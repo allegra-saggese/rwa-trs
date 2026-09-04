@@ -50,6 +50,12 @@ ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "data" / "raw"
 PROC = ROOT / "data" / "processed"
 
+# Survey microdata is read from the Dropbox holdings, not the repo.
+NISR_ROOT = Path(
+    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
+    "data/Publicly-Available-NISR"
+)
+
 GADM_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_RWA_2.json.zip"
 
 # CHIRPS v2.0, Africa monthly window. ~4 MB per month gzipped; the Africa subset
@@ -101,6 +107,9 @@ def normalise_name(s: str) -> str:
         return ""
     s = unicodedata.normalize("NFKD", str(s))
     s = "".join(c for c in s if not unicodedata.combining(c))
+    # NISR value labels often carry the numeric code as a prefix ("11 -Nyarugenge",
+    # "1-Kigali", "21- Nyanza"). Strip a leading code so the name matches GADM.
+    s = re.sub(r"^\s*\d+\s*[-–—.]?\s*", "", s)
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
 
@@ -342,7 +351,8 @@ def extract_dhs() -> dict[str, pd.DataFrame]:
     """
     import pyreadstat
 
-    src = RAW / "dhs"
+    src = Path("/Users/allegrasaggese/Library/CloudStorage/Dropbox/"
+               "Rwanda - TRS/data/DHS")
     files = sorted([p for p in src.glob("**/*") if p.suffix.upper() in {".DTA", ".SAV"}]) if src.exists() else []
 
     if not files:
@@ -407,7 +417,8 @@ def extract_dhs_gps() -> "gpd.GeoDataFrame | None":  # noqa: F821
     """
     import geopandas as gpd
 
-    src = RAW / "dhs"
+    src = Path("/Users/allegrasaggese/Library/CloudStorage/Dropbox/"
+               "Rwanda - TRS/data/DHS")
     shp = sorted(src.glob("**/*.shp")) if src.exists() else []
     if not shp:
         _log("dhs gps: no shapefile in data/raw/dhs/ - skipping")
@@ -499,7 +510,7 @@ def extract_eicv() -> dict[str, pd.DataFrame]:
     """
     import pyreadstat
 
-    src = RAW / "eicv"
+    src = NISR_ROOT / "Household-Living-Conditions-EICV"
     files = sorted([p for p in src.glob("**/*") if p.suffix.upper() in {".DTA", ".SAV"}]) if src.exists() else []
     if not files:
         _log("eicv: no files in data/raw/eicv/ - skipping "
@@ -602,21 +613,21 @@ def build_eicv7_district_welfare(poverty: pd.DataFrame) -> pd.DataFrame:
 # un-harmonised - the same policy applied to EICV before its dictionary arrived.
 SURVEYS = {
     "rec": {
-        "dir": "rec",
+        "dir": "Establishment-Census-EC",
         "title": "Rwanda Establishment Census",
         "unit": "establishment",
         "source": "microdata.statistics.gov.rw",
         "note": "Firm-level census: employment, sector (ISIC), location, ownership.",
     },
     "est": {
-        "dir": "est",
+        "dir": "Establishment-Census-EC",
         "title": "Establishment Survey",
         "unit": "establishment",
         "source": "microdata.statistics.gov.rw",
         "note": "Sample survey of establishments; overlaps REC but is run more often.",
     },
     "ahs": {
-        "dir": "ahs",
+        "dir": "Agriculture-Survey-AHS",
         "title": "Agriculture Household Survey",
         "unit": "household / parcel / plot",
         "source": "microdata.statistics.gov.rw",
@@ -624,8 +635,17 @@ SURVEYS = {
                  "that EICV7 dropped. Often distributed alongside the Seasonal "
                  "Agriculture Survey (SAS); season files may need stacking."),
     },
+    "sas": {
+        "dir": "Season-Agriculture-Survey-SAS",
+        "title": "Seasonal Agriculture Survey",
+        "unit": "segment x plot x season",
+        "source": "microdata.statistics.gov.rw",
+        "note": ("Area-frame survey: the unit is a PLOT within a sampled segment, "
+                 "not a household. Files split by Season A/B/C and by part. "
+                 "Held: 2019, 2020."),
+    },
     "lfs": {
-        "dir": "lfs",
+        "dir": "Labour-Force-Survey-LFS",
         "title": "Labour Force Survey",
         "unit": "person",
         "source": "microdata.statistics.gov.rw",
@@ -652,7 +672,11 @@ def extract_survey(key: str) -> dict[str, pd.DataFrame]:
     import pyreadstat
 
     spec = SURVEYS[key]
-    src = RAW / spec["dir"]
+    # Survey microdata lives outside the repo: it is licensed to the researcher
+    # and far too large to sit in a git tree. NISR_ROOT is the Dropbox holdings;
+    # data/raw/ is still used for open sources the pipeline downloads itself.
+    base = NISR_ROOT if (NISR_ROOT / spec["dir"]).exists() else RAW
+    src = base / spec["dir"]
     exts = {".DTA", ".SAV", ".CSV", ".XLSX"}
     files = sorted([p for p in src.glob("**/*") if p.suffix.upper() in exts]) if src.exists() else []
 
@@ -668,19 +692,30 @@ def extract_survey(key: str) -> dict[str, pd.DataFrame]:
 
     out: dict[str, pd.DataFrame] = {}
     for fp in files:
-        try:
-            suffix = fp.suffix.upper()
-            if suffix == ".DTA":
-                df, _ = pyreadstat.read_dta(fp, apply_value_formats=True)
-            elif suffix == ".SAV":
-                df, _ = pyreadstat.read_sav(fp, apply_value_formats=True)
-            elif suffix == ".CSV":
-                df = pd.read_csv(fp, low_memory=False)
-            else:
-                df = pd.read_excel(fp)
-        except Exception as exc:  # noqa: BLE001 - one unreadable file must not stop the rest
-            _log(f"  ! {fp.name}: {exc}")
-            continue
+        suffix = fp.suffix.upper()
+        df = None
+        if suffix in (".DTA", ".SAV"):
+            reader = pyreadstat.read_dta if suffix == ".DTA" else pyreadstat.read_sav
+            # NISR files mix encodings; try utf-8 first so clean files are not mangled.
+            for enc in (None, "latin1", "cp1252"):
+                try:
+                    kw = {"apply_value_formats": True}
+                    if enc:
+                        kw["encoding"] = enc
+                    df, _ = reader(fp, **kw)
+                    break
+                except Exception as exc:  # noqa: BLE001
+                    last = exc
+            if df is None:
+                _log(f"  ! {fp.name}: {last}")
+                continue
+        else:
+            try:
+                df = (pd.read_csv(fp, low_memory=False) if suffix == ".CSV"
+                      else pd.read_excel(fp))
+            except Exception as exc:  # noqa: BLE001
+                _log(f"  ! {fp.name}: {exc}")
+                continue
 
         # Join geography where a district column exists under any common spelling.
         dcol = next((c for c in df.columns if str(c).strip().lower() == "district"), None)
@@ -703,9 +738,58 @@ def extract_survey(key: str) -> dict[str, pd.DataFrame]:
     return out
 
 
+# Establishment Census geography, by round. The detail DEGRADES over time:
+# 2011 reaches village, 2014 reaches sector, and 2017 onward stop at district.
+# Only 2011 and 2014 can therefore support sector-level work. `q1_5_1` in the
+# later rounds is "Village type" (an urban/rural classification), NOT a village
+# identifier - it must not be mistaken for one.
+# NOTE on 2011: its ID2/ID3 are sequential WITHIN the parent unit (8 and 21
+# distinct values), not the national codes, so they cannot be joined on their own
+# and are left unmapped pending a concordance. 2014's ID3 IS the national sector
+# code (416 distinct, 1101-5715) and matches the Census and village files exactly.
+EC_GEOGRAPHY = {
+    "EC_2011": {"province": "ID1", "district": "ID2", "sector": "ID3",
+                "cell": "ID4", "village": "ID5"},
+    "EC_2014": {"province": "ID1", "district": "ID2", "sector": "ID3"},
+    "EC_2017": {"province": "q1_1", "district": "q1_2"},
+    "EC_2020": {"province": "q1_1", "district": "q1_2"},
+    "EC_2023": {"province": "q1_1", "district": "q1_2"},
+}
+
+
 def extract_rec():
-    """Rwanda Establishment Census."""
-    return extract_survey("rec")
+    """Rwanda Establishment Census.
+
+    Geography is renamed to the common names in EC_GEOGRAPHY so the rounds can
+    be stacked, and the finest level available in each round is recorded in a
+    `geo_level` column - district-level rounds must not be silently pooled with
+    sector-level ones.
+    """
+    out = extract_survey("rec")
+    if not out:
+        return out
+
+    districts = load_districts()
+    key_to_id = dict(zip(districts["district_key"], districts["district_id"]))
+
+    for stem, df in out.items():
+        cols = next((v for k, v in EC_GEOGRAPHY.items() if k.lower() in stem.lower()), None)
+        if cols is None:
+            _log(f"  ? {stem}: no geography mapping recorded; left as-is")
+            continue
+        for name, src in cols.items():
+            if src in df.columns:
+                df[f"geo_{name}"] = df[src]
+        df["geo_level"] = max(cols, key=lambda k: ["province","district","sector","cell","village"].index(k))
+
+        if "geo_district" in df.columns:
+            df["district_key"] = df["geo_district"].map(normalise_name)
+            df["district_id"] = df["district_key"].map(key_to_id)
+            n = df["district_id"].notna().sum()
+            _log(f"  {stem}: geo to {df['geo_level'].iloc[0]}, "
+                 f"{n:,}/{len(df):,} rows matched to a district")
+        df.to_csv(PROC / f"rec_{normalise_name(stem)[:60]}.csv", index=False)
+    return out
 
 
 def extract_est():
@@ -785,7 +869,7 @@ def merge_district_panel() -> pd.DataFrame:
 # --------------------------------------------------------------------------
 
 SOURCES = ["boundaries", "chirps", "wdi", "dhs", "dhs_gps", "eicv",
-           "rec", "est", "ahs", "lfs"]
+           "rec", "est", "ahs", "sas", "lfs"]
 
 
 def main(argv=None) -> int:
@@ -825,6 +909,8 @@ def main(argv=None) -> int:
         extract_est()
     if "ahs" in todo:
         extract_ahs()
+    if "sas" in todo:
+        extract_survey("sas")
     if "lfs" in todo:
         extract_lfs()
 

@@ -43,7 +43,7 @@ DOCS = REPO / "docs"
 # repo is the wrong place for 5 GB of restricted files.
 DEFAULT_ROOT = Path(
     "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
-    "data/Publicly Available NISR"
+    "data/Publicly-Available-NISR"
 )
 
 READABLE = {".dta", ".sav", ".csv"}
