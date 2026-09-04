@@ -24,3 +24,6 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 .DS_Store
+
+# Credentials - never commit
+.gfw_api_key
