@@ -1,0 +1,26 @@
+# Raw data is never committed: EICV and DHS microdata are licensed to the
+# individual researcher and may not be redistributed. Open sources (CHIRPS,
+# GADM) are excluded too, since extract.py re-downloads them on demand.
+data/raw/*
+data/interim/*
+
+# Processed outputs are reproducible from extract.py. Commit selectively if a
+# specific file is small and needed for review.
+data/processed/*
+
+# Rendered output
+output/figures/*
+output/tables/*
+output/maps/*
+
+# Keep the directory skeleton so a fresh clone has somewhere to put data.
+!.gitkeep
+!**/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store

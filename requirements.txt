@@ -1,0 +1,20 @@
+# Core
+pandas>=2.0
+numpy>=1.24
+requests>=2.28
+
+# Spatial
+geopandas>=1.0
+rasterio>=1.3
+rasterstats>=0.19
+shapely>=2.0
+mapclassify>=2.5          # classification schemes for choropleths
+
+# Survey microdata
+pyreadstat>=1.2           # .dta/.sav with value labels intact
+
+# Output
+matplotlib>=3.7
+jinja2>=3.0               # DataFrame.to_latex
+scipy>=1.10
+statsmodels>=0.14
