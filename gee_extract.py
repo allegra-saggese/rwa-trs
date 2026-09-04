@@ -22,6 +22,7 @@ Outputs (data/processed/)
 -------------------------
     tmf_by_sector.csv   sector x year x TMF annual-change class, area in ha
     dw_by_sector.csv    sector x year, mean fraction of each Dynamic World class
+    radd_by_sector.csv  sector x year, hectares of confirmed RADD alerts
 
 Both key on `sector_id`, so they join to the Census microdata and to the
 existing park-exposure and Hansen tables.
@@ -57,6 +58,11 @@ TMF_CLASSES = {
     5: "water",              # permanent or seasonal
     6: "other_land_cover",
 }
+
+# RADD deforestation alerts. The collection mixes alert images with forest-mask
+# baselines, so it must be filtered on `layer` or a mosaic fails on mismatched
+# bands. Alert: 2 = unconfirmed, 3 = confirmed. Date: YYDOY (19008 = 2019 day 8).
+RADD = "projects/radar-wur/raddalert/v1"
 
 DW = "GOOGLE/DYNAMICWORLD/V1"
 DW_BANDS = ["water", "trees", "grass", "flooded_vegetation", "crops",
@@ -221,12 +227,63 @@ def fetch_dw(ee, sectors, years: range) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def fetch_radd(ee, sectors, years: range) -> pd.DataFrame:
+    """Confirmed RADD deforestation alerts per sector per year.
+
+    Only confirmed alerts (Alert == 3) are counted; unconfirmed ones are
+    provisional and are revised in later releases. Alert area is reported in
+    hectares from pixel area rather than a pixel count, so the 10 m grid is
+    handled correctly away from the equator.
+    """
+    _log(f"RADD alerts, {years.start}-{years.stop - 1}")
+    al = (ee.ImageCollection(RADD)
+          .filter(ee.Filter.eq("geography", "africa"))
+          .filter(ee.Filter.eq("layer", "alerts")))
+    img = al.mosaic()
+    alert, date = img.select("Alert"), img.select("Date")
+
+    rows = []
+    for yr in years:
+        if yr < 2019:
+            continue   # RADD starts January 2019
+        # YYDOY -> year: 19008 is 2019 day 8, so the year is Date // 1000 + 2000.
+        yr_band = date.divide(1000).floor().add(2000)
+        mask = alert.eq(3).And(yr_band.eq(yr))
+        area = ee.Image.pixelArea().divide(1e4).updateMask(mask)
+
+        feats, ok = [], False
+        for tile_scale in (4, 16):
+            try:
+                feats = area.reduceRegions(collection=sectors,
+                                           reducer=ee.Reducer.sum(),
+                                           scale=SCALE_M,
+                                           tileScale=tile_scale).getInfo()["features"]
+                ok = True
+                break
+            except Exception as exc:  # noqa: BLE001
+                if "memory" not in str(exc).lower():
+                    _log(f"  ! {yr}: {str(exc)[:80]}")
+                    break
+        if not ok:
+            _log(f"  ! {yr}: skipped"); continue
+
+        for f in feats:
+            pr = f["properties"]
+            rows.append({"sector_id": pr["sector_id"], "sector": pr["sector"],
+                         "district": pr["district"], "year": yr,
+                         "radd_alert_ha": pr.get("sum", 0) or 0})
+        _log(f"  {yr} done ({len(feats)} sectors)")
+        time.sleep(0.3)
+
+    return pd.DataFrame(rows)
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--project", required=True, help="your GEE Cloud project id")
-    p.add_argument("--datasets", nargs="+", default=["tmf", "dw"],
-                   choices=["tmf", "dw"])
+    p.add_argument("--datasets", nargs="+", default=["tmf", "dw", "radd"],
+                   choices=["tmf", "dw", "radd"])
     p.add_argument("--years", nargs=2, type=int, default=[1990, 2024],
                    metavar=("START", "END"))
     args = p.parse_args(argv)
@@ -247,6 +304,12 @@ def main(argv=None) -> int:
         if not d.empty:
             d.to_csv(PROC / "dw_by_sector.csv", index=False)
             _log(f"-> dw_by_sector.csv ({len(d):,} sector-years)")
+
+    if "radd" in args.datasets:
+        d = fetch_radd(ee, sectors, years)
+        if not d.empty:
+            d.to_csv(PROC / "radd_by_sector.csv", index=False)
+            _log(f"-> radd_by_sector.csv ({len(d):,} sector-years)")
 
     _log("done")
     return 0
