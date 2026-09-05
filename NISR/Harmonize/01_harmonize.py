@@ -494,6 +494,10 @@ for tag in DATASETS:
         summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "unit": unit or "module", "rows": n_in, "vars": int(df.shape[1]),
                                       "h_vars": [c for c in df.columns if c.startswith("h_")], "waves": sorted(map(str, df["wave"].unique())) if "wave" in df.columns else []}
         del df
+for tag in DATASETS:                                                # copies whose source file no longer exists (module renamed / merged away) are removed
+    if ONLY and tag not in ONLY: continue
+    for f in sorted(P_OUT.glob(f"H_{tag}_*.dta")):
+        if f.name not in summary["files"]: f.unlink(); log.info("removed superseded %s (no source file any more)", f.name)
 ck.done()
 with open(P_OUT / "harmonization_map.csv", "w", newline="") as fh:
     wr = csv.DictWriter(fh, fieldnames=["dataset", "waves", "file", "h_variable", "source_variables", "rule", "level", "quality", "note"]); wr.writeheader(); wr.writerows(MAP)

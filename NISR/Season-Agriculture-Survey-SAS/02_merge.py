@@ -285,7 +285,7 @@ by_name = {}
 for y in ("2013", "2014", "2015", "2016"):
     for f in sorted(inter.glob(f"SAS_{y}_*_clean.dta")):
         stem = re.sub(rf"^SAS_{y}_[ABC?]_(.*)_clean\.dta$", r"\1", f.name)
-        if any(re.search(p, stem) for p in PLOTCROP_EARLY) or re.search(r"yield|_province|weight$", stem): continue
+        if early_type(stem) is not None or re.search(r"yield|_province|weight$", stem): continue      # plot x crop record types live in the early file
         by_name.setdefault(stem, []).append(f)
 for stem, fs in sorted(by_name.items()):
     if len({f.name.split("_")[1] for f in fs}) < 2: continue        # needs >= 2 years
@@ -308,4 +308,6 @@ for canon, (pat, years) in MODULES.items():
     if len({w[:4] for w in frames}) >= 2:
         ys = sorted({w[:4] for w in frames})
         summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS {ys[0]}-{ys[-1]} pooled module '{canon}' ({len(ys)} years; crop = wave's own list)", canon, out_dir=APPENDED, sources=sources, crop_native="crop" in {c for d in frames.values() for c in d.columns})
+for f in sorted(APPENDED.glob("*.dta")):                       # appended/ is entirely generated here: drop copies of modules no longer produced
+    if f.name not in summary["files"]: f.unlink(); log.info("removed superseded %s", f.name)
 save_json(summary, LOGS / "merge_alignment.json"); ck.done(); log.info("02_merge done")
