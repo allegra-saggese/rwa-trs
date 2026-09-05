@@ -432,9 +432,11 @@ for tag in DATASETS:
     for folder, f in files:
         fname = f.name; unit = unit_of(tag, fname, align); out = P_OUT / out_name(tag, fname)
         free_gb = shutil.disk_usage(P_OUT).free / 1e9; size_gb = os.path.getsize(f) / 1e9
-        if free_gb - size_gb * 1.3 < MIN_FREE_GB:
+        old_gb = os.path.getsize(out) / 1e9 if out.exists() else 0.0          # a rebuild replaces the previous copy: its space comes back
+        if free_gb + old_gb - size_gb * 1.3 < MIN_FREE_GB:
             log.warning("SKIPPED %s: %.1f GB file, only %.1f GB free (MIN_FREE_GB=%s) -- rerun when space is available", fname, size_gb, free_gb, MIN_FREE_GB)
             summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "skipped": "disk space"}; continue
+        if out.exists(): out.unlink(); log.info("   previous %s removed before the rebuild (%.2f GB)", out.name, old_gb)
         log.info("---------------- %s / %s (%s, %.2f GB) -> %s", tag, fname, unit or "module", size_gb, out.name)
         df, vl, vv = read_dta_typed(f, log); n_in = len(df)
         # 1. common key labels and value labels; sex/age plain copies where present

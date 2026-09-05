@@ -12,7 +12,7 @@ from sas_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE, DATA
 TAG = "SAS"
 log = get_logger("04_codebook"); P = paths()
 align = json.load(open(LOGS / "merge_alignment.json"))
-metas = {}
+metas = {f.stem.replace("clean_", "").replace("_meta", ""): json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}   # year -> {"S/stem": {source, rows, ...}}
 
 def chunked_counts(path, key, chunk=250_000):
     """non-missing counts per column by `key` (wave/year), reading the file in row chunks so
@@ -28,8 +28,8 @@ def chunked_counts(path, key, chunk=250_000):
 
 
 FILE_UNIVERSE = {
-    "SAS_pooled_plotcrop.dta": "2017-2025: every plot x crop record of the plot questionnaire (part II) in sampled segments (small-scale, area frame) and on large-scale farms (list frame, from 2019 flagged by farm_type); seasons A (Sep-Feb), B (Mar-Aug), C (marshland)",
-    "SAS_pooled_plotcrop_2013_2016.dta": "2013-2016: plot x crop records from the screening / planting / harvest / big-farmer files (record type in source_module); 2013 keys are tract and plot within segment",
+    "SAS_pooled_plotcrop.dta": "2017-2025: every crop-PRODUCTION record of the plot questionnaire (part II) in sampled segments (small-scale, area frame) and on large-scale farms (list frame, farm_type); seasons A (Sep-Feb), B (Mar-Aug), C (marshland). Crop codes are the wave's own list (crop_list: 2017-2019 vs 2020+; text in crop_name). (wave, farm_type, segment, holder, plot, crop) is NOT unique (a few dozen duplicated rows per wave, as shipped). The official cultivated-area universe is the screening crop record (2_Intermediate/appended/SAS_pooled_screening_crops.dta), which reproduces the published maize areas 2020-2023",
+    "SAS_pooled_plotcrop_2013_2016.dta": "2013-2016: plot x crop records of every shipped file with a plot-level crop record: screening, crop-area, sowing / production / harvest and plot-roster files (record_type, source_module); several record types per wave -> keys are unique only within a record type, if at all; 2013 keys are tract and plot within segment; crop = the wave's own list (crop_list)",
 }
 FILE_UNIVERSE_DEFAULT = 'plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season'
 
@@ -52,11 +52,11 @@ def write_workbook(path, notes, books):
     from openpyxl.styles import Font
     from openpyxl.utils import get_column_letter
     used = {"README", "files", "modules", "value_labels", "checks"}
-    finals = [(cb, m) for cb, m, _ in books if m["folder"] == "3_Final"]
-    mods = [(cb, m) for cb, m, _ in books if m["folder"] != "3_Final"]
+    finals = [(cb, m) for cb, m, _ in books if m is not None and m["folder"] == "3_Final"]
+    mods = [(cb, m) for cb, m, _ in books if m is not None and m["folder"] != "3_Final"]
     names = {m["file"]: sheet_name(m["file"], used) for _, m in finals}
     names.update({m["file"]: "modules" for _, m in mods})
-    files = pd.DataFrame([dict(m, sheet=names[m["file"]]) for _, m, _ in books])
+    files = pd.DataFrame([dict(m, sheet=names[m["file"]]) for _, m, _ in books if m is not None])
     vls = pd.DataFrame([r for _, _, v in books for r in v], columns=["file", "variable", "code", "label"])
     report = LOGS / "checks_report.txt"
     checks = pd.DataFrame({"checks_report": report.read_text().splitlines() if report.exists() else ["(no logs/checks_report.txt yet: run 03_checks.py)"]})
@@ -92,7 +92,12 @@ def codebook(fname, info):
         labs = {w: l for w, l in (d.get("labels_by_wave") or {}).items() if w in ws_here}
         variants = "; ".join(f"{w}: {l[:50]}" for w, l in labs.items() if l and l != d.get("reference_label")) if len(set(labs.values())) > 1 else ""
         others = ", ".join(f"{n} ({', '.join(g)})" for n, g in vers.items() if n != c) if len(vers) > 1 else ""
-        src = "; ".join(f"{w}: {metas[w][unit]['source'].get(c, metas[w][unit]['source'].get(base))}" for w in (ws_here or info.get('waves', [])) if w in metas and unit in metas[w] and (c in metas[w][unit].get('source', {}) or base in metas[w][unit].get('source', {})))
+        src = []
+        for w in (ws_here or info.get("waves", [])):                     # lineage: wave -> (year, "S/stem") -> 01_clean's source map
+            y, mk = info.get("wave_modules", {}).get(w, (None, None))
+            sm = metas.get(y, {}).get(mk, {}).get("source", {}) if y else {}
+            if c in sm or base in sm: src.append(f"{w}: {sm.get(c, sm.get(base))}")
+        src = "; ".join(src)
         vlab = vv.get(c, {}); vtxt = ", ".join(f"{k}={v}" for k, v in list(vlab.items())[:5]) + (" …" if len(vlab) > 5 else "")
         conf = info.get("value_label_conflicts", {}).get(c)
         rows.append({"variable": c, "label": vl.get(c) or "", "type": types.get(c, ""), "value_labels": vtxt, "n_value_labels": len(vlab),
@@ -105,11 +110,16 @@ def codebook(fname, info):
 NOTES = [f"SAS codebook -- generated by rwa-trs/NISR/{DATASET}/04_codebook.py on {time.strftime('%Y-%m-%d %H:%M')} from 3_Final/ (and 2_Intermediate/appended/). Do not hand-edit: re-run python master.py 04.",
          "Sheets: files = one row per final/appended file (folder, unit, rows, variables, waves, universe, sheet); one sheet per FINAL dataset = one row per variable (label, storage type, first value labels, number of value labels, non-missing count per wave, source variable per wave, versions, label variants, value-label text conflicts); modules = the same table for every appended module file of 2_Intermediate/appended/, stacked, file in the first column; value_labels = every code of every labelled variable (all files); checks = the latest verification report (logs/checks_report.txt).",
          'Key block: survey year season wave farm_type prov dist stratum segment holder plot crop wt, plus the CORE quantities plot_area_ha crop_area_ha harvested_area_ha production_kg yield_kg_ha (explicit per-year map in 02_merge.py, recorded in logs/merge_alignment.json).',
-         f"Alignment rule: waves are grouped into versions of a variable by label similarity (token Jaccard >= {align['threshold']}); the largest group keeps the name, the others are <name>_v2, _v3 ...; forced alignments: {', '.join(sorted(align.get('force_align', []))) or 'none'}; forced splits: {', '.join(f'{k} ({v})' for k, v in (align.get('force_split') or {}).items()) or 'none'}.",
+         f"Alignment rule: a same-named variable is one column across waves only when (a) its variable labels are similar (token Jaccard >= {align['threshold']}) AND (b) its value labels are compatible (no code whose text means something else, similarity >= {align.get('vl_threshold', 0.6)}; an unlabelled wave's values inside the labelled range); the largest group keeps the name, the others are <name>_v2, _v3 ... (split reasons in logs/merge_alignment.json); forced splits by year: {', '.join(f'{k} {v}' for k, v in (align.get('force_split') or {}).items()) or 'none'}. The crop code is exempt: it keeps the wave's own list (crop_list, crop_name) and no pooled value labels.",
          "Value labels are the union over waves within a version; where the same code had different text the most recent wave's text is kept and the conflict listed.",
          'universe (files sheet): from the questionnaires; no sampling/weighting document exists in z_Documentation (strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed / 90 large-scale list frame).',
          f"Processing notes (what z_Documentation says and how it was applied; every decision and why) are kept in the project memory file NISR-{DATASET}.md (Green Jobs - TRS folder), not in git or Dropbox."]
 books = [codebook(fname, info) for fname, info in align["files"].items()]
+# the crop code keeps no pooled value labels (the lists differ by wave): every wave's own crop dictionary goes into the value_labels sheet, file = the cleaned per-wave file
+for y, m in sorted(metas.items()):
+    for mk, i in sorted(m.items()):
+        d = i.get("value_labels", {}).get("crop", {})
+        if len(d) >= 20: books.append((None, None, [{"file": i["out"], "variable": "crop", "code": k, "label": v} for k, v in d.items()]))
 write_workbook(P["root"] / f"CODEBOOK_{TAG}.xlsx", NOTES, books)
 
 # ---------------------------------------------------------------- README.txt on Dropbox

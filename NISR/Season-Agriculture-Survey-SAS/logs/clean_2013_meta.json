@@ -147,7 +147,7 @@
  "A/area_a": {
   "file": "SAS_2013_area_a.dta",
   "rows": 64365,
-  "vars": 15,
+  "vars": 16,
   "level": "records",
   "keys_present": [
    "survey",
@@ -169,6 +169,7 @@
    "holder": "idquest",
    "crop": "crop_code",
    "wt": "coef",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -180,8 +181,9 @@
    "stratum": "Sampling stratum (as shipped)",
    "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -280,7 +282,7 @@
  "A/area_a_province": {
   "file": "SAS_2013_area_a_province.dta",
   "rows": 159,
-  "vars": 12,
+  "vars": 13,
   "level": "table",
   "keys_present": [
    "survey",
@@ -294,6 +296,7 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -303,7 +306,8 @@
    "group_crop": "Crop group",
    "category": "Crop category",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -395,7 +399,7 @@
  "A/area_a_province_phys": {
   "file": "SAS_2013_area_a_province_phys.dta",
   "rows": 158,
-  "vars": 10,
+  "vars": 11,
   "level": "table",
   "keys_present": [
    "survey",
@@ -409,6 +413,7 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -416,7 +421,8 @@
    "area_phys_lsf": "Physical Area Large Scale Farmer",
    "total_area_phy": "Total Area",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -475,7 +481,7 @@
  "A/big_farmer_a": {
   "file": "SAS_2013_big_farmer_a.dta",
   "rows": 2226,
-  "vars": 12,
+  "vars": 13,
   "level": "records",
   "keys_present": [
    "survey",
@@ -489,20 +495,22 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "id2a": "An_District",
    "area_ha": "Area Hectare",
    "association": "Pure and mixed cropping",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -546,6 +554,7 @@
     "1": "Pure Crop Land",
     "2": "Mixed Crop Land"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -554,7 +563,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -599,7 +607,7 @@
  "A/date_sowing_production_harvest": {
   "file": "SAS_2013_date_sowing_production_harvest.dta",
   "rows": 49434,
-  "vars": 17,
+  "vars": 18,
   "level": "records",
   "keys_present": [
    "survey",
@@ -616,13 +624,14 @@
    "wt"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "stratum": "id3",
    "segment": "id4",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "c03a",
    "wt": "coef",
+   "crop_name": "value labels of c03a",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -631,13 +640,14 @@
    "c05": "Starting date for sowing",
    "c12": "Production expectation by 28th February 2013",
    "c13": "Expected date for harvesting",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "stratum": "Sampling stratum (as shipped)",
    "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -697,6 +707,7 @@
     "5": "After 28/02/13",
     "6": "Not applicable"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -707,7 +718,6 @@
    "stratum": {},
    "segment": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -1111,7 +1121,7 @@
  "A/lsf_area_a_province": {
   "file": "SAS_2013_lsf_area_a_province.dta",
   "rows": 124,
-  "vars": 8,
+  "vars": 9,
   "level": "table",
   "keys_present": [
    "survey",
@@ -1125,12 +1135,14 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "area_ha_lsf": "Area in Hectare Large Scale Farmer",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -1189,7 +1201,7 @@
  "A/lsf_date_sowing_production_harvest": {
   "file": "SAS_2013_lsf_date_sowing_production_harvest.dta",
   "rows": 1512,
-  "vars": 13,
+  "vars": 14,
   "level": "records",
   "keys_present": [
    "survey",
@@ -1202,9 +1214,10 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -1213,9 +1226,10 @@
    "c05": "1.5 Starting date for sowing ? Code",
    "c12": "1.12  Do you expect any production on this crop by 28th February 2013?",
    "c13": "1.13 What is the expected date for harvesting?",
-   "prov": "Province (1-5, NISR codes)",
    "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -1244,6 +1258,7 @@
     "5": "After 28/02/13",
     "6": "Not applicable"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -1251,7 +1266,6 @@
     "4": "Northern Province",
     "5": "Eastern Province"
    },
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -1296,7 +1310,7 @@
  "A/lsf_improved_by_crop": {
   "file": "SAS_2013_lsf_improved_by_crop.dta",
   "rows": 349,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -1312,12 +1326,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2107,7 +2123,7 @@
  "A/lsf_traditional_by_crop": {
   "file": "SAS_2013_lsf_traditional_by_crop.dta",
   "rows": 825,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -2123,12 +2139,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2188,7 +2206,7 @@
  "A/lsf_use_of_production": {
   "file": "SAS_2013_lsf_use_of_production.dta",
   "rows": 3413,
-  "vars": 20,
+  "vars": 21,
   "level": "records",
   "keys_present": [
    "survey",
@@ -2202,6 +2220,7 @@
   "source": {
    "prov": "id1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -2219,7 +2238,8 @@
    "c8b": "On the total production of this crop which quantity has been stored/ will be sto",
    "total_use": "Total",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2453,7 +2473,7 @@
  "A/ssf_area_a_province": {
   "file": "SAS_2013_ssf_area_a_province.dta",
   "rows": 158,
-  "vars": 8,
+  "vars": 9,
   "level": "table",
   "keys_present": [
    "survey",
@@ -2467,12 +2487,14 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "area_h_ssf": "Area in Hectare Small Scale Farmer",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2531,7 +2553,7 @@
  "A/ssf_improved_by_crop": {
   "file": "SAS_2013_ssf_improved_by_crop.dta",
   "rows": 2188,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -2547,12 +2569,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3125,7 +3149,7 @@
  "A/ssf_traditional_by_crop": {
   "file": "SAS_2013_ssf_traditional_by_crop.dta",
   "rows": 18058,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3141,12 +3165,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3206,7 +3232,7 @@
  "A/ssf_use_of_production": {
   "file": "SAS_2013_ssf_use_of_production.dta",
   "rows": 6425,
-  "vars": 20,
+  "vars": 21,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3222,6 +3248,7 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -3239,7 +3266,8 @@
    "total_use": "Total",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3301,7 +3329,7 @@
  "B/area": {
   "file": "SAS_2013_area.dta",
   "rows": 160,
-  "vars": 12,
+  "vars": 13,
   "level": "table",
   "keys_present": [
    "survey",
@@ -3315,6 +3343,7 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -3324,7 +3353,8 @@
    "group_crop": "Crop group",
    "category": "Crop category",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3416,7 +3446,7 @@
  "B/area_phy": {
   "file": "SAS_2013_area_phy.dta",
   "rows": 157,
-  "vars": 10,
+  "vars": 11,
   "level": "table",
   "keys_present": [
    "survey",
@@ -3430,6 +3460,7 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -3437,7 +3468,8 @@
    "lsf_area_phy": "Physical Area Large Scale Farmer",
    "total_area_phys": "Total Area",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3642,7 +3674,7 @@
  "B/lsf_area": {
   "file": "SAS_2013_lsf_area.dta",
   "rows": 2991,
-  "vars": 12,
+  "vars": 13,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3656,20 +3688,22 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "c03b": "1.3B Specify the crop planted - Crop Name",
    "superic": "Area hectare",
    "association": "Pure and mixed cropping",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3681,6 +3715,7 @@
     "1": "Pure crop land",
     "2": "Mixed crop land"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -3689,7 +3724,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -3812,7 +3846,7 @@
  "B/lsf_improved_by_crop_b": {
   "file": "SAS_2013_lsf_improved_by_crop_b.dta",
   "rows": 221,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3828,12 +3862,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4421,7 +4457,7 @@
  "B/lsf_sowing_production_harvest": {
   "file": "SAS_2013_lsf_sowing_production_harvest.dta",
   "rows": 1513,
-  "vars": 12,
+  "vars": 13,
   "level": "records",
   "keys_present": [
    "survey",
@@ -4434,9 +4470,10 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -4444,9 +4481,10 @@
    "c05": "1.6 Starting date for sowing ? Code",
    "c12": "1.13  Do you expect any production on this crop by 30th August 2013?",
    "c13": "1.14 What is the expected date for harvesting?",
-   "holder": "Holder / questionnaire id (as shipped)",
    "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4475,8 +4513,8 @@
     "5": "After 31/07/13",
     "6": "Not applicable"
    },
-   "holder": {},
    "plot": {},
+   "holder": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -4521,7 +4559,7 @@
  "B/lsf_traditional_by_crop_b": {
   "file": "SAS_2013_lsf_traditional_by_crop_b.dta",
   "rows": 744,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -4537,12 +4575,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4602,7 +4642,7 @@
  "B/lsf_use_of_production": {
   "file": "SAS_2013_lsf_use_of_production.dta",
   "rows": 194,
-  "vars": 18,
+  "vars": 19,
   "level": "records",
   "keys_present": [
    "survey",
@@ -4616,6 +4656,7 @@
   "source": {
    "holder": "idquest",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -4631,7 +4672,8 @@
    "c8c": "On the total production of this crop which quantity has been stored/ will be sto",
    "total": "Total",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4682,7 +4724,7 @@
  "B/phys_area_b": {
   "file": "SAS_2013_phys_area_b.dta",
   "rows": 166,
-  "vars": 8,
+  "vars": 9,
   "level": "table",
   "keys_present": [
    "survey",
@@ -4696,12 +4738,14 @@
   "source": {
    "prov": "id1",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
    "area_phy": "Physical Area",
    "prov": "Province (1-5, NISR codes)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5060,7 +5104,7 @@
  "B/ssf_improved_by_crop_b": {
   "file": "SAS_2013_ssf_improved_by_crop_b.dta",
   "rows": 1144,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -5076,12 +5120,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5419,7 +5465,7 @@
  "B/ssf_pure_mixed_crop_land": {
   "file": "SAS_2013_ssf_pure_mixed_crop_land.dta",
   "rows": 76153,
-  "vars": 14,
+  "vars": 15,
   "level": "records",
   "keys_present": [
    "survey",
@@ -5434,11 +5480,12 @@
    "wt"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "crop_code",
    "wt": "coef",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -5446,11 +5493,12 @@
    "c03b": "1.3B Specify the crop planted - Crop Name",
    "area": "Area in hectare",
    "association": "Pure and mixedd cropping",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5494,6 +5542,7 @@
     "1": "Pure Crop Land",
     "2": "Mixed crop Land"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -5502,7 +5551,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -5771,7 +5819,7 @@
  "B/ssf_sowing_production_harvest": {
   "file": "SAS_2013_ssf_sowing_production_harvest.dta",
   "rows": 59642,
-  "vars": 14,
+  "vars": 15,
   "level": "records",
   "keys_present": [
    "survey",
@@ -5786,11 +5834,12 @@
    "wt"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "c03a",
    "wt": "coef",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -5798,11 +5847,12 @@
    "c05": "Starting date for sowing",
    "c12": "Production expectation by 28th February 2013",
    "c13": "Expected date for harvesting",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5863,6 +5913,7 @@
     "5": "After 31/07/13",
     "6": "Not applicable"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -5871,7 +5922,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -5917,7 +5967,7 @@
  "B/ssf_traditional_by_crop_b": {
   "file": "SAS_2013_ssf_traditional_by_crop_b.dta",
   "rows": 38385,
-  "vars": 8,
+  "vars": 9,
   "level": "records",
   "keys_present": [
    "survey",
@@ -5933,12 +5983,14 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5998,7 +6050,7 @@
  "B/ssf_use_of_production": {
   "file": "SAS_2013_ssf_use_of_production.dta",
   "rows": 7660,
-  "vars": 20,
+  "vars": 21,
   "level": "records",
   "keys_present": [
    "survey",
@@ -6014,6 +6066,7 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -6031,7 +6084,8 @@
    "total": "Total",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -6089,7 +6143,7 @@
  "C/area_province_crop_c": {
   "file": "SAS_2013_area_province_crop_c.dta",
   "rows": 5510,
-  "vars": 11,
+  "vars": 12,
   "level": "records",
   "keys_present": [
    "survey",
@@ -6107,6 +6161,7 @@
    "holder": "idquest",
    "crop": "crop_code",
    "wt": "coef",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -6114,8 +6169,9 @@
    "group_crop": "Crop group",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -6477,7 +6533,7 @@
  "C/ssf_improved_by_crop_c": {
   "file": "SAS_2013_ssf_improved_by_crop_c.dta",
   "rows": 139,
-  "vars": 9,
+  "vars": 10,
   "level": "records",
   "keys_present": [
    "survey",
@@ -6493,13 +6549,15 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "improved": "Did you used improved seeds?",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -6903,7 +6961,7 @@
  "C/ssf_pure_and_mixed_c": {
   "file": "SAS_2013_ssf_pure_and_mixed_c.dta",
   "rows": 6068,
-  "vars": 12,
+  "vars": 13,
   "level": "records",
   "keys_present": [
    "survey",
@@ -6918,21 +6976,23 @@
    "wt"
   ],
   "source": {
+   "plot": "plot_number (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "plot_number",
    "crop": "crop_code",
    "wt": "coef",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "area": "Area in Hectare",
    "association": "Pure and mixed cropping",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -6944,6 +7004,7 @@
     "1": "Pure crop land",
     "2": "Mixed crop land"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -6952,7 +7013,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -7215,7 +7275,7 @@
  "C/ssf_sowing_production_harvest_c": {
   "file": "SAS_2013_ssf_sowing_production_harvest_c.dta",
   "rows": 1893,
-  "vars": 12,
+  "vars": 13,
   "level": "records",
   "keys_present": [
    "survey",
@@ -7229,20 +7289,22 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "c05": "1.6 Starting date for sowing ? Code",
    "c12": "1.14  Do you expect any production on this crop before 31st August 2013?",
    "c13": "1.15 What is the expected date for harvesting?",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -7269,6 +7331,7 @@
     "4": "1 to 31/08/13",
     "5": "After 31/08/13"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -7277,7 +7340,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -7336,7 +7398,7 @@
  "C/ssf_traditional_by_crop_c": {
   "file": "SAS_2013_ssf_traditional_by_crop_c.dta",
   "rows": 1398,
-  "vars": 9,
+  "vars": 10,
   "level": "records",
   "keys_present": [
    "survey",
@@ -7352,13 +7414,15 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "traditional": "Did you used traditional seeds?",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -7435,7 +7499,7 @@
  "C/ssf_use_of_productionc": {
   "file": "SAS_2013_ssf_use_of_productionc.dta",
   "rows": 1536,
-  "vars": 20,
+  "vars": 21,
   "level": "records",
   "keys_present": [
    "survey",
@@ -7449,6 +7513,7 @@
   "source": {
    "holder": "idquest",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -7466,7 +7531,8 @@
    "used_in_any_other_way": "On the total production of this crop what is the quantity that has been been use",
    "total": "Total",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",

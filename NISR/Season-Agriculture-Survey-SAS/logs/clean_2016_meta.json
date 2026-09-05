@@ -2,7 +2,7 @@
  "A/part_i_farm": {
   "file": "SAS_2016_A_part_i_farm.dta",
   "rows": 25183,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -17,11 +17,12 @@
    "wt"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "b1",
    "crop": "c03a",
    "wt": "weight",
+   "crop_name": "value labels of c03a",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -34,11 +35,12 @@
    "c05": "1.5 Starting date for sowing ? Code",
    "type_of_seeds_sown": "1.6 Type of seeds sown",
    "age_group": null,
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -92,9 +94,9 @@
     "4": "45-54",
     "5": "55 and Above"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -183,7 +185,7 @@
  "A/part_i_farm_big": {
   "file": "SAS_2016_A_part_i_farm_big.dta",
   "rows": 2167,
-  "vars": 18,
+  "vars": 19,
   "level": "records",
   "keys_present": [
    "survey",
@@ -197,10 +199,11 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -213,10 +216,11 @@
    "c05": "1.5 Starting date for sowing ? Code",
    "type_of_seeds_sown": "1.6 Type of seeds sown",
    "age_group": null,
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -267,6 +271,7 @@
     "4": "45-54",
     "5": "55 and Above"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -275,7 +280,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -377,9 +381,9 @@
    "wt"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_no",
    "wt": "weight",
    "farm_type": "not identifiable"
   },
@@ -389,9 +393,9 @@
    "used_any_irrigation_type": "2.3 Have you used any irrigation type?",
    "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
    "ui26": "2.6.1 Specify any expenditure on anti erosion activities ?Code",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
@@ -431,9 +435,9 @@
     "8": "Beds",
     "9": "Others"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "wt": {}
   },
   "out": "SAS_2016_A_part_ii_a_clean.dta"
@@ -454,9 +458,9 @@
    "plot"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "plot_no",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -464,9 +468,9 @@
    "ui02e": "2.2.1 Specify  equipment/oxen were rented or hired for land preparation? - CODE",
    "used_any_irrigation_type": "2.3 Have you used any irrigation type?",
    "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -494,6 +498,7 @@
     "3": "Water channels",
     "4": "Others"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -501,8 +506,7 @@
     "4": "Northern Province",
     "5": "Eastern Province"
    },
-   "holder": {},
-   "plot": {}
+   "holder": {}
   },
   "out": "SAS_2016_A_part_ii_a_big_clean.dta"
  },
@@ -523,9 +527,9 @@
    "wt"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_no",
    "wt": "weight",
    "farm_type": "not identifiable"
   },
@@ -535,9 +539,9 @@
    "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
    "have_you_used_this": "2.11.1 Have you used this pesticide?",
    "pp1a": "2.11.2 Pesticides used in Season B 2014-Type",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
@@ -575,9 +579,9 @@
     "12": "PILKARE",
     "13": "OTHER PESTICIDE"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "wt": {}
   },
   "out": "SAS_2016_A_part_ii_b_clean.dta"
@@ -598,9 +602,9 @@
    "plot"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "prov": "id1",
    "holder": "idquest",
-   "plot": "plot_no",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -609,9 +613,9 @@
    "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
    "have_you_used_this": "2.11.1 Have you used this pesticide?",
    "pp1a": "2.11.2 Pesticides used in Season B 2014-Type",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -648,6 +652,7 @@
     "12": "PILKARE",
     "13": "OTHER PESTICIDE"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -655,15 +660,14 @@
     "4": "Northern Province",
     "5": "Eastern Province"
    },
-   "holder": {},
-   "plot": {}
+   "holder": {}
   },
   "out": "SAS_2016_A_part_ii_b_big_clean.dta"
  },
  "A/part_iv": {
   "file": "SAS_2016_A_part_iv.dta",
   "rows": 13012,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -679,6 +683,7 @@
    "stratum": "strate",
    "holder": "tractid",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -695,7 +700,8 @@
    "used_in_any_other_way": "4.11 Qty used in any other way",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -792,7 +798,7 @@
  "A/part_iv_big": {
   "file": "SAS_2016_A_part_iv_big.dta",
   "rows": 632,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -808,6 +814,7 @@
    "prov": "id1",
    "holder": "idquest",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -824,7 +831,8 @@
    "used_in_any_other_way": "4.11 Qty used in any other way",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -1277,7 +1285,7 @@
    "pesticide_usef": "7.9.4 pesticide used  code",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -1506,7 +1514,7 @@
    "pesticide_usef": "7.9.4 pesticide used  code",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -1697,7 +1705,7 @@
  "A/screening_a_final": {
   "file": "SAS_2016_A_screening_a_final.dta",
   "rows": 105526,
-  "vars": 21,
+  "vars": 22,
   "level": "records",
   "keys_present": [
    "survey",
@@ -1712,11 +1720,12 @@
    "wt"
   ],
   "source": {
+   "plot": "plot_number (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_number",
    "crop": "crop_code",
    "wt": "weight",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -1731,11 +1740,12 @@
    "group_crop": null,
    "association": null,
    "season_a_crop": "2.10 season a crop",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -1835,9 +1845,9 @@
     "1": "yes",
     "2": "no"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "maize",
     "2": "paddy rice",
@@ -1924,7 +1934,7 @@
  "A/screening_a_final_big": {
   "file": "SAS_2016_A_screening_a_final_big.dta",
   "rows": 5224,
-  "vars": 20,
+  "vars": 21,
   "level": "records",
   "keys_present": [
    "survey",
@@ -1938,10 +1948,11 @@
    "crop"
   ],
   "source": {
+   "plot": "plot_number (by label)",
    "prov": "province",
    "holder": "idquest",
-   "plot": "plot_number",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -1956,10 +1967,11 @@
    "area_crop": "crop area",
    "group_crop": null,
    "association": null,
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2058,6 +2070,7 @@
     "1": "Pure crop",
     "2": "Mixed crop"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -2066,7 +2079,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -2280,7 +2292,7 @@
  "B/farmq_part1": {
   "file": "SAS_2016_B_farmq_part1.dta",
   "rows": 29652,
-  "vars": 11,
+  "vars": 12,
   "level": "records",
   "keys_present": [
    "survey",
@@ -2294,19 +2306,21 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "not identifiable"
   },
   "var_labels": {
    "c05": "1.5 Starting date for sowing ? Code",
    "type_of_seeds_sown": "1.6 Type of seeds sown",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2328,9 +2342,9 @@
     "2": "Improved seeds",
     "3": "Traditional and Improved seeds"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -2431,9 +2445,9 @@
    "plot"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_no",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -2441,9 +2455,9 @@
    "ui02e": "2.2.1 Specify  equipment/oxen were rented or hired for land preparation? - CODE",
    "used_any_irrigation_type": "2.3 Have you used any irrigation type?",
    "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2471,9 +2485,9 @@
     "3": "Water channels",
     "4": "Others"
    },
+   "plot": {},
    "stratum": {},
-   "holder": {},
-   "plot": {}
+   "holder": {}
   },
   "out": "SAS_2016_B_farmq_part2a_clean.dta"
  },
@@ -2489,20 +2503,22 @@
    "wave",
    "farm_type",
    "stratum",
-   "holder"
+   "holder",
+   "plot"
   ],
   "source": {
+   "plot": "pp7a (by label)",
    "stratum": "strate",
    "holder": "tractid",
    "farm_type": "not identifiable"
   },
   "var_labels": {
-   "pp7a": "1.1 Plot No.",
    "pp7": "2.8 Have you already used organic fertilizers during this agriculture season?",
    "have_u_already_used_this_in": "2.10.1 have u already used this Inorganic Fertilizers",
    "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
    "have_you_used_this": "2.11.1 Have you used this pesticide?",
    "pp1a": "2.11.2 Pesticides used in Season B 2014-Type",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
    "survey": "Source survey",
@@ -2541,6 +2557,7 @@
     "12": "PILKARE",
     "13": "OTHER PESTICIDE"
    },
+   "plot": {},
    "stratum": {},
    "holder": {}
   },
@@ -2549,7 +2566,7 @@
  "B/farmq_part4": {
   "file": "SAS_2016_B_farmq_part4.dta",
   "rows": 14908,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -2565,6 +2582,7 @@
    "stratum": "strate",
    "holder": "tractid",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -2581,7 +2599,8 @@
    "used_in_any_other_way": "4.11 Qty used in any other way",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -2869,7 +2888,7 @@
    "pesticide_usef": "7.9.4 pesticide used  code",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3054,7 +3073,7 @@
  "B/farmq_screening": {
   "file": "SAS_2016_B_farmq_screening.dta",
   "rows": 102381,
-  "vars": 22,
+  "vars": 23,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3069,11 +3088,12 @@
    "wt"
   ],
   "source": {
+   "plot": "plot_number (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_number",
    "crop": "crop_code",
    "wt": "weight",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -3089,11 +3109,12 @@
    "area_sqm": "Area_SQm",
    "ha_p": "Physical area in hectare",
    "ha_d": "Developed area in hectare",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3163,9 +3184,9 @@
     "1": "Yes",
     "2": "No"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -3334,7 +3355,7 @@
  "B/lsf_farmq_part1": {
   "file": "SAS_2016_B_lsf_farmq_part1.dta",
   "rows": 1914,
-  "vars": 11,
+  "vars": 12,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3348,19 +3369,21 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "prov": "province",
    "holder": "idquest",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
    "c05": "1.5 Starting date for sowing ? Code",
    "type_of_seeds_sown": "1.6 Type of seeds sown",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3382,6 +3405,7 @@
     "2": "Improved seeds",
     "3": "Traditional and Improved seeds"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -3390,7 +3414,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -3491,9 +3514,9 @@
    "plot"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "prov": "province",
    "holder": "idquest",
-   "plot": "plot_no",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -3501,9 +3524,9 @@
    "ui02e": "2.2.1 Specify if equipment/oxen were rented or hired for land preparation? - COD",
    "used_any_irrigation_type": "2.3 Have you used any irrigation type?",
    "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3531,6 +3554,7 @@
     "3": "Water channels",
     "4": "Others"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -3538,8 +3562,7 @@
     "4": "Northern Province",
     "5": "Eastern Province"
    },
-   "holder": {},
-   "plot": {}
+   "holder": {}
   },
   "out": "SAS_2016_B_lsf_farmq_part2a_clean.dta"
  },
@@ -3555,20 +3578,22 @@
    "wave",
    "farm_type",
    "prov",
-   "holder"
+   "holder",
+   "plot"
   ],
   "source": {
+   "plot": "pp7a (by label)",
    "prov": "province",
    "holder": "idquest",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
-   "pp7a": "1.1 Plot No.",
    "pp7": "2.8 Have you already used organic fertilizers during this agriculture season?",
    "have_u_already_used_this_in": "2.10.1 have u already used this Inorganic Fertilizers",
    "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
    "have_you_used_this": "2.11.1 Have you used this pesticide?",
    "pp1a": "2.11.2 Pesticides used in Season B 2014-Type",
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
    "survey": "Source survey",
@@ -3607,6 +3632,7 @@
     "12": "PILKARE",
     "13": "OTHER PESTICIDE"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -3621,7 +3647,7 @@
  "B/lsf_farmq_part4": {
   "file": "SAS_2016_B_lsf_farmq_part4.dta",
   "rows": 566,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -3637,6 +3663,7 @@
    "prov": "province",
    "holder": "idquest",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -3653,7 +3680,8 @@
    "used_in_any_other_way": "4.11 Qty used in any other way",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -3959,7 +3987,7 @@
    "pesticide_usef": "7.9.4 pesticide used  code",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4150,7 +4178,7 @@
  "B/lsf_screening": {
   "file": "SAS_2016_B_lsf_screening.dta",
   "rows": 4838,
-  "vars": 18,
+  "vars": 19,
   "level": "records",
   "keys_present": [
    "survey",
@@ -4164,10 +4192,11 @@
    "crop"
   ],
   "source": {
+   "plot": "plot_number (by label)",
    "prov": "province",
    "holder": "idquest",
-   "plot": "plot_number",
    "crop": "crop_code",
+   "crop_name": "value labels of crop_code",
    "farm_type": "file name (ssf/lsf)"
   },
   "var_labels": {
@@ -4180,10 +4209,11 @@
    "season_b_crop": "2.8 Season B crop",
    "ha": null,
    "ha_phy": null,
+   "plot": "Plot number within segment/holder",
    "prov": "Province (1-5, NISR codes)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4248,6 +4278,7 @@
     "1": "Yes",
     "2": "No"
    },
+   "plot": {},
    "prov": {
     "1": "City of Kigali",
     "2": "Southern Province",
@@ -4256,7 +4287,6 @@
     "5": "Eastern Province"
    },
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -4471,7 +4501,7 @@
  "C/farmq_part1": {
   "file": "SAS_2016_C_farmq_part1.dta",
   "rows": 2361,
-  "vars": 11,
+  "vars": 12,
   "level": "records",
   "keys_present": [
    "survey",
@@ -4485,19 +4515,21 @@
    "crop"
   ],
   "source": {
+   "plot": "b1 (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "b1",
    "crop": "c03a",
+   "crop_name": "value labels of c03a",
    "farm_type": "not identifiable"
   },
   "var_labels": {
    "c05": "1.5 Starting date for sowing ? Code",
    "type_of_seeds_sown": "1.6 Type of seeds sown",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4517,9 +4549,9 @@
     "2": "Improved seeds",
     "3": "Traditional and Improved seeds"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
@@ -4620,9 +4652,9 @@
    "plot"
   ],
   "source": {
+   "plot": "plot_no (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_no",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -4630,9 +4662,9 @@
    "ui02e": "2.2.1 Specify  equipment/oxen were rented or hired for land preparation? - CODE",
    "used_any_irrigation_type": "2.3 Have you used any irrigation type?",
    "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -4660,9 +4692,9 @@
     "3": "Water channels",
     "4": "Others"
    },
+   "plot": {},
    "stratum": {},
-   "holder": {},
-   "plot": {}
+   "holder": {}
   },
   "out": "SAS_2016_C_farmq_part2a_clean.dta"
  },
@@ -4678,20 +4710,22 @@
    "wave",
    "farm_type",
    "stratum",
-   "holder"
+   "holder",
+   "plot"
   ],
   "source": {
+   "plot": "pp7a (by label)",
    "stratum": "strate",
    "holder": "tractid",
    "farm_type": "not identifiable"
   },
   "var_labels": {
-   "pp7a": "1.1 Plot No.",
    "pp7": "2.8 Have you already used organic fertilizers during this agriculture season?",
    "have_u_already_used_this_in": "2.10.1 have u already used this Inorganic Fertilizers",
    "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
    "have_you_used_this": "2.11.1 Have you used this pesticide?",
    "pp1a": "2.11.2 Pesticides used in Season B 2014-Type",
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
    "survey": "Source survey",
@@ -4730,6 +4764,7 @@
     "12": "PILKARE",
     "13": "OTHER PESTICIDE"
    },
+   "plot": {},
    "stratum": {},
    "holder": {}
   },
@@ -4738,7 +4773,7 @@
  "C/farmq_part4": {
   "file": "SAS_2016_C_farmq_part4.dta",
   "rows": 1257,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -4754,6 +4789,7 @@
    "stratum": "strate",
    "holder": "tractid",
    "crop": "c03c",
+   "crop_name": "value labels of c03c",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -4770,7 +4806,8 @@
    "used_in_any_other_way": "4.11 Qty used in any other way",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5058,7 +5095,7 @@
    "pesticide_usef": "7.9.4 pesticide used  code",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5243,7 +5280,7 @@
  "C/screeningc": {
   "file": "SAS_2016_C_screening2016c.dta",
   "rows": 20774,
-  "vars": 19,
+  "vars": 20,
   "level": "records",
   "keys_present": [
    "survey",
@@ -5258,11 +5295,12 @@
    "wt"
   ],
   "source": {
+   "plot": "plot_number (by label)",
    "stratum": "strate",
    "holder": "tractid",
-   "plot": "plot_number",
    "crop": "crop_code",
    "wt": "weight",
+   "crop_name": "value labels of crop_code",
    "farm_type": "not identifiable"
   },
   "var_labels": {
@@ -5275,11 +5313,12 @@
    "anti_erosive_activitiet": "2.8.2 Anti erosive activity-3",
    "season_c_crop": "2.10 Season B crop",
    "ha": null,
+   "plot": "Plot number within segment/holder",
    "stratum": "Sampling stratum (as shipped)",
    "holder": "Holder / questionnaire id (as shipped)",
-   "plot": "Plot number within segment/holder",
-   "crop": "Crop code (native list of the wave; see codebook)",
+   "crop": "Crop code (native list of the wave -- the lists differ before / from 2020; see crop_name, crop_list)",
    "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "crop_name": "Crop name (text of the wave's own crop list for crop)",
    "survey": "Source survey",
    "year": "Agricultural year of the season (as in the NISR release)",
    "season": "Season (A, B, C)",
@@ -5350,9 +5389,9 @@
     "1": "Yes",
     "2": "No"
    },
+   "plot": {},
    "stratum": {},
    "holder": {},
-   "plot": {},
    "crop": {
     "1": "Maize",
     "2": "Paddy rice",
