@@ -1,0 +1,3323 @@
+{
+ "year": "2009",
+ "files": {
+  "household": {
+   "file": "Data/CFSVA_2009_all_section_without_tables.sav",
+   "rows": 5400,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "id8",
+    "s00cb",
+    "s00d",
+    "s00e",
+    "s00f",
+    "s1q1",
+    "s1q2",
+    "s1q3",
+    "s1q4",
+    "s1q5a",
+    "s1q5b",
+    "s1q6",
+    "s1q7",
+    "s1q8",
+    "s1q9",
+    "s1q10",
+    "s1q10b",
+    "s1q12",
+    "s1q11a",
+    "s1q11b",
+    "s1q11c",
+    "s1q11d",
+    "s1q11e",
+    "s1q11f",
+    "s1q11g",
+    "s1q11h",
+    "s1q11i",
+    "s1q11j",
+    "s1q14",
+    "s1q16a",
+    "s1q16b",
+    "s1q17",
+    "s1q1a",
+    "s1q1b",
+    "s1q1d",
+    "s1q1f",
+    "s1q1h",
+    "s1q1j",
+    "s1q1l",
+    "s1q1na",
+    "s1q1nb",
+    "s1q1n",
+    "s1q1c",
+    "s1q1e",
+    "s1q1g",
+    "s1q1i",
+    "s1q1k",
+    "s1q1m",
+    "s1q1nc",
+    "s1q1nd",
+    "s1q19",
+    "s1q20",
+    "s1q22",
+    "s1q23",
+    "s1q24",
+    "s1q24b",
+    "s1q25",
+    "s1q26",
+    "s1q27",
+    "s1q28",
+    "s2q01",
+    "s2q1a",
+    "s2q2",
+    "s2q3",
+    "s2q4",
+    "s2q5",
+    "s2q6",
+    "s2q7",
+    "s2q7b",
+    "s2q7c",
+    "s2q7d",
+    "s2q7e",
+    "s2q8",
+    "s2q9a",
+    "s2q9b",
+    "s2q10",
+    "s2q11a",
+    "s2q11b",
+    "s2q11c",
+    "s2q11d",
+    "s2q11e",
+    "s2q11f",
+    "s2q11g",
+    "s2q11h",
+    "s2q11i",
+    "s2q11j",
+    "s2q11k",
+    "s2q11l",
+    "s2q11m",
+    "s2q12",
+    "s2q13",
+    "s2q14",
+    "s2q15",
+    "s2q16a",
+    "s2q16b",
+    "s2q16c",
+    "s2q16d",
+    "s2q16e",
+    "s2q16f",
+    "s2q16g",
+    "s2q16h",
+    "s2q16i",
+    "s2q16j",
+    "s2q16k",
+    "s2q16l",
+    "s2q16m",
+    "s2q17",
+    "s2q18",
+    "s2q19a",
+    "s2q19b",
+    "s2q19c",
+    "s2q19d",
+    "s2q20",
+    "s2q21",
+    "s3q1",
+    "s3q2a",
+    "s3q2b",
+    "s3q2c",
+    "s3q3a",
+    "s3q3b",
+    "s3q3c",
+    "s3q4a",
+    "s3q4b",
+    "s3q4c",
+    "s3q5a",
+    "s3q5b",
+    "s3q5c",
+    "s3q6",
+    "s3q7",
+    "s3q8a",
+    "s3q8b",
+    "s3q8c",
+    "s3q8d",
+    "s3q8e",
+    "s3q8f",
+    "s3q8g",
+    "s3q8h",
+    "s3q8i",
+    "s3q8j",
+    "s3q8k",
+    "s3q8l",
+    "s3q8m",
+    "s3q8n",
+    "s3q8o",
+    "s3q8p",
+    "s3q8q",
+    "s3q8r",
+    "s3q9",
+    "s3q10",
+    "s3q11",
+    "s3q12",
+    "s3q13",
+    "s3q14",
+    "s3q15",
+    "s3q16",
+    "s5q1",
+    "s5q2",
+    "s5q3a",
+    "s5q3b",
+    "s4q4a",
+    "s4q4m",
+    "s4q4n",
+    "s4q4o",
+    "s4q4p",
+    "s4q4q",
+    "s4q4r",
+    "s4q4s",
+    "s4q4t",
+    "s4q4u",
+    "s4q4v",
+    "s4q4w",
+    "s5q5a",
+    "s5q5b",
+    "s5q6a",
+    "s5q6b",
+    "s5q7a",
+    "s5q7b",
+    "s6q1",
+    "s6q2",
+    "s6q2a",
+    "s6q3",
+    "s6q4",
+    "s6q5",
+    "s6q6",
+    "s6q7",
+    "s6q8",
+    "s9q1",
+    "s9q2",
+    "s9q3a",
+    "s9q5a",
+    "s9q5b",
+    "s9q5c",
+    "s9q5d",
+    "s9q5e",
+    "s9q5f",
+    "s10q0",
+    "s10q1b",
+    "s10q1c",
+    "s10q1d",
+    "s10q1e",
+    "s10q1f",
+    "s10q1g",
+    "s10q1h",
+    "s10q1i",
+    "s10q1j",
+    "s10q1k",
+    "s10q1l",
+    "s10q1m",
+    "s10q1n",
+    "s10q1o",
+    "s10q1p",
+    "s10q1q",
+    "s10q1r",
+    "s10q1s",
+    "s11q0",
+    "s11q1b",
+    "s11q1d",
+    "s11q1e",
+    "s11q1f",
+    "s11q1g",
+    "s11q1h",
+    "s11q1i",
+    "s11q30",
+    "s11q3a",
+    "s11q3b",
+    "s11q3c",
+    "s11q3d",
+    "s11q3e",
+    "s11q3f",
+    "s11q3g",
+    "s11q3h",
+    "s11q3i",
+    "s11q3j",
+    "s12q1",
+    "s13q0",
+    "s16ab"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "id8": "Numero d'Agent de saisie",
+    "s00cb": "Agent de saisie",
+    "s00d": "Intara",
+    "s00e": "Akarere",
+    "s00f": "Umurenge",
+    "s1q1": "1.1. Ubu mubana n'abantu bangahe muri runo rugo ?",
+    "s1q2": "1.2.Igitsina cy'umutware w'urugo",
+    "s1q3": "1.3.Umutware w'urugo afite imyaka ingahe y'amavuko",
+    "s1q4": "1.4.Umutware w'urugo azi gusoma no kwandika inyandiko ngufi",
+    "s1q5a": "1.5.Ni ayahe mashuri umutware w'urugo yarangije ?",
+    "s1q5b": "1.5.B.Ikindi cy'iciro umutware w'urugo yarangije (Sobanura)",
+    "s1q6": "1.6.Imibereho bwite (irangamimerere) y'umutware w'urugo ni i",
+    "s1q7": "1.7.Afite abagore bangahe ?",
+    "s1q8": "1.8.Umugore wo muri uri uru rugo afite imyaka ingahe ?",
+    "s1q9": "1.9.Umugore wo muri uru rugo azi gusoma no kwandika inyandik",
+    "s1q10": "1.10.ANi ayahe mashuri umugore wo muri uru rugo yarangije ?",
+    "s1q10b": "1.10.B.Ikindi cy'iciro umufasha w'umutware yarangije (Sobanu",
+    "s1q12": "1.12.Hari uwo muri uru rugo witabye Imana mu mezi 6 ashize ?",
+    "s1q11a": "1.11.A - 0-<Amezi 6 G",
+    "s1q11b": "1.11.B - Kuva ku mezi 6 kugeza kumyaka 5 G",
+    "s1q11c": "1.11.C - Kuva ku myaka 6 kugeza kumyaka 14 G",
+    "s1q11d": "1.11.D - Kuva ku myaka 15 kugez 59 G",
+    "s1q11e": "1.11.E - Abafite imyaka 60 n'abayirengeje G",
+    "s1q11f": "1.11.A - 0-<Amezi 6 F",
+    "s1q11g": "1.11.B - Kuva ku mezi 6 kugeza kumyaka 5 F",
+    "s1q11h": "1.11.C - Kuva ku myaka 6 kugeza kumyaka 14 F",
+    "s1q11i": "1.11.D - Kuva ku myaka 15 kugez 59 F",
+    "s1q11j": "1.11.E - Abafite imyaka 60 n'abayirengeje F",
+    "s1q14": "1.14.Mu bantu bakuze bari hagati y'imyaka 15 na 59 baba muri",
+    "s1q16a": "1.16.Ni abana bangahe bafite imyaka 7 kugeza kuri 14 biga am",
+    "s1q16b": "1.16.Ni abana bangahe bafite imyaka 7 kugeza kuri 14 biga am",
+    "s1q17": "1.17.Hari uwaba yarasibye ishuri icyumweru kimwe cyangwa kir",
+    "s1q1a": "1.18 Uburwayi",
+    "s1q1b": "1.18.Gukorera amafaranga/Ibiryo",
+    "s1q1d": "1.18.Akazi ko mu rugo",
+    "s1q1f": "1.18.Kwita kuri barumana be",
+    "s1q1h": "1.18.Urugendo rurerure bajya kw'ishuri",
+    "s1q1j": "1.18.Ishuri rihenze",
+    "s1q1l": "1.18.Yanze kwiga",
+    "s1q1na": "1.18.Indi impamvu",
+    "s1q1nb": "1.18.Indi (Sobanura)",
+    "s1q1n": "1.18 Uburwayi",
+    "s1q1c": "1.18.Gukorera amafaranga/Ibiryo",
+    "s1q1e": "1.18.Akazi ko mu rugo",
+    "s1q1g": "1.18.Kwita kuri barumana be",
+    "s1q1i": "1.18.Urugendo rurerure bajya kw'ishuri",
+    "s1q1k": "1.18.Ishuri rihenze",
+    "s1q1m": "1.18.Yanze kwiga",
+    "s1q1nc": "1.18.Indi impamvu",
+    "s1q1nd": "1.18.Indi (Sobanura)",
+    "s1q19": "1.19.Muri uru rugo haba harimo impfubyi zifite munis y'imyak",
+    "s1q20": "1.20.Ni mfubyi zingahe zifite munsi y'imyaka 18 ziri muri ru",
+    "s1q22": "1.22.Ni bangahe biga ubu",
+    "s1q23": "1.23.Hari umuntu wo muri urugo waba yaragize aho ajya mu mez",
+    "s1q24": "1.24.Ni iyi mpamvu yigenzi yamujyanye?",
+    "s1q24b": "1.24.b.Indi mpamvu yivuge",
+    "s1q25": "1.25.Yagiye hehe ?",
+    "s1q26": "1.26.Hari abari baravuye mu rugo ariko bakagaruka nyuma yame",
+    "s1q27": "1.27.Hashize igihe kigani ki kuva bagaruka ?",
+    "s1q28": "1.28.Hari umuntu urugo rwanyu rwacumbikiye mu gihe gito? (am",
+    "s2q01": "A.Gusakara",
+    "s2q1a": "B.Gusasa hasi mu nzu",
+    "s2q2": "2.2.Mufite ibyumba byokuraramo bingahe ?",
+    "s2q3": "2.3.Ejo hashize, ni abantu bangahe baraye muri ibyo byumba?",
+    "s2q4": "2.4.Umusarane mukoresha uba mu rugo ?",
+    "s2q5": "2.5.Uru rugo rukoresha umusarane umeze ute",
+    "s2q6": "2.6.Umusarane ufite isuku ihagije ?",
+    "s2q7": "2.7.Ni ibihe bikoresho by'isuku...Amazi ?",
+    "s2q7b": "2.7.Ni ibihe bikoresho by'isuku...Ibibabi/Ibyatsi ?",
+    "s2q7c": "2.7.Ni ibihe bikoresho by'isuku...Urupapuro rw'isuku ?",
+    "s2q7d": "2.7.Ni ibihe bikoresho by'isuku...Urupapuro zisanzwe ?",
+    "s2q7e": "2.7.Ni ibihe bikoresho by'isuku...Ntabyo ?",
+    "s2q8": "2.8.Iyo bwije mucana iki cy'igenzi mu nzu kugirango habone?",
+    "s2q9a": "2.9.Mukoresha iki kugirango mubone umuriro wo guteka ?",
+    "s2q9b": "2.9.Mukoresha iki kugirango mubone umuriro wo guteka ? ibind",
+    "s2q10": "2.10.Ubusanzwe amazi munywa muri uru rugo muyavoma hehe?",
+    "s2q11a": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Muta",
+    "s2q11b": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Gash",
+    "s2q11c": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Weru",
+    "s2q11d": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Mata",
+    "s2q11e": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Gicu",
+    "s2q11f": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Kame",
+    "s2q11g": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Nyak",
+    "s2q11h": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Kana",
+    "s2q11i": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Nzel",
+    "s2q11j": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Ukwa",
+    "s2q11k": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Ugus",
+    "s2q11l": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Ukub",
+    "s2q11m": "2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Yose",
+    "s2q12": "2.12.Hari amafaranga mwishyura amazi kuri iryo vomo",
+    "s2q13": "2.13.Mwishyura amafaranga angahe buri kwezi mugura amazi?",
+    "s2q14": "2.14.Haba hari igihe muri uyu mwaka mwakoresheje amavomo ata",
+    "s2q15": "2.15.Ni rihe riba rindi ry'ingezi mwagiye mwifashisha mu mez",
+    "s2q16a": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16b": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16c": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16d": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16e": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16f": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16g": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16h": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16i": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16j": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16k": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16l": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q16m": "2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom",
+    "s2q17": "2.17.Urugo rwanyu rwigeze rwishyura amazi mu gihe kinyuranye",
+    "s2q18": "2.18.Uriha amafaranga angahe buri kwezi",
+    "s2q19a": "2.19.a.Aho muvoma hari urugendo n'amaguru rungana iki kugend",
+    "s2q19b": "2.19.b.Aho muvoma hari urugendo n'amaguru rungana iki kugend",
+    "s2q19c": "2.19.a.Aho muvoma hari urugendo n'amaguru rungana iki kugend",
+    "s2q19d": "2.19.b.Aho muvoma hari urugendo n'amaguru rungana iki kugend",
+    "s2q20": "2.20.Ugereranije urugo rwanyu rukoresha amabindo y'amanzi an",
+    "s2q21": "2.21.Ubusanzwe urugo rwanyu rukoresha ubuhe buryo mugutungan",
+    "s3q1": "3.1.Urugo rwanyu rurahiga ?",
+    "s3q2a": "3.2.a.Uko amasambu angana igihembwe A 2009",
+    "s3q2b": "3.2.b.Uko amasambu angana igihembwe B 2008",
+    "s3q2c": "3.2.c.Uko amasambu angana igihembwe C 2008",
+    "s3q3a": "3.3.a.Ubutaka bwawe bwite buhingwa bungana iki ugeranije n'u",
+    "s3q3b": "3.3.b.Ubutaka bwawe bwite buhingwa bungana iki ugeranije n'u",
+    "s3q3c": "3.3.c.Ubutaka bwawe bwite buhingwa bungana iki ugeranije n'u",
+    "s3q4a": "3.4.a.Ni mukuhe kwezi wasaruyemo muri icyo gihe cy'ihinga ?",
+    "s3q4b": "3.4.b.Ni mukuhe kwezi wasaruyemo muri icyo gihe cy'ihinga ?",
+    "s3q4c": "3.4.c.Ni mukuhe kwezi wasaruyemo muri icyo gihe cy'ihinga ?",
+    "s3q5a": "3.5.a.Umusaruro w'igihe cy'ihinga wamaze igihe cyingana iki?",
+    "s3q5b": "3.5.b.Umusaruro w'igihe cy'ihinga wamaze igihe cyingana iki?",
+    "s3q5c": "3.5.c.Umusaruro w'igihe cy'ihinga wamaze igihe cyingana iki?",
+    "s3q6": "3.6.Muri icyo gihe cy'ihinga wakoesheje ifumbire mvaruganda",
+    "s3q7": "3.7.Wakoresheje muri icyo gihe cy'ihinga ifumbire isanzwe (a",
+    "s3q8a": "3.8.1.Urugo rwanyu rufite iki gikoresho ? ISUKA",
+    "s3q8b": "3.8.2.Urugo rwanyu rufite iki gikoresho ? ISHOKA",
+    "s3q8c": "3.8.3.Urugo rwanyu rufite iki gikoresho ? UMUPANGA/AKAYUYA/N",
+    "s3q8d": "3.8.4.Urugo rwanyu rufite iki gikoresho ? RATO",
+    "s3q8e": "3.8.5.Urugo rwanyu rufite iki gikoresho ? RADIO GUSA",
+    "s3q8f": "3.8.6.Urugo rwanyu rufite iki gikoresho ? AMAKASETI/AMASEDE",
+    "s3q8g": "3.8.7.Urugo rwanyu rufite iki gikoresho ? IGARE",
+    "s3q8h": "3.8.8.Urugo rwanyu rufite iki gikoresho ? UBWATO",
+    "s3q8i": "3.8.9.Urugo rwanyu rufite iki gikoresho ? URUSHUNDURA/UMURAN",
+    "s3q8j": "3.8.10.Urugo rwanyu rufite iki gikoresho ? IPOMPO ITERA IMIT",
+    "s3q8k": "3.8.11.Urugo rwanyu rufite iki gikoresho ? INTEBE AMADIVA",
+    "s3q8l": "3.8.12.Urugo rwanyu rufite iki gikoresho ? IIGIKORESHO GIKUR",
+    "s3q8m": "3.8.13.Urugo rwanyu rufite iki gikoresho ? TINGATINGA/IMASHI",
+    "s3q8n": "3.8.14.Urugo rwanyu rufite iki gikoresho ? URUSHYO RWA KIZUN",
+    "s3q8o": "3.8.15.Urugo rwanyu rufite iki gikoresho ? AKUMA GATUNGANYA",
+    "s3q8p": "3.8.16.Urugo rwanyu rufite iki gikoresho ? TELEFONI ZIGENDAN",
+    "s3q8q": "3.8.17.a.rugo rwanyu rufite iki gikoresho ? IBINDI BYUMA BIK",
+    "s3q8r": "3.8.17.b.Urugo rwanyu rufite iki gikoresho ? KUBIVUGA",
+    "s3q9": "3.9.Urugo rwanyu rufite ibiti by'imbuto ziribwa ?",
+    "s3q10": "3.10.Urugo rwanyu rufite ibiti bingahe byose hamwe ?",
+    "s3q11": "3.11.Urugo rwanyu rufite insina zinyamunyo",
+    "s3q12": "3.12.Urugo rwanyu rufite insina z'inyamunyu zingahe sose ham",
+    "s3q13": "3.13.Urugo rwanyu rufite umurima ruhingamo insina z'ibitoki",
+    "s3q14": "3.14.Izo nsina z'ibitoki by'inzoga ni zingahe ?",
+    "s3q15": "3.15.Urugo rwanyu rufite akarima k'igikoni ?",
+    "s3q16": "3.16.Urugo rwanyu rufite amatungo ?",
+    "s5q1": "5.1.Hari abo muri rungo rugo rwanyu bakorera ahandi kure ya",
+    "s5q2": "5.2.Niba ari yego, ni hehe ?",
+    "s5q3a": "5.3.A.Ni bangahe bagize urugo rwanyu bakorera ahandi badatah",
+    "s5q3b": "5.3.B.ni bangahe bagize urugo rwanyu bakorera ahandi badatah",
+    "s4q4a": "5.4.a.Ni muyahe mezi uwo murimo ukorwamo ? J",
+    "s4q4m": "5.4.b.Ni muyahe mezi uwo murimo ukorwamo ? F",
+    "s4q4n": "5.4.c.Ni muyahe mezi uwo murimo ukorwamo ? M",
+    "s4q4o": "5.4.d.Ni muyahe mezi uwo murimo ukorwamo ? A",
+    "s4q4p": "5.4.e.Ni muyahe mezi uwo murimo ukorwamo ? M",
+    "s4q4q": "5.4.f.Ni muyahe mezi uwo murimo ukorwamo ? J",
+    "s4q4r": "5.4.g.Ni muyahe mezi uwo murimo ukorwamo ? J",
+    "s4q4s": "5.4.h.Ni muyahe mezi uwo murimo ukorwamo ? A",
+    "s4q4t": "5.4.i.Ni muyahe mezi uwo murimo ukorwamo ? S",
+    "s4q4u": "5.4.j.Ni muyahe mezi uwo murimo ukorwamo ? O",
+    "s4q4v": "5.4.k.Ni muyahe mezi uwo murimo ukorwamo ? N",
+    "s4q4w": "5.4.l.Ni muyahe mezi uwo murimo ukorwamo ? D",
+    "s5q5a": "5.5.a.Hari amafaranga boherereza uru rugo ? ABAKORA AKAZI K'",
+    "s5q5b": "5.5.b.Hari amafaranga boherereza uru rugo ? ABAKORA AKAZI K'",
+    "s5q6a": "5.6.a.Niba ari yego, bayohereza kangahe mu mezi 12 ashize ?",
+    "s5q6b": "5.6.b.Niba ari yego, bayohereza kangahe mu mezi 12 ashize ?",
+    "s5q7a": "5.7.a.Ni amafaranga angahe urugo rwanyu rwohererejwe mu mwak",
+    "s5q7b": "5.7.b.Ni amafaranga angahe urugo rwanyu rwohererejwe mu mwak",
+    "s6q1": "6.1.Urugo rwanyu rujyarubona inguzanyo/umwenda",
+    "s6q2": "6.2.Bibaye ngombwa ko urugo rwanyu rusaba inguzanyo, ni hehe",
+    "s6q2a": "6.2.a.Bibaye ngombwa ko urugo rwanyu rusaba inguzanyo, ni he",
+    "s6q3": "6.3.Hari uwafashe inguzanyo muri uru rugo mu mezi 12 ashize",
+    "s6q4": "6.4.Ni iki mwakoresheje igice kinini k'iyo nguzanyo yafashwe",
+    "s6q5": "6.5.Igice kinini cy'iyo nguzanyo cyavuyehe",
+    "s6q6": "6.6.Iyo nguzanyo ingana ite ? (amafaranga)",
+    "s6q7": "6.7.Iyo nguzanyo izishyurwa mu gihe kigana iki (mu mezi)",
+    "s6q8": "6.8.Ni ikihe gice cy'iyo nguzanyo wumva uzashobora kwishyura",
+    "s9q1": "9.1.Ejo hashize abantu bakuru bariye inshuro zingahe muri ur",
+    "s9q2": "9.2.Ejo hashize abana badakwije imaka 15 bariye inshuro zing",
+    "s9q3a": "9.3.a.Ese izo nshuro nizo musanzwe mufataho ifunguro muri ik",
+    "s9q5a": "9.5.A.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara",
+    "s9q5b": "9.5.B.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara",
+    "s9q5c": "9.5.C.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara",
+    "s9q5d": "9.5.D.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara",
+    "s9q5e": "9.5.E.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara",
+    "s9q5f": "9.5.F.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara",
+    "s10q0": "10.0.Hari ingorane urugo rwanyu rwagize mu mwaka ushize muku",
+    "s10q1b": "10.1.A.Amapfa/Imvura itagwira igihe",
+    "s10q1c": "10.1.B.Imyuzure",
+    "s10q1d": "10.1.C.Gutenguka, isuri",
+    "s10q1e": "10.1.D.Indwara z'ibihingwa zidasanzwe",
+    "s10q1f": "10.1.E.Indwara z'amatungo zidasanzwe",
+    "s10q1g": "10.1.F.Indwara zibyorezo zifata abantu",
+    "s10q1h": "10.1.G.Izamuka ry'ibiciro ridasanzwe",
+    "s10q1i": "10.1.H.Izamuka ry'ibiciro by'ibiciro by'inyongeramusaruro n'",
+    "s10q1j": "10.1.I.Gutakaza n'igabunuka ry'akazi kuri bamwe bamwe bagize",
+    "s10q1k": "10.1.J.Igabanuka ry'umutungo w'umwe mu bagize urugo",
+    "s10q1l": "10.1.K.Indwara ikomeye/impanuka by'umwe mu bagize urugo",
+    "s10q1m": "10.1.L.Urupfu rw'umutware w'urugo",
+    "s10q1n": "10.1.M.Urupfu rw'umwe mu bagize urugo wakoraga",
+    "s10q1o": "10.1.N.Urupfu rw'umwe mu bagize urugo",
+    "s10q1p": "10.1.O.Kwibwa ibyazanira urugo amafaranga",
+    "s10q1q": "10.1.P.Umutekano mucye/urugomo",
+    "s10q1r": "10.1.Q.Urubuga",
+    "s10q1s": "10.1.R.Ibindi",
+    "s11q0": "11.0.Mu mezi 12 ashize, hari uwo muri uru rugo wabonye imfas",
+    "s11q1b": "11.2.1. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo by'ab",
+    "s11q1d": "11.2.2. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo bigen",
+    "s11q1e": "11.2.3. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo bitan",
+    "s11q1f": "11.2.4. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo bitan",
+    "s11q1g": "11.2.5. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Imfashanyo y",
+    "s11q1h": "11.2.6. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ubundi buryo",
+    "s11q1i": "11.2.6. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ubundi buryo",
+    "s11q30": "11.3.0.Mu mezi 12 ashize, hari uwo muri uru rugo waba warabo",
+    "s11q3a": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3b": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3c": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3d": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3e": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3f": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3g": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3h": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3i": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s11q3j": "11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw",
+    "s12q1": "12.1.Hari ab'igitsina gore bafite imyaka kuva 15 kuveza kuri",
+    "s13q0": "Hari abana bafite munsi y'amezi 59",
+    "s16ab": null,
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s1q2": {
+     "1.0": "Gabo",
+     "2.0": "Gore"
+    },
+    "s1q4": {
+     "0.0": "Oya",
+     "1.0": "Yego",
+     "2.0": "Yego byombi"
+    },
+    "s1q5a": {
+     "1.0": "Ntiyize",
+     "2.0": "Ntiyarangije abanza",
+     "3.0": "Yarangije amashuri abanza",
+     "4.0": "Amashuri y'ingoboka",
+     "5.0": "Ntiyarangije amashuri yisumbuye",
+     "6.0": "Yarangije ayisumbuye",
+     "7.0": "Icyiciro cya mbere cya Kaminuza",
+     "8.0": "Icyiciro cya kabiri cya Kaminuza",
+     "9.0": "Icyiciro cya 3 cya Kaminuza",
+     "10.0": "Andi"
+    },
+    "s1q6": {
+     "1.0": "Arubatse/yarashatse",
+     "2.0": "Babana ku bwumvikane",
+     "3.0": "Yatandukanye n'uwo bashakanye",
+     "4.0": "Ntabana n'uwo bashakanye",
+     "5.0": "Umupfakazi",
+     "6.0": "Ingaragu"
+    },
+    "s1q9": {
+     "0.0": "Oya",
+     "1.0": "Yego gusoma gusa",
+     "2.0": "Yego byombi"
+    },
+    "s1q10": {
+     "1.0": "Ntiyize",
+     "2.0": "Ntiyarangije abanza",
+     "3.0": "Yarangije amashuri abanza",
+     "4.0": "Amashuri y'ingoboka",
+     "5.0": "Ntiyarangije amashuri yisumbuye",
+     "6.0": "Yarangije ayisumbuye",
+     "7.0": "Icyiciro cya mbere cya Kaminuza",
+     "8.0": "Icyiciro cya kabiri cya Kaminuza",
+     "9.0": "Icyiciro cya 3 cya Kaminuza",
+     "10.0": "Andi"
+    },
+    "s1q12": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s1q14": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s1q17": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s1q19": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s1q23": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s1q24": {
+     "1.0": "Umutekano muke",
+     "2.0": "Akazi/izindi mpamvu zo gushaka ubuzima",
+     "3.0": "Kujya kwivuza",
+     "4.0": "Kujya kwiga",
+     "5.0": "Ikibazo cy'aamasambu",
+     "6.0": "Indi mpamvu"
+    },
+    "s1q25": {
+     "1.0": "Mu Ntara",
+     "2.0": "Mu kandi karere k'icyaro",
+     "3.0": "Mu kandi karere ariko mu mujyi",
+     "4.0": "Yahungiye hanze y'igihugu cyo mu bituranyi akaba yibera mu n",
+     "5.0": "Yahungiye hanze y'igihugu ariko ataba mu nambi y'impunzi",
+     "6.0": "Mu yandi mahanga",
+     "7.0": "Ntahazi"
+    },
+    "s1q26": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s1q28": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q01": {
+     "1.0": "Beto/sima",
+     "3.0": "Ibyatsi",
+     "4.0": "Imbaho",
+     "5.0": "Shitingi",
+     "6.0": "Amabati",
+     "7.0": "Amategura",
+     "8.0": "Ikindi"
+    },
+    "s2q1a": {
+     "1.0": "Beto/sima",
+     "2.0": "Icyondo",
+     "4.0": "Imbaho",
+     "8.0": "Ikindi"
+    },
+    "s2q4": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q5": {
+     "1.0": "Umusarani ukoresha amazi",
+     "2.0": "Umusarani wa gakondo usanzwe upfundikiye",
+     "3.0": "Umusarani wa gakondo usanzwe udapfundikiye",
+     "4.0": "Umusarani ufite ubuhomekero",
+     "5.0": "Icyobo kidatwikiriye",
+     "6.0": "Ntawo/mugisambu/mu mugenzi, etc"
+    },
+    "s2q6": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q7": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q7b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q7c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q7d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q7e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q8": {
+     "1.0": "Amashanyarazi/Aturuka ku mirasire y'izuba",
+     "2.0": "Peteroli, gazi,mazutu",
+     "3.0": "Buji",
+     "4.0": "Amatara akoesha amabuye",
+     "5.0": "Ntacyo"
+    },
+    "s2q9a": {
+     "1.0": "Gazi",
+     "2.0": "Amashanyarazi",
+     "3.0": "Inkwi, amakara",
+     "4.0": "Peteroli",
+     "5.0": "Ibindi sobanura"
+    },
+    "s2q10": {
+     "1.0": "Ivomo rusange/Kano/Robine",
+     "2.0": "Ikinamba, ikiyaga, umugezi",
+     "3.0": "Amazi y'iriba bazamuza ipompo",
+     "4.0": "Amazi y'imvura",
+     "5.0": "Iriba riunganyije",
+     "6.0": "Iriba idatunganyije",
+     "7.0": "Umucuruzi w'amazi"
+    },
+    "s2q11a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11g": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11h": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11i": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11j": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11k": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11l": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q11m": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q12": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q14": {
+     "1.0": "Oya, twakoresheje ivomo rimwe",
+     "2.0": "Yego, twakoresheje limwe ariko limwe tugakoersha andi mavomo",
+     "3.0": "Yego, twavomye ahandi igihe iryo twaridusanganywe ritakoraga"
+    },
+    "s2q15": {
+     "1.0": "Ivomo rusange/kano",
+     "2.0": "Ikinamba, ikiyaga, umugezi",
+     "3.0": "Amazi y'iriba bazamuza ipompo",
+     "4.0": "Amazi y'imvura",
+     "5.0": "Isoko itunganyije",
+     "6.0": "Isoko idatunganyije",
+     "7.0": "Umucuruzi w'amazi"
+    },
+    "s2q16a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16g": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16h": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16i": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16j": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16k": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16l": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q16m": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q17": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s2q21": {
+     "1.0": "Amazi atetse kandi ayunguruye",
+     "2.0": "Atetse atayunguruye",
+     "3.0": "Kuyungururwa gusa",
+     "4.0": "Gushyiramo ibinini",
+     "5.0": "Kuyanyweraho"
+    },
+    "s3q1": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q2a": {
+     "0.0": "Not aplicable",
+     "1.0": "<0.1Ha",
+     "2.0": "0.1Ha - 0.19Ha",
+     "3.0": "0.2Ha - 0.49Ha",
+     "4.0": "0.5Ha -. 0.99Ha",
+     "5.0": "1 Ha - 1.99 Ha",
+     "6.0": "2 Ha - 5 Ha",
+     "7.0": "Hejuru ya 5Ha",
+     "9.0": "Missing value"
+    },
+    "s3q2b": {
+     "0.0": "Not aplicable",
+     "1.0": "<0.1Ha",
+     "2.0": "0.1Ha - 0.19Ha",
+     "3.0": "0.2Ha - 0.49Ha",
+     "4.0": "0.5Ha -. 0.99Ha",
+     "5.0": "1 Ha - 1.99 Ha",
+     "6.0": "2 Ha - 5 Ha",
+     "7.0": "Hejuru ya 5Ha",
+     "9.0": "Missing value"
+    },
+    "s3q2c": {
+     "0.0": "Not aplicable",
+     "1.0": "<0.1Ha",
+     "2.0": "0.1Ha - 0.19Ha",
+     "3.0": "0.2Ha - 0.49Ha",
+     "4.0": "0.5Ha -. 0.99Ha",
+     "5.0": "1 Ha - 1.99 Ha",
+     "6.0": "2 Ha - 5 Ha",
+     "7.0": "Hejuru ya 5Ha",
+     "9.0": "Missing value"
+    },
+    "s3q3a": {
+     "999.0": "Missing value"
+    },
+    "s3q3b": {
+     "999.0": "Missing value"
+    },
+    "s3q3c": {
+     "999.0": "Missing value"
+    },
+    "s3q6": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q7": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8g": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8h": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8i": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8j": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8k": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8l": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8m": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8n": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8o": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8p": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q8q": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q9": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q11": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q13": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s3q15": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s5q1": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s5q2": {
+     "1.0": "Mu mujyi",
+     "2.0": "Mu ntara",
+     "3.0": "Indi ntara",
+     "4.0": "Kigali",
+     "5.0": "Mu karere k'ibiyaga bigali",
+     "6.0": "Amahanga yandi",
+     "7.0": "Ahandi"
+    },
+    "s5q5a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s5q6a": {
+     "0.0": "",
+     "1.0": "Inshuro 1 mu mwaka",
+     "2.0": "Inshuro 2 kugeza kuri 4 mu mwaka",
+     "3.0": "Inshuro 4 cyangwa zirenze mu gihe cy'umwaka"
+    },
+    "s5q6b": {
+     "0.0": "",
+     "1.0": "Inshuro 1 mu mwaka",
+     "2.0": "Inshuro 2 kugeza kuri 4 mu mwaka",
+     "3.0": "Inshuro 4 cyangwa zirenze mu gihe cy'umwaka"
+    },
+    "s5q7a": {
+     "0.0": "",
+     "1.0": "0 - 10,000 RFWS",
+     "2.0": "10,000 - 20,000 RWFS",
+     "3.0": "20,000 - 50,000 RWFS",
+     "4.0": ">50,50.000 RFWS"
+    },
+    "s5q7b": {
+     "0.0": "",
+     "1.0": "0 - 10,000 RFWS",
+     "2.0": "10,000 - 20,000 RWFS",
+     "3.0": "20,000 - 50,000 RWFS",
+     "4.0": ">50,50.000 RFWS"
+    },
+    "s6q1": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s6q2": {
+     "1.0": "Umuryango/inshuti zo mu rwanda",
+     "2.0": "Umuryango/inshuti zo hanze y'igihugu",
+     "3.0": "Abacuruzi",
+     "4.0": "Ku bafite amasambu",
+     "5.0": "Abaguriza abandi amafaranga",
+     "6.0": "Ibigo by'imari iciriritse (NGO)",
+     "7.0": "Banki",
+     "8.0": "Umucuruzi ukomeye",
+     "9.0": "Uwo gwatirizaho ubutaka/inzu",
+     "10.0": "Ibindi"
+    },
+    "s6q3": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s6q4": {
+     "1.0": "Inyongera musaruro",
+     "2.0": "Kugura ibiryo",
+     "3.0": "Ubundi bwubatsi butari ubw'inzu yo kubamo",
+     "4.0": "Kwivuza byihutirwa",
+     "5.0": "Kujya mu bucuruzi",
+     "6.0": "Gutanga inkwano/Gukora ubukwe",
+     "7.0": "Kugura ubutaka",
+     "8.0": "Gushyingura",
+     "9.0": "Kugura/Kubaka inzu",
+     "10.0": "Gusana inzu",
+     "11.0": "Ibindi",
+     "12.0": "Kugura imiti y'umwe mu bagize urugo urwaye indwara idakira"
+    },
+    "s6q5": {
+     "1.0": "Umuryango/ inshuti zo mu Rwanda",
+     "2.0": "Ibigo by'imari iciriritse",
+     "3.0": "Umuryango/ inshuti zo mu Mahanga",
+     "4.0": "Banki",
+     "5.0": "Abacuruzi",
+     "6.0": "Umucuruzi urangura",
+     "7.0": "Kubafite amasambu",
+     "8.0": "Ingwate y'ubutaka cyangwa inzu",
+     "9.0": "Abaguriza abandi amafaranga",
+     "10.0": "Ahandi"
+    },
+    "s6q8": {
+     "1.0": "Ntayo azishyura",
+     "2.0": "Hazishyurwa munsi ya 1/2",
+     "3.0": "Hazishyurwa hejuru ya 1/2",
+     "4.0": "Hazishyurwa yose mu gihe cyagenwe"
+    },
+    "s10q0": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q1b": {
+     "0.0": "",
+     "1.0": ""
+    },
+    "s10q1c": {
+     "0.0": "",
+     "2.0": ""
+    },
+    "s10q1d": {
+     "0.0": "",
+     "3.0": ""
+    },
+    "s10q1e": {
+     "0.0": "",
+     "4.0": ""
+    },
+    "s10q1f": {
+     "0.0": "",
+     "5.0": ""
+    },
+    "s10q1g": {
+     "0.0": "",
+     "6.0": ""
+    },
+    "s10q1h": {
+     "0.0": "",
+     "7.0": ""
+    },
+    "s10q1i": {
+     "0.0": "",
+     "8.0": ""
+    },
+    "s10q1j": {
+     "0.0": "",
+     "9.0": ""
+    },
+    "s10q1k": {
+     "0.0": "",
+     "10.0": ""
+    },
+    "s10q1l": {
+     "0.0": "",
+     "11.0": ""
+    },
+    "s10q1m": {
+     "0.0": "",
+     "12.0": ""
+    },
+    "s10q1n": {
+     "0.0": "",
+     "13.0": ""
+    },
+    "s10q1o": {
+     "0.0": "",
+     "14.0": ""
+    },
+    "s10q1p": {
+     "0.0": "",
+     "15.0": ""
+    },
+    "s10q1q": {
+     "0.0": "",
+     "16.0": ""
+    },
+    "s10q1r": {
+     "0.0": "",
+     "17.0": ""
+    },
+    "s10q1s": {
+     "0.0": "",
+     "18.0": ""
+    },
+    "s11q0": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s11q1b": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q1d": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q1e": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q1f": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q1g": {
+     "0": "Non aid",
+     "1": "Leta",
+     "2": "Umulyango w'abibumye",
+     "3": "Imilyango ntera nkunga (ONG)",
+     "4": "Itorero cg umusigiti",
+     "5": "Ishyirahamwe",
+     "6": "Ishuti, abaturanyi",
+     "7": "Undi"
+    },
+    "s11q1h": {
+     "0": "Non aid",
+     "1": "Leta",
+     "2": "Umulyango w'abibumye",
+     "3": "Imilyango ntera nkunga (ONG)",
+     "4": "Itorero cg umusigiti",
+     "5": "Ishyirahamwe",
+     "6": "Ishuti, abaturanyi",
+     "7": "Undi"
+    },
+    "s11q30": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s11q3a": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3b": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3c": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3d": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3e": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3f": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3g": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3h": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s11q3i": {
+     "0.0": "Non aid",
+     "1.0": "Leta",
+     "2.0": "Umulyango w'abibumye",
+     "3.0": "Imilyango ntera nkunga (ONG)",
+     "4.0": "Itorero cg umusigiti",
+     "5.0": "Ishyirahamwe",
+     "6.0": "Ishuti, abaturanyi",
+     "7.0": "Undi"
+    },
+    "s12q1": {
+     "0.0": "OYA",
+     "1.0": "YEGO"
+    },
+    "s13q0": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6",
+    "dist": "s00e (district name; closest spelling for variants such as RURINDO -> Rulindo)"
+   },
+   "out": "CFSVA_2009_household_clean.dta"
+  },
+  "woman": {
+   "file": "Data/CFSVA_2009_section_12_female_15_49.sav",
+   "rows": 6252,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "nr",
+    "s12q2",
+    "s12q3",
+    "s12q4",
+    "s12q5",
+    "s12q6",
+    "s12q7",
+    "s12q8",
+    "s12q9",
+    "s12q10",
+    "s12q11",
+    "s12q12a",
+    "s12q12b",
+    "s12q12c",
+    "s12q12d",
+    "s12q12e",
+    "s12q12f",
+    "s12q13",
+    "s12q14",
+    "s12q15",
+    "s12q16",
+    "s12q17"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "nr": "No",
+    "s12q2": "Izina ry'umugore ufite imyaka kuva 15 kugera 49",
+    "s12q3": "12.3. Imyaka afite",
+    "s12q4": "Ushobora kwandika/gusoma inyandiko ngufi",
+    "s12q5": "12.5.Ni ikihe cyiciro cy'amashuri wize",
+    "s12q6": "12.6.Ese ubu uratwite/uronsa",
+    "s12q7": "12.7.Igihe wari utwite wigeze ujya kwisuzumisha kwa muganga",
+    "s12q8": "12.8.Igihe wari utwite wafashe ibinini bya feri",
+    "s12q9": "12.9.Hari ubwo wigeze ufata ibinini bya vitamini A nyuma y'a",
+    "s12q10": "12.10.Mu byumweru 2 bishize hari ubwo wigeze urwara",
+    "s12q11": "12.11.Mu ijoro ryakeye waba waraye mu nzitiraibu ?",
+    "s12q12a": "12.12.a.Ukaraba intoki ryari ? Mbere yo gutegura ifunguro",
+    "s12q12b": "12.12.b.Ukaraba intoki ryari ? Mbere yo kurya",
+    "s12q12c": "12.12.c.Ukaraba intoki ryari ? Avuye kwituma",
+    "s12q12d": "12.12.d.Ukaraba intoki ryari ? Nyuma yo gutuganya umwana uvu",
+    "s12q12e": "12.12.e.Ukaraba intoki ryari ? Igihe afite intoki zanduye",
+    "s12q12f": "12.12.f.Ukaraba intoki ryari ? Nta na rimwe",
+    "s12q13": "12.13.Iyo uvuye kwituma ukaraba iki ?",
+    "s12q14": "12.14.Pima umusegururko w'ukuboko kw'ibumoso (MUAC) muri cm",
+    "s12q15": "12.15.Ese ubu uratwite",
+    "s12q16": "12.16.Uburebure bw'uwo mubyeyi muri cm",
+    "s12q17": "12.17.Ibiro by'uwo mubyeyi mur Kg",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s12q4": {
+     "0.0": "OYA",
+     "1.0": "YEGO",
+     "2.0": "GUSOMA GUSA"
+    },
+    "s12q5": {
+     "0.0": "",
+     "1.0": "Ntayo",
+     "2.0": "Yageze mu mashuri abanza",
+     "3.0": "Amashuri y'ingoboka (icyiciro rusange)",
+     "4.0": "Amashuri y'isumbuye (umwaka wa 1-3)",
+     "5.0": "Yarangije neza icyiciro rusange",
+     "6.0": "Yarangije neza amashuri yisumbuye",
+     "7.0": "A1",
+     "8.0": "A0+"
+    },
+    "s12q6": {
+     "0.0": "",
+     "1.0": "Aratwite",
+     "2.0": "Aronsa",
+     "3.0": "Nta na kimwe",
+     "4.0": "Byombi",
+     "5.0": "Ntabizi",
+     "6.0": "Ntiyigeze asama"
+    },
+    "s12q7": {
+     "0.0": "",
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s12q8": {
+     "0.0": "",
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s12q9": {
+     "0.0": "",
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "9.0": "N/A (Ntarabyara ariko aratwite)"
+    },
+    "s12q10": {
+     "0.0": "",
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s12q11": {
+     "0.0": "",
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s12q12a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s12q12b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s12q12c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s12q12d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s12q12e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s12q12f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s12q13": {
+     "0.0": "",
+     "1.0": "Amazi gusa",
+     "2.0": "Isabune, yakorewe mu rugo/ivu n'amazi",
+     "3.0": "Isabune n'amazi",
+     "4.0": "Nta na kimwe",
+     "5.0": "Ikindi"
+    },
+    "s12q15": {
+     "0.0": "Yego",
+     "1.0": "Oya"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_woman_clean.dta"
+  },
+  "child": {
+   "file": "Data/CFSVA_2009_section_13_enfants.sav",
+   "rows": 7819,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "ns",
+    "s13q1a0",
+    "s13q1a",
+    "s13q1b",
+    "s13q1c",
+    "s13q1d",
+    "s13q1e",
+    "s13q3",
+    "s13q4",
+    "s13q5",
+    "s13q6",
+    "s13q7",
+    "s13q8",
+    "s13q9",
+    "s13q9a",
+    "s13q10",
+    "s13q11",
+    "s13q12",
+    "s13q13",
+    "s13q14",
+    "s13q15",
+    "s13q16",
+    "s13q17",
+    "s13q18",
+    "s13q19",
+    "s13q20",
+    "s13q21",
+    "s13q22",
+    "s13q23",
+    "s13q24",
+    "s13q25",
+    "s13q26",
+    "s13q27",
+    "s13q28",
+    "s13q29",
+    "s13q30",
+    "s13q31"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "ns": "No",
+    "s13q1a0": "13.1. Ese kuri ubu uracyonsa ?",
+    "s13q1a": "13.1a.Izina (buri mubare uhwanye n'ikirango cya nyina w'umwa",
+    "s13q1b": "13.1b.N\u00b0 za nyina w'umwana",
+    "s13q1c": "13.2.Itariki y'amavuko   Umunsi",
+    "s13q1d": "13.2.Itariki y'amavuko   Ukwezi",
+    "s13q1e": "13.2.Itariki y'amavuko   Umwaka",
+    "s13q3": "13.3.Ukwezi yavutsemo",
+    "s13q4": "13.4.Umwaka yavutseho",
+    "s13q5": "13.5.Imyaka y'umwana (mu mezi)",
+    "s13q6": "13.6.Igitsina",
+    "s13q7": "13.7.Ni wowe ubyara",
+    "s13q8": "13.8.Hari ubwo wigeze wonsa ?",
+    "s13q9": "13.9.Wonkeje nyuma y'igihe kingana iki ukimara kubyara ?   A",
+    "s13q9a": "13.9.Wonkeje nyuma y'igihe kingana iki ukimara kubyara ?   I",
+    "s13q10": "13.10.Mu mezi 6 umaze kubyara waba hari icyo wamuhaye cyo ku",
+    "s13q11": "13.11.Uracyamwonsa",
+    "s13q12": "13.12.Ni kangahe waraye wonkeje kuva nimugoroba izuba rirenz",
+    "s13q13": "13.13.Ni inshuro nzigahe wonkeje ejo umunsi wose",
+    "s13q14": "13.14.Ejo hashize cg mu ijoro ryakeye haba hari icyo yanywey",
+    "s13q15": "13.15.Igihe yavukaga ... yaganaga ate ?",
+    "s13q16": "13.16.Yigeze afata ikini cya vitamini A",
+    "s13q17": "13.17.Mu byumweru bibili bishize yigeze arwara",
+    "s13q18": "13.18.Mu byumweru bibili bishize yigeze agira umuriro",
+    "s13q19": "13.19.Mu byumweru bibiri bishize yigeze arwara inkorara",
+    "s13q20": "13.20.Mu byumweru bibiri bishize yigeze arwara impiswi ?",
+    "s13q21": "13.21.Niba mu byumweru bibiri bishize yararwaye, ese yagiye",
+    "s13q22": "13.22.Niba afite amezi 9 cg hejuru ese yigeze abona urukingo",
+    "s13q23": "13.23.Ese yigeze afata ibinini by'inzoka mu mezi 6 ashize ?",
+    "s13q24": "13.24.Ibiro by'umwana",
+    "s13q25": "13.25.Ese ibipimo by'umwana byafashwe aryamye/ahagaze?",
+    "s13q26": "13.26.Uburebure bw'umwana",
+    "s13q27": "13.27.Umuzeguruko w'akaboko k'ibumoso k'uwo mwana ?",
+    "s13q28": "13.28.umuzeguruko w'umutwe w''umwana",
+    "s13q29": "13.29.Ese umwana afite ububyimbe ku birenge byombi ? (oedema",
+    "s13q30": "13.30.Yaba yarashyizwe muri gahunda mbonezamirire ?",
+    "s13q31": "13.31.Niba ari yego, ni muhiye gahunda ?",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s13q1a0": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s13q1a": {
+     "0.0": ""
+    },
+    "s13q1b": {
+     "8.0": "Ntiyabonetse mu kiganiro",
+     "9.0": "Yitabye imana"
+    },
+    "s13q1e": {
+     "0.0": ""
+    },
+    "s13q6": {
+     "1.0": "GABO",
+     "2.0": "GORE"
+    },
+    "s13q7": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s13q8": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s13q9": {
+     "0.0": "Munsi y'isaha",
+     "99.0": "Ntabizi"
+    },
+    "s13q10": {
+     "0.0": "Oya",
+     "1.0": "Yego",
+     "2.0": "Ntabizi"
+    },
+    "s13q11": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s13q14": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "9.0": "Ntabizi"
+    },
+    "s13q15": {
+     "1.0": "Munini cyane",
+     "2.0": "Munini",
+     "3.0": "Mu rugero",
+     "4.0": "Muto biriganiye",
+     "5.0": "Muto cyane",
+     "6.0": "Ntabizi"
+    },
+    "s13q16": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q17": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q18": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q19": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q20": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q21": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q22": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q23": {
+     "1.0": "Yego",
+     "2.0": "Oya",
+     "3.0": "Ntabizi"
+    },
+    "s13q25": {
+     "1.0": "Aryamye",
+     "2.0": "Ahagaze"
+    },
+    "s13q29": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s13q30": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s13q31": {
+     "1.0": "Therapeutic feeding program",
+     "2.0": "Supplementary feeding program"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_child_clean.dta"
+  },
+  "village": {
+   "file": "Data/CFSVA_2009_pam_community.sav",
+   "rows": 427,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "id2",
+    "id4",
+    "id5",
+    "s00d",
+    "s00e",
+    "s00f",
+    "q1",
+    "q1a",
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q210",
+    "q211",
+    "q212"
+   ],
+   "var_labels": {
+    "id2": "AKARERE",
+    "id4": "UMURENGE",
+    "id5": "AKAGARI",
+    "s00d": "Intara",
+    "s00e": "Akarere",
+    "s00f": "Umurenge",
+    "q1": "1 - Kuva mu 2006 haba hari ubantu baje gutura aha cyangwa bi",
+    "q1a": "Ni ubuhe buryo bw'imiturire buri muri aka kagari",
+    "q21": "2.1 - Muri aka kagari hari ikigo cy'amashuri abanza gikora",
+    "q22": "2.2 - Niba ntacyo,kugera ku mashuri abanza abegereye harimo",
+    "q23": "2.3 - Muri aka kagari hari amashuri yisumbuye akora",
+    "q24": "2.4 - Niba ntayo kugera ku mashuri y'isumbuye abegereye  har",
+    "q25": "2.5 - Muri aka kagari hari ivuriro ritoya rikora muri aka ka",
+    "q26": "2.6 - Hari urugendo rungana iki kugera iki kugera ku ivuriro",
+    "q27": "2.7 - Umuhanda muto ubegereye waba uri ku ntera ingana iki u",
+    "q28": "2.8 - Umuhanda munini ubegereye waba uri kuntera ingana iki",
+    "q29": "2.9 - Haba hari isoko ry'ibiribwa rirema buri munsi muri aka",
+    "q210": "2.10 - Haba hari isoko ry'ibiribwa ritarema buri munsi muri",
+    "q211": "2.11 - Ni igihe kingana iki mukoresha kugera ku isoko ribege",
+    "q212": "2.12 - Ni igihe kingana iki mukoresha kugera ku isoko ribege",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)"
+   },
+   "value_labels": {
+    "q1": {
+     "1.0": "Haje benshi",
+     "2.0": "Hagiye benshi",
+     "3.0": "Barangana",
+     "4.0": "Nta byabaye"
+    },
+    "q1a": {
+     "1.0": "Imidugudu",
+     "2.0": "Urusisiro",
+     "3.0": "Isambu ye"
+    },
+    "q21": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "q23": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "q25": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "q29": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "q210": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "prov": "id1",
+    "cluster": "id6",
+    "dist": "s00e (district name; closest spelling for variants such as RURINDO -> Rulindo)"
+   },
+   "out": "CFSVA_2009_village_clean.dta"
+  },
+  "s10b": {
+   "file": "Data/CFSVA_2009_s10b.sav",
+   "rows": 5948,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "s10q2a",
+    "s10q2b13",
+    "s10q2b1",
+    "s10q2b2",
+    "s10q2b3",
+    "s10q2b4",
+    "s10q2b5",
+    "s10q2b6",
+    "s10q2b7",
+    "s10q2b8",
+    "s10q2b9",
+    "s10q2b10",
+    "s10q2b11",
+    "s10q2b12",
+    "s10q3",
+    "s10q4",
+    "s10q5",
+    "s10q6b",
+    "s10q7"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "s10q2a": "URWEGO N'IMPAMVU",
+    "s10q2b13": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? ALL",
+    "s10q2b1": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? J",
+    "s10q2b2": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? F",
+    "s10q2b3": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? M",
+    "s10q2b4": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? A",
+    "s10q2b5": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? M",
+    "s10q2b6": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? J",
+    "s10q2b7": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? J",
+    "s10q2b8": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? A",
+    "s10q2b9": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? S",
+    "s10q2b10": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? O",
+    "s10q2b11": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? N",
+    "s10q2b12": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? D",
+    "s10q3": "10.3. Iyo mpamvu yaba yaratumye urugo rubura cyangwa rutakaz",
+    "s10q4": "10.4.Iyo mpamvu yaba yaratumye urugo rubura ibintu byo mu ru",
+    "s10q5": "10.5.Ese iyo ngorane yatumye urugo rutakaza ubushobozi bwo k",
+    "s10q6b": "10.6.1.Ni iki mwakoze kugirango mwikure muri izo ngorane ?",
+    "s10q7": "10.7.Kuri ubu urugo rwanyu rwabashije kwihaza mu biribwa ?",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s10q2a": {
+     "0.0": "",
+     "1.0": "A.Ampapfa/Umvura itagwira igihe",
+     "2.0": "B.Imyuzure",
+     "3.0": "C.Gutenguka, Isuri",
+     "4.0": "D.Indwara z'ibihingwa zidasanzwe",
+     "5.0": "E.Indwara z'amatungo zidasanzwe",
+     "6.0": "F.Indwara z'ibyorezo zifata abantu",
+     "7.0": "G.Izamuka ry'ibiciro ridasanzwe",
+     "8.0": "H.Izamuka ry'ibiciro by'inyongeramusaruro n'imbuto",
+     "9.0": "I.Gutakaza n'igabanuka ry'akazi",
+     "10.0": "J.Igabanuka ry'umutungo w'umwe mu bagize urugo",
+     "11.0": "K.Indwara ikomeye/Impanuka by'umwe mu bagize urugo",
+     "12.0": "L.Urupfu rw'umutware w'urugo",
+     "13.0": "M.Urupfu rw'umwe mu bagize urugo wakoraga",
+     "14.0": "N.Urupfu rw'umwe mu bagize urugo",
+     "15.0": "O.Kwibwa ibyazaniraga urugo amafaranga",
+     "16.0": "P.Umutekano mucye/Urugomo",
+     "17.0": "Q.Urubura",
+     "18.0": "R.Ibindi"
+    },
+    "s10q2b13": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b1": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b2": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b3": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b4": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b5": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b6": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b7": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b8": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b9": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b10": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b11": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q2b12": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s10q3": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s10q4": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s10q5": {
+     "1.0": "Yego",
+     "2.0": "Oya"
+    },
+    "s10q6b": {
+     "0.0": "Missing value",
+     "1.0": "Kugura gusa ibiribwa bidahenze",
+     "2.0": "Kuguza ibiribwa/Gufashwa",
+     "3.0": "Ibiribwa byaguzwe ku ideni",
+     "4.0": "Kurya ibiribwa bitahinzwe, (sauvage) umuhigo",
+     "5.0": "Kurya imbuto z'igihe cy'ihinga gitaha",
+     "6.0": "Kugabanya ibyo buri wese yafataga",
+     "7.0": "Abakuru barigomwa kugirango abana barye",
+     "8.0": "Kugabanya inshuro bafunguraga ku munsi",
+     "9.0": "Kumara iminis yo kurya",
+     "10.0": "Bamwe mubagize urugo bimutse igihe gito (<amezi6)",
+     "11.0": "Bamwe mu bagize urugo bimutse burundu(>amezi 6)",
+     "12.0": "Kugabanya amafaranga yatangwaga ku buzima n'uburezi",
+     "13.0": "Gukoresha ku mafaranga urugo rwazigamye",
+     "14.0": "Kuguza amafaranga",
+     "15.0": "Kuugurisha ibikoresho by'urugo",
+     "16.0": "Kugurisha ibikoresho byo mu buhinzi",
+     "17.0": "Kugurisha ibikoresho by'ubwubatsi",
+     "18.0": "Kugurisha ibikoresho byo mu nzu",
+     "19.0": "Kugurisha ibinyamababa",
+     "20.0": "Kugurisha amatungo magufi",
+     "21.0": "Kugurisha amatungo maremare",
+     "22.0": "Gukodesha ubutaka",
+     "23.0": "Kugura isambu",
+     "24.0": "Gukorera ibiryo gusa",
+     "25.0": "Gukora amasha y'ikienga",
+     "26.0": "Kuvana abana mu ishuri",
+     "27.0": "Gusuhuka k'urugo"
+    },
+    "s10q7": {
+     "0.0": "OYA",
+     "1.0": "YEGO",
+     "2.0": "BUCYE"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s10b_clean.dta"
+  },
+  "s1_13_question": {
+   "file": "Data/CFSVA_2009_s1_13_question.sav",
+   "rows": 5406,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "no",
+    "s1q13d",
+    "s1q13e",
+    "s1q13f"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "no": "No.",
+    "s1q13d": "1.13.A. Igitsina",
+    "s1q13e": "1.13.B.Imyaka",
+    "s1q13f": "1.13.C.Bishwe ni iki",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s1q13d": {
+     "1.0": "Gabo",
+     "2.0": "Gore",
+     "9.0": ""
+    },
+    "s1q13f": {
+     "1.0": "Ubusaza",
+     "2.0": "Uburwayi bwigihe gito",
+     "3.0": "Impanuka",
+     "4.0": "Uburwayi karande",
+     "5.0": "SIDA",
+     "6.0": "Igituntu",
+     "7.0": "Ibindi"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s1_13_question_clean.dta"
+  },
+  "s1_15_question": {
+   "file": "Data/CFSVA_2009_s1_15_question.sav",
+   "rows": 5457,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "np",
+    "s1q15a",
+    "s1q15b",
+    "s1q15c",
+    "s1q15d"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "np": "No",
+    "s1q15a": "1.15.A.Igitsina",
+    "s1q15b": "1.15.B.Imyaka",
+    "s1q15c": "1.15.C.Uko ameze",
+    "s1q15d": "1.15.D.Sobanura",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s1q15a": {
+     "1.0": "Gabo",
+     "2.0": "Gore",
+     "9.0": ""
+    },
+    "s1q15c": {
+     "1.0": "Ubumunga",
+     "2.0": "Uburwayi bwigihe gito(impiswi, marariya)",
+     "3.0": "Uburwayi karande (igituntu,sida,kanseri,etc)",
+     "4.0": "Ibindi sobanura"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s1_15_question_clean.dta"
+  },
+  "s1_21question": {
+   "file": "Data/CFSVA_2009_s1_21question.sav",
+   "rows": 5894,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "nq",
+    "s1q21a",
+    "s1q21b",
+    "s1q21c"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "nq": "No.",
+    "s1q21a": "1.21.A.Mbwira igitsina cye ?",
+    "s1q21b": "1.21.B.Mbwira imyaka yabo?",
+    "s1q21c": "1.21.C.Mbwira ikiciro cye ?",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s1q21a": {
+     "1.0": "G",
+     "2.0": "F"
+    },
+    "s1q21c": {
+     "1.0": "Ise aracyariho",
+     "2.0": "Nyina aracyariho",
+     "3.0": "Ababyeyi bombi ntibariho"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s1_21question_clean.dta"
+  },
+  "s3_17_question": {
+   "file": "Data/CFSVA_2009_s3_17_question.sav",
+   "rows": 42309,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "s3q17a1",
+    "s3q17a",
+    "s3q17b",
+    "s3q17c"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "s3q17a1": "3.17.No",
+    "s3q17a": "3.17.Amatungo",
+    "s3q17b": "3.17.a.UMUBARE BOROYE",
+    "s3q17c": "3.17.b.AYABO BWITE",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s3_17_question_clean.dta"
+  },
+  "s4": {
+   "file": "Data/CFSVA_2009_s4.sav",
+   "rows": 21600,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "s4q0",
+    "s4q1a",
+    "s4q1",
+    "s4q2l",
+    "s4q2",
+    "s4q2a",
+    "s4q2b",
+    "s4q2c",
+    "s4q2d",
+    "s4q2e",
+    "s4q2f",
+    "s4q2g",
+    "s4q2h",
+    "s4q2i",
+    "s4q2j",
+    "s4q2k",
+    "s4q3",
+    "s4q4",
+    "s4q41",
+    "sq42"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "s4q0": "Code umurimo",
+    "s4q1a": "A.1.Urwego rw'umurimo",
+    "s4q1": "A.2.Niyihe mirimo y'ingenzi itunze urugo yakozwe mu mezi 12",
+    "s4q2l": "Ni muyahe mezi uwo murimo ukorwamo ? All",
+    "s4q2": "B.Ni muyahe mezi uwo murimo ukorwamo ? J",
+    "s4q2a": "Ni muyahe mezi uwo murimo ukorwamo ? F",
+    "s4q2b": "Ni muyahe mezi uwo murimo ukorwamo ? M",
+    "s4q2c": "Ni muyahe mezi uwo murimo ukorwamo ? A",
+    "s4q2d": "Ni muyahe mezi uwo murimo ukorwamo ? M",
+    "s4q2e": "Ni muyahe mezi uwo murimo ukorwamo ? J",
+    "s4q2f": "Ni muyahe mezi uwo murimo ukorwamo ? J",
+    "s4q2g": "Ni muyahe mezi uwo murimo ukorwamo ? A",
+    "s4q2h": "Ni muyahe mezi uwo murimo ukorwamo ? S",
+    "s4q2i": "Ni muyahe mezi uwo murimo ukorwamo ? O",
+    "s4q2j": "Ni muyahe mezi uwo murimo ukorwamo ? N",
+    "s4q2k": "Ni muyahe mezi uwo murimo ukorwamo ? D",
+    "s4q3": "C.Ninde ukora uwo murimo",
+    "s4q4": "D.Ni uwuhe mugabane ukomoka kuri uwo murimo utunze urugo ?",
+    "s4q41": "E.Ni ikihe kigereranyo cy'amafaranga yavuye muri uwo muimo m",
+    "sq42": "F.Ukoresheje ijanisha erekana uko uwo murimo ubunganira mugu",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s4q1": {
+     "0.0": "",
+     "1.0": "Umusaruro k'ubuhinzi",
+     "2.0": "Ubworozi",
+     "3.0": "Uburobyi",
+     "4.0": "Guhiga",
+     "5.0": "Gusoroma imbuto",
+     "6.0": "Nyakabyizi uhembwa ibitari amafaranga",
+     "7.0": "Imfashanyo, impano, gusabiriza (ibitari amafaranga/ibiryo)",
+     "8.0": "Ubucuruzi bw'ibikomoka ku buhinzi",
+     "9.0": "Kugurisha ibisarurwa mu bishanga",
+     "10.0": "Ubucuruzi bw'ibikomoka k'ubworozi",
+     "11.0": "Ubucuruzi bw'ibikomoka ku burobyi",
+     "12.0": "Ubucuruzi bw'ibikomoka ku guhiga/gusoroma imbuto",
+     "13.0": "Kugurisha amatungo",
+     "14.0": "Ubucuruzi buciriritse/kudandaza",
+     "15.0": "Nyakabyizi",
+     "16.0": "Ubukorikori/Imyuga iciriritse",
+     "17.0": "Ubwikorezi",
+     "18.0": "Umukozi wa Leta (Ubariyemo n'uhabwa pensiyo y'izabukuru)",
+     "19.0": "Ukorera uwikorera ku giti cye",
+     "20.0": "Kontaro (imiryango mpuzamahanga/yegenga)",
+     "21.0": "Pansiyo ikomoka ku bumuga",
+     "22.0": "Ubucuruzi/Rwiyemeza mirimo",
+     "23.0": "Amafaranga yoherezwa n'abataba mur rugo",
+     "24.0": "Imfashanyo, impano, gusabiriza (amafaranga)",
+     "25.0": "Inguzanyo",
+     "26.0": "Indi.."
+    },
+    "s4q2l": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2g": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2h": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2i": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2j": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q2k": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s4q4": {
+     "888.0": "NTIBIBAHO",
+     "999.0": "NTABIZI"
+    },
+    "s4q41": {
+     "0.0": "",
+     "1.0": "0-5,000 Frw",
+     "2.0": "5,000-5,0000 FRW",
+     "3.0": "50,000-75,000 FRW",
+     "4.0": "75,000-100,000 FRW",
+     "5.0": "100,000-200,000 FRW",
+     "6.0": "200,000 +"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s4_clean.dta"
+  },
+  "s7": {
+   "file": "Data/CFSVA_2009_s7.sav",
+   "rows": 43200,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "code1",
+    "s7q0",
+    "s7q1",
+    "s7q2",
+    "s7q3",
+    "s7q4",
+    "s7q5a",
+    "s7qb",
+    "s7q6"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "code1": "Code1",
+    "s7q0": "Ibirango by'ibihingwa",
+    "s7q1": "A.Ni ikihe gihingwa k'ingenzi cyahinzwe muri ubwo bwoko bw'b",
+    "s7q2": "B.Ni uwuhe mugabane w'ubutaka ukoreshwa kuri iki gihingwa ? %",
+    "s7q3": "C.Wowe ubwawe ukoresha uwuhe mugabane w'umusaruro w'iki gihi",
+    "s7q4": "D.Ni uwuhe mugabane w'umusaruro ugurisha uva muri iki gihing",
+    "s7q5a": "E.a.Iyo mushaka imbuto z'icyo gihingwa k'ingenzi muzibona mu",
+    "s7qb": "E.b.Iyo mushaka imbuto z'icyo gihingwa k'ingenzi muzibona mu",
+    "s7q6": "F.Ni uwuhe mugabane w'umusaruro w'icyo gihingwa k'ingenzi wo",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s7q0": {
+     "0.0": "",
+     "1.0": "IBIGORI",
+     "2.0": "AMASAKA",
+     "3.0": "UMUCERI",
+     "4.0": "IBINDI BINYAMPEKE",
+     "5.0": "IBIJUMBA",
+     "6.0": "IMYUMBATI",
+     "7.0": "IBIRAYI",
+     "8.0": "IBINDI BINYABIJUMBA",
+     "9.0": "IBISHYIMBO",
+     "10.0": "AMASHAZA",
+     "11.0": "SOYA",
+     "12.0": "UBUNYOBWA",
+     "13.0": "IBINDI BINYAMISOGWE",
+     "14.0": "AMASHU",
+     "15.0": "INYANYA",
+     "16.0": "IZINDI MBOGA",
+     "18.0": "INKANSHI/IKAKAMA",
+     "19.0": "INYAMUNYO",
+     "20.0": "IMINEKE",
+     "21.0": "IZINDI MBUTO",
+     "22.0": "ICYAYI",
+     "23.0": "IKAWA",
+     "24.0": "ITABI",
+     "25.0": "AMATUNDA",
+     "26.0": "IBISHEKE",
+     "27.0": "IBINDI BIHINGWA NGENGABUKUNGU"
+    },
+    "s7q5a": {
+     "0.0": "",
+     "1.0": "Kuzigura",
+     "2.0": "Kugurana iintu n'abazifite",
+     "3.0": "Kuzihabwaho impano n'abo dufitanye isano/umuryango",
+     "4.0": "Kubika imbuto ku musarururo",
+     "5.0": "Kuzihabwa ONG, Leta,...",
+     "6.0": "Ahandi, kuhavuga"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s7_clean.dta"
+  },
+  "s8": {
+   "file": "Data/CFSVA_2009_s8.sav",
+   "rows": 118800,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "s8q0",
+    "s8q1",
+    "s8q2",
+    "s8q3",
+    "s8q4",
+    "code_hh"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "s8q0": "CODE",
+    "s8q1": "Mu minsi 30 ishize hari amafaranga yatanzwe ku... kugirango",
+    "s8q2": "A.Ugereranyije watanze amafaranga angahe ku.. mu minsi 30 is",
+    "s8q3": "B.Ugereranyije ibintu mwafashe ku ideni .... gifite agaciro",
+    "s8q4": "C.Ugereranyije ... mwaguranye ibindi bintu bifite agaciro k'",
+    "code_hh": null,
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s8_clean.dta"
+  },
+  "s8_823_32question": {
+   "file": "Data/CFSVA_2009_s8_823_32question.sav",
+   "rows": 54000,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "s8q01",
+    "s8q01b",
+    "code_hh",
+    "s8q23m",
+    "s8q23a",
+    "s8q23b",
+    "s8q23c",
+    "s8q23d",
+    "s8q23e",
+    "s8q23f",
+    "s8q23g",
+    "s8q23h",
+    "s8q23i",
+    "s8q23j",
+    "s8q23k",
+    "s8q23l",
+    "s8q24",
+    "s8q25",
+    "s8q26"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "No HH",
+    "s8q01": "CODE",
+    "s8q01b": "IGIKORWA",
+    "code_hh": null,
+    "s8q23m": "ALL",
+    "s8q23a": "Jan",
+    "s8q23b": "Feb",
+    "s8q23c": "Mar",
+    "s8q23d": "Apr",
+    "s8q23e": "May",
+    "s8q23f": "June",
+    "s8q23g": "July",
+    "s8q23h": "Aug",
+    "s8q23i": "Sept",
+    "s8q23j": "Oct",
+    "s8q23k": "Nov",
+    "s8q23l": "Dec",
+    "s8q24": "A.Ugereranyije watanze amafaranga angahe?",
+    "s8q25": "B.Ugeraranyije mwafashe... ku ideni gifite agaciro k'amafara",
+    "s8q26": "C.Ugereranyije mwaguranye ibindi bintu bifite agaciro k'amaf",
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s8q23m": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23a": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23b": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23g": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23h": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23i": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23j": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23k": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s8q23l": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s8_823_32question_clean.dta"
+  },
+  "s9_question": {
+   "file": "Data/CFSVA_2009_s9_question.sav",
+   "rows": 118800,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "cluster",
+    "hhid",
+    "id2",
+    "id4",
+    "id5",
+    "id7",
+    "s9q3j",
+    "s9q3k",
+    "s9q3c",
+    "s9q3d",
+    "s9q3e",
+    "s9q3f",
+    "s9q3g",
+    "s9q3h",
+    "s9q3i",
+    "s9q3l",
+    "s9q3m",
+    "s9q3n",
+    "code_hh"
+   ],
+   "var_labels": {
+    "id2": "Akarere",
+    "id4": "Umurenge",
+    "id5": "Akagari",
+    "id7": "Numero y'urugo",
+    "s9q3j": "No code",
+    "s9q3k": "IBIRIBWA",
+    "s9q3c": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3d": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3e": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3f": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3g": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3h": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3i": "Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",
+    "s9q3l": "1.Umubare w'iminsi ikiribwa cyakoreshejwe igiteranyo cy'utuz",
+    "s9q3m": "2.1.Aho ibiribwa byakomotse   AH'INGENZI",
+    "s9q3n": "2.1.Aho ibiribwa byakomotse   AHANDI",
+    "code_hh": null,
+    "prov": "Province (1-5, NISR codes)",
+    "cluster": "Village / cluster id (as shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "dist": "District (11-57, NISR codes)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "s9q3c": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3d": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3e": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3f": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3g": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3h": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3i": {
+     "0.0": "Oya",
+     "1.0": "Yego"
+    },
+    "s9q3m": {
+     "0.0": "",
+     "1.0": "Umusaruro wanyu bwite(Ibihingwa n'amatungo)",
+     "2.0": "Guhinga, uburubyi, gusoroma",
+     "3.0": "Gukora cg gutanga ibindi kugirango ubone ibribwa",
+     "4.0": "Kuguza uburibwa",
+     "5.0": "Kubigura",
+     "6.0": "Impano z'ibiribwa zivuye kubo mufitanye isano/Umuryango",
+     "7.0": "Imfashanyo y'ibiribwa"
+    },
+    "s9q3n": {
+     "0.0": "",
+     "1.0": "Umusaruro wanyu bwite(Ibihingwa n'amatungo)",
+     "2.0": "Guhinga, uburubyi, gusoroma",
+     "3.0": "Gukora cg gutanga ibindi kugirango ubone ibribwa",
+     "4.0": "Kuguza uburibwa",
+     "5.0": "Kubigura",
+     "6.0": "Impano z'ibiribwa zivuye kubo mufitanye isano/Umuryango",
+     "7.0": "Imfashanyo y'ibiribwa"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "prov": "id1",
+    "cluster": "id6"
+   },
+   "out": "CFSVA_2009_s9_question_clean.dta"
+  }
+ }
+}

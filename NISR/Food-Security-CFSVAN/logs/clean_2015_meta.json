@@ -1,0 +1,2973 @@
+{
+ "year": "2015",
+ "files": {
+  "household": {
+   "file": "CFSVA_2015_master_db.sav",
+   "rows": 7500,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "sector",
+    "urban",
+    "hhid",
+    "wt",
+    "v0_identifiers",
+    "s0_b_date",
+    "month",
+    "districts",
+    "normalized_weight",
+    "v1_layers",
+    "rwanda",
+    "livezone",
+    "fs_final_lyr",
+    "wi_cat_lyr",
+    "v2_demography",
+    "s1_01",
+    "as1_01_4",
+    "as1_01_4_2",
+    "bs1_01_4",
+    "bs1_01_4_2",
+    "cs1_01_4",
+    "cs1_01_4_2",
+    "ds1_01_4",
+    "ds1_01_4_2",
+    "es1_01_4",
+    "es1_01_4_2",
+    "fs1_01_4",
+    "fs1_01_4_2",
+    "gs1_01_4",
+    "gs1_01_4_2",
+    "hs1_01_4",
+    "hs1_01_4_2",
+    "s1_01_3",
+    "s1_01_4",
+    "s1_01_7",
+    "s1_01_8",
+    "s1_01_10",
+    "s1_01_11_c",
+    "s1_01_11",
+    "v2_2_education",
+    "s1_01_7_hc88_s",
+    "s1_01_7_hc0_s",
+    "s1_01_7_hc1_s",
+    "s1_01_7_hc2_s",
+    "s1_01_8_s1",
+    "s1_01_8_s2",
+    "s1_01_8_s3",
+    "s1_01_12",
+    "s1_01_12_1",
+    "s1_01_12_2",
+    "s1_01_13",
+    "s1_01_13_1",
+    "s1_01_13_2",
+    "s1_01_14_1",
+    "s1_01_14_2",
+    "s1_01_14_3",
+    "s1_01_14_4",
+    "s1_01_14_5",
+    "s1_01_14_6",
+    "s1_01_14_7",
+    "s1_01_14_8",
+    "hh_m_en",
+    "hh_f_en",
+    "hh_all_en",
+    "hh_m_att",
+    "hh_f_att",
+    "hh_all_att",
+    "v3_housingwealth",
+    "s2_04",
+    "s2_04_2",
+    "s2_05",
+    "s2_06",
+    "rooms",
+    "crowding",
+    "improved_roof2",
+    "improved_floor",
+    "improved_wall",
+    "improved_toilet",
+    "s2_07_3",
+    "s2_07_2",
+    "improved_water",
+    "s2_10_2",
+    "s2_10_3",
+    "time_water_source",
+    "s2_11",
+    "s2_12",
+    "s2_13",
+    "water_source_treatment",
+    "improved_light",
+    "s2_09",
+    "own_livestock",
+    "manage_livestock",
+    "own_cattle",
+    "tlu",
+    "wi_cat",
+    "s12_01",
+    "s12_02",
+    "v3_2_communityfacility",
+    "v_s2_01",
+    "v_s2_02",
+    "v_s2_03_1",
+    "v_s2_03_2",
+    "v_s2_03_3",
+    "v_s2_03_4",
+    "v_s3_01",
+    "v_s3_02",
+    "v_s3_02_2",
+    "v_s3_03",
+    "v_s3_03_2",
+    "v_s4_01",
+    "v_s4_02_2",
+    "v_s4_02_3",
+    "v_s4_02_4",
+    "health_facility_distance",
+    "market_distance",
+    "health_less_60min",
+    "market_less_60min",
+    "road_distance",
+    "v4_incomelivelihoodexpenditure",
+    "s3_01",
+    "sh_agricultural_production",
+    "sh_labour_ag_work",
+    "sh_unskilled_labour",
+    "sh_petty_trade",
+    "sh_salaried",
+    "sh_livestock_raising",
+    "sh_artisan",
+    "sh_skilled_labour",
+    "sh_remittances",
+    "sh_own_business",
+    "sh_transport",
+    "sh_sale_ag_prod",
+    "sh_fishing_hunting",
+    "sh_selling_fish_hunt",
+    "sh_sale_livestock_prod",
+    "sh_sale_livestock",
+    "sh_pension",
+    "sh_vup_public_works",
+    "sh_vup_transfers",
+    "sh_begging",
+    "sh_other",
+    "livelihood_group_2",
+    "p_cap_exp",
+    "p_cap_exp_annual",
+    "fie",
+    "nfie",
+    "t_exp",
+    "s_fie",
+    "s_nfie",
+    "v5_landagriculture",
+    "s4_01",
+    "s4_01_2",
+    "s4_01_5",
+    "s4_01_5_2",
+    "s4_01_6",
+    "s4_01_7",
+    "s4_01_8",
+    "s4_09",
+    "s5_00",
+    "s5_01",
+    "s5_02",
+    "s5_03",
+    "s5_03_2",
+    "s5_04",
+    "s5_05",
+    "s5_06",
+    "s5_06_2",
+    "s5_06_3",
+    "s5_06_4",
+    "s5_06_5",
+    "s5_07",
+    "crop_reported",
+    "growing_beans",
+    "growing_maize",
+    "growing_s_potato",
+    "growing_cassava",
+    "growing_i_potato",
+    "growing_sorghum",
+    "growing_banana_cooking",
+    "growing_banana_wine",
+    "percent_consumed",
+    "percent_sold",
+    "percent_given_away",
+    "percent_lost",
+    "mostly_consuming",
+    "mostly_selling",
+    "stock_durationa",
+    "stock_durationb",
+    "stock_durationc",
+    "v7_foodsecurity",
+    "s9_01",
+    "s9_01_cat",
+    "s9_01_2",
+    "s9_02",
+    "s9_02_cat",
+    "s9_02_2",
+    "s9_04",
+    "starch",
+    "pulses",
+    "meat",
+    "vegetables",
+    "oil",
+    "fruit",
+    "milk",
+    "sugar",
+    "fcs",
+    "fcg",
+    "fs_final",
+    "dds",
+    "gdds",
+    "vita_groups",
+    "protein_groups",
+    "hiron_groups",
+    "shr_pur",
+    "shr_own",
+    "shr_gif",
+    "shr_hun",
+    "shr_exc",
+    "shr_bor",
+    "shr_aid",
+    "hdds_24h",
+    "hdds_groups",
+    "v11_copingshocks",
+    "s10_01",
+    "csi",
+    "csi_terciles",
+    "max_coping_behaviour",
+    "foodaccess",
+    "months_fa",
+    "months_fa_cat",
+    "s11_02",
+    "shock_drought",
+    "drought_coping",
+    "shock_illness",
+    "illness_coping",
+    "shock_loss_employment",
+    "loss_employment_coping",
+    "household_still_recovering",
+    "v8_loansandbanking",
+    "s7_01",
+    "s7_01_2",
+    "s7_01_4",
+    "s7_02",
+    "s7_03",
+    "s7_04",
+    "v9_assistance",
+    "any_assistance",
+    "any_food_assistance",
+    "any_non_food_assistance",
+    "financial_assistance",
+    "agriculture_assisstance",
+    "other_non_food_assistance",
+    "s12_04_2_1_0_new",
+    "s12_04_2_2_0_new",
+    "s12_04_2_3_0_new",
+    "s12_04_2_4_0_new",
+    "s12_04_2_5_0_new",
+    "s12_04_2_6_0_new",
+    "s12_04_2_7_0_new",
+    "s12_07_2_1_0_new",
+    "s12_07_2_2_0_new",
+    "s12_07_2_3_0_new",
+    "s12_07_2_4_0_new",
+    "s12_07_2_5_0_new",
+    "s12_07_2_6_0_new",
+    "s12_07_2_7_0_new",
+    "s12_07_2_8_0_new",
+    "s12_07_2_9_0_new",
+    "s12_07_2_10_0_new",
+    "s12_07_2_11_0_new",
+    "s12_07_2_12_0_new",
+    "s12_07_2_13_0_new",
+    "s12_07_2_14_0_new",
+    "vup_support",
+    "v10_nutrition",
+    "wasted_yn",
+    "stunted_yn",
+    "underweight_yn",
+    "malnourished_yn"
+   ],
+   "var_labels": {
+    "v0_identifiers": null,
+    "s0_b_date": "Interview date",
+    "month": null,
+    "districts": "District",
+    "normalized_weight": "Normalized weight",
+    "v1_layers": null,
+    "rwanda": "Rwanda",
+    "urban": "Area of residence (1 urban, 2 rural; where shipped)",
+    "livezone": "Livelihood zone",
+    "fs_final_lyr": "Final CARI food security index",
+    "wi_cat_lyr": "Wealth Index groups",
+    "v2_demography": null,
+    "s1_01": "How many members does your household have?",
+    "as1_01_4": "Males Under 6 months",
+    "as1_01_4_2": "Females Under 6 months",
+    "bs1_01_4": "Males 6 to 23 Months",
+    "bs1_01_4_2": "Females 6 to 23 Months",
+    "cs1_01_4": "Males 24 to 59 months",
+    "cs1_01_4_2": "Females 24 to 59 months",
+    "ds1_01_4": "Males 5 to 6 years",
+    "ds1_01_4_2": "Females 6 to 6 years",
+    "es1_01_4": "Males 7 to 14 years",
+    "es1_01_4_2": "Females 7 to 14 years",
+    "fs1_01_4": "Males 15 to 17 years",
+    "fs1_01_4_2": "Females 15 to 17 years",
+    "gs1_01_4": "Males 18 to 59 years",
+    "gs1_01_4_2": "Females 18 to 59 years",
+    "hs1_01_4": "Males 60  years and above",
+    "hs1_01_4_2": "Females 60  years and above",
+    "s1_01_3": "What is the gender of the head of household",
+    "s1_01_4": "How old is the head of household",
+    "s1_01_7": "Can head of household read and write?",
+    "s1_01_8": "What is head of household's level of education?",
+    "s1_01_10": "What's is the head of household marital status?",
+    "s1_01_11_c": "Is the head of HH in polygamous marriage?",
+    "s1_01_11": "How many spouses or partners does the head of household have?",
+    "v2_2_education": null,
+    "s1_01_7_hc88_s": "% of household members under 7 years old (haven't started school yet)",
+    "s1_01_7_hc0_s": "% of household members who can't read or write",
+    "s1_01_7_hc1_s": "% of household members who can read and write",
+    "s1_01_7_hc2_s": "% of household members who can only read",
+    "s1_01_8_s1": "% of HH members with unknown education level (Unknown + Haven't started school yet)",
+    "s1_01_8_s2": "% of HH members with low education level (Never been to school + Primary school)",
+    "s1_01_8_s3": "% of HH members with Medium to high educaion level (Secondary + Vocational + University)",
+    "s1_01_12": "Household with at least one child 7-14 years currently attending primary school?",
+    "s1_01_12_1": "Number of males 7-14 years currently attending primary school",
+    "s1_01_12_2": "Number of females 7-14 years currently attending primary school",
+    "s1_01_13": "At least one child missed school for one week or more since january 2015",
+    "s1_01_13_1": "Number of males 7-14 who missed school for one or more week since january 2015",
+    "s1_01_13_2": "Number of females 7-14 who missed school for one or more week since january 2015",
+    "s1_01_14_1": "Sickness",
+    "s1_01_14_2": "Working for cash (either sent or chose to)",
+    "s1_01_14_3": "housework (cooking, fetching water and more)",
+    "s1_01_14_4": "Taking care of siblings",
+    "s1_01_14_5": "The school is far from home",
+    "s1_01_14_6": "No school fees",
+    "s1_01_14_7": "Refused to go",
+    "s1_01_14_8": "Other reasons",
+    "hh_m_en": "HH primary scchool enrolment rate  among boys 7-14yrs",
+    "hh_f_en": "HH primary scchool enrolment rate among girls 7-14yrs",
+    "hh_all_en": "HH overall primary scchool enrolment rate among children 7-14yrs",
+    "hh_m_att": "HH males primary scchool attendance rate",
+    "hh_f_att": "HH females primary scchool attendance rate",
+    "hh_all_att": "HH overall primary scchool attendance rate",
+    "v3_housingwealth": null,
+    "s2_04": "Is the household living in umudugudu \u2018new recommended settlement\u2019?",
+    "s2_04_2": "Since when is your household living in \"Umudugudu\"?",
+    "s2_05": "What is your occupancy status in this house?",
+    "s2_06": "How many sleeping rooms does the house you are living in have?",
+    "rooms": "Hosehold own more than 2 sleeping rooms",
+    "crowding": "Crowding index (number of persons per sleeping room)",
+    "improved_roof2": "improved roof (Iron sheet and Clay tiles vs others)",
+    "improved_floor": "improved floor (concrete/cement and clay tiles vs others)",
+    "improved_wall": "improved wall (cement with mud/cement/fired bricks and trees vs others)",
+    "improved_toilet": "improved toilet (flush and pit Pit with floor, walls and roof vs others)",
+    "s2_07_3": "Do you share the toilet facility with other households?",
+    "s2_07_2": "If your household does not have its own toilet facility, then what do you use?",
+    "improved_water": "improved water (public/home tap and borehole with pump vs others)",
+    "s2_10_2": "Do you pay any money to access water from this main source?",
+    "s2_10_3": "How do you or your household members go to this main source of water?",
+    "time_water_source": "Distance to main water source, in categories",
+    "s2_11": "Is there a time in the year when your household uses an alternate source of water?",
+    "s2_12": "What does your household normally do to its water prior to drinking?",
+    "s2_13": "On average, how many liters of water does your household use per day?",
+    "water_source_treatment": "Source of water and treatment",
+    "improved_light": "improved source of light (electricity and solar vs others)",
+    "s2_09": "What fuel do you use most often for cooking?",
+    "own_livestock": "Household own livestock",
+    "manage_livestock": "Household manage livestock",
+    "own_cattle": "Household own cattle",
+    "tlu": "Tropical Livesttock Unit (TLU)",
+    "wi_cat": "Wealth Index groups",
+    "s12_01": "Ubudehe profile (Old)",
+    "s12_02": "Ubudehe profile (New)",
+    "v3_2_communityfacility": null,
+    "v_s2_01": "How many households does this village have?",
+    "v_s2_02": "How would you qualify this village ? (chose one option)",
+    "v_s2_03_1": "VUP (schemes applied in the village)",
+    "v_s2_03_2": "Land consolidation (schemes applied in the village)",
+    "v_s2_03_3": "IDP model village (schemes applied in the village)",
+    "v_s2_03_4": "Structured umudugudu (schemes applied in the village)",
+    "v_s3_01": "What percentage of households in this village have access to electricity?",
+    "v_s3_02": "Is there any functioning primary school in this village?",
+    "v_s3_02_2": "If not, then how far away on average is the nearest functioning primary school? (minutes)",
+    "v_s3_03": "Is there a functioning health facility in the village?",
+    "v_s3_03_2": "If not, then how far away on average is the nearest functioning health facility? (minutes)",
+    "v_s4_01": "Is there a market in this village?",
+    "v_s4_02_2": "Is this the main market your community mostly interacts with?",
+    "v_s4_02_3": "If this is not the main market for the village or there is no market at all, how far is the main market your community mostly interacts with?",
+    "v_s4_02_4": "Is the road to the main market for your community accessible all year round using transport means other than walking?",
+    "health_facility_distance": "Distance to health faility",
+    "market_distance": "Distance to market",
+    "health_less_60min": "Health facility available in less than 60 min",
+    "market_less_60min": "Market availlable in less than 60 min",
+    "road_distance": "Village distance to road",
+    "v4_incomelivelihoodexpenditure": null,
+    "s3_01": "How many livelihood activities does your household have?",
+    "sh_agricultural_production": "Contribution from Agricultural Production On Own Farm/Land Or On Other Farm/LandWith No Rental Payment",
+    "sh_labour_ag_work": "Contribution from Daily Labour Agricultural Work",
+    "sh_unskilled_labour": "Contribution from Unskilled Daily Labour",
+    "sh_petty_trade": "Contribution from Informal Sale/Petty Trade",
+    "sh_salaried": "Contribution from Salaried",
+    "sh_livestock_raising": "Contribution from Livestock Raising For Sales",
+    "sh_artisan": "Contribution from Handicrafts/Artisanal Work",
+    "sh_skilled_labour": "Contribution from Skilled Labour",
+    "sh_remittances": "Contribution from Remittances From Friends And Relatives",
+    "sh_own_business": "Contribution from Own Buisness/Self Employed",
+    "sh_transport": "Contribution from Transport",
+    "sh_sale_ag_prod": "Contribution from Purchase And Sale Of Agricultural Products",
+    "sh_fishing_hunting": "Contribution from Fishing, Hunting, Gathering",
+    "sh_selling_fish_hunt": "Contribution from Purchase Sale Of Product From Fishing Hunting Gathering",
+    "sh_sale_livestock_prod": "Contribution from Purchase And Sale Of Livestock Products",
+    "sh_sale_livestock": "Contribution from Purchase And Sale Of Livestock",
+    "sh_pension": "Contribution from Pension",
+    "sh_vup_public_works": "Contribution from Vup Public Works",
+    "sh_vup_transfers": "Contribution from Vup Direct Transfers And Other Social Transfers",
+    "sh_begging": "Contribution from Begging",
+    "sh_other": "Contribution from other activity",
+    "livelihood_group_2": "Livelihood group",
+    "p_cap_exp": "Monthly per capita expenditure",
+    "p_cap_exp_annual": "Annual per capita expenditure",
+    "fie": "Monthly HH food item expenditures (cash and non-cah)",
+    "nfie": "Monthly HH non food item expenditure (acuired by cash)",
+    "t_exp": "Total monthly household expenditures (food and non food, cash and non-cah)",
+    "s_fie": "Share food expenditure (cash and non-cah)",
+    "s_nfie": "Share non food expenditure",
+    "v5_landagriculture": null,
+    "s4_01": "Does your household own farming land including pastures for livestock?",
+    "s4_01_2": "How big is that land that your household own?",
+    "s4_01_5": "Is any part of the farming land that your household own consolidated (land consolidation programme)",
+    "s4_01_5_2": "If yes how much % of your land is in consolidation?",
+    "s4_01_6": "Is any part of your land registered to be used for public related activites (such us roads, hospitals and rescue services)?",
+    "s4_01_7": "Is any of the farming land that your household own protected against soil erosion?",
+    "s4_01_8": "Do you have a household vegetable plot /garden?",
+    "s4_09": "Does your household own or manage any farm-animals?",
+    "s5_00": "Does your household practice agriculture?",
+    "s5_01": "Is any member of your household a member of a farmer organization/cooperative?",
+    "s5_02": "Did your household cultivate any crop in the last agriculture year?",
+    "s5_03": "Is any of the farming land that your household own irrigated?",
+    "s5_03_2": "If yes how much % of the land you farm is irrigated?",
+    "s5_04": "Is your household currently renting in any land for farming?",
+    "s5_05": "Is you household currently farming any land for free use?",
+    "s5_06": "Did your household use fertilizer and/or insecticides during the past 12 months?",
+    "s5_06_2": "How much % of those fertilizer and or pestcides were Bought with cash?",
+    "s5_06_3": "How much % of those fertilizer and or pestcides were Bought with voucher system",
+    "s5_06_4": "How much % of those fertilizer and or pestcides were Received from NGO, government or other institution",
+    "s5_06_5": "How much % of those fertilizer and or pestcides were Free or from your Own production",
+    "s5_07": "How many crops did your household cultivate in the last agriculture year?",
+    "crop_reported": "Number of crops reported by the household",
+    "growing_beans": "Household growing beans",
+    "growing_maize": "Household growing maize",
+    "growing_s_potato": "Household growing sweet potato",
+    "growing_cassava": "Household growing cassava",
+    "growing_i_potato": "Household growing irish potato",
+    "growing_sorghum": "Household growing sorghum",
+    "growing_banana_cooking": "Household growing banana for cooking",
+    "growing_banana_wine": "Household growing banana for wine",
+    "percent_consumed": "% of own production consumed within the household",
+    "percent_sold": "% of own production sold",
+    "percent_given_away": "%of own production given away",
+    "percent_lost": "% of own production lost",
+    "mostly_consuming": "HH consuming more than 50% of the produce",
+    "mostly_selling": "HH selling more than 50% of the produce",
+    "stock_durationa": "Stock duration in months season A",
+    "stock_durationb": "Stock duration in months Season B",
+    "stock_durationc": "Stock duration in months Season C",
+    "v7_foodsecurity": null,
+    "s9_01": "Yesterday, how many times did the adults in this household eat?",
+    "s9_01_cat": "Adult meal frequency - categories",
+    "s9_01_2": "Is this usual for adults at this time of year?",
+    "s9_02": "Yesterday, how many times did the children (<15 year old) in this household eat?",
+    "s9_02_cat": "Child meal frequenccy - categories",
+    "s9_02_2": "Is this usual for your children at this time of year?",
+    "s9_04": "What is your household prefered staple food (other than beans, soup)?",
+    "starch": "Number of days in a week starches were consumed",
+    "pulses": "Number of days in a week pulses were consumed",
+    "meat": "Number of days in a week meat was consumed",
+    "vegetables": "Number of days in a week vegetables were consumed",
+    "oil": "Number of days in a week oil was consumed",
+    "fruit": "Number of days in a week fruits  were consumed",
+    "milk": "Number of days in a week milk was consumed",
+    "sugar": "Number of days in a week sugar consumed",
+    "fcs": "Food Consumption Score",
+    "fcg": "Food Consumption Group",
+    "fs_final": "Final CARI food security index",
+    "dds": "Dietary diversity score",
+    "gdds": "Dietary diversity groups",
+    "vita_groups": "Consumption of vitamin A rich food",
+    "protein_groups": "Consumption of protein rich food",
+    "hiron_groups": "Consumption of hem iron rich food",
+    "shr_pur": "Food source: share from purchase",
+    "shr_own": "Food source: share from own production",
+    "shr_gif": "Food source: share from gift",
+    "shr_hun": "Food sourcce: share from hunting",
+    "shr_exc": "Food source: share from exchange",
+    "shr_bor": "Food source: share from borrowing",
+    "shr_aid": "Food source: share from aid",
+    "hdds_24h": "Household dietary diversity based on 24h recall",
+    "hdds_groups": "Percentile Group of HDDS_24h",
+    "v11_copingshocks": null,
+    "s10_01": "HH had food access problems during last 7 days",
+    "csi": "Reduced coping strategies index",
+    "csi_terciles": "CSI terciles",
+    "max_coping_behaviour": "Summary of asset depletion",
+    "foodaccess": "HH had food access problems in specific months during  the last 12 months?",
+    "months_fa": "Number of months in which household had difficulty in having enough food",
+    "months_fa_cat": "Number of months in which household had difficulty in having enough food",
+    "s11_02": "Household experienced shock during last 12 months?",
+    "shock_drought": "Household experienced drought",
+    "drought_coping": "Coping strategies used in response to drought",
+    "shock_illness": "Household experiences illness/accident",
+    "illness_coping": "Coping strategies used in response to illness",
+    "shock_loss_employment": "Household experienced loss of employment",
+    "loss_employment_coping": "Coping strategies used in response to loss of employment",
+    "household_still_recovering": "Household still recovering from shock",
+    "v8_loansandbanking": null,
+    "s7_01": "Have you or any household member request for  a loan in the in the last 12 months ?",
+    "s7_01_2": "Were you given the loan you requested?",
+    "s7_01_4": "Why were you not given the loan you requested?",
+    "s7_02": "What was the main use of the largest loan taken in the  in the last 12 months ?",
+    "s7_03": "What was the source of the largest loan?",
+    "s7_04": "What is the total amount of money the household has borrowed in Francs equivalent in the last 12 months?",
+    "v9_assistance": null,
+    "any_assistance": "Any assistance (excluding assistance from friends/relatives)",
+    "any_food_assistance": "Any food assistance (during last the 12 months)",
+    "any_non_food_assistance": "Any non-food assisatance (during last the 12 months)",
+    "financial_assistance": "Financial assistance (during last the 12 months)",
+    "agriculture_assisstance": "Agricultural assistance (during last the 12 months)",
+    "other_non_food_assistance": "Other non-food assistance (during last the 12 months)",
+    "s12_04_2_1_0_new": "Food for school children (eaten at school or take-home)",
+    "s12_04_2_2_0_new": "Food for pregnant and breastfeeding women and small children (MCHN)",
+    "s12_04_2_3_0_new": "Food for work",
+    "s12_04_2_4_0_new": "Food for training",
+    "s12_04_2_5_0_new": "One cup of milk per child",
+    "s12_04_2_6_0_new": "Free food distributions",
+    "s12_04_2_7_0_new": "Other food assistance programs",
+    "s12_07_2_1_0_new": "Access to credit/loans for agricultural/livestock related activities (including micro-credit other than VUP)",
+    "s12_07_2_2_0_new": "Access to credit/loans for Other NON agricultural/livestock related activities (including micro-credit other than VUP)",
+    "s12_07_2_3_0_new": "Agricultural input assistance (tools, seeds, fertilizer, etc.)",
+    "s12_07_2_4_0_new": "Training and technical assistance in improved agricultural/livestock practices",
+    "s12_07_2_5_0_new": "Large Livestock (eg. cow)",
+    "s12_07_2_6_0_new": "Small livestock (eg. chicken rabbits?)",
+    "s12_07_2_7_0_new": "Fish ponds",
+    "s12_07_2_8_0_new": "Veterinary services",
+    "s12_07_2_9_0_new": "For education (e.g. school materials)",
+    "s12_07_2_10_0_new": "Direct transfers (other than VUP)",
+    "s12_07_2_11_0_new": "medical services (including mutuelle de sante)",
+    "s12_07_2_12_0_new": "Construction/building materials",
+    "s12_07_2_13_0_new": "Water and/or sanitation",
+    "s12_07_2_14_0_new": "Other non food assistance",
+    "vup_support": "Household received any VUP or ubudehe support (during last the 12 months)",
+    "v10_nutrition": null,
+    "wasted_yn": "Household has at least one child under five that is wasted",
+    "stunted_yn": "Household has at least one child under five that  is stunted",
+    "underweight_yn": "Household has at least one child under five that is underweight",
+    "malnourished_yn": "Household has at least one child under five that is malnourished",
+    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR codes)",
+    "sector": "Sector (1101-5715, NISR codes; where shipped)",
+    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)"
+   },
+   "value_labels": {
+    "month": {
+     "1.0": "April",
+     "2.0": "May"
+    },
+    "districts": {
+     "101.0": "Nyarugenge",
+     "102.0": "Gasabo",
+     "103.0": "Kicukiro",
+     "201.0": "Nyanza",
+     "202.0": "Gisagara",
+     "203.0": "Nyaruguru",
+     "204.0": "Huye",
+     "205.0": "Nyamagabe",
+     "206.0": "Ruhango",
+     "207.0": "Muhanga",
+     "208.0": "Kamonyi",
+     "301.0": "Karongi",
+     "302.0": "Rutsiro",
+     "303.0": "Rubavu",
+     "304.0": "Nyabihu",
+     "305.0": "Ngororero",
+     "306.0": "Rusizi",
+     "307.0": "Nyamasheke",
+     "401.0": "Rulindo",
+     "402.0": "Gakenke",
+     "403.0": "Musanze",
+     "404.0": "Burera",
+     "405.0": "Gicumbi",
+     "501.0": "Rwamagana",
+     "502.0": "Nyagatare",
+     "503.0": "Gatsibo",
+     "504.0": "Kayonza",
+     "505.0": "Kirehe",
+     "506.0": "Ngoma",
+     "507.0": "Bugesera"
+    },
+    "rwanda": {
+     "1.0": "Rwanda"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
+    },
+    "livezone": {
+     "0.0": "Kigali city",
+     "1.0": "Lake Kivu Coffee Zone",
+     "2.0": "West Congo-Nile Crest Tea Zone",
+     "3.0": "Northwest Volcanic Irish Potato Zone",
+     "4.0": "East Congo-Nile Highland Subsistence Farming Zone",
+     "5.0": "Central Plateau Cassava and Coffee Zone",
+     "6.0": "Northern Highland Beans and Wheat Zone",
+     "7.0": "Central-Northern Highland Irish Potato, Beans and Vegetable Zone",
+     "8.0": "Bugesera Cassava Zone",
+     "9.0": "Eastern Plateau Mixed Agriculture Zone",
+     "10.0": "Southeastern Plateau Banana Zone",
+     "11.0": "Eastern Agropastoral Zone",
+     "12.0": "Eastern Semi-Arid Agropastoral Zone"
+    },
+    "fs_final_lyr": {
+     "1.0": "Food secure",
+     "2.0": "Marginally food secure",
+     "3.0": "Moderately food insecure",
+     "4.0": "Severely food insecure"
+    },
+    "wi_cat_lyr": {
+     "1.0": "Poorest",
+     "2.0": "Poor",
+     "3.0": "Medium",
+     "4.0": "Wealth",
+     "5.0": "Wealthies"
+    },
+    "s1_01_3": {
+     "1.0": "Male",
+     "2.0": "Female"
+    },
+    "s1_01_7": {
+     "0.0": " No",
+     "1.0": " Yes (both read and write)",
+     "2.0": " Yes (read only)"
+    },
+    "s1_01_8": {
+     "1.0": " No school",
+     "2.0": " Some/still primary",
+     "3.0": " Completed primary",
+     "4.0": " Vocational school",
+     "5.0": " Some/still secondary",
+     "6.0": " Completed secondary",
+     "7.0": " Some/still university",
+     "8.0": " Completed university",
+     "88.0": "Don't know"
+    },
+    "s1_01_10": {
+     "1.0": " Married",
+     "2.0": " Partner",
+     "3.0": " Divorced",
+     "4.0": " Separated",
+     "5.0": " Widow/Widower",
+     "6.0": " Never married (single)"
+    },
+    "s1_01_11_c": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s1_01_12": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s1_01_13": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s1_01_14_1": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_2": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_3": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_4": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_5": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_6": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_7": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s1_01_14_8": {
+     "1.0": "Sickness",
+     "2.0": "Working for cash (either sent or chose to)",
+     "3.0": "housework (cooking, fetching water and more)",
+     "4.0": "Taking care of siblings",
+     "5.0": "The school is far from home",
+     "6.0": "No school fees",
+     "7.0": "Refused to go",
+     "8.0": "Other reasons"
+    },
+    "s2_04": {
+     "1.0": "Yes, it's in the umudugudu",
+     "2.0": "No, this is town",
+     "3.0": "No, it's not in umudugu"
+    },
+    "s2_04_2": {
+     "0.0": "The HH does not live in \"Umudugudu\"",
+     "1.0": "Since less than 3 months",
+     "2.0": "Between 3 and less than 6 months",
+     "3.0": "Between 6 months and 1 year",
+     "4.0": "For more than 1 year"
+    },
+    "s2_05": {
+     "1.0": "Owner",
+     "2.0": "Rented",
+     "3.0": "Free of charge (not owner)"
+    },
+    "rooms": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "improved_roof2": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "improved_floor": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "improved_wall": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "improved_toilet": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "s2_07_3": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s2_07_2": {
+     "1.0": "Borrow from neighbors,",
+     "2.0": "Public latrines in the village,",
+     "3.0": "Bush or stream or other inappropriate places"
+    },
+    "improved_water": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "s2_10_2": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s2_10_3": {
+     "0.0": "Water source at home",
+     "1.0": "Walk",
+     "2.0": "Bicycle",
+     "3.0": "Motorbike/vehicle",
+     "4.0": "Hire someone for that",
+     "5.0": "Other"
+    },
+    "time_water_source": {
+     "1.0": "less than 30 min",
+     "2.0": "30 min to 1 hour",
+     "3.0": "more than 1 hour"
+    },
+    "s2_11": {
+     "0.0": "No, this is the only source we use",
+     "1.0": "Yes, we do have another source"
+    },
+    "s2_12": {
+     "1.0": "Boil",
+     "2.0": "Strained through cloth",
+     "3.0": "Ceramic, sand or other filter",
+     "4.0": "Purifying tablets/bleach chlorine",
+     "5.0": "Sedimentation",
+     "6.0": "Nothing is done"
+    },
+    "water_source_treatment": {
+     "1.0": "Improved water, boiled or ceramic treatment",
+     "2.0": "Improved water, treated with chlorine",
+     "3.0": "Improved water, untreated",
+     "4.0": "Unimproved water, boiled or ceramic treatment",
+     "5.0": "Unimproved water, treated with chlorine",
+     "6.0": "Unimproved water, untreated"
+    },
+    "improved_light": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "s2_09": {
+     "1.0": "Gas",
+     "2.0": "Electricity",
+     "3.0": "Firewood",
+     "4.0": " Charcoal",
+     "5.0": "Kerosene",
+     "6.0": "Bio-gas",
+     "7.0": "Crop waste/animal dung",
+     "8.0": "Other"
+    },
+    "own_cattle": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "wi_cat": {
+     "1.0": "Poorest",
+     "2.0": "Poor",
+     "3.0": "Medium",
+     "4.0": "Wealth",
+     "5.0": "Wealthies"
+    },
+    "s12_01": {
+     "0.0": "[0] Don't know",
+     "1.0": "[1] Umutindi nyakujya (Those in abject poverty)",
+     "2.0": "[2] Umutindi (the very poor)",
+     "3.0": "[3] Umukene (the poor)",
+     "4.0": "[4] Umukene wifashije (the resourceful poor)",
+     "5.0": "[5] Umukungu (the food rich)",
+     "6.0": "[6] Umukire (the money rich )"
+    },
+    "s12_02": {
+     "0.0": "[0] Don't know",
+     "1.0": "[1] Category one",
+     "2.0": "[2] Category two",
+     "3.0": "[3] Category three",
+     "4.0": "[4] Category four"
+    },
+    "v_s2_02": {
+     "1.0": "Rural",
+     "2.0": "Urban organized",
+     "3.0": "Urban slum"
+    },
+    "v_s2_03_1": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s2_03_2": {
+     "0.0": "No",
+     "2.0": "Yes"
+    },
+    "v_s2_03_3": {
+     "0.0": "No",
+     "3.0": "Yes"
+    },
+    "v_s2_03_4": {
+     "0.0": "No",
+     "4.0": "Yes"
+    },
+    "v_s3_02": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s3_03": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s4_01": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s4_02_2": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s4_02_4": {
+     "0.0": "Yes",
+     "1.0": "No"
+    },
+    "health_facility_distance": {
+     "1.0": "health facility in village",
+     "2.0": "less than 60 min",
+     "3.0": "60-120 min",
+     "4.0": "more than 120 min"
+    },
+    "market_distance": {
+     "1.0": "market in village",
+     "2.0": "less than 60 min",
+     "3.0": "60-120 min",
+     "4.0": "more than 120 min"
+    },
+    "health_less_60min": {
+     "1.0": "health facility available in less than 60 min",
+     "2.0": "health facility available in more than 60 min"
+    },
+    "market_less_60min": {
+     "1.0": "market available in less than 60 min",
+     "2.0": "market available in more than 60 min"
+    },
+    "road_distance": {
+     "1.0": "less than 2km",
+     "2.0": "2-5km",
+     "3.0": "5-10km",
+     "4.0": "more than 10km"
+    },
+    "livelihood_group_2": {
+     "1.0": "Low-income agriculturalists",
+     "2.0": "Agro-pastoralists",
+     "3.0": "Agricultural daily labour",
+     "4.0": "Unskilled daily labour",
+     "5.0": "Skilled labour",
+     "6.0": "Trade/petty trade",
+     "7.0": "Salaried work/own business",
+     "8.0": "External support/transfers/begging",
+     "9.0": "Artisanal work/other",
+     "10.0": "Medium/high income agriculturalists"
+    },
+    "s4_01": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s4_01_2": {
+     "0.0": "None",
+     "1.0": "0-0.1 ha,",
+     "2.0": "0.1-0.19 ha",
+     "3.0": "0.2-0.49 ha",
+     "4.0": "0.5-0.99 ha",
+     "5.0": "1-1.99 ha",
+     "6.0": "2-5 ha",
+     "7.0": "more than 5 ha"
+    },
+    "s4_01_5": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s4_01_6": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s4_01_7": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s4_01_8": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s4_09": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s5_00": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s5_01": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s5_02": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s5_03": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s5_04": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s5_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s5_06": {
+     "1.0": "No",
+     "2.0": "Yes Fertilizer only",
+     "3.0": "Yes pesticides only",
+     "4.0": "Yes both",
+     "88.0": "Don't know"
+    },
+    "growing_beans": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_maize": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_s_potato": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_cassava": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_i_potato": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_sorghum": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_banana_cooking": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "growing_banana_wine": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s9_01_cat": {
+     "0.0": "0",
+     "1.0": "1",
+     "2.0": "2",
+     "3.0": "3 or more"
+    },
+    "s9_01_2": {
+     "0.0": "It's usual",
+     "1.0": "No, it's more than usual",
+     "2.0": "No, it's less than usual",
+     "88.0": "No children"
+    },
+    "s9_02_cat": {
+     "0.0": "0",
+     "1.0": "1",
+     "2.0": "2",
+     "3.0": "3 or more"
+    },
+    "s9_02_2": {
+     "0.0": "It's usual",
+     "1.0": "No, it's more than usual",
+     "2.0": "No, it's less than usual",
+     "88.0": "No children"
+    },
+    "s9_04": {
+     "1.0": "Cereals",
+     "2.0": "Tubers and roots",
+     "3.0": "Cooking banana"
+    },
+    "fcg": {
+     "1.0": "Poor Consumption",
+     "2.0": "Borderline Consumption",
+     "3.0": "Acceptable Consumption"
+    },
+    "fs_final": {
+     "1.0": "Food secure",
+     "2.0": "Marginally food secure",
+     "3.0": "Moderately food insecure",
+     "4.0": "Severely food insecure"
+    },
+    "gdds": {
+     "1.0": "Low diet diversity",
+     "2.0": "Medium diet diversity",
+     "3.0": "Good diet diversity"
+    },
+    "vita_groups": {
+     "1.0": "never consumed (0 times)",
+     "2.0": "consumed sometimes (1 - 6 times a week)",
+     "3.0": "consumed at least daily (at least 7 times a week)"
+    },
+    "protein_groups": {
+     "1.0": "never consumed (0 times)",
+     "2.0": "consumed sometimes (1 - 6 times a week)",
+     "3.0": "consumed at least daily (at least 7 times a week)"
+    },
+    "hiron_groups": {
+     "1.0": "never consumed (0 times)",
+     "2.0": "consumed sometimes (1 - 6 times a week)",
+     "3.0": "consumed at least daily (at least 7 times a week)"
+    },
+    "hdds_groups": {
+     "1.0": "0-4 food groups",
+     "2.0": "5-6 food groups",
+     "3.0": "7 or more groups"
+    },
+    "s10_01": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "csi_terciles": {
+     "0.0": "No coping strategies",
+     "1.0": "Low coping",
+     "2.0": "Medium coping",
+     "3.0": "High coping"
+    },
+    "max_coping_behaviour": {
+     "1.0": "HH not adopting coping strategies",
+     "2.0": "Stress coping strategies",
+     "3.0": "crisis coping strategies",
+     "4.0": "emergencies coping strategies"
+    },
+    "foodaccess": {
+     "0.0": "No food access issues",
+     "1.0": "Chronic food access issues",
+     "2.0": "Seasonal food access issues",
+     "3.0": "Acute food access issues"
+    },
+    "months_fa_cat": {
+     "0.0": "None",
+     "1.0": "Between 1 and 6 months",
+     "2.0": "Between 6 and 12 months",
+     "3.0": "the whole year"
+    },
+    "s11_02": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "shock_drought": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "drought_coping": {
+     "1.0": "Have household members eat at relatives? or neighbours?",
+     "2.0": "Reduce adult consumption so that children can eat",
+     "3.0": "Feed working members at the expense of non working members",
+     "4.0": "Reduce number of meals eaten per day",
+     "5.0": "Go entire day without eating",
+     "6.0": "Borrow food or rely on help from friends or relatives",
+     "7.0": "Rely on less expensive or less preferred foods",
+     "8.0": "Purchase/borrow food on credit",
+     "9.0": "Consume seed stock to be saved for next season",
+     "10.0": "Increased casual labour",
+     "11.0": "Migration of one or more household members",
+     "12.0": "Some household members worked for food only",
+     "13.0": "Spent savings",
+     "14.0": "Borrowed money",
+     "15.0": "Sold household assets",
+     "16.0": "Sold productive assets",
+     "17.0": "Children taken out of school",
+     "18.0": "Reduced expenditures on health an/or education"
+    },
+    "shock_illness": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "illness_coping": {
+     "1.0": "Have household members eat at relatives? or neighbours?",
+     "2.0": "Reduce adult consumption so that children can eat",
+     "3.0": "Feed working members at the expense of non working members",
+     "4.0": "Reduce number of meals eaten per day",
+     "5.0": "Go entire day without eating",
+     "6.0": "Borrow food or rely on help from friends or relatives",
+     "7.0": "Rely on less expensive or less preferred foods",
+     "8.0": "Purchase/borrow food on credit",
+     "9.0": "Consume seed stock to be saved for next season",
+     "10.0": "Increased casual labour",
+     "11.0": "Migration of one or more household members",
+     "12.0": "Some household members worked for food only",
+     "13.0": "Spent savings",
+     "14.0": "Borrowed money",
+     "15.0": "Sold household assets",
+     "16.0": "Sold productive assets",
+     "17.0": "Children taken out of school",
+     "18.0": "Reduced expenditures on health an/or education"
+    },
+    "shock_loss_employment": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "loss_employment_coping": {
+     "1.0": "Have household members eat at relatives? or neighbours?",
+     "2.0": "Reduce adult consumption so that children can eat",
+     "3.0": "Feed working members at the expense of non working members",
+     "4.0": "Reduce number of meals eaten per day",
+     "5.0": "Go entire day without eating",
+     "6.0": "Borrow food or rely on help from friends or relatives",
+     "7.0": "Rely on less expensive or less preferred foods",
+     "8.0": "Purchase/borrow food on credit",
+     "9.0": "Consume seed stock to be saved for next season",
+     "10.0": "Increased casual labour",
+     "11.0": "Migration of one or more household members",
+     "12.0": "Some household members worked for food only",
+     "13.0": "Spent savings",
+     "14.0": "Borrowed money",
+     "15.0": "Sold household assets",
+     "16.0": "Sold productive assets",
+     "17.0": "Children taken out of school",
+     "18.0": "Reduced expenditures on health an/or education"
+    },
+    "household_still_recovering": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s7_01": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s7_01_2": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s7_01_4": {
+     "1.0": "Poor proposal",
+     "2.0": "Not enough collateral",
+     "3.0": "Other reasons"
+    },
+    "s7_02": {
+     "0.0": "Education",
+     "1.0": "Agricultural and livestock activities",
+     "2.0": "Food purchases",
+     "3.0": "Construction other than house",
+     "4.0": "Health emergency",
+     "5.0": "Business investment",
+     "6.0": "Bride price / Wedding and parties",
+     "7.0": "Land purchase",
+     "8.0": "Funeral",
+     "9.0": "House purchase or construction",
+     "10.0": "Medicines for chronically ill family member",
+     "11.0": "Home improvement",
+     "12.0": "Other"
+    },
+    "s7_03": {
+     "1.0": "Family / friends in Rwanda",
+     "2.0": "Micro-finance Institution (Credit d\u2019Epargne/NGO/Sacco)",
+     "3.0": "Family / friends outside Rwanda",
+     "4.0": "Bank",
+     "5.0": "Shopkeeper /traders",
+     "6.0": "Tontine (Community loan)",
+     "7.0": "VUP financial service",
+     "8.0": "Informal lender",
+     "9.0": "Other"
+    },
+    "any_assistance": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "any_food_assistance": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "any_non_food_assistance": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives only",
+     "88.0": "do not know"
+    },
+    "financial_assistance": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives only",
+     "88.0": "do not know"
+    },
+    "agriculture_assisstance": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives only",
+     "88.0": "do not know"
+    },
+    "other_non_food_assistance": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives only",
+     "88.0": "do not know"
+    },
+    "s12_04_2_1_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_04_2_2_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_04_2_3_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_04_2_4_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_04_2_5_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_04_2_6_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_04_2_7_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_1_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_2_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_3_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_4_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_5_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_6_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_7_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_8_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_9_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_10_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_11_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_12_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_13_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "s12_07_2_14_0_new": {
+     "0.0": "no",
+     "1.0": "yes",
+     "2.0": "yes, from friends/relatives",
+     "88.0": "do not know"
+    },
+    "vup_support": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "wasted_yn": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "stunted_yn": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "underweight_yn": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "malnourished_yn": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "key",
+    "prov": "s0_c_prov",
+    "dist": "s0_d_dist",
+    "sector": "s0_e_sect",
+    "wt": "weight"
+   },
+   "out": "CFSVA_2015_household_clean.dta"
+  },
+  "woman": {
+   "file": "CFSVA_2015_mother_db.sav",
+   "rows": 6768,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "sector",
+    "urban",
+    "hhid",
+    "wt",
+    "normalized_weight_women",
+    "parent_key",
+    "submissiondate",
+    "s0_b_date",
+    "bmic",
+    "livezone",
+    "fs_final",
+    "fcs",
+    "fcg",
+    "wi",
+    "wi_cat",
+    "csi",
+    "s13_01",
+    "s14_01",
+    "s13_02_2",
+    "s13_02_3",
+    "s13_02_4",
+    "s13_03",
+    "s13_03_3",
+    "s13_03_4",
+    "s13_03_5",
+    "s13_03_6",
+    "s13_03_7",
+    "s13_03_8",
+    "s13_03_9",
+    "s13_04",
+    "s13_04_2",
+    "s13_04_3",
+    "s13_04_4",
+    "as13_05",
+    "bs13_05",
+    "cs13_05",
+    "ds13_05",
+    "es13_05",
+    "s13_05_2",
+    "s13_06",
+    "bmi",
+    "s13_06_2",
+    "s13_06_3",
+    "s13_06_4",
+    "s13_03_2",
+    "beans_nuts",
+    "fruits_vegetables",
+    "as13_07",
+    "ds13_07",
+    "es13_07",
+    "fs13_07",
+    "gs13_07",
+    "hs13_07",
+    "ks13_07",
+    "bs13_07",
+    "cs13_07",
+    "is13_07",
+    "js13_07",
+    "muac_groups",
+    "filter__",
+    "wdds",
+    "stunted_women",
+    "underweight_women",
+    "nwdds"
+   ],
+   "var_labels": {
+    "normalized_weight_women": "Normalized weight",
+    "parent_key": null,
+    "submissiondate": null,
+    "s0_b_date": "Interview date",
+    "bmic": "Body mass index (grouped)",
+    "urban": "Area of residence (1 urban, 2 rural; where shipped)",
+    "livezone": "Livelihoodzone",
+    "fs_final": "Final CARI food security index",
+    "fcs": "Food Consumption Score",
+    "fcg": "Food Consumption Group",
+    "wi": "Wealth Index",
+    "wi_cat": "Wealth Index groups",
+    "csi": "Reduced coping strategies index",
+    "s13_01": "How many women between 15 and 49 years old are present in this household?",
+    "s14_01": "How many children under 5 years old (6 - 59.98 months) are present in this household?",
+    "s13_02_2": "How old are you?",
+    "s13_02_3": "Does the woman know how to read and write?",
+    "s13_02_4": "What is the level of education of the woman",
+    "s13_03": "Have you ever been pregnant and gave birth at least once?",
+    "s13_03_3": "During the first 6 weeks that s/he was born (the child that you're currently breastfeeding), did you receive supplementation with Vitamin A?",
+    "s13_03_4": "Did you see anyone for antenatal care for this/the last pregnancy?",
+    "s13_03_5": "Where did you receive antenatal care for this/the last pregnancy?",
+    "s13_03_6": "How many months pregnant were you when you first received antenatal care for the last pregnancy? (Record 10 if don\u2019t remember)",
+    "s13_03_7": "How many antenatal care visits did you attend during your last pregnancy?",
+    "s13_03_8": "During your last pregnancy, have you taken iron supplements?",
+    "s13_03_9": "For how long did you take iron pills  during your last pregnancy: (write the time in weeks)",
+    "s13_04": "Do you ever sleep in a mosquito net?",
+    "s13_04_2": "How many nights a week or how many nights in the last week did you use mosquito net",
+    "s13_04_3": "Have you ever been ill during the last two weeks?",
+    "s13_04_4": "Last 2 weeks when you were sick, did you consult any healthcare service?",
+    "as13_05": "Before preparing meals?",
+    "bs13_05": "After cleaning a child from toilet?",
+    "cs13_05": "Before eating?",
+    "ds13_05": "Whenever their dirty?",
+    "es13_05": "After visiting toilet?",
+    "s13_05_2": "What do you use to wash your hands after visiting toilet or at any other time?",
+    "s13_06": "Does the woman presen any disability the prevents her from being measured? If yes, please indicate which measurements will be affected?",
+    "bmi": "Body mass index",
+    "s13_06_2": "[name]'s MUAC in mm",
+    "s13_06_3": "[name]'s height in Cm",
+    "s13_06_4": "[name]'s weight in Cm",
+    "s13_03_2": "Are you currently pregnant or breastfeeding",
+    "beans_nuts": "Any foods made from beans, peas, or lentils, nuts or seeds",
+    "fruits_vegetables": "Any other fruits or vegetables",
+    "as13_07": "Any starchy staple foods",
+    "ds13_07": "Milk or other dairy products",
+    "es13_07": "Any flesh food such as fresh or dried fish, shellfish, or seafood, beef, pork, lamb, goat, chicken, or duck, rabbit Liver, kidney, heart, or other organ meats",
+    "fs13_07": "Eggs",
+    "gs13_07": "Any dark green leafy vegetables",
+    "hs13_07": "Orange fruits and vegetables",
+    "ks13_07": "Super Cereal / CSB+",
+    "bs13_07": "Any foods made from beans, peas, or lentils",
+    "cs13_07": "Any foods made from nuts or seeds",
+    "is13_07": "Any other vegetables",
+    "js13_07": "Any other fruits",
+    "muac_groups": null,
+    "filter__": "S13_03_2 = 1 or S13_03_2 =2 (FILTER)",
+    "wdds": null,
+    "stunted_women": null,
+    "underweight_women": null,
+    "nwdds": "Percentile Group of WDDS",
+    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR codes)",
+    "sector": "Sector (1101-5715, NISR codes; where shipped)",
+    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)"
+   },
+   "value_labels": {
+    "bmic": {
+     "1.0": "Severe Thinness (< 16)",
+     "2.0": "Moderate Thinness (16 - 17)",
+     "3.0": "Mild Thinness (17 - 18.5)",
+     "4.0": "Normal (18.5 - 25)",
+     "5.0": "Overweight (25 - 30)",
+     "6.0": "Obese Class I (30 - 35)",
+     "7.0": "Obese Class II (35 - 40)",
+     "8.0": "Obese Class III (> 40)"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
+    },
+    "livezone": {
+     "0.0": "Kigali city",
+     "1.0": "Lake Kivu Coffee Zone",
+     "2.0": "West Congo-Nile Crest Tea Zone",
+     "3.0": "Northwest Volcanic Irish Potato Zone",
+     "4.0": "East Congo-Nile Highland Subsistence Farming Zone",
+     "5.0": "Central Plateau Cassava and Coffee Zone",
+     "6.0": "Northern Highland Beans and Wheat Zone",
+     "7.0": "Central-Northern Highland Irish Potato, Beans and Vegetable Zone",
+     "8.0": "Bugesera Cassava Zone",
+     "9.0": "Eastern Plateau Mixed Agriculture Zone",
+     "10.0": "Southeastern Plateau Banana Zone",
+     "11.0": "Eastern Agropastoral Zone",
+     "12.0": "Eastern Semi-Arid Agropastoral Zone"
+    },
+    "fs_final": {
+     "1.0": "Food secure",
+     "2.0": "Marginally food secure",
+     "3.0": "Moderately food insecure",
+     "4.0": "Severely food insecure"
+    },
+    "fcg": {
+     "1.0": "Poor Consumption",
+     "2.0": "Borderline Consumption",
+     "3.0": "Acceptable Consumption"
+    },
+    "s13_02_3": {
+     "0.0": " No",
+     "1.0": " Yes both read and write",
+     "2.0": " Yes (read only)"
+    },
+    "s13_02_4": {
+     "1.0": " No school",
+     "2.0": " Some/still primary",
+     "3.0": " Completed primary",
+     "4.0": " Vocational school",
+     "5.0": " Some/still secondary",
+     "6.0": " Completed secondary",
+     "7.0": " Some/still university",
+     "8.0": " Completed university"
+    },
+    "s13_03": {
+     "0.0": "Never been pregnant",
+     "1.0": "Never gave birth but been pregnant",
+     "2.0": "Yes (was pregnant and gave brith)",
+     "88.0": "Don't know"
+    },
+    "s13_03_3": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_03_4": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_03_5": {
+     "1.0": "Public/confessional",
+     "2.0": "Private"
+    },
+    "s13_03_8": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_04": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_04_3": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_04_4": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "as13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "bs13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "cs13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "ds13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "es13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_05_2": {
+     "1.0": "Water only",
+     "2.0": "Water and homemade soap",
+     "3.0": "Water and washing soap",
+     "4.0": "Other"
+    },
+    "s13_06": {
+     "0.0": "No",
+     "1.0": "Yes, Affecting MUAC",
+     "2.0": "Yes, Affecting Weight and height"
+    },
+    "s13_03_2": {
+     "1.0": "Pregnant only",
+     "2.0": "Both (pregnant and lactating)",
+     "3.0": "Lactating only",
+     "4.0": "Neither",
+     "88.0": "Don't know"
+    },
+    "as13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ds13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "es13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "fs13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "gs13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "hs13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ks13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "bs13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "cs13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "is13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "js13_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "muac_groups": {
+     "1.0": "severely wasted",
+     "2.0": "wasted",
+     "3.0": "normal"
+    },
+    "filter__": {
+     "0.0": "Not Selected",
+     "1.0": "Selected"
+    },
+    "stunted_women": {
+     "0.0": "Non-stunted",
+     "1.0": "Stunted"
+    },
+    "underweight_women": {
+     "0.0": "Non-underweight",
+     "1.0": "Underweight"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "key",
+    "prov": "s0_c_prov",
+    "dist": "s0_d_dist",
+    "sector": "s0_e_sect",
+    "wt": "weight"
+   },
+   "out": "CFSVA_2015_woman_clean.dta"
+  },
+  "child": {
+   "file": "CFSVA_2015_child_db.sav",
+   "rows": 4058,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "sector",
+    "urban",
+    "cluster",
+    "hhid",
+    "wt",
+    "rwanda_lyr",
+    "urban_lyr",
+    "s0_c_prov_lyr",
+    "s0_d_dist_lyr",
+    "livezone_lyr",
+    "fs_final_lyr_lyr",
+    "wi_cat_lyr_lyr",
+    "wasted_global",
+    "stunted_global",
+    "underweight_global",
+    "chn_key",
+    "fs_final",
+    "who_flag",
+    "normalized_weight_child",
+    "s0_b_date",
+    "livezone",
+    "fcs",
+    "fcg",
+    "wi",
+    "wi_cat",
+    "csi",
+    "wasted",
+    "stunted",
+    "underweight",
+    "s13_01",
+    "s14_01",
+    "s14_02",
+    "s14_02_2",
+    "s14_02_3",
+    "s14_02_4",
+    "s14_02_5",
+    "s14_02_6",
+    "s14_02_7",
+    "s14_02_8",
+    "s14_03",
+    "s14_03_2",
+    "s14_03_3",
+    "s14_03_4",
+    "s14_03_5",
+    "birthweight_cat",
+    "s14_03_6",
+    "as14_04",
+    "s14_05",
+    "s14_05_2",
+    "s14_05_3",
+    "s14_05_4",
+    "s14_05_5",
+    "s14_05_6",
+    "s14_06",
+    "s14_06_2",
+    "s14_06_3",
+    "s14_06_4",
+    "s14_07",
+    "s14_07_2",
+    "s14_07_2_2",
+    "s14_07_3",
+    "s14_07_3_2",
+    "s14_07_4",
+    "s14_07_4_2",
+    "s14_07_5",
+    "s14_07_5_2",
+    "s14_07_6",
+    "s14_07_6_2",
+    "s14_08",
+    "as14_08",
+    "bs14_08",
+    "cs14_08",
+    "ds14_08",
+    "es14_08",
+    "fs14_08",
+    "gs14_08",
+    "hs14_08",
+    "is14_08",
+    "js14_08",
+    "ks14_08",
+    "ls14_08",
+    "ms14_08",
+    "ns14_08",
+    "os14_08",
+    "s14_08_2",
+    "s14_09",
+    "s14_10",
+    "s14_10_2",
+    "s14_12_2",
+    "s14_12_3",
+    "s14_12_4",
+    "s14_12_5",
+    "s14_12_6",
+    "muac_groups",
+    "waznchs",
+    "haznchs",
+    "whznchs",
+    "wazwho",
+    "hazwho",
+    "bmizwho",
+    "wamnchs",
+    "hamnchs",
+    "whmnchs",
+    "muacz_age",
+    "height_age_who",
+    "muacz_ht",
+    "mad001",
+    "mad002",
+    "mad003",
+    "mad004",
+    "mad005",
+    "mad006",
+    "mad007",
+    "mad008",
+    "mad009",
+    "mad010",
+    "mad011",
+    "mad012",
+    "mad013",
+    "s14_11",
+    "whzwho",
+    "age_class",
+    "child_age_groups",
+    "s2_10",
+    "improved_water",
+    "s2_07",
+    "s2_07_2",
+    "s2_07_3",
+    "s2_13",
+    "improved_toilet",
+    "water_source_treatment",
+    "feeding_hygiene",
+    "child_overweight",
+    "mhn_key",
+    "s13_02_2",
+    "s13_02_3",
+    "s13_02_4",
+    "as13_05",
+    "bs13_05",
+    "cs13_05",
+    "ds13_05",
+    "es13_05",
+    "s13_05_2",
+    "s13_06",
+    "s13_06_2",
+    "s13_06_3",
+    "s13_06_4",
+    "bmi",
+    "bmic",
+    "stunted_women",
+    "underweight_women",
+    "education_groups",
+    "v_s2_01",
+    "v_s2_02",
+    "v_s2_03_1",
+    "v_s2_03_2",
+    "v_s2_03_3",
+    "v_s2_03_4",
+    "v_s2_03_5",
+    "v_s2_03_88",
+    "v_s3_01",
+    "v_s3_02",
+    "v_s3_02_2",
+    "v_s3_03",
+    "v_s3_03_2",
+    "v_s4_01",
+    "v_s4_02_2",
+    "v_s4_02_3",
+    "v_s4_02_4",
+    "health_facility_distance",
+    "market_distance",
+    "health_less_60min",
+    "market_less_60min",
+    "s12_01",
+    "s12_02",
+    "road_distance",
+    "road_distance_less_5",
+    "filter__"
+   ],
+   "var_labels": {
+    "rwanda_lyr": "Rwanda",
+    "urban_lyr": "Urban status",
+    "s0_c_prov_lyr": "Province",
+    "s0_d_dist_lyr": "District",
+    "livezone_lyr": "Livelihood zone",
+    "fs_final_lyr_lyr": "Final CARI food security index",
+    "wi_cat_lyr_lyr": "Wealth Index groups",
+    "wasted_global": "Child wasted",
+    "stunted_global": "Child stunted",
+    "underweight_global": "Child underweight",
+    "chn_key": "KEY",
+    "fs_final": "Final CARI food security index",
+    "who_flag": null,
+    "parent_key": "Household unique ID",
+    "normalized_weight_child": "Normalized weight",
+    "s0_b_date": "Interview date",
+    "urban": "Area of residence (1 urban, 2 rural; where shipped)",
+    "livezone": "Livelihoodzone",
+    "fcs": "Food Consumption Score",
+    "fcg": "Food Consumption Group",
+    "wi": "Wealth Index",
+    "wi_cat": "Wealth Index groups",
+    "csi": "Reduced coping strategies index",
+    "wasted": "Prevalence of global acute malnutrition",
+    "stunted": "Prevalence of stunting",
+    "underweight": "Prevalence of underweight",
+    "s13_01": "How many women between 15 and 49 years old are present in this household?",
+    "s14_01": "How many children under 5 years old (6 - 59.98 months) are present in this household?",
+    "s14_02": "Child name",
+    "s14_02_2": "Primary Caregiver of Child",
+    "s14_02_3": "Respondent's relationship with child?",
+    "s14_02_4": "Child's mother id (from previous section)",
+    "s14_02_5": "Does [child name] has birth card for proper  DOB and other information recording?",
+    "s14_02_6": "Child date of birth",
+    "s14_02_7": "Child age in months",
+    "s14_02_8": "Child sex",
+    "s14_03": "Since born, was [child name] ever breastfeed?",
+    "s14_03_2": "How many hours after birth did you first put [child name] on breast?",
+    "s14_03_3": "How many days after the birth did you first put [child name] on breast?",
+    "s14_03_4": "In the first six month [child name] was born, was s/he given drinks or foods other than breastmilk?",
+    "s14_03_5": "Are you still breastfeeding [child name]?",
+    "birthweight_cat": null,
+    "s14_03_6": "When born, how big in Kg was [child name]?",
+    "as14_04": "Did [child name] ever receive vitamin A drops?",
+    "s14_05": "Was [child name] ill during last two weeks?",
+    "s14_05_2": "Has [child name] had illness with fever during last two weeks?",
+    "s14_05_3": "Has [child name] had illness with cough during last two weeks?",
+    "s14_05_4": "Has [child name] had illness with diarrhoea during last two weeks?",
+    "s14_05_5": "During last two weeks when [child name] was sick, did s/he see any healthcare provider?",
+    "s14_05_6": "During last six months, did [child name] receive deworming tablets?",
+    "s14_06": "Does [child name] feed him/herself?",
+    "s14_06_2": "If yes, does [child name] use his/her hand or utensils for feeding?",
+    "s14_06_3": "Does [child name] have his/her hands washed before eating/meal",
+    "s14_06_4": "If the [child name] does not feed him/herself  do the person who feed him wash his/her hand  before feeding the child",
+    "s14_07": "Yesterday, during day or night was [child name] breastfeed (last 24 hours)?",
+    "s14_07_2": "Infant formula",
+    "s14_07_2_2": "How many times did [child name] consume Infant formula",
+    "s14_07_3": "Milk (tinned, powdered, fresh",
+    "s14_07_3_2": "How many times did [child name] consume Milk (tinned, powdered, fresh",
+    "s14_07_4": "Yogurt",
+    "s14_07_4_2": "How many times did [child name] consume Yogurt",
+    "s14_07_5": "Thin porridge",
+    "s14_07_5_2": "How many times did [child name] consume Thin porridge",
+    "s14_07_6": "CSB++",
+    "s14_07_6_2": "How many times did [child name] consume CSB++",
+    "s14_08": "Did [child name] start eating any solid/Semi-solid food?",
+    "as14_08": "Porridge, bread, rice, noodles, or other foods made from grains (maize, millet, oats, rice, sorghum, teff, wheat)",
+    "bs14_08": "Pumpkin, carrots, squash, or sweet potatoes that are yellow or orange inside",
+    "cs14_08": "White potatoes, white yams, manioc, cassava, plantains, green banana, yam, or any other foods made from roots",
+    "ds14_08": "Any dark green leafy vegetables (broccoli, cassava greens, lettuce dark green, pumpkin greens, spinach, sweet potato leaves)",
+    "es14_08": "Ripe mangoes, ripe papayas, or passion fruit, tree tomato, apricot",
+    "fs14_08": "Any other fruits or vegetables",
+    "gs14_08": "Liver, kidney, heart, or other organ meats",
+    "hs14_08": "Any meat, such as beef, pork, lamb, goat, chicken, or duck, rabbit",
+    "is14_08": "Eggs",
+    "js14_08": "Fresh or dried fish, shellfish, or seafood",
+    "ks14_08": "Any foods made from beans, peas, lentils, nuts or seeds",
+    "ls14_08": "Cheese, yogurt, or other milk products",
+    "ms14_08": "Foods made with red palm oil, red palm nut, or red palm nut pulp sauce",
+    "ns14_08": "Super Cereal Plus / CSB++",
+    "os14_08": "Micronutrient Powders (MNPs)",
+    "s14_08_2": "PLEASE WRITE DOWN OTHER FOODS OR LIQUIDS IN THIS BOX THAT RESPONDENT MENTIONED BUT ARE NOT IN THE LIST ABOVE:",
+    "s14_09": "Yesteday, during day or night how many times did [child name] eat solid, semisolid, or soft foods other than liquids",
+    "s14_10": "Is [child name] enrolled in any  supplementary feeding programme?",
+    "s14_10_2": "If any, which supplementary feeding programme?",
+    "s14_12_2": "Child weight in kg",
+    "s14_12_3": "Does [child name] present any disability preventing him or her from being measured?",
+    "s14_12_4": "Child length/height",
+    "s14_12_5": "How was [child name] measured?",
+    "s14_12_6": "Child's MUAC",
+    "muac_groups": null,
+    "waznchs": "Weight for Age Z-Score [NCHS]",
+    "haznchs": "Height for Age Z-Score [NCHS]",
+    "whznchs": "Weigt for Height Z-Score [NCHS]",
+    "wazwho": "Weight for Age Z-Score [WHO]",
+    "hazwho": "Height for Age Z-Score [WHO]",
+    "bmizwho": "Body Mass Index Z-Score [WHO]",
+    "wamnchs": null,
+    "hamnchs": null,
+    "whmnchs": null,
+    "muacz_age": null,
+    "height_age_who": null,
+    "muacz_ht": null,
+    "mad001": "Grains, Roots, and Tubers",
+    "mad002": "Legumes and Nuts",
+    "mad003": "Dairy Products",
+    "mad004": "Flesh Foods",
+    "mad005": "Eggs",
+    "mad006": "Vitamin-A Rich Fruits and Vegetables",
+    "mad007": "Other Fruits and Vegetables",
+    "mad008": "Fortified Foods",
+    "mad009": "Food Group Score",
+    "mad010": "Number of Milk Feeds for Non-Breastfed Children",
+    "mad011": "Diet Diversity Score",
+    "mad012": "Minimum Meal Frequency Score",
+    "mad013": "Minimum Acceptable Diet Score",
+    "s14_11": "Does [child name] present billateral pitting (edema)?",
+    "whzwho": "Weigt for Height Z-Score [WHO]",
+    "age_class": "Child age classes",
+    "child_age_groups": null,
+    "s2_10": "What is the current main source of water that your household use?",
+    "improved_water": "improved water",
+    "s2_07": "What kind of toilet facility does your household use here in your household?",
+    "s2_07_2": "If your household does not have its own toilet facility, then what do you use?",
+    "s2_07_3": "Do you share the toilet facility with other households?",
+    "s2_13": "On average, how many liters of water does your household use per day? (make your own calculation and tell us total number of liters)",
+    "improved_toilet": "improved toilet",
+    "water_source_treatment": null,
+    "feeding_hygiene": null,
+    "child_overweight": null,
+    "mhn_key": "Mother unique ID",
+    "s13_02_2": "Age of mother",
+    "s13_02_3": "Mother know how to read and write?",
+    "s13_02_4": "What is the level of education of the woman",
+    "as13_05": "Before preparing meals?",
+    "bs13_05": "After cleaning a child from toilet?",
+    "cs13_05": "Before eating?",
+    "ds13_05": "Whenever their dirty?",
+    "es13_05": "After visiting toilet?",
+    "s13_05_2": "What do you use to wash your hands after visiting toilet or at any other time?",
+    "s13_06": "Does the woman presen any disability the prevents her from being measured? If yes, please indicate which measurements will be affected?",
+    "s13_06_2": "Mothers MUAC in mm",
+    "s13_06_3": "Mothers height in Cm",
+    "s13_06_4": "Mothers weight in Cm",
+    "bmi": "Mothers Body mass index",
+    "bmic": "Mothers Body mass index (grouped)",
+    "stunted_women": "Mother stunted",
+    "underweight_women": "Mother underweight",
+    "education_groups": "Mother's eduction",
+    "v_s2_01": "How many households does this village have?",
+    "v_s2_02": "How would you qualify this village ? (chose one option)",
+    "v_s2_03_1": "VUP (schemes applied in the village)",
+    "v_s2_03_2": "Land consolidation (schemes applied in the village)",
+    "v_s2_03_3": "IDP model village (schemes applied in the village)",
+    "v_s2_03_4": "Structured umudugudu (schemes applied in the village)",
+    "v_s2_03_5": "Other, specify (schemes applied in the village)",
+    "v_s2_03_88": "None (schemes applied in the village)",
+    "v_s3_01": "What percentage of households in this village have access to electricity?",
+    "v_s3_02": "Is there any functioning primary school in this village?",
+    "v_s3_02_2": "If not, then how far away on average is the nearest functioning primary school? (minutes)",
+    "v_s3_03": "Is there a functioning health facility in the village?",
+    "v_s3_03_2": "If not, then how far away on average is the nearest functioning health facility? (minutes)",
+    "v_s4_01": "Is there a market in this village?",
+    "v_s4_02_2": "Is this the main market your community mostly interacts with?",
+    "v_s4_02_3": "If this is not the main market for the village or there is no market at all, how far is the main market your community mostly interacts with?",
+    "v_s4_02_4": "Is the road to the main market for your community accessible all year round using transport means other than walking?",
+    "health_facility_distance": null,
+    "market_distance": null,
+    "health_less_60min": null,
+    "market_less_60min": null,
+    "s12_01": "Can you tell me the old ubudehe category of your household?",
+    "s12_02": "Can you tell me the new ubudehe category of your household?",
+    "road_distance": "Village distance to road",
+    "road_distance_less_5": null,
+    "filter__": "S0_C_Prov  > 1 and Urban >1 (FILTER)",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR codes)",
+    "sector": "Sector (1101-5715, NISR codes; where shipped)",
+    "cluster": "Village / cluster id (as shipped)",
+    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "hhid": "Household id (unique within wave; composite string in 2009)"
+   },
+   "value_labels": {
+    "rwanda_lyr": {
+     "1.0": "Rwanda"
+    },
+    "urban_lyr": {
+     "1.0": "Urban",
+     "2.0": "Rural"
+    },
+    "s0_c_prov_lyr": {
+     "1.0": "Kigali city",
+     "2.0": "Southern",
+     "3.0": "Western",
+     "4.0": "Northern",
+     "5.0": "Eastern"
+    },
+    "s0_d_dist_lyr": {
+     "101.0": "Nyarugenge",
+     "102.0": "Gasabo",
+     "103.0": "Kicukiro",
+     "201.0": "Nyanza",
+     "202.0": "Gisagara",
+     "203.0": "Nyaruguru",
+     "204.0": "Huye",
+     "205.0": "Nyamagabe",
+     "206.0": "Ruhango",
+     "207.0": "Muhanga",
+     "208.0": "Kamonyi",
+     "301.0": "Karongi",
+     "302.0": "Rutsiro",
+     "303.0": "Rubavu",
+     "304.0": "Nyabihu",
+     "305.0": "Ngororero",
+     "306.0": "Rusizi",
+     "307.0": "Nyamasheke",
+     "401.0": "Rulindo",
+     "402.0": "Gakenke",
+     "403.0": "Musanze",
+     "404.0": "Burera",
+     "405.0": "Gicumbi",
+     "501.0": "Rwamagana",
+     "502.0": "Nyagatare",
+     "503.0": "Gatsibo",
+     "504.0": "Kayonza",
+     "505.0": "Kirehe",
+     "506.0": "Ngoma",
+     "507.0": "Bugesera"
+    },
+    "livezone_lyr": {
+     "0.0": "Kigali city",
+     "1.0": "Lake Kivu Coffee Zone",
+     "2.0": "West Congo-Nile Crest Tea Zone",
+     "3.0": "Northwest Volcanic Irish Potato Zone",
+     "4.0": "East Congo-Nile Highland Subsistence Farming Zone",
+     "5.0": "Central Plateau Cassava and Coffee Zone",
+     "6.0": "Northern Highland Beans and Wheat Zone",
+     "7.0": "Central-Northern Highland Irish Potato, Beans and Vegetable Zone",
+     "8.0": "Bugesera Cassava Zone",
+     "9.0": "Eastern Plateau Mixed Agriculture Zone",
+     "10.0": "Southeastern Plateau Banana Zone",
+     "11.0": "Eastern Agropastoral Zone",
+     "12.0": "Eastern Semi-Arid Agropastoral Zone"
+    },
+    "fs_final_lyr_lyr": {
+     "1.0": "Food secure",
+     "2.0": "Marginally food secure",
+     "3.0": "Moderately food insecure",
+     "4.0": "Severely food insecure"
+    },
+    "wi_cat_lyr_lyr": {
+     "1.0": "Poorest",
+     "2.0": "Poor",
+     "3.0": "Medium",
+     "4.0": "Wealth",
+     "5.0": "Wealthies"
+    },
+    "wasted_global": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "stunted_global": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "underweight_global": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "fs_final": {
+     "1.0": "Food secure",
+     "2.0": "Marginally food secure",
+     "3.0": "Moderately food insecure",
+     "4.0": "Severely food insecure"
+    },
+    "who_flag": {
+     "0.0": "No flag",
+     "1.0": "Flagged"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
+    },
+    "livezone": {
+     "0.0": "Kigali city",
+     "1.0": "Lake Kivu Coffee Zone",
+     "2.0": "West Congo-Nile Crest Tea Zone",
+     "3.0": "Northwest Volcanic Irish Potato Zone",
+     "4.0": "East Congo-Nile Highland Subsistence Farming Zone",
+     "5.0": "Central Plateau Cassava and Coffee Zone",
+     "6.0": "Northern Highland Beans and Wheat Zone",
+     "7.0": "Central-Northern Highland Irish Potato, Beans and Vegetable Zone",
+     "8.0": "Bugesera Cassava Zone",
+     "9.0": "Eastern Plateau Mixed Agriculture Zone",
+     "10.0": "Southeastern Plateau Banana Zone",
+     "11.0": "Eastern Agropastoral Zone",
+     "12.0": "Eastern Semi-Arid Agropastoral Zone"
+    },
+    "fcg": {
+     "1.0": "Poor Consumption",
+     "2.0": "Borderline Consumption",
+     "3.0": "Acceptable Consumption"
+    },
+    "wasted": {
+     "0.0": "Normal",
+     "1.0": "Moderate",
+     "2.0": "Severe"
+    },
+    "stunted": {
+     "0.0": "Normal",
+     "1.0": "Moderate",
+     "2.0": "Severe"
+    },
+    "underweight": {
+     "0.0": "Normal",
+     "1.0": "Moderate",
+     "2.0": "Severe"
+    },
+    "s14_02_2": {
+     "1.0": " Mother",
+     "2.0": " Father",
+     "3.0": "Grandmother",
+     "4.0": " Close family relative",
+     "5.0": " Other relationship",
+     "6.0": "Homemaid"
+    },
+    "s14_02_3": {
+     "1.0": " Mother",
+     "2.0": " Father",
+     "3.0": "Grandmother",
+     "4.0": " Close family relative",
+     "5.0": " Other relationship",
+     "6.0": "Homemaid"
+    },
+    "s14_02_4": {
+     "1.0": " Woman 1",
+     "2.0": " Woman 2",
+     "3.0": " Woman 3",
+     "4.0": " Woman 4",
+     "5.0": " Woman 5",
+     "77.0": " Not interviewed (not pregnant or breastfeeding)",
+     "88.0": " Not present",
+     "99.0": " Deceased"
+    },
+    "s14_02_5": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s14_02_8": {
+     "1.0": "Male",
+     "2.0": "Female"
+    },
+    "s14_03": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_03_4": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_03_5": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "birthweight_cat": {
+     "1.0": "Low birthweight (<2500g)",
+     "2.0": " Normal or high birthweight (>2500g)"
+    },
+    "as14_04": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_05": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_05_2": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_05_3": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_05_4": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_05_5": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_05_6": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_06": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_06_2": {
+     "1.0": " Hands",
+     "2.0": " Utensils"
+    },
+    "s14_06_3": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_06_4": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_07": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_07_2": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_07_3": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_07_4": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_07_5": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_07_6": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_08": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "as14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "bs14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "cs14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ds14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "es14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "gs14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "hs14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "is14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "js14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ks14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ls14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ms14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "ns14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "os14_08": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_10": {
+     "0.0": "No",
+     "1.0": "Yes",
+     "88.0": "Don't know"
+    },
+    "s14_10_2": {
+     "1.0": "(non-hospitalized) Therapeutic feeding",
+     "2.0": "(hospitalized, inpatient) Therapeutic feeding",
+     "3.0": "Supplementary feeding"
+    },
+    "s14_12_3": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s14_12_5": {
+     "1.0": "Lying",
+     "2.0": "Standing"
+    },
+    "muac_groups": {
+     "1.0": "Severe acute malnutrition (<115mm)",
+     "2.0": "Moderate acute malnutrition (115mm \u2013 125mm)",
+     "3.0": "Normal nutritional status (>125mm)"
+    },
+    "mad001": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad002": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad003": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad004": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad005": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad006": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad007": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad008": {
+     "0.0": "Not consummed",
+     "1.0": "Consummed"
+    },
+    "mad011": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "mad012": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "mad013": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s14_11": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "age_class": {
+     "1.0": "Under 2 years old",
+     "2.0": "2 years old and above"
+    },
+    "child_age_groups": {
+     "1.0": "6-11 months",
+     "2.0": "12-23 months",
+     "3.0": "24-35 months",
+     "4.0": "36-47 months",
+     "5.0": " 48-59 months"
+    },
+    "s2_10": {
+     "1.0": " Public tap/ piped water",
+     "2.0": " Water tap at home",
+     "3.0": " Pond, lake, river or stream",
+     "4.0": " Borehole with pump",
+     "5.0": " Rain water",
+     "6.0": " Protected dug well or spring",
+     "7.0": " Unprotected well or spring",
+     "8.0": " Vendor",
+     "9.0": "Other"
+    },
+    "improved_water": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "s2_07": {
+     "1.0": " Flush latrine",
+     "2.0": " Pit latrine (floor, walls and roof)",
+     "3.0": " Pit latrine (floor, walls without roof)",
+     "4.0": " Pit latrine (floor, without walls and roof)",
+     "5.0": " Pit latrine (no floor, walls or roof",
+     "6.0": " None (bush, stream or neighbours)"
+    },
+    "s2_07_2": {
+     "1.0": "Borrow from neighbors,",
+     "2.0": "Public latrines in the village,",
+     "3.0": "Bush or stream or other inappropriate places"
+    },
+    "s2_07_3": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "improved_toilet": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "water_source_treatment": {
+     "1.0": "Improved water, boiled or ceramic treatment",
+     "2.0": "Improved water, treated with chlorine",
+     "3.0": "Improved water, untreated",
+     "4.0": "Unimproved water, boiled or ceramic treatment",
+     "5.0": "Unimproved water, treated with chlorine",
+     "6.0": "Unimproved water, untreated"
+    },
+    "feeding_hygiene": {
+     "0.0": "fed with unwashed hands",
+     "1.0": "fed with washed hands or utensils",
+     "88.0": "do not know"
+    },
+    "s13_02_3": {
+     "0.0": " No",
+     "1.0": " Yes both read and write",
+     "2.0": " Yes (read only)"
+    },
+    "s13_02_4": {
+     "1.0": " No school",
+     "2.0": " Some/still primary",
+     "3.0": " Completed primary",
+     "4.0": " Vocational school",
+     "5.0": " Some/still secondary",
+     "6.0": " Completed secondary",
+     "7.0": " Some/still university",
+     "8.0": " Completed university"
+    },
+    "as13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "bs13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "cs13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "ds13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "es13_05": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "s13_05_2": {
+     "1.0": "Water only",
+     "2.0": "Water and homemade soap",
+     "3.0": "Water and washing soap",
+     "4.0": "Other"
+    },
+    "s13_06": {
+     "0.0": "No",
+     "1.0": "Yes, Affecting MUAC",
+     "2.0": "Yes, Affecting Weight and height"
+    },
+    "bmic": {
+     "1.0": "Severe Thinness (< 16)",
+     "2.0": "Moderate Thinness (16 - 17)",
+     "3.0": "Mild Thinness (17 - 18.5)",
+     "4.0": "Normal (18.5 - 25)",
+     "5.0": "Overweight (25 - 30)",
+     "6.0": "Obese Class I (30 - 35)",
+     "7.0": "Obese Class II (35 - 40)",
+     "8.0": "Obese Class III (> 40)"
+    },
+    "stunted_women": {
+     "0.0": "Non-stunted",
+     "1.0": "Stunted"
+    },
+    "underweight_women": {
+     "0.0": "Non-underweight",
+     "1.0": "Underweight"
+    },
+    "education_groups": {
+     "1.0": "No school",
+     "2.0": "Some primary",
+     "3.0": "Completed primary and or vocational training",
+     "4.0": "Some secondary and above"
+    },
+    "v_s2_02": {
+     "1.0": "Rural",
+     "2.0": "Urban organized",
+     "3.0": "Urban slum"
+    },
+    "v_s3_02": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s3_03": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s4_01": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s4_02_2": {
+     "0.0": "No",
+     "1.0": "Yes"
+    },
+    "v_s4_02_4": {
+     "0.0": "Yes",
+     "1.0": "No"
+    },
+    "health_facility_distance": {
+     "1.0": "health facility in village",
+     "2.0": "less than 60 min",
+     "3.0": "60-120 min",
+     "4.0": "more than 120 min"
+    },
+    "market_distance": {
+     "1.0": "market in village",
+     "2.0": "less than 60 min",
+     "3.0": "60-120 min",
+     "4.0": "more than 120 min"
+    },
+    "health_less_60min": {
+     "1.0": "health facility available in less than 60 min",
+     "2.0": "health facility available in more than 60 min"
+    },
+    "market_less_60min": {
+     "1.0": "market available in less than 60 min",
+     "2.0": "market available in more than 60 min"
+    },
+    "s12_01": {
+     "0.0": "[0] Don't know",
+     "1.0": "[1] Umutindi nyakujya (Those in abject poverty)",
+     "2.0": "[2] Umutindi (the very poor)",
+     "3.0": "[3] Umukene (the poor)",
+     "4.0": "[4] Umukene wifashije (the resourceful poor)",
+     "5.0": "[5] Umukungu (the food rich)",
+     "6.0": "[6] Umukire (the money rich )"
+    },
+    "s12_02": {
+     "0.0": "[0] Don't know",
+     "1.0": "[1] Category one",
+     "2.0": "[2] Category two",
+     "3.0": "[3] Category three",
+     "4.0": "[4] Category four"
+    },
+    "road_distance": {
+     "1.0": "less than 2km",
+     "2.0": "2-5km",
+     "3.0": "5-10km",
+     "4.0": "more than 10km"
+    },
+    "road_distance_less_5": {
+     "0.0": "no",
+     "1.0": "yes"
+    },
+    "filter__": {
+     "0.0": "Not Selected",
+     "1.0": "Selected"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "source": {
+    "hhid": "parent_key (does NOT match the household file's key -- see DECISIONS)",
+    "prov": "s0_c_prov",
+    "dist": "s0_d_dist",
+    "sector": "s0_e_sect",
+    "cluster": "s0_g_vill",
+    "wt": "weight"
+   },
+   "out": "CFSVA_2015_child_clean.dta"
+  }
+ }
+}

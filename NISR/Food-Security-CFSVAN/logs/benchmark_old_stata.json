@@ -1,0 +1,175 @@
+{
+ "source": "no prior outputs; raw NISR/WFP files as shipped",
+ "files": [
+  {
+   "file": "2006/Data/CFSVA_2006_june10_section12.sav",
+   "n_rows": 3671,
+   "n_vars": 36
+  },
+  {
+   "file": "2006/Data/CFSVA_2006_june10_section13_mg.sav",
+   "n_rows": 2059,
+   "n_vars": 47
+  },
+  {
+   "file": "2006/Data/CFSVA_2006_june_10_section1_11.sav",
+   "n_rows": 2783,
+   "n_vars": 1569
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_all_section_without_tables.sav",
+   "n_rows": 5400,
+   "n_vars": 242
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_pam_community.sav",
+   "n_rows": 427,
+   "n_vars": 22
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s10b.sav",
+   "n_rows": 5948,
+   "n_vars": 25
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s1_13_question.sav",
+   "n_rows": 5406,
+   "n_vars": 10
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s1_15_question.sav",
+   "n_rows": 5457,
+   "n_vars": 11
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s1_21question.sav",
+   "n_rows": 5894,
+   "n_vars": 10
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s3_17_question.sav",
+   "n_rows": 42309,
+   "n_vars": 10
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s4.sav",
+   "n_rows": 21600,
+   "n_vars": 26
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s7.sav",
+   "n_rows": 43200,
+   "n_vars": 15
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s8.sav",
+   "n_rows": 118800,
+   "n_vars": 12
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s8_823_32question.sav",
+   "n_rows": 54000,
+   "n_vars": 25
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_s9_question.sav",
+   "n_rows": 118800,
+   "n_vars": 19
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_section_12_female_15_49.sav",
+   "n_rows": 6252,
+   "n_vars": 28
+  },
+  {
+   "file": "2009/Data/CFSVA_2009_section_13_enfants.sav",
+   "n_rows": 7819,
+   "n_vars": 43
+  },
+  {
+   "file": "2012/CFSVA_2012_children.sav",
+   "n_rows": 4601,
+   "n_vars": 763
+  },
+  {
+   "file": "2012/CFSVA_2012_children_mothers_household.sav",
+   "n_rows": 4601,
+   "n_vars": 631
+  },
+  {
+   "file": "2012/CFSVA_2012_community.sav",
+   "n_rows": 748,
+   "n_vars": 249
+  },
+  {
+   "file": "2012/CFSVA_2012_household.sav",
+   "n_rows": 7498,
+   "n_vars": 1019
+  },
+  {
+   "file": "2012/CFSVA_2012_mother.sav",
+   "n_rows": 7456,
+   "n_vars": 620
+  },
+  {
+   "file": "2015/CFSVA_2015_child_db.sav",
+   "n_rows": 4058,
+   "n_vars": 180
+  },
+  {
+   "file": "2015/CFSVA_2015_master_db.sav",
+   "n_rows": 7500,
+   "n_vars": 281
+  },
+  {
+   "file": "2015/CFSVA_2015_mother_db.sav",
+   "n_rows": 6768,
+   "n_vars": 66
+  },
+  {
+   "file": "2018/CFSVA_2018_db_childandmother_201904.dta",
+   "n_rows": 6736,
+   "n_vars": 219
+  },
+  {
+   "file": "2018/CFSVA_2018_db_householdques_201904.dta",
+   "n_rows": 9709,
+   "n_vars": 342
+  },
+  {
+   "file": "2018/CFSVA_2018_db_villageques_201904.dta",
+   "n_rows": 987,
+   "n_vars": 163
+  },
+  {
+   "file": "2021/Microdata/CFSVA_2021_VILLAGE.dta",
+   "n_rows": 900,
+   "n_vars": 164
+  },
+  {
+   "file": "2021/Microdata/CFSVA_2021_cfsvahh2021_under_5_childwithmother.dta",
+   "n_rows": 5776,
+   "n_vars": 120
+  },
+  {
+   "file": "2021/Microdata/CFSVA_2021_hh_master_dataset.dta",
+   "n_rows": 9000,
+   "n_vars": 1080
+  },
+  {
+   "file": "2024/Microdata/stata/CFSVA_2024_hh.dta",
+   "n_rows": 9000,
+   "n_vars": 1069
+  },
+  {
+   "file": "2024/Microdata/stata/CFSVA_2024_hh_child_6_59_months.dta",
+   "n_rows": 4715,
+   "n_vars": 107
+  },
+  {
+   "file": "2024/Microdata/stata/CFSVA_2024_hh_women_15_49_years.dta",
+   "n_rows": 6891,
+   "n_vars": 70
+  }
+ ]
+}

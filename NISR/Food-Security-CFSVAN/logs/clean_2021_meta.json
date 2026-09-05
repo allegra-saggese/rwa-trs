@@ -1,0 +1,6401 @@
+{
+ "year": "2021",
+ "files": {
+  "household": {
+   "file": "Microdata/CFSVA_2021_hh_master_dataset.dta",
+   "rows": 9000,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "urban",
+    "hhid",
+    "wt",
+    "s0_b_date",
+    "vhhsize",
+    "vsamplesize",
+    "respondent_gender",
+    "s1_01",
+    "s1_01_3",
+    "s1_01_4",
+    "s1_01_4_2",
+    "s1_01_4_3",
+    "s1_01_5",
+    "s1_01_6",
+    "s1_01_6_2",
+    "s1_01_7",
+    "s1_01_8",
+    "s1_01_9",
+    "s1_01_10",
+    "s1_01_11",
+    "s1_01_12",
+    "s1_01_13",
+    "s1_01_14",
+    "s1_01_14_smt_1",
+    "s1_01_14_smt_2",
+    "s1_01_14_smt_3",
+    "s1_01_14_smt_4",
+    "s1_01_14_smt_5",
+    "s1_01_14_smt_6",
+    "s1_01_14_smt_7",
+    "s1_01_14_2",
+    "s1_01_15",
+    "s1_01_15_smt_1",
+    "s1_01_15_smt_2",
+    "s1_01_15_smt_3",
+    "s1_01_15_smt_4",
+    "s1_01_15_smt_5",
+    "s1_01_15_smt_6",
+    "s1_01_15_smt_7",
+    "s1_01_15_smt_8",
+    "s1_01_15_smt_9",
+    "s1_01_15_smt_10",
+    "s1_01_15_smt_11",
+    "s1_01_15_smt_12",
+    "s1_01_15_smt_13",
+    "s1_01_15_smt_14",
+    "s1_01_15_smt_15",
+    "s1_01_15_smt_16",
+    "s1_01_15_smt_17",
+    "s1_01_15_smt_18",
+    "s1_01_15_smt_0",
+    "s1_01_15_1",
+    "s1_01_15_2",
+    "s1_01_16",
+    "s1_01_16_2",
+    "s1_01_17",
+    "s2_01",
+    "s2_01_2",
+    "s2_02",
+    "s2_02_2",
+    "s2_03",
+    "s2_03_2",
+    "s2_04",
+    "s2_04_2",
+    "s2_05",
+    "s2_06",
+    "s2_07",
+    "s2_07_2",
+    "s2_07_3",
+    "s2_08",
+    "s2_08_2",
+    "s2_09",
+    "s2_09_2",
+    "s2_10",
+    "s2_10_1",
+    "s2_10_2",
+    "s2_10_3",
+    "s2_10_3_2",
+    "s2_10_4",
+    "s2_10_5",
+    "s2_11",
+    "s2_11_2",
+    "s2_11_2_2",
+    "s2_11_3",
+    "s2_11_4",
+    "s2_11_4_2",
+    "s2_11_5",
+    "s2_12",
+    "s2_13",
+    "s2_13_2",
+    "s3_01",
+    "s3_01_smt_1",
+    "s3_01_smt_2",
+    "s3_01_smt_3",
+    "s3_01_smt_4",
+    "s3_01_smt_5",
+    "s3_01_smt_6",
+    "s3_01_smt_7",
+    "s3_01_smt_8",
+    "s3_01_smt_9",
+    "s3_01_smt_10",
+    "s3_01_smt_11",
+    "s3_01_smt_12",
+    "s3_01_smt_13",
+    "s3_01_smt_14",
+    "s3_01_smt_15",
+    "s3_01_smt_16",
+    "s3_01_smt_17",
+    "s3_01_smt_18",
+    "s3_01_smt_0",
+    "s3_02",
+    "s3_02_1",
+    "s3_02_2",
+    "s3_02_2_1",
+    "s3_02_3",
+    "s3_02_3_smt_1",
+    "s3_02_3_smt_2",
+    "s3_02_3_smt_3",
+    "s3_02_3_smt_4",
+    "s3_02_3_smt_5",
+    "s3_02_3_smt_6",
+    "s3_02_3_smt_7",
+    "s3_02_3_smt_8",
+    "s3_02_3_smt_9",
+    "s3_02_3_smt_10",
+    "s3_02_3_smt_11",
+    "s3_02_3_smt_12",
+    "s3_02_3_smt_13",
+    "s3_03",
+    "s3_03_1",
+    "s3_03_2",
+    "s3_03_2_1",
+    "s3_03_3",
+    "s3_03_3_smt_1",
+    "s3_03_3_smt_2",
+    "s3_03_3_smt_3",
+    "s3_03_3_smt_4",
+    "s3_03_3_smt_5",
+    "s3_03_3_smt_6",
+    "s3_03_3_smt_7",
+    "s3_03_3_smt_8",
+    "s3_03_3_smt_9",
+    "s3_03_3_smt_10",
+    "s3_03_3_smt_11",
+    "s3_03_3_smt_12",
+    "s3_03_3_smt_13",
+    "s3_04",
+    "s3_04_1",
+    "s3_04_2",
+    "s3_04_2_1",
+    "s3_04_3",
+    "s3_04_3_smt_1",
+    "s3_04_3_smt_2",
+    "s3_04_3_smt_3",
+    "s3_04_3_smt_4",
+    "s3_04_3_smt_5",
+    "s3_04_3_smt_6",
+    "s3_04_3_smt_7",
+    "s3_04_3_smt_8",
+    "s3_04_3_smt_9",
+    "s3_04_3_smt_10",
+    "s3_04_3_smt_11",
+    "s3_04_3_smt_12",
+    "s3_04_3_smt_13",
+    "s3_05",
+    "s3_05_2",
+    "s4_01",
+    "s4_01_2",
+    "s4_01_3",
+    "s4_02_1",
+    "s4_02_2",
+    "s4_02_2_1",
+    "s4_02_3",
+    "s4_02_4",
+    "s4_03",
+    "s4_03_2",
+    "s4_03_3",
+    "s4_04",
+    "s4_04_smt_1",
+    "s4_04_smt_2",
+    "s4_04_smt_3",
+    "s4_04_smt_4",
+    "s4_04_smt_5",
+    "s4_04_smt_6",
+    "s4_04_smt_7",
+    "s4_04_smt_8",
+    "s4_04_smt_9",
+    "s4_04_smt_10",
+    "s4_04_smt_11",
+    "s4_04_smt_12",
+    "s4_04_smt_13",
+    "s4_04_smt_14",
+    "s4_04_smt_15",
+    "s4_04_smt_16",
+    "s4_04_smt_17",
+    "s4_04_smt_18",
+    "s4_04_smt_19",
+    "s4_04_smt_20",
+    "s4_04_smt_21",
+    "s4_04_smt_22",
+    "s4_04_smt_88",
+    "s4_05",
+    "s4_05_smt_1",
+    "s4_05_smt_2",
+    "s4_05_smt_3",
+    "s4_05_smt_4",
+    "s4_05_smt_5",
+    "s4_05_smt_6",
+    "s4_05_smt_7",
+    "s4_05_smt_8",
+    "s4_05_smt_88",
+    "s4_05_2",
+    "as4_06",
+    "as4_06_3",
+    "bs4_06",
+    "bs4_06_3",
+    "cs4_06",
+    "cs4_06_3",
+    "ds4_06",
+    "ds4_06_3",
+    "es4_06",
+    "es4_06_3",
+    "fs4_06",
+    "fs4_06_3",
+    "gs4_06",
+    "gs4_06_3",
+    "hs4_06",
+    "hs4_06_3",
+    "s4_07",
+    "s4_08_2",
+    "s4_08_2_1",
+    "s4_09",
+    "s4_09_smt_1",
+    "s4_09_smt_2",
+    "s4_09_smt_3",
+    "s4_09_smt_4",
+    "s4_09_smt_5",
+    "s4_09_smt_0",
+    "s4_09_2",
+    "s4_09_2_smt_1",
+    "s4_09_2_smt_2",
+    "s4_09_2_smt_3",
+    "s4_09_2_smt_4",
+    "s4_09_2_smt_5",
+    "s4_09_2_smt_0",
+    "s4_09_3",
+    "s4_11",
+    "s4_11_smt_1",
+    "s4_11_smt_2",
+    "s4_11_smt_3",
+    "s4_11_smt_4",
+    "s4_11_smt_5",
+    "s4_11_smt_6",
+    "s4_11_smt_7",
+    "s4_11_0",
+    "s5_01",
+    "s5_01_smt_11",
+    "s5_01_smt_12",
+    "s5_01_smt_13",
+    "s5_01_smt_14",
+    "s5_01_smt_15",
+    "s5_01_smt_20",
+    "s5_01_smt_21",
+    "s5_01_smt_22",
+    "s5_01_smt_23",
+    "s5_01_smt_24",
+    "s5_01_smt_25",
+    "s5_01_smt_26",
+    "s5_01_smt_31",
+    "s5_01_smt_32",
+    "s5_01_smt_33",
+    "s5_01_smt_41",
+    "s5_01_smt_42",
+    "s5_01_smt_43",
+    "s5_01_smt_44",
+    "s5_01_smt_50",
+    "s5_01_smt_51",
+    "s5_01_smt_52",
+    "s5_01_smt_53",
+    "s5_01_smt_54",
+    "s5_01_smt_61",
+    "s5_01_smt_62",
+    "s5_01_smt_63",
+    "s5_01_smt_64",
+    "s5_01_01",
+    "s5_01_02",
+    "s5_01_2",
+    "s5_01_3",
+    "s5_01_4",
+    "as5_02",
+    "as5_03",
+    "as5_03_2",
+    "as5_04",
+    "as5c1",
+    "as5_04_2",
+    "as5_04_2_2",
+    "as5_04_3",
+    "as5_04_3_2",
+    "as5_04_3_2_2",
+    "as5_04_3_2_3",
+    "as5_04_4",
+    "as5_04_5",
+    "as5_04_6",
+    "as5_04_7",
+    "as5_05",
+    "as5_05_2",
+    "as5_05_3",
+    "as5_05_2_2",
+    "bs5_02",
+    "bs5_03",
+    "bs5_03_2",
+    "bs5_04",
+    "bs5c1",
+    "bs5_04_2",
+    "bs5_04_2_2",
+    "bs5_04_3",
+    "bs5_04_3_2",
+    "bs5_04_3_2_2",
+    "bs5_04_3_2_3",
+    "bs5_04_4",
+    "bs5_04_5",
+    "bs5_04_6",
+    "bs5_04_7",
+    "bs5_05",
+    "bs5_05_2",
+    "bs5_05_3",
+    "bs5_05_2_2",
+    "cs5_02",
+    "cs5_03",
+    "cs5_03_2",
+    "cs5_04",
+    "cs5c1",
+    "cs5_04_2",
+    "cs5_04_2_2",
+    "cs5_04_3",
+    "cs5_04_3_2",
+    "cs5_04_3_2_2",
+    "cs5_04_3_2_3",
+    "cs5_04_4",
+    "cs5_04_5",
+    "cs5_04_6",
+    "cs5_04_7",
+    "cs5_05",
+    "cs5_05_2",
+    "cs5_05_3",
+    "cs5_05_2_2",
+    "s5_03",
+    "s5_03_2",
+    "s5_03_3",
+    "s5_04",
+    "s5_05",
+    "s5_06",
+    "s5_06_smt_0",
+    "s5_06_smt_1",
+    "s5_06_smt_2",
+    "s5_06_smt_3",
+    "s5_06_smt_4",
+    "s5_06_smt_5",
+    "s5_06_smt_6",
+    "s5_06_smt_7",
+    "s5_06_smt_8",
+    "s5_06_0",
+    "s6_01",
+    "s6_02",
+    "s6_02_2",
+    "s6_03",
+    "s6_03_2",
+    "s6_03_2_2",
+    "s6_04",
+    "s6_04_smt_1",
+    "s6_04_smt_2",
+    "s6_04_smt_3",
+    "s6_04_smt_4",
+    "s6_04_smt_5",
+    "s6_04_smt_6",
+    "s6_04_smt_7",
+    "s6_04_smt_8",
+    "s6_04_smt_9",
+    "s6_04_smt_10",
+    "s6_04_smt_11",
+    "s6_04_smt_12",
+    "s6_04_2",
+    "s6_04_3",
+    "s6_04_4",
+    "s6_04_5",
+    "s7_01",
+    "s7_01_00",
+    "s7_01_00_smt_1",
+    "s7_01_00_smt_2",
+    "s7_01_00_smt_3",
+    "s7_01_00_smt_4",
+    "s7_01_00_smt_5",
+    "s7_01_00_smt_6",
+    "s7_01_00_smt_7",
+    "s7_01_00_smt_8",
+    "s7_01_00_smt_9",
+    "s7_01_00_smt_10",
+    "s7_01_00_smt_11",
+    "s7_01_00_smt_12",
+    "s7_01_00_smt_88",
+    "s7_01_01",
+    "s7_01_01_2",
+    "s7_01_02",
+    "s7_01_02_2",
+    "s7_01_03",
+    "s7_01_03_2",
+    "s7_01_04",
+    "s7_01_04_2",
+    "s7_01_05",
+    "s7_01_05_2",
+    "s7_01_06",
+    "s7_01_06_2",
+    "s7_01_07",
+    "s7_01_07_2",
+    "s7_01_08",
+    "s7_01_08_2",
+    "s7_01_09",
+    "s7_01_09_2",
+    "s7_01_10",
+    "s7_01_10_2",
+    "s7_01_11",
+    "s7_01_11_2",
+    "s7_01_12",
+    "s7_01_12_2",
+    "s7_02_01",
+    "s7_02_01_2",
+    "s7_02_02",
+    "s7_02_02_2",
+    "s7_02_03",
+    "s7_02_03_2",
+    "s7_02_04",
+    "s7_02_04_2",
+    "s7_02_05",
+    "s7_02_05_2",
+    "s7_02_06",
+    "s7_02_06_2",
+    "s7_02_07",
+    "s7_02_07_2",
+    "s7_02_08",
+    "s7_02_08_2",
+    "s7_02_09",
+    "s7_02_09_2",
+    "s7_02_10",
+    "s7_02_10_2",
+    "s7_03_01",
+    "s7_03_01_2",
+    "s7_03_02",
+    "s7_03_02_2",
+    "s7_03_03",
+    "s7_03_03_2",
+    "s7_03_04",
+    "s7_03_04_2",
+    "s7_03_05",
+    "s7_03_05_2",
+    "s7_03_06",
+    "s7_03_06_2",
+    "s7_03_07",
+    "s7_03_07_2",
+    "s7_03_08",
+    "s7_03_08_2",
+    "s7_03_09",
+    "s7_03_09_2",
+    "s7_03_10",
+    "s7_03_10_2",
+    "s7_03_11",
+    "s7_03_11_2",
+    "s7_03_12",
+    "s7_03_12_2",
+    "s7_03_13",
+    "s7_03_13_2",
+    "s7_03_14",
+    "s7_03_14_2",
+    "s8_01",
+    "s8_01_2",
+    "s8_01_3",
+    "s8_02",
+    "s8_02_2",
+    "s8_02_3",
+    "s8_04",
+    "s8_05",
+    "s8_05_2",
+    "s8_05_3",
+    "s8_06",
+    "s8_06_smt_1",
+    "s8_06_smt_2",
+    "s8_06_smt_3",
+    "s8_06_smt_4",
+    "s8_06_smt_5",
+    "s8_06_smt_6",
+    "s8_06_smt_7",
+    "s8_06_smt_8",
+    "s8_06_2",
+    "s8_06_3",
+    "s9_01",
+    "s9_01_2",
+    "s9_01_2_0",
+    "s9_01_2_2",
+    "s9_01_2_2_2",
+    "s9_01_2_3",
+    "s9_01_2_3_2",
+    "s9_01_3",
+    "s9_01_3_smt_1",
+    "s9_01_3_smt_2",
+    "s9_01_3_smt_3",
+    "s9_01_3_smt_4",
+    "s9_01_3_smt_5",
+    "s9_01_3_smt_6",
+    "s9_01_3_smt_7",
+    "s9_01_3_smt_8",
+    "s9_01_3_0",
+    "as9_02_2",
+    "bs9_02_2",
+    "cs9_02_2",
+    "ds9_02_2",
+    "es9_02_2",
+    "as9_04",
+    "as9_04_2",
+    "bs9_04",
+    "bs9_04_2",
+    "cs9_04",
+    "cs9_04_2",
+    "ds9_04",
+    "ds9_04_2",
+    "es9_04",
+    "es9_04_2",
+    "fs9_04",
+    "fs9_04_2",
+    "gs9_04",
+    "gs9_04_2",
+    "hs9_04",
+    "hs9_04_2",
+    "is9_04",
+    "is9_04_2",
+    "js9_04",
+    "js9_04_2",
+    "s10_01",
+    "s10_01_2",
+    "s10_01_2_smt_1",
+    "s10_01_2_smt_2",
+    "s10_01_2_smt_3",
+    "s10_01_2_smt_4",
+    "s10_01_2_smt_5",
+    "s10_01_2_smt_6",
+    "s10_01_2_smt_7",
+    "s10_01_2_smt_8",
+    "s10_01_2_smt_9",
+    "s10_01_2_smt_10",
+    "s10_01_2_smt_11",
+    "s10_01_2_smt_12",
+    "s10_01_2_smt_13",
+    "s10_01_3",
+    "s10_02",
+    "s10_03",
+    "s10_03_smt_1",
+    "s10_03_smt_2",
+    "s10_03_smt_3",
+    "s10_03_smt_4",
+    "s10_03_smt_5",
+    "s10_03_smt_6",
+    "s10_03_smt_7",
+    "s10_03_smt_8",
+    "s10_03_smt_9",
+    "s10_03_smt_10",
+    "s10_03_smt_11",
+    "s10_03_smt_12",
+    "s10_03_smt_13",
+    "s10_03_smt_14",
+    "s10_03_smt_15",
+    "s10_03_smt_16",
+    "s10_03_smt_17",
+    "s10_03_smt_18",
+    "s10_03_smt_19",
+    "s10_03_smt_21",
+    "s10_03_smt_20",
+    "s10_03_2",
+    "s10_03_3",
+    "as10_05",
+    "as10_05_2",
+    "as10_05_3",
+    "as10_05_4",
+    "as10_05_4_smt_1",
+    "as10_05_4_smt_2",
+    "as10_05_4_smt_3",
+    "as10_05_4_smt_4",
+    "as10_05_4_smt_5",
+    "as10_05_4_smt_6",
+    "as10_05_4_smt_7",
+    "as10_05_4_smt_8",
+    "as10_05_4_smt_9",
+    "as10_05_4_smt_10",
+    "as10_05_4_smt_11",
+    "as10_05_4_smt_12",
+    "as10_05_4_smt_13",
+    "as10_05_5",
+    "as10_05_6",
+    "as10_05_6_smt_1",
+    "as10_05_6_smt_2",
+    "as10_05_6_smt_3",
+    "as10_05_6_smt_4",
+    "as10_05_6_smt_5",
+    "as10_05_6_smt_6",
+    "as10_05_6_smt_7",
+    "as10_05_6_smt_8",
+    "as10_05_6_smt_9",
+    "as10_05_6_smt_10",
+    "as10_05_6_smt_11",
+    "as10_05_6_smt_12",
+    "as10_05_6_smt_13",
+    "as10_05_6_smt_14",
+    "as10_05_6_smt_15",
+    "as10_05_6_smt_16",
+    "as10_05_6_smt_17",
+    "as10_05_6_smt_18",
+    "as10_05_6_smt_20",
+    "as10_05_6_smt_19",
+    "as10_05_6_2",
+    "bs10_05",
+    "bs10_05_2",
+    "bs10_05_3",
+    "bs10_05_4",
+    "bs10_05_4_smt_1",
+    "bs10_05_4_smt_2",
+    "bs10_05_4_smt_3",
+    "bs10_05_4_smt_4",
+    "bs10_05_4_smt_5",
+    "bs10_05_4_smt_6",
+    "bs10_05_4_smt_7",
+    "bs10_05_4_smt_8",
+    "bs10_05_4_smt_9",
+    "bs10_05_4_smt_10",
+    "bs10_05_4_smt_11",
+    "bs10_05_4_smt_12",
+    "bs10_05_4_smt_13",
+    "bs10_05_5",
+    "bs10_05_6",
+    "bs10_05_6_smt_1",
+    "bs10_05_6_smt_2",
+    "bs10_05_6_smt_3",
+    "bs10_05_6_smt_4",
+    "bs10_05_6_smt_5",
+    "bs10_05_6_smt_6",
+    "bs10_05_6_smt_7",
+    "bs10_05_6_smt_8",
+    "bs10_05_6_smt_9",
+    "bs10_05_6_smt_10",
+    "bs10_05_6_smt_11",
+    "bs10_05_6_smt_12",
+    "bs10_05_6_smt_13",
+    "bs10_05_6_smt_14",
+    "bs10_05_6_smt_15",
+    "bs10_05_6_smt_16",
+    "bs10_05_6_smt_17",
+    "bs10_05_6_smt_18",
+    "bs10_05_6_smt_20",
+    "bs10_05_6_smt_19",
+    "bs10_05_6_2",
+    "cs10_05",
+    "cs10_05_2",
+    "cs10_05_3",
+    "cs10_05_4",
+    "cs10_05_4_smt_1",
+    "cs10_05_4_smt_2",
+    "cs10_05_4_smt_3",
+    "cs10_05_4_smt_4",
+    "cs10_05_4_smt_5",
+    "cs10_05_4_smt_6",
+    "cs10_05_4_smt_7",
+    "cs10_05_4_smt_8",
+    "cs10_05_4_smt_9",
+    "cs10_05_4_smt_10",
+    "cs10_05_4_smt_11",
+    "cs10_05_4_smt_12",
+    "cs10_05_4_smt_13",
+    "cs10_05_5",
+    "cs10_05_6",
+    "cs10_05_6_smt_1",
+    "cs10_05_6_smt_2",
+    "cs10_05_6_smt_3",
+    "cs10_05_6_smt_4",
+    "cs10_05_6_smt_5",
+    "cs10_05_6_smt_6",
+    "cs10_05_6_smt_7",
+    "cs10_05_6_smt_8",
+    "cs10_05_6_smt_9",
+    "cs10_05_6_smt_10",
+    "cs10_05_6_smt_11",
+    "cs10_05_6_smt_12",
+    "cs10_05_6_smt_13",
+    "cs10_05_6_smt_14",
+    "cs10_05_6_smt_15",
+    "cs10_05_6_smt_16",
+    "cs10_05_6_smt_17",
+    "cs10_05_6_smt_18",
+    "cs10_05_6_smt_20",
+    "cs10_05_6_smt_19",
+    "ubudehe",
+    "s11_02",
+    "s11_02_smt_0",
+    "s11_02_smt_1",
+    "s11_02_smt_2",
+    "s11_02_smt_3",
+    "s11_02_smt_4",
+    "s11_02_0",
+    "s11_03",
+    "s11_04",
+    "s11_04_smt_1",
+    "s11_04_smt_2",
+    "s11_04_smt_3",
+    "s11_04_smt_4",
+    "s11_04_smt_5",
+    "s11_04_smt_6",
+    "s11_04_1",
+    "s11_04_1_1",
+    "as11_04_3",
+    "as11_04_3_smt_1",
+    "as11_04_3_smt_2",
+    "as11_04_3_smt_3",
+    "as11_04_3_smt_4",
+    "as11_04_3_smt_5",
+    "as11_04_3_smt_6",
+    "as11_04_3_smt_7",
+    "as11_04_3_smt_8",
+    "as11_04_3_smt_88",
+    "as11_04_3_2",
+    "bs11_04_3",
+    "bs11_04_3_smt_1",
+    "bs11_04_3_smt_2",
+    "bs11_04_3_smt_3",
+    "bs11_04_3_smt_4",
+    "bs11_04_3_smt_5",
+    "bs11_04_3_smt_6",
+    "bs11_04_3_smt_7",
+    "bs11_04_3_smt_8",
+    "bs11_04_3_smt_88",
+    "bs11_04_3_2",
+    "cs11_04_3",
+    "cs11_04_3_smt_1",
+    "cs11_04_3_smt_2",
+    "cs11_04_3_smt_3",
+    "cs11_04_3_smt_4",
+    "cs11_04_3_smt_5",
+    "cs11_04_3_smt_6",
+    "cs11_04_3_smt_7",
+    "cs11_04_3_smt_8",
+    "cs11_04_3_smt_88",
+    "cs11_04_3_2",
+    "ds11_04_3",
+    "ds11_04_3_smt_1",
+    "ds11_04_3_smt_2",
+    "ds11_04_3_smt_3",
+    "ds11_04_3_smt_4",
+    "ds11_04_3_smt_5",
+    "ds11_04_3_smt_6",
+    "ds11_04_3_smt_7",
+    "ds11_04_3_smt_8",
+    "ds11_04_3_smt_88",
+    "ds11_04_3_2",
+    "es11_04_3",
+    "es11_04_3_smt_1",
+    "es11_04_3_smt_2",
+    "es11_04_3_smt_3",
+    "es11_04_3_smt_4",
+    "es11_04_3_smt_5",
+    "es11_04_3_smt_6",
+    "es11_04_3_smt_7",
+    "es11_04_3_smt_8",
+    "es11_04_3_smt_88",
+    "es11_04_3_2",
+    "fs11_04_3",
+    "fs11_04_3_smt_1",
+    "fs11_04_3_smt_2",
+    "fs11_04_3_smt_3",
+    "fs11_04_3_smt_4",
+    "fs11_04_3_smt_5",
+    "fs11_04_3_smt_6",
+    "fs11_04_3_smt_7",
+    "fs11_04_3_smt_8",
+    "fs11_04_3_smt_88",
+    "fs11_04_3_2",
+    "s11_05",
+    "s11_05_smt_1",
+    "s11_05_smt_2",
+    "s11_05_smt_3",
+    "s11_05_smt_4",
+    "s11_05_smt_5",
+    "s11_05_smt_6",
+    "s11_05_smt_7",
+    "s11_05_smt_8",
+    "s11_05_smt_9",
+    "s11_05_smt_10",
+    "s11_05_smt_11",
+    "s11_05_smt_88",
+    "s11_05_0_1",
+    "s11_05_0_2",
+    "s11_05_0_2_smt_1",
+    "s11_05_0_2_smt_2",
+    "s11_05_0_2_smt_3",
+    "s11_05_0_2_smt_4",
+    "s11_05_0_2_smt_5",
+    "s11_05_0_2_smt_6",
+    "s11_05_0_2_smt_7",
+    "s11_05_0_2_smt_8",
+    "s11_05_0_2_smt_9",
+    "s11_05_0_2_smt_10",
+    "s11_05_0_2_smt_11",
+    "s11_05_0_2_smt_12",
+    "s11_05_0_2_smt_13",
+    "s11_05_1",
+    "s11_05_1_1",
+    "s11_06",
+    "s11_07",
+    "s11_07_smt_1",
+    "s11_07_smt_2",
+    "s11_07_smt_3",
+    "s11_07_smt_4",
+    "s11_07_smt_5",
+    "s11_07_smt_6",
+    "s11_07_smt_7",
+    "s11_07_smt_8",
+    "s11_07_smt_9",
+    "s11_07_smt_10",
+    "s11_07_smt_11",
+    "s11_07_smt_12",
+    "s11_07_smt_13",
+    "s11_07_smt_14",
+    "s11_07_1",
+    "as11_07_3",
+    "as11_07_3_smt_1",
+    "as11_07_3_smt_2",
+    "as11_07_3_smt_3",
+    "as11_07_3_smt_4",
+    "as11_07_3_smt_5",
+    "as11_07_3_smt_6",
+    "as11_07_3_smt_7",
+    "as11_07_3_smt_8",
+    "as11_07_3_smt_88",
+    "as11_07_3_4",
+    "as11_07_3_2",
+    "bs11_07_3",
+    "bs11_07_3_smt_1",
+    "bs11_07_3_smt_2",
+    "bs11_07_3_smt_3",
+    "bs11_07_3_smt_4",
+    "bs11_07_3_smt_5",
+    "bs11_07_3_smt_6",
+    "bs11_07_3_smt_7",
+    "bs11_07_3_smt_8",
+    "bs11_07_3_smt_88",
+    "as11_07_3_5",
+    "bs11_07_3_2",
+    "cs11_07_3",
+    "cs11_07_3_smt_1",
+    "cs11_07_3_smt_2",
+    "cs11_07_3_smt_3",
+    "cs11_07_3_smt_4",
+    "cs11_07_3_smt_5",
+    "cs11_07_3_smt_6",
+    "cs11_07_3_smt_7",
+    "cs11_07_3_smt_8",
+    "cs11_07_3_smt_88",
+    "as11_07_3_6",
+    "cs11_07_3_2",
+    "ds11_07_3",
+    "ds11_07_3_smt_1",
+    "ds11_07_3_smt_2",
+    "ds11_07_3_smt_3",
+    "ds11_07_3_smt_4",
+    "ds11_07_3_smt_5",
+    "ds11_07_3_smt_6",
+    "ds11_07_3_smt_7",
+    "ds11_07_3_smt_8",
+    "ds11_07_3_smt_88",
+    "as11_07_3_7",
+    "ds11_07_3_2",
+    "es11_07_3",
+    "es11_07_3_smt_1",
+    "es11_07_3_smt_2",
+    "es11_07_3_smt_3",
+    "es11_07_3_smt_4",
+    "es11_07_3_smt_5",
+    "es11_07_3_smt_6",
+    "es11_07_3_smt_7",
+    "es11_07_3_smt_8",
+    "es11_07_3_smt_88",
+    "as11_07_3_8",
+    "es11_07_3_2",
+    "fs11_07_3",
+    "fs11_07_3_smt_1",
+    "fs11_07_3_smt_2",
+    "fs11_07_3_smt_3",
+    "fs11_07_3_smt_4",
+    "fs11_07_3_smt_5",
+    "fs11_07_3_smt_6",
+    "fs11_07_3_smt_7",
+    "fs11_07_3_smt_8",
+    "fs11_07_3_smt_88",
+    "as11_07_3_9",
+    "fs11_07_3_2",
+    "gs11_07_3",
+    "gs11_07_3_smt_1",
+    "gs11_07_3_smt_2",
+    "gs11_07_3_smt_3",
+    "gs11_07_3_smt_4",
+    "gs11_07_3_smt_5",
+    "gs11_07_3_smt_6",
+    "gs11_07_3_smt_7",
+    "gs11_07_3_smt_8",
+    "gs11_07_3_smt_88",
+    "as11_07_3_10",
+    "gs11_07_3_2",
+    "hs11_07_3",
+    "hs11_07_3_smt_1",
+    "hs11_07_3_smt_2",
+    "hs11_07_3_smt_3",
+    "hs11_07_3_smt_4",
+    "hs11_07_3_smt_5",
+    "hs11_07_3_smt_6",
+    "hs11_07_3_smt_7",
+    "hs11_07_3_smt_8",
+    "hs11_07_3_smt_88",
+    "as11_07_3_11",
+    "hs11_07_3_2",
+    "is11_07_3",
+    "is11_07_3_smt_1",
+    "is11_07_3_smt_2",
+    "is11_07_3_smt_3",
+    "is11_07_3_smt_4",
+    "is11_07_3_smt_5",
+    "is11_07_3_smt_6",
+    "is11_07_3_smt_7",
+    "is11_07_3_smt_8",
+    "is11_07_3_smt_88",
+    "as11_07_3_12",
+    "is11_07_3_2",
+    "js11_07_3",
+    "js11_07_3_smt_1",
+    "js11_07_3_smt_2",
+    "js11_07_3_smt_3",
+    "js11_07_3_smt_4",
+    "js11_07_3_smt_5",
+    "js11_07_3_smt_6",
+    "js11_07_3_smt_7",
+    "js11_07_3_smt_8",
+    "js11_07_3_smt_88",
+    "as11_07_3_13",
+    "js11_07_3_2",
+    "ks11_07_3",
+    "ks11_07_3_smt_1",
+    "ks11_07_3_smt_2",
+    "ks11_07_3_smt_3",
+    "ks11_07_3_smt_4",
+    "ks11_07_3_smt_5",
+    "ks11_07_3_smt_6",
+    "ks11_07_3_smt_7",
+    "ks11_07_3_smt_8",
+    "ks11_07_3_smt_88",
+    "as11_07_3_14",
+    "ks11_07_3_2",
+    "ls11_07_3",
+    "ls11_07_3_smt_1",
+    "ls11_07_3_smt_2",
+    "ls11_07_3_smt_3",
+    "ls11_07_3_smt_4",
+    "ls11_07_3_smt_5",
+    "ls11_07_3_smt_6",
+    "ls11_07_3_smt_7",
+    "ls11_07_3_smt_8",
+    "ls11_07_3_smt_88",
+    "as11_07_3_15",
+    "ls11_07_3_2",
+    "ms11_07_3",
+    "ms11_07_3_smt_1",
+    "ms11_07_3_smt_2",
+    "ms11_07_3_smt_3",
+    "ms11_07_3_smt_4",
+    "ms11_07_3_smt_5",
+    "ms11_07_3_smt_6",
+    "ms11_07_3_smt_7",
+    "ms11_07_3_smt_8",
+    "ms11_07_3_smt_88",
+    "as11_07_3_16",
+    "ms11_07_3_2",
+    "ns11_07_3",
+    "ns11_07_3_smt_1",
+    "ns11_07_3_smt_2",
+    "ns11_07_3_smt_3",
+    "ns11_07_3_smt_4",
+    "ns11_07_3_smt_5",
+    "ns11_07_3_smt_6",
+    "ns11_07_3_smt_7",
+    "ns11_07_3_smt_8",
+    "ns11_07_3_smt_88",
+    "as11_07_3_17",
+    "ns11_07_3_2",
+    "cvd_0",
+    "cvd_0_smt_1",
+    "cvd_0_smt_2",
+    "cvd_0_smt_3",
+    "cvd_0_smt_4",
+    "cvd_0_smt_5",
+    "cvd_0_smt_6",
+    "cvd_0_smt_7",
+    "cvd_0_smt_8",
+    "cvd_0_smt_9",
+    "cvd_0_smt_10",
+    "cvd_0_smt_11",
+    "cvd_0_smt_12",
+    "cvd_0_smt_13",
+    "cvd_0_smt_14",
+    "cvd_0_smt_15",
+    "cvd_0_smt_16",
+    "cvd_0_smt_17",
+    "cvd_0_smt_18",
+    "cvd_0_smt_21",
+    "cvd_0_smt_0",
+    "cvd_0_1",
+    "cvd_1",
+    "cvd_2",
+    "cvd_3",
+    "cvd_4",
+    "cvd_5",
+    "cvd_6",
+    "cvd_6_smt_1",
+    "cvd_6_smt_2",
+    "cvd_6_smt_3",
+    "cvd_6_smt_4",
+    "cvd_6_smt_98",
+    "cvd_7",
+    "cvd_8",
+    "cvd_9",
+    "n13_21",
+    "n13_22",
+    "n13_23",
+    "n13_23_0",
+    "n13_24",
+    "n13_24_0",
+    "n13_25",
+    "n13_26_1",
+    "n13_26_2",
+    "n13_26_3",
+    "n13_26_4",
+    "n13_26_5",
+    "n13_26_6",
+    "n13_27",
+    "n13_28",
+    "n13_29",
+    "s0_e_livezone",
+    "fie",
+    "nfie",
+    "t_exp",
+    "s_fie",
+    "s_nfie",
+    "s_chk",
+    "an_hh_exp",
+    "anpercap_exp",
+    "percap_fie",
+    "starch",
+    "pulses",
+    "milk",
+    "meat",
+    "vegetables",
+    "fruit",
+    "oil",
+    "sugar",
+    "fcs",
+    "fcg",
+    "share_exp_cat",
+    "stress_coping",
+    "crisis_coping",
+    "emergency_coping",
+    "max_coping_behaviour",
+    "fs_final",
+    "chronically_fs",
+    "income_quintile",
+    "wi_cat",
+    "fg_vitacat",
+    "fg_proteincat",
+    "fg_hironcat"
+   ],
+   "var_labels": {
+    "s0_b_date": "Interview date",
+    "vhhsize": "Village N HHs",
+    "vsamplesize": "Village Sample Size",
+    "respondent_gender": "Respondent Gender",
+    "s1_01": "How many members does your household have?",
+    "s1_01_3": "What is the gender of household head?",
+    "s1_01_4": "How old is household head",
+    "s1_01_4_2": "Does household head have birth card for proper  DOB and other information record",
+    "s1_01_4_3": "if household head is [Years] years old, please indicate his/her exact date of bi",
+    "s1_01_5": "Household head's age in months",
+    "s1_01_6": "What is household head's relationship with the head of household?",
+    "s1_01_6_2": "Please specify what other relationships are",
+    "s1_01_7": "Can household head read and write?",
+    "s1_01_8": "Education level Head",
+    "s1_01_9": "Does household head have any disability?",
+    "s1_01_10": "Marital status Head",
+    "s1_01_11": "How many spouses or partners does household head have?",
+    "s1_01_12": "Is household head currently attending primary school?",
+    "s1_01_13": "Did household head miss school for one week or more since january this year (or",
+    "s1_01_14": "What was the main reason that made household head absent from school?",
+    "s1_01_14_smt_1": "Sickness",
+    "s1_01_14_smt_2": "Working for cash (either sent or chose to)",
+    "s1_01_14_smt_3": "housework (cooking, fetching water and more)",
+    "s1_01_14_smt_4": "Taking care of siblings",
+    "s1_01_14_smt_5": "The school is far from home",
+    "s1_01_14_smt_6": "No school fees",
+    "s1_01_14_smt_7": "Refused to go",
+    "s1_01_14_2": "Please specify what other reasons of being absent are",
+    "s1_01_15": "Which income generating activity is household head mainly involved in?",
+    "s1_01_15_smt_1": "Agricultural Production (On Own Farm/Land Or On Other Farm/Land With or without",
+    "s1_01_15_smt_2": "Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash Compensation",
+    "s1_01_15_smt_3": "Livestock Raising For Sales",
+    "s1_01_15_smt_4": "Fishing, Hunting, Gathering",
+    "s1_01_15_smt_5": "Unskilled Daily Labour (Non Agricultural)",
+    "s1_01_15_smt_6": "Skilled Labour",
+    "s1_01_15_smt_7": "Purchase and Sale Of Product From Fishing, Hunting Gathering",
+    "s1_01_15_smt_8": "Purchase And Sale Of Agricultural Products",
+    "s1_01_15_smt_9": "Purchase And Sale Of Livestock Products",
+    "s1_01_15_smt_10": "Purchase And Sale Of Livestock",
+    "s1_01_15_smt_11": "Informal Sale/Petty Trade",
+    "s1_01_15_smt_12": "Handicrafts/Artisanal Work",
+    "s1_01_15_smt_13": "Transport",
+    "s1_01_15_smt_14": "Salaried",
+    "s1_01_15_smt_15": "Pension",
+    "s1_01_15_smt_16": "Own Business/Self Employed",
+    "s1_01_15_smt_17": "Vup Public Works",
+    "s1_01_15_smt_18": "Begging",
+    "s1_01_15_smt_0": "None",
+    "s1_01_15_1": "Specify other",
+    "s1_01_15_2": "Does household head's income contribute to the household living basket?",
+    "s1_01_16": "Is household head currently a member of any association or cooperative?",
+    "s1_01_16_2": "Does household head hold any manegerial role in that cooperative or association",
+    "s1_01_17": "Does household head hold any managerial roles in the community you live in?",
+    "s2_01": "Roof",
+    "s2_01_2": "Please specify what other roof materials are",
+    "s2_02": "Floor",
+    "s2_02_2": "Please specify what other floor materials are",
+    "s2_03": "Wall",
+    "s2_03_2": "Please specify what other wall materials are",
+    "s2_04": "Is the house your household is living in located in a umudugudu new recommended",
+    "s2_04_2": "If YEs, Since how long have you been living there?",
+    "s2_05": "What is your occupancy status in this house?",
+    "s2_06": "How many sleeping rooms does the house you are living in have?",
+    "s2_07": "What kind of toilet facility does your household use here in your household?",
+    "s2_07_2": "If your household does not have its own toilet facility, then what do you use?",
+    "s2_07_3": "Do you share the toilet facility with other households?",
+    "s2_08": "What is the main source of lighting for this house?",
+    "s2_08_2": "Please specify other lighting source",
+    "s2_09": "What fuel do you use most often for cooking?",
+    "s2_09_2": "Please specify what other ccooking energy sourcesare",
+    "s2_10": "What is the current main source of water that your household use?",
+    "s2_10_1": "Please specify what other main source of water is",
+    "s2_10_2": "Do your household pay for water from this current main source?",
+    "s2_10_3": "How do you or your household members go to this main source of water?",
+    "s2_10_3_2": "Please specify what other method of going to the main water source is",
+    "s2_10_4": "How far is this main source of water (count in minutes, the time it takes from h",
+    "s2_10_5": "Who usually fetches most of the water your household uses from this source",
+    "s2_11": "Is there a time in the year when your household uses an alternate source of wate",
+    "s2_11_2": "What is the main alternative source of water that your household use?",
+    "s2_11_2_2": "Please specify what other main alternative source of water is",
+    "s2_11_3": "Does your household pay for this alternate source of water?",
+    "s2_11_4": "How do you or your household members go to your alternate source of water?",
+    "s2_11_4_2": "Please specify what other method of going to the main alternative source of wate",
+    "s2_11_5": "How far is this alternate source of water (count in minutes, the time it takes f",
+    "s2_12": "What does your household normally do to treat its water prior to drinking?",
+    "s2_13": "On average, how many liters of water does your household use per day? (make your",
+    "s2_13_2": "For data quality purposes, repeat the previoius amount",
+    "s3_01": "All activities reported by household members in the demographic section",
+    "s3_01_smt_1": "Agricultural Production (On Own Farm/Land Or On Other Farm/Land With or without",
+    "s3_01_smt_2": "Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash Compensation",
+    "s3_01_smt_3": "Livestock Raising For Sales",
+    "s3_01_smt_4": "Fishing, Hunting, Gathering",
+    "s3_01_smt_5": "Unskilled Daily Labour (Non Agricultural)",
+    "s3_01_smt_6": "Skilled Labour",
+    "s3_01_smt_7": "Purchase and Sale Of Product From Fishing, Hunting Gathering",
+    "s3_01_smt_8": "Purchase And Sale Of Agricultural Products",
+    "s3_01_smt_9": "Purchase And Sale Of Livestock Products",
+    "s3_01_smt_10": "Purchase And Sale Of Livestock",
+    "s3_01_smt_11": "Informal Sale/Petty Trade",
+    "s3_01_smt_12": "Handicrafts/Artisanal Work",
+    "s3_01_smt_13": "Transport",
+    "s3_01_smt_14": "Salaried",
+    "s3_01_smt_15": "Pension",
+    "s3_01_smt_16": "Own Business/Self Employed",
+    "s3_01_smt_17": "Vup Public Works",
+    "s3_01_smt_18": "Begging",
+    "s3_01_smt_0": "None",
+    "s3_02": "Main activity",
+    "s3_02_1": "Please specify what other activity is",
+    "s3_02_2": "Using proportional piling or 'divide the pie' methods, please estimate the relat",
+    "s3_02_2_1": "Is this livelihood activity seasonal?",
+    "s3_02_3": "During which months of the year is this activity important for your household",
+    "s3_02_3_smt_1": "January",
+    "s3_02_3_smt_2": "February",
+    "s3_02_3_smt_3": "March",
+    "s3_02_3_smt_4": "April",
+    "s3_02_3_smt_5": "May",
+    "s3_02_3_smt_6": "June",
+    "s3_02_3_smt_7": "July",
+    "s3_02_3_smt_8": "August",
+    "s3_02_3_smt_9": "September",
+    "s3_02_3_smt_10": "October",
+    "s3_02_3_smt_11": "November",
+    "s3_02_3_smt_12": "December",
+    "s3_02_3_smt_13": "Random",
+    "s3_03": "Second activity",
+    "s3_03_1": "Please specify what other activity is",
+    "s3_03_2": "Using proportional piling or 'divide the pie' methods, please estimate the relat",
+    "s3_03_2_1": "Is this livelihood activity seasonal?",
+    "s3_03_3": "During which months of the year is this activity important for your household",
+    "s3_03_3_smt_1": "January",
+    "s3_03_3_smt_2": "February",
+    "s3_03_3_smt_3": "March",
+    "s3_03_3_smt_4": "April",
+    "s3_03_3_smt_5": "May",
+    "s3_03_3_smt_6": "June",
+    "s3_03_3_smt_7": "July",
+    "s3_03_3_smt_8": "August",
+    "s3_03_3_smt_9": "September",
+    "s3_03_3_smt_10": "October",
+    "s3_03_3_smt_11": "November",
+    "s3_03_3_smt_12": "December",
+    "s3_03_3_smt_13": "Random",
+    "s3_04": "Third activity",
+    "s3_04_1": "Please specify what other activity is",
+    "s3_04_2": "Using proportional piling or 'divide the pie' methods, please estimate the relat",
+    "s3_04_2_1": "Is this livelihood activity seasonal?",
+    "s3_04_3": "During which months of the year is this activity important for your household",
+    "s3_04_3_smt_1": "January",
+    "s3_04_3_smt_2": "February",
+    "s3_04_3_smt_3": "March",
+    "s3_04_3_smt_4": "April",
+    "s3_04_3_smt_5": "May",
+    "s3_04_3_smt_6": "June",
+    "s3_04_3_smt_7": "July",
+    "s3_04_3_smt_8": "August",
+    "s3_04_3_smt_9": "September",
+    "s3_04_3_smt_10": "October",
+    "s3_04_3_smt_11": "November",
+    "s3_04_3_smt_12": "December",
+    "s3_04_3_smt_13": "Random",
+    "s3_05": "Approximately, how much money did your household earn during the last month? (in",
+    "s3_05_2": "For quality check, please repeat the previous amount",
+    "s4_01": "Does your household own farming land including pastures for livestock?",
+    "s4_01_2": "How big is that land that your household own?",
+    "s4_01_3": "In how many plots is that land allocated?",
+    "s4_02_1": "Do you ever practice \"share cropping\" on the farming land that your household ow",
+    "s4_02_2": "Is \"land consolidation program\" applied on any portion of the land that you own?",
+    "s4_02_2_1": "Consolidated land percentage",
+    "s4_02_3": "Is the faming land that your household owns protected against soil erosion? (eg:",
+    "s4_02_4": "Is any portion of the land that your household owns irrigated?",
+    "s4_03": "Does your household have a vegetable plot /garden?",
+    "s4_03_2": "Are you currently growing any food in that vegetable garden?",
+    "s4_03_3": "Is the food that you usually grow in that garden mainly used for household consu",
+    "s4_04": "Which of the following items does your houeshold own?",
+    "s4_04_smt_1": "Hoe",
+    "s4_04_smt_2": "Shovel",
+    "s4_04_smt_3": "Rake",
+    "s4_04_smt_4": "Spade",
+    "s4_04_smt_5": "Pick",
+    "s4_04_smt_6": "Wheel barrow",
+    "s4_04_smt_7": "Plough/Ox Plough",
+    "s4_04_smt_8": "Grinding Mill",
+    "s4_04_smt_9": "Oil press",
+    "s4_04_smt_10": "Sewing machine",
+    "s4_04_smt_11": "Ironing machine",
+    "s4_04_smt_12": "Radio (only)",
+    "s4_04_smt_13": "Tape/CD player",
+    "s4_04_smt_14": "Tv",
+    "s4_04_smt_15": "Fridge",
+    "s4_04_smt_16": "Cooker (gas or electrical)",
+    "s4_04_smt_17": "Mobile phone",
+    "s4_04_smt_18": "Living room suite (chairs/sofa)",
+    "s4_04_smt_19": "Bed",
+    "s4_04_smt_20": "Bicycle",
+    "s4_04_smt_21": "Motorized Vehicle of any kind",
+    "s4_04_smt_22": "Fishing boat / canoe",
+    "s4_04_smt_88": "None",
+    "s4_05": "S4_05 Which of the following animals does your household own or manage?",
+    "s4_05_smt_1": "Cattle",
+    "s4_05_smt_2": "Goats",
+    "s4_05_smt_3": "Pigs",
+    "s4_05_smt_4": "Sheep",
+    "s4_05_smt_5": "Chicken",
+    "s4_05_smt_6": "Ducks and other poultry",
+    "s4_05_smt_7": "Rabbits",
+    "s4_05_smt_8": "Other animals",
+    "s4_05_smt_88": "No animal is owned",
+    "s4_05_2": "Specify what these other animals are",
+    "as4_06": "How many Cattle is your household currently rearing?",
+    "as4_06_3": "How many of these [number] cattle does your household manage for others?",
+    "bs4_06": "How many Goats is your household currently rearing?",
+    "bs4_06_3": "How many of these [number] goats does your household manage for others?",
+    "cs4_06": "How many Pigs is your household currently rearing?",
+    "cs4_06_3": "How many of these [number] pigs does your household manage for others?",
+    "ds4_06": "How many Sheep is your household currently rearing?",
+    "ds4_06_3": "How many of these [number] sheep does your household manage for others?",
+    "es4_06": "How many Chicken is your household currently rearing?",
+    "es4_06_3": "How many of these [number] chicken does your household manage for others?",
+    "fs4_06": "How many Ducks and other poultry is your household currently rearing?",
+    "fs4_06_3": "How many of these [number] ducks and other poultry your household manage for oth",
+    "gs4_06": "How many Rabbits is your household currently rearing?",
+    "gs4_06_3": "How many of these [number] rabbits does your household manage for others?",
+    "hs4_06": "How many [name of Other] is your household currently rearing?",
+    "hs4_06_3": "How many of these [number] [other] does your household manage for others?",
+    "s4_07": "During the last month, did your household consume any product from the animals y",
+    "s4_08_2": "During the last month, did your household sell any product from the animals you",
+    "s4_08_2_1": "How much money did your household make from the total income from livestock and",
+    "s4_09": "During the last 12 months, which animal health services did your household use?",
+    "s4_09_smt_1": "Traitment of diseases",
+    "s4_09_smt_2": "Vaccination",
+    "s4_09_smt_3": "Artificial insemination",
+    "s4_09_smt_4": "Heat synchronization and induction in cattle",
+    "s4_09_smt_5": "Pregnancy detection",
+    "s4_09_smt_0": "None",
+    "s4_09_2": "Did your household have to pay to get these services?",
+    "s4_09_2_smt_1": "Traitment of diseases",
+    "s4_09_2_smt_2": "Vaccination",
+    "s4_09_2_smt_3": "Artificial insemination",
+    "s4_09_2_smt_4": "Heat synchronization and induction in cattle",
+    "s4_09_2_smt_5": "Pregnancy detection",
+    "s4_09_2_smt_0": "None",
+    "s4_09_3": "How Is easy was it for your household to access these animal health services?",
+    "s4_11": "S4_11 What means of transport you own in this household",
+    "s4_11_smt_1": "bicycle",
+    "s4_11_smt_2": "moto",
+    "s4_11_smt_3": "car",
+    "s4_11_smt_4": "truck",
+    "s4_11_smt_5": "Locally fabricated mean",
+    "s4_11_smt_6": "None",
+    "s4_11_smt_7": "Others",
+    "s4_11_0": "Others(Specify)",
+    "s5_01": "Which crops does your household usually grow?",
+    "s5_01_smt_11": "Wheat",
+    "s5_01_smt_12": "Maize",
+    "s5_01_smt_13": "Sorghum",
+    "s5_01_smt_14": "Rice",
+    "s5_01_smt_15": "Other cereals",
+    "s5_01_smt_20": "Orange fleshed Sweet potatoes",
+    "s5_01_smt_21": "White fleshed sweet potatoes",
+    "s5_01_smt_22": "Irish potato",
+    "s5_01_smt_23": "Cassava",
+    "s5_01_smt_24": "Taro",
+    "s5_01_smt_25": "Yam",
+    "s5_01_smt_26": "Banana cooking",
+    "s5_01_smt_31": "Tomato",
+    "s5_01_smt_32": "Cabbage",
+    "s5_01_smt_33": "Other vegetables",
+    "s5_01_smt_41": "Banana (wine)",
+    "s5_01_smt_42": "Banana fruit",
+    "s5_01_smt_43": "Passion fruit",
+    "s5_01_smt_44": "Pineapple",
+    "s5_01_smt_50": "bio-fortified beans",
+    "s5_01_smt_51": "Beans",
+    "s5_01_smt_52": "Peas",
+    "s5_01_smt_53": "Soya",
+    "s5_01_smt_54": "Ground nuts",
+    "s5_01_smt_61": "Tea",
+    "s5_01_smt_62": "Coffee",
+    "s5_01_smt_63": "Tobacco",
+    "s5_01_smt_64": "Sugar cane",
+    "s5_01_01": "Other fruit, specify",
+    "s5_01_02": "Other pulses, specify",
+    "s5_01_2": "1st main commodity",
+    "s5_01_3": "2nd main commodity",
+    "s5_01_4": "3rd main commodity",
+    "as5_02": "Did your household grow [commodity name] during the season of 2021A?",
+    "as5_03": "How did you acquire seeds for [commodity name]?",
+    "as5_03_2": "Please specify what other mode of seeds acquisition are",
+    "as5_04": "What was or will be the expected harvest for [commodity name] during season 2021",
+    "as5c1": "Used production percentages",
+    "as5_04_2": "What % of your production for this crop did you or plan to directly consume in y",
+    "as5_04_2_2": "How long, did or will the stock for this [commodity name] kept for home consumpt",
+    "as5_04_3": "What % of your production for this crop did you or plan to sell?",
+    "as5_04_3_2": "To whom did you or plan to sell the majority of this [commodity name] to?",
+    "as5_04_3_2_2": "Please specify what other production buyers are",
+    "as5_04_3_2_3": "What is the distance in hours to reach the point of sale for the main buyer (One",
+    "as5_04_4": "What % of your production for this crop did you or plan to keep as seed for next",
+    "as5_04_5": "What % of your production for this cop did you or plan to use for other purposes",
+    "as5_04_6": "What % of your production for this crop did you or plan to give away? (friends,",
+    "as5_04_7": "What % of your production for this crop is lost/became spoiled, as to have no va",
+    "as5_05": "Did your household use any chemical fertilizer and/or insecticides for this [cro",
+    "as5_05_2": "How did you acquire these the fetilizer that you used on [commodity name] during",
+    "as5_05_3": "How did you acquire the pestcides that you used on [commodity name] during seaso",
+    "as5_05_2_2": "Please specify what other mode of inputs acquisition are",
+    "bs5_02": "Did your household grow [commodity name] during the season of 2021A?",
+    "bs5_03": "How did you acquire seeds for [commodity name]?",
+    "bs5_03_2": "Please specify what other mode of seeds acquisition are",
+    "bs5_04": "What was or will be the expected harvest for [commodity name] during season 2021",
+    "bs5c1": "Used production percentages",
+    "bs5_04_2": "What % of your production for this crop did you or plan to directly consume in y",
+    "bs5_04_2_2": "How long, did or will the stock for this [commodity name] kept for home consumpt",
+    "bs5_04_3": "What % of your production for this crop did you or plan to sell?",
+    "bs5_04_3_2": "To whom did you or plan to sell the majority of this [commodity name] to?",
+    "bs5_04_3_2_2": "Please specify what other production buyers are",
+    "bs5_04_3_2_3": "What is the distance in hours to reach the point of sale for the main buyer (One",
+    "bs5_04_4": "What % of your production for this crop did you or plan to keep as seed for next",
+    "bs5_04_5": "What % of your production for this cop did you or plan to use for other purposes",
+    "bs5_04_6": "What % of your production for this crop did you or plan to give away? (friends,",
+    "bs5_04_7": "What % of your production for this crop is lost/became spoiled, as to have no va",
+    "bs5_05": "Did your household use any chemical fertilizer and/or insecticides for this [cro",
+    "bs5_05_2": "How did you acquire these the fetilizer that you used on [commodity name] during",
+    "bs5_05_3": "How did you acquire the pestcides that you used on [commodity name] during seaso",
+    "bs5_05_2_2": "Please specify what other mode of inputs acquisition are",
+    "cs5_02": "Did your household grow [commodity name] during the season of 2021A?",
+    "cs5_03": "How did you acquire seeds for [commodity name]?",
+    "cs5_03_2": "Please specify what other mode of seeds acquisition are",
+    "cs5_04": "What was or will be the expected harvest for [commodity name] during season 2021",
+    "cs5c1": "Used production percentages",
+    "cs5_04_2": "What % of your production for this crop did you or plan to directly consume in y",
+    "cs5_04_2_2": "How long, did or will the stock for this [commodity name] kept for home consumpt",
+    "cs5_04_3": "What % of your production for this crop did you or plan to sell?",
+    "cs5_04_3_2": "To whom did you or plan to sell the majority of this [commodity name] to?",
+    "cs5_04_3_2_2": "Please specify what other production buyers are",
+    "cs5_04_3_2_3": "What is the distance in hours to reach the point of sale for the main buyer (One",
+    "cs5_04_4": "What % of your production for this crop did you or plan to keep as seed for next",
+    "cs5_04_5": "What % of your production for this cop did you or plan to use for other purposes",
+    "cs5_04_6": "What % of your production for this crop did you or plan to give away? (friends,",
+    "cs5_04_7": "What % of your production for this crop is lost/became spoiled, as to have no va",
+    "cs5_05": "Did your household use any chemical fertilizer and/or insecticides for this [cro",
+    "cs5_05_2": "How did you acquire these the fetilizer that you used on [commodity name] during",
+    "cs5_05_3": "How did you acquire the pestcides that you used on [commodity name] during seaso",
+    "cs5_05_2_2": "Please specify what other mode of inputs acquisition are",
+    "s5_03": "household owned",
+    "s5_03_2": "rented (paid in cash or shared cropping)",
+    "s5_03_3": "others' land freely accessed",
+    "s5_04": "Has your household had access to extension services in the period of season 2021",
+    "s5_05": "Has your household received weather and climate information services during the",
+    "s5_06": "What storage facility does your household use to store your production?",
+    "s5_06_smt_0": "Never store",
+    "s5_06_smt_1": "In traditional granaries",
+    "s5_06_smt_2": "Indoors \u00e2\u20ac\u201c in basket/bags",
+    "s5_06_smt_3": "Indoors \u00e2\u20ac\u201c open storage",
+    "s5_06_smt_4": "Outside \u00e2\u20ac\u201c open storage",
+    "s5_06_smt_5": "In certified warehouses for which you received a receipt specifying the quality",
+    "s5_06_smt_6": "In other warehouses/stores",
+    "s5_06_smt_7": "Metallic home silos",
+    "s5_06_smt_8": "Plastic home silos",
+    "s5_06_0": "Specify other Storage facilities",
+    "s6_01": "Did you or any household member request for a loan in the in the last 12 months",
+    "s6_02": "Where did you requested the most recent loan?",
+    "s6_02_2": "Please specify what other money lenders are",
+    "s6_03": "Were you given the loan you requested?",
+    "s6_03_2": "Why were you not given the loan you requested?",
+    "s6_03_2_2": "Please specify what other reasons why the loan was not issued",
+    "s6_04": "What was the main use of the largest loan taken in the in the last 12 months ?",
+    "s6_04_smt_1": "Education",
+    "s6_04_smt_2": "Agricultural and livestock activities (crop/livestock production, post-harvest p",
+    "s6_04_smt_3": "Food purchases",
+    "s6_04_smt_4": "Construction other than house",
+    "s6_04_smt_5": "Health emergency",
+    "s6_04_smt_6": "Business investment",
+    "s6_04_smt_7": "Bride price / Wedding and parties",
+    "s6_04_smt_8": "Land purchase",
+    "s6_04_smt_9": "Funeral",
+    "s6_04_smt_10": "House purchase or construction",
+    "s6_04_smt_11": "Medicines for chronically ill family member",
+    "s6_04_smt_12": "Home improvement",
+    "s6_04_2": "Please specify what other use of loan was",
+    "s6_04_3": "what % of loan was spent in buying or preparing farming or pasture land and anim",
+    "s6_04_4": "What % of loan was spent in buying inputs ( seeds, chemicals, irrigation and vet",
+    "s6_04_5": "What % of loan was used on post-harvet and production handling and processing?",
+    "s7_01": "During the past 30 days, did your household spend any money in buying food commo",
+    "s7_01_00": "Can you tell me of all commodities you remeemeber your houhold purchased?",
+    "s7_01_00_smt_1": "Cereals, Roots and tubers",
+    "s7_01_00_smt_2": "Legumes / nuts",
+    "s7_01_00_smt_3": "Vegetables",
+    "s7_01_00_smt_4": "Fruits",
+    "s7_01_00_smt_5": "Meat, fish and eggs",
+    "s7_01_00_smt_6": "Milk and other dairy products",
+    "s7_01_00_smt_7": "Oil / fat / butter",
+    "s7_01_00_smt_8": "Sugar, or sweets",
+    "s7_01_00_smt_9": "Condiments / Spices",
+    "s7_01_00_smt_10": "Non-alcoholic beverages (Soda, bottled water, juice, etc)",
+    "s7_01_00_smt_11": "Meals and drinks bought from resto, bar, etc",
+    "s7_01_00_smt_12": "Other food items not mentioned on the list",
+    "s7_01_00_smt_88": "No food was bought",
+    "s7_01_01": "During the last 30 days, how much money did your household sepend in buying Cere",
+    "s7_01_01_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_02": "During the last 30 days, how much money did your household sepend in buying Legu",
+    "s7_01_02_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_03": "During the last 30 days, how much money did your household sepend in buying Vege",
+    "s7_01_03_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_04": "During the last 30 days, how much money did your household sepend in buying Frui",
+    "s7_01_04_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_05": "During the last 30 days, how much money did your household sepend in buying Meat",
+    "s7_01_05_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_06": "During the last 30 days, how much money did your household sepend in buying Milk",
+    "s7_01_06_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_07": "During the last 30 days, how much money did your household sepend in buying Oil",
+    "s7_01_07_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_08": "During the last 30 days, how much money did your household sepend in buying Suga",
+    "s7_01_08_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_09": "During the last 30 days, how much money did your household sepend in buying Cond",
+    "s7_01_09_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_10": "During the last 30 days, how much money did your household sepend in buying Non-",
+    "s7_01_10_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_11": "During the last 30 days, how much money did your household sepend in buying Meal",
+    "s7_01_11_2": "For data quality purposes, repeat the previoius amount",
+    "s7_01_12": "During the last 30 days, how much money did your household sepend in buying Othe",
+    "s7_01_12_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_01": "Last 30 days, how much money did your household spend in buying Alcohol & Tobacc",
+    "s7_02_01_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_02": "Last 30 days, how much money did your household spend in buying Soap and other p",
+    "s7_02_02_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_03": "Last 30 days, how much money did your household spend on Transport, for you or o",
+    "s7_02_03_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_04": "Last 30 days, how much money did your household spend in buying lighting energy",
+    "s7_02_04_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_05": "Last 30 days, how much money did your household spend in buying cooking energy (",
+    "s7_02_05_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_06": "Last 30 days, how much money did your household spend in household Waste disposa",
+    "s7_02_06_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_07": "Last 30 days, how much money did your household spend in buying Rent (house / la",
+    "s7_02_07_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_08": "Last 30 days, how much money did your household spend in buying Milling foods fo",
+    "s7_02_08_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_09": "Last 30 days, how much money did your household spend in buying Communication (m",
+    "s7_02_09_2": "For data quality purposes, repeat the previoius amount",
+    "s7_02_10": "Last 30 days, how much money did your household spend in buying Other nonfood it",
+    "s7_02_10_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_01": "Last 3 months, how much money did your household spend on Medical expenses, heal",
+    "s7_03_01_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_02": "Last 3 months, how much money did your household spend on Education, school fees",
+    "s7_03_02_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_03": "Last 3 months, how much money did your household spend on Clothing, shoes ?",
+    "s7_03_03_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_04": "Last 3 months, how much money did your household spend on household furnishings",
+    "s7_03_04_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_05": "Last 3 months, how much money did your household spend on Construction, house re",
+    "s7_03_05_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_06": "Last 3 months, how much money did your household spend on Agriculture and relate",
+    "s7_03_06_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_07": "Last 3 months, how much money did your household spend on Livestock and related",
+    "s7_03_07_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_08": "Last 3 months, how much money did your household spend on Hiring non-agricultura",
+    "s7_03_08_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_09": "Last 3 months, how much money did your household spend on Debts/mortgage/loan re",
+    "s7_03_09_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_10": "Last 3 months, how much money did your household spend on Fines, taxes ?",
+    "s7_03_10_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_11": "Last 3 months, how much money did your household spend on Ceremonies?",
+    "s7_03_11_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_12": "Last 3 months, how much money did your household spend on Gifts/donations?",
+    "s7_03_12_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_13": "Last 3 months, how much money did your household spend on Leisure?",
+    "s7_03_13_2": "For data quality purposes, repeat the previoius amount",
+    "s7_03_14": "Last 3 months, how much money did your household spend on Other services not lis",
+    "s7_03_14_2": "For data quality purposes, repeat the previoius amount",
+    "s8_01": "Yesterday, how many times did the male adults in this household eat?",
+    "s8_01_2": "Yesterday, how many times did the female adults in this household eat?",
+    "s8_01_3": "Is this usual for adults at this time of year?",
+    "s8_02": "Yesterday, how many times did the children ( boys <15 year old) in this househol",
+    "s8_02_2": "Yesterday, how many times did the children (girls <15 year old) in this househol",
+    "s8_02_3": "Is this usual for your children at this time of year?",
+    "s8_04": "What was the main source of beans your household consumed over the last 12 month",
+    "s8_05": "What is your household prefered staple food (other than beans, soup)?",
+    "s8_05_2": "Is this also the most consumed staple for your household?",
+    "s8_05_3": "What was the main source of [staple name] that your household consumed over the",
+    "s8_06": "What are you household prefered vegetables",
+    "s8_06_smt_1": "Amaranthus",
+    "s8_06_smt_2": "Carrot",
+    "s8_06_smt_3": "Spinach",
+    "s8_06_smt_4": "Red onion",
+    "s8_06_smt_5": "White cabbage",
+    "s8_06_smt_6": "Black eggplant",
+    "s8_06_smt_7": "Mushroom",
+    "s8_06_smt_8": "Pumpkins",
+    "s8_06_2": "Is this also the most consumed vegetables for your household?",
+    "s8_06_3": "What is the main source of these said Vegetables?",
+    "s9_01": "In the last 7 days, have there been times when your household did not have enoug",
+    "s9_01_2": "What caused the food shortage that you earlier mentioned?",
+    "s9_01_2_0": "Specify other",
+    "s9_01_2_2": "What was the main cause of reduced or insufficient production?",
+    "s9_01_2_2_2": "Specify other",
+    "s9_01_2_3": "What was the main cause of loss or reduction of household's labour or income gen",
+    "s9_01_2_3_2": "Specify other",
+    "s9_01_3": "What do you think can be done to alleviate food access problems?",
+    "s9_01_3_smt_1": "Subsidized agricurtural inputs",
+    "s9_01_3_smt_2": "Creation of HH's income generating activities",
+    "s9_01_3_smt_3": "Support in market access and linkages",
+    "s9_01_3_smt_4": "Support in irrigation systems",
+    "s9_01_3_smt_5": "Support in errosion control systems",
+    "s9_01_3_smt_6": "Support to vulnerables affected by shocks",
+    "s9_01_3_smt_7": "Support in health insurance",
+    "s9_01_3_smt_8": "Support in family planning",
+    "s9_01_3_0": "Specify others",
+    "as9_02_2": "In the past 7 days, how many days has your household had to Rely On Less Preferr",
+    "bs9_02_2": "In the past 7 days, how many days has your household had to Borrow Food, Or Rely",
+    "cs9_02_2": "In the past 7 days, how many days has your household had to Limit Portion Size A",
+    "ds9_02_2": "In the past 7 days, how many days has your household had to Restrict Consumption",
+    "es9_02_2": "In the past 7 days, how many days has your household had to Reduce Number Of Mea",
+    "as9_04": "During the past 30 days, did anyone in your household have to Sell household ass",
+    "as9_04_2": "If no, why?",
+    "bs9_04": "During the past 30 days, did anyone in your household have to spend savings due",
+    "bs9_04_2": "If no, why?",
+    "cs9_04": "During the past 30 days, did anyone in your household have to sell more animals",
+    "cs9_04_2": "If no, why?",
+    "ds9_04": "During the past 30 days, did anyone in your household have to purchased food on",
+    "ds9_04_2": "If no, why?",
+    "es9_04": "During the past 30 days, did anyone in your household have to harvest immature c",
+    "es9_04_2": "If no, why?",
+    "fs9_04": "During the past 30 days, did anyone in your household have to consume seed stock",
+    "fs9_04_2": "If no, why?",
+    "gs9_04": "During the past 30 days, did anyone in your household have to decrease expenditu",
+    "gs9_04_2": "If no, why?",
+    "hs9_04": "During the past 30 days, did anyone in your household have to Begg due to a lack",
+    "hs9_04_2": "If no, why?",
+    "is9_04": "During the past 30 days, did anyone in your household have to sell last female a",
+    "is9_04_2": "If no, why?",
+    "js9_04": "During the past 30 days, your entire household migrate due to a lack of enough f",
+    "js9_04_2": "If no, why?",
+    "s10_01": "In the last 12 months were there any specific months in which your household fou",
+    "s10_01_2": "If yes, in which months did your household found it does not have enough food or",
+    "s10_01_2_smt_1": "March of 2021",
+    "s10_01_2_smt_2": "February of 2021",
+    "s10_01_2_smt_3": "January of 2021",
+    "s10_01_2_smt_4": "December of 2020",
+    "s10_01_2_smt_5": "November of 2020",
+    "s10_01_2_smt_6": "October of 2020",
+    "s10_01_2_smt_7": "September of 2020",
+    "s10_01_2_smt_8": "August of 2020",
+    "s10_01_2_smt_9": "July of 2020",
+    "s10_01_2_smt_10": "June of 2020",
+    "s10_01_2_smt_11": "May of 2020",
+    "s10_01_2_smt_12": "April of 2020",
+    "s10_01_2_smt_13": "March of 2020",
+    "s10_01_3": "S10_01_3 Was this situation usual for your household at that time of the year?",
+    "s10_02": "S10_02 Did you or your household experience any unusual situation during the las",
+    "s10_03": "S10_03 If yes, tell us all the problems that affected your household during the",
+    "s10_03_smt_1": "Drought/irregular rains, prolonged dry spell",
+    "s10_03_smt_2": "Floods",
+    "s10_03_smt_3": "Landslides and Mudslides",
+    "s10_03_smt_4": "Unusually high level of crop pests & disease",
+    "s10_03_smt_5": "Unusually high level of livestock diseases",
+    "s10_03_smt_6": "Unusually high level of human disease/EPIDEMIC",
+    "s10_03_smt_7": "Unusually high prices for food",
+    "s10_03_smt_8": "Unusually high cost of agric. inputs (seed, fertilizer, etc.)",
+    "s10_03_smt_9": "Loss or reduced employment/Income for a household member",
+    "s10_03_smt_10": "Fires",
+    "s10_03_smt_11": "Serious illness or accident of household member",
+    "s10_03_smt_12": "Death  of the Head of the household",
+    "s10_03_smt_13": "Death a working household member",
+    "s10_03_smt_14": "Death of other household member",
+    "s10_03_smt_15": "Theft of productive resources",
+    "s10_03_smt_16": "Insecurity/violence",
+    "s10_03_smt_17": "hailstones (grele)",
+    "s10_03_smt_18": "earthquake",
+    "s10_03_smt_19": "Volcanic activity",
+    "s10_03_smt_21": "COVID-19",
+    "s10_03_smt_20": "Other, specify",
+    "s10_03_2": "Please specify what other shocks are",
+    "s10_03_3": "Did your household receive post disaster package (food, construction materials,.",
+    "as10_05": "Which one of these shocks did your household consider the 1st most servere?",
+    "as10_05_2": "Has [shock name] caused a reduction or loss of income (in nature or in cash)?",
+    "as10_05_3": "Did [shock name] create a decrease or loss of assets or belongings?",
+    "as10_05_4": "Please indicate in which period of the year that shock manifested itself?",
+    "as10_05_4_smt_1": "March of 2021",
+    "as10_05_4_smt_2": "February of 2021",
+    "as10_05_4_smt_3": "January of 2021",
+    "as10_05_4_smt_4": "December of 2020",
+    "as10_05_4_smt_5": "November of 2020",
+    "as10_05_4_smt_6": "October of 2020",
+    "as10_05_4_smt_7": "September of 2020",
+    "as10_05_4_smt_8": "August of 2020",
+    "as10_05_4_smt_9": "July of 2020",
+    "as10_05_4_smt_10": "June of 2020",
+    "as10_05_4_smt_11": "May of 2020",
+    "as10_05_4_smt_12": "April of 2020",
+    "as10_05_4_smt_13": "March of 2020",
+    "as10_05_5": "AS10_05_5 Has the household recovered from those losses?",
+    "as10_05_6": "AS10_05_6 What did the household do to compensate for the consequencies of the s",
+    "as10_05_6_smt_1": "Have household members eat at relatives' or neighbours'",
+    "as10_05_6_smt_2": "Reduced adult consumption so that children can eat",
+    "as10_05_6_smt_3": "Fed working members at the expense of non working members",
+    "as10_05_6_smt_4": "Reduce number of meals eaten per day",
+    "as10_05_6_smt_5": "Go entire day without eating",
+    "as10_05_6_smt_6": "Borrow food or rely on help from friends or relatives",
+    "as10_05_6_smt_7": "Rely on less expensive or less preferred foods",
+    "as10_05_6_smt_8": "Purchase/borrow food on credit",
+    "as10_05_6_smt_9": "Consume seed stock to be saved for next season",
+    "as10_05_6_smt_10": "Increased casual labour",
+    "as10_05_6_smt_11": "Migration of one or more household members",
+    "as10_05_6_smt_12": "Some household members worked for food only",
+    "as10_05_6_smt_13": "Spent savings",
+    "as10_05_6_smt_14": "Borrowed money",
+    "as10_05_6_smt_15": "Sold household assets",
+    "as10_05_6_smt_16": "Sold productive assets",
+    "as10_05_6_smt_17": "Children taken out of school",
+    "as10_05_6_smt_18": "Reduced expenditures on health an/or education",
+    "as10_05_6_smt_20": "Reduced the consumed quantity",
+    "as10_05_6_smt_19": "Other survival mechanism",
+    "as10_05_6_2": "Specify other",
+    "bs10_05": "Which one of these shocks did your household consider the 2nd most servere?",
+    "bs10_05_2": "Has [shock name] caused a reduction or loss of income (in nature or in cash)?",
+    "bs10_05_3": "Did [Shock name] create a decrease or loss of assets or belongings?",
+    "bs10_05_4": "Please indicate in which period of the year that shock manifested itself?",
+    "bs10_05_4_smt_1": "March of 2021",
+    "bs10_05_4_smt_2": "February of 2021",
+    "bs10_05_4_smt_3": "January of 2021",
+    "bs10_05_4_smt_4": "December of 2020",
+    "bs10_05_4_smt_5": "November of 2020",
+    "bs10_05_4_smt_6": "October of 2020",
+    "bs10_05_4_smt_7": "September of 2020",
+    "bs10_05_4_smt_8": "August of 2020",
+    "bs10_05_4_smt_9": "July of 2020",
+    "bs10_05_4_smt_10": "June of 2020",
+    "bs10_05_4_smt_11": "May of 2020",
+    "bs10_05_4_smt_12": "April of 2020",
+    "bs10_05_4_smt_13": "March of 2020",
+    "bs10_05_5": "Has the household recovered from those losses?",
+    "bs10_05_6": "What did the household do to compensate for the consequencies of the shock?",
+    "bs10_05_6_smt_1": "Have household members eat at relatives' or neighbours'",
+    "bs10_05_6_smt_2": "Reduced adult consumption so that children can eat",
+    "bs10_05_6_smt_3": "Fed working members at the expense of non working members",
+    "bs10_05_6_smt_4": "Reduce number of meals eaten per day",
+    "bs10_05_6_smt_5": "Go entire day without eating",
+    "bs10_05_6_smt_6": "Borrow food or rely on help from friends or relatives",
+    "bs10_05_6_smt_7": "Rely on less expensive or less preferred foods",
+    "bs10_05_6_smt_8": "Purchase/borrow food on credit",
+    "bs10_05_6_smt_9": "Consume seed stock to be saved for next season",
+    "bs10_05_6_smt_10": "Increased casual labour",
+    "bs10_05_6_smt_11": "Migration of one or more household members",
+    "bs10_05_6_smt_12": "Some household members worked for food only",
+    "bs10_05_6_smt_13": "Spent savings",
+    "bs10_05_6_smt_14": "Borrowed money",
+    "bs10_05_6_smt_15": "Sold household assets",
+    "bs10_05_6_smt_16": "Sold productive assets",
+    "bs10_05_6_smt_17": "Children taken out of school",
+    "bs10_05_6_smt_18": "Reduced expenditures on health an/or education",
+    "bs10_05_6_smt_20": "Reduced the consumed quantity",
+    "bs10_05_6_smt_19": "Other survival mechanism",
+    "bs10_05_6_2": "Specify other",
+    "cs10_05": "Which one of these shocks did your household consider the 3rd most servere?",
+    "cs10_05_2": "Has [shock name] caused a reduction or loss of income (in nature or in cash)?",
+    "cs10_05_3": "Did [Shock name] create a decrease or loss of assets or belongings?",
+    "cs10_05_4": "Please indicate in which period of the year that shock manifested itself?",
+    "cs10_05_4_smt_1": "March of 2021",
+    "cs10_05_4_smt_2": "February of 2021",
+    "cs10_05_4_smt_3": "January of 2021",
+    "cs10_05_4_smt_4": "December of 2020",
+    "cs10_05_4_smt_5": "November of 2020",
+    "cs10_05_4_smt_6": "October of 2020",
+    "cs10_05_4_smt_7": "September of 2020",
+    "cs10_05_4_smt_8": "August of 2020",
+    "cs10_05_4_smt_9": "July of 2020",
+    "cs10_05_4_smt_10": "June of 2020",
+    "cs10_05_4_smt_11": "May of 2020",
+    "cs10_05_4_smt_12": "April of 2020",
+    "cs10_05_4_smt_13": "March of 2020",
+    "cs10_05_5": "Has the household recovered from those losses?",
+    "cs10_05_6": "What did the household do to compensate for the consequencies of the shock?",
+    "cs10_05_6_smt_1": "Have household members eat at relatives' or neighbours'",
+    "cs10_05_6_smt_2": "Reduced adult consumption so that children can eat",
+    "cs10_05_6_smt_3": "Fed working members at the expense of non working members",
+    "cs10_05_6_smt_4": "Reduce number of meals eaten per day",
+    "cs10_05_6_smt_5": "Go entire day without eating",
+    "cs10_05_6_smt_6": "Borrow food or rely on help from friends or relatives",
+    "cs10_05_6_smt_7": "Rely on less expensive or less preferred foods",
+    "cs10_05_6_smt_8": "Purchase/borrow food on credit",
+    "cs10_05_6_smt_9": "Consume seed stock to be saved for next season",
+    "cs10_05_6_smt_10": "Increased casual labour",
+    "cs10_05_6_smt_11": "Migration of one or more household members",
+    "cs10_05_6_smt_12": "Some household members worked for food only",
+    "cs10_05_6_smt_13": "Spent savings",
+    "cs10_05_6_smt_14": "Borrowed money",
+    "cs10_05_6_smt_15": "Sold household assets",
+    "cs10_05_6_smt_16": "Sold productive assets",
+    "cs10_05_6_smt_17": "Children taken out of school",
+    "cs10_05_6_smt_18": "Reduced expenditures on health an/or education",
+    "cs10_05_6_smt_20": "Reduced the consumed quantity",
+    "cs10_05_6_smt_19": "Other survival mechanism",
+    "ubudehe": "Ubudehe",
+    "s11_02": "What kind of social protection program or support have you received from the gov",
+    "s11_02_smt_0": "None",
+    "s11_02_smt_1": "Cash assistance",
+    "s11_02_smt_2": "Food assistance",
+    "s11_02_smt_3": "Not needed",
+    "s11_02_smt_4": "Others",
+    "s11_02_0": "Other assistance",
+    "s11_03": "Did your household or one (or more) of its members benefit from any in kind FOOD",
+    "s11_04": "What type of FOOD assistance was provided?",
+    "s11_04_smt_1": "Food for school children (eaten at school or take-home)",
+    "s11_04_smt_2": "Food for pregnant and breastfeeding women and small children (MCHN)",
+    "s11_04_smt_3": "Food for work",
+    "s11_04_smt_4": "Food for training",
+    "s11_04_smt_5": "Free food distributions",
+    "s11_04_smt_6": "Other food assistance programs",
+    "s11_04_1": "Please specify what any other types food assistance provided which is not in the",
+    "s11_04_1_1": "Please indicate the number of days the food assistance received would feed the f",
+    "as11_04_3": "Who provided Food for school children (eaten at school or take-home)",
+    "as11_04_3_smt_1": "Government",
+    "as11_04_3_smt_2": "WFP",
+    "as11_04_3_smt_3": "Other UN agency",
+    "as11_04_3_smt_4": "NGO",
+    "as11_04_3_smt_5": "Church/Mosque",
+    "as11_04_3_smt_6": "Community",
+    "as11_04_3_smt_7": "Relative(s) /Friend(s)",
+    "as11_04_3_smt_8": "Other",
+    "as11_04_3_smt_88": "Don't know",
+    "as11_04_3_2": "Specify other providers for Food for school children (eaten at school or take-ho",
+    "bs11_04_3": "Who provided Food for pregnant and breastfeeding women and small children (MCHN)",
+    "bs11_04_3_smt_1": "Government",
+    "bs11_04_3_smt_2": "WFP",
+    "bs11_04_3_smt_3": "Other UN agency",
+    "bs11_04_3_smt_4": "NGO",
+    "bs11_04_3_smt_5": "Church/Mosque",
+    "bs11_04_3_smt_6": "Community",
+    "bs11_04_3_smt_7": "Relative(s) /Friend(s)",
+    "bs11_04_3_smt_8": "Other",
+    "bs11_04_3_smt_88": "Don't know",
+    "bs11_04_3_2": "Specify other providers for Food for pregnant and breastfeeding women and small",
+    "cs11_04_3": "Who provided Food for work",
+    "cs11_04_3_smt_1": "Government",
+    "cs11_04_3_smt_2": "WFP",
+    "cs11_04_3_smt_3": "Other UN agency",
+    "cs11_04_3_smt_4": "NGO",
+    "cs11_04_3_smt_5": "Church/Mosque",
+    "cs11_04_3_smt_6": "Community",
+    "cs11_04_3_smt_7": "Relative(s) /Friend(s)",
+    "cs11_04_3_smt_8": "Other",
+    "cs11_04_3_smt_88": "Don't know",
+    "cs11_04_3_2": "Specify other providers for Food for work",
+    "ds11_04_3": "Who provided Food for training",
+    "ds11_04_3_smt_1": "Government",
+    "ds11_04_3_smt_2": "WFP",
+    "ds11_04_3_smt_3": "Other UN agency",
+    "ds11_04_3_smt_4": "NGO",
+    "ds11_04_3_smt_5": "Church/Mosque",
+    "ds11_04_3_smt_6": "Community",
+    "ds11_04_3_smt_7": "Relative(s) /Friend(s)",
+    "ds11_04_3_smt_8": "Other",
+    "ds11_04_3_smt_88": "Don't know",
+    "ds11_04_3_2": "Specify other providers for Food for training",
+    "es11_04_3": "Who provided Free food distributions",
+    "es11_04_3_smt_1": "Government",
+    "es11_04_3_smt_2": "WFP",
+    "es11_04_3_smt_3": "Other UN agency",
+    "es11_04_3_smt_4": "NGO",
+    "es11_04_3_smt_5": "Church/Mosque",
+    "es11_04_3_smt_6": "Community",
+    "es11_04_3_smt_7": "Relative(s) /Friend(s)",
+    "es11_04_3_smt_8": "Other",
+    "es11_04_3_smt_88": "Don't know",
+    "es11_04_3_2": "Specify other providers for Free food distributions",
+    "fs11_04_3": "Who provided Other food assistance programs",
+    "fs11_04_3_smt_1": "Government",
+    "fs11_04_3_smt_2": "WFP",
+    "fs11_04_3_smt_3": "Other UN agency",
+    "fs11_04_3_smt_4": "NGO",
+    "fs11_04_3_smt_5": "Church/Mosque",
+    "fs11_04_3_smt_6": "Community",
+    "fs11_04_3_smt_7": "Relative(s) /Friend(s)",
+    "fs11_04_3_smt_8": "Other",
+    "fs11_04_3_smt_88": "Don't know",
+    "fs11_04_3_2": "Specify other providers for Other food assistance programs",
+    "s11_05": "Did your household or one (or more) of its members benefit from any of the follo",
+    "s11_05_smt_1": "VUP direct support",
+    "s11_05_smt_2": "VUP Nutrition Sensitive Direct Support",
+    "s11_05_smt_3": "VUP public Works",
+    "s11_05_smt_4": "VUP expanded Public Works",
+    "s11_05_smt_5": "VUP Asset Transfer",
+    "s11_05_smt_6": "Emergency Cash Transfer for COVID-19",
+    "s11_05_smt_7": "VUP financial services loans through SACCOs",
+    "s11_05_smt_8": "Ubudehe credit scheme/loan (individual or group)",
+    "s11_05_smt_9": "Girinka (one cow per family)",
+    "s11_05_smt_10": "One cup of milk per child",
+    "s11_05_smt_11": "Others",
+    "s11_05_smt_88": "None",
+    "s11_05_0_1": "What is the amount of money your household recevied in financial assistance pack",
+    "s11_05_0_2": "Please specify how many months your household has benefitted from VUP transfers",
+    "s11_05_0_2_smt_1": "March of 2021",
+    "s11_05_0_2_smt_2": "February of 2021",
+    "s11_05_0_2_smt_3": "January of 2021",
+    "s11_05_0_2_smt_4": "December of 2020",
+    "s11_05_0_2_smt_5": "November of 2020",
+    "s11_05_0_2_smt_6": "October of 2020",
+    "s11_05_0_2_smt_7": "September of 2020",
+    "s11_05_0_2_smt_8": "August of 2020",
+    "s11_05_0_2_smt_9": "July of 2020",
+    "s11_05_0_2_smt_10": "June of 2020",
+    "s11_05_0_2_smt_11": "May of 2020",
+    "s11_05_0_2_smt_12": "April of 2020",
+    "s11_05_0_2_smt_13": "March of 2020",
+    "s11_05_1": "In the last 12 months, Did your household recevied any financial assistance pack",
+    "s11_05_1_1": "What is the amount of money your household recevied in financial assistance pack",
+    "s11_06": "Did your household or one (or more) of its members benefit from any other assist",
+    "s11_07": "What type of assistance was provided?",
+    "s11_07_smt_1": "Access to credit/loans for agricultural/livestock related activities (including",
+    "s11_07_smt_2": "Access to credit/loans for Other NON agricultural/livestock related activities (",
+    "s11_07_smt_3": "Agricultural input assistance (tools, seeds, fertilizer, etc.)",
+    "s11_07_smt_4": "Training and technical assistance in improved agricultural/livestock practices",
+    "s11_07_smt_5": "Large Livestock (eg. cow)",
+    "s11_07_smt_6": "Small livestock (eg. chicken rabbits\u00e2\u20ac\u00a6)",
+    "s11_07_smt_7": "Fish ponds",
+    "s11_07_smt_8": "Veterinary services",
+    "s11_07_smt_9": "For education (e.g. school materials)",
+    "s11_07_smt_10": "Direct transfers (other than VUP)",
+    "s11_07_smt_11": "medical services (including mutuelle de sante)",
+    "s11_07_smt_12": "Construction/building materials",
+    "s11_07_smt_13": "Water and/or sanitation",
+    "s11_07_smt_14": "Other non food assistance",
+    "s11_07_1": "Please speficy other types of assistance received?",
+    "as11_07_3": "AS11_07_3 Who provided Access to credit/loans for agricultural/livestock related",
+    "as11_07_3_smt_1": "Government",
+    "as11_07_3_smt_2": "WFP",
+    "as11_07_3_smt_3": "Other UN agency",
+    "as11_07_3_smt_4": "NGO",
+    "as11_07_3_smt_5": "Church/Mosque",
+    "as11_07_3_smt_6": "Community",
+    "as11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "as11_07_3_smt_8": "Other",
+    "as11_07_3_smt_88": "Don't know",
+    "as11_07_3_4": "Was the provided Access to credit/loans for agricultural/livestock related activ",
+    "as11_07_3_2": "Please specify what other providers provided the assistance you received?",
+    "bs11_07_3": "Who provided Access to credit/loans for Other NON agricultural/livestock related",
+    "bs11_07_3_smt_1": "Government",
+    "bs11_07_3_smt_2": "WFP",
+    "bs11_07_3_smt_3": "Other UN agency",
+    "bs11_07_3_smt_4": "NGO",
+    "bs11_07_3_smt_5": "Church/Mosque",
+    "bs11_07_3_smt_6": "Community",
+    "bs11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "bs11_07_3_smt_8": "Other",
+    "bs11_07_3_smt_88": "Don't know",
+    "as11_07_3_5": "Was the provided Access to credit/loans for Other NON agricultural/livestock rel",
+    "bs11_07_3_2": "Specify other providers for Access to credit/loans for Other NON agricultural/li",
+    "cs11_07_3": "Who provided Agricultural input assistance (tools, seeds, fertilizer, etc.)",
+    "cs11_07_3_smt_1": "Government",
+    "cs11_07_3_smt_2": "WFP",
+    "cs11_07_3_smt_3": "Other UN agency",
+    "cs11_07_3_smt_4": "NGO",
+    "cs11_07_3_smt_5": "Church/Mosque",
+    "cs11_07_3_smt_6": "Community",
+    "cs11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "cs11_07_3_smt_8": "Other",
+    "cs11_07_3_smt_88": "Don't know",
+    "as11_07_3_6": "Was the provided Agricultural input assistance (tools, seeds, fertilizer, etc.)",
+    "cs11_07_3_2": "Specify other providers for Agricultural input assistance (tools, seeds, fertili",
+    "ds11_07_3": "Who provided Training and technical assistance in improved agricultural/livestoc",
+    "ds11_07_3_smt_1": "Government",
+    "ds11_07_3_smt_2": "WFP",
+    "ds11_07_3_smt_3": "Other UN agency",
+    "ds11_07_3_smt_4": "NGO",
+    "ds11_07_3_smt_5": "Church/Mosque",
+    "ds11_07_3_smt_6": "Community",
+    "ds11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "ds11_07_3_smt_8": "Other",
+    "ds11_07_3_smt_88": "Don't know",
+    "as11_07_3_7": "Was the provided Training and technical assistance in improved agricultural/live",
+    "ds11_07_3_2": "Specify other providers for Training and technical assistance in improved agricu",
+    "es11_07_3": "Who provided Large Livestock (eg. cow)",
+    "es11_07_3_smt_1": "Government",
+    "es11_07_3_smt_2": "WFP",
+    "es11_07_3_smt_3": "Other UN agency",
+    "es11_07_3_smt_4": "NGO",
+    "es11_07_3_smt_5": "Church/Mosque",
+    "es11_07_3_smt_6": "Community",
+    "es11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "es11_07_3_smt_8": "Other",
+    "es11_07_3_smt_88": "Don't know",
+    "as11_07_3_8": "Was the provided Large Livestock (eg. Cow) in response to the impact of Covid-19",
+    "es11_07_3_2": "Specify other providers for Large Livestock (eg. cow)",
+    "fs11_07_3": "Who provided Small livestock (eg. chicken rabbits\u00e2\u20ac\u00a6)",
+    "fs11_07_3_smt_1": "Government",
+    "fs11_07_3_smt_2": "WFP",
+    "fs11_07_3_smt_3": "Other UN agency",
+    "fs11_07_3_smt_4": "NGO",
+    "fs11_07_3_smt_5": "Church/Mosque",
+    "fs11_07_3_smt_6": "Community",
+    "fs11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "fs11_07_3_smt_8": "Other",
+    "fs11_07_3_smt_88": "Don't know",
+    "as11_07_3_9": "Was the provided Small livestock (eg. chicken rabbits\u00e2\u20ac\u00a6) in response to the imp",
+    "fs11_07_3_2": "Specify other providers for Small livestock (eg. chicken rabbits\u00e2\u20ac\u00a6)",
+    "gs11_07_3": "Who provided Fish ponds",
+    "gs11_07_3_smt_1": "Government",
+    "gs11_07_3_smt_2": "WFP",
+    "gs11_07_3_smt_3": "Other UN agency",
+    "gs11_07_3_smt_4": "NGO",
+    "gs11_07_3_smt_5": "Church/Mosque",
+    "gs11_07_3_smt_6": "Community",
+    "gs11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "gs11_07_3_smt_8": "Other",
+    "gs11_07_3_smt_88": "Don't know",
+    "as11_07_3_10": "Was the provided Fish ponds in response to the impact of Covid-19 pandemic?",
+    "gs11_07_3_2": "Specify other providers for Fish ponds",
+    "hs11_07_3": "Who provided Veterinary services",
+    "hs11_07_3_smt_1": "Government",
+    "hs11_07_3_smt_2": "WFP",
+    "hs11_07_3_smt_3": "Other UN agency",
+    "hs11_07_3_smt_4": "NGO",
+    "hs11_07_3_smt_5": "Church/Mosque",
+    "hs11_07_3_smt_6": "Community",
+    "hs11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "hs11_07_3_smt_8": "Other",
+    "hs11_07_3_smt_88": "Don't know",
+    "as11_07_3_11": "Was the provided Veterinary services in response to the impact of Covid-19 pande",
+    "hs11_07_3_2": "Specify other providers for Veterinary services",
+    "is11_07_3": "Who provided For education (e.g. school materials)",
+    "is11_07_3_smt_1": "Government",
+    "is11_07_3_smt_2": "WFP",
+    "is11_07_3_smt_3": "Other UN agency",
+    "is11_07_3_smt_4": "NGO",
+    "is11_07_3_smt_5": "Church/Mosque",
+    "is11_07_3_smt_6": "Community",
+    "is11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "is11_07_3_smt_8": "Other",
+    "is11_07_3_smt_88": "Don't know",
+    "as11_07_3_12": "Was the provided For education (e.g. school materials) in response to the impact",
+    "is11_07_3_2": "Specify other providers for For education (e.g. school materials)",
+    "js11_07_3": "Who provided Direct transfers (other than VUP)",
+    "js11_07_3_smt_1": "Government",
+    "js11_07_3_smt_2": "WFP",
+    "js11_07_3_smt_3": "Other UN agency",
+    "js11_07_3_smt_4": "NGO",
+    "js11_07_3_smt_5": "Church/Mosque",
+    "js11_07_3_smt_6": "Community",
+    "js11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "js11_07_3_smt_8": "Other",
+    "js11_07_3_smt_88": "Don't know",
+    "as11_07_3_13": "Was the provided Direct transfers (other than VUP) in response to the impact of",
+    "js11_07_3_2": "Specify other providers for Direct transfers (other than VUP)",
+    "ks11_07_3": "Who provided medical services (including mutuelle de sante)",
+    "ks11_07_3_smt_1": "Government",
+    "ks11_07_3_smt_2": "WFP",
+    "ks11_07_3_smt_3": "Other UN agency",
+    "ks11_07_3_smt_4": "NGO",
+    "ks11_07_3_smt_5": "Church/Mosque",
+    "ks11_07_3_smt_6": "Community",
+    "ks11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "ks11_07_3_smt_8": "Other",
+    "ks11_07_3_smt_88": "Don't know",
+    "as11_07_3_14": "Was the provided medical services (including mutuelle de sante) in response to t",
+    "ks11_07_3_2": "Specify other providers for medical services (including mutuelle de sante)",
+    "ls11_07_3": "Who provided Construction/building materials",
+    "ls11_07_3_smt_1": "Government",
+    "ls11_07_3_smt_2": "WFP",
+    "ls11_07_3_smt_3": "Other UN agency",
+    "ls11_07_3_smt_4": "NGO",
+    "ls11_07_3_smt_5": "Church/Mosque",
+    "ls11_07_3_smt_6": "Community",
+    "ls11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "ls11_07_3_smt_8": "Other",
+    "ls11_07_3_smt_88": "Don't know",
+    "as11_07_3_15": "Was the provided Construction/building materials in response to the impact of Co",
+    "ls11_07_3_2": "Specify other providers for Construction/building materials",
+    "ms11_07_3": "Who provided Water and/or sanitation",
+    "ms11_07_3_smt_1": "Government",
+    "ms11_07_3_smt_2": "WFP",
+    "ms11_07_3_smt_3": "Other UN agency",
+    "ms11_07_3_smt_4": "NGO",
+    "ms11_07_3_smt_5": "Church/Mosque",
+    "ms11_07_3_smt_6": "Community",
+    "ms11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "ms11_07_3_smt_8": "Other",
+    "ms11_07_3_smt_88": "Don't know",
+    "as11_07_3_16": "Was the provided Water and/or sanitation in response to the impact of Covid-19 p",
+    "ms11_07_3_2": "Specify other providers for Water and/or sanitation",
+    "ns11_07_3": "Who provided Other non food assistance",
+    "ns11_07_3_smt_1": "Government",
+    "ns11_07_3_smt_2": "WFP",
+    "ns11_07_3_smt_3": "Other UN agency",
+    "ns11_07_3_smt_4": "NGO",
+    "ns11_07_3_smt_5": "Church/Mosque",
+    "ns11_07_3_smt_6": "Community",
+    "ns11_07_3_smt_7": "Relative(s) /Friend(s)",
+    "ns11_07_3_smt_8": "Other",
+    "ns11_07_3_smt_88": "Don't know",
+    "as11_07_3_17": "Was the provided Other non food assistance in response to the impact of Covid-19",
+    "ns11_07_3_2": "Specify other providers for Other non food assistance",
+    "cvd_0": "All activities reported by household members in the demographic section",
+    "cvd_0_smt_1": "Agricultural Production (On Own Farm/Land Or On Other Farm/Land With or without",
+    "cvd_0_smt_2": "Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash Compensation",
+    "cvd_0_smt_3": "Livestock Raising For Sales",
+    "cvd_0_smt_4": "Fishing, Hunting, Gathering",
+    "cvd_0_smt_5": "Unskilled Daily Labour (Non Agricultural)",
+    "cvd_0_smt_6": "Skilled Labour",
+    "cvd_0_smt_7": "Purchase and Sale Of Product From Fishing, Hunting Gathering",
+    "cvd_0_smt_8": "Purchase And Sale Of Agricultural Products",
+    "cvd_0_smt_9": "Purchase And Sale Of Livestock Products",
+    "cvd_0_smt_10": "Purchase And Sale Of Livestock",
+    "cvd_0_smt_11": "Informal Sale/Petty Trade",
+    "cvd_0_smt_12": "Handicrafts/Artisanal Work",
+    "cvd_0_smt_13": "Transport",
+    "cvd_0_smt_14": "Salaried",
+    "cvd_0_smt_15": "Pension",
+    "cvd_0_smt_16": "Own Business/Self Employed",
+    "cvd_0_smt_17": "Vup Public Works",
+    "cvd_0_smt_18": "Begging",
+    "cvd_0_smt_21": "Other",
+    "cvd_0_smt_0": "None",
+    "cvd_0_1": " Are they the same activities your household was doing before COVID-19?",
+    "cvd_1": "Are basic food commodities (such as wheat, bread, rice) currently available in s",
+    "cvd_2": "Are fresh food commodities (such as milk, eggs, meat, vegetables) currently avai",
+    "cvd_3": "Are hygiene articles (e.g. soap/detergents) currently available for purchase in",
+    "cvd_4": "Are essential medicine available in clinics or pharmacies?",
+    "cvd_5": "Has there been any change in the provision of health services (clinics/doctors)",
+    "cvd_6": "Has there been any change in the provision of education in your community/neighb",
+    "cvd_6_smt_1": "Schools are functioning as normal",
+    "cvd_6_smt_2": "Schools continued online",
+    "cvd_6_smt_3": "Schools are temporary closed",
+    "cvd_6_smt_4": "There are no schools at all",
+    "cvd_6_smt_98": "I don't know",
+    "cvd_7": "Has your household income changed when compared to before COVID-19?",
+    "cvd_8": "Did you faced food access issues due to your immediate family member who has bee",
+    "cvd_9": "Have you enhanced your hygiene practices (e.g. regular hand washing with soap) d",
+    "n13_21": "Did you hear or receive any message on feeding a child aged 6 months to 2 years",
+    "n13_22": "Were there any occasions in which you did not attend a scheduled ANC visit due t",
+    "n13_23": "Did you seek advice or treatment for the illness outside the home during COVID-1",
+    "n13_23_0": "Others Specify",
+    "n13_24": "What was the main reason for not seeking health care?",
+    "n13_24_0": "Other reasons(Specify)",
+    "n13_25": "In the past 12 months, have you felt worried about not having enough food to eat",
+    "n13_26_1": "Dairy, milk, yogurt",
+    "n13_26_2": "Breastmilk substitutes / infant formula",
+    "n13_26_3": "Meat, poultry, fish, shrimp",
+    "n13_26_4": "Eggs",
+    "n13_26_5": "Vegetables",
+    "n13_26_6": "Fruits",
+    "n13_27": "Did you hear or receive any message on breastfeeding of infants in the context o",
+    "n13_28": "How do you normally wash your hands?",
+    "n13_29": "Due to COVID19, Have you enhanced your hygiene practices (e.g. regular hand wash",
+    "s0_e_livezone": "S0_E_Livezone",
+    "fie": "Monthly food item expenditures",
+    "nfie": "Non food item expenditures",
+    "t_exp": "Total monthly household expenditures",
+    "s_fie": "Share food expenditure",
+    "s_nfie": "Share non food expenditure",
+    "s_chk": "Check expenditure shares",
+    "an_hh_exp": "Annual household expenditures",
+    "anpercap_exp": "Annual per capita expenditures",
+    "percap_fie": "Food Expenditure share Per Capita",
+    "starch": "Starch consumption in last 7 days",
+    "pulses": "Pulses consumption in last 7 days",
+    "milk": "Milk consumption in last 7 days",
+    "meat": "Meat consumption in last 7 days",
+    "vegetables": "Vegetables consumption in last 7 days",
+    "fruit": "Fruit consumption in last 7 days",
+    "oil": "Oil consumption in last 7 days",
+    "sugar": "Sugar consumption in last 7 days",
+    "fcs": "Food Consumption Score",
+    "fcg": "Food Consumption Group",
+    "share_exp_cat": "Food expenditure share categories",
+    "stress_coping": "did HH engage in stress coping strategies?",
+    "crisis_coping": "did HH engage in crisis coping strategies?",
+    "emergency_coping": "did HH engage in emergency coping strategies?",
+    "max_coping_behaviour": "Summary of asset depletion",
+    "fs_final": "HH Food security index",
+    "chronically_fs": "Food access situation",
+    "income_quintile": "Income quintile",
+    "wi_cat": "Wealth index categories",
+    "fg_vitacat": "FG_VitACategory",
+    "fg_proteincat": "FG_ProteinCategory",
+    "fg_hironcat": "FG_HIronCategory",
+    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR codes)",
+    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "urban": "Area of residence (1 urban, 2 rural; where shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)"
+   },
+   "value_labels": {
+    "respondent_gender": {
+     "1": "Male",
+     "2": "Female"
+    },
+    "s1_01_3": {
+     "1": "Male",
+     "2": "Female"
+    },
+    "s1_01_4_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_6": {
+     "1": "Head of household",
+     "2": "Spouse of head of household",
+     "3": "Son or daughter of head of household",
+     "4": "Step/Adopted/Foster child of head of household",
+     "5": "Father/Mother of head of head of household",
+     "6": "Brother/Sister to the head of household",
+     "7": "Grandchild of head of household",
+     "8": "Parent in law of the head of household",
+     "9": "Brother/Sister in law to the head of household",
+     "10": "Other relationship to the head of household",
+     "11": "No relationship with head of household",
+     "12": "Waged doemstic worker"
+    },
+    "s1_01_7": {
+     "0": "No",
+     "1": "Yes (both read and write)",
+     "2": "Yes (read only)"
+    },
+    "s1_01_8": {
+     "1": "No school",
+     "2": "Some/still primary",
+     "3": "Completed primary",
+     "4": "Vocational school",
+     "5": "Some/still secondary",
+     "6": "Completed secondary",
+     "7": "Some/still university",
+     "8": "Completed university",
+     "88": "Don't know"
+    },
+    "s1_01_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_10": {
+     "1": "Married",
+     "2": "Partner",
+     "3": "Divorced",
+     "4": "Separated",
+     "5": "Widow/Widower",
+     "6": "Never married (single)"
+    },
+    "s1_01_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_14_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_15": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_16": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_17": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_18": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_smt_0": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_15_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_16": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_16_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s1_01_17": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_01": {
+     "1": "Straw/Thatch Leaves Grass",
+     "2": "Metal sheet corrugated iron",
+     "3": "Clay Tiles",
+     "4": "Cement/Concrete",
+     "5": "Wood/bamboo",
+     "6": "Other"
+    },
+    "s2_02": {
+     "1": "Earth/Mud",
+     "2": "Cement concrete",
+     "3": "Hardened Dung",
+     "4": "CLAY TILES",
+     "5": "Wood",
+     "6": "Bricks",
+     "7": "Other"
+    },
+    "s2_03": {
+     "1": "Mud bricks",
+     "2": "Mud bricks covered with cement",
+     "3": "Tree trunks with mud",
+     "4": "tree trunks with mud and cement",
+     "5": "Oven fired bricks and or Cement made bricks",
+     "6": "Other"
+    },
+    "s2_04": {
+     "1": "Yes, it's in the umudugudu",
+     "2": "No, this is town",
+     "3": "No, it's not in umudugu"
+    },
+    "s2_04_2": {
+     "1": "since <3months",
+     "2": "Yes, between 3 and less than 6 months",
+     "3": "Yes, Between 6 months and 1 year",
+     "4": "Yes, More than 1 year"
+    },
+    "s2_05": {
+     "1": "Owner",
+     "2": "Rented",
+     "3": "Free of charge (not owner)"
+    },
+    "s2_07": {
+     "1": "Flush latrine",
+     "2": "Pit latrine (floor, walls and roof)",
+     "3": "Pit latrine (floor, walls without roof)",
+     "4": "Pit latrine (floor, without walls and roof)",
+     "5": "Pit latrine (no floor, walls or roof",
+     "6": "None (bush, stream or neighbours)"
+    },
+    "s2_07_2": {
+     "1": "Borrow from neighbors,",
+     "2": "Public latrines in the village,",
+     "3": "Bush or stream or other inappropriate places"
+    },
+    "s2_07_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_08": {
+     "0": "No lighting",
+     "1": "Electricity",
+     "2": "Kerosene, oil or gas lamp",
+     "3": "Lantern",
+     "4": "Battery flashlights",
+     "5": "Candles",
+     "6": "Firewood",
+     "7": "Solar energy",
+     "8": "Others,"
+    },
+    "s2_09": {
+     "1": "Gas",
+     "2": "Electricity",
+     "3": "Firewood",
+     "4": "Charcoal",
+     "5": "Kerosene",
+     "6": "Bio-gas",
+     "7": "Crop waste/animal dung",
+     "8": "Other"
+    },
+    "s2_10": {
+     "1": "Public tap/ piped water",
+     "2": "Water tap at home",
+     "3": "Pond, lake, river or stream",
+     "4": "Borehole with pump",
+     "5": "Rain water",
+     "6": "Protected dug well or spring",
+     "7": "Unprotected well or spring",
+     "8": "Vendor",
+     "9": "Other"
+    },
+    "s2_10_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_10_3": {
+     "1": "Walk",
+     "2": "Bicycle",
+     "3": "Motorbike/vehicle",
+     "4": "Hire someone for that",
+     "5": "Other"
+    },
+    "s2_11": {
+     "0": "No, this is the only source we use",
+     "1": "Yes, we do have another source"
+    },
+    "s2_11_2": {
+     "1": "Public tap/ piped water",
+     "2": "Water tap at home",
+     "3": "Pond, lake, river or stream",
+     "4": "Borehole with pump",
+     "5": "Rain water",
+     "6": "Protected dug well or spring",
+     "7": "Unprotected well or spring",
+     "8": "Vendor",
+     "9": "Other"
+    },
+    "s2_11_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_11_4": {
+     "1": "Walk",
+     "2": "Bicycle",
+     "3": "Motorbike/vehicle",
+     "4": "Hire someone for that",
+     "5": "Other"
+    },
+    "s2_12": {
+     "1": "Boil",
+     "2": "Strained through cloth",
+     "3": "Ceramic, sand or other filter",
+     "4": "Purifying tablets/bleach chlorine",
+     "5": "Sedimentation",
+     "6": "Nothing is done",
+     "7": "We buy treated water"
+    },
+    "s3_02": {
+     "0": "None",
+     "1": "Agricultural Production (On Own Farm/Land Or On Other Farm/Land With or without Rental Payment)",
+     "2": "Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash Compensation Excluding Vup)",
+     "3": "Livestock Raising For Sales",
+     "4": "Fishing, Hunting, Gathering",
+     "5": "Unskilled Daily Labour (Non Agricultural)",
+     "6": "Skilled Labour",
+     "7": "Purchase and Sale Of Product From Fishing, Hunting Gathering",
+     "8": "Purchase And Sale Of Agricultural Products",
+     "9": "Purchase And Sale Of Livestock Products",
+     "10": "Purchase And Sale Of Livestock",
+     "11": "Informal Sale/Petty Trade",
+     "12": "Handicrafts/Artisanal Work",
+     "13": "Transport",
+     "14": "Salaried",
+     "15": "Pension",
+     "16": "Own Business/Self Employed",
+     "17": "Vup Public Works",
+     "18": "Begging",
+     "21": "Other"
+    },
+    "s3_02_2_1": {
+     "0": "No, it continuous throughout the year",
+     "1": "Yes, it's seasonal"
+    },
+    "s3_03": {
+     "0": "None",
+     "1": "Agricultural Production (On Own Farm/Land Or On Other Farm/Land With or without Rental Payment)",
+     "2": "Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash Compensation Excluding Vup)",
+     "3": "Livestock Raising For Sales",
+     "4": "Fishing, Hunting, Gathering",
+     "5": "Unskilled Daily Labour (Non Agricultural)",
+     "6": "Skilled Labour",
+     "7": "Purchase and Sale Of Product From Fishing, Hunting Gathering",
+     "8": "Purchase And Sale Of Agricultural Products",
+     "9": "Purchase And Sale Of Livestock Products",
+     "10": "Purchase And Sale Of Livestock",
+     "11": "Informal Sale/Petty Trade",
+     "12": "Handicrafts/Artisanal Work",
+     "13": "Transport",
+     "14": "Salaried",
+     "15": "Pension",
+     "16": "Own Business/Self Employed",
+     "17": "Vup Public Works",
+     "18": "Begging",
+     "21": "Other"
+    },
+    "s3_03_2_1": {
+     "0": "No, it continuous throughout the year",
+     "1": "Yes, it's seasonal"
+    },
+    "s3_04": {
+     "0": "None",
+     "1": "Agricultural Production (On Own Farm/Land Or On Other Farm/Land With or without Rental Payment)",
+     "2": "Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash Compensation Excluding Vup)",
+     "3": "Livestock Raising For Sales",
+     "4": "Fishing, Hunting, Gathering",
+     "5": "Unskilled Daily Labour (Non Agricultural)",
+     "6": "Skilled Labour",
+     "7": "Purchase and Sale Of Product From Fishing, Hunting Gathering",
+     "8": "Purchase And Sale Of Agricultural Products",
+     "9": "Purchase And Sale Of Livestock Products",
+     "10": "Purchase And Sale Of Livestock",
+     "11": "Informal Sale/Petty Trade",
+     "12": "Handicrafts/Artisanal Work",
+     "13": "Transport",
+     "14": "Salaried",
+     "15": "Pension",
+     "16": "Own Business/Self Employed",
+     "17": "Vup Public Works",
+     "18": "Begging",
+     "21": "Other"
+    },
+    "s3_04_2_1": {
+     "0": "No, it continuous throughout the year",
+     "1": "Yes, it's seasonal"
+    },
+    "s4_01": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_01_2": {
+     "1": "less that 1000 sqm (<0.1 ha)",
+     "2": "Between 1000 and 2000sqm (0.1 < 0.2 ha)",
+     "3": "Between 2000 and 5000sqm (0.2 <0.5 ha)",
+     "4": "Between 5000 and 10,000sqm (0.5 < 1ha)",
+     "5": "Between 10,000 and 20,000sqm (1 < 2 ha)",
+     "6": "Between 20,000 and 50,000sqm (2 < 5 ha)",
+     "7": "50,000sqm and above (5 ha and above)"
+    },
+    "s4_02_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_03": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_03_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_03_3": {
+     "1": "HH Consumption",
+     "2": "Income generating",
+     "3": "Both (consumption and income)"
+    },
+    "s4_05_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_07": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s4_08_2": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s4_09_3": {
+     "1": "Very easy",
+     "2": "Easy",
+     "3": "Not easy"
+    },
+    "s5_01_2": {
+     "11": "Wheat",
+     "12": "Maize",
+     "13": "Sorghum",
+     "14": "Rice",
+     "15": "Other cereals",
+     "20": "Orange fleshed Sweet potatoes",
+     "21": "White fleshed sweet potatoes",
+     "22": "Irish potato",
+     "23": "Cassava",
+     "24": "Taro",
+     "25": "Yam",
+     "26": "Banana cooking",
+     "27": "Other roots and tubers specify",
+     "31": "Tomato",
+     "32": "Cabbage",
+     "33": "Other vegetables",
+     "41": "Banana (wine)",
+     "42": "Banana fruit",
+     "43": "Passion fruit",
+     "44": "Pineapple",
+     "45": "Other fruit specify",
+     "50": "bio-fortified beans",
+     "51": "Beans",
+     "52": "Peas",
+     "53": "Soya",
+     "54": "Ground nuts",
+     "55": "Other pulses, specify",
+     "61": "Tea",
+     "62": "Coffee",
+     "63": "Tobacco",
+     "64": "Sugar cane",
+     "65": "Other cash crops specify"
+    },
+    "s5_01_3": {
+     "11": "Wheat",
+     "12": "Maize",
+     "13": "Sorghum",
+     "14": "Rice",
+     "15": "Other cereals",
+     "20": "Orange fleshed Sweet potatoes",
+     "21": "White fleshed sweet potatoes",
+     "22": "Irish potato",
+     "23": "Cassava",
+     "24": "Taro",
+     "25": "Yam",
+     "26": "Banana cooking",
+     "27": "Other roots and tubers specify",
+     "31": "Tomato",
+     "32": "Cabbage",
+     "33": "Other vegetables",
+     "41": "Banana (wine)",
+     "42": "Banana fruit",
+     "43": "Passion fruit",
+     "44": "Pineapple",
+     "45": "Other fruit specify",
+     "50": "bio-fortified beans",
+     "51": "Beans",
+     "52": "Peas",
+     "53": "Soya",
+     "54": "Ground nuts",
+     "55": "Other pulses, specify",
+     "61": "Tea",
+     "62": "Coffee",
+     "63": "Tobacco",
+     "64": "Sugar cane",
+     "65": "Other cash crops specify"
+    },
+    "s5_01_4": {
+     "11": "Wheat",
+     "12": "Maize",
+     "13": "Sorghum",
+     "14": "Rice",
+     "15": "Other cereals",
+     "20": "Orange fleshed Sweet potatoes",
+     "21": "White fleshed sweet potatoes",
+     "22": "Irish potato",
+     "23": "Cassava",
+     "24": "Taro",
+     "25": "Yam",
+     "26": "Banana cooking",
+     "27": "Other roots and tubers specify",
+     "31": "Tomato",
+     "32": "Cabbage",
+     "33": "Other vegetables",
+     "41": "Banana (wine)",
+     "42": "Banana fruit",
+     "43": "Passion fruit",
+     "44": "Pineapple",
+     "45": "Other fruit specify",
+     "50": "bio-fortified beans",
+     "51": "Beans",
+     "52": "Peas",
+     "53": "Soya",
+     "54": "Ground nuts",
+     "55": "Other pulses, specify",
+     "61": "Tea",
+     "62": "Coffee",
+     "63": "Tobacco",
+     "64": "Sugar cane",
+     "65": "Other cash crops specify"
+    },
+    "as5_02": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as5_03": {
+     "1": "Purchase",
+     "2": "Purchase with Government support",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "Reserved from  previous harvest",
+     "6": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "7": "Other"
+    },
+    "as5_04_3_2": {
+     "1": "Purchaser in the field",
+     "2": "Trader in the village market",
+     "3": "Trader in the sector market",
+     "4": "Trader in the district market",
+     "5": "Individual consumer, family and relatives",
+     "6": "Cooperative",
+     "7": "International trader",
+     "8": "Other"
+    },
+    "as5_05": {
+     "0": "No",
+     "1": "Yes Fertilizer only",
+     "2": "Yes pesticides only",
+     "3": "Yes both",
+     "88": "Don't know"
+    },
+    "as5_05_2": {
+     "1": "Purchase",
+     "2": "Purchase with Government Contribution",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "88": "Other"
+    },
+    "as5_05_3": {
+     "1": "Purchase",
+     "2": "Purchase with Government Contribution",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "88": "Other"
+    },
+    "bs5_02": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs5_03": {
+     "1": "Purchase",
+     "2": "Purchase with Government support",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "Reserved from  previous harvest",
+     "6": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "7": "Other"
+    },
+    "bs5_04_3_2": {
+     "1": "Purchaser in the field",
+     "2": "Trader in the village market",
+     "3": "Trader in the sector market",
+     "4": "Trader in the district market",
+     "5": "Individual consumer, family and relatives",
+     "6": "Cooperative",
+     "7": "International trader",
+     "8": "Other"
+    },
+    "bs5_05": {
+     "0": "No",
+     "1": "Yes Fertilizer only",
+     "2": "Yes pesticides only",
+     "3": "Yes both",
+     "88": "Don't know"
+    },
+    "bs5_05_2": {
+     "1": "Purchase",
+     "2": "Purchase with Government Contribution",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "88": "Other"
+    },
+    "bs5_05_3": {
+     "1": "Purchase",
+     "2": "Purchase with Government Contribution",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "88": "Other"
+    },
+    "cs5_02": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs5_03": {
+     "1": "Purchase",
+     "2": "Purchase with Government support",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "Reserved from  previous harvest",
+     "6": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "7": "Other"
+    },
+    "cs5_04_3_2": {
+     "1": "Purchaser in the field",
+     "2": "Trader in the village market",
+     "3": "Trader in the sector market",
+     "4": "Trader in the district market",
+     "5": "Individual consumer, family and relatives",
+     "6": "Cooperative",
+     "7": "International trader",
+     "8": "Other"
+    },
+    "cs5_05": {
+     "0": "No",
+     "1": "Yes Fertilizer only",
+     "2": "Yes pesticides only",
+     "3": "Yes both",
+     "88": "Don't know"
+    },
+    "cs5_05_2": {
+     "1": "Purchase",
+     "2": "Purchase with Government Contribution",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "88": "Other"
+    },
+    "cs5_05_3": {
+     "1": "Purchase",
+     "2": "Purchase with Government Contribution",
+     "3": "Exchange with farmers",
+     "4": "Gift from relatives/family",
+     "5": "received from NGOs, govt\u00e2\u20ac\u00a6",
+     "88": "Other"
+    },
+    "s5_04": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s5_05": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s6_01": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s6_02": {
+     "1": "Micro-finance Institution (Credit d'Epargne/NGO/Sacco)",
+     "2": "Bank",
+     "3": "Tontine / Cooperative (Community loan)",
+     "4": "VUP financial service",
+     "5": "Village Saving and Loaning",
+     "6": "Informal lender",
+     "7": "Other"
+    },
+    "s6_03": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s6_03_2": {
+     "1": "Insufficient income",
+     "2": "Insufficient collateral",
+     "3": "Problems related to debts history",
+     "4": "Unclear  purpose of the loan",
+     "5": "Other reasons"
+    },
+    "s7_01": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_3": {
+     "0": "It's usual",
+     "1": "No, it's more than usual",
+     "2": "No, it's less than usual"
+    },
+    "s8_02_3": {
+     "0": "It's usual",
+     "1": "No, it's more than usual",
+     "2": "No, it's less than usual"
+    },
+    "s8_04": {
+     "1": "Own production (crops, animal)",
+     "2": "Fishing / Hunting",
+     "3": "Loan",
+     "4": "Market (purchase with cash)",
+     "5": "Market (purchase on credit)",
+     "6": "Beg for food",
+     "7": "Exchange labor or items for food",
+     "8": "Gift (food) from family relatives or friends",
+     "9": "Food aid from civil society, NGOs, government, WFP"
+    },
+    "s8_05": {
+     "1": "Cereals",
+     "2": "Tubers and roots",
+     "3": "Cooking banana"
+    },
+    "s8_05_2": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s8_05_3": {
+     "1": "Own production (crops, animal)",
+     "2": "Fishing / Hunting",
+     "3": "Loan",
+     "4": "Market (purchase with cash)",
+     "5": "Market (purchase on credit)",
+     "6": "Beg for food",
+     "7": "Exchange labor or items for food",
+     "8": "Gift (food) from family relatives or friends",
+     "9": "Food aid from civil society, NGOs, government, WFP"
+    },
+    "s8_06_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_06_2": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s8_06_3": {
+     "1": "Own production (crops, animal)",
+     "2": "Fishing / Hunting",
+     "3": "Loan",
+     "4": "Market (purchase with cash)",
+     "5": "Market (purchase on credit)",
+     "6": "Beg for food",
+     "7": "Exchange labor or items for food",
+     "8": "Gift (food) from family relatives or friends",
+     "9": "Food aid from civil society, NGOs, government, WFP"
+    },
+    "s9_01": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s9_01_2": {
+     "1": "Low production from last season",
+     "2": "Lack of agricultural production markets",
+     "3": "Loss/reduction of employment of members of the household",
+     "4": "Reduction of income of household members",
+     "5": "High market prices for non-food items",
+     "6": "Unusually high food prices",
+     "7": "Insecurity/unrest/Violence",
+     "8": "Others"
+    },
+    "s9_01_2_2": {
+     "1": "Drought/irregular rains, prolonged dry spell",
+     "2": "Floods",
+     "3": "Landslides and Mudslides",
+     "4": "Unusually high level of crop pests & disease",
+     "5": "Unusually high level of livestock diseases",
+     "6": "Hailstones (grele)",
+     "7": "Other, specify"
+    },
+    "s9_01_2_3": {
+     "1": "Serious illness or accident of household member",
+     "2": "Death  of the Head of the household",
+     "3": "Death a working household member",
+     "4": "Death of other household member",
+     "5": "Theft of productive resources",
+     "6": "Loss or reduced employment/Income for a household member",
+     "7": "Other, specify"
+    },
+    "as9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "as9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "bs9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "bs9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "cs9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "cs9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "ds9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "ds9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "es9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "es9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "fs9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "fs9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "gs9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "gs9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "hs9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "hs9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "is9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "is9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "js9_04": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "js9_04_2": {
+     "1": "No, because it wasn't necessary",
+     "2": "No, because I already sold those assets or did this activity and I cannont continue to do it.",
+     "3": "No because I never had the possibility to do so"
+    },
+    "s10_01": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s10_01_3": {
+     "0": "It's usual",
+     "1": "No, it's better than usual",
+     "2": "No, it's worse/less than usual"
+    },
+    "s10_02": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s10_03_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as10_05": {
+     "1": "Drought/irregular rains, prolonged dry spell",
+     "2": "Floods",
+     "3": "Landslides and Mudslides",
+     "4": "Unusually high level of crop pests & disease",
+     "5": "Unusually high level of livestock diseases",
+     "6": "Unusually high level of human disease/EPIDEMIC",
+     "7": "Unusually high prices for food",
+     "8": "Unusually high cost of agric. inputs (seed, fertilizer, etc.)",
+     "9": "Loss or reduced employment/Income for a household member",
+     "10": "Fires",
+     "11": "Serious illness or accident of household member",
+     "12": "Death  of the Head of the household",
+     "13": "Death a working household member",
+     "14": "Death of other household member",
+     "15": "Theft of productive resources",
+     "16": "Insecurity/violence",
+     "17": "hailstones (grele)",
+     "18": "earthquake",
+     "19": "Volcanic activity",
+     "20": "Other, specify",
+     "21": "COVID-19"
+    },
+    "as10_05_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as10_05_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as10_05_5": {
+     "1": "not at all",
+     "2": "partially",
+     "3": "fully"
+    },
+    "bs10_05": {
+     "1": "Drought/irregular rains, prolonged dry spell",
+     "2": "Floods",
+     "3": "Landslides and Mudslides",
+     "4": "Unusually high level of crop pests & disease",
+     "5": "Unusually high level of livestock diseases",
+     "6": "Unusually high level of human disease/EPIDEMIC",
+     "7": "Unusually high prices for food",
+     "8": "Unusually high cost of agric. inputs (seed, fertilizer, etc.)",
+     "9": "Loss or reduced employment/Income for a household member",
+     "10": "Fires",
+     "11": "Serious illness or accident of household member",
+     "12": "Death  of the Head of the household",
+     "13": "Death a working household member",
+     "14": "Death of other household member",
+     "15": "Theft of productive resources",
+     "16": "Insecurity/violence",
+     "17": "hailstones (grele)",
+     "18": "earthquake",
+     "19": "Volcanic activity",
+     "20": "Other, specify",
+     "21": "COVID-19"
+    },
+    "bs10_05_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs10_05_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs10_05_5": {
+     "1": "not at all",
+     "2": "partially",
+     "3": "fully"
+    },
+    "cs10_05": {
+     "1": "Drought/irregular rains, prolonged dry spell",
+     "2": "Floods",
+     "3": "Landslides and Mudslides",
+     "4": "Unusually high level of crop pests & disease",
+     "5": "Unusually high level of livestock diseases",
+     "6": "Unusually high level of human disease/EPIDEMIC",
+     "7": "Unusually high prices for food",
+     "8": "Unusually high cost of agric. inputs (seed, fertilizer, etc.)",
+     "9": "Loss or reduced employment/Income for a household member",
+     "10": "Fires",
+     "11": "Serious illness or accident of household member",
+     "12": "Death  of the Head of the household",
+     "13": "Death a working household member",
+     "14": "Death of other household member",
+     "15": "Theft of productive resources",
+     "16": "Insecurity/violence",
+     "17": "hailstones (grele)",
+     "18": "earthquake",
+     "19": "Volcanic activity",
+     "20": "Other, specify",
+     "21": "COVID-19"
+    },
+    "cs10_05_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs10_05_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs10_05_5": {
+     "1": "not at all",
+     "2": "partially",
+     "3": "fully"
+    },
+    "ubudehe": {
+     "0": "Don't know",
+     "1": "Category 1",
+     "2": "Category 2",
+     "3": "Category 3",
+     "4": "Category 4",
+     "88": "Not assigned yet"
+    },
+    "s11_02_smt_0": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_02_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_02_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_02_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_02_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_03": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s11_04_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_04_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_04_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_04_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_04_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_04_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_04_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_04_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_04_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_04_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_04_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_04_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_0_2_smt_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_05_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_06": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s11_07_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s11_07_smt_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "bs11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cs11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ds11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "es11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "fs11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "gs11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hs11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "is11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "js11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ks11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ls11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_15": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ms11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_16": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "ns11_07_3_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as11_07_3_17": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_15": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_16": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_17": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_18": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_21": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_smt_0": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_0_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_1": {
+     "1": "Always available",
+     "2": "Partially/sometimes available",
+     "3": "No longer available",
+     "4": "Always scarce or never available (remove if not relevant)",
+     "5": "Don't know"
+    },
+    "cvd_2": {
+     "1": "Always available",
+     "2": "Partially/sometimes available",
+     "3": "No longer available",
+     "4": "Always scarce or never available (remove if not relevant)",
+     "5": "Don't know"
+    },
+    "cvd_3": {
+     "1": "Always available",
+     "2": "Partially/sometimes available",
+     "3": "No longer available",
+     "4": "Always scarce or never available (remove if not relevant)",
+     "5": "Don't know"
+    },
+    "cvd_4": {
+     "1": "Always available",
+     "2": "Partially/sometimes available",
+     "3": "No longer available",
+     "4": "Always scarce or never available (remove if not relevant)",
+     "5": "Don't know"
+    },
+    "cvd_5": {
+     "1": "Health services are functioning as usual",
+     "2": "Health services are functioning better than usual",
+     "3": "Health services are functioning bad than usual",
+     "4": "Health services have deteriorated",
+     "5": "Health services are no longer functioning",
+     "6": "I don't know",
+     "7": "Not Applicable"
+    },
+    "cvd_6_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_6_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_6_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_6_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_6_smt_98": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "cvd_7": {
+     "1": "No change",
+     "2": "Increased income",
+     "3": "Reduced income",
+     "98": "Do not know"
+    },
+    "cvd_8": {
+     "0": "No",
+     "1": "Yes",
+     "3": "Not applicable"
+    },
+    "cvd_9": {
+     "1": "No",
+     "2": "Yes, sometimes",
+     "3": "Yes, all the time"
+    },
+    "n13_21": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "n13_22": {
+     "1": "No",
+     "2": "Yes, appointment cancelled",
+     "3": "Yes, appointment postponed",
+     "4": "Yes, refused to attend due to C19 risk",
+     "5": "Yes, impossible to move and attend ANC",
+     "6": "Yes, my family would not let me free to go to the clinic",
+     "7": "Not applicable"
+    },
+    "n13_23": {
+     "0": "No",
+     "1": "Yes, Public Health facility",
+     "2": "Yes, Private clinic",
+     "3": "Yes, Traditional healers",
+     "4": "Yes, Herbal stores/ Herbalists",
+     "5": "Yes, Drugs store/pharmacy",
+     "6": "Yes, Friends/relatives",
+     "7": "Yes, Others",
+     "88": "Don't know"
+    },
+    "n13_24": {
+     "1": "Lack of money",
+     "2": "Absence of health services / hospitals, health centres are closed",
+     "3": "No caretaker to take the child to the health facility",
+     "4": "Health facility too far away",
+     "5": "Movement restrictions",
+     "6": "Denied access because it's out of capacity",
+     "7": "All members of the family too sick to move",
+     "8": "I cannot take my child to the health facility because my family doesn't agree.",
+     "9": "others"
+    },
+    "n13_25": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "n13_26_1": {
+     "0": "No",
+     "1": "Having more of this food delivered",
+     "2": "Substitute the usual food items with other cheaper food items",
+     "3": "Buying less of this food because reduced purchasing power",
+     "4": "Buying less of this food because reduced access to functioning/open market facilities (physical access problem)",
+     "5": "Stopped buying because not available in the market",
+     "6": "Other reasons"
+    },
+    "n13_26_2": {
+     "0": "No",
+     "1": "Having more of this food delivered",
+     "2": "Substitute the usual food items with other cheaper food items",
+     "3": "Buying less of this food because reduced purchasing power",
+     "4": "Buying less of this food because reduced access to functioning/open market facilities (physical access problem)",
+     "5": "Stopped buying because not available in the market",
+     "6": "Other reasons"
+    },
+    "n13_26_3": {
+     "0": "No",
+     "1": "Having more of this food delivered",
+     "2": "Substitute the usual food items with other cheaper food items",
+     "3": "Buying less of this food because reduced purchasing power",
+     "4": "Buying less of this food because reduced access to functioning/open market facilities (physical access problem)",
+     "5": "Stopped buying because not available in the market",
+     "6": "Other reasons"
+    },
+    "n13_26_4": {
+     "0": "No",
+     "1": "Having more of this food delivered",
+     "2": "Substitute the usual food items with other cheaper food items",
+     "3": "Buying less of this food because reduced purchasing power",
+     "4": "Buying less of this food because reduced access to functioning/open market facilities (physical access problem)",
+     "5": "Stopped buying because not available in the market",
+     "6": "Other reasons"
+    },
+    "n13_26_5": {
+     "0": "No",
+     "1": "Having more of this food delivered",
+     "2": "Substitute the usual food items with other cheaper food items",
+     "3": "Buying less of this food because reduced purchasing power",
+     "4": "Buying less of this food because reduced access to functioning/open market facilities (physical access problem)",
+     "5": "Stopped buying because not available in the market",
+     "6": "Other reasons"
+    },
+    "n13_26_6": {
+     "0": "No",
+     "1": "Having more of this food delivered",
+     "2": "Substitute the usual food items with other cheaper food items",
+     "3": "Buying less of this food because reduced purchasing power",
+     "4": "Buying less of this food because reduced access to functioning/open market facilities (physical access problem)",
+     "5": "Stopped buying because not available in the market",
+     "6": "Other reasons"
+    },
+    "n13_27": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "n13_28": {
+     "1": "Water only",
+     "2": "Both water and soap",
+     "3": "I do not wash my hands regularly"
+    },
+    "n13_29": {
+     "1": "No",
+     "2": "Yes, sometimes",
+     "3": "Yes, all the time"
+    },
+    "s0_e_livezone": {
+     "0": "Kigali city",
+     "1": "Lake Kivu Coffee Zone",
+     "2": "West Congo-Nile Crest Tea Zone",
+     "3": "Northwest Volcanic Irish Potato Zone",
+     "4": "East Congo-Nile Highland Subsistence Farming Zone",
+     "5": "Central Plateau Cassava and Coffee Zone",
+     "6": "Northern Highland Beans and Wheat Zone",
+     "7": "Central-Northern Highland Irish Potato, Beans and Vegetable Zone",
+     "8": "Bugesera Cassava Zone",
+     "9": "Eastern Plateau Mixed Agriculture Zone",
+     "10": "Southeastern Plateau Banana Zone",
+     "11": "Eastern Agropastoral Zone",
+     "12": "Eastern Semi-Arid Agropastoral Zone"
+    },
+    "fcg": {
+     "1": "Poor Consumption",
+     "2": "Borderline Consumption",
+     "3": "Acceptable Consumption"
+    },
+    "share_exp_cat": {
+     "1": "<50%",
+     "2": "50-64%",
+     "3": "65-74%",
+     "4": ">75%"
+    },
+    "max_coping_behaviour": {
+     "1": "HH not adopting coping strategies",
+     "2": "Stress coping strategies",
+     "3": "crisis coping strategies",
+     "4": "emergencies coping strategies"
+    },
+    "fs_final": {
+     "1": "Food secure",
+     "2": "Marginally food secure",
+     "3": "Moderately food insecure",
+     "4": "Severely food insecure"
+    },
+    "chronically_fs": {
+     "0": "No food access issues",
+     "1": "Chronically food insecure",
+     "2": "Seasonaly food insecure",
+     "3": "Acutely food insecure",
+     "88": "Do not know"
+    },
+    "income_quintile": {
+     "1": "Lowest",
+     "2": "Low",
+     "3": "Medium",
+     "4": "High",
+     "5": "Highest"
+    },
+    "wi_cat": {
+     "1": "Poorest",
+     "2": "Poor",
+     "3": "Medium",
+     "4": "Wealth",
+     "5": "Wealthiest"
+    },
+    "fg_vitacat": {
+     "1": "Never consumed",
+     "2": "Consumed sometimes",
+     "3": "Consumed at least daily"
+    },
+    "fg_proteincat": {
+     "1": "Never consumed",
+     "2": "Consumed sometimes",
+     "3": "Consumed at least daily"
+    },
+    "fg_hironcat": {
+     "1": "Never consumed",
+     "2": "Consumed sometimes",
+     "3": "Consumed at least daily"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
+    }
+   },
+   "source": {
+    "hhid": "index",
+    "prov": "s0_c_prov",
+    "dist": "s0_d_dist",
+    "wt": "finalweight",
+    "urban": "urbanrural"
+   },
+   "out": "CFSVA_2021_household_clean.dta"
+  },
+  "child": {
+   "file": "Microdata/CFSVA_2021_cfsvahh2021_under_5_childwithmother.dta",
+   "rows": 5776,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "urban",
+    "hhid",
+    "wt",
+    "s13_01",
+    "s13_01_2",
+    "s13_01_3",
+    "s13_01_4",
+    "s13_01_5",
+    "s13_02",
+    "s13_03",
+    "s13_04",
+    "mother_education",
+    "s13_05",
+    "s13_06",
+    "s13_07",
+    "s13_08",
+    "s13_09",
+    "s13_10",
+    "s13_11",
+    "s13_11_2",
+    "s13_11_2_smt_1",
+    "s13_11_2_smt_2",
+    "s13_11_2_smt_3",
+    "s13_11_2_smt_4",
+    "s13_11_2_smt_5",
+    "s13_11_2_smt_6",
+    "s13_11_2_smt_7",
+    "s13_11_2_smt_8",
+    "s13_11_2_smt_88",
+    "s13_11_2_2",
+    "s13_12",
+    "s13_13",
+    "s13_14",
+    "as13_15",
+    "as13_15_2",
+    "as13_15_2_1",
+    "as13_15_2_0",
+    "as13_15_3",
+    "bs13_15",
+    "cs13_15",
+    "cs13_15_2",
+    "ds13_15",
+    "ds13_15_2",
+    "es13_15",
+    "fs13_15",
+    "gs13_15",
+    "hs13_15",
+    "hs13_15_2",
+    "is13_15",
+    "js13_15",
+    "ks13_15",
+    "ls13_15",
+    "ms13_15",
+    "ms13_15_1",
+    "ms13_17",
+    "as13_16",
+    "bs13_16",
+    "bs13_16_1",
+    "cs13_16",
+    "ds13_16",
+    "es13_16",
+    "fs13_16",
+    "gs13_16",
+    "hs13_16",
+    "is13_16",
+    "js13_16",
+    "ks13_16",
+    "ls13_16",
+    "ms13_16",
+    "ns13_16",
+    "os13_16",
+    "ps13_16",
+    "qs13_16",
+    "rs13_16",
+    "s13_17",
+    "s13_18",
+    "s13_19",
+    "s13_19_2",
+    "s13_20",
+    "s13_20_smt_0",
+    "s13_20_smt_1",
+    "s13_20_smt_2",
+    "s13_20_smt_3",
+    "s13_20_smt_4",
+    "muac",
+    "oedema",
+    "weight",
+    "height",
+    "waz",
+    "haz",
+    "whz",
+    "wasting",
+    "stunting",
+    "underweight",
+    "today",
+    "s0_b_date",
+    "hhchildatebeans",
+    "hhwomenatebeans",
+    "hhchildatemilk",
+    "hhchildatemeat",
+    "hhchildatevegetables",
+    "hhchildateoil",
+    "hhwomenatenuts",
+    "hhwomenatemilk",
+    "hhwomenatemeat",
+    "hhwomenatevegetables",
+    "hhwomenatefruits",
+    "age_cat_child1",
+    "age_cat_child2",
+    "age_cat_child3",
+    "foodsecure",
+    "globstunting",
+    "fs_stunting",
+    "sam",
+    "childrenunder5",
+    "muac_cat",
+    "wasting_final",
+    "globalwasting",
+    "food_shortage"
+   ],
+   "var_labels": {
+    "s13_01": "Child index from demograpy section",
+    "s13_01_2": "Child's name",
+    "s13_01_3": "Child date of birth",
+    "s13_01_4": "Child age in months",
+    "s13_01_5": "Child sex",
+    "s13_02": "Primary Caregiver of Child",
+    "s13_03": "Respondent's relationship with child?",
+    "s13_04": "Child's mother",
+    "mother_education": "Child mother Education level",
+    "s13_05": "Is [Name] currently present for interview and anthropometric measurement?",
+    "s13_06": "When born, how big in Kg was [Name], refer to the child growth card?",
+    "s13_07": "Since September 2020 (last 6 months), has [NAME] received vit A drops? (show the",
+    "s13_08": "During last six months, did [Name] receive deworming tablets?",
+    "s13_09": "Has [Name] had illness with fever during last two weeks?",
+    "s13_10": "Has [Name] had illness with cough during last two weeks?",
+    "s13_11": "Has [Name] had illness with diarrhea during last two weeks?",
+    "s13_11_2": "During the last 2 weeks when [Name] had diarrhea, how did you treat it?",
+    "s13_11_2_smt_1": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was gi",
+    "s13_11_2_smt_2": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was gi",
+    "s13_11_2_smt_3": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was fr",
+    "s13_11_2_smt_4": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was gi",
+    "s13_11_2_smt_5": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was gi",
+    "s13_11_2_smt_6": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was gi",
+    "s13_11_2_smt_7": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was zi",
+    "s13_11_2_smt_8": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Was gi",
+    "s13_11_2_smt_88": "During the last 2 weeks when [Name] had diarrhea, how did you treat it? - Nothin",
+    "s13_11_2_2": "Please specify what other treatment were\u00e2\u20ac\u00a6",
+    "s13_12": "During last two weeks when [Name] was sick, did s/he see any healthcare provider",
+    "s13_13": "Does [Name] have his/her hands washed before eating/meal",
+    "s13_14": "Did [Name] sleep under a mosquito net last night?",
+    "as13_15": "Was [Name] breastfed yesterday during day or at night?",
+    "as13_15_2": "Has [Name]ever been breastfed?",
+    "as13_15_2_1": ". Why did you stop breastfeeding?",
+    "as13_15_2_0": ". Other reasons(Specify)",
+    "as13_15_3": "How long after birth did you first put [Name]to the breast after birth?",
+    "bs13_15": "Yesterday, during the day or night, did [Name] drink Plain water",
+    "cs13_15": "Yesterday, during the day or night, did [Name] drink any drinks made with Infant",
+    "cs13_15_2": "How many times did [Name] consume this Infant formula",
+    "ds13_15": "Yesterday, during the day or night, did [Name] drink any Milk made from tinned,",
+    "ds13_15_2": "How many times did [Name] consume Milk (tinned, powdered, fresh",
+    "es13_15": "Yesterday, during the day or night, did [Name] drink any juice or juice drinks,",
+    "fs13_15": "Yesterday, during the day or night, did [Name] drink any clear broth",
+    "gs13_15": "Yesterday, during the day or night, did [Name] drink any sour milk or yogurt",
+    "hs13_15": "Yesterday, during the day or night, did [Name] drink any fortified blended foods",
+    "hs13_15_2": "How many times did [Name] consume FBF (shisha kibondo)?",
+    "is13_15": "Yesterday, during the day or night, did [Name] drink any other FBF (Sosoma, Noot",
+    "js13_15": "Yesterday, during the day or night, did [Name] drink any thin porridge, for exam",
+    "ks13_15": "Yesterday, during the day or night, did [Name] drinkTea or coffee with milk",
+    "ls13_15": "Yesterday, during the day or night, did [Name] drink any other water-based liqui",
+    "ms13_15": "Yesterday, during the day or night, did [Name] drink anything from a bottle with",
+    "ms13_15_1": "Has your child's [Name] food consumption changed because of Covid19 pandemic?",
+    "ms13_17": ". Has the frequency of food consumption of your child [Name] changed because of",
+    "as13_16": "Yesterday, during the day or night, did [child name] eat any Porridge, bread, ri",
+    "bs13_16": "Yesterday, during the day or night, did [child name] eat any White potatoes, whi",
+    "bs13_16_1": "Yesterday, during the day or night, did [child name] eat any fats including vege",
+    "cs13_16": "Yesterday, during the day or night, did [child name] eat any Legumes and nuts (A",
+    "ds13_16": "Yesterday, during the day or night, did [child name] eat any Milk, Cheese, yogur",
+    "es13_16": "Yesterday, during the day or night, did [child name] eat any Liver, kidney, hear",
+    "fs13_16": "Yesterday, during the day or night, did [child name] eat any meat, such as beef,",
+    "gs13_16": "Yesterday, during the day or night, did [child name] eat any Fresh or dried fish",
+    "hs13_16": "Yesterday, during the day or night, did [child name] eat any Eggs",
+    "is13_16": "Yesterday, during the day or night, did [child name] eat any Vit A rich vegetabl",
+    "js13_16": "Yesterday, during the day or night, did [child name] eat any dark green leafy ve",
+    "ks13_16": "Yesterday, during the day or night, did [child name] eat any Ripe mangoes, ripe",
+    "ls13_16": "Yesterday, during the day or night, did [child name] eat any other fruits or veg",
+    "ms13_16": "Yesterday, during the day or night, did [child name] eat any Foods made with red",
+    "ns13_16": "Yesterday, during the day or night, did [child name] eat any shisha kibondo?",
+    "os13_16": "Yesterday, during the day or night, did [child name] eat any other FBF (e.g. sos",
+    "ps13_16": "Yesterday, during the day or night, did [child name] eat any RUTF (e.g. Plumpy'N",
+    "qs13_16": "Yesterday, during the day or night, did [child name] eat any bio-fortied solid,",
+    "rs13_16": "Yesterday, during the day or night, did [child name] eat any food to which you a",
+    "s13_17": "Yesteday, during day or night how many times did [child name] eat solid, semisol",
+    "s13_18": "Is [child name] enrolled in Shisha Kibondo?",
+    "s13_19": "Is [child name] enrolled in any supplementary feeding programme?",
+    "s13_19_2": "If any, which supplementary feeding programme?",
+    "s13_20": "Does [child name] present any disability preventing him or her from being measur",
+    "s13_20_smt_0": "Does [child name] present any disability preventing him or her from being measur",
+    "s13_20_smt_1": "Does [child name] present any disability preventing him or her from being measur",
+    "s13_20_smt_2": "Does [child name] present any disability preventing him or her from being measur",
+    "s13_20_smt_3": "Does [child name] present any disability preventing him or her from being measur",
+    "s13_20_smt_4": "Does [child name] present any disability preventing him or her from being measur",
+    "muac": "Child MUAC in milmeters",
+    "oedema": "Does [child name] present bilateral pitting (edema)?",
+    "weight": "Child's weight",
+    "height": "Child's height in cm",
+    "waz": "Weight for Age Z-Score",
+    "haz": "Height for Age Z-Score",
+    "whz": "Weight for Height Z-Score",
+    "wasting": "Wasting",
+    "stunting": "Stunting",
+    "underweight": "Underweight",
+    "today": "today",
+    "s0_b_date": "Interview date",
+    "hhchildatebeans": null,
+    "hhwomenatebeans": null,
+    "hhchildatemilk": null,
+    "hhchildatemeat": null,
+    "hhchildatevegetables": null,
+    "hhchildateoil": null,
+    "hhwomenatenuts": null,
+    "hhwomenatemilk": null,
+    "hhwomenatemeat": null,
+    "hhwomenatevegetables": null,
+    "hhwomenatefruits": null,
+    "age_cat_child1": null,
+    "age_cat_child2": null,
+    "age_cat_child3": null,
+    "foodsecure": "FoodSecure",
+    "globstunting": "Global_Stunting",
+    "fs_stunting": "FS_Stunting",
+    "sam": "SAM",
+    "childrenunder5": null,
+    "muac_cat": "MUAC_Cat",
+    "wasting_final": "Wasting_final",
+    "globalwasting": "Global_Wasting",
+    "food_shortage": null,
+    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR codes)",
+    "urban": "Area of residence (1 urban, 2 rural; where shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)",
+    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)"
+   },
+   "value_labels": {
+    "s13_01_5": {
+     "1": "Male",
+     "2": "Female"
+    },
+    "s13_02": {
+     "1": "Mother",
+     "2": "Father",
+     "3": "Grandmother",
+     "4": "Close family relative",
+     "5": "Other relationship",
+     "6": "Homemaid"
+    },
+    "s13_03": {
+     "1": "Mother",
+     "2": "Father",
+     "3": "Grandmother",
+     "4": "Close family relative",
+     "5": "Other relationship",
+     "6": "Homemaid"
+    },
+    "s13_04": {
+     "1": "${S1C20}",
+     "2": "${S1C21}",
+     "3": "${S1C22}",
+     "4": "${S1C23}",
+     "5": "${S1C24}",
+     "6": "${S1C25}",
+     "7": "${S1C26}",
+     "8": "${S1C27}",
+     "9": "${S1C28}",
+     "10": "${S1C29}",
+     "11": "${S1C30}",
+     "12": "${S1C31}",
+     "13": "${S1C32}",
+     "14": "${S1C33}",
+     "15": "${S1C34}",
+     "16": "${S1C35}",
+     "17": "${S1C36}",
+     "18": "${S1C37}",
+     "19": "${S1C38}",
+     "20": "${S1C39}",
+     "21": "${S1C40}",
+     "22": "${S1C41}",
+     "23": "${S1C42}",
+     "24": "${S1C43}",
+     "25": "${S1C44}",
+     "26": "${S1C45}",
+     "27": "${S1C46}",
+     "28": "${S1C47}",
+     "29": "${S1C48}",
+     "30": "${S1C49}",
+     "77": "Doesn't live in this household",
+     "88": "Deceased"
+    },
+    "mother_education": {
+     "1": "No school",
+     "2": "Some/still primary",
+     "3": "Completed primary",
+     "4": "Vocational school",
+     "5": "Some/still secondary",
+     "6": "Completed secondary",
+     "7": "Some/still university",
+     "8": "Completed university",
+     "88": "Don't know"
+    },
+    "s13_05": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s13_07": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_08": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_09": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_10": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_1": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_2": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_3": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_4": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_5": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_6": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_7": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_8": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_11_2_smt_88": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_12": {
+     "0": "None",
+     "1": "Staff at health facility",
+     "2": "Community health care worker",
+     "3": "Staff at Private hospital",
+     "4": "Traditional"
+    },
+    "s13_13": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as13_15": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as13_15_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "as13_15_2_1": {
+     "0": "Stop breastfeeding because of Covid19 reasons",
+     "1": "Doctor/nurse told me to stop breastfeeding or not to start breastfeeding because of COVID-19",
+     "2": "A family member/friend told me to stop/not to BF because of COVID-19",
+     "3": "I heard on the radio/TV/read online that Covid is in breastmilk and not to breastfeed",
+     "4": "I heard on social media that Covid is in breastmilk and not to breastfeed",
+     "5": "I heard marketing messages from formula companies that it is better to formula feed in the context of Covid",
+     "6": "Other reasons",
+     "88": "Do not know"
+    },
+    "as13_15_3": {
+     "1": "Less than 1 hour",
+     "2": "Between 1 -23 hours",
+     "3": "24 hours or more",
+     "4": "Don't remember"
+    },
+    "bs13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "cs13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ds13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "es13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "fs13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "gs13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "hs13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "is13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "js13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ks13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ls13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ms13_15": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ms13_15_1": {
+     "1": "Yes, increase consumption",
+     "2": "Yes, decrease consumption",
+     "3": "No change"
+    },
+    "ms13_17": {
+     "0": "No",
+     "1": "Yes, more frequent",
+     "2": "Yes, less frequent",
+     "3": "Yes, but not because of Covid19",
+     "88": "Do not know"
+    },
+    "as13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "bs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "bs13_16_1": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "cs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ds13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "es13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "fs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "gs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "hs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "is13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "js13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ks13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ls13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ms13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ns13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "os13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "ps13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "qs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "rs13_16": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_17": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_18": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_19": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_19_2": {
+     "1": "(non-hospitalized) Therapeutic feeding",
+     "2": "(hospitalized, inpatient) Therapeutic feeding",
+     "3": "Supplementary feeding"
+    },
+    "s13_20_smt_0": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_20_smt_1": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_20_smt_2": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_20_smt_3": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "s13_20_smt_4": {
+     "0": "No",
+     "1": "Yes",
+     "88": "Don't know"
+    },
+    "oedema": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "wasting": {
+     "0": "Normal",
+     "1": "Moderately wasted",
+     "2": "Severely wasted"
+    },
+    "stunting": {
+     "0": "Normal",
+     "1": "Moderately stunted",
+     "2": "Severely stunted"
+    },
+    "underweight": {
+     "0": "Normal",
+     "1": "Moderately underweight",
+     "2": "Severely underweight"
+    },
+    "hhchildatebeans": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhwomenatebeans": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhchildatemilk": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhchildatemeat": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhchildatevegetables": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhchildateoil": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhwomenatenuts": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhwomenatemilk": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhwomenatemeat": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhwomenatevegetables": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "hhwomenatefruits": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "age_cat_child1": {
+     "1": "<6 months",
+     "2": "6-11 months",
+     "3": "12-17 months",
+     "4": "18-23 months",
+     "5": "24-29 months",
+     "6": "30-35 months",
+     "7": "36-41 months",
+     "8": "42-47 months",
+     "9": "48-53 months",
+     "10": "54-59 months"
+    },
+    "age_cat_child2": {
+     "1": "<6",
+     "2": "6 to 8",
+     "3": "9 to 11",
+     "4": "12 to 17",
+     "5": "18 to 23",
+     "6": "24 to 35",
+     "7": "36 to 47",
+     "8": "48 to 59"
+    },
+    "age_cat_child3": {
+     "1": "<6",
+     "2": "6 to 11",
+     "3": "12 to 23",
+     "4": "24 to 35",
+     "5": "36 to 47",
+     "6": "48 to 59"
+    },
+    "foodsecure": {
+     "1": "Food Secure",
+     "2": "Food Insecure"
+    },
+    "globstunting": {
+     "0": "Normal",
+     "1": "Stunted"
+    },
+    "fs_stunting": {
+     "0": "FoodSecure_NoStunted",
+     "1": "FoodSecure_Stunted",
+     "2": "FoodInsec_NoStunted",
+     "3": "FoodInsec_Stunted"
+    },
+    "sam": {
+     "0": "No SAM",
+     "1": "SAM"
+    },
+    "muac_cat": {
+     "1": "Normal",
+     "2": "MAM",
+     "3": "SAM"
+    },
+    "wasting_final": {
+     "0": "Normal",
+     "2": "MAM",
+     "3": "SAM"
+    },
+    "globalwasting": {
+     "0": "Normal",
+     "1": "Global Acute Malnutrition"
+    },
+    "food_shortage": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
+    }
+   },
+   "source": {
+    "hhid": "index",
+    "prov": "s0_c_prov",
+    "dist": "s0_d_dist",
+    "urban": "urbanrural"
+   },
+   "out": "CFSVA_2021_child_clean.dta"
+  },
+  "village": {
+   "file": "Microdata/CFSVA_2021_VILLAGE.dta",
+   "rows": 900,
+   "vars": [
+    "survey",
+    "year",
+    "wave",
+    "unit",
+    "prov",
+    "dist",
+    "urban",
+    "s0_b_date",
+    "s1_01",
+    "s1_01_2",
+    "s1_01_3",
+    "s1_01_4",
+    "s1_01_5",
+    "s1_01_6",
+    "s1_01_7",
+    "s2_01",
+    "s2_01_2",
+    "s2_03",
+    "s2_03_smt_1",
+    "s2_03_smt_2",
+    "s2_03_smt_3",
+    "s2_03_smt_4",
+    "s2_03_smt_5",
+    "s2_03_smt_6",
+    "s2_03_smt_7",
+    "s2_03_smt_88",
+    "s2_03_0",
+    "s3_02",
+    "s3_02_2",
+    "s3_02_2_2",
+    "s3_03",
+    "s3_03_2",
+    "s3_03_2_2",
+    "s4_01",
+    "s4_02_2",
+    "s4_02_3",
+    "s4_02_3_2",
+    "s4_02_4",
+    "s4_02_5",
+    "s4_02_5_smt_1",
+    "s4_02_5_smt_2",
+    "s4_02_5_smt_3",
+    "s4_02_5_smt_4",
+    "s4_02_5_smt_5",
+    "s4_02_5_smt_6",
+    "s4_02_5_smt_7",
+    "s4_02_5_smt_8",
+    "s4_02_5_smt_9",
+    "s4_02_5_smt_10",
+    "s4_02_5_smt_11",
+    "s4_02_5_smt_12",
+    "s4_02_6",
+    "s4_02_6_smt_1",
+    "s4_02_6_smt_2",
+    "s4_02_6_smt_3",
+    "s4_02_6_smt_4",
+    "s4_02_6_smt_5",
+    "s4_02_6_smt_6",
+    "s4_02_6_smt_7",
+    "s4_02_6_smt_8",
+    "s4_02_6_smt_9",
+    "s4_02_6_smt_10",
+    "s4_02_6_smt_11",
+    "s4_02_6_smt_88",
+    "s4_02_6_0",
+    "s5_01",
+    "s5_01_smt_1",
+    "s5_01_smt_2",
+    "s5_01_smt_3",
+    "s5_01_smt_4",
+    "s5_01_smt_88",
+    "s5_01_0",
+    "s5_01_2",
+    "s5_01_3",
+    "s5_02",
+    "s5_02_smt_1",
+    "s5_02_smt_2",
+    "s5_02_smt_3",
+    "s5_02_smt_4",
+    "s5_02_smt_5",
+    "s5_02_smt_6",
+    "s5_02_smt_88",
+    "s5_02_2",
+    "s5_02_3",
+    "s5_03",
+    "s5_03_smt_1",
+    "s5_03_smt_2",
+    "s5_03_smt_3",
+    "s5_03_smt_4",
+    "s5_03_smt_5",
+    "s5_03_2",
+    "s5_03_3",
+    "s5_04",
+    "s5_04_smt_1",
+    "s5_04_smt_2",
+    "s5_04_smt_3",
+    "s5_04_smt_4",
+    "s5_04_2",
+    "s5_04_3",
+    "s6_01",
+    "s6_01_2",
+    "s6_01_3",
+    "s6_02",
+    "s6_02_2",
+    "s6_01_4",
+    "s7_01",
+    "s7_01_2",
+    "s7_01_2_smt_11",
+    "s7_01_2_smt_12",
+    "s7_01_2_smt_13",
+    "s7_01_2_smt_14",
+    "s7_01_2_smt_15",
+    "s7_01_2_smt_21",
+    "s7_01_2_smt_22",
+    "s7_01_2_smt_23",
+    "s7_01_2_smt_24",
+    "s7_01_2_smt_25",
+    "s7_01_2_smt_26",
+    "s7_01_2_smt_27",
+    "s7_01_2_smt_31",
+    "s7_01_2_smt_32",
+    "s7_01_2_smt_33",
+    "s7_01_2_smt_41",
+    "s7_01_2_smt_42",
+    "s7_01_2_smt_43",
+    "s7_01_2_smt_44",
+    "s7_01_2_smt_45",
+    "s7_01_2_smt_51",
+    "s7_01_2_smt_52",
+    "s7_01_2_smt_53",
+    "s7_01_2_smt_54",
+    "s7_01_2_smt_55",
+    "s7_01_2_smt_61",
+    "s7_01_2_smt_62",
+    "s7_01_2_smt_63",
+    "s7_01_2_smt_64",
+    "s7_01_2_smt_65",
+    "s8_01",
+    "s8_01_2",
+    "s8_01_2_smt_1",
+    "s8_01_2_smt_2",
+    "s8_01_2_smt_3",
+    "s8_01_2_smt_4",
+    "s8_01_2_smt_5",
+    "s8_01_2_smt_6",
+    "s8_01_2_smt_7",
+    "s8_01_2_smt_8",
+    "s8_01_2_smt_9",
+    "s8_01_2_smt_10",
+    "s8_01_2_smt_11",
+    "s8_01_2_smt_12",
+    "s8_01_2_smt_13",
+    "s8_01_2_smt_14",
+    "s8_01_2_smt_15",
+    "s8_02",
+    "s8_02_smt_1",
+    "s8_02_smt_2",
+    "s8_02_smt_3",
+    "s8_02_smt_4",
+    "s8_02_smt_5",
+    "s8_02_smt_6",
+    "s8_02_smt_7",
+    "s8_02_smt_8",
+    "s8_02_smt_9",
+    "s8_02_smt_10",
+    "s8_02_smt_11",
+    "s8_02_smt_88",
+    "s8_02_2"
+   ],
+   "var_labels": {
+    "s0_b_date": "Interview date",
+    "s1_01": "Number of informants:",
+    "s1_01_2": "How many women are in this group?",
+    "s1_01_3": "How many men are in this group?",
+    "s1_01_4": "How many of these informants are local leaders?",
+    "s1_01_5": "How many of these informants are teachers",
+    "s1_01_6": "How many of these informants are health care workers",
+    "s1_01_7": "How many of these informants are farmers",
+    "s2_01": "How many households does this village have?",
+    "s2_01_2": "For quality control, repeat the previous value?",
+    "s2_03": "Does any of the following safetynets schemes apply to this village",
+    "s2_03_smt_1": "Does any of the following safetynets schemes apply to this village? - VUP direct",
+    "s2_03_smt_2": "Does any of the following safetynets schemes apply to this village? - VUP public",
+    "s2_03_smt_3": "Does any of the following safetynets schemes apply to this village? - VUP access",
+    "s2_03_smt_4": "Does any of the following safetynets schemes apply to this village? - Ubudehe cr",
+    "s2_03_smt_5": "Does any of the following safetynets schemes apply to this village? - Girinka (o",
+    "s2_03_smt_6": "Does any of the following safetynets schemes apply to this village? - One cup of",
+    "s2_03_smt_7": "Does any of the following safetynets schemes apply to this village? - Others",
+    "s2_03_smt_88": "Does any of the following safetynets schemes apply to this village? - None",
+    "s2_03_0": "Other schemes",
+    "s3_02": "Is there any functioning primary school in this village?",
+    "s3_02_2": "If not, then how far away on average is the nearest functioning primary school?",
+    "s3_02_2_2": "For quality control, repeat the previous value?",
+    "s3_03": "Is there a functioning health facility in the village?",
+    "s3_03_2": "If not, then how far away on average is the nearest functioning health facility?",
+    "s3_03_2_2": "For quality control, repeat the previous value?",
+    "s4_01": "Is there a market in this village?",
+    "s4_02_2": "Is this the main market your community mostly interacts with?",
+    "s4_02_3": "If this is not the main market for the village or there is no market at all, how",
+    "s4_02_3_2": "For quality control, repeat the previous value?",
+    "s4_02_4": "Is the road to the main market for your community accessible all year round usin",
+    "s4_02_5": "If no, which months is it not accessible?",
+    "s4_02_5_smt_1": "If no, which months is it not accessible? - January",
+    "s4_02_5_smt_2": "If no, which months is it not accessible? - February",
+    "s4_02_5_smt_3": "If no, which months is it not accessible? - March",
+    "s4_02_5_smt_4": "If no, which months is it not accessible? - April",
+    "s4_02_5_smt_5": "If no, which months is it not accessible? - May",
+    "s4_02_5_smt_6": "If no, which months is it not accessible? - June",
+    "s4_02_5_smt_7": "If no, which months is it not accessible? - July",
+    "s4_02_5_smt_8": "If no, which months is it not accessible? - August",
+    "s4_02_5_smt_9": "If no, which months is it not accessible? - September",
+    "s4_02_5_smt_10": "If no, which months is it not accessible? - October",
+    "s4_02_5_smt_11": "If no, which months is it not accessible? - November",
+    "s4_02_5_smt_12": "If no, which months is it not accessible? - December",
+    "s4_02_6": "What are the main challenges your community faces related to food markets?",
+    "s4_02_6_smt_1": "What are the main challenges your community faces related to food markets? - Low",
+    "s4_02_6_smt_2": "What are the main challenges your community faces related to food markets? - Not",
+    "s4_02_6_smt_3": "What are the main challenges your community faces related to food markets? - Not",
+    "s4_02_6_smt_4": "What are the main challenges your community faces related to food markets? - Los",
+    "s4_02_6_smt_5": "What are the main challenges your community faces related to food markets? - Red",
+    "s4_02_6_smt_6": "What are the main challenges your community faces related to food markets? - Hig",
+    "s4_02_6_smt_7": "What are the main challenges your community faces related to food markets? - Unu",
+    "s4_02_6_smt_8": "What are the main challenges your community faces related to food markets? - Ins",
+    "s4_02_6_smt_9": "What are the main challenges your community faces related to food markets? - Mar",
+    "s4_02_6_smt_10": "What are the main challenges your community faces related to food markets? - Bad",
+    "s4_02_6_smt_11": "What are the main challenges your community faces related to food markets? - Oth",
+    "s4_02_6_smt_88": "What are the main challenges your community faces related to food markets? - No",
+    "s4_02_6_0": "Other Challenges",
+    "s5_01": "Three Most consumed cereals",
+    "s5_01_smt_1": "Three Most consumed cereals - Wheat",
+    "s5_01_smt_2": "Three Most consumed cereals - Maize",
+    "s5_01_smt_3": "Three Most consumed cereals - Sorghum",
+    "s5_01_smt_4": "Three Most consumed cereals - Rice",
+    "s5_01_smt_88": "Three Most consumed cereals - Other",
+    "s5_01_0": "Other Cereal",
+    "s5_01_2": "How do you rate the current availability in the martets that your community inte",
+    "s5_01_3": "How do you rate the current prices of these commodities compared to normal?",
+    "s5_02": "Three Most consumed tuber and roots",
+    "s5_02_smt_1": "Three Most consumed tuber and roots - Sweet Potato",
+    "s5_02_smt_2": "Three Most consumed tuber and roots - Irish potato",
+    "s5_02_smt_3": "Three Most consumed tuber and roots - Cassava",
+    "s5_02_smt_4": "Three Most consumed tuber and roots - Taro",
+    "s5_02_smt_5": "Three Most consumed tuber and roots - Yam",
+    "s5_02_smt_6": "Three Most consumed tuber and roots - Banana cooking",
+    "s5_02_smt_88": "Three Most consumed tuber and roots - Other roots or other cereals",
+    "s5_02_2": "How do you rate the current availability in the martets that your community inte",
+    "s5_02_3": "How do you rate the current prices of these commodities compared to normal?",
+    "s5_03": "Three most consumed pulses and legumes",
+    "s5_03_smt_1": "Three most consumed pulses and legumes - Beans",
+    "s5_03_smt_2": "Three most consumed pulses and legumes - Peas",
+    "s5_03_smt_3": "Three most consumed pulses and legumes - Soya",
+    "s5_03_smt_4": "Three most consumed pulses and legumes - Ground nuts",
+    "s5_03_smt_5": "Three most consumed pulses and legumes - Other pulses, specify:_____",
+    "s5_03_2": "How do you rate the current availability in the martets that your community inte",
+    "s5_03_3": "How do you rate the current prices of these commodities compared to normal?",
+    "s5_04": "Three most consumed vegetables",
+    "s5_04_smt_1": "Three most consumed pulses and legumes - Tomato",
+    "s5_04_smt_2": "Three most consumed pulses and legumes - Cabbage",
+    "s5_04_smt_3": "Three most consumed pulses and legumes - Amaranthes",
+    "s5_04_smt_4": "Three most consumed pulses and legumes - Other vegetables",
+    "s5_04_2": "How do you rate the current availability in the martets that your community inte",
+    "s5_04_3": "How do you rate the current prices of these commodities compared to normal?",
+    "s6_01": "Currently, what is the daily wage for unskilled agricultural labour?",
+    "s6_01_2": "For quality control, repeat the previous value?",
+    "s6_01_3": "How does that wage compare to normal at this time of the year?",
+    "s6_02": "Currently, what is the daily wage for Unskilled non agricultural labour?",
+    "s6_02_2": "For quality control, repeat the previous value?",
+    "s6_01_4": "How does that wage compare to normal at this time of the year?",
+    "s7_01": "Do households in your village community practice any agriculture activites?",
+    "s7_01_2": "Which commodities do people usually grow in this village?",
+    "s7_01_2_smt_11": "Which commodities do people usually grow in this village? - Wheat",
+    "s7_01_2_smt_12": "Which commodities do people usually grow in this village? - Maize",
+    "s7_01_2_smt_13": "Which commodities do people usually grow in this village? - Sorghum",
+    "s7_01_2_smt_14": "Which commodities do people usually grow in this village? - Rice",
+    "s7_01_2_smt_15": "Which commodities do people usually grow in this village? - Other cereals",
+    "s7_01_2_smt_21": "Which commodities do people usually grow in this village? - Sweet Potato",
+    "s7_01_2_smt_22": "Which commodities do people usually grow in this village? - Irish potato",
+    "s7_01_2_smt_23": "Which commodities do people usually grow in this village? - Cassava",
+    "s7_01_2_smt_24": "Which commodities do people usually grow in this village? - Taro",
+    "s7_01_2_smt_25": "Which commodities do people usually grow in this village? - Yam",
+    "s7_01_2_smt_26": "Which commodities do people usually grow in this village? - Banana cooking",
+    "s7_01_2_smt_27": "Which commodities do people usually grow in this village? - Other roots and tube",
+    "s7_01_2_smt_31": "Which commodities do people usually grow in this village? - Tomato",
+    "s7_01_2_smt_32": "Which commodities do people usually grow in this village? - Cabbage",
+    "s7_01_2_smt_33": "Which commodities do people usually grow in this village? - Other vegetables",
+    "s7_01_2_smt_41": "Which commodities do people usually grow in this village? - Banana (wine)",
+    "s7_01_2_smt_42": "Which commodities do people usually grow in this village? - Banana fruit",
+    "s7_01_2_smt_43": "Which commodities do people usually grow in this village? - Passion fruit",
+    "s7_01_2_smt_44": "Which commodities do people usually grow in this village? - Pineapple",
+    "s7_01_2_smt_45": "Which commodities do people usually grow in this village? - Other fruit specify:",
+    "s7_01_2_smt_51": "Which commodities do people usually grow in this village? - Beans",
+    "s7_01_2_smt_52": "Which commodities do people usually grow in this village? - Peas",
+    "s7_01_2_smt_53": "Which commodities do people usually grow in this village? - Soya",
+    "s7_01_2_smt_54": "Which commodities do people usually grow in this village? - Ground nuts",
+    "s7_01_2_smt_55": "Which commodities do people usually grow in this village? - Other pulses, specif",
+    "s7_01_2_smt_61": "Which commodities do people usually grow in this village? - Tea",
+    "s7_01_2_smt_62": "Which commodities do people usually grow in this village? - Coffee",
+    "s7_01_2_smt_63": "Which commodities do people usually grow in this village? - Tobacco",
+    "s7_01_2_smt_64": "Which commodities do people usually grow in this village? - Sugar cane",
+    "s7_01_2_smt_65": "Which commodities do people usually grow in this village? - Other cash crops spe",
+    "s8_01": "Did your village experience any shock in the past 12 months?",
+    "s8_01_2": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_1": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_2": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_3": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_4": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_5": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_6": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_7": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_8": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_9": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_10": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_11": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_12": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_13": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_14": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_01_2_smt_15": "Based on severity, what are the main shocks/problems did households in this vill",
+    "s8_02": "What are the major community development constraints facing this village?",
+    "s8_02_smt_1": "What are the major community development constraints facing this village? - Low",
+    "s8_02_smt_2": "What are the major community development constraints facing this village? - Not",
+    "s8_02_smt_3": "What are the major community development constraints facing this village? - Not",
+    "s8_02_smt_4": "What are the major community development constraints facing this village? - Loss",
+    "s8_02_smt_5": "What are the major community development constraints facing this village? - Redu",
+    "s8_02_smt_6": "What are the major community development constraints facing this village? - High",
+    "s8_02_smt_7": "What are the major community development constraints facing this village? - Unus",
+    "s8_02_smt_8": "What are the major community development constraints facing this village? - Inse",
+    "s8_02_smt_9": "What are the major community development constraints facing this village? - Mark",
+    "s8_02_smt_10": "What are the major community development constraints facing this village? - Bad",
+    "s8_02_smt_11": "What are the major community development constraints facing this village? - Othe",
+    "s8_02_smt_88": "What are the major community development constraints facing this village? - No c",
+    "s8_02_2": "Specfy other challenges",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR codes)",
+    "urban": "Area of residence (1 urban, 2 rural; where shipped)",
+    "survey": "Source survey",
+    "year": "Survey year",
+    "wave": "Wave (survey year)",
+    "unit": "Unit of the file (household, woman, child, village)"
+   },
+   "value_labels": {
+    "s2_03_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s2_03_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s3_02": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s3_03": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_01": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_5_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s4_02_6_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_01_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_01_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_01_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_01_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_01_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_01_2": {
+     "1": "Sufficient",
+     "2": "Moderately sufficient",
+     "3": "Low (insufficient)"
+    },
+    "s5_01_3": {
+     "1": "Normal",
+     "2": "Higher that normal",
+     "3": "Lower than normal"
+    },
+    "s5_02_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_02_2": {
+     "1": "Sufficient",
+     "2": "Moderately sufficient",
+     "3": "Low (insufficient)"
+    },
+    "s5_02_3": {
+     "1": "Normal",
+     "2": "Higher that normal",
+     "3": "Lower than normal"
+    },
+    "s5_03_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_03_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_03_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_03_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_03_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_03_2": {
+     "1": "Sufficient",
+     "2": "Moderately sufficient",
+     "3": "Low (insufficient)"
+    },
+    "s5_03_3": {
+     "1": "Normal",
+     "2": "Higher that normal",
+     "3": "Lower than normal"
+    },
+    "s5_04_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_04_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_04_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_04_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s5_04_2": {
+     "1": "Sufficient",
+     "2": "Moderately sufficient",
+     "3": "Low (insufficient)"
+    },
+    "s5_04_3": {
+     "1": "Normal",
+     "2": "Higher that normal",
+     "3": "Lower than normal"
+    },
+    "s6_01_3": {
+     "1": "Normal",
+     "2": "Higher that normal",
+     "3": "Lower than normal"
+    },
+    "s6_01_4": {
+     "1": "Normal",
+     "2": "Higher that normal",
+     "3": "Lower than normal"
+    },
+    "s7_01": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_15": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_21": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_22": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_23": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_24": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_25": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_26": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_27": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_31": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_32": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_33": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_41": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_42": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_43": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_44": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_45": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_51": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_52": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_53": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_54": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_55": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_61": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_62": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_63": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_64": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s7_01_2_smt_65": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_12": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_13": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_14": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_01_2_smt_15": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_1": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_2": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_3": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_4": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_5": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_6": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_7": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_8": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_9": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_10": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_11": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "s8_02_smt_88": {
+     "0": "No",
+     "1": "Yes"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
+    }
+   },
+   "source": {
+    "prov": "s0_c_prov",
+    "dist": "s0_d_dist",
+    "urban": "urbanrural"
+   },
+   "out": "CFSVA_2021_village_clean.dta"
+  }
+ }
+}
