@@ -1,0 +1,275 @@
+{
+ "source": "no prior outputs; raw NISR files as shipped",
+ "files": [
+  {
+   "file": "AHS_2017_s0_general_information.dta",
+   "year": 2017,
+   "n_rows": 23709,
+   "n_vars": 25
+  },
+  {
+   "file": "AHS_2017_s10_1_cattle_milk_production.dta",
+   "year": 2017,
+   "n_rows": 3237,
+   "n_vars": 16
+  },
+  {
+   "file": "AHS_2017_s10_2_cattle_milk_production_use.dta",
+   "year": 2017,
+   "n_rows": 3989,
+   "n_vars": 15
+  },
+  {
+   "file": "AHS_2017_s10_3_honey_production.dta",
+   "year": 2017,
+   "n_rows": 16067,
+   "n_vars": 12
+  },
+  {
+   "file": "AHS_2017_s11_animal_inputs_and_services.dta",
+   "year": 2017,
+   "n_rows": 26500,
+   "n_vars": 20
+  },
+  {
+   "file": "AHS_2017_s1_household_members_characteristics.dta",
+   "year": 2017,
+   "n_rows": 73665,
+   "n_vars": 27
+  },
+  {
+   "file": "AHS_2017_s2_land_tenure_and_crops_planted.dta",
+   "year": 2017,
+   "n_rows": 16057,
+   "n_vars": 30
+  },
+  {
+   "file": "AHS_2017_s3_extension_services_and_agricultural_programmes.dta",
+   "year": 2017,
+   "n_rows": 64228,
+   "n_vars": 24
+  },
+  {
+   "file": "AHS_2017_s4_funding_during_2016.dta",
+   "year": 2017,
+   "n_rows": 16057,
+   "n_vars": 19
+  },
+  {
+   "file": "AHS_2017_s5_agricultural_inputs.dta",
+   "year": 2017,
+   "n_rows": 16057,
+   "n_vars": 162
+  },
+  {
+   "file": "AHS_2017_s6_agricultural_practices.dta",
+   "year": 2017,
+   "n_rows": 16057,
+   "n_vars": 40
+  },
+  {
+   "file": "AHS_2017_s7_1_agricultural_small_tools.dta",
+   "year": 2017,
+   "n_rows": 362203,
+   "n_vars": 13
+  },
+  {
+   "file": "AHS_2017_s7_2_agricultural_durable_tools.dta",
+   "year": 2017,
+   "n_rows": 207049,
+   "n_vars": 13
+  },
+  {
+   "file": "AHS_2017_s8_a_production_use_storage_and_expenses.dta",
+   "year": 2017,
+   "n_rows": 35844,
+   "n_vars": 31
+  },
+  {
+   "file": "AHS_2017_s8_b_production_use_storage_and_expenses.dta",
+   "year": 2017,
+   "n_rows": 34167,
+   "n_vars": 31
+  },
+  {
+   "file": "AHS_2017_s9_number_of_animals.dta",
+   "year": 2017,
+   "n_rows": 32611,
+   "n_vars": 38
+  },
+  {
+   "file": "AHS_2020_section_0.dta",
+   "year": 2020,
+   "n_rows": 10666,
+   "n_vars": 16
+  },
+  {
+   "file": "AHS_2020_section_1.dta",
+   "year": 2020,
+   "n_rows": 48726,
+   "n_vars": 26
+  },
+  {
+   "file": "AHS_2020_section_2_1.dta",
+   "year": 2020,
+   "n_rows": 32888,
+   "n_vars": 44
+  },
+  {
+   "file": "AHS_2020_section_2_2.dta",
+   "year": 2020,
+   "n_rows": 10666,
+   "n_vars": 82
+  },
+  {
+   "file": "AHS_2020_section_2_3.dta",
+   "year": 2020,
+   "n_rows": 20046,
+   "n_vars": 22
+  },
+  {
+   "file": "AHS_2020_section_3_1.dta",
+   "year": 2020,
+   "n_rows": 25329,
+   "n_vars": 23
+  },
+  {
+   "file": "AHS_2020_section_3_2.dta",
+   "year": 2020,
+   "n_rows": 10666,
+   "n_vars": 49
+  },
+  {
+   "file": "AHS_2020_section_4.dta",
+   "year": 2020,
+   "n_rows": 10666,
+   "n_vars": 59
+  },
+  {
+   "file": "AHS_2020_section_5.dta",
+   "year": 2020,
+   "n_rows": 23250,
+   "n_vars": 31
+  },
+  {
+   "file": "AHS_2020_section_6.dta",
+   "year": 2020,
+   "n_rows": 23250,
+   "n_vars": 41
+  },
+  {
+   "file": "AHS_2020_section_7_1.dta",
+   "year": 2020,
+   "n_rows": 44148,
+   "n_vars": 25
+  },
+  {
+   "file": "AHS_2020_section_7_2.dta",
+   "year": 2020,
+   "n_rows": 39776,
+   "n_vars": 31
+  },
+  {
+   "file": "AHS_2020_section_7_3.dta",
+   "year": 2020,
+   "n_rows": 13011,
+   "n_vars": 33
+  },
+  {
+   "file": "AHS_2020_section_8.dta",
+   "year": 2020,
+   "n_rows": 23250,
+   "n_vars": 31
+  },
+  {
+   "file": "AHS_2020_section_9.dta",
+   "year": 2020,
+   "n_rows": 23250,
+   "n_vars": 30
+  },
+  {
+   "file": "AHS_2024_credits.dta",
+   "year": 2024,
+   "n_rows": 5224,
+   "n_vars": 12
+  },
+  {
+   "file": "AHS_2024_saving.dta",
+   "year": 2024,
+   "n_rows": 10342,
+   "n_vars": 14
+  },
+  {
+   "file": "AHS_2024_section0.dta",
+   "year": 2024,
+   "n_rows": 3724,
+   "n_vars": 9
+  },
+  {
+   "file": "AHS_2024_section11_1_cattle_milk_production_and_use.dta",
+   "year": 2024,
+   "n_rows": 12209,
+   "n_vars": 40
+  },
+  {
+   "file": "AHS_2024_section11_2_egg_production.dta",
+   "year": 2024,
+   "n_rows": 19077,
+   "n_vars": 17
+  },
+  {
+   "file": "AHS_2024_section11_3_honey_production.dta",
+   "year": 2024,
+   "n_rows": 9387,
+   "n_vars": 16
+  },
+  {
+   "file": "AHS_2024_section1_household_members_characteristics.dta",
+   "year": 2024,
+   "n_rows": 16292,
+   "n_vars": 142
+  },
+  {
+   "file": "AHS_2024_section2_land_tenure.dta",
+   "year": 2024,
+   "n_rows": 23266,
+   "n_vars": 20
+  },
+  {
+   "file": "AHS_2024_section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices.dta",
+   "year": 2024,
+   "n_rows": 32616,
+   "n_vars": 331
+  },
+  {
+   "file": "AHS_2024_section5_fruits_production.dta",
+   "year": 2024,
+   "n_rows": 9193,
+   "n_vars": 16
+  },
+  {
+   "file": "AHS_2024_section6_extension_services_and_agricultural_programmes.dta",
+   "year": 2024,
+   "n_rows": 9286,
+   "n_vars": 30
+  },
+  {
+   "file": "AHS_2024_section7_agricultural_tools.dta",
+   "year": 2024,
+   "n_rows": 9981,
+   "n_vars": 20
+  },
+  {
+   "file": "AHS_2024_section8_sustainable_agriculture.dta",
+   "year": 2024,
+   "n_rows": 3724,
+   "n_vars": 11
+  },
+  {
+   "file": "AHS_2024_section9_10_12_livestock_and_animal_inputs_expenditures.dta",
+   "year": 2024,
+   "n_rows": 9947,
+   "n_vars": 54
+  }
+ ]
+}

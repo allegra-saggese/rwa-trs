@@ -1,0 +1,61 @@
+21:30:15 01_clean INFO ==== 01_clean | run 20260904-213015_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:30:15 01_clean INFO ================ 2017 ================
+21:30:15 01_clean INFO read AHS_2017_s0_general_information.dta                -> s0_general_information                          23,709 rows x   25 vars
+21:30:15 01_clean INFO read AHS_2017_s10_1_cattle_milk_production.dta          -> s10_1_cattle_milk_production                     3,237 rows x   16 vars
+21:30:15 01_clean INFO read AHS_2017_s10_2_cattle_milk_production_use.dta      -> s10_2_cattle_milk_production_use                 3,989 rows x   15 vars
+21:30:15 01_clean INFO read AHS_2017_s10_3_honey_production.dta                -> s10_3_honey_production                          16,067 rows x   12 vars
+21:30:15 01_clean INFO read AHS_2017_s11_animal_inputs_and_services.dta        -> s11_animal_inputs_and_services                  26,500 rows x   20 vars
+21:30:15 01_clean INFO read AHS_2017_s1_household_members_characteristics.dta  -> s1_household_members_characteristics            73,665 rows x   27 vars
+21:30:15 01_clean INFO read AHS_2017_s2_land_tenure_and_crops_planted.dta      -> s2_land_tenure_and_crops_planted                16,057 rows x   30 vars
+21:30:16 01_clean INFO read AHS_2017_s3_extension_services_and_agricultural_programmes.dta -> s3_extension_services_and_agricultural_programmes   64,228 rows x   24 vars
+21:30:16 01_clean INFO read AHS_2017_s4_funding_during_2016.dta                -> s4_funding_during_2016                          16,057 rows x   19 vars
+21:30:16 01_clean INFO read AHS_2017_s5_agricultural_inputs.dta                -> s5_agricultural_inputs                          16,057 rows x  162 vars
+21:30:16 01_clean INFO read AHS_2017_s6_agricultural_practices.dta             -> s6_agricultural_practices                       16,057 rows x   40 vars
+21:30:17 01_clean INFO read AHS_2017_s7_1_agricultural_small_tools.dta         -> s7_1_agricultural_small_tools                  362,203 rows x   13 vars
+21:30:18 01_clean INFO read AHS_2017_s7_2_agricultural_durable_tools.dta       -> s7_2_agricultural_durable_tools                207,049 rows x   13 vars
+21:30:18 01_clean INFO read AHS_2017_s8_a_production_use_storage_and_expenses.dta -> s8_a_production_use_storage_and_expenses        35,844 rows x   31 vars
+21:30:18 01_clean INFO read AHS_2017_s8_b_production_use_storage_and_expenses.dta -> s8_b_production_use_storage_and_expenses        34,167 rows x   31 vars
+21:30:18 01_clean INFO read AHS_2017_s9_number_of_animals.dta                  -> s9_number_of_animals                            32,611 rows x   38 vars
+21:30:18 01_clean WARNING WARN  2017: household base s0_general_information had 289 duplicate hhid rows; first row kept
+21:30:18 01_clean INFO PASS  2017: hhid unique in household base (23,420 households)
+21:30:18 01_clean INFO PASS  2017: prov complete in household key table
+21:30:18 01_clean INFO PASS  2017: dist complete in household key table
+21:30:18 01_clean INFO PASS  2017: cluster complete in household key table
+21:30:18 01_clean INFO PASS  2017: wt complete in household key table
+21:30:18 01_clean INFO PASS  2017: province codes 1-5
+21:30:18 01_clean INFO PASS  2017: 30 districts on the 11-57 scheme
+21:30:18 01_clean INFO PASS  2017: household weight > 0
+21:30:19 01_clean INFO wrote AHS_2017_s0_general_information_clean.dta  (23,709 rows x 30 vars, 1.6 MB)
+21:30:19 01_clean INFO wrote AHS_2017_s10_1_cattle_milk_production_clean.dta  (3,237 rows x 22 vars, 0.2 MB)
+21:30:19 01_clean INFO wrote AHS_2017_s10_2_cattle_milk_production_use_clean.dta  (3,989 rows x 22 vars, 0.4 MB)
+21:30:19 01_clean INFO wrote AHS_2017_s10_3_honey_production_clean.dta  (16,067 rows x 19 vars, 1.3 MB)
+21:30:19 01_clean INFO wrote AHS_2017_s11_animal_inputs_and_services_clean.dta  (26,500 rows x 26 vars, 2.6 MB)
+21:30:19 01_clean INFO wrote AHS_2017_s1_household_members_characteristics_clean.dta  (73,665 rows x 33 vars, 5.0 MB)
+21:30:19 01_clean INFO wrote AHS_2017_s2_land_tenure_and_crops_planted_clean.dta  (16,057 rows x 36 vars, 1.3 MB)
+21:30:20 01_clean INFO wrote AHS_2017_s3_extension_services_and_agricultural_programmes_clean.dta  (64,228 rows x 30 vars, 4.1 MB)
+21:30:20 01_clean INFO wrote AHS_2017_s4_funding_during_2016_clean.dta  (16,057 rows x 25 vars, 1.0 MB)
+21:30:20 01_clean INFO wrote AHS_2017_s5_agricultural_inputs_clean.dta  (16,057 rows x 168 vars, 10.3 MB)
+21:30:20 01_clean INFO wrote AHS_2017_s6_agricultural_practices_clean.dta  (16,057 rows x 46 vars, 2.8 MB)
+21:30:22 01_clean INFO wrote AHS_2017_s7_1_agricultural_small_tools_clean.dta  (362,203 rows x 19 vars, 22.1 MB)
+21:30:23 01_clean INFO wrote AHS_2017_s7_2_agricultural_durable_tools_clean.dta  (207,049 rows x 19 vars, 12.6 MB)
+21:30:23 01_clean INFO wrote AHS_2017_s8_a_production_use_storage_and_expenses_clean.dta  (35,844 rows x 37 vars, 7.0 MB)
+21:30:23 01_clean INFO wrote AHS_2017_s8_b_production_use_storage_and_expenses_clean.dta  (34,167 rows x 37 vars, 6.6 MB)
+21:30:24 01_clean INFO wrote AHS_2017_s9_number_of_animals_clean.dta  (32,611 rows x 44 vars, 3.2 MB)
+21:30:24 01_clean INFO module levels: {'s0_general_information': 'multi', 's10_1_cattle_milk_production': 'multi', 's10_2_cattle_milk_production_use': 'multi', 's10_3_honey_production': 'multi', 's11_animal_inputs_and_services': 'multi', 's1_household_members_characteristics': 'person', 's2_land_tenure_and_crops_planted': 'household', 's3_extension_services_and_agricultural_programmes': 'multi', 's4_funding_during_2016': 'household', 's5_agricultural_inputs': 'household', 's6_agricultural_practices': 'household', 's7_1_agricultural_small_tools': 'multi', 's7_2_agricultural_durable_tools': 'multi', 's8_a_production_use_storage_and_expenses': 'multi', 's8_b_production_use_storage_and_expenses': 'multi', 's9_number_of_animals': 'multi'}
+21:30:24 01_clean INFO PASS  2017: (hhid, pid) unique in the person file
+21:30:24 01_clean INFO PASS  2017: wt present and > 0 on every person row
+21:30:24 01_clean INFO PASS  2017: sex in {1,2}
+21:30:24 01_clean INFO 2017 person file: 73,665 rows x 33 vars; weighted persons = 9,682,214
+21:30:24 01_clean INFO wrote AHS_2017_person_clean.dta  (73,665 rows x 33 vars, 5.0 MB)
+21:30:24 01_clean WARNING WARN  2017: 7362 household-base rows without any roster member dropped (dwellings listed but not interviewed)
+21:30:24 01_clean INFO    joined s2_land_tenure_and_crops_planted              100.00% of base rows matched, 24 columns added, identical copies dropped: ['s0q3', 's0q4']
+21:30:24 01_clean INFO    joined s4_funding_during_2016                        100.00% of base rows matched, 13 columns added, identical copies dropped: ['s0q3', 's0q4']
+21:30:24 01_clean INFO    joined s5_agricultural_inputs                        100.00% of base rows matched, 156 columns added, identical copies dropped: ['s0q3', 's0q4']
+21:30:24 01_clean INFO    joined s6_agricultural_practices                     100.00% of base rows matched, 28 columns added, identical copies dropped: ['s2q7_1', 's2q7_2', 's2q7_3', 's2q15_1', 's2q15_2', 's2q15_3', 's0q3', 's0q4']
+21:30:24 01_clean INFO PASS  2017: one head (s1q3 == 1) per household: 100.0000%
+21:30:24 01_clean INFO PASS  2017: hhid unique in the household file (16,057 households)
+21:30:24 01_clean INFO PASS  2017: sum of hhsize == person rows
+21:30:24 01_clean INFO 2017 household file: 16,057 rows x 254 vars; weighted households = 2,164,610
+21:30:25 01_clean INFO wrote AHS_2017_household_clean.dta  (16,057 rows x 254 vars, 13.5 MB)
+21:30:25 01_clean INFO all hard checks passed (2 soft warnings)
+21:30:25 01_clean INFO 01_clean done for ['2017']
