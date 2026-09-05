@@ -1,150 +1,134 @@
 # rwa-trs
 
-spatial and micro analysis of rwa census data
+Tourism, jobs and conservation in the communities bordering Rwanda's national
+parks. Estimates the effect of park-based tourism and of the Tourism Revenue
+Sharing (TRS) programme on local economies, and asks whether tourism-led
+development raises or relieves pressure on the forest.
 
----
+The unit of analysis is the **sector** (416) and, where the outcome supports it,
+the **cell** (2,148). Both are joined to Census microdata through the national
+administrative code scheme.
 
 ## Scripts
 
-Three task-based scripts. Run in order on a fresh clone.
-
 | Script | Does | Writes to |
 |---|---|---|
-| `extract.py` | Downloads open data, loads survey microdata from `data/raw/`, cleans and merges everything | `data/processed/` |
-| `summary.py` | Descriptive tables, figures, graphs | `output/tables/`, `output/figures/` |
-| `maps.py` | Choropleths and other spatial output | `output/maps/` |
-
-`variables.py` is not a pipeline stage — it is the EICV7 codebook, mapping
-analysis names to variable codes by workstream (labour, livelihood,
-conservation). All 107 codes verify against the shipped dictionary:
+| `extract.py` | Acquires, cleans and merges every source | `data/processed/` |
+| `gee_extract.py` | Earth Engine layers: TMF, Dynamic World, RADD | `data/processed/` |
+| `fetch_geodata_rw.py` | Rwanda national geoportal layers (ArcGIS FeatureServers) | `geo-data/` |
+| `inventory.py` | Indexes every file and variable across the holdings | `docs/`, `data/processed/` |
+| `summary.py` | Descriptive tables and figures | `output/tables`, `output/figures` |
+| `maps.py` | Choropleths and spatial figures | `output/maps/` |
+| `variables.py` | EICV7 codebook by workstream, with a verifier | — |
 
 ```bash
-python variables.py --check           # verify every code exists
-python variables.py --list labour     # print one workstream
-python variables.py --export          # regenerate docs/variable_lists.md
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python extract.py --all && python summary.py --all && python maps.py --all
 ```
 
 ## NISR microdata pipelines (`NISR/`)
 
 The survey microdata (LFS, Census, EICV, Establishment Census, AHS, SAS, CFSVA) are
-cleaned and pooled by independent Python pipelines in [`NISR/`](NISR/README.md): one
-folder per survey, `python master.py` runs it top to bottom, outputs go to the Dropbox
-data folder (`2_Intermediate/`, `3_Final/`), and each folder carries its `DECISIONS.md`,
-generated `CODEBOOK.md`, `DOCUMENTATION.md` (what the NISR documentation says and how it
-was applied), check reports and run logs. An eighth folder, `NISR/Harmonize/`, writes
-harmonised copies of every final and appended file (common keys, labels and `h_*` concept
-variables) to `Publicly-Available-NISR/Harmonized/`. The `extract.py` survey loaders
-below predate these pipelines; read `NISR/README.md` first for survey data.
+cleaned and pooled by independent Python pipelines in `NISR/` (read `NISR/README.txt`
+first for survey data): one folder per survey, `python master.py` runs it top to bottom,
+outputs go to the Dropbox data folder (`2_Intermediate/`, `3_Final/`). Each dataset's
+codebook is the Excel workbook `CODEBOOK_<survey>.xlsx` next to that folder's `README.txt`
+on Dropbox; the repository holds code and run logs only, and the processing notes (what the
+NISR documentation says, every decision and why) are kept with the project memory outside
+git. An eighth folder, `NISR/Harmonize/`, writes harmonised copies of every final and
+appended file (common keys, labels and `h_*` concept variables) to
+`Publicly-Available-NISR/Harmonized/`. The `extract.py` survey loaders predate these pipelines.
 
-## Setup
+## The three measurement problems this project has to solve
 
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-```
+Everything in the data build exists to address one of these. They are not
+side-quests; each one determines whether a headline result survives.
 
-## Quickstart
+### 1. Where are the households?
 
-```bash
-python extract.py --all          # first run downloads ~4 GB of CHIRPS, ~25 min
-python summary.py --all
-python maps.py --all
-```
+Public microdata is anonymised to coarse geography, and it differs by source:
 
-Downloads are cached in `data/raw/` and skipped on re-run. To test on a short
-window instead:
+| Source | Finest named geography |
+|---|---|
+| **Census (PHC)** | **sector — 416, named and coded** |
+| Establishment Census 2011 / 2014 | village / **sector** |
+| LFS, EICV, AHS | district only (30) |
+| DHS | GPS, but displaced 2–10 km |
 
-```bash
-python extract.py --sources boundaries wdi chirps --start 2015 --end 2020
-```
+The Census sector code (1101–5715) matches the NISR village boundary file
+**416 of 416**, which is what makes sector-level analysis possible at all. EICV
+and LFS clusters are more numerous than districts but carry no place name, so
+they support clustered standard errors and nothing spatial.
 
-## Data sources
+**Consequence:** the household-side econometrics is district-level and
+non-spatial; the spatial work runs on the Census and on the environmental
+layers.
 
-| Source | Access | Coverage | Status |
-|---|---|---|---|
-| GADM 4.1 admin-2 | open, auto-downloaded | 30 districts, 5 provinces | working |
-| CHIRPS v2.0 monthly | open, auto-downloaded | 1981–present, 0.05° | working, built 2000–2024 |
-| World Bank WDI | open API, auto-downloaded | national, 1960–present | working |
-| EICV7 (2023-24) | **NISR account required** | 21 files, household + person | loader written, awaiting files |
-| DHS recodes + GPS | **account required** | 2000, 2005, 2010, 2014-15, 2019-20 | loader written, awaiting files |
-| Rwanda Establishment Census (`rec`) | **NISR account required** | establishment level | generic loader, awaiting files + dictionary |
-| Establishment Survey (`est`) | **NISR account required** | establishment level | generic loader, awaiting files + dictionary |
-| Agriculture Household Survey (`ahs`) | **NISR account required** | household / parcel | generic loader, awaiting files + dictionary |
-| Labour Force Survey (`lfs`) | **NISR account required** | quarterly, 2016/17– | generic loader, awaiting files + dictionary |
+### 2. What counts as treated?
 
-Both survey loaders skip with an explanatory message when files are absent, so
-the rest of the pipeline runs without them.
+`Border_s` — a sector touching or within 1 km of a national park — is
+load-bearing, and the count moves with the boundary source:
 
-### Adding EICV7
+| Boundary source | Border sectors | Population |
+|---|---|---|
+| WDPA | 51 | 1,549,299 |
+| geodata.rw (authoritative, in use) | 62 | 1,925,052 |
+| Population within 2 km (1 km grid) | — | **490,308** |
 
-Request at [microdata.statistics.gov.rw](https://microdata.statistics.gov.rw),
-put the files in `data/raw/eicv/`, then:
+The third row is the point. Sectors average 64 km², so most people in a
+"treated" sector live far from the boundary. The gridded population raster gives
+a continuous exposure measure that does not inherit sector shape.
 
-```bash
-python extract.py --sources eicv
-```
+Boundaries are stable from the **2006 administrative reform** onward. All time
+series are therefore clipped to 2006+; full-length versions are kept as
+`*_full.csv`.
 
-Files are identified by their `F`-number prefix (`F1 CS_EICV7_poverty_file.dta`
-→ `poverty`), per `EICV7_2023-24_variable_dictionary.csv` in the repo root. All
-21 files are recognised. District names are normalised and joined to
-`district_id`, so survey data lines up with the climate panel with no manual
-crosswalk.
+### 3. Is forest loss deforestation, or is it harvest?
 
-`F1` (poverty) additionally collapses to `eicv7_district_welfare.csv` —
-population-weighted poverty and extreme-poverty rates, household-weighted mean
-consumption per adult equivalent — which merges into `district_panel.csv`.
+Rwandan forest loss runs 1,200–2,100 ha/yr through 2012 and 5,500–9,100 ha/yr
+from 2013. That step change is not obviously a change in deforestation
+pressure — planted area correlates 0.154 with 2006–2012 loss but **0.565** with
+2013–2024 loss. Rwanda planted heavily in the 1980s–90s and those stands came
+due.
 
-### Adding REC, Establishment Survey, AHS, LFS
+Separating the two requires the planted-tree layer alongside the loss layer.
+Without it, a forest result is partly an estimate of eucalyptus rotation.
 
-Put files in `data/raw/rec/`, `data/raw/est/`, `data/raw/ahs/`, `data/raw/lfs/`
-respectively, then:
+## Data
 
-```bash
-python extract.py --sources rec est ahs lfs
-```
+Full detail in [`docs/data_catalogue.md`](docs/data_catalogue.md); the paper
+table is [`output/tables/data_table.tex`](output/tables/data_table.tex).
 
-Reads `.dta`, `.sav`, `.csv` and `.xlsx`. No variable dictionary is held for
-these, so files load under their own stem with value labels applied and a
-`district_id` join where a district column exists — nothing else is assumed.
-Verified variable lists follow once the dictionaries arrive.
+**Economic** — Census (2002/2012/2022), EICV (6 waves), LFS (2017–2025),
+Establishment Census (5 rounds), AHS (2017/2020/2024), SAS (2019/2020), IBES
+(provincial aggregates). Awaited: **RDB TRS project data**, the treatment
+itself, and DHS GPS.
 
-LFS quarters are **not** stacked automatically: weights are round-specific and
-definitions have shifted over the series. Stack deliberately in analysis code.
+**Conservation** — Hansen forest loss (sector and cell), JRC TMF (forest
+quality: undisturbed / degraded / regrowth), Dynamic World (9 land-cover
+classes), RADD alerts, WRI SDPT planted trees, CHIRPS rainfall. Missing: RCMRD
+land cover (portal down), animal censuses.
 
-### Adding DHS
+**Infrastructure and geography** — Google Open Buildings (5.8M footprints),
+GRID3 settlements, gridfinder electricity, NISR administrative boundaries
+(province → village), geodata.rw protected areas, 1 km gridded population.
 
-Register at [dhsprogram.com](https://dhsprogram.com), put the recode `.DTA`
-files and GPS shapefile in `data/raw/dhs/`, then:
-
-```bash
-python extract.py --sources dhs dhs_gps
-```
-
-## Current outputs
-
-`district_panel.csv` — 750 district-years (30 districts × 2000–2024): rainfall
-totals, within-district anomalies and percentiles, a drought indicator, area,
-province, and national WDI controls.
-
-5 figures, 5 maps, 3 tables in `output/`.
+Survey microdata is licensed to the researcher and lives outside this repo. The
+paths are set in `extract.py:NISR_ROOT` and `inventory.py:DEFAULT_ROOT`.
 
 ## Documentation
 
-- [`docs/data_provenance.md`](docs/data_provenance.md) — where each file came from, when, licensing
-- [`docs/cleaning_decisions.md`](docs/cleaning_decisions.md) — every judgment call, with reasoning
-- [`docs/variable_lists.md`](docs/variable_lists.md) — EICV7 variables by workstream (generated)
-- [`docs/eicv_rounds.md`](docs/eicv_rounds.md) — round structure and what pools across waves
+| File | Contents |
+|---|---|
+| [`docs/data_catalogue.md`](docs/data_catalogue.md) | Every dataset: contents, path, years, source |
+| [`docs/data_requirements.md`](docs/data_requirements.md) | Proposal table vs holdings, and the gaps |
+| [`docs/geodata_audit.md`](docs/geodata_audit.md) | Spatial layers held and still needed |
+| [`docs/cleaning_decisions.md`](docs/cleaning_decisions.md) | Every judgment call, dated, with reasoning |
+| [`docs/eicv_rounds.md`](docs/eicv_rounds.md) | Round structure and what pools across waves |
+| [`docs/variable_lists.md`](docs/variable_lists.md) | EICV7 variables by workstream (generated) |
+| [`docs/data_inventory.md`](docs/data_inventory.md) | File-level index (generated) |
 
-**Read the second one before designing a specification.** It documents a real
-constraint: rainfall shocks in Rwanda are ~79% absorbed by year fixed effects
-(mean pairwise correlation of district anomalies is 0.79), which limits what a
-district × year design can identify.
-
-## Useful invocations
-
-```bash
-python maps.py --list-vars                        # what can be mapped
-python maps.py --var rain_z --year 2018           # map any panel column
-python summary.py --all --format pdf              # vector output for LaTeX
-python extract.py --sources chirps --start 1981   # full CHIRPS record
-```
+**Read `cleaning_decisions.md` before specifying anything.** It records the
+constraints that shape what can be identified — including that rainfall shocks
+are ~79% absorbed by year fixed effects.
