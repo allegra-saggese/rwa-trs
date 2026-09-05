@@ -124,11 +124,12 @@ import difflib, re as _re
 align = json.load(open(LOGS / "merge_alignment.json")); thr = align.get("vl_threshold", 0.6)
 metas = {y: json.load(open(LOGS / f"clean_{y}_meta.json")) for y in range(2017, 2026) if (LOGS / f"clean_{y}_meta.json").exists()}
 SENT = {98, 99, 998, 999, 9998, 9999}
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
 _SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
 def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in _re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
 def _same(x, y):
     a, b = _norm(x), _norm(y)
-    if a == b: return True
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
     ta, tb = set(a.split()), set(b.split())
     if ta and tb and (ta <= tb or tb <= ta): return True
     return difflib.SequenceMatcher(None, a, b).ratio() >= thr

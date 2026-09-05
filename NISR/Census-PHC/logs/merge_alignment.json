@@ -13,6 +13,15 @@
   ],
   "h08": [
    2012
+  ],
+  "h01": [
+   2022
+  ],
+  "h02": [
+   2022
+  ],
+  "p19": [
+   2002
   ]
  },
  "decisions": {
@@ -28,7 +37,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy A46)"
    },
-   "reference_label": "Age (NISR derived copy A46)"
+   "reference_label": "Age (NISR derived copy A46)",
+   "split_reasons": []
   },
   "agcm": {
    "years": [
@@ -42,7 +52,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy)"
    },
-   "reference_label": "Age (NISR derived copy)"
+   "reference_label": "Age (NISR derived copy)",
+   "split_reasons": []
   },
   "age": {
    "years": [
@@ -62,7 +73,8 @@
     "2012": "Age in years",
     "2022": "Age in years"
    },
-   "reference_label": "Age in years"
+   "reference_label": "Age in years",
+   "split_reasons": []
   },
   "age18": {
    "years": [
@@ -76,7 +88,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 18)"
    },
-   "reference_label": "Age (NISR derived copy 18)"
+   "reference_label": "Age (NISR derived copy 18)",
+   "split_reasons": []
   },
   "age19": {
    "years": [
@@ -90,7 +103,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 19)"
    },
-   "reference_label": "Age (NISR derived copy 19)"
+   "reference_label": "Age (NISR derived copy 19)",
+   "split_reasons": []
   },
   "age1_1": {
    "years": [
@@ -104,7 +118,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 1-1)"
    },
-   "reference_label": "Age (NISR derived copy 1-1)"
+   "reference_label": "Age (NISR derived copy 1-1)",
+   "split_reasons": []
   },
   "age26": {
    "years": [
@@ -118,7 +133,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 26)"
    },
-   "reference_label": "Age (NISR derived copy 26)"
+   "reference_label": "Age (NISR derived copy 26)",
+   "split_reasons": []
   },
   "age_5": {
    "years": [
@@ -132,7 +148,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy, 5)"
    },
-   "reference_label": "Age (NISR derived copy, 5)"
+   "reference_label": "Age (NISR derived copy, 5)",
+   "split_reasons": []
   },
   "agebetween5_17": {
    "years": [
@@ -146,7 +163,8 @@
    "labels_by_year": {
     "2002": "Flag: age 5-17 (NISR derived)"
    },
-   "reference_label": "Flag: age 5-17 (NISR derived)"
+   "reference_label": "Flag: age 5-17 (NISR derived)",
+   "split_reasons": []
   },
   "agegrp_nisr": {
    "years": [
@@ -160,7 +178,8 @@
    "labels_by_year": {
     "2002": "Age group (NISR derived, 0-5; shipped as 'Age')"
    },
-   "reference_label": "Age group (NISR derived, 0-5; shipped as 'Age')"
+   "reference_label": "Age group (NISR derived, 0-5; shipped as 'Age')",
+   "split_reasons": []
   },
   "aggroup5": {
    "years": [
@@ -174,7 +193,8 @@
    "labels_by_year": {
     "2012": "Five-Year Age-Group"
    },
-   "reference_label": "Five-Year Age-Group"
+   "reference_label": "Five-Year Age-Group",
+   "split_reasons": []
   },
   "cluster": {
    "years": [
@@ -194,7 +214,8 @@
     "2012": "Sampling cluster proxy (year_sector)",
     "2022": "Sampling cluster proxy (year_sector)"
    },
-   "reference_label": "Sampling cluster proxy (year_sector)"
+   "reference_label": "Sampling cluster proxy (year_sector)",
+   "split_reasons": []
   },
   "collective": {
    "years": [
@@ -208,7 +229,8 @@
    "labels_by_year": {
     "2002": "1 = row belongs to a collective/institutional household (2002 only)"
    },
-   "reference_label": "1 = row belongs to a collective/institutional household (2002 only)"
+   "reference_label": "1 = row belongs to a collective/institutional household (2002 only)",
+   "split_reasons": []
   },
   "dist": {
    "years": [
@@ -228,7 +250,8 @@
     "2012": "District (11-57, NISR codes)",
     "2022": "District (11-57, NISR codes)"
    },
-   "reference_label": "District (11-57, NISR codes)"
+   "reference_label": "District (11-57, NISR codes)",
+   "split_reasons": []
   },
   "district_code": {
    "years": [
@@ -242,7 +265,8 @@
    "labels_by_year": {
     "2002": "District code (3-digit, as shipped)"
    },
-   "reference_label": "District code (3-digit, as shipped)"
+   "reference_label": "District code (3-digit, as shipped)",
+   "split_reasons": []
   },
   "emploi_exerc": {
    "years": [
@@ -256,7 +280,8 @@
    "labels_by_year": {
     "2002": "Occupation (NISR grouped)"
    },
-   "reference_label": "Occupation (NISR grouped)"
+   "reference_label": "Occupation (NISR grouped)",
+   "split_reasons": []
   },
   "etat_matri": {
    "years": [
@@ -270,7 +295,8 @@
    "labels_by_year": {
     "2002": "Marital status (NISR grouped)"
    },
-   "reference_label": "Marital status (NISR grouped)"
+   "reference_label": "Marital status (NISR grouped)",
+   "split_reasons": []
   },
   "filter__": {
    "years": [
@@ -284,7 +310,8 @@
    "labels_by_year": {
     "2012": "P02 = 1 (FILTER)"
    },
-   "reference_label": "P02 = 1 (FILTER)"
+   "reference_label": "P02 = 1 (FILTER)",
+   "split_reasons": []
   },
   "fr_quentation": {
    "years": [
@@ -298,7 +325,8 @@
    "labels_by_year": {
     "2002": "School attendance (NISR grouped)"
    },
-   "reference_label": "School attendance (NISR grouped)"
+   "reference_label": "School attendance (NISR grouped)",
+   "split_reasons": []
   },
   "gpe_age": {
    "years": [
@@ -312,7 +340,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy, groups)"
    },
-   "reference_label": "Age (NISR derived copy, groups)"
+   "reference_label": "Age (NISR derived copy, groups)",
+   "split_reasons": []
   },
   "grpage5": {
    "years": [
@@ -326,7 +355,8 @@
    "labels_by_year": {
     "2002": "Five-year age group (NISR derived)"
    },
-   "reference_label": "Five-year age group (NISR derived)"
+   "reference_label": "Five-year age group (NISR derived)",
+   "split_reasons": []
   },
   "h01": {
    "years": [
@@ -337,7 +367,9 @@
    "versions": {
     "h01": [
      2002,
-     2012,
+     2012
+    ],
+    "h01_v2": [
      2022
     ]
    },
@@ -346,7 +378,10 @@
     "2012": "Type of Housing",
     "2022": "Type of habitant"
    },
-   "reference_label": "Type of habitant"
+   "reference_label": "Type of Housing",
+   "split_reasons": [
+    "2022: FORCE_SPLIT"
+   ]
   },
   "h02": {
    "years": [
@@ -357,7 +392,9 @@
    "versions": {
     "h02": [
      2002,
-     2012,
+     2012
+    ],
+    "h02_v2": [
      2022
     ]
    },
@@ -366,7 +403,10 @@
     "2012": "Type of Housing unit",
     "2022": "Type of Building"
    },
-   "reference_label": "Type of Building"
+   "reference_label": "Type of Housing unit",
+   "split_reasons": [
+    "2022: FORCE_SPLIT"
+   ]
   },
   "h03": {
    "years": [
@@ -390,7 +430,12 @@
     "2012": "Status of occupancy of house",
     "2022": "Tenure of then housing unit"
    },
-   "reference_label": "Tenure of then housing unit"
+   "reference_label": "Tenure of then housing unit",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Status of occupancy of house' vs 'Roof material')",
+    "2022 vs 2002: variable label differs ('Tenure of then housing unit' vs 'Roof material')",
+    "2022 vs 2012: variable label differs ('Tenure of then housing unit' vs 'Status of occupancy of house')"
+   ]
   },
   "h04": {
    "years": [
@@ -414,7 +459,12 @@
     "2012": "Roof",
     "2022": "Is this Household has its own housing unit  in this village or elsewhere"
    },
-   "reference_label": "Is this Household has its own housing unit  in this village or elsewhere"
+   "reference_label": "Is this Household has its own housing unit  in this village or elsewhere",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Roof' vs 'Outer wall material')",
+    "2022 vs 2002: variable label differs ('Is this Household has its own housing un' vs 'Outer wall material')",
+    "2022 vs 2012: variable label differs ('Is this Household has its own housing un' vs 'Roof')"
+   ]
   },
   "h05": {
    "years": [
@@ -438,7 +488,12 @@
     "2012": "Walls",
     "2022": "main material used for the roof"
    },
-   "reference_label": "main material used for the roof"
+   "reference_label": "main material used for the roof",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Walls' vs 'Floor material')",
+    "2022 vs 2002: variable label differs ('main material used for the roof' vs 'Floor material')",
+    "2022 vs 2012: variable label differs ('main material used for the roof' vs 'Walls')"
+   ]
   },
   "h06": {
    "years": [
@@ -462,7 +517,12 @@
     "2012": "Floor",
     "2022": "main material used for the walls"
    },
-   "reference_label": "main material used for the walls"
+   "reference_label": "main material used for the walls",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Floor' vs 'Number of living rooms')",
+    "2022 vs 2002: variable label differs ('main material used for the walls' vs 'Number of living rooms')",
+    "2022 vs 2012: variable label differs ('main material used for the walls' vs 'Floor')"
+   ]
   },
   "h07": {
    "years": [
@@ -486,7 +546,12 @@
     "2012": "Number of rooms",
     "2022": "main material used for the floor"
    },
-   "reference_label": "main material used for the floor"
+   "reference_label": "main material used for the floor",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Number of rooms' vs 'Main source of water supply')",
+    "2022 vs 2002: variable label differs ('main material used for the floor' vs 'Main source of water supply')",
+    "2022 vs 2012: variable label differs ('main material used for the floor' vs 'Number of rooms')"
+   ]
   },
   "h08": {
    "years": [
@@ -510,7 +575,11 @@
     "2012": "Number of rooms for sleeping",
     "2022": "Number of rooms"
    },
-   "reference_label": "Number of rooms"
+   "reference_label": "Number of rooms",
+   "split_reasons": [
+    "2012: FORCE_SPLIT",
+    "2022 vs 2002: variable label differs ('Number of rooms' vs 'Main source of lighting')"
+   ]
   },
   "h09": {
    "years": [
@@ -534,7 +603,12 @@
     "2012": "Number of occupants",
     "2022": "number of rooms are used for sleeping"
    },
-   "reference_label": "number of rooms are used for sleeping"
+   "reference_label": "number of rooms are used for sleeping",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Number of occupants' vs 'Main cooking energy')",
+    "2022 vs 2002: variable label differs ('number of rooms are used for sleeping' vs 'Main cooking energy')",
+    "2022 vs 2012: variable label differs ('number of rooms are used for sleeping' vs 'Number of occupants')"
+   ]
   },
   "h10": {
    "years": [
@@ -558,7 +632,12 @@
     "2012": "Main source of water",
     "2022": "Are Sleeping rooms  for Boys separated from those for Girls"
    },
-   "reference_label": "Are Sleeping rooms  for Boys separated from those for Girls"
+   "reference_label": "Are Sleeping rooms  for Boys separated from those for Girls",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Main source of water' vs 'Main toilet facility')",
+    "2022 vs 2002: variable label differs ('Are Sleeping rooms  for Boys separated f' vs 'Main toilet facility')",
+    "2022 vs 2012: variable label differs ('Are Sleeping rooms  for Boys separated f' vs 'Main source of water')"
+   ]
   },
   "h100": {
    "years": [
@@ -572,7 +651,8 @@
    "labels_by_year": {
     "2002": "Household type (100 = ordinary household)"
    },
-   "reference_label": "Household type (100 = ordinary household)"
+   "reference_label": "Household type (100 = ordinary household)",
+   "split_reasons": []
   },
   "h101": {
    "years": [
@@ -586,7 +666,8 @@
    "labels_by_year": {
     "2002": "Questionnaire serial number in household"
    },
-   "reference_label": "Questionnaire serial number in household"
+   "reference_label": "Questionnaire serial number in household",
+   "split_reasons": []
   },
   "h102": {
    "years": [
@@ -600,7 +681,8 @@
    "labels_by_year": {
     "2002": "Number of questionnaires filled in household"
    },
-   "reference_label": "Number of questionnaires filled in household"
+   "reference_label": "Number of questionnaires filled in household",
+   "split_reasons": []
   },
   "h11": {
    "years": [
@@ -624,7 +706,12 @@
     "2012": "Type of toilet facility",
     "2022": "Main source of water used for general purposes"
    },
-   "reference_label": "Main source of water used for general purposes"
+   "reference_label": "Main source of water used for general purposes",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Type of toilet facility' vs 'Main mode of household waste disposal')",
+    "2022 vs 2002: variable label differs ('Main source of water used for general pu' vs 'Main mode of household waste disposal')",
+    "2022 vs 2012: variable label differs ('Main source of water used for general pu' vs 'Type of toilet facility')"
+   ]
   },
   "h110": {
    "years": [
@@ -638,7 +725,8 @@
    "labels_by_year": {
     "2002": "Recap: male residents present"
    },
-   "reference_label": "Recap: male residents present"
+   "reference_label": "Recap: male residents present",
+   "split_reasons": []
   },
   "h111": {
    "years": [
@@ -652,7 +740,8 @@
    "labels_by_year": {
     "2002": "Recap: male residents absent"
    },
-   "reference_label": "Recap: male residents absent"
+   "reference_label": "Recap: male residents absent",
+   "split_reasons": []
   },
   "h112": {
    "years": [
@@ -666,7 +755,8 @@
    "labels_by_year": {
     "2002": "Recap: male residents total"
    },
-   "reference_label": "Recap: male residents total"
+   "reference_label": "Recap: male residents total",
+   "split_reasons": []
   },
   "h113": {
    "years": [
@@ -680,7 +770,8 @@
    "labels_by_year": {
     "2002": "Recap: male residents aged 17+"
    },
-   "reference_label": "Recap: male residents aged 17+"
+   "reference_label": "Recap: male residents aged 17+",
+   "split_reasons": []
   },
   "h114": {
    "years": [
@@ -694,7 +785,8 @@
    "labels_by_year": {
     "2002": "Recap: male visitors"
    },
-   "reference_label": "Recap: male visitors"
+   "reference_label": "Recap: male visitors",
+   "split_reasons": []
   },
   "h115": {
    "years": [
@@ -708,7 +800,8 @@
    "labels_by_year": {
     "2002": "Recap: female residents present"
    },
-   "reference_label": "Recap: female residents present"
+   "reference_label": "Recap: female residents present",
+   "split_reasons": []
   },
   "h116": {
    "years": [
@@ -722,7 +815,8 @@
    "labels_by_year": {
     "2002": "Recap: female residents absent"
    },
-   "reference_label": "Recap: female residents absent"
+   "reference_label": "Recap: female residents absent",
+   "split_reasons": []
   },
   "h117": {
    "years": [
@@ -736,7 +830,8 @@
    "labels_by_year": {
     "2002": "Recap: female residents total"
    },
-   "reference_label": "Recap: female residents total"
+   "reference_label": "Recap: female residents total",
+   "split_reasons": []
   },
   "h118": {
    "years": [
@@ -750,7 +845,8 @@
    "labels_by_year": {
     "2002": "Recap: female residents aged 17+"
    },
-   "reference_label": "Recap: female residents aged 17+"
+   "reference_label": "Recap: female residents aged 17+",
+   "split_reasons": []
   },
   "h119": {
    "years": [
@@ -764,7 +860,8 @@
    "labels_by_year": {
     "2002": "Recap: female visitors"
    },
-   "reference_label": "Recap: female visitors"
+   "reference_label": "Recap: female visitors",
+   "split_reasons": []
   },
   "h12": {
    "years": [
@@ -788,7 +885,12 @@
     "2012": "Source of lighting",
     "2022": "Main source of drinking water"
    },
-   "reference_label": "Main source of drinking water"
+   "reference_label": "Main source of drinking water",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Source of lighting' vs 'Occupancy status of the dwelling')",
+    "2022 vs 2002: variable label differs ('Main source of drinking water' vs 'Occupancy status of the dwelling')",
+    "2022 vs 2012: variable label differs ('Main source of drinking water' vs 'Source of lighting')"
+   ]
   },
   "h120": {
    "years": [
@@ -802,7 +904,8 @@
    "labels_by_year": {
     "2002": "Recap: residents present, total"
    },
-   "reference_label": "Recap: residents present, total"
+   "reference_label": "Recap: residents present, total",
+   "split_reasons": []
   },
   "h121": {
    "years": [
@@ -816,7 +919,8 @@
    "labels_by_year": {
     "2002": "Recap: residents absent, total"
    },
-   "reference_label": "Recap: residents absent, total"
+   "reference_label": "Recap: residents absent, total",
+   "split_reasons": []
   },
   "h122": {
    "years": [
@@ -830,7 +934,8 @@
    "labels_by_year": {
     "2002": "Recap: residents, total"
    },
-   "reference_label": "Recap: residents, total"
+   "reference_label": "Recap: residents, total",
+   "split_reasons": []
   },
   "h123": {
    "years": [
@@ -844,7 +949,8 @@
    "labels_by_year": {
     "2002": "Recap: residents aged 17+, total"
    },
-   "reference_label": "Recap: residents aged 17+, total"
+   "reference_label": "Recap: residents aged 17+, total",
+   "split_reasons": []
   },
   "h124": {
    "years": [
@@ -858,7 +964,8 @@
    "labels_by_year": {
     "2002": "Recap: visitors, total"
    },
-   "reference_label": "Recap: visitors, total"
+   "reference_label": "Recap: visitors, total",
+   "split_reasons": []
   },
   "h13": {
    "years": [
@@ -882,7 +989,12 @@
     "2012": "Energy of cooking",
     "2022": "Toilet Facility"
    },
-   "reference_label": "Toilet Facility"
+   "reference_label": "Toilet Facility",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Energy of cooking' vs 'Radio / television ownership')",
+    "2022 vs 2002: variable label differs ('Toilet Facility' vs 'Radio / television ownership')",
+    "2022 vs 2012: variable label differs ('Toilet Facility' vs 'Energy of cooking')"
+   ]
   },
   "h14": {
    "years": [
@@ -906,7 +1018,12 @@
     "2012": "Energy saving stove",
     "2022": "Electricity (Grid line) connectivity"
    },
-   "reference_label": "Electricity (Grid line) connectivity"
+   "reference_label": "Electricity (Grid line) connectivity",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Energy saving stove' vs 'Fixed-line / cell phone')",
+    "2022 vs 2002: variable label differs ('Electricity (Grid line) connectivity' vs 'Fixed-line / cell phone')",
+    "2022 vs 2012: variable label differs ('Electricity (Grid line) connectivity' vs 'Energy saving stove')"
+   ]
   },
   "h15": {
    "years": [
@@ -930,7 +1047,12 @@
     "2012": "Mode of household waste disposal",
     "2022": "Main source of energy for lighting"
    },
-   "reference_label": "Main source of energy for lighting"
+   "reference_label": "Main source of energy for lighting",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Mode of household waste disposal' vs 'Computer / internet connection')",
+    "2022 vs 2002: variable label differs ('Main source of energy for lighting' vs 'Computer / internet connection')",
+    "2022 vs 2012: variable label differs ('Main source of energy for lighting' vs 'Mode of household waste disposal')"
+   ]
   },
   "h16": {
    "years": [
@@ -949,7 +1071,10 @@
     "2012": "Mode of sewage disposal",
     "2022": "Main source of energy for cooking"
    },
-   "reference_label": "Main source of energy for cooking"
+   "reference_label": "Main source of energy for cooking",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Main source of energy for cooking' vs 'Mode of sewage disposal')"
+   ]
   },
   "h16a": {
    "years": [
@@ -963,7 +1088,8 @@
    "labels_by_year": {
     "2002": "Number of vehicles"
    },
-   "reference_label": "Number of vehicles"
+   "reference_label": "Number of vehicles",
+   "split_reasons": []
   },
   "h16b": {
    "years": [
@@ -977,7 +1103,8 @@
    "labels_by_year": {
     "2002": "Number of motorcycles"
    },
-   "reference_label": "Number of motorcycles"
+   "reference_label": "Number of motorcycles",
+   "split_reasons": []
   },
   "h16c": {
    "years": [
@@ -991,7 +1118,8 @@
    "labels_by_year": {
     "2002": "Number of bicycles"
    },
-   "reference_label": "Number of bicycles"
+   "reference_label": "Number of bicycles",
+   "split_reasons": []
   },
   "h17": {
    "years": [
@@ -1015,7 +1143,12 @@
     "2012": "Radio",
     "2022": "Secondary source of energy for cooking"
    },
-   "reference_label": "Secondary source of energy for cooking"
+   "reference_label": "Secondary source of energy for cooking",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Radio' vs 'Total persons counted in the household')",
+    "2022 vs 2002: variable label differs ('Secondary source of energy for cooking' vs 'Total persons counted in the household')",
+    "2022 vs 2012: variable label differs ('Secondary source of energy for cooking' vs 'Radio')"
+   ]
   },
   "h18": {
    "years": [
@@ -1039,7 +1172,12 @@
     "2012": "Television",
     "2022": "Does your HH use a cooking energy saving stove?"
    },
-   "reference_label": "Does your HH use a cooking energy saving stove?"
+   "reference_label": "Does your HH use a cooking energy saving stove?",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Television' vs '(empty in the public file)')",
+    "2022 vs 2002: variable label differs ('Does your HH use a cooking energy saving' vs '(empty in the public file)')",
+    "2022 vs 2012: variable label differs ('Does your HH use a cooking energy saving' vs 'Television')"
+   ]
   },
   "h19": {
    "years": [
@@ -1058,7 +1196,10 @@
     "2012": "Telephone (fixed line)",
     "2022": "Main mode of household waste disposal used"
    },
-   "reference_label": "Main mode of household waste disposal used"
+   "reference_label": "Main mode of household waste disposal used",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Main mode of household waste disposal us' vs 'Telephone (fixed line)')"
+   ]
   },
   "h19a": {
    "years": [
@@ -1072,7 +1213,8 @@
    "labels_by_year": {
     "2002": "Any death of a resident member in the last 12 months"
    },
-   "reference_label": "Any death of a resident member in the last 12 months"
+   "reference_label": "Any death of a resident member in the last 12 months",
+   "split_reasons": []
   },
   "h19b": {
    "years": [
@@ -1086,7 +1228,8 @@
    "labels_by_year": {
     "2002": "Number of deaths in the last 12 months"
    },
-   "reference_label": "Number of deaths in the last 12 months"
+   "reference_label": "Number of deaths in the last 12 months",
+   "split_reasons": []
   },
   "h20": {
    "years": [
@@ -1105,7 +1248,10 @@
     "2012": "Cell phone",
     "2022": "Main mode of sewage"
    },
-   "reference_label": "Main mode of sewage"
+   "reference_label": "Main mode of sewage",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Main mode of sewage' vs 'Cell phone')"
+   ]
   },
   "h200": {
    "years": [
@@ -1119,7 +1265,8 @@
    "labels_by_year": {
     "2002": "Collective household type (codes 201-214; not filled)"
    },
-   "reference_label": "Collective household type (codes 201-214; not filled)"
+   "reference_label": "Collective household type (codes 201-214; not filled)",
+   "split_reasons": []
   },
   "h21": {
    "years": [
@@ -1133,7 +1280,8 @@
    "labels_by_year": {
     "2012": "Refrigerator/ Freezer"
    },
-   "reference_label": "Refrigerator/ Freezer"
+   "reference_label": "Refrigerator/ Freezer",
+   "split_reasons": []
   },
   "h21_01": {
    "years": [
@@ -1147,7 +1295,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Radio"
    },
-   "reference_label": "Functional assets own by HH: Radio"
+   "reference_label": "Functional assets own by HH: Radio",
+   "split_reasons": []
   },
   "h21_02": {
    "years": [
@@ -1161,7 +1310,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Television"
    },
-   "reference_label": "Functional assets own by HH: Television"
+   "reference_label": "Functional assets own by HH: Television",
+   "split_reasons": []
   },
   "h21_03": {
    "years": [
@@ -1175,7 +1325,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Refrigerator/Freezer for HH use only"
    },
-   "reference_label": "Functional assets own by HH: Refrigerator/Freezer for HH use only"
+   "reference_label": "Functional assets own by HH: Refrigerator/Freezer for HH use only",
+   "split_reasons": []
   },
   "h21_04": {
    "years": [
@@ -1189,7 +1340,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Gas/Electrical Cooker"
    },
-   "reference_label": "Functional assets own by HH: Gas/Electrical Cooker"
+   "reference_label": "Functional assets own by HH: Gas/Electrical Cooker",
+   "split_reasons": []
   },
   "h21_05": {
    "years": [
@@ -1203,7 +1355,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Washing machine"
    },
-   "reference_label": "Functional assets own by HH: Washing machine"
+   "reference_label": "Functional assets own by HH: Washing machine",
+   "split_reasons": []
   },
   "h21_06": {
    "years": [
@@ -1217,7 +1370,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Microwave"
    },
-   "reference_label": "Functional assets own by HH: Microwave"
+   "reference_label": "Functional assets own by HH: Microwave",
+   "split_reasons": []
   },
   "h21_07": {
    "years": [
@@ -1231,7 +1385,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Mattress"
    },
-   "reference_label": "Functional assets own by HH: Mattress"
+   "reference_label": "Functional assets own by HH: Mattress",
+   "split_reasons": []
   },
   "h21_08": {
    "years": [
@@ -1245,7 +1400,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Bench/Chair"
    },
-   "reference_label": "Functional assets own by HH: Bench/Chair"
+   "reference_label": "Functional assets own by HH: Bench/Chair",
+   "split_reasons": []
   },
   "h21_09": {
    "years": [
@@ -1259,7 +1415,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Bed"
    },
-   "reference_label": "Functional assets own by HH: Bed"
+   "reference_label": "Functional assets own by HH: Bed",
+   "split_reasons": []
   },
   "h21_10": {
    "years": [
@@ -1273,7 +1430,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Tables"
    },
-   "reference_label": "Functional assets own by HH: Tables"
+   "reference_label": "Functional assets own by HH: Tables",
+   "split_reasons": []
   },
   "h21_11": {
    "years": [
@@ -1287,7 +1445,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Sofa"
    },
-   "reference_label": "Functional assets own by HH: Sofa"
+   "reference_label": "Functional assets own by HH: Sofa",
+   "split_reasons": []
   },
   "h21_12": {
    "years": [
@@ -1301,7 +1460,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Computers"
    },
-   "reference_label": "Functional assets own by HH: Computers"
+   "reference_label": "Functional assets own by HH: Computers",
+   "split_reasons": []
   },
   "h21_13": {
    "years": [
@@ -1315,7 +1475,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Vehicles for household use only"
    },
-   "reference_label": "Functional assets own by HH: Vehicles for household use only"
+   "reference_label": "Functional assets own by HH: Vehicles for household use only",
+   "split_reasons": []
   },
   "h21_14": {
    "years": [
@@ -1329,7 +1490,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Motorcycles for household use only"
    },
-   "reference_label": "Functional assets own by HH: Motorcycles for household use only"
+   "reference_label": "Functional assets own by HH: Motorcycles for household use only",
+   "split_reasons": []
   },
   "h21_15": {
    "years": [
@@ -1343,7 +1505,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Bicycles for household use only"
    },
-   "reference_label": "Functional assets own by HH: Bicycles for household use only"
+   "reference_label": "Functional assets own by HH: Bicycles for household use only",
+   "split_reasons": []
   },
   "h21_16": {
    "years": [
@@ -1357,7 +1520,8 @@
    "labels_by_year": {
     "2022": "Functional assets own by HH: Electrical/Charcoal Iron"
    },
-   "reference_label": "Functional assets own by HH: Electrical/Charcoal Iron"
+   "reference_label": "Functional assets own by HH: Electrical/Charcoal Iron",
+   "split_reasons": []
   },
   "h22": {
    "years": [
@@ -1376,7 +1540,10 @@
     "2012": "Computer",
     "2022": "HH own livestock or beehive"
    },
-   "reference_label": "HH own livestock or beehive"
+   "reference_label": "HH own livestock or beehive",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('HH own livestock or beehive' vs 'Computer')"
+   ]
   },
   "h22a_01": {
    "years": [
@@ -1390,7 +1557,8 @@
    "labels_by_year": {
     "2022": "Local breed cows reared"
    },
-   "reference_label": "Local breed cows reared"
+   "reference_label": "Local breed cows reared",
+   "split_reasons": []
   },
   "h22a_02": {
    "years": [
@@ -1404,7 +1572,8 @@
    "labels_by_year": {
     "2022": "Exotic breed cows reared"
    },
-   "reference_label": "Exotic breed cows reared"
+   "reference_label": "Exotic breed cows reared",
+   "split_reasons": []
   },
   "h22a_03": {
    "years": [
@@ -1418,7 +1587,8 @@
    "labels_by_year": {
     "2022": "Cross breed cows reared"
    },
-   "reference_label": "Cross breed cows reared"
+   "reference_label": "Cross breed cows reared",
+   "split_reasons": []
   },
   "h22a_04": {
    "years": [
@@ -1432,7 +1602,8 @@
    "labels_by_year": {
     "2022": "Local goats reared"
    },
-   "reference_label": "Local goats reared"
+   "reference_label": "Local goats reared",
+   "split_reasons": []
   },
   "h22a_05": {
    "years": [
@@ -1446,7 +1617,8 @@
    "labels_by_year": {
     "2022": "Exotic goats reared"
    },
-   "reference_label": "Exotic goats reared"
+   "reference_label": "Exotic goats reared",
+   "split_reasons": []
   },
   "h22a_06": {
    "years": [
@@ -1460,7 +1632,8 @@
    "labels_by_year": {
     "2022": "Cross goats reared"
    },
-   "reference_label": "Cross goats reared"
+   "reference_label": "Cross goats reared",
+   "split_reasons": []
   },
   "h22a_07": {
    "years": [
@@ -1474,7 +1647,8 @@
    "labels_by_year": {
     "2022": "Local sheep reared"
    },
-   "reference_label": "Local sheep reared"
+   "reference_label": "Local sheep reared",
+   "split_reasons": []
   },
   "h22a_08": {
    "years": [
@@ -1488,7 +1662,8 @@
    "labels_by_year": {
     "2022": "Exotic sheep reared"
    },
-   "reference_label": "Exotic sheep reared"
+   "reference_label": "Exotic sheep reared",
+   "split_reasons": []
   },
   "h22a_09": {
    "years": [
@@ -1502,7 +1677,8 @@
    "labels_by_year": {
     "2022": "Local pigs reared"
    },
-   "reference_label": "Local pigs reared"
+   "reference_label": "Local pigs reared",
+   "split_reasons": []
   },
   "h22a_10": {
    "years": [
@@ -1516,7 +1692,8 @@
    "labels_by_year": {
     "2022": "Exotic pig reared"
    },
-   "reference_label": "Exotic pig reared"
+   "reference_label": "Exotic pig reared",
+   "split_reasons": []
   },
   "h22a_11": {
    "years": [
@@ -1530,7 +1707,8 @@
    "labels_by_year": {
     "2022": "Cross pig reared"
    },
-   "reference_label": "Cross pig reared"
+   "reference_label": "Cross pig reared",
+   "split_reasons": []
   },
   "h22a_12": {
    "years": [
@@ -1544,7 +1722,8 @@
    "labels_by_year": {
     "2022": "Rabbits reared"
    },
-   "reference_label": "Rabbits reared"
+   "reference_label": "Rabbits reared",
+   "split_reasons": []
   },
   "h22a_13": {
    "years": [
@@ -1558,7 +1737,8 @@
    "labels_by_year": {
     "2022": "Broiler chicken reared"
    },
-   "reference_label": "Broiler chicken reared"
+   "reference_label": "Broiler chicken reared",
+   "split_reasons": []
   },
   "h22a_14": {
    "years": [
@@ -1572,7 +1752,8 @@
    "labels_by_year": {
     "2022": "Layers chicken reared"
    },
-   "reference_label": "Layers chicken reared"
+   "reference_label": "Layers chicken reared",
+   "split_reasons": []
   },
   "h22a_15": {
    "years": [
@@ -1586,7 +1767,8 @@
    "labels_by_year": {
     "2022": "Dual purpose chicken reared"
    },
-   "reference_label": "Dual purpose chicken reared"
+   "reference_label": "Dual purpose chicken reared",
+   "split_reasons": []
   },
   "h22a_16": {
    "years": [
@@ -1600,7 +1782,8 @@
    "labels_by_year": {
     "2022": "Local chicken reared"
    },
-   "reference_label": "Local chicken reared"
+   "reference_label": "Local chicken reared",
+   "split_reasons": []
   },
   "h22a_17": {
    "years": [
@@ -1614,7 +1797,8 @@
    "labels_by_year": {
     "2022": "Duck reared"
    },
-   "reference_label": "Duck reared"
+   "reference_label": "Duck reared",
+   "split_reasons": []
   },
   "h22a_18": {
    "years": [
@@ -1628,7 +1812,8 @@
    "labels_by_year": {
     "2022": "Turkey reared"
    },
-   "reference_label": "Turkey reared"
+   "reference_label": "Turkey reared",
+   "split_reasons": []
   },
   "h22a_19": {
    "years": [
@@ -1642,7 +1827,8 @@
    "labels_by_year": {
     "2022": "Other poultry reared"
    },
-   "reference_label": "Other poultry reared"
+   "reference_label": "Other poultry reared",
+   "split_reasons": []
   },
   "h22a_20": {
    "years": [
@@ -1656,7 +1842,8 @@
    "labels_by_year": {
     "2022": "Camel reared"
    },
-   "reference_label": "Camel reared"
+   "reference_label": "Camel reared",
+   "split_reasons": []
   },
   "h22a_21": {
    "years": [
@@ -1670,7 +1857,8 @@
    "labels_by_year": {
     "2022": "Bees hive reared"
    },
-   "reference_label": "Bees hive reared"
+   "reference_label": "Bees hive reared",
+   "split_reasons": []
   },
   "h22a_22": {
    "years": [
@@ -1684,7 +1872,8 @@
    "labels_by_year": {
     "2022": "Dogs reared"
    },
-   "reference_label": "Dogs reared"
+   "reference_label": "Dogs reared",
+   "split_reasons": []
   },
   "h22a_23": {
    "years": [
@@ -1698,7 +1887,8 @@
    "labels_by_year": {
     "2022": "Other reared"
    },
-   "reference_label": "Other reared"
+   "reference_label": "Other reared",
+   "split_reasons": []
   },
   "h22b1_01": {
    "years": [
@@ -1712,7 +1902,8 @@
    "labels_by_year": {
     "2022": "Number of Local breed cows reared"
    },
-   "reference_label": "Number of Local breed cows reared"
+   "reference_label": "Number of Local breed cows reared",
+   "split_reasons": []
   },
   "h22b1_02": {
    "years": [
@@ -1726,7 +1917,8 @@
    "labels_by_year": {
     "2022": "Number of Exotic breed cows reared"
    },
-   "reference_label": "Number of Exotic breed cows reared"
+   "reference_label": "Number of Exotic breed cows reared",
+   "split_reasons": []
   },
   "h22b1_03": {
    "years": [
@@ -1740,7 +1932,8 @@
    "labels_by_year": {
     "2022": "Number of Cross breed cows reared"
    },
-   "reference_label": "Number of Cross breed cows reared"
+   "reference_label": "Number of Cross breed cows reared",
+   "split_reasons": []
   },
   "h22b1_04": {
    "years": [
@@ -1754,7 +1947,8 @@
    "labels_by_year": {
     "2022": "Number of Local goats reared"
    },
-   "reference_label": "Number of Local goats reared"
+   "reference_label": "Number of Local goats reared",
+   "split_reasons": []
   },
   "h22b1_05": {
    "years": [
@@ -1768,7 +1962,8 @@
    "labels_by_year": {
     "2022": "Number of Exotic goats reared"
    },
-   "reference_label": "Number of Exotic goats reared"
+   "reference_label": "Number of Exotic goats reared",
+   "split_reasons": []
   },
   "h22b1_06": {
    "years": [
@@ -1782,7 +1977,8 @@
    "labels_by_year": {
     "2022": "Number of Cross goats reared"
    },
-   "reference_label": "Number of Cross goats reared"
+   "reference_label": "Number of Cross goats reared",
+   "split_reasons": []
   },
   "h22b1_07": {
    "years": [
@@ -1796,7 +1992,8 @@
    "labels_by_year": {
     "2022": "Number of Local sheep reared"
    },
-   "reference_label": "Number of Local sheep reared"
+   "reference_label": "Number of Local sheep reared",
+   "split_reasons": []
   },
   "h22b1_08": {
    "years": [
@@ -1810,7 +2007,8 @@
    "labels_by_year": {
     "2022": "Number of Exotic sheep reared"
    },
-   "reference_label": "Number of Exotic sheep reared"
+   "reference_label": "Number of Exotic sheep reared",
+   "split_reasons": []
   },
   "h22b1_09": {
    "years": [
@@ -1824,7 +2022,8 @@
    "labels_by_year": {
     "2022": "Number of Local pigs reared"
    },
-   "reference_label": "Number of Local pigs reared"
+   "reference_label": "Number of Local pigs reared",
+   "split_reasons": []
   },
   "h22b1_10": {
    "years": [
@@ -1838,7 +2037,8 @@
    "labels_by_year": {
     "2022": "Number of Exotic pig reared"
    },
-   "reference_label": "Number of Exotic pig reared"
+   "reference_label": "Number of Exotic pig reared",
+   "split_reasons": []
   },
   "h22b1_11": {
    "years": [
@@ -1852,7 +2052,8 @@
    "labels_by_year": {
     "2022": "Number of Cross pig reared"
    },
-   "reference_label": "Number of Cross pig reared"
+   "reference_label": "Number of Cross pig reared",
+   "split_reasons": []
   },
   "h22b1_12": {
    "years": [
@@ -1866,7 +2067,8 @@
    "labels_by_year": {
     "2022": "Number of Rabbits reared"
    },
-   "reference_label": "Number of Rabbits reared"
+   "reference_label": "Number of Rabbits reared",
+   "split_reasons": []
   },
   "h22b1_13": {
    "years": [
@@ -1880,7 +2082,8 @@
    "labels_by_year": {
     "2022": "Number of Broiler chicken reared"
    },
-   "reference_label": "Number of Broiler chicken reared"
+   "reference_label": "Number of Broiler chicken reared",
+   "split_reasons": []
   },
   "h22b1_14": {
    "years": [
@@ -1894,7 +2097,8 @@
    "labels_by_year": {
     "2022": "Number of Layers chicken reared"
    },
-   "reference_label": "Number of Layers chicken reared"
+   "reference_label": "Number of Layers chicken reared",
+   "split_reasons": []
   },
   "h22b1_15": {
    "years": [
@@ -1908,7 +2112,8 @@
    "labels_by_year": {
     "2022": "Number of Dual purpose chicken reared"
    },
-   "reference_label": "Number of Dual purpose chicken reared"
+   "reference_label": "Number of Dual purpose chicken reared",
+   "split_reasons": []
   },
   "h22b1_16": {
    "years": [
@@ -1922,7 +2127,8 @@
    "labels_by_year": {
     "2022": "Number of Local chicken reared"
    },
-   "reference_label": "Number of Local chicken reared"
+   "reference_label": "Number of Local chicken reared",
+   "split_reasons": []
   },
   "h22b1_17": {
    "years": [
@@ -1936,7 +2142,8 @@
    "labels_by_year": {
     "2022": "Number of Duck reared"
    },
-   "reference_label": "Number of Duck reared"
+   "reference_label": "Number of Duck reared",
+   "split_reasons": []
   },
   "h22b1_18": {
    "years": [
@@ -1950,7 +2157,8 @@
    "labels_by_year": {
     "2022": "Number of Turkey reared"
    },
-   "reference_label": "Number of Turkey reared"
+   "reference_label": "Number of Turkey reared",
+   "split_reasons": []
   },
   "h22b1_19": {
    "years": [
@@ -1964,7 +2172,8 @@
    "labels_by_year": {
     "2022": "Number of Other poultry reared"
    },
-   "reference_label": "Number of Other poultry reared"
+   "reference_label": "Number of Other poultry reared",
+   "split_reasons": []
   },
   "h22b1_20": {
    "years": [
@@ -1978,7 +2187,8 @@
    "labels_by_year": {
     "2022": "Number of Camel reared"
    },
-   "reference_label": "Number of Camel reared"
+   "reference_label": "Number of Camel reared",
+   "split_reasons": []
   },
   "h22b1_21": {
    "years": [
@@ -1992,7 +2202,8 @@
    "labels_by_year": {
     "2022": "Number of Bees hive reared"
    },
-   "reference_label": "Number of Bees hive reared"
+   "reference_label": "Number of Bees hive reared",
+   "split_reasons": []
   },
   "h22b1_22": {
    "years": [
@@ -2006,7 +2217,8 @@
    "labels_by_year": {
     "2022": "Number of Dogs reared"
    },
-   "reference_label": "Number of Dogs reared"
+   "reference_label": "Number of Dogs reared",
+   "split_reasons": []
   },
   "h22b1_23": {
    "years": [
@@ -2020,7 +2232,8 @@
    "labels_by_year": {
     "2022": "Number of Other reared"
    },
-   "reference_label": "Number of Other reared"
+   "reference_label": "Number of Other reared",
+   "split_reasons": []
   },
   "h22b2_01": {
    "years": [
@@ -2034,7 +2247,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Local breed cows reared"
    },
-   "reference_label": "Location(District) where is Local breed cows reared"
+   "reference_label": "Location(District) where is Local breed cows reared",
+   "split_reasons": []
   },
   "h22b2_02": {
    "years": [
@@ -2048,7 +2262,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Exotic breed cows reared"
    },
-   "reference_label": "Location(District) where is Exotic breed cows reared"
+   "reference_label": "Location(District) where is Exotic breed cows reared",
+   "split_reasons": []
   },
   "h22b2_03": {
    "years": [
@@ -2062,7 +2277,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Cross breed cows reared"
    },
-   "reference_label": "Location(District) where is Cross breed cows reared"
+   "reference_label": "Location(District) where is Cross breed cows reared",
+   "split_reasons": []
   },
   "h22b2_04": {
    "years": [
@@ -2076,7 +2292,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Local goats reared"
    },
-   "reference_label": "Location(District) where is Local goats reared"
+   "reference_label": "Location(District) where is Local goats reared",
+   "split_reasons": []
   },
   "h22b2_05": {
    "years": [
@@ -2090,7 +2307,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Exotic goats reared"
    },
-   "reference_label": "Location(District) where is Exotic goats reared"
+   "reference_label": "Location(District) where is Exotic goats reared",
+   "split_reasons": []
   },
   "h22b2_06": {
    "years": [
@@ -2104,7 +2322,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Cross goats reared"
    },
-   "reference_label": "Location(District) where is Cross goats reared"
+   "reference_label": "Location(District) where is Cross goats reared",
+   "split_reasons": []
   },
   "h22b2_07": {
    "years": [
@@ -2118,7 +2337,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Local sheep reared"
    },
-   "reference_label": "Location(District) where is Local sheep reared"
+   "reference_label": "Location(District) where is Local sheep reared",
+   "split_reasons": []
   },
   "h22b2_08": {
    "years": [
@@ -2132,7 +2352,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Exotic sheep reared"
    },
-   "reference_label": "Location(District) where is Exotic sheep reared"
+   "reference_label": "Location(District) where is Exotic sheep reared",
+   "split_reasons": []
   },
   "h22b2_09": {
    "years": [
@@ -2146,7 +2367,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Local pigs reared"
    },
-   "reference_label": "Location(District) where is Local pigs reared"
+   "reference_label": "Location(District) where is Local pigs reared",
+   "split_reasons": []
   },
   "h22b2_10": {
    "years": [
@@ -2160,7 +2382,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Exotic pig reared"
    },
-   "reference_label": "Location(District) where is Exotic pig reared"
+   "reference_label": "Location(District) where is Exotic pig reared",
+   "split_reasons": []
   },
   "h22b2_11": {
    "years": [
@@ -2174,7 +2397,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Cross pig reared"
    },
-   "reference_label": "Location(District) where is Cross pig reared"
+   "reference_label": "Location(District) where is Cross pig reared",
+   "split_reasons": []
   },
   "h22b2_12": {
    "years": [
@@ -2188,7 +2412,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Rabbits reared"
    },
-   "reference_label": "Location(District) where is Rabbits reared"
+   "reference_label": "Location(District) where is Rabbits reared",
+   "split_reasons": []
   },
   "h22b2_13": {
    "years": [
@@ -2202,7 +2427,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Broiler chicken reared"
    },
-   "reference_label": "Location(District) where is Broiler chicken reared"
+   "reference_label": "Location(District) where is Broiler chicken reared",
+   "split_reasons": []
   },
   "h22b2_14": {
    "years": [
@@ -2216,7 +2442,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Layers chicken reared"
    },
-   "reference_label": "Location(District) where is Layers chicken reared"
+   "reference_label": "Location(District) where is Layers chicken reared",
+   "split_reasons": []
   },
   "h22b2_15": {
    "years": [
@@ -2230,7 +2457,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Dual purpose chicken reared"
    },
-   "reference_label": "Location(District) where is Dual purpose chicken reared"
+   "reference_label": "Location(District) where is Dual purpose chicken reared",
+   "split_reasons": []
   },
   "h22b2_16": {
    "years": [
@@ -2244,7 +2472,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Local chicken reared"
    },
-   "reference_label": "Location(District) where is Local chicken reared"
+   "reference_label": "Location(District) where is Local chicken reared",
+   "split_reasons": []
   },
   "h22b2_17": {
    "years": [
@@ -2258,7 +2487,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Duck reared"
    },
-   "reference_label": "Location(District) where is Duck reared"
+   "reference_label": "Location(District) where is Duck reared",
+   "split_reasons": []
   },
   "h22b2_18": {
    "years": [
@@ -2272,7 +2502,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Turkey reared"
    },
-   "reference_label": "Location(District) where is Turkey reared"
+   "reference_label": "Location(District) where is Turkey reared",
+   "split_reasons": []
   },
   "h22b2_19": {
    "years": [
@@ -2286,7 +2517,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Other poultry reared"
    },
-   "reference_label": "Location(District) where is Other poultry reared"
+   "reference_label": "Location(District) where is Other poultry reared",
+   "split_reasons": []
   },
   "h22b2_20": {
    "years": [
@@ -2300,7 +2532,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Camel reared"
    },
-   "reference_label": "Location(District) where is Camel reared"
+   "reference_label": "Location(District) where is Camel reared",
+   "split_reasons": []
   },
   "h22b2_21": {
    "years": [
@@ -2314,7 +2547,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Bees hive reared"
    },
-   "reference_label": "Location(District) where is Bees hive reared"
+   "reference_label": "Location(District) where is Bees hive reared",
+   "split_reasons": []
   },
   "h22b2_22": {
    "years": [
@@ -2328,7 +2562,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Dogs reared"
    },
-   "reference_label": "Location(District) where is Dogs reared"
+   "reference_label": "Location(District) where is Dogs reared",
+   "split_reasons": []
   },
   "h22b2_23": {
    "years": [
@@ -2342,7 +2577,8 @@
    "labels_by_year": {
     "2022": "Location(District) where is Other reared"
    },
-   "reference_label": "Location(District) where is Other reared"
+   "reference_label": "Location(District) where is Other reared",
+   "split_reasons": []
   },
   "h23": {
    "years": [
@@ -2361,7 +2597,10 @@
     "2012": "Bicycles",
     "2022": "Household grew crops in last 12 months"
    },
-   "reference_label": "Household grew crops in last 12 months"
+   "reference_label": "Household grew crops in last 12 months",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Household grew crops in last 12 months' vs 'Bicycles')"
+   ]
   },
   "h23a": {
    "years": [
@@ -2375,7 +2614,8 @@
    "labels_by_year": {
     "2022": "Place where the agricultural activities is done"
    },
-   "reference_label": "Place where the agricultural activities is done"
+   "reference_label": "Place where the agricultural activities is done",
+   "split_reasons": []
   },
   "h24": {
    "years": [
@@ -2389,7 +2629,8 @@
    "labels_by_year": {
     "2012": "Vehicles"
    },
-   "reference_label": "Vehicles"
+   "reference_label": "Vehicles",
+   "split_reasons": []
   },
   "h24_01": {
    "years": [
@@ -2403,7 +2644,8 @@
    "labels_by_year": {
     "2022": "Maize grown"
    },
-   "reference_label": "Maize grown"
+   "reference_label": "Maize grown",
+   "split_reasons": []
   },
   "h24_02": {
    "years": [
@@ -2417,7 +2659,8 @@
    "labels_by_year": {
     "2022": "Rice grown"
    },
-   "reference_label": "Rice grown"
+   "reference_label": "Rice grown",
+   "split_reasons": []
   },
   "h24_03": {
    "years": [
@@ -2431,7 +2674,8 @@
    "labels_by_year": {
     "2022": "Sorghum grown"
    },
-   "reference_label": "Sorghum grown"
+   "reference_label": "Sorghum grown",
+   "split_reasons": []
   },
   "h24_04": {
    "years": [
@@ -2445,7 +2689,8 @@
    "labels_by_year": {
     "2022": "Wheat grown"
    },
-   "reference_label": "Wheat grown"
+   "reference_label": "Wheat grown",
+   "split_reasons": []
   },
   "h24_05": {
    "years": [
@@ -2459,7 +2704,8 @@
    "labels_by_year": {
     "2022": "Bean grown"
    },
-   "reference_label": "Bean grown"
+   "reference_label": "Bean grown",
+   "split_reasons": []
   },
   "h24_06": {
    "years": [
@@ -2473,7 +2719,8 @@
    "labels_by_year": {
     "2022": "Pea grown"
    },
-   "reference_label": "Pea grown"
+   "reference_label": "Pea grown",
+   "split_reasons": []
   },
   "h24_07": {
    "years": [
@@ -2487,7 +2734,8 @@
    "labels_by_year": {
     "2022": "Groundnut grown"
    },
-   "reference_label": "Groundnut grown"
+   "reference_label": "Groundnut grown",
+   "split_reasons": []
   },
   "h24_08": {
    "years": [
@@ -2501,7 +2749,8 @@
    "labels_by_year": {
     "2022": "Soybean grown"
    },
-   "reference_label": "Soybean grown"
+   "reference_label": "Soybean grown",
+   "split_reasons": []
   },
   "h24_09": {
    "years": [
@@ -2515,7 +2764,8 @@
    "labels_by_year": {
     "2022": "Cassava grown"
    },
-   "reference_label": "Cassava grown"
+   "reference_label": "Cassava grown",
+   "split_reasons": []
   },
   "h24_10": {
    "years": [
@@ -2529,7 +2779,8 @@
    "labels_by_year": {
     "2022": "Sweet potato grown"
    },
-   "reference_label": "Sweet potato grown"
+   "reference_label": "Sweet potato grown",
+   "split_reasons": []
   },
   "h24_11": {
    "years": [
@@ -2543,7 +2794,8 @@
    "labels_by_year": {
     "2022": "Irish potato grown"
    },
-   "reference_label": "Irish potato grown"
+   "reference_label": "Irish potato grown",
+   "split_reasons": []
   },
   "h24_12": {
    "years": [
@@ -2557,7 +2809,8 @@
    "labels_by_year": {
     "2022": "Yams& Taro grown"
    },
-   "reference_label": "Yams& Taro grown"
+   "reference_label": "Yams& Taro grown",
+   "split_reasons": []
   },
   "h24_13": {
    "years": [
@@ -2571,7 +2824,8 @@
    "labels_by_year": {
     "2022": "Cooking Banana grown"
    },
-   "reference_label": "Cooking Banana grown"
+   "reference_label": "Cooking Banana grown",
+   "split_reasons": []
   },
   "h24_14": {
    "years": [
@@ -2585,7 +2839,8 @@
    "labels_by_year": {
     "2022": "Dessert Banana grown"
    },
-   "reference_label": "Dessert Banana grown"
+   "reference_label": "Dessert Banana grown",
+   "split_reasons": []
   },
   "h24_15": {
    "years": [
@@ -2599,7 +2854,8 @@
    "labels_by_year": {
     "2022": "Banana for Beer grown"
    },
-   "reference_label": "Banana for Beer grown"
+   "reference_label": "Banana for Beer grown",
+   "split_reasons": []
   },
   "h24_16": {
    "years": [
@@ -2613,7 +2869,8 @@
    "labels_by_year": {
     "2022": "Vegetables grown"
    },
-   "reference_label": "Vegetables grown"
+   "reference_label": "Vegetables grown",
+   "split_reasons": []
   },
   "h24_17": {
    "years": [
@@ -2627,7 +2884,8 @@
    "labels_by_year": {
     "2022": "Tea grown"
    },
-   "reference_label": "Tea grown"
+   "reference_label": "Tea grown",
+   "split_reasons": []
   },
   "h24_18": {
    "years": [
@@ -2641,7 +2899,8 @@
    "labels_by_year": {
     "2022": "Coffee grown"
    },
-   "reference_label": "Coffee grown"
+   "reference_label": "Coffee grown",
+   "split_reasons": []
   },
   "h24_19": {
    "years": [
@@ -2655,7 +2914,8 @@
    "labels_by_year": {
     "2022": "Sugarcane grown"
    },
-   "reference_label": "Sugarcane grown"
+   "reference_label": "Sugarcane grown",
+   "split_reasons": []
   },
   "h24_20": {
    "years": [
@@ -2669,7 +2929,8 @@
    "labels_by_year": {
     "2022": "Pyrethrum grown"
    },
-   "reference_label": "Pyrethrum grown"
+   "reference_label": "Pyrethrum grown",
+   "split_reasons": []
   },
   "h24_21": {
    "years": [
@@ -2683,7 +2944,8 @@
    "labels_by_year": {
     "2022": "Flowers grown"
    },
-   "reference_label": "Flowers grown"
+   "reference_label": "Flowers grown",
+   "split_reasons": []
   },
   "h24_22": {
    "years": [
@@ -2697,7 +2959,8 @@
    "labels_by_year": {
     "2022": "Other crop type grown"
    },
-   "reference_label": "Other crop type grown"
+   "reference_label": "Other crop type grown",
+   "split_reasons": []
   },
   "h25": {
    "years": [
@@ -2711,7 +2974,8 @@
    "labels_by_year": {
     "2012": "Motorcycles"
    },
-   "reference_label": "Motorcycles"
+   "reference_label": "Motorcycles",
+   "split_reasons": []
   },
   "h25_01": {
    "years": [
@@ -2725,7 +2989,8 @@
    "labels_by_year": {
     "2022": "Amaranths grown"
    },
-   "reference_label": "Amaranths grown"
+   "reference_label": "Amaranths grown",
+   "split_reasons": []
   },
   "h25_02": {
    "years": [
@@ -2739,7 +3004,8 @@
    "labels_by_year": {
     "2022": "Tomato grown"
    },
-   "reference_label": "Tomato grown"
+   "reference_label": "Tomato grown",
+   "split_reasons": []
   },
   "h25_03": {
    "years": [
@@ -2753,7 +3019,8 @@
    "labels_by_year": {
     "2022": "Cabbage grown"
    },
-   "reference_label": "Cabbage grown"
+   "reference_label": "Cabbage grown",
+   "split_reasons": []
   },
   "h25_04": {
    "years": [
@@ -2767,7 +3034,8 @@
    "labels_by_year": {
     "2022": "Onion grown"
    },
-   "reference_label": "Onion grown"
+   "reference_label": "Onion grown",
+   "split_reasons": []
   },
   "h25_05": {
    "years": [
@@ -2781,7 +3049,8 @@
    "labels_by_year": {
     "2022": "Carrot grown"
    },
-   "reference_label": "Carrot grown"
+   "reference_label": "Carrot grown",
+   "split_reasons": []
   },
   "h25_06": {
    "years": [
@@ -2795,7 +3064,8 @@
    "labels_by_year": {
     "2022": "Eggplant grown"
    },
-   "reference_label": "Eggplant grown"
+   "reference_label": "Eggplant grown",
+   "split_reasons": []
   },
   "h25_07": {
    "years": [
@@ -2809,7 +3079,8 @@
    "labels_by_year": {
     "2022": "Black eggplant grown"
    },
-   "reference_label": "Black eggplant grown"
+   "reference_label": "Black eggplant grown",
+   "split_reasons": []
   },
   "h25_08": {
    "years": [
@@ -2823,7 +3094,8 @@
    "labels_by_year": {
     "2022": "Sweet pepper grown"
    },
-   "reference_label": "Sweet pepper grown"
+   "reference_label": "Sweet pepper grown",
+   "split_reasons": []
   },
   "h25_09": {
    "years": [
@@ -2837,7 +3109,8 @@
    "labels_by_year": {
     "2022": "Pepper grown"
    },
-   "reference_label": "Pepper grown"
+   "reference_label": "Pepper grown",
+   "split_reasons": []
   },
   "h25_10": {
    "years": [
@@ -2851,7 +3124,8 @@
    "labels_by_year": {
     "2022": "Cauliflower grown"
    },
-   "reference_label": "Cauliflower grown"
+   "reference_label": "Cauliflower grown",
+   "split_reasons": []
   },
   "h25_11": {
    "years": [
@@ -2865,7 +3139,8 @@
    "labels_by_year": {
     "2022": "French beans grown"
    },
-   "reference_label": "French beans grown"
+   "reference_label": "French beans grown",
+   "split_reasons": []
   },
   "h25_12": {
    "years": [
@@ -2879,7 +3154,8 @@
    "labels_by_year": {
     "2022": "Beetroot grown"
    },
-   "reference_label": "Beetroot grown"
+   "reference_label": "Beetroot grown",
+   "split_reasons": []
   },
   "h25_13": {
    "years": [
@@ -2893,7 +3169,8 @@
    "labels_by_year": {
     "2022": "Garlic grown"
    },
-   "reference_label": "Garlic grown"
+   "reference_label": "Garlic grown",
+   "split_reasons": []
   },
   "h25_14": {
    "years": [
@@ -2907,7 +3184,8 @@
    "labels_by_year": {
     "2022": "Lettuce grown"
    },
-   "reference_label": "Lettuce grown"
+   "reference_label": "Lettuce grown",
+   "split_reasons": []
   },
   "h25_15": {
    "years": [
@@ -2921,7 +3199,8 @@
    "labels_by_year": {
     "2022": "Broccoli grown"
    },
-   "reference_label": "Broccoli grown"
+   "reference_label": "Broccoli grown",
+   "split_reasons": []
   },
   "h25_16": {
    "years": [
@@ -2935,7 +3214,8 @@
    "labels_by_year": {
     "2022": "Spinach grown"
    },
-   "reference_label": "Spinach grown"
+   "reference_label": "Spinach grown",
+   "split_reasons": []
   },
   "h25_17": {
    "years": [
@@ -2949,7 +3229,8 @@
    "labels_by_year": {
     "2022": "Celery grown"
    },
-   "reference_label": "Celery grown"
+   "reference_label": "Celery grown",
+   "split_reasons": []
   },
   "h25_18": {
    "years": [
@@ -2963,7 +3244,8 @@
    "labels_by_year": {
     "2022": "Leeks grown"
    },
-   "reference_label": "Leeks grown"
+   "reference_label": "Leeks grown",
+   "split_reasons": []
   },
   "h25_19": {
    "years": [
@@ -2977,7 +3259,8 @@
    "labels_by_year": {
     "2022": "Pumpkin grown"
    },
-   "reference_label": "Pumpkin grown"
+   "reference_label": "Pumpkin grown",
+   "split_reasons": []
   },
   "h25_20": {
    "years": [
@@ -2991,7 +3274,8 @@
    "labels_by_year": {
     "2022": "Cocumber grown"
    },
-   "reference_label": "Cocumber grown"
+   "reference_label": "Cocumber grown",
+   "split_reasons": []
   },
   "h25_21": {
    "years": [
@@ -3005,7 +3289,8 @@
    "labels_by_year": {
     "2022": "Mushroom grown"
    },
-   "reference_label": "Mushroom grown"
+   "reference_label": "Mushroom grown",
+   "split_reasons": []
   },
   "h25_22": {
    "years": [
@@ -3019,7 +3304,8 @@
    "labels_by_year": {
     "2022": "Chayote grown"
    },
-   "reference_label": "Chayote grown"
+   "reference_label": "Chayote grown",
+   "split_reasons": []
   },
   "h25_23": {
    "years": [
@@ -3033,7 +3319,8 @@
    "labels_by_year": {
     "2022": "Cassava Leaves grown"
    },
-   "reference_label": "Cassava Leaves grown"
+   "reference_label": "Cassava Leaves grown",
+   "split_reasons": []
   },
   "h25_24": {
    "years": [
@@ -3047,7 +3334,8 @@
    "labels_by_year": {
     "2022": "Other vegetables grown"
    },
-   "reference_label": "Other vegetables grown"
+   "reference_label": "Other vegetables grown",
+   "split_reasons": []
   },
   "h26": {
    "years": [
@@ -3066,7 +3354,10 @@
     "2012": "Internet Access",
     "2022": "Number of tea trees grown"
    },
-   "reference_label": "Number of tea trees grown"
+   "reference_label": "Number of tea trees grown",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Number of tea trees grown' vs 'Internet Access')"
+   ]
   },
   "h27": {
    "years": [
@@ -3085,7 +3376,10 @@
     "2012": "Where do you access internet",
     "2022": "Number of coffee trees grown"
    },
-   "reference_label": "Number of coffee trees grown"
+   "reference_label": "Number of coffee trees grown",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Number of coffee trees grown' vs 'Where do you access internet')"
+   ]
   },
   "h28a": {
    "years": [
@@ -3104,7 +3398,10 @@
     "2012": "Cattle:Local breed cow",
     "2022": "Any fruit tree"
    },
-   "reference_label": "Any fruit tree"
+   "reference_label": "Any fruit tree",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Any fruit tree' vs 'Cattle:Local breed cow')"
+   ]
   },
   "h28b": {
    "years": [
@@ -3118,7 +3415,8 @@
    "labels_by_year": {
     "2012": "Cattle: Cross breed cow"
    },
-   "reference_label": "Cattle: Cross breed cow"
+   "reference_label": "Cattle: Cross breed cow",
+   "split_reasons": []
   },
   "h28b1_01": {
    "years": [
@@ -3132,7 +3430,8 @@
    "labels_by_year": {
     "2022": "Grow Avocado"
    },
-   "reference_label": "Grow Avocado"
+   "reference_label": "Grow Avocado",
+   "split_reasons": []
   },
   "h28b1_02": {
    "years": [
@@ -3146,7 +3445,8 @@
    "labels_by_year": {
     "2022": "Grow Orange"
    },
-   "reference_label": "Grow Orange"
+   "reference_label": "Grow Orange",
+   "split_reasons": []
   },
   "h28b1_03": {
    "years": [
@@ -3160,7 +3460,8 @@
    "labels_by_year": {
     "2022": "Grow Papaya"
    },
-   "reference_label": "Grow Papaya"
+   "reference_label": "Grow Papaya",
+   "split_reasons": []
   },
   "h28b1_04": {
    "years": [
@@ -3174,7 +3475,8 @@
    "labels_by_year": {
     "2022": "Grow Guava"
    },
-   "reference_label": "Grow Guava"
+   "reference_label": "Grow Guava",
+   "split_reasons": []
   },
   "h28b1_05": {
    "years": [
@@ -3188,7 +3490,8 @@
    "labels_by_year": {
     "2022": "Grow Lemon"
    },
-   "reference_label": "Grow Lemon"
+   "reference_label": "Grow Lemon",
+   "split_reasons": []
   },
   "h28b1_06": {
    "years": [
@@ -3202,7 +3505,8 @@
    "labels_by_year": {
     "2022": "Grow Mango"
    },
-   "reference_label": "Grow Mango"
+   "reference_label": "Grow Mango",
+   "split_reasons": []
   },
   "h28b1_07": {
    "years": [
@@ -3216,7 +3520,8 @@
    "labels_by_year": {
     "2022": "Grow Mandarin"
    },
-   "reference_label": "Grow Mandarin"
+   "reference_label": "Grow Mandarin",
+   "split_reasons": []
   },
   "h28b1_08": {
    "years": [
@@ -3230,7 +3535,8 @@
    "labels_by_year": {
     "2022": "Grow Jack fruits"
    },
-   "reference_label": "Grow Jack fruits"
+   "reference_label": "Grow Jack fruits",
+   "split_reasons": []
   },
   "h28b1_09": {
    "years": [
@@ -3244,7 +3550,8 @@
    "labels_by_year": {
     "2022": "Grow Beefheart"
    },
-   "reference_label": "Grow Beefheart"
+   "reference_label": "Grow Beefheart",
+   "split_reasons": []
   },
   "h28b1_10": {
    "years": [
@@ -3258,7 +3565,8 @@
    "labels_by_year": {
     "2022": "Grow Passion fruits"
    },
-   "reference_label": "Grow Passion fruits"
+   "reference_label": "Grow Passion fruits",
+   "split_reasons": []
   },
   "h28b1_11": {
    "years": [
@@ -3272,7 +3580,8 @@
    "labels_by_year": {
     "2022": "Grow Pineapple"
    },
-   "reference_label": "Grow Pineapple"
+   "reference_label": "Grow Pineapple",
+   "split_reasons": []
   },
   "h28b1_12": {
    "years": [
@@ -3286,7 +3595,8 @@
    "labels_by_year": {
     "2022": "Grow Tree tomato"
    },
-   "reference_label": "Grow Tree tomato"
+   "reference_label": "Grow Tree tomato",
+   "split_reasons": []
   },
   "h28b1_13": {
    "years": [
@@ -3300,7 +3610,8 @@
    "labels_by_year": {
     "2022": "Grow Watermelon"
    },
-   "reference_label": "Grow Watermelon"
+   "reference_label": "Grow Watermelon",
+   "split_reasons": []
   },
   "h28b1_14": {
    "years": [
@@ -3314,7 +3625,8 @@
    "labels_by_year": {
     "2022": "Grow Strawberry"
    },
-   "reference_label": "Grow Strawberry"
+   "reference_label": "Grow Strawberry",
+   "split_reasons": []
   },
   "h28b1_15": {
    "years": [
@@ -3328,7 +3640,8 @@
    "labels_by_year": {
     "2022": "Grow Other fruit"
    },
-   "reference_label": "Grow Other fruit"
+   "reference_label": "Grow Other fruit",
+   "split_reasons": []
   },
   "h28b2_01": {
    "years": [
@@ -3342,7 +3655,8 @@
    "labels_by_year": {
     "2022": "Number of Avocado"
    },
-   "reference_label": "Number of Avocado"
+   "reference_label": "Number of Avocado",
+   "split_reasons": []
   },
   "h28b2_02": {
    "years": [
@@ -3356,7 +3670,8 @@
    "labels_by_year": {
     "2022": "Number of Orange"
    },
-   "reference_label": "Number of Orange"
+   "reference_label": "Number of Orange",
+   "split_reasons": []
   },
   "h28b2_03": {
    "years": [
@@ -3370,7 +3685,8 @@
    "labels_by_year": {
     "2022": "Number of Papaya"
    },
-   "reference_label": "Number of Papaya"
+   "reference_label": "Number of Papaya",
+   "split_reasons": []
   },
   "h28b2_04": {
    "years": [
@@ -3384,7 +3700,8 @@
    "labels_by_year": {
     "2022": "Number of Guava"
    },
-   "reference_label": "Number of Guava"
+   "reference_label": "Number of Guava",
+   "split_reasons": []
   },
   "h28b2_05": {
    "years": [
@@ -3398,7 +3715,8 @@
    "labels_by_year": {
     "2022": "Number of Lemon"
    },
-   "reference_label": "Number of Lemon"
+   "reference_label": "Number of Lemon",
+   "split_reasons": []
   },
   "h28b2_06": {
    "years": [
@@ -3412,7 +3730,8 @@
    "labels_by_year": {
     "2022": "Number of Mango"
    },
-   "reference_label": "Number of Mango"
+   "reference_label": "Number of Mango",
+   "split_reasons": []
   },
   "h28b2_07": {
    "years": [
@@ -3426,7 +3745,8 @@
    "labels_by_year": {
     "2022": "Number of Mandarin"
    },
-   "reference_label": "Number of Mandarin"
+   "reference_label": "Number of Mandarin",
+   "split_reasons": []
   },
   "h28b2_08": {
    "years": [
@@ -3440,7 +3760,8 @@
    "labels_by_year": {
     "2022": "Number of Jack fruits"
    },
-   "reference_label": "Number of Jack fruits"
+   "reference_label": "Number of Jack fruits",
+   "split_reasons": []
   },
   "h28b2_09": {
    "years": [
@@ -3454,7 +3775,8 @@
    "labels_by_year": {
     "2022": "Number of Beefheart"
    },
-   "reference_label": "Number of Beefheart"
+   "reference_label": "Number of Beefheart",
+   "split_reasons": []
   },
   "h28b2_10": {
    "years": [
@@ -3468,7 +3790,8 @@
    "labels_by_year": {
     "2022": "Number of Passion fruits"
    },
-   "reference_label": "Number of Passion fruits"
+   "reference_label": "Number of Passion fruits",
+   "split_reasons": []
   },
   "h28b2_11": {
    "years": [
@@ -3482,7 +3805,8 @@
    "labels_by_year": {
     "2022": "Number of Pineapple"
    },
-   "reference_label": "Number of Pineapple"
+   "reference_label": "Number of Pineapple",
+   "split_reasons": []
   },
   "h28b2_12": {
    "years": [
@@ -3496,7 +3820,8 @@
    "labels_by_year": {
     "2022": "Number of Tree tomato"
    },
-   "reference_label": "Number of Tree tomato"
+   "reference_label": "Number of Tree tomato",
+   "split_reasons": []
   },
   "h28b2_13": {
    "years": [
@@ -3510,7 +3835,8 @@
    "labels_by_year": {
     "2022": "Number of Watermelon"
    },
-   "reference_label": "Number of Watermelon"
+   "reference_label": "Number of Watermelon",
+   "split_reasons": []
   },
   "h28b2_14": {
    "years": [
@@ -3524,7 +3850,8 @@
    "labels_by_year": {
     "2022": "Number of Strawberry"
    },
-   "reference_label": "Number of Strawberry"
+   "reference_label": "Number of Strawberry",
+   "split_reasons": []
   },
   "h28b2_15": {
    "years": [
@@ -3538,7 +3865,8 @@
    "labels_by_year": {
     "2022": "Number of Other fruit"
    },
-   "reference_label": "Number of Other fruit"
+   "reference_label": "Number of Other fruit",
+   "split_reasons": []
   },
   "h28c": {
    "years": [
@@ -3552,7 +3880,8 @@
    "labels_by_year": {
     "2012": "Cattle: Exotic breed cow"
    },
-   "reference_label": "Cattle: Exotic breed cow"
+   "reference_label": "Cattle: Exotic breed cow",
+   "split_reasons": []
   },
   "h29": {
    "years": [
@@ -3566,7 +3895,8 @@
    "labels_by_year": {
     "2012": "Goats"
    },
-   "reference_label": "Goats"
+   "reference_label": "Goats",
+   "split_reasons": []
   },
   "h30": {
    "years": [
@@ -3580,7 +3910,8 @@
    "labels_by_year": {
     "2012": "Sheeps"
    },
-   "reference_label": "Sheeps"
+   "reference_label": "Sheeps",
+   "split_reasons": []
   },
   "h31": {
    "years": [
@@ -3594,7 +3925,8 @@
    "labels_by_year": {
     "2012": "Pigs"
    },
-   "reference_label": "Pigs"
+   "reference_label": "Pigs",
+   "split_reasons": []
   },
   "h32": {
    "years": [
@@ -3608,7 +3940,8 @@
    "labels_by_year": {
     "2012": "Rabbits"
    },
-   "reference_label": "Rabbits"
+   "reference_label": "Rabbits",
+   "split_reasons": []
   },
   "h33": {
    "years": [
@@ -3622,7 +3955,8 @@
    "labels_by_year": {
     "2012": "Poultry/fowl"
    },
-   "reference_label": "Poultry/fowl"
+   "reference_label": "Poultry/fowl",
+   "split_reasons": []
   },
   "h34": {
    "years": [
@@ -3636,7 +3970,8 @@
    "labels_by_year": {
     "2012": "Other"
    },
-   "reference_label": "Other"
+   "reference_label": "Other",
+   "split_reasons": []
   },
   "h35": {
    "years": [
@@ -3650,7 +3985,8 @@
    "labels_by_year": {
     "2012": "Land"
    },
-   "reference_label": "Land"
+   "reference_label": "Land",
+   "split_reasons": []
   },
   "hhid": {
    "years": [
@@ -3670,7 +4006,8 @@
     "2012": "Household id (unique within year)",
     "2022": "Household id (unique within year)"
    },
-   "reference_label": "Household id (unique within year)"
+   "reference_label": "Household id (unique within year)",
+   "split_reasons": []
   },
   "hhsize": {
    "years": [
@@ -3684,7 +4021,8 @@
    "labels_by_year": {
     "2012": "Household Size"
    },
-   "reference_label": "Household Size"
+   "reference_label": "Household Size",
+   "split_reasons": []
   },
   "inclusionprobability_1_": {
    "years": [
@@ -3698,7 +4036,8 @@
    "labels_by_year": {
     "2012": "Inclusion (Selection) Probability for Stage 1"
    },
-   "reference_label": "Inclusion (Selection) Probability for Stage 1"
+   "reference_label": "Inclusion (Selection) Probability for Stage 1",
+   "split_reasons": []
   },
   "l02": {
    "years": [
@@ -3712,7 +4051,8 @@
    "labels_by_year": {
     "2012": "District"
    },
-   "reference_label": "District"
+   "reference_label": "District",
+   "split_reasons": []
   },
   "l03": {
    "years": [
@@ -3726,7 +4066,8 @@
    "labels_by_year": {
     "2012": "Sector"
    },
-   "reference_label": "Sector"
+   "reference_label": "Sector",
+   "split_reasons": []
   },
   "l07": {
    "years": [
@@ -3740,7 +4081,8 @@
    "labels_by_year": {
     "2012": "Area of residence"
    },
-   "reference_label": "Area of residence"
+   "reference_label": "Area of residence",
+   "split_reasons": []
   },
   "m1": {
    "years": [
@@ -3754,7 +4096,8 @@
    "labels_by_year": {
     "2012": "Death in the Household"
    },
-   "reference_label": "Death in the Household"
+   "reference_label": "Death in the Household",
+   "split_reasons": []
   },
   "novdistr": {
    "years": [
@@ -3768,7 +4111,8 @@
    "labels_by_year": {
     "2002": "District name"
    },
-   "reference_label": "District name"
+   "reference_label": "District name",
+   "split_reasons": []
   },
   "novprov": {
    "years": [
@@ -3782,7 +4126,8 @@
    "labels_by_year": {
     "2002": "Province name"
    },
-   "reference_label": "Province name"
+   "reference_label": "Province name",
+   "split_reasons": []
   },
   "novsect": {
    "years": [
@@ -3796,7 +4141,8 @@
    "labels_by_year": {
     "2002": "Sector name"
    },
-   "reference_label": "Sector name"
+   "reference_label": "Sector name",
+   "split_reasons": []
   },
   "p00_mean": {
    "years": [
@@ -3810,7 +4156,8 @@
    "labels_by_year": {
     "2002": "NISR artefact: mean of P00 in household"
    },
-   "reference_label": "NISR artefact: mean of P00 in household"
+   "reference_label": "NISR artefact: mean of P00 in household",
+   "split_reasons": []
   },
   "p00_nu": {
    "years": [
@@ -3824,7 +4171,8 @@
    "labels_by_year": {
     "2002": "NISR artefact: count of P00 in household"
    },
-   "reference_label": "NISR artefact: count of P00 in household"
+   "reference_label": "NISR artefact: count of P00 in household",
+   "split_reasons": []
   },
   "p02": {
    "years": [
@@ -3846,7 +4194,10 @@
     "2012": "Relationship",
     "2022": "Relationship (Private HH only)"
    },
-   "reference_label": "Relationship"
+   "reference_label": "Relationship",
+   "split_reasons": [
+    "2022 vs 2002: variable label differs ('Relationship (Private HH only)' vs 'Relationship to household head')"
+   ]
   },
   "p02_hh": {
    "years": [
@@ -3860,7 +4211,8 @@
    "labels_by_year": {
     "2002": "Flag: household head (P02 = 1)"
    },
-   "reference_label": "Flag: household head (P02 = 1)"
+   "reference_label": "Flag: household head (P02 = 1)",
+   "split_reasons": []
   },
   "p03": {
    "years": [
@@ -3874,7 +4226,8 @@
    "labels_by_year": {
     "2002": "Residence status (present/absent resident, visitor, collective)"
    },
-   "reference_label": "Residence status (present/absent resident, visitor, collective)"
+   "reference_label": "Residence status (present/absent resident, visitor, collective)",
+   "split_reasons": []
   },
   "p04m": {
    "years": [
@@ -3888,7 +4241,8 @@
    "labels_by_year": {
     "2012": "Month of Birth"
    },
-   "reference_label": "Month of Birth"
+   "reference_label": "Month of Birth",
+   "split_reasons": []
   },
   "p04y": {
    "years": [
@@ -3902,7 +4256,8 @@
    "labels_by_year": {
     "2012": "Year of Birth"
    },
-   "reference_label": "Year of Birth"
+   "reference_label": "Year of Birth",
+   "split_reasons": []
   },
   "p05a": {
    "years": [
@@ -3916,7 +4271,8 @@
    "labels_by_year": {
     "2002": "Month of birth"
    },
-   "reference_label": "Month of birth"
+   "reference_label": "Month of birth",
+   "split_reasons": []
   },
   "p05b": {
    "years": [
@@ -3930,7 +4286,8 @@
    "labels_by_year": {
     "2002": "Year of birth"
    },
-   "reference_label": "Year of birth"
+   "reference_label": "Year of birth",
+   "split_reasons": []
   },
   "p05x": {
    "years": [
@@ -3944,7 +4301,8 @@
    "labels_by_year": {
     "2002": "Day of birth"
    },
-   "reference_label": "Day of birth"
+   "reference_label": "Day of birth",
+   "split_reasons": []
   },
   "p06": {
    "years": [
@@ -3963,7 +4321,10 @@
     "2012": "Situation of residence",
     "2022": "marital status"
    },
-   "reference_label": "marital status"
+   "reference_label": "marital status",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('marital status' vs 'Situation of residence')"
+   ]
   },
   "p061": {
    "years": [
@@ -3977,7 +4338,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 1)"
    },
-   "reference_label": "Age (NISR derived copy 1)"
+   "reference_label": "Age (NISR derived copy 1)",
+   "split_reasons": []
   },
   "p062": {
    "years": [
@@ -3991,7 +4353,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 2)"
    },
-   "reference_label": "Age (NISR derived copy 2)"
+   "reference_label": "Age (NISR derived copy 2)",
+   "split_reasons": []
   },
   "p063": {
    "years": [
@@ -4005,7 +4368,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 3)"
    },
-   "reference_label": "Age (NISR derived copy 3)"
+   "reference_label": "Age (NISR derived copy 3)",
+   "split_reasons": []
   },
   "p0631": {
    "years": [
@@ -4019,7 +4383,8 @@
    "labels_by_year": {
     "2002": "Age (NISR derived copy 3b)"
    },
-   "reference_label": "Age (NISR derived copy 3b)"
+   "reference_label": "Age (NISR derived copy 3b)",
+   "split_reasons": []
   },
   "p07": {
    "years": [
@@ -4038,7 +4403,10 @@
     "2002": "Nationality",
     "2012": "Place of Birth"
    },
-   "reference_label": "Place of Birth"
+   "reference_label": "Place of Birth",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Place of Birth' vs 'Nationality')"
+   ]
   },
   "p07a": {
    "years": [
@@ -4052,7 +4420,8 @@
    "labels_by_year": {
     "2022": "Residence Status"
    },
-   "reference_label": "Residence Status"
+   "reference_label": "Residence Status",
+   "split_reasons": []
   },
   "p07b": {
    "years": [
@@ -4066,7 +4435,8 @@
    "labels_by_year": {
     "2022": "Residence status of resident member"
    },
-   "reference_label": "Residence status of resident member"
+   "reference_label": "Residence status of resident member",
+   "split_reasons": []
   },
   "p08": {
    "years": [
@@ -4085,7 +4455,10 @@
     "2002": "Place of birth (district or country)",
     "2012": "Nationality"
    },
-   "reference_label": "Nationality"
+   "reference_label": "Nationality",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Nationality' vs 'Place of birth (district or country)')"
+   ]
   },
   "p08c": {
    "years": [
@@ -4099,7 +4472,8 @@
    "labels_by_year": {
     "2022": "Age at first marriage"
    },
-   "reference_label": "Age at first marriage"
+   "reference_label": "Age at first marriage",
+   "split_reasons": []
   },
   "p09": {
    "years": [
@@ -4118,7 +4492,10 @@
     "2002": "Duration of residence in this locality (years; 99 since birth)",
     "2012": "Place of previous residence"
    },
-   "reference_label": "Place of previous residence"
+   "reference_label": "Place of previous residence",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Place of previous residence' vs 'Duration of residence in this locality (')"
+   ]
   },
   "p09a": {
    "years": [
@@ -4132,7 +4509,8 @@
    "labels_by_year": {
     "2022": "Place of birth/country"
    },
-   "reference_label": "Place of birth/country"
+   "reference_label": "Place of birth/country",
+   "split_reasons": []
   },
   "p09b": {
    "years": [
@@ -4146,7 +4524,8 @@
    "labels_by_year": {
     "2022": "Place of birh/district"
    },
-   "reference_label": "Place of birh/district"
+   "reference_label": "Place of birh/district",
+   "split_reasons": []
   },
   "p09c": {
    "years": [
@@ -4160,7 +4539,8 @@
    "labels_by_year": {
     "2022": "Country of birth: country code"
    },
-   "reference_label": "Country of birth: country code"
+   "reference_label": "Country of birth: country code",
+   "split_reasons": []
   },
   "p10": {
    "years": [
@@ -4179,7 +4559,10 @@
     "2002": "Place of previous residence (district or country)",
     "2012": "Duration of Residence"
    },
-   "reference_label": "Duration of Residence"
+   "reference_label": "Duration of Residence",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Duration of Residence' vs 'Place of previous residence (district or')"
+   ]
   },
   "p10a": {
    "years": [
@@ -4193,7 +4576,8 @@
    "labels_by_year": {
     "2022": "Duration of Residence"
    },
-   "reference_label": "Duration of Residence"
+   "reference_label": "Duration of Residence",
+   "split_reasons": []
   },
   "p10b": {
    "years": [
@@ -4207,7 +4591,8 @@
    "labels_by_year": {
     "2022": "Place of previous residence"
    },
-   "reference_label": "Place of previous residence"
+   "reference_label": "Place of previous residence",
+   "split_reasons": []
   },
   "p11": {
    "years": [
@@ -4226,7 +4611,10 @@
     "2002": "Languages spoken",
     "2012": "Religion"
    },
-   "reference_label": "Religion"
+   "reference_label": "Religion",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Religion' vs 'Languages spoken')"
+   ]
   },
   "p11a": {
    "years": [
@@ -4240,7 +4628,8 @@
    "labels_by_year": {
     "2022": "District of previous residence"
    },
-   "reference_label": "District of previous residence"
+   "reference_label": "District of previous residence",
+   "split_reasons": []
   },
   "p11b": {
    "years": [
@@ -4254,7 +4643,8 @@
    "labels_by_year": {
     "2022": "Country of previous residence: country code"
    },
-   "reference_label": "Country of previous residence: country code"
+   "reference_label": "Country of previous residence: country code",
+   "split_reasons": []
   },
   "p12": {
    "years": [
@@ -4268,7 +4658,8 @@
    "labels_by_year": {
     "2002": "Religious affiliation"
    },
-   "reference_label": "Religious affiliation"
+   "reference_label": "Religious affiliation",
+   "split_reasons": []
   },
   "p12b": {
    "years": [
@@ -4282,7 +4673,8 @@
    "labels_by_year": {
     "2022": "Nationality: country code"
    },
-   "reference_label": "Nationality: country code"
+   "reference_label": "Nationality: country code",
+   "split_reasons": []
   },
   "p12c1": {
    "years": [
@@ -4296,7 +4688,8 @@
    "labels_by_year": {
     "2012": "Cause of disability (C1)"
    },
-   "reference_label": "Cause of disability (C1)"
+   "reference_label": "Cause of disability (C1)",
+   "split_reasons": []
   },
   "p12c2": {
    "years": [
@@ -4310,7 +4703,8 @@
    "labels_by_year": {
     "2012": "Cause of disability (C2)"
    },
-   "reference_label": "Cause of disability (C2)"
+   "reference_label": "Cause of disability (C2)",
+   "split_reasons": []
   },
   "p12c3": {
    "years": [
@@ -4324,7 +4718,8 @@
    "labels_by_year": {
     "2012": "Cause of disability (C3)"
    },
-   "reference_label": "Cause of disability (C3)"
+   "reference_label": "Cause of disability (C3)",
+   "split_reasons": []
   },
   "p12c4": {
    "years": [
@@ -4338,7 +4733,8 @@
    "labels_by_year": {
     "2012": "Cause of disability (C4)"
    },
-   "reference_label": "Cause of disability (C4)"
+   "reference_label": "Cause of disability (C4)",
+   "split_reasons": []
   },
   "p12c5": {
    "years": [
@@ -4352,7 +4748,8 @@
    "labels_by_year": {
     "2012": "Cause of disability (C5)"
    },
-   "reference_label": "Cause of disability (C5)"
+   "reference_label": "Cause of disability (C5)",
+   "split_reasons": []
   },
   "p12c6": {
    "years": [
@@ -4366,7 +4763,8 @@
    "labels_by_year": {
     "2012": "Cause of disability(C6)"
    },
-   "reference_label": "Cause of disability(C6)"
+   "reference_label": "Cause of disability(C6)",
+   "split_reasons": []
   },
   "p12d1": {
    "years": [
@@ -4380,7 +4778,8 @@
    "labels_by_year": {
     "2012": "Type of major disability (D1)"
    },
-   "reference_label": "Type of major disability (D1)"
+   "reference_label": "Type of major disability (D1)",
+   "split_reasons": []
   },
   "p12d2": {
    "years": [
@@ -4394,7 +4793,8 @@
    "labels_by_year": {
     "2012": "Type of major disability (D2)"
    },
-   "reference_label": "Type of major disability (D2)"
+   "reference_label": "Type of major disability (D2)",
+   "split_reasons": []
   },
   "p12d3": {
    "years": [
@@ -4408,7 +4808,8 @@
    "labels_by_year": {
     "2012": "Type of major disability (D3)"
    },
-   "reference_label": "Type of major disability (D3)"
+   "reference_label": "Type of major disability (D3)",
+   "split_reasons": []
   },
   "p12d4": {
    "years": [
@@ -4422,7 +4823,8 @@
    "labels_by_year": {
     "2012": "Type of major disability (D4)"
    },
-   "reference_label": "Type of major disability (D4)"
+   "reference_label": "Type of major disability (D4)",
+   "split_reasons": []
   },
   "p12d5": {
    "years": [
@@ -4436,7 +4838,8 @@
    "labels_by_year": {
     "2012": "Type of major disability (D5)"
    },
-   "reference_label": "Type of major disability (D5)"
+   "reference_label": "Type of major disability (D5)",
+   "split_reasons": []
   },
   "p12d6": {
    "years": [
@@ -4450,7 +4853,8 @@
    "labels_by_year": {
     "2012": "Type of major disability(D6)"
    },
-   "reference_label": "Type of major disability(D6)"
+   "reference_label": "Type of major disability(D6)",
+   "split_reasons": []
   },
   "p13": {
    "years": [
@@ -4474,7 +4878,11 @@
     "2012": "Type of insurance",
     "2022": "Religious affiliation"
    },
-   "reference_label": "Religious affiliation"
+   "reference_label": "Religious affiliation",
+   "split_reasons": [
+    "2002: FORCE_SPLIT",
+    "2022 vs 2012: variable label differs ('Religious affiliation' vs 'Type of insurance')"
+   ]
   },
   "p14": {
    "years": [
@@ -4493,7 +4901,10 @@
     "2002": "Cause of handicap",
     "2022": "Medical insurance"
    },
-   "reference_label": "Medical insurance"
+   "reference_label": "Medical insurance",
+   "split_reasons": [
+    "2022 vs 2002: variable label differs ('Medical insurance' vs 'Cause of handicap')"
+   ]
   },
   "p14a": {
    "years": [
@@ -4507,7 +4918,8 @@
    "labels_by_year": {
     "2012": "Mother alive"
    },
-   "reference_label": "Mother alive"
+   "reference_label": "Mother alive",
+   "split_reasons": []
   },
   "p14b": {
    "years": [
@@ -4521,7 +4933,8 @@
    "labels_by_year": {
     "2012": "Natural mother live in household"
    },
-   "reference_label": "Natural mother live in household"
+   "reference_label": "Natural mother live in household",
+   "split_reasons": []
   },
   "p14c": {
    "years": [
@@ -4535,7 +4948,8 @@
    "labels_by_year": {
     "2012": "Father alive"
    },
-   "reference_label": "Father alive"
+   "reference_label": "Father alive",
+   "split_reasons": []
   },
   "p14d": {
    "years": [
@@ -4549,7 +4963,8 @@
    "labels_by_year": {
     "2012": "Natural father live in household"
    },
-   "reference_label": "Natural father live in household"
+   "reference_label": "Natural father live in household",
+   "split_reasons": []
   },
   "p15": {
    "years": [
@@ -4568,7 +4983,10 @@
     "2002": "Survival of parents",
     "2012": "Birth Registration"
    },
-   "reference_label": "Birth Registration"
+   "reference_label": "Birth Registration",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Birth Registration' vs 'Survival of parents')"
+   ]
   },
   "p15b": {
    "years": [
@@ -4582,7 +5000,8 @@
    "labels_by_year": {
     "2022": "Level of difficulty of seeing"
    },
-   "reference_label": "Level of difficulty of seeing"
+   "reference_label": "Level of difficulty of seeing",
+   "split_reasons": []
   },
   "p16": {
    "years": [
@@ -4601,7 +5020,10 @@
     "2002": "School attendance (ever attended)",
     "2012": "Languages reading and written"
    },
-   "reference_label": "Languages reading and written"
+   "reference_label": "Languages reading and written",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Languages reading and written' vs 'School attendance (ever attended)')"
+   ]
   },
   "p16b": {
    "years": [
@@ -4615,7 +5037,8 @@
    "labels_by_year": {
     "2022": "Level of difficulty of hearing"
    },
-   "reference_label": "Level of difficulty of hearing"
+   "reference_label": "Level of difficulty of hearing",
+   "split_reasons": []
   },
   "p17": {
    "years": [
@@ -4634,7 +5057,10 @@
     "2002": "Highest class successfully completed",
     "2012": "School attendance"
    },
-   "reference_label": "School attendance"
+   "reference_label": "School attendance",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('School attendance' vs 'Highest class successfully completed')"
+   ]
   },
   "p171": {
    "years": [
@@ -4648,7 +5074,8 @@
    "labels_by_year": {
     "2002": "Educational level attained (NISR grouped)"
    },
-   "reference_label": "Educational level attained (NISR grouped)"
+   "reference_label": "Educational level attained (NISR grouped)",
+   "split_reasons": []
   },
   "p17b": {
    "years": [
@@ -4662,7 +5089,8 @@
    "labels_by_year": {
     "2022": "Level of difficulty of walking"
    },
-   "reference_label": "Level of difficulty of walking"
+   "reference_label": "Level of difficulty of walking",
+   "split_reasons": []
   },
   "p18": {
    "years": [
@@ -4676,7 +5104,8 @@
    "labels_by_year": {
     "2002": "Area of specialisation (secondary/higher)"
    },
-   "reference_label": "Area of specialisation (secondary/higher)"
+   "reference_label": "Area of specialisation (secondary/higher)",
+   "split_reasons": []
   },
   "p18a": {
    "years": [
@@ -4690,7 +5119,8 @@
    "labels_by_year": {
     "2012": "Educational level"
    },
-   "reference_label": "Educational level"
+   "reference_label": "Educational level",
+   "split_reasons": []
   },
   "p18b": {
    "years": [
@@ -4709,7 +5139,10 @@
     "2012": "Years completed",
     "2022": "Level of difficulty of communicating"
    },
-   "reference_label": "Level of difficulty of communicating"
+   "reference_label": "Level of difficulty of communicating",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Level of difficulty of communicating' vs 'Years completed')"
+   ]
   },
   "p19": {
    "years": [
@@ -4718,15 +5151,20 @@
    ],
    "versions": {
     "p19": [
-     2002,
      2012
+    ],
+    "p19_v2": [
+     2002
     ]
    },
    "labels_by_year": {
     "2002": "Highest certificate or diploma obtained",
     "2012": "Highest Certificate/Diploma"
    },
-   "reference_label": "Highest Certificate/Diploma"
+   "reference_label": "Highest Certificate/Diploma",
+   "split_reasons": [
+    "2002: FORCE_SPLIT"
+   ]
   },
   "p19b": {
    "years": [
@@ -4740,7 +5178,8 @@
    "labels_by_year": {
     "2022": "Level of difficulty of remembering or concentrating"
    },
-   "reference_label": "Level of difficulty of remembering or concentrating"
+   "reference_label": "Level of difficulty of remembering or concentrating",
+   "split_reasons": []
   },
   "p20": {
    "years": [
@@ -4759,7 +5198,10 @@
     "2002": "Literacy",
     "2012": "Work"
    },
-   "reference_label": "Work"
+   "reference_label": "Work",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Work' vs 'Literacy')"
+   ]
   },
   "p20b": {
    "years": [
@@ -4773,7 +5215,8 @@
    "labels_by_year": {
     "2022": "Level of difficulty with self-care such as washing all over or dressing"
    },
-   "reference_label": "Level of difficulty with self-care such as washing all over or dressing"
+   "reference_label": "Level of difficulty with self-care such as washing all over or dressing",
+   "split_reasons": []
   },
   "p21": {
    "years": [
@@ -4792,7 +5235,10 @@
     "2002": "Economic activity situation (15/07-15/08/2002)",
     "2012": "Why did not work"
    },
-   "reference_label": "Why did not work"
+   "reference_label": "Why did not work",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Why did not work' vs 'Economic activity situation (15/07-15/08')"
+   ]
   },
   "p211": {
    "years": [
@@ -4806,7 +5252,8 @@
    "labels_by_year": {
     "2002": "Activity status (NISR grouped)"
    },
-   "reference_label": "Activity status (NISR grouped)"
+   "reference_label": "Activity status (NISR grouped)",
+   "split_reasons": []
   },
   "p21a": {
    "years": [
@@ -4820,7 +5267,8 @@
    "labels_by_year": {
     "2022": "Has a problem of short stature"
    },
-   "reference_label": "Has a problem of short stature"
+   "reference_label": "Has a problem of short stature",
+   "split_reasons": []
   },
   "p22": {
    "years": [
@@ -4839,7 +5287,10 @@
     "2002": "Main occupation (type of work done)",
     "2012": "Work done"
    },
-   "reference_label": "Work done"
+   "reference_label": "Work done",
+   "split_reasons": [
+    "2002: FORCE_SPLIT"
+   ]
   },
   "p22a": {
    "years": [
@@ -4853,7 +5304,8 @@
    "labels_by_year": {
     "2022": "Has a disability with albinism"
    },
-   "reference_label": "Has a disability with albinism"
+   "reference_label": "Has a disability with albinism",
+   "split_reasons": []
   },
   "p23": {
    "years": [
@@ -4872,7 +5324,10 @@
     "2002": "Status in employment",
     "2012": "Ready to work"
    },
-   "reference_label": "Ready to work"
+   "reference_label": "Ready to work",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Ready to work' vs 'Status in employment')"
+   ]
   },
   "p23a": {
    "years": [
@@ -4886,7 +5341,8 @@
    "labels_by_year": {
     "2022": "Biological mother alive"
    },
-   "reference_label": "Biological mother alive"
+   "reference_label": "Biological mother alive",
+   "split_reasons": []
   },
   "p23b": {
    "years": [
@@ -4900,7 +5356,8 @@
    "labels_by_year": {
     "2022": "Biological mother live in this household"
    },
-   "reference_label": "Biological mother live in this household"
+   "reference_label": "Biological mother live in this household",
+   "split_reasons": []
   },
   "p23bb": {
    "years": [
@@ -4914,7 +5371,8 @@
    "labels_by_year": {
     "2022": "Select the name of the biological mother"
    },
-   "reference_label": "Select the name of the biological mother"
+   "reference_label": "Select the name of the biological mother",
+   "split_reasons": []
   },
   "p23c": {
    "years": [
@@ -4928,7 +5386,8 @@
    "labels_by_year": {
     "2022": "Biological father alive"
    },
-   "reference_label": "Biological father alive"
+   "reference_label": "Biological father alive",
+   "split_reasons": []
   },
   "p23d": {
    "years": [
@@ -4942,7 +5401,8 @@
    "labels_by_year": {
     "2022": "Biological father live in this household"
    },
-   "reference_label": "Biological father live in this household"
+   "reference_label": "Biological father live in this household",
+   "split_reasons": []
   },
   "p23dd": {
    "years": [
@@ -4956,7 +5416,8 @@
    "labels_by_year": {
     "2022": "Select the name of the biological father"
    },
-   "reference_label": "Select the name of the biological father"
+   "reference_label": "Select the name of the biological father",
+   "split_reasons": []
   },
   "p24": {
    "years": [
@@ -4980,7 +5441,12 @@
     "2012": "Seeking for work",
     "2022": "Registered in the Civil Registration books"
    },
-   "reference_label": "Registered in the Civil Registration books"
+   "reference_label": "Registered in the Civil Registration books",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Seeking for work' vs 'Branch of economic activity')",
+    "2022 vs 2002: variable label differs ('Registered in the Civil Registration boo' vs 'Branch of economic activity')",
+    "2022 vs 2012: variable label differs ('Registered in the Civil Registration boo' vs 'Seeking for work')"
+   ]
   },
   "p241": {
    "years": [
@@ -4994,7 +5460,8 @@
    "labels_by_year": {
     "2002": "Branch of economic activity (NISR grouped)"
    },
-   "reference_label": "Branch of economic activity (NISR grouped)"
+   "reference_label": "Branch of economic activity (NISR grouped)",
+   "split_reasons": []
   },
   "p25": {
    "years": [
@@ -5013,7 +5480,10 @@
     "2002": "Institutional sector of employment (public/parastatal/NGO/cooperative/other priv",
     "2012": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code lis"
    },
-   "reference_label": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code lis"
+   "reference_label": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code lis",
+   "split_reasons": [
+    "2012 vs 2002: variable label differs ('Main occupation, ISCO-08 4-digit (labels' vs 'Institutional sector of employment (publ')"
+   ]
   },
   "p26": {
    "years": [
@@ -5032,7 +5502,10 @@
     "2002": "Marital status",
     "2012": "Status in employment"
    },
-   "reference_label": "Status in employment"
+   "reference_label": "Status in employment",
+   "split_reasons": [
+    "2002: FORCE_SPLIT"
+   ]
   },
   "p27": {
    "years": [
@@ -5046,7 +5519,8 @@
    "labels_by_year": {
     "2012": "Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabe"
    },
-   "reference_label": "Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabe"
+   "reference_label": "Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabe",
+   "split_reasons": []
   },
   "p27a": {
    "years": [
@@ -5060,7 +5534,8 @@
    "labels_by_year": {
     "2002": "Live births ever, boys"
    },
-   "reference_label": "Live births ever, boys"
+   "reference_label": "Live births ever, boys",
+   "split_reasons": []
   },
   "p27b": {
    "years": [
@@ -5074,7 +5549,8 @@
    "labels_by_year": {
     "2002": "Live births ever, girls"
    },
-   "reference_label": "Live births ever, girls"
+   "reference_label": "Live births ever, girls",
+   "split_reasons": []
   },
   "p28": {
    "years": [
@@ -5088,7 +5564,8 @@
    "labels_by_year": {
     "2012": "Institutional sector of employment"
    },
-   "reference_label": "Institutional sector of employment"
+   "reference_label": "Institutional sector of employment",
+   "split_reasons": []
   },
   "p28a": {
    "years": [
@@ -5102,7 +5579,8 @@
    "labels_by_year": {
     "2002": "Children surviving, boys"
    },
-   "reference_label": "Children surviving, boys"
+   "reference_label": "Children surviving, boys",
+   "split_reasons": []
   },
   "p28b": {
    "years": [
@@ -5116,7 +5594,8 @@
    "labels_by_year": {
     "2002": "Children surviving, girls"
    },
-   "reference_label": "Children surviving, girls"
+   "reference_label": "Children surviving, girls",
+   "split_reasons": []
   },
   "p29": {
    "years": [
@@ -5135,7 +5614,10 @@
     "2012": "Marital status",
     "2022": "Ever or currently attending  school"
    },
-   "reference_label": "Ever or currently attending  school"
+   "reference_label": "Ever or currently attending  school",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Ever or currently attending  school' vs 'Marital status')"
+   ]
   },
   "p29a": {
    "years": [
@@ -5149,7 +5631,8 @@
    "labels_by_year": {
     "2002": "Births in the last 12 months, boys"
    },
-   "reference_label": "Births in the last 12 months, boys"
+   "reference_label": "Births in the last 12 months, boys",
+   "split_reasons": []
   },
   "p29b": {
    "years": [
@@ -5163,7 +5646,8 @@
    "labels_by_year": {
     "2002": "Births in the last 12 months, girls"
    },
-   "reference_label": "Births in the last 12 months, girls"
+   "reference_label": "Births in the last 12 months, girls",
+   "split_reasons": []
   },
   "p30": {
    "years": [
@@ -5177,7 +5661,8 @@
    "labels_by_year": {
     "2012": "Number of spouses"
    },
-   "reference_label": "Number of spouses"
+   "reference_label": "Number of spouses",
+   "split_reasons": []
   },
   "p30a": {
    "years": [
@@ -5196,7 +5681,10 @@
     "2002": "Of births in the last 12 months, surviving boys",
     "2022": "Highest level of education"
    },
-   "reference_label": "Highest level of education"
+   "reference_label": "Highest level of education",
+   "split_reasons": [
+    "2022 vs 2002: variable label differs ('Highest level of education' vs 'Of births in the last 12 months, survivi')"
+   ]
   },
   "p30b": {
    "years": [
@@ -5215,7 +5703,10 @@
     "2002": "Of births in the last 12 months, surviving girls",
     "2022": "Years of school complete successfully at that level"
    },
-   "reference_label": "Years of school complete successfully at that level"
+   "reference_label": "Years of school complete successfully at that level",
+   "split_reasons": [
+    "2022 vs 2002: variable label differs ('Years of school complete successfully at' vs 'Of births in the last 12 months, survivi')"
+   ]
   },
   "p31": {
    "years": [
@@ -5234,7 +5725,10 @@
     "2012": "Current rank as spouse",
     "2022": "Highest certificate/degree"
    },
-   "reference_label": "Highest certificate/degree"
+   "reference_label": "Highest certificate/degree",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Highest certificate/degree' vs 'Current rank as spouse')"
+   ]
   },
   "p32": {
    "years": [
@@ -5253,7 +5747,10 @@
     "2012": "Age at first marriage",
     "2022": "Can read and write with understanding in the following languages"
    },
-   "reference_label": "Can read and write with understanding in the following languages"
+   "reference_label": "Can read and write with understanding in the following languages",
+   "split_reasons": [
+    "2022 vs 2012: variable label differs ('Can read and write with understanding in' vs 'Age at first marriage')"
+   ]
   },
   "p33": {
    "years": [
@@ -5267,7 +5764,8 @@
    "labels_by_year": {
     "2022": "Ever attended or currently attending Informal adult litteracy Program"
    },
-   "reference_label": "Ever attended or currently attending Informal adult litteracy Program"
+   "reference_label": "Ever attended or currently attending Informal adult litteracy Program",
+   "split_reasons": []
   },
   "p33f": {
    "years": [
@@ -5281,7 +5779,8 @@
    "labels_by_year": {
     "2012": "Females ever born"
    },
-   "reference_label": "Females ever born"
+   "reference_label": "Females ever born",
+   "split_reasons": []
   },
   "p33m": {
    "years": [
@@ -5295,7 +5794,8 @@
    "labels_by_year": {
     "2012": "Males ever born"
    },
-   "reference_label": "Males ever born"
+   "reference_label": "Males ever born",
+   "split_reasons": []
   },
   "p34": {
    "years": [
@@ -5309,7 +5809,8 @@
    "labels_by_year": {
     "2022": "Internet use"
    },
-   "reference_label": "Internet use"
+   "reference_label": "Internet use",
+   "split_reasons": []
   },
   "p34f": {
    "years": [
@@ -5323,7 +5824,8 @@
    "labels_by_year": {
     "2012": "Females alive"
    },
-   "reference_label": "Females alive"
+   "reference_label": "Females alive",
+   "split_reasons": []
   },
   "p34m": {
    "years": [
@@ -5337,7 +5839,8 @@
    "labels_by_year": {
     "2012": "Males alive"
    },
-   "reference_label": "Males alive"
+   "reference_label": "Males alive",
+   "split_reasons": []
   },
   "p35": {
    "years": [
@@ -5351,7 +5854,8 @@
    "labels_by_year": {
     "2022": "Access to internet"
    },
-   "reference_label": "Access to internet"
+   "reference_label": "Access to internet",
+   "split_reasons": []
   },
   "p35f": {
    "years": [
@@ -5365,7 +5869,8 @@
    "labels_by_year": {
     "2012": "Females born in 12 months"
    },
-   "reference_label": "Females born in 12 months"
+   "reference_label": "Females born in 12 months",
+   "split_reasons": []
   },
   "p35m": {
    "years": [
@@ -5379,7 +5884,8 @@
    "labels_by_year": {
     "2012": "Males born in 12 months"
    },
-   "reference_label": "Males born in 12 months"
+   "reference_label": "Males born in 12 months",
+   "split_reasons": []
   },
   "p36c": {
    "years": [
@@ -5393,7 +5899,8 @@
    "labels_by_year": {
     "2022": "type of mobile phone"
    },
-   "reference_label": "type of mobile phone"
+   "reference_label": "type of mobile phone",
+   "split_reasons": []
   },
   "p36f": {
    "years": [
@@ -5407,7 +5914,8 @@
    "labels_by_year": {
     "2012": "Females alive 12 months"
    },
-   "reference_label": "Females alive 12 months"
+   "reference_label": "Females alive 12 months",
+   "split_reasons": []
   },
   "p36m": {
    "years": [
@@ -5421,7 +5929,8 @@
    "labels_by_year": {
     "2012": "Males alive in 12 months"
    },
-   "reference_label": "Males alive in 12 months"
+   "reference_label": "Males alive in 12 months",
+   "split_reasons": []
   },
   "p46": {
    "years": [
@@ -5435,7 +5944,8 @@
    "labels_by_year": {
     "2022": "Institutional sector"
    },
-   "reference_label": "Institutional sector"
+   "reference_label": "Institutional sector",
+   "split_reasons": []
   },
   "p47a": {
    "years": [
@@ -5449,7 +5959,8 @@
    "labels_by_year": {
     "2022": "ISIC High level"
    },
-   "reference_label": "ISIC High level"
+   "reference_label": "ISIC High level",
+   "split_reasons": []
   },
   "p48a": {
    "years": [
@@ -5463,7 +5974,8 @@
    "labels_by_year": {
     "2022": "Main occupations(ISCO high level)"
    },
-   "reference_label": "Main occupations(ISCO high level)"
+   "reference_label": "Main occupations(ISCO high level)",
+   "split_reasons": []
   },
   "p49": {
    "years": [
@@ -5477,7 +5989,8 @@
    "labels_by_year": {
     "2022": "status in employment"
    },
-   "reference_label": "status in employment"
+   "reference_label": "status in employment",
+   "split_reasons": []
   },
   "p50a": {
    "years": [
@@ -5491,7 +6004,8 @@
    "labels_by_year": {
     "2022": "given birth"
    },
-   "reference_label": "given birth"
+   "reference_label": "given birth",
+   "split_reasons": []
   },
   "p50b_boys": {
    "years": [
@@ -5505,7 +6019,8 @@
    "labels_by_year": {
     "2022": "Number of live births ever had / boys"
    },
-   "reference_label": "Number of live births ever had / boys"
+   "reference_label": "Number of live births ever had / boys",
+   "split_reasons": []
   },
   "p50b_girls": {
    "years": [
@@ -5519,7 +6034,8 @@
    "labels_by_year": {
     "2022": "Number of live births ever had / girls"
    },
-   "reference_label": "Number of live births ever had / girls"
+   "reference_label": "Number of live births ever had / girls",
+   "split_reasons": []
   },
   "p50c_boys": {
    "years": [
@@ -5533,7 +6049,8 @@
    "labels_by_year": {
     "2022": "Among those children how many are still alive / Boys"
    },
-   "reference_label": "Among those children how many are still alive / Boys"
+   "reference_label": "Among those children how many are still alive / Boys",
+   "split_reasons": []
   },
   "p50c_girls": {
    "years": [
@@ -5547,7 +6064,8 @@
    "labels_by_year": {
     "2022": "Among those children how many are still alive / Girls"
    },
-   "reference_label": "Among those children how many are still alive / Girls"
+   "reference_label": "Among those children how many are still alive / Girls",
+   "split_reasons": []
   },
   "p51a": {
    "years": [
@@ -5561,7 +6079,8 @@
    "labels_by_year": {
     "2022": "During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give"
    },
-   "reference_label": "During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give"
+   "reference_label": "During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give",
+   "split_reasons": []
   },
   "p51b_boys": {
    "years": [
@@ -5575,7 +6094,8 @@
    "labels_by_year": {
     "2022": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
    },
-   "reference_label": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
+   "reference_label": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021",
+   "split_reasons": []
   },
   "p51b_girls": {
    "years": [
@@ -5589,7 +6109,8 @@
    "labels_by_year": {
     "2022": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
    },
-   "reference_label": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
+   "reference_label": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021",
+   "split_reasons": []
   },
   "p51c_boys": {
    "years": [
@@ -5603,7 +6124,8 @@
    "labels_by_year": {
     "2022": "Among those children s,how many are still alive / Boys"
    },
-   "reference_label": "Among those children s,how many are still alive / Boys"
+   "reference_label": "Among those children s,how many are still alive / Boys",
+   "split_reasons": []
   },
   "p51c_girls": {
    "years": [
@@ -5617,7 +6139,8 @@
    "labels_by_year": {
     "2022": "Among those children s,how many are still alive / Girls"
    },
-   "reference_label": "Among those children s,how many are still alive / Girls"
+   "reference_label": "Among those children s,how many are still alive / Girls",
+   "split_reasons": []
   },
   "personnes_handic": {
    "years": [
@@ -5631,7 +6154,8 @@
    "labels_by_year": {
     "2002": "Persons with a handicap (NISR grouped)"
    },
-   "reference_label": "Persons with a handicap (NISR grouped)"
+   "reference_label": "Persons with a handicap (NISR grouped)",
+   "split_reasons": []
   },
   "pid": {
    "years": [
@@ -5651,7 +6175,8 @@
     "2012": "Person number within the household",
     "2022": "Person number within the household"
    },
-   "reference_label": "Person number within the household"
+   "reference_label": "Person number within the household",
+   "split_reasons": []
   },
   "pid_nisr": {
    "years": [
@@ -5665,7 +6190,8 @@
    "labels_by_year": {
     "2002": "NISR person number as shipped"
    },
-   "reference_label": "NISR person number as shipped"
+   "reference_label": "NISR person number as shipped",
+   "split_reasons": []
   },
   "probability": {
    "years": [
@@ -5679,7 +6205,8 @@
    "labels_by_year": {
     "2002": "Inclusion (selection) probability"
    },
-   "reference_label": "Inclusion (selection) probability"
+   "reference_label": "Inclusion (selection) probability",
+   "split_reasons": []
   },
   "prov": {
    "years": [
@@ -5699,7 +6226,8 @@
     "2012": "Province (1-5, NISR codes)",
     "2022": "Province (1-5, NISR codes)"
    },
-   "reference_label": "Province (1-5, NISR codes)"
+   "reference_label": "Province (1-5, NISR codes)",
+   "split_reasons": []
   },
   "rl07": {
    "years": [
@@ -5713,7 +6241,8 @@
    "labels_by_year": {
     "2012": "Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urb"
    },
-   "reference_label": "Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urb"
+   "reference_label": "Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urb",
+   "split_reasons": []
   },
   "rp04y": {
    "years": [
@@ -5727,7 +6256,8 @@
    "labels_by_year": {
     "2012": "Year of birth (NISR copy of P04Y)"
    },
-   "reference_label": "Year of birth (NISR copy of P04Y)"
+   "reference_label": "Year of birth (NISR copy of P04Y)",
+   "split_reasons": []
   },
   "rp08": {
    "years": [
@@ -5741,7 +6271,8 @@
    "labels_by_year": {
     "2012": "Nationality group (NISR recode of P08)"
    },
-   "reference_label": "Nationality group (NISR recode of P08)"
+   "reference_label": "Nationality group (NISR recode of P08)",
+   "split_reasons": []
   },
   "rp12": {
    "years": [
@@ -5755,7 +6286,8 @@
    "labels_by_year": {
     "2012": "Disability status, any difficulty (NISR recode of P12)"
    },
-   "reference_label": "Disability status, any difficulty (NISR recode of P12)"
+   "reference_label": "Disability status, any difficulty (NISR recode of P12)",
+   "split_reasons": []
   },
   "rp142": {
    "years": [
@@ -5769,7 +6301,8 @@
    "labels_by_year": {
     "2012": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)"
    },
-   "reference_label": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)"
+   "reference_label": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)",
+   "split_reasons": []
   },
   "rp2024": {
    "years": [
@@ -5783,7 +6316,8 @@
    "labels_by_year": {
     "2012": "Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on lea"
    },
-   "reference_label": "Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on lea"
+   "reference_label": "Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on lea",
+   "split_reasons": []
   },
   "rp2124": {
    "years": [
@@ -5797,7 +6331,8 @@
    "labels_by_year": {
     "2012": "Reason for not working (NISR recode of P21, inactive only)"
    },
-   "reference_label": "Reason for not working (NISR recode of P21, inactive only)"
+   "reference_label": "Reason for not working (NISR recode of P21, inactive only)",
+   "split_reasons": []
   },
   "rp25": {
    "years": [
@@ -5811,7 +6346,8 @@
    "labels_by_year": {
     "2012": "Occupation group"
    },
-   "reference_label": "Occupation group"
+   "reference_label": "Occupation group",
+   "split_reasons": []
   },
   "rp27": {
    "years": [
@@ -5825,7 +6361,8 @@
    "labels_by_year": {
     "2012": "Industry group"
    },
-   "reference_label": "Industry group"
+   "reference_label": "Industry group",
+   "split_reasons": []
   },
   "sector": {
    "years": [
@@ -5845,7 +6382,8 @@
     "2012": "Sector (1101-5715, NISR codes; names attached)",
     "2022": "Sector (1101-5715, NISR codes; names attached)"
    },
-   "reference_label": "Sector (1101-5715, NISR codes; names attached)"
+   "reference_label": "Sector (1101-5715, NISR codes; names attached)",
+   "split_reasons": []
   },
   "sector_code_file": {
    "years": [
@@ -5859,7 +6397,8 @@
    "labels_by_year": {
     "2002": "Sector code as shipped in the 2002 file (before the name-based correction, see D"
    },
-   "reference_label": "Sector code as shipped in the 2002 file (before the name-based correction, see D"
+   "reference_label": "Sector code as shipped in the 2002 file (before the name-based correction, see D",
+   "split_reasons": []
   },
   "sex": {
    "years": [
@@ -5879,7 +6418,8 @@
     "2012": "Sex (1 male, 2 female)",
     "2022": "Sex (1 male, 2 female)"
    },
-   "reference_label": "Sex (1 male, 2 female)"
+   "reference_label": "Sex (1 male, 2 female)",
+   "split_reasons": []
   },
   "survey": {
    "years": [
@@ -5899,7 +6439,8 @@
     "2012": "Source survey",
     "2022": "Source survey"
    },
-   "reference_label": "Source survey"
+   "reference_label": "Source survey",
+   "split_reasons": []
   },
   "urban": {
    "years": [
@@ -5919,7 +6460,8 @@
     "2012": "Area of residence (1 urban, 2 rural)",
     "2022": "Area of residence (1 urban, 2 rural)"
    },
-   "reference_label": "Area of residence (1 urban, 2 rural)"
+   "reference_label": "Area of residence (1 urban, 2 rural)",
+   "split_reasons": []
   },
   "wave": {
    "years": [
@@ -5939,7 +6481,8 @@
     "2012": "Wave (census year)",
     "2022": "Wave (census year)"
    },
-   "reference_label": "Wave (census year)"
+   "reference_label": "Wave (census year)",
+   "split_reasons": []
   },
   "wt": {
    "years": [
@@ -5959,7 +6502,8 @@
     "2012": "Person weight (sums to the census population)",
     "2022": "Person weight (sums to the census population)"
    },
-   "reference_label": "Person weight (sums to the census population)"
+   "reference_label": "Person weight (sums to the census population)",
+   "split_reasons": []
   },
   "wt_hh": {
    "years": [
@@ -5979,7 +6523,8 @@
     "2012": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa",
     "2022": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa"
    },
-   "reference_label": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa"
+   "reference_label": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa",
+   "split_reasons": []
   },
   "year": {
    "years": [
@@ -5999,7 +6544,8 @@
     "2012": "Census year",
     "2022": "Census year"
    },
-   "reference_label": "Census year"
+   "reference_label": "Census year",
+   "split_reasons": []
   }
  },
  "label_variants": {
@@ -6235,8 +6781,8 @@
     "Spouse of head"
    ],
    "3": [
-    "Child of head",
-    "Son/Daughter"
+    "Son/Daughter",
+    "Son/daughter of head"
    ],
    "4": [
     "Unrelated Child",
@@ -6260,74 +6806,25 @@
    ],
    "9": [
     "Non Relative",
-    "Not related to head"
-   ]
-  },
-  "p19": {
-   "1": [
-    "CE/FE",
-    "None"
-   ],
-   "2": [
-    "EMA/ENTA",
-    "EMA: primary teacher training or equivalent"
-   ],
-   "3": [
-    "A3/D4/D5",
-    "A3/D4/D5: secondary teacher training or equivalent"
-   ],
-   "4": [
-    "A2/D6/D7",
-    "A2/D6/D7: diploma of humanities or equivalent"
-   ],
-   "5": [
-    "A1: baccalaureat, GCE A level or equivalent",
-    "A1:Bacc/Diploma"
-   ],
-   "6": [
-    "A0: BA, maitrise, ingeniorat or equivalent",
-    "A0: Bachelor"
-   ],
-   "7": [
-    ">A0: MA, doctorate",
-    "MA: Master"
-   ],
-   "9": [
-    "Not stated",
-    "missing"
+    "Non relative (not related to head)"
    ]
   },
   "h01": {
    "1": [
-    "Planned rural settlement",
     "Umudugudu (new rural agglomeration)",
     "Umudugudu(Clustered rural settlement)"
    ],
    "2": [
-    "Early rural agglomeration",
-    "Integrated Model Village",
-    "Old settlement"
+    "Old settlement",
+    "Old settlement (early rural agglomeration)"
    ],
    "4": [
     "Planned urban housing",
-    "Planned urban housing (cadastral plot)",
-    "Unplanned clustered rural housing (Dispersed/Isolated housing)"
+    "Planned urban housing (cadastral plot)"
    ],
    "9": [
     "Not stated",
     "missing"
-   ],
-   "3": [
-    "Dispersed/Isolated housing",
-    "Old settlement"
-   ],
-   "5": [
-    "Modern planned urban area",
-    "Spontaneous/squatter housing"
-   ],
-   "6": [
-    "Other type of housing",
-    "Spontaneous/Squatter housing in Urban area"
    ]
   },
   "h02": {
@@ -6337,25 +6834,366 @@
    ],
    "2": [
     "Building occupied by several households",
-    "House occupied by several household",
-    "House occupied by several householdS"
+    "House occupied by several household"
    ],
    "3": [
-    "Storey building occupied by one household",
     "Storey building occupied by one or more household",
     "Storey building occupied by one or more households"
    ],
    "4": [
     "Several buildings in a compound occupied by several househol",
-    "Several buildings in a compound occupied by several households",
-    "Storey building occupied by many households"
-   ],
-   "5": [
-    "Other type of building",
-    "Several buildings in a compound occupied by one  household"
+    "Several buildings in a compound occupied by several households"
    ]
   }
  },
+ "stale_labels": {
+  "a46": {
+   "2002": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ]
+  },
+  "age1_1": {
+   "2002": [
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106
+   ]
+  },
+  "etat_matri": {
+   "2002": [
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    7.0
+   ]
+  },
+  "h01": {
+   "2022": [
+    9
+   ]
+  },
+  "h02": {
+   "2012": [
+    9
+   ],
+   "2022": [
+    9
+   ]
+  },
+  "h03": {
+   "2012": [
+    9
+   ],
+   "2022": [
+    9
+   ]
+  },
+  "h04": {
+   "2012": [
+    9
+   ]
+  },
+  "h05": {
+   "2012": [
+    0
+   ]
+  },
+  "h06": {
+   "2012": [
+    9
+   ]
+  },
+  "h10": {
+   "2012": [
+    0
+   ],
+   "2022": [
+    9
+   ]
+  },
+  "h11": {
+   "2012": [
+    9
+   ]
+  },
+  "h13": {
+   "2012": [
+    9
+   ]
+  },
+  "h14": {
+   "2012": [
+    9
+   ]
+  },
+  "h15": {
+   "2012": [
+    9
+   ]
+  },
+  "h16": {
+   "2012": [
+    9
+   ]
+  },
+  "h16c": {
+   "2002": [
+    0.0
+   ]
+  },
+  "h200": {
+   "2002": [
+    100.0
+   ]
+  },
+  "p05a": {
+   "2002": [
+    0.0,
+    14.0,
+    22.0
+   ]
+  },
+  "p061": {
+   "2002": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+   ]
+  },
+  "p062": {
+   "2002": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+   ]
+  },
+  "p063": {
+   "2002": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ]
+  },
+  "p07": {
+   "2002": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    114,
+    116,
+    117,
+    120,
+    205,
+    206,
+    208,
+    209
+   ]
+  },
+  "p11": {
+   "2012": [
+    9
+   ]
+  },
+  "p12c2": {
+   "2012": [
+    9
+   ]
+  },
+  "p13": {
+   "2002": [
+    9.0
+   ]
+  },
+  "p14": {
+   "2002": [
+    9.0
+   ]
+  },
+  "p15": {
+   "2002": [
+    5.0,
+    9.0
+   ]
+  },
+  "p15b": {
+   "2022": [
+    9.0
+   ]
+  },
+  "p16b": {
+   "2022": [
+    9.0
+   ]
+  },
+  "p17b": {
+   "2022": [
+    9.0
+   ]
+  },
+  "p18b": {
+   "2022": [
+    9.0
+   ]
+  },
+  "p19b": {
+   "2022": [
+    9.0
+   ]
+  },
+  "p20": {
+   "2002": [
+    9.0
+   ]
+  },
+  "p20b": {
+   "2022": [
+    9.0
+   ]
+  },
+  "p21": {
+   "2002": [
+    9.0
+   ]
+  },
+  "p23": {
+   "2002": [
+    9.0
+   ]
+  },
+  "p241": {
+   "2002": [
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    20.0,
+    101.0,
+    102.0,
+    103.0,
+    111.0,
+    112.0,
+    120.0,
+    131.0,
+    132.0,
+    141.0,
+    142.0,
+    151.0,
+    152.0,
+    153.0,
+    154.0
+   ]
+  },
+  "p29": {
+   "2022": [
+    9
+   ]
+  },
+  "p33": {
+   "2022": [
+    9.0
+   ]
+  }
+ },
+ "vl_threshold": 0.6,
  "person": {
   "rows": 3165816,
   "vars": [
@@ -6410,7 +7248,7 @@
    "p17_v2",
    "p171",
    "p18",
-   "p19",
+   "p19_v2",
    "p20_v2",
    "p21_v2",
    "p211",
@@ -6513,6 +7351,7 @@
    "p17",
    "p18a",
    "p18b_v2",
+   "p19",
    "p20",
    "p21",
    "p22",
@@ -6636,6 +7475,8 @@
    "p51b_girls",
    "p51c_boys",
    "p51c_girls",
+   "h01_v2",
+   "h02_v2",
    "h03",
    "h04",
    "h05",
@@ -6880,12 +7721,9 @@
    "h16b",
    "h16c",
    "h17_v3",
-   "h18_v3",
    "h19a",
    "h19b",
    "probability",
-   "p00_nu",
-   "p00_mean",
    "collective",
    "hhsize",
    "head_sex",
@@ -6893,7 +7731,6 @@
    "l02",
    "l03",
    "l07",
-   "rp2124",
    "rl07",
    "h03_v2",
    "h04_v2",
@@ -6932,7 +7769,8 @@
    "h35",
    "m1",
    "inclusionprobability_1_",
-   "p07a",
+   "h01_v2",
+   "h02_v2",
    "h03",
    "h04",
    "h05",
@@ -7118,6 +7956,21 @@
    "h28b2_13",
    "h28b2_14",
    "h28b2_15"
-  ]
+  ],
+  "head_fields": [
+   "prov",
+   "dist",
+   "sector",
+   "urban",
+   "cluster",
+   "wt_hh"
+  ],
+  "inconsistent_households": {
+   "2002": {
+    "urban": 89
+   },
+   "2012": {},
+   "2022": {}
+  }
  }
 }

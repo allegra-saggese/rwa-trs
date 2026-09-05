@@ -137,5 +137,6 @@ cd NISR/Labour-Force-Survey-LFS && python master.py        # everything
 python master.py 01 02                                      # selected steps
 python 01_clean.py 2019                                     # one wave (for debugging)
 
-Requirements: Python >= 3.10, pandas >= 2.0, numpy, pyreadstat, openpyxl (codebooks). Stata is
-optional (section B of the checks is skipped without it).
+Requirements: Python >= 3.10, pandas >= 2.0, numpy, pyreadstat, openpyxl (codebooks), xlrd
+(Census: the 2012 ISCO coding list is a legacy .xls). Stata is optional (section B of the
+checks is skipped without it).

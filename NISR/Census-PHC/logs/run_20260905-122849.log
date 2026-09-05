@@ -1,0 +1,203 @@
+12:28:49 02_merge INFO ==== 02_merge | run 20260905-122849 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:29:09 02_merge INFO loaded 2002: 814,432 rows x 121 vars
+12:29:19 02_merge INFO loaded 2012: 1,038,369 rows x 121 vars
+12:30:11 02_merge INFO loaded 2022: 1,313,015 rows x 254 vars
+12:30:12 02_merge INFO VERSIONS h01: {'h01': [2002, 2012], 'h01_v2': [2022]} | 2022: FORCE_SPLIT
+12:30:12 02_merge INFO VERSIONS h02: {'h02': [2002, 2012], 'h02_v2': [2022]} | 2022: FORCE_SPLIT
+12:30:12 02_merge INFO VERSIONS h03: {'h03': [2022], 'h03_v2': [2012], 'h03_v3': [2002]} | 2012 vs 2002: variable label differs ('Status of occupancy of house' vs 'Roof material') / 2022 vs 2002: variable label differs ('Tenure of then housing unit' vs 'Roof material')
+12:30:12 02_merge INFO VERSIONS h04: {'h04': [2022], 'h04_v2': [2012], 'h04_v3': [2002]} | 2012 vs 2002: variable label differs ('Roof' vs 'Outer wall material') / 2022 vs 2002: variable label differs ('Is this Household has its own housing un' vs 'Outer wall material')
+12:30:13 02_merge INFO VERSIONS h05: {'h05': [2022], 'h05_v2': [2012], 'h05_v3': [2002]} | 2012 vs 2002: variable label differs ('Walls' vs 'Floor material') / 2022 vs 2002: variable label differs ('main material used for the roof' vs 'Floor material')
+12:30:13 02_merge INFO VERSIONS h06: {'h06': [2022], 'h06_v2': [2012], 'h06_v3': [2002]} | 2012 vs 2002: variable label differs ('Floor' vs 'Number of living rooms') / 2022 vs 2002: variable label differs ('main material used for the walls' vs 'Number of living rooms')
+12:30:13 02_merge INFO VERSIONS h07: {'h07': [2022], 'h07_v2': [2012], 'h07_v3': [2002]} | 2012 vs 2002: variable label differs ('Number of rooms' vs 'Main source of water supply') / 2022 vs 2002: variable label differs ('main material used for the floor' vs 'Main source of water supply')
+12:30:13 02_merge INFO VERSIONS h08: {'h08': [2022], 'h08_v2': [2012], 'h08_v3': [2002]} | 2012: FORCE_SPLIT / 2022 vs 2002: variable label differs ('Number of rooms' vs 'Main source of lighting')
+12:30:13 02_merge INFO VERSIONS h09: {'h09': [2022], 'h09_v2': [2012], 'h09_v3': [2002]} | 2012 vs 2002: variable label differs ('Number of occupants' vs 'Main cooking energy') / 2022 vs 2002: variable label differs ('number of rooms are used for sleeping' vs 'Main cooking energy')
+12:30:13 02_merge INFO VERSIONS h10: {'h10': [2022], 'h10_v2': [2012], 'h10_v3': [2002]} | 2012 vs 2002: variable label differs ('Main source of water' vs 'Main toilet facility') / 2022 vs 2002: variable label differs ('Are Sleeping rooms  for Boys separated f' vs 'Main toilet facility')
+12:30:13 02_merge INFO VERSIONS h11: {'h11': [2022], 'h11_v2': [2012], 'h11_v3': [2002]} | 2012 vs 2002: variable label differs ('Type of toilet facility' vs 'Main mode of household waste disposal') / 2022 vs 2002: variable label differs ('Main source of water used for general pu' vs 'Main mode of household waste disposal')
+12:30:13 02_merge INFO VERSIONS h12: {'h12': [2022], 'h12_v2': [2012], 'h12_v3': [2002]} | 2012 vs 2002: variable label differs ('Source of lighting' vs 'Occupancy status of the dwelling') / 2022 vs 2002: variable label differs ('Main source of drinking water' vs 'Occupancy status of the dwelling')
+12:30:14 02_merge INFO VERSIONS h13: {'h13': [2022], 'h13_v2': [2012], 'h13_v3': [2002]} | 2012 vs 2002: variable label differs ('Energy of cooking' vs 'Radio / television ownership') / 2022 vs 2002: variable label differs ('Toilet Facility' vs 'Radio / television ownership')
+12:30:14 02_merge INFO VERSIONS h14: {'h14': [2022], 'h14_v2': [2012], 'h14_v3': [2002]} | 2012 vs 2002: variable label differs ('Energy saving stove' vs 'Fixed-line / cell phone') / 2022 vs 2002: variable label differs ('Electricity (Grid line) connectivity' vs 'Fixed-line / cell phone')
+12:30:14 02_merge INFO VERSIONS h15: {'h15': [2022], 'h15_v2': [2012], 'h15_v3': [2002]} | 2012 vs 2002: variable label differs ('Mode of household waste disposal' vs 'Computer / internet connection') / 2022 vs 2002: variable label differs ('Main source of energy for lighting' vs 'Computer / internet connection')
+12:30:14 02_merge INFO VERSIONS h16: {'h16': [2022], 'h16_v2': [2012]} | 2022 vs 2012: variable label differs ('Main source of energy for cooking' vs 'Mode of sewage disposal')
+12:30:14 02_merge INFO VERSIONS h17: {'h17': [2022], 'h17_v2': [2012], 'h17_v3': [2002]} | 2012 vs 2002: variable label differs ('Radio' vs 'Total persons counted in the household') / 2022 vs 2002: variable label differs ('Secondary source of energy for cooking' vs 'Total persons counted in the household')
+12:30:14 02_merge INFO VERSIONS h18: {'h18': [2022], 'h18_v2': [2012], 'h18_v3': [2002]} | 2012 vs 2002: variable label differs ('Television' vs '(empty in the public file)') / 2022 vs 2002: variable label differs ('Does your HH use a cooking energy saving' vs '(empty in the public file)')
+12:30:14 02_merge INFO VERSIONS h19: {'h19': [2022], 'h19_v2': [2012]} | 2022 vs 2012: variable label differs ('Main mode of household waste disposal us' vs 'Telephone (fixed line)')
+12:30:14 02_merge INFO VERSIONS h20: {'h20': [2022], 'h20_v2': [2012]} | 2022 vs 2012: variable label differs ('Main mode of sewage' vs 'Cell phone')
+12:30:17 02_merge INFO VERSIONS h22: {'h22': [2022], 'h22_v2': [2012]} | 2022 vs 2012: variable label differs ('HH own livestock or beehive' vs 'Computer')
+12:30:26 02_merge INFO VERSIONS h23: {'h23': [2022], 'h23_v2': [2012]} | 2022 vs 2012: variable label differs ('Household grew crops in last 12 months' vs 'Bicycles')
+12:30:33 02_merge INFO VERSIONS h26: {'h26': [2022], 'h26_v2': [2012]} | 2022 vs 2012: variable label differs ('Number of tea trees grown' vs 'Internet Access')
+12:30:33 02_merge INFO VERSIONS h27: {'h27': [2022], 'h27_v2': [2012]} | 2022 vs 2012: variable label differs ('Number of coffee trees grown' vs 'Where do you access internet')
+12:30:33 02_merge INFO VERSIONS h28a: {'h28a': [2022], 'h28a_v2': [2012]} | 2022 vs 2012: variable label differs ('Any fruit tree' vs 'Cattle:Local breed cow')
+12:30:39 02_merge INFO VERSIONS p02: {'p02': [2002, 2012], 'p02_v2': [2022]} | 2022 vs 2002: variable label differs ('Relationship (Private HH only)' vs 'Relationship to household head')
+12:30:39 02_merge INFO VERSIONS p06: {'p06': [2022], 'p06_v2': [2012]} | 2022 vs 2012: variable label differs ('marital status' vs 'Situation of residence')
+12:30:39 02_merge INFO VERSIONS p07: {'p07': [2012], 'p07_v2': [2002]} | 2012 vs 2002: variable label differs ('Place of Birth' vs 'Nationality')
+12:30:39 02_merge INFO VERSIONS p08: {'p08': [2012], 'p08_v2': [2002]} | 2012 vs 2002: variable label differs ('Nationality' vs 'Place of birth (district or country)')
+12:30:39 02_merge INFO VERSIONS p09: {'p09': [2012], 'p09_v2': [2002]} | 2012 vs 2002: variable label differs ('Place of previous residence' vs 'Duration of residence in this locality (')
+12:30:40 02_merge INFO VERSIONS p10: {'p10': [2012], 'p10_v2': [2002]} | 2012 vs 2002: variable label differs ('Duration of Residence' vs 'Place of previous residence (district or')
+12:30:40 02_merge INFO VERSIONS p11: {'p11': [2012], 'p11_v2': [2002]} | 2012 vs 2002: variable label differs ('Religion' vs 'Languages spoken')
+12:30:40 02_merge INFO VERSIONS p13: {'p13': [2022], 'p13_v2': [2012], 'p13_v3': [2002]} | 2002: FORCE_SPLIT / 2022 vs 2012: variable label differs ('Religious affiliation' vs 'Type of insurance')
+12:30:40 02_merge INFO VERSIONS p14: {'p14': [2022], 'p14_v2': [2002]} | 2022 vs 2002: variable label differs ('Medical insurance' vs 'Cause of handicap')
+12:30:40 02_merge INFO VERSIONS p15: {'p15': [2012], 'p15_v2': [2002]} | 2012 vs 2002: variable label differs ('Birth Registration' vs 'Survival of parents')
+12:30:41 02_merge INFO VERSIONS p16: {'p16': [2012], 'p16_v2': [2002]} | 2012 vs 2002: variable label differs ('Languages reading and written' vs 'School attendance (ever attended)')
+12:30:41 02_merge INFO VERSIONS p17: {'p17': [2012], 'p17_v2': [2002]} | 2012 vs 2002: variable label differs ('School attendance' vs 'Highest class successfully completed')
+12:30:41 02_merge INFO VERSIONS p18b: {'p18b': [2022], 'p18b_v2': [2012]} | 2022 vs 2012: variable label differs ('Level of difficulty of communicating' vs 'Years completed')
+12:30:41 02_merge INFO VERSIONS p19: {'p19': [2012], 'p19_v2': [2002]} | 2002: FORCE_SPLIT
+12:30:41 02_merge INFO VERSIONS p20: {'p20': [2012], 'p20_v2': [2002]} | 2012 vs 2002: variable label differs ('Work' vs 'Literacy')
+12:30:42 02_merge INFO VERSIONS p21: {'p21': [2012], 'p21_v2': [2002]} | 2012 vs 2002: variable label differs ('Why did not work' vs 'Economic activity situation (15/07-15/08')
+12:30:42 02_merge INFO VERSIONS p22: {'p22': [2012], 'p22_v2': [2002]} | 2002: FORCE_SPLIT
+12:30:42 02_merge INFO VERSIONS p23: {'p23': [2012], 'p23_v2': [2002]} | 2012 vs 2002: variable label differs ('Ready to work' vs 'Status in employment')
+12:30:43 02_merge INFO VERSIONS p24: {'p24': [2022], 'p24_v2': [2012], 'p24_v3': [2002]} | 2012 vs 2002: variable label differs ('Seeking for work' vs 'Branch of economic activity') / 2022 vs 2002: variable label differs ('Registered in the Civil Registration boo' vs 'Branch of economic activity')
+12:30:43 02_merge INFO VERSIONS p25: {'p25': [2012], 'p25_v2': [2002]} | 2012 vs 2002: variable label differs ('Main occupation, ISCO-08 4-digit (labels' vs 'Institutional sector of employment (publ')
+12:30:43 02_merge INFO VERSIONS p26: {'p26': [2012], 'p26_v2': [2002]} | 2002: FORCE_SPLIT
+12:30:44 02_merge INFO VERSIONS p29: {'p29': [2022], 'p29_v2': [2012]} | 2022 vs 2012: variable label differs ('Ever or currently attending  school' vs 'Marital status')
+12:30:44 02_merge INFO VERSIONS p30a: {'p30a': [2022], 'p30a_v2': [2002]} | 2022 vs 2002: variable label differs ('Highest level of education' vs 'Of births in the last 12 months, survivi')
+12:30:44 02_merge INFO VERSIONS p30b: {'p30b': [2022], 'p30b_v2': [2002]} | 2022 vs 2002: variable label differs ('Years of school complete successfully at' vs 'Of births in the last 12 months, survivi')
+12:30:44 02_merge INFO VERSIONS p31: {'p31': [2022], 'p31_v2': [2012]} | 2022 vs 2012: variable label differs ('Highest certificate/degree' vs 'Current rank as spouse')
+12:30:45 02_merge INFO VERSIONS p32: {'p32': [2022], 'p32_v2': [2012]} | 2022 vs 2012: variable label differs ('Can read and write with understanding in' vs 'Age at first marriage')
+12:30:51 02_merge INFO 39 variables with codes observed outside their own value labels (stale labels; listed in merge_alignment.json): ['a46', 'age1_1', 'etat_matri', 'h01', 'h02', 'h03', 'h04', 'h05', 'h06', 'h10', 'h11', 'h13', 'h14', 'h15', 'h16', 'h16c', 'h200', 'p05a', 'p061', 'p062', 'p063', 'p07', 'p11', 'p12c2', 'p13', 'p14', 'p15', 'p15b', 'p16b', 'p17b']
+12:32:36 02_merge INFO pooled person file: 3,165,816 rows x 465 vars; 51 variables with >1 version; 3 value-label text conflicts
+12:32:39 02_merge INFO PASS  no numeric column left object-typed after concat
+12:32:39 02_merge INFO PASS  pooled rows == sum of yearly rows
+12:32:39 02_merge INFO PASS  2002: sum wt preserved in pool
+12:32:39 02_merge INFO PASS  2012: sum wt preserved in pool
+12:32:39 02_merge INFO PASS  2022: sum wt preserved in pool
+12:33:15 02_merge INFO wrote Census_pooled_person.dta  (3,165,816 rows x 465 vars, 2026.6 MB)
+12:33:15 02_merge INFO 2002: 797,715 of 814,432 rows in ordinary households
+12:33:18 02_merge WARNING 2002: households whose members disagree on a key field (head's value used): {'urban': 89}
+12:33:18 02_merge INFO PASS  2002: household rows unique
+12:33:18 02_merge INFO PASS  2002: every household has a head
+12:33:18 02_merge INFO PASS  2002: geography from the head is complete on every household
+12:33:18 02_merge INFO 2002: 175,737 households, 50 household-level variables carried (person-block and all-missing columns excluded)
+12:33:18 02_merge INFO 2012: 1,038,369 of 1,038,369 rows in ordinary households
+12:33:20 02_merge INFO PASS  2012: household rows unique
+12:33:20 02_merge INFO PASS  2012: every household has a head
+12:33:20 02_merge INFO PASS  2012: geography from the head is complete on every household
+12:33:20 02_merge INFO 2012: 242,461 households, 47 household-level variables carried (person-block and all-missing columns excluded)
+12:33:20 02_merge INFO 2022: 1,313,015 of 1,313,015 rows in ordinary households
+12:33:28 02_merge INFO PASS  2022: household rows unique
+12:33:28 02_merge INFO PASS  2022: every household has a head
+12:33:28 02_merge INFO PASS  2022: geography from the head is complete on every household
+12:33:28 02_merge INFO 2022: 331,917 households, 190 household-level variables carried (person-block and all-missing columns excluded)
+12:33:50 02_merge INFO wrote Census_pooled_household.dta  (750,115 rows x 289 vars, 316.0 MB)
+12:33:51 02_merge INFO wrote Census_2002_household_clean.dta  (175,737 rows x 61 vars, 26.4 MB)
+12:33:52 02_merge INFO wrote Census_2012_household_clean.dta  (242,461 rows x 57 vars, 27.4 MB)
+12:33:55 02_merge INFO wrote Census_2022_household_clean.dta  (331,917 rows x 201 vars, 89.1 MB)
+12:33:55 02_merge INFO all hard checks passed (0 soft warnings)
+12:33:55 02_merge INFO 02_merge done
+12:33:57 03_checks INFO ==== 03_checks | run 20260905-122849 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:34:24 03_checks INFO 
+# Census checks report
+
+Generated by 03_checks.py.
+
+## A. Python pooled file vs old Stata outputs (3 Jul 2026; 2002 was not processed then)
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | 2012 rows | 1,038,369 | 1,038,369 | PASS |
+| A | 2012 sum wt | 10,383,686 | 10,383,686 | PASS |
+| A | 2012 sectors | 416 | 416 | PASS |
+| A | 2012 households | 242,461 | 242,461 | PASS |
+| A | 2012 male | 498,302 | 498,302 | PASS |
+| A | 2012 female | 540,067 | 540,067 | PASS |
+| A | 2022 rows | 1,313,015 | 1,313,015 | PASS |
+| A | 2022 sum wt | 13,245,753 | 13,245,753 | PASS |
+| A | 2022 sectors | 416 | 416 | PASS |
+| A | 2022 households | 331,917 | 331,917 | PASS |
+| A | 2022 male | 631,543 | 631,543 | PASS |
+| A | 2022 female | 681,472 | 681,472 | PASS |
+
+## B. Stata 17 recomputation from the written .dta files
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2002 rows | 814,432 | 814,432 | PASS |
+| B | 2002 sum wt | 8,144,311 | 8,144,311 | PASS |
+| B | 2002 male | 388,346 | 388,346 | PASS |
+| B | 2002 female | 426,086 | 426,086 | PASS |
+| B | 2002 sectors | 416 | 416 | PASS |
+| B | 2012 rows | 1,038,369 | 1,038,369 | PASS |
+| B | 2012 sum wt | 10,383,686 | 10,383,686 | PASS |
+| B | 2012 male | 498,302 | 498,302 | PASS |
+| B | 2012 female | 540,067 | 540,067 | PASS |
+| B | 2012 sectors | 416 | 416 | PASS |
+| B | 2022 rows | 1,313,015 | 1,313,015 | PASS |
+| B | 2022 sum wt | 13,245,753 | 13,245,753 | PASS |
+| B | 2022 male | 631,543 | 631,543 | PASS |
+| B | 2022 female | 681,472 | 681,472 | PASS |
+| B | 2022 sectors | 416 | 416 | PASS |
+| B | 2002 households | 175,737 | 175,737 | PASS |
+| B | 2002 sum hhsize | 797,715 | 797,715 | PASS |
+| B | 2002 sum household weight | 1,757,368 | 1,757,368 | PASS |
+| B | 2012 households | 242,461 | 242,461 | PASS |
+| B | 2012 sum hhsize | 1,038,369 | 1,038,369 | PASS |
+| B | 2012 sum household weight | 2,424,609 | 2,424,609 | PASS |
+| B | 2022 households | 331,917 | 331,917 | PASS |
+| B | 2022 sum hhsize | 1,313,015 | 1,313,015 | PASS |
+| B | 2022 sum household weight | 3,312,795 | 3,312,795 | PASS |
+
+## C. Against NISR published figures
+
+| section | statistic | Python | published | result |
+|---|---|---:|---:|---|
+| C | 2002 weighted population (published total 8,128,553; 10% sample) | 8,144,311 | 8,128,553 | PASS |
+| C | 2012 male (statement table 1) | 498,302 | 498,302 | PASS |
+| C | 2012 female (statement table 1) | 540,067 | 540,067 | PASS |
+| C | 2012 households (statement table 2) | 242,461 | 242,461 | PASS |
+| C | 2012 weighted population vs the published total incl. institutional population 10,515,973 (informational; the private-household benchmark is tested below) | 10,383,686 |  | n/a |
+| C | 2022 male (statement table 1) | 631,543 | 631,543 | PASS |
+| C | 2022 female (statement table 1) | 681,472 | 681,472 | PASS |
+| C | 2022 weighted population (statement table 1) | 13,245,753 | 13,245,753 | PASS |
+| C | 2022 weighted pop. City of Kigali (statement table 2) | 1,745,519 | 1,745,519 | PASS |
+| C | 2022 weighted pop. Eastern (statement table 2) | 3,562,690 | 3,562,690 | PASS |
+| C | 2022 households with a first-roster-row resident (pid == 1) == statement table 3 (331,606; the table counts P01 = 1 rows) | 331,606 | 331,606 | PASS |
+| C | 2022 weighted households with pid == 1 == statement table 3 (3,309,692) | 3,309,692 | 3,309,692 | PASS |
+| C | 2022 households defined by a head (p02 == 1, our household file; 311 households have their head at a later roster position) | 331,917 |  | n/a |
+| C | 2012 households in province 1 (statement table 2) | 28,665 | 28,665 | PASS |
+| C | 2012 households in province 2 (statement table 2) | 60,364 | 60,364 | PASS |
+| C | 2012 households in province 3 (statement table 2) | 54,345 | 54,345 | PASS |
+| C | 2012 households in province 4 (statement table 2) | 39,165 | 39,165 | PASS |
+| C | 2012 households in province 5 (statement table 2) | 59,922 | 59,922 | PASS |
+| C | 2012 weighted population vs published private-household population 10,378,021 | 10,383,686 | 10,378,021 | PASS |
+| C | 2002 urban share of the weighted population (published 16.9%) | 16.8% | 16.9% | PASS |
+| C | 2012 urban share of the weighted population (published 16.5%) | 16.2% | 16.5% | PASS |
+| C | 2022 urban share of the weighted population (published 27.9%) | 27.9% | 27.9% | PASS |
+
+## D. Household file sanity
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| D | 2002 sum hhsize == ordinary-household person rows | 797,715 | 797,715 | PASS |
+| D | 2002 households == distinct hhid | 175,737 | 175,737 | PASS |
+| D | 2002 households with exactly one head (p02 == 1) | 0 | 175,737 | **FAIL** |
+| D | 2002 (hhid, pid) unique -- duplicate rows | 0 | 0 | PASS |
+| D | 2002 wt_hh constant within household (% of households) | 100 | 100 | PASS |
+| D | 2002 prov/dist/sector constant within household (% of households) | 100 | 100 | PASS |
+| D | 2002 households whose members disagree on urban (head's value used; informational) | 89 |  | n/a |
+| D | 2002 household file: urban and head_sex non-missing on every household | 2 | 2 | PASS |
+| D | 2012 sum hhsize == ordinary-household person rows | 1,038,369 | 1,038,369 | PASS |
+| D | 2012 households == distinct hhid | 242,461 | 242,461 | PASS |
+| D | 2012 households with exactly one head (p02 == 1) | 0 | 242,461 | **FAIL** |
+| D | 2012 (hhid, pid) unique -- duplicate rows | 0 | 0 | PASS |
+| D | 2012 wt_hh constant within household (% of households) | 100 | 100 | PASS |
+| D | 2012 prov/dist/sector constant within household (% of households) | 100 | 100 | PASS |
+| D | 2012 households whose members disagree on urban (head's value used; informational) | 0 |  | n/a |
+| D | 2012 household file: urban and head_sex non-missing on every household | 2 | 2 | PASS |
+| D | 2022 sum hhsize == ordinary-household person rows | 1,313,015 | 1,313,015 | PASS |
+| D | 2022 households == distinct hhid | 331,917 | 331,917 | PASS |
+| D | 2022 households with exactly one head (p02 == 1) | 331,917 | 331,917 | PASS |
+| D | 2022 (hhid, pid) unique -- duplicate rows | 0 | 0 | PASS |
+| D | 2022 wt_hh constant within household (% of households) | 100 | 100 | PASS |
+| D | 2022 prov/dist/sector constant within household (% of households) | 100 | 100 | PASS |
+| D | 2022 households whose members disagree on urban (head's value used; informational) | 0 |  | n/a |
+| D | 2022 household file: urban and head_sex non-missing on every household | 2 | 2 | PASS |
+
+## E. Cross-year coding compatibility within pooled columns
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| E | pooled columns holding years with incompatible value-label texts for the same code, FORCE_ALIGN excluded (must be 0) | 0 | 0 | PASS |
+| E | variables split into versions because of value labels or unlabelled ranges (informational) | 0 |  | n/a |
+| E | variables with codes observed outside their own year's value labels -- stale labels (informational; listed in merge_alignment.json) | 39 |  | n/a |
+| E | forced splits (FORCE_SPLIT entries) | 7 |  | n/a |
+
+**2 check(s) failed.**

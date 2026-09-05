@@ -1,0 +1,42 @@
+12:28:27 01_clean INFO ==== 01_clean | run 20260905-122827_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:28:27 01_clean INFO ---------------- 2002 ----------------
+12:28:33 01_clean INFO read Census_2002.sav: 814,432 rows x 112 vars
+12:28:34 01_clean INFO PASS  2002: every variable has an English label ([])
+12:28:34 01_clean INFO 2002 value labels translated to English for 53 variables: etat_matri fr_quentation h01 h02 h03 h04 h05 h06 h07 h08 h09 h10 h100 h11 h12 h13 h14 h15 h16a h16b h16c h19a h200 hhid p02 p03 p05a p05b p07 p08 p09 p10 p11 p12 p13 p14 p15 p16 p17 p171 p18 p19 p20 p21 p22 p23 p24 p25 p26 p29a p29b p30a p30b
+12:28:34 01_clean INFO PASS  2002: concept variables carry English value labels
+12:28:34 01_clean INFO 2002 sector name MAGERAGERE     matched to MAGEREGERE     (1105)
+12:28:34 01_clean INFO 2002 sector name KIBIRIZI       matched to KIBILIZI       (2104)
+12:28:34 01_clean INFO 2002 sector name KIBILIZI       matched to KIBIRIZI       (2204)
+12:28:34 01_clean INFO 2002 sector name KABAGARI       matched to KABAGALI       (2603)
+12:28:34 01_clean INFO 2002 sector name RUGALIKA       matched to RUGARIKA       (2810)
+12:28:34 01_clean INFO 2002 sector name GISHARI        matched to GASHARI        (3102)
+12:28:34 01_clean INFO 2002 sector name NYAKILIBA      matched to NYAKIRIBA      (3308)
+12:28:34 01_clean INFO 2002 sector name RUSARABUGE     matched to RUSARABUYE     (4416)
+12:28:34 01_clean INFO 2002 sector name GISHARI        matched to GISHALI        (5103)
+12:28:34 01_clean INFO 2002 sector name NYAKARIRO      matched to NYAKALIRO      (5112)
+12:28:34 01_clean INFO 2002 sector name MIMULI         matched to MIMURI         (5207)
+12:28:34 01_clean INFO 2002 sector name MUSHELI        matched to MUSHERI        (5209)
+12:28:34 01_clean INFO 2002 sector name NYAMUGALI      matched to NYAMUGARI      (5511)
+12:28:34 01_clean INFO 2002 sectors whose code changed after name matching: [(40301, 4301, 4304, 'Gashaki'), (40302, 4302, 4301, 'Busogo'), (40303, 4303, 4302, 'Cyuve'), (40304, 4304, 4303, 'Gacaca')]
+12:28:34 01_clean INFO PASS  2002: 416 distinct sectors after name matching
+12:28:34 01_clean INFO PASS  2002: corrected sector code nests in district
+12:28:34 01_clean INFO rows without a household id: 16,717
+12:28:40 01_clean INFO PASS  row count unchanged (814,432)
+12:28:40 01_clean INFO PASS  wt present and > 0 on every row
+12:28:40 01_clean INFO PASS  5 provinces / 30 districts / 416 sectors
+12:28:40 01_clean INFO PASS  sector codes == NISR current 416-sector list
+12:28:40 01_clean INFO PASS  sector nests in district nests in province
+12:28:40 01_clean INFO PASS  sex in {1,2}
+12:28:40 01_clean INFO PASS  age in [0,130] (max 110)
+12:28:45 01_clean INFO PASS  exactly one head per (ordinary) household: 100.0000% of 175,737
+12:28:45 01_clean INFO PASS  (hhid, pid) unique
+12:28:45 01_clean INFO PASS  wt_hh constant within household
+12:28:45 01_clean INFO PASS  prov/dist/sector constant within household
+12:28:45 01_clean WARNING WARN  urban constant within household (89 households differ; NISR data as shipped -- the household file takes the head's value, 02_merge)
+12:28:45 01_clean INFO PASS  collective flag == rows without a household id (16,717 rows)
+12:28:45 01_clean INFO PASS  weighted population 8,144,311 within 2% of published 8,128,553 (+0.19%)
+12:28:45 01_clean INFO households: 175,737 | urban share (weighted): 0.168
+12:28:45 01_clean INFO all hard checks passed (1 soft warnings)
+12:28:45 01_clean INFO value label 9999999999.0='Not applicable' on hhid dropped (key outside int32)
+12:28:49 01_clean INFO wrote Census_2002_person_clean.dta  (814,432 rows x 121 vars, 190.7 MB)
+12:28:49 01_clean INFO 01_clean done for [2002]

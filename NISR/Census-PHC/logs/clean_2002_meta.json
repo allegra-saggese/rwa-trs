@@ -255,13 +255,13 @@
   "p02": {
    "1.0": "Head of household",
    "2.0": "Spouse of head",
-   "3.0": "Child of head",
+   "3.0": "Son/daughter of head",
    "4.0": "Unrelated child brought up in the household",
    "5.0": "Father/mother of head",
    "6.0": "Brother/sister of head",
    "7.0": "Grandchild of head",
    "8.0": "Other relative of head",
-   "9.0": "Not related to head"
+   "9.0": "Non relative (not related to head)"
   },
   "p03": {
    "1.0": "Present resident",
@@ -1358,7 +1358,7 @@
   },
   "h01": {
    "1.0": "Umudugudu (new rural agglomeration)",
-   "2.0": "Early rural agglomeration",
+   "2.0": "Old settlement (early rural agglomeration)",
    "3.0": "Dispersed/isolated housing",
    "4.0": "Planned urban housing (cadastral plot)",
    "5.0": "Spontaneous/squatter housing",
@@ -2141,7 +2141,7 @@
   "age": "p06",
   "wt": "weight",
   "wt_hh": "= wt (10% household sample, self-weighting)",
-  "collective": "h100 missing (P03 = 4 'm\u00e9nage collectif')"
+  "collective": "h100 missing: collective/institutional household rows (no household id, no H-block; P03 is 1 on all of them)"
  },
  "dtypes": {
   "survey": "object",

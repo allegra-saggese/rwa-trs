@@ -1794,8 +1794,8 @@
    "9623": "Meter readers and vending-machine collectors",
    "9624": "Water and firewood collectors",
    "9629": "Elementary workers not elsewhere classified",
-   "9998": "ISCO code not in the 2012 list",
-   "9999": "ISCO code not in the 2012 list"
+   "9998": "Not stated",
+   "9999": "Invalid code (NISR edit imputation)"
   },
   "p26": {
    "1": "Employee",

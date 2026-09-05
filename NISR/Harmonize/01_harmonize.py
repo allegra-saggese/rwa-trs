@@ -135,7 +135,7 @@ def concepts_lfs(df, dec, fname):
         a02 = col_for(dec, "a02", w, df.columns); a05 = col_for(dec, "a05", w, df.columns); b02a = col_for(dec, "b02a", w, df.columns)
         b06 = col_for(dec, "b06", w, df.columns); st = col_for(dec, "status1", w, df.columns); d05 = col_for(dec, "d05", w, df.columns)
         i03 = col_for(dec, "indd03", w, df.columns); i01 = col_for(dec, "indd01", w, df.columns)
-        if y >= 2025: rel = {1: [1], 2: [2], 3: [3, 4], 4: list(range(5, 12)), 5: [12, 13, 14]}
+        if y >= 2024: rel = {1: [1], 2: [2], 3: [3, 4], 4: list(range(5, 12)), 5: [12, 13, 14]}   # 14-code list from 2024 (a02_v2; the 2024 file's data already follow it -- LFS audit 2026-09-05)
         else: rel = {1: [1], 2: [2], 3: [3, 4], 4: [5, 6, 7, 8, 9], 5: [10, 11]}
         apply_recode(df, m, a02, "h_relation", rel, ds, w, fname, LEVEL_ALL, "exact", "98/99 don't know/missing -> missing")
         apply_recode(df, m, a05, "h_marital", {1: [6], 2: [1, 2, 3], 3: [4, 5], 4: [7]}, ds, w, fname, LEVEL_ALL, "exact", "asked of members 12+")

@@ -52,15 +52,16 @@ for y in YEARS:
 
 # ---------------------------------------------------------------- alignment decisions
 SENTINELS = {98, 99, 998, 999, 9998, 9999}       # NISR's don't-know / missing codes: never evidence of a coding change
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
 _SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
 def _norm(s):
     toks = [_SYN.get(w, w) for w in re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()]
     return " ".join(w for w in toks if w)
 def _same(x, y):
-    """same category? normalised texts equal, one's tokens contained in the other's ('Other' ~ 'Other (specify)',
+    """same category? normalised texts equal, both missing-like, one's tokens contained in the other's ('Other' ~ 'Other (specify)',
     '16-30' ~ 'Youth (16-30 yrs)', 'Cement' ~ 'Cement/pavement'), or close spelling (difflib ratio >= VL_THRESHOLD)"""
     a, b = _norm(x), _norm(y)
-    if a == b: return True
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
     ta, tb = set(a.split()), set(b.split())
     if ta and tb and (ta <= tb or tb <= ta): return True
     return difflib.SequenceMatcher(None, a, b).ratio() >= VL_THRESHOLD

@@ -3,8 +3,11 @@
 
   A. Python pooled file vs the OLD Stata pipeline's outputs (2012, 2022; logs/benchmark_old_stata.json)
   B. Python vs Stata 17 recomputation on the written files (skipped if Stata is absent)
-  C. Weighted totals vs NISR's published figures (census totals; the public-use-sample statements)
-  D. Household file sanity (hhsize vs person rows, one row per household)
+  C. Weighted totals vs NISR's published figures (census totals; the public-use-sample statements); the 2022
+     household count is reported under both definitions (first roster row = NISR's table 3; head p02 = 1 = ours)
+  D. Household file: hhsize vs person rows, one row per household, exactly one head, (hhid, pid) unique, household
+     weight and geography constant within household (members disagreeing on urban counted), head geography complete
+  E. Cross-year coding compatibility within pooled columns (re-derived from the per-year meta files)
 """
 import json, os, shutil, subprocess, sys
 import pandas as pd
@@ -19,8 +22,14 @@ def row(section, name, ours, ref, tol=0.0, pct=False):
     f = (lambda x: f"{x:.1f}%") if pct else (lambda x: f"{x:,.0f}")
     report.append(f"| {section} | {name} | {f(ours)} | {'' if ref is None else f(ref)} | {'PASS' if ok else ('n/a' if ok is None else '**FAIL**')} |")
 
-person, _, _ = read_dta(P["final"] / "Census_pooled_person.dta", usecols=["year", "wt", "sex", "prov", "dist", "sector", "hhid", "collective", "urban"])
-hh, _, _ = read_dta(P["final"] / "Census_pooled_household.dta", usecols=["year", "wt", "hhsize", "hhid", "prov"])
+from census_helpers import read_meta
+pcols = read_meta(P["final"] / "Census_pooled_person.dta").column_names
+p02cols = [c for c in pcols if c == "p02" or c.startswith("p02_v")]        # relationship to head is versioned across censuses
+person, _, _ = read_dta(P["final"] / "Census_pooled_person.dta", usecols=["year", "wt", "wt_hh", "sex", "prov", "dist", "sector", "hhid", "pid", "collective", "urban"] + p02cols)
+person["is_head"] = 0
+for c in p02cols: person["is_head"] = person["is_head"] | (pd.to_numeric(person[c], errors="coerce") == 1).astype(int)
+hh, _, _ = read_dta(P["final"] / "Census_pooled_household.dta", usecols=["year", "wt", "hhsize", "hhid", "prov", "urban", "head_sex"])
+for c in ("pid", "urban"): person[c] = pd.to_numeric(person[c], errors="coerce")
 ours = {int(y): {"n": len(g), "sum_wt": g["wt"].sum(), "n_sector": g["sector"].nunique(), "n_hh": g["hhid"].nunique(),
                  "male": int((g["sex"] == 1).sum()), "female": int((g["sex"] == 2).sum()),
                  "urban_pct": 100 * (g["wt"] * (g["urban"] == 1)).sum() / g["wt"].sum(),
@@ -79,13 +88,14 @@ PUB = {
     "2002 weighted population (published total 8,128,553; 10% sample)": (ours[2002]["sum_wt"], 8_128_553, 0.005),
     "2012 male (statement table 1)": (ours[2012]["male"], 498_302, 0), "2012 female (statement table 1)": (ours[2012]["female"], 540_067, 0),
     "2012 households (statement table 2)": (ours[2012]["n_hh"], 242_461, 0),
-    "2012 weighted population (published 10,515,973)": (ours[2012]["sum_wt"], 10_515_973, 0.02),
+    "2012 weighted population vs the published total incl. institutional population 10,515,973 (informational; the private-household benchmark is tested below)": (ours[2012]["sum_wt"], None, 0),
     "2022 male (statement table 1)": (ours[2022]["male"], 631_543, 0), "2022 female (statement table 1)": (ours[2022]["female"], 681_472, 0),
     "2022 weighted population (statement table 1)": (ours[2022]["sum_wt"], 13_245_753, 1e-6),
     "2022 weighted pop. City of Kigali (statement table 2)": (ours[2022]["pop_by_prov"].get(1, 0), 1_745_519, 1e-6),
     "2022 weighted pop. Eastern (statement table 2)": (ours[2022]["pop_by_prov"].get(5, 0), 3_562_690, 1e-6),
-    "2022 households, unweighted (statement table 3 says 331,606; file holds 331,917)": (ours[2022]["n_hh"], 331_606, 0.002),
-    "2022 households, weighted (statement table 3 says 3,309,692)": (hh.loc[hh.year == 2022, "wt"].sum(), 3_309_692, 0.002),
+    "2022 households with a first-roster-row resident (pid == 1) == statement table 3 (331,606; the table counts P01 = 1 rows)": (int(person[(person.year == 2022) & (person.pid == 1)]["hhid"].nunique()), 331_606, 0),
+    "2022 weighted households with pid == 1 == statement table 3 (3,309,692)": (person[(person.year == 2022) & (person.pid == 1)]["wt_hh"].sum(), 3_309_692, 1e-6),
+    "2022 households defined by a head (p02 == 1, our household file; 311 households have their head at a later roster position)": (ours[2022]["n_hh"], None, 0),
 }
 h12 = hh[hh.year == 2012].groupby("prov").size().to_dict()
 for p, n in {1: 28_665, 2: 60_364, 3: 54_345, 4: 39_165, 5: 59_922}.items(): PUB[f"2012 households in province {p} (statement table 2)"] = (h12.get(p, 0), n, 0)
@@ -103,6 +113,46 @@ for y, g in hh.groupby("year"):
     p = person[(person.year == y) & (person["collective"].fillna(0) == 0)]
     row("D", f"{y} sum hhsize == ordinary-household person rows", g["hhsize"].sum(), len(p))
     row("D", f"{y} households == distinct hhid", len(g), p["hhid"].nunique())
+    heads = p.groupby("hhid")["is_head"].sum()
+    row("D", f"{y} households with exactly one head (p02 == 1 in the wave's p02 version)", int(heads.eq(1).sum()), len(heads))
+    row("D", f"{y} (hhid, pid) unique -- duplicate rows", int(p.duplicated(["hhid", "pid"]).sum()), 0)
+    row("D", f"{y} wt_hh constant within household (% of households)", (p.groupby("hhid")["wt_hh"].nunique() <= 1).mean() * 100, 100)
+    row("D", f"{y} prov/dist/sector constant within household (% of households)", (p.groupby("hhid")[["prov", "dist", "sector"]].nunique().max(axis=1) <= 1).mean() * 100, 100)
+    row("D", f"{y} households whose members disagree on urban (head's value used; informational)", int((p.groupby("hhid")["urban"].nunique(dropna=False) > 1).sum()), None)
+    row("D", f"{y} household file: urban and head_sex non-missing on every household", int(g["urban"].notna().sum() == len(g)) + int(g["head_sex"].notna().sum() == len(g)), 2)
+
+# ---- E. cross-year coding compatibility (independent re-derivation from the per-year meta files)
+import difflib, re as _re
+align = json.load(open(LOGS / "merge_alignment.json")); thr = align.get("vl_threshold", 0.6)
+metas = {y: json.load(open(LOGS / f"clean_{y}_meta.json")) for y in (2002, 2012, 2022) if (LOGS / f"clean_{y}_meta.json").exists()}
+SENT = {98, 99, 998, 999, 9998, 9999}
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in _re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
+def _same(x, y):
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= thr
+forced = set(align.get("force_align", []))
+bad, forced_diff, ncols_split_vl = [], [], 0
+for base, d in align["decisions"].items():
+    if len(d["versions"]) > 1 and any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): ncols_split_vl += 1
+    for col, ys in d["versions"].items():
+        labs = [(y, metas[y]["value_labels"].get(base) or {}) for y in ys if y in metas]
+        for i in range(len(labs)):
+            for j in range(i + 1, len(labs)):
+                a, b = labs[i][1], labs[j][1]
+                for c in set(a) & set(b):
+                    if c not in SENT and not _same(a[c], b[c]):
+                        (forced_diff if base in forced else bad).append((col, labs[i][0], labs[j][0], c, a[c], b[c]))
+report += ["", "## E. Cross-year coding compatibility within pooled columns", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+row("E", "pooled columns holding years with incompatible value-label texts for the same code, FORCE_ALIGN excluded (must be 0)", len({b[0] for b in bad}), 0)
+row("E", "variables split into versions because of value labels or unlabelled ranges (informational)", ncols_split_vl, None)
+row("E", "variables with codes observed outside their own year's value labels -- stale labels (informational; listed in merge_alignment.json)", len(align.get("stale_labels", {})), None)
+row("E", "forced splits (FORCE_SPLIT entries)", len(align.get("force_split", {})), None)
+if bad: report += ["", "Incompatible pairs: " + "; ".join(f"{c}: {y1}/{y2} code {k} {p!r} vs {q!r}" for c, y1, y2, k, p, q in bad[:20])]
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
 if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")

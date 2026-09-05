@@ -82,8 +82,9 @@ EN2002 = {
 #     on purpose (proper names / 3-digit ISCO-88 & ISIC Rev.3 lists not in the English documentation):
 #     p08 p10 (pre-2006 districts), p18 (field of study), p22 emploi_exerc (ISCO-88), p24 p241 (ISIC Rev.3).
 EN2002_VALUES = {
-    "p02": {1: "Head of household", 2: "Spouse of head", 3: "Child of head", 4: "Unrelated child brought up in the household",
-            5: "Father/mother of head", 6: "Brother/sister of head", 7: "Grandchild of head", 8: "Other relative of head", 9: "Not related to head"},
+    "p02": {1: "Head of household", 2: "Spouse of head", 3: "Son/daughter of head", 4: "Unrelated child brought up in the household",
+            5: "Father/mother of head", 6: "Brother/sister of head", 7: "Grandchild of head", 8: "Other relative of head", 9: "Non relative (not related to head)"},
+    #   wording aligned with the 2012 list (same nine categories) so the version rule keeps 2002 and 2012 in one column
     "p03": {1: "Present resident", 2: "Absent resident", 3: "Visitor", 4: "Collective household", 9: "Not stated"},
     "p05a": {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August", 9: "September",
              10: "October", 11: "November", 12: "December", 99: "Month of birth not stated"},
@@ -114,7 +115,7 @@ EN2002_VALUES = {
     "h200": {201: "Police camp", 202: "Home for old persons", 203: "Military camp", 204: "Religious institution", 205: "Street children",
              206: "Schools", 207: "Prison", 208: "Reception centre", 209: "Hotel/lodging", 210: "Centre for disabled, deaf and dumb",
              211: "Hospital", 212: "Orphanage", 213: "Refugee camp", 214: "Youth centre"},
-    "h01": {1: "Umudugudu (new rural agglomeration)", 2: "Early rural agglomeration", 3: "Dispersed/isolated housing",
+    "h01": {1: "Umudugudu (new rural agglomeration)", 2: "Old settlement (early rural agglomeration)", 3: "Dispersed/isolated housing",
             4: "Planned urban housing (cadastral plot)", 5: "Spontaneous/squatter housing", 6: "Other type of housing", 9: "Not stated"},
     "h02": {1: "Building occupied by one household", 2: "Building occupied by several households",
             3: "Storey building occupied by one or more households", 4: "Several buildings in a compound occupied by several households",
@@ -299,7 +300,7 @@ for y in YEARS:
         df["pid"] = df.groupby("hhid").cumcount() + 1; srcmap["pid"] = "row order within household (P00 is not unique within households; kept as pid_nisr)"
         ren(df, vl, vv, "p04", "sex", srcmap); ren(df, vl, vv, "p06", "age", srcmap)
         ren(df, vl, vv, "weight", "wt", srcmap); df["wt_hh"] = df["wt"]; srcmap["wt_hh"] = "= wt (10% household sample, self-weighting)"
-        df["collective"] = (df["h100"].isna()).astype("int8"); srcmap["collective"] = "h100 missing (P03 = 4 'ménage collectif')"
+        df["collective"] = (df["h100"].isna()).astype("int8"); srcmap["collective"] = "h100 missing: collective/institutional household rows (no household id, no H-block; P03 is 1 on all of them)"
         vv["sex"] = {1: "Male", 2: "Female"}
     elif y == 2012:
         ren(df, vl, vv, "l01", "prov", srcmap); ren(df, vl, vv, "dui", "dist", srcmap); ren(df, vl, vv, "sui", "sector", srcmap)
@@ -351,9 +352,9 @@ for y in YEARS:
     ck((df.groupby("hhid")["wt_hh"].nunique() <= 1).all(), "wt_hh constant within household")
     ck((df.groupby("hhid")[["prov", "dist", "sector"]].nunique() <= 1).all().all(), "prov/dist/sector constant within household")
     n_urb = int((df.groupby("hhid")["urban"].nunique(dropna=False) > 1).sum())
-    ck(n_urb == 0, f"urban constant within household ({n_urb} households differ; NISR data as shipped, head's value used in the household file)", hard=False)
-    if "collective" in df.columns:
-        ck(bool(((df["collective"] == 1) == (df["p03"] == 4)).mean() > 0.99), f"collective flag agrees with P03 == 4 ({((df['collective'] == 1) == (df['p03'] == 4)).mean():.4%})", hard=False)
+    ck(n_urb == 0, f"urban constant within household ({n_urb} households differ; NISR data as shipped -- the household file takes the head's value, 02_merge)", hard=False)
+    if "collective" in df.columns:   # structural test: collective rows are exactly the rows without a household id (they carry no H-block either)
+        ck(bool(((df["collective"] == 1) == df["hhid"].isna()).all()), f"collective flag == rows without a household id ({int((df['collective'] == 1).sum()):,} rows)")
     tot = df["wt"].sum(); pub = PUBLISHED_POP[y]
     ck(abs(tot / pub - 1) < 0.02, f"weighted population {tot:,.0f} within 2% of published {pub:,} ({tot / pub - 1:+.2%})")
     if "hhsize" in df.columns:
