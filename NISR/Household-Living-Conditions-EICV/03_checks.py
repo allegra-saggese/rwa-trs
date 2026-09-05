@@ -3,8 +3,11 @@
 
   A. Python pooled person file vs the OLD Stata pipeline's outputs (EICV3-7; logs/benchmark_old_stata.json)
   B. Python vs Stata 17 recomputation on the written files (skipped if Stata is absent)
-  C. Weighted poverty headcounts (household file, NISR's own poverty flags x pop_wt) vs NISR's published rates
-  D. Household/person consistency (sum of hhsize == person rows; one row per household)
+  C. Weighted poverty headcounts (household file, the CANONICAL poverty flag of each round x pop_wt) vs NISR's
+     published rates; documented sample sizes
+  D. Household/person consistency (sum of hhsize == person rows; one row per household); the manifest of
+     expected files per wave and sample (EICV audit 2026-09-05); pop_wt identity; join accounting
+  E. Cross-year coding compatibility within pooled columns (re-derived from the per-wave meta files)
 """
 import json, os, shutil, subprocess, sys
 import numpy as np, pandas as pd
@@ -22,9 +25,9 @@ def cols_of(fname, wanted):
     names = read_meta(P["final"] / fname).column_names
     return [c for c in wanted if c in names]
 
-person, _, _ = read_dta(P["final"] / "EICV_pooled_person.dta", usecols=cols_of("EICV_pooled_person.dta", ["wave", "wt", "sex", "dist", "hhid"]))
+person, _, _ = read_dta(P["final"] / "EICV_pooled_person.dta", usecols=cols_of("EICV_pooled_person.dta", ["wave", "wt", "sex", "dist", "hhid", "s1q2"]))
 _hh_names = read_meta(P["final"] / "EICV_pooled_household.dta").column_names
-hh_cols = cols_of("EICV_pooled_household.dta", ["wave", "wt", "hhsize", "hhid", "pop_wt"]) + [c for c in _hh_names if c.startswith(("poverty", "pov"))]
+hh_cols = cols_of("EICV_pooled_household.dta", ["wave", "wt", "hhsize", "hhid", "pop_wt", "hhsize_pop"]) + [c for c in _hh_names if c.startswith(("poverty", "pov"))]
 hh, _, _ = read_dta(P["final"] / "EICV_pooled_household.dta", usecols=hh_cols)
 ours = {w: {"n": len(g), "sum_wt": g["wt"].sum(), "n_hh": g["hhid"].nunique(), "n_dist": g["dist"].nunique(),
             "male": int((g["sex"] == 1).sum()), "female": int((g["sex"] == 2).sum())} for w, g in person.groupby("wave", sort=False)}
@@ -89,20 +92,87 @@ PUB_HH = {"EICV1": (6_450, 0.01), "EICV2": (6_900, 0), "EICV4_CS": (14_419, 0), 
 for w, (n, tol) in PUB_HH.items():
     if w in set(hh["wave"]): row("C", f"{w} households interviewed (documentation)", int((hh["wave"] == w).sum()), n, tol)
 if "EICV7_CS" in set(person["wave"]): row("C", "EICV7_CS person rows (DDI: 62,110)", int((person["wave"] == "EICV7_CS").sum()), 62_110)
+# The canonical flag is NISR's poverty file's variable under its plain name (01_clean makes the poverty file the
+# canonical source when it collides with the household base; the base's copy is suffixed _hhbase).
 for w, pub in PUB_POV.items():
-    g = hh[hh.wave == w]
-    cands = [c for c in g.columns if c.startswith(POVVAR[w])]        # the flag may carry a version or module suffix
-    var = next((c for c in cands if g[c].notna().any() and set(g[c].dropna().unique()) <= {0, 100}), None)
-    if var is None: report.append(f"| C | {w} poverty variable {POVVAR[w]} not found in 0/100 coding | | | n/a |"); continue
+    g = hh[hh.wave == w]; var = POVVAR[w]
+    if var not in g.columns or not g[var].notna().any(): report.append(f"| C | {w} canonical poverty variable {var} missing | | | **FAIL** |"); fails += 1; continue
+    vals = set(pd.to_numeric(g[var], errors="coerce").dropna().unique())
+    row("C", f"{w} canonical poverty flag {var} coded 0/100 only (distinct values found: {len(vals)})", int(vals <= {0, 100}), 1)
     wgt = g["pop_wt"] if "pop_wt" in g and g["pop_wt"].notna().all() else g["wt"] * g["hhsize"]
-    rate = 100 * (wgt * (g[var] == 100)).sum() / wgt.sum()
+    rate = 100 * (wgt * (pd.to_numeric(g[var], errors="coerce") == 100)).sum() / wgt.sum()
     row("C", f"{w} poverty headcount ({var}, pop_wt-weighted)", rate, pub, 0.01, fmt="{:.2f}")
 
-report += ["", "## D. Household / person consistency", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+report += ["", "## D. Household / person consistency, manifest, weights, joins", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 for w, g in hh.groupby("wave", sort=False):
     p = person[person.wave == w]
     row("D", f"{w} sum hhsize == person rows", g["hhsize"].sum(), len(p)); row("D", f"{w} households == distinct hhid in person file", len(g), p["hhid"].nunique())
     row("D", f"{w} household rows unique", g["hhid"].nunique(), len(g))
+    if "pop_wt" in g and g["pop_wt"].notna().any() and "s1q2" in p.columns:     # NISR population weight = wt x (roster - domestic workers) in EICV3-5, wt x roster in EICV7
+        dom = p[pd.to_numeric(p["s1q2"], errors="coerce") == 12].groupby("hhid").size()
+        expect = (g.set_index("hhid")["hhsize"] - dom.reindex(g["hhid"]).fillna(0).values) if w != "EICV7_CS" else g.set_index("hhid")["hhsize"]
+        ratio = (g.set_index("hhid")["pop_wt"] / g.set_index("hhid")["wt"])
+        row("D", f"{w} pop_wt / wt == hhsize{' - domestic workers' if w != 'EICV7_CS' else ''} (% of households)", 100 * (abs(ratio - expect) < 0.01).mean(), 100, 0.001)
+# manifest: every configured wave/sample must yield its person and household files, and the VUP pools must hold all three VUP waves
+EXPECT = {"EICV1": (1, 1), "EICV2": (1, 1), "EICV3": (1, 1), "EICV4_CS": (1, 1), "EICV4_VUP": (1, 1), "EICV5_CS": (1, 1), "EICV5_VUP": (1, 1), "EICV7_CS": (1, 1), "EICV7_VUP": (1, 1)}
+for w, (np_, nh_) in EXPECT.items():
+    row("D", f"{w} person and household files present in 2_Intermediate (manifest)", int((P["inter"] / f"EICV_{w}_person_clean.dta").exists()) + int((P["inter"] / f"EICV_{w}_household_clean.dta").exists()), np_ + nh_)
+for unit in ("person", "household"):
+    f = P["inter"] / "appended" / f"EICV_pooled_{unit}_vup.dta"
+    if f.exists():
+        v, _, _ = read_dta(f, usecols=["wave"]); row("D", f"VUP {unit} pool holds EICV4_VUP, EICV5_VUP and EICV7_VUP (waves found)", v["wave"].nunique(), 3)
+        if unit == "household": row("D", "VUP household pool: EICV4_VUP households (report: 2,460 sampled)", int((v["wave"] == "EICV4_VUP").sum()), 2_460)
+metas = {f.stem[6:-5]: json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}
+for w, m in sorted(metas.items()):
+    mj = m.get("modules", {}).get("mainjob_short")
+    if mj: row("D", f"{w} mainjob_short joined at person level (household-key match rate)", (mj.get("hh_match_rate") or 0) * 100, 100, 0.001)
+    pf = m.get("modules", {}).get("poverty_file")
+    if pf: row("D", f"{w} nested poverty file joined at household level (match rate)", (pf.get("hh_match_rate") or 0) * 100, 100, 0.001)
+    joins = m.get("joins", {})
+    row("D", f"{w} values filled into base columns by agreeing module copies (join coalescing; informational)", sum(sum(j.get("filled", {}).values()) for j in joins.values()), None)
+    row("D", f"{w} colliding columns kept with a suffix because they disagree (informational)", sum(len(j.get("conflicts", {})) for j in joins.values()), None)
+    natives = [c for unit in ("person", "household") for c in m.get(unit, {}).get("vars", []) if c.endswith("_nisr")]
+    row("D", f"{w} NISR native survey/year fields preserved as *_nisr (informational)", len(set(natives)), None)
+
+# ---- E. cross-wave coding compatibility (independent re-derivation from the per-wave meta files, all pooled files)
+import difflib, re as _re
+align = json.load(open(LOGS / "merge_alignment.json")); thr = align.get("vl_threshold", 0.6)
+SENT = {98, 99, 998, 999, 9998, 9999}
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in _re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
+def _same(x, y):
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= thr
+def labels_of(w, fname, info, base):
+    unit = info.get("unit")
+    if unit in ("person", "household") and unit in metas.get(w, {}): return metas[w][unit].get("value_labels", {}).get(base) or {}
+    for stem in info.get("stems", {}).get(w, []):
+        vl = metas.get(w, {}).get("modules", {}).get(stem, {}).get("value_labels", {}).get(base)
+        if vl: return vl
+    return {}
+bad, ncols_split_vl, nfiles = [], 0, 0
+for fname, info in align["files"].items():
+    if not info.get("decisions"): continue
+    nfiles += 1
+    for base, d in info["decisions"].items():
+        if len(d["versions"]) > 1 and any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): ncols_split_vl += 1
+        for col, ws in d["versions"].items():
+            labs = [(w, {float(k): v for k, v in labels_of(w, fname, info, base).items()}) for w in ws]
+            for i in range(len(labs)):
+                for j in range(i + 1, len(labs)):
+                    a, b = labs[i][1], labs[j][1]
+                    for c in set(a) & set(b):
+                        if c not in SENT and not _same(a[c], b[c]): bad.append((fname, col, labs[i][0], labs[j][0], c, a[c], b[c]))
+report += ["", "## E. Cross-wave coding compatibility within pooled columns", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+row("E", f"pooled columns (all {nfiles} pooled files) holding waves with incompatible value-label texts for the same code (must be 0)", len({(b[0], b[1]) for b in bad}), 0)
+row("E", "variables split into versions because of value labels or unlabelled ranges (informational)", ncols_split_vl, None)
+row("E", "variables with codes observed outside their own wave's value labels -- stale labels (informational)", sum(len(i.get("stale_labels", {})) for i in align["files"].values()), None)
+row("E", "forced splits (FORCE_SPLIT entries) / forced alignments", len(align.get("force_split", {})) * 1000 + len(align.get("force_align", [])), None, fmt="{:.0f}")
+if bad: report += ["", "Incompatible pairs: " + "; ".join(f"{f}:{c}: {y1}/{y2} code {k:g} {p!r} vs {q!r}" for f, c, y1, y2, k, p, q in bad[:20])]
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
 if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")

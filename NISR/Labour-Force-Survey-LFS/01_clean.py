@@ -54,6 +54,7 @@ VALUE_LABEL_FIXES = {
     #   2024 questionnaire A02 = the 14-code list above; the 2024 file shipped the pre-2024 11-code labels although its
     #   data follow the new list (codes 12-14 present; code 9 = grandchild has the pre-2024 code-5 frequencies).
     ("phase", None): {1: "February round", 2: "August round"},   # 2017/2018 files label 1/2 as February_<year>/August_<year>; the year is in `year`, the round in `round`
+    ("d03a", 2019): {1: "Name of workplace"},   # 2019 file: "Valid name"; same category as every other year (the workplace has a name)
     ("b09", None): {2: "1-3 months"},          # questionnaires 2018, 2021, 2025: "1-3 months"; the files say "1- 2 months"
     ("d13", None): {5: "One year"},            # questionnaires 2017-2023: D13 code 5 = one year (files 2017/2022/2023: "Other(specify)")
     ("d16", None): {5: "Year"},                # questionnaires 2017-2023: D16 code 5 = year (files 2017/2022/2023: "Other(specify)")

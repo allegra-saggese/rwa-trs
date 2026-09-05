@@ -29,11 +29,21 @@ WAVES = {
                       base_hh=["s6_housing", "s0_id", "eicv1_remap_weights"], base_p="s1_demographics",
                       geo={"id1_n": "prov", "id2_n": "dist", "milieu": "urban", "zdkey": "cluster"}, wt="pond",
                       rel="s1q2", sex="s1q1", age="s1q3a",
-                      extra=[("EICV2", "EICV2_eicv1_econbase"), ("EICV2", "EICV2_eicv1_jobstatus_subsistence1")]),
+                      strata="dstrat",
+                      extra=[("EICV2", "EICV2_eicv1_econbase"), ("EICV2", "EICV2_eicv1_jobstatus_subsistence1"),
+                             # NISR's 2007 social-sector analysis package (nested folder): the EICV1 rows of the poverty file
+                             ("EICV2", "EICV2_social_sector_analysis/auxiliary/EICV2_poverty", {"where": "survey == 1", "name": "poverty_file"})]),
     "EICV2":     dict(year=2006, sample="CS",  raw="EICV2", prefixes=["EICV2_eng_", "EICV2_"],
                       base_hh=["s0_id", "s5_housing", "b_filters"], base_p="s1_demo",
                       geo={"id1_n": "prov", "id2_n": "dist", "id0": "urban", "clust": "cluster"}, wt="hh_wt",
-                      rel="s1q2", sex="s1q1", age="s1q3a", skip=["EICV2_eicv1_econbase", "EICV2_eicv1_jobstatus_subsistence1"]),
+                      rel="s1q2", sex="s1q1", age="s1q3a", strata="dstrat", skip=["EICV2_eicv1_econbase", "EICV2_eicv1_jobstatus_subsistence1"],
+                      # old 13-digit household keys (KEY of mainjob_short, key of the nested package) are mapped to the anonymised
+                      # key through the OKEY -> KEY crosswalk shipped in jobstatus_subsistence1 (EICV audit 2026-09-05)
+                      crosswalk=("jobstatus_subsistence1", "okey"),
+                      extra=[("EICV2", "EICV2_social_sector_analysis/auxiliary/EICV2_poverty", {"where": "survey == 2", "name": "poverty_file"}),
+                             ("EICV2", "EICV2_social_sector_analysis/auxiliary/eicv2_comm_hh", {"name": "comm_hh"}),
+                             ("EICV2", "EICV2_social_sector_analysis/eicv2/data/EICV2_total_jobs", {"name": "total_jobs"}),
+                             ("EICV2", "EICV2_social_sector_analysis/eicv2/data/EICV2_eng_com0_infrastructure2", {"name": "com0_infrastructure"})]),
     "EICV3":     dict(year=2011, sample="CS",  raw="EICV3", prefixes=["EICV3_"],
                       base_hh=["s05abcd_housing"], base_p="s01_hhmembers_s02_education_s03_health_s04_migration",
                       geo={"province": "prov", "district": "dist", "urb2002": "urban", "cluster": "cluster"}, wt="hh_wt",
@@ -45,9 +55,9 @@ WAVES = {
                       geo={"province": "prov", "district": "dist", "ur2_2012": "urban", "clust": "cluster"}, wt="weight",
                       rel="s1q2", sex="s1q1", age="s1q3y", skip=["EICV4_CS_eicv3_povertyfile_jan2014"]),
     "EICV4_VUP": dict(year=2014, sample="VUP", raw="EICV4_VUP", prefixes=["EICV4_VUP_vup_", "EICV4_VUP_"],
-                      base_hh=["s0_s5_household_dta"], base_p="s1_s2_s3_s4_s6a_s6e_s6f_person",
+                      base_hh=["s0_s5_household"], base_p="s1_s2_s3_s4_s6a_s6e_s6f_person",   # was "s0_s5_household_dta": never matched the normalised module name -> no EICV4 VUP household file (EICV audit 2026-09-05)
                       geo={"province": "prov", "district": "dist", "ur2_2012": "urban", "clust": "cluster"}, wt="weight",
-                      rel="s1q2", sex="s1q1", age="s1q3y"),
+                      rel="s1q2", sex="s1q1", age="s1q3y", strata="vup_strata"),
     "EICV5_CS":  dict(year=2017, sample="CS",  raw="EICV5_CS", prefixes=["EICV5_CS_cs_", "EICV5_CS_"],
                       base_hh=["s0_s5_household", "eicv5_poverty_file"], base_p="s1_s2_s3_s4_s6a_s6e_person",
                       geo={"province": "prov", "district": "dist", "ur": "urban", "clust": "cluster"}, wt="weight",
@@ -62,17 +72,21 @@ WAVES = {
     "EICV7_CS":  dict(year=2024, sample="CS",  raw="EICV7_CS", prefixes=["EICV7_CS_cs_", "EICV7_CS_"],
                       base_hh=["s01_s5_s7_household", "eicv7_poverty_file"], base_p="s0_s1_s2_s3_s4_s6a_s6b_s6c_person",
                       geo={"province": "prov", "district": "dist", "ur": "urban", "clust": "cluster"}, wt="weight",
-                      rel="s1q2", sex="s1q1", age="s1q3y"),
+                      rel="s1q2", sex="s1q1", age="s1q3y", strata="strata_id"),
     "EICV7_VUP": dict(year=2024, sample="VUP", raw="EICV7_VUP", prefixes=["EICV7_VUP_vup_", "EICV7_VUP_"],
                       base_hh=["s01_s5_s7_household"], base_p="s0_s1_s2_s3_s4_s6a_s6b_s6c_person",
                       geo={"province": "prov", "district": "dist", "ur": "urban", "clust": "cluster"}, wt="weight",
-                      rel="s1q2", sex="s1q1", age="s1q3y"),
+                      rel="s1q2", sex="s1q1", age="s1q3y", strata="strata_id"),
 }
 WANT = sys.argv[1:] or list(WAVES)
-KEY_ORDER = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
+KEY_ORDER = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "stratum", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
 KEY_LABELS = {"survey": "Source survey", "year": "Survey year (mid-fieldwork)", "wave": "Wave / round id", "sample": "CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",
               "prov": "Province (1-5, NISR codes)", "dist": "District (11-57, NISR current codes)", "urban": "Area of residence (1 urban, 2 rural)",
               "cluster": "Sampling cluster / enumeration area (as shipped)", "hhid": "Household id (unique within wave)",
+              "stratum": "Design stratum as shipped by NISR (EICV1/2 dstrat, EICV4 VUP vup_strata, EICV7 strata_id = district x urban/rural; not released for EICV3, EICV4 CS, EICV5)",
+              "year_nisr": "NISR's own survey-year field as shipped (the pipeline year is in `year`)", "survey_nisr": "NISR's own survey indicator as shipped",
+              "hhid_old": "Old (pre-anonymisation) household key as shipped, mapped to hhid through NISR's OKEY -> KEY crosswalk",
+              "hhsize_pop": "Persons counted by NISR's population weight (pop_wt / wt): roster minus domestic workers in EICV3-EICV5, the roster in EICV7",
               "pid": "Person number within the household", "sex": "Sex (1 male, 2 female)", "age": "Age in years",
               "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
               "wt_hh": "Household weight (same value as wt; sums to the number of households)", "pid_nisr": "NISR person id as shipped (EICV3 PID = hhid*100 + person)",
@@ -155,32 +169,59 @@ def normalise_keys(df, vl, vv, W, srcmap):
             df = df.rename(columns={raw: key}); vl[key] = vl.pop(raw, ""); vv.pop(raw, None); srcmap.setdefault(key, raw)
     if W["wt"] in df.columns and "wt" not in df.columns:
         df = df.rename(columns={W["wt"]: "wt"}); vl["wt"] = vl.pop(W["wt"], ""); srcmap.setdefault("wt", W["wt"])
+    if W.get("strata") and W["strata"] in df.columns and "stratum" not in df.columns:
+        df = df.rename(columns={W["strata"]: "stratum"}); vl["stratum"] = vl.pop(W["strata"], ""); vv["stratum"] = vv.pop(W["strata"], vv.get("stratum", {})); srcmap.setdefault("stratum", W["strata"])
     if "dist" in df.columns: df["dist"] = to_dist(df["dist"])
     if "cluster" in df.columns: df["cluster"] = df["cluster"].astype(object).where(df["cluster"].notna(), "").astype(str).str.replace(r"\.0$", "", regex=True)
     return df, vl, vv
 
-def stamp(df, W, wave):
+def stamp(df, W, wave, vl=None):
+    """key stamps; a NISR variable that carries one of the stamp names is kept as <name>_nisr (never overwritten)"""
+    for c in ("survey", "year", "wave", "sample"):
+        if c in df.columns and f"{c}_nisr" not in df.columns:
+            df = df.rename(columns={c: f"{c}_nisr"})
+            if vl is not None: vl[f"{c}_nisr"] = (vl.pop(c, "") or c) + " (NISR native)"
     df["survey"] = "EICV"; df["year"] = np.int16(W["year"]); df["wave"] = wave; df["sample"] = W["sample"]
     return df
 
-def join_1to1(base, other, on, tag, log):
-    """left-join `other` onto `base` on `on`; colliding non-key names get _<tag>."""
+JOIN_REPORT = {}   # (wave, tag) -> {"filled": {col: n}, "conflicts": {col: n}}: what happened to colliding columns
+NO_PREFER = {"id0", "id1", "id2", "id1_n", "id2_n", "strate", "dstrat", "id_strate", "rectype", "prefect", "zdkey", "clust", "hh_wt", "weight", "pond",
+             "month", "year_nisr", "survey_nisr", "hhsize", "hhsize_nisr", "eqad", "pp_wt"}   # never taken from a poverty file over the household base
+def join_1to1(base, other, on, tag, log, prefer_other=False, wave=""):
+    """left-join `other` onto `base` on `on`. A colliding column that agrees with the base wherever both are
+    non-missing is one variable: its values FILL the base's missings (coalesce) and the copy is dropped; a copy
+    that disagrees is kept with the _<tag> suffix. With prefer_other=True (NISR's poverty files) the other file
+    is the canonical source: the base's copy is the one suffixed (_hhbase) or dropped.
+    EICV audit 2026-09-05: the old rule dropped the copy without coalescing (e.g. 9,956 EICV1 work-status values)."""
     other = other.drop(columns=[c for c in ("_merge",) if c in other.columns])   # NISR poverty files ship a Stata _merge artefact
     base = base.drop(columns=[c for c in ("_merge",) if c in base.columns])
-    ren = {c: f"{c}_{tag}"[:32] for c in other.columns if c not in on and c in base.columns}
-    other = other.rename(columns=ren)
+    coll = [c for c in other.columns if c not in on and c in base.columns]
+    if prefer_other:                                             # identifiers / design / weight fields stay the base's; substantive columns come from the other file
+        pref = [c for c in coll if c not in NO_PREFER]; keep = [c for c in coll if c in NO_PREFER]
+        base = base.rename(columns={c: f"{c}_hhbase"[:32] for c in pref})
+        ren = {c: f"{c}_hhbase"[:32] for c in pref}            # canonical = other's column (plain name); base copy suffixed
+        ren_keep = {c: f"{c}_{tag}"[:32] for c in keep}
+        other = other.rename(columns=ren_keep); ren.update(ren_keep)
+    else:
+        ren = {c: f"{c}_{tag}"[:32] for c in coll}
+        other = other.rename(columns=ren)
     out = base.merge(other, on=on, how="left", indicator=True)
     rate = (out["_merge"] == "both").mean()
-    # a colliding column that merely repeats the base (same values wherever both are non-missing)
-    # is a redundant copy and is dropped; a copy that differs is kept with the _<tag> suffix.
-    dropped = []
+    dropped, filled, conflicts = [], {}, {}
     for c, n in list(ren.items()):
-        a, b = out[c], out[n]
+        a, b = out[c], out[n]                                     # a = canonical column, b = the other copy
         both = a.notna() & b.notna()
-        same = (a[both].astype(str) == b[both].astype(str)).all() if both.any() else True
-        if same: out = out.drop(columns=[n]); dropped.append(c); del ren[c]
-    log.info("   joined %-45s %6.2f%% of base rows matched, %d columns added%s%s", tag, 100 * rate, len(other.columns) - len(on) - len(dropped),
-             f", identical copies dropped: {dropped[:8]}" if dropped else "", f", differing copies kept as _{tag}: {list(ren)[:6]}" if ren else "")
+        agree = (a[both].astype(str) == b[both].astype(str)).all() if both.any() else True
+        if agree:
+            fill = a.isna() & b.notna()
+            if fill.any(): out[c] = a.where(a.notna(), b); filled[c] = int(fill.sum())
+            out = out.drop(columns=[n]); dropped.append(c); del ren[c]
+        else:
+            conflicts[c] = int((a[both].astype(str) != b[both].astype(str)).sum())
+    JOIN_REPORT[(wave, tag)] = {"matched": round(float(rate), 4), "filled": filled, "conflicts": conflicts, "prefer_other": prefer_other}
+    log.info("   joined %-45s %6.2f%% of base rows matched, %d columns added%s%s%s", tag, 100 * rate, len(other.columns) - len(on) - len(dropped),
+             f", agreeing copies merged: {len(dropped)}" + (f" (values filled: {dict(list(filled.items())[:4])})" if filled else ""),
+             f", differing copies kept as {'_hhbase (other file canonical)' if prefer_other else '_' + tag}: {list(ren)[:6]}" if ren else "", "")
     return out.drop(columns="_merge"), ren
 
 for wave in WANT:
@@ -190,14 +231,22 @@ for wave in WANT:
     rawdir = P["raw"] / W["raw"]
     files = sorted([f for f in rawdir.iterdir() if f.suffix.lower() in (".dta", ".sav")])
     files = [f for f in files if f.stem not in W.get("skip", [])]
-    for src_wave, stem in W.get("extra", []):
-        cand = [f for f in (P["raw"] / src_wave).iterdir() if f.stem == stem]
+    extra_opts = {}
+    for spec in W.get("extra", []):
+        src_wave, stem, opts = (spec + ({},))[:3]
+        cand = sorted((P["raw"] / src_wave).glob(stem + ".*"))          # stem may include a nested path
+        if not cand: log.warning("%s: extra file %s/%s not found", wave, src_wave, stem)
+        for f in cand: extra_opts[f] = opts
         files += cand
     modules, labels, vlabels, srcmaps, level = {}, {}, {}, {}, {}
+    JOIN_REPORT.clear()
     for f in files:
-        name = module_name(f.stem, W["prefixes"] + [f"{src}_" for src, _ in W.get("extra", [])])
+        opts = extra_opts.get(f, {})
+        name = opts.get("name") or module_name(f.stem, W["prefixes"] + [f"{spec[0]}_" for spec in W.get("extra", [])])
         df, vl, vv = read_any(f)
         df, vl, vv = lower_names(df, vl, vv, log)
+        if opts.get("where"):
+            n0 = len(df); df = df.query(opts["where"]).copy(); log.info("   %s: kept %s of %s rows where %s", name, f"{len(df):,}", f"{n0:,}", opts["where"])
         srcmap = {}
         if W.get("idmap"):
             m = {k: v for k, v in W["idmap"].items() if k in df.columns}
@@ -211,20 +260,32 @@ for wave in WANT:
     for stem in W["base_hh"]:
         m = modules.get(stem)
         if m is None: continue
-        hh_base = m if hh_base is None else join_1to1(hh_base, m, ["hhid"], stem, log)[0]
-    keycols = [c for c in ["prov", "dist", "urban", "cluster", "wt"] if hh_base is not None and c in hh_base.columns]
+        hh_base = m if hh_base is None else join_1to1(hh_base, m, ["hhid"], stem, log, prefer_other="poverty" in stem, wave=wave)[0]
+    keycols = [c for c in ["prov", "dist", "urban", "cluster", "stratum", "wt"] if hh_base is not None and c in hh_base.columns]
     keys = hh_base[["hhid"] + keycols].drop_duplicates("hhid") if hh_base is not None else None
     if keys is not None:
         ck(keys["hhid"].is_unique, f"{wave}: hhid unique in household base ({len(keys):,} households)")
-        for c in keycols: ck(keys[c].notna().all(), f"{wave}: {c} complete in household key table")
+        for c in keycols: ck(keys[c].notna().all(), f"{wave}: {c} complete in household key table", hard=(c != "stratum"))
         if "prov" in keycols: ck(set(keys["prov"].unique()) <= set(PROV_LABELS), f"{wave}: province codes 1-5")
         if "dist" in keycols: ck(set(keys["dist"].unique()) == set(DIST_LABELS), f"{wave}: 30 districts on the 11-57 scheme")
         if "wt" in keycols: ck((keys["wt"] > 0).all(), f"{wave}: household weight > 0")
 
     # ---------------- attach keys to every module, classify, write
     meta_modules = {}
+    crosswalk = None
+    if W.get("crosswalk") and W["crosswalk"][0] in modules:
+        cwm = modules[W["crosswalk"][0]]; old = W["crosswalk"][1]
+        if old in cwm.columns and "hhid" in cwm.columns:
+            crosswalk = dict(zip(pd.to_numeric(cwm[old], errors="coerce"), cwm["hhid"]))
+            log.info("household-key crosswalk from %s: %d old keys -> %d new keys", W["crosswalk"][0], len(crosswalk), cwm["hhid"].nunique())
     for name, df in modules.items():
         vl, vv, srcmap = labels[name], vlabels[name], srcmaps[name]
+        if keys is not None and "hhid" in df.columns and crosswalk is not None and df["hhid"].isin(keys["hhid"]).mean() < 0.5:
+            mapped = pd.to_numeric(df["hhid"], errors="coerce").map(crosswalk)
+            if mapped.isin(keys["hhid"]).mean() > 0.99:
+                df["hhid_old"] = df["hhid"]; df["hhid"] = mapped.astype("Int64"); vl["hhid_old"] = KEY_LABELS["hhid_old"]
+                srcmap["hhid"] = f"old household key mapped through the OKEY -> KEY crosswalk ({W['crosswalk'][0]}); old key kept as hhid_old"
+                log.info("   %s: household key mapped through the crosswalk (%.2f%% of rows match the roster)", name, 100 * mapped.isin(keys["hhid"]).mean())
         if keys is not None and "hhid" in df.columns:
             need = [c for c in keycols if c not in df.columns]
             if need:
@@ -239,7 +300,7 @@ for wave in WANT:
         elif "pid" in df.columns and df["pid"].notna().all() and not df.duplicated(["hhid", "pid"]).any(): lvl = "person"
         else: lvl = "multi"    # several rows per household or person (plots, items, jobs, ...)
         level[name] = lvl
-        df = stamp(df, W, wave)
+        df = stamp(df, W, wave, vl)
         if "wt" in df.columns: df["wt_hh"] = df["wt"]
         vv.update({"prov": PROV_LABELS, "dist": DIST_LABELS, "urban": URBAN_LABELS})
         for c, t in KEY_LABELS.items():
@@ -249,7 +310,8 @@ for wave in WANT:
         df = df[[c for c in KEY_ORDER if c in df.columns] + [c for c in df.columns if c not in KEY_ORDER]]
         modules[name] = df
         meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4),
-                              "universe": universe_for(wave, [name]).get(name, "")}
+                              "universe": universe_for(wave, [name]).get(name, ""), "value_labels": {k: v for k, v in vv.items() if k in df.columns},
+                              "var_labels": {k: v for k, v in vl.items() if k in df.columns}}
         write_dta(df, P["inter"] / f"EICV_{wave}_{name}_clean.dta", vl, vv, f"EICV {wave} module {name} ({lvl}-level)", log)
     log.info("module levels: %s", {k: v["level"] for k, v in meta_modules.items()})
 
@@ -261,7 +323,7 @@ for wave in WANT:
         for name, df in modules.items():
             if name == W["base_p"] or level[name] != "person": continue
             other = df.drop(columns=[c for c in KEY_ORDER + ["wt_hh", "pid_nisr"] if c in df.columns and c not in ("hhid", "pid")])
-            person, ren = join_1to1(person, other, ["hhid", "pid"], name, log)
+            person, ren = join_1to1(person, other, ["hhid", "pid"], name, log, wave=wave)
             for c in other.columns:
                 n = ren.get(c, c)
                 if c not in ("hhid", "pid"):
@@ -293,13 +355,15 @@ for wave in WANT:
         for name, df in modules.items():
             if name in W["base_hh"] or level[name] != "household": continue
             other = df.drop(columns=[c for c in KEY_ORDER + ["wt_hh", "pid_nisr"] if c in df.columns and c != "hhid"])
-            hh, ren = join_1to1(hh, other, ["hhid"], name, log)
+            hh, ren = join_1to1(hh, other, ["hhid"], name, log, prefer_other="poverty" in name, wave=wave)
             for c in other.columns:
                 n = ren.get(c, c)
                 if c != "hhid":
                     hvl[n] = labels[name].get(c, ""); hsrc[n] = f"module {name}"
                     if c in vlabels[name]: hvv[n] = vlabels[name][c]
         if person is not None:
+            if "hhsize" in hh.columns:                             # NISR's own household-size field: kept, never overwritten
+                hh = hh.rename(columns={"hhsize": "hhsize_nisr"}); hvl["hhsize_nisr"] = (hvl.pop("hhsize", "") or "Household size") + " (NISR native)"; hsrc["hhsize_nisr"] = hsrc.pop("hhsize", "")
             g = person.groupby("hhid", sort=False)
             agg = pd.DataFrame({"hhsize": g.size()})
             if W["rel"] and W["rel"] in person.columns:
@@ -310,7 +374,10 @@ for wave in WANT:
             hh = hh.merge(agg, left_on="hhid", right_index=True, how="left")
             hvl.update({"hhsize": "Household size (persons in the roster)", "head_sex": f"Sex of household head ({W['rel']} == 1)", "head_age": f"Age of household head ({W['rel']} == 1)"})
             hvv["head_sex"] = pvv.get("sex", {})
-        hh = stamp(hh, W, wave); hh["wt_hh"] = hh["wt"]
+        if "pop_wt" in hh.columns and "wt" in hh.columns:        # NISR's household-level population weight; EICV3-5 exclude domestic workers
+            hh["hhsize_pop"] = (pd.to_numeric(hh["pop_wt"], errors="coerce") / hh["wt"]).round().astype("Int64"); hvl["hhsize_pop"] = KEY_LABELS["hhsize_pop"]
+            hvl["pop_wt"] = "NISR population weight = wt x hhsize_pop (EICV3-EICV5: roster excluding domestic workers, relationship code 12; EICV7: full roster)"
+        hh = stamp(hh, W, wave, hvl); hh["wt_hh"] = hh["wt"]
         hvv.update({"prov": PROV_LABELS, "dist": DIST_LABELS, "urban": URBAN_LABELS})
         for c, t in KEY_LABELS.items():
             if c in hh.columns: hvl[c] = t
@@ -322,6 +389,11 @@ for wave in WANT:
         write_dta(hh, P["inter"] / f"EICV_{wave}_household_clean.dta", hvl, hvv, f"EICV {wave} household file (household base + household-level modules)", log)
         meta["household"] = {"n": len(hh), "vars": list(hh.columns), "var_labels": hvl, "value_labels": {k: v for k, v in hvv.items() if k in hh.columns}, "source": hsrc,
                              "universe": universe_for(wave, hh.columns)}
+    ck(bool(person is not None or not W["base_p"]), f"{wave}: person file assembled (manifest)")
+    ck(bool(hh_base is not None or not W["base_hh"]), f"{wave}: household file assembled (manifest)")
+    for m_, lvl_ in ((W.get("crosswalk") and "mainjob_short", "person"), ("poverty_file", "household")):
+        if m_ and m_ in meta_modules: ck(meta_modules[m_]["level"] == lvl_, f"{wave}: {m_} joined at {lvl_} level (match rate {meta_modules[m_]['hh_match_rate']})", hard=False)
+    meta["joins"] = {f"{tag}": rep for (w_, tag), rep in JOIN_REPORT.items() if w_ == wave}
     ck.done()
     save_json(meta, LOGS / f"clean_{wave}_meta.json")
 log.info("01_clean done for %s", WANT)

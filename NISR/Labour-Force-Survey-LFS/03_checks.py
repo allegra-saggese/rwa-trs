@@ -144,9 +144,9 @@ for base, d in align["decisions"].items():
                 a, b = labs[i][1], labs[j][1]
                 for c in set(a) & set(b):
                     if c not in SENT and not _same(a[c], b[c]):
-                        (forced_diff if base in forced else bad).append((col, labs[i][0], labs[j][0], c, a[c], b[c]))
+                        bad.append((col, labs[i][0], labs[j][0], c, a[c], b[c]))
 report += ["", "## E. Cross-year coding compatibility within pooled columns", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
-row("E", "pooled columns holding years with incompatible value-label texts for the same code, FORCE_ALIGN excluded (must be 0)", len({b[0] for b in bad}), 0)
+row("E", "pooled columns holding years with incompatible value-label texts for the same code, must be 0", len({b[0] for b in bad}), 0)
 row("E", "FORCE_ALIGN columns whose value-label wording differs across years (owner's judgement that the question is the same; informational)", len({b[0] for b in forced_diff}), None)
 row("E", "variables split into versions because of value labels or unlabelled ranges (informational)", ncols_split_vl, None)
 row("E", "variables with codes observed outside their own year's value labels -- stale labels (informational; listed in merge_alignment.json)", len(align.get("stale_labels", {})), None)

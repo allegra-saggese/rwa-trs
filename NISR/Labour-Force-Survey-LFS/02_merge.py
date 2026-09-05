@@ -93,7 +93,7 @@ def incompatible(y, z, vls, rng):
 def version_groups(v, yrs, labs, vls, rng):
     """Greedy grouping of years: a year joins the first group whose variable label is similar AND whose value
     labels are compatible with every member; FORCE_SPLIT groups are closed. Returns (year-lists largest first, reasons)."""
-    if v in KEYS or v in FORCE_ALIGN or len(yrs) == 1: return [list(yrs)], []
+    if v in KEYS or len(yrs) == 1: return [list(yrs)], []
     forced = {}
     for i, g in enumerate(FORCE_SPLIT.get(v, [])):
         for y in ([g] if not isinstance(g, list) else g): forced[y] = i
@@ -107,7 +107,7 @@ def version_groups(v, yrs, labs, vls, rng):
             continue
         for rep, ys in groups:
             if isinstance(rep, tuple): continue                                         # closed group
-            if labs[y] and rep and label_similarity(labs[y], rep) < SIM_THRESHOLD:       # no label = no evidence of a change
+            if v not in FORCE_ALIGN and labs[y] and rep and label_similarity(labs[y], rep) < SIM_THRESHOLD:       # FORCE_ALIGN skips this test only; no label = no evidence of a change
                 reasons.append(f"{y} vs {ys[0]}: variable label differs ({labs[y][:40]!r} vs {rep[:40]!r})"); continue
             why = next((w for z in ys for w in [incompatible(y, z, vls, rng)] if w), None)
             if why: reasons.append(why); continue

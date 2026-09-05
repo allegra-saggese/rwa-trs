@@ -4142,10 +4142,12 @@
     "d03a": [
      2019,
      2021,
+     2025
+    ],
+    "d03a_v2": [
      2022,
      2023,
-     2024,
-     2025
+     2024
     ]
    },
    "labels_by_year": {
@@ -4157,7 +4159,11 @@
     "2025": "Does the place or business where(you/name) work's have a name?"
    },
    "reference_label": "Does the place or business where(you/name) work's have a name?",
-   "split_reasons": []
+   "split_reasons": [
+    "2022 vs 2019: value labels differ -- 1: 'Valid name' vs 'Name of workplace'",
+    "2023 vs 2019: value labels differ -- 1: 'Valid name' vs 'Name of workplace'",
+    "2024 vs 2019: value labels differ -- 1: 'Valid name' vs 'Name of workplace'"
+   ]
   },
   "d03a1": {
    "years": [
@@ -11879,16 +11885,6 @@
     "TemporaryResident"
    ]
   },
-  "d03a": {
-   "1": [
-    "Name of workplace",
-    "Valid name"
-   ],
-   "2": [
-    "Domestic worker",
-    "Domestic works"
-   ]
-  },
   "d17": {
    "1": [
     "Less than\u00a020,000 RWF",
@@ -11923,6 +11919,12 @@
    "5": [
     "Presence of small children",
     "Presence of small children/Elders/sick people"
+   ]
+  },
+  "d03a": {
+   "2": [
+    "Domestic worker",
+    "Domestic works"
    ]
   },
   "d06": {
@@ -12709,6 +12711,7 @@
    "c21_g",
    "c21_h",
    "c21_l",
+   "d03a_v2",
    "neetyouth",
    "youngs",
    "intcash",

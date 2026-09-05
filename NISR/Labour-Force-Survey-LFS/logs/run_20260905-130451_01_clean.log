@@ -1,0 +1,22 @@
+13:04:51 01_clean INFO ==== 01_clean | run 20260905-130451_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+13:04:51 01_clean INFO ---------------- 2019 ----------------
+13:04:52 01_clean INFO read LFS_2019.dta: 81,778 rows x 238 vars
+13:04:52 01_clean INFO value labels corrected from the questionnaire: d03a codes [1]
+13:04:52 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+13:04:52 01_clean INFO value labels corrected from the questionnaire: i03 codes [3, 4]
+13:04:52 01_clean INFO PASS  status1 populated on ages 16+ and empty below (threshold 99%): 0 rows aged 16+ without status1
+13:04:53 01_clean INFO PASS  row count unchanged (81,778)
+13:04:53 01_clean INFO PASS  wt present and > 0 on every row
+13:04:53 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+13:04:53 01_clean INFO PASS  30 districts (found 30)
+13:04:53 01_clean INFO PASS  5 provinces (found 5)
+13:04:53 01_clean INFO PASS  sex (a01) in {1,2}
+13:04:53 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+13:04:54 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 99.9897% of 19,325 (0 heads: 2, 2+: 0)
+13:04:54 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+13:04:54 01_clean INFO share of rows with a household key: 1.000
+13:04:54 01_clean INFO rounds: {'MAY19': 22293, 'NOV19': 21949, 'FEB19': 18849, 'AUG19': 18687}
+13:04:54 01_clean INFO weighted total (sum wt) = 12,216,163 ; wap16-weighted = 7,231,536
+13:04:54 01_clean INFO all hard checks passed (0 soft warnings)
+13:04:54 01_clean INFO wrote LFS_2019_person_clean.dta  (81,778 rows x 251 vars, 46.4 MB)
+13:04:54 01_clean INFO 01_clean done for [2019]

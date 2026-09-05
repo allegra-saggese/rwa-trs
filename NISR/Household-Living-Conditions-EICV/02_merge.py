@@ -9,11 +9,17 @@
   Rule (Matteo, 2026-09-04): 3_Final holds only the appended unit-level datasets (<= 5 files);
   every module-level file, per wave or appended, lives in 2_Intermediate.
 
-Alignment rule as in every NISR dataset: waves are grouped into versions of a variable by
-label similarity (token Jaccard >= 0.25); the largest group keeps the name, others become
-<name>_v2, _v3 ...; FORCE_ALIGN lists rewordings judged to be the same question.
+Alignment rule: waves are grouped into versions of a variable when (a) their variable labels
+describe the same question (token Jaccard >= SIM_THRESHOLD; 0.5 for EICV because item numbers
+move between rounds and many same-named items are different questions with a shared word --
+EICV audit 2026-09-05) AND (b) their value labels are compatible (no code whose text means
+something else; an unlabelled wave's values inside the labelled range). The largest group keeps
+the name, others become <name>_v2 ...; FORCE_ALIGN lists rewordings judged to be the same
+question (skips test (a) only; value labels verified compatible when the list was written);
+FORCE_SPLIT lists closed groups of waves that must stay apart. Reasons for every split and the
+"stale labels" (codes observed outside a wave's own value labels) go to merge_alignment.json.
 """
-import json
+import difflib, json, re
 from collections import Counter
 import numpy as np, pandas as pd
 from eicv_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
@@ -22,14 +28,33 @@ from eicv_helpers import (paths, get_logger, Checks, read_dta, write_dta, downca
 log = get_logger("02_merge"); P = paths(); ck = Checks(log)
 CS = ["EICV1", "EICV2", "EICV3", "EICV4_CS", "EICV5_CS", "EICV7_CS"]
 VUP = ["EICV4_VUP", "EICV5_VUP", "EICV7_VUP"]
-KEYS = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
+KEYS = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "stratum", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
 STR_KEYS = ("survey", "wave", "sample", "cluster")
-SIM_THRESHOLD = 0.25
-FORCE_ALIGN = set()
+SIM_THRESHOLD = 0.5       # variable-label similarity (token Jaccard); 0.5 for EICV (see the docstring)
+VL_THRESHOLD = 0.6        # value-label text similarity (difflib ratio) for the same code to mean the same thing
+# Rewordings of the same question across rounds (read from the labels; value labels verified compatible in every
+# wave pair when the list was written, 2026-09-05). The rule still splits them if their value labels ever conflict.
+FORCE_ALIGN = {'s5aq4', 's4aq14', 's6bq1', 's3q1', 's8bq15', 's11aq1', 's8bq13', 's5bq8', 's5cq5', 's8bq3', 's6aq1', 's3aq19', 'ur', 's7a2q5', 's2cq13', 's3aq22', 's8bq7', 's5cq22', 's7a2q9', 's8bq2', 's8bq5', 's2q1'}
 # same name, different question, but labels too alike for the threshold (found while harmonising, 2026-09-05):
 # s6aq6 EICV3 'VUP works programme' vs EICV5 'worked in a non-farm business'; s6aq8 EICV5 'months occupied' vs
 # EICV4 'main reason for not working'; s4bq4 EICV4 'can write' vs EICV5/7 'able to read'.
-FORCE_SPLIT = {"s6aq6": ["EICV3"], "s6aq8": ["EICV5_CS", "EICV5_VUP"], "s4bq4": ["EICV4_CS", "EICV4_VUP"]}
+FORCE_SPLIT = {   # closed groups of waves (a wave, or a list of waves pooled together) that must not join the others
+    "s6aq6": ["EICV3"], "s6aq8": [["EICV5_CS", "EICV5_VUP"]], "s4bq4": [["EICV4_CS", "EICV4_VUP"]],                 # found while harmonising
+    # EICV audit 2026-09-05 -- same name, different question (variable labels verified per wave):
+    "s1q13": [["EICV7_CS", "EICV7_VUP"]],          # father alive (EICV3/4) vs mother alive (EICV7); EICV5 = disability (own version)
+    "s1q14": [["EICV5_CS", "EICV5_VUP"], ["EICV7_CS", "EICV7_VUP"]],   # mother alive (EICV3/4) vs father alive (EICV5) vs household membership (EICV7)
+    "s3q7": [["EICV7_CS", "EICV7_VUP"]], "s3q8": [["EICV7_CS", "EICV7_VUP"]], "s3q9": [["EICV7_CS", "EICV7_VUP"]],   # disability items shift by one in EICV7
+    "s4aq7": ["EICV1"], "s4aq8": [["EICV7_CS", "EICV7_VUP"]],                                                      # other work (EICV1) / school type vs highest level (EICV7)
+    "s2cq6": ["EICV3"], "s3aq12": ["EICV1"], "s2bq7": ["EICV1"], "s3bq8": ["EICV2"],                                  # literacy course vs months of training; cost vs reason; primary completed vs type; prenatal vs vaccination
+    "s3cq5a": ["EICV1"], "s3cq5c": ["EICV1"], "s3cq5d": ["EICV1"],                                                  # vaccine items shift between EICV1 and EICV2
+    "s5cq7": [["EICV7_CS", "EICV7_VUP"]], "s7a2q2": [["EICV7_CS", "EICV7_VUP"]], "s5aq1": ["EICV2"], "s5bq10": ["EICV2"], "s5aq3": [["EICV7_CS", "EICV7_VUP"]],
+    "s5cq9a": ["EICV5_CS"], "s8bq10": ["EICV1"], "s6bq4": ["EICV2"],
+    "s10aq7": [["EICV7_CS", "EICV7_VUP"]],         # loan amount vs main purpose of loan (credits module)
+    "s7dq6": [["EICV5_CS", "EICV5_VUP"]],          # kg sold vs average price per kg (crop_large module)
+    "s7bq15": ["EICV3"],                            # amount borrowed vs main source of credit (enterprise module)
+    "sol_jan": [["EICV7_CS", "EICV7_VUP"]],        # consumption aggregate in January-2024 prices (EICV3/5: January-2014 prices)
+    "pov": ["EICV2"], "ae": [["EICV7_CS", "EICV7_VUP"]],   # poverty incidence (EICV1) vs poverty line (EICV2); adult equivalents (EICV5 label) vs hhsize A/E (EICV7)
+}
 KEEP_DOUBLE = ("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight")
 
 # Canonical module names for files whose content repeats across waves (same questionnaire block).
@@ -69,16 +94,67 @@ for w in ("EICV7_CS", "EICV7_VUP"):
                      "s10a1_a2_credits": "credits", "s10b_durables": "durables", "s10c_savings": "savings"}
 
 # ------------------------------------------------------------------ generic pooling
-def version_groups(v, waves, labs):
-    if v in KEYS or v in FORCE_ALIGN or len(waves) == 1: return [list(waves)]
-    groups = []
+SENTINELS = {98, 99, 998, 999, 9998, 9999}       # NISR's don't-know / missing codes: never evidence of a coding change
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s):
+    toks = [_SYN.get(w, w) for w in re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()]
+    return " ".join(w for w in toks if w)
+def _same(x, y):
+    """same category? normalised texts equal, both missing-like, one's tokens contained in the other's, or close spelling"""
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= VL_THRESHOLD
+def vl_conflicts(a, b):
+    return {c: (a[c], b[c]) for c in set(a) & set(b) if c not in SENTINELS and not _same(a[c], b[c])}
+def _range(s):
+    s = pd.to_numeric(s, errors="coerce") if s.dtype == object else s
+    if not pd.api.types.is_numeric_dtype(s): return None
+    s = s[s.notna() & ~s.isin(SENTINELS)]
+    return (float(s.min()), float(s.max())) if len(s) else None
+def _obs(s):
+    s = pd.to_numeric(s, errors="coerce") if s.dtype == object else s
+    return set(s.dropna().unique().tolist()) if pd.api.types.is_numeric_dtype(s) else set()
+def incompatible(y, z, vls, rng):
+    a, b = vls.get(y) or {}, vls.get(z) or {}
+    if a and b:
+        c = vl_conflicts(a, b)
+        if c: return f"{y} vs {z}: value labels differ -- " + "; ".join(f"{k:g}: {p!r} vs {q!r}" for k, (p, q) in sorted(c.items())[:3])
+    elif a or b:
+        lab, u = (a, z) if a else (b, y)
+        codes = [c for c in lab if c not in SENTINELS]
+        r = rng.get(u)
+        if len(codes) >= 2 and r and r[1] > max(codes):
+            return f"{y} vs {z}: {u} is unlabelled and its values reach {r[1]:g}, beyond the labelled codes ({min(codes):g}-{max(codes):g})"
+    return None
+
+def version_groups(v, waves, labs, vls, rng):
+    """Greedy grouping of waves: a wave joins the first group whose variable label is similar (skipped for FORCE_ALIGN)
+    AND whose value labels are compatible with every member; FORCE_SPLIT groups are closed. Returns (groups, reasons)."""
+    if v in KEYS or len(waves) == 1: return [list(waves)], []
+    forced = {}
+    for i, g in enumerate(FORCE_SPLIT.get(v, [])):
+        for w in ([g] if not isinstance(g, list) else g): forced[w] = i
+    groups, reasons = [], []
     for w in waves:
-        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append(("__forced__", [w])); continue   # closed group: nothing else may join it
+        if w in forced:
+            key = ("__forced__", forced[w])
+            for rep, ws in groups:
+                if rep == key: ws.append(w); break
+            else: groups.append((key, [w])); reasons.append(f"{w}: FORCE_SPLIT")
+            continue
         for rep, ws in groups:
-            if rep != "__forced__" and (not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD): ws.append(w); break
+            if isinstance(rep, tuple): continue
+            if v not in FORCE_ALIGN and labs[w] and rep and label_similarity(labs[w], rep) < SIM_THRESHOLD:
+                reasons.append(f"{w} vs {ws[0]}: variable label differs ({labs[w][:40]!r} vs {rep[:40]!r})"); continue
+            why = next((x for z in ws for x in [incompatible(w, z, vls, rng)] if x), None)
+            if why: reasons.append(why); continue
+            ws.append(w); break
         else: groups.append((labs[w], [w]))
     groups.sort(key=lambda g: (-len(g[1]), -max(CS_ORDER.get(x, 0) for x in g[1])))
-    return [ws for _, ws in groups]
+    return [ws for _, ws in groups], (reasons if len(groups) > 1 else [])
 CS_ORDER = {w: i for i, w in enumerate(CS + VUP)}
 
 APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
@@ -92,16 +168,22 @@ def pool(files, out_name, label, unit, out_dir=None):
         log.info("  loaded %-10s %-55s %9s rows x %4d", w, f.name, f"{len(df):,}", df.shape[1])
     waves = list(files)
     allvars = sorted({c for df in data.values() for c in df.columns})
-    decisions, colname, vl_conflicts, var_labels, value_labels = {}, {}, {}, {}, {}
+    decisions, colname, vl_conflicts, var_labels, value_labels, stale_labels = {}, {}, {}, {}, {}, {}
     for v in allvars:
         ws = [w for w in waves if v in data[w].columns]
         labs = {w: (labels[w].get(v) or "").strip() for w in ws}
-        groups = version_groups(v, ws, labs); versions = {}
+        vls = {w: (vlabs[w].get(v) or {}) for w in ws}
+        rng = {w: _range(data[w][v]) for w in ws}
+        groups, reasons = version_groups(v, ws, labs, vls, rng); versions = {}
+        stale = {w: sorted(_obs(data[w][v]) - set(vls[w]) - SENTINELS)[:20] for w in ws if len(set(vls[w]) - SENTINELS) >= 3}
+        stale = {w: s for w, s in stale.items() if s}
+        if stale: stale_labels[v] = stale
         for i, g in enumerate(groups):
             name = v if i == 0 else f"{v[:28]}_v{i + 1}"; versions[name] = g
             for w in g: colname[(v, w)] = name
-        decisions[v] = {"waves": ws, "versions": versions, "labels_by_wave": labs, "reference_label": labs[groups[0][-1]]}
-        if len(groups) > 1: log.info("  VERSIONS %s: %s", v, versions)
+        decisions[v] = {"waves": ws, "versions": versions, "labels_by_wave": labs, "reference_label": labs[groups[0][-1]], "split_reasons": reasons}
+        if len(groups) > 1: log.info("  VERSIONS %s: %s | %s", v, versions, " / ".join(reasons[:2]))
+    if stale_labels: log.info("  %d variables with codes observed outside their own value labels (stale labels)", len(stale_labels))
     frames = []
     for w in waves:
         df, vl, vv = data[w].copy(), labels[w], vlabs[w]
@@ -133,9 +215,9 @@ def pool(files, out_name, label, unit, out_dir=None):
     write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
     return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
             "stems": {w: [f.name.replace(f"EICV_{w}_", "").replace("_clean.dta", "")] for w, f in files.items()},
-            "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}}
+            "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 
-summary = {"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "files": {}}
+summary = {"threshold": SIM_THRESHOLD, "vl_threshold": VL_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "files": {}}
 inter = P["inter"]
 for unit in ("person", "household"):
     for tag, waves in (("", CS), ("_vup", VUP)):
@@ -162,7 +244,7 @@ for canon, files in sorted(by_module.items()):
         log.info("---------------- %s: item-level module, not pooled (per-wave files in 2_Intermediate)", canon); continue
     name = f"EICV_pooled_{canon}.dta"
     log.info("---------------- %s (%s)", name, list(files))
-    summary["files"][name] = pool(files, name, f"EICV pooled module '{canon}' (one row per {canon} record; see codebook)", canon, out_dir=APPENDED)
+    summary["files"][name] = pool(files, name, f"EICV pooled module '{canon}' (one row per record; CS and VUP samples appended -- filter on sample)", canon, out_dir=APPENDED)
 summary["module_map"] = MODULE_MAP
 
 # ---- link files
