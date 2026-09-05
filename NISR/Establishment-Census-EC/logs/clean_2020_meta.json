@@ -75,7 +75,8 @@
   "foregner_workers",
   "rwandan_female",
   "foreign_female",
-  "size2"
+  "size2",
+  "prov_derived"
  ],
  "var_labels": {
   "q2": "Q2. Working place",
@@ -152,7 +153,8 @@
   "year": "Census year",
   "wave": "Wave (census year)",
   "estid": "Establishment id (NISR key where shipped, else year*1e6 + row number)",
-  "wt": "Weight (1 for full enumerations; NISR final sampling weight in 2014)"
+  "wt": "Weight (1 for full enumerations; NISR final sampling weight in 2014)",
+  "prov_derived": "1 = province was missing in the file and derived as district // 10 (2020: 137 establishments)"
  },
  "value_labels": {
   "q2": {
@@ -446,7 +448,7 @@
   }
  },
  "source": {
-  "prov": "q1_1",
+  "prov": "q1_1; derived as dist // 10 where missing (prov_derived = 1)",
   "dist": "q1_2",
   "urban": "q1_5_1",
   "estid": "year*1e6 + row number (no establishment id shipped)",
@@ -527,6 +529,7 @@
   "foregner_workers": "Int16",
   "rwandan_female": "Int16",
   "foreign_female": "Int8",
-  "size2": "Int8"
+  "size2": "Int8",
+  "prov_derived": "Int8"
  }
 }

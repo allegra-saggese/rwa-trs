@@ -1,7 +1,35 @@
 {
  "threshold": 0.25,
- "force_align": [],
- "force_split": {},
+ "force_align": [
+  "female_worker",
+  "foregner_workers",
+  "foreign_female",
+  "foreign_male",
+  "male_worker",
+  "q6_1",
+  "rwandan_female",
+  "rwandan_male",
+  "rwandan_workers",
+  "total_workers"
+ ],
+ "force_split": {
+  "start_y": [
+   2017,
+   2023
+  ],
+  "q20": [
+   2023
+  ],
+  "q21": [
+   2023
+  ],
+  "q9": [
+   2023
+  ],
+  "owner_age": [
+   2023
+  ]
+ },
  "decisions": {
   "a29b": {
    "years": [
@@ -15,7 +43,8 @@
    "labels_by_year": {
     "2014": "TPR/PAYE"
    },
-   "reference_label": "TPR/PAYE"
+   "reference_label": "TPR/PAYE",
+   "split_reasons": []
   },
   "ao2": {
    "years": [
@@ -29,7 +58,8 @@
    "labels_by_year": {
     "2014": "Age of owner"
    },
-   "reference_label": "Age of owner"
+   "reference_label": "Age of owner",
+   "split_reasons": []
   },
   "cell_seq_2011": {
    "years": [
@@ -43,7 +73,8 @@
    "labels_by_year": {
     "2011": "2011 cell sequence within sector (ID4, as shipped)"
    },
-   "reference_label": "2011 cell sequence within sector (ID4, as shipped)"
+   "reference_label": "2011 cell sequence within sector (ID4, as shipped)",
+   "split_reasons": []
   },
   "dist": {
    "years": [
@@ -69,7 +100,8 @@
     "2020": "District (11-57, NISR codes)",
     "2023": "District (11-57, NISR codes)"
    },
-   "reference_label": "District (11-57, NISR codes)"
+   "reference_label": "District (11-57, NISR codes)",
+   "split_reasons": []
   },
   "districts_names": {
    "years": [
@@ -83,7 +115,8 @@
    "labels_by_year": {
     "2011": "District names"
    },
-   "reference_label": "District names"
+   "reference_label": "District names",
+   "split_reasons": []
   },
   "est_size2": {
    "years": [
@@ -97,7 +130,8 @@
    "labels_by_year": {
     "2011": "Size of establishment based on number of workers"
    },
-   "reference_label": "Size of establishment based on number of workers"
+   "reference_label": "Size of establishment based on number of workers",
+   "split_reasons": []
   },
   "estid": {
    "years": [
@@ -123,7 +157,8 @@
     "2020": "Establishment id (NISR key where shipped, else year*1e6 + row number)",
     "2023": "Establishment id (NISR key where shipped, else year*1e6 + row number)"
    },
-   "reference_label": "Establishment id (NISR key where shipped, else year*1e6 + row number)"
+   "reference_label": "Establishment id (NISR key where shipped, else year*1e6 + row number)",
+   "split_reasons": []
   },
   "female_worker": {
    "years": [
@@ -134,9 +169,7 @@
    "versions": {
     "female_worker": [
      2017,
-     2020
-    ],
-    "female_worker_v2": [
+     2020,
      2023
     ]
    },
@@ -145,7 +178,8 @@
     "2020": "Enterprise female workers",
     "2023": "Total FEMALE staff"
    },
-   "reference_label": "Enterprise female workers"
+   "reference_label": "Total FEMALE staff",
+   "split_reasons": []
   },
   "fi": {
    "years": [
@@ -168,7 +202,8 @@
     "2020": "Formal and Informal enterprises",
     "2023": "Formal and Informal enterprises"
    },
-   "reference_label": "Formal and Informal enterprises"
+   "reference_label": "Formal and Informal enterprises",
+   "split_reasons": []
   },
   "fi_1": {
    "years": [
@@ -182,7 +217,8 @@
    "labels_by_year": {
     "2011": "Formal_Informal based on registration, keeping account and size"
    },
-   "reference_label": "Formal_Informal based on registration, keeping account and size"
+   "reference_label": "Formal_Informal based on registration, keeping account and size",
+   "split_reasons": []
   },
   "fi_2": {
    "years": [
@@ -196,7 +232,8 @@
    "labels_by_year": {
     "2011": "Formality based on registration and keeking account"
    },
-   "reference_label": "Formality based on registration and keeking account"
+   "reference_label": "Formality based on registration and keeking account",
+   "split_reasons": []
   },
   "foregner_workers": {
    "years": [
@@ -207,9 +244,7 @@
    "versions": {
     "foregner_workers": [
      2017,
-     2020
-    ],
-    "foregner_workers_v2": [
+     2020,
      2023
     ]
    },
@@ -218,7 +253,8 @@
     "2020": "Enterprise foreigner workers",
     "2023": "Total number of Foreigner staff"
    },
-   "reference_label": "Enterprise foreigner workers"
+   "reference_label": "Total number of Foreigner staff",
+   "split_reasons": []
   },
   "foreign_female": {
    "years": [
@@ -229,9 +265,7 @@
    "versions": {
     "foreign_female": [
      2017,
-     2020
-    ],
-    "foreign_female_v2": [
+     2020,
      2023
     ]
    },
@@ -240,7 +274,8 @@
     "2020": "Enterprise foreign female workers",
     "2023": "Number of FEMALE Foreigner staff"
    },
-   "reference_label": "Enterprise foreign female workers"
+   "reference_label": "Number of FEMALE Foreigner staff",
+   "split_reasons": []
   },
   "foreign_male": {
    "years": [
@@ -251,9 +286,7 @@
    "versions": {
     "foreign_male": [
      2017,
-     2020
-    ],
-    "foreign_male_v2": [
+     2020,
      2023
     ]
    },
@@ -262,7 +295,23 @@
     "2020": "Enterprise foreign male workers",
     "2023": "Number of MALE Foreigner staff"
    },
-   "reference_label": "Enterprise foreign male workers"
+   "reference_label": "Number of MALE Foreigner staff",
+   "split_reasons": []
+  },
+  "geo_conflict_2011": {
+   "years": [
+    2011
+   ],
+   "versions": {
+    "geo_conflict_2011": [
+     2011
+    ]
+   },
+   "labels_by_year": {
+    "2011": "2011: 1 = the numeric district code (Districts_names) disagreed with the distric"
+   },
+   "reference_label": "2011: 1 = the numeric district code (Districts_names) disagreed with the distric",
+   "split_reasons": []
   },
   "id10": {
    "years": [
@@ -276,7 +325,8 @@
    "labels_by_year": {
     "2011": "GENDER OF MANAGER"
    },
-   "reference_label": "GENDER OF MANAGER"
+   "reference_label": "GENDER OF MANAGER",
+   "split_reasons": []
   },
   "id2": {
    "years": [
@@ -290,7 +340,8 @@
    "labels_by_year": {
     "2011": "DISTRICT"
    },
-   "reference_label": "DISTRICT"
+   "reference_label": "DISTRICT",
+   "split_reasons": []
   },
   "id3": {
    "years": [
@@ -304,7 +355,8 @@
    "labels_by_year": {
     "2011": "SECTOR"
    },
-   "reference_label": "SECTOR"
+   "reference_label": "SECTOR",
+   "split_reasons": []
   },
   "id6": {
    "years": [
@@ -318,7 +370,8 @@
    "labels_by_year": {
     "2011": "SERIAL NUMBER WITHIN THE VILLAGE"
    },
-   "reference_label": "SERIAL NUMBER WITHIN THE VILLAGE"
+   "reference_label": "SERIAL NUMBER WITHIN THE VILLAGE",
+   "split_reasons": []
   },
   "inclusionprobability_1_": {
    "years": [
@@ -332,7 +385,8 @@
    "labels_by_year": {
     "2014": "Inclusion (Selection) Probability for Stage 1"
    },
-   "reference_label": "Inclusion (Selection) Probability for Stage 1"
+   "reference_label": "Inclusion (Selection) Probability for Stage 1",
+   "split_reasons": []
   },
   "isic1_comp": {
    "years": [
@@ -346,7 +400,8 @@
    "labels_by_year": {
     "2011": "ISIC for comparison with 2014"
    },
-   "reference_label": "ISIC for comparison with 2014"
+   "reference_label": "ISIC for comparison with 2014",
+   "split_reasons": []
   },
   "isic1q6b": {
    "years": [
@@ -360,7 +415,8 @@
    "labels_by_year": {
     "2014": "MAIN ECONOMIC ACTIVITY_1 DIGIT"
    },
-   "reference_label": "MAIN ECONOMIC ACTIVITY_1 DIGIT"
+   "reference_label": "MAIN ECONOMIC ACTIVITY_1 DIGIT",
+   "split_reasons": []
   },
   "isic1q7b": {
    "years": [
@@ -374,7 +430,8 @@
    "labels_by_year": {
     "2014": "SECONDARY ECONOMIC ACTIVITY_1 DIGIT"
    },
-   "reference_label": "SECONDARY ECONOMIC ACTIVITY_1 DIGIT"
+   "reference_label": "SECONDARY ECONOMIC ACTIVITY_1 DIGIT",
+   "split_reasons": []
   },
   "isic_fl_ent": {
    "years": [
@@ -388,7 +445,8 @@
    "labels_by_year": {
     "2011": "ISIC _1DIGIT"
    },
-   "reference_label": "ISIC _1DIGIT"
+   "reference_label": "ISIC _1DIGIT",
+   "split_reasons": []
   },
   "isic_level1": {
    "years": [
@@ -402,7 +460,8 @@
    "labels_by_year": {
     "2011": "ISIC_LEVEL1_MAIN ACTIVITY"
    },
-   "reference_label": "ISIC_LEVEL1_MAIN ACTIVITY"
+   "reference_label": "ISIC_LEVEL1_MAIN ACTIVITY",
+   "split_reasons": []
   },
   "key": {
    "years": [
@@ -419,7 +478,8 @@
     "2011": "Unique Identifier",
     "2014": "Unique identifier of establishment"
    },
-   "reference_label": "Unique identifier of establishment"
+   "reference_label": "Unique identifier of establishment",
+   "split_reasons": []
   },
   "male_worker": {
    "years": [
@@ -430,9 +490,7 @@
    "versions": {
     "male_worker": [
      2017,
-     2020
-    ],
-    "male_worker_v2": [
+     2020,
      2023
     ]
    },
@@ -441,7 +499,8 @@
     "2020": "Enterprise male workers",
     "2023": "Total MALE  staff"
    },
-   "reference_label": "Enterprise male workers"
+   "reference_label": "Total MALE  staff",
+   "split_reasons": []
   },
   "new_sector": {
    "years": [
@@ -455,7 +514,8 @@
    "labels_by_year": {
     "2014": "Created institutional sector"
    },
-   "reference_label": "Created institutional sector"
+   "reference_label": "Created institutional sector",
+   "split_reasons": []
   },
   "no_detail_employ": {
    "years": [
@@ -469,7 +529,8 @@
    "labels_by_year": {
     "2011": "Employees without details"
    },
-   "reference_label": "Employees without details"
+   "reference_label": "Employees without details",
+   "split_reasons": []
   },
   "owner": {
    "years": [
@@ -483,7 +544,8 @@
    "labels_by_year": {
     "2017": "Owner of establishment"
    },
-   "reference_label": "Owner of establishment"
+   "reference_label": "Owner of establishment",
+   "split_reasons": []
   },
   "owner_age": {
    "years": [
@@ -494,7 +556,9 @@
    "versions": {
     "owner_age": [
      2017,
-     2020,
+     2020
+    ],
+    "owner_age_v2": [
      2023
     ]
    },
@@ -503,7 +567,10 @@
     "2020": "Age of owner",
     "2023": "Q14 Age of the owner"
    },
-   "reference_label": "Q14 Age of the owner"
+   "reference_label": "Age of owner",
+   "split_reasons": [
+    "2023: FORCE_SPLIT"
+   ]
   },
   "owner_gender": {
    "years": [
@@ -517,7 +584,8 @@
    "labels_by_year": {
     "2011": "Gender of owner"
    },
-   "reference_label": "Gender of owner"
+   "reference_label": "Gender of owner",
+   "split_reasons": []
   },
   "owner_sex": {
    "years": [
@@ -537,7 +605,8 @@
     "2020": "Sex of owner",
     "2023": "Sex of owner of establishment"
    },
-   "reference_label": "Sex of owner of establishment"
+   "reference_label": "Sex of owner of establishment",
+   "split_reasons": []
   },
   "prov": {
    "years": [
@@ -563,7 +632,23 @@
     "2020": "Province (1-5, NISR codes)",
     "2023": "Province (1-5, NISR codes)"
    },
-   "reference_label": "Province (1-5, NISR codes)"
+   "reference_label": "Province (1-5, NISR codes)",
+   "split_reasons": []
+  },
+  "prov_derived": {
+   "years": [
+    2020
+   ],
+   "versions": {
+    "prov_derived": [
+     2020
+    ]
+   },
+   "labels_by_year": {
+    "2020": "1 = province was missing in the file and derived as district // 10 (2020: 137 es"
+   },
+   "reference_label": "1 = province was missing in the file and derived as district // 10 (2020: 137 es",
+   "split_reasons": []
   },
   "psf": {
    "years": [
@@ -577,7 +662,8 @@
    "labels_by_year": {
     "2011": "PSF"
    },
-   "reference_label": "PSF"
+   "reference_label": "PSF",
+   "split_reasons": []
   },
   "q10": {
    "years": [
@@ -602,7 +688,12 @@
     "2020": "Q10 Legal status",
     "2023": "Q10 Legal status"
    },
-   "reference_label": "Q10 Legal status"
+   "reference_label": "Q10 Legal status",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q10 Legal status' vs 'CATEGORIES OF MIXED SECTOR')",
+    "2020 vs 2014: variable label differs ('Q10 Legal status' vs 'CATEGORIES OF MIXED SECTOR')",
+    "2023 vs 2014: variable label differs ('Q10 Legal status' vs 'CATEGORIES OF MIXED SECTOR')"
+   ]
   },
   "q11": {
    "years": [
@@ -627,7 +718,12 @@
     "2020": "Q11 Is the management of establishment completely separated from the household m",
     "2023": "Q11 Is the management of establishment completely separated from the household m"
    },
-   "reference_label": "Q11 Is the management of establishment completely separated from the household m"
+   "reference_label": "Q11 Is the management of establishment completely separated from the household m",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q11 Is the management of establishment c' vs 'NATIONALITY OF OWNERS')",
+    "2020 vs 2014: variable label differs ('Q11 Is the management of establishment c' vs 'NATIONALITY OF OWNERS')",
+    "2023 vs 2014: variable label differs ('Q11 Is the management of establishment c' vs 'NATIONALITY OF OWNERS')"
+   ]
   },
   "q12": {
    "years": [
@@ -652,7 +748,12 @@
     "2020": "Q12 Is the owner of the establishment its manager?",
     "2023": "Q12 Is the owner of the establishment its manager?"
    },
-   "reference_label": "Q12 Is the owner of the establishment its manager?"
+   "reference_label": "Q12 Is the owner of the establishment its manager?",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q12 Is the owner of the establishment it' vs 'LEGAL STATUS')",
+    "2020 vs 2014: variable label differs ('Q12 Is the owner of the establishment it' vs 'LEGAL STATUS')",
+    "2023 vs 2014: variable label differs ('Q12 Is the owner of the establishment it' vs 'LEGAL STATUS')"
+   ]
   },
   "q13": {
    "years": [
@@ -677,7 +778,12 @@
     "2020": "Q13 Sex of the owner",
     "2023": "Q13 Sex of the owner"
    },
-   "reference_label": "Q13 Sex of the owner"
+   "reference_label": "Q13 Sex of the owner",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q13 Sex of the owner' vs 'IS THE MANAGEMENT OF ESTABLISHMENT COMPL')",
+    "2020 vs 2014: variable label differs ('Q13 Sex of the owner' vs 'IS THE MANAGEMENT OF ESTABLISHMENT COMPL')",
+    "2023 vs 2014: variable label differs ('Q13 Sex of the owner' vs 'IS THE MANAGEMENT OF ESTABLISHMENT COMPL')"
+   ]
   },
   "q14": {
    "years": [
@@ -699,7 +805,11 @@
     "2017": "Q14 Age of the owner",
     "2020": "Q14 Age of the owner"
    },
-   "reference_label": "Q14 Age of the owner"
+   "reference_label": "Q14 Age of the owner",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q14 Age of the owner' vs 'IS THE OWNER OF THE ESTABLISHMENT ITS MA')",
+    "2020 vs 2014: variable label differs ('Q14 Age of the owner' vs 'IS THE OWNER OF THE ESTABLISHMENT ITS MA')"
+   ]
   },
   "q15": {
    "years": [
@@ -713,7 +823,8 @@
    "labels_by_year": {
     "2014": "THE SEX OF OWNER"
    },
-   "reference_label": "THE SEX OF OWNER"
+   "reference_label": "THE SEX OF OWNER",
+   "split_reasons": []
   },
   "q15_1": {
    "years": [
@@ -733,7 +844,8 @@
     "2020": "Q15.1 Does the establishment maintain regular accounts?",
     "2023": "Q15.1 Does the establishment maintain regular accounts?"
    },
-   "reference_label": "Q15.1 Does the establishment maintain regular accounts?"
+   "reference_label": "Q15.1 Does the establishment maintain regular accounts?",
+   "split_reasons": []
   },
   "q15_2": {
    "years": [
@@ -753,7 +865,8 @@
     "2020": "Q15.2 Which of the following books is used",
     "2023": "Q15.2 Which of the following books is used"
    },
-   "reference_label": "Q15.2 Which of the following books is used"
+   "reference_label": "Q15.2 Which of the following books is used",
+   "split_reasons": []
   },
   "q15_2a": {
    "years": [
@@ -773,7 +886,8 @@
     "2020": "Q15_2A Ledgers",
     "2023": "Q15_2A Ledgers"
    },
-   "reference_label": "Q15_2A Ledgers"
+   "reference_label": "Q15_2A Ledgers",
+   "split_reasons": []
   },
   "q15_2b": {
    "years": [
@@ -793,7 +907,8 @@
     "2020": "Q15_2B Journals",
     "2023": "Q15_2B Journals"
    },
-   "reference_label": "Q15_2B Journals"
+   "reference_label": "Q15_2B Journals",
+   "split_reasons": []
   },
   "q15_2c": {
    "years": [
@@ -813,7 +928,8 @@
     "2020": "Q15_2C Balance sheet",
     "2023": "Q15_2C Balance sheet"
    },
-   "reference_label": "Q15_2C Balance sheet"
+   "reference_label": "Q15_2C Balance sheet",
+   "split_reasons": []
   },
   "q15_2d": {
    "years": [
@@ -833,7 +949,8 @@
     "2020": "Q15_2D Income statement (Profit and loss account)",
     "2023": "Q15_2D Income statement (Profit and loss account)"
    },
-   "reference_label": "Q15_2D Income statement (Profit and loss account)"
+   "reference_label": "Q15_2D Income statement (Profit and loss account)",
+   "split_reasons": []
   },
   "q15_2e": {
    "years": [
@@ -853,7 +970,8 @@
     "2020": "Q15_2E Invoice",
     "2023": "Q15_2E Invoice"
    },
-   "reference_label": "Q15_2E Invoice"
+   "reference_label": "Q15_2E Invoice",
+   "split_reasons": []
   },
   "q16": {
    "years": [
@@ -878,7 +996,12 @@
     "2020": "Q16 Establishment type",
     "2023": "Q16 Establishment type"
    },
-   "reference_label": "Q16 Establishment type"
+   "reference_label": "Q16 Establishment type",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q16 Establishment type' vs 'AGE OF OWNER')",
+    "2020 vs 2014: variable label differs ('Q16 Establishment type' vs 'AGE OF OWNER')",
+    "2023 vs 2014: variable label differs ('Q16 Establishment type' vs 'AGE OF OWNER')"
+   ]
   },
   "q17": {
    "years": [
@@ -892,7 +1015,8 @@
    "labels_by_year": {
     "2014": "DOES THE ESTABLISHMENT MAINTAIN REGULAR ACCOUNTING?"
    },
-   "reference_label": "DOES THE ESTABLISHMENT MAINTAIN REGULAR ACCOUNTING?"
+   "reference_label": "DOES THE ESTABLISHMENT MAINTAIN REGULAR ACCOUNTING?",
+   "split_reasons": []
   },
   "q17_2": {
    "years": [
@@ -912,7 +1036,8 @@
     "2020": "Q17.2 Total number of branches in rwanda including the head office",
     "2023": "Q17.2 Total number of branches in rwanda including the head office"
    },
-   "reference_label": "Q17.2 Total number of branches in rwanda including the head office"
+   "reference_label": "Q17.2 Total number of branches in rwanda including the head office",
+   "split_reasons": []
   },
   "q17_3": {
    "years": [
@@ -932,7 +1057,8 @@
     "2020": "Q17.3 Total number of working persons in all branches in rwanda including the he",
     "2023": "Q17.3 Total number of working persons in all branches in rwanda including the he"
    },
-   "reference_label": "Q17.3 Total number of working persons in all branches in rwanda including the he"
+   "reference_label": "Q17.3 Total number of working persons in all branches in rwanda including the he",
+   "split_reasons": []
   },
   "q18": {
    "years": [
@@ -946,7 +1072,8 @@
    "labels_by_year": {
     "2014": "ESTABLISHMENT TYPE"
    },
-   "reference_label": "ESTABLISHMENT TYPE"
+   "reference_label": "ESTABLISHMENT TYPE",
+   "split_reasons": []
   },
   "q19": {
    "years": [
@@ -960,7 +1087,8 @@
    "labels_by_year": {
     "2014": "TOTAL NUMBER OF BRANCHES IN RWANDA INCLUDING THE HEAD OFFICE"
    },
-   "reference_label": "TOTAL NUMBER OF BRANCHES IN RWANDA INCLUDING THE HEAD OFFICE"
+   "reference_label": "TOTAL NUMBER OF BRANCHES IN RWANDA INCLUDING THE HEAD OFFICE",
+   "split_reasons": []
   },
   "q2": {
    "years": [
@@ -983,7 +1111,8 @@
     "2020": "Q2. Working place",
     "2023": "Q2. Working place"
    },
-   "reference_label": "Q2. Working place"
+   "reference_label": "Q2. Working place",
+   "split_reasons": []
   },
   "q20": {
    "years": [
@@ -995,10 +1124,12 @@
    "versions": {
     "q20": [
      2017,
-     2020,
-     2023
+     2020
     ],
     "q20_v2": [
+     2023
+    ],
+    "q20_v3": [
      2014
     ]
    },
@@ -1008,7 +1139,12 @@
     "2020": "Q20. Annual total turnover in 2019",
     "2023": "Q20. Annual total turnover in 2022"
    },
-   "reference_label": "Q20. Annual total turnover in 2022"
+   "reference_label": "Q20. Annual total turnover in 2019",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q20. Annual total turnover in 2016' vs 'TOTAL NUMBER OF WORKING PERSONS IN ALL B')",
+    "2020 vs 2014: variable label differs ('Q20. Annual total turnover in 2019' vs 'TOTAL NUMBER OF WORKING PERSONS IN ALL B')",
+    "2023: FORCE_SPLIT"
+   ]
   },
   "q21": {
    "years": [
@@ -1019,7 +1155,9 @@
    "versions": {
     "q21": [
      2017,
-     2020,
+     2020
+    ],
+    "q21_v2": [
      2023
     ]
    },
@@ -1028,7 +1166,10 @@
     "2020": "Q21. Current employed capital",
     "2023": "Q21. Current employed capital"
    },
-   "reference_label": "Q21. Current employed capital"
+   "reference_label": "Q21. Current employed capital",
+   "split_reasons": [
+    "2023: FORCE_SPLIT"
+   ]
   },
   "q21a1": {
    "years": [
@@ -1042,7 +1183,8 @@
    "labels_by_year": {
     "2014": "Rwandan Total"
    },
-   "reference_label": "Rwandan Total"
+   "reference_label": "Rwandan Total",
+   "split_reasons": []
   },
   "q21a2": {
    "years": [
@@ -1056,7 +1198,8 @@
    "labels_by_year": {
     "2014": "Rwandan Male"
    },
-   "reference_label": "Rwandan Male"
+   "reference_label": "Rwandan Male",
+   "split_reasons": []
   },
   "q21a3": {
    "years": [
@@ -1070,7 +1213,8 @@
    "labels_by_year": {
     "2014": "Rwandan Female"
    },
-   "reference_label": "Rwandan Female"
+   "reference_label": "Rwandan Female",
+   "split_reasons": []
   },
   "q21b1": {
    "years": [
@@ -1084,7 +1228,8 @@
    "labels_by_year": {
     "2014": "Foreigner Total"
    },
-   "reference_label": "Foreigner Total"
+   "reference_label": "Foreigner Total",
+   "split_reasons": []
   },
   "q21b2": {
    "years": [
@@ -1098,7 +1243,8 @@
    "labels_by_year": {
     "2014": "Foreigner Male"
    },
-   "reference_label": "Foreigner Male"
+   "reference_label": "Foreigner Male",
+   "split_reasons": []
   },
   "q21b3": {
    "years": [
@@ -1112,7 +1258,8 @@
    "labels_by_year": {
     "2014": "Foreigner Female"
    },
-   "reference_label": "Foreigner Female"
+   "reference_label": "Foreigner Female",
+   "split_reasons": []
   },
   "q21c1": {
    "years": [
@@ -1126,7 +1273,8 @@
    "labels_by_year": {
     "2014": "TOTAL"
    },
-   "reference_label": "TOTAL"
+   "reference_label": "TOTAL",
+   "split_reasons": []
   },
   "q21c2": {
    "years": [
@@ -1140,7 +1288,8 @@
    "labels_by_year": {
     "2014": "TOTAL  Male"
    },
-   "reference_label": "TOTAL  Male"
+   "reference_label": "TOTAL  Male",
+   "split_reasons": []
   },
   "q21c3": {
    "years": [
@@ -1154,7 +1303,8 @@
    "labels_by_year": {
     "2014": "TOTAL  Female"
    },
-   "reference_label": "TOTAL  Female"
+   "reference_label": "TOTAL  Female",
+   "split_reasons": []
   },
   "q22": {
    "years": [
@@ -1174,7 +1324,8 @@
     "2020": "Q22. Is the establishment registered in any of the following institutions?",
     "2023": "Q22. Is the establishment registered in any of the following institutions?"
    },
-   "reference_label": "Q22. Is the establishment registered in any of the following institutions?"
+   "reference_label": "Q22. Is the establishment registered in any of the following institutions?",
+   "split_reasons": []
   },
   "q22_other": {
    "years": [
@@ -1194,7 +1345,8 @@
     "2020": "Q22. Specify other",
     "2023": "Q22. Specify other"
    },
-   "reference_label": "Q22. Specify other"
+   "reference_label": "Q22. Specify other",
+   "split_reasons": []
   },
   "q22a": {
    "years": [
@@ -1214,7 +1366,8 @@
     "2020": "Q22A Sector",
     "2023": "Q22A Sector"
    },
-   "reference_label": "Q22A Sector"
+   "reference_label": "Q22A Sector",
+   "split_reasons": []
   },
   "q22a1": {
    "years": [
@@ -1228,7 +1381,8 @@
    "labels_by_year": {
     "2014": "Working Owners    TOTAL"
    },
-   "reference_label": "Working Owners    TOTAL"
+   "reference_label": "Working Owners    TOTAL",
+   "split_reasons": []
   },
   "q22a2": {
    "years": [
@@ -1242,7 +1396,8 @@
    "labels_by_year": {
     "2014": "Working Owners    MALE"
    },
-   "reference_label": "Working Owners    MALE"
+   "reference_label": "Working Owners    MALE",
+   "split_reasons": []
   },
   "q22a3": {
    "years": [
@@ -1256,7 +1411,8 @@
    "labels_by_year": {
     "2014": "Working Owners    FEMALE"
    },
-   "reference_label": "Working Owners    FEMALE"
+   "reference_label": "Working Owners    FEMALE",
+   "split_reasons": []
   },
   "q22b": {
    "years": [
@@ -1276,7 +1432,8 @@
     "2020": "Q22B District",
     "2023": "Q22B District"
    },
-   "reference_label": "Q22B District"
+   "reference_label": "Q22B District",
+   "split_reasons": []
   },
   "q22b1": {
    "years": [
@@ -1290,7 +1447,8 @@
    "labels_by_year": {
     "2014": "Unpaid    TOTAL"
    },
-   "reference_label": "Unpaid    TOTAL"
+   "reference_label": "Unpaid    TOTAL",
+   "split_reasons": []
   },
   "q22b2": {
    "years": [
@@ -1304,7 +1462,8 @@
    "labels_by_year": {
     "2014": "Unpaid    MALE"
    },
-   "reference_label": "Unpaid    MALE"
+   "reference_label": "Unpaid    MALE",
+   "split_reasons": []
   },
   "q22b3": {
    "years": [
@@ -1318,7 +1477,8 @@
    "labels_by_year": {
     "2014": "Unpaid    FEMALE"
    },
-   "reference_label": "Unpaid    FEMALE"
+   "reference_label": "Unpaid    FEMALE",
+   "split_reasons": []
   },
   "q22c": {
    "years": [
@@ -1338,7 +1498,8 @@
     "2020": "Q22C Rwanda cooperative Agency (RCA) only Cooperative",
     "2023": "Q22C Rwanda cooperative Agency (RCA) only Cooperative"
    },
-   "reference_label": "Q22C Rwanda cooperative Agency (RCA) only Cooperative"
+   "reference_label": "Q22C Rwanda cooperative Agency (RCA) only Cooperative",
+   "split_reasons": []
   },
   "q22c1": {
    "years": [
@@ -1352,7 +1513,8 @@
    "labels_by_year": {
     "2014": "Apprentice    TOTAL"
    },
-   "reference_label": "Apprentice    TOTAL"
+   "reference_label": "Apprentice    TOTAL",
+   "split_reasons": []
   },
   "q22c2": {
    "years": [
@@ -1366,7 +1528,8 @@
    "labels_by_year": {
     "2014": "Apprentice    MALE"
    },
-   "reference_label": "Apprentice    MALE"
+   "reference_label": "Apprentice    MALE",
+   "split_reasons": []
   },
   "q22c3": {
    "years": [
@@ -1380,7 +1543,8 @@
    "labels_by_year": {
     "2014": "Apprentice    FEMALE"
    },
-   "reference_label": "Apprentice    FEMALE"
+   "reference_label": "Apprentice    FEMALE",
+   "split_reasons": []
   },
   "q22d": {
    "years": [
@@ -1400,7 +1564,8 @@
     "2020": "Q22D Private sector Federation (PSF)",
     "2023": "Q22D Private sector Federation (PSF)"
    },
-   "reference_label": "Q22D Private sector Federation (PSF)"
+   "reference_label": "Q22D Private sector Federation (PSF)",
+   "split_reasons": []
   },
   "q22d1": {
    "years": [
@@ -1414,7 +1579,8 @@
    "labels_by_year": {
     "2014": "<1 Months    TOTAL"
    },
-   "reference_label": "<1 Months    TOTAL"
+   "reference_label": "<1 Months    TOTAL",
+   "split_reasons": []
   },
   "q22d2": {
    "years": [
@@ -1428,7 +1594,8 @@
    "labels_by_year": {
     "2014": "<1 Months    MALE"
    },
-   "reference_label": "<1 Months    MALE"
+   "reference_label": "<1 Months    MALE",
+   "split_reasons": []
   },
   "q22d3": {
    "years": [
@@ -1442,7 +1609,8 @@
    "labels_by_year": {
     "2014": "<1 Months    FEMALE"
    },
-   "reference_label": "<1 Months    FEMALE"
+   "reference_label": "<1 Months    FEMALE",
+   "split_reasons": []
   },
   "q22e": {
    "years": [
@@ -1462,7 +1630,8 @@
     "2020": "Q22E Rwanda Governance Board (RGB) only NGO",
     "2023": "Q22E Rwanda Governance Board (RGB) only NGO"
    },
-   "reference_label": "Q22E Rwanda Governance Board (RGB) only NGO"
+   "reference_label": "Q22E Rwanda Governance Board (RGB) only NGO",
+   "split_reasons": []
   },
   "q22e1": {
    "years": [
@@ -1476,7 +1645,8 @@
    "labels_by_year": {
     "2014": "1-6 Months    TOTAL"
    },
-   "reference_label": "1-6 Months    TOTAL"
+   "reference_label": "1-6 Months    TOTAL",
+   "split_reasons": []
   },
   "q22e2": {
    "years": [
@@ -1490,7 +1660,8 @@
    "labels_by_year": {
     "2014": "1-6 Months    MALE"
    },
-   "reference_label": "1-6 Months    MALE"
+   "reference_label": "1-6 Months    MALE",
+   "split_reasons": []
   },
   "q22e3": {
    "years": [
@@ -1504,7 +1675,8 @@
    "labels_by_year": {
     "2014": "1-6 Months    FEMALE"
    },
-   "reference_label": "1-6 Months    FEMALE"
+   "reference_label": "1-6 Months    FEMALE",
+   "split_reasons": []
   },
   "q22f": {
    "years": [
@@ -1524,7 +1696,8 @@
     "2020": "Q22F Social Security Board (RSSB)",
     "2023": "Q22F Social Security Board (RSSB)"
    },
-   "reference_label": "Q22F Social Security Board (RSSB)"
+   "reference_label": "Q22F Social Security Board (RSSB)",
+   "split_reasons": []
   },
   "q22f1": {
    "years": [
@@ -1538,7 +1711,8 @@
    "labels_by_year": {
     "2014": "Above 6 Months    TOTAL"
    },
-   "reference_label": "Above 6 Months    TOTAL"
+   "reference_label": "Above 6 Months    TOTAL",
+   "split_reasons": []
   },
   "q22f2": {
    "years": [
@@ -1552,7 +1726,8 @@
    "labels_by_year": {
     "2014": "Above 6 Months    MALE"
    },
-   "reference_label": "Above 6 Months    MALE"
+   "reference_label": "Above 6 Months    MALE",
+   "split_reasons": []
   },
   "q22f3": {
    "years": [
@@ -1566,7 +1741,8 @@
    "labels_by_year": {
     "2014": "Above 6 Months    FEMALE"
    },
-   "reference_label": "Above 6 Months    FEMALE"
+   "reference_label": "Above 6 Months    FEMALE",
+   "split_reasons": []
   },
   "q22g": {
    "years": [
@@ -1586,7 +1762,8 @@
     "2020": "Q22G Rwanda Development Board (RDB)",
     "2023": "Q22G Rwanda Development Board (RDB)"
    },
-   "reference_label": "Q22G Rwanda Development Board (RDB)"
+   "reference_label": "Q22G Rwanda Development Board (RDB)",
+   "split_reasons": []
   },
   "q22g1": {
    "years": [
@@ -1600,7 +1777,8 @@
    "labels_by_year": {
     "2014": "Open contract    TOTAL"
    },
-   "reference_label": "Open contract    TOTAL"
+   "reference_label": "Open contract    TOTAL",
+   "split_reasons": []
   },
   "q22g2": {
    "years": [
@@ -1614,7 +1792,8 @@
    "labels_by_year": {
     "2014": "Open contract    MALE"
    },
-   "reference_label": "Open contract    MALE"
+   "reference_label": "Open contract    MALE",
+   "split_reasons": []
   },
   "q22g3": {
    "years": [
@@ -1628,7 +1807,8 @@
    "labels_by_year": {
     "2014": "Open contract    FEMALE"
    },
-   "reference_label": "Open contract    FEMALE"
+   "reference_label": "Open contract    FEMALE",
+   "split_reasons": []
   },
   "q22h": {
    "years": [
@@ -1648,7 +1828,8 @@
     "2020": "Q22H Rwanda Revenue Authority (RRA)",
     "2023": "Q22H Rwanda Revenue Authority (RRA)"
    },
-   "reference_label": "Q22H Rwanda Revenue Authority (RRA)"
+   "reference_label": "Q22H Rwanda Revenue Authority (RRA)",
+   "split_reasons": []
   },
   "q22h1": {
    "years": [
@@ -1662,7 +1843,8 @@
    "labels_by_year": {
     "2014": "TOTAL          TOTAL"
    },
-   "reference_label": "TOTAL          TOTAL"
+   "reference_label": "TOTAL          TOTAL",
+   "split_reasons": []
   },
   "q22h2": {
    "years": [
@@ -1676,7 +1858,8 @@
    "labels_by_year": {
     "2014": "TOTAL          MALE"
    },
-   "reference_label": "TOTAL          MALE"
+   "reference_label": "TOTAL          MALE",
+   "split_reasons": []
   },
   "q22h3": {
    "years": [
@@ -1690,7 +1873,8 @@
    "labels_by_year": {
     "2014": "TOTAL          FEMALE"
    },
-   "reference_label": "TOTAL          FEMALE"
+   "reference_label": "TOTAL          FEMALE",
+   "split_reasons": []
   },
   "q22i": {
    "years": [
@@ -1710,7 +1894,8 @@
     "2020": "Q22I Directorate of Immigration and Emigration",
     "2023": "Q22I Directorate of Immigration and Emigration"
    },
-   "reference_label": "Q22I Directorate of Immigration and Emigration"
+   "reference_label": "Q22I Directorate of Immigration and Emigration",
+   "split_reasons": []
   },
   "q22j": {
    "years": [
@@ -1730,7 +1915,8 @@
     "2020": "Q22J Other",
     "2023": "Q22J Other"
    },
-   "reference_label": "Q22J Other"
+   "reference_label": "Q22J Other",
+   "split_reasons": []
   },
   "q22z": {
    "years": [
@@ -1750,7 +1936,8 @@
     "2020": "Q22Z No registration",
     "2023": "Q22Z No registration"
    },
-   "reference_label": "Q22Z No registration"
+   "reference_label": "Q22Z No registration",
+   "split_reasons": []
   },
   "q23": {
    "years": [
@@ -1764,7 +1951,8 @@
    "labels_by_year": {
     "2014": "ANNUAL TOTAL TURNOVER IN 2013"
    },
-   "reference_label": "ANNUAL TOTAL TURNOVER IN 2013"
+   "reference_label": "ANNUAL TOTAL TURNOVER IN 2013",
+   "split_reasons": []
   },
   "q23_1": {
    "years": [
@@ -1784,7 +1972,8 @@
     "2020": "Q23.1 Did you have any transaction of goods with a foreign country during the la",
     "2023": "Q23.1 Did you have any transaction of goods with a foreign country during the la"
    },
-   "reference_label": "Q23.1 Did you have any transaction of goods with a foreign country during the la"
+   "reference_label": "Q23.1 Did you have any transaction of goods with a foreign country during the la",
+   "split_reasons": []
   },
   "q23_2": {
    "years": [
@@ -1804,7 +1993,8 @@
     "2020": "Q23.2 Did you have any transaction of services with a foreign country during the",
     "2023": "Q23.2 Did you have any transaction of services with a foreign country during the"
    },
-   "reference_label": "Q23.2 Did you have any transaction of services with a foreign country during the"
+   "reference_label": "Q23.2 Did you have any transaction of services with a foreign country during the",
+   "split_reasons": []
   },
   "q24": {
    "years": [
@@ -1829,7 +2019,12 @@
     "2020": "Q24. What type of taxes do you pay?",
     "2023": "Q24. What type of taxes do you pay?"
    },
-   "reference_label": "Q24. What type of taxes do you pay?"
+   "reference_label": "Q24. What type of taxes do you pay?",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q24. What type of taxes do you pay?' vs 'EMPLOYED CAPITAL')",
+    "2020 vs 2014: variable label differs ('Q24. What type of taxes do you pay?' vs 'EMPLOYED CAPITAL')",
+    "2023 vs 2014: variable label differs ('Q24. What type of taxes do you pay?' vs 'EMPLOYED CAPITAL')"
+   ]
   },
   "q24a": {
    "years": [
@@ -1849,7 +2044,8 @@
     "2020": "Q24A Value Added Tax (VAT)",
     "2023": "Q24A Value Added Tax (VAT)"
    },
-   "reference_label": "Q24A Value Added Tax (VAT)"
+   "reference_label": "Q24A Value Added Tax (VAT)",
+   "split_reasons": []
   },
   "q24b": {
    "years": [
@@ -1869,7 +2065,8 @@
     "2020": "Q24B TPR/PAYE",
     "2023": "Q24B TPR/PAYE"
    },
-   "reference_label": "Q24B TPR/PAYE"
+   "reference_label": "Q24B TPR/PAYE",
+   "split_reasons": []
   },
   "q24c": {
    "years": [
@@ -1889,7 +2086,8 @@
     "2020": "Q24C Income tax",
     "2023": "Q24C Income tax"
    },
-   "reference_label": "Q24C Income tax"
+   "reference_label": "Q24C Income tax",
+   "split_reasons": []
   },
   "q24d": {
    "years": [
@@ -1909,7 +2107,8 @@
     "2020": "Q24D Excise duties tax",
     "2023": "Q24D Excise duties tax"
    },
-   "reference_label": "Q24D Excise duties tax"
+   "reference_label": "Q24D Excise duties tax",
+   "split_reasons": []
   },
   "q24e": {
    "years": [
@@ -1929,7 +2128,8 @@
     "2020": "Q24E Import duties tax",
     "2023": "Q24E Import duties tax"
    },
-   "reference_label": "Q24E Import duties tax"
+   "reference_label": "Q24E Import duties tax",
+   "split_reasons": []
   },
   "q24f": {
    "years": [
@@ -1949,7 +2149,8 @@
     "2020": "Q24F Trading license tax",
     "2023": "Q24F Trading license tax"
    },
-   "reference_label": "Q24F Trading license tax"
+   "reference_label": "Q24F Trading license tax",
+   "split_reasons": []
   },
   "q24g": {
    "years": [
@@ -1969,7 +2170,8 @@
     "2020": "Q24G Rental income tax",
     "2023": "Q24G Rental income tax"
    },
-   "reference_label": "Q24G Rental income tax"
+   "reference_label": "Q24G Rental income tax",
+   "split_reasons": []
   },
   "q24h": {
    "years": [
@@ -1989,7 +2191,8 @@
     "2020": "Q24H Flat tax",
     "2023": "Q24H Flat tax"
    },
-   "reference_label": "Q24H Flat tax"
+   "reference_label": "Q24H Flat tax",
+   "split_reasons": []
   },
   "q24z": {
    "years": [
@@ -2009,7 +2212,8 @@
     "2020": "Q24Z No tax",
     "2023": "Q24Z No tax"
    },
-   "reference_label": "Q24Z No tax"
+   "reference_label": "Q24Z No tax",
+   "split_reasons": []
   },
   "q25": {
    "years": [
@@ -2034,7 +2238,12 @@
     "2020": "Q25. Do you have a tin number",
     "2023": "Q25. Do you have a tin number"
    },
-   "reference_label": "Q25. Do you have a tin number"
+   "reference_label": "Q25. Do you have a tin number",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q25. Do you have a tin number' vs 'REVENUE/INCOME IN 2013')",
+    "2020 vs 2014: variable label differs ('Q25. Do you have a tin number' vs 'REVENUE/INCOME IN 2013')",
+    "2023 vs 2014: variable label differs ('Q25. Do you have a tin number' vs 'REVENUE/INCOME IN 2013')"
+   ]
   },
   "q26": {
    "years": [
@@ -2048,7 +2257,8 @@
    "labels_by_year": {
     "2014": "CONTRIBUTIONS"
    },
-   "reference_label": "CONTRIBUTIONS"
+   "reference_label": "CONTRIBUTIONS",
+   "split_reasons": []
   },
   "q27a": {
    "years": [
@@ -2062,7 +2272,8 @@
    "labels_by_year": {
     "2014": "Registration at Sector"
    },
-   "reference_label": "Registration at Sector"
+   "reference_label": "Registration at Sector",
+   "split_reasons": []
   },
   "q27b": {
    "years": [
@@ -2076,7 +2287,8 @@
    "labels_by_year": {
     "2014": "Registration at District"
    },
-   "reference_label": "Registration at District"
+   "reference_label": "Registration at District",
+   "split_reasons": []
   },
   "q27c": {
    "years": [
@@ -2090,7 +2302,8 @@
    "labels_by_year": {
     "2014": "Registration at Rwanda Cooperative Agency (RCA)"
    },
-   "reference_label": "Registration at Rwanda Cooperative Agency (RCA)"
+   "reference_label": "Registration at Rwanda Cooperative Agency (RCA)",
+   "split_reasons": []
   },
   "q27d": {
    "years": [
@@ -2104,7 +2317,8 @@
    "labels_by_year": {
     "2014": "Registration at Private Sector Federation (PSF)"
    },
-   "reference_label": "Registration at Private Sector Federation (PSF)"
+   "reference_label": "Registration at Private Sector Federation (PSF)",
+   "split_reasons": []
   },
   "q27e": {
    "years": [
@@ -2118,7 +2332,8 @@
    "labels_by_year": {
     "2014": "Registration at Rwanda Governance Board (RGB)"
    },
-   "reference_label": "Registration at Rwanda Governance Board (RGB)"
+   "reference_label": "Registration at Rwanda Governance Board (RGB)",
+   "split_reasons": []
   },
   "q27f": {
    "years": [
@@ -2132,7 +2347,8 @@
    "labels_by_year": {
     "2014": "Registration at Social Security Fund (RSSB)"
    },
-   "reference_label": "Registration at Social Security Fund (RSSB)"
+   "reference_label": "Registration at Social Security Fund (RSSB)",
+   "split_reasons": []
   },
   "q27g": {
    "years": [
@@ -2146,7 +2362,8 @@
    "labels_by_year": {
     "2014": "Registration at Rwanda Development Board (RDB)"
    },
-   "reference_label": "Registration at Rwanda Development Board (RDB)"
+   "reference_label": "Registration at Rwanda Development Board (RDB)",
+   "split_reasons": []
   },
   "q27h": {
    "years": [
@@ -2160,7 +2377,8 @@
    "labels_by_year": {
     "2014": "Registrastion at Rwanda Revenue Authority (RRA)"
    },
-   "reference_label": "Registrastion at Rwanda Revenue Authority (RRA)"
+   "reference_label": "Registrastion at Rwanda Revenue Authority (RRA)",
+   "split_reasons": []
   },
   "q27ia": {
    "years": [
@@ -2174,7 +2392,8 @@
    "labels_by_year": {
     "2014": "Registration at Other institutions"
    },
-   "reference_label": "Registration at Other institutions"
+   "reference_label": "Registration at Other institutions",
+   "split_reasons": []
   },
   "q28": {
    "years": [
@@ -2188,7 +2407,8 @@
    "labels_by_year": {
     "2014": "DO YOU BUY OR SELL GOODS/SERVICES ABROAD"
    },
-   "reference_label": "DO YOU BUY OR SELL GOODS/SERVICES ABROAD"
+   "reference_label": "DO YOU BUY OR SELL GOODS/SERVICES ABROAD",
+   "split_reasons": []
   },
   "q29a": {
    "years": [
@@ -2202,7 +2422,8 @@
    "labels_by_year": {
     "2014": "Value Added Tax (VAT)"
    },
-   "reference_label": "Value Added Tax (VAT)"
+   "reference_label": "Value Added Tax (VAT)",
+   "split_reasons": []
   },
   "q29c": {
    "years": [
@@ -2216,7 +2437,8 @@
    "labels_by_year": {
     "2014": "Income tax"
    },
-   "reference_label": "Income tax"
+   "reference_label": "Income tax",
+   "split_reasons": []
   },
   "q29d": {
    "years": [
@@ -2230,7 +2452,8 @@
    "labels_by_year": {
     "2014": "Excise duties tax"
    },
-   "reference_label": "Excise duties tax"
+   "reference_label": "Excise duties tax",
+   "split_reasons": []
   },
   "q29e": {
    "years": [
@@ -2244,7 +2467,8 @@
    "labels_by_year": {
     "2014": "Import duties tax"
    },
-   "reference_label": "Import duties tax"
+   "reference_label": "Import duties tax",
+   "split_reasons": []
   },
   "q29f": {
    "years": [
@@ -2258,7 +2482,8 @@
    "labels_by_year": {
     "2014": "Trading license tax"
    },
-   "reference_label": "Trading license tax"
+   "reference_label": "Trading license tax",
+   "split_reasons": []
   },
   "q29g": {
    "years": [
@@ -2272,7 +2497,8 @@
    "labels_by_year": {
     "2014": "Rental income tax"
    },
-   "reference_label": "Rental income tax"
+   "reference_label": "Rental income tax",
+   "split_reasons": []
   },
   "q29h": {
    "years": [
@@ -2286,7 +2512,8 @@
    "labels_by_year": {
     "2014": "Flat tax"
    },
-   "reference_label": "Flat tax"
+   "reference_label": "Flat tax",
+   "split_reasons": []
   },
   "q3": {
    "years": [
@@ -2309,7 +2536,8 @@
     "2020": "Q3. Working status",
     "2023": "Q3.1. Working status"
    },
-   "reference_label": "Q3.1. Working status"
+   "reference_label": "Q3.1. Working status",
+   "split_reasons": []
   },
   "q30": {
    "years": [
@@ -2323,7 +2551,8 @@
    "labels_by_year": {
     "2014": "DO YOU HAVE A TIN NUMBER ?"
    },
-   "reference_label": "DO YOU HAVE A TIN NUMBER ?"
+   "reference_label": "DO YOU HAVE A TIN NUMBER ?",
+   "split_reasons": []
   },
   "q4_2": {
    "years": [
@@ -2343,7 +2572,8 @@
     "2020": "Q4.2 Manager sex",
     "2023": "Q4.2 Manager sex"
    },
-   "reference_label": "Q4.2 Manager sex"
+   "reference_label": "Q4.2 Manager sex",
+   "split_reasons": []
   },
   "q4_3": {
    "years": [
@@ -2363,7 +2593,8 @@
     "2020": "Q4.3 Manager age",
     "2023": "Q4.3 Manager age"
    },
-   "reference_label": "Q4.3 Manager age"
+   "reference_label": "Q4.3 Manager age",
+   "split_reasons": []
   },
   "q4b": {
    "years": [
@@ -2377,7 +2608,8 @@
    "labels_by_year": {
     "2014": "GENDER OF MANAGER"
    },
-   "reference_label": "GENDER OF MANAGER"
+   "reference_label": "GENDER OF MANAGER",
+   "split_reasons": []
   },
   "q4c": {
    "years": [
@@ -2391,7 +2623,8 @@
    "labels_by_year": {
     "2014": "AGE OF MANAGER"
    },
-   "reference_label": "AGE OF MANAGER"
+   "reference_label": "AGE OF MANAGER",
+   "split_reasons": []
   },
   "q5_1": {
    "years": [
@@ -2408,7 +2641,8 @@
     "2017": "Q5.1 Month of starting operation in Rwanda",
     "2020": "Q5.1 Month of starting operation in Rwanda"
    },
-   "reference_label": "Q5.1 Month of starting operation in Rwanda"
+   "reference_label": "Q5.1 Month of starting operation in Rwanda",
+   "split_reasons": []
   },
   "q5_2": {
    "years": [
@@ -2428,7 +2662,8 @@
     "2020": "Q5.2 Year of starting operation in Rwanda",
     "2023": "Year of starting operation in Rwanda"
    },
-   "reference_label": "Year of starting operation in Rwanda"
+   "reference_label": "Year of starting operation in Rwanda",
+   "split_reasons": []
   },
   "q5a": {
    "years": [
@@ -2442,7 +2677,8 @@
    "labels_by_year": {
     "2014": "MONTH OF STARTING OPERATION"
    },
-   "reference_label": "MONTH OF STARTING OPERATION"
+   "reference_label": "MONTH OF STARTING OPERATION",
+   "split_reasons": []
   },
   "q5b": {
    "years": [
@@ -2456,7 +2692,8 @@
    "labels_by_year": {
     "2014": "YEAR OF STARTING OPERATION"
    },
-   "reference_label": "YEAR OF STARTING OPERATION"
+   "reference_label": "YEAR OF STARTING OPERATION",
+   "split_reasons": []
   },
   "q6_1": {
    "years": [
@@ -2467,9 +2704,7 @@
    "versions": {
     "q6_1": [
      2017,
-     2020
-    ],
-    "q6_1_v2": [
+     2020,
      2023
     ]
    },
@@ -2478,7 +2713,8 @@
     "2020": "ISIC_1_digit",
     "2023": "ISIC1 Major economic activity"
    },
-   "reference_label": "ISIC_1_digit"
+   "reference_label": "ISIC1 Major economic activity",
+   "split_reasons": []
   },
   "q7": {
    "years": [
@@ -2498,7 +2734,8 @@
     "2020": "Q7 Institutional sector",
     "2023": "Q7 Institutional sector"
    },
-   "reference_label": "Q7 Institutional sector"
+   "reference_label": "Q7 Institutional sector",
+   "split_reasons": []
   },
   "q8": {
    "years": [
@@ -2523,7 +2760,12 @@
     "2020": "Q8 Categories of mixed sector",
     "2023": "Q8 Categories of mixed sector"
    },
-   "reference_label": "Q8 Categories of mixed sector"
+   "reference_label": "Q8 Categories of mixed sector",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q8 Categories of mixed sector' vs 'INSITUTIONAL SECTOR')",
+    "2020 vs 2014: variable label differs ('Q8 Categories of mixed sector' vs 'INSITUTIONAL SECTOR')",
+    "2023 vs 2014: variable label differs ('Q8 Categories of mixed sector' vs 'INSITUTIONAL SECTOR')"
+   ]
   },
   "q9": {
    "years": [
@@ -2535,10 +2777,12 @@
    "versions": {
     "q9": [
      2017,
-     2020,
-     2023
+     2020
     ],
     "q9_v2": [
+     2023
+    ],
+    "q9_v3": [
      2014
     ]
    },
@@ -2548,7 +2792,12 @@
     "2020": "Q9 Nationality of owner",
     "2023": "Q9 Nationality of owner"
    },
-   "reference_label": "Q9 Nationality of owner"
+   "reference_label": "Q9 Nationality of owner",
+   "split_reasons": [
+    "2017 vs 2014: variable label differs ('Q9 Nationality of owner' vs 'CATEGORIES OF PRIVATE SECTOR')",
+    "2020 vs 2014: variable label differs ('Q9 Nationality of owner' vs 'CATEGORIES OF PRIVATE SECTOR')",
+    "2023: FORCE_SPLIT"
+   ]
   },
   "rwandan_female": {
    "years": [
@@ -2568,7 +2817,8 @@
     "2020": "Enterprise Rwandan female workers",
     "2023": "Number of FEMALE Rwandan staff"
    },
-   "reference_label": "Number of FEMALE Rwandan staff"
+   "reference_label": "Number of FEMALE Rwandan staff",
+   "split_reasons": []
   },
   "rwandan_male": {
    "years": [
@@ -2588,7 +2838,8 @@
     "2020": "Enterprise Rwandan male workers",
     "2023": "Number of MALE Rwandan staff"
    },
-   "reference_label": "Number of MALE Rwandan staff"
+   "reference_label": "Number of MALE Rwandan staff",
+   "split_reasons": []
   },
   "rwandan_workers": {
    "years": [
@@ -2599,9 +2850,7 @@
    "versions": {
     "rwandan_workers": [
      2017,
-     2020
-    ],
-    "rwandan_workers_v2": [
+     2020,
      2023
     ]
    },
@@ -2610,7 +2859,8 @@
     "2020": "Enterprise Rwandan workers",
     "2023": "Total number of Rwandan staff"
    },
-   "reference_label": "Enterprise Rwandan workers"
+   "reference_label": "Total number of Rwandan staff",
+   "split_reasons": []
   },
   "s001": {
    "years": [
@@ -2624,7 +2874,8 @@
    "labels_by_year": {
     "2011": "Name of Province"
    },
-   "reference_label": "Name of Province"
+   "reference_label": "Name of Province",
+   "split_reasons": []
   },
   "s002": {
    "years": [
@@ -2638,7 +2889,8 @@
    "labels_by_year": {
     "2011": "Name of District"
    },
-   "reference_label": "Name of District"
+   "reference_label": "Name of District",
+   "split_reasons": []
   },
   "s003": {
    "years": [
@@ -2652,7 +2904,8 @@
    "labels_by_year": {
     "2011": "Name of Sector"
    },
-   "reference_label": "Name of Sector"
+   "reference_label": "Name of Sector",
+   "split_reasons": []
   },
   "s03": {
    "years": [
@@ -2666,7 +2919,8 @@
    "labels_by_year": {
     "2011": "WORKING PLACE"
    },
-   "reference_label": "WORKING PLACE"
+   "reference_label": "WORKING PLACE",
+   "split_reasons": []
   },
   "s04": {
    "years": [
@@ -2680,7 +2934,8 @@
    "labels_by_year": {
     "2011": "WORKING STATUS"
    },
-   "reference_label": "WORKING STATUS"
+   "reference_label": "WORKING STATUS",
+   "split_reasons": []
   },
   "s05": {
    "years": [
@@ -2694,7 +2949,8 @@
    "labels_by_year": {
     "2011": "SECTOR"
    },
-   "reference_label": "SECTOR"
+   "reference_label": "SECTOR",
+   "split_reasons": []
   },
   "s06": {
    "years": [
@@ -2708,7 +2964,8 @@
    "labels_by_year": {
     "2011": "OWNERSHIP"
    },
-   "reference_label": "OWNERSHIP"
+   "reference_label": "OWNERSHIP",
+   "split_reasons": []
   },
   "s07": {
    "years": [
@@ -2722,7 +2979,8 @@
    "labels_by_year": {
     "2011": "YEAR OF STARTING OPERATION"
    },
-   "reference_label": "YEAR OF STARTING OPERATION"
+   "reference_label": "YEAR OF STARTING OPERATION",
+   "split_reasons": []
   },
   "s08b": {
    "years": [
@@ -2736,7 +2994,8 @@
    "labels_by_year": {
     "2011": "ISIC CODE"
    },
-   "reference_label": "ISIC CODE"
+   "reference_label": "ISIC CODE",
+   "split_reasons": []
   },
   "s09": {
    "years": [
@@ -2750,7 +3009,8 @@
    "labels_by_year": {
     "2011": "LEGAL STATUS"
    },
-   "reference_label": "LEGAL STATUS"
+   "reference_label": "LEGAL STATUS",
+   "split_reasons": []
   },
   "s10a": {
    "years": [
@@ -2764,7 +3024,8 @@
    "labels_by_year": {
     "2011": "Social Security Fund"
    },
-   "reference_label": "Social Security Fund"
+   "reference_label": "Social Security Fund",
+   "split_reasons": []
   },
   "s10b": {
    "years": [
@@ -2778,7 +3039,8 @@
    "labels_by_year": {
     "2011": "Rwanda Revenue Authority"
    },
-   "reference_label": "Rwanda Revenue Authority"
+   "reference_label": "Rwanda Revenue Authority",
+   "split_reasons": []
   },
   "s10c": {
    "years": [
@@ -2792,7 +3054,8 @@
    "labels_by_year": {
     "2011": "Rwanda Development Board"
    },
-   "reference_label": "Rwanda Development Board"
+   "reference_label": "Rwanda Development Board",
+   "split_reasons": []
   },
   "s10d": {
    "years": [
@@ -2806,7 +3069,8 @@
    "labels_by_year": {
     "2011": "District"
    },
-   "reference_label": "District"
+   "reference_label": "District",
+   "split_reasons": []
   },
   "s10e": {
    "years": [
@@ -2820,7 +3084,8 @@
    "labels_by_year": {
     "2011": "Sector"
    },
-   "reference_label": "Sector"
+   "reference_label": "Sector",
+   "split_reasons": []
   },
   "s10f": {
    "years": [
@@ -2834,7 +3099,8 @@
    "labels_by_year": {
     "2011": "Rwanda cooperative Agency"
    },
-   "reference_label": "Rwanda cooperative Agency"
+   "reference_label": "Rwanda cooperative Agency",
+   "split_reasons": []
   },
   "s10g": {
    "years": [
@@ -2848,7 +3114,8 @@
    "labels_by_year": {
     "2011": "Other GoR Agencies"
    },
-   "reference_label": "Other GoR Agencies"
+   "reference_label": "Other GoR Agencies",
+   "split_reasons": []
   },
   "s11a": {
    "years": [
@@ -2862,7 +3129,8 @@
    "labels_by_year": {
     "2011": "VAT"
    },
-   "reference_label": "VAT"
+   "reference_label": "VAT",
+   "split_reasons": []
   },
   "s11b": {
    "years": [
@@ -2876,7 +3144,8 @@
    "labels_by_year": {
     "2011": "TPR"
    },
-   "reference_label": "TPR"
+   "reference_label": "TPR",
+   "split_reasons": []
   },
   "s11c": {
    "years": [
@@ -2890,7 +3159,8 @@
    "labels_by_year": {
     "2011": "Income tax"
    },
-   "reference_label": "Income tax"
+   "reference_label": "Income tax",
+   "split_reasons": []
   },
   "s12": {
    "years": [
@@ -2904,7 +3174,8 @@
    "labels_by_year": {
     "2011": "DOES THE ESTABLISHMENT MAINTAIN REGULAR OPERATIONAL ACCOU"
    },
-   "reference_label": "DOES THE ESTABLISHMENT MAINTAIN REGULAR OPERATIONAL ACCOU"
+   "reference_label": "DOES THE ESTABLISHMENT MAINTAIN REGULAR OPERATIONAL ACCOU",
+   "split_reasons": []
   },
   "s13": {
    "years": [
@@ -2918,7 +3189,8 @@
    "labels_by_year": {
     "2011": "EMPLOYED CAPITAL"
    },
-   "reference_label": "EMPLOYED CAPITAL"
+   "reference_label": "EMPLOYED CAPITAL",
+   "split_reasons": []
   },
   "s14a": {
    "years": [
@@ -2932,7 +3204,8 @@
    "labels_by_year": {
     "2011": "Without qualification R_P_M (Rwandan Permanent Male)"
    },
-   "reference_label": "Without qualification R_P_M (Rwandan Permanent Male)"
+   "reference_label": "Without qualification R_P_M (Rwandan Permanent Male)",
+   "split_reasons": []
   },
   "s14aa": {
    "years": [
@@ -2946,7 +3219,8 @@
    "labels_by_year": {
     "2011": "PrimaryT_R_M"
    },
-   "reference_label": "PrimaryT_R_M"
+   "reference_label": "PrimaryT_R_M",
+   "split_reasons": []
   },
   "s14ab": {
    "years": [
@@ -2960,7 +3234,8 @@
    "labels_by_year": {
     "2011": "PrimaryT_R_F"
    },
-   "reference_label": "PrimaryT_R_F"
+   "reference_label": "PrimaryT_R_F",
+   "split_reasons": []
   },
   "s14ac": {
    "years": [
@@ -2974,7 +3249,8 @@
    "labels_by_year": {
     "2011": "PrimaryT_N_R_M"
    },
-   "reference_label": "PrimaryT_N_R_M"
+   "reference_label": "PrimaryT_N_R_M",
+   "split_reasons": []
   },
   "s14ad": {
    "years": [
@@ -2988,7 +3264,8 @@
    "labels_by_year": {
     "2011": "PrimaryT_N_R_F"
    },
-   "reference_label": "PrimaryT_N_R_F"
+   "reference_label": "PrimaryT_N_R_F",
+   "split_reasons": []
   },
   "s14b": {
    "years": [
@@ -3002,7 +3279,8 @@
    "labels_by_year": {
     "2011": "Without qualification R_P_F (Rwandan Permanent Female)"
    },
-   "reference_label": "Without qualification R_P_F (Rwandan Permanent Female)"
+   "reference_label": "Without qualification R_P_F (Rwandan Permanent Female)",
+   "split_reasons": []
   },
   "s14ba": {
    "years": [
@@ -3016,7 +3294,8 @@
    "labels_by_year": {
     "2011": "SecondaryT_R_M"
    },
-   "reference_label": "SecondaryT_R_M"
+   "reference_label": "SecondaryT_R_M",
+   "split_reasons": []
   },
   "s14bb": {
    "years": [
@@ -3030,7 +3309,8 @@
    "labels_by_year": {
     "2011": "SecondaryT_R_F"
    },
-   "reference_label": "SecondaryT_R_F"
+   "reference_label": "SecondaryT_R_F",
+   "split_reasons": []
   },
   "s14bc": {
    "years": [
@@ -3044,7 +3324,8 @@
    "labels_by_year": {
     "2011": "SecondaryT_N_R_M"
    },
-   "reference_label": "SecondaryT_N_R_M"
+   "reference_label": "SecondaryT_N_R_M",
+   "split_reasons": []
   },
   "s14bd": {
    "years": [
@@ -3058,7 +3339,8 @@
    "labels_by_year": {
     "2011": "SecondaryT_N_R_F"
    },
-   "reference_label": "SecondaryT_N_R_F"
+   "reference_label": "SecondaryT_N_R_F",
+   "split_reasons": []
   },
   "s14c": {
    "years": [
@@ -3072,7 +3354,8 @@
    "labels_by_year": {
     "2011": "Without qualificationR_T_M (Rwandan Tatal male)"
    },
-   "reference_label": "Without qualificationR_T_M (Rwandan Tatal male)"
+   "reference_label": "Without qualificationR_T_M (Rwandan Tatal male)",
+   "split_reasons": []
   },
   "s14ca": {
    "years": [
@@ -3086,7 +3369,8 @@
    "labels_by_year": {
     "2011": "UniversityT_R_M"
    },
-   "reference_label": "UniversityT_R_M"
+   "reference_label": "UniversityT_R_M",
+   "split_reasons": []
   },
   "s14cb": {
    "years": [
@@ -3100,7 +3384,8 @@
    "labels_by_year": {
     "2011": "UniversityT_R_F"
    },
-   "reference_label": "UniversityT_R_F"
+   "reference_label": "UniversityT_R_F",
+   "split_reasons": []
   },
   "s14cc": {
    "years": [
@@ -3114,7 +3399,8 @@
    "labels_by_year": {
     "2011": "UniversityT_N_R_M"
    },
-   "reference_label": "UniversityT_N_R_M"
+   "reference_label": "UniversityT_N_R_M",
+   "split_reasons": []
   },
   "s14cd": {
    "years": [
@@ -3128,7 +3414,8 @@
    "labels_by_year": {
     "2011": "UniversityT_N_R_F"
    },
-   "reference_label": "UniversityT_N_R_F"
+   "reference_label": "UniversityT_N_R_F",
+   "split_reasons": []
   },
   "s14d": {
    "years": [
@@ -3142,7 +3429,8 @@
    "labels_by_year": {
     "2011": "Without qualificationR_T_F"
    },
-   "reference_label": "Without qualificationR_T_F"
+   "reference_label": "Without qualificationR_T_F",
+   "split_reasons": []
   },
   "s14da": {
    "years": [
@@ -3156,7 +3444,8 @@
    "labels_by_year": {
     "2011": "Without qualificationT_R_M"
    },
-   "reference_label": "Without qualificationT_R_M"
+   "reference_label": "Without qualificationT_R_M",
+   "split_reasons": []
   },
   "s14db": {
    "years": [
@@ -3170,7 +3459,8 @@
    "labels_by_year": {
     "2011": "Without qualificationT_R_F"
    },
-   "reference_label": "Without qualificationT_R_F"
+   "reference_label": "Without qualificationT_R_F",
+   "split_reasons": []
   },
   "s14dc": {
    "years": [
@@ -3184,7 +3474,8 @@
    "labels_by_year": {
     "2011": "Without qualificationT_N_R_M"
    },
-   "reference_label": "Without qualificationT_N_R_M"
+   "reference_label": "Without qualificationT_N_R_M",
+   "split_reasons": []
   },
   "s14dd": {
    "years": [
@@ -3198,7 +3489,8 @@
    "labels_by_year": {
     "2011": "Without qualificationT_N_R_F"
    },
-   "reference_label": "Without qualificationT_N_R_F"
+   "reference_label": "Without qualificationT_N_R_F",
+   "split_reasons": []
   },
   "s14e": {
    "years": [
@@ -3212,7 +3504,8 @@
    "labels_by_year": {
     "2011": "Without qualificationN_R_P_M (Non-Rwandan Permanent Male)"
    },
-   "reference_label": "Without qualificationN_R_P_M (Non-Rwandan Permanent Male)"
+   "reference_label": "Without qualificationN_R_P_M (Non-Rwandan Permanent Male)",
+   "split_reasons": []
   },
   "s14f": {
    "years": [
@@ -3226,7 +3519,8 @@
    "labels_by_year": {
     "2011": "Without qualificationN_R_P_F"
    },
-   "reference_label": "Without qualificationN_R_P_F"
+   "reference_label": "Without qualificationN_R_P_F",
+   "split_reasons": []
   },
   "s14g": {
    "years": [
@@ -3240,7 +3534,8 @@
    "labels_by_year": {
     "2011": "Without qualificationN_R_T_M"
    },
-   "reference_label": "Without qualificationN_R_T_M"
+   "reference_label": "Without qualificationN_R_T_M",
+   "split_reasons": []
   },
   "s14h": {
    "years": [
@@ -3254,7 +3549,8 @@
    "labels_by_year": {
     "2011": "Without qualificationN_R_T_F"
    },
-   "reference_label": "Without qualificationN_R_T_F"
+   "reference_label": "Without qualificationN_R_T_F",
+   "split_reasons": []
   },
   "s14m": {
    "years": [
@@ -3268,7 +3564,8 @@
    "labels_by_year": {
     "2011": "PrimaryR_P_M"
    },
-   "reference_label": "PrimaryR_P_M"
+   "reference_label": "PrimaryR_P_M",
+   "split_reasons": []
   },
   "s14n": {
    "years": [
@@ -3282,7 +3579,8 @@
    "labels_by_year": {
     "2011": "PrimaryR_P_F"
    },
-   "reference_label": "PrimaryR_P_F"
+   "reference_label": "PrimaryR_P_F",
+   "split_reasons": []
   },
   "s14o": {
    "years": [
@@ -3296,7 +3594,8 @@
    "labels_by_year": {
     "2011": "PrimaryR_T_M"
    },
-   "reference_label": "PrimaryR_T_M"
+   "reference_label": "PrimaryR_T_M",
+   "split_reasons": []
   },
   "s14oa": {
    "years": [
@@ -3310,7 +3609,8 @@
    "labels_by_year": {
     "2011": "SecondaryR_T_M"
    },
-   "reference_label": "SecondaryR_T_M"
+   "reference_label": "SecondaryR_T_M",
+   "split_reasons": []
   },
   "s14ob": {
    "years": [
@@ -3324,7 +3624,8 @@
    "labels_by_year": {
     "2011": "UniversityR_T_M"
    },
-   "reference_label": "UniversityR_T_M"
+   "reference_label": "UniversityR_T_M",
+   "split_reasons": []
   },
   "s14p": {
    "years": [
@@ -3338,7 +3639,8 @@
    "labels_by_year": {
     "2011": "PrimaryR_T_F"
    },
-   "reference_label": "PrimaryR_T_F"
+   "reference_label": "PrimaryR_T_F",
+   "split_reasons": []
   },
   "s14pa": {
    "years": [
@@ -3352,7 +3654,8 @@
    "labels_by_year": {
     "2011": "SecondaryR_T_F"
    },
-   "reference_label": "SecondaryR_T_F"
+   "reference_label": "SecondaryR_T_F",
+   "split_reasons": []
   },
   "s14pb": {
    "years": [
@@ -3366,7 +3669,8 @@
    "labels_by_year": {
     "2011": "UniversityR_T_F"
    },
-   "reference_label": "UniversityR_T_F"
+   "reference_label": "UniversityR_T_F",
+   "split_reasons": []
   },
   "s14q": {
    "years": [
@@ -3380,7 +3684,8 @@
    "labels_by_year": {
     "2011": "PrimaryN_R_P_M"
    },
-   "reference_label": "PrimaryN_R_P_M"
+   "reference_label": "PrimaryN_R_P_M",
+   "split_reasons": []
   },
   "s14qa": {
    "years": [
@@ -3394,7 +3699,8 @@
    "labels_by_year": {
     "2011": "SecondaryN_R_P_M"
    },
-   "reference_label": "SecondaryN_R_P_M"
+   "reference_label": "SecondaryN_R_P_M",
+   "split_reasons": []
   },
   "s14qb": {
    "years": [
@@ -3408,7 +3714,8 @@
    "labels_by_year": {
     "2011": "UniversityN_R_P_M"
    },
-   "reference_label": "UniversityN_R_P_M"
+   "reference_label": "UniversityN_R_P_M",
+   "split_reasons": []
   },
   "s14r": {
    "years": [
@@ -3422,7 +3729,8 @@
    "labels_by_year": {
     "2011": "PrimaryN_R_P_F"
    },
-   "reference_label": "PrimaryN_R_P_F"
+   "reference_label": "PrimaryN_R_P_F",
+   "split_reasons": []
   },
   "s14ra": {
    "years": [
@@ -3436,7 +3744,8 @@
    "labels_by_year": {
     "2011": "SecondaryN_R_P_F"
    },
-   "reference_label": "SecondaryN_R_P_F"
+   "reference_label": "SecondaryN_R_P_F",
+   "split_reasons": []
   },
   "s14rb": {
    "years": [
@@ -3450,7 +3759,8 @@
    "labels_by_year": {
     "2011": "UniversityN_R_P_F"
    },
-   "reference_label": "UniversityN_R_P_F"
+   "reference_label": "UniversityN_R_P_F",
+   "split_reasons": []
   },
   "s14s": {
    "years": [
@@ -3464,7 +3774,8 @@
    "labels_by_year": {
     "2011": "PrimaryN_R_T_M"
    },
-   "reference_label": "PrimaryN_R_T_M"
+   "reference_label": "PrimaryN_R_T_M",
+   "split_reasons": []
   },
   "s14sa": {
    "years": [
@@ -3478,7 +3789,8 @@
    "labels_by_year": {
     "2011": "SecondaryN_R_T_M"
    },
-   "reference_label": "SecondaryN_R_T_M"
+   "reference_label": "SecondaryN_R_T_M",
+   "split_reasons": []
   },
   "s14sb": {
    "years": [
@@ -3492,7 +3804,8 @@
    "labels_by_year": {
     "2011": "UniversityN_R_T_M"
    },
-   "reference_label": "UniversityN_R_T_M"
+   "reference_label": "UniversityN_R_T_M",
+   "split_reasons": []
   },
   "s14t": {
    "years": [
@@ -3506,7 +3819,8 @@
    "labels_by_year": {
     "2011": "PrimaryN_R_T_F"
    },
-   "reference_label": "PrimaryN_R_T_F"
+   "reference_label": "PrimaryN_R_T_F",
+   "split_reasons": []
   },
   "s14ta": {
    "years": [
@@ -3520,7 +3834,8 @@
    "labels_by_year": {
     "2011": "SecondaryN_R_T_F"
    },
-   "reference_label": "SecondaryN_R_T_F"
+   "reference_label": "SecondaryN_R_T_F",
+   "split_reasons": []
   },
   "s14tb": {
    "years": [
@@ -3534,7 +3849,8 @@
    "labels_by_year": {
     "2011": "UniversityN_R_T_F"
    },
-   "reference_label": "UniversityN_R_T_F"
+   "reference_label": "UniversityN_R_T_F",
+   "split_reasons": []
   },
   "s14y": {
    "years": [
@@ -3548,7 +3864,8 @@
    "labels_by_year": {
     "2011": "SecondaryR_P_M"
    },
-   "reference_label": "SecondaryR_P_M"
+   "reference_label": "SecondaryR_P_M",
+   "split_reasons": []
   },
   "s14ya": {
    "years": [
@@ -3562,7 +3879,8 @@
    "labels_by_year": {
     "2011": "UniversityR_P_M"
    },
-   "reference_label": "UniversityR_P_M"
+   "reference_label": "UniversityR_P_M",
+   "split_reasons": []
   },
   "s14z": {
    "years": [
@@ -3576,7 +3894,8 @@
    "labels_by_year": {
     "2011": "SecondaryR_P_F"
    },
-   "reference_label": "SecondaryR_P_F"
+   "reference_label": "SecondaryR_P_F",
+   "split_reasons": []
   },
   "s14za": {
    "years": [
@@ -3590,7 +3909,8 @@
    "labels_by_year": {
     "2011": "UniversityR_P_F"
    },
-   "reference_label": "UniversityR_P_F"
+   "reference_label": "UniversityR_P_F",
+   "split_reasons": []
   },
   "s15": {
    "years": [
@@ -3604,7 +3924,8 @@
    "labels_by_year": {
     "2011": "ESTABLISHMENT TYPE"
    },
-   "reference_label": "ESTABLISHMENT TYPE"
+   "reference_label": "ESTABLISHMENT TYPE",
+   "split_reasons": []
   },
   "s163": {
    "years": [
@@ -3618,7 +3939,8 @@
    "labels_by_year": {
     "2011": "ISIC _4 DIGITS"
    },
-   "reference_label": "ISIC _4 DIGITS"
+   "reference_label": "ISIC _4 DIGITS",
+   "split_reasons": []
   },
   "s163b": {
    "years": [
@@ -3632,7 +3954,8 @@
    "labels_by_year": {
     "2011": "Total Number of working persons in all branches in Rwan"
    },
-   "reference_label": "Total Number of working persons in all branches in Rwan"
+   "reference_label": "Total Number of working persons in all branches in Rwan",
+   "split_reasons": []
   },
   "s16a": {
    "years": [
@@ -3646,7 +3969,8 @@
    "labels_by_year": {
     "2011": "Total Number of Branches in Rwanda"
    },
-   "reference_label": "Total Number of Branches in Rwanda"
+   "reference_label": "Total Number of Branches in Rwanda",
+   "split_reasons": []
   },
   "s91": {
    "years": [
@@ -3660,7 +3984,8 @@
    "labels_by_year": {
     "2011": "Gender of owner"
    },
-   "reference_label": "Gender of owner"
+   "reference_label": "Gender of owner",
+   "split_reasons": []
   },
   "s92": {
    "years": [
@@ -3674,7 +3999,8 @@
    "labels_by_year": {
     "2011": "Is the owner of the establishment its manager"
    },
-   "reference_label": "Is the owner of the establishment its manager"
+   "reference_label": "Is the owner of the establishment its manager",
+   "split_reasons": []
   },
   "s_sector": {
    "years": [
@@ -3688,7 +4014,8 @@
    "labels_by_year": {
     "2011": "Short Intitutional sector"
    },
-   "reference_label": "Short Intitutional sector"
+   "reference_label": "Short Intitutional sector",
+   "split_reasons": []
   },
   "sampleweightcumulative_1_": {
    "years": [
@@ -3702,7 +4029,8 @@
    "labels_by_year": {
     "2014": "Cumulative Sampling Weight for Stage 1"
    },
-   "reference_label": "Cumulative Sampling Weight for Stage 1"
+   "reference_label": "Cumulative Sampling Weight for Stage 1",
+   "split_reasons": []
   },
   "sector": {
    "years": [
@@ -3719,7 +4047,8 @@
     "2011": "Sector (1101-5715, NISR codes; 2011 and 2014 only)",
     "2014": "Sector (1101-5715, NISR codes; 2011 and 2014 only)"
    },
-   "reference_label": "Sector (1101-5715, NISR codes; 2011 and 2014 only)"
+   "reference_label": "Sector (1101-5715, NISR codes; 2011 and 2014 only)",
+   "split_reasons": []
   },
   "size": {
    "years": [
@@ -3733,7 +4062,8 @@
    "labels_by_year": {
     "2014": "Created Size based on number of workers"
    },
-   "reference_label": "Created Size based on number of workers"
+   "reference_label": "Created Size based on number of workers",
+   "split_reasons": []
   },
   "size2": {
    "years": [
@@ -3753,7 +4083,8 @@
     "2020": "Size based on number of workers at enterprise level",
     "2023": "Size based on number of workers"
    },
-   "reference_label": "Size based on number of workers"
+   "reference_label": "Size based on number of workers",
+   "split_reasons": []
   },
   "so2": {
    "years": [
@@ -3767,7 +4098,8 @@
    "labels_by_year": {
     "2014": "Sex of owner"
    },
-   "reference_label": "Sex of owner"
+   "reference_label": "Sex of owner",
+   "split_reasons": []
   },
   "start_y": {
    "years": [
@@ -3777,11 +4109,13 @@
    ],
    "versions": {
     "start_y": [
-     2017,
-     2020
+     2023
     ],
     "start_y_v2": [
-     2023
+     2020
+    ],
+    "start_y_v3": [
+     2017
     ]
    },
    "labels_by_year": {
@@ -3789,7 +4123,11 @@
     "2020": "Year of starting intervals",
     "2023": "Start year group"
    },
-   "reference_label": "Year of starting intervals"
+   "reference_label": "Start year group",
+   "split_reasons": [
+    "2017: FORCE_SPLIT",
+    "2023: FORCE_SPLIT"
+   ]
   },
   "survey": {
    "years": [
@@ -3815,7 +4153,8 @@
     "2020": "Source survey",
     "2023": "Source survey"
    },
-   "reference_label": "Source survey"
+   "reference_label": "Source survey",
+   "split_reasons": []
   },
   "time_period": {
    "years": [
@@ -3829,7 +4168,8 @@
    "labels_by_year": {
     "2014": "Period in 3 year Interval"
    },
-   "reference_label": "Period in 3 year Interval"
+   "reference_label": "Period in 3 year Interval",
+   "split_reasons": []
   },
   "total_emp2": {
    "years": [
@@ -3843,7 +4183,8 @@
    "labels_by_year": {
     "2011": "Total number of workers"
    },
-   "reference_label": "Total number of workers"
+   "reference_label": "Total number of workers",
+   "split_reasons": []
   },
   "total_workers": {
    "years": [
@@ -3854,9 +4195,7 @@
    "versions": {
     "total_workers": [
      2017,
-     2020
-    ],
-    "total_workers_v2": [
+     2020,
      2023
     ]
    },
@@ -3865,7 +4204,8 @@
     "2020": "Enterprise total workers",
     "2023": "Total number of staff"
    },
-   "reference_label": "Enterprise total workers"
+   "reference_label": "Total number of staff",
+   "split_reasons": []
   },
   "u_r": {
    "years": [
@@ -3882,7 +4222,8 @@
     "2011": "Urban/Rural",
     "2014": "Created Urban and Rural"
    },
-   "reference_label": "Created Urban and Rural"
+   "reference_label": "Created Urban and Rural",
+   "split_reasons": []
   },
   "urban": {
    "years": [
@@ -3908,7 +4249,8 @@
     "2020": "Area of residence (1 urban, 2 rural)",
     "2023": "Area of residence (1 urban, 2 rural)"
    },
-   "reference_label": "Area of residence (1 urban, 2 rural)"
+   "reference_label": "Area of residence (1 urban, 2 rural)",
+   "split_reasons": []
   },
   "village_seq_2011": {
    "years": [
@@ -3922,7 +4264,8 @@
    "labels_by_year": {
     "2011": "2011 village sequence within cell (ID5, as shipped)"
    },
-   "reference_label": "2011 village sequence within cell (ID5, as shipped)"
+   "reference_label": "2011 village sequence within cell (ID5, as shipped)",
+   "split_reasons": []
   },
   "wave": {
    "years": [
@@ -3948,7 +4291,8 @@
     "2020": "Wave (census year)",
     "2023": "Wave (census year)"
    },
-   "reference_label": "Wave (census year)"
+   "reference_label": "Wave (census year)",
+   "split_reasons": []
   },
   "working_status": {
    "years": [
@@ -3962,7 +4306,8 @@
    "labels_by_year": {
     "2011": "Short working status"
    },
-   "reference_label": "Short working status"
+   "reference_label": "Short working status",
+   "split_reasons": []
   },
   "wt": {
    "years": [
@@ -3988,7 +4333,8 @@
     "2020": "Weight (1 for full enumerations; NISR final sampling weight in 2014)",
     "2023": "Weight (1 for full enumerations; NISR final sampling weight in 2014)"
    },
-   "reference_label": "Weight (1 for full enumerations; NISR final sampling weight in 2014)"
+   "reference_label": "Weight (1 for full enumerations; NISR final sampling weight in 2014)",
+   "split_reasons": []
   },
   "year": {
    "years": [
@@ -4014,7 +4360,23 @@
     "2020": "Census year",
     "2023": "Census year"
    },
-   "reference_label": "Census year"
+   "reference_label": "Census year",
+   "split_reasons": []
+  },
+  "year_nisr": {
+   "years": [
+    2011
+   ],
+   "versions": {
+    "year_nisr": [
+     2011
+    ]
+   },
+   "labels_by_year": {
+    "2011": "NISR's own variable named Year as shipped (2011: year-of-start group), kept -- t"
+   },
+   "reference_label": "NISR's own variable named Year as shipped (2011: year-of-start group), kept -- t",
+   "split_reasons": []
   }
  },
  "label_variants": {
@@ -4285,120 +4647,45 @@
     "Other service activities",
     "Other_services"
    ],
-   "20": [
-    "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
-    "Activities_of_house13holds_as_employers"
-   ],
    "21": [
     "Activities of extraterritorial organizations and bodies",
     "Activities_of_extraterritorial_organizations_and_bodies"
-   ]
-  },
-  "start_y": {
-   "1": [
-    "Before 1970",
-    "Below 1970"
    ],
-   "2": [
-    "1970 -1999",
-    "1970-1972"
-   ],
-   "3": [
-    "1973-1975",
-    "2000 - 2011"
-   ],
-   "4": [
-    "1976-1978",
-    "2012 - 2014"
-   ],
-   "5": [
-    "1979-1981",
-    "2015 - 2017"
-   ],
-   "6": [
-    "1982-1984",
-    "2018 - 2020"
-   ],
-   "7": [
-    "1985-1987",
-    "Not stated"
-   ]
-  },
-  "q9": {
-   "1": [
-    "01. Rwandan",
-    "Rwandan"
-   ],
-   "2": [
-    "02. Foreign (East African Community)",
-    "East African Community"
-   ],
-   "3": [
-    "03. Foreign (Other African countries)",
-    "Other African countries"
-   ],
-   "4": [
-    "04. Foreign (Other rest of world)",
-    "Europe"
-   ],
-   "5": [
-    "05. Joint (Rwandan + EAC)",
-    "America"
-   ],
-   "6": [
-    "06. Joint (Rwandan + Other African countries)",
-    "Asia"
-   ],
-   "7": [
-    "07. Joint (Rwandan + Other rest of world)",
-    "Oceania"
-   ],
-   "8": [
-    "08. Joint (more than one nonRwandan)",
-    "Joint (Rwandan + EAC)"
-   ],
-   "9": [
-    "Joint (Rwandan + Other African countries)",
-    "Not stated"
-   ]
-  },
-  "q20": {
-   "2": [
-    "300.000 - 12.000.000",
-    "300.000 - <12.000.000"
-   ],
-   "3": [
-    "12 - 20 million",
-    "12 million - <20 million"
-   ],
-   "4": [
-    "20 million - < 50 million",
-    "More than 20 to 50 million"
-   ],
-   "5": [
-    "50 million - < 400 million",
-    "More than 50 million"
-   ]
-  },
-  "q21": {
-   "1": [
-    "Less than 300.000",
-    "Less than 500.000"
-   ],
-   "2": [
-    "300.000 - <12.000.000",
-    "500.000 - 15.000.000"
-   ],
-   "3": [
-    "12 million - <20 million",
-    "More than 15 to 75 million"
-   ],
-   "4": [
-    "20 million - < 50 million",
-    "More than 75 million"
+   "20": [
+    "Activities Of Households As Employers; Undifferentiated Goods And Servicesproducing Activities Of Households For Own Use",
+    "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use"
    ]
   }
  },
+ "stale_labels": {
+  "q10": {
+   "2017": [
+    9
+   ]
+  },
+  "q20": {
+   "2017": [
+    9.0
+   ]
+  },
+  "q21": {
+   "2017": [
+    9
+   ]
+  },
+  "q9": {
+   "2017": [
+    91
+   ]
+  },
+  "s08b": {
+   "2011": [
+    4852,
+    99999
+   ]
+  }
+ },
+ "vl_threshold": 0.6,
  "establishment": {
   "rows": 896710,
   "vars": [
@@ -4500,6 +4787,7 @@
    "total_emp2",
    "no_detail_employ",
    "working_status",
+   "year_nisr",
    "owner_gender",
    "est_size2",
    "districts_names",
@@ -4508,6 +4796,7 @@
    "isic1_comp",
    "fi_1",
    "fi_2",
+   "geo_conflict_2011",
    "q2",
    "q3",
    "q4b",
@@ -4517,7 +4806,7 @@
    "isic1q6b",
    "isic1q7b",
    "q8_v2",
-   "q9_v2",
+   "q9_v3",
    "q10_v2",
    "q11_v2",
    "q12_v2",
@@ -4528,7 +4817,7 @@
    "q17",
    "q18",
    "q19",
-   "q20_v2",
+   "q20_v3",
    "q21a1",
    "q21a2",
    "q21a3",
@@ -4647,7 +4936,7 @@
    "owner_sex",
    "owner_age",
    "owner",
-   "start_y",
+   "start_y_v3",
    "male_worker",
    "female_worker",
    "total_workers",
@@ -4658,15 +4947,13 @@
    "rwandan_female",
    "foreign_female",
    "size2",
-   "rwandan_workers_v2",
-   "foreign_male_v2",
-   "foreign_female_v2",
-   "foregner_workers_v2",
-   "male_worker_v2",
-   "female_worker_v2",
-   "total_workers_v2",
-   "q6_1_v2",
-   "start_y_v2"
+   "start_y_v2",
+   "prov_derived",
+   "q9_v2",
+   "owner_age_v2",
+   "q20_v2",
+   "q21_v2",
+   "start_y"
   ]
  }
 }

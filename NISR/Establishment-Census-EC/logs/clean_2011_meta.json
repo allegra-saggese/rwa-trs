@@ -99,6 +99,7 @@
   "total_emp2",
   "no_detail_employ",
   "working_status",
+  "year_nisr",
   "owner_gender",
   "est_size2",
   "districts_names",
@@ -106,7 +107,8 @@
   "u_r",
   "isic1_comp",
   "fi_1",
-  "fi_2"
+  "fi_2",
+  "geo_conflict_2011"
  ],
  "var_labels": {
   "key": "Unique Identifier",
@@ -198,7 +200,6 @@
   "total_emp2": "Total number of workers",
   "no_detail_employ": "Employees without details",
   "working_status": "Short working status",
-  "year": "Census year",
   "owner_gender": "Gender of owner",
   "est_size2": "Size of establishment based on number of workers",
   "districts_names": "District names",
@@ -207,8 +208,10 @@
   "isic1_comp": "ISIC for comparison with 2014",
   "fi_1": "Formal_Informal based on registration, keeping account and size",
   "fi_2": "Formality based on registration and keeking account",
+  "year_nisr": "NISR's own variable named Year as shipped (2011: year-of-start group), kept -- the census year is in `year`",
   "prov": "Province (1-5, NISR codes)",
   "survey": "Source survey",
+  "year": "Census year",
   "wave": "Wave (census year)",
   "dist": "District (11-57, NISR codes)",
   "sector": "Sector (1101-5715, NISR codes; 2011 and 2014 only)",
@@ -216,7 +219,8 @@
   "estid": "Establishment id (NISR key where shipped, else year*1e6 + row number)",
   "wt": "Weight (1 for full enumerations; NISR final sampling weight in 2014)",
   "cell_seq_2011": "2011 cell sequence within sector (ID4, as shipped)",
-  "village_seq_2011": "2011 village sequence within cell (ID5, as shipped)"
+  "village_seq_2011": "2011 village sequence within cell (ID5, as shipped)",
+  "geo_conflict_2011": "2011: 1 = the numeric district code (Districts_names) disagreed with the district NAME (S002); district and sector taken from the names (622 establishments)"
  },
  "value_labels": {
   "id10": {
@@ -1276,14 +1280,6 @@
    "2.0": "Permenantly closed",
    "3.0": "Refusals"
   },
-  "year": {
-   "1.0": "1900-1949",
-   "2.0": "1950-1999",
-   "3.0": "2000-2004",
-   "4.0": "2005-2009",
-   "5.0": "2010-2011",
-   "9.0": "NS"
-  },
   "owner_gender": {
    "1.0": "Male",
    "2.0": "Female"
@@ -1369,12 +1365,23 @@
    "1.0": "Formal",
    "2.0": "Informal"
   },
+  "year_nisr": {
+   "1.0": "1900-1949",
+   "2.0": "1950-1999",
+   "3.0": "2000-2004",
+   "4.0": "2005-2009",
+   "5.0": "2010-2011",
+   "9.0": "NS"
+  },
   "prov": {
    "1": "City of Kigali",
    "2": "Southern Province",
    "3": "Western Province",
    "4": "Northern Province",
    "5": "Estern Province"
+  },
+  "total_emp2": {
+   "999999": "Not applicable (not operating or refusal)"
   },
   "dist": {
    "11": "Nyarugenge",
@@ -1833,8 +1840,8 @@
  },
  "source": {
   "prov": "id1",
-  "dist": "districts_names (NISR 101-507 codes -> 11-57)",
-  "sector": "s003 (sector name) matched to NISR codes within district; unmatched names -> missing",
+  "dist": "districts_names (NISR 101-507 codes -> 11-57); replaced by the district NAME (s002) where the code contradicts the sector name (geo_conflict_2011 = 1)",
+  "sector": "s003 (sector name) matched to NISR codes within the district (numeric code, else the district name s002 -- geo_conflict_2011 = 1)",
   "urban": "u_r recoded (2011 codes 1 rural, 2 urban -> key block 1 urban, 2 rural; u_r kept)",
   "estid": "key",
   "wt": "1 (full enumeration)"
@@ -1938,6 +1945,7 @@
   "total_emp2": "Int32",
   "no_detail_employ": "Int16",
   "working_status": "Int8",
+  "year_nisr": "Int8",
   "owner_gender": "Int8",
   "est_size2": "Int8",
   "districts_names": "Int16",
@@ -1945,6 +1953,7 @@
   "u_r": "Int8",
   "isic1_comp": "Int8",
   "fi_1": "Int8",
-  "fi_2": "Int8"
+  "fi_2": "Int8",
+  "geo_conflict_2011": "Int8"
  }
 }

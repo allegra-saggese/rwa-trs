@@ -1,5 +1,8 @@
 """
 03_checks.py -- EC: independent verification of 3_Final/EC_pooled_establishment.dta -> logs/checks_report.txt
+  C also checks worker totals (2011 operating universe without the 999999 sentinel; 2017 / 2020 male + female vs the
+  reports), D status accounting / geography completeness / worker identities / sentinels, E cross-year coding
+  compatibility (EC audit 2026-09-05).
   A. Python vs raw-file row counts (no prior processed outputs existed)
   B. Python vs Stata 17 recomputation on the written file
   C. Establishment and worker totals vs NISR's published EC reports
@@ -16,11 +19,15 @@ def row(section, name, ours, ref, tol=0.0):
     fails += (ok is False)
     report.append(f"| {section} | {name} | {ours:,.0f} | {'' if ref is None else f'{ref:,.0f}'} | {'PASS' if ok else ('n/a' if ok is None else '**FAIL**')} |")
 
-cols = [c for c in ["year", "wt", "dist", "sector", "urban", "estid", "s04", "total_workers", "total_emp2", "q20"] if c in read_meta(P["final"] / "EC_pooled_establishment.dta").column_names]
+cols = [c for c in ["year", "wt", "prov", "dist", "sector", "urban", "estid", "s04", "q3", "total_workers", "male_worker", "female_worker", "total_emp2", "q21c1", "q20",
+                    "geo_conflict_2011", "prov_derived"] if c in read_meta(P["final"] / "EC_pooled_establishment.dta").column_names]
 est, _, _ = read_dta(P["final"] / "EC_pooled_establishment.dta", usecols=cols)
+for c in ("s04", "q3", "total_workers", "male_worker", "female_worker", "total_emp2", "q21c1", "prov", "dist"):
+    if c in est.columns: est[c] = pd.to_numeric(est[c], errors="coerce")
+def status(g, y): return g["s04"] if y == 2011 else g["q3"]
 ours = {int(y): {"n": len(g), "sum_wt": g["wt"].sum(), "n_dist": g["dist"].nunique(), "urban": int((g["urban"] == 1).sum()),
                  "workers": float(g["total_workers"].sum()) if "total_workers" in g and g["total_workers"].notna().any() else None,
-                 "working": int((g["s04"] == 1).sum()) if "s04" in g else None} for y, g in est.groupby("year")}
+                 "operating": int(status(g, int(y)).isin([1, 2]).sum())} for y, g in est.groupby("year")}
 
 report += ["## A. Pooled file vs raw files as shipped", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 bench = json.load(open(LOGS / "benchmark_old_stata.json"))
@@ -57,13 +64,67 @@ else:
     report.append("Stata not found on this machine -- section B skipped."); log.warning("Stata not found; skipping B")
 
 # ---- C. published figures (zz_Reports: EC 2011 report p.?, EC 2014, 2017, 2020 reports; 2023 report not held)
+g11 = est[est.year == 2011]; g14 = est[est.year == 2014]; g17 = est[est.year == 2017]; g20 = est[est.year == 2020]; g23 = est[est.year == 2023]
+w11 = g11.loc[g11["s04"].isin([1, 2]) & (g11["total_emp2"] != 999999), "total_emp2"].sum()
 PUB = {"2011 establishments enumerated (2014 project document: 127,662)": (ours[2011]["n"], 127_662, 0),
-       "2011 operating establishments (report: 123,526)": (ours[2011]["working"], 123_526, 0.01),
+       "2011 operating establishments = status 1 working + 2 temporarily closed (report: 123,526; exact)": (ours[2011]["operating"], 123_526, 0),
+       "2011 workers in operating establishments, sentinel 999999 excluded (report: 281,946; exact)": (w11, 281_946, 0),
        "2014 weighted establishments (report: 154,236)": (ours[2014]["sum_wt"], 154_236, 0.001),
-       "2017 establishments (report: 190,288)": (ours[2017]["n"], 190_288, 0),
-       "2020 establishments (report: 232,283)": (ours[2020]["n"], 232_283, 0)}
+       "2014 weighted workers q21c1 x wt vs the full-census report 493,302 (public sample; 0.66% off -- informational)": ((g14["q21c1"] * g14["wt"]).sum(), None, 0),
+       "2017 establishments (report: 190,288; all rows are status 1 or 2)": (ours[2017]["n"], 190_288, 0),
+       "2017 workers = male + female (report: 616,737; exact)": ((g17["male_worker"] + g17["female_worker"]).sum(), 616_737, 0),
+       "2020 establishments (report: 232,283; incl. 24,457 temporarily closed)": (ours[2020]["n"], 232_283, 0),
+       "2020 workers = male + female (report: 706,140; exact)": ((g20["male_worker"] + g20["female_worker"]).sum(), 706_140, 0),
+       "2020 shipped total_workers (705,965: 175 short of the components -- use male + female; informational)": (g20["total_workers"].sum(), None, 0),
+       "2023 establishments (no report held; all rows are status 1 or 2; informational)": (ours[2023]["n"], None, 0),
+       "2023 workers = male + female (no report held; equals shipped total_workers; informational)": ((g23["male_worker"] + g23["female_worker"]).sum(), None, 0)}
 report += ["", "## C. Against NISR published EC totals", "", "| section | statistic | Python | published | result |", "|---|---|---:|---:|---|"]
 for k, (o, ref, tol) in PUB.items(): row("C", k, o, ref, tol)
+
+# ---- D. structure: status accounting, geography completeness, worker identities, sentinels
+report += ["", "## D. Status accounting, geography, worker identities, sentinels", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+for y, g in est.groupby("year"):
+    y = int(y); st = status(g, y)
+    row("D", f"{y} status accounting: rows == operating (1-2) + permanently closed (3) + refusals (4)", int(st.isin([1, 2, 3, 4]).sum()) if st.notna().any() else len(g), len(g))
+    row("D", f"{y} province complete (% of establishments)", 100 * g["prov"].notna().mean(), 100)
+    row("D", f"{y} district complete (% of establishments)", 100 * g["dist"].notna().mean(), 100)
+    if "sector" in g and y in (2011, 2014): row("D", f"{y} sector assigned (% of establishments)", 100 * g["sector"].notna().mean(), 100)
+    if y == 2011:
+        row("D", "2011 establishments whose numeric district contradicted the district name (names used; informational)", int(g["geo_conflict_2011"].sum()) if "geo_conflict_2011" in g else 0, None)
+        row("D", "2011 total_emp2 == 999999 sentinel rows (labelled not applicable; informational)", int((g["total_emp2"] == 999999).sum()), None)
+    if y == 2020: row("D", "2020 establishments with province derived from district (informational)", int(g["prov_derived"].sum()) if "prov_derived" in g else 0, None)
+    if y >= 2017: row("D", f"{y} establishments whose shipped total_workers != male + female (informational)", int((g["total_workers"] != g["male_worker"] + g["female_worker"]).sum()), None)
+
+# ---- E. cross-year coding compatibility (independent re-derivation from the per-year meta files)
+import difflib, re as _re
+align = json.load(open(LOGS / "merge_alignment.json")); thr = align.get("vl_threshold", 0.6)
+metas = {y: json.load(open(LOGS / f"clean_{y}_meta.json")) for y in (2011, 2014, 2017, 2020, 2023) if (LOGS / f"clean_{y}_meta.json").exists()}
+SENT = {98, 99, 998, 999, 9998, 9999}
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in _re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
+def _same(x, y):
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= thr
+bad, ncols_split_vl = [], 0
+for base, d in align["decisions"].items():
+    if len(d["versions"]) > 1 and any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): ncols_split_vl += 1
+    for col, ys in d["versions"].items():
+        labs = [(y, {float(k): v for k, v in metas[y]["value_labels"].get(base, {}).items() if str(k).replace('.', '', 1).lstrip('-').isdigit()}) for y in ys if y in metas]
+        for i in range(len(labs)):
+            for j in range(i + 1, len(labs)):
+                a, b = labs[i][1], labs[j][1]
+                for c in set(a) & set(b):
+                    if c not in SENT and not _same(a[c], b[c]): bad.append((col, labs[i][0], labs[j][0], c, a[c], b[c]))
+report += ["", "## E. Cross-year coding compatibility within pooled columns", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+row("E", "pooled columns holding years with incompatible value-label texts for the same code (must be 0)", len({b[0] for b in bad}), 0)
+row("E", "variables split into versions because of value labels or unlabelled ranges (informational)", ncols_split_vl, None)
+row("E", "variables with codes observed outside their own year's value labels -- stale labels (informational)", len(align.get("stale_labels", {})), None)
+row("E", "forced splits / forced alignments (informational)", len(align.get("force_split", {})) * 1000 + len(align.get("force_align", [])), None)
+if bad: report += ["", "Incompatible pairs: " + "; ".join(f"{c}: {y1}/{y2} code {k:g} {p!r} vs {q!r}" for c, y1, y2, k, p, q in bad[:20])]
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
 if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")

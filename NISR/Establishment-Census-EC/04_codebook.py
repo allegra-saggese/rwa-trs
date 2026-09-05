@@ -30,7 +30,7 @@ def chunked_counts(path, key, chunk=250_000):
     return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
 
 
-FILE_UNIVERSE = {"EC_pooled_establishment.dta": "every establishment enumerated with a fixed location; operating units = working-status item (s04 2011, q3 2014, q3_1 2017+; 1 = working); 2014 is a weighted sample (wt)"}
+FILE_UNIVERSE = {"EC_pooled_establishment.dta": "every establishment enumerated with a fixed location; NISR's operational universe = working (1) + temporarily closed (2) on the status item (s04 2011, q3 2014-2023) -- 2017-2023 files hold only those; permanently closed / refusals exist in 2011 only; 2014 is a weighted sample of working units (wt)"}
 
 def sheet_name(fname, used):
     """Excel sheet name for a file: the stem without the <TAG>_pooled_ prefix, <= 31 chars, unique."""
