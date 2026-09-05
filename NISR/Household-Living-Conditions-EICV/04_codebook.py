@@ -21,7 +21,7 @@ def chunked_counts(path, key, chunk=250_000):
     for off in range(0, m.number_rows, chunk):
         part, _, _ = read_dta(path, row_offset=off, row_limit=chunk)
         if key not in part.columns: part[key] = "all"
-        c = part.groupby(key, sort=False).count()
+        c = part.groupby(key, sort=False).count(); c[key] = part.groupby(key, sort=False).size()   # the key itself: group size
         counts = c if counts is None else counts.add(c, fill_value=0)
         order += [k for k in part[key].unique().tolist() if k not in order]
     return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
@@ -88,7 +88,7 @@ def codebook(fname, info):
         labs = {w: l for w, l in (d.get("labels_by_wave") or {}).items() if w in ws_here}
         variants = "; ".join(f"{w}: {l[:50]}" for w, l in labs.items() if l and l != d.get("reference_label")) if len(set(labs.values())) > 1 else ""
         others = ", ".join(f"{n} ({', '.join(g)})" for n, g in vers.items() if n != c) if len(vers) > 1 else ""
-        src = "; ".join(f"{w}: {metas[w][unit]['source'][c]}" for w in ws_here if w in metas and unit in metas[w] and c in metas[w][unit].get("source", {}))
+        src = "; ".join(f"{w}: {metas[w][unit]['source'].get(c, metas[w][unit]['source'].get(base))}" for w in (ws_here or info.get('waves', [])) if w in metas and unit in metas[w] and (c in metas[w][unit].get('source', {}) or base in metas[w][unit].get('source', {})))
         # universe: unit files carry it per variable; module files per module stem (recorded by 01_clean from the questionnaires)
         wv = ws_here if ws_here else info.get("waves", [])
         if unit in ("person", "household"): uni = {w: metas[w][unit]["universe"][base] for w in wv if w in metas and unit in metas[w] and base in metas[w][unit].get("universe", {})}

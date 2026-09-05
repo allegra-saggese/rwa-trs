@@ -1,12 +1,17 @@
 """
 03_checks.py -- LFS: independent verification of 3_Final/ outputs.
 
-Three comparisons, each PASS/FAIL, written to logs/checks_report.txt:
+Five sections, each row PASS/FAIL (or informational), written to logs/checks_report.txt:
   A. Python pooled file vs the OLD Stata pipeline's outputs (logs/benchmark_old_stata.json):
      rows, sum of annual weight, weighted working-age population, sex counts, by year.
   B. Python vs Stata: the same statistics recomputed by Stata 17 from the .dta files we wrote
-     (stata_checks.do; skipped with a warning if Stata is not installed).
-  C. Weighted totals vs figures published in NISR's annual LFS reports (hard-coded with source).
+     (stata_checks.do is regenerated here with the current paths; skipped if Stata is absent).
+  C. Weighted working-age population vs the figures published in NISR's annual LFS reports.
+  D. Household file: hhsize = roster count, household-interviews unique, exactly one head per
+     household-interview (exceptions counted), weight constant within the household-interview.
+  E. Cross-year coding compatibility: within every pooled column the years' value labels are
+     compatible (re-derived from the per-year meta files, independently of 02_merge's record);
+     informational counts of value-label splits and of stale labels.
 """
 import json, os, shutil, subprocess, sys
 import numpy as np, pandas as pd
@@ -22,8 +27,13 @@ def row(section, name, ours, ref, tol=0.0):
     fails += (ok is False)
     report.append(f"| {section} | {name} | {ours:,.0f} | {ref if ref is None else f'{ref:,.0f}'} | {'PASS' if ok else ('n/a' if ok is None else '**FAIL**')} |")
 
-person, _, _ = read_dta(P["final"] / "LFS_pooled_person.dta", usecols=["year", "wt", "wap16", "sex", "dist", "hhid", "interview"])
-hh, _, _ = read_dta(P["final"] / "LFS_pooled_household.dta", usecols=["year", "wt", "hhsize", "hhid", "interview"])
+from lfs_helpers import read_meta
+pcols = read_meta(P["final"] / "LFS_pooled_person.dta").column_names
+a02cols = [c for c in pcols if c == "a02" or c.startswith("a02_v")]
+person, _, _ = read_dta(P["final"] / "LFS_pooled_person.dta", usecols=["year", "wt", "wap16", "sex", "dist", "hhid", "interview"] + a02cols)
+hh, _, _ = read_dta(P["final"] / "LFS_pooled_household.dta", usecols=["year", "wt", "hhsize", "hhid", "interview", "head_sex"])
+person["is_head"] = 0
+for c in a02cols: person["is_head"] = person["is_head"] | (pd.to_numeric(person[c], errors="coerce") == 1).astype(int)
 ours = {}
 for y, g in person.groupby("year"):
     ours[int(y)] = {"n": len(g), "sum_wt": g["wt"].sum(), "wpop_wap16": (g["wap16"] * g["wt"]).sum(),
@@ -85,7 +95,15 @@ else:
 # ---- C. published figures
 # Working-age (16+) population as published in NISR annual LFS reports (zz_Reports/). Only the
 # figures verified against the PDFs are listed; a missing entry means "not yet checked".
-PUBLISHED_WAP16 = {2024: 8_303_568}   # LFS 2024 annual report, key indicators table; matches the file exactly
+PUBLISHED_WAP16 = {   # zz_Reports/, working-age population (16+) as printed; 2017 has round reports only, 2023 no annual report
+    2018: 6_966_096,   # LFS_2018_report.pdf
+    2019: 7_231_536,   # LFS_2019_annual_report_1.pdf
+    2020: 7_472_601,   # LFS_2020_labour_force_survey_annual_report.pdf
+    2021: 7_718_871,   # LFS_2021_annual_report.pdf
+    2022: 7_963_586,   # LFS_2022_annual_report.pdf, p. 1 and table 1.1
+    2024: 8_303_568,   # LFS 2024 annual report, key indicators table
+    2025: 8_541_210,   # LFS_2025_annual_report.pdf
+}
 report += ["", "## C. Weighted working-age population vs published NISR figures", "",
            "| section | statistic | Python | published | result |", "|---|---|---:|---:|---|"]
 for y, v in PUBLISHED_WAP16.items(): row("C", f"{y} weighted 16+ pop", ours[y]["wpop_wap16"], v, 0.005)
@@ -96,6 +114,44 @@ for y, g in hh.groupby("year"):
     p = person[(person.year == y) & person.hhid.notna()]
     row("D", f"{y} sum hhsize == person rows with hh key", g["hhsize"].sum(), len(p))
     row("D", f"{y} household-interviews", len(g), p.drop_duplicates(["hhid", "interview"]).shape[0])
+    heads = p.groupby(["hhid", "interview"])["is_head"].sum()
+    row("D", f"{y} household-interviews with exactly one head (0 heads: {int((heads == 0).sum())}, 2+: {int((heads > 1).sum())}; threshold 99.9%)", heads.eq(1).mean() * 100, 100, 0.001)
+    row("D", f"{y} household-interviews with head_sex missing", int(g["head_sex"].isna().sum()), int((heads == 0).sum()))
+    row("D", f"{y} wt constant within household-interview (% of household-interviews)", (p.groupby(["hhid", "interview"])["wt"].nunique() <= 1).mean() * 100, 100)
+
+# ---- E. cross-year coding compatibility (independent re-derivation from the per-year meta files)
+import difflib, re as _re
+align = json.load(open(LOGS / "merge_alignment.json")); thr = align.get("vl_threshold", 0.6)
+metas = {y: json.load(open(LOGS / f"clean_{y}_meta.json")) for y in range(2017, 2026) if (LOGS / f"clean_{y}_meta.json").exists()}
+SENT = {98, 99, 998, 999, 9998, 9999}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in _re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
+def _same(x, y):
+    a, b = _norm(x), _norm(y)
+    if a == b: return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= thr
+forced = set(align.get("force_align", []))
+bad, forced_diff, ncols_split_vl = [], [], 0
+for base, d in align["decisions"].items():
+    if len(d["versions"]) > 1 and any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): ncols_split_vl += 1
+    for col, ys in d["versions"].items():
+        labs = [(y, metas[y]["value_labels"].get(base) or {}) for y in ys if y in metas]
+        for i in range(len(labs)):
+            for j in range(i + 1, len(labs)):
+                a, b = labs[i][1], labs[j][1]
+                for c in set(a) & set(b):
+                    if c not in SENT and not _same(a[c], b[c]):
+                        (forced_diff if base in forced else bad).append((col, labs[i][0], labs[j][0], c, a[c], b[c]))
+report += ["", "## E. Cross-year coding compatibility within pooled columns", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+row("E", "pooled columns holding years with incompatible value-label texts for the same code, FORCE_ALIGN excluded (must be 0)", len({b[0] for b in bad}), 0)
+row("E", "FORCE_ALIGN columns whose value-label wording differs across years (owner's judgement that the question is the same; informational)", len({b[0] for b in forced_diff}), None)
+row("E", "variables split into versions because of value labels or unlabelled ranges (informational)", ncols_split_vl, None)
+row("E", "variables with codes observed outside their own year's value labels -- stale labels (informational; listed in merge_alignment.json)", len(align.get("stale_labels", {})), None)
+row("E", "forced splits (FORCE_SPLIT entries)", len(align.get("force_split", {})), None)
+if bad: report += ["", "Incompatible pairs: " + "; ".join(f"{c}: {y1}/{y2} code {k} {p!r} vs {q!r}" for c, y1, y2, k, p, q in bad[:20])]
+if forced_diff: report += ["", "FORCE_ALIGN wording differences: " + "; ".join(sorted({f"{c}: code {k} {p!r} vs {q!r}" for c, y1, y2, k, p, q in forced_diff})[:10])]
 
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report))

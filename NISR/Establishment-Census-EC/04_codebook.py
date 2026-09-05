@@ -24,7 +24,7 @@ def chunked_counts(path, key, chunk=250_000):
     for off in range(0, m.number_rows, chunk):
         part, _, _ = read_dta(path, row_offset=off, row_limit=chunk)
         if key not in part.columns: part[key] = "all"
-        c = part.groupby(key, sort=False).count()
+        c = part.groupby(key, sort=False).count(); c[key] = part.groupby(key, sort=False).size()   # the key itself: group size
         counts = c if counts is None else counts.add(c, fill_value=0)
         order += [k for k in part[key].unique().tolist() if k not in order]
     return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
@@ -93,7 +93,7 @@ def codebook(fname, unit):
         labs = {y: l for y, l in (d.get("labels_by_year") or {}).items() if int(y) in ys_here}
         variants = "; ".join(f"{y}: {l[:60]}" for y, l in labs.items() if l and l != d.get("reference_label")) if len(set(labs.values())) > 1 else ""
         other_versions = ", ".join(f"{n} ({ys[0]}–{ys[-1]})" for n, ys in vers.items() if n != c) if len(vers) > 1 else ""
-        src = "; ".join(f"{y}: {s[c]}" for y, s in srcs.items() if c in s)
+        src = "; ".join(f"{y}: {s.get(c, s.get(base))}" for y, s in srcs.items() if (c in s or base in s) and (not ys_here or int(y) in ys_here))
         if c in orig and orig[c] and orig[c] != (vl.get(c) or ""): src = (src + "; " if src else "") + f"2002 original label (FR): {orig[c][:60]}"
         vlab = vv.get(c, {})
         vtxt = ", ".join(f"{k}={v}" for k, v in list(vlab.items())[:6]) + (" …" if len(vlab) > 6 else "")

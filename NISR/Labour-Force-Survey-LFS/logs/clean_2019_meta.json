@@ -495,14 +495,14 @@
   "survey": "Source survey",
   "year": "Survey year",
   "wave": "Wave (survey year)",
-  "round": "Data-collection round (month+year as labelled by NISR)",
-  "quarter": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-  "interview": "Interview number of the household within the year (1, 2)",
+  "round": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025 (not shipped)",
+  "quarter": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's block structure in 2023-2025; missing in 2022",
+  "interview": "Interview number of the household within the year (1, 2): rank of the quarter where known; order of appearance in the file in 2022",
   "urban": "Area of residence (1 urban, 2 rural)",
   "cluster": "Sampling cluster id (year_psu)",
   "psu": "Primary sampling unit number (NISR PSU_NO; anonymised)",
   "hhid": "Household id = PSU*100 + household number (unique with year + interview)",
-  "pid": "Person number within the household",
+  "pid": "Person number within the household (2025: row order within the household-interview; no person id shipped)",
   "wt_round": "Round weight (where released)",
   "pid_nisr": "NISR person id as shipped (pid / pkey)"
  },
@@ -1439,8 +1439,8 @@
   "i03": {
    "1": "Flush toilet",
    "2": "Pit Latrine with constructed floor slab",
-   "3": "Pit latrine without constructed",
-   "4": "floor slab",
+   "3": "Pit latrine without constructed floor slab",
+   "4": "Pit latrine covered by concrete floor slab",
    "5": " No toilet (bush, channeled water,river, etc.)",
    "6": "Other (specify)"
   },
@@ -1776,6 +1776,7 @@
   "psu": "pkey // 1e6",
   "hhid": "pkey // 1e4",
   "pid": "(pkey // 100) % 100",
+  "pid_nisr": "pkey",
   "round": "pkey % 100 (2020-file numbering)",
   "sex": "a01",
   "age": "a04"

@@ -4,12 +4,50 @@
   "b01",
   "d03a",
   "d06",
-  "d23",
   "lu2",
   "psu_no",
   "status1"
  ],
- "force_split": {},
+ "force_split": {
+  "a02": [
+   [
+    2024,
+    2025
+   ]
+  ],
+  "d24": [
+   [
+    2024,
+    2025
+   ]
+  ],
+  "a14b": [
+   2024
+  ],
+  "d03b1": [
+   2020
+  ],
+  "h02": [
+   [
+    2021,
+    2022,
+    2023
+   ]
+  ],
+  "h03": [
+   [
+    2021,
+    2022,
+    2023
+   ]
+  ],
+  "subhrs": [
+   [
+    2022,
+    2023
+   ]
+  ]
+ },
  "decisions": {
   "a02": {
    "years": [
@@ -31,7 +69,9 @@
      2020,
      2021,
      2022,
-     2023,
+     2023
+    ],
+    "a02_v2": [
      2024,
      2025
     ]
@@ -47,7 +87,10 @@
     "2024": "Relationship",
     "2025": "Relationship"
    },
-   "reference_label": "Relationship"
+   "reference_label": "Relationship",
+   "split_reasons": [
+    "2024: FORCE_SPLIT"
+   ]
   },
   "a03m": {
    "years": [
@@ -76,7 +119,8 @@
     "2024": "Date of birth Month",
     "2025": "Date of birth Month"
    },
-   "reference_label": "Date of birth Month"
+   "reference_label": "Date of birth Month",
+   "split_reasons": []
   },
   "a03y": {
    "years": [
@@ -105,7 +149,8 @@
     "2024": "date of birth year",
     "2025": "date of birth year"
    },
-   "reference_label": "date of birth year"
+   "reference_label": "date of birth year",
+   "split_reasons": []
   },
   "a05": {
    "years": [
@@ -140,7 +185,8 @@
     "2024": "Present marital status",
     "2025": "Present marital status"
    },
-   "reference_label": "Present marital status"
+   "reference_label": "Present marital status",
+   "split_reasons": []
   },
   "a06": {
    "years": [
@@ -175,7 +221,8 @@
     "2024": "Do you have difficulty seeing, even if wearing glasses?",
     "2025": "Do you have difficulty seeing, even if wearing glasses?"
    },
-   "reference_label": "Do you have difficulty seeing, even if wearing glasses?"
+   "reference_label": "Do you have difficulty seeing, even if wearing glasses?",
+   "split_reasons": []
   },
   "a07": {
    "years": [
@@ -210,7 +257,8 @@
     "2024": "Do you have difficulty hearing, even if using a hearing aid?",
     "2025": "Do you have difficulty hearing, even if using a hearing aid?"
    },
-   "reference_label": "Do you have difficulty hearing, even if using a hearing aid?"
+   "reference_label": "Do you have difficulty hearing, even if using a hearing aid?",
+   "split_reasons": []
   },
   "a08": {
    "years": [
@@ -245,7 +293,8 @@
     "2024": "Do you have difficulty walking or climbing steps?",
     "2025": "Do you have difficulty walking or climbing steps?"
    },
-   "reference_label": "Do you have difficulty walking or climbing steps?"
+   "reference_label": "Do you have difficulty walking or climbing steps?",
+   "split_reasons": []
   },
   "a09": {
    "years": [
@@ -280,7 +329,8 @@
     "2024": "Do you have difficulty remembering or concentrating?",
     "2025": "Do you have difficulty remembering or concentrating?"
    },
-   "reference_label": "Do you have difficulty remembering or concentrating?"
+   "reference_label": "Do you have difficulty remembering or concentrating?",
+   "split_reasons": []
   },
   "a0a": {
    "years": [
@@ -294,7 +344,8 @@
    "labels_by_year": {
     "2020": "Does anyone has difficulty seeing, even if wearing glasses in the HH?"
    },
-   "reference_label": "Does anyone has difficulty seeing, even if wearing glasses in the HH?"
+   "reference_label": "Does anyone has difficulty seeing, even if wearing glasses in the HH?",
+   "split_reasons": []
   },
   "a0b": {
    "years": [
@@ -308,7 +359,8 @@
    "labels_by_year": {
     "2020": "Does anyone has difficulty hearing, even if using a hearing aid?"
    },
-   "reference_label": "Does anyone has difficulty hearing, even if using a hearing aid?"
+   "reference_label": "Does anyone has difficulty hearing, even if using a hearing aid?",
+   "split_reasons": []
   },
   "a0c": {
    "years": [
@@ -322,7 +374,8 @@
    "labels_by_year": {
     "2020": "Does anyone has difficulty walking or climbing steps?"
    },
-   "reference_label": "Does anyone has difficulty walking or climbing steps?"
+   "reference_label": "Does anyone has difficulty walking or climbing steps?",
+   "split_reasons": []
   },
   "a0d": {
    "years": [
@@ -336,7 +389,8 @@
    "labels_by_year": {
     "2020": "Does anyone has difficulty remembering or concentrating?"
    },
-   "reference_label": "Does anyone has difficulty remembering or concentrating?"
+   "reference_label": "Does anyone has difficulty remembering or concentrating?",
+   "split_reasons": []
   },
   "a10": {
    "years": [
@@ -371,7 +425,8 @@
     "2024": "Do you have difficulty (with self-care such as) washing all over or dressing?",
     "2025": "Do you have difficulty (with self-care such as) washing all over or dressing?"
    },
-   "reference_label": "Do you have difficulty (with self-care such as) washing all over or dressing?"
+   "reference_label": "Do you have difficulty (with self-care such as) washing all over or dressing?",
+   "split_reasons": []
   },
   "a11": {
    "years": [
@@ -406,7 +461,8 @@
     "2024": "Using your usual language, do you have difficulty communicating, mple understand",
     "2025": "Using your usual language, do you have difficulty communicating, mple understand"
    },
-   "reference_label": "Using your usual language, do you have difficulty communicating, mple understand"
+   "reference_label": "Using your usual language, do you have difficulty communicating, mple understand",
+   "split_reasons": []
   },
   "a12": {
    "years": [
@@ -427,7 +483,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "a12_v2": [
      2025
     ]
    },
@@ -441,7 +499,10 @@
     "2024": "What is nationality?",
     "2025": "What is nationality?"
    },
-   "reference_label": "What is nationality?"
+   "reference_label": "What is nationality?",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 7: 'South Sudan' vs ' Rest of Africa'; 8: 'Rest of Africa' vs 'Other country'"
+   ]
   },
   "a13": {
    "years": [
@@ -476,7 +537,8 @@
     "2024": "Residential Status in Rwanda",
     "2025": "Residential Status in Rwanda"
    },
-   "reference_label": "Residential Status in Rwanda"
+   "reference_label": "Residential Status in Rwanda",
+   "split_reasons": []
   },
   "a14a": {
    "years": [
@@ -497,7 +559,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "a14a_v2": [
      2025
     ]
    },
@@ -511,7 +575,10 @@
     "2024": "Country/Area of birth",
     "2025": "Country/Area of birth"
    },
-   "reference_label": "Country/Area of birth"
+   "reference_label": "Country/Area of birth",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 7: 'South Sudan' vs 'Rest of Africa'; 8: 'Rest of Africa' vs 'Other country'"
+   ]
   },
   "a14b": {
    "years": [
@@ -532,8 +599,10 @@
      2021,
      2022,
      2023,
-     2024,
      2025
+    ],
+    "a14b_v2": [
+     2024
     ]
    },
    "labels_by_year": {
@@ -543,10 +612,13 @@
     "2021": "District of birth",
     "2022": "District of birth",
     "2023": "District of birth",
-    "2024": "District of birth",
+    "2024": "District of birth -- 2024 file mixes district codes (11-57) and sector codes (11",
     "2025": "District of birth"
    },
-   "reference_label": "District of birth"
+   "reference_label": "District of birth",
+   "split_reasons": [
+    "2024: FORCE_SPLIT"
+   ]
   },
   "a15": {
    "years": [
@@ -577,7 +649,11 @@
     "2024": "Has usual place of residence  always been in this district?",
     "2025": "Did he/she lived outside this district for at least 6 consecutive months?"
    },
-   "reference_label": "Has usual place of residence  always been in this district?"
+   "reference_label": "Has usual place of residence  always been in this district?",
+   "split_reasons": [
+    "2021 vs 2019: variable label differs ('Since birth Has  ived in another distric' vs 'Has usual place of residence  always bee')",
+    "2025 vs 2019: variable label differs ('Did he/she lived outside this district f' vs 'Has usual place of residence  always bee')"
+   ]
   },
   "a16y": {
    "years": [
@@ -606,7 +682,8 @@
     "2024": "The period of usual place of residence( last move)-Years",
     "2025": "The period of usual place of residence( last move)-Years"
    },
-   "reference_label": "The period of usual place of residence( last move)-Years"
+   "reference_label": "The period of usual place of residence( last move)-Years",
+   "split_reasons": []
   },
   "a17a": {
    "years": [
@@ -623,7 +700,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "a17a_v2": [
      2025
     ]
    },
@@ -635,7 +714,10 @@
     "2024": "District or foreign country did he/she live.",
     "2025": "In which country(Name) live in prior to arrive here?"
    },
-   "reference_label": "In which country(Name) live in prior to arrive here?"
+   "reference_label": "District or foreign country did he/she live.",
+   "split_reasons": [
+    "2025 vs 2019: value labels differ -- 7: 'South Sudan' vs 'Rest of Africa'; 8: 'Rest of Africa' vs 'Other country'"
+   ]
   },
   "a17b": {
    "years": [
@@ -664,7 +746,8 @@
     "2024": "District code",
     "2025": "District code"
    },
-   "reference_label": "District code"
+   "reference_label": "District code",
+   "split_reasons": []
   },
   "a18": {
    "years": [
@@ -693,7 +776,8 @@
     "2022": "Kind of place he/she lived in prior to arriving here?",
     "2023": "Kind of place he/she lived in prior to arriving here?"
    },
-   "reference_label": "Kind of place he/she lived in prior to arriving here?"
+   "reference_label": "Kind of place he/she lived in prior to arriving here?",
+   "split_reasons": []
   },
   "a19": {
    "years": [
@@ -728,7 +812,8 @@
     "2024": "How long did he/she live in the previous location prior to arriving here?",
     "2025": "How long did he/she live in the previous location prior to arriving here?"
    },
-   "reference_label": "How long did he/she live in the previous location prior to arriving here?"
+   "reference_label": "How long did he/she live in the previous location prior to arriving here?",
+   "split_reasons": []
   },
   "a1a": {
    "years": [
@@ -742,7 +827,8 @@
    "labels_by_year": {
     "2020": "Does anyone has difficulty (with self-care such as) washing all over or dressing"
    },
-   "reference_label": "Does anyone has difficulty (with self-care such as) washing all over or dressing"
+   "reference_label": "Does anyone has difficulty (with self-care such as) washing all over or dressing",
+   "split_reasons": []
   },
   "a1b": {
    "years": [
@@ -756,7 +842,8 @@
    "labels_by_year": {
     "2020": "Using your usual language, does anyone has difficulty communicating, mple unders"
    },
-   "reference_label": "Using your usual language, does anyone has difficulty communicating, mple unders"
+   "reference_label": "Using your usual language, does anyone has difficulty communicating, mple unders",
+   "split_reasons": []
   },
   "a20": {
    "years": [
@@ -791,7 +878,8 @@
     "2024": "Reason to move away from previous location",
     "2025": "Reason  for moving to the current location"
    },
-   "reference_label": "Reason  for moving to the current location"
+   "reference_label": "Reason  for moving to the current location",
+   "split_reasons": []
   },
   "a21": {
    "years": [
@@ -820,7 +908,8 @@
     "2022": "Has he/she been away from home in this last 12 months?",
     "2023": "Has he/she been away from home in this last 12 months?"
    },
-   "reference_label": "Has he/she been away from home in this last 12 months?"
+   "reference_label": "Has he/she been away from home in this last 12 months?",
+   "split_reasons": []
   },
   "a22": {
    "years": [
@@ -849,7 +938,8 @@
     "2022": "Months during the past 12 months has he/she been away from this HH",
     "2023": "Months during the past 12 months has he/she been away from this HH"
    },
-   "reference_label": "Months during the past 12 months has he/she been away from this HH"
+   "reference_label": "Months during the past 12 months has he/she been away from this HH",
+   "split_reasons": []
   },
   "a23": {
    "years": [
@@ -878,7 +968,8 @@
     "2022": "While absent, is/was he/she a member of another household?",
     "2023": "While absent, is/was he/she a member of another household?"
    },
-   "reference_label": "While absent, is/was he/she a member of another household?"
+   "reference_label": "While absent, is/was he/she a member of another household?",
+   "split_reasons": []
   },
   "a24": {
    "years": [
@@ -907,7 +998,8 @@
     "2022": "Is he/she household member?",
     "2023": "Is he/she household member?"
    },
-   "reference_label": "Is he/she household member?"
+   "reference_label": "Is he/she household member?",
+   "split_reasons": []
   },
   "a25": {
    "years": [
@@ -924,7 +1016,8 @@
     "2017": "Is (NAME) currently studying or working?",
     "2019": "Is (NAME) currently studying or working?"
    },
-   "reference_label": "Is (NAME) currently studying or working?"
+   "reference_label": "Is (NAME) currently studying or working?",
+   "split_reasons": []
   },
   "a26": {
    "years": [
@@ -941,7 +1034,8 @@
     "2017": "What type of work does (NAME) do?",
     "2019": "What type of work does (NAME) do?"
    },
-   "reference_label": "What type of work does (NAME) do?"
+   "reference_label": "What type of work does (NAME) do?",
+   "split_reasons": []
   },
   "a27": {
    "years": [
@@ -958,7 +1052,8 @@
     "2017": "How many days per week did [NAME] usually work in these activities?",
     "2019": "How many days per week did [NAME] usually work in these activities?"
    },
-   "reference_label": "How many days per week did [NAME] usually work in these activities?"
+   "reference_label": "How many days per week did [NAME] usually work in these activities?",
+   "split_reasons": []
   },
   "a28": {
    "years": [
@@ -975,7 +1070,8 @@
     "2017": "How many hours per day did [NAME] usually work in these activities?",
     "2019": "How many hours per day did [NAME] usually work in these activities?"
    },
-   "reference_label": "How many hours per day did [NAME] usually work in these activities?"
+   "reference_label": "How many hours per day did [NAME] usually work in these activities?",
+   "split_reasons": []
   },
   "a29": {
    "years": [
@@ -992,7 +1088,8 @@
     "2017": "In the last 7 days, how many hours did [NAME] spend collecting firewood for the",
     "2019": "In the last 7 days, how many hours did [NAME] spend collecting firewood for the"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend collecting firewood for the"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend collecting firewood for the",
+   "split_reasons": []
   },
   "a30": {
    "years": [
@@ -1009,7 +1106,8 @@
     "2017": "In the last 7 days, how many hours did [NAME] spend fetching water for the house",
     "2019": "In the last 7 days, how many hours did [NAME] spend fetching water for the house"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend fetching water for the house"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend fetching water for the house",
+   "split_reasons": []
   },
   "a31": {
    "years": [
@@ -1026,7 +1124,8 @@
     "2017": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra",
     "2019": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra",
+   "split_reasons": []
   },
   "a32": {
    "years": [
@@ -1043,7 +1142,8 @@
     "2017": "In the last 7 days ,how many hours did[NAME]spend manifacturing household goods",
     "2019": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,",
+   "split_reasons": []
   },
   "a33": {
    "years": [
@@ -1060,7 +1160,8 @@
     "2017": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,",
     "2019": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu",
+   "split_reasons": []
   },
   "a34": {
    "years": [
@@ -1077,7 +1178,8 @@
     "2017": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu",
     "2019": "In the last 7 days, how many  hours did [NAME] spend looking after children and"
    },
-   "reference_label": "In the last 7 days, how many  hours did [NAME] spend looking after children and"
+   "reference_label": "In the last 7 days, how many  hours did [NAME] spend looking after children and",
+   "split_reasons": []
   },
   "a35": {
    "years": [
@@ -1091,7 +1193,8 @@
    "labels_by_year": {
     "2017": "In the last 7 days, how many  hours did [NAME] spend looking after children and"
    },
-   "reference_label": "In the last 7 days, how many  hours did [NAME] spend looking after children and"
+   "reference_label": "In the last 7 days, how many  hours did [NAME] spend looking after children and",
+   "split_reasons": []
   },
   "act_hrs": {
    "years": [
@@ -1126,7 +1229,8 @@
     "2024": "Number of actual hours worked",
     "2025": "Number of actual hours worked"
    },
-   "reference_label": "Number of actual hours worked"
+   "reference_label": "Number of actual hours worked",
+   "split_reasons": []
   },
   "acthrs": {
    "years": [
@@ -1161,7 +1265,8 @@
     "2024": "Actual hours intervals",
     "2025": "Actual hours intervals"
    },
-   "reference_label": "Actual hours intervals"
+   "reference_label": "Actual hours intervals",
+   "split_reasons": []
   },
   "agdis": {
    "years": [
@@ -1178,7 +1283,8 @@
     "2022": "RECODE of A04 (Age at last birthday)",
     "2023": "RECODE of A04 (Age at last birthday)"
    },
-   "reference_label": "RECODE of A04 (Age at last birthday)"
+   "reference_label": "RECODE of A04 (Age at last birthday)",
+   "split_reasons": []
   },
   "age": {
    "years": [
@@ -1216,7 +1322,8 @@
     "2024": "Age in years",
     "2025": "Age in years"
    },
-   "reference_label": "Age in years"
+   "reference_label": "Age in years",
+   "split_reasons": []
   },
   "age10": {
    "years": [
@@ -1248,7 +1355,8 @@
     "2024": "Broader age group",
     "2025": "Broader age group"
    },
-   "reference_label": "Broader age group"
+   "reference_label": "Broader age group",
+   "split_reasons": []
   },
   "age3": {
    "years": [
@@ -1271,7 +1379,8 @@
     "2024": "selected age group",
     "2025": "selected age group"
    },
-   "reference_label": "selected age group"
+   "reference_label": "selected age group",
+   "split_reasons": []
   },
   "age3_16_30": {
    "years": [
@@ -1294,7 +1403,8 @@
     "2024": "Youth age groups",
     "2025": "Youth age groups"
    },
-   "reference_label": "Youth age groups"
+   "reference_label": "Youth age groups",
+   "split_reasons": []
   },
   "age5": {
    "years": [
@@ -1326,7 +1436,8 @@
     "2024": "Five years age group",
     "2025": "Five years age group"
    },
-   "reference_label": "Five years age group"
+   "reference_label": "Five years age group",
+   "split_reasons": []
   },
   "attained": {
    "years": [
@@ -1358,7 +1469,8 @@
     "2024": "Level of education completed",
     "2025": "Level of education completed"
    },
-   "reference_label": "Level of education completed"
+   "reference_label": "Level of education completed",
+   "split_reasons": []
   },
   "b01": {
    "years": [
@@ -1393,7 +1505,8 @@
     "2024": "IS [NAME] currently studying?",
     "2025": "IS [NAME] a student(Is he /she attending school or would be attending one if sch"
    },
-   "reference_label": "IS [NAME] a student(Is he /she attending school or would be attending one if sch"
+   "reference_label": "IS [NAME] a student(Is he /she attending school or would be attending one if sch",
+   "split_reasons": []
   },
   "b02a": {
    "years": [
@@ -1428,7 +1541,8 @@
     "2024": "What is the Highest educational level is/ have [NAME] attending / attended?",
     "2025": "What is the Highest educational level is/ have [NAME] attending / attended?"
    },
-   "reference_label": "What is the Highest educational level is/ have [NAME] attending / attended?"
+   "reference_label": "What is the Highest educational level is/ have [NAME] attending / attended?",
+   "split_reasons": []
   },
   "b02b": {
    "years": [
@@ -1463,7 +1577,8 @@
     "2024": "How many years have you completed in that level of education?",
     "2025": "How many years have you completed in that level of education?"
    },
-   "reference_label": "How many years have you completed in that level of education?"
+   "reference_label": "How many years have you completed in that level of education?",
+   "split_reasons": []
   },
   "b03": {
    "years": [
@@ -1492,7 +1607,8 @@
     "2022": "Highest certificate obtained",
     "2023": "Highest certificate obtained"
    },
-   "reference_label": "Highest certificate obtained"
+   "reference_label": "Highest certificate obtained",
+   "split_reasons": []
   },
   "b04": {
    "years": [
@@ -1512,7 +1628,8 @@
     "2018": "The place of  the highest qualification attained",
     "2019": "The place of  the highest qualification attained"
    },
-   "reference_label": "The place of  the highest qualification attained"
+   "reference_label": "The place of  the highest qualification attained",
+   "split_reasons": []
   },
   "b05a": {
    "years": [
@@ -1532,7 +1649,8 @@
     "2019": "Area of specialization",
     "2021": "Area of specialization"
    },
-   "reference_label": "Area of specialization"
+   "reference_label": "Area of specialization",
+   "split_reasons": []
   },
   "b05b": {
    "years": [
@@ -1552,7 +1670,8 @@
     "2019": "ESCED code",
     "2021": "ESCED code"
    },
-   "reference_label": "ESCED code"
+   "reference_label": "ESCED code",
+   "split_reasons": []
   },
   "b05c": {
    "years": [
@@ -1569,7 +1688,8 @@
     "2019": "ESCED name",
     "2021": "ESCED name"
    },
-   "reference_label": "ESCED name"
+   "reference_label": "ESCED name",
+   "split_reasons": []
   },
   "b06": {
    "years": [
@@ -1598,7 +1718,8 @@
     "2022": "Ability to read and write",
     "2023": "Ability to read and write"
    },
-   "reference_label": "Ability to read and write"
+   "reference_label": "Ability to read and write",
+   "split_reasons": []
   },
   "b07": {
    "years": [
@@ -1633,7 +1754,8 @@
     "2024": "Currently attending any trade or technical Skills school",
     "2025": "Currently attending any trade or technical Skills school"
    },
-   "reference_label": "Currently attending any trade or technical Skills school"
+   "reference_label": "Currently attending any trade or technical Skills school",
+   "split_reasons": []
   },
   "b08": {
    "years": [
@@ -1668,7 +1790,8 @@
     "2024": "Did you learn any Trade or Technical vocational course (TVET)?",
     "2025": "Did you learn any Trade or Technical vocational course (TVET)?"
    },
-   "reference_label": "Did you learn any Trade or Technical vocational course (TVET)?"
+   "reference_label": "Did you learn any Trade or Technical vocational course (TVET)?",
+   "split_reasons": []
   },
   "b09": {
    "years": [
@@ -1703,7 +1826,8 @@
     "2024": "How long will/did this Training take?",
     "2025": "How long will/did this Training take?"
    },
-   "reference_label": "How long will/did this Training take?"
+   "reference_label": "How long will/did this Training take?",
+   "split_reasons": []
   },
   "b10": {
    "years": [
@@ -1721,10 +1845,12 @@
      2017,
      2018,
      2019,
-     2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "b10_v2": [
+     2021,
      2025
     ]
    },
@@ -1738,7 +1864,11 @@
     "2024": "Type of technical skills learned?",
     "2025": "Type of technical skills learned?"
    },
-   "reference_label": "Type of technical skills learned?"
+   "reference_label": "Type of technical skills learned?",
+   "split_reasons": [
+    "2021 vs 2017: value labels differ -- 22: 'Ubwubatsi buhanitse/Cival Engeeniering' vs '22. Civil construction'; 47: 'Chollegraphy' vs 'Other'",
+    "2025 vs 2017: value labels differ -- 22: 'Ubwubatsi buhanitse/Cival Engeeniering' vs '22. Civil construction'; 47: 'Chollegraphy' vs 'Other'"
+   ]
   },
   "b11": {
    "years": [
@@ -1758,7 +1888,8 @@
     "2018": "Where did (NAME) acquire these skills",
     "2019": "Where did (NAME) acquire these skills"
    },
-   "reference_label": "Where did (NAME) acquire these skills"
+   "reference_label": "Where did (NAME) acquire these skills",
+   "split_reasons": []
   },
   "b12": {
    "years": [
@@ -1778,7 +1909,8 @@
     "2018": "Who was the main sponsor for this course?",
     "2019": "Who was the main sponsor for this course?"
    },
-   "reference_label": "Who was the main sponsor for this course?"
+   "reference_label": "Who was the main sponsor for this course?",
+   "split_reasons": []
   },
   "b13": {
    "years": [
@@ -1794,12 +1926,14 @@
    "versions": {
     "b13": [
      2017,
-     2018,
      2019,
-     2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "b13_v2": [
+     2018,
+     2021,
      2025
     ]
    },
@@ -1813,7 +1947,12 @@
     "2024": "Did [NAME] complete the course?",
     "2025": "Did [NAME] complete the course?"
    },
-   "reference_label": "Did [NAME] complete the course?"
+   "reference_label": "Did [NAME] complete the course?",
+   "split_reasons": [
+    "2018 vs 2017: value labels differ -- 3: 'Yes with degree/Diploma' vs 'No'",
+    "2021 vs 2017: value labels differ -- 3: 'Yes with degree/Diploma' vs 'No'",
+    "2025 vs 2017: value labels differ -- 3: 'Yes with degree/Diploma' vs 'No'"
+   ]
   },
   "b13a": {
    "years": [
@@ -1842,7 +1981,8 @@
     "2022": "In which year did (Name) complete this course?",
     "2023": "In which year did (Name) complete this course?"
    },
-   "reference_label": "In which year did (Name) complete this course?"
+   "reference_label": "In which year did (Name) complete this course?",
+   "split_reasons": []
   },
   "b13b": {
    "years": [
@@ -1856,7 +1996,8 @@
    "labels_by_year": {
     "2025": "In which year did (Name) complete this course?"
    },
-   "reference_label": "In which year did (Name) complete this course?"
+   "reference_label": "In which year did (Name) complete this course?",
+   "split_reasons": []
   },
   "b14": {
    "years": [
@@ -1874,10 +2015,12 @@
      2017,
      2018,
      2019,
-     2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "b14_v2": [
+     2021,
      2025
     ]
    },
@@ -1891,7 +2034,11 @@
     "2024": "What happened after you completed the course?",
     "2025": "What happened after you completed the course?"
    },
-   "reference_label": "What happened after you completed the course?"
+   "reference_label": "What happened after you completed the course?",
+   "split_reasons": [
+    "2021 vs 2017: value labels differ -- 2: ' I was able to get a job' vs 'Starting own business'; 3: ' My salary increased' vs 'I was able to get a job'; 4: ' I was promoted at work' vs 'My salary increased'",
+    "2025 vs 2017: value labels differ -- 2: ' I was able to get a job' vs 'Starting own business'; 3: ' My salary increased' vs 'I was able to get a job'; 4: ' I was promoted at work' vs 'My salary increased'"
+   ]
   },
   "b15": {
    "years": [
@@ -1919,7 +2066,10 @@
     "2021": "At what level could you use of computer?",
     "2025": "How long did take(Name) to get a job or start own business after completing the"
    },
-   "reference_label": "At what level could you use of computer?"
+   "reference_label": "At what level could you use of computer?",
+   "split_reasons": [
+    "2025 vs 2017: variable label differs ('How long did take(Name) to get a job or ' vs 'At what level could you use of computer?')"
+   ]
   },
   "b16a": {
    "years": [
@@ -1931,9 +2081,13 @@
    "versions": {
     "b16a": [
      2017,
-     2018,
-     2019,
+     2019
+    ],
+    "b16a_v2": [
      2021
+    ],
+    "b16a_v3": [
+     2018
     ]
    },
    "labels_by_year": {
@@ -1942,7 +2096,12 @@
     "2019": "At what level could (Name) speak English",
     "2021": "At what level could (Name) speak English"
    },
-   "reference_label": "At what level could (Name) speak English"
+   "reference_label": "At what level could (Name) speak English",
+   "split_reasons": [
+    "2018 vs 2017: value labels differ -- 2: 'Good' vs 'Fair'; 3: 'Fair' vs \"Don't Know\"",
+    "2021 vs 2017: value labels differ -- 1: 'Very well' vs 'Good'; 2: 'Well' vs 'Fair'; 3: 'Less' vs \"Don't Know\"",
+    "2021 vs 2018: value labels differ -- 1: 'Very well' vs 'Very good'; 2: 'Well' vs 'Good'; 3: 'Less' vs 'Fair'"
+   ]
   },
   "b16b": {
    "years": [
@@ -1954,9 +2113,13 @@
    "versions": {
     "b16b": [
      2017,
-     2018,
-     2019,
+     2019
+    ],
+    "b16b_v2": [
      2021
+    ],
+    "b16b_v3": [
+     2018
     ]
    },
    "labels_by_year": {
@@ -1965,7 +2128,12 @@
     "2019": "At what level could (Name) speak French",
     "2021": "At what level could (Name) speak French"
    },
-   "reference_label": "At what level could (Name) speak French"
+   "reference_label": "At what level could (Name) speak French",
+   "split_reasons": [
+    "2018 vs 2017: value labels differ -- 2: 'Good' vs 'Fair'; 3: 'Fair' vs \"Don't Know\"",
+    "2021 vs 2017: value labels differ -- 1: 'Very well' vs 'Good'; 2: 'Well' vs 'Fair'; 3: 'Less' vs \"Don't Know\"",
+    "2021 vs 2018: value labels differ -- 1: 'Very well' vs 'Very good'; 2: 'Well' vs 'Good'; 3: 'Less' vs 'Fair'"
+   ]
   },
   "b16c": {
    "years": [
@@ -1977,9 +2145,13 @@
    "versions": {
     "b16c": [
      2017,
-     2018,
-     2019,
+     2019
+    ],
+    "b16c_v2": [
      2021
+    ],
+    "b16c_v3": [
+     2018
     ]
    },
    "labels_by_year": {
@@ -1988,7 +2160,12 @@
     "2019": "At what level could (Name) speak Swahili",
     "2021": "At what level could (Name) speak Swahili"
    },
-   "reference_label": "At what level could (Name) speak Swahili"
+   "reference_label": "At what level could (Name) speak Swahili",
+   "split_reasons": [
+    "2018 vs 2017: value labels differ -- 2: 'Good' vs 'Fair'; 3: 'Fair' vs \"Don't Know\"",
+    "2021 vs 2017: value labels differ -- 1: 'Very well' vs 'Good'; 2: 'Well' vs 'Fair'; 3: 'Less' vs \"Don't Know\"",
+    "2021 vs 2018: value labels differ -- 1: 'Very well' vs 'Very good'; 2: 'Well' vs 'Good'; 3: 'Less' vs 'Fair'"
+   ]
   },
   "b17": {
    "years": [
@@ -2002,7 +2179,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply any of the following ICT skills (Choose all applicable s"
    },
-   "reference_label": "Is [Name] able to apply any of the following ICT skills (Choose all applicable s"
+   "reference_label": "Is [Name] able to apply any of the following ICT skills (Choose all applicable s",
+   "split_reasons": []
   },
   "b17_a": {
    "years": [
@@ -2016,7 +2194,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply  Copying or moving file or folder"
    },
-   "reference_label": "Is [Name] able to apply  Copying or moving file or folder"
+   "reference_label": "Is [Name] able to apply  Copying or moving file or folder",
+   "split_reasons": []
   },
   "b17_b": {
    "years": [
@@ -2030,7 +2209,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply Using copy and paste to duplicate or move document"
    },
-   "reference_label": "Is [Name] able to apply Using copy and paste to duplicate or move document"
+   "reference_label": "Is [Name] able to apply Using copy and paste to duplicate or move document",
+   "split_reasons": []
   },
   "b17_c": {
    "years": [
@@ -2044,7 +2224,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply Sending email with attached files"
    },
-   "reference_label": "Is [Name] able to apply Sending email with attached files"
+   "reference_label": "Is [Name] able to apply Sending email with attached files",
+   "split_reasons": []
   },
   "b17_d": {
    "years": [
@@ -2058,7 +2239,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply Using basic arithmetic formulae in a spreadsheet"
    },
-   "reference_label": "Is [Name] able to apply Using basic arithmetic formulae in a spreadsheet"
+   "reference_label": "Is [Name] able to apply Using basic arithmetic formulae in a spreadsheet",
+   "split_reasons": []
   },
   "b17_e": {
    "years": [
@@ -2072,7 +2254,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply Connecting and installing new devices (E.g. Modem, print"
    },
-   "reference_label": "Is [Name] able to apply Connecting and installing new devices (E.g. Modem, print"
+   "reference_label": "Is [Name] able to apply Connecting and installing new devices (E.g. Modem, print",
+   "split_reasons": []
   },
   "b17_f": {
    "years": [
@@ -2086,7 +2269,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply Transferring files between a computer and other devices"
    },
-   "reference_label": "Is [Name] able to apply Transferring files between a computer and other devices"
+   "reference_label": "Is [Name] able to apply Transferring files between a computer and other devices",
+   "split_reasons": []
   },
   "b17_g": {
    "years": [
@@ -2100,7 +2284,8 @@
    "labels_by_year": {
     "2021": "Is [Name] able to apply (NONE)"
    },
-   "reference_label": "Is [Name] able to apply (NONE)"
+   "reference_label": "Is [Name] able to apply (NONE)",
+   "split_reasons": []
   },
   "b18": {
    "years": [
@@ -2120,7 +2305,8 @@
     "2022": "Has [Name] in last three months used any social media (facebook, whatsapp, tweet",
     "2023": "Has [Name] in last three months used any social media (facebook, whatsapp, tweet"
    },
-   "reference_label": "Has [Name] in last three months used any social media (facebook, whatsapp, tweet"
+   "reference_label": "Has [Name] in last three months used any social media (facebook, whatsapp, tweet",
+   "split_reasons": []
   },
   "b19": {
    "years": [
@@ -2140,7 +2326,8 @@
     "2022": "Has [Name] in the last three months used intenet? (for individual use not for of",
     "2023": "Has [Name] in the last three months used intenet? (for individual use not for of"
    },
-   "reference_label": "Has [Name] in the last three months used intenet? (for individual use not for of"
+   "reference_label": "Has [Name] in the last three months used intenet? (for individual use not for of",
+   "split_reasons": []
   },
   "c01": {
    "years": [
@@ -2175,7 +2362,8 @@
     "2024": "During the last 7 days,did he/she do any work for wage, salary, commission, tips",
     "2025": "During the last 7 days,did he/she do any work for wage, salary, commission, tips"
    },
-   "reference_label": "During the last 7 days,did he/she do any work for wage, salary, commission, tips"
+   "reference_label": "During the last 7 days,did he/she do any work for wage, salary, commission, tips",
+   "split_reasons": []
   },
   "c02": {
    "years": [
@@ -2210,7 +2398,8 @@
     "2024": "During the past 7 days, did (NAME) run or do any kind of business, farming or ot",
     "2025": "During the past 7 days, did (NAME) run or do any kind of business activity other"
    },
-   "reference_label": "During the past 7 days, did (NAME) run or do any kind of business activity other"
+   "reference_label": "During the past 7 days, did (NAME) run or do any kind of business activity other",
+   "split_reasons": []
   },
   "c02a": {
    "years": [
@@ -2224,7 +2413,8 @@
    "labels_by_year": {
     "2025": "During the past 7 days, did (NAME) run or do any farming, Rearing farm animals,"
    },
-   "reference_label": "During the past 7 days, did (NAME) run or do any farming, Rearing farm animals,"
+   "reference_label": "During the past 7 days, did (NAME) run or do any farming, Rearing farm animals,",
+   "split_reasons": []
   },
   "c03": {
    "years": [
@@ -2259,7 +2449,8 @@
     "2024": "During the past 7 days, did (NAME) help unpaid in a business owned by a househol",
     "2025": "During the past 7 days, did (NAME) help unpaid in a business owned by a househol"
    },
-   "reference_label": "During the past 7 days, did (NAME) help unpaid in a business owned by a househol"
+   "reference_label": "During the past 7 days, did (NAME) help unpaid in a business owned by a househol",
+   "split_reasons": []
   },
   "c04": {
    "years": [
@@ -2288,7 +2479,8 @@
     "2022": "Was this work in agriculture, farming or fishing?",
     "2023": "Was this work in agriculture, farming or fishing?"
    },
-   "reference_label": "Was this work in agriculture, farming or fishing?"
+   "reference_label": "Was this work in agriculture, farming or fishing?",
+   "split_reasons": []
   },
   "c05": {
    "years": [
@@ -2323,7 +2515,8 @@
     "2024": "In general, are the products obtained from this activity for sale or for family",
     "2025": "In general, are the products obtained from this activity for sale or for family"
    },
-   "reference_label": "In general, are the products obtained from this activity for sale or for family"
+   "reference_label": "In general, are the products obtained from this activity for sale or for family",
+   "split_reasons": []
   },
   "c06": {
    "years": [
@@ -2358,7 +2551,8 @@
     "2024": "During the last 7 days, did (NAME) have a paid job or a business from which he/s",
     "2025": "During the last 7 days, did (NAME) have a paid job or a business from which he/s"
    },
-   "reference_label": "During the last 7 days, did (NAME) have a paid job or a business from which he/s"
+   "reference_label": "During the last 7 days, did (NAME) have a paid job or a business from which he/s",
+   "split_reasons": []
   },
   "c07": {
    "years": [
@@ -2376,11 +2570,13 @@
      2017,
      2018,
      2019,
-     2021,
      2022,
      2023,
      2024,
      2025
+    ],
+    "c07_v2": [
+     2021
     ]
    },
    "labels_by_year": {
@@ -2393,7 +2589,10 @@
     "2024": "What was the main reason (NAME) was absent from work during the last 7 days?",
     "2025": "What was the main reason (NAME) was absent from work during the last 7 days?"
    },
-   "reference_label": "What was the main reason (NAME) was absent from work during the last 7 days?"
+   "reference_label": "What was the main reason (NAME) was absent from work during the last 7 days?",
+   "split_reasons": [
+    "2021 vs 2017: value labels differ -- 11: \"Business / Gov't closed due to coronavirus legal restrictions\" vs 'Other Specify'"
+   ]
   },
   "c08": {
    "years": [
@@ -2428,7 +2627,8 @@
     "2024": "What is the expected total absence from work for (NAME)?",
     "2025": "What is the expected total absence from work for (NAME)?"
    },
-   "reference_label": "What is the expected total absence from work for (NAME)?"
+   "reference_label": "What is the expected total absence from work for (NAME)?",
+   "split_reasons": []
   },
   "c09": {
    "years": [
@@ -2463,7 +2663,8 @@
     "2024": "Does (NAME) continue receiving an income from his/her job during absence?",
     "2025": "Does (NAME) continue receiving an income from his/her job during absence?"
    },
-   "reference_label": "Does (NAME) continue receiving an income from his/her job during absence?"
+   "reference_label": "Does (NAME) continue receiving an income from his/her job during absence?",
+   "split_reasons": []
   },
   "c09a": {
    "years": [
@@ -2492,7 +2693,8 @@
     "2024": "Among the following categories, which correspond to the (NAME)'s situation",
     "2025": "Among the following categories, which correspond to the (NAME)'s situation"
    },
-   "reference_label": "Among the following categories, which correspond to the (NAME)'s situation"
+   "reference_label": "Among the following categories, which correspond to the (NAME)'s situation",
+   "split_reasons": []
   },
   "c10": {
    "years": [
@@ -2527,7 +2729,8 @@
     "2024": "Did [NAME] have any other paid job or business or performed any secondary activi",
     "2025": "Did [NAME] have any other paid job or business or performed any secondary activi"
    },
-   "reference_label": "Did [NAME] have any other paid job or business or performed any secondary activi"
+   "reference_label": "Did [NAME] have any other paid job or business or performed any secondary activi",
+   "split_reasons": []
   },
   "c10a": {
    "years": [
@@ -2544,7 +2747,8 @@
     "2024": "How many jobs other than main job do(you/name) posess?",
     "2025": "How many jobs other than main job do(you/name) posess?"
    },
-   "reference_label": "How many jobs other than main job do(you/name) posess?"
+   "reference_label": "How many jobs other than main job do(you/name) posess?",
+   "split_reasons": []
   },
   "c11a": {
    "years": [
@@ -2579,7 +2783,8 @@
     "2024": "How many hours does [NAME] usually work per week?Main job/activity",
     "2025": "How many hours does [NAME] usually work per week?Main job/activity"
    },
-   "reference_label": "How many hours does [NAME] usually work per week?Main job/activity"
+   "reference_label": "How many hours does [NAME] usually work per week?Main job/activity",
+   "split_reasons": []
   },
   "c11b": {
    "years": [
@@ -2614,7 +2819,8 @@
     "2024": "How many hours does [NAME] usually work per week?Secondary job/activity",
     "2025": "How many hours does [NAME] usually work per week?Secondary job/activity"
    },
-   "reference_label": "How many hours does [NAME] usually work per week?Secondary job/activity"
+   "reference_label": "How many hours does [NAME] usually work per week?Secondary job/activity",
+   "split_reasons": []
   },
   "c12a": {
    "years": [
@@ -2649,7 +2855,8 @@
     "2024": "During the past 7 days, how many days did (NAME) actually work?Main job/activity",
     "2025": "During the past 7 days, how many days did (NAME) actually work in Main job/activ"
    },
-   "reference_label": "During the past 7 days, how many days did (NAME) actually work in Main job/activ"
+   "reference_label": "During the past 7 days, how many days did (NAME) actually work in Main job/activ",
+   "split_reasons": []
   },
   "c12b": {
    "years": [
@@ -2684,7 +2891,8 @@
     "2024": "During the past 7 days, how many days did (NAME) actually work?Secondary job/act",
     "2025": "During the past 7 days, how many days did (NAME) actually work in all Secondary"
    },
-   "reference_label": "During the past 7 days, how many days did (NAME) actually work in all Secondary"
+   "reference_label": "During the past 7 days, how many days did (NAME) actually work in all Secondary",
+   "split_reasons": []
   },
   "c13a": {
    "years": [
@@ -2719,7 +2927,8 @@
     "2024": "During the past 7 days, how many hours per day did (NAME) actually worked?Main j",
     "2025": "During the past 7 days, how many hours per day did (NAME) actually worked in Mai"
    },
-   "reference_label": "During the past 7 days, how many hours per day did (NAME) actually worked in Mai"
+   "reference_label": "During the past 7 days, how many hours per day did (NAME) actually worked in Mai",
+   "split_reasons": []
   },
   "c13b": {
    "years": [
@@ -2754,7 +2963,8 @@
     "2024": "During the past 7 days, how many hours per day did (NAME) actually worked?second",
     "2025": "During the past 7 days, how many hours per day did (NAME) actually worked in all"
    },
-   "reference_label": "During the past 7 days, how many hours per day did (NAME) actually worked in all"
+   "reference_label": "During the past 7 days, how many hours per day did (NAME) actually worked in all",
+   "split_reasons": []
   },
   "c14": {
    "years": [
@@ -2789,7 +2999,8 @@
     "2024": "How many hours did [NAME) usually worked at all jobs combined during the last 7",
     "2025": "How many hours did [NAME) usually worked at all jobs combined?"
    },
-   "reference_label": "How many hours did [NAME) usually worked at all jobs combined?"
+   "reference_label": "How many hours did [NAME) usually worked at all jobs combined?",
+   "split_reasons": []
   },
   "c15": {
    "years": [
@@ -2824,7 +3035,8 @@
     "2024": "What was the main reason (NAME) usually worked long hours per week?",
     "2025": "What was the main reason (NAME) usually worked long hours per week?"
    },
-   "reference_label": "What was the main reason (NAME) usually worked long hours per week?"
+   "reference_label": "What was the main reason (NAME) usually worked long hours per week?",
+   "split_reasons": []
   },
   "c16": {
    "years": [
@@ -2859,7 +3071,8 @@
     "2024": "During the last 4 weeks, did (NAME) look for additional or other work?",
     "2025": "During the last 4 weeks, did (NAME) look for additional or other work?"
    },
-   "reference_label": "During the last 4 weeks, did (NAME) look for additional or other work?"
+   "reference_label": "During the last 4 weeks, did (NAME) look for additional or other work?",
+   "split_reasons": []
   },
   "c17": {
    "years": [
@@ -2894,7 +3107,8 @@
     "2024": "Would want to work more hours per week than usualy worked provided the extra hou",
     "2025": "Would want to work more hours per week than usualy worked provided the extra hou"
    },
-   "reference_label": "Would want to work more hours per week than usualy worked provided the extra hou"
+   "reference_label": "Would want to work more hours per week than usualy worked provided the extra hou",
+   "split_reasons": []
   },
   "c18": {
    "years": [
@@ -2929,7 +3143,8 @@
     "2024": "If an opportunity for additional work became available, could (NAME) start worki",
     "2025": "If an opportunity for additional work became available, could (NAME) start worki"
    },
-   "reference_label": "If an opportunity for additional work became available, could (NAME) start worki"
+   "reference_label": "If an opportunity for additional work became available, could (NAME) start worki",
+   "split_reasons": []
   },
   "c19": {
    "years": [
@@ -2964,7 +3179,8 @@
     "2024": "During the last 4 weeks, did [NAME] look for any kind of paid job or try to star",
     "2025": "During the last 4 weeks, did [NAME] look for any kind of paid job or try to star"
    },
-   "reference_label": "During the last 4 weeks, did [NAME] look for any kind of paid job or try to star"
+   "reference_label": "During the last 4 weeks, did [NAME] look for any kind of paid job or try to star",
+   "split_reasons": []
   },
   "c19a": {
    "years": [
@@ -2981,7 +3197,8 @@
     "2024": "During the last 4 weeks did(name) try to start a business?",
     "2025": "During the last 4 weeks did(name) try to start a business?"
    },
-   "reference_label": "During the last 4 weeks did(name) try to start a business?"
+   "reference_label": "During the last 4 weeks did(name) try to start a business?",
+   "split_reasons": []
   },
   "c20": {
    "years": [
@@ -3016,7 +3233,8 @@
     "2024": "Has [NAME] already found a job or arranged to start a business in the next 4 wee",
     "2025": "Has [NAME] already found a job or arranged to start a business in the next 4 wee"
    },
-   "reference_label": "Has [NAME] already found a job or arranged to start a business in the next 4 wee"
+   "reference_label": "Has [NAME] already found a job or arranged to start a business in the next 4 wee",
+   "split_reasons": []
   },
   "c20a": {
    "years": [
@@ -3033,7 +3251,8 @@
     "2024": "How soon Does  [NAME] expect  to start  working in  this new job or  business ?",
     "2025": "How soon Does  [NAME] expect  to start  working in  this new job or  business ?"
    },
-   "reference_label": "How soon Does  [NAME] expect  to start  working in  this new job or  business ?"
+   "reference_label": "How soon Does  [NAME] expect  to start  working in  this new job or  business ?",
+   "split_reasons": []
   },
   "c21": {
    "years": [
@@ -3065,7 +3284,8 @@
     "2024": "what did [NAME] do  in the last 4 weeks to find a paid job or start a business?",
     "2025": "what did [NAME] do  in the last 4 weeks to find a paid job or start a business?"
    },
-   "reference_label": "what did [NAME] do  in the last 4 weeks to find a paid job or start a business?"
+   "reference_label": "what did [NAME] do  in the last 4 weeks to find a paid job or start a business?",
+   "split_reasons": []
   },
   "c21_a": {
    "years": [
@@ -3082,7 +3302,8 @@
     "2022": "Arranging for financial ressources,applying for permits,licences",
     "2023": "Arranging for financial ressources,applying for permits,licences"
    },
-   "reference_label": "Arranging for financial ressources,applying for permits,licences"
+   "reference_label": "Arranging for financial ressources,applying for permits,licences",
+   "split_reasons": []
   },
   "c21_b": {
    "years": [
@@ -3099,7 +3320,8 @@
     "2022": "Looking for land,premises,machinery,supplies,farming inputs",
     "2023": "Looking for land,premises,machinery,supplies,farming inputs"
    },
-   "reference_label": "Looking for land,premises,machinery,supplies,farming inputs"
+   "reference_label": "Looking for land,premises,machinery,supplies,farming inputs",
+   "split_reasons": []
   },
   "c21_c": {
    "years": [
@@ -3116,7 +3338,8 @@
     "2022": "Seeking the assistance of friends,relatives or other types of intermediaries",
     "2023": "Seeking the assistance of friends,relatives or other types of intermediaries"
    },
-   "reference_label": "Seeking the assistance of friends,relatives or other types of intermediaries"
+   "reference_label": "Seeking the assistance of friends,relatives or other types of intermediaries",
+   "split_reasons": []
   },
   "c21_d": {
    "years": [
@@ -3133,7 +3356,8 @@
     "2022": "Registering with or contacting public or private employment services",
     "2023": "Registering with or contacting public or private employment services"
    },
-   "reference_label": "Registering with or contacting public or private employment services"
+   "reference_label": "Registering with or contacting public or private employment services",
+   "split_reasons": []
   },
   "c21_e": {
    "years": [
@@ -3150,7 +3374,8 @@
     "2022": "Applying to employers directly,checking at worksites,farms,factory gates,markets",
     "2023": "Applying to employers directly,checking at worksites,farms,factory gates,markets"
    },
-   "reference_label": "Applying to employers directly,checking at worksites,farms,factory gates,markets"
+   "reference_label": "Applying to employers directly,checking at worksites,farms,factory gates,markets",
+   "split_reasons": []
   },
   "c21_f": {
    "years": [
@@ -3167,7 +3392,8 @@
     "2022": "Placing or answering newspaper or online job advertisements",
     "2023": "Placing or answering newspaper or online job advertisements"
    },
-   "reference_label": "Placing or answering newspaper or online job advertisements"
+   "reference_label": "Placing or answering newspaper or online job advertisements",
+   "split_reasons": []
   },
   "c21_g": {
    "years": [
@@ -3184,7 +3410,8 @@
     "2022": "Placing and updating resumes on professional or social networking sites online",
     "2023": "Placing and updating resumes on professional or social networking sites online"
    },
-   "reference_label": "Placing and updating resumes on professional or social networking sites online"
+   "reference_label": "Placing and updating resumes on professional or social networking sites online",
+   "split_reasons": []
   },
   "c21_h": {
    "years": [
@@ -3201,7 +3428,8 @@
     "2022": "No method",
     "2023": "No method"
    },
-   "reference_label": "No method"
+   "reference_label": "No method",
+   "split_reasons": []
   },
   "c21_l": {
    "years": [
@@ -3218,7 +3446,8 @@
     "2022": "Other, specify",
     "2023": "Other, specify"
    },
-   "reference_label": "Other, specify"
+   "reference_label": "Other, specify",
+   "split_reasons": []
   },
   "c21a": {
    "years": [
@@ -3248,7 +3477,13 @@
     "2021": "Arranging for financial ressources,applying for permits,licences",
     "2024": "Apply to prospective Employers"
    },
-   "reference_label": "Arranging for financial ressources,applying for permits,licences"
+   "reference_label": "Arranging for financial ressources,applying for permits,licences",
+   "split_reasons": [
+    "2018 vs 2017: variable label differs ('Arranging for financial ressources,apply' vs 'what did [NAME] do  in the last 4 weeks ')",
+    "2021 vs 2017: variable label differs ('Arranging for financial ressources,apply' vs 'what did [NAME] do  in the last 4 weeks ')",
+    "2024 vs 2017: variable label differs ('Apply to prospective Employers' vs 'what did [NAME] do  in the last 4 weeks ')",
+    "2024 vs 2018: variable label differs ('Apply to prospective Employers' vs 'Arranging for financial ressources,apply')"
+   ]
   },
   "c21b": {
    "years": [
@@ -3278,7 +3513,13 @@
     "2021": "Looking for land,premises,machinery,supplies,farming inputs",
     "2024": "Place or Answer Job Advertisement"
    },
-   "reference_label": "Looking for land,premises,machinery,supplies,farming inputs"
+   "reference_label": "Looking for land,premises,machinery,supplies,farming inputs",
+   "split_reasons": [
+    "2018 vs 2017: variable label differs ('Looking for land,premises,machinery,supp' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2021 vs 2017: variable label differs ('Looking for land,premises,machinery,supp' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2024 vs 2017: variable label differs ('Place or Answer Job Advertisement' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2024 vs 2018: variable label differs ('Place or Answer Job Advertisement' vs 'Looking for land,premises,machinery,supp')"
+   ]
   },
   "c21c": {
    "years": [
@@ -3308,7 +3549,13 @@
     "2021": "Seeking the assistance of friends,relatives or other types of intermediaries",
     "2024": "Post/Update resume on professional/Social networking sites online"
    },
-   "reference_label": "Seeking the assistance of friends,relatives or other types of intermediaries"
+   "reference_label": "Seeking the assistance of friends,relatives or other types of intermediaries",
+   "split_reasons": [
+    "2018 vs 2017: variable label differs ('Seeking the assistance of friends,relati' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2021 vs 2017: variable label differs ('Seeking the assistance of friends,relati' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2024 vs 2017: variable label differs ('Post/Update resume on professional/Socia' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2024 vs 2018: variable label differs ('Post/Update resume on professional/Socia' vs 'Seeking the assistance of friends,relati')"
+   ]
   },
   "c21d": {
    "years": [
@@ -3336,7 +3583,12 @@
     "2021": "Registering with or contacting public or private employment services",
     "2024": "Register with Employment center(Public/private)"
    },
-   "reference_label": "Register with Employment center(Public/private)"
+   "reference_label": "Register with Employment center(Public/private)",
+   "split_reasons": [
+    "2018 vs 2017: variable label differs ('Registering with or contacting public or' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2021 vs 2017: variable label differs ('Registering with or contacting public or' vs 'What did [NAME] do in the last 4 weeks t')",
+    "2024 vs 2017: variable label differs ('Register with Employment center(Public/p' vs 'What did [NAME] do in the last 4 weeks t')"
+   ]
   },
   "c21e": {
    "years": [
@@ -3361,7 +3613,10 @@
     "2021": "Applying to employers directly,checking at worksites,farms,factory gates,markets",
     "2024": "Take a test or Interview"
    },
-   "reference_label": "Applying to employers directly,checking at worksites,farms,factory gates,markets"
+   "reference_label": "Applying to employers directly,checking at worksites,farms,factory gates,markets",
+   "split_reasons": [
+    "2024 vs 2018: variable label differs ('Take a test or Interview' vs 'Applying to employers directly,checking ')"
+   ]
   },
   "c21f": {
    "years": [
@@ -3386,7 +3641,10 @@
     "2021": "Placing or answering newspaper or online job advertisements",
     "2024": "Seek help from Relatives,friends,Others"
    },
-   "reference_label": "Placing or answering newspaper or online job advertisements"
+   "reference_label": "Placing or answering newspaper or online job advertisements",
+   "split_reasons": [
+    "2024 vs 2018: variable label differs ('Seek help from Relatives,friends,Others' vs 'Placing or answering newspaper or online')"
+   ]
   },
   "c21g": {
    "years": [
@@ -3411,7 +3669,10 @@
     "2021": "Placing and updating resumes on professional or social networking sites online",
     "2024": "Check at Factories worksite"
    },
-   "reference_label": "Placing and updating resumes on professional or social networking sites online"
+   "reference_label": "Placing and updating resumes on professional or social networking sites online",
+   "split_reasons": [
+    "2024 vs 2018: variable label differs ('Check at Factories worksite' vs 'Placing and updating resumes on professi')"
+   ]
   },
   "c21h": {
    "years": [
@@ -3436,7 +3697,10 @@
     "2021": "No method",
     "2024": "Wait on the street to be recruited"
    },
-   "reference_label": "No method"
+   "reference_label": "No method",
+   "split_reasons": [
+    "2024 vs 2018: variable label differs ('Wait on the street to be recruited' vs 'No method')"
+   ]
   },
   "c21i": {
    "years": [
@@ -3450,7 +3714,8 @@
    "labels_by_year": {
     "2024": "Seek Financial help to start a business"
    },
-   "reference_label": "Seek Financial help to start a business"
+   "reference_label": "Seek Financial help to start a business",
+   "split_reasons": []
   },
   "c21j": {
    "years": [
@@ -3464,7 +3729,8 @@
    "labels_by_year": {
     "2024": "Look for land,building,equipment,Materials to start a business"
    },
-   "reference_label": "Look for land,building,equipment,Materials to start a business"
+   "reference_label": "Look for land,building,equipment,Materials to start a business",
+   "split_reasons": []
   },
   "c21k": {
    "years": [
@@ -3478,7 +3744,8 @@
    "labels_by_year": {
     "2024": "Apply for permit or licence to start a business        street to be recruited"
    },
-   "reference_label": "Apply for permit or licence to start a business        street to be recruited"
+   "reference_label": "Apply for permit or licence to start a business        street to be recruited",
+   "split_reasons": []
   },
   "c21l": {
    "years": [
@@ -3500,7 +3767,10 @@
     "2021": "Other",
     "2024": "No Method"
    },
-   "reference_label": "Other"
+   "reference_label": "Other",
+   "split_reasons": [
+    "2024 vs 2018: variable label differs ('No Method' vs 'Other')"
+   ]
   },
   "c21m": {
    "years": [
@@ -3514,7 +3784,8 @@
    "labels_by_year": {
     "2024": "Other,specify"
    },
-   "reference_label": "Other,specify"
+   "reference_label": "Other,specify",
+   "split_reasons": []
   },
   "c22": {
    "years": [
@@ -3529,14 +3800,16 @@
    ],
    "versions": {
     "c22": [
-     2017,
      2018,
      2019,
      2021,
+     2025
+    ],
+    "c22_v2": [
+     2017,
      2022,
      2023,
-     2024,
-     2025
+     2024
     ]
    },
    "labels_by_year": {
@@ -3549,7 +3822,13 @@
     "2024": "For how long has [NAME] been without work and trying to find a paid job or start",
     "2025": "For how long has [NAME] been without work and trying to find a paid job or start"
    },
-   "reference_label": "For how long has [NAME] been without work and trying to find a paid job or start"
+   "reference_label": "For how long has [NAME] been without work and trying to find a paid job or start",
+   "split_reasons": [
+    "2018 vs 2017: 2018 is unlabelled and its values reach 60, beyond the labelled codes (1-6)",
+    "2019 vs 2017: 2019 is unlabelled and its values reach 60, beyond the labelled codes (1-6)",
+    "2021 vs 2017: 2021 is unlabelled and its values reach 60, beyond the labelled codes (1-6)",
+    "2025 vs 2017: 2025 is unlabelled and its values reach 120, beyond the labelled codes (1-6)"
+   ]
   },
   "c23": {
    "years": [
@@ -3584,7 +3863,8 @@
     "2024": "Would [NAME] want to work if a  paid job or business opportunity became availabl",
     "2025": "Would [NAME] want to work if a  paid job or business opportunity became availabl"
    },
-   "reference_label": "Would [NAME] want to work if a  paid job or business opportunity became availabl"
+   "reference_label": "Would [NAME] want to work if a  paid job or business opportunity became availabl",
+   "split_reasons": []
   },
   "c24": {
    "years": [
@@ -3602,11 +3882,13 @@
      2017,
      2018,
      2019,
-     2021,
      2022,
      2023,
      2024,
      2025
+    ],
+    "c24_v2": [
+     2021
     ]
    },
    "labels_by_year": {
@@ -3619,7 +3901,10 @@
     "2024": "What was the main reason (NAME) did not try to find a paid job or start a busine",
     "2025": "What was the main reason (NAME) did not try to find a paid job or start a busine"
    },
-   "reference_label": "What was the main reason (NAME) did not try to find a paid job or start a busine"
+   "reference_label": "What was the main reason (NAME) did not try to find a paid job or start a busine",
+   "split_reasons": [
+    "2021 vs 2017: value labels differ -- 14: 'Unable to move due to movements  restrictions  because of Covid-19/own or family quarantine' vs 'Other specify'"
+   ]
   },
   "c25": {
    "years": [
@@ -3654,7 +3939,8 @@
     "2024": "If a paid job or business opportunity become available, could [NAME] have starte",
     "2025": "If a paid job or business opportunity become available, could [NAME] have starte"
    },
-   "reference_label": "If a paid job or business opportunity become available, could [NAME] have starte"
+   "reference_label": "If a paid job or business opportunity become available, could [NAME] have starte",
+   "split_reasons": []
   },
   "c26": {
    "years": [
@@ -3675,7 +3961,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "c26_v2": [
      2025
     ]
    },
@@ -3689,7 +3977,10 @@
     "2024": "What is the mean reason why (NAME) could not  start working in the last 7 days o",
     "2025": "What is the mean reason why (NAME) could not  start working in the last 7 days o"
    },
-   "reference_label": "What is the mean reason why (NAME) could not  start working in the last 7 days o"
+   "reference_label": "What is the mean reason why (NAME) could not  start working in the last 7 days o",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 5: 'In Agriculture/fishing for Family use' vs 'Other'"
+   ]
   },
   "cash": {
    "years": [
@@ -3721,7 +4012,8 @@
     "2024": "Monthly income in cash for employees",
     "2025": "Monthly income in cash for employees"
    },
-   "reference_label": "Monthly income in cash for employees"
+   "reference_label": "Monthly income in cash for employees",
+   "split_reasons": []
   },
   "cluster": {
    "years": [
@@ -3759,7 +4051,8 @@
     "2024": "Sampling cluster id (year_psu)",
     "2025": "Sampling cluster id (year_psu)"
    },
-   "reference_label": "Sampling cluster id (year_psu)"
+   "reference_label": "Sampling cluster id (year_psu)",
+   "split_reasons": []
   },
   "combhrs": {
    "years": [
@@ -3776,7 +4069,8 @@
     "2022": "Combined hours for Own use and employment",
     "2023": "Combined hours for Own use and employment"
    },
-   "reference_label": "Combined hours for Own use and employment"
+   "reference_label": "Combined hours for Own use and employment",
+   "split_reasons": []
   },
   "consent": {
    "years": [
@@ -3790,7 +4084,8 @@
    "labels_by_year": {
     "2021": "Consent"
    },
-   "reference_label": "Consent"
+   "reference_label": "Consent",
+   "split_reasons": []
   },
   "d01b2": {
    "years": [
@@ -3810,7 +4105,8 @@
     "2019": "Main tasks and duties(ISCO CODE)",
     "2021": "Main tasks and duties(ISCO CODE)"
    },
-   "reference_label": "Main tasks and duties(ISCO CODE)"
+   "reference_label": "Main tasks and duties(ISCO CODE)",
+   "split_reasons": []
   },
   "d02": {
    "years": [
@@ -3830,7 +4126,8 @@
     "2018": "What do you think could be the minimum level of education to carry out the job (",
     "2019": "What do you think could be the minimum level of education to carry out the job ("
    },
-   "reference_label": "What do you think could be the minimum level of education to carry out the job ("
+   "reference_label": "What do you think could be the minimum level of education to carry out the job (",
+   "split_reasons": []
   },
   "d03a": {
    "years": [
@@ -3859,7 +4156,8 @@
     "2024": "What is the name of (NAME)?s workplace?",
     "2025": "Does the place or business where(you/name) work's have a name?"
    },
-   "reference_label": "Does the place or business where(you/name) work's have a name?"
+   "reference_label": "Does the place or business where(you/name) work's have a name?",
+   "split_reasons": []
   },
   "d03a1": {
    "years": [
@@ -3876,7 +4174,8 @@
     "2019": "The workplace name",
     "2021": "The workplace name"
    },
-   "reference_label": "The workplace name"
+   "reference_label": "The workplace name",
+   "split_reasons": []
   },
   "d03b": {
    "years": [
@@ -3893,7 +4192,8 @@
     "2019": "What are the main goods or services produced at (NAME)?s place of work or its ma",
     "2021": "What are the main goods or services produced at (NAME)?s place of work or its ma"
    },
-   "reference_label": "What are the main goods or services produced at (NAME)?s place of work or its ma"
+   "reference_label": "What are the main goods or services produced at (NAME)?s place of work or its ma",
+   "split_reasons": []
   },
   "d03b1": {
    "years": [
@@ -3904,16 +4204,21 @@
    "versions": {
     "d03b1": [
      2019,
-     2020,
      2021
+    ],
+    "d03b1_v2": [
+     2020
     ]
    },
    "labels_by_year": {
     "2019": "Main goods and services(ISIC code)",
-    "2020": "ISIC code",
+    "2020": "ISIC code of the main job -- 2-digit divisions in the reduced 2020 file (4-digit",
     "2021": "Main goods and services(ISIC code)"
    },
-   "reference_label": "Main goods and services(ISIC code)"
+   "reference_label": "Main goods and services(ISIC code)",
+   "split_reasons": [
+    "2020: FORCE_SPLIT"
+   ]
   },
   "d04": {
    "years": [
@@ -3934,7 +4239,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "d04_v2": [
      2025
     ]
    },
@@ -3948,7 +4255,10 @@
     "2024": "Does (Name) work in....",
     "2025": "Does (Name) work in...."
    },
-   "reference_label": "Does (Name) work in...."
+   "reference_label": "Does (Name) work in....",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 8: 'VUP/Community based jobs' vs 'Others(Specify)'"
+   ]
   },
   "d05": {
    "years": [
@@ -3988,7 +4298,10 @@
     "2024": "In this job, is  [NAME] working as??",
     "2025": "Status of employment according to ICSE-93"
    },
-   "reference_label": "In this job, is  [NAME] working as??"
+   "reference_label": "In this job, is  [NAME] working as??",
+   "split_reasons": [
+    "2025 vs 2017: variable label differs ('Status of employment according to ICSE-9' vs 'In this job, is  [NAME] working as??')"
+   ]
   },
   "d05a": {
    "years": [
@@ -4005,7 +4318,8 @@
     "2024": "How many persons including  you at your work place?",
     "2025": "How many persons including  you at your work place?"
    },
-   "reference_label": "How many persons including  you at your work place?"
+   "reference_label": "How many persons including  you at your work place?",
+   "split_reasons": []
   },
   "d05a1": {
    "years": [
@@ -4022,7 +4336,8 @@
     "2024": "Number of  persons including  you at your work place,Less than 10",
     "2025": "Number of  persons including  you at your work place,Less than 10"
    },
-   "reference_label": "Number of  persons including  you at your work place,Less than 10"
+   "reference_label": "Number of  persons including  you at your work place,Less than 10",
+   "split_reasons": []
   },
   "d06": {
    "years": [
@@ -4057,7 +4372,8 @@
     "2024": "Have [NAME] been employed on the basis of:",
     "2025": "(Do/does)(You/Name) have a written contract or oral agreement for the work (You/"
    },
-   "reference_label": "(Do/does)(You/Name) have a written contract or oral agreement for the work (You/"
+   "reference_label": "(Do/does)(You/Name) have a written contract or oral agreement for the work (You/",
+   "split_reasons": []
   },
   "d07": {
    "years": [
@@ -4078,7 +4394,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "d07_v2": [
      2025
     ]
    },
@@ -4092,7 +4410,10 @@
     "2024": "Is [NAME]'s contract or agreement :",
     "2025": "Is [NAME]'s contract or agreement :"
    },
-   "reference_label": "Is [NAME]'s contract or agreement :"
+   "reference_label": "Is [NAME]'s contract or agreement :",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 2: 'Temporary  with a specific period of time' vs 'Temporary contract:'"
+   ]
   },
   "d08": {
    "years": [
@@ -4113,7 +4434,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "d08_v2": [
      2025
     ]
    },
@@ -4127,7 +4450,10 @@
     "2024": "The duration of the contract or agreement?",
     "2025": "The duration of the contract or agreement?"
    },
-   "reference_label": "The duration of the contract or agreement?"
+   "reference_label": "The duration of the contract or agreement?",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 1: 'Daily contract/Agreement' vs 'Day'; 2: 'Less than one month' vs 'Week'; 3: 'One to less than 3 months' vs 'Month'"
+   ]
   },
   "d08a": {
    "years": [
@@ -4141,7 +4467,8 @@
    "labels_by_year": {
     "2025": "Does [NAME] have a minimum amount of hours or work agreed with his/her employer?"
    },
-   "reference_label": "Does [NAME] have a minimum amount of hours or work agreed with his/her employer?"
+   "reference_label": "Does [NAME] have a minimum amount of hours or work agreed with his/her employer?",
+   "split_reasons": []
   },
   "d09a": {
    "years": [
@@ -4176,7 +4503,8 @@
     "2024": "Does employer pay contributions on [NAME]?s behalf to social security fund",
     "2025": "Does employer pay contributions on [NAME]?s behalf to social security fund(RSSB)"
    },
-   "reference_label": "Does employer pay contributions on [NAME]?s behalf to social security fund(RSSB)"
+   "reference_label": "Does employer pay contributions on [NAME]?s behalf to social security fund(RSSB)",
+   "split_reasons": []
   },
   "d09b": {
    "years": [
@@ -4205,7 +4533,8 @@
     "2022": "Does employer pay contributions on [NAME]?s behalf to health insurance fund",
     "2023": "Does employer pay contributions on [NAME]?s behalf to health insurance fund"
    },
-   "reference_label": "Does employer pay contributions on [NAME]?s behalf to health insurance fund"
+   "reference_label": "Does employer pay contributions on [NAME]?s behalf to health insurance fund",
+   "split_reasons": []
   },
   "d10": {
    "years": [
@@ -4219,7 +4548,8 @@
    "labels_by_year": {
     "2025": "Has [NAME] registered his/her economic activity with the Rwanda Revenue Authorit"
    },
-   "reference_label": "Has [NAME] registered his/her economic activity with the Rwanda Revenue Authorit"
+   "reference_label": "Has [NAME] registered his/her economic activity with the Rwanda Revenue Authorit",
+   "split_reasons": []
   },
   "d10_e": {
    "years": [
@@ -4233,7 +4563,8 @@
    "labels_by_year": {
     "2025": "Does (name) make contributions to the Ejo Heza scheme?"
    },
-   "reference_label": "Does (name) make contributions to the Ejo Heza scheme?"
+   "reference_label": "Does (name) make contributions to the Ejo Heza scheme?",
+   "split_reasons": []
   },
   "d10a": {
    "years": [
@@ -4268,7 +4599,8 @@
     "2024": "Benefits paid for annual leave",
     "2025": "Is (Name) entitled to paid annual leave benefits from employer?"
    },
-   "reference_label": "Is (Name) entitled to paid annual leave benefits from employer?"
+   "reference_label": "Is (Name) entitled to paid annual leave benefits from employer?",
+   "split_reasons": []
   },
   "d10b": {
    "years": [
@@ -4303,7 +4635,8 @@
     "2024": "Benefits  paid for sick leave",
     "2025": "Is (name) entitled to paid sick leave benefits from employer?"
    },
-   "reference_label": "Is (name) entitled to paid sick leave benefits from employer?"
+   "reference_label": "Is (name) entitled to paid sick leave benefits from employer?",
+   "split_reasons": []
   },
   "d10c": {
    "years": [
@@ -4338,7 +4671,8 @@
     "2024": "Benefits  paid for maternity/paternity leave",
     "2025": "Is (name) entitled to maternity/paternity leave?"
    },
-   "reference_label": "Is (name) entitled to maternity/paternity leave?"
+   "reference_label": "Is (name) entitled to maternity/paternity leave?",
+   "split_reasons": []
   },
   "d10d": {
    "years": [
@@ -4373,7 +4707,8 @@
     "2024": "Is (Name)'s salary subjected to deduction of taxe (PAYE)",
     "2025": "Is (Name)'s salary subjected to deduction of taxe (PAYE)"
    },
-   "reference_label": "Is (Name)'s salary subjected to deduction of taxe (PAYE)"
+   "reference_label": "Is (Name)'s salary subjected to deduction of taxe (PAYE)",
+   "split_reasons": []
   },
   "d11": {
    "years": [
@@ -4402,7 +4737,8 @@
     "2022": "Does [NAME] belong to any trade union or syndicate",
     "2023": "Does [NAME] belong to any trade union or syndicate"
    },
-   "reference_label": "Does [NAME] belong to any trade union or syndicate"
+   "reference_label": "Does [NAME] belong to any trade union or syndicate",
+   "split_reasons": []
   },
   "d12": {
    "years": [
@@ -4428,7 +4764,8 @@
     "2023": "How much did he/she  earn at main job last time in cash and in kind, before taxe",
     "2024": "How much did he/she  earn at main job last time in cash and in kind, before taxe"
    },
-   "reference_label": "How much did he/she  earn at main job last time in cash and in kind, before taxe"
+   "reference_label": "How much did he/she  earn at main job last time in cash and in kind, before taxe",
+   "split_reasons": []
   },
   "d12_1": {
    "years": [
@@ -4442,7 +4779,8 @@
    "labels_by_year": {
     "2025": "How much money did (Name) earn from his/her main job/business the last time ?"
    },
-   "reference_label": "How much money did (Name) earn from his/her main job/business the last time ?"
+   "reference_label": "How much money did (Name) earn from his/her main job/business the last time ?",
+   "split_reasons": []
   },
   "d12_1a": {
    "years": [
@@ -4456,7 +4794,8 @@
    "labels_by_year": {
     "2025": "Amount in Rwandan francs"
    },
-   "reference_label": "Amount in Rwandan francs"
+   "reference_label": "Amount in Rwandan francs",
+   "split_reasons": []
   },
   "d12a": {
    "years": [
@@ -4479,7 +4818,8 @@
     "2022": "Amount in Rwandan francs",
     "2023": "Amount in Rwandan francs"
    },
-   "reference_label": "Amount in Rwandan francs"
+   "reference_label": "Amount in Rwandan francs",
+   "split_reasons": []
   },
   "d13": {
    "years": [
@@ -4502,7 +4842,8 @@
     "2022": "How long did it cover?",
     "2023": "How long did it cover?"
    },
-   "reference_label": "How long did it cover?"
+   "reference_label": "How long did it cover?",
+   "split_reasons": []
   },
   "d13_1": {
    "years": [
@@ -4516,7 +4857,8 @@
    "labels_by_year": {
     "2025": "How long did it cover?"
    },
-   "reference_label": "How long did it cover?"
+   "reference_label": "How long did it cover?",
+   "split_reasons": []
   },
   "d14": {
    "years": [
@@ -4539,7 +4881,8 @@
     "2022": "Does [NAME] receive in-kind payments in main job such as food, agricultural prod",
     "2023": "Does [NAME] receive in-kind payments in main job such as food, agricultural prod"
    },
-   "reference_label": "Does [NAME] receive in-kind payments in main job such as food, agricultural prod"
+   "reference_label": "Does [NAME] receive in-kind payments in main job such as food, agricultural prod",
+   "split_reasons": []
   },
   "d14_1": {
    "years": [
@@ -4553,7 +4896,8 @@
    "labels_by_year": {
     "2025": "On average, how much money did (NAME) earn from main job/business per month?"
    },
-   "reference_label": "On average, how much money did (NAME) earn from main job/business per month?"
+   "reference_label": "On average, how much money did (NAME) earn from main job/business per month?",
+   "split_reasons": []
   },
   "d14_1a": {
    "years": [
@@ -4567,7 +4911,8 @@
    "labels_by_year": {
     "2025": "Amount in Rwandan francs"
    },
-   "reference_label": "Amount in Rwandan francs"
+   "reference_label": "Amount in Rwandan francs",
+   "split_reasons": []
   },
   "d15": {
    "years": [
@@ -4590,7 +4935,8 @@
     "2022": "What is the value of these in-kind payments?",
     "2023": "What is the value of these in-kind payments?"
    },
-   "reference_label": "What is the value of these in-kind payments?"
+   "reference_label": "What is the value of these in-kind payments?",
+   "split_reasons": []
   },
   "d15a": {
    "years": [
@@ -4613,7 +4959,8 @@
     "2022": "Amount in Rwandan francs",
     "2023": "Amount in Rwandan francs"
    },
-   "reference_label": "Amount in Rwandan francs"
+   "reference_label": "Amount in Rwandan francs",
+   "split_reasons": []
   },
   "d16": {
    "years": [
@@ -4636,7 +4983,8 @@
     "2022": "What period did it cover?",
     "2023": "What period did it cover?"
    },
-   "reference_label": "What period did it cover?"
+   "reference_label": "What period did it cover?",
+   "split_reasons": []
   },
   "d17": {
    "years": [
@@ -4659,7 +5007,8 @@
     "2022": "Taking into account both cash and in kind payments,Would you say the monthly amo",
     "2023": "Taking into account both cash and in kind payments,Would you say the monthly amo"
    },
-   "reference_label": "Taking into account both cash and in kind payments,Would you say the monthly amo"
+   "reference_label": "Taking into account both cash and in kind payments,Would you say the monthly amo",
+   "split_reasons": []
   },
   "d17_1": {
    "years": [
@@ -4673,7 +5022,8 @@
    "labels_by_year": {
     "2025": "Would you say that monthly amount earned the last time  in  (Name) ?s  job/busin"
    },
-   "reference_label": "Would you say that monthly amount earned the last time  in  (Name) ?s  job/busin"
+   "reference_label": "Would you say that monthly amount earned the last time  in  (Name) ?s  job/busin",
+   "split_reasons": []
   },
   "d18a": {
    "years": [
@@ -4692,7 +5042,10 @@
     "2017": "What is the net monthly earnings of (NAME) from his/her business Activity?",
     "2025": "How did (you/name) obtain your current employment?"
    },
-   "reference_label": "How did (you/name) obtain your current employment?"
+   "reference_label": "How did (you/name) obtain your current employment?",
+   "split_reasons": [
+    "2025 vs 2017: variable label differs ('How did (you/name) obtain your current e' vs 'What is the net monthly earnings of (NAM')"
+   ]
   },
   "d18a1": {
    "years": [
@@ -4706,7 +5059,8 @@
    "labels_by_year": {
     "2017": "What is the net monthly earnings of (NAME) from his/her business Activity?(Amoun"
    },
-   "reference_label": "What is the net monthly earnings of (NAME) from his/her business Activity?(Amoun"
+   "reference_label": "What is the net monthly earnings of (NAME) from his/her business Activity?(Amoun",
+   "split_reasons": []
   },
   "d18a_other": {
    "years": [
@@ -4720,7 +5074,8 @@
    "labels_by_year": {
     "2025": "D18A_ obtain your current employment?"
    },
-   "reference_label": "D18A_ obtain your current employment?"
+   "reference_label": "D18A_ obtain your current employment?",
+   "split_reasons": []
   },
   "d18b": {
    "years": [
@@ -4734,7 +5089,8 @@
    "labels_by_year": {
     "2017": "What is the net monthly earnings of (NAME) from his/her business or activity?"
    },
-   "reference_label": "What is the net monthly earnings of (NAME) from his/her business or activity?"
+   "reference_label": "What is the net monthly earnings of (NAME) from his/her business or activity?",
+   "split_reasons": []
   },
   "d19": {
    "years": [
@@ -4748,7 +5104,8 @@
    "labels_by_year": {
     "2017": "Was this below average, above average, or average of monthly earnings during las"
    },
-   "reference_label": "Was this below average, above average, or average of monthly earnings during las"
+   "reference_label": "Was this below average, above average, or average of monthly earnings during las",
+   "split_reasons": []
   },
   "d20": {
    "years": [
@@ -4783,7 +5140,8 @@
     "2024": "Is the business/establishment where [NAME] works registered with the RRA or  pay",
     "2025": "Is the business/establishment where [NAME] works registered with the RRA or  pay"
    },
-   "reference_label": "Is the business/establishment where [NAME] works registered with the RRA or  pay"
+   "reference_label": "Is the business/establishment where [NAME] works registered with the RRA or  pay",
+   "split_reasons": []
   },
   "d21": {
    "years": [
@@ -4818,7 +5176,8 @@
     "2024": "In order to report to an authority, does the business/establishment where (NAME)",
     "2025": "In order to report to an authority, does the business/establishment where (NAME)"
    },
-   "reference_label": "In order to report to an authority, does the business/establishment where (NAME)"
+   "reference_label": "In order to report to an authority, does the business/establishment where (NAME)",
+   "split_reasons": []
   },
   "d21a": {
    "years": [
@@ -4835,7 +5194,8 @@
     "2024": "What kind of accounts or records deos the (busines/farm) keep?",
     "2025": "What kind of accounts or records deos the (busines/farm) keep?"
    },
-   "reference_label": "What kind of accounts or records deos the (busines/farm) keep?"
+   "reference_label": "What kind of accounts or records deos the (busines/farm) keep?",
+   "split_reasons": []
   },
   "d22a": {
    "years": [
@@ -4855,7 +5215,8 @@
     "2018": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl",
     "2019": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl"
    },
-   "reference_label": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl"
+   "reference_label": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl",
+   "split_reasons": []
   },
   "d22b": {
    "years": [
@@ -4875,7 +5236,8 @@
     "2018": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl",
     "2019": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl"
    },
-   "reference_label": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl"
+   "reference_label": "How many regular paid or unpaid employees including [NAME], work at [NAME]'s  pl",
+   "split_reasons": []
   },
   "d23": {
    "years": [
@@ -4896,7 +5258,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "d23_v2": [
      2025
     ]
    },
@@ -4910,7 +5274,10 @@
     "2024": "In what type of place does [NAME] usually work?",
     "2025": "Where is the business where [NAME] work located?"
    },
-   "reference_label": "Where is the business where [NAME] work located?"
+   "reference_label": "In what type of place does [NAME] usually work?",
+   "split_reasons": [
+    "2025 vs 2017: variable label differs ('Where is the business where [NAME] work ' vs 'In what type of place does [NAME] usuall')"
+   ]
   },
   "d23a": {
    "years": [
@@ -4919,15 +5286,20 @@
    ],
    "versions": {
     "d23a": [
-     2024,
      2025
+    ],
+    "d23a_v2": [
+     2024
     ]
    },
    "labels_by_year": {
     "2024": "What means of transportation do you mainly use to commute to your place of work?",
     "2025": "What means of transportation do you mainly use to commute to your place of work?"
    },
-   "reference_label": "What means of transportation do you mainly use to commute to your place of work?"
+   "reference_label": "What means of transportation do you mainly use to commute to your place of work?",
+   "split_reasons": [
+    "2025 vs 2024: value labels differ -- 6: 'Private motobike' vs \"Private Employer's car\"; 8: 'Boat' vs 'Private bicycle'"
+   ]
   },
   "d23b": {
    "years": [
@@ -4944,7 +5316,8 @@
     "2024": "How long does it normally take you to get to work?",
     "2025": "How long does it normally take you to get to work?"
    },
-   "reference_label": "How long does it normally take you to get to work?"
+   "reference_label": "How long does it normally take you to get to work?",
+   "split_reasons": []
   },
   "d24": {
    "years": [
@@ -4958,7 +5331,9 @@
     "d24": [
      2017,
      2019,
-     2020,
+     2020
+    ],
+    "d24_v2": [
      2024,
      2025
     ]
@@ -4967,10 +5342,13 @@
     "2017": "How long have [NAME] been working (total experience)?",
     "2019": "How long have [NAME] been working (total experience)?",
     "2020": "How long have [NAME] been working (total experience)?",
-    "2024": "How long have [NAME] been working (total experience)?",
-    "2025": "How long have [NAME] been working (total experience)-Years?"
+    "2024": "Total work experience in years (2024 questionnaire D24; 2017 = duration bands, 2",
+    "2025": "Total work experience in years (2025 questionnaire D24; 2017 = duration bands, 2"
    },
-   "reference_label": "How long have [NAME] been working (total experience)-Years?"
+   "reference_label": "How long have [NAME] been working (total experience)?",
+   "split_reasons": [
+    "2024: FORCE_SPLIT"
+   ]
   },
   "d24a": {
    "years": [
@@ -4993,7 +5371,8 @@
     "2022": "How long have [NAME] been working (total experience)-Years?",
     "2023": "How long have [NAME] been working (total experience)-Years?"
    },
-   "reference_label": "How long have [NAME] been working (total experience)-Years?"
+   "reference_label": "How long have [NAME] been working (total experience)-Years?",
+   "split_reasons": []
   },
   "d24b": {
    "years": [
@@ -5007,7 +5386,8 @@
    "labels_by_year": {
     "2025": "In your main job or business, how many months do you typically work in a year?"
    },
-   "reference_label": "In your main job or business, how many months do you typically work in a year?"
+   "reference_label": "In your main job or business, how many months do you typically work in a year?",
+   "split_reasons": []
   },
   "d25": {
    "years": [
@@ -5027,7 +5407,8 @@
     "2018": "In day to day work does [NAME] need the computer to perform his/her duties?",
     "2019": "In day to day work does [NAME] need the computer to perform his/her duties?"
    },
-   "reference_label": "In day to day work does [NAME] need the computer to perform his/her duties?"
+   "reference_label": "In day to day work does [NAME] need the computer to perform his/her duties?",
+   "split_reasons": []
   },
   "d25a": {
    "years": [
@@ -5044,7 +5425,8 @@
     "2024": "Is this District the same as the District where (Name) performs his/her main job",
     "2025": "Is this District the same as the District where (Name) performs his/her main job"
    },
-   "reference_label": "Is this District the same as the District where (Name) performs his/her main job"
+   "reference_label": "Is this District the same as the District where (Name) performs his/her main job",
+   "split_reasons": []
   },
   "d25b": {
    "years": [
@@ -5061,7 +5443,8 @@
     "2024": "In which district do (You/Name) mainly perform this work?",
     "2025": "In which district do (You/Name) mainly perform this work?"
    },
-   "reference_label": "In which district do (You/Name) mainly perform this work?"
+   "reference_label": "In which district do (You/Name) mainly perform this work?",
+   "split_reasons": []
   },
   "d26": {
    "years": [
@@ -5081,7 +5464,8 @@
     "2018": "Does (name) use computer in his/her day to day work?",
     "2019": "Does (name) use computer in his/her day to day work?"
    },
-   "reference_label": "Does (name) use computer in his/her day to day work?"
+   "reference_label": "Does (name) use computer in his/her day to day work?",
+   "split_reasons": []
   },
   "d27": {
    "years": [
@@ -5107,7 +5491,8 @@
     "2022": "Is a secondary paid job or business/activity reported",
     "2023": "Is a secondary paid job or business/activity reported"
    },
-   "reference_label": "Is a secondary paid job or business/activity reported"
+   "reference_label": "Is a secondary paid job or business/activity reported",
+   "split_reasons": []
   },
   "d28": {
    "years": [
@@ -5121,7 +5506,8 @@
    "labels_by_year": {
     "2021": "In the past 12 months, has (NAME)  ever been hurt in an accident while working t"
    },
-   "reference_label": "In the past 12 months, has (NAME)  ever been hurt in an accident while working t"
+   "reference_label": "In the past 12 months, has (NAME)  ever been hurt in an accident while working t",
+   "split_reasons": []
   },
   "d29": {
    "years": [
@@ -5135,7 +5521,8 @@
    "labels_by_year": {
     "2021": "Did this injury result in (NAME)  being absent or unable to work, for at least o"
    },
-   "reference_label": "Did this injury result in (NAME)  being absent or unable to work, for at least o"
+   "reference_label": "Did this injury result in (NAME)  being absent or unable to work, for at least o",
+   "split_reasons": []
   },
   "d30a": {
    "years": [
@@ -5149,7 +5536,8 @@
    "labels_by_year": {
     "2021": "How long(NAME)  were  away from work (or are likely to be) because of the injury"
    },
-   "reference_label": "How long(NAME)  were  away from work (or are likely to be) because of the injury"
+   "reference_label": "How long(NAME)  were  away from work (or are likely to be) because of the injury",
+   "split_reasons": []
   },
   "d30b": {
    "years": [
@@ -5163,7 +5551,8 @@
    "labels_by_year": {
     "2021": "How long(NAME)  were  away from work (or are likely to be) because of the injury"
    },
-   "reference_label": "How long(NAME)  were  away from work (or are likely to be) because of the injury"
+   "reference_label": "How long(NAME)  were  away from work (or are likely to be) because of the injury",
+   "split_reasons": []
   },
   "d31": {
    "years": [
@@ -5177,7 +5566,8 @@
    "labels_by_year": {
     "2021": "Did (NAME)  report the injury to the management?"
    },
-   "reference_label": "Did (NAME)  report the injury to the management?"
+   "reference_label": "Did (NAME)  report the injury to the management?",
+   "split_reasons": []
   },
   "d32": {
    "years": [
@@ -5191,7 +5581,8 @@
    "labels_by_year": {
     "2021": "Did you receive any financial compensation for the injury?"
    },
-   "reference_label": "Did you receive any financial compensation for the injury?"
+   "reference_label": "Did you receive any financial compensation for the injury?",
+   "split_reasons": []
   },
   "decode": {
    "years": [
@@ -5205,7 +5596,8 @@
    "labels_by_year": {
     "2021": "Data entry code"
    },
-   "reference_label": "Data entry code"
+   "reference_label": "Data entry code",
+   "split_reasons": []
   },
   "dg01": {
    "years": [
@@ -5228,7 +5620,8 @@
     "2024": "fetch firewood",
     "2025": "fetch firewood"
    },
-   "reference_label": "fetch firewood"
+   "reference_label": "fetch firewood",
+   "split_reasons": []
   },
   "dg02": {
    "years": [
@@ -5251,7 +5644,8 @@
     "2024": "fetch water",
     "2025": "fetch water"
    },
-   "reference_label": "fetch water"
+   "reference_label": "fetch water",
+   "split_reasons": []
   },
   "dg03": {
    "years": [
@@ -5274,7 +5668,8 @@
     "2024": "searching fooder or grazing",
     "2025": "searching fooder or grazing"
    },
-   "reference_label": "searching fooder or grazing"
+   "reference_label": "searching fooder or grazing",
+   "split_reasons": []
   },
   "dg04": {
    "years": [
@@ -5297,7 +5692,8 @@
     "2024": "manufacturing household goods",
     "2025": "manufacturing household goods"
    },
-   "reference_label": "manufacturing household goods"
+   "reference_label": "manufacturing household goods",
+   "split_reasons": []
   },
   "dg05": {
    "years": [
@@ -5320,7 +5716,8 @@
     "2024": "repairing household",
     "2025": "repairing household"
    },
-   "reference_label": "repairing household"
+   "reference_label": "repairing household",
+   "split_reasons": []
   },
   "dg06": {
    "years": [
@@ -5343,7 +5740,8 @@
     "2024": "Cooking and shopping",
     "2025": "Cooking and shopping"
    },
-   "reference_label": "Cooking and shopping"
+   "reference_label": "Cooking and shopping",
+   "split_reasons": []
   },
   "dg07": {
    "years": [
@@ -5366,7 +5764,8 @@
     "2024": "Looking after children and aldery",
     "2025": "Looking after children and aldery"
    },
-   "reference_label": "Looking after children and aldery"
+   "reference_label": "Looking after children and aldery",
+   "split_reasons": []
   },
   "disable": {
    "years": [
@@ -5398,7 +5797,8 @@
     "2024": "person with disability",
     "2025": "person with disability"
    },
-   "reference_label": "person with disability"
+   "reference_label": "person with disability",
+   "split_reasons": []
   },
   "discourage": {
    "years": [
@@ -5430,7 +5830,8 @@
     "2024": "Discouraged jobseekers",
     "2025": "Discouraged jobseekers"
    },
-   "reference_label": "Discouraged jobseekers"
+   "reference_label": "Discouraged jobseekers",
+   "split_reasons": []
   },
   "dist": {
    "years": [
@@ -5468,7 +5869,8 @@
     "2024": "District (11-57, NISR codes)",
     "2025": "District (11-57, NISR codes)"
    },
-   "reference_label": "District (11-57, NISR codes)"
+   "reference_label": "District (11-57, NISR codes)",
+   "split_reasons": []
   },
   "ds07": {
    "years": [
@@ -5482,7 +5884,8 @@
    "labels_by_year": {
     "2025": "(Do/Does) (You/Name) work...?"
    },
-   "reference_label": "(Do/Does) (You/Name) work...?"
+   "reference_label": "(Do/Does) (You/Name) work...?",
+   "split_reasons": []
   },
   "ds08": {
    "years": [
@@ -5496,7 +5899,8 @@
    "labels_by_year": {
     "2025": "Who usually makes the decisions about the running of the family/household busine"
    },
-   "reference_label": "Who usually makes the decisions about the running of the family/household busine"
+   "reference_label": "Who usually makes the decisions about the running of the family/household busine",
+   "split_reasons": []
   },
   "ds09": {
    "years": [
@@ -5510,7 +5914,8 @@
    "labels_by_year": {
     "2025": "Does the business hire/have any paid employees on a regular basis?"
    },
-   "reference_label": "Does the business hire/have any paid employees on a regular basis?"
+   "reference_label": "Does the business hire/have any paid employees on a regular basis?",
+   "split_reasons": []
   },
   "ds09_a": {
    "years": [
@@ -5524,7 +5929,8 @@
    "labels_by_year": {
     "2025": "Does more than half of the income from [NAME]?s business/activity come from ?.?"
    },
-   "reference_label": "Does more than half of the income from [NAME]?s business/activity come from ?.?"
+   "reference_label": "Does more than half of the income from [NAME]?s business/activity come from ?.?",
+   "split_reasons": []
   },
   "ds09_b": {
    "years": [
@@ -5538,7 +5944,8 @@
    "labels_by_year": {
     "2025": "Does [NAME] get customers, clients or buyers through someone else, for example f"
    },
-   "reference_label": "Does [NAME] get customers, clients or buyers through someone else, for example f"
+   "reference_label": "Does [NAME] get customers, clients or buyers through someone else, for example f",
+   "split_reasons": []
   },
   "ds09_c": {
    "years": [
@@ -5552,7 +5959,8 @@
    "labels_by_year": {
     "2025": "In this business /activity Does [NAME]??"
    },
-   "reference_label": "In this business /activity Does [NAME]??"
+   "reference_label": "In this business /activity Does [NAME]??",
+   "split_reasons": []
   },
   "ds09_d": {
    "years": [
@@ -5566,7 +5974,8 @@
    "labels_by_year": {
     "2025": "In [NAME]?s business/activity does client/company/intermediary/or other person??"
    },
-   "reference_label": "In [NAME]?s business/activity does client/company/intermediary/or other person??"
+   "reference_label": "In [NAME]?s business/activity does client/company/intermediary/or other person??",
+   "split_reasons": []
   },
   "ds09aa": {
    "years": [
@@ -5580,7 +5989,8 @@
    "labels_by_year": {
     "2025": "Is (NAME)'s business registered with RDB?"
    },
-   "reference_label": "Is (NAME)'s business registered with RDB?"
+   "reference_label": "Is (NAME)'s business registered with RDB?",
+   "split_reasons": []
   },
   "ds09aaa": {
    "years": [
@@ -5594,7 +6004,8 @@
    "labels_by_year": {
     "2025": "Is (Name)'s business registered as....?"
    },
-   "reference_label": "Is (Name)'s business registered as....?"
+   "reference_label": "Is (Name)'s business registered as....?",
+   "split_reasons": []
   },
   "ds10a": {
    "years": [
@@ -5608,7 +6019,8 @@
    "labels_by_year": {
     "2025": "Which of the following types of pay (do/does) (you/name) receive for this work?"
    },
-   "reference_label": "Which of the following types of pay (do/does) (you/name) receive for this work?"
+   "reference_label": "Which of the following types of pay (do/does) (you/name) receive for this work?",
+   "split_reasons": []
   },
   "e01b1": {
    "years": [
@@ -5628,7 +6040,8 @@
     "2019": "Main tasks and duties(ISCO CODE)",
     "2021": "Main tasks and duties(ISCO CODE)"
    },
-   "reference_label": "Main tasks and duties(ISCO CODE)"
+   "reference_label": "Main tasks and duties(ISCO CODE)",
+   "split_reasons": []
   },
   "e02": {
    "years": [
@@ -5642,7 +6055,8 @@
    "labels_by_year": {
     "2018": "What is the name of (NAME)?s workplace at his/her secondary job/activity?"
    },
-   "reference_label": "What is the name of (NAME)?s workplace at his/her secondary job/activity?"
+   "reference_label": "What is the name of (NAME)?s workplace at his/her secondary job/activity?",
+   "split_reasons": []
   },
   "e02b1": {
    "years": [
@@ -5659,7 +6073,8 @@
     "2019": "Main goods or services(ISIC CODE)",
     "2021": "Main goods or services(ISIC CODE)"
    },
-   "reference_label": "Main goods or services(ISIC CODE)"
+   "reference_label": "Main goods or services(ISIC CODE)",
+   "split_reasons": []
   },
   "e03": {
    "years": [
@@ -5679,7 +6094,8 @@
     "2018": "In his/her secondary job/activity, does (NAME) work in ??",
     "2019": "In his/her secondary job/activity, does (NAME) work in ??"
    },
-   "reference_label": "In his/her secondary job/activity, does (NAME) work in ??"
+   "reference_label": "In his/her secondary job/activity, does (NAME) work in ??",
+   "split_reasons": []
   },
   "e04": {
    "years": [
@@ -5699,7 +6115,8 @@
     "2018": "In his/her secondary job/business, does (NAME) work as ??",
     "2019": "In his/her secondary job/business, does (NAME) work as ??"
    },
-   "reference_label": "In his/her secondary job/business, does (NAME) work as ??"
+   "reference_label": "In his/her secondary job/business, does (NAME) work as ??",
+   "split_reasons": []
   },
   "e05a": {
    "years": [
@@ -5719,7 +6136,8 @@
     "2018": "Does the employer pay contributions on (Name)'s behalf to social security fund?",
     "2019": "Does the employer pay contributions on (Name)'s behalf to social security fund?"
    },
-   "reference_label": "Does the employer pay contributions on (Name)'s behalf to social security fund?"
+   "reference_label": "Does the employer pay contributions on (Name)'s behalf to social security fund?",
+   "split_reasons": []
   },
   "e05b": {
    "years": [
@@ -5739,7 +6157,8 @@
     "2018": "Does the employer pay contributions on (Name)'sbehalf  to health insurance?",
     "2019": "Does the employer pay contributions on (Name)'sbehalf  to health insurance?"
    },
-   "reference_label": "Does the employer pay contributions on (Name)'sbehalf  to health insurance?"
+   "reference_label": "Does the employer pay contributions on (Name)'sbehalf  to health insurance?",
+   "split_reasons": []
   },
   "e06a": {
    "years": [
@@ -5759,7 +6178,8 @@
     "2018": "Is (Name) paid annual leave",
     "2019": "Is (Name) paid annual leave"
    },
-   "reference_label": "Is (Name) paid annual leave"
+   "reference_label": "Is (Name) paid annual leave",
+   "split_reasons": []
   },
   "e06b": {
    "years": [
@@ -5779,7 +6199,8 @@
     "2018": "Is (Name) paid sick leave.",
     "2019": "Is (Name) paid sick leave."
    },
-   "reference_label": "Is (Name) paid sick leave."
+   "reference_label": "Is (Name) paid sick leave.",
+   "split_reasons": []
   },
   "e06c": {
    "years": [
@@ -5799,7 +6220,8 @@
     "2018": "Is (NAME)Paid maternity/paternity leave?",
     "2019": "Is (NAME)Paid maternity/paternity leave?"
    },
-   "reference_label": "Is (NAME)Paid maternity/paternity leave?"
+   "reference_label": "Is (NAME)Paid maternity/paternity leave?",
+   "split_reasons": []
   },
   "e07": {
    "years": [
@@ -5819,7 +6241,8 @@
     "2018": "Is the business/establishment where (Name) works for registered with the RRA or",
     "2019": "Is the business/establishment where (Name) works for registered with the RRA or"
    },
-   "reference_label": "Is the business/establishment where (Name) works for registered with the RRA or"
+   "reference_label": "Is the business/establishment where (Name) works for registered with the RRA or",
+   "split_reasons": []
   },
   "e08": {
    "years": [
@@ -5839,7 +6262,8 @@
     "2018": "Does [NAME]'s employer keep any written records or accounts?",
     "2019": "Does [NAME]'s employer keep any written records or accounts?"
    },
-   "reference_label": "Does [NAME]'s employer keep any written records or accounts?"
+   "reference_label": "Does [NAME]'s employer keep any written records or accounts?",
+   "split_reasons": []
   },
   "e09a": {
    "years": [
@@ -5859,7 +6283,8 @@
     "2018": "Including (Name) how many regular paid or unpaid employees(less than 10)",
     "2019": "Including (Name) how many regular paid or unpaid employees(less than 10)"
    },
-   "reference_label": "Including (Name) how many regular paid or unpaid employees(less than 10)"
+   "reference_label": "Including (Name) how many regular paid or unpaid employees(less than 10)",
+   "split_reasons": []
   },
   "e09b": {
    "years": [
@@ -5879,7 +6304,8 @@
     "2018": "Including (Name) how many regular paid or unpaid employees(More than 10)",
     "2019": "Including (Name) how many regular paid or unpaid employees(More than 10)"
    },
-   "reference_label": "Including (Name) how many regular paid or unpaid employees(More than 10)"
+   "reference_label": "Including (Name) how many regular paid or unpaid employees(More than 10)",
+   "split_reasons": []
   },
   "e10": {
    "years": [
@@ -5899,7 +6325,8 @@
     "2018": "In what type of place does (Name) usually work?",
     "2019": "In what type of place does (Name) usually work?"
    },
-   "reference_label": "In what type of place does (Name) usually work?"
+   "reference_label": "In what type of place does (Name) usually work?",
+   "split_reasons": []
   },
   "e11": {
    "years": [
@@ -5928,7 +6355,8 @@
     "2022": "Apart from the main job:how many Job did(Name) had in the last 7 days?",
     "2023": "Apart from the main job:how many Job did(Name) had in the last 7 days?"
    },
-   "reference_label": "Apart from the main job:how many Job did(Name) had in the last 7 days?"
+   "reference_label": "Apart from the main job:how many Job did(Name) had in the last 7 days?",
+   "split_reasons": []
   },
   "e12": {
    "years": [
@@ -5951,7 +6379,8 @@
     "2022": "How much did (Name) earn from other jobs or activities had last week in cash?",
     "2023": "How much did (Name) earn from other jobs or activities had last week in cash?"
    },
-   "reference_label": "How much did (Name) earn from other jobs or activities had last week in cash?"
+   "reference_label": "How much did (Name) earn from other jobs or activities had last week in cash?",
+   "split_reasons": []
   },
   "e12b": {
    "years": [
@@ -5974,7 +6403,8 @@
     "2022": "Amount in Rwandan francs",
     "2023": "Amount in Rwandan francs"
    },
-   "reference_label": "Amount in Rwandan francs"
+   "reference_label": "Amount in Rwandan francs",
+   "split_reasons": []
   },
   "e13": {
    "years": [
@@ -5997,7 +6427,8 @@
     "2022": "How long did it cover?",
     "2023": "How long did it cover?"
    },
-   "reference_label": "How long did it cover?"
+   "reference_label": "How long did it cover?",
+   "split_reasons": []
   },
   "employed16": {
    "years": [
@@ -6035,7 +6466,8 @@
     "2024": "Employment to population ratio",
     "2025": "Employment to population ratio"
    },
-   "reference_label": "Employment to population ratio"
+   "reference_label": "Employment to population ratio",
+   "split_reasons": []
   },
   "en01": {
    "years": [
@@ -6052,7 +6484,8 @@
     "2024": "main source of energy that your household uses for lighting?",
     "2025": "main source of energy that your household uses for lighting?"
    },
-   "reference_label": "main source of energy that your household uses for lighting?"
+   "reference_label": "main source of energy that your household uses for lighting?",
+   "split_reasons": []
   },
   "en01_others": {
    "years": [
@@ -6069,7 +6502,8 @@
     "2024": "Main source of energy Others",
     "2025": "Main source of energy Others"
    },
-   "reference_label": "Main source of energy Others"
+   "reference_label": "Main source of energy Others",
+   "split_reasons": []
   },
   "f01": {
    "years": [
@@ -6098,7 +6532,8 @@
     "2022": "Has [NAME]ever worked previously for a wage, salary or for other income in cash",
     "2023": "Has [NAME]ever worked previously for a wage, salary or for other income in cash"
    },
-   "reference_label": "Has [NAME]ever worked previously for a wage, salary or for other income in cash"
+   "reference_label": "Has [NAME]ever worked previously for a wage, salary or for other income in cash",
+   "split_reasons": []
   },
   "f01a": {
    "years": [
@@ -6112,7 +6547,8 @@
    "labels_by_year": {
     "2025": "(Have/Has) (you/name) ever had a paid job or another income-generating activity,"
    },
-   "reference_label": "(Have/Has) (you/name) ever had a paid job or another income-generating activity,"
+   "reference_label": "(Have/Has) (you/name) ever had a paid job or another income-generating activity,",
+   "split_reasons": []
   },
   "f01b": {
    "years": [
@@ -6126,7 +6562,8 @@
    "labels_by_year": {
     "2025": "How long ago was it that(you/name) last stop working?"
    },
-   "reference_label": "How long ago was it that(you/name) last stop working?"
+   "reference_label": "How long ago was it that(you/name) last stop working?",
+   "split_reasons": []
   },
   "f02": {
    "years": [
@@ -6147,7 +6584,9 @@
      2021,
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "f02_v2": [
      2025
     ]
    },
@@ -6161,7 +6600,10 @@
     "2024": "The main reason to stop working in his/her last paid job / business?",
     "2025": "The main reason to stop working in his/her last paid job / business?"
    },
-   "reference_label": "The main reason to stop working in his/her last paid job / business?"
+   "reference_label": "The main reason to stop working in his/her last paid job / business?",
+   "split_reasons": [
+    "2025 vs 2017: value labels differ -- 12: 'Other(specify)' vs 'Physical/ social harassment'"
+   ]
   },
   "f03b": {
    "years": [
@@ -6175,7 +6617,8 @@
    "labels_by_year": {
     "2019": "What were (NAME)?s main tasks and duties?"
    },
-   "reference_label": "What were (NAME)?s main tasks and duties?"
+   "reference_label": "What were (NAME)?s main tasks and duties?",
+   "split_reasons": []
   },
   "f03b1": {
    "years": [
@@ -6192,7 +6635,8 @@
     "2019": "Main tasks and duties(ISCO CODE)",
     "2021": "Main tasks and duties(ISCO CODE)"
    },
-   "reference_label": "Main tasks and duties(ISCO CODE)"
+   "reference_label": "Main tasks and duties(ISCO CODE)",
+   "split_reasons": []
   },
   "f04a": {
    "years": [
@@ -6206,7 +6650,8 @@
    "labels_by_year": {
     "2018": "What was the name of (NAME)?s workplace at his/her job/activity?"
    },
-   "reference_label": "What was the name of (NAME)?s workplace at his/her job/activity?"
+   "reference_label": "What was the name of (NAME)?s workplace at his/her job/activity?",
+   "split_reasons": []
   },
   "f04b": {
    "years": [
@@ -6223,7 +6668,8 @@
     "2019": "What were the main goods or services produced at (NAME)?s workplace  in his/her",
     "2021": "What were the main goods or services produced at (NAME)?s workplace  in his/her"
    },
-   "reference_label": "What were the main goods or services produced at (NAME)?s workplace  in his/her"
+   "reference_label": "What were the main goods or services produced at (NAME)?s workplace  in his/her",
+   "split_reasons": []
   },
   "f04b1": {
    "years": [
@@ -6240,7 +6686,8 @@
     "2019": "Main goods and services(ISIC CODE)",
     "2021": "Main goods and services(ISIC CODE)"
    },
-   "reference_label": "Main goods and services(ISIC CODE)"
+   "reference_label": "Main goods and services(ISIC CODE)",
+   "split_reasons": []
   },
   "f05": {
    "years": [
@@ -6275,7 +6722,8 @@
     "2024": "What is (Name) main source of income at present?",
     "2025": "What is (Name) main source of income at present?"
    },
-   "reference_label": "What is (Name) main source of income at present?"
+   "reference_label": "What is (Name) main source of income at present?",
+   "split_reasons": []
   },
   "f06": {
    "years": [
@@ -6286,7 +6734,9 @@
    "versions": {
     "f06": [
      2017,
-     2018,
+     2018
+    ],
+    "f06_v2": [
      2019
     ]
    },
@@ -6295,7 +6745,10 @@
     "2018": "In your opinion, which of the following best describes your main status at prese",
     "2019": "In your opinion, which of the following best describes your main status at prese"
    },
-   "reference_label": "In your opinion, which of the following best describes your main status at prese"
+   "reference_label": "In your opinion, which of the following best describes your main status at prese",
+   "split_reasons": [
+    "2019 vs 2017: value labels differ -- 8: 'Other status, specify' vs 'Finish school,waiting for results'"
+   ]
   },
   "f07": {
    "years": [
@@ -6306,7 +6759,9 @@
    "versions": {
     "f07": [
      2017,
-     2018,
+     2018
+    ],
+    "f07_v2": [
      2019
     ]
    },
@@ -6315,7 +6770,10 @@
     "2018": "What Competencies do you need to increase your employment opportunities?",
     "2019": "What Competencies do you need to increase your employment opportunities?"
    },
-   "reference_label": "What Competencies do you need to increase your employment opportunities?"
+   "reference_label": "What Competencies do you need to increase your employment opportunities?",
+   "split_reasons": [
+    "2019 vs 2017: value labels differ -- 4: 'Other (Please specify)' vs 'None'; 5: 'None' vs 'Other (Please specify)'"
+   ]
   },
   "g01": {
    "years": [
@@ -6350,7 +6808,8 @@
     "2024": "In the last 7 days, how many  hours did [NAME] spend collecting firewood for the",
     "2025": "In the last 7 days, how many  hours did [NAME] spend collecting firewood for the"
    },
-   "reference_label": "In the last 7 days, how many  hours did [NAME] spend collecting firewood for the"
+   "reference_label": "In the last 7 days, how many  hours did [NAME] spend collecting firewood for the",
+   "split_reasons": []
   },
   "g01a": {
    "years": [
@@ -6376,7 +6835,8 @@
     "2024": "In the last 7 days,  did [NAME] spend time collecting firewood for the household",
     "2025": "In the last 7 days,  did [NAME] spend time collecting firewood for the household"
    },
-   "reference_label": "In the last 7 days,  did [NAME] spend time collecting firewood for the household"
+   "reference_label": "In the last 7 days,  did [NAME] spend time collecting firewood for the household",
+   "split_reasons": []
   },
   "g02": {
    "years": [
@@ -6411,7 +6871,8 @@
     "2024": "In the last 7 days, how many hours did [NAME] spend fetching water for the house",
     "2025": "In the last 7 days, how many hours did [NAME] spend fetching water for the house"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend fetching water for the house"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend fetching water for the house",
+   "split_reasons": []
   },
   "g02a": {
    "years": [
@@ -6437,7 +6898,8 @@
     "2024": "In the last 7 days, Did [Name] spent time on fetching water for the household?",
     "2025": "In the last 7 days, Did [Name] spent time on fetching water for the household?"
    },
-   "reference_label": "In the last 7 days, Did [Name] spent time on fetching water for the household?"
+   "reference_label": "In the last 7 days, Did [Name] spent time on fetching water for the household?",
+   "split_reasons": []
   },
   "g03": {
    "years": [
@@ -6472,7 +6934,8 @@
     "2024": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra",
     "2025": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend searching for  fodder or gra",
+   "split_reasons": []
   },
   "g03a": {
    "years": [
@@ -6498,7 +6961,8 @@
     "2024": "In the last 7 days, Did [Name] spent time on grazing or feeding hiusehold animal",
     "2025": "In the last 7 days, Did [Name] spent time on grazing or feeding hiusehold animal"
    },
-   "reference_label": "In the last 7 days, Did [Name] spent time on grazing or feeding hiusehold animal"
+   "reference_label": "In the last 7 days, Did [Name] spent time on grazing or feeding hiusehold animal",
+   "split_reasons": []
   },
   "g04": {
    "years": [
@@ -6533,7 +6997,8 @@
     "2024": "In the last 7 days, how many hours did [NAME] spend manufacturing household good",
     "2025": "In the last 7 days, how many hours did [NAME] spend manufacturing household good"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend manufacturing household good"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend manufacturing household good",
+   "split_reasons": []
   },
   "g04a": {
    "years": [
@@ -6559,7 +7024,8 @@
     "2024": "In the last 7 days, Did [Name] spent time on manufacturing of goods for family u",
     "2025": "In the last 7 days, Did [Name] spent time on manufacturing of goods for family u"
    },
-   "reference_label": "In the last 7 days, Did [Name] spent time on manufacturing of goods for family u"
+   "reference_label": "In the last 7 days, Did [Name] spent time on manufacturing of goods for family u",
+   "split_reasons": []
   },
   "g05": {
    "years": [
@@ -6594,7 +7060,8 @@
     "2024": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,",
     "2025": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend constructing your dwelling,",
+   "split_reasons": []
   },
   "g05a": {
    "years": [
@@ -6620,7 +7087,8 @@
     "2024": "In the last 7 days, Did [Name] spent time on construction of own building?",
     "2025": "In the last 7 days, Did [Name] spent time on construction of own building?"
    },
-   "reference_label": "In the last 7 days, Did [Name] spent time on construction of own building?"
+   "reference_label": "In the last 7 days, Did [Name] spent time on construction of own building?",
+   "split_reasons": []
   },
   "g06": {
    "years": [
@@ -6655,7 +7123,8 @@
     "2024": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu",
     "2025": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend doing household chores inclu",
+   "split_reasons": []
   },
   "g06a": {
    "years": [
@@ -6681,7 +7150,8 @@
     "2024": "In the last 7 days, Did [Name] spent time on doing household chores?",
     "2025": "In the last 7 days, Did [Name] spent time on doing household chores?"
    },
-   "reference_label": "In the last 7 days, Did [Name] spent time on doing household chores?"
+   "reference_label": "In the last 7 days, Did [Name] spent time on doing household chores?",
+   "split_reasons": []
   },
   "g07": {
    "years": [
@@ -6716,7 +7186,8 @@
     "2024": "In the last 7 days, how many hours did [NAME] spend looking after children and e",
     "2025": "In the last 7 days, how many hours did [NAME] spend looking after children and e"
    },
-   "reference_label": "In the last 7 days, how many hours did [NAME] spend looking after children and e"
+   "reference_label": "In the last 7 days, how many hours did [NAME] spend looking after children and e",
+   "split_reasons": []
   },
   "g07a": {
    "years": [
@@ -6742,7 +7213,8 @@
     "2024": "In the last 7 days, Did [Name] tooktime to look under children or adults",
     "2025": "In the last 7 days, Did [Name] tooktime to look under children or adults"
    },
-   "reference_label": "In the last 7 days, Did [Name] tooktime to look under children or adults"
+   "reference_label": "In the last 7 days, Did [Name] tooktime to look under children or adults",
+   "split_reasons": []
   },
   "gid": {
    "years": [
@@ -6756,7 +7228,8 @@
    "labels_by_year": {
     "2017": "Serian Number for Section G"
    },
-   "reference_label": "Serian Number for Section G"
+   "reference_label": "Serian Number for Section G",
+   "split_reasons": []
   },
   "h00": {
    "years": [
@@ -6776,7 +7249,8 @@
     "2022": "How would you describe your main situation on labour market at present?",
     "2023": "How would you describe your main situation on labour market at present?"
    },
-   "reference_label": "How would you describe your main situation on labour market at present?"
+   "reference_label": "How would you describe your main situation on labour market at present?",
+   "split_reasons": []
   },
   "h01": {
    "years": [
@@ -6811,7 +7285,8 @@
     "2024": "During the last four weeks did he/she do any of the following  work mainly for o",
     "2025": "During the last four weeks did he/she do any of the following  work mainly for o"
    },
-   "reference_label": "During the last four weeks did he/she do any of the following  work mainly for o"
+   "reference_label": "During the last four weeks did he/she do any of the following  work mainly for o",
+   "split_reasons": []
   },
   "h02": {
    "years": [
@@ -6829,11 +7304,13 @@
      2017,
      2018,
      2019,
-     2021,
-     2022,
-     2023,
      2024,
      2025
+    ],
+    "h02_v2": [
+     2021,
+     2022,
+     2023
     ]
    },
    "labels_by_year": {
@@ -6846,7 +7323,10 @@
     "2024": "How many days per week did [NAME] usually worked in these activities?",
     "2025": "How many days per week has [NAME] usualy worked in these activities?"
    },
-   "reference_label": "How many days per week has [NAME] usualy worked in these activities?"
+   "reference_label": "How many days per week has [NAME] usualy worked in these activities?",
+   "split_reasons": [
+    "2021: FORCE_SPLIT"
+   ]
   },
   "h03": {
    "years": [
@@ -6864,11 +7344,13 @@
      2017,
      2018,
      2019,
-     2021,
-     2022,
-     2023,
      2024,
      2025
+    ],
+    "h03_v2": [
+     2021,
+     2022,
+     2023
     ]
    },
    "labels_by_year": {
@@ -6881,7 +7363,10 @@
     "2024": "How many hours per day has [NAME] usually worked in these activities?",
     "2025": "How many hours per week does [NAME] usually work in these activities?"
    },
-   "reference_label": "How many hours per week does [NAME] usually work in these activities?"
+   "reference_label": "How many hours per week does [NAME] usually work in these activities?",
+   "split_reasons": [
+    "2021: FORCE_SPLIT"
+   ]
   },
   "h04": {
    "years": [
@@ -6907,7 +7392,8 @@
     "2022": "",
     "2023": ""
    },
-   "reference_label": ""
+   "reference_label": "",
+   "split_reasons": []
   },
   "h05": {
    "years": [
@@ -6942,7 +7428,8 @@
     "2024": "In general, did the household sell or barter any part of the goods obtained from",
     "2025": "In general, did the household sell or barter any part of the goods obtained from"
    },
-   "reference_label": "In general, did the household sell or barter any part of the goods obtained from"
+   "reference_label": "In general, did the household sell or barter any part of the goods obtained from",
+   "split_reasons": []
   },
   "h06": {
    "years": [
@@ -6977,7 +7464,8 @@
     "2024": "About how much does the household regularly sell?",
     "2025": "About how much does the household regularly sell?"
    },
-   "reference_label": "About how much does the household regularly sell?"
+   "reference_label": "About how much does the household regularly sell?",
+   "split_reasons": []
   },
   "h07": {
    "years": [
@@ -6997,7 +7485,8 @@
     "2018": "What was the net Value in Frw the household get from agricultural activities dur",
     "2019": "What was the net Value in Frw the household get from agricultural activities dur"
    },
-   "reference_label": "What was the net Value in Frw the household get from agricultural activities dur"
+   "reference_label": "What was the net Value in Frw the household get from agricultural activities dur",
+   "split_reasons": []
   },
   "h08": {
    "years": [
@@ -7017,7 +7506,8 @@
     "2018": "Compared to  previous season Was the production  below/above average or an avera",
     "2019": "Was the previous season below/above average or an average season for your househ"
    },
-   "reference_label": "Was the previous season below/above average or an average season for your househ"
+   "reference_label": "Was the previous season below/above average or an average season for your househ",
+   "split_reasons": []
   },
   "h09": {
    "years": [
@@ -7052,7 +7542,8 @@
     "2024": "Do you regularly or sometimes engage paid employee in the farming activity?",
     "2025": "Do you regularly or sometimes engage paid employee in the farming activity?"
    },
-   "reference_label": "Do you regularly or sometimes engage paid employee in the farming activity?"
+   "reference_label": "Do you regularly or sometimes engage paid employee in the farming activity?",
+   "split_reasons": []
   },
   "h10": {
    "years": [
@@ -7087,7 +7578,8 @@
     "2024": "Excluding family members, how many paid employees do you usually  engage in thes",
     "2025": "Excluding family members, how many paid employees do you usually  engage in thes"
    },
-   "reference_label": "Excluding family members, how many paid employees do you usually  engage in thes"
+   "reference_label": "Excluding family members, how many paid employees do you usually  engage in thes",
+   "split_reasons": []
   },
   "h11a": {
    "years": [
@@ -7107,7 +7599,8 @@
     "2018": "Did you get access to the land for the agricultural work by leasing (have land t",
     "2019": "Did you get access to the land for the agricultural work by leasing (have land t"
    },
-   "reference_label": "Did you get access to the land for the agricultural work by leasing (have land t"
+   "reference_label": "Did you get access to the land for the agricultural work by leasing (have land t",
+   "split_reasons": []
   },
   "h11b": {
    "years": [
@@ -7127,7 +7620,8 @@
     "2018": "Did you get access to the land for the agricultural work by Renting (share-cropp",
     "2019": "Did you get access to the land for the agricultural work by Renting (share-cropp"
    },
-   "reference_label": "Did you get access to the land for the agricultural work by Renting (share-cropp"
+   "reference_label": "Did you get access to the land for the agricultural work by Renting (share-cropp",
+   "split_reasons": []
   },
   "h11c": {
    "years": [
@@ -7147,7 +7641,8 @@
     "2018": "Did you get access to the land for the agricultural work by renting (fixed rent)",
     "2019": "Did you get access to the land for the agricultural work by renting (fixed rent)"
    },
-   "reference_label": "Did you get access to the land for the agricultural work by renting (fixed rent)"
+   "reference_label": "Did you get access to the land for the agricultural work by renting (fixed rent)",
+   "split_reasons": []
   },
   "h11d": {
    "years": [
@@ -7167,7 +7662,8 @@
     "2018": "Did you get access to the land for the agricultural work by renting (free of cha",
     "2019": "Did you get access to the land for the agricultural work by renting (free of cha"
    },
-   "reference_label": "Did you get access to the land for the agricultural work by renting (free of cha"
+   "reference_label": "Did you get access to the land for the agricultural work by renting (free of cha",
+   "split_reasons": []
   },
   "h11e": {
    "years": [
@@ -7187,7 +7683,8 @@
     "2018": "Did you get access to the land for the agricultural work by communal rights/publ",
     "2019": "Did you get access to the land for the agricultural work by communal rights/publ"
    },
-   "reference_label": "Did you get access to the land for the agricultural work by communal rights/publ"
+   "reference_label": "Did you get access to the land for the agricultural work by communal rights/publ",
+   "split_reasons": []
   },
   "head": {
    "years": [
@@ -7210,7 +7707,8 @@
     "2024": "Head of the household",
     "2025": "Head of the household"
    },
-   "reference_label": "Head of the household"
+   "reference_label": "Head of the household",
+   "split_reasons": []
   },
   "hhgac": {
    "years": [
@@ -7224,7 +7722,8 @@
    "labels_by_year": {
     "2021": "Number of Group Acceptance"
    },
-   "reference_label": "Number of Group Acceptance"
+   "reference_label": "Number of Group Acceptance",
+   "split_reasons": []
   },
   "hhgap": {
    "years": [
@@ -7238,7 +7737,8 @@
    "labels_by_year": {
     "2021": "Number of Group Appearance"
    },
-   "reference_label": "Number of Group Appearance"
+   "reference_label": "Number of Group Appearance",
+   "split_reasons": []
   },
   "hhid": {
    "years": [
@@ -7276,7 +7776,8 @@
     "2024": "Household id = PSU*100 + household number (unique with year + interview)",
     "2025": "Household id = PSU*100 + household number (unique with year + interview)"
    },
-   "reference_label": "Household id = PSU*100 + household number (unique with year + interview)"
+   "reference_label": "Household id = PSU*100 + household number (unique with year + interview)",
+   "split_reasons": []
   },
   "hhid_nisr": {
    "years": [
@@ -7302,7 +7803,8 @@
     "2024": "NISR household id as shipped (HHID)",
     "2025": "NISR household id as shipped (HHID)"
    },
-   "reference_label": "NISR household id as shipped (HHID)"
+   "reference_label": "NISR household id as shipped (HHID)",
+   "split_reasons": []
   },
   "hhrg": {
    "years": [
@@ -7322,7 +7824,8 @@
     "2018": "Rotation Group",
     "2021": "Rotation Group"
    },
-   "reference_label": "Rotation Group"
+   "reference_label": "Rotation Group",
+   "split_reasons": []
   },
   "hhsize": {
    "years": [
@@ -7345,7 +7848,8 @@
     "2024": "Household size",
     "2025": "Household size"
    },
-   "reference_label": "Household size"
+   "reference_label": "Household size",
+   "split_reasons": []
   },
   "hr_cash": {
    "years": [
@@ -7368,7 +7872,8 @@
     "2023": "Hourly wage of employees",
     "2024": "Hourly wage of employees"
    },
-   "reference_label": "Hourly wage of employees"
+   "reference_label": "Hourly wage of employees",
+   "split_reasons": []
   },
   "hr_cshmain": {
    "years": [
@@ -7391,7 +7896,8 @@
     "2023": "Hourly wage of employees in main job",
     "2024": "Hourly wage of employees in main job"
    },
-   "reference_label": "Hourly wage of employees in main job"
+   "reference_label": "Hourly wage of employees in main job",
+   "split_reasons": []
   },
   "hr_own": {
    "years": [
@@ -7414,7 +7920,8 @@
     "2024": "Total hours in own use",
     "2025": "Total hours in own use"
    },
-   "reference_label": "Total hours in own use"
+   "reference_label": "Total hours in own use",
+   "split_reasons": []
   },
   "i01_a": {
    "years": [
@@ -7427,10 +7934,12 @@
    "versions": {
     "i01_a": [
      2017,
-     2019,
      2021,
      2022,
      2023
+    ],
+    "i01_a_v2": [
+     2019
     ]
    },
    "labels_by_year": {
@@ -7440,7 +7949,10 @@
     "2022": "Main material used in building this house for roof",
     "2023": "Main material used in building this house for roof"
    },
-   "reference_label": "Main material used in building this house for roof"
+   "reference_label": "Main material used in building this house for roof",
+   "split_reasons": [
+    "2019 vs 2017: value labels differ -- 4: 'Bamboo' vs 'Plastic/plywood/impermanent material'; 5: 'Plastic/plywood/impermanent material' vs 'Other (specify)'"
+   ]
   },
   "i01_b": {
    "years": [
@@ -7466,7 +7978,8 @@
     "2022": "Main material used in building this house for exterior walls",
     "2023": "Main material used in building this house for exterior walls"
    },
-   "reference_label": "Main material used in building this house for exterior walls"
+   "reference_label": "Main material used in building this house for exterior walls",
+   "split_reasons": []
   },
   "i01_c": {
    "years": [
@@ -7492,7 +8005,8 @@
     "2022": "Main material used in building this house for floor",
     "2023": "Main material used in building this house for floor"
    },
-   "reference_label": "Main material used in building this house for floor"
+   "reference_label": "Main material used in building this house for floor",
+   "split_reasons": []
   },
   "i02": {
    "years": [
@@ -7518,7 +8032,8 @@
     "2022": "How many rooms in your household are used for sleeping?",
     "2023": "How many rooms in your household are used for sleeping?"
    },
-   "reference_label": "How many rooms in your household are used for sleeping?"
+   "reference_label": "How many rooms in your household are used for sleeping?",
+   "split_reasons": []
   },
   "i03": {
    "years": [
@@ -7544,7 +8059,8 @@
     "2022": "What type of toilet does your household have?",
     "2023": "What type of toilet does your household have?"
    },
-   "reference_label": "What type of toilet does your household have?"
+   "reference_label": "What type of toilet does your household have?",
+   "split_reasons": []
   },
   "i04": {
    "years": [
@@ -7570,7 +8086,8 @@
     "2022": "What is the main source of energy in your household for lighting?",
     "2023": "What is the main source of energy in your household for lighting?"
    },
-   "reference_label": "What is the main source of energy in your household for lighting?"
+   "reference_label": "What is the main source of energy in your household for lighting?",
+   "split_reasons": []
   },
   "i05": {
    "years": [
@@ -7596,7 +8113,8 @@
     "2022": "What is the main source of energy in your household for cooking?",
     "2023": "What is the main source of energy in your household for cooking?"
    },
-   "reference_label": "What is the main source of energy in your household for cooking?"
+   "reference_label": "What is the main source of energy in your household for cooking?",
+   "split_reasons": []
   },
   "i06a": {
    "years": [
@@ -7610,9 +8128,11 @@
     "i06a": [
      2017,
      2019,
-     2021,
      2022,
      2023
+    ],
+    "i06a_v2": [
+     2021
     ]
    },
    "labels_by_year": {
@@ -7622,7 +8142,10 @@
     "2022": "What is the main source of water in your household for drinking?",
     "2023": "What is the main source of water in your household for drinking?"
    },
-   "reference_label": "What is the main source of water in your household for drinking?"
+   "reference_label": "What is the main source of water in your household for drinking?",
+   "split_reasons": [
+    "2021 vs 2017: value labels differ -- 11: 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)' vs 'Bottled Water'; 12: 'Bottled water' vs 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)'"
+   ]
   },
   "i06b": {
    "years": [
@@ -7636,9 +8159,11 @@
     "i06b": [
      2017,
      2019,
-     2021,
      2022,
      2023
+    ],
+    "i06b_v2": [
+     2021
     ]
    },
    "labels_by_year": {
@@ -7648,7 +8173,10 @@
     "2022": "What is the main source of water in your household for other uses?",
     "2023": "What is the main source of water in your household for other uses?"
    },
-   "reference_label": "What is the main source of water in your household for other uses?"
+   "reference_label": "What is the main source of water in your household for other uses?",
+   "split_reasons": [
+    "2021 vs 2017: value labels differ -- 11: 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)' vs 'Bottled Water'; 12: 'Bottled Water' vs 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)'"
+   ]
   },
   "i07a": {
    "years": [
@@ -7674,7 +8202,8 @@
     "2022": "Does this household own Refrigerator/Freezer?",
     "2023": "Does this household own Refrigerator/Freezer?"
    },
-   "reference_label": "Does this household own Refrigerator/Freezer?"
+   "reference_label": "Does this household own Refrigerator/Freezer?",
+   "split_reasons": []
   },
   "i07b": {
    "years": [
@@ -7700,7 +8229,8 @@
     "2022": "Does this household own radio?",
     "2023": "Does this household own radio?"
    },
-   "reference_label": "Does this household own radio?"
+   "reference_label": "Does this household own radio?",
+   "split_reasons": []
   },
   "i07c": {
    "years": [
@@ -7726,7 +8256,8 @@
     "2022": "Does this household own TV set?",
     "2023": "Does this household own TV set?"
    },
-   "reference_label": "Does this household own TV set?"
+   "reference_label": "Does this household own TV set?",
+   "split_reasons": []
   },
   "i07d": {
    "years": [
@@ -7752,7 +8283,8 @@
     "2022": "Does this household own parabolic antena?",
     "2023": "Does this household own parabolic antena?"
    },
-   "reference_label": "Does this household own parabolic antena?"
+   "reference_label": "Does this household own parabolic antena?",
+   "split_reasons": []
   },
   "i07e": {
    "years": [
@@ -7778,7 +8310,8 @@
     "2022": "Does this household own Video/DVD player?",
     "2023": "Does this household own Video/DVD player?"
    },
-   "reference_label": "Does this household own Video/DVD player?"
+   "reference_label": "Does this household own Video/DVD player?",
+   "split_reasons": []
   },
   "i07f": {
    "years": [
@@ -7804,7 +8337,8 @@
     "2022": "Does this household own Computer and accessories?",
     "2023": "Does this household own Computer and accessories?"
    },
-   "reference_label": "Does this household own Computer and accessories?"
+   "reference_label": "Does this household own Computer and accessories?",
+   "split_reasons": []
   },
   "i07g": {
    "years": [
@@ -7830,7 +8364,8 @@
     "2022": "Does this household own Music system?",
     "2023": "Does this household own Music system?"
    },
-   "reference_label": "Does this household own Music system?"
+   "reference_label": "Does this household own Music system?",
+   "split_reasons": []
   },
   "i07h": {
    "years": [
@@ -7856,7 +8391,8 @@
     "2022": "Does this household own Cooker?",
     "2023": "Does this household own Cooker?"
    },
-   "reference_label": "Does this household own Cooker?"
+   "reference_label": "Does this household own Cooker?",
+   "split_reasons": []
   },
   "i07i": {
    "years": [
@@ -7882,7 +8418,8 @@
     "2022": "Does this household own Sewing machine?",
     "2023": "Does this household own Sewing machine?"
    },
-   "reference_label": "Does this household own Sewing machine?"
+   "reference_label": "Does this household own Sewing machine?",
+   "split_reasons": []
   },
   "i07j": {
    "years": [
@@ -7908,7 +8445,8 @@
     "2022": "Does this household own Laundry machine?",
     "2023": "Does this household own Laundry machine?"
    },
-   "reference_label": "Does this household own Laundry machine?"
+   "reference_label": "Does this household own Laundry machine?",
+   "split_reasons": []
   },
   "i07k": {
    "years": [
@@ -7934,7 +8472,8 @@
     "2022": "Does this household own Electric fan?",
     "2023": "Does this household own Electric fan?"
    },
-   "reference_label": "Does this household own Electric fan?"
+   "reference_label": "Does this household own Electric fan?",
+   "split_reasons": []
   },
   "i07l": {
    "years": [
@@ -7960,7 +8499,8 @@
     "2022": "Does this household own Camera?",
     "2023": "Does this household own Camera?"
    },
-   "reference_label": "Does this household own Camera?"
+   "reference_label": "Does this household own Camera?",
+   "split_reasons": []
   },
   "i07m": {
    "years": [
@@ -7986,7 +8526,8 @@
     "2022": "Does this household own Mobile phone?",
     "2023": "Does this household own Mobile phone?"
    },
-   "reference_label": "Does this household own Mobile phone?"
+   "reference_label": "Does this household own Mobile phone?",
+   "split_reasons": []
   },
   "i07n": {
    "years": [
@@ -8012,7 +8553,8 @@
     "2022": "Does this household own Car ?",
     "2023": "Does this household own Car ?"
    },
-   "reference_label": "Does this household own Car ?"
+   "reference_label": "Does this household own Car ?",
+   "split_reasons": []
   },
   "i07o": {
    "years": [
@@ -8038,7 +8580,8 @@
     "2022": "Does this household own Bicycle  ?",
     "2023": "Does this household own Bicycle  ?"
    },
-   "reference_label": "Does this household own Bicycle  ?"
+   "reference_label": "Does this household own Bicycle  ?",
+   "split_reasons": []
   },
   "i07p": {
    "years": [
@@ -8064,7 +8607,8 @@
     "2022": "Does this household own Motorcycle  ?",
     "2023": "Does this household own Motorcycle  ?"
    },
-   "reference_label": "Does this household own Motorcycle  ?"
+   "reference_label": "Does this household own Motorcycle  ?",
+   "split_reasons": []
   },
   "i07q": {
    "years": [
@@ -8090,7 +8634,8 @@
     "2022": "Does this household own internet connection ?",
     "2023": "Does this household own internet connection ?"
    },
-   "reference_label": "Does this household own internet connection ?"
+   "reference_label": "Does this household own internet connection ?",
+   "split_reasons": []
   },
   "i08": {
    "years": [
@@ -8107,7 +8652,8 @@
     "2019": "How many of this household members used internet in the last 12 months?",
     "2020": "How many of this household members used internet in the last 12 months?"
    },
-   "reference_label": "How many of this household members used internet in the last 12 months?"
+   "reference_label": "How many of this household members used internet in the last 12 months?",
+   "split_reasons": []
   },
   "i09": {
    "years": [
@@ -8124,7 +8670,8 @@
     "2019": "How many of this household members having mobile phone?",
     "2020": "How many of this household members having mobile phone?"
    },
-   "reference_label": "How many of this household members having mobile phone?"
+   "reference_label": "How many of this household members having mobile phone?",
+   "split_reasons": []
   },
   "i10": {
    "years": [
@@ -8141,7 +8688,8 @@
     "2019": "How many of this household members having personal computer?",
     "2020": "How many of this household members having personal computer?"
    },
-   "reference_label": "How many of this household members having personal computer?"
+   "reference_label": "How many of this household members having personal computer?",
+   "split_reasons": []
   },
   "i11": {
    "years": [
@@ -8158,7 +8706,8 @@
     "2019": "How many of this household members using social media",
     "2020": "How many of this household members using social media"
    },
-   "reference_label": "How many of this household members using social media"
+   "reference_label": "How many of this household members using social media",
+   "split_reasons": []
   },
   "i12": {
    "years": [
@@ -8175,7 +8724,8 @@
     "2019": "How many of this household members aged 10 and above who used a computer in the",
     "2020": "How many of this household members aged 10 and above who used a computer in the"
    },
-   "reference_label": "How many of this household members aged 10 and above who used a computer in the"
+   "reference_label": "How many of this household members aged 10 and above who used a computer in the",
+   "split_reasons": []
   },
   "i13": {
    "years": [
@@ -8189,7 +8739,8 @@
    "labels_by_year": {
     "2019": "How many of this household members aged 10 and above who know to use at least on"
    },
-   "reference_label": "How many of this household members aged 10 and above who know to use at least on"
+   "reference_label": "How many of this household members aged 10 and above who know to use at least on",
+   "split_reasons": []
   },
   "icse18a": {
    "years": [
@@ -8203,7 +8754,8 @@
    "labels_by_year": {
     "2025": "5 Main categories of Status in employment by type of authority"
    },
-   "reference_label": "5 Main categories of Status in employment by type of authority"
+   "reference_label": "5 Main categories of Status in employment by type of authority",
+   "split_reasons": []
   },
   "ie": {
    "years": [
@@ -8217,7 +8769,8 @@
    "labels_by_year": {
     "2017": "Formal and Informal employment for main job"
    },
-   "reference_label": "Formal and Informal employment for main job"
+   "reference_label": "Formal and Informal employment for main job",
+   "split_reasons": []
   },
   "iev2": {
    "years": [
@@ -8249,7 +8802,8 @@
     "2024": "Formal and Informal employment for main job",
     "2025": "Formal and Informal employment for main job"
    },
-   "reference_label": "Formal and Informal employment for main job"
+   "reference_label": "Formal and Informal employment for main job",
+   "split_reasons": []
   },
   "indb05": {
    "years": [
@@ -8284,7 +8838,8 @@
     "2024": "Field of education",
     "2025": "Field of education"
    },
-   "reference_label": "Field of education"
+   "reference_label": "Field of education",
+   "split_reasons": []
   },
   "indb1": {
    "years": [
@@ -8313,7 +8868,8 @@
     "2024": "Years of schooling",
     "2025": "Years of schooling"
    },
-   "reference_label": "Years of schooling"
+   "reference_label": "Years of schooling",
+   "split_reasons": []
   },
   "indd01": {
    "years": [
@@ -8348,7 +8904,8 @@
     "2024": "ISCO High level",
     "2025": "ISCO High level"
    },
-   "reference_label": "ISCO High level"
+   "reference_label": "ISCO High level",
+   "split_reasons": []
   },
   "indd03": {
    "years": [
@@ -8386,7 +8943,8 @@
     "2024": "ISIC High level",
     "2025": "ISIC High level"
    },
-   "reference_label": "ISIC High level"
+   "reference_label": "ISIC High level",
+   "split_reasons": []
   },
   "inde01": {
    "years": [
@@ -8403,7 +8961,8 @@
     "2017": "ISCO High level_secondary",
     "2018": "ISCO High level_secondary"
    },
-   "reference_label": "ISCO High level_secondary"
+   "reference_label": "ISCO High level_secondary",
+   "split_reasons": []
   },
   "inde02": {
    "years": [
@@ -8429,7 +8988,8 @@
     "2022": "ISIC High level_secondary",
     "2023": "ISIC High level_secondary"
    },
-   "reference_label": "ISIC High level_secondary"
+   "reference_label": "ISIC High level_secondary",
+   "split_reasons": []
   },
   "indf03": {
    "years": [
@@ -8446,7 +9006,8 @@
     "2017": "ISCO High level_past",
     "2018": "ISCO High level_past"
    },
-   "reference_label": "ISCO High level_past"
+   "reference_label": "ISCO High level_past",
+   "split_reasons": []
   },
   "indf04": {
    "years": [
@@ -8463,7 +9024,8 @@
     "2017": "ISIC High level_past",
     "2018": "ISIC High level_past"
    },
-   "reference_label": "ISIC High level_past"
+   "reference_label": "ISIC High level_past",
+   "split_reasons": []
   },
   "intcash": {
    "years": [
@@ -8476,7 +9038,9 @@
     "intcash": [
      2022,
      2023,
-     2024,
+     2024
+    ],
+    "intcash_v2": [
      2025
     ]
    },
@@ -8486,7 +9050,10 @@
     "2024": "Income interval",
     "2025": "Cash Income interval for employees"
    },
-   "reference_label": "Cash Income interval for employees"
+   "reference_label": "Income interval",
+   "split_reasons": [
+    "2025 vs 2022: value labels differ -- 5: '100,000-199,999RWF' vs '100000 and above RWF'"
+   ]
   },
   "interview": {
    "years": [
@@ -8514,17 +9081,18 @@
     ]
    },
    "labels_by_year": {
-    "2017": "Interview number of the household within the year (1, 2)",
-    "2018": "Interview number of the household within the year (1, 2)",
-    "2019": "Interview number of the household within the year (1, 2)",
-    "2020": "Interview number of the household within the year (1, 2)",
-    "2021": "Interview number of the household within the year (1, 2)",
-    "2022": "Interview number of the household within the year (1, 2)",
-    "2023": "Interview number of the household within the year (1, 2)",
-    "2024": "Interview number of the household within the year (1, 2)",
-    "2025": "Interview number of the household within the year (1, 2)"
+    "2017": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2018": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2019": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2020": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2021": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2022": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2023": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2024": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+    "2025": "Interview number of the household within the year (1, 2): rank of the quarter wh"
    },
-   "reference_label": "Interview number of the household within the year (1, 2)"
+   "reference_label": "Interview number of the household within the year (1, 2): rank of the quarter wh",
+   "split_reasons": []
   },
   "is": {
    "years": [
@@ -8538,7 +9106,8 @@
    "labels_by_year": {
     "2021": "Informal&Formal sector employment"
    },
-   "reference_label": "Informal&Formal sector employment"
+   "reference_label": "Informal&Formal sector employment",
+   "split_reasons": []
   },
   "isco2d": {
    "years": [
@@ -8555,7 +9124,8 @@
     "2017": "Isco_2digits_mainjob",
     "2018": "Isco_2digits_mainjob"
    },
-   "reference_label": "Isco_2digits_mainjob"
+   "reference_label": "Isco_2digits_mainjob",
+   "split_reasons": []
   },
   "isco2digit": {
    "years": [
@@ -8578,7 +9148,8 @@
     "2024": "occupation activity at two digit",
     "2025": "occupation activity at two digit"
    },
-   "reference_label": "occupation activity at two digit"
+   "reference_label": "occupation activity at two digit",
+   "split_reasons": []
   },
   "isco2e": {
    "years": [
@@ -8595,7 +9166,8 @@
     "2017": "Isco_2digits_secondjob",
     "2018": "Isco_2digits_secondjob"
    },
-   "reference_label": "Isco_2digits_secondjob"
+   "reference_label": "Isco_2digits_secondjob",
+   "split_reasons": []
   },
   "isco2f": {
    "years": [
@@ -8612,7 +9184,8 @@
     "2017": "Isco_2digits_pastjob",
     "2018": "Isco_2digits_pastjob"
    },
-   "reference_label": "Isco_2digits_pastjob"
+   "reference_label": "Isco_2digits_pastjob",
+   "split_reasons": []
   },
   "isic2d": {
    "years": [
@@ -8629,7 +9202,8 @@
     "2017": "Isic_2digits_mainjob",
     "2018": "Isic_2digits_mainjob"
    },
-   "reference_label": "Isic_2digits_mainjob"
+   "reference_label": "Isic_2digits_mainjob",
+   "split_reasons": []
   },
   "isic2digitdigit": {
    "years": [
@@ -8652,7 +9226,8 @@
     "2024": "economic activity at two digit",
     "2025": "economic activity at two digit"
    },
-   "reference_label": "economic activity at two digit"
+   "reference_label": "economic activity at two digit",
+   "split_reasons": []
   },
   "isic2e": {
    "years": [
@@ -8669,7 +9244,8 @@
     "2017": "Isic_2digits_secondjob",
     "2018": "Isic_2digits_secondjob"
    },
-   "reference_label": "Isic_2digits_secondjob"
+   "reference_label": "Isic_2digits_secondjob",
+   "split_reasons": []
   },
   "isic2f": {
    "years": [
@@ -8686,7 +9262,8 @@
     "2017": "Isic_2digits_pastjob",
     "2018": "Isic_2digits_pastjob"
    },
-   "reference_label": "Isic_2digits_pastjob"
+   "reference_label": "Isic_2digits_pastjob",
+   "split_reasons": []
   },
   "jobsearch": {
    "years": [
@@ -8703,7 +9280,8 @@
     "2018": "Not employed with jobseach",
     "2020": "Not employed with jobseach"
    },
-   "reference_label": "Not employed with jobseach"
+   "reference_label": "Not employed with jobseach",
+   "split_reasons": []
   },
   "lfpr": {
    "years": [
@@ -8741,7 +9319,8 @@
     "2024": "Labour force particiaption rate",
     "2025": "Labour force particiaption rate"
    },
-   "reference_label": "Labour force particiaption rate"
+   "reference_label": "Labour force particiaption rate",
+   "split_reasons": []
   },
   "lfs_round": {
    "years": [
@@ -8750,15 +9329,20 @@
    ],
    "versions": {
     "lfs_round": [
-     2020,
      2021
+    ],
+    "lfs_round_v2": [
+     2020
     ]
    },
    "labels_by_year": {
     "2020": "LFS_rounds",
     "2021": "LFS_rounds"
    },
-   "reference_label": "LFS_rounds"
+   "reference_label": "LFS_rounds",
+   "split_reasons": [
+    "2021 vs 2020: value labels differ -- 2: 'FEB17' vs 'AUG17'; 3: 'AUG17' vs 'FEB18'; 4: 'FEB18' vs 'AUG18'"
+   ]
   },
   "lfs_strata": {
    "years": [
@@ -8775,7 +9359,8 @@
     "2024": "strata for LFS",
     "2025": "strata for LFS"
    },
-   "reference_label": "strata for LFS"
+   "reference_label": "strata for LFS",
+   "split_reasons": []
   },
   "lfs_workforce": {
    "years": [
@@ -8789,7 +9374,8 @@
    "labels_by_year": {
     "2019": "LFS_workforce"
    },
-   "reference_label": "LFS_workforce"
+   "reference_label": "LFS_workforce",
+   "split_reasons": []
   },
   "lfs_year": {
    "years": [
@@ -8818,7 +9404,8 @@
     "2024": "LFS data collection year",
     "2025": "LFS data collection year"
    },
-   "reference_label": "LFS data collection year"
+   "reference_label": "LFS data collection year",
+   "split_reasons": []
   },
   "lu2": {
    "years": [
@@ -8847,7 +9434,8 @@
     "2024": "LU2 - Combined rate of unemployment and time-related underemployment(%)",
     "2025": "LU2 - Combined rate of unemployment and time-related underemployment(%)"
    },
-   "reference_label": "LU2 - Combined rate of unemployment and time-related underemployment(%)"
+   "reference_label": "LU2 - Combined rate of unemployment and time-related underemployment(%)",
+   "split_reasons": []
   },
   "lu3": {
    "years": [
@@ -8876,7 +9464,8 @@
     "2024": "LU3 - Combined rate of unemployment and potential labour force(%)",
     "2025": "LU3 - Combined rate of unemployment and potential labour force(%)"
    },
-   "reference_label": "LU3 - Combined rate of unemployment and potential labour force(%)"
+   "reference_label": "LU3 - Combined rate of unemployment and potential labour force(%)",
+   "split_reasons": []
   },
   "lu4": {
    "years": [
@@ -8899,7 +9488,8 @@
     "2024": "LU4 - Composite measure of labour underutilization(%)",
     "2025": "LU4 - Composite measure of labour underutilization(%)"
    },
-   "reference_label": "LU4 - Composite measure of labour underutilization(%)"
+   "reference_label": "LU4 - Composite measure of labour underutilization(%)",
+   "split_reasons": []
   },
   "luu": {
    "years": [
@@ -8934,7 +9524,8 @@
     "2024": "Labour underutilisation",
     "2025": "Labour underutilization"
    },
-   "reference_label": "Labour underutilization"
+   "reference_label": "Labour underutilization",
+   "split_reasons": []
   },
   "luur": {
    "years": [
@@ -8966,7 +9557,8 @@
     "2023": "Labour underutilization rate",
     "2024": "Labour underulilation rate"
    },
-   "reference_label": "Labour underulilation rate"
+   "reference_label": "Labour underulilation rate",
+   "split_reasons": []
   },
   "main_sect": {
    "years": [
@@ -8995,7 +9587,8 @@
     "2024": "Economic sector",
     "2025": "Economic sector"
    },
-   "reference_label": "Economic sector"
+   "reference_label": "Economic sector",
+   "split_reasons": []
   },
   "migrant": {
    "years": [
@@ -9027,7 +9620,8 @@
     "2024": "Recent migration",
     "2025": "Recent migration"
    },
-   "reference_label": "Recent migration"
+   "reference_label": "Recent migration",
+   "split_reasons": []
   },
   "more_person": {
    "years": [
@@ -9041,7 +9635,8 @@
    "labels_by_year": {
     "2021": "More person"
    },
-   "reference_label": "More person"
+   "reference_label": "More person",
+   "split_reasons": []
   },
   "neetyoung": {
    "years": [
@@ -9070,7 +9665,8 @@
     "2024": "NEET 16-30",
     "2025": "NEET 16-30"
    },
-   "reference_label": "NEET 16-30"
+   "reference_label": "NEET 16-30",
+   "split_reasons": []
   },
   "neetyouth": {
    "years": [
@@ -9093,7 +9689,8 @@
     "2024": "NEET 16-24",
     "2025": "NEET 16-24"
    },
-   "reference_label": "NEET 16-24"
+   "reference_label": "NEET 16-24",
+   "split_reasons": []
   },
   "phase": {
    "years": [
@@ -9110,7 +9707,8 @@
     "2017": "Data collection round",
     "2018": "Data collection round"
    },
-   "reference_label": "Data collection round"
+   "reference_label": "Data collection round",
+   "split_reasons": []
   },
   "pid": {
    "years": [
@@ -9138,17 +9736,18 @@
     ]
    },
    "labels_by_year": {
-    "2017": "Person number within the household",
-    "2018": "Person number within the household",
-    "2019": "Person number within the household",
-    "2020": "Person number within the household",
-    "2021": "Person number within the household",
-    "2022": "Person number within the household",
-    "2023": "Person number within the household",
-    "2024": "Person number within the household",
-    "2025": "Person number within the household"
+    "2017": "Person number within the household (2025: row order within the household-intervi",
+    "2018": "Person number within the household (2025: row order within the household-intervi",
+    "2019": "Person number within the household (2025: row order within the household-intervi",
+    "2020": "Person number within the household (2025: row order within the household-intervi",
+    "2021": "Person number within the household (2025: row order within the household-intervi",
+    "2022": "Person number within the household (2025: row order within the household-intervi",
+    "2023": "Person number within the household (2025: row order within the household-intervi",
+    "2024": "Person number within the household (2025: row order within the household-intervi",
+    "2025": "Person number within the household (2025: row order within the household-intervi"
    },
-   "reference_label": "Person number within the household"
+   "reference_label": "Person number within the household (2025: row order within the household-intervi",
+   "split_reasons": []
   },
   "pid_nisr": {
    "years": [
@@ -9183,7 +9782,8 @@
     "2023": "NISR person id as shipped (pid / pkey)",
     "2024": "NISR person id as shipped (pid / pkey)"
    },
-   "reference_label": "NISR person id as shipped (pid / pkey)"
+   "reference_label": "NISR person id as shipped (pid / pkey)",
+   "split_reasons": []
   },
   "pkey": {
    "years": [
@@ -9197,7 +9797,8 @@
    "labels_by_year": {
     "2019": "identifier"
    },
-   "reference_label": "identifier"
+   "reference_label": "identifier",
+   "split_reasons": []
   },
   "plf": {
    "years": [
@@ -9232,7 +9833,8 @@
     "2024": "Potential labour force",
     "2025": "Potential labour force"
    },
-   "reference_label": "Potential labour force"
+   "reference_label": "Potential labour force",
+   "split_reasons": []
   },
   "pop": {
    "years": [
@@ -9246,7 +9848,8 @@
    "labels_by_year": {
     "2021": "Total population"
    },
-   "reference_label": "Total population"
+   "reference_label": "Total population",
+   "split_reasons": []
   },
   "prod_sec": {
    "years": [
@@ -9263,7 +9866,8 @@
     "2017": "Formal_Informal_HH",
     "2018": "Informal&Formal& household sector employment"
    },
-   "reference_label": "Informal&Formal& household sector employment"
+   "reference_label": "Informal&Formal& household sector employment",
+   "split_reasons": []
   },
   "prod_unit": {
    "years": [
@@ -9292,7 +9896,8 @@
     "2024": "Production sector unit",
     "2025": "Production sector unit"
    },
-   "reference_label": "Production sector unit"
+   "reference_label": "Production sector unit",
+   "split_reasons": []
   },
   "prov": {
    "years": [
@@ -9330,7 +9935,8 @@
     "2024": "Province (1-5, NISR codes)",
     "2025": "Province (1-5, NISR codes)"
    },
-   "reference_label": "Province (1-5, NISR codes)"
+   "reference_label": "Province (1-5, NISR codes)",
+   "split_reasons": []
   },
   "psu": {
    "years": [
@@ -9368,7 +9974,8 @@
     "2024": "Primary sampling unit number (NISR PSU_NO; anonymised)",
     "2025": "Primary sampling unit number (NISR PSU_NO; anonymised)"
    },
-   "reference_label": "Primary sampling unit number (NISR PSU_NO; anonymised)"
+   "reference_label": "Primary sampling unit number (NISR PSU_NO; anonymised)",
+   "split_reasons": []
   },
   "psu_id": {
    "years": [
@@ -9382,7 +9989,8 @@
    "labels_by_year": {
     "2021": "Primary Sampling Unit"
    },
-   "reference_label": "Primary Sampling Unit"
+   "reference_label": "Primary Sampling Unit",
+   "split_reasons": []
   },
   "psu_no": {
    "years": [
@@ -9417,7 +10025,8 @@
     "2024": "Primary Sampling Unit",
     "2025": "Primary Sampling Unit"
    },
-   "reference_label": "Primary Sampling Unit"
+   "reference_label": "Primary Sampling Unit",
+   "split_reasons": []
   },
   "qh_no": {
    "years": [
@@ -9443,7 +10052,8 @@
     "2024": "QUESTIONNAIRE  NUMBER",
     "2025": "QUESTIONNAIRE  NUMBER"
    },
-   "reference_label": "QUESTIONNAIRE  NUMBER"
+   "reference_label": "QUESTIONNAIRE  NUMBER",
+   "split_reasons": []
   },
   "quarter": {
    "years": [
@@ -9471,17 +10081,18 @@
     ]
    },
    "labels_by_year": {
-    "2017": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2018": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2019": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2020": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2021": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2022": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2023": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2024": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)",
-    "2025": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)"
+    "2017": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2018": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2019": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2020": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2021": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2022": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2023": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2024": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+    "2025": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl"
    },
-   "reference_label": "Quarter of the round (1 Feb, 2 May, 3 Aug, 4 Nov)"
+   "reference_label": "Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl",
+   "split_reasons": []
   },
   "quintile": {
    "years": [
@@ -9495,7 +10106,8 @@
    "labels_by_year": {
     "2021": "quintiles"
    },
-   "reference_label": "quintiles"
+   "reference_label": "quintiles",
+   "split_reasons": []
   },
   "round": {
    "years": [
@@ -9523,17 +10135,18 @@
     ]
    },
    "labels_by_year": {
-    "2017": "Data-collection round (month+year as labelled by NISR)",
-    "2018": "Data-collection round (month+year as labelled by NISR)",
-    "2019": "Data-collection round (month+year as labelled by NISR)",
-    "2020": "Data-collection round (month+year as labelled by NISR)",
-    "2021": "Data-collection round (month+year as labelled by NISR)",
-    "2022": "Data-collection round (month+year as labelled by NISR)",
-    "2023": "Data-collection round (month+year as labelled by NISR)",
-    "2024": "Data-collection round (month+year as labelled by NISR)",
-    "2025": "Data-collection round (month+year as labelled by NISR)"
+    "2017": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2018": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2019": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2020": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2021": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2022": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2023": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2024": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+    "2025": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025"
    },
-   "reference_label": "Data-collection round (month+year as labelled by NISR)"
+   "reference_label": "Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025",
+   "split_reasons": []
   },
   "ryear": {
    "years": [
@@ -9547,7 +10160,8 @@
    "labels_by_year": {
     "2017": "Year"
    },
-   "reference_label": "Year"
+   "reference_label": "Year",
+   "split_reasons": []
   },
   "samehh": {
    "years": [
@@ -9564,7 +10178,8 @@
     "2017": "The same Household Visited last time?",
     "2018": "The same Household Visited last time?"
    },
-   "reference_label": "The same Household Visited last time?"
+   "reference_label": "The same Household Visited last time?",
+   "split_reasons": []
   },
   "sex": {
    "years": [
@@ -9602,7 +10217,8 @@
     "2024": "Sex (1 male, 2 female)",
     "2025": "Sex (1 male, 2 female)"
    },
-   "reference_label": "Sex (1 male, 2 female)"
+   "reference_label": "Sex (1 male, 2 female)",
+   "split_reasons": []
   },
   "sihh": {
    "years": [
@@ -9616,7 +10232,8 @@
    "labels_by_year": {
     "2021": "Still in the Household"
    },
-   "reference_label": "Still in the Household"
+   "reference_label": "Still in the Household",
+   "split_reasons": []
   },
   "sm": {
    "years": [
@@ -9636,7 +10253,8 @@
     "2022": "Search methods",
     "2023": "Search methods"
    },
-   "reference_label": "Search methods"
+   "reference_label": "Search methods",
+   "split_reasons": []
   },
   "status1": {
    "years": [
@@ -9674,7 +10292,8 @@
     "2024": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
     "2025": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed"
    },
-   "reference_label": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed"
+   "reference_label": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+   "split_reasons": []
   },
   "sub": {
    "years": [
@@ -9709,7 +10328,8 @@
     "2024": "Dimunished Subsistance foodstaff producers",
     "2025": "Subsistance foodstaff producers"
    },
-   "reference_label": "Subsistance foodstaff producers"
+   "reference_label": "Subsistance foodstaff producers",
+   "split_reasons": []
   },
   "subhrs": {
    "years": [
@@ -9720,19 +10340,24 @@
    ],
    "versions": {
     "subhrs": [
-     2022,
-     2023,
      2024,
      2025
+    ],
+    "subhrs_v2": [
+     2022,
+     2023
     ]
    },
    "labels_by_year": {
-    "2022": "Time spent in subsistance activities",
-    "2023": "Time spent in subsistance activities",
+    "2022": "NISR subsistence hours = h02 x h03; in 2022-2023 both inputs are weekly hours, s",
+    "2023": "NISR subsistence hours = h02 x h03; in 2022-2023 both inputs are weekly hours, s",
     "2024": "Time spent in subsistance activities",
     "2025": "Time spent in subsistance activities"
    },
-   "reference_label": "Time spent in subsistance activities"
+   "reference_label": "Time spent in subsistance activities",
+   "split_reasons": [
+    "2022: FORCE_SPLIT"
+   ]
   },
   "survey": {
    "years": [
@@ -9770,7 +10395,8 @@
     "2024": "Source survey",
     "2025": "Source survey"
    },
-   "reference_label": "Source survey"
+   "reference_label": "Source survey",
+   "split_reasons": []
   },
   "timegood": {
    "years": [
@@ -9793,7 +10419,8 @@
     "2024": "Time spent in production of good",
     "2025": "Time spent in production of good"
    },
-   "reference_label": "Time spent in production of good"
+   "reference_label": "Time spent in production of good",
+   "split_reasons": []
   },
   "timeservice": {
    "years": [
@@ -9816,7 +10443,8 @@
     "2024": "Time spent in production of services",
     "2025": "Time spent in production of services"
    },
-   "reference_label": "Time spent in production of services"
+   "reference_label": "Time spent in production of services",
+   "split_reasons": []
   },
   "tru": {
    "years": [
@@ -9851,7 +10479,8 @@
     "2024": "Time related underemployment",
     "2025": "Time related underemployment"
    },
-   "reference_label": "Time related underemployment"
+   "reference_label": "Time related underemployment",
+   "split_reasons": []
   },
   "trur": {
    "years": [
@@ -9880,7 +10509,8 @@
     "2024": "Time related underemployment rate(%)",
     "2025": "Time related underemployment rate(%)"
    },
-   "reference_label": "Time related underemployment rate(%)"
+   "reference_label": "Time related underemployment rate(%)",
+   "split_reasons": []
   },
   "tvet3": {
    "years": [
@@ -9897,7 +10527,8 @@
     "2022": "TVET Completion",
     "2023": "TVET Completion"
    },
-   "reference_label": "TVET Completion"
+   "reference_label": "TVET Completion",
+   "split_reasons": []
   },
   "tvt": {
    "years": [
@@ -9923,7 +10554,8 @@
     "2024": "Attended TVT or not",
     "2025": "Attended TVT or not"
    },
-   "reference_label": "Attended TVT or not"
+   "reference_label": "Attended TVT or not",
+   "split_reasons": []
   },
   "tvt2": {
    "years": [
@@ -9952,7 +10584,8 @@
     "2024": "General or TVET attainemnt",
     "2025": "General or TVET attainemnt"
    },
-   "reference_label": "General or TVET attainemnt"
+   "reference_label": "General or TVET attainemnt",
+   "split_reasons": []
   },
   "ud": {
    "years": [
@@ -9981,7 +10614,8 @@
     "2024": "Unemployment duration",
     "2025": "Unemployment duration"
    },
-   "reference_label": "Unemployment duration"
+   "reference_label": "Unemployment duration",
+   "split_reasons": []
   },
   "ur1": {
    "years": [
@@ -10019,7 +10653,8 @@
     "2024": "Unemployment rate",
     "2025": "Unemployment rate"
    },
-   "reference_label": "Unemployment rate"
+   "reference_label": "Unemployment rate",
+   "split_reasons": []
   },
   "urban": {
    "years": [
@@ -10057,7 +10692,8 @@
     "2024": "Area of residence (1 urban, 2 rural)",
     "2025": "Area of residence (1 urban, 2 rural)"
    },
-   "reference_label": "Area of residence (1 urban, 2 rural)"
+   "reference_label": "Area of residence (1 urban, 2 rural)",
+   "split_reasons": []
   },
   "usual_h": {
    "years": [
@@ -10092,7 +10728,8 @@
     "2024": "Number of usual hours",
     "2025": "Number of usual hours"
    },
-   "reference_label": "Number of usual hours"
+   "reference_label": "Number of usual hours",
+   "split_reasons": []
   },
   "usualhc": {
    "years": [
@@ -10106,7 +10743,8 @@
    "labels_by_year": {
     "2020": "Hours worked by children"
    },
-   "reference_label": "Hours worked by children"
+   "reference_label": "Hours worked by children",
+   "split_reasons": []
   },
   "usualhrs": {
    "years": [
@@ -10141,7 +10779,8 @@
     "2024": "Usually working hours",
     "2025": "Usually working hours"
    },
-   "reference_label": "Usually working hours"
+   "reference_label": "Usually working hours",
+   "split_reasons": []
   },
   "usualhrsc": {
    "years": [
@@ -10155,7 +10794,8 @@
    "labels_by_year": {
     "2020": "Hours worked by child_interval"
    },
-   "reference_label": "Hours worked by child_interval"
+   "reference_label": "Hours worked by child_interval",
+   "split_reasons": []
   },
   "wap16": {
    "years": [
@@ -10193,7 +10833,8 @@
     "2024": "Working age population",
     "2025": "Working age population"
    },
-   "reference_label": "Working age population"
+   "reference_label": "Working age population",
+   "split_reasons": []
   },
   "wave": {
    "years": [
@@ -10231,7 +10872,8 @@
     "2024": "Wave (survey year)",
     "2025": "Wave (survey year)"
    },
-   "reference_label": "Wave (survey year)"
+   "reference_label": "Wave (survey year)",
+   "split_reasons": []
   },
   "willing": {
    "years": [
@@ -10257,7 +10899,8 @@
     "2024": "Willing non seeker and not available",
     "2025": "Willing non seeker and not available"
    },
-   "reference_label": "Willing non seeker and not available"
+   "reference_label": "Willing non seeker and not available",
+   "split_reasons": []
   },
   "work_agr": {
    "years": [
@@ -10274,7 +10917,8 @@
     "2018": "work in agriculture",
     "2019": "work in agriculture"
    },
-   "reference_label": "work in agriculture"
+   "reference_label": "work in agriculture",
+   "split_reasons": []
   },
   "wt": {
    "years": [
@@ -10312,7 +10956,8 @@
     "2024": "Annual person weight (sums to population)",
     "2025": "Annual person weight (sums to population)"
    },
-   "reference_label": "Annual person weight (sums to population)"
+   "reference_label": "Annual person weight (sums to population)",
+   "split_reasons": []
   },
   "wt_round": {
    "years": [
@@ -10350,7 +10995,8 @@
     "2024": "Round weight (where released)",
     "2025": "Round weight (where released)"
    },
-   "reference_label": "Round weight (where released)"
+   "reference_label": "Round weight (where released)",
+   "split_reasons": []
   },
   "ya": {
    "years": [
@@ -10379,7 +11025,8 @@
     "2024": "Young/adult",
     "2025": "Young/adult"
    },
-   "reference_label": "Young/adult"
+   "reference_label": "Young/adult",
+   "split_reasons": []
   },
   "year": {
    "years": [
@@ -10417,7 +11064,8 @@
     "2024": "Survey year",
     "2025": "Survey year"
    },
-   "reference_label": "Survey year"
+   "reference_label": "Survey year",
+   "split_reasons": []
   },
   "young": {
    "years": [
@@ -10443,7 +11091,8 @@
     "2024": "Young 16 to 30 years old",
     "2025": "Young 16 to 30 years old"
    },
-   "reference_label": "Young 16 to 30 years old"
+   "reference_label": "Young 16 to 30 years old",
+   "split_reasons": []
   },
   "youngs": {
    "years": [
@@ -10466,7 +11115,8 @@
     "2024": "Young status",
     "2025": "Young status"
    },
-   "reference_label": "Young status"
+   "reference_label": "Young status",
+   "split_reasons": []
   },
   "youth": {
    "years": [
@@ -10492,7 +11142,8 @@
     "2024": "Youth 16 to 24 years old",
     "2025": "Youth 16 to 24 years old"
    },
-   "reference_label": "Youth 16 to 24 years old"
+   "reference_label": "Youth 16 to 24 years old",
+   "split_reasons": []
   },
   "yur1": {
    "years": [
@@ -10515,10 +11166,21 @@
     "2024": "Youth unemployment rate",
     "2025": "Youth unemployment rate"
    },
-   "reference_label": "Youth unemployment rate"
+   "reference_label": "Youth unemployment rate",
+   "split_reasons": []
   }
  },
  "label_variants": {
+  "a14b": {
+   "2017": "District of birth",
+   "2018": "District of birth",
+   "2019": "District of birth",
+   "2021": "District of birth",
+   "2022": "District of birth",
+   "2023": "District of birth",
+   "2024": "District of birth -- 2024 file mixes district codes (11-57) and sector codes (11",
+   "2025": "District of birth"
+  },
   "a15": {
    "2019": "Has usual place of residence  always been in this district?",
    "2021": "Since birth Has  ived in another district for 6 consecutive months?",
@@ -10701,7 +11363,7 @@
   },
   "d03b1": {
    "2019": "Main goods and services(ISIC code)",
-   "2020": "ISIC code",
+   "2020": "ISIC code of the main job -- 2-digit divisions in the reduced 2020 file (4-digit",
    "2021": "Main goods and services(ISIC code)"
   },
   "d05": {
@@ -10783,8 +11445,8 @@
    "2017": "How long have [NAME] been working (total experience)?",
    "2019": "How long have [NAME] been working (total experience)?",
    "2020": "How long have [NAME] been working (total experience)?",
-   "2024": "How long have [NAME] been working (total experience)?",
-   "2025": "How long have [NAME] been working (total experience)-Years?"
+   "2024": "Total work experience in years (2024 questionnaire D24; 2017 = duration bands, 2",
+   "2025": "Total work experience in years (2025 questionnaire D24; 2017 = duration bands, 2"
   },
   "d27": {
    "2018": "Is a secondary paid job or business/activity reported",
@@ -10914,6 +11576,12 @@
    "2024": "Dimunished Subsistance foodstaff producers",
    "2025": "Subsistance foodstaff producers"
   },
+  "subhrs": {
+   "2022": "NISR subsistence hours = h02 x h03; in 2022-2023 both inputs are weekly hours, s",
+   "2023": "NISR subsistence hours = h02 x h03; in 2022-2023 both inputs are weekly hours, s",
+   "2024": "Time spent in subsistance activities",
+   "2025": "Time spent in subsistance activities"
+  },
   "trur": {
    "2018": "Time related underumployment",
    "2019": "Time related underumployment",
@@ -10924,16 +11592,6 @@
   }
  },
  "value_label_conflicts": {
-  "phase": {
-   "1": [
-    "February_2017",
-    "February_2018"
-   ],
-   "2": [
-    "August_2017",
-    "August_2018"
-   ]
-  },
   "a20": {
    "14": [
     "Other",
@@ -10950,21 +11608,10 @@
     "Coming back in country/building/Renting"
    ]
   },
-  "b09": {
-   "2": [
-    "1- 2 months",
-    "1-3 months"
-   ]
-  },
   "b10": {
    "47": [
-    "Chollegraphy",
     "Other",
     "other (Specify)"
-   ],
-   "22": [
-    "22. Civil construction",
-    "Ubwubatsi buhanitse/Cival Engeeniering"
    ]
   },
   "b11": {
@@ -10979,89 +11626,15 @@
     "Self-financing/Parents"
    ]
   },
-  "b13": {
-   "3": [
-    "No",
-    "Yes with degree/Diploma"
-   ]
-  },
-  "b16a": {
-   "1": [
-    "Good",
-    "Very good",
-    "Very well"
-   ],
-   "2": [
-    "Fair",
-    "Good",
-    "Well"
-   ],
-   "3": [
-    "Don't Know",
-    "Fair",
-    "Less"
-   ]
-  },
-  "b16b": {
-   "1": [
-    "Good",
-    "Very good",
-    "Very well"
-   ],
-   "2": [
-    "Fair",
-    "Good",
-    "Well"
-   ],
-   "3": [
-    "Don't Know",
-    "Fair",
-    "Less"
-   ]
-  },
-  "b16c": {
-   "1": [
-    "Good",
-    "Very good",
-    "Very well"
-   ],
-   "2": [
-    "Fair",
-    "Good",
-    "Well"
-   ],
-   "3": [
-    "Don't Know",
-    "Fair",
-    "Less"
-   ]
-  },
   "c07": {
    "10": [
     "Disorganization or suspension of work (e.g. due to bad weather, mechanical, elec",
     "Disorganization or suspension of work (e.g. due to bad weather, mechanical, electrical or communication breakdown,"
-   ],
-   "11": [
-    "Business / Gov't closed due to coronavirus legal restrictions",
-    "Other Specify"
    ]
   },
   "c26": {
    "5": [
-    "In Agriculture/fishing for Family use",
     "Other",
-    "Other(specify)"
-   ],
-   "3": [
-    "Injury, illness",
-    "Injury, illness,Disability"
-   ],
-   "6": [
-    "Retired or Pensioner",
-    "Self or quarantine because of covid-19"
-   ],
-   "7": [
-    "Movements restrictions due to covid-19",
     "Other(specify)"
    ]
   },
@@ -11202,10 +11775,6 @@
    "6": [
     "Compulsory civic services",
     "In compulsory military or civilian service"
-   ],
-   "8": [
-    "Finish school,waiting for results",
-    "Other status, specify"
    ]
   },
   "sub": {
@@ -11231,8 +11800,7 @@
    ],
    "8": [
     "Other",
-    "Others(Specify)",
-    "VUP/Community based jobs"
+    "Others(Specify)"
    ]
   },
   "d24": {
@@ -11245,16 +11813,6 @@
     "2 years -\u00c2\u00a0Less than 5years"
    ]
   },
-  "f07": {
-   "4": [
-    "None",
-    "Other (Please specify)"
-   ],
-   "5": [
-    "None",
-    "Other (Please specify)"
-   ]
-  },
   "h06": {
    "1": [
     "\u00bc or less",
@@ -11265,16 +11823,6 @@
     "More than \u00bc but  less than half",
     "More than \u00c2\u00bc but  less than half",
     "More than \u00d1\u02dc but  less than half"
-   ]
-  },
-  "i01_a": {
-   "4": [
-    "Bamboo",
-    "Plastic/plywood/impermanent material"
-   ],
-   "5": [
-    "Other (specify)",
-    "Plastic/plywood/impermanent material"
    ]
   },
   "i01_b": {
@@ -11331,47 +11879,6 @@
     "TemporaryResident"
    ]
   },
-  "b14": {
-   "2": [
-    " I was able to get a job",
-    "Starting own business"
-   ],
-   "3": [
-    " My salary increased",
-    "I was able to get a job"
-   ],
-   "4": [
-    " I was promoted at work",
-    "My salary increased"
-   ],
-   "5": [
-    " My job skills have improved",
-    "I was promoted at work"
-   ],
-   "6": [
-    " I got internship/traineeship with a company",
-    "My job skills have improved"
-   ],
-   "7": [
-    " Starting own business",
-    "Got internship/traineeship with a company"
-   ],
-   "8": [
-    " Other specify_________________",
-    "Other (specify)"
-   ]
-  },
-  "c24": {
-   "5": [
-    "Presence of small children",
-    "Presence of small children/Elders/sick people",
-    "Presence of small children/adult(Family responsability"
-   ],
-   "14": [
-    "Other specify",
-    "Unable to move due to movements  restrictions  because of Covid-19/own or family quarantine"
-   ]
-  },
   "d03a": {
    "1": [
     "Name of workplace",
@@ -11382,98 +11889,10 @@
     "Domestic works"
    ]
   },
-  "d13": {
-   "5": [
-    "One year",
-    "Other(specify)"
-   ]
-  },
-  "d16": {
-   "5": [
-    "Other(specify)",
-    "Year"
-   ]
-  },
   "d17": {
    "1": [
     "Less than\u00a020,000 RWF",
     "Less than\u00c2\u00a020,000 RWF"
-   ]
-  },
-  "i03": {
-   "3": [
-    "Pit latrine without constructed",
-    "Pit latrine without constructed floor slab"
-   ],
-   "4": [
-    "Pit latrine covered by concrete",
-    "floor slab"
-   ]
-  },
-  "i06a": {
-   "11": [
-    "Bottled Water",
-    "Surface Water (River/Lake/Pond/Stream/Irrigation Channel)"
-   ],
-   "12": [
-    "Bottled water",
-    "Surface Water (River/Lake/Pond/Stream/Irrigation Channel)"
-   ]
-  },
-  "i06b": {
-   "11": [
-    "Bottled Water",
-    "Surface Water (River/Lake/Pond/Stream/Irrigation Channel)"
-   ],
-   "12": [
-    "Bottled Water",
-    "Surface Water (River/Lake/Pond/Stream/Irrigation Channel)"
-   ]
-  },
-  "lfs_round": {
-   "2": [
-    "AUG17",
-    "FEB17"
-   ],
-   "3": [
-    "AUG17",
-    "FEB18"
-   ],
-   "4": [
-    "AUG18",
-    "FEB18"
-   ],
-   "5": [
-    "AUG18",
-    "FEB19"
-   ],
-   "6": [
-    "FEB19",
-    "MAY19"
-   ],
-   "7": [
-    "AUG19",
-    "MAY19"
-   ],
-   "8": [
-    "AUG19",
-    "NOV19"
-   ],
-   "9": [
-    "FEB20",
-    "NOV19"
-   ],
-   "10": [
-    "FEB20",
-    "MAY20"
-   ],
-   "11": [
-    "AUG20",
-    "MAY20"
-   ],
-   "12": [
-    "AUG20",
-    "NOV20"
    ]
   },
   "sm": {
@@ -11486,68 +11905,24 @@
     "\u00c2\u00a0Placing or updating resumes on professional or social networking"
    ]
   },
-  "a02": {
-   "1": [
-    "Head",
-    "Household Head"
-   ],
-   "5": [
-    "Grandchild",
-    "Parent(Father/Mother)"
-   ],
-   "6": [
-    "Parent-in-law",
-    "Parent/Parent-in-law"
-   ],
-   "7": [
-    "Brother or Sister-In law",
-    "Brother or Sister/In law"
-   ],
-   "8": [
-    "Brother or Sister",
-    "Son/Daughter-in-law"
-   ],
+  "a02_v2": {
    "9": [
     "Grand child",
-    "Other relative"
+    "Grandchild"
    ],
    "10": [
-    "Domestic helper",
-    "Son/Daughter in law"
+    "Son/Daughter in law",
+    "Son/Daughter-in-law"
    ],
-   "11": [
-    "Non-relative",
-    "Other relative"
+   "13": [
+    "Non relative",
+    "Non-relative"
    ]
   },
-  "a12": {
-   "7": [
-    " Rest of Africa",
-    "South Sudan"
-   ],
-   "8": [
-    "Other country",
-    "Rest of Africa"
-   ]
-  },
-  "a14a": {
-   "7": [
-    "Rest of Africa",
-    "South Sudan"
-   ],
-   "8": [
-    "Other country",
-    "Rest of Africa"
-   ]
-  },
-  "a17a": {
-   "7": [
-    "Rest of Africa",
-    "South Sudan"
-   ],
-   "8": [
-    "Other country",
-    "Rest of Africa"
+  "c24": {
+   "5": [
+    "Presence of small children",
+    "Presence of small children/Elders/sick people"
    ]
   },
   "d06": {
@@ -11560,74 +11935,10 @@
     "Yes,Oral agreement"
    ]
   },
-  "d07": {
-   "2": [
-    "Temporary  with a specific period of time",
-    "Temporary contract:"
-   ]
-  },
-  "d08": {
-   "1": [
-    "Daily contract/Agreement",
-    "Day"
-   ],
-   "2": [
-    "Less than one month",
-    "Week"
-   ],
-   "3": [
-    "Month",
-    "One to less than 3 months"
-   ],
-   "4": [
-    "3 to less than 6 months",
-    "Less than one year"
-   ],
-   "5": [
-    "6 to less than 12 months",
-    "One year or more"
-   ],
-   "6": [
-    "12 to less than 24 months",
-    "Permenant"
-   ]
-  },
   "d21a": {
    "2": [
     " Simplified written accounts to be submitted for tax purposes",
     "Simplified written Accounts to be  submitted fot tax purposes"
-   ]
-  },
-  "d23": {
-   "1": [
-    "At  my own home",
-    "At home"
-   ],
-   "7": [
-    "Street",
-    "Street or another public space without a fixed structure"
-   ],
-   "8": [
-    " Land, forest, sea, mining site.",
-    "Land, forest, mining site."
-   ],
-   "11": [
-    "In/on a vehicle (without daily work base)",
-    "Other (specify):"
-   ]
-  },
-  "d23a": {
-   "6": [
-    "Private Employer's car",
-    "Private motobike"
-   ],
-   "7": [
-    "Private bicycle",
-    "Private motobike"
-   ],
-   "8": [
-    "Boat",
-    "Private bicycle"
    ]
   },
   "d25a": {
@@ -11640,12 +11951,6 @@
     "Oya"
    ]
   },
-  "f02": {
-   "12": [
-    "Other(specify)",
-    "Physical/ social harassment"
-   ]
-  },
   "ya": {
    "1": [
     "16-30",
@@ -11655,30 +11960,369 @@
     "31+",
     "Adult(31+ yrs)"
    ]
+  }
+ },
+ "stale_labels": {
+  "a12": {
+   "2024": [
+    9
+   ]
   },
-  "intcash": {
-   "1": [
-    "Less than 20000 RFW",
-    "Less than 30,000 RFW"
+  "a14a": {
+   "2024": [
+    9
+   ]
+  },
+  "a14b": {
+   "2024": [
+    1101.0,
+    1102.0,
+    1103.0,
+    1104.0,
+    1105.0,
+    1106.0,
+    1107.0,
+    1108.0,
+    1109.0,
+    1110.0,
+    1201.0,
+    1202.0,
+    1203.0,
+    1204.0,
+    1205.0,
+    1209.0,
+    1210.0,
+    1211.0,
+    1212.0,
+    1213.0
+   ]
+  },
+  "a17a": {
+   "2024": [
+    9.0
+   ]
+  },
+  "a20": {
+   "2019": [
+    0.0
+   ]
+  },
+  "b05b": {
+   "2021": [
+    2333.0,
+    8888.0
+   ]
+  },
+  "b10": {
+   "2018": [
+    22.0
    ],
-   "2": [
-    "20000-29999 RWF",
-    "30,000-49,999 RWF"
+   "2019": [
+    47.0,
+    48.0,
+    49.0,
+    97.0
    ],
-   "3": [
-    "30000-49999 RWF",
-    "50,000-79,999 RWF"
+   "2022": [
+    48.0,
+    49.0,
+    97.0
    ],
-   "4": [
-    "50000 - 99999 FRW",
-    "80,000 - 99,999 FRW"
+   "2023": [
+    48.0,
+    49.0,
+    97.0
    ],
-   "5": [
-    "100,000-199,999RWF",
-    "100000 and above RWF"
+   "2024": [
+    48.0,
+    49.0,
+    97.0
+   ]
+  },
+  "b13": {
+   "2017": [
+    4.0
+   ],
+   "2019": [
+    4.0
+   ],
+   "2022": [
+    4.0
+   ],
+   "2023": [
+    4.0
+   ],
+   "2024": [
+    4.0
+   ]
+  },
+  "b16a": {
+   "2019": [
+    4.0
+   ]
+  },
+  "b16b": {
+   "2019": [
+    4.0
+   ]
+  },
+  "b16c": {
+   "2019": [
+    4.0
+   ]
+  },
+  "c07": {
+   "2022": [
+    12.0,
+    13.0,
+    16.0
+   ],
+   "2023": [
+    16.0
+   ]
+  },
+  "c22": {
+   "2017": [
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    18.0,
+    19.0,
+    20.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0,
+    26.0,
+    28.0,
+    29.0
+   ],
+   "2022": [
+    0.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0
+   ],
+   "2023": [
+    0.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0
+   ],
+   "2024": [
+    0.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    15.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0
+   ]
+  },
+  "c24": {
+   "2022": [
+    16.0,
+    17.0
+   ],
+   "2023": [
+    15.0,
+    16.0,
+    17.0
+   ]
+  },
+  "c26": {
+   "2022": [
+    6.0
+   ],
+   "2024": [
+    6.0,
+    7.0
+   ]
+  },
+  "d01b2": {
+   "2021": [
+    2213.0,
+    2455.0,
+    3449.0,
+    9511.0
+   ]
+  },
+  "d03b1": {
+   "2021": [
+    5888.0
+   ]
+  },
+  "d08": {
+   "2024": [
+    6.0,
+    7.0
+   ]
+  },
+  "d12": {
+   "2022": [
+    4.0
+   ],
+   "2023": [
+    4.0
+   ]
+  },
+  "d23": {
+   "2024": [
+    12.0,
+    13.0
+   ]
+  },
+  "e01b1": {
+   "2021": [
+    111.0,
+    146.0,
+    5630.0,
+    9491.0,
+    9609.0
+   ]
+  },
+  "f02": {
+   "2022": [
+    14.0,
+    15.0
+   ],
+   "2023": [
+    14.0,
+    15.0
+   ]
+  },
+  "f03b1": {
+   "2021": [
+    0.0,
+    5122.0,
+    5510.0,
+    7490.0
+   ]
+  },
+  "f04b1": {
+   "2021": [
+    0.0
+   ]
+  },
+  "i04": {
+   "2021": [
+    0.0
+   ]
+  },
+  "i06b": {
+   "2021": [
+    0.0
+   ]
+  },
+  "indb05": {
+   "2019": [
+    0.0
+   ],
+   "2021": [
+    0.0
+   ]
+  },
+  "isco2d": {
+   "2018": [
+    9.0
+   ]
+  },
+  "isco2digit": {
+   "2023": [
+    5.0
+   ]
+  },
+  "isco2f": {
+   "2018": [
+    10.0
+   ]
+  },
+  "isic2f": {
+   "2018": [
+    4.0,
+    48.0,
+    54.0
+   ]
+  },
+  "tvt2": {
+   "2019": [
+    0.0
+   ],
+   "2021": [
+    0.0
+   ],
+   "2025": [
+    0.0
+   ]
+  },
+  "ud": {
+   "2024": [
+    108.0,
+    120.0
+   ]
+  },
+  "usualhrs": {
+   "2019": [
+    0.0
+   ],
+   "2020": [
+    0.0
    ]
   }
  },
+ "vl_threshold": 0.6,
  "person": {
   "rows": 724015,
   "vars": [
@@ -11783,7 +12427,7 @@
    "c21b_v2",
    "c21c_v2",
    "c21d_v2",
-   "c22",
+   "c22_v2",
    "c23",
    "c24",
    "c25",
@@ -11923,6 +12567,10 @@
    "prod_sec",
    "pid_nisr",
    "b05a",
+   "b13_v2",
+   "b16a_v3",
+   "b16b_v3",
+   "b16c_v3",
    "c21a",
    "c21c",
    "c21d",
@@ -11931,6 +12579,7 @@
    "c21g",
    "c21h",
    "c21l",
+   "c22",
    "c21b",
    "d01b2",
    "d27",
@@ -11965,6 +12614,9 @@
    "f03b1",
    "f04b",
    "f04b1",
+   "f06_v2",
+   "f07_v2",
+   "i01_a_v2",
    "i08",
    "i09",
    "i10",
@@ -11986,7 +12638,7 @@
    "ya",
    "usualhrsc",
    "usualhc",
-   "lfs_round",
+   "lfs_round_v2",
    "tvt",
    "a0a",
    "a0b",
@@ -11995,6 +12647,7 @@
    "a1a",
    "a1b",
    "lfs_year",
+   "d03b1_v2",
    "psu_id",
    "qh_no",
    "hhgap",
@@ -12004,6 +12657,11 @@
    "sihh",
    "more_person",
    "a15_v2",
+   "b10_v2",
+   "b14_v2",
+   "b16a_v2",
+   "b16b_v2",
+   "b16c_v2",
    "b17",
    "b17_a",
    "b17_b",
@@ -12014,6 +12672,8 @@
    "b17_g",
    "b18",
    "b19",
+   "c07_v2",
+   "c24_v2",
    "d28",
    "d29",
    "d30a",
@@ -12028,6 +12688,11 @@
    "g06a",
    "g07a",
    "h00",
+   "h02_v2",
+   "h03_v2",
+   "i06a_v2",
+   "i06b_v2",
+   "lfs_round",
    "is",
    "quintile",
    "hr_cshmain",
@@ -12052,7 +12717,7 @@
    "hhsize",
    "hr_own",
    "combhrs",
-   "subhrs",
+   "subhrs_v2",
    "tvet3",
    "agdis",
    "head",
@@ -12070,6 +12735,8 @@
    "age3_16_30",
    "yur1",
    "lfs_strata",
+   "a02_v2",
+   "a14b_v2",
    "c10a",
    "c19a",
    "c20a",
@@ -12088,16 +12755,25 @@
    "d05a",
    "d05a1",
    "d21a",
-   "d23a",
+   "d23a_v2",
    "d23b",
+   "d24_v2",
    "d25a",
    "d25b",
+   "subhrs",
    "en01",
    "en01_others",
+   "a12_v2",
+   "a14a_v2",
+   "a17a_v2",
    "b13b",
    "b15_v2",
    "c02a",
+   "c26_v2",
+   "d04_v2",
    "d05_v2",
+   "d07_v2",
+   "d08_v2",
    "d08a",
    "d10",
    "d10_e",
@@ -12109,6 +12785,8 @@
    "d17_1",
    "d18a",
    "d18a_other",
+   "d23_v2",
+   "d23a",
    "d24b",
    "ds07",
    "ds08",
@@ -12122,7 +12800,9 @@
    "ds10a",
    "f01a",
    "f01b",
-   "icse18a"
+   "f02_v2",
+   "icse18a",
+   "intcash_v2"
   ]
  },
  "household": {
@@ -12190,11 +12870,11 @@
    "head_age",
    "d24",
    "f03b",
-   "f06",
+   "f06_v2",
    "h05",
    "usualhrsc",
    "usualhc",
-   "lfs_round",
+   "lfs_round_v2",
    "a0a",
    "a0b",
    "a0c",
@@ -12214,6 +12894,9 @@
    "consent",
    "decode",
    "sihh",
+   "i06a_v2",
+   "i06b_v2",
+   "lfs_round",
    "pop",
    "hhid_nisr",
    "lfs_strata",
