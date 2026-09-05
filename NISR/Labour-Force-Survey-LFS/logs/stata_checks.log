@@ -23,9 +23,6 @@
 
 . export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Fo
 > rce-Survey-LFS/logs/stata_checks.csv", replace
-(file
-    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/
-    > stata_checks.csv not found)
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/s
 > tata_checks.csv saved
 
@@ -38,9 +35,6 @@ file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/s
 
 . export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Fo
 > rce-Survey-LFS/logs/stata_checks_hh.csv", replace
-(file
-    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/
-    > stata_checks_hh.csv not found)
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/s
 > tata_checks_hh.csv saved
 

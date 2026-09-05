@@ -86,3 +86,20 @@ the writer refuses to stringify a numeric object column.
 **Storage.** pandas `to_stata` (Stata 118 format) so small storage types survive; every
 integer-valued variable is downcast (byte/int/long, or float if it has missings);
 weights and ids stay double. pyreadstat only reads.
+
+## 2026-09-04 — documentation pass (see DOCUMENTATION.md)
+
+**`status1` age base differs by file and NISR's label is unreliable.** The 2017–2019 files populate
+NISR's labour-force status only for ages 16+; the 2020–2025 files for 14+ (2022–2024 labels still say
+"with 16+"). `01_clean.py` now asserts the verified base per year, writes it into the label, and
+`status1` is force-aligned across years. Consumers that want the national 16+ definition must filter
+on `age >= 16` (the derived `wap16`/`employed16`/`ur1`/`lfpr` are 16-based in every year).
+
+**Weight property from the methodology annex** (household calibrated weight shared by all members)
+is now a hard check per year; it holds everywhere, so the household file's `wt` (head's weight)
+is exactly the household weight.
+
+**Universes recorded** per variable (sections B–H 14+, disability 5+, marital 12+, children 5–13,
+household-level sections) in the meta files and the codebook; questionnaire changes documented:
+B03/B06 (certificate, literacy) end in 2023, A25–A27 end in 2023, ICSE-18 block DS07–DS10a from
+2024, D05 recoded in 2025 (`d05_v2`).

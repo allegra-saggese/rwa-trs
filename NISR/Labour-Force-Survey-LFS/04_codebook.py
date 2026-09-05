@@ -12,7 +12,9 @@ from lfs_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE, DATA
 log = get_logger("04_codebook")
 P = paths()
 align = json.load(open(LOGS / "merge_alignment.json"))
-srcs = {y: json.load(open(LOGS / f"clean_{y}_meta.json"))["source"] for y in range(2017, 2026)}
+metas = {y: json.load(open(LOGS / f"clean_{y}_meta.json")) for y in range(2017, 2026)}
+srcs = {y: m["source"] for y, m in metas.items()}
+univ = {y: m.get("universe", {}) for y, m in metas.items()}
 
 def chunked_counts(path, key, chunk=250_000):
     """non-missing counts per column by `key` (wave/year), reading the file in row chunks so
@@ -45,8 +47,10 @@ def codebook(fname, unit):
         vlab = vv.get(c, {})
         vtxt = ", ".join(f"{k}={v}" for k, v in list(vlab.items())[:6]) + (" …" if len(vlab) > 6 else "")
         conf = align["value_label_conflicts"].get(c)
+        uni = {y: u[c] for y, u in univ.items() if c in u}
+        utxt = ("; ".join(f"{y}: {t}" for y, t in uni.items()) if len(set(uni.values())) > 1 else next(iter(uni.values()), "")) if uni else ""
         rows.append({"variable": c, "label": vl.get(c) or "", "type": types.get(c, str(df[c].dtype)),
-                     "value_labels": vtxt, "n_value_labels": len(vlab),
+                     "value_labels": vtxt, "n_value_labels": len(vlab), "universe": utxt,
                      **{f"n_{y}": int(nn.loc[y, c]) if c in nn.columns else 0 for y in years},
                      "source_by_year": src, "version_years": ",".join(map(str, ys_here)) if len(vers) > 1 else "",
                      "other_versions": other_versions,
@@ -60,6 +64,7 @@ def codebook(fname, unit):
     for r in rows:
         notes = []
         if r["source_by_year"]: notes.append("source: " + r["source_by_year"])
+        if r["universe"]: notes.append("universe: " + r["universe"])
         if r["version_years"]: notes.append(f"version for {r['version_years']}; other versions: {r['other_versions']}")
         if r["label_variants"]: notes.append("label variants — " + r["label_variants"])
         if r["value_label_conflicts"]: notes.append("value-label text conflicts: " + r["value_label_conflicts"])

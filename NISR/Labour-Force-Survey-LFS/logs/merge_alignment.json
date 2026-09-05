@@ -6,7 +6,8 @@
   "d06",
   "d23",
   "lu2",
-  "psu_no"
+  "psu_no",
+  "status1"
  ],
  "force_split": {},
  "decisions": {
@@ -9663,17 +9664,17 @@
     ]
    },
    "labels_by_year": {
-    "2017": "Labour force status with 16+",
-    "2018": "Labour force status with 16+",
-    "2019": "Labour force status with 14+",
-    "2020": "Labour force status with 14+",
-    "2021": "Labour force status with 14+",
-    "2022": "Labour force status with 16+",
-    "2023": "Labour force status with 16+",
-    "2024": "Labour force status with 16+",
-    "2025": "Labour force status with 14+"
+    "2017": "Labour force status (NISR derived; population aged 16+: 1 employed, 2 unemployed",
+    "2018": "Labour force status (NISR derived; population aged 16+: 1 employed, 2 unemployed",
+    "2019": "Labour force status (NISR derived; population aged 16+: 1 employed, 2 unemployed",
+    "2020": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+    "2021": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+    "2022": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+    "2023": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+    "2024": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+    "2025": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed"
    },
-   "reference_label": "Labour force status with 14+"
+   "reference_label": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed"
   },
   "sub": {
    "years": [
@@ -10893,15 +10894,15 @@
    "2025": "Primary Sampling Unit"
   },
   "status1": {
-   "2017": "Labour force status with 16+",
-   "2018": "Labour force status with 16+",
-   "2019": "Labour force status with 14+",
-   "2020": "Labour force status with 14+",
-   "2021": "Labour force status with 14+",
-   "2022": "Labour force status with 16+",
-   "2023": "Labour force status with 16+",
-   "2024": "Labour force status with 16+",
-   "2025": "Labour force status with 14+"
+   "2017": "Labour force status (NISR derived; population aged 16+: 1 employed, 2 unemployed",
+   "2018": "Labour force status (NISR derived; population aged 16+: 1 employed, 2 unemployed",
+   "2019": "Labour force status (NISR derived; population aged 16+: 1 employed, 2 unemployed",
+   "2020": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+   "2021": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+   "2022": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+   "2023": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+   "2024": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed",
+   "2025": "Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed"
   },
   "sub": {
    "2017": "Subsistance_foodstaff_producers",

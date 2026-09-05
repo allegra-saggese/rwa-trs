@@ -43,6 +43,36 @@ KEY_ORDER = ["survey", "year", "wave", "round", "quarter", "interview", "prov", 
 PROV_LABELS = {1: "City of Kigali", 2: "Southern Province", 3: "Western Province", 4: "Northern Province", 5: "Eastern Province"}
 URBAN_LABELS = {1: "Urban", 2: "Rural"}
 
+# --- Universe (who was asked) per variable, from the questionnaires 2017-2025 (z_Documentation; see
+#     DOCUMENTATION.md). Section universes did not change across years: A05 12+, A06-A11 5+, A25-A27
+#     children 5-13, sections B-H 14+, section I and H05-H11 household level. NISR's derived labour-force
+#     status (status1) is defined on 16+ in the 2017-2019 files and on 14+ from 2020 (verified in the data).
+#     Patterns are regexes on the lower-cased variable name; first match wins.
+UNIVERSE_LFS = [
+    (r"^a05$", "household members aged 12+"), (r"^a(0[6-9]|1[01])a?$", "household members aged 5+ (disability, Washington Group)"),
+    (r"^a2[5-9]", "children aged 5-13 (activities of children; not in the 2024-2025 questionnaires)"),
+    (r"^a(1[2-9]|2[0-4])", "all household members (migration, absence)"),
+    (r"^b\d", "household members aged 14+ (education)"), (r"^c\d", "household members aged 14+ (labour force identification)"),
+    (r"^d\d|^ds\d", "employed members aged 14+ (main job)"), (r"^e\d", "employed members aged 14+ with a secondary job"),
+    (r"^f\d", "members aged 14+ not in employment (past employment, income source)"),
+    (r"^g\d", "household members aged 14+ (own-use production; domestic workers excluded from 2024)"),
+    (r"^h0[1-4]$", "household members aged 14+ (subsistence foodstuff production)"), (r"^h(0[5-9]|1\d)$", "household level (family farm)"),
+    (r"^i\d", "household level (housing and assets)"),
+    (r"^(wap16|employed16|ur1|lfpr|youth|young|neet|yur1|age3_16_30)", "population aged 16+ (NISR indicator base)"),
+    (r"^(tru|trur|plf|sub|luu|luur|lu[234]|discourage|willing|is|ie|iev2|ud|sm|main_sect|prod_unit|usualhrs|acthrs|usual_h|act_hrs|combhrs|subhrs|hr_own|timegood|timeservice)$",
+     "labour-force population on the status1 universe (16+ in 2017-2019 files, 14+ from 2020)"),
+    (r"^(cash|intcash|hr_cash|hr_cshmain)$", "employees (main job earnings)"),
+    (r"^(isco|isic|indd0|inde0)", "employed (occupation / industry codes)"), (r"^(attained|indb|tvt|tvet)", "household members aged 14+ (education recodes)"),
+]
+def universe_for(y, cols):
+    import re
+    out = {}
+    for c in cols:
+        if c == "status1": out[c] = f"population aged {16 if y <= 2019 else 14}+ (NISR derived; see DECISIONS)"; continue
+        for pat, txt in UNIVERSE_LFS:
+            if re.match(pat, c): out[c] = txt; break
+    return out
+
 def ren(df, vl, vv, src, dst, srcmap):
     """rename src -> dst if present; record the mapping for the codebook."""
     if src in df.columns and dst not in df.columns:
@@ -144,12 +174,19 @@ for y in YEARS:
     df = destring(df, log, skip=("survey", "wave", "round", "cluster"))
     for c, t in KEY_LABELS.items():
         if c in df.columns: vl[c] = t
+    if "status1" in df.columns:   # NISR's own label says 16+ or 14+ inconsistently with the data; state the verified universe
+        lo = 16 if y <= 2019 else 14
+        ck(df.loc[df["age"] < lo, "status1"].isna().all() and df.loc[df["age"] >= lo, "status1"].notna().mean() > 0.99,
+           f"status1 populated exactly for ages {lo}+ ({df.loc[df['age'] >= lo, 'status1'].notna().mean():.4%} of {lo}+ rows)", hard=False)
+        vl["status1"] = f"Labour force status (NISR derived; population aged {lo}+: 1 employed, 2 unemployed, 3 outside the labour force)"
     df = downcast(df, keep_double=("wt", "wt_round", "hhid", "hhid_nisr", "pid_nisr", "pkey"))
     df = df[KEY_ORDER + [c for c in df.columns if c not in KEY_ORDER]]
 
     # ---- back-checks
     ck(len(df) == n_raw, f"row count unchanged ({n_raw:,})")
     ck(df["wt"].notna().all() and (df["wt"] > 0).all(), "wt present and > 0 on every row")
+    hk = df["hhid"].notna()   # methodology (LFS 2021 Annex B): the calibrated household weight is assigned to every member
+    ck(bool((df[hk].groupby(["hhid", "interview"], dropna=False)["wt"].nunique() <= 1).all()), "wt constant within household-interview (household-level calibrated weight)")
     ck(df["dist"].nunique() == 30, f"30 districts (found {df['dist'].nunique()})")
     ck(df["prov"].nunique() == 5, f"5 provinces (found {df['prov'].nunique()})")
     ck(set(df["sex"].dropna().unique()) <= {1, 2}, "sex (a01) in {1,2}")
@@ -169,6 +206,6 @@ for y in YEARS:
     write_dta(df, out, vl, vv, f"Rwanda LFS {y} person-interview file (cleaned)", log)
     meta_all[y] = {"n": len(df), "vars": list(df.columns), "var_labels": vl,
                    "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "source": srcmap,
-                   "dtypes": {c: str(df[c].dtype) for c in df.columns}}
+                   "dtypes": {c: str(df[c].dtype) for c in df.columns}, "universe": universe_for(y, df.columns)}
     save_json(meta_all[y], LOGS / f"clean_{y}_meta.json")
 log.info("01_clean done for %s", YEARS)

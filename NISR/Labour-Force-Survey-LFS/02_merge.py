@@ -22,7 +22,7 @@ KEYS = ["survey", "year", "wave", "round", "quarter", "interview", "prov", "dist
         "cluster", "psu", "hhid", "pid", "sex", "age", "wt", "wt_round"]
 SIM_THRESHOLD = 0.25
 # Same question, reworded (checked against the questionnaires and value labels; see DECISIONS.md):
-FORCE_ALIGN = {"b01", "d03a", "d06", "d23", "lu2", "psu_no"}
+FORCE_ALIGN = {"b01", "d03a", "d06", "d23", "lu2", "psu_no", "status1"}   # status1: same codes, label now states the year-specific age base
 # Force a separate version for given years even if labels look alike (none needed so far):
 FORCE_SPLIT = {}   # e.g. {"d05": [2025]}
 
