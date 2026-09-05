@@ -30,6 +30,10 @@ same-named, different-question variables apart. **Weights**: 2017–2019 product
 none; the plot weight is merged from the same season's screening file on (segment, plot),
 falling back to the segment weight, and `wt_source` records what happened per row.
 
-**2013–2014 crop-area records** are pooled separately (`SAS_pooled_plotcrop_2013_2014`)
-with their native crop lists; 2015–2016 ship no plot-level crop area in the microdata (only
-sowing/seed items and yield tables), so they stay per-wave.
+**2013–2016 plot × crop records** are appended into `SAS_pooled_plotcrop_2013_2016` with
+`source_module` tagging the record type (crop-area files, sowing/planting files, big-farmer area
+files, screening files) and the waves' own crop lists; crop area is filled where the record type
+carries one (2013 area files, 2014 screening), missing otherwise (2015–2016 ship no plot-level crop
+area). Other 2013–2016 modules with the same file name in two or more years are appended as
+`SAS_pooled_<module>_2013_2016`; the 2017–2018 modules (fertilizers, pesticides, anti-erosion,
+irrigation/tenure, screening) as `SAS_pooled_<module>_2017_2018`.

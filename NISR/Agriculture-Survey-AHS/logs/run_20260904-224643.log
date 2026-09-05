@@ -1,0 +1,233 @@
+22:46:43 02_merge INFO ==== 02_merge | run 20260904-224643 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+22:46:43 02_merge INFO ---------------- AHS_pooled_person.dta (['2017', '2020', '2024'])
+22:46:44 02_merge INFO   loaded 2017       AHS_2017_person_clean.dta                                  73,665 rows x   33
+22:46:44 02_merge INFO   loaded 2020       AHS_2020_person_clean.dta                                  48,726 rows x   31
+22:46:44 02_merge INFO   loaded 2024       AHS_2024_person_clean.dta                                  16,292 rows x  148
+22:46:44 02_merge INFO   VERSIONS s1q10: {'s1q10': ['2024'], 's1q10_v2': ['2017']}
+22:46:44 02_merge INFO   VERSIONS s1q11: {'s1q11': ['2024'], 's1q11_v2': ['2017']}
+22:46:44 02_merge INFO   VERSIONS s1q12: {'s1q12': ['2024'], 's1q12_v2': ['2017']}
+22:46:44 02_merge INFO   VERSIONS s1q13: {'s1q13': ['2024'], 's1q13_v2': ['2017']}
+22:46:44 02_merge INFO   VERSIONS s1q14: {'s1q14': ['2024'], 's1q14_v2': ['2017']}
+22:46:44 02_merge INFO   VERSIONS s1q4: {'s1q4': ['2024'], 's1q4_v2': ['2020']}
+22:46:44 02_merge INFO   VERSIONS s1q6: {'s1q6': ['2024'], 's1q6_v2': ['2017']}
+22:46:44 02_merge INFO   VERSIONS s1q7: {'s1q7': ['2017', '2020'], 's1q7_v2': ['2024']}
+22:46:44 02_merge INFO   VERSIONS s1q8: {'s1q8': ['2017', '2020'], 's1q8_v2': ['2024']}
+22:46:44 02_merge INFO   VERSIONS s1q9: {'s1q9': ['2024'], 's1q9_v2': ['2020'], 's1q9_v3': ['2017']}
+22:46:44 02_merge WARNING type conflict s1q2: numeric in some waves, free text in others -> kept as text
+22:46:46 02_merge INFO PASS  AHS_pooled_person.dta: pooled rows == sum of wave rows
+22:46:46 02_merge INFO PASS  AHS_pooled_person.dta: 2017 sum wt preserved
+22:46:46 02_merge INFO PASS  AHS_pooled_person.dta: 2020 sum wt preserved
+22:46:46 02_merge INFO PASS  AHS_pooled_person.dta: 2024 sum wt preserved
+22:46:47 02_merge INFO wrote AHS_pooled_person.dta  (138,683 rows x 184 vars, 42.2 MB)
+22:46:47 02_merge INFO ---------------- AHS_pooled_household.dta (['2017', '2020', '2024'])
+22:46:47 02_merge INFO   loaded 2017       AHS_2017_household_clean.dta                               16,057 rows x  254
+22:46:48 02_merge INFO   loaded 2020       AHS_2020_household_clean.dta                               10,666 rows x  208
+22:46:48 02_merge INFO   loaded 2024       AHS_2024_household_clean.dta                                3,724 rows x   23
+22:46:48 02_merge INFO   VERSIONS s0q10: {'s0q10': ['2020'], 's0q10_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s0q14: {'s0q14': ['2024'], 's0q14_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s0q15: {'s0q15': ['2020', '2024'], 's0q15_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s0q16: {'s0q16': ['2024'], 's0q16_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s0q17: {'s0q17': ['2020'], 's0q17_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s0q18: {'s0q18': ['2020'], 's0q18_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s2q14: {'s2q14': ['2020'], 's2q14_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s2q15_1: {'s2q15_1': ['2020'], 's2q15_1_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s2q15_2: {'s2q15_2': ['2020'], 's2q15_2_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s2q15_3: {'s2q15_3': ['2020'], 's2q15_3_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s4q11: {'s4q11': ['2020'], 's4q11_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s4q12: {'s4q12': ['2020'], 's4q12_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s4q13: {'s4q13': ['2020'], 's4q13_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s4q4: {'s4q4': ['2020'], 's4q4_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s4q5: {'s4q5': ['2020'], 's4q5_v2': ['2017']}
+22:46:48 02_merge INFO   VERSIONS s4q8: {'s4q8': ['2020'], 's4q8_v2': ['2017']}
+22:46:48 02_merge WARNING type conflict s0q7: numeric in some waves, free text in others -> kept as text
+22:46:49 02_merge INFO PASS  AHS_pooled_household.dta: pooled rows == sum of wave rows
+22:46:49 02_merge INFO PASS  AHS_pooled_household.dta: 2017 sum wt preserved
+22:46:49 02_merge INFO PASS  AHS_pooled_household.dta: 2020 sum wt preserved
+22:46:49 02_merge INFO PASS  AHS_pooled_household.dta: 2024 sum wt preserved
+22:46:49 02_merge INFO wrote AHS_pooled_household.dta  (30,447 rows x 453 vars, 32.2 MB)
+22:46:49 02_merge INFO ---------------- AHS_pooled_animal_inputs.dta (['2017', '2020'])
+22:46:49 02_merge INFO   loaded 2017       AHS_2017_s11_animal_inputs_and_services_clean.dta          26,500 rows x   26
+22:46:49 02_merge INFO   loaded 2020       AHS_2020_section_9_clean.dta                               23,250 rows x   35
+22:46:50 02_merge INFO PASS  AHS_pooled_animal_inputs.dta: pooled rows == sum of wave rows
+22:46:50 02_merge INFO PASS  AHS_pooled_animal_inputs.dta: 2017 sum wt preserved
+22:46:50 02_merge INFO PASS  AHS_pooled_animal_inputs.dta: 2020 sum wt preserved
+22:46:50 02_merge INFO wrote AHS_pooled_animal_inputs.dta  (49,750 rows x 52 vars, 8.9 MB)
+22:46:50 02_merge INFO ---------------- AHS_pooled_credits.dta (['2017', '2020', '2024'])
+22:46:50 02_merge INFO   loaded 2017       AHS_2017_s4_funding_during_2016_clean.dta                  16,057 rows x   25
+22:46:50 02_merge INFO   loaded 2020       AHS_2020_section_4_clean.dta                               10,666 rows x   64
+22:46:50 02_merge INFO   loaded 2024       AHS_2024_credits_clean.dta                                  5,224 rows x   20
+22:46:50 02_merge INFO   VERSIONS s4q11: {'s4q11': ['2020'], 's4q11_v2': ['2017']}
+22:46:50 02_merge INFO   VERSIONS s4q12: {'s4q12': ['2020'], 's4q12_v2': ['2017']}
+22:46:50 02_merge INFO   VERSIONS s4q13: {'s4q13': ['2020'], 's4q13_v2': ['2017']}
+22:46:50 02_merge INFO   VERSIONS s4q4: {'s4q4': ['2020'], 's4q4_v2': ['2017']}
+22:46:50 02_merge INFO   VERSIONS s4q5: {'s4q5': ['2020'], 's4q5_v2': ['2017']}
+22:46:50 02_merge INFO   VERSIONS s4q8: {'s4q8': ['2020'], 's4q8_v2': ['2017']}
+22:46:50 02_merge INFO PASS  AHS_pooled_credits.dta: pooled rows == sum of wave rows
+22:46:50 02_merge INFO PASS  AHS_pooled_credits.dta: 2017 sum wt preserved
+22:46:50 02_merge INFO PASS  AHS_pooled_credits.dta: 2020 sum wt preserved
+22:46:50 02_merge INFO PASS  AHS_pooled_credits.dta: 2024 sum wt preserved
+22:46:50 02_merge INFO wrote AHS_pooled_credits.dta  (31,947 rows x 89 vars, 4.9 MB)
+22:46:50 02_merge INFO ---------------- AHS_pooled_eggs.dta (['2020', '2024'])
+22:46:51 02_merge INFO   loaded 2020       AHS_2020_section_7_2_clean.dta                             39,776 rows x   36
+22:46:51 02_merge INFO   loaded 2024       AHS_2024_section11_2_egg_production_clean.dta              19,077 rows x   22
+22:46:51 02_merge INFO PASS  AHS_pooled_eggs.dta: pooled rows == sum of wave rows
+22:46:51 02_merge INFO PASS  AHS_pooled_eggs.dta: 2020 sum wt preserved
+22:46:51 02_merge INFO PASS  AHS_pooled_eggs.dta: 2024 sum wt preserved
+22:46:51 02_merge INFO wrote AHS_pooled_eggs.dta  (58,853 rows x 49 vars, 6.8 MB)
+22:46:51 02_merge INFO ---------------- AHS_pooled_extension.dta (['2017', '2020', '2024'])
+22:46:51 02_merge INFO   loaded 2017       AHS_2017_s3_extension_services_and_agricultural_programmes_clean.dta    64,228 rows x   30
+22:46:51 02_merge INFO   loaded 2020       AHS_2020_section_3_1_clean.dta                             25,329 rows x   28
+22:46:52 02_merge INFO   loaded 2024       AHS_2024_section6_extension_services_and_agricultural_programmes_clean.dta     9,286 rows x   35
+22:46:52 02_merge INFO   VERSIONS s3q2: {'s3q2': ['2020'], 's3q2_v2': ['2017']}
+22:46:52 02_merge INFO PASS  AHS_pooled_extension.dta: pooled rows == sum of wave rows
+22:46:52 02_merge INFO PASS  AHS_pooled_extension.dta: 2017 sum wt preserved
+22:46:52 02_merge INFO PASS  AHS_pooled_extension.dta: 2020 sum wt preserved
+22:46:52 02_merge INFO PASS  AHS_pooled_extension.dta: 2024 sum wt preserved
+22:46:52 02_merge INFO wrote AHS_pooled_extension.dta  (98,843 rows x 74 vars, 13.2 MB)
+22:46:52 02_merge INFO ---------------- AHS_pooled_fruits.dta (['2020', '2024'])
+22:46:52 02_merge INFO   loaded 2020       AHS_2020_section_2_3_clean.dta                             20,046 rows x   27
+22:46:53 02_merge INFO   loaded 2024       AHS_2024_section5_fruits_production_clean.dta               9,193 rows x   21
+22:46:53 02_merge INFO PASS  AHS_pooled_fruits.dta: pooled rows == sum of wave rows
+22:46:53 02_merge INFO PASS  AHS_pooled_fruits.dta: 2020 sum wt preserved
+22:46:53 02_merge INFO PASS  AHS_pooled_fruits.dta: 2024 sum wt preserved
+22:46:53 02_merge INFO wrote AHS_pooled_fruits.dta  (29,239 rows x 39 vars, 2.4 MB)
+22:46:53 02_merge INFO ---------------- AHS_pooled_honey.dta (['2017', '2020', '2024'])
+22:46:53 02_merge INFO   loaded 2017       AHS_2017_s10_3_honey_production_clean.dta                  16,067 rows x   19
+22:46:53 02_merge INFO   loaded 2020       AHS_2020_section_7_3_clean.dta                             13,011 rows x   38
+22:46:53 02_merge INFO   loaded 2024       AHS_2024_section11_3_honey_production_clean.dta             9,387 rows x   21
+22:46:53 02_merge INFO PASS  AHS_pooled_honey.dta: pooled rows == sum of wave rows
+22:46:53 02_merge INFO PASS  AHS_pooled_honey.dta: 2017 sum wt preserved
+22:46:53 02_merge INFO PASS  AHS_pooled_honey.dta: 2020 sum wt preserved
+22:46:53 02_merge INFO PASS  AHS_pooled_honey.dta: 2024 sum wt preserved
+22:46:53 02_merge INFO wrote AHS_pooled_honey.dta  (38,465 rows x 59 vars, 7.0 MB)
+22:46:53 02_merge INFO ---------------- AHS_pooled_inputs.dta (['2017', '2020'])
+22:46:53 02_merge INFO   loaded 2017       AHS_2017_s5_agricultural_inputs_clean.dta                  16,057 rows x  168
+22:46:54 02_merge INFO   loaded 2020       AHS_2020_section_2_2_clean.dta                             10,666 rows x   87
+22:46:54 02_merge INFO PASS  AHS_pooled_inputs.dta: pooled rows == sum of wave rows
+22:46:54 02_merge INFO PASS  AHS_pooled_inputs.dta: 2017 sum wt preserved
+22:46:54 02_merge INFO PASS  AHS_pooled_inputs.dta: 2020 sum wt preserved
+22:46:54 02_merge INFO wrote AHS_pooled_inputs.dta  (26,723 rows x 246 vars, 19.3 MB)
+22:46:54 02_merge INFO ---------------- AHS_pooled_land.dta (['2017', '2020', '2024'])
+22:46:54 02_merge INFO   loaded 2017       AHS_2017_s2_land_tenure_and_crops_planted_clean.dta        16,057 rows x   36
+22:46:55 02_merge INFO   loaded 2020       AHS_2020_section_2_1_clean.dta                             32,888 rows x   49
+22:46:55 02_merge INFO   loaded 2024       AHS_2024_section2_land_tenure_clean.dta                    23,266 rows x   25
+22:46:55 02_merge INFO   VERSIONS s2q1: {'s2q1': ['2017', '2020'], 's2q1_v2': ['2024']}
+22:46:55 02_merge INFO   VERSIONS s2q10: {'s2q10': ['2020'], 's2q10_v2': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q12: {'s2q12': ['2020'], 's2q12_v2': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q13: {'s2q13': ['2020'], 's2q13_v2': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q2: {'s2q2': ['2017', '2020'], 's2q2_v2': ['2024']}
+22:46:55 02_merge INFO   VERSIONS s2q3: {'s2q3': ['2017', '2020'], 's2q3_v2': ['2024']}
+22:46:55 02_merge INFO   VERSIONS s2q4: {'s2q4': ['2024'], 's2q4_v2': ['2020'], 's2q4_v3': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q5: {'s2q5': ['2024'], 's2q5_v2': ['2020'], 's2q5_v3': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q6: {'s2q6': ['2024'], 's2q6_v2': ['2020'], 's2q6_v3': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q7_1: {'s2q7_1': ['2020'], 's2q7_1_v2': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q7_2: {'s2q7_2': ['2020'], 's2q7_2_v2': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q7_3: {'s2q7_3': ['2020'], 's2q7_3_v2': ['2017']}
+22:46:55 02_merge INFO   VERSIONS s2q8: {'s2q8': ['2024'], 's2q8_v2': ['2020']}
+22:46:55 02_merge INFO   VERSIONS s2q9: {'s2q9': ['2024'], 's2q9_v2': ['2017']}
+22:46:55 02_merge INFO PASS  AHS_pooled_land.dta: pooled rows == sum of wave rows
+22:46:55 02_merge INFO PASS  AHS_pooled_land.dta: 2017 sum wt preserved
+22:46:55 02_merge INFO PASS  AHS_pooled_land.dta: 2020 sum wt preserved
+22:46:55 02_merge INFO PASS  AHS_pooled_land.dta: 2024 sum wt preserved
+22:46:55 02_merge INFO wrote AHS_pooled_land.dta  (72,211 rows x 88 vars, 13.3 MB)
+22:46:55 02_merge INFO ---------------- AHS_pooled_livestock.dta (['2017', '2020', '2024'])
+22:46:56 02_merge INFO   loaded 2017       AHS_2017_s9_number_of_animals_clean.dta                    32,611 rows x   44
+22:46:56 02_merge INFO   loaded 2020       AHS_2020_section_5_clean.dta                               23,250 rows x   36
+22:46:56 02_merge INFO   loaded 2024       AHS_2024_section9_10_12_livestock_and_animal_inputs_expenditures_clean.dta     9,947 rows x   59
+22:46:56 02_merge INFO PASS  AHS_pooled_livestock.dta: pooled rows == sum of wave rows
+22:46:56 02_merge INFO PASS  AHS_pooled_livestock.dta: 2017 sum wt preserved
+22:46:56 02_merge INFO PASS  AHS_pooled_livestock.dta: 2020 sum wt preserved
+22:46:56 02_merge INFO PASS  AHS_pooled_livestock.dta: 2024 sum wt preserved
+22:46:57 02_merge INFO wrote AHS_pooled_livestock.dta  (65,808 rows x 119 vars, 19.4 MB)
+22:46:57 02_merge INFO ---------------- AHS_pooled_milk.dta (['2017', '2020', '2024'])
+22:46:57 02_merge INFO   loaded 2017       AHS_2017_s10_1_cattle_milk_production_clean.dta             3,237 rows x   22
+22:46:57 02_merge INFO   loaded 2020       AHS_2020_section_7_1_clean.dta                             44,148 rows x   30
+22:46:57 02_merge INFO   loaded 2024       AHS_2024_section11_1_cattle_milk_production_and_use_clean.dta    12,209 rows x   45
+22:46:57 02_merge INFO PASS  AHS_pooled_milk.dta: pooled rows == sum of wave rows
+22:46:57 02_merge INFO PASS  AHS_pooled_milk.dta: 2017 sum wt preserved
+22:46:57 02_merge INFO PASS  AHS_pooled_milk.dta: 2020 sum wt preserved
+22:46:57 02_merge INFO PASS  AHS_pooled_milk.dta: 2024 sum wt preserved
+22:46:57 02_merge INFO wrote AHS_pooled_milk.dta  (59,594 rows x 78 vars, 17.5 MB)
+22:46:57 02_merge INFO ---------------- AHS_pooled_tools.dta (['2017', '2024'])
+22:46:59 02_merge INFO   loaded 2017       AHS_2017_s7_1_agricultural_small_tools_clean.dta          362,203 rows x   19
+22:46:59 02_merge INFO   loaded 2024       AHS_2024_section7_agricultural_tools_clean.dta              9,981 rows x   25
+22:46:59 02_merge INFO   VERSIONS s7q1: {'s7q1': ['2024'], 's7q1_v2': ['2017']}
+22:46:59 02_merge INFO   VERSIONS s7q3: {'s7q3': ['2024'], 's7q3_v2': ['2017']}
+22:46:59 02_merge INFO   VERSIONS s7q4: {'s7q4': ['2024'], 's7q4_v2': ['2017']}
+22:46:59 02_merge INFO   VERSIONS s7q5: {'s7q5': ['2024'], 's7q5_v2': ['2017']}
+22:46:59 02_merge INFO   VERSIONS s7q6: {'s7q6': ['2024'], 's7q6_v2': ['2017']}
+22:46:59 02_merge INFO   VERSIONS s7q7: {'s7q7': ['2024'], 's7q7_v2': ['2017']}
+22:46:59 02_merge INFO PASS  AHS_pooled_tools.dta: pooled rows == sum of wave rows
+22:46:59 02_merge INFO PASS  AHS_pooled_tools.dta: 2017 sum wt preserved
+22:46:59 02_merge INFO PASS  AHS_pooled_tools.dta: 2024 sum wt preserved
+22:47:01 02_merge INFO wrote AHS_pooled_tools.dta  (372,184 rows x 33 vars, 59.9 MB)
+22:47:01 02_merge INFO all hard checks passed (0 soft warnings)
+22:47:01 02_merge INFO 02_merge done
+22:47:03 03_checks INFO ==== 03_checks | run 20260904-224643 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+22:47:07 03_checks INFO 
+# AHS checks report
+
+Generated by 03_checks.py.
+
+## A. Pooled person file vs per-wave cleaned files
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | 2017 person rows | 73,665 | 73,665 | PASS |
+| A | 2017 sum wt | 9,682,214 | 9,682,214 | PASS |
+| A | 2017 households | 16,057 | 16,057 | PASS |
+| A | 2017 districts | 30 | 30 | PASS |
+| A | 2020 person rows | 48,726 | 48,726 | PASS |
+| A | 2020 sum wt | 10,486,251 | 10,486,251 | PASS |
+| A | 2020 households | 10,666 | 10,666 | PASS |
+| A | 2020 districts | 30 | 30 | PASS |
+| A | 2024 person rows | 16,292 | 16,292 | PASS |
+| A | 2024 sum wt | 9,561,842 | 9,561,842 | PASS |
+| A | 2024 households | 3,724 | 3,724 | PASS |
+| A | 2024 districts | 30 | 30 | PASS |
+
+## B. Stata 17 recomputation from the written .dta files
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2017 person rows | 73,665 | 73,665 | PASS |
+| B | 2017 sum wt | 9,682,214 | 9,682,214 | PASS |
+| B | 2017 male | 34,951 | 34,951 | PASS |
+| B | 2017 female | 38,714 | 38,714 | PASS |
+| B | 2020 person rows | 48,726 | 48,726 | PASS |
+| B | 2020 sum wt | 10,486,251 | 10,486,251 | PASS |
+| B | 2020 male | 23,139 | 23,139 | PASS |
+| B | 2020 female | 25,587 | 25,587 | PASS |
+| B | 2024 person rows | 16,292 | 16,292 | PASS |
+| B | 2024 sum wt | 9,561,842 | 9,561,842 | PASS |
+| B | 2024 male | 7,794 | 7,794 | PASS |
+| B | 2024 female | 8,498 | 8,498 | PASS |
+| B | 2017 households | 16,057 | 16,057 | PASS |
+| B | 2017 sum hhsize | 73,665 | 73,665 | PASS |
+| B | 2017 sum household weight | 2,164,610 | 2,164,610 | PASS |
+| B | 2020 households | 10,666 | 10,666 | PASS |
+| B | 2020 sum hhsize | 48,726 | 48,726 | PASS |
+| B | 2020 sum household weight | 2,321,662 | 2,321,662 | PASS |
+| B | 2024 households | 3,724 | 3,724 | PASS |
+| B | 2024 sum hhsize | 16,292 | 16,292 | PASS |
+| B | 2024 sum household weight | 2,163,580 | 2,163,580 | PASS |
+
+## C. Household / person consistency
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| C | 2017 sum hhsize == person rows | 73,665 | 73,665 | PASS |
+| C | 2017 households == distinct hhid in person file | 16,057 | 16,057 | PASS |
+| C | 2017 household rows unique | 16,057 | 16,057 | PASS |
+| C | 2020 sum hhsize == person rows | 48,726 | 48,726 | PASS |
+| C | 2020 households == distinct hhid in person file | 10,666 | 10,666 | PASS |
+| C | 2020 household rows unique | 10,666 | 10,666 | PASS |
+| C | 2024 sum hhsize == person rows | 16,292 | 16,292 | PASS |
+| C | 2024 households == distinct hhid in person file | 3,724 | 3,724 | PASS |
+| C | 2024 household rows unique | 3,724 | 3,724 | PASS |
+
+**All checks passed.**
+22:47:07 03_checks INFO 03_checks done
+22:47:08 04_codebook INFO ==== 04_codebook | run 20260904-224643 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+22:47:22 04_codebook INFO wrote CODEBOOK.md and codebook_*.csv for 13 files
+22:47:22 04_codebook INFO README.txt updated (/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Agriculture-Survey-AHS/README.txt)

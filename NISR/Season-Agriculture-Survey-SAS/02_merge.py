@@ -38,9 +38,16 @@ CORE = {
 }
 SCREENING_WT = {"2017": ("screening", "wh_plot"), "2018": ("screening", "wh_plot"), "2019": ("screening", "wt")}   # plot weight lives in the screening file
 # other 2019+ modules that repeat across waves
-MODULES = {"fertilizers_pesticides": r"partiii_fertilizers_pesticides", "agricultural_practice": r"partiv_agricultural_practice",
-           "land_tenure": r"partv_land_tenure", "screening_crops": r"screening_crops|^screening$", "screening_agroforestry": r"screening_agroforestry",
-           "screening_antierosion": r"screening_antierosion_land_consolidation"}
+MODULES = {  # canonical name: file-stem pattern, (years)
+    "fertilizers_pesticides": (r"partiii_fertilizers_pesticides", range(2019, 2026)), "agricultural_practice": (r"partiv_agricultural_practice", range(2019, 2026)),
+    "land_tenure": (r"partv_land_tenure", range(2019, 2026)), "screening_crops": (r"screening_crops|^screening$", range(2019, 2026)),
+    "screening_agroforestry": (r"screening_agroforestry", range(2019, 2026)), "screening_antierosion": (r"screening_antierosion_land_consolidation", range(2019, 2026)),
+    "fertilizers_2017_2018": (r"(ssf|lsf)_fertilizers", range(2017, 2019)), "pesticides_2017_2018": (r"(ssf|lsf)_pesticides", range(2017, 2019)),
+    "antierosion_2017_2018": (r"(ssf|lsf)_antierosion", range(2017, 2019)), "irrigation_land_tenure_2017_2018": (r"(ssf|lsf)_irrigation_soil_preparation_and_land_tenure", range(2017, 2019)),
+    "screening_2017_2018": (r"(ssf|lsf)_screening", range(2017, 2019)),
+}
+# 2013-2016 plot x crop records (planting / area files) appended into one file with the source module tagged
+PLOTCROP_EARLY = [r"area_[abc]$", r"^area$", r"date_sowing_production_harvest", r"big_farmer_[abc]$", r"farmq_part1$", r"part_i_farm(_big)?$", r"farmq_screening$", r"screening_[abc]_final(_big)?$"]
 
 inter = P["inter"]
 def files_for(year, pattern):
@@ -134,23 +141,51 @@ for y, m in CORE.items():
 summary["files"]["SAS_pooled_plotcrop.dta"] = version_pool(frames, labels, vlabs, "SAS_pooled_plotcrop.dta", "SAS 2017-2025 pooled plot x crop x season records (crop-production module)", "plotcrop")
 pc = summary["files"]["SAS_pooled_plotcrop.dta"]
 
-# ---------------------------------------------------------------- crop-area records 2013-2014
+# ---------------------------------------------------------------- plot x crop records 2013-2016
+# The pre-redesign waves ship plot x crop records in several shapes (crop-area files, planting /
+# sowing files, holder-level big-farmer area files, screening files). They are appended into one
+# file with `source_module` saying which record type each row is; crop lists are the waves' own.
 frames, labels, vlabs = {}, {}, {}
-for f in sorted(inter.glob("SAS_2013_*_area_*_clean.dta")) + sorted(inter.glob("SAS_2014_*_farmq_screening_clean.dta")):
-    df, vl, vv = read_dta(f)
-    if "crop" not in df.columns or not any(c in df.columns for c in ("area_ha", "ha")): continue
-    if len(df) < 500: continue                                   # province summaries
-    df["crop_area_ha"] = pd.to_numeric(df["area_ha"] if "area_ha" in df.columns else df["ha"], errors="coerce"); vl["crop_area_ha"] = KEYLAB["crop_area_ha"] + " [from area_ha / ha]"
-    frames[f.name] = df; labels[f.name] = vl; vlabs[f.name] = vv
+for y in ("2013", "2014", "2015", "2016"):
+    for f in sorted(inter.glob(f"SAS_{y}_*_clean.dta")):
+        stem = re.sub(rf"^SAS_{y}_[ABC?]_(.*)_clean\.dta$", r"\1", f.name)
+        if not any(re.search(p, stem) for p in PLOTCROP_EARLY): continue
+        df, vl, vv = read_dta(f)
+        if "crop" not in df.columns or len(df) < 200: continue                 # tabulations / files without a crop record
+        df["source_module"] = stem; vl["source_module"] = "Record type of the shipped file this row comes from"
+        area = next((c for c in ("area_ha", "ha", "crop_area_ha") if c in df.columns), None)
+        df["crop_area_ha"] = pd.to_numeric(df[area], errors="coerce") if area else np.nan
+        vl["crop_area_ha"] = KEYLAB["crop_area_ha"] + (f" [from {area}]" if area else " [not in this record type]")
+        w = f"{y}_{df['season'].iloc[0]}_{stem}"; frames[w], labels[w], vlabs[w] = df, vl, vv
 if frames:
-    summary["files"]["SAS_pooled_plotcrop_2013_2014.dta"] = version_pool(frames, labels, vlabs, "SAS_pooled_plotcrop_2013_2014.dta", "SAS 2013-2014 crop-area records (pre-redesign design; native crop lists)", "plotcrop_area")
+    summary["files"]["SAS_pooled_plotcrop_2013_2016.dta"] = version_pool(frames, labels, vlabs, "SAS_pooled_plotcrop_2013_2016.dta", "SAS 2013-2016 plot x crop records (pre-redesign; source_module tags the record type; native crop lists)", "plotcrop_early")
+    old_file = P["final"] / "SAS_pooled_plotcrop_2013_2014.dta"
+    if old_file.exists(): old_file.unlink(); log.info("removed superseded SAS_pooled_plotcrop_2013_2014.dta")
+
+# ---------------------------------------------------------------- other 2013-2016 modules: same module name in >= 2 wave-seasons
+by_name = {}
+for y in ("2013", "2014", "2015", "2016"):
+    for f in sorted(inter.glob(f"SAS_{y}_*_clean.dta")):
+        stem = re.sub(rf"^SAS_{y}_[ABC?]_(.*)_clean\.dta$", r"\1", f.name)
+        if any(re.search(p, stem) for p in PLOTCROP_EARLY) or re.search(r"yield|_province|weight$", stem): continue
+        by_name.setdefault(stem, []).append(f)
+for stem, fs in sorted(by_name.items()):
+    if len({f.name.split("_")[1] for f in fs}) < 2: continue        # needs >= 2 years
+    frames, labels, vlabs = {}, {}, {}
+    for f in fs:
+        df, vl, vv = read_dta(f)
+        if len(df) < 200: continue
+        w = f"{f.name.split('_')[1]}_{df['season'].iloc[0]}"; frames[w], labels[w], vlabs[w] = df, vl, vv
+    if len({w[:4] for w in frames}) >= 2:
+        summary["files"][f"SAS_pooled_{stem}_2013_2016.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{stem}_2013_2016.dta", f"SAS 2013-2016 pooled module '{stem}' (pre-redesign design)", stem)
 
 # ---------------------------------------------------------------- other 2019+ modules
-for canon, pat in MODULES.items():
+for canon, (pat, years) in MODULES.items():
     frames, labels, vlabs = {}, {}, {}
-    for y in ("2019", "2020", "2021", "2022", "2023", "2024", "2025"):
-        for f in files_for(y, pat):
-            df, vl, vv = read_dta(f); wave = f"{y}_{df['season'].iloc[0]}"; frames[wave], labels[wave], vlabs[wave] = df, vl, vv
+    for y in years:
+        for f in files_for(str(y), pat):
+            df, vl, vv = read_dta(f); wave = f"{y}_{df['season'].iloc[0]}" + ("_lsf" if "lsf_" in f.name else ("_ssf" if "ssf_" in f.name else ""))
+            frames[wave], labels[wave], vlabs[wave] = df, vl, vv
     if len({w[:4] for w in frames}) >= 2:
-        summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS 2019-2025 pooled module '{canon}'", canon)
+        summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS {min(years)}-{max(years)} pooled module '{canon}'", canon)
 save_json(summary, LOGS / "merge_alignment.json"); ck.done(); log.info("02_merge done")

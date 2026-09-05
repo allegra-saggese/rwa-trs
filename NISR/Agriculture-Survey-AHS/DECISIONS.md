@@ -19,6 +19,9 @@ kept and the count logged.
 in 2020 section 0 ships no weight, so it is taken from section 1 (constant within
 household); 2024 `weight` is the "final season A weight".
 
-**Pooled modules.** Only 2017 and 2024 files are mapped to canonical modules (milk, honey,
-land, extension, tools, livestock, credits/savings …); the 2020 section files are numbered
-without titles and are left per-wave until their content is mapped from the questionnaire.
+**Pooled modules.** All three waves are mapped to canonical modules (milk, eggs, honey, land,
+inputs, fruits, extension, credits, livestock, animal inputs, tools …). The 2020 section files are
+numbered without titles; their content was mapped from the 2020 questionnaire (section II = land
+tenure / crops & inputs / fruits, III = extension and programmes, IV = savings-credits, V–VI =
+livestock numbers and stock change, VII = milk / eggs / honey, VIII = animal health, IX = animal
+input expenditures). Modules that exist in one wave only stay per-wave in `2_Intermediate/`.

@@ -33,9 +33,14 @@ MODULE_MAP = {
     "2017": {"s10_1_cattle_milk_production": "milk", "s10_2_cattle_milk_production_use": "milk_use", "s10_3_honey_production": "honey",
              "s11_animal_inputs_and_services": "animal_inputs", "s2_land_tenure_and_crops_planted": "land", "s3_extension_services_and_agricultural_programmes": "extension",
              "s4_funding_during_2016": "credits", "s5_agricultural_inputs": "inputs", "s6_agricultural_practices": "practices",
-             "s7_1_agricultural_small_tools": "tools_small", "s7_2_agricultural_durable_tools": "tools_durable", "s8_a_production_use_storage_and_expenses": "production",
+             "s7_1_agricultural_small_tools": "tools", "s7_2_agricultural_durable_tools": "tools_durable", "s8_a_production_use_storage_and_expenses": "production",
              "s8_b_production_use_storage_and_expenses": "production_b", "s9_number_of_animals": "livestock"},
-    "2020": {},
+    # 2020 sections mapped from the questionnaire (z_Documentation/2020): II land tenure / crops & inputs /
+    # fruits, III extension, IV savings-credits, V livestock numbers, VI stock change, VII milk / eggs / honey,
+    # VIII animal health, IX animal input expenditures
+    "2020": {"section_2_1": "land", "section_2_2": "inputs", "section_2_3": "fruits", "section_3_1": "extension", "section_3_2": "programmes",
+             "section_4": "credits", "section_5": "livestock", "section_6": "livestock_change", "section_7_1": "milk", "section_7_2": "eggs",
+             "section_7_3": "honey", "section_8": "animal_health", "section_9": "animal_inputs"},
     "2024": {"section11_1_cattle_milk_production_and_use": "milk", "section11_2_egg_production": "eggs", "section11_3_honey_production": "honey",
              "section2_land_tenure": "land", "section6_extension_services_and_agricultural_programmes": "extension", "credits": "credits", "saving": "savings",
              "section7_agricultural_tools": "tools", "section9_10_12_livestock_and_animal_inputs_expenditures": "livestock", "section5_fruits_production": "fruits",
