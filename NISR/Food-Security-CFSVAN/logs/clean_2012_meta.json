@@ -21,6 +21,7 @@
     "final_norm_weight",
     "dist_copy",
     "rwanda",
+    "urban_nisr",
     "agro_climat",
     "fews_code",
     "q1201_2",
@@ -43,7 +44,6 @@
     "share_gifts",
     "share_foodaid",
     "int_urban",
-    "urban_new",
     "final_urban",
     "vup",
     "gwi",
@@ -668,7 +668,7 @@
     "ncsi_red",
     "nfi_short",
     "nfi_long",
-    "class",
+    "class_",
     "pc_exp_year",
     "trunc_fcs",
     "stuntedcu5",
@@ -1027,7 +1027,8 @@
     "fsnms",
     "cyanika",
     "lwh",
-    "lwh_s"
+    "lwh_s",
+    "v_name"
    ],
    "var_labels": {
     "filename": "Filename",
@@ -1058,7 +1059,6 @@
     "share_gifts": "% from gifts",
     "share_foodaid": "% from food aid",
     "int_urban": "Interviewed urban status",
-    "urban_new": "Urban corrected with observations",
     "final_urban": "NISR",
     "vup": "Village VUP level",
     "gwi": "Grouped wealth index",
@@ -1683,7 +1683,6 @@
     "ncsi_red": "TERCILES of CSI_reduced",
     "nfi_short": "Non food item expenditure per month",
     "nfi_long": "Non food item expenditure per month",
-    "class": "14 livelihood clusters from addawin",
     "pc_exp_year": "year per capita expenditure",
     "trunc_fcs": null,
     "stuntedcu5": "How many stunted children under 5 years are there in the household?",
@@ -2043,12 +2042,15 @@
     "cyanika": "Combined villages",
     "lwh": "World Bank intervention sites",
     "lwh_s": null,
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "class_": "14 livelihood clusters from addawin",
+    "urban_nisr": "Area of residence as shipped (1 urban, 2 rural, 3 semi-urban; NISR's 2-category urban_new is the key urban)",
+    "v_name": "Village name (text of the v_code value labels, too many to be written as a Stata label set)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "sector": "Sector (1101-5715, NISR codes; where shipped)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "cluster": "Village id (vill_id, as shipped; 750 villages of 10 households)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -2089,10 +2091,6 @@
     },
     "rwanda": {
      "1.0": "Rwanda"
-    },
-    "urban": {
-     "1": "Urban",
-     "2": "Rural"
     },
     "agro_climat": {
      "1.0": "Bugarama plane",
@@ -2166,10 +2164,6 @@
      "1.0": "Rural",
      "2.0": "Urban",
      "3.0": "Slum"
-    },
-    "urban_new": {
-     "1.0": "Urban",
-     "2.0": "Rural"
     },
     "final_urban": {
      "1.0": "Urban",
@@ -20736,6 +20730,12 @@
      "6.0": "RWAMAGANA 34",
      "7.0": "RWAMAGANA 35"
     },
+    "class_": {},
+    "urban_nisr": {
+     "1.0": "Urban",
+     "2.0": "Rural",
+     "3.0": "Semi-Urban"
+    },
     "prov": {
      "1": "City of Kigali",
      "2": "Southern Province",
@@ -20774,18 +20774,28 @@
      "55": "Kirehe",
      "56": "Ngoma",
      "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
     }
    },
    "source": {
+    "class_": "class (Stata reserved word)",
+    "urban_nisr": "urban",
+    "v_name": "value labels of v_code",
     "hhid": "hh_id",
     "prov": "p_code",
     "dist": "d_code",
     "sector": "s_code",
     "cluster": "vill_id",
     "wt": "final_popweight",
-    "urban": "urban (1 urban, 0 rural -> 1/2)"
+    "urban": "urban_new"
    },
-   "out": "CFSVA_2012_household_clean.dta"
+   "out": "CFSVA_2012_household_clean.dta",
+   "unit": "household",
+   "hhid_nonmissing": 7498,
+   "cluster_nonmissing": 7498
   },
   "woman": {
    "file": "CFSVA_2012_mother.sav",
@@ -20852,6 +20862,7 @@
     "changed_muac",
     "changed_any",
     "strata_id",
+    "urban_nisr",
     "vup",
     "q101",
     "q102",
@@ -21414,7 +21425,8 @@
     "final_urban",
     "n_w_wastin_muac",
     "n_g_w_wastin_muac",
-    "fews_code"
+    "fews_code",
+    "v_name"
    ],
    "var_labels": {
     "filename": "Filename",
@@ -22031,12 +22043,14 @@
     "n_w_wastin_muac": "Women global wasting (NEW)",
     "n_g_w_wastin_muac": null,
     "fews_code": "Fewsnet livelihood zones",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "urban_nisr": "Area of residence as shipped (1 urban, 2 rural, 3 semi-urban; NISR's 2-category urban_new is the key urban)",
+    "v_name": "Village name (text of the v_code value labels, too many to be written as a Stata label set)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "sector": "Sector (1101-5715, NISR codes; where shipped)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "cluster": "Village id (vill_id, as shipped; 750 villages of 10 households)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -37056,10 +37070,6 @@
      "15.0": "Gisagara",
      "16.0": "Nyamagabe-Nyaruguru"
     },
-    "urban": {
-     "1": "Urban",
-     "2": "Rural"
-    },
     "vup": {
      "0.0": "Non VUP",
      "1.0": "High priority",
@@ -39423,6 +39433,11 @@
      "11.0": "Eastern Agropastoral Zone",
      "12.0": "Eastern Semi-Arid Agropastoral Zone"
     },
+    "urban_nisr": {
+     "1.0": "Urban",
+     "2.0": "Rural",
+     "3.0": "Semiurban"
+    },
     "prov": {
      "1": "City of Kigali",
      "2": "Southern Province",
@@ -39461,18 +39476,26 @@
      "55": "Kirehe",
      "56": "Ngoma",
      "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
     }
    },
    "source": {
+    "urban_nisr": "urban",
+    "v_name": "value labels of v_code",
     "hhid": "hh_id",
     "prov": "p_code",
     "dist": "d_code",
     "sector": "s_code",
     "cluster": "vill_id",
-    "wt": "final_popweight",
-    "urban": "urban (1 urban, 0 rural -> 1/2)"
+    "wt": "final_popweight"
    },
-   "out": "CFSVA_2012_woman_clean.dta"
+   "out": "CFSVA_2012_woman_clean.dta",
+   "unit": "woman",
+   "hhid_nonmissing": 7456,
+   "cluster_nonmissing": 7456
   },
   "child": {
    "file": "CFSVA_2012_children.sav",
@@ -39496,7 +39519,6 @@
     "dist_copy",
     "v_code",
     "t_code",
-    "urban_new",
     "final_urban",
     "q1201_2_old",
     "hh_size_computed",
@@ -39589,6 +39611,7 @@
     "flaghaz",
     "flagwhz",
     "child_age_groups",
+    "urban_nisr",
     "vup",
     "fews_code",
     "under5",
@@ -40244,7 +40267,8 @@
     "diarrhoea",
     "age_nut",
     "age_edprs",
-    "agegroup"
+    "agegroup",
+    "v_name"
    ],
    "var_labels": {
     "childid": "Child's unique ID",
@@ -40254,7 +40278,6 @@
     "dist_copy": "District",
     "v_code": "Village",
     "t_code": "Team",
-    "urban_new": "Urban corrected with observations",
     "final_urban": null,
     "q1201_2_old": "Ubudehe categories",
     "hh_size_computed": null,
@@ -41004,12 +41027,14 @@
     "age_nut": "Age groups for nutrition indicators",
     "age_edprs": "Age groups for EDPRS",
     "agegroup": null,
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "urban_nisr": "Area of residence as shipped (1 urban, 2 rural, 3 semi-urban; NISR's 2-category urban_new is the key urban)",
+    "v_name": "Village name (text of the v_code value labels, too many to be written as a Stata label set)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "sector": "Sector (1101-5715, NISR codes; where shipped)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "cluster": "Village id (vill_id, as shipped; 750 villages of 10 households)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -55890,10 +55915,6 @@
      "507150504.0": "Rutare",
      "507150505.0": "Shyara"
     },
-    "urban_new": {
-     "1.0": "Urban",
-     "2.0": "Rural"
-    },
     "final_urban": {
      "1.0": "Urban",
      "2.0": "Rural",
@@ -56207,10 +56228,6 @@
      "0.0": "No",
      "1.0": "Yes",
      "8.0": "Don't know"
-    },
-    "urban": {
-     "1": "Urban",
-     "2": "Rural"
     },
     "vup": {
      "0.0": "Non VUP",
@@ -58714,6 +58731,11 @@
      "1.0": "Btw 6 and 23 months",
      "2.0": "Btw 24 months and 5 years"
     },
+    "urban_nisr": {
+     "1.0": "Urban",
+     "2.0": "Rural",
+     "3.0": "Semi-Urban"
+    },
     "prov": {
      "1": "City of Kigali",
      "2": "Southern Province",
@@ -58752,18 +58774,27 @@
      "55": "Kirehe",
      "56": "Ngoma",
      "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
     }
    },
    "source": {
+    "urban_nisr": "urban",
+    "v_name": "value labels of v_code",
     "hhid": "hh_id",
     "prov": "p_code",
     "dist": "d_code",
     "sector": "s_code",
     "cluster": "vill_id",
     "wt": "final_popweight",
-    "urban": "urban (1 urban, 0 rural -> 1/2)"
+    "urban": "urban_new"
    },
-   "out": "CFSVA_2012_child_clean.dta"
+   "out": "CFSVA_2012_child_clean.dta",
+   "unit": "child",
+   "hhid_nonmissing": 4601,
+   "cluster_nonmissing": 4601
   },
   "children_mothers_household": {
    "file": "CFSVA_2012_children_mothers_household.sav",
@@ -58787,7 +58818,6 @@
     "dist_two",
     "v_code",
     "t_code",
-    "urban_new",
     "final_urban",
     "int_urban",
     "hh_size_computed",
@@ -58881,6 +58911,7 @@
     "wasted_no_oedema",
     "wasted",
     "child_age_groups",
+    "urban_nisr",
     "vup",
     "q1201_2",
     "fews_code",
@@ -59290,7 +59321,7 @@
     "sfie",
     "snfi",
     "chk_share",
-    "class",
+    "class_",
     "pc_exp_year",
     "trunc_fcs",
     "stuntedcu5",
@@ -59403,7 +59434,8 @@
     "sick_hf",
     "logfie",
     "n_fews_code",
-    "n_c_stunted"
+    "n_c_stunted",
+    "v_name"
    ],
    "var_labels": {
     "filename": "Filename",
@@ -59413,7 +59445,6 @@
     "dist_two": "District",
     "v_code": "Village",
     "t_code": "Team",
-    "urban_new": "Urban corrected with observations",
     "final_urban": null,
     "int_urban": "Interviewed urban status",
     "hh_size_computed": null,
@@ -59917,7 +59948,6 @@
     "sfie": "Share food item expenditure",
     "snfi": "Share non food item expenditure",
     "chk_share": "Check shares expenditures",
-    "class": "14 livelihood clusters from addawin",
     "pc_exp_year": "year per capita expenditure",
     "trunc_fcs": null,
     "stuntedcu5": "How many stunted children under 5 years are there in the household?",
@@ -60031,12 +60061,15 @@
     "logfie": null,
     "n_fews_code": "Fews grouped for regression",
     "n_c_stunted": "New Stunted",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "class_": "14 livelihood clusters from addawin",
+    "urban_nisr": "Area of residence as shipped (1 urban, 2 rural, 3 semi-urban; NISR's 2-category urban_new is the key urban)",
+    "v_name": "Village name (text of the v_code value labels, too many to be written as a Stata label set)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "sector": "Sector (1101-5715, NISR codes; where shipped)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "cluster": "Village id (vill_id, as shipped; 750 villages of 10 households)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -74917,10 +74950,6 @@
      "507150504.0": "Rutare",
      "507150505.0": "Shyara"
     },
-    "urban_new": {
-     "1.0": "Urban",
-     "2.0": "Rural"
-    },
     "final_urban": {
      "1.0": "Urban",
      "2.0": "Rural",
@@ -75230,10 +75259,6 @@
      "1.0": "Moderately wasted",
      "2.0": "Severely wasted",
      "99.0": "Flag"
-    },
-    "urban": {
-     "1": "Urban",
-     "2": "Rural"
     },
     "vup": {
      "0.0": "Non VUP",
@@ -76825,6 +76850,12 @@
      "1.0": "Moderately stunted",
      "2.0": "Severely stunted"
     },
+    "class_": {},
+    "urban_nisr": {
+     "1.0": "Urban",
+     "2.0": "Rural",
+     "3.0": "Semi-Urban"
+    },
     "prov": {
      "1": "City of Kigali",
      "2": "Southern Province",
@@ -76863,18 +76894,28 @@
      "55": "Kirehe",
      "56": "Ngoma",
      "57": "Bugesera"
+    },
+    "urban": {
+     "1": "Urban",
+     "2": "Rural"
     }
    },
    "source": {
+    "class_": "class (Stata reserved word)",
+    "urban_nisr": "urban",
+    "v_name": "value labels of v_code",
     "hhid": "hh_id",
     "prov": "p_code",
     "dist": "d_code",
     "sector": "s_code",
     "cluster": "vill_id",
     "wt": "final_popweight",
-    "urban": "urban (1 urban, 0 rural -> 1/2)"
+    "urban": "urban_new"
    },
-   "out": "CFSVA_2012_children_mothers_household_clean.dta"
+   "out": "CFSVA_2012_children_mothers_household_clean.dta",
+   "unit": "child_mother_household",
+   "hhid_nonmissing": 4601,
+   "cluster_nonmissing": 4601
   },
   "village": {
    "file": "CFSVA_2012_community.sav",
@@ -77383,7 +77424,7 @@
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "sector": "Sector (1101-5715, NISR codes; where shipped)",
-    "cluster": "Village / cluster id (as shipped)",
+    "cluster": "Village id (vill_id, as shipped; 750 villages of 10 households)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -78511,7 +78552,10 @@
     "sector": "s_code",
     "cluster": "vill_id"
    },
-   "out": "CFSVA_2012_village_clean.dta"
+   "out": "CFSVA_2012_village_clean.dta",
+   "unit": "village",
+   "hhid_nonmissing": 0,
+   "cluster_nonmissing": 748
   }
  }
 }

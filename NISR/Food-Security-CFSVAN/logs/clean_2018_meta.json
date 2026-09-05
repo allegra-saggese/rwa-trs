@@ -690,10 +690,10 @@
     "ks12_07_3": "Who provided medical services (including mutuelle de sante)",
     "ls12_07_3": "Who provided Construction/building materials",
     "ms12_07_3": "Who provided Water and/or sanitation",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
     "survey": "Source survey",
     "year": "Survey year",
@@ -2138,7 +2138,10 @@
     "wt": "finalweight",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2018_household_clean.dta"
+   "out": "CFSVA_2018_household_clean.dta",
+   "unit": "household",
+   "hhid_nonmissing": 9709,
+   "cluster_nonmissing": 0
   },
   "child": {
    "file": "CFSVA_2018_db_childandmother_201904.dta",
@@ -2583,10 +2586,10 @@
     "tot_mddw": "Minimum Dietary Diverstity - Women",
     "mddwless5": "Minimum Dietary Diverstity - Women (Categories)",
     "age_cat_child_rec": "Child age class",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
     "survey": "Source survey",
     "year": "Survey year",
@@ -3434,7 +3437,10 @@
     "wt": "finalweight",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2018_child_clean.dta"
+   "out": "CFSVA_2018_child_clean.dta",
+   "unit": "child",
+   "hhid_nonmissing": 6736,
+   "cluster_nonmissing": 0
   },
   "village": {
    "file": "CFSVA_2018_db_villageques_201904.dta",
@@ -4474,7 +4480,10 @@
     "sector": "s0_e_sect",
     "cluster": "s0_g_vill"
    },
-   "out": "CFSVA_2018_village_clean.dta"
+   "out": "CFSVA_2018_village_clean.dta",
+   "unit": "village",
+   "hhid_nonmissing": 0,
+   "cluster_nonmissing": 987
   }
  }
 }

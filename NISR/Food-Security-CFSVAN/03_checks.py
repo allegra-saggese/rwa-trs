@@ -1,8 +1,12 @@
 """
 03_checks.py -- CFSVA: verification of 3_Final/ -> logs/checks_report.txt
-  A. pooled files vs per-wave files   B. Stata 17 recomputation   C. geography completeness
+  A. pooled files vs per-wave files   B. Stata 17 recomputation   C. geography completeness and documented sample sizes
+  D. keys and identities (CFSVA audit 2026-09-05): cluster completeness and counts by wave, 2012 urban distribution,
+     2015 woman / child rows carry no household id, woman / child rows link to households elsewhere, 2018 = report count
+  E. cross-wave coding compatibility within every pooled column (re-derived from the per-wave meta files)
+Rows with a reference are hard checks; rows without one are informational.
 """
-import os, shutil, subprocess, sys
+import difflib, json, os, re, shutil, subprocess, sys
 import pandas as pd
 from cfsva_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE
 log = get_logger("03_checks"); P = paths()
@@ -14,10 +18,10 @@ def row(section, name, ours, ref, tol=0.0):
     report.append(f"| {section} | {name} | {ours:,.0f} | {'' if ref is None else f'{ref:,.0f}'} | {'PASS' if ok else ('n/a' if ok is None else '**FAIL**')} |")
 units = [u for u in ("household", "woman", "child", "village") if (P["final"] / f"CFSVA_pooled_{u}.dta").exists()]
 report += ["## A. Pooled files vs per-wave cleaned files", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
-hh = None
+hh = None; pooled = {}
 for u in units:
-    cols = [c for c in ["wave", "wt", "dist", "hhid"] if c in read_meta(P["final"] / f"CFSVA_pooled_{u}.dta").column_names]
-    d, _, _ = read_dta(P["final"] / f"CFSVA_pooled_{u}.dta", usecols=cols)
+    cols = [c for c in ["wave", "wt", "dist", "hhid", "cluster", "urban"] if c in read_meta(P["final"] / f"CFSVA_pooled_{u}.dta").column_names]
+    d, _, _ = read_dta(P["final"] / f"CFSVA_pooled_{u}.dta", usecols=cols); pooled[u] = d
     if u == "household": hh = d
     for w, g in d.groupby("wave", sort=False):
         p, _, _ = read_dta(P["inter"] / f"CFSVA_{w}_{u}_clean.dta", usecols=[c for c in cols if c != "wave"])
@@ -50,8 +54,8 @@ report += ["", "## C. Geography completeness (household file)", "", "| section |
 # sample sizes stated in the methodology annexes (NISR-Food-Security-CFSVAN.md (documentation notes)); 2018 is shipped larger than documented (informational)
 for w, n in {"2012": 7_498, "2015": 7_500, "2021": 9_000, "2024": 9_000}.items():
     if (hh["wave"] == w).any(): row("C", f"{w} households vs methodology annex ({n:,})", int((hh["wave"] == w).sum()), n)
-if (hh["wave"] == "2018").any(): row("C", "2018 households in the shipped file (annex says 9,000; informational)", int((hh["wave"] == "2018").sum()), None)
-for uname, w, n in (("woman", "2015", 6_768), ("village", "2012", 748)):
+if (hh["wave"] == "2018").any(): row("C", "2018 households vs the final report (9,709 interviewed; the annex target was 9,000)", int((hh["wave"] == "2018").sum()), 9_709)
+for uname, w, n in (("woman", "2015", 6_768), ("village", "2012", 748), ("village", "2015", 750), ("village", "2021", 900)):
     f = P["final"] / f"CFSVA_pooled_{uname}.dta"
     if f.exists():
         u, _, _ = read_dta(f, usecols=["wave"]); row("C", f"{w} {uname} records vs methodology annex ({n:,})", int((u["wave"] == w).sum()), n)
@@ -60,6 +64,65 @@ if hh is not None:
     for w, g in hh.groupby("wave", sort=False):
         expected = {"2006": 29, "2009": 27}.get(w, 30)      # 2006 covered 29 districts; 2009 excluded the three City of Kigali districts
         row("C", f"{w} districts present (survey coverage)", g["dist"].nunique(), expected); row("C", f"{w} rows with district", int(g["dist"].notna().sum()), len(g), 0.01)
+# ---------------------------------------------------------------- D. keys and identities
+report += ["", "## D. Keys and identities", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+CL = {"2006": True, "2009": True, "2012": True, "2015": True, "2018": False, "2021": False, "2024": False}      # cluster available (2015: reconstructed) / no PSU released
+for w, g in hh.groupby("wave", sort=False):
+    has = int((g["cluster"].fillna("") != "").sum())
+    if CL.get(w): row("D", f"{w} households with a cluster id (must be all)", has, len(g))
+    else: row("D", f"{w} households with a cluster id (no PSU in the public file; informational)", has, None)
+for w, n, what in (("2009", 449, "enumeration zones (province-district-zone composite; report: 450, one 24-household zone)"), ("2012", 750, "villages (vill_id)"), ("2015", 750, "reconstructed villages (25 per district x 30)")):
+    g = hh[hh["wave"] == w]
+    if len(g): row("D", f"{w} distinct clusters = {what}", g["cluster"].nunique(), n)
+g = hh[hh["wave"] == "2015"]
+if len(g): row("D", "2015 reconstructed villages: households per village = 10 (number of villages with another size)", int((g.groupby("cluster").size() != 10).sum()), 0)
+g = hh[hh["wave"] == "2012"]
+if len(g) and "urban" in g:
+    row("D", "2012 urban == 1 (NISR urban_new: 990)", int((g["urban"] == 1).sum()), 990); row("D", "2012 urban == 2 (6,508)", int((g["urban"] == 2).sum()), 6_508); row("D", "2012 urban missing", int(g["urban"].isna().sum()), 0)
+for u in ("woman", "child"):
+    if u not in pooled: continue
+    d = pooled[u]
+    for w, g in d.groupby("wave", sort=False):
+        ids = g["hhid"].dropna() if "hhid" in g else pd.Series(dtype=object)
+        ids = ids[ids.astype(str).str.strip() != ""]
+        if w == "2015": row("D", f"2015 {u} rows carrying a household id (must be 0: nutrition-form ids only)", len(ids), 0)
+        else:
+            hw = hh.loc[hh["wave"] == w, "hhid"].astype(str)
+            row("D", f"{w} {u} rows whose household id is in the household file (share x 1000; must be >= 900; 2012 children link at 93.9% as shipped)", 1000 * ids.astype(str).isin(hw).mean() if len(ids) else 0, 1000, 0.1)
+
+# ---------------------------------------------------------------- E. cross-wave coding compatibility (independent of 02_merge: from the per-wave meta files)
+align = json.load(open(LOGS / "merge_alignment.json")); thr = align.get("vl_threshold", 0.6)
+metas = {f.stem.replace("clean_", "").replace("_meta", ""): json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}
+SENT = {98, 99, 998, 999, 9998, 9999}
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
+def _same(x, y):
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= thr
+bad, nsplit, nsplit_vl = [], 0, 0
+for fname, info in align["files"].items():
+    unit = info.get("unit")
+    for base, d in info["decisions"].items():
+        if len(d["versions"]) > 1:
+            nsplit += 1
+            if any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): nsplit_vl += 1
+        for col, ws in d["versions"].items():
+            labs = [(w, {float(k): v for k, v in metas[w]["files"][unit].get("value_labels", {}).get(base, {}).items() if str(k).replace('.', '', 1).lstrip('-').isdigit()}) for w in ws if w in metas and unit in metas[w].get("files", {})]
+            for i in range(len(labs)):
+                for j in range(i + 1, len(labs)):
+                    a, b = labs[i][1], labs[j][1]
+                    for c in set(a) & set(b):
+                        if c not in SENT and not _same(a[c], b[c]): bad.append((fname, col, labs[i][0], labs[j][0], c, a[c], b[c]))
+report += ["", "## E. Cross-wave coding compatibility within pooled columns (all pooled files)", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+row("E", "pooled columns holding waves with incompatible value-label texts for the same code (must be 0)", len({(b[0], b[1]) for b in bad}), 0)
+row("E", "variables split into versions, all pooled files (informational)", nsplit, None)
+row("E", "of which because of value labels or unlabelled ranges (informational)", nsplit_vl, None)
+row("E", "variables with codes observed outside their own wave's value labels -- stale labels (informational)", sum(len(i.get("stale_labels", {})) for i in align["files"].values()), None)
+if bad: report += ["", "Incompatible pairs: " + "; ".join(f"{f}:{c}: {y1}/{y2} code {k:g} {p!r} vs {q!r}" for f, c, y1, y2, k, p, q in bad[:20])]
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
 if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")

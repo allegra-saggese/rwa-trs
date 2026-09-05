@@ -6,11 +6,16 @@
   CFSVA_pooled_<module>.dta                                    modules with the same content in >= 2 waves (MODULE_MAP)
   CFSVA3_4_panel_link.dta, CFSVA5_vup_panel_link.dta            NISR's household/person linking files, keys harmonised
 
-Alignment rule as in every NISR dataset: waves are grouped into versions of a variable by
-label similarity (token Jaccard >= 0.25); the largest group keeps the name, others become
-<name>_v2, _v3 ...; FORCE_ALIGN lists rewordings judged to be the same question.
+Alignment rule as in every NISR dataset: a same-named variable is ONE column across waves only
+when (a) its variable labels are similar (token Jaccard >= SIM_THRESHOLD) AND (b) its value labels
+are compatible (no code whose text means something else; an unlabelled wave's values inside the
+labelled range); otherwise <name>_v2, _v3 ... FORCE_ALIGN skips only the label test; FORCE_SPLIT
+closes groups. CFSVA audit 2026-09-05: the old label-only rule (0.25) pooled 2006 food quantities
+with 2012 crop indicators (rice, beans, maize, cassava), child name with caregiver (s14_02) and
+recoded categorical items (seed / fertiliser sources AS5_03 ..., loan refusal s6_03_2, shocks
+as10_05, food sources s8_04 ...).
 """
-import json
+import difflib, json, re
 from collections import Counter
 import numpy as np, pandas as pd
 from cfsva_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
@@ -21,23 +26,75 @@ CS = ["2006", "2009", "2012", "2015", "2018", "2021", "2024"]
 VUP = []
 KEYS = ["survey", "year", "wave", "unit", "prov", "dist", "sector", "urban", "cluster", "hhid", "wt"]
 STR_KEYS = ("survey", "wave", "unit", "cluster", "hhid", "key", "parent_key", "chn_key", "woman_key", "child_key")
-SIM_THRESHOLD = 0.25
+SIM_THRESHOLD = 0.5; VL_THRESHOLD = 0.6
 FORCE_ALIGN = set()
 FORCE_SPLIT = {}
+SENTINELS = {98, 99, 998, 999, 9998, 9999}       # NISR's don't-know / missing codes: never evidence of a coding change
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s):
+    toks = [_SYN.get(w, w) for w in re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()]
+    return " ".join(w for w in toks if w)
+def _same(x, y):
+    """same category? normalised texts equal, both missing-like, one's tokens contained in the other's, or close spelling"""
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= VL_THRESHOLD
+def vl_conflicts_of(a, b):
+    return {c: (a[c], b[c]) for c in set(a) & set(b) if c not in SENTINELS and not _same(a[c], b[c])}
+def _numlab(d):
+    return {float(k): str(v) for k, v in (d or {}).items() if str(k).replace(".", "", 1).lstrip("-").isdigit()}
+def _range(s):
+    s = pd.to_numeric(s, errors="coerce") if s.dtype == object else s
+    if not pd.api.types.is_numeric_dtype(s): return None
+    s = s[s.notna() & ~s.isin(SENTINELS)]
+    return (float(s.min()), float(s.max())) if len(s) else None
+def _obs(s):
+    s = pd.to_numeric(s, errors="coerce") if s.dtype == object else s
+    return set(s.dropna().unique().tolist()) if pd.api.types.is_numeric_dtype(s) else set()
+def incompatible(y, z, vls, rng):
+    a, b = vls.get(y) or {}, vls.get(z) or {}
+    if a and b:
+        c = vl_conflicts_of(a, b)
+        if c: return f"{y} vs {z}: value labels differ -- " + "; ".join(f"{k:g}: {p!r} vs {q!r}" for k, (p, q) in sorted(c.items())[:3])
+    elif a or b:
+        lab, u = (a, z) if a else (b, y)
+        codes = [c for c in lab if c not in SENTINELS]
+        r = rng.get(u)
+        if len(codes) >= 2 and r and r[1] > max(codes):
+            return f"{y} vs {z}: {u} is unlabelled and its values reach {r[1]:g}, beyond the labelled codes ({min(codes):g}-{max(codes):g})"
+    return None
 KEEP_DOUBLE = ("wt", "final_popweight", "final_norm_weight", "weight", "hhweight", "normalized_weight", "finalweight")
 
 MODULE_MAP = {}
 # ------------------------------------------------------------------ generic pooling
-def version_groups(v, waves, labs):
-    if v in KEYS or v in FORCE_ALIGN or len(waves) == 1: return [list(waves)]
-    groups = []
+def version_groups(v, waves, labs, vls, rng):
+    """Greedy grouping of waves: a wave joins the first group whose variable label is similar (skipped for FORCE_ALIGN)
+    AND whose value labels are compatible with every member; FORCE_SPLIT groups are closed. Returns (groups, reasons)."""
+    if v in KEYS or len(waves) == 1: return [list(waves)], []
+    forced = {}
+    for i, g in enumerate(FORCE_SPLIT.get(v, [])):
+        for w in ([g] if not isinstance(g, list) else g): forced[w] = i
+    groups, reasons = [], []
     for w in waves:
-        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append(("__forced__", [w])); continue   # closed group: nothing else may join it
+        if w in forced:
+            key = ("__forced__", forced[w])
+            for rep, ws in groups:
+                if rep == key: ws.append(w); break
+            else: groups.append((key, [w])); reasons.append(f"{w}: FORCE_SPLIT")
+            continue
         for rep, ws in groups:
-            if rep != "__forced__" and (not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD): ws.append(w); break
+            if isinstance(rep, tuple): continue
+            if v not in FORCE_ALIGN and labs[w] and rep and label_similarity(labs[w], rep) < SIM_THRESHOLD:
+                reasons.append(f"{w} vs {ws[0]}: variable label differs ({labs[w][:40]!r} vs {rep[:40]!r})"); continue
+            why = next((x for z in ws for x in [incompatible(w, z, vls, rng)] if x), None)
+            if why: reasons.append(why); continue
+            ws.append(w); break
         else: groups.append((labs[w], [w]))
     groups.sort(key=lambda g: (-len(g[1]), -max(CS_ORDER.get(x, 0) for x in g[1])))
-    return [ws for _, ws in groups]
+    return [ws for _, ws in groups], (reasons if len(groups) > 1 else [])
 CS_ORDER = {w: i for i, w in enumerate(CS)}
 
 def pool(files, out_name, label, unit):
@@ -48,16 +105,21 @@ def pool(files, out_name, label, unit):
         log.info("  loaded %-10s %-55s %9s rows x %4d", w, f.name, f"{len(df):,}", df.shape[1])
     waves = list(files)
     allvars = sorted({c for df in data.values() for c in df.columns})
-    decisions, colname, vl_conflicts, var_labels, value_labels = {}, {}, {}, {}, {}
+    decisions, colname, vl_conflicts, var_labels, value_labels, stale_labels = {}, {}, {}, {}, {}, {}
     for v in allvars:
         ws = [w for w in waves if v in data[w].columns]
         labs = {w: (labels[w].get(v) or "").strip() for w in ws}
-        groups = version_groups(v, ws, labs); versions = {}
+        vls = {w: _numlab(vlabs[w].get(v)) for w in ws}; rng = {w: _range(data[w][v]) for w in ws}
+        groups, reasons = version_groups(v, ws, labs, vls, rng); versions = {}
+        stale = {w: sorted(_obs(data[w][v]) - set(vls[w]) - SENTINELS)[:20] for w in ws if len(set(vls[w]) - SENTINELS) >= 3}
+        stale = {w: s for w, s in stale.items() if s}
+        if stale: stale_labels[v] = stale
         for i, g in enumerate(groups):
             name = v if i == 0 else f"{v[:28]}_v{i + 1}"; versions[name] = g
             for w in g: colname[(v, w)] = name
-        decisions[v] = {"waves": ws, "versions": versions, "labels_by_wave": labs, "reference_label": labs[groups[0][-1]]}
-        if len(groups) > 1: log.info("  VERSIONS %s: %s", v, versions)
+        decisions[v] = {"waves": ws, "versions": versions, "labels_by_wave": labs, "reference_label": labs[groups[0][-1]], "split_reasons": reasons}
+        if len(groups) > 1: log.info("  VERSIONS %s: %s | %s", v, {k: len(g) for k, g in versions.items()}, " / ".join(reasons[:2]))
+    if stale_labels: log.info("  %d variables with codes observed outside their own value labels (stale labels)", len(stale_labels))
     frames = []
     for w in waves:
         df, vl, vv = data[w].copy(), labels[w], vlabs[w]
@@ -89,9 +151,9 @@ def pool(files, out_name, label, unit):
             if "wt" in data[w].columns: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
     write_dta(out, P["final"] / out_name, var_labels, value_labels, label, log)
     return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "decisions": decisions,
-            "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}}
+            "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 
-summary = {"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "files": {}}
+summary = {"threshold": SIM_THRESHOLD, "vl_threshold": VL_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "files": {}}
 inter = P["inter"]
 for unit in ("household", "woman", "child", "village"):
     files = {w: inter / f"CFSVA_{w}_{unit}_clean.dta" for w in CS if (inter / f"CFSVA_{w}_{unit}_clean.dta").exists()}

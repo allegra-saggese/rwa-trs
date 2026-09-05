@@ -3143,12 +3143,12 @@
     "s1113": "How did the infrastructure",
     "s1114": "If none of your household members participated in any cash",
     "s121a": "Are there women between 15 and 49 years old in this househol",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "sector": "Sector (1101-5715, NISR codes; where shipped)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "cluster": "Village / cluster id (zid, as shipped)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -7502,7 +7502,10 @@
     "cluster": "zid",
     "wt": "hhweight"
    },
-   "out": "CFSVA_2006_household_clean.dta"
+   "out": "CFSVA_2006_household_clean.dta",
+   "unit": "household",
+   "hhid_nonmissing": 2783,
+   "cluster_nonmissing": 2783
   },
   "woman": {
    "file": "Data/CFSVA_2006_june10_section12.sav",
@@ -7586,9 +7589,9 @@
     "s1215": "12.15 Is the woman pregnant",
     "s1216": "12.16 Mother's height",
     "s1217": "12.17 Mother's weight",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
+    "cluster": "Village / cluster id (zid, as shipped)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -7762,7 +7765,10 @@
     "cluster": "zid",
     "wt": "hhweight"
    },
-   "out": "CFSVA_2006_woman_clean.dta"
+   "out": "CFSVA_2006_woman_clean.dta",
+   "unit": "woman",
+   "hhid_nonmissing": 3671,
+   "cluster_nonmissing": 3671
   },
   "child": {
    "file": "Data/CFSVA_2006_june10_section13_mg.sav",
@@ -7868,9 +7874,9 @@
     "waste": "Wasting Categories",
     "stunt": "Stunting Categories",
     "underw": "Underweight categories",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
-    "cluster": "Village / cluster id (as shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
+    "cluster": "Village / cluster id (zid, as shipped)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
@@ -7957,7 +7963,10 @@
     "cluster": "zid",
     "wt": "hhweight"
    },
-   "out": "CFSVA_2006_child_clean.dta"
+   "out": "CFSVA_2006_child_clean.dta",
+   "unit": "child",
+   "hhid_nonmissing": 2059,
+   "cluster_nonmissing": 2059
   }
  }
 }

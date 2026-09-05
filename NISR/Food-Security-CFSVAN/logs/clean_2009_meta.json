@@ -16,6 +16,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "id8",
     "s00cb",
@@ -258,6 +259,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "id8": "Numero d'Agent de saisie",
     "s00cb": "Agent de saisie",
@@ -496,13 +498,13 @@
     "s13q0": "Hari abana bafite munsi y'amezi 59",
     "s16ab": null,
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s1q2": {
@@ -1320,11 +1322,14 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
     "prov": "id1",
-    "cluster": "id6",
     "dist": "s00e (district name; closest spelling for variants such as RURINDO -> Rulindo)"
    },
-   "out": "CFSVA_2009_household_clean.dta"
+   "out": "CFSVA_2009_household_clean.dta",
+   "unit": "household",
+   "hhid_nonmissing": 5400,
+   "cluster_nonmissing": 5400
   },
   "woman": {
    "file": "Data/CFSVA_2009_section_12_female_15_49.sav",
@@ -1341,6 +1346,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "nr",
     "s12q2",
@@ -1369,6 +1375,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "nr": "No",
     "s12q2": "Izina ry'umugore ufite imyaka kuva 15 kugera 49",
@@ -1393,13 +1400,13 @@
     "s12q16": "12.16.Uburebure bw'uwo mubyeyi muri cm",
     "s12q17": "12.17.Ibiro by'uwo mubyeyi mur Kg",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s12q4": {
@@ -1531,10 +1538,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_woman_clean.dta"
+   "out": "CFSVA_2009_woman_clean.dta",
+   "unit": "woman",
+   "hhid_nonmissing": 6252,
+   "cluster_nonmissing": 6252
   },
   "child": {
    "file": "Data/CFSVA_2009_section_13_enfants.sav",
@@ -1551,6 +1561,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "ns",
     "s13q1a0",
@@ -1594,6 +1605,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "ns": "No",
     "s13q1a0": "13.1. Ese kuri ubu uracyonsa ?",
@@ -1633,13 +1645,13 @@
     "s13q30": "13.30.Yaba yarashyizwe muri gahunda mbonezamirire ?",
     "s13q31": "13.31.Niba ari yego, ni muhiye gahunda ?",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s13q1a0": {
@@ -1792,10 +1804,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_child_clean.dta"
+   "out": "CFSVA_2009_child_clean.dta",
+   "unit": "child",
+   "hhid_nonmissing": 7819,
+   "cluster_nonmissing": 7819
   },
   "village": {
    "file": "Data/CFSVA_2009_pam_community.sav",
@@ -1811,6 +1826,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "s00d",
     "s00e",
     "s00f",
@@ -1833,6 +1849,7 @@
     "id2": "AKARERE",
     "id4": "UMURENGE",
     "id5": "AKAGARI",
+    "id6": "ZD",
     "s00d": "Intara",
     "s00e": "Akarere",
     "s00f": "Umurenge",
@@ -1851,12 +1868,12 @@
     "q211": "2.11 - Ni igihe kingana iki mukoresha kugera ku isoko ribege",
     "q212": "2.12 - Ni igihe kingana iki mukoresha kugera ku isoko ribege",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
-    "dist": "District (11-57, NISR codes)"
+    "dist": "District (11-57, NISR codes)",
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)"
    },
    "value_labels": {
     "q1": {
@@ -1931,11 +1948,14 @@
     }
    },
    "source": {
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
     "prov": "id1",
-    "cluster": "id6",
     "dist": "s00e (district name; closest spelling for variants such as RURINDO -> Rulindo)"
    },
-   "out": "CFSVA_2009_village_clean.dta"
+   "out": "CFSVA_2009_village_clean.dta",
+   "unit": "village",
+   "hhid_nonmissing": 0,
+   "cluster_nonmissing": 427
   },
   "s10b": {
    "file": "Data/CFSVA_2009_s10b.sav",
@@ -1952,6 +1972,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "s10q2a",
     "s10q2b13",
@@ -1977,6 +1998,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "s10q2a": "URWEGO N'IMPAMVU",
     "s10q2b13": "NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? ALL",
@@ -1998,13 +2020,13 @@
     "s10q6b": "10.6.1.Ni iki mwakoze kugirango mwikure muri izo ngorane ?",
     "s10q7": "10.7.Kuri ubu urugo rwanyu rwabashije kwihaza mu biribwa ?",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s10q2a": {
@@ -2169,10 +2191,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s10b_clean.dta"
+   "out": "CFSVA_2009_s10b_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 5948,
+   "cluster_nonmissing": 5948
   },
   "s1_13_question": {
    "file": "Data/CFSVA_2009_s1_13_question.sav",
@@ -2189,6 +2214,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "no",
     "s1q13d",
@@ -2199,19 +2225,20 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "no": "No.",
     "s1q13d": "1.13.A. Igitsina",
     "s1q13e": "1.13.B.Imyaka",
     "s1q13f": "1.13.C.Bishwe ni iki",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s1q13d": {
@@ -2270,10 +2297,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s1_13_question_clean.dta"
+   "out": "CFSVA_2009_s1_13_question_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 5406,
+   "cluster_nonmissing": 5406
   },
   "s1_15_question": {
    "file": "Data/CFSVA_2009_s1_15_question.sav",
@@ -2290,6 +2320,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "np",
     "s1q15a",
@@ -2301,6 +2332,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "np": "No",
     "s1q15a": "1.15.A.Igitsina",
@@ -2308,13 +2340,13 @@
     "s1q15c": "1.15.C.Uko ameze",
     "s1q15d": "1.15.D.Sobanura",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s1q15a": {
@@ -2370,10 +2402,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s1_15_question_clean.dta"
+   "out": "CFSVA_2009_s1_15_question_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 5457,
+   "cluster_nonmissing": 5457
   },
   "s1_21question": {
    "file": "Data/CFSVA_2009_s1_21question.sav",
@@ -2390,6 +2425,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "nq",
     "s1q21a",
@@ -2400,19 +2436,20 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "nq": "No.",
     "s1q21a": "1.21.A.Mbwira igitsina cye ?",
     "s1q21b": "1.21.B.Mbwira imyaka yabo?",
     "s1q21c": "1.21.C.Mbwira ikiciro cye ?",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s1q21a": {
@@ -2466,10 +2503,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s1_21question_clean.dta"
+   "out": "CFSVA_2009_s1_21question_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 5894,
+   "cluster_nonmissing": 5894
   },
   "s3_17_question": {
    "file": "Data/CFSVA_2009_s3_17_question.sav",
@@ -2486,6 +2526,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "s3q17a1",
     "s3q17a",
@@ -2496,19 +2537,20 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "s3q17a1": "3.17.No",
     "s3q17a": "3.17.Amatungo",
     "s3q17b": "3.17.a.UMUBARE BOROYE",
     "s3q17c": "3.17.b.AYABO BWITE",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "prov": {
@@ -2553,10 +2595,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s3_17_question_clean.dta"
+   "out": "CFSVA_2009_s3_17_question_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 42309,
+   "cluster_nonmissing": 42309
   },
   "s4": {
    "file": "Data/CFSVA_2009_s4.sav",
@@ -2573,6 +2618,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "s4q0",
     "s4q1a",
@@ -2599,6 +2645,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "s4q0": "Code umurimo",
     "s4q1a": "A.1.Urwego rw'umurimo",
@@ -2621,13 +2668,13 @@
     "s4q41": "E.Ni ikihe kigereranyo cy'amafaranga yavuye muri uwo muimo m",
     "sq42": "F.Ukoresheje ijanisha erekana uko uwo murimo ubunganira mugu",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s4q1": {
@@ -2766,10 +2813,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s4_clean.dta"
+   "out": "CFSVA_2009_s4_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 21600,
+   "cluster_nonmissing": 21600
   },
   "s7": {
    "file": "Data/CFSVA_2009_s7.sav",
@@ -2786,6 +2836,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "code1",
     "s7q0",
@@ -2801,6 +2852,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "code1": "Code1",
     "s7q0": "Ibirango by'ibihingwa",
@@ -2812,13 +2864,13 @@
     "s7qb": "E.b.Iyo mushaka imbuto z'icyo gihingwa k'ingenzi muzibona mu",
     "s7q6": "F.Ni uwuhe mugabane w'umusaruro w'icyo gihingwa k'ingenzi wo",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s7q0": {
@@ -2901,10 +2953,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s7_clean.dta"
+   "out": "CFSVA_2009_s7_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 43200,
+   "cluster_nonmissing": 43200
   },
   "s8": {
    "file": "Data/CFSVA_2009_s8.sav",
@@ -2921,6 +2976,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "s8q0",
     "s8q1",
@@ -2933,6 +2989,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "s8q0": "CODE",
     "s8q1": "Mu minsi 30 ishize hari amafaranga yatanzwe ku... kugirango",
@@ -2941,13 +2998,13 @@
     "s8q4": "C.Ugereranyije ... mwaguranye ibindi bintu bifite agaciro k'",
     "code_hh": null,
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "prov": {
@@ -2992,10 +3049,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s8_clean.dta"
+   "out": "CFSVA_2009_s8_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 118800,
+   "cluster_nonmissing": 118800
   },
   "s8_823_32question": {
    "file": "Data/CFSVA_2009_s8_823_32question.sav",
@@ -3012,6 +3072,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "s8q01",
     "s8q01b",
@@ -3037,6 +3098,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "No HH",
     "s8q01": "CODE",
     "s8q01b": "IGIKORWA",
@@ -3058,13 +3120,13 @@
     "s8q25": "B.Ugeraranyije mwafashe... ku ideni gifite agaciro k'amafara",
     "s8q26": "C.Ugereranyije mwaguranye ibindi bintu bifite agaciro k'amaf",
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s8q23m": {
@@ -3161,10 +3223,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s8_823_32question_clean.dta"
+   "out": "CFSVA_2009_s8_823_32question_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 54000,
+   "cluster_nonmissing": 54000
   },
   "s9_question": {
    "file": "Data/CFSVA_2009_s9_question.sav",
@@ -3181,6 +3246,7 @@
     "id2",
     "id4",
     "id5",
+    "id6",
     "id7",
     "s9q3j",
     "s9q3k",
@@ -3200,6 +3266,7 @@
     "id2": "Akarere",
     "id4": "Umurenge",
     "id5": "Akagari",
+    "id6": "Agapande k'ibarura",
     "id7": "Numero y'urugo",
     "s9q3j": "No code",
     "s9q3k": "IBIRIBWA",
@@ -3215,13 +3282,13 @@
     "s9q3n": "2.1.Aho ibiribwa byakomotse   AHANDI",
     "code_hh": null,
     "prov": "Province (1-5, NISR codes)",
-    "cluster": "Village / cluster id (as shipped)",
     "survey": "Source survey",
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "dist": "District (11-57, NISR codes)",
-    "hhid": "Household id (unique within wave; composite string in 2009)"
+    "cluster": "Enumeration zone: province-district-zone composite (ID1-ID2-ID6; ID6 alone repeats across districts); 449 zones of 12 households (one of 24)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)"
    },
    "value_labels": {
     "s9q3c": {
@@ -3314,10 +3381,13 @@
    },
    "source": {
     "hhid": "composite id1-id2-id4-id5-id6-id7",
-    "prov": "id1",
-    "cluster": "id6"
+    "cluster": "composite id1-id2-id6 (province-district-zone; id6 alone repeats across districts)",
+    "prov": "id1"
    },
-   "out": "CFSVA_2009_s9_question_clean.dta"
+   "out": "CFSVA_2009_s9_question_clean.dta",
+   "unit": "other",
+   "hhid_nonmissing": 118800,
+   "cluster_nonmissing": 118800
   }
  }
 }

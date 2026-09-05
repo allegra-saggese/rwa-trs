@@ -2166,10 +2166,10 @@
     "fg_vitacat": "FG_VitACategory",
     "fg_proteincat": "FG_ProteinCategory",
     "fg_hironcat": "FG_HIronCategory",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
     "survey": "Source survey",
     "year": "Survey year",
@@ -4652,7 +4652,10 @@
     "wt": "finalweight",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2021_household_clean.dta"
+   "out": "CFSVA_2021_household_clean.dta",
+   "unit": "household",
+   "hhid_nonmissing": 9000,
+   "cluster_nonmissing": 0
   },
   "child": {
    "file": "Microdata/CFSVA_2021_cfsvahh2021_under_5_childwithmother.dta",
@@ -4901,7 +4904,7 @@
     "wasting_final": "Wasting_final",
     "globalwasting": "Global_Wasting",
     "food_shortage": null,
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
@@ -4909,7 +4912,7 @@
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)"
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)"
    },
    "value_labels": {
     "s13_01_5": {
@@ -5482,7 +5485,10 @@
     "dist": "s0_d_dist",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2021_child_clean.dta"
+   "out": "CFSVA_2021_child_clean.dta",
+   "unit": "child",
+   "hhid_nonmissing": 5776,
+   "cluster_nonmissing": 0
   },
   "village": {
    "file": "Microdata/CFSVA_2021_VILLAGE.dta",
@@ -6395,7 +6401,10 @@
     "dist": "s0_d_dist",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2021_village_clean.dta"
+   "out": "CFSVA_2021_village_clean.dta",
+   "unit": "village",
+   "hhid_nonmissing": 0,
+   "cluster_nonmissing": 0
   }
  }
 }

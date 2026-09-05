@@ -2144,10 +2144,10 @@
     "rcsimealadult_yes": "Restricted consumption by adults in order for small children to eat",
     "wi_cat": "Household wealth index",
     "dup": null,
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)",
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
     "survey": "Source survey",
     "year": "Survey year",
@@ -6584,7 +6584,10 @@
     "wt": "finalweight",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2024_household_clean.dta"
+   "out": "CFSVA_2024_household_clean.dta",
+   "unit": "household",
+   "hhid_nonmissing": 9000,
+   "cluster_nonmissing": 0
   },
   "woman": {
    "file": "Microdata/stata/CFSVA_2024_hh_women_15_49_years.dta",
@@ -6735,7 +6738,7 @@
     "qs12_17": "QS12_17 Any fortified blended foods (Nootri-mama, Nootri family, Sosoma)",
     "mddwless5": "MDD-Women",
     "dup": null,
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "survey": "Source survey",
@@ -6743,7 +6746,7 @@
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)"
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)"
    },
    "value_labels": {
     "s12_01_4": {
@@ -6983,7 +6986,10 @@
     "prov": "s0_c_prov",
     "dist": "s0_d_dist"
    },
-   "out": "CFSVA_2024_woman_clean.dta"
+   "out": "CFSVA_2024_woman_clean.dta",
+   "unit": "woman",
+   "hhid_nonmissing": 6891,
+   "cluster_nonmissing": 0
   },
   "child": {
    "file": "Microdata/stata/CFSVA_2024_hh_child_6_59_months.dta",
@@ -7206,7 +7212,7 @@
     "stunting": "stunted Stunting results",
     "wasting": "wasted Wasting results",
     "underweight": "underweight Underweight results",
-    "hhid": "Household id (unique within wave; composite string in 2009)",
+    "hhid": "Household id (unique within wave; composite string in 2009; absent on the 2015 woman / child files, which carry nutrition-form ids only)",
     "prov": "Province (1-5, NISR codes)",
     "dist": "District (11-57, NISR codes)",
     "urban": "Area of residence (1 urban, 2 rural; where shipped)",
@@ -7214,7 +7220,7 @@
     "year": "Survey year",
     "wave": "Wave (survey year)",
     "unit": "Unit of the file (household, woman, child, village)",
-    "wt": "Household weight as shipped (see DECISIONS: normalised in 2006/2012, none in 2009)"
+    "wt": "Household weight as shipped (normalised in 2006, population expansion 2012, household expansion 2015-2024, none in 2009)"
    },
    "value_labels": {
     "s13_01_5": {
@@ -7673,7 +7679,10 @@
     "dist": "s0_d_dist",
     "urban": "urbanrural"
    },
-   "out": "CFSVA_2024_child_clean.dta"
+   "out": "CFSVA_2024_child_clean.dta",
+   "unit": "child",
+   "hhid_nonmissing": 4715,
+   "cluster_nonmissing": 0
   }
  }
 }
