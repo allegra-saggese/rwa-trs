@@ -1,0 +1,336 @@
+{
+ "source": "old Stata outputs built 3 Jul 2026 (clean.do/merge.do, archived in _archive/code-NISR-stata-2026-09-04)",
+ "files": [
+  {
+   "file": "LFS_2017_clean.dta",
+   "n_rows": 77761,
+   "n_vars": 234,
+   "file_date": "Rwanda LFS 2017 - cleaned/harmonized",
+   "by_year": {
+    "2017": {
+     "n": 77761,
+     "sum_wt_annual": 11628680.85194683,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 23257361.676322736,
+     "wpop_wap16": 6761080.333334923,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 40314,
+      "1": 37447
+     },
+     "age_min": 0.0,
+     "age_max": 99.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2018_clean.dta",
+   "n_rows": 76670,
+   "n_vars": 193,
+   "file_date": "Rwanda LFS 2018 - cleaned/harmonized",
+   "by_year": {
+    "2018": {
+     "n": 76670,
+     "sum_wt_annual": 11889219.404836178,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 23778438.840995498,
+     "wpop_wap16": 6966095.775877476,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 39604,
+      "1": 37066
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2019_clean.dta",
+   "n_rows": 81778,
+   "n_vars": 243,
+   "file_date": "Rwanda LFS 2019 - cleaned/harmonized",
+   "by_year": {
+    "2019": {
+     "n": 81778,
+     "sum_wt_annual": 12216163.052369595,
+     "miss_wt_annual": 0,
+     "wpop_wap16": 7231536.233950138,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 42441,
+      "1": 39337
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2020_clean.dta",
+   "n_rows": 70172,
+   "n_vars": 55,
+   "file_date": "Rwanda LFS 2020 - cleaned/harmonized",
+   "by_year": {
+    "2020": {
+     "n": 70172,
+     "sum_wt_annual": 12499074.325333953,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 49996297.3393677,
+     "wpop_wap16": 7472601.265573025,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 36288,
+      "1": 33884
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2021_clean.dta",
+   "n_rows": 71947,
+   "n_vars": 250,
+   "file_date": "Rwanda LFS 2021 - cleaned/harmonized",
+   "by_year": {
+    "2021": {
+     "n": 71947,
+     "sum_wt_annual": 12786879.23514837,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 51147516.94059348,
+     "wpop_wap16": 7718871.174533963,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 37295,
+      "1": 34652
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2022_clean.dta",
+   "n_rows": 70424,
+   "n_vars": 243,
+   "file_date": "Rwanda LFS 2022 - cleaned/harmonized",
+   "by_year": {
+    "2022": {
+     "n": 70424,
+     "sum_wt_annual": 13078028.4747653,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13078028.4747653,
+     "wpop_wap16": 7963586.276710033,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 36594,
+      "1": 33830
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2023_clean.dta",
+   "n_rows": 71849,
+   "n_vars": 243,
+   "file_date": "Rwanda LFS 2023 - cleaned/harmonized",
+   "by_year": {
+    "2023": {
+     "n": 71849,
+     "sum_wt_annual": 13362858.116260052,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13362858.116260052,
+     "wpop_wap16": 8071961.776919842,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 37336,
+      "1": 34513
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2024_clean.dta",
+   "n_rows": 102562,
+   "n_vars": 201,
+   "file_date": "Rwanda LFS 2024 - cleaned/harmonized",
+   "by_year": {
+    "2024": {
+     "n": 102562,
+     "sum_wt_annual": 13658301.57718277,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13658301.57718277,
+     "wpop_wap16": 8303568.392230988,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 53246,
+      "1": 49316
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_2025_clean.dta",
+   "n_rows": 100852,
+   "n_vars": 211,
+   "file_date": "Rwanda LFS 2025 - cleaned/harmonized",
+   "by_year": {
+    "2025": {
+     "n": 100852,
+     "sum_wt_annual": 13958541.763772964,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13958541.763772964,
+     "wpop_wap16": 8541209.542886734,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 52698,
+      "1": 48154
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  },
+  {
+   "file": "LFS_panel_2017_2025.dta",
+   "n_rows": 724015,
+   "n_vars": 419,
+   "file_date": "Rwanda LFS pooled panel 2017-2025 (harmonized repeated cross-section)",
+   "by_year": {
+    "2017": {
+     "n": 77761,
+     "sum_wt_annual": 11628680.85194683,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 23257361.676322736,
+     "wpop_wap16": 6761080.333334923,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 40314,
+      "1": 37447
+     },
+     "age_min": 0.0,
+     "age_max": 99.0
+    },
+    "2018": {
+     "n": 76670,
+     "sum_wt_annual": 11889219.404836178,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 23778438.840995498,
+     "wpop_wap16": 6966095.775877476,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 39604,
+      "1": 37066
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2019": {
+     "n": 81778,
+     "sum_wt_annual": 12216163.052369595,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 0.0,
+     "wpop_wap16": 7231536.233950138,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 42441,
+      "1": 39337
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2020": {
+     "n": 70172,
+     "sum_wt_annual": 12499074.325333953,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 49996297.3393677,
+     "wpop_wap16": 7472601.265573025,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 36288,
+      "1": 33884
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2021": {
+     "n": 71947,
+     "sum_wt_annual": 12786879.23514837,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 51147516.94059348,
+     "wpop_wap16": 7718871.174533963,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 37295,
+      "1": 34652
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2022": {
+     "n": 70424,
+     "sum_wt_annual": 13078028.4747653,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13078028.4747653,
+     "wpop_wap16": 7963586.276710033,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 36594,
+      "1": 33830
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2023": {
+     "n": 71849,
+     "sum_wt_annual": 13362858.116260052,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13362858.116260052,
+     "wpop_wap16": 8071961.776919842,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 37336,
+      "1": 34513
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2024": {
+     "n": 102562,
+     "sum_wt_annual": 13658301.57718277,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13658301.57718277,
+     "wpop_wap16": 8303568.392230988,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 53246,
+      "1": 49316
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    },
+    "2025": {
+     "n": 100852,
+     "sum_wt_annual": 13958541.763772964,
+     "miss_wt_annual": 0,
+     "sum_wt_round": 13958541.763772964,
+     "wpop_wap16": 8541209.542886734,
+     "n_dist": 30,
+     "A01_counts": {
+      "2": 52698,
+      "1": 48154
+     },
+     "age_min": 0.0,
+     "age_max": 95.0
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+20:38:40 01_clean INFO ==== 01_clean | run 20260904-203840_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+20:38:40 01_clean INFO ---------------- 2020 ----------------
+20:38:40 01_clean INFO read LFS_2020.dta: 70,172 rows x 51 vars
+20:38:40 01_clean INFO name collision 'district' vs 'District' -> dropping 'district' (all missing)
+20:38:40 01_clean INFO prov derived from dist // 10 (province not shipped in 2020)
+20:38:40 01_clean INFO destring d05 (20440 values)
+20:38:40 01_clean INFO destring indd03 (20440 values)
+20:38:40 01_clean INFO destring wap16 (42106 values)
+20:38:40 01_clean INFO destring employed16 (42106 values)
+20:38:40 01_clean INFO destring ur1 (24827 values)
+20:38:40 01_clean INFO destring lfpr (42106 values)
+20:38:40 01_clean INFO destring sub (42106 values)
+20:38:40 01_clean INFO destring plf (8953 values)
+20:38:40 01_clean INFO destring youth (12685 values)
+20:38:40 01_clean INFO destring young (19817 values)
+20:38:40 01_clean INFO destring main_sect (20440 values)
+20:38:40 01_clean INFO destring attained (45294 values)
+20:38:40 01_clean INFO destring age10 (42106 values)
+20:38:40 01_clean INFO destring usualhrs (20440 values)
+20:38:40 01_clean INFO destring act_hrs (20051 values)
+20:38:41 01_clean INFO destring acthrs (20051 values)
+20:38:41 01_clean INFO destring ya (42106 values)
+20:38:41 01_clean INFO destring status1 (45039 values)
+20:38:41 01_clean INFO destring tvt (32961 values)
+20:38:41 01_clean INFO destring d03b1 (20440 values)
+20:38:41 01_clean INFO PASS  row count unchanged (70,172)
+20:38:41 01_clean INFO PASS  wt present and > 0 on every row
+20:38:41 01_clean INFO PASS  30 districts (found 30)
+20:38:41 01_clean INFO PASS  5 provinces (found 5)
+20:38:41 01_clean INFO PASS  sex (a01) in {1,2}
+20:38:41 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+20:38:41 01_clean INFO PASS  one head per household-interview: 99.9777% of 8,986 (0 heads: 2, 2+: 0)
+20:38:41 01_clean ERROR FAIL  (hhid, interview, pid) unique: 2 duplicates

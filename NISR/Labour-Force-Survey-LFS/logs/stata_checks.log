@@ -1,0 +1,48 @@
+
+. * stata_checks.do -- recompute LFS check statistics in Stata (written by 03_c
+> hecks.py)
+. clear all
+
+. set more off
+
+. use "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - T
+> RS/data/Publicly-Available-NISR/Labour-Force-Survey-LFS/3_Final/LFS_pooled_pe
+> rson.dta", clear
+(Rwanda LFS 2017-2025 pooled person-interview file (repeated cross-section))
+
+. gen double wwap = wap16 * wt
+(290,406 missing values generated)
+
+. gen byte male = sex == 1
+
+. gen byte female = sex == 2
+
+. gen long one = 1
+
+. collapse (sum) n=one sum_wt=wt wpop_wap16=wwap male female, by(year)
+
+. export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Fo
+> rce-Survey-LFS/logs/stata_checks.csv", replace
+(file
+    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/
+    > stata_checks.csv not found)
+file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/s
+> tata_checks.csv saved
+
+. use "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - T
+> RS/data/Publicly-Available-NISR/Labour-Force-Survey-LFS/3_Final/LFS_pooled_ho
+> usehold.dta", clear
+(Rwanda LFS 2017-2025 pooled household-interview file)
+
+. collapse (count) n_hh=hhid (sum) hhsize_sum=hhsize, by(year)
+
+. export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Fo
+> rce-Survey-LFS/logs/stata_checks_hh.csv", replace
+(file
+    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/
+    > stata_checks_hh.csv not found)
+file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/s
+> tata_checks_hh.csv saved
+
+. 
+end of do-file
