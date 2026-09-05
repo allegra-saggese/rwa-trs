@@ -26,7 +26,7 @@ Last updated: 2026-09-04
 | Population and Housing Census (PHC) | 2002, 2012, 2022 | HAVE, all three |
 | EICV | 7 waves | HAVE 5 (EICV1,2,3,4,5,7) — **EICV6 (2020/21) missing** |
 | Labour Force Survey | annual 2017–2025 | HAVE, all nine years |
-| **Establishment Census (EC)** | 2011, 2014, 2017, 2020, 2023 | **MISSING** — folder created at `NISR/REC/` |
+| **Establishment Census (EC)** | 2011, 2014, 2017, 2020, 2023 | **MISSING** — folder created at `Establishment-Census-EC/` |
 | **Integrated Business Enterprise Survey (IBES)** | annual 2014–2024 | **MISSING** — no folder yet |
 
 **RDB project data is the binding gap.** TRS project location, category, amount,
@@ -36,7 +36,7 @@ The proposal's own note anticipates this: an RDB letter of approval, then
 district governments who hold the implementation records.
 
 **EICV6** is listed as a wave in the proposal but is absent from the NISR public
-catalogue (see `Publicly Available NISR/EICV/README.txt`). The proposal already
+catalogue (see `Publicly-Available-NISR/EICV/README.txt`). The proposal already
 flags it covered ~40% of the planned sample with limited variables due to COVID.
 
 ---

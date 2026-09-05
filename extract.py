@@ -498,59 +498,82 @@ def _eicv7_unit(path: Path) -> str | None:
 
 
 def extract_eicv() -> dict[str, pd.DataFrame]:
-    """Load EICV7 files from data/raw/eicv/ and write one tidy CSV per unit.
+    """Load EICV files from the Dropbox EICV folder.
 
-    Files are identified by their F-number prefix rather than by column
-    sniffing, because all 21 share an identical identifier block. Access
-    requires a NISR account, so nothing is downloaded: place the files in
-    data/raw/eicv/.
+    The folder holds three different kinds of file and they need different
+    handling:
 
-    District names are normalised and joined to `district_id` so survey data
-    lines up with the climate panel without a manual crosswalk.
+      Raw/<round>/     original NISR distribution, still zipped. EICV7's sections
+                       use the F-number scheme (F1..F21) that EICV7_FILES maps.
+      Cleaned/         one harmonised person-level file per round, built by the
+                       project's own Stata pipeline (EICV3_clean.dta etc).
+      Merged Panel/    the pooled cross-section and the EICV3-4 panel.
+
+    An earlier version applied the F-number matcher to everything and rejected
+    every cleaned file, because those names carry no F-number. Files are now
+    routed by which subfolder they sit in.
     """
     import pyreadstat
 
     src = NISR_ROOT / "Household-Living-Conditions-EICV"
-    files = sorted([p for p in src.glob("**/*") if p.suffix.upper() in {".DTA", ".SAV"}]) if src.exists() else []
+    if not src.exists():
+        _log(f"eicv: {src} not found - skipping")
+        return {}
+
+    files = sorted(p for p in src.glob("**/*")
+                   if p.suffix.upper() in {".DTA", ".SAV"})
     if not files:
-        _log("eicv: no files in data/raw/eicv/ - skipping "
-             "(request at microdata.statistics.gov.rw, then place files there)")
+        _log("eicv: no .dta/.sav found (Raw/ rounds are still zipped) - skipping")
         return {}
 
     _log(f"eicv: {len(files)} file(s)")
-
-    # District id lookup, so survey geography joins to the spatial spine.
     districts = load_districts()
     key_to_id = dict(zip(districts["district_key"], districts["district_id"]))
 
     out: dict[str, pd.DataFrame] = {}
     for fp in files:
-        unit = _eicv7_unit(fp)
-        if unit is None:
-            _log(f"  ? {fp.name}: no recognised F-number prefix, skipping")
+        parts = {x.lower() for x in fp.relative_to(src).parts}
+        if "cleaned" in parts:
+            kind, unit = "cleaned", fp.stem.replace("_clean", "").lower()
+        elif "merged panel" in parts:
+            kind, unit = "merged", fp.stem.lower()
+        else:
+            unit = _eicv7_unit(fp)
+            if unit is None:
+                _log(f"  ? {fp.name}: raw file with no recognised F-number, skipping")
+                continue
+            kind = "raw"
+
+        df = None
+        reader = pyreadstat.read_dta if fp.suffix.upper() == ".DTA" else pyreadstat.read_sav
+        for enc in (None, "latin1", "cp1252"):
+            try:
+                kw = {"apply_value_formats": True}
+                if enc:
+                    kw["encoding"] = enc
+                df, _ = reader(fp, **kw)
+                break
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+        if df is None:
+            _log(f"  ! {fp.name}: {str(last)[:70]}")
             continue
 
-        if fp.suffix.upper() == ".DTA":
-            df, _ = pyreadstat.read_dta(fp, apply_value_formats=True)
-        else:
-            df, _ = pyreadstat.read_sav(fp, apply_value_formats=True)
-
-        if "district" in df.columns:
-            df["district_key"] = df["district"].map(normalise_name)
+        dcol = next((c for c in df.columns if str(c).strip().lower() == "district"), None)
+        if dcol:
+            df["district_key"] = df[dcol].map(normalise_name)
             df["district_id"] = df["district_key"].map(key_to_id)
-            unmatched = df["district_id"].isna().sum()
-            if unmatched:
-                bad = sorted(df.loc[df["district_id"].isna(), "district"].dropna().unique())[:5]
-                _log(f"  ! {fp.name}: {unmatched:,} row(s) with unmatched district {bad}")
+            n = df["district_id"].notna().sum()
+            geo = f"{n:,}/{len(df):,} geocoded"
+        else:
+            geo = "no district column"
 
         df["source_file"] = fp.name
-        out[unit] = df
-        dest = PROC / f"eicv7_{unit}.csv"
+        out[f"{kind}_{unit}"] = df
+        dest = PROC / f"eicv_{kind}_{normalise_name(unit)[:50]}.csv"
         df.to_csv(dest, index=False)
-        _log(f"  {fp.name}: {unit}, {len(df):,} rows x {df.shape[1]} cols -> {dest.name}")
+        _log(f"  [{kind:7s}] {fp.name[:38]:40s} {len(df):>8,} rows  {geo}")
 
-    if "poverty" in out:
-        build_eicv7_district_welfare(out["poverty"])
     return out
 
 

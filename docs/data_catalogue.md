@@ -23,7 +23,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Note** This is the treatment variable. No public substitute. Gate-level visitor counts are required for the tourism-exposure measure; park totals alone would not identify it.
 
 ### Population and Housing Census (PHC) ✅
-- **Location** `$DB/Publicly Available NISR/Census/`
+- **Location** `$DB/Publicly-Available-NISR/Census-PHC/`
   - `Raw/2002/Census_2002.sav` — 814,432 rows × 112 vars
   - `Raw/2012/Census_2012.dta` — 1,038,369 × 115
   - `Raw/2022/Census_2022.dta` — 1,313,015 × 250
@@ -37,7 +37,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Weights** `wt` (person, sums to 13,245,753 against 13,246,394 published) and `wt_hh`. The microdata is a ~10% sample; unweighted counts are not population.
 
 ### EICV ✅ (6 of 7 waves)
-- **Location** `$DB/Publicly Available NISR/EICV/`
+- **Location** `$DB/Publicly-Available-NISR/Household-Living-Conditions-EICV/`
   - `Raw/EICV1..EICV7_VUP/` — original NISR zips + questionnaires
   - `Cleaned/EICV3_clean.dta` 68,398 × 174 · `EICV4_CS` 66,081 × 130 · `EICV4_VUP` 10,606 × 128 · `EICV5_CS` 64,314 × 119 · `EICV5_VUP` 6,596 × 120 · `EICV7_CS` 62,110 × 161 · `EICV7_VUP` 15,039 × 161
   - `Merged Panel/EICV_pooled_crosssection.dta` — 260,903 × 539
@@ -48,7 +48,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Comparability** EICV4↔EICV5 pool cleanly. EICV3→EICV4 and EICV5→EICV7 are methodological breaks. EICV7 poverty is on a revised basis and a January 2024 price base — NISR explicitly cautions against comparing it to earlier rounds. See `eicv_rounds.md`.
 
 ### Labour Force Survey (LFS) ✅
-- **Location** `$DB/Publicly Available NISR/LFS/`
+- **Location** `$DB/Publicly-Available-NISR/Labour-Force-Survey-LFS/`
   - `Raw/2017..2025/LFS_<year>.dta` + questionnaires
   - `Cleaned/LFS_<year>_clean.dta` — 70,172 to 102,562 rows each
   - `Merged Panel/LFS_panel_2017_2025.dta` — 724,015 × 419
@@ -57,15 +57,17 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Contents** Activity status; ISCO occupation and ISIC industry; formal/informal employment, contract type; time-related underemployment; entrepreneurship
 - **Note** The more consistent labour series over time than the EICV employment module. Finest geography is **district**; `psu` (1,242) is anonymised. LFS 2020 is a reduced file (55 vars) and 2019 has no urban variable.
 
-### Establishment Census (EC) ⏳
-- **Location** `$DB/Publicly Available NISR/REC/` — currently README only; download in progress
+### Establishment Census (EC) ✅ (all 5 rounds)
+- **Location** `$DB/Publicly-Available-NISR/Establishment-Census-EC/Raw/<year>/`
+  - `EC_2011.sav` 127,662 establishments · `EC_2014.sav` 77,151 · `EC_2017.sav` 190,288 · `EC_2020.dta` 232,283 · `EC_2023.dta` 269,326
+- **Geographic depth degrades by round** 2011 → village · 2014 → **sector** (national code, matches Census 416/416) · 2017/2020/2023 → district only. `q1_5_1` in later rounds is *village type*, not a village id. EC 2011's ID2/ID3 are province-relative, not national codes, and are unmapped
 - **Coverage** 5 rounds: 2011, 2014, 2017, 2020, 2023
 - **Source** NISR catalog ids **62** (2011), **67** (2014), **87** (2017), **94** (2020), **112** (2023). Login required; public study pages carry questionnaires and reports only
 - **Contents** All economic activities by size, formal/informal status; location; ISIC; employment; year of establishment
 - **Why it matters** Full count with establishment location — the operative firm-side source, since IBES cannot support sub-provincial work
 
 ### IBES ✅ (aggregates only)
-- **Location** `$DB/Publicly Available NISR/IBES/`
+- **Location** `$DB/Publicly-Available-NISR/Business-Survey-IBES/`
   - `IBES2024_Main_Report_English.pdf` (3.9 MB)
   - `IBES2024_Tables_and_Figures.xlsx` (517 KB, 5 sheets)
 - **Coverage** 2024 report; series runs 2014–2024 (2019 and 2021 combined)
@@ -73,16 +75,25 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Contents** Firm employment by sex; income, expenditure, assets, equity, liabilities, access to finance; ownership residency; legal form; ISIC section
 - **Hard limit** The only geographic breakdown in the published tables is the **five provinces**. No district, no sector. Cannot support a sector-level design; use as national/provincial context only.
 
-### Agriculture Household Survey (AHS) ✅ (1 of 3 waves)
-- **Location** `$DB/Publicly Available NISR/AHS-2024-microdata/` — 14 section `.dta` files + DDI PDF
+### Agriculture Household Survey (AHS) ✅ (3 waves)
+- **Location** `$DB/Publicly-Available-NISR/Agriculture-Survey-AHS/AHS-2024-microdata/` — 14 section `.dta` files + DDI PDF
   - Section 1 household members 16,292 × 142 · Section 2 land tenure 23,266 × 20 · Sections 3–4 crops/inputs 32,616 × 331 · Section 5 fruits 9,193 · Section 6 extension 9,286 · Section 7 tools 9,981 · Section 8 sustainable ag 3,724 · Sections 9–12 livestock 9,947 · milk 12,209 · eggs 19,077 · honey 9,387 · credits 5,224 · savings 10,342 · Section 0 roster 3,724
-- **Coverage** **2024 only — but 2017 and 2020 also exist and are not held**
-- **Other waves available** AHS 2017 (NISR catalog id **90**), AHS 2020 (id **101**), AHS 2024 (id **123**, held). Also Seasonal Agriculture Survey 2021 (id **102**) and 2022 (id **103**)
+- **Coverage** 2017, 2020, 2024 — all three held (`Agriculture-Survey-AHS/AHS-<year>-microdata/`)
+- **Not poolable as-is** Identifiers differ per wave: 2017 `idquest` + `s0q1/s0q2`; 2020 `HHUID` + `s0q1/s0q2`; 2024 `hhid`/`clust` + named `province`/`district`. Match on question content, not code
 - **Source** NISR
 - **Why it matters** Carries the crop area, yield and agricultural-income content EICV7 dropped when its agriculture module was discontinued. Geography: district.
 
+### Seasonal Agriculture Survey (SAS) ✅ (2 waves)
+- **Location** `$DB/Publicly-Available-NISR/Season-Agriculture-Survey-SAS/SAS-{2019,2020}-microdata/` — 33 `.dta` files
+- **Coverage** 2019, 2020. Not held: SAS 2021 (id **102**), SAS 2022 (id **103**)
+- **Source** NISR
+- **Unit** **PLOT within a sampled SEGMENT — not a household.** `Segment_ID`, `s1q1` province, `s1q2` district, `s1q3` stratum, `s1q4` segment, `s2q1` plot, `s2q2` plot area m². No household id, so it does not join to AHS or EICV at household level
+- **Seasons** Files split by Season A (Sep–Feb), B (Mar–Jun), C (marshland). Stack deliberately — weights and definitions differ by season
+- **Why it matters** The agricultural area frame RCMRD Scheme II was meant to crosswalk to, and the only source of within-year seasonal variation
+
 ### DHS ⏳
-- **Location** `$DB/DHS/` — README only; access granted, download pending
+- **Location** `$DB/DHS/covariates/RWGC{62,81,8A,91}FL/` — 4 rounds of **Geographic Covariates**
+- **Wrong file type held** RWGC = covariates (DHSID, DHSCLUST, pre-computed population/aridity/temperature per cluster; 560 rows × 135 cols). **No latitude or longitude.** The GPS files are **RWGE##FL** — still needed
 - **Coverage** 5 rounds: 2000, 2005, 2010, 2014/15, 2019/20
 - **Source** dhsprogram.com
 - **Files to take** GE (GPS), HR (household), PR (member), IR (women), MR (men). Skip KR/BR unless child health is in scope
@@ -193,7 +204,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 ## Panel D — Geographic base layers
 
 ### NISR administrative boundaries ✅
-- **Location** `$DB/Publicly Available NISR/geodata-nisr/`
+- **Location** `$DB/Publicly-Available-NISR/geodata-nisr/`
   - `Village_Boundary_2022_4682352090287555743.zip` — 27 MB shapefile
   - `Village_Boundary_2022_924768113126413998.csv` — 14,823 rows
   - `Cell_Office_...zip`
