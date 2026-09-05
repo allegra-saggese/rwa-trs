@@ -4,8 +4,8 @@
 Per census: lower-case names, build the harmonised key block (survey year wave prov dist
 sector urban cluster hhid pid sex age wt wt_hh), attach NISR's current province / district /
 sector names as value labels, keep every other variable under its own name (2002: English
-variable labels from the questionnaire, French originals recorded), destring, downcast,
-back-check, write. Unit = person (public-use 10% household samples; see DECISIONS.md).
+variable and value labels from the questionnaire, French originals recorded; 2012: NISR recodes
+labelled, ISCO-08 titles on P25), record each variable's universe, destring, downcast, back-check, write. Unit = person (public-use 10% household samples; see DECISIONS.md).
 """
 import difflib, sys
 import numpy as np, pandas as pd
@@ -74,6 +74,157 @@ EN2002 = {
     "p00_mean": "NISR artefact: mean of P00 in household",
 }
 
+# --- 2002: English VALUE labels for the key block and the concept variables (relationship, residence,
+#     religion, disability, parents, education, literacy, activity, status in employment, institutional
+#     sector, marital status, fertility counts, housing block). Transcribed from the 2002 questionnaire
+#     (z_Documentation/2002/Census_2002_questionnaire_household.pdf), matched to the French SPSS labels by
+#     code. French originals stay in logs/clean_2002_meta.json (value_labels_original). Left in French
+#     on purpose (proper names / 3-digit ISCO-88 & ISIC Rev.3 lists not in the English documentation):
+#     p08 p10 (pre-2006 districts), p18 (field of study), p22 emploi_exerc (ISCO-88), p24 p241 (ISIC Rev.3).
+EN2002_VALUES = {
+    "p02": {1: "Head of household", 2: "Spouse of head", 3: "Child of head", 4: "Unrelated child brought up in the household",
+            5: "Father/mother of head", 6: "Brother/sister of head", 7: "Grandchild of head", 8: "Other relative of head", 9: "Not related to head"},
+    "p03": {1: "Present resident", 2: "Absent resident", 3: "Visitor", 4: "Collective household", 9: "Not stated"},
+    "p05a": {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August", 9: "September",
+             10: "October", 11: "November", 12: "December", 99: "Month of birth not stated"},
+    "p05b": {9999: "Year of birth not stated"},
+    "p07": {100: "Rwanda", 201: "Burundi", 202: "DR Congo (Congo-Kinshasa)", 203: "Uganda", 204: "Tanzania", 207: "Belgium", 212: "India"},
+    "p12": {1: "Catholic", 2: "Protestant", 3: "Adventist", 4: "Jehovah's Witness", 5: "Other Christian religion", 6: "Muslim",
+            7: "Traditional/animist", 8: "Other religion", 9: "No religion"},
+    "p13": {1: "No major handicap", 2: "Blind", 3: "Deaf/dumb", 4: "Infirmity of the legs/feet", 5: "Infirmity of the arms/hands",
+            6: "Mental deficiency", 7: "Trauma", 8: "Other major handicap"},
+    "p14": {1: "Congenital", 2: "Illness", 3: "Accident", 4: "War", 5: "Genocide", 6: "Mines", 7: "Other", 8: "Don't know"},
+    "p15": {1: "Both parents alive", 2: "Mother only alive", 3: "Father only alive", 4: "Neither alive"},
+    "p16": {1: "Attending / attended school", 2: "Never went to school"}, "fr_quentation": {1: "Attending / attended school"},
+    "p17": {99: "Not stated"}, "p171": {99: "Not stated"},
+    "p19": {1: "None", 2: "EMA: primary teacher training or equivalent", 3: "A3/D4/D5: secondary teacher training or equivalent",
+            4: "A2/D6/D7: diploma of humanities or equivalent", 5: "A1: baccalaureat, GCE A level or equivalent",
+            6: "A0: BA, maitrise, ingeniorat or equivalent", 7: ">A0: MA, doctorate", 9: "Not stated"},
+    "p20": {1: "Can read and write", 2: "Can read only", 3: "Cannot read or write"},
+    "p21": {1: "Employed", 2: "Temporarily unemployed", 3: "First job seeker", 4: "Unpaid homekeeper", 5: "Pupil/student",
+            6: "Retired", 7: "Elderly landowner/landlord (rentier)", 8: "Jobless / has no work"},
+    "p23": {1: "Self-employed", 2: "Employer", 3: "Regularly paid worker", 4: "Temporarily paid worker", 5: "Apprentice",
+            6: "Unpaid family worker", 7: "Other"},
+    "p25": {1: "Public", 2: "Parastatal", 3: "NGO", 4: "Cooperative", 5: "Other private", 9: "Not stated"},
+    "p26": {1: "Never married (bachelor/spinster)", 2: "Cohabitation / common-law union", 3: "Monogamous marriage",
+            4: "Polygamous married man", 5: "First wife in a polygamous marriage", 6: "Second wife in a polygamous marriage",
+            7: "Third or later wife in a polygamous marriage", 8: "Divorced/separated", 9: "Widowed"},
+    "etat_matri": {1: "Never married", 8: "Divorced/separated", 9: "Widowed", 99: "Not stated"},
+    "h100": {100: "Ordinary household"},
+    "h200": {201: "Police camp", 202: "Home for old persons", 203: "Military camp", 204: "Religious institution", 205: "Street children",
+             206: "Schools", 207: "Prison", 208: "Reception centre", 209: "Hotel/lodging", 210: "Centre for disabled, deaf and dumb",
+             211: "Hospital", 212: "Orphanage", 213: "Refugee camp", 214: "Youth centre"},
+    "h01": {1: "Umudugudu (new rural agglomeration)", 2: "Early rural agglomeration", 3: "Dispersed/isolated housing",
+            4: "Planned urban housing (cadastral plot)", 5: "Spontaneous/squatter housing", 6: "Other type of housing", 9: "Not stated"},
+    "h02": {1: "Building occupied by one household", 2: "Building occupied by several households",
+            3: "Storey building occupied by one or more households", 4: "Several buildings in a compound occupied by several households",
+            5: "Other type of building", 9: "Not stated"},
+    "h03": {1: "Zinc / iron sheets", 2: "Local tiles", 3: "Industrial tiles/slates", 4: "Concrete", 5: "Cartons/sheeting", 6: "Grass/straw", 7: "Other", 9: "Not stated"},
+    "h04": {1: "Wood / unplastered mud walls", 2: "Wood / cemented mud walls", 3: "Sun-dried (adobe) bricks", 4: "Burnt bricks",
+            5: "Cement blocks / concrete", 6: "Stone", 7: "Planks", 8: "Plastic sheeting / cartons", 9: "Other", 99: "Not stated"},
+    "h05": {1: "Earth", 2: "Cement", 3: "Stone", 4: "Floor tiles", 5: "Burnt bricks", 6: "Other", 9: "Not stated"},
+    "h07": {1: "Internal pipe-borne water", 2: "Pipe-borne water in the compound", 3: "Public tap outside the compound",
+            4: "Protected spring/well", 5: "Unprotected spring/well", 6: "Rain water", 7: "River", 8: "Lake/stream/pond/surface water", 9: "Other", 99: "Not stated"},
+    "h08": {1: "Electricity (Electrogaz)", 2: "Hydro-electric or other private source", 3: "Solar panel / electric generator",
+            4: "Kerosene lamp", 5: "Oil lamp", 6: "Candle", 7: "Firewood", 8: "Other", 9: "Not stated"},
+    "h09": {1: "Electricity", 2: "Gas", 3: "Kerosene", 4: "Firewood", 5: "Charcoal", 6: "Vegetal material (grass, leaves)", 7: "Other", 9: "Not stated"},
+    "h10": {1: "Flush toilet (WC)", 2: "Private pit latrine", 3: "Public/shared pit latrine", 4: "Bush", 5: "Other", 9: "Not stated"},
+    "h11": {1: "Compost dumping", 2: "Private dust bin", 3: "Public refuse dump", 4: "In the bush", 5: "On the farm", 6: "In a river/stream/drain", 7: "Other", 9: "Not stated"},
+    "h12": {1: "Owner", 2: "Tenant", 3: "Hire purchase", 4: "Free lodging", 5: "Service housing", 6: "Refuge / temporary camp", 7: "Other", 9: "Not stated"},
+    "h13": {1: "Radio", 2: "Television", 3: "Radio and television", 4: "None", 9: "Not stated"},
+    "h14": {1: "Fixed-line telephone", 2: "Cell phone", 3: "Fixed-line and cell phone", 4: "None", 9: "Not stated"},
+    "h15": {1: "Computer", 2: "Computer and internet connection", 3: "None", 9: "Not stated"},
+    "h19a": {1: "Yes", 2: "No", 9: "Not stated"},
+}
+for _v in ("p29a", "p29b", "p30a", "p30b"):
+    EN2002_VALUES[_v] = {0: "None", 1: "1 birth", 2: "2 births", 3: "3 births", 4: "4 births", 9: "Not stated"}
+EN2002_VALUES["h16a"] = {0: "No vehicle", **{k: f"{k} vehicle{'s' if k > 1 else ''}" for k in range(1, 5)}, 9: "Not stated"}
+EN2002_VALUES["h16b"] = {0: "No motorcycle", **{k: f"{k} motorcycle{'s' if k > 1 else ''}" for k in range(1, 9)}, 9: "Not stated"}
+# whole-label phrases that recur across the remaining 2002 variables
+FR_PHRASES = {"non déterminé": "Not stated", "nd": "Not stated", "aucun": "None", "autre": "Other", "autres": "Other", "oui": "Yes", "non": "No",
+              "not applicable": "Not applicable"}
+# p11 (languages spoken) is a coded combination; tokens are joined with ' + '
+LANG_TOKENS = {"Muet": "Mute (no language)", "Kinyarwanda": "Kinyarwanda", "Kiny": "Kinyarwanda", "Français": "French", "Fran": "French",
+               "Swahili": "Swahili", "Swah": "Swahili", "Anglais": "English", "Angl": "English", "Ang": "English",
+               "Autres langues": "Other languages", "Autr": "Other"}
+
+def translate_2002_values(vv, log):
+    """Replace French value-label text by the English transcription, code by code; returns the set of
+    variables touched. Codes not covered by the transcription keep their French text."""
+    done = set()
+    for var, d in vv.items():
+        if not isinstance(d, dict): continue
+        new, hit = {}, 0
+        for k, txt in d.items():
+            try: code = int(float(k))
+            except (TypeError, ValueError): new[k] = txt; continue
+            if var in EN2002_VALUES and code in EN2002_VALUES[var]: new[k] = EN2002_VALUES[var][code]; hit += 1
+            elif var == "p11": new[k] = " + ".join(LANG_TOKENS.get(t.strip(), t.strip()) for t in str(txt).split("+")); hit += 1
+            elif str(txt).strip().lower() in FR_PHRASES: new[k] = FR_PHRASES[str(txt).strip().lower()]; hit += 1
+            else: new[k] = txt
+        if var in EN2002_VALUES:   # codes defined in the questionnaire but absent from the SPSS label set (e.g. P13 = 1)
+            for code, txt in EN2002_VALUES[var].items():
+                if code not in {int(float(k)) for k in new if str(k).replace('.', '').lstrip('-').isdigit()}: new[code] = txt; hit += 1
+        if hit: vv[var] = new; done.add(var)
+    log.info("2002 value labels translated to English for %d variables: %s", len(done), " ".join(sorted(done)))
+    return done
+
+# --- 2012: NISR's recoded variables ship with their name as the only label; documented from the
+#     questionnaire, the edit specifications and the thematic reports (see DOCUMENTATION.md) and
+#     verified against the source variables in the data (cross-tabulations in DECISIONS.md).
+RP2012_LABELS = {
+    "rp142": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)",
+    "rp12": "Disability status, any difficulty (NISR recode of P12)",
+    "rp08": "Nationality group (NISR recode of P08)",
+    "rp2024": "Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on leave, 2/3 = did not work and available, 4-7 inactive)",
+    "rp2124": "Reason for not working (NISR recode of P21, inactive only)",
+    "rl07": "Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urban = 2)",
+    "rp04y": "Year of birth (NISR copy of P04Y)",
+    "p25": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code list; 1-digit groups in rp25)",
+    "p27": "Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabelled by NISR; sections in rp27)",
+}
+
+def isco08_labels(log):
+    """ISCO-08 unit-group (4-digit) titles from NISR's 2012 coding list (z_Documentation/2012/Census_2012_rhpc_isco_codes.xls)."""
+    x = pd.read_excel(P["root"] / "z_Documentation" / "2012" / "Census_2012_rhpc_isco_codes.xls", sheet_name="ISCO", header=None)
+    lab = {}
+    for _, r in x.iterrows():
+        code, title = r[3], r[5]
+        if pd.notna(code) and isinstance(code, (int, float)) and 1000 <= int(code) <= 9999 and isinstance(title, str) and title.strip():
+            lab[int(code)] = title.strip()
+    log.info("ISCO-08 list: %d unit groups", len(lab))
+    return lab
+
+# --- Universe (who was asked) per variable and year, from the questionnaires; written to the meta
+#     files and shown in the codebook. Patterns are regexes on the lower-cased variable name.
+UNIVERSE = {
+    2002: [(r"^(p07|p08|p09|p10|p11|p12|p13)$", "residents (P03 = 1, 2); visitors skip to next person"),
+           (r"^p14$", "persons with a major handicap (P13 != 1)"), (r"^p15$", "persons aged 25 or less"),
+           (r"^(p16|fr_quentation|p17|p171|p18|p19|p20)$", "population aged 6+ (P18/P19 if attended school)"),
+           (r"^(p21|p211)$", "population aged 6+"), (r"^(p22|emploi_exerc|p23|p24|p241|p25)$", "economically active aged 6+ (P21 = 1 employed or 2 temporarily unemployed)"),
+           (r"^(p26|etat_matri)$", "residents aged 12+"), (r"^(p27|p28|p29|p30)[ab]$", "resident women aged 12+"),
+           (r"^h(0\d|1\d[abc]?|19[ab])$", "ordinary (private) households"), (r"^p05[xab]$", "all persons (day of birth not asked; NISR field)")],
+    2012: [(r"^(p07|p08|p09|p10)$", "usual residents"), (r"^p14[abcd]$", "residents under 18"), (r"^p15$", "all residents (birth registration)"),
+           (r"^(p16|p17|p18a|p18b|p19)$", "residents aged 3+ (P18a-P19 if ever attended school)"),
+           (r"^(p20|p21|p22|p23|p24|rp2024|rp2124)$", "residents aged 5+ (P21-P24 only if did not work in the last 7 days)"),
+           (r"^(p25|p26|p27|p28|rp25|rp27)$", "residents aged 5+ currently working or who ever worked"),
+           (r"^(p29)$", "residents aged 12+"), (r"^p30$", "married men aged 12+"), (r"^p31$", "married women aged 12+"), (r"^p32$", "ever-married residents aged 12+"),
+           (r"^p3[3456][mf]$", "resident women aged 12+"), (r"^h\d", "private households (repeated on every member)"), (r"^m1$", "private households (deaths in the last 12 months)")],
+    2022: [(r"^p06$", "residents aged 12+"), (r"^p08[abc]$", "residents aged 12+ in a union (P08a men, P08b women in polygamous union)"),
+           (r"^(p09[abc]|p10[ab]|p11[ab]|p12b|p13|p14)$", "usual residents"), (r"^p(1[5-9]|2[012])[ab]*$", "residents aged 5+ (disability, Washington Group)"),
+           (r"^p2[34]", "residents under 18"), (r"^p2[5-8]", "residents aged 18+ (and under-18s without registered birth)"),
+           (r"^(p29|p30[ab]|p31)$", "all residents (P30-P31 if ever attended school)"), (r"^(p32|p33)$", "residents aged 10+"),
+           (r"^(p34|p35|p36c)$", "residents aged 10+"), (r"^(p46|p47a|p48a|p49)$", "employed residents aged 16+ (P37-P45 identification questions are not in the public file)"),
+           (r"^p5[01]", "resident women aged 10+"), (r"^h\d", "private households (repeated on every member)")],
+}
+def universe_for(y, cols):
+    import re
+    out = {}
+    for c in cols:
+        for pat, txt in UNIVERSE.get(y, []):
+            if re.match(pat, c): out[c] = txt; break
+    return out
+
 # --- NISR current administrative names (geodata-nisr village file) -> value labels for prov/dist/sector
 geo = db_root() / "geodata-nisr" / "Village_Boundary_2022_924768113126413998.csv"
 v = pd.read_csv(geo)
@@ -127,7 +278,7 @@ for y in YEARS:
     df, vl, vv = lower_names(df, vl, vv, log)
     srcmap, ck = {}, Checks(log)
     df["survey"] = "Census"; df["year"] = np.int16(y); df["wave"] = str(y)
-    vl_original = None
+    vl_original, vv_original = None, {}
 
     if y == 2002:
         df = df.rename(columns={"age": "agegrp_nisr"}); vl["agegrp_nisr"] = vl.pop("age", ""); vv.pop("age", None)   # free the name for P06
@@ -136,6 +287,9 @@ for y in YEARS:
             if c in df.columns: vl[c] = t
         missing = [c for c in df.columns if c not in EN2002 and c not in ("survey", "year", "wave")]
         ck(not missing, f"2002: every variable has an English label ({missing})", hard=False)
+        vv_original = {k: dict(v) for k, v in vv.items() if isinstance(v, dict)}
+        translated = translate_2002_values(vv, log)
+        ck({"p02", "p03", "p21", "p23", "p26", "p19", "p20"} <= translated, "2002: concept variables carry English value labels")
         ren(df, vl, vv, "province_code", "prov", srcmap)
         df["dist"] = (df["district_code"] // 100) * 10 + df["district_code"] % 100; srcmap["dist"] = "district_code (3-digit prov*100+seq -> prov*10+seq)"
         df = df.rename(columns={"sector_code": "sector_code_file"}); vl["sector_code_file"] = KEY_LABELS["sector_code_file"]
@@ -149,9 +303,21 @@ for y in YEARS:
         vv["sex"] = {1: "Male", 2: "Female"}
     elif y == 2012:
         ren(df, vl, vv, "l01", "prov", srcmap); ren(df, vl, vv, "dui", "dist", srcmap); ren(df, vl, vv, "sui", "sector", srcmap)
-        # l07 has 4 categories (urban 13.9%, rural 75.3%, peri-urban 8.5%, semi-urban 2.3%, weighted);
-        # key-block urban = 1 for 'urban' only, 2 otherwise; l07 is carried untouched.
-        df["urban"] = np.where(df["l07"] == 1, 1, np.where(df["l07"].isna(), np.nan, 2)); srcmap["urban"] = "l07 == 1 -> 1, l07 in {2,3,4} -> 2 (l07 kept)"
+        # l07 has 4 categories (urban 13.9%, rural 75.3%, peri-urban 8.5%, semi-urban 2.3%, weighted). NISR's own
+        # 2-way recode rl07 counts semi-urban as urban and peri-urban as rural (verified: rl07 = 1 <=> l07 in {1, 4});
+        # it reproduces the published 2012 urban share (16.5%; 16.2% in the sample) where l07 == 1 alone gives 13.9%.
+        # key-block urban therefore = rl07; l07 is carried untouched.
+        ck(bool(((df["rl07"] == 1) == df["l07"].isin([1, 4])).all()), "2012: rl07 == 1 <=> l07 in {urban, semi-urban}")
+        df["urban"] = df["rl07"]; srcmap["urban"] = "rl07 (NISR 2-way recode: urban + semi-urban = 1, rural + peri-urban = 2; l07 kept)"
+        for c, t in RP2012_LABELS.items():
+            if c in df.columns: vl[c] = t
+        isco = isco08_labels(log)
+        codes = set(int(x) for x in df["p25"].dropna().unique()); unmatched = sorted(codes - set(isco))
+        log.info("2012 P25: %d distinct ISCO codes, %d not in the list: %s", len(codes), len(unmatched), unmatched[:20])
+        ck(len(unmatched) <= 0.02 * len(codes), f"2012: >= 98% of P25 codes found in the ISCO-08 list ({len(unmatched)} unmatched)", hard=False)
+        # 9999 = invalid code imputed by NISR's edit program (edit specs P25SPEC26); 9998 = not stated (NISR sentinel)
+        vv["p25"] = {k: v for k, v in isco.items() if k in codes} | {9998: "Not stated", 9999: "Invalid code (NISR edit imputation)"} | {k: "ISCO code not in the 2012 list" for k in unmatched if k not in (9998, 9999)}
+        vv["rp2024"] = dict(vv.get("rp2024", {})) | {9: "Not classified (code unlabelled by NISR: P21 = home worker / never worked / other)"}
         ren(df, vl, vv, "p01", "pid", srcmap); ren(df, vl, vv, "p03", "sex", srcmap); ren(df, vl, vv, "p05", "age", srcmap)
         ren(df, vl, vv, "sampleweight_final_", "wt", srcmap); df["wt_hh"] = df["wt"]; srcmap["wt_hh"] = "= wt (10% household sample, self-weighting)"
     else:
@@ -200,5 +366,7 @@ for y in YEARS:
     meta = {"n": len(df), "vars": list(df.columns), "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns},
             "source": srcmap, "dtypes": {c: str(df[c].dtype) for c in df.columns}}
     if vl_original: meta["var_labels_original"] = vl_original
+    if y == 2002: meta["value_labels_original"] = {k: v for k, v in vv_original.items() if k in df.columns}
+    meta["universe"] = universe_for(y, df.columns)
     save_json(meta, LOGS / f"clean_{y}_meta.json")
 log.info("01_clean done for %s", YEARS)

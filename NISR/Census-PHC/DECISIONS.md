@@ -73,3 +73,40 @@ its native codes and labels; the codebook lists the value labels so the sentinel
 (e.g. `p21` = activity status in 2002, "why did not work" in 2012). The version rule
 (label similarity) separates them automatically; forced alignments are listed in
 `02_merge.py` once the first VERSIONS log has been reviewed.
+
+## 2026-09-04 — documentation pass (see DOCUMENTATION.md)
+
+**2012 `urban` now follows NISR's 2-way recode `rl07`.** The population-size report gives 16.5%
+urban in 2012; in the sample L07 = 1 alone gives 13.9% while `rl07` (urban + semi-urban = 1,
+rural + peri-urban = 2, verified cell by cell) gives 16.2%. The earlier rule (L07 = 1 only)
+understated urbanisation and is replaced; `l07` is still carried, and a hard check asserts the
+rl07/L07 correspondence.
+
+**2002 value labels translated to English** for the key block and every concept variable, from
+the English questionnaire (code lists match one-for-one). French originals are in
+`logs/clean_2002_meta.json` (`value_labels_original`). P08/P10 (140 pre-2006 district names),
+P18, P22 (ISCO-88) and P24/P241 (ISIC Rev.3) stay French — no English list exists in the
+documentation and they are not concept variables.
+
+**2012 recodes labelled from the data.** Cross-tabulations against the source questions:
+`rp2024` 1 ⇔ P20 = 1 or P21 = 3 (on leave, 61,515 rows); 2/3 ⇔ P21 = 1/2 and P23 = 1; 4 ⇔ P21 = 0
+home worker; 5 ⇔ P21 = 4/5; 6 ⇔ P21 = 6; the unlabelled code 9 (86,066 rows) collects
+P21 = 7 "other" plus home workers and never-worked persons not available for work — labelled
+"not classified" rather than guessed. `rp12` = any P12 difficulty; `rp142` = P14b × P14d;
+`rl07` as above; `rp04y` = P04Y (identical on every row).
+
+**ISCO-08 titles attached to 2012 `p25`** from NISR's own 2012 coding list; every one of the 418
+codes in the data is in the list. No English ISIC Rev.4 list ships with the census documentation,
+so `p27` keeps its bare codes (sections are in `rp27`); the Kinyarwanda ISIC list was not used.
+
+**Universe per variable recorded** (`UNIVERSE` in `01_clean.py` → meta → codebook). Age
+thresholds differ across censuses (activity 6+/5+/16+, education 6+/3+/all, literacy 6+/3+/10+,
+fertility 12+/12+/10+); the harmonisation step must restrict on age explicitly rather than rely on
+non-missingness.
+
+**2022 employment identification (P37–P45) is not in the public file.** Only the job
+characteristics P46–P49 of employed residents 16+ are released, so no labour-force status is
+derived for 2022 (2002 and 2012 carry NISR's own status variables `p211` / `rp2024`).
+
+**New published checks:** 2012 weighted population vs the private-household population
+10,378,021 (labour-force report), and the weighted urban share per census vs 16.9 / 16.5 / 27.9%.

@@ -23,9 +23,6 @@
 
 . export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PH
 > C/logs/stata_checks.csv", replace
-(file
-    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks.
-    > csv not found)
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks.c
 > sv saved
 
@@ -38,9 +35,6 @@ file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks.c
 
 . export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PH
 > C/logs/stata_checks_hh.csv", replace
-(file
-    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks_
-    > hh.csv not found)
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks_h
 > h.csv saved
 

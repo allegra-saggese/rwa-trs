@@ -1,0 +1,254 @@
+23:34:35 01_clean INFO ==== 01_clean | run 20260904-233432 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+23:34:35 01_clean INFO ---------------- 2002 ----------------
+23:34:41 01_clean INFO read Census_2002.sav: 814,432 rows x 112 vars
+23:34:41 01_clean INFO PASS  2002: every variable has an English label ([])
+23:34:41 01_clean INFO 2002 value labels translated to English for 53 variables: etat_matri fr_quentation h01 h02 h03 h04 h05 h06 h07 h08 h09 h10 h100 h11 h12 h13 h14 h15 h16a h16b h16c h19a h200 hhid p02 p03 p05a p05b p07 p08 p09 p10 p11 p12 p13 p14 p15 p16 p17 p171 p18 p19 p20 p21 p22 p23 p24 p25 p26 p29a p29b p30a p30b
+23:34:41 01_clean INFO PASS  2002: concept variables carry English value labels
+23:34:42 01_clean INFO 2002 sector name MAGERAGERE     matched to MAGEREGERE     (1105)
+23:34:42 01_clean INFO 2002 sector name KIBIRIZI       matched to KIBILIZI       (2104)
+23:34:42 01_clean INFO 2002 sector name KIBILIZI       matched to KIBIRIZI       (2204)
+23:34:42 01_clean INFO 2002 sector name KABAGARI       matched to KABAGALI       (2603)
+23:34:42 01_clean INFO 2002 sector name RUGALIKA       matched to RUGARIKA       (2810)
+23:34:42 01_clean INFO 2002 sector name GISHARI        matched to GASHARI        (3102)
+23:34:42 01_clean INFO 2002 sector name NYAKILIBA      matched to NYAKIRIBA      (3308)
+23:34:42 01_clean INFO 2002 sector name RUSARABUGE     matched to RUSARABUYE     (4416)
+23:34:42 01_clean INFO 2002 sector name GISHARI        matched to GISHALI        (5103)
+23:34:42 01_clean INFO 2002 sector name NYAKARIRO      matched to NYAKALIRO      (5112)
+23:34:42 01_clean INFO 2002 sector name MIMULI         matched to MIMURI         (5207)
+23:34:42 01_clean INFO 2002 sector name MUSHELI        matched to MUSHERI        (5209)
+23:34:42 01_clean INFO 2002 sector name NYAMUGALI      matched to NYAMUGARI      (5511)
+23:34:42 01_clean INFO 2002 sectors whose code changed after name matching: [(40301, 4301, 4304, 'Gashaki'), (40302, 4302, 4301, 'Busogo'), (40303, 4303, 4302, 'Cyuve'), (40304, 4304, 4303, 'Gacaca')]
+23:34:42 01_clean INFO PASS  2002: 416 distinct sectors after name matching
+23:34:42 01_clean INFO PASS  2002: corrected sector code nests in district
+23:34:42 01_clean INFO rows without a household id: 16,717
+23:34:48 01_clean INFO PASS  row count unchanged (814,432)
+23:34:48 01_clean INFO PASS  wt present and > 0 on every row
+23:34:48 01_clean INFO PASS  5 provinces / 30 districts / 416 sectors
+23:34:48 01_clean INFO PASS  sector codes == NISR current 416-sector list
+23:34:48 01_clean INFO PASS  sector nests in district nests in province
+23:34:48 01_clean INFO PASS  sex in {1,2}
+23:34:48 01_clean INFO PASS  age in [0,130] (max 110)
+23:34:53 01_clean INFO PASS  exactly one head per (ordinary) household: 100.0000% of 175,737
+23:34:53 01_clean INFO PASS  (hhid, pid) unique
+23:34:53 01_clean INFO PASS  wt_hh constant within household
+23:34:53 01_clean INFO PASS  prov/dist/sector constant within household
+23:34:53 01_clean WARNING WARN  urban constant within household (89 households differ; NISR data as shipped, head's value used in the household file)
+23:34:53 01_clean WARNING WARN  collective flag agrees with P03 == 4 (97.9474%)
+23:34:53 01_clean INFO PASS  weighted population 8,144,311 within 2% of published 8,128,553 (+0.19%)
+23:34:53 01_clean INFO households: 175,737 | urban share (weighted): 0.168
+23:34:53 01_clean INFO all hard checks passed (2 soft warnings)
+23:34:53 01_clean INFO value label 9999999999.0='Not applicable' on hhid dropped (key outside int32)
+23:34:57 01_clean INFO wrote Census_2002_person_clean.dta  (814,432 rows x 121 vars, 190.7 MB)
+23:34:57 01_clean INFO ---------------- 2012 ----------------
+23:35:05 01_clean INFO read Census_2012.dta: 1,038,369 rows x 115 vars
+23:35:05 01_clean INFO PASS  2012: rl07 == 1 <=> l07 in {urban, semi-urban}
+23:35:05 01_clean INFO ISCO-08 list: 433 unit groups
+23:35:05 01_clean INFO 2012 P25: 418 distinct ISCO codes, 2 not in the list: [9998, 9999]
+23:35:05 01_clean INFO PASS  2012: >= 98% of P25 codes found in the ISCO-08 list (2 unmatched)
+23:35:05 01_clean INFO rows without a household id: 0
+23:35:13 01_clean INFO PASS  row count unchanged (1,038,369)
+23:35:13 01_clean INFO PASS  wt present and > 0 on every row
+23:35:13 01_clean INFO PASS  5 provinces / 30 districts / 416 sectors
+23:35:13 01_clean INFO PASS  sector codes == NISR current 416-sector list
+23:35:13 01_clean INFO PASS  sector nests in district nests in province
+23:35:13 01_clean INFO PASS  sex in {1,2}
+23:35:13 01_clean INFO PASS  age in [0,130] (max 125)
+23:35:19 01_clean INFO PASS  exactly one head per (ordinary) household: 100.0000% of 242,461
+23:35:19 01_clean INFO PASS  (hhid, pid) unique
+23:35:19 01_clean INFO PASS  wt_hh constant within household
+23:35:19 01_clean INFO PASS  prov/dist/sector constant within household
+23:35:19 01_clean INFO PASS  urban constant within household (0 households differ; NISR data as shipped, head's value used in the household file)
+23:35:19 01_clean INFO PASS  weighted population 10,383,686 within 2% of published 10,515,973 (-1.26%)
+23:35:19 01_clean INFO PASS  shipped hhsize == roster count
+23:35:19 01_clean INFO households: 242,461 | urban share (weighted): 0.162
+23:35:19 01_clean INFO all hard checks passed (0 soft warnings)
+23:35:22 01_clean INFO wrote Census_2012_person_clean.dta  (1,038,369 rows x 121 vars, 190.2 MB)
+23:35:22 01_clean INFO ---------------- 2022 ----------------
+23:36:25 01_clean INFO read Census_2022.dta: 1,313,015 rows x 250 vars
+23:36:27 01_clean INFO rows without a household id: 0
+23:36:48 01_clean INFO PASS  row count unchanged (1,313,015)
+23:36:48 01_clean INFO PASS  wt present and > 0 on every row
+23:36:48 01_clean INFO PASS  5 provinces / 30 districts / 416 sectors
+23:36:48 01_clean INFO PASS  sector codes == NISR current 416-sector list
+23:36:48 01_clean INFO PASS  sector nests in district nests in province
+23:36:48 01_clean INFO PASS  sex in {1,2}
+23:36:48 01_clean INFO PASS  age in [0,130] (max 122)
+23:36:56 01_clean INFO PASS  exactly one head per (ordinary) household: 100.0000% of 331,917
+23:36:56 01_clean INFO PASS  (hhid, pid) unique
+23:36:56 01_clean INFO PASS  wt_hh constant within household
+23:36:56 01_clean INFO PASS  prov/dist/sector constant within household
+23:36:56 01_clean INFO PASS  urban constant within household (0 households differ; NISR data as shipped, head's value used in the household file)
+23:36:56 01_clean INFO PASS  weighted population 13,245,753 within 2% of published 13,246,394 (-0.00%)
+23:36:56 01_clean INFO households: 331,917 | urban share (weighted): 0.279
+23:36:56 01_clean INFO all hard checks passed (0 soft warnings)
+23:37:06 01_clean INFO wrote Census_2022_person_clean.dta  (1,313,015 rows x 254 vars, 423.0 MB)
+23:37:06 01_clean INFO 01_clean done for [2002, 2012, 2022]
+23:37:06 02_merge INFO ==== 02_merge | run 20260904-233432 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+23:37:26 02_merge INFO loaded 2002: 814,432 rows x 121 vars
+23:37:36 02_merge INFO loaded 2012: 1,038,369 rows x 121 vars
+23:38:27 02_merge INFO loaded 2022: 1,313,015 rows x 254 vars
+23:38:27 02_merge INFO VERSIONS h03: {'h03': [2022], 'h03_v2': [2012], 'h03_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h04: {'h04': [2022], 'h04_v2': [2012], 'h04_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h05: {'h05': [2022], 'h05_v2': [2012], 'h05_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h06: {'h06': [2022], 'h06_v2': [2012], 'h06_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h07: {'h07': [2022], 'h07_v2': [2012], 'h07_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h08: {'h08': [2012, 2022], 'h08_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS h09: {'h09': [2022], 'h09_v2': [2012], 'h09_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h10: {'h10': [2022], 'h10_v2': [2012], 'h10_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h11: {'h11': [2022], 'h11_v2': [2012], 'h11_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h12: {'h12': [2022], 'h12_v2': [2012], 'h12_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h13: {'h13': [2022], 'h13_v2': [2012], 'h13_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h14: {'h14': [2022], 'h14_v2': [2012], 'h14_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h15: {'h15': [2022], 'h15_v2': [2012], 'h15_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h16: {'h16': [2022], 'h16_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h17: {'h17': [2022], 'h17_v2': [2012], 'h17_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h18: {'h18': [2022], 'h18_v2': [2012], 'h18_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS h19: {'h19': [2022], 'h19_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h20: {'h20': [2022], 'h20_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h22: {'h22': [2022], 'h22_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h23: {'h23': [2022], 'h23_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h26: {'h26': [2022], 'h26_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h27: {'h27': [2022], 'h27_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS h28a: {'h28a': [2022], 'h28a_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS p02: {'p02': [2002, 2012], 'p02_v2': [2022]}
+23:38:27 02_merge INFO VERSIONS p06: {'p06': [2022], 'p06_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS p07: {'p07': [2012], 'p07_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p08: {'p08': [2012], 'p08_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p09: {'p09': [2012], 'p09_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p10: {'p10': [2012], 'p10_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p11: {'p11': [2012], 'p11_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p13: {'p13': [2002, 2012], 'p13_v2': [2022]}
+23:38:27 02_merge INFO VERSIONS p14: {'p14': [2022], 'p14_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p15: {'p15': [2012], 'p15_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p16: {'p16': [2012], 'p16_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p17: {'p17': [2012], 'p17_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p18b: {'p18b': [2022], 'p18b_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS p20: {'p20': [2012], 'p20_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p21: {'p21': [2012], 'p21_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p23: {'p23': [2012], 'p23_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p24: {'p24': [2022], 'p24_v2': [2012], 'p24_v3': [2002]}
+23:38:27 02_merge INFO VERSIONS p25: {'p25': [2012], 'p25_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p29: {'p29': [2022], 'p29_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS p30a: {'p30a': [2022], 'p30a_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p30b: {'p30b': [2022], 'p30b_v2': [2002]}
+23:38:27 02_merge INFO VERSIONS p31: {'p31': [2022], 'p31_v2': [2012]}
+23:38:27 02_merge INFO VERSIONS p32: {'p32': [2022], 'p32_v2': [2012]}
+23:40:08 02_merge INFO pooled person file: 3,165,816 rows x 458 vars; 46 variables with >1 version; 6 value-label text conflicts
+23:40:12 02_merge INFO PASS  no numeric column left object-typed after concat
+23:40:12 02_merge INFO PASS  pooled rows == sum of yearly rows
+23:40:12 02_merge INFO PASS  2002: sum wt preserved in pool
+23:40:12 02_merge INFO PASS  2012: sum wt preserved in pool
+23:40:12 02_merge INFO PASS  2022: sum wt preserved in pool
+23:40:49 02_merge INFO wrote Census_pooled_person.dta  (3,165,816 rows x 458 vars, 2004.4 MB)
+23:40:49 02_merge INFO 2002: 797,715 of 814,432 rows in ordinary households
+23:40:51 02_merge INFO PASS  2002: household rows unique
+23:40:51 02_merge INFO PASS  2002: every household has a head
+23:40:51 02_merge INFO 2002: 175,737 households, 59 household-level variables carried
+23:40:51 02_merge INFO 2012: 1,038,369 of 1,038,369 rows in ordinary households
+23:40:54 02_merge INFO PASS  2012: household rows unique
+23:40:54 02_merge INFO PASS  2012: every household has a head
+23:40:54 02_merge INFO 2012: 242,461 households, 55 household-level variables carried
+23:40:54 02_merge INFO 2022: 1,313,015 of 1,313,015 rows in ordinary households
+23:41:02 02_merge INFO PASS  2022: household rows unique
+23:41:02 02_merge INFO PASS  2022: every household has a head
+23:41:02 02_merge INFO 2022: 331,917 households, 198 household-level variables carried
+23:41:25 02_merge INFO wrote Census_pooled_household.dta  (750,115 rows x 291 vars, 322.8 MB)
+23:41:28 02_merge INFO wrote Census_2002_household_clean.dta  (175,737 rows x 291 vars, 75.8 MB)
+23:41:30 02_merge INFO wrote Census_2012_household_clean.dta  (242,461 rows x 291 vars, 95.3 MB)
+23:41:34 02_merge INFO wrote Census_2022_household_clean.dta  (331,917 rows x 291 vars, 130.4 MB)
+23:41:35 02_merge INFO all hard checks passed (0 soft warnings)
+23:41:35 02_merge INFO 02_merge done
+23:41:37 03_checks INFO ==== 03_checks | run 20260904-233432 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+23:41:51 03_checks INFO 
+# Census checks report
+
+Generated by 03_checks.py.
+
+## A. Python pooled file vs old Stata outputs (3 Jul 2026; 2002 was not processed then)
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | 2012 rows | 1,038,369 | 1,038,369 | PASS |
+| A | 2012 sum wt | 10,383,686 | 10,383,686 | PASS |
+| A | 2012 sectors | 416 | 416 | PASS |
+| A | 2012 households | 242,461 | 242,461 | PASS |
+| A | 2012 male | 498,302 | 498,302 | PASS |
+| A | 2012 female | 540,067 | 540,067 | PASS |
+| A | 2022 rows | 1,313,015 | 1,313,015 | PASS |
+| A | 2022 sum wt | 13,245,753 | 13,245,753 | PASS |
+| A | 2022 sectors | 416 | 416 | PASS |
+| A | 2022 households | 331,917 | 331,917 | PASS |
+| A | 2022 male | 631,543 | 631,543 | PASS |
+| A | 2022 female | 681,472 | 681,472 | PASS |
+
+## B. Stata 17 recomputation from the written .dta files
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2002 rows | 814,432 | 814,432 | PASS |
+| B | 2002 sum wt | 8,144,311 | 8,144,311 | PASS |
+| B | 2002 male | 388,346 | 388,346 | PASS |
+| B | 2002 female | 426,086 | 426,086 | PASS |
+| B | 2002 sectors | 416 | 416 | PASS |
+| B | 2012 rows | 1,038,369 | 1,038,369 | PASS |
+| B | 2012 sum wt | 10,383,686 | 10,383,686 | PASS |
+| B | 2012 male | 498,302 | 498,302 | PASS |
+| B | 2012 female | 540,067 | 540,067 | PASS |
+| B | 2012 sectors | 416 | 416 | PASS |
+| B | 2022 rows | 1,313,015 | 1,313,015 | PASS |
+| B | 2022 sum wt | 13,245,753 | 13,245,753 | PASS |
+| B | 2022 male | 631,543 | 631,543 | PASS |
+| B | 2022 female | 681,472 | 681,472 | PASS |
+| B | 2022 sectors | 416 | 416 | PASS |
+| B | 2002 households | 175,737 | 175,737 | PASS |
+| B | 2002 sum hhsize | 797,715 | 797,715 | PASS |
+| B | 2002 sum household weight | 1,757,368 | 1,757,368 | PASS |
+| B | 2012 households | 242,461 | 242,461 | PASS |
+| B | 2012 sum hhsize | 1,038,369 | 1,038,369 | PASS |
+| B | 2012 sum household weight | 2,424,609 | 2,424,609 | PASS |
+| B | 2022 households | 331,917 | 331,917 | PASS |
+| B | 2022 sum hhsize | 1,313,015 | 1,313,015 | PASS |
+| B | 2022 sum household weight | 3,312,795 | 3,312,795 | PASS |
+
+## C. Against NISR published figures
+
+| section | statistic | Python | published | result |
+|---|---|---:|---:|---|
+| C | 2002 weighted population (published total 8,128,553; 10% sample) | 8,144,311 | 8,128,553 | PASS |
+| C | 2012 male (statement table 1) | 498,302 | 498,302 | PASS |
+| C | 2012 female (statement table 1) | 540,067 | 540,067 | PASS |
+| C | 2012 households (statement table 2) | 242,461 | 242,461 | PASS |
+| C | 2012 weighted population (published 10,515,973) | 10,383,686 | 10,515,973 | PASS |
+| C | 2022 male (statement table 1) | 631,543 | 631,543 | PASS |
+| C | 2022 female (statement table 1) | 681,472 | 681,472 | PASS |
+| C | 2022 weighted population (statement table 1) | 13,245,753 | 13,245,753 | PASS |
+| C | 2022 weighted pop. City of Kigali (statement table 2) | 1,745,519 | 1,745,519 | PASS |
+| C | 2022 weighted pop. Eastern (statement table 2) | 3,562,690 | 3,562,690 | PASS |
+| C | 2022 households, unweighted (statement table 3 says 331,606; file holds 331,917) | 331,917 | 331,606 | PASS |
+| C | 2022 households, weighted (statement table 3 says 3,309,692) | 3,312,795 | 3,309,692 | PASS |
+| C | 2012 households in province 1 (statement table 2) | 28,665 | 28,665 | PASS |
+| C | 2012 households in province 2 (statement table 2) | 60,364 | 60,364 | PASS |
+| C | 2012 households in province 3 (statement table 2) | 54,345 | 54,345 | PASS |
+| C | 2012 households in province 4 (statement table 2) | 39,165 | 39,165 | PASS |
+| C | 2012 households in province 5 (statement table 2) | 59,922 | 59,922 | PASS |
+| C | 2012 weighted population vs published private-household population 10,378,021 | 10,383,686 | 10,378,021 | PASS |
+| C | 2002 urban share of the weighted population (published 16.9%) | 16.8% | 16.9% | PASS |
+| C | 2012 urban share of the weighted population (published 16.5%) | 16.2% | 16.5% | PASS |
+| C | 2022 urban share of the weighted population (published 27.9%) | 27.9% | 27.9% | PASS |
+
+## D. Household file sanity
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| D | 2002 sum hhsize == ordinary-household person rows | 797,715 | 797,715 | PASS |
+| D | 2002 households == distinct hhid | 175,737 | 175,737 | PASS |
+| D | 2012 sum hhsize == ordinary-household person rows | 1,038,369 | 1,038,369 | PASS |
+| D | 2012 households == distinct hhid | 242,461 | 242,461 | PASS |
+| D | 2022 sum hhsize == ordinary-household person rows | 1,313,015 | 1,313,015 | PASS |
+| D | 2022 households == distinct hhid | 331,917 | 331,917 | PASS |
+
+**All checks passed.**
+23:41:51 03_checks INFO 03_checks done
+23:41:52 04_codebook INFO ==== 04_codebook | run 20260904-233432 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+23:44:48 04_codebook INFO wrote CODEBOOK.md, codebook_person.csv, codebook_household.csv
+23:44:48 04_codebook INFO README.txt updated (/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Census-PHC/README.txt)

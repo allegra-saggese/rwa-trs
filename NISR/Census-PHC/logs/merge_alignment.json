@@ -4992,9 +4992,9 @@
    },
    "labels_by_year": {
     "2002": "Institutional sector of employment (public/parastatal/NGO/cooperative/other priv",
-    "2012": "Type of work"
+    "2012": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code lis"
    },
-   "reference_label": "Type of work"
+   "reference_label": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code lis"
   },
   "p26": {
    "years": [
@@ -5023,9 +5023,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "Branch of economic activity"
+    "2012": "Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabe"
    },
-   "reference_label": "Branch of economic activity"
+   "reference_label": "Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabe"
   },
   "p27a": {
    "years": [
@@ -5690,9 +5690,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RL07"
+    "2012": "Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urb"
    },
-   "reference_label": "RL07"
+   "reference_label": "Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urb"
   },
   "rp04y": {
    "years": [
@@ -5704,9 +5704,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RP04Y"
+    "2012": "Year of birth (NISR copy of P04Y)"
    },
-   "reference_label": "RP04Y"
+   "reference_label": "Year of birth (NISR copy of P04Y)"
   },
   "rp08": {
    "years": [
@@ -5718,9 +5718,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RP08"
+    "2012": "Nationality group (NISR recode of P08)"
    },
-   "reference_label": "RP08"
+   "reference_label": "Nationality group (NISR recode of P08)"
   },
   "rp12": {
    "years": [
@@ -5732,9 +5732,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RP12"
+    "2012": "Disability status, any difficulty (NISR recode of P12)"
    },
-   "reference_label": "RP12"
+   "reference_label": "Disability status, any difficulty (NISR recode of P12)"
   },
   "rp142": {
    "years": [
@@ -5746,9 +5746,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RP142"
+    "2012": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)"
    },
-   "reference_label": "RP142"
+   "reference_label": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)"
   },
   "rp2024": {
    "years": [
@@ -5760,9 +5760,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RP2024"
+    "2012": "Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on lea"
    },
-   "reference_label": "RP2024"
+   "reference_label": "Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on lea"
   },
   "rp2124": {
    "years": [
@@ -5774,9 +5774,9 @@
     ]
    },
    "labels_by_year": {
-    "2012": "RP2124"
+    "2012": "Reason for not working (NISR recode of P21, inactive only)"
    },
-   "reference_label": "RP2124"
+   "reference_label": "Reason for not working (NISR recode of P21, inactive only)"
   },
   "rp25": {
    "years": [
@@ -6180,7 +6180,7 @@
   },
   "p25": {
    "2002": "Institutional sector of employment (public/parastatal/NGO/cooperative/other priv",
-   "2012": "Type of work"
+   "2012": "Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code lis"
   },
   "p26": {
    "2002": "Marital status",
@@ -6209,195 +6209,191 @@
  },
  "value_label_conflicts": {
   "p02": {
-   "1": [
-    "Chef de m\u00e9nage",
-    "Head of Household"
-   ],
    "2": [
-    "Conjoint du chef",
-    "Spouse"
+    "Spouse",
+    "Spouse of head"
    ],
    "3": [
-    "Enfant du chef",
+    "Child of head",
     "Son/Daughter"
    ],
    "4": [
-    "Enfant accueilli",
-    "Unrelated Child"
+    "Unrelated Child",
+    "Unrelated child brought up in the household"
    ],
    "5": [
     "Father/Mother",
-    "P\u00e8re/m\u00e8re"
+    "Father/mother of head"
    ],
    "6": [
     "Brother/Sister",
-    "Fr\u00e8re/soeur"
+    "Brother/sister of head"
    ],
    "7": [
     "Grandchild",
-    "Petit enfant"
+    "Grandchild of head"
    ],
    "8": [
-    "Autre lien de parent\u00e9",
-    "Other Relative"
+    "Other Relative",
+    "Other relative of head"
    ],
    "9": [
     "Non Relative",
-    "Sans lien de parent\u00e9"
+    "Not related to head"
    ]
   },
   "p13": {
+   "1": [
+    "Mutuelle",
+    "No major handicap"
+   ],
    "2": [
-    "Aveugle",
+    "Blind",
     "RAMA"
    ],
    "3": [
-    "MMI",
-    "Sourd/muet"
+    "Deaf/dumb",
+    "MMI"
    ],
    "4": [
     "FARG",
-    "Infirme des membres inf\u00e9r."
+    "Infirmity of the legs/feet"
    ],
    "5": [
-    "Infirme des membres sup\u00e9r.",
+    "Infirmity of the arms/hands",
     "Insurance cie"
    ],
    "6": [
-    "D\u00e9ficience mentale",
+    "Mental deficiency",
     "School"
    ],
    "7": [
     "NGO",
-    "Traumatisme"
+    "Trauma"
    ],
    "8": [
-    "Autre handicap",
-    "Employer"
+    "Employer",
+    "Other major handicap"
    ]
   },
   "p19": {
    "1": [
-    "Aucun",
-    "CE/FE"
+    "CE/FE",
+    "None"
    ],
    "2": [
     "EMA/ENTA",
-    "Ecole des monit. auxiliaires"
+    "EMA: primary teacher training or equivalent"
    ],
    "3": [
     "A3/D4/D5",
-    "Dipl. Ens. Normal Terminal"
+    "A3/D4/D5: secondary teacher training or equivalent"
    ],
    "4": [
     "A2/D6/D7",
-    "Dipl. Humanit\u00e9s ou \u00e9quivalent"
+    "A2/D6/D7: diploma of humanities or equivalent"
    ],
    "5": [
-    "A1:Bacc/Diploma",
-    "Baccalaur\u00e9at ou \u00e9quivalent"
+    "A1: baccalaureat, GCE A level or equivalent",
+    "A1:Bacc/Diploma"
    ],
    "6": [
-    "A0: Bachelor",
-    "Ma\u00eetrise, ing\u00e9niorat ou \u00e9quiv."
+    "A0: BA, maitrise, ingeniorat or equivalent",
+    "A0: Bachelor"
    ],
    "7": [
-    "Doctorat",
+    ">A0: MA, doctorate",
     "MA: Master"
    ],
    "9": [
-    "Non d\u00e9termin\u00e9",
+    "Not stated",
     "missing"
    ]
   },
   "p26": {
    "1": [
-    "C\u00e9libataire",
-    "Employee"
+    "Employee",
+    "Never married (bachelor/spinster)"
    ],
    "2": [
-    "Employer",
-    "Union libre"
+    "Cohabitation / common-law union",
+    "Employer"
    ],
    "3": [
-    "Mariage monogamique",
+    "Monogamous marriage",
     "Self-employed"
    ],
    "4": [
     "Contributing family worker",
-    "Homme polygame"
+    "Polygamous married man"
    ],
    "5": [
-    "1i\u00e8re femme mariage poly",
+    "First wife in a polygamous marriage",
     "Producers cooperative member"
    ],
    "6": [
-    "2i\u00e8me femme mariage poly",
-    "Other"
+    "Other",
+    "Second wife in a polygamous marriage"
    ],
    "9": [
-    "Veuf/Veuve",
+    "Widowed",
     "missing"
    ]
   },
   "h01": {
    "1": [
     "Planned rural settlement",
-    "Umudugudu",
+    "Umudugudu (new rural agglomeration)",
     "Umudugudu(Clustered rural settlement)"
    ],
    "2": [
-    "Ancien regroupement",
+    "Early rural agglomeration",
     "Integrated Model Village",
     "Old settlement"
    ],
-   "3": [
-    "Dispersed/Isolated housing",
-    "Habitat isol\u00e9e",
-    "Old settlement"
-   ],
    "4": [
-    "Lotissement cadastral",
     "Planned urban housing",
+    "Planned urban housing (cadastral plot)",
     "Unplanned clustered rural housing (Dispersed/Isolated housing)"
    ],
+   "9": [
+    "Not stated",
+    "missing"
+   ],
+   "3": [
+    "Dispersed/Isolated housing",
+    "Old settlement"
+   ],
    "5": [
-    "Habitat spontan\u00e9e",
     "Modern planned urban area",
     "Spontaneous/squatter housing"
    ],
    "6": [
-    "Autre mode d'habitat",
     "Other type of housing",
     "Spontaneous/Squatter housing in Urban area"
-   ],
-   "9": [
-    "Habitat non d\u00e9termin\u00e9",
-    "missing"
    ]
   },
   "h02": {
    "1": [
-    "B\u00e2timent habit\u00e9 par un seul m\u00e9nage",
+    "Building occupied by one household",
     "House occupied by one household"
    ],
    "2": [
-    "B\u00e2timent habit\u00e9 par plusieurs m\u00e9nages",
+    "Building occupied by several households",
     "House occupied by several household",
     "House occupied by several householdS"
    ],
    "3": [
-    "B\u00e2timent en \u00e9tage habit\u00e9 par un ou plusieurs m\u00e9nages",
     "Storey building occupied by one household",
-    "Storey building occupied by one or more household"
+    "Storey building occupied by one or more household",
+    "Storey building occupied by one or more households"
    ],
    "4": [
-    "Plusieurs b\u00e2timents dans un enclos de plusieurs m\u00e9nages",
     "Several buildings in a compound occupied by several househol",
+    "Several buildings in a compound occupied by several households",
     "Storey building occupied by many households"
    ],
    "5": [
-    "Autre mode de construction",
     "Other type of building",
     "Several buildings in a compound occupied by one  household"
    ]
