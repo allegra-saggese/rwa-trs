@@ -1,0 +1,3077 @@
+{
+ "wave": "EICV4_CS",
+ "year": 2014,
+ "sample": "CS",
+ "modules": {
+  "s0_s5_household": {
+   "level": "household",
+   "rows": 14419,
+   "vars": 81,
+   "hh_match_rate": 1.0
+  },
+  "s10a1_credits": {
+   "level": "household",
+   "rows": 14419,
+   "vars": 24,
+   "hh_match_rate": 1.0
+  },
+  "s10a2_credits": {
+   "level": "multi",
+   "rows": 20974,
+   "vars": 30,
+   "hh_match_rate": 1.0
+  },
+  "s10b_goods": {
+   "level": "multi",
+   "rows": 389313,
+   "vars": 33,
+   "hh_match_rate": 1.0
+  },
+  "s10c_savings": {
+   "level": "multi",
+   "rows": 24413,
+   "vars": 30,
+   "hh_match_rate": 1.0
+  },
+  "s1_s2_s3_s4_s6a_s6e_s6f_person": {
+   "level": "person",
+   "rows": 66081,
+   "vars": 132,
+   "hh_match_rate": 1.0
+  },
+  "s5e_access_to_services": {
+   "level": "multi",
+   "rows": 216285,
+   "vars": 29,
+   "hh_match_rate": 1.0
+  },
+  "s6b_employement_6c_salaried_s6d_business": {
+   "level": "multi",
+   "rows": 59616,
+   "vars": 76,
+   "hh_match_rate": 1.0
+  },
+  "s7a1_livestock": {
+   "level": "multi",
+   "rows": 80877,
+   "vars": 38,
+   "hh_match_rate": 1.0
+  },
+  "s7a2_livestock": {
+   "level": "household",
+   "rows": 14419,
+   "vars": 31,
+   "hh_match_rate": 1.0
+  },
+  "s7a3_livestock": {
+   "level": "multi",
+   "rows": 80877,
+   "vars": 29,
+   "hh_match_rate": 1.0
+  },
+  "s7a4_livestock": {
+   "level": "multi",
+   "rows": 109359,
+   "vars": 28,
+   "hh_match_rate": 1.0
+  },
+  "s7b1_land_agriculture": {
+   "level": "household",
+   "rows": 14419,
+   "vars": 33,
+   "hh_match_rate": 1.0
+  },
+  "s7b2_land_agriculture": {
+   "level": "multi",
+   "rows": 242644,
+   "vars": 31,
+   "hh_match_rate": 1.0
+  },
+  "s7c_parcels": {
+   "level": "multi",
+   "rows": 53535,
+   "vars": 41,
+   "hh_match_rate": 1.0
+  },
+  "s7d_large_crop": {
+   "level": "multi",
+   "rows": 44453,
+   "vars": 32,
+   "hh_match_rate": 1.0
+  },
+  "s7e_small_crop": {
+   "level": "multi",
+   "rows": 145711,
+   "vars": 35,
+   "hh_match_rate": 1.0
+  },
+  "s7f_income_agriculture": {
+   "level": "multi",
+   "rows": 173028,
+   "vars": 26,
+   "hh_match_rate": 1.0
+  },
+  "s7g_expenditure_agriculture": {
+   "level": "multi",
+   "rows": 230704,
+   "vars": 25,
+   "hh_match_rate": 1.0
+  },
+  "s7h_transformation_agriculture": {
+   "level": "multi",
+   "rows": 53549,
+   "vars": 32,
+   "hh_match_rate": 1.0
+  },
+  "s8a1_expenditure": {
+   "level": "multi",
+   "rows": 994911,
+   "vars": 28,
+   "hh_match_rate": 1.0
+  },
+  "s8a2_expenditure": {
+   "level": "multi",
+   "rows": 793045,
+   "vars": 28,
+   "hh_match_rate": 1.0
+  },
+  "s8a3_expenditure": {
+   "level": "multi",
+   "rows": 533503,
+   "vars": 37,
+   "hh_match_rate": 1.0
+  },
+  "s8b_expenditure": {
+   "level": "multi",
+   "rows": 2119593,
+   "vars": 37,
+   "hh_match_rate": 1.0
+  },
+  "s8c_farming": {
+   "level": "multi",
+   "rows": 1347319,
+   "vars": 38,
+   "hh_match_rate": 1.0
+  },
+  "s9a_transfers_out": {
+   "level": "multi",
+   "rows": 84413,
+   "vars": 33,
+   "hh_match_rate": 1.0
+  },
+  "s9b_transfers_in": {
+   "level": "multi",
+   "rows": 80723,
+   "vars": 33,
+   "hh_match_rate": 1.0
+  },
+  "s9c1_vup": {
+   "level": "multi",
+   "rows": 239,
+   "vars": 31,
+   "hh_match_rate": 1.0
+  },
+  "s9c_vup": {
+   "level": "household",
+   "rows": 14419,
+   "vars": 48,
+   "hh_match_rate": 1.0
+  },
+  "s9d_other_income": {
+   "level": "multi",
+   "rows": 288380,
+   "vars": 26,
+   "hh_match_rate": 1.0
+  },
+  "s9e_other_expenditure": {
+   "level": "multi",
+   "rows": 187447,
+   "vars": 24,
+   "hh_match_rate": 1.0
+  },
+  "current_main_activity6": {
+   "level": "person",
+   "rows": 55079,
+   "vars": 28,
+   "hh_match_rate": 1.0
+  },
+  "eicv4_poverty_file": {
+   "level": "household",
+   "rows": 14419,
+   "vars": 50,
+   "hh_match_rate": 1.0
+  }
+ },
+ "person": {
+  "n": 66081,
+  "vars": [
+   "survey",
+   "year",
+   "wave",
+   "sample",
+   "prov",
+   "dist",
+   "urban",
+   "cluster",
+   "hhid",
+   "pid",
+   "sex",
+   "age",
+   "wt",
+   "wt_hh",
+   "ur2012",
+   "region",
+   "hhtype",
+   "s0q19m",
+   "s0q19y",
+   "pop_wt",
+   "rwanda",
+   "surveyh",
+   "quintile",
+   "poverty",
+   "consumption",
+   "s1q2",
+   "s1q3m",
+   "s1q4",
+   "s1q5",
+   "s1q6",
+   "s1q7",
+   "s1q8",
+   "s1q9",
+   "s1q10",
+   "s1q11",
+   "s1q12",
+   "s1q13",
+   "s1q14",
+   "s1q15",
+   "s2q1",
+   "s2q2",
+   "s2q3y",
+   "s2q3m",
+   "s2q4",
+   "s2q5",
+   "s2q6",
+   "s2q7",
+   "s2q8",
+   "s3q1",
+   "s3q2",
+   "s3q3",
+   "s3q4",
+   "s3q5",
+   "s3q6",
+   "s3q7",
+   "s4aq1",
+   "s4aq2",
+   "s4aq3",
+   "s4aq4a",
+   "s4aq4b",
+   "s4aq5",
+   "s4aq6a",
+   "s4aq6b",
+   "s4aq7",
+   "s4aq8",
+   "s4aq9",
+   "s4aq10",
+   "s4aq11a",
+   "s4aq11b",
+   "s4aq11c",
+   "s4aq11d",
+   "s4aq11e",
+   "s4aq11f",
+   "s4aq11g",
+   "s4aq11h",
+   "s4aq12",
+   "s4aq13",
+   "s4aq14",
+   "s4aq15",
+   "s4aq16",
+   "s4aq17",
+   "s4bq1",
+   "s4bq2",
+   "s4bq3",
+   "s4bq4",
+   "s4bq5",
+   "s4bq6",
+   "s4bq7",
+   "s4bq8",
+   "s6aq2",
+   "s6aq3",
+   "s6aq4",
+   "s6aq5",
+   "s6aq6",
+   "s6aq7a",
+   "s6aq7b",
+   "s6aq8",
+   "s6eq1",
+   "s6eq2",
+   "s6eq3",
+   "s6eq4",
+   "s6eq5",
+   "s6eq6",
+   "s6eq7",
+   "s6eq8",
+   "s6eq9",
+   "s6eq10",
+   "s6eq11",
+   "s6eq12a",
+   "s6eq12b",
+   "s6eq13",
+   "s6eq14",
+   "s6eq15",
+   "s6eq16",
+   "s6eq17",
+   "s6eq18",
+   "s6eq19",
+   "s6eq20",
+   "s6eq21",
+   "s6eq0a",
+   "s6fq1",
+   "s6fq2",
+   "s6fq3",
+   "s6fq4",
+   "s6fq5",
+   "s6fq6",
+   "s6fq7",
+   "s6fq8",
+   "s6fq9",
+   "s6fq10",
+   "s6fq11",
+   "s6fq12",
+   "eid",
+   "lfs6",
+   "lfs16",
+   "ur",
+   "epr",
+   "twh",
+   "truu",
+   "isco",
+   "isic"
+  ],
+  "var_labels": {
+   "hhid": "Household id (unique within wave)",
+   "ur2012": "Urban/Rural 2012 (4 categories)",
+   "region": "Region",
+   "hhtype": "Type of household according to the sample",
+   "s0q19m": "Month of interview",
+   "s0q19y": "Year of interview",
+   "pop_wt": "Population Weight",
+   "rwanda": "All Rwanda",
+   "surveyh": "EICV4 survey sample",
+   "quintile": "QUINTILE",
+   "poverty": "POVERTY",
+   "consumption": "aggregate consumption/ae in Jan14 Prices",
+   "pid": "Person number within the household",
+   "s1q1": "Sex",
+   "s1q2": "Relation with the head of household",
+   "s1q3y": "Age (Years)",
+   "s1q3m": "Age (Months)",
+   "s1q4": "Marital status",
+   "s1q5": "Place of birth",
+   "s1q6": "Nationality",
+   "s1q7": "Absent in the last 12 months",
+   "s1q8": "Length of absence in last 12 months",
+   "s1q9": "Reason for absence",
+   "s1q10": "Lived in another HH during absence",
+   "s1q11": "Will be resident during enumeration period",
+   "s1q12": "Reason for absence",
+   "s1q13": "Father still alive",
+   "s1q14": "Mother still alive",
+   "s1q15": "HH membership",
+   "s2q1": "pid of respondent",
+   "s2q2": "Always lived in the district",
+   "s2q3y": "Time since last move (years)",
+   "s2q3m": "Time since last move (months)",
+   "s2q4": "District or foreign country lived prior to arrival",
+   "s2q5": "Kind of place lived prior to arrival",
+   "s2q6": "Duration of stay in the previous location (years)",
+   "s2q7": "Primary reason for moving",
+   "s2q8": "Moved alone or with other HH members",
+   "s3q1": "pid of respondent",
+   "s3q2": "Suffers from a major disability",
+   "s3q3": "Main health insurance",
+   "s3q4": "Suffered from health problem in the last 4 weeks",
+   "s3q5": "Nature of the health problem",
+   "s3q6": "Medical consultation over the last 4 weeks",
+   "s3q7": "Reason for medical consultation",
+   "s4aq1": "Ever been to school",
+   "s4aq2": "Highest class successfully completed",
+   "s4aq3": "Highest diploma obtained",
+   "s4aq4a": "Field of education of diploma",
+   "s4aq4b": "ISCED code",
+   "s4aq5": "Last higher institution attended",
+   "s4aq6a": "Class attended during school year 2012",
+   "s4aq6b": "Class attended during school year 2013",
+   "s4aq7": "Attended school in previous 12 months",
+   "s4aq8": "Type of school attended in previous 12 months",
+   "s4aq9": "Problem experienced at school",
+   "s4aq10": "School has separate toilet facilities for boys and girls",
+   "s4aq11a": "Registration and school fees",
+   "s4aq11b": "Parent contributions",
+   "s4aq11c": "School uniforms expenses",
+   "s4aq11d": "Books and school supplies expenses",
+   "s4aq11e": "Transport to and from school expenses",
+   "s4aq11f": "Room and board (or board only) expenses",
+   "s4aq11g": "Other school expenses",
+   "s4aq11h": "Total education expenses (non-distributed option)",
+   "s4aq12": "Who paid school expenses over last 12 months",
+   "s4aq13": "Missed any day at school in the last 7 days?",
+   "s4aq14": "Number of school days missed in the last 7 days",
+   "s4aq15": "Cause of not attending school",
+   "s4aq16": "Year left school",
+   "s4aq17": "Reason for leaving school",
+   "s4bq1": "Post-school/vocational training in last 12 months",
+   "s4bq2": "Expense of post-school/vocational training",
+   "s4bq3": "Can read a letter or a simple note",
+   "s4bq4": "Can write a letter or a simple note",
+   "s4bq5": "Can perform a written calculation",
+   "s4bq6": "Feels confident about using a computer",
+   "s4bq7": "Attended literacy course",
+   "s4bq8": "Has a mobile telephone",
+   "s6aq2": "Work on own/HH farm (last 12 months)",
+   "s6aq3": "Agricultural work for salary, wages, in-kind (last 12 months)",
+   "s6aq4": "Non-farm work for salary or wages (last 12 months)",
+   "s6aq5": "Non-farm business for cash/profit (last 12 months)",
+   "s6aq6": "Worked in HH member non-farm business for no payment (last 12 months)",
+   "s6aq7a": "Number of jobs over past 12 months",
+   "s6aq7b": "Number of jobs over past 7 days",
+   "s6aq8": "Main reason for not working (last 12 months)",
+   "s6eq1": "Worked for one hour in the last 7 days in S6A activities",
+   "s6eq2": "Usually works but absent last week",
+   "s6eq3": "Reason for absence from work; last 7 days",
+   "s6eq4": "Usual hours worked in job; 7 day period",
+   "s6eq5": "Worked in other activities in the last 7 days",
+   "s6eq6": "Reason not working in the last 7 days",
+   "s6eq7": "Able to start work if the opportunity existed",
+   "s6eq8": "Seeking a job during the last 4 weeks",
+   "s6eq9": "Steps taken to seek work during last 4 weeks",
+   "s6eq10": "Desire to work at the present",
+   "s6eq11": "Reason not seeking a job in last 4 weeks",
+   "s6eq12a": "Period looking for a job (year)",
+   "s6eq12b": "Period looking for a job (month)",
+   "s6eq13": "Ever worked before",
+   "s6eq14": "Reason stopped working in last job",
+   "s6eq15": "Employment status last job",
+   "s6eq16": "Kind of establishments in previous employment",
+   "s6eq17": "Wanted additional work",
+   "s6eq18": "Number of additional hours preferred to work in last 7 days",
+   "s6eq19": "Desire to change current job",
+   "s6eq20": "Reason wants to change current job",
+   "s6eq21": "Current main job/activity match training",
+   "s6eq0a": "ID number",
+   "s6fq1": "Fetched water last 7 days",
+   "s6fq2": "Number of hours fetching water last 7 days",
+   "s6fq3": "Foraged for firewood last 7 days",
+   "s6fq4": "Number of hours foraging for wood last 7 days",
+   "s6fq5": "Searched fodder last 7 days",
+   "s6fq6": "Number of hours searching fodder last 7 days",
+   "s6fq7": "Went to the market last 7 days",
+   "s6fq8": "Number of hours going to market last 7 days",
+   "s6fq9": "Cooked for household last 7 days",
+   "s6fq10": "Number of hours cooking last 7 days",
+   "s6fq11": "Did other household chores last 7 days",
+   "s6fq12": "Number of hours spent on other household chores last 7 days",
+   "prov": "Province (1-5, NISR codes)",
+   "dist": "District (11-57, NISR current codes)",
+   "urban": "Area of residence (1 urban, 2 rural)",
+   "cluster": "Sampling cluster / enumeration area (as shipped)",
+   "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
+   "survey": "Source survey",
+   "year": "Survey year (mid-fieldwork)",
+   "wave": "Wave / round id",
+   "sample": "CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",
+   "wt_hh": "Household weight (same value as wt; sums to the number of households)",
+   "eid": null,
+   "lfs6": "Labour force status for 6 years and above",
+   "lfs16": "Labour force status for 16 years and above",
+   "ur": "Unemployment rate",
+   "epr": "Employment to population ratio",
+   "twh": "Hours worked in all jobs",
+   "truu": "Time related underemployment",
+   "isco": "Current main Occupation",
+   "isic": "Current main economic activity",
+   "sex": "Sex (1 male, 2 female)",
+   "age": "Age in years"
+  },
+  "value_labels": {
+   "ur2012": {
+    "1": "Urban",
+    "2": "Semi urban",
+    "3": "Peri urban",
+    "4": "Rural"
+   },
+   "region": {
+    "1": "Kigali City",
+    "2": "Other Urban",
+    "3": "Rural Southern",
+    "4": "Rural Western",
+    "5": "Rural Northern",
+    "6": "Rural Eastern"
+   },
+   "hhtype": {
+    "1": "New sample (cluster>=2000 and cluster<5000)",
+    "2": "Panel head of households in the same cluster",
+    "3": "Panel head of households outside cluster",
+    "4": "Panel other relative inside the same cluster",
+    "5": "Panel other relative outside cluster",
+    "6": "Replaced in the same household (dependent code 94)",
+    "7": "Replaced different household (dependent code 95)",
+    "8": "VUP"
+   },
+   "rwanda": {
+    "1": "All Rwanda"
+   },
+   "surveyh": {
+    "1": "New Sample",
+    "2": "Panel",
+    "3": "VUP"
+   },
+   "quintile": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "s1q2": {
+    "1": "Household head (HH)",
+    "2": "Spouse of HH",
+    "3": "Son or daughter of HH",
+    "4": "Step or adopted or foster child of HH",
+    "5": "Father or mother of HH",
+    "6": "Brother or sister of HH",
+    "7": "Grand child of HH",
+    "8": "Parent in law of HH",
+    "9": "Brother or  sister in law to HH",
+    "10": "Other relationship to HH",
+    "11": "No relationship to HH",
+    "12": "Domestic worker",
+    "99": "Missing"
+   },
+   "s1q4": {
+    "1": "Married monogamously with legal certificate",
+    "2": "Married monogamously without legal certificate",
+    "3": "Married polygamously",
+    "4": "Living together",
+    "5": "Divorced",
+    "6": "Separated",
+    "7": "Single",
+    "8": "Widow or widower",
+    "9": "Missing"
+   },
+   "s1q5": {
+    "11": "Nyarugenge",
+    "12": "Gasabo",
+    "13": "Kicukiro",
+    "21": "Nyanza",
+    "22": "Gisagara",
+    "23": "Nyaruguru",
+    "24": "Huye",
+    "25": "Nyamagabe",
+    "26": "Ruhango",
+    "27": "Muhanga",
+    "28": "Kamonyi",
+    "31": "Karongi",
+    "32": "Rutsiro",
+    "33": "Rubavu",
+    "34": "Nyabihu",
+    "35": "Ngororero",
+    "36": "Rusizi",
+    "37": "Nyamasheke",
+    "41": "Rulindo",
+    "42": "Gkenke",
+    "43": "Musanze",
+    "44": "Burera",
+    "45": "Gicumbi",
+    "51": "Rwamagana",
+    "52": "Nyagatare",
+    "53": "Gatsibo",
+    "54": "Kayonza",
+    "55": "Kirehe",
+    "56": "Ngoma",
+    "57": "Bugesera",
+    "61": "Burundi",
+    "62": "Democratic Republic of Congo",
+    "63": "Uganda",
+    "64": "Tanzania",
+    "65": "Kenya",
+    "66": "Other African",
+    "67": "Rest of the world",
+    "99": "Missing"
+   },
+   "s1q6": {
+    "60": "Rwandese",
+    "61": "Burundian",
+    "62": "Congolese",
+    "63": "Ugandan",
+    "64": "Tanzanian",
+    "65": "Kenyan",
+    "66": "Other African",
+    "67": "Other foreign",
+    "99": "Missing"
+   },
+   "s1q7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s1q8": {
+    "0": "Less than one month",
+    "1": "1 month",
+    "2": "2 months",
+    "3": "3 months",
+    "4": "4 months",
+    "5": "5 months",
+    "6": "6 months",
+    "7": "7 months",
+    "8": "8 months",
+    "9": "9 months",
+    "10": "10 months",
+    "11": "11 months",
+    "12": "12 months",
+    "99": "Missing"
+   },
+   "s1q9": {
+    "1": "Studies",
+    "2": "Seasonal work",
+    "3": "Working away now",
+    "4": "Health care",
+    "5": "Attend ceremony",
+    "6": "Visit friend or family",
+    "7": "Training",
+    "8": "Detention or compulsory service",
+    "9": "Unexplained absence",
+    "10": "Other",
+    "11": "Not yet joined the Household",
+    "99": "Missing"
+   },
+   "s1q10": {
+    "1": "Yes",
+    "2": "No",
+    "8": "Don't Know",
+    "9": "Missing"
+   },
+   "s1q11": {
+    "1": "Yes",
+    "2": "No",
+    "8": "Don't know",
+    "9": "Missing"
+   },
+   "s1q12": {
+    "1": "Studies",
+    "2": "Seasonal work",
+    "3": "Working away now",
+    "4": "Health care",
+    "5": "Attend ceremony",
+    "6": "Visit friend or family",
+    "7": "Training",
+    "8": "Detention or compulsory service",
+    "9": "Unexplained absence",
+    "10": "Other",
+    "99": "Missing"
+   },
+   "s1q13": {
+    "1": "Yes,and residing in the household",
+    "2": "Yes,but residing in another household",
+    "3": "No",
+    "8": "Don't know",
+    "9": "Missing"
+   },
+   "s1q14": {
+    "1": "Yes and resident in household",
+    "2": "Yes but residing in another household",
+    "3": "No",
+    "8": "Do not know",
+    "9": "Missing"
+   },
+   "s1q15": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2q2": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s2q3y": {
+    "0": "Less than one year",
+    "99": "Missing"
+   },
+   "s2q3m": {
+    "99": "Missing"
+   },
+   "s2q4": {
+    "11": "Nyarugenge",
+    "12": "Gasabo",
+    "13": "Kicukiro",
+    "21": "Nyanza",
+    "22": "Gisagara",
+    "23": "Nyaruguru",
+    "24": "Huye",
+    "25": "Nyamagabe",
+    "26": "Ruhango",
+    "27": "Muhanga",
+    "28": "Kamonyi",
+    "31": "Karongi",
+    "32": "Rutsiro",
+    "33": "Rubavu",
+    "34": "Nyabihu",
+    "35": "Ngororero",
+    "36": "Rusizi",
+    "37": "Nyamasheke",
+    "41": "Rulindo",
+    "42": "Gkenke",
+    "43": "Musanze",
+    "44": "Burera",
+    "45": "Gicumbi",
+    "51": "Rwamagana",
+    "52": "Nyagatare",
+    "53": "Gatsibo",
+    "54": "Kayonza",
+    "55": "Kirehe",
+    "56": "Ngoma",
+    "57": "Bugesera",
+    "61": "Burundi",
+    "62": "Democratic Republic of Congo",
+    "63": "Uganda",
+    "64": "Tanzania",
+    "65": "Kenya",
+    "66": "Other African",
+    "67": "Rest of the world",
+    "99": "Missing"
+   },
+   "s2q5": {
+    "1": "Capital",
+    "2": "Big city",
+    "3": "Other town",
+    "4": "Countryside"
+   },
+   "s2q6": {
+    "0": "Less than one year",
+    "99": "Missing"
+   },
+   "s2q7": {
+    "1": "Employment",
+    "2": "Loss of employment",
+    "3": "Employment of spouse",
+    "4": "Marriage",
+    "5": "Other family reasons",
+    "6": "Studies",
+    "7": "Disasters or insecurity",
+    "8": "Bad health",
+    "9": "Live in their Own house built elsewhere",
+    "10": "Trade and business",
+    "11": "Lack of land",
+    "12": "Lack of employment",
+    "13": "Desire to return home",
+    "14": "Parent/HH moved",
+    "15": "Other"
+   },
+   "s2q8": {
+    "1": "Alone",
+    "2": "Part of family",
+    "3": "All of family",
+    "9": "Missing"
+   },
+   "s3q2": {
+    "1": "Without Disability",
+    "2": "Visual disability",
+    "3": "Deaf and/or mute",
+    "4": "Disability in the arms",
+    "5": "Disability in the legs",
+    "6": "Mental disability",
+    "7": "Trauma",
+    "8": "Very old",
+    "9": "Other, specify",
+    "99": "Missing"
+   },
+   "s3q3": {
+    "1": "RAMA",
+    "2": "Mutual insurance",
+    "3": "Employer",
+    "4": "MMI",
+    "5": "Other insurance",
+    "6": "None",
+    "9": "Missing"
+   },
+   "s3q4": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s3q5": {
+    "1": "Malaria",
+    "2": "Internal parasites",
+    "3": "Respiratory infection",
+    "4": "Skin disease",
+    "5": "Accident/injury",
+    "6": "Diarrhoea",
+    "7": "Dental problem",
+    "8": "Reproductive issues",
+    "9": "Other",
+    "99": "Missing"
+   },
+   "s3q6": {
+    "1": "Yes",
+    "2": "No",
+    "8": "Don't know",
+    "9": "Missing"
+   },
+   "s3q7": {
+    "1": "General visit or preventive",
+    "2": "Sickness",
+    "3": "Injury",
+    "4": "Sickness and injury",
+    "5": "Vaccination",
+    "6": "Prenatal care",
+    "7": "Postnatal care",
+    "8": "Other (specify)",
+    "9": "Missing"
+   },
+   "s4aq1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4aq2": {
+    "1": "Pre-primary",
+    "10": "Not complete P1",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "98": "Don't Know",
+    "99": "Missing"
+   },
+   "s4aq3": {
+    "1": "Primary completed",
+    "2": "Secondary common",
+    "3": "Post primary certificate",
+    "4": "Diploma A3, D5, D4",
+    "5": "Humanities Diploma",
+    "6": "Bachelors",
+    "7": "Professional license",
+    "8": "Engineer",
+    "9": "Masters",
+    "10": "Doctorate",
+    "99": "Missing"
+   },
+   "s4aq4b": {
+    "1": "Basic programmes",
+    "8": "Literacy and numeracy",
+    "9": "Personal development",
+    "14": "Teacher training and education science",
+    "21": "Arts",
+    "22": "Humanities",
+    "31": "Social and behavioural science",
+    "32": "Journalism and information",
+    "34": "Business and administration",
+    "38": "Law",
+    "41": "Combined sciences",
+    "42": "Life sciences",
+    "44": "Physical sciences",
+    "46": "Mathematics and statistics",
+    "48": "Computing",
+    "52": "Engineering and engineering trades",
+    "54": "Manufacturing and processing",
+    "58": "Architecture and building",
+    "62": "Agriculture, forestry and fishery",
+    "64": "Veterinary",
+    "72": "Health",
+    "76": "Social services",
+    "81": "Personal services",
+    "84": "Transport services",
+    "85": "Environmental protection",
+    "86": "Security services",
+    "99": "Missing"
+   },
+   "s4aq5": {
+    "1": "University",
+    "2": "Institute/school",
+    "3": "Polytechnic",
+    "4": "College of Education",
+    "5": "Technical College",
+    "6": "Other",
+    "7": "None",
+    "9": "Missing"
+   },
+   "s4aq6a": {
+    "0": "Not in class",
+    "1": "Pre-primary",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "98": "Don't Know",
+    "99": "Missing"
+   },
+   "s4aq6b": {
+    "0": "Not in class",
+    "1": "Pre-primary",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "98": "Don't Know",
+    "99": "Missing"
+   },
+   "s4aq7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4aq8": {
+    "1": "Public",
+    "2": "Private",
+    "3": "Free Subsidized",
+    "9": "Missing"
+   },
+   "s4aq9": {
+    "1": "No problem",
+    "2": "Books not available",
+    "3": "Mediocre teaching",
+    "4": "Not enough teachers",
+    "5": "Teachers absent",
+    "6": "Poor buildings & equipment",
+    "7": "Other (specify)",
+    "8": "Don't know",
+    "9": "Missing"
+   },
+   "s4aq10": {
+    "1": "Yes",
+    "2": "No",
+    "8": "Do not know",
+    "9": "Missing"
+   },
+   "s4aq11a": {
+    "0": "Zero",
+    "9999999": "Missing"
+   },
+   "s4aq11b": {
+    "0": "Zero",
+    "999999": "Missing"
+   },
+   "s4aq11c": {
+    "0": "Zero",
+    "999999": "Missing"
+   },
+   "s4aq11d": {
+    "0": "Zero",
+    "9999999": "Missing"
+   },
+   "s4aq11e": {
+    "0": "Zero",
+    "9999999": "Missing"
+   },
+   "s4aq11f": {
+    "0": "Zero",
+    "9999999": "Missing"
+   },
+   "s4aq11g": {
+    "0": "Zero",
+    "999999": "Missing"
+   },
+   "s4aq11h": {
+    "0": "Zero",
+    "9999999": "Missing"
+   },
+   "s4aq12": {
+    "1": "Father",
+    "2": "Mother",
+    "3": "Both parents",
+    "4": "Other household members",
+    "5": "Other relatives",
+    "6": "Other non-relatives",
+    "7": "Myself",
+    "8": "State",
+    "9": "Other Organization/Association",
+    "10": "Employer",
+    "11": "Others",
+    "99": "Missing"
+   },
+   "s4aq13": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4aq14": {
+    "99": "Missing"
+   },
+   "s4aq15": {
+    "1": "Dropped out",
+    "2": "Poor health",
+    "3": "Hunger",
+    "4": "Financial Reasons",
+    "5": "Family circumstances",
+    "6": "Fear of Punishment",
+    "7": "Holidays",
+    "8": "Transition between levels",
+    "9": "Completed Studies",
+    "10": "Other",
+    "99": "missing"
+   },
+   "s4aq16": {
+    "9999": "Missing"
+   },
+   "s4aq17": {
+    "1": "Cost",
+    "2": "Work",
+    "3": "Marriage",
+    "4": "Change of residence",
+    "5": "Excluded",
+    "6": "Lack of interest",
+    "7": "Lack of family support",
+    "8": "War/Genocide",
+    "9": "Health",
+    "10": "Completed studies successfully",
+    "11": "Other (Specify)",
+    "99": "Missing"
+   },
+   "s4bq1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4bq2": {
+    "0": "Zero",
+    "99999999": "Missing"
+   },
+   "s4bq3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4bq4": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4bq5": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4bq6": {
+    "1": "Yes",
+    "2": "No",
+    "3": "No literate",
+    "9": "Missing"
+   },
+   "s4bq7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s4bq8": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6aq2": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6aq3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6aq4": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6aq5": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6aq6": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6aq7a": {
+    "99": "Missing"
+   },
+   "s6aq7b": {
+    "9": "Missing"
+   },
+   "s6aq8": {
+    "1": "Unemployed /seeking work",
+    "2": "Domestic duties",
+    "3": "Student",
+    "4": "Retired/old age",
+    "5": "Sickness/Health problems/disability",
+    "6": "Too young",
+    "7": "Other,(Specify)",
+    "9": "Missing"
+   },
+   "s6eq1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq2": {
+    "1": "Yes, absent",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq3": {
+    "1": "Sick/injured",
+    "2": "No work",
+    "3": "Season",
+    "4": "Weather",
+    "5": "Leave",
+    "6": "Other",
+    "9": "Missing"
+   },
+   "s6eq4": {
+    "99": "Missing"
+   },
+   "s6eq5": {
+    "1": "Yes, at least one of them",
+    "2": "None of the above",
+    "9": "Missing"
+   },
+   "s6eq6": {
+    "1": "Unemployed",
+    "2": "Domestic duties",
+    "3": "Student",
+    "4": "Retired",
+    "5": "Sickness/Health problems/disability",
+    "6": "Old age",
+    "7": "Too young",
+    "8": "Other (Specify)",
+    "9": "Missing"
+   },
+   "s6eq7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq8": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq9": {
+    "1": "friend to help",
+    "2": "Applied for a job",
+    "3": "Called on employers",
+    "4": "Listened to radio announcements",
+    "5": "Read published announcements",
+    "6": "Attempting own job creation",
+    "7": "Searched internet",
+    "8": "Other (specify",
+    "9": "Missing"
+   },
+   "s6eq10": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq11": {
+    "1": "Discouraged seeker",
+    "2": "Waiting to start a new job promised",
+    "3": "Waiting to create own job",
+    "4": "Others (specify)",
+    "9": "Missing"
+   },
+   "s6eq12a": {
+    "99": "Missing"
+   },
+   "s6eq12b": {
+    "0": "No months",
+    "99": "Missing"
+   },
+   "s6eq13": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq14": {
+    "1": "Under payment",
+    "2": "Late payment",
+    "3": "Physical/social harassment",
+    "4": "Poor working Conditions",
+    "5": "Marital/family commitments",
+    "6": "Going back to school/training",
+    "7": "Restructuring/Fired/dismissed",
+    "8": "Health problems",
+    "9": "Unprofitable",
+    "10": "Temporary work only",
+    "11": "Other",
+    "99": "Missing"
+   },
+   "s6eq15": {
+    "1": "Paid employee",
+    "2": "Employer",
+    "3": "Own account worker",
+    "4": "Unpaid family worker",
+    "5": "Member of Cooperative",
+    "6": "Intern/Volunteer",
+    "7": "VUP",
+    "8": "Other (specify)",
+    "9": "Missing"
+   },
+   "s6eq16": {
+    "1": "Private non-farm",
+    "2": "Private farm",
+    "3": "Public",
+    "4": "Cooperative",
+    "5": "NGO (local)",
+    "6": "International organisation",
+    "7": "VUP Community work in Private  enterprise",
+    "8": "VUP Community work in Public sector",
+    "9": "Household Domestic",
+    "10": "Other (specify)",
+    "98": "Don't know",
+    "99": "Missing"
+   },
+   "s6eq17": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq18": {
+    "0": "No additional hours",
+    "99": "Missing"
+   },
+   "s6eq19": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6eq20": {
+    "1": "Wants higher pay",
+    "2": "Wants timely pay",
+    "3": "Stop harassment",
+    "4": "Better environment",
+    "5": "Fit in with family commitments",
+    "6": "Further training/school",
+    "7": "Start own business",
+    "8": "Health problem",
+    "9": "Other"
+   },
+   "s6eq21": {
+    "1": "Yes",
+    "2": "No different occupation to qualification",
+    "3": "No lower job than qualification",
+    "4": "No higher job than qualification)",
+    "9": "Missing"
+   },
+   "s6fq1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6fq2": {
+    "0": "Less than an hour",
+    "99": "Missing"
+   },
+   "s6fq3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6fq4": {
+    "0": "Less than an hour",
+    "99": "Missing"
+   },
+   "s6fq5": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6fq6": {
+    "0": "Less than an hour",
+    "99": "Missing"
+   },
+   "s6fq7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6fq8": {
+    "0": "Less than an hour",
+    "99": "Missing"
+   },
+   "s6fq9": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6fq10": {
+    "0": "Less than an hour",
+    "99": "Missing"
+   },
+   "s6fq11": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s6fq12": {
+    "0": "Less than an hour",
+    "99": "Missing"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "dist": {
+    "11": "Nyarugenge",
+    "12": "Gasabo",
+    "13": "Kicukiro",
+    "21": "Nyanza",
+    "22": "Gisagara",
+    "23": "Nyaruguru",
+    "24": "Huye",
+    "25": "Nyamagabe",
+    "26": "Ruhango",
+    "27": "Muhanga",
+    "28": "Kamonyi",
+    "31": "Karongi",
+    "32": "Rutsiro",
+    "33": "Rubavu",
+    "34": "Nyabihu",
+    "35": "Ngororero",
+    "36": "Rusizi",
+    "37": "Nyamasheke",
+    "41": "Rulindo",
+    "42": "Gakenke",
+    "43": "Musanze",
+    "44": "Burera",
+    "45": "Gicumbi",
+    "51": "Rwamagana",
+    "52": "Nyagatare",
+    "53": "Gatsibo",
+    "54": "Kayonza",
+    "55": "Kirehe",
+    "56": "Ngoma",
+    "57": "Bugesera"
+   },
+   "urban": {
+    "1": "Urban",
+    "2": "Rural"
+   },
+   "lfs6": {
+    "1": "Currently employed",
+    "2": "Currently unemployed",
+    "3": "Currently economically inactive",
+    "a": "Missing"
+   },
+   "lfs16": {
+    "1": "Currently employed",
+    "2": "Currently unemployed",
+    "3": "Currently economically inactive",
+    "a": "Missing"
+   },
+   "epr": {
+    "0": "Not employed",
+    "100": " Employed"
+   },
+   "truu": {
+    "0": "Not underemployed",
+    "100": "Underemployed"
+   },
+   "isco": {
+    "1": "Managers",
+    "2": "Professionals",
+    "3": "Technicians and associate professionals",
+    "4": "Clerical support workers",
+    "5": "Service and sales workers",
+    "6": "Skilled agriculture, forestry and fishery workers",
+    "7": "Craft and related trade workers",
+    "8": "Plant and machine operators and assemblers",
+    "9": "Elementary occupations",
+    "99": "Missing"
+   },
+   "isic": {
+    "1": "Agriculture, forestry and fishing",
+    "2": "Mining and quarrying",
+    "3": "Manufacturing",
+    "4": "Electrivcity, gas, steam and air conditionning supply",
+    "5": "Water supply , sewage, waste managment and remediation activ",
+    "6": "Construction",
+    "7": "Wholesale and retail trade, repair of motor vehivles and mot",
+    "8": "Transportation and storage",
+    "9": "Accomodation and food service activities",
+    "10": "Information and communication",
+    "11": "Financial and insurance activities",
+    "12": "Real estate activities",
+    "13": "Professional, scientific and technical activities",
+    "14": "Administrative and support service activities",
+    "15": "Public administration and defence; compulsory social securit",
+    "16": "Education",
+    "17": "Human health and social work activities",
+    "18": "Arts, entertainment and recreation",
+    "19": "Other service activities",
+    "20": "Activies of HH as employers; undifferentiated goods and  ser",
+    "21": "Activities of extraterritorial organisations and bodies"
+   },
+   "sex": {
+    "1": "Male",
+    "2": "Female",
+    "9": "Missing"
+   },
+   "age": {
+    "998": "Don't know",
+    "999": "Missing"
+   }
+  },
+  "source": {
+   "prov": "province",
+   "dist": "district",
+   "urban": "ur2_2012",
+   "cluster": "clust",
+   "wt": "weight",
+   "base module": "s1_s2_s3_s4_s6a_s6e_s6f_person",
+   "eid": "module current_main_activity6",
+   "s1q1": "module current_main_activity6",
+   "s1q3y": "module current_main_activity6",
+   "lfs6": "module current_main_activity6",
+   "lfs16": "module current_main_activity6",
+   "ur": "module current_main_activity6",
+   "epr": "module current_main_activity6",
+   "twh": "module current_main_activity6",
+   "truu": "module current_main_activity6",
+   "isco": "module current_main_activity6",
+   "isic": "module current_main_activity6",
+   "s0q19m": "module current_main_activity6",
+   "s0q19y": "module current_main_activity6",
+   "quintile": "module current_main_activity6",
+   "poverty": "module current_main_activity6",
+   "consumption": "module current_main_activity6",
+   "sex": "s1q1",
+   "age": "s1q3y"
+  }
+ },
+ "household": {
+  "n": 14419,
+  "vars": [
+   "survey",
+   "year",
+   "wave",
+   "sample",
+   "prov",
+   "dist",
+   "urban",
+   "cluster",
+   "hhid",
+   "wt",
+   "wt_hh",
+   "ur2012",
+   "region",
+   "rwanda",
+   "surveyh",
+   "quintile",
+   "poverty",
+   "consumption",
+   "hhtype",
+   "s0q19m",
+   "s0q19y",
+   "s0qb",
+   "s5aq1",
+   "s5aq2",
+   "s5aq3",
+   "s5aq4",
+   "s5aq5",
+   "s5aq6",
+   "s5aq7y",
+   "s5aq7m",
+   "s5aq8",
+   "s5aq9",
+   "s5aq10",
+   "s5aq11",
+   "s5bq1",
+   "s5bq2",
+   "s5bq3a",
+   "s5bq3b",
+   "s5bq4a",
+   "s5bq4b",
+   "s5bq5",
+   "s5bq6a",
+   "s5bq6b",
+   "s5bq7",
+   "s5bq8",
+   "s5bq9a",
+   "s5bq9b",
+   "s5bq10",
+   "s5bq11",
+   "s5cq1",
+   "s5cq2",
+   "s5cq3",
+   "s5cq4",
+   "s5cq5",
+   "s5cq6",
+   "s5cq7",
+   "s5cq8",
+   "s5cq9a",
+   "s5cq9b",
+   "s5cq10",
+   "s5cq11",
+   "s5cq12",
+   "s5cq13",
+   "s5cq14",
+   "s5cq15",
+   "s5cq16",
+   "s5cq17",
+   "s5cq18",
+   "s5cq19",
+   "s5cq20",
+   "s5cq21",
+   "s5cq22",
+   "s5cq23",
+   "s5cq24",
+   "s5cq25",
+   "s5cq26",
+   "s5cq27",
+   "s5dq1",
+   "s5dq2",
+   "s5dq3",
+   "s5dq4",
+   "member",
+   "ae",
+   "region_eicv4_poverty_file",
+   "id1",
+   "ur",
+   "exp1",
+   "exp4",
+   "exp5",
+   "exp6",
+   "exp7",
+   "exp8",
+   "exp9",
+   "exp10",
+   "exp11",
+   "exp12",
+   "exp12_wh",
+   "exp13",
+   "exp14_1",
+   "exp14_2",
+   "exp15_1",
+   "exp15_2",
+   "exp16_1",
+   "exp16a_1",
+   "exp16_2",
+   "exp16a_2",
+   "exp17",
+   "exp18",
+   "cons1",
+   "food",
+   "cons1_ae",
+   "hh_wt",
+   "pop_wt",
+   "foodshare1",
+   "sol",
+   "epov",
+   "pov",
+   "qcons",
+   "ur2012_s10a1_credits",
+   "region_s10a1_credits",
+   "s10aq1",
+   "s10aq2",
+   "s10aq3",
+   "hhtype_s10a1_credits",
+   "rwanda_s10a1_credits",
+   "surveyh_s10a1_credits",
+   "quintile_s10a1_credits",
+   "poverty_s10a1_credits",
+   "s0q19m_s10a1_credits",
+   "s0q19y_s10a1_credits",
+   "ur2012_s7a2_livestock",
+   "region_s7a2_livestock",
+   "s7a2q1",
+   "s7a2q2",
+   "s7a2q3",
+   "s7a2q4a",
+   "s7a2q4b",
+   "s7a2q5",
+   "s7a2q6",
+   "s7a2q7",
+   "s7a2q8",
+   "s7a2q9",
+   "hhtype_s7a2_livestock",
+   "rwanda_s7a2_livestock",
+   "surveyh_s7a2_livestock",
+   "quintile_s7a2_livestock",
+   "poverty_s7a2_livestock",
+   "s0q19m_s7a2_livestock",
+   "s0q19y_s7a2_livestock",
+   "ur2012_s7b1_land_agriculture",
+   "region_s7b1_land_agriculture",
+   "s7b1q1",
+   "s7b1q2",
+   "s7b1q3",
+   "s7b1q4",
+   "s7b1q5",
+   "s7b1q6",
+   "s7b1q7",
+   "s7b1q8",
+   "s7b1q9",
+   "s7b1q10",
+   "s7b1q11",
+   "s7b1q12",
+   "hhtype_s7b1_land_agriculture",
+   "rwanda_s7b1_land_agriculture",
+   "surveyh_s7b1_land_agriculture",
+   "quintile_s7b1_land_agriculture",
+   "poverty_s7b1_land_agriculture",
+   "s0q19m_s7b1_land_agriculture",
+   "s0q19y_s7b1_land_agriculture",
+   "ur2012_s9c_vup",
+   "region_s9c_vup",
+   "s9cq1",
+   "s9cq2",
+   "s9cq3",
+   "s9cq4",
+   "s9cq5",
+   "s9cq6",
+   "s9cq7",
+   "s9cq8",
+   "s9cq9",
+   "s9cq10",
+   "s9cq11",
+   "s9cq12",
+   "s9cq13",
+   "s9cq14",
+   "s9cq15",
+   "s9cq16",
+   "s9cq17",
+   "s9cq18",
+   "s9cq19",
+   "s9cq20",
+   "s9cq30",
+   "s9cq31a",
+   "s9cq31b",
+   "s9cq31c",
+   "s9cq31d",
+   "s9cq31e",
+   "s9cq31f",
+   "hhtype_s9c_vup",
+   "rwanda_s9c_vup",
+   "surveyh_s9c_vup",
+   "quintile_s9c_vup",
+   "poverty_s9c_vup",
+   "s0q19m_s9c_vup",
+   "s0q19y_s9c_vup",
+   "hhsize",
+   "head_sex",
+   "head_age"
+  ],
+  "var_labels": {
+   "hhid": "Household id (unique within wave)",
+   "ur2012": "Urban/Rural 2012 (4 categories)",
+   "region": "(max) region",
+   "rwanda": "All Rwanda",
+   "surveyh": "EICV4 survey sample",
+   "quintile": "QUINTILE",
+   "poverty": "POVERTY",
+   "consumption": "aggregate consumption/ae in Jan14 Prices",
+   "hhtype": "Type of household according to the sample",
+   "s0q19m": "Month of interview",
+   "s0q19y": "Year of interview",
+   "s0qb": "Ubudehe category (according to sector office)",
+   "s5aq1": "Type of habitat",
+   "s5aq2": "Type of dwelling",
+   "s5aq3": "Number of HH share the dwelling",
+   "s5aq4": "Share room(s) with other households",
+   "s5aq5": "Number of rooms occupied by HH",
+   "s5aq6": "Number of rooms used for sleeping",
+   "s5aq7y": "Duration (years) HH inhabited dwelling",
+   "s5aq7m": "Duration (months) HH inhabited dwelling",
+   "s5aq8": "Lived in other dwellings prior to current",
+   "s5aq9": "Reason for moving to current dwelling",
+   "s5aq10": "Owner of house/dwelling",
+   "s5aq11": "Current occupancy status",
+   "s5bq1": "Year built or purchased",
+   "s5bq2": "Current value of dwelling if were to sell it",
+   "s5bq3a": "Estimated rent (amount)",
+   "s5bq3b": "Estimated rent (time unit)",
+   "s5bq4a": "Rent paid in cash (amount)",
+   "s5bq4b": "Rent paid in cash (time unit)",
+   "s5bq5": "Provide service/payments in kind",
+   "s5bq6a": "Service/payment in kind (amount)",
+   "s5bq6b": "Service/payment in kind (time unit)",
+   "s5bq7": "Anybody outside HH paying rent",
+   "s5bq8": "Who pays the rent for you",
+   "s5bq9a": "Amount of rent paid for you",
+   "s5bq9b": "Time unit of rent paid for you",
+   "s5bq10": "Built/extended house in last 12 months",
+   "s5bq11": "Amount paid for house construction last 12 months",
+   "s5cq1": "Type main source of water",
+   "s5cq2": "Metres to main water source",
+   "s5cq3": "Type nearest source of drinking water",
+   "s5cq4": "Metres to nearest drinking water source",
+   "s5cq5": "Use the nearest drinking water source",
+   "s5cq6": "Main reason why source is not used",
+   "s5cq7": "Type drinking water source used",
+   "s5cq8": "Metres to drinking water source used",
+   "s5cq9a": "Period of last water bill (months)",
+   "s5cq9b": "Amount of last water bill",
+   "s5cq10": "Water from private vendor/neighbour in last 7 days",
+   "s5cq11": "Amount paid to private water vendor/neighbour in last 7 days",
+   "s5cq12": "Sold water in last 7 days",
+   "s5cq13": "Money earned from the water sold in last 7 days",
+   "s5cq14": "Amount paid to maintain water source (last month)",
+   "s5cq15": "Rainwater management",
+   "s5cq16": "Main source of lighting in home",
+   "s5cq17": "Amount paid for electricity in last 4 weeks",
+   "s5cq18": "Primary source of cooking fuel",
+   "s5cq19": "Mode of rubbish/garbage disposal",
+   "s5cq20": "Type of toilet",
+   "s5cq21": "Toilet facility shared with another household",
+   "s5cq22": "Dwelling affected by environmental destruction in last 12 months",
+   "s5cq23": "Main environmental problem experienced with dwelling",
+   "s5cq24": "Received any environmental information in last 12 months",
+   "s5cq25": "Main source of info on environmental issues",
+   "s5cq26": "Have Internet connection",
+   "s5cq27": "Main kind of internet connection used",
+   "s5dq1": "Main construction material of exterior wall",
+   "s5dq2": "Main roofing material for main dwelling",
+   "s5dq3": "Main floor material for dwelling",
+   "s5dq4": "Floor area of the dwelling (square metres)",
+   "prov": "Province (1-5, NISR codes)",
+   "dist": "District (11-57, NISR current codes)",
+   "urban": "Area of residence (1 urban, 2 rural)",
+   "cluster": "Sampling cluster / enumeration area (as shipped)",
+   "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
+   "survey": "Source survey",
+   "year": "Survey year (mid-fieldwork)",
+   "wave": "Wave / round id",
+   "sample": "CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",
+   "wt_hh": "Household weight (same value as wt; sums to the number of households)",
+   "member": "(sum) member",
+   "ae": "(sum) ae",
+   "id1": "(max) id1_Province",
+   "ur": "urb rural 2012",
+   "exp1": "education expenses",
+   "exp4": "imputed rents",
+   "exp5": "actual rents",
+   "exp6": "Maintenance costs",
+   "exp7": "water expenses",
+   "exp8": "electricity expenses",
+   "exp9": "in-kind payments",
+   "exp10": "provision of house",
+   "exp11": "other benefits",
+   "exp12": "Annual non-food expenditures",
+   "exp12_wh": "Annual non-food expenditures (withouth health)",
+   "exp13": "monthly non-food expenditures",
+   "exp14_1": "frequent non-food expenditures with filter questions 0",
+   "exp14_2": "frequent non-food expenditures without filter questions",
+   "exp15_1": "food expenditures with filter question 0",
+   "exp15_2": "food expenditures without filter question",
+   "exp16_1": "own food consumption with filter question 0",
+   "exp16a_1": "own non-food consumption with filter question 0",
+   "exp16_2": "own food consumption without filter question",
+   "exp16a_2": "own non-food consumption without filter question",
+   "exp17": "use value of durable goods",
+   "exp18": "received transfers",
+   "cons1": "aggregate consumption",
+   "food": "food consumption",
+   "cons1_ae": "aggregate consumption/ae",
+   "hh_wt": "Household weight",
+   "pop_wt": "Population weight",
+   "foodshare1": "Share of food in total household consumption",
+   "sol": "aggregate consumption/ae in Jan14 Prices",
+   "epov": "Extreme poverty Headcount Ratio",
+   "pov": "Total Poverty Headcount Ratio",
+   "qcons": "Deciles of total consumption (sol1)",
+   "ur2012_s10a1_credits": "Urban/Rural 2012 (4 categories)",
+   "region_s10a1_credits": "Region",
+   "s10aq1": "Requested and failed to get a loan in last 12 months",
+   "s10aq2": "Reason why loan was denied",
+   "s10aq3": "HH member owe money over previous 12 months",
+   "hhtype_s10a1_credits": "Type of household according to the sample",
+   "rwanda_s10a1_credits": "All Rwanda",
+   "surveyh_s10a1_credits": "EICV4 survey sample",
+   "quintile_s10a1_credits": "QUINTILE",
+   "poverty_s10a1_credits": "POVERTY",
+   "s0q19m_s10a1_credits": "Month of interview",
+   "s0q19y_s10a1_credits": "Year of interview",
+   "ur2012_s7a2_livestock": "Urban/Rural 2012 (4 categories)",
+   "region_s7a2_livestock": "Region",
+   "s7a2q1": "Received a cow from government policy",
+   "s7a2q2": "Still keep this animal",
+   "s7a2q3": "Received animal from NGO or social protection",
+   "s7a2q4a": "Kind of animal 1st",
+   "s7a2q4b": "Kind of animal 2nd",
+   "s7a2q5": "Change in number of animals",
+   "s7a2q6": "Use a maintained pasture",
+   "s7a2q7": "Owner of pasture",
+   "s7a2q8": "Cost of using the pasture over last 12 months",
+   "s7a2q9": "Number of months pasture was used",
+   "hhtype_s7a2_livestock": "Type of household according to the sample",
+   "rwanda_s7a2_livestock": "All Rwanda",
+   "surveyh_s7a2_livestock": "EICV4 survey sample",
+   "quintile_s7a2_livestock": "QUINTILE",
+   "poverty_s7a2_livestock": "POVERTY",
+   "s0q19m_s7a2_livestock": "Month of interview",
+   "s0q19y_s7a2_livestock": "Year of interview",
+   "ur2012_s7b1_land_agriculture": "Urban/Rural 2012 (4 categories)",
+   "region_s7b1_land_agriculture": "Region",
+   "s7b1q1": "Currently own agricultural land",
+   "s7b1q2": "Owned land over last 12 months",
+   "s7b1q3": "Bought land over last 12 months",
+   "s7b1q4": "Amount paid to acquire land",
+   "s7b1q5": "Sold land over last 12 months",
+   "s7b1q6": "Amount received from the sale of this land",
+   "s7b1q7": "Rented out land over the last 12 months",
+   "s7b1q8": "Amount received from the rent of land",
+   "s7b1q9": "Sharecropped land in the last 12 months",
+   "s7b1q10": "Amount received from the sharecropping",
+   "s7b1q11": "Received land over the last 12 months",
+   "s7b1q12": "Given land over the last 12 months",
+   "hhtype_s7b1_land_agriculture": "Type of household according to the sample",
+   "rwanda_s7b1_land_agriculture": "All Rwanda",
+   "surveyh_s7b1_land_agriculture": "EICV4 survey sample",
+   "quintile_s7b1_land_agriculture": "QUINTILE",
+   "poverty_s7b1_land_agriculture": "POVERTY",
+   "s0q19m_s7b1_land_agriculture": "Month of interview",
+   "s0q19y_s7b1_land_agriculture": "Year of interview",
+   "ur2012_s9c_vup": "Urban/Rural 2012 (4 categories)",
+   "region_s9c_vup": "Region",
+   "s9cq1": "Ubudehe category of HH (self-declared)",
+   "s9cq2": "HH live in a VUP support sector",
+   "s9cq3": "HH has ever enrolled in VUP",
+   "s9cq4": "Year HH started to benefit from VUP",
+   "s9cq5": "Type VUP program when first started",
+   "s9cq6": "HH currently benefits from VUP",
+   "s9cq7": "Reason HH no longer benefits from VUP",
+   "s9cq8": "Type of VUP currently receiving",
+   "s9cq9": "Period HH receives direct support",
+   "s9cq10": "Receive direct support payments on time",
+   "s9cq11": "Average amount received from direct support per month",
+   "s9cq12": "Amount household received in the last 12 months",
+   "s9cq13": "Able to invest direct support benefit in asset",
+   "s9cq14": "Period involved in public works",
+   "s9cq15": "Number HH members worked in PWs in last 12 months",
+   "s9cq16": "Number of months worked in PWs over last 12 months",
+   "s9cq17": "Payment to all HH members over the last 12 months",
+   "s9cq18": "Receive PWs payments on time",
+   "s9cq19": "Able to invest public works pay in asset",
+   "s9cq20": "Some members benefited from financial services loan",
+   "s9cq30": "HH ever benefited from RSSP",
+   "s9cq31a": "RSSP - Cooperatives",
+   "s9cq31b": "RSSP - Access to credit",
+   "s9cq31c": "RSSP - Training",
+   "s9cq31d": "RSSP - Swamp or marshland rehabilitation",
+   "s9cq31e": "RSSP - Construction of market",
+   "s9cq31f": "RSSP - Others",
+   "hhtype_s9c_vup": "Type of household according to the sample",
+   "rwanda_s9c_vup": "All Rwanda",
+   "surveyh_s9c_vup": "EICV4 survey sample",
+   "quintile_s9c_vup": "QUINTILE",
+   "poverty_s9c_vup": "POVERTY",
+   "s0q19m_s9c_vup": "Month of interview",
+   "s0q19y_s9c_vup": "Year of interview",
+   "hhsize": "Household size (persons in the roster)",
+   "head_sex": "Sex of household head (s1q2 == 1)",
+   "head_age": "Age of household head (s1q2 == 1)"
+  },
+  "value_labels": {
+   "ur2012": {
+    "1": "Urban",
+    "2": "Semi urban",
+    "3": "Peri urban",
+    "4": "Rural"
+   },
+   "region": {
+    "1": "Kigali City",
+    "2": "Other Urban",
+    "3": "Rural Southern",
+    "4": "Rural Western",
+    "5": "Rural Northern",
+    "6": "Rural Eastern"
+   },
+   "rwanda": {
+    "1": "All Rwanda"
+   },
+   "surveyh": {
+    "1": "New Sample",
+    "2": "Panel",
+    "3": "VUP"
+   },
+   "quintile": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "hhtype": {
+    "1": "New sample (cluster>=2000 and cluster<5000)",
+    "2": "Panel head of households in the same cluster",
+    "3": "Panel head of households outside cluster",
+    "4": "Panel other relative inside the same cluster",
+    "5": "Panel other relative outside cluster",
+    "6": "Replaced in the same household (dependent code 94)",
+    "7": "Replaced different household (dependent code 95)",
+    "8": "VUP"
+   },
+   "s0qb": {
+    "1": "Category 1",
+    "2": "Category 2",
+    "3": "Category 3",
+    "4": "Category 4",
+    "5": "Category 5",
+    "6": "Category 6",
+    "7": "Not found in the list"
+   },
+   "s5aq1": {
+    "1": "Umudugudu",
+    "2": "Unplanned clustered rural housing",
+    "3": "Isolated rural housing",
+    "4": "Unplanned urban housing",
+    "5": "Small settlement",
+    "6": "Modern planned area",
+    "7": "Other",
+    "9": "Missing"
+   },
+   "s5aq2": {
+    "1": "A single house occupied by one  household dwelling",
+    "2": "A house occupied by multiple Households",
+    "3": "Multi-storied building with one household",
+    "4": "Multi-storied building with more households",
+    "5": "Group of enclosed dwellings: multiple households",
+    "6": "Group of enclosed dwellings occupied by a single household",
+    "7": "Other (Specify)",
+    "9": "Missing value"
+   },
+   "s5aq3": {
+    "0": "None",
+    "99": "Missing"
+   },
+   "s5aq4": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5aq5": {
+    "99": "Missing"
+   },
+   "s5aq6": {
+    "99": "Missing"
+   },
+   "s5aq7y": {
+    "99": "Missing"
+   },
+   "s5aq7m": {
+    "99": "Missing"
+   },
+   "s5aq8": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5aq9": {
+    "1": "Resettlement- policy",
+    "2": "Evacuated-disaster",
+    "3": "Get a better house",
+    "4": "Build/buy own house",
+    "5": "Renting cost",
+    "6": "Move to a better neighbourhood",
+    "7": "Access to new/different job",
+    "8": "Forced by owner/parent",
+    "9": "Returning to Rwanda",
+    "10": "Other (specify)",
+    "99": "Missing"
+   },
+   "s5aq10": {
+    "1": "Head",
+    "2": "Spouse",
+    "3": "Spouse with head",
+    "4": "Other household member",
+    "5": "Relative",
+    "6": "Non relative",
+    "7": "State",
+    "8": "Private company",
+    "9": "Other",
+    "99": "Missing"
+   },
+   "s5aq11": {
+    "1": "Owner occupied",
+    "2": "Tenancy (renting)",
+    "3": "Dwelling provided by employer",
+    "4": "Dwelling provided free of charge",
+    "5": "Appropriation",
+    "6": "Temporary camp or settlement",
+    "7": "Other",
+    "9": "Missing"
+   },
+   "s5bq1": {
+    "9999": "Missing"
+   },
+   "s5bq2": {
+    "99999995": "More than 99999990"
+   },
+   "s5bq3a": {
+    "99999999": "Missing"
+   },
+   "s5bq3b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Annually",
+    "9": "Missing"
+   },
+   "s5bq4a": {
+    "99999999": "Missing"
+   },
+   "s5bq4b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Annually",
+    "9": "Missing"
+   },
+   "s5bq5": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5bq6a": {
+    "99999999": "Missing"
+   },
+   "s5bq6b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Annually",
+    "9": "Missing"
+   },
+   "s5bq7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5bq8": {
+    "1": "Relative of the head of household",
+    "2": "Non relative",
+    "3": "State",
+    "4": "Private company",
+    "5": "Association payment",
+    "6": "Other",
+    "9": "Missing"
+   },
+   "s5bq9a": {
+    "99999999": "Missing"
+   },
+   "s5bq9b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Annually",
+    "9": "Missing"
+   },
+   "s5bq10": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5bq11": {
+    "99999999": "Missing"
+   },
+   "s5cq1": {
+    "1": "Piped into dwelling",
+    "2": "Piped into yard",
+    "3": "Public standpipe",
+    "4": "Borehole",
+    "5": "Protected well",
+    "6": "Unprotected well",
+    "7": "Protected spring",
+    "8": "Unprotected spring",
+    "9": "Rain water",
+    "10": "Tanker truck",
+    "11": "Surface water (river or lake)",
+    "12": "Other",
+    "99": "Missing"
+   },
+   "s5cq2": {
+    "9000": "Greater than 9 km",
+    "9999": "Missing"
+   },
+   "s5cq3": {
+    "3": "Public standpipe",
+    "4": "Borehole",
+    "5": "Protected well",
+    "6": "Unprotected well",
+    "7": "Protected spring",
+    "8": "Unprotected spring",
+    "9": "Rain water",
+    "10": "Tanker truck",
+    "11": "Surface water (river or lake)",
+    "12": "Other",
+    "99": "Missing"
+   },
+   "s5cq4": {
+    "9000": "Greater than 9 km",
+    "9999": "Missing"
+   },
+   "s5cq5": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq6": {
+    "1": "Too expensive",
+    "2": "Not safe",
+    "3": "Difficult terrain",
+    "4": "Too far",
+    "5": "Does not function",
+    "6": "Other (specify)",
+    "9": "Missing"
+   },
+   "s5cq7": {
+    "3": "Public standpipe",
+    "4": "Borehole",
+    "5": "Protected well",
+    "6": "Unprotected well",
+    "7": "Protected spring",
+    "8": "Unprotected spring",
+    "9": "Rain water",
+    "10": "Tanker truck",
+    "11": "Surface water (river or lake)",
+    "12": "Other",
+    "99": "Missing"
+   },
+   "s5cq8": {
+    "9000": "Greater than 9 km",
+    "9999": "Missing"
+   },
+   "s5cq9a": {
+    "0": "Not applicable",
+    "99": "Missing"
+   },
+   "s5cq9b": {
+    "0": "Not applicable",
+    "99999999": "Missing"
+   },
+   "s5cq10": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq11": {
+    "99999999": "Missing"
+   },
+   "s5cq12": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq13": {
+    "99999999": "Missing"
+   },
+   "s5cq14": {
+    "99999": "Missing"
+   },
+   "s5cq15": {
+    "1": "No measures",
+    "2": "Rainwater tank from roof",
+    "3": "Ditch",
+    "4": "Piped away",
+    "5": "Other",
+    "9": "Missing"
+   },
+   "s5cq16": {
+    "1": "Electricity from EWSA",
+    "2": "Other electricity distributors",
+    "3": "Bio Gas",
+    "4": "Generator",
+    "5": "Oil Lamp",
+    "6": "Firewood",
+    "7": "Candle",
+    "8": "Lantern (Agatadowa)",
+    "9": "Solar panel",
+    "10": "Batteries+ Bulb",
+    "11": "Other (specify)",
+    "99": "Missing"
+   },
+   "s5cq17": {
+    "99999999": "Missing"
+   },
+   "s5cq18": {
+    "1": "Firewood",
+    "2": "Charcoal",
+    "3": "Gas",
+    "4": "Biogaz",
+    "5": "Solar power",
+    "6": "Electricity",
+    "7": "Oil or kerosene",
+    "8": "Crop waste",
+    "9": "Animal dung",
+    "10": "Other",
+    "99": "Missing"
+   },
+   "s5cq19": {
+    "1": "Publicly managed refuse area",
+    "2": "Rubbish collection service",
+    "3": "Thrown in bushes or fields",
+    "4": "Dumped in river or lake",
+    "5": "Burnt",
+    "6": "Compost heap",
+    "7": "Other",
+    "9": "Missing"
+   },
+   "s5cq20": {
+    "1": "Flush toilet",
+    "2": "Pit latrine with solid slab",
+    "3": "Pit latrine without slab",
+    "4": "Other",
+    "5": "No toilet whatsoever",
+    "9": "Missing"
+   },
+   "s5cq21": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq22": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq23": {
+    "1": "Floods",
+    "2": "Mountain slides",
+    "3": "Destructive rains",
+    "4": "Other",
+    "9": "Missing"
+   },
+   "s5cq24": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq25": {
+    "1": "Meetings/Training",
+    "2": "School",
+    "3": "Radio/tv",
+    "4": "Other type of media",
+    "5": "Others (Specify)",
+    "9": "Missing"
+   },
+   "s5cq26": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s5cq27": {
+    "1": "Landline/LAN",
+    "2": "Modem",
+    "3": "Mobile phone",
+    "4": "Wireless",
+    "5": "Other",
+    "9": "Missing"
+   },
+   "s5dq1": {
+    "1": "Mud bricks",
+    "2": "Mud bricks covered with cement",
+    "3": "Oven fired bricks",
+    "4": "Cement bricks",
+    "5": "Wooden planks",
+    "6": "Stones",
+    "7": "Tree trunks with mud",
+    "8": "Tree trunks with mud and cement",
+    "9": "Plastic sheeting",
+    "10": "Other",
+    "99": "Missing"
+   },
+   "s5dq2": {
+    "1": "Thatch or leaves",
+    "2": "Metal sheets",
+    "3": "Clay tiles",
+    "4": "Concrete",
+    "5": "Plastic or plywood",
+    "6": "Other",
+    "9": "Missing"
+   },
+   "s5dq3": {
+    "1": "Beaten earth",
+    "2": "Hardened dung",
+    "3": "Wooden floor",
+    "4": "Clay tiles",
+    "5": "Cement",
+    "6": "Bricks",
+    "7": "Other",
+    "9": "Missing"
+   },
+   "s5dq4": {
+    "10001": "Greater than 900 meters squared",
+    "99999": "Missing"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "dist": {
+    "11": "Nyarugenge",
+    "12": "Gasabo",
+    "13": "Kicukiro",
+    "21": "Nyanza",
+    "22": "Gisagara",
+    "23": "Nyaruguru",
+    "24": "Huye",
+    "25": "Nyamagabe",
+    "26": "Ruhango",
+    "27": "Muhanga",
+    "28": "Kamonyi",
+    "31": "Karongi",
+    "32": "Rutsiro",
+    "33": "Rubavu",
+    "34": "Nyabihu",
+    "35": "Ngororero",
+    "36": "Rusizi",
+    "37": "Nyamasheke",
+    "41": "Rulindo",
+    "42": "Gakenke",
+    "43": "Musanze",
+    "44": "Burera",
+    "45": "Gicumbi",
+    "51": "Rwamagana",
+    "52": "Nyagatare",
+    "53": "Gatsibo",
+    "54": "Kayonza",
+    "55": "Kirehe",
+    "56": "Ngoma",
+    "57": "Bugesera"
+   },
+   "urban": {
+    "1": "Urban",
+    "2": "Rural"
+   },
+   "ur2012_s10a1_credits": {
+    "1": "Urban",
+    "2": "Semi urban",
+    "3": "Peri urban",
+    "4": "Rural"
+   },
+   "region_s10a1_credits": {
+    "1": "Kigali City",
+    "2": "Other Urban",
+    "3": "Rural Southern",
+    "4": "Rural Western",
+    "5": "Rural Northern",
+    "6": "Rural Eastern"
+   },
+   "s10aq1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s10aq2": {
+    "1": "Insufficient income",
+    "2": "Insufficient collateral",
+    "3": "Problems related to debts history",
+    "4": "Unclear purpose of the loan",
+    "5": "Other reasons",
+    "9": "Missing"
+   },
+   "s10aq3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "hhtype_s10a1_credits": {
+    "1": "New sample (cluster>=2000 and cluster<5000)",
+    "2": "Panel head of households in the same cluster",
+    "3": "Panel head of households outside cluster",
+    "4": "Panel other relative inside the same cluster",
+    "5": "Panel other relative outside cluster",
+    "6": "Replaced in the same household (dependent code 94)",
+    "7": "Replaced different household (dependent code 95)",
+    "8": "VUP"
+   },
+   "rwanda_s10a1_credits": {
+    "1": "All Rwanda"
+   },
+   "surveyh_s10a1_credits": {
+    "1": "New Sample",
+    "2": "Panel",
+    "3": "VUP"
+   },
+   "quintile_s10a1_credits": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "ur2012_s7a2_livestock": {
+    "1": "Urban",
+    "2": "Semi urban",
+    "3": "Peri urban",
+    "4": "Rural"
+   },
+   "region_s7a2_livestock": {
+    "1": "Kigali City",
+    "2": "Other Urban",
+    "3": "Rural Southern",
+    "4": "Rural Western",
+    "5": "Rural Northern",
+    "6": "Rural Eastern"
+   },
+   "s7a2q1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7a2q2": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7a2q3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7a2q4a": {
+    "1": "Cattle",
+    "2": "Sheep",
+    "3": "Goat",
+    "4": "Poultry",
+    "5": "Pig",
+    "6": "Rabbit",
+    "7": "Other",
+    "9": "Missing"
+   },
+   "s7a2q4b": {
+    "0": "None",
+    "1": "Cattle",
+    "2": "Sheep",
+    "3": "Goat",
+    "4": "Poultry",
+    "5": "Pig",
+    "6": "Rabbit",
+    "7": "Other",
+    "9": "Missing"
+   },
+   "s7a2q5": {
+    "1": "Yes, increased",
+    "2": "Yes, reduced",
+    "3": "No, the same",
+    "4": "Not applicable",
+    "9": "Missing"
+   },
+   "s7a2q6": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7a2q7": {
+    "1": "Household ownership",
+    "2": "Other person/private company",
+    "3": "State owned",
+    "4": "District land",
+    "9": "Missing"
+   },
+   "s7a2q8": {
+    "0": "Not applicable",
+    "999999999": "Missing"
+   },
+   "s7a2q9": {
+    "99": "Missing"
+   },
+   "hhtype_s7a2_livestock": {
+    "1": "New sample (cluster>=2000 and cluster<5000)",
+    "2": "Panel head of households in the same cluster",
+    "3": "Panel head of households outside cluster",
+    "4": "Panel other relative inside the same cluster",
+    "5": "Panel other relative outside cluster",
+    "6": "Replaced in the same household (dependent code 94)",
+    "7": "Replaced different household (dependent code 95)",
+    "8": "VUP"
+   },
+   "rwanda_s7a2_livestock": {
+    "1": "All Rwanda"
+   },
+   "surveyh_s7a2_livestock": {
+    "1": "New Sample",
+    "2": "Panel",
+    "3": "VUP"
+   },
+   "quintile_s7a2_livestock": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "ur2012_s7b1_land_agriculture": {
+    "1": "Urban",
+    "2": "Semi urban",
+    "3": "Peri urban",
+    "4": "Rural"
+   },
+   "region_s7b1_land_agriculture": {
+    "1": "Kigali City",
+    "2": "Other Urban",
+    "3": "Rural Southern",
+    "4": "Rural Western",
+    "5": "Rural Northern",
+    "6": "Rural Eastern"
+   },
+   "s7b1q1": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q2": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q4": {
+    "999999999": "Missing"
+   },
+   "s7b1q5": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q6": {
+    "999999999": "Missing"
+   },
+   "s7b1q7": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q8": {
+    "999999": "Missing"
+   },
+   "s7b1q9": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q10": {
+    "999999": "Missing"
+   },
+   "s7b1q11": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s7b1q12": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "hhtype_s7b1_land_agriculture": {
+    "1": "New sample (cluster>=2000 and cluster<5000)",
+    "2": "Panel head of households in the same cluster",
+    "3": "Panel head of households outside cluster",
+    "4": "Panel other relative inside the same cluster",
+    "5": "Panel other relative outside cluster",
+    "6": "Replaced in the same household (dependent code 94)",
+    "7": "Replaced different household (dependent code 95)",
+    "8": "VUP"
+   },
+   "rwanda_s7b1_land_agriculture": {
+    "1": "All Rwanda"
+   },
+   "surveyh_s7b1_land_agriculture": {
+    "1": "New Sample",
+    "2": "Panel",
+    "3": "VUP"
+   },
+   "quintile_s7b1_land_agriculture": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "ur2012_s9c_vup": {
+    "1": "Urban",
+    "2": "Semi urban",
+    "3": "Peri urban",
+    "4": "Rural"
+   },
+   "region_s9c_vup": {
+    "1": "Kigali City",
+    "2": "Other Urban",
+    "3": "Rural Southern",
+    "4": "Rural Western",
+    "5": "Rural Northern",
+    "6": "Rural Eastern"
+   },
+   "s9cq1": {
+    "1": "Extremely poor",
+    "2": "Very poor",
+    "3": "Poor",
+    "4": "Self reliant",
+    "5": "Rich",
+    "6": "Very rich",
+    "8": "Don't know",
+    "9": "Missing"
+   },
+   "s9cq2": {
+    "1": "Yes",
+    "2": "No",
+    "8": "Don't Know",
+    "9": "Missing"
+   },
+   "s9cq3": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s9cq4": {
+    "0": "Not yet started to benefit",
+    "1": "2014",
+    "2": "2013",
+    "3": "2012",
+    "4": "2011",
+    "5": "2010",
+    "6": "2009",
+    "7": "2008",
+    "8": "Don't know",
+    "9": "Missing"
+   },
+   "s9cq5": {
+    "1": "Direct support",
+    "2": "Public works",
+    "3": "Financial Service Loan",
+    "9": "Missing"
+   },
+   "s9cq6": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing value"
+   },
+   "s9cq7": {
+    "0": "Paid off VUP",
+    "1": "Moved to higher Ubedehe category",
+    "2": "Found another job",
+    "3": "Did not participate in training",
+    "4": "Forced to leave",
+    "5": "Not enough public works",
+    "6": "Supported by other NGO/Partner",
+    "7": "Does not want (religious/moral)",
+    "8": "Other",
+    "9": "Payment delayed/not paid",
+    "10": "Ill/not fit enough to work"
+   },
+   "s9cq8": {
+    "1": "Direct Support only",
+    "2": "Direct Support plus Financial Services",
+    "3": "Public Works only",
+    "4": "Public Works and Financial Services",
+    "5": "Financial services loan Only",
+    "9": "Missing"
+   },
+   "s9cq9": {
+    "999": "Missing"
+   },
+   "s9cq10": {
+    "1": "Yes every month",
+    "2": "No, between one and 30 days late",
+    "3": "No, more than 30 days late",
+    "9": "Missing"
+   },
+   "s9cq11": {
+    "999999999": "Missing"
+   },
+   "s9cq12": {
+    "999999999": "Missing"
+   },
+   "s9cq13": {
+    "1": "To buy home utensils (except food and clothing)",
+    "2": "Durable assets",
+    "3": "Education",
+    "4": "Health/medical",
+    "5": "Buy animals",
+    "6": "Invest in farm",
+    "7": "Invest in business or income generating activity",
+    "8": "Construction/improve house",
+    "9": "Saving",
+    "10": "Other",
+    "11": "To buy food and clothing"
+   },
+   "s9cq14": {
+    "999": "Missing"
+   },
+   "s9cq15": {
+    "99": "Missing"
+   },
+   "s9cq16": {
+    "999": "Missing"
+   },
+   "s9cq17": {
+    "999999999": "Missing"
+   },
+   "s9cq18": {
+    "1": "Yes, every 15 days",
+    "2": "No, between 15 days and one month",
+    "3": "No, more than one month",
+    "9": "Missing"
+   },
+   "s9cq19": {
+    "1": "To buy home utensils",
+    "2": "Durable assets",
+    "3": "Education",
+    "4": "Health/medical",
+    "5": "Buy animals",
+    "6": "Invest in farm",
+    "7": "Invest in business or income generating activity",
+    "8": "Improve house",
+    "9": "Savings",
+    "10": "Other",
+    "99": "Missing"
+   },
+   "s9cq20": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s9cq30": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s9cq31a": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing value"
+   },
+   "s9cq31b": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing"
+   },
+   "s9cq31c": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing value"
+   },
+   "s9cq31d": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing value"
+   },
+   "s9cq31e": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing value"
+   },
+   "s9cq31f": {
+    "1": "Yes",
+    "2": "No",
+    "9": "Missing value"
+   },
+   "hhtype_s9c_vup": {
+    "1": "New sample (cluster>=2000 and cluster<5000)",
+    "2": "Panel head of households in the same cluster",
+    "3": "Panel head of households outside cluster",
+    "4": "Panel other relative inside the same cluster",
+    "5": "Panel other relative outside cluster",
+    "6": "Replaced in the same household (dependent code 94)",
+    "7": "Replaced different household (dependent code 95)",
+    "8": "VUP"
+   },
+   "rwanda_s9c_vup": {
+    "1": "All Rwanda"
+   },
+   "surveyh_s9c_vup": {
+    "1": "New Sample",
+    "2": "Panel",
+    "3": "VUP"
+   },
+   "quintile_s9c_vup": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "head_sex": {
+    "1": "Male",
+    "2": "Female",
+    "9": "Missing"
+   }
+  },
+  "source": {
+   "base modules": "s0_s5_household, eicv4_poverty_file",
+   "survey": "module s0_s5_household",
+   "year": "module s0_s5_household",
+   "wave": "module s0_s5_household",
+   "sample": "module s0_s5_household",
+   "prov": "module s0_s5_household",
+   "dist": "module s0_s5_household",
+   "urban": "module s0_s5_household",
+   "cluster": "module s0_s5_household",
+   "hhid": "module s0_s5_household",
+   "wt": "module s0_s5_household",
+   "wt_hh": "module s0_s5_household",
+   "ur2012": "module s0_s5_household",
+   "region": "module s0_s5_household",
+   "rwanda": "module s0_s5_household",
+   "surveyh": "module s0_s5_household",
+   "quintile": "module s0_s5_household",
+   "poverty": "module s0_s5_household",
+   "consumption": "module s9c_vup",
+   "hhtype": "module s0_s5_household",
+   "s0q19m": "module s0_s5_household",
+   "s0q19y": "module s0_s5_household",
+   "s0qb": "module s0_s5_household",
+   "s5aq1": "module s0_s5_household",
+   "s5aq2": "module s0_s5_household",
+   "s5aq3": "module s0_s5_household",
+   "s5aq4": "module s0_s5_household",
+   "s5aq5": "module s0_s5_household",
+   "s5aq6": "module s0_s5_household",
+   "s5aq7y": "module s0_s5_household",
+   "s5aq7m": "module s0_s5_household",
+   "s5aq8": "module s0_s5_household",
+   "s5aq9": "module s0_s5_household",
+   "s5aq10": "module s0_s5_household",
+   "s5aq11": "module s0_s5_household",
+   "s5bq1": "module s0_s5_household",
+   "s5bq2": "module s0_s5_household",
+   "s5bq3a": "module s0_s5_household",
+   "s5bq3b": "module s0_s5_household",
+   "s5bq4a": "module s0_s5_household",
+   "s5bq4b": "module s0_s5_household",
+   "s5bq5": "module s0_s5_household",
+   "s5bq6a": "module s0_s5_household",
+   "s5bq6b": "module s0_s5_household",
+   "s5bq7": "module s0_s5_household",
+   "s5bq8": "module s0_s5_household",
+   "s5bq9a": "module s0_s5_household",
+   "s5bq9b": "module s0_s5_household",
+   "s5bq10": "module s0_s5_household",
+   "s5bq11": "module s0_s5_household",
+   "s5cq1": "module s0_s5_household",
+   "s5cq2": "module s0_s5_household",
+   "s5cq3": "module s0_s5_household",
+   "s5cq4": "module s0_s5_household",
+   "s5cq5": "module s0_s5_household",
+   "s5cq6": "module s0_s5_household",
+   "s5cq7": "module s0_s5_household",
+   "s5cq8": "module s0_s5_household",
+   "s5cq9a": "module s0_s5_household",
+   "s5cq9b": "module s0_s5_household",
+   "s5cq10": "module s0_s5_household",
+   "s5cq11": "module s0_s5_household",
+   "s5cq12": "module s0_s5_household",
+   "s5cq13": "module s0_s5_household",
+   "s5cq14": "module s0_s5_household",
+   "s5cq15": "module s0_s5_household",
+   "s5cq16": "module s0_s5_household",
+   "s5cq17": "module s0_s5_household",
+   "s5cq18": "module s0_s5_household",
+   "s5cq19": "module s0_s5_household",
+   "s5cq20": "module s0_s5_household",
+   "s5cq21": "module s0_s5_household",
+   "s5cq22": "module s0_s5_household",
+   "s5cq23": "module s0_s5_household",
+   "s5cq24": "module s0_s5_household",
+   "s5cq25": "module s0_s5_household",
+   "s5cq26": "module s0_s5_household",
+   "s5cq27": "module s0_s5_household",
+   "s5dq1": "module s0_s5_household",
+   "s5dq2": "module s0_s5_household",
+   "s5dq3": "module s0_s5_household",
+   "s5dq4": "module s0_s5_household",
+   "member": "module eicv4_poverty_file",
+   "ae": "module eicv4_poverty_file",
+   "id1": "module eicv4_poverty_file",
+   "ur": "module eicv4_poverty_file",
+   "exp1": "module eicv4_poverty_file",
+   "exp4": "module eicv4_poverty_file",
+   "exp5": "module eicv4_poverty_file",
+   "exp6": "module eicv4_poverty_file",
+   "exp7": "module eicv4_poverty_file",
+   "exp8": "module eicv4_poverty_file",
+   "exp9": "module eicv4_poverty_file",
+   "exp10": "module eicv4_poverty_file",
+   "exp11": "module eicv4_poverty_file",
+   "exp12": "module eicv4_poverty_file",
+   "exp12_wh": "module eicv4_poverty_file",
+   "exp13": "module eicv4_poverty_file",
+   "exp14_1": "module eicv4_poverty_file",
+   "exp14_2": "module eicv4_poverty_file",
+   "exp15_1": "module eicv4_poverty_file",
+   "exp15_2": "module eicv4_poverty_file",
+   "exp16_1": "module eicv4_poverty_file",
+   "exp16a_1": "module eicv4_poverty_file",
+   "exp16_2": "module eicv4_poverty_file",
+   "exp16a_2": "module eicv4_poverty_file",
+   "exp17": "module eicv4_poverty_file",
+   "exp18": "module eicv4_poverty_file",
+   "cons1": "module eicv4_poverty_file",
+   "food": "module eicv4_poverty_file",
+   "cons1_ae": "module eicv4_poverty_file",
+   "hh_wt": "module eicv4_poverty_file",
+   "pop_wt": "module eicv4_poverty_file",
+   "foodshare1": "module eicv4_poverty_file",
+   "sol": "module eicv4_poverty_file",
+   "epov": "module eicv4_poverty_file",
+   "pov": "module eicv4_poverty_file",
+   "qcons": "module eicv4_poverty_file",
+   "ur2012_s10a1_credits": "module s10a1_credits",
+   "region_s10a1_credits": "module s10a1_credits",
+   "s10aq1": "module s10a1_credits",
+   "s10aq2": "module s10a1_credits",
+   "s10aq3": "module s10a1_credits",
+   "hhtype_s10a1_credits": "module s10a1_credits",
+   "rwanda_s10a1_credits": "module s10a1_credits",
+   "surveyh_s10a1_credits": "module s10a1_credits",
+   "quintile_s10a1_credits": "module s10a1_credits",
+   "poverty_s10a1_credits": "module s10a1_credits",
+   "s0q19m_s10a1_credits": "module s10a1_credits",
+   "s0q19y_s10a1_credits": "module s10a1_credits",
+   "ur2012_s7a2_livestock": "module s7a2_livestock",
+   "region_s7a2_livestock": "module s7a2_livestock",
+   "s7a2q1": "module s7a2_livestock",
+   "s7a2q2": "module s7a2_livestock",
+   "s7a2q3": "module s7a2_livestock",
+   "s7a2q4a": "module s7a2_livestock",
+   "s7a2q4b": "module s7a2_livestock",
+   "s7a2q5": "module s7a2_livestock",
+   "s7a2q6": "module s7a2_livestock",
+   "s7a2q7": "module s7a2_livestock",
+   "s7a2q8": "module s7a2_livestock",
+   "s7a2q9": "module s7a2_livestock",
+   "hhtype_s7a2_livestock": "module s7a2_livestock",
+   "rwanda_s7a2_livestock": "module s7a2_livestock",
+   "surveyh_s7a2_livestock": "module s7a2_livestock",
+   "quintile_s7a2_livestock": "module s7a2_livestock",
+   "poverty_s7a2_livestock": "module s7a2_livestock",
+   "s0q19m_s7a2_livestock": "module s7a2_livestock",
+   "s0q19y_s7a2_livestock": "module s7a2_livestock",
+   "ur2012_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "region_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "s7b1q1": "module s7b1_land_agriculture",
+   "s7b1q2": "module s7b1_land_agriculture",
+   "s7b1q3": "module s7b1_land_agriculture",
+   "s7b1q4": "module s7b1_land_agriculture",
+   "s7b1q5": "module s7b1_land_agriculture",
+   "s7b1q6": "module s7b1_land_agriculture",
+   "s7b1q7": "module s7b1_land_agriculture",
+   "s7b1q8": "module s7b1_land_agriculture",
+   "s7b1q9": "module s7b1_land_agriculture",
+   "s7b1q10": "module s7b1_land_agriculture",
+   "s7b1q11": "module s7b1_land_agriculture",
+   "s7b1q12": "module s7b1_land_agriculture",
+   "hhtype_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "rwanda_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "surveyh_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "quintile_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "poverty_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "s0q19m_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "s0q19y_s7b1_land_agriculture": "module s7b1_land_agriculture",
+   "ur2012_s9c_vup": "module s9c_vup",
+   "region_s9c_vup": "module s9c_vup",
+   "s9cq1": "module s9c_vup",
+   "s9cq2": "module s9c_vup",
+   "s9cq3": "module s9c_vup",
+   "s9cq4": "module s9c_vup",
+   "s9cq5": "module s9c_vup",
+   "s9cq6": "module s9c_vup",
+   "s9cq7": "module s9c_vup",
+   "s9cq8": "module s9c_vup",
+   "s9cq9": "module s9c_vup",
+   "s9cq10": "module s9c_vup",
+   "s9cq11": "module s9c_vup",
+   "s9cq12": "module s9c_vup",
+   "s9cq13": "module s9c_vup",
+   "s9cq14": "module s9c_vup",
+   "s9cq15": "module s9c_vup",
+   "s9cq16": "module s9c_vup",
+   "s9cq17": "module s9c_vup",
+   "s9cq18": "module s9c_vup",
+   "s9cq19": "module s9c_vup",
+   "s9cq20": "module s9c_vup",
+   "s9cq30": "module s9c_vup",
+   "s9cq31a": "module s9c_vup",
+   "s9cq31b": "module s9c_vup",
+   "s9cq31c": "module s9c_vup",
+   "s9cq31d": "module s9c_vup",
+   "s9cq31e": "module s9c_vup",
+   "s9cq31f": "module s9c_vup",
+   "hhtype_s9c_vup": "module s9c_vup",
+   "rwanda_s9c_vup": "module s9c_vup",
+   "surveyh_s9c_vup": "module s9c_vup",
+   "quintile_s9c_vup": "module s9c_vup",
+   "poverty_s9c_vup": "module s9c_vup",
+   "s0q19m_s9c_vup": "module s9c_vup",
+   "s0q19y_s9c_vup": "module s9c_vup"
+  }
+ }
+}

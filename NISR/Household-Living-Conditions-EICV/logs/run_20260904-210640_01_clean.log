@@ -1,0 +1,91 @@
+21:06:40 01_clean INFO ==== 01_clean | run 20260904-210640_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:06:40 01_clean INFO ================ EICV3 ================
+21:06:40 01_clean INFO read EICV3_s01_hhmembers_s02_education_s03_health_s04_migration.dta -> s01_hhmembers_s02_education_s03_health_s04_migration   68,398 rows x  171 vars
+21:06:40 01_clean INFO read EICV3_s05abcd_housing.dta                          -> s05abcd_housing                                 14,308 rows x   65 vars
+21:06:41 01_clean INFO read EICV3_s05e_services.dta                            -> s05e_services                                  200,312 rows x   16 vars
+21:06:41 01_clean INFO read EICV3_s06ab_occupation.dta                         -> s06ab_occupation                                56,116 rows x   29 vars
+21:06:41 01_clean INFO read EICV3_s06cdef_jobs.dta                             -> s06cdef_jobs                                    61,405 rows x   65 vars
+21:06:41 01_clean INFO read EICV3_s06g_timeuse.dta                             -> s06g_timeuse                                    56,116 rows x   22 vars
+21:06:41 01_clean INFO read EICV3_s07_enterprise.dta                           -> s07_enterprise                                  61,405 rows x   40 vars
+21:06:41 01_clean INFO read EICV3_s08a1_livestock.dta                          -> s08a1_livestock                                 78,432 rows x   24 vars
+21:06:41 01_clean INFO read EICV3_s08a2_livestock.dta                          -> s08a2_livestock                                  9,804 rows x   18 vars
+21:06:42 01_clean INFO read EICV3_s08a3_livestock.dta                          -> s08a3_livestock                                 68,628 rows x   15 vars
+21:06:42 01_clean INFO read EICV3_s08a4_livestock.dta                          -> s08a4_livestock                                 98,040 rows x   18 vars
+21:06:42 01_clean INFO read EICV3_s08b1_landtransactions.dta                   -> s08b1_landtransactions                          14,308 rows x   31 vars
+21:06:42 01_clean INFO read EICV3_s08b2_equipment.dta                          -> s08b2_equipment                                201,870 rows x   18 vars
+21:06:42 01_clean INFO read EICV3_s08c_parcels.dta                             -> s08c_parcels                                    59,016 rows x   28 vars
+21:06:43 01_clean INFO read EICV3_s08d_croplarge.dta                           -> s08d_croplarge                                  46,621 rows x   25 vars
+21:06:43 01_clean INFO read EICV3_s08e_cropsmall.dta                           -> s08e_cropsmall                                 121,882 rows x   24 vars
+21:06:43 01_clean INFO read EICV3_s08f_otheragric.dta                          -> s08f_otheragric                                 18,846 rows x   13 vars
+21:06:43 01_clean INFO read EICV3_s08g_inputs.dta                              -> s08g_inputs                                    205,664 rows x   14 vars
+21:06:43 01_clean INFO read EICV3_s08h_processing.dta                          -> s08h_processing                                 32,981 rows x   25 vars
+21:06:46 01_clean INFO read EICV3_s09a1_consnonfood.dta                        -> s09a1_consnonfood                             1,273,412 rows x   12 vars
+21:06:47 01_clean INFO read EICV3_s09a2_consnonfood.dta                        -> s09a2_consnonfood                              672,476 rows x   12 vars
+21:06:48 01_clean INFO read EICV3_s09a3_consnonfood.dta                        -> s09a3_consnonfood                              543,704 rows x   22 vars
+21:06:53 01_clean INFO read EICV3_s09b_consfood.dta                            -> s09b_consfood                                 2,103,276 rows x   22 vars
+21:06:57 01_clean INFO read EICV3_s09c_consownfood.dta                         -> s09c_consownfood                              1,414,994 rows x   23 vars
+21:06:57 01_clean INFO read EICV3_s10a_transfersout.dta                        -> s10a_transfersout                               98,521 rows x   19 vars
+21:06:57 01_clean INFO read EICV3_s10b_transfersin.dta                         -> s10b_transfersin                                89,947 rows x   20 vars
+21:06:58 01_clean INFO read EICV3_s10c_otherinc.dta                            -> s10c_otherinc                                  314,776 rows x   11 vars
+21:06:58 01_clean INFO read EICV3_s10d_schemes.dta                             -> s10d_schemes                                    14,308 rows x   26 vars
+21:06:58 01_clean INFO read EICV3_s10e_otherexp.dta                            -> s10e_otherexp                                  171,696 rows x   10 vars
+21:06:58 01_clean INFO read EICV3_s11a1_credit.dta                             -> s11a1_credit                                    14,308 rows x   12 vars
+21:06:58 01_clean INFO read EICV3_s11a2_credit.dta                             -> s11a2_credit                                    22,781 rows x   17 vars
+21:06:59 01_clean INFO read EICV3_s11b_durables.dta                            -> s11b_durables                                  400,624 rows x   22 vars
+21:06:59 01_clean INFO read EICV3_s11c_savings.dta                             -> s11c_savings                                    14,461 rows x   18 vars
+21:06:59 01_clean INFO read EICV4_CS_eicv3_povertyfile_jan2014.dta             -> eicv3_povertyfile_jan2014                       14,308 rows x   41 vars
+21:06:59 01_clean INFO PASS  EICV3: hhid unique in household base (14,308 households)
+21:06:59 01_clean INFO PASS  EICV3: prov complete in household key table
+21:06:59 01_clean INFO PASS  EICV3: dist complete in household key table
+21:06:59 01_clean INFO PASS  EICV3: urban complete in household key table
+21:06:59 01_clean INFO PASS  EICV3: cluster complete in household key table
+21:06:59 01_clean INFO PASS  EICV3: wt complete in household key table
+21:06:59 01_clean INFO PASS  EICV3: province codes 1-5
+21:06:59 01_clean INFO PASS  EICV3: 30 districts on the 11-57 scheme
+21:06:59 01_clean INFO PASS  EICV3: household weight > 0
+21:07:00 01_clean INFO wrote EICV_EICV3_s01_hhmembers_s02_education_s03_health_s04_migration_clean.dta  (68,398 rows x 176 vars, 22.1 MB)
+21:07:00 01_clean INFO wrote EICV_EICV3_s05abcd_housing_clean.dta  (14,308 rows x 70 vars, 2.0 MB)
+21:07:01 01_clean INFO wrote EICV_EICV3_s05e_services_clean.dta  (200,312 rows x 21 vars, 10.2 MB)
+21:07:01 01_clean INFO wrote EICV_EICV3_s06ab_occupation_clean.dta  (56,116 rows x 34 vars, 4.0 MB)
+21:07:02 01_clean INFO wrote EICV_EICV3_s06cdef_jobs_clean.dta  (61,405 rows x 70 vars, 7.3 MB)
+21:07:02 01_clean INFO wrote EICV_EICV3_s06g_timeuse_clean.dta  (56,116 rows x 27 vars, 3.4 MB)
+21:07:02 01_clean INFO wrote EICV_EICV3_s07_enterprise_clean.dta  (61,405 rows x 45 vars, 6.1 MB)
+21:07:02 01_clean INFO wrote EICV_EICV3_s08a1_livestock_clean.dta  (78,432 rows x 29 vars, 5.9 MB)
+21:07:02 01_clean INFO wrote EICV_EICV3_s08a2_livestock_clean.dta  (9,804 rows x 23 vars, 0.6 MB)
+21:07:03 01_clean INFO wrote EICV_EICV3_s08a3_livestock_clean.dta  (68,628 rows x 20 vars, 4.3 MB)
+21:07:03 01_clean INFO wrote EICV_EICV3_s08a4_livestock_clean.dta  (98,040 rows x 23 vars, 5.8 MB)
+21:07:03 01_clean INFO wrote EICV_EICV3_s08b1_landtransactions_clean.dta  (14,308 rows x 36 vars, 1.3 MB)
+21:07:04 01_clean INFO wrote EICV_EICV3_s08b2_equipment_clean.dta  (201,870 rows x 23 vars, 13.1 MB)
+21:07:04 01_clean INFO wrote EICV_EICV3_s08c_parcels_clean.dta  (59,016 rows x 33 vars, 4.7 MB)
+21:07:04 01_clean INFO wrote EICV_EICV3_s08d_croplarge_clean.dta  (46,621 rows x 30 vars, 5.3 MB)
+21:07:04 01_clean INFO wrote EICV_EICV3_s08e_cropsmall_clean.dta  (121,882 rows x 29 vars, 11.7 MB)
+21:07:04 01_clean INFO wrote EICV_EICV3_s08f_otheragric_clean.dta  (18,846 rows x 18 vars, 1.0 MB)
+21:07:05 01_clean INFO wrote EICV_EICV3_s08g_inputs_clean.dta  (205,664 rows x 19 vars, 10.7 MB)
+21:07:05 01_clean INFO wrote EICV_EICV3_s08h_processing_clean.dta  (32,981 rows x 30 vars, 3.3 MB)
+21:07:09 01_clean INFO wrote EICV_EICV3_s09a1_consnonfood_clean.dta  (1,273,412 rows x 17 vars, 63.7 MB)
+21:07:11 01_clean INFO wrote EICV_EICV3_s09a2_consnonfood_clean.dta  (672,476 rows x 17 vars, 34.3 MB)
+21:07:13 01_clean INFO wrote EICV_EICV3_s09a3_consnonfood_clean.dta  (543,704 rows x 27 vars, 47.9 MB)
+21:07:20 01_clean INFO wrote EICV_EICV3_s09b_consfood_clean.dta  (2,103,276 rows x 27 vars, 185.1 MB)
+21:07:25 01_clean INFO wrote EICV_EICV3_s09c_consownfood_clean.dta  (1,414,994 rows x 28 vars, 184.0 MB)
+21:07:25 01_clean INFO wrote EICV_EICV3_s10a_transfersout_clean.dta  (98,521 rows x 24 vars, 6.5 MB)
+21:07:25 01_clean INFO wrote EICV_EICV3_s10b_transfersin_clean.dta  (89,947 rows x 25 vars, 6.0 MB)
+21:07:26 01_clean INFO wrote EICV_EICV3_s10c_otherinc_clean.dta  (314,776 rows x 16 vars, 16.4 MB)
+21:07:26 01_clean INFO wrote EICV_EICV3_s10d_schemes_clean.dta  (14,308 rows x 31 vars, 0.9 MB)
+21:07:27 01_clean INFO wrote EICV_EICV3_s10e_otherexp_clean.dta  (171,696 rows x 15 vars, 8.3 MB)
+21:07:27 01_clean INFO wrote EICV_EICV3_s11a1_credit_clean.dta  (14,308 rows x 17 vars, 0.7 MB)
+21:07:27 01_clean INFO wrote EICV_EICV3_s11a2_credit_clean.dta  (22,781 rows x 22 vars, 1.5 MB)
+21:07:28 01_clean INFO wrote EICV_EICV3_s11b_durables_clean.dta  (400,624 rows x 27 vars, 40.9 MB)
+21:07:28 01_clean INFO wrote EICV_EICV3_s11c_savings_clean.dta  (14,461 rows x 23 vars, 1.0 MB)
+21:07:28 01_clean INFO wrote EICV_EICV3_eicv3_povertyfile_jan2014_clean.dta  (14,308 rows x 49 vars, 4.3 MB)
+21:07:28 01_clean INFO module levels: {'s01_hhmembers_s02_education_s03_health_s04_migration': 'person', 's05abcd_housing': 'household', 's05e_services': 'multi', 's06ab_occupation': 'person', 's06cdef_jobs': 'multi', 's06g_timeuse': 'person', 's07_enterprise': 'multi', 's08a1_livestock': 'multi', 's08a2_livestock': 'household', 's08a3_livestock': 'multi', 's08a4_livestock': 'multi', 's08b1_landtransactions': 'household', 's08b2_equipment': 'multi', 's08c_parcels': 'multi', 's08d_croplarge': 'multi', 's08e_cropsmall': 'multi', 's08f_otheragric': 'multi', 's08g_inputs': 'multi', 's08h_processing': 'multi', 's09a1_consnonfood': 'multi', 's09a2_consnonfood': 'multi', 's09a3_consnonfood': 'multi', 's09b_consfood': 'multi', 's09c_consownfood': 'multi', 's10a_transfersout': 'multi', 's10b_transfersin': 'multi', 's10c_otherinc': 'multi', 's10d_schemes': 'household', 's10e_otherexp': 'multi', 's11a1_credit': 'household', 's11a2_credit': 'multi', 's11b_durables': 'multi', 's11c_savings': 'multi', 'eicv3_povertyfile_jan2014': 'household'}
+21:07:28 01_clean INFO    joined s06ab_occupation                               82.04% of base rows matched, 21 columns added, renamed collisions: ['quintile', 'poverty']
+21:07:28 01_clean INFO    joined s06g_timeuse                                   82.04% of base rows matched, 14 columns added, renamed collisions: ['quintile', 'poverty']
+21:07:28 01_clean INFO PASS  EICV3: (hhid, pid) unique in the person file
+21:07:28 01_clean INFO PASS  EICV3: wt present and > 0 on every person row
+21:07:28 01_clean INFO PASS  EICV3: sex in {1,2}
+21:07:28 01_clean INFO EICV3 person file: 68,398 rows x 211 vars; weighted persons = 10,762,085
+21:07:30 01_clean INFO wrote EICV_EICV3_person_clean.dta  (68,398 rows x 211 vars, 24.8 MB)
+21:07:30 01_clean INFO    joined s08a2_livestock                                68.52% of base rows matched, 12 columns added, renamed collisions: ['quintile', 'poverty']
+21:07:30 01_clean INFO    joined s08b1_landtransactions                        100.00% of base rows matched, 25 columns added, renamed collisions: ['quintile', 'poverty']
+21:07:30 01_clean INFO    joined s10d_schemes                                  100.00% of base rows matched, 20 columns added, renamed collisions: ['quintile', 'poverty']
+21:07:30 01_clean INFO    joined s11a1_credit                                  100.00% of base rows matched, 6 columns added, renamed collisions: ['quintile', 'poverty']

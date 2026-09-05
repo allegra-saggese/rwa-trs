@@ -1,0 +1,13 @@
+{
+ "wave": "EICV3_4_Panel",
+ "year": 2014,
+ "sample": "PANEL",
+ "modules": {
+  "data_stata": {
+   "level": "multi",
+   "rows": 8310,
+   "vars": 38,
+   "hh_match_rate": null
+  }
+ }
+}

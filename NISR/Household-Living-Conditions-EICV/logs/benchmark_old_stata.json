@@ -1,0 +1,196 @@
+{
+ "source": "old Stata outputs built 3 Jul 2026 (clean.do/merge.do, archived in _archive/code-NISR-stata-2026-09-04)",
+ "files": [
+  {
+   "file": "EICV3_clean.dta",
+   "n_rows": 68398,
+   "n_vars": 174,
+   "by_round": {
+    "EICV3": {
+     "n": 68398,
+     "sum_wt": 10762084.90783792,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 35908,
+      "1": 32490
+     },
+     "n_hh": 14308,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV4_CS_clean.dta",
+   "n_rows": 66081,
+   "n_vars": 130,
+   "by_round": {
+    "EICV4_CS": {
+     "n": 66081,
+     "sum_wt": 11432047.101011962,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 34537,
+      "1": 31544
+     },
+     "n_hh": 14419,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV4_VUP_clean.dta",
+   "n_rows": 10606,
+   "n_vars": 128,
+   "by_round": {
+    "EICV4_VU": {
+     "n": 10606,
+     "sum_wt": 738627.130057169,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 5767,
+      "1": 4839
+     },
+     "n_hh": 2460,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV5_CS_clean.dta",
+   "n_rows": 64314,
+   "n_vars": 119,
+   "by_round": {
+    "EICV5_CS": {
+     "n": 64314,
+     "sum_wt": 11893443.345329285,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 33536,
+      "1": 30778
+     },
+     "n_hh": 14580,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV5_VUP_clean.dta",
+   "n_rows": 6596,
+   "n_vars": 120,
+   "by_round": {
+    "EICV5_VU": {
+     "n": 6596,
+     "sum_wt": 370780.4625939131,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 3616,
+      "1": 2980
+     },
+     "n_hh": 1390,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV7_CS_clean.dta",
+   "n_rows": 62110,
+   "n_vars": 161,
+   "by_round": {
+    "EICV7_CS": {
+     "n": 62110,
+     "sum_wt": 13549456.93890911,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 32435,
+      "1": 29675
+     },
+     "n_hh": 15054,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV7_VUP_clean.dta",
+   "n_rows": 15039,
+   "n_vars": 161,
+   "by_round": {
+    "EICV7_VU": {
+     "n": 15039,
+     "sum_wt": 1591578.692666173,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 8389,
+      "1": 6650
+     },
+     "n_hh": 3771,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV_pooled_crosssection.dta",
+   "n_rows": 260903,
+   "n_vars": 539,
+   "by_round": {
+    "EICV3": {
+     "n": 68398,
+     "sum_wt": 10762084.90783792,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 35908,
+      "1": 32490
+     },
+     "n_hh": 14308,
+     "n_district": 30
+    },
+    "EICV4_CS": {
+     "n": 66081,
+     "sum_wt": 11432047.101011962,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 34537,
+      "1": 31544
+     },
+     "n_hh": 14419,
+     "n_district": 30
+    },
+    "EICV5_CS": {
+     "n": 64314,
+     "sum_wt": 11893443.345329285,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 33536,
+      "1": 30778
+     },
+     "n_hh": 14580,
+     "n_district": 30
+    },
+    "EICV7_CS": {
+     "n": 62110,
+     "sum_wt": 13549456.93890911,
+     "miss_wt": 0,
+     "sex_counts": {
+      "2": 32435,
+      "1": 29675
+     },
+     "n_hh": 15054,
+     "n_district": 30
+    }
+   }
+  },
+  {
+   "file": "EICV3_4_panel.dta",
+   "n_rows": 8310,
+   "n_vars": 34,
+   "by_round": {
+    "all": {
+     "n": 8310,
+     "sum_wt": 8101819.209795,
+     "miss_wt": 0,
+     "n_hh": 2423,
+     "n_district": 30
+    }
+   }
+  }
+ ]
+}

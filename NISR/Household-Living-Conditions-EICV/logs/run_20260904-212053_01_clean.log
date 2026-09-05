@@ -1,0 +1,246 @@
+21:20:53 01_clean INFO ==== 01_clean | run 20260904-212053_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:20:53 01_clean INFO ================ EICV5_VUP ================
+21:20:53 01_clean INFO read EICV5_VUP_vup_panel_for_merge.dta                  -> panel_for_merge                                  5,171 rows x   32 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s0_s5_household.dta                  -> s0_s5_household                                  1,644 rows x   96 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s10a1_credits.dta                    -> s10a1_credits                                    1,643 rows x   12 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s10a2_listing_of_credits.dta         -> s10a2_listing_of_credits                         1,968 rows x   18 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s10b1_durable_household_goods.dta    -> s10b1_durable_household_goods                    6,576 rows x   13 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s10b2_durable_household_goods.dta    -> s10b2_durable_household_goods                   41,100 rows x   23 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s10c1_savings.dta                    -> s10c1_savings                                    6,099 rows x   16 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s10c2_tontine.dta                    -> s10c2_tontine                                    4,577 rows x   14 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s1_s2_s3_s4_s6a_s6e_person.dta       -> s1_s2_s3_s4_s6a_s6e_person                       6,596 rows x  115 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s5f_access_to_services.dta           -> s5f_access_to_services                          24,660 rows x   20 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s6b_employement_6c_salaried_s6d_business.dta -> s6b_employement_6c_salaried_s6d_business         9,180 rows x   52 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7a1_livestock.dta                   -> s7a1_livestock                                  11,867 rows x   24 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7a2_livestock.dta                   -> s7a2_livestock                                   1,136 rows x   19 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7a3_livestock.dta                   -> s7a3_livestock                                  10,224 rows x   17 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7a4_livestock.dta                   -> s7a4_livestock                                  12,495 rows x   15 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7b1_land_agriculture.dta            -> s7b1_land_agriculture                            1,644 rows x   21 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7b2_land_agriculture.dta            -> s7b2_land_agriculture                           27,198 rows x   18 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7c_parcels.dta                      -> s7c_parcels                                      4,629 rows x   31 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7d_large_crop.dta                   -> s7d_large_crop                                   4,613 rows x   17 vars
+21:20:53 01_clean INFO read EICV5_VUP_vup_s7e_small_crop.dta                   -> s7e_small_crop                                  14,136 rows x   22 vars
+21:20:54 01_clean INFO read EICV5_VUP_vup_s7f_income_agriculture.dta           -> s7f_income_agriculture                          19,728 rows x   13 vars
+21:20:54 01_clean INFO read EICV5_VUP_vup_s7g_expenditure_agriculture.dta      -> s7g_expenditure_agriculture                     26,288 rows x   12 vars
+21:20:54 01_clean INFO read EICV5_VUP_vup_s7h_transformation_agriculture.dta   -> s7h_transformation_agriculture                   5,300 rows x   24 vars
+21:20:54 01_clean INFO read EICV5_VUP_vup_s8a1_expenditure.dta                 -> s8a1_expenditure                               113,436 rows x   15 vars
+21:20:54 01_clean INFO read EICV5_VUP_vup_s8a2_expenditure.dta                 -> s8a2_expenditure                                90,366 rows x   15 vars
+21:20:54 01_clean INFO read EICV5_VUP_vup_s8a3_expenditure.dta                 -> s8a3_expenditure                                60,828 rows x   25 vars
+21:20:56 01_clean INFO read EICV5_VUP_vup_s8b_expenditure.dta                  -> s8b_expenditure                                246,600 rows x   25 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s8c_farming.dta                      -> s8c_farming                                    166,044 rows x   26 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9a_transfers_out.dta                -> s9a_transfers_out                                8,592 rows x   23 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9b_transfers_in.dta                 -> s9b_transfers_in                                10,844 rows x   23 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9c3_vup_ubudehe_and_rssp_schemes.dta -> s9c3_vup_ubudehe_and_rssp_schemes                  128 rows x   53 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9c4_vup_ubudehe_and_rssp_schemes.dta -> s9c4_vup_ubudehe_and_rssp_schemes                  154 rows x   42 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9c_vup_ubudehe_and_rssp_schemes.dta -> s9c_vup_ubudehe_and_rssp_schemes                 1,642 rows x   50 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9d_other_income.dta                 -> s9d_other_income                                34,463 rows x   13 vars
+21:20:57 01_clean INFO read EICV5_VUP_vup_s9e_other_expenditure.dta            -> s9e_other_expenditure                           21,333 rows x   11 vars
+21:20:57 01_clean INFO PASS  EICV5_VUP: hhid unique in household base (1,644 households)
+21:20:57 01_clean INFO PASS  EICV5_VUP: prov complete in household key table
+21:20:57 01_clean INFO PASS  EICV5_VUP: dist complete in household key table
+21:20:57 01_clean INFO PASS  EICV5_VUP: urban complete in household key table
+21:20:57 01_clean INFO PASS  EICV5_VUP: cluster complete in household key table
+21:20:57 01_clean INFO PASS  EICV5_VUP: wt complete in household key table
+21:20:57 01_clean INFO PASS  EICV5_VUP: province codes 1-5
+21:20:57 01_clean INFO PASS  EICV5_VUP: 30 districts on the 11-57 scheme
+21:20:57 01_clean INFO PASS  EICV5_VUP: household weight > 0
+21:20:57 01_clean INFO wrote EICV_EICV5_VUP_panel_for_merge_clean.dta  (5,171 rows x 41 vars, 0.7 MB)
+21:20:57 01_clean INFO wrote EICV_EICV5_VUP_s0_s5_household_clean.dta  (1,644 rows x 101 vars, 0.4 MB)
+21:20:57 01_clean INFO wrote EICV_EICV5_VUP_s10a1_credits_clean.dta  (1,643 rows x 17 vars, 0.1 MB)
+21:20:57 01_clean INFO wrote EICV_EICV5_VUP_s10a2_listing_of_credits_clean.dta  (1,968 rows x 23 vars, 0.2 MB)
+21:20:57 01_clean INFO wrote EICV_EICV5_VUP_s10b1_durable_household_goods_clean.dta  (6,576 rows x 18 vars, 0.4 MB)
+21:20:57 01_clean INFO wrote EICV_EICV5_VUP_s10b2_durable_household_goods_clean.dta  (41,100 rows x 28 vars, 3.6 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s10c1_savings_clean.dta  (6,099 rows x 21 vars, 0.4 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s10c2_tontine_clean.dta  (4,577 rows x 19 vars, 0.3 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s1_s2_s3_s4_s6a_s6e_person_clean.dta  (6,596 rows x 120 vars, 1.4 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s5f_access_to_services_clean.dta  (24,660 rows x 25 vars, 1.8 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s6b_employement_6c_salaried_s6d_business_clean.dta  (9,180 rows x 57 vars, 1.2 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7a1_livestock_clean.dta  (11,867 rows x 29 vars, 1.0 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7a2_livestock_clean.dta  (1,136 rows x 24 vars, 0.1 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7a3_livestock_clean.dta  (10,224 rows x 22 vars, 0.8 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7a4_livestock_clean.dta  (12,495 rows x 20 vars, 0.8 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7b1_land_agriculture_clean.dta  (1,644 rows x 26 vars, 0.1 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7b2_land_agriculture_clean.dta  (27,198 rows x 23 vars, 1.9 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7c_parcels_clean.dta  (4,629 rows x 36 vars, 0.5 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7d_large_crop_clean.dta  (4,613 rows x 22 vars, 0.4 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7e_small_crop_clean.dta  (14,136 rows x 27 vars, 1.3 MB)
+21:20:58 01_clean INFO wrote EICV_EICV5_VUP_s7f_income_agriculture_clean.dta  (19,728 rows x 18 vars, 1.2 MB)
+21:20:59 01_clean INFO wrote EICV_EICV5_VUP_s7g_expenditure_agriculture_clean.dta  (26,288 rows x 17 vars, 1.6 MB)
+21:20:59 01_clean INFO wrote EICV_EICV5_VUP_s7h_transformation_agriculture_clean.dta  (5,300 rows x 29 vars, 0.5 MB)
+21:20:59 01_clean INFO wrote EICV_EICV5_VUP_s8a1_expenditure_clean.dta  (113,436 rows x 20 vars, 8.2 MB)
+21:20:59 01_clean INFO wrote EICV_EICV5_VUP_s8a2_expenditure_clean.dta  (90,366 rows x 20 vars, 6.5 MB)
+21:21:00 01_clean INFO wrote EICV_EICV5_VUP_s8a3_expenditure_clean.dta  (60,828 rows x 30 vars, 7.4 MB)
+21:21:02 01_clean INFO wrote EICV_EICV5_VUP_s8b_expenditure_clean.dta  (246,600 rows x 30 vars, 34.8 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s8c_farming_clean.dta  (166,044 rows x 31 vars, 32.4 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9a_transfers_out_clean.dta  (8,592 rows x 28 vars, 0.8 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9b_transfers_in_clean.dta  (10,844 rows x 28 vars, 1.1 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9c3_vup_ubudehe_and_rssp_schemes_clean.dta  (128 rows x 58 vars, 0.1 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9c4_vup_ubudehe_and_rssp_schemes_clean.dta  (154 rows x 47 vars, 0.1 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9c_vup_ubudehe_and_rssp_schemes_clean.dta  (1,642 rows x 55 vars, 0.2 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9d_other_income_clean.dta  (34,463 rows x 18 vars, 2.2 MB)
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_s9e_other_expenditure_clean.dta  (21,333 rows x 16 vars, 1.2 MB)
+21:21:03 01_clean INFO module levels: {'panel_for_merge': 'person', 's0_s5_household': 'household', 's10a1_credits': 'household', 's10a2_listing_of_credits': 'multi', 's10b1_durable_household_goods': 'multi', 's10b2_durable_household_goods': 'multi', 's10c1_savings': 'multi', 's10c2_tontine': 'multi', 's1_s2_s3_s4_s6a_s6e_person': 'person', 's5f_access_to_services': 'multi', 's6b_employement_6c_salaried_s6d_business': 'multi', 's7a1_livestock': 'multi', 's7a2_livestock': 'household', 's7a3_livestock': 'multi', 's7a4_livestock': 'multi', 's7b1_land_agriculture': 'household', 's7b2_land_agriculture': 'multi', 's7c_parcels': 'multi', 's7d_large_crop': 'multi', 's7e_small_crop': 'multi', 's7f_income_agriculture': 'multi', 's7g_expenditure_agriculture': 'multi', 's7h_transformation_agriculture': 'multi', 's8a1_expenditure': 'multi', 's8a2_expenditure': 'multi', 's8a3_expenditure': 'multi', 's8b_expenditure': 'multi', 's8c_farming': 'multi', 's9a_transfers_out': 'multi', 's9b_transfers_in': 'multi', 's9c3_vup_ubudehe_and_rssp_schemes': 'household', 's9c4_vup_ubudehe_and_rssp_schemes': 'multi', 's9c_vup_ubudehe_and_rssp_schemes': 'household', 's9d_other_income': 'multi', 's9e_other_expenditure': 'multi'}
+21:21:03 01_clean INFO    joined panel_for_merge                                78.40% of base rows matched, 28 columns added, identical copies dropped: ['hhid_eicv4'], differing copies kept as _panel_for_merge: ['pid_eicv4']
+21:21:03 01_clean INFO PASS  EICV5_VUP: (hhid, pid) unique in the person file
+21:21:03 01_clean INFO PASS  EICV5_VUP: wt present and > 0 on every person row
+21:21:03 01_clean INFO PASS  EICV5_VUP: sex in {1,2}
+21:21:03 01_clean INFO EICV5_VUP person file: 6,596 rows x 148 vars; weighted persons = 370,780
+21:21:03 01_clean INFO wrote EICV_EICV5_VUP_person_clean.dta  (6,596 rows x 148 vars, 1.9 MB)
+21:21:03 01_clean INFO    joined s10a1_credits                                  99.94% of base rows matched, 3 columns added, identical copies dropped: ['hhid_eicv4', 's0q18m', 's0q18y']
+21:21:03 01_clean INFO    joined s7a2_livestock                                 69.10% of base rows matched, 10 columns added, identical copies dropped: ['hhid_eicv4', 's0q18m', 's0q18y']
+21:21:03 01_clean INFO    joined s7b1_land_agriculture                         100.00% of base rows matched, 12 columns added, identical copies dropped: ['hhid_eicv4', 's0q18m', 's0q18y']
+21:21:03 01_clean INFO    joined s9c3_vup_ubudehe_and_rssp_schemes               7.79% of base rows matched, 43 columns added, identical copies dropped: ['hhid_eicv4', 's0qb', 's0q18m', 's0q18y']
+21:21:03 01_clean INFO    joined s9c_vup_ubudehe_and_rssp_schemes               99.88% of base rows matched, 29 columns added, identical copies dropped: ['hhid_eicv4', 's9cq1', 's9cq2', 's9cq4a', 's9cq4b', 's9cq4c', 's9cq4d', 's9cq4e'], differing copies kept as _s9c_vup_ubudehe_and_rssp_schemes: ['s0qb']
+21:21:03 01_clean INFO PASS  EICV5_VUP: one head (s1q2 == 1) per household: 100.0000%
+21:21:03 01_clean INFO PASS  EICV5_VUP: hhid unique in the household file (1,644 households)
+21:21:03 01_clean INFO PASS  EICV5_VUP: sum of hhsize == person rows
+21:21:03 01_clean INFO EICV5_VUP household file: 1,644 rows x 201 vars; weighted households = 88,110
+21:21:04 01_clean INFO wrote EICV_EICV5_VUP_household_clean.dta  (1,644 rows x 201 vars, 0.7 MB)
+21:21:04 01_clean INFO all hard checks passed (0 soft warnings)
+21:21:04 01_clean INFO ================ EICV7_CS ================
+21:21:04 01_clean INFO read EICV7_CS_cs_eicv7_poverty_file.dta                 -> eicv7_poverty_file                              15,054 rows x   32 vars
+21:21:04 01_clean INFO read EICV7_CS_cs_s01_s5_s7_household.dta                -> s01_s5_s7_household                             15,054 rows x  112 vars
+21:21:06 01_clean INFO read EICV7_CS_cs_s0_s1_s2_s3_s4_s6a_s6b_s6c_person.dta  -> s0_s1_s2_s3_s4_s6a_s6b_s6c_person               62,110 rows x  157 vars
+21:21:06 01_clean INFO read EICV7_CS_cs_s10a1_a2_credits.dta                   -> s10a1_a2_credits                                20,509 rows x   20 vars
+21:21:07 01_clean INFO read EICV7_CS_cs_s10b_durables.dta                      -> s10b_durables                                  406,458 rows x   19 vars
+21:21:07 01_clean INFO read EICV7_CS_cs_s10c_savings.dta                       -> s10c_savings                                    43,810 rows x   19 vars
+21:21:08 01_clean INFO read EICV7_CS_cs_s5f_access_to_services.dta             -> s5f_access_to_services                         225,810 rows x   22 vars
+21:21:11 01_clean INFO read EICV7_CS_cs_s8a1_expenditure.dta                   -> s8a1_expenditure                              1,159,158 rows x   17 vars
+21:21:13 01_clean INFO read EICV7_CS_cs_s8a2_expenditure.dta                   -> s8a2_expenditure                               978,382 rows x   17 vars
+21:21:14 01_clean INFO read EICV7_CS_cs_s8a3_expenditure.dta                   -> s8a3_expenditure                               346,220 rows x   21 vars
+21:21:26 01_clean INFO read EICV7_CS_cs_s8b_food_expenditure_consumption.dta   -> s8b_food_expenditure_consumption              2,227,992 rows x   68 vars
+21:21:26 01_clean INFO read EICV7_CS_cs_s8c_food_away_from_home.dta            -> s8c_food_away_from_home                         62,110 rows x   72 vars
+21:21:26 01_clean INFO read EICV7_CS_cs_s9a_transfers_out.dta                  -> s9a_transfers_out                               68,175 rows x   25 vars
+21:21:26 01_clean INFO read EICV7_CS_cs_s9b_transfers_in.dta                   -> s9b_transfers_in                                33,353 rows x   22 vars
+21:21:27 01_clean INFO read EICV7_CS_cs_s9c_other_expenditure.dta              -> s9c_other_expenditure                          198,588 rows x   13 vars
+21:21:27 01_clean INFO read EICV7_CS_cs_s9d1_direct_support.dta                -> s9d1_direct_support                             15,056 rows x   37 vars
+21:21:27 01_clean INFO read EICV7_CS_cs_s9d2_classic_public_work.dta           -> s9d2_classic_public_work                        15,054 rows x   40 vars
+21:21:27 01_clean INFO read EICV7_CS_cs_s9d3_expanded_public_work.dta          -> s9d3_expanded_public_work                       15,055 rows x   41 vars
+21:21:27 01_clean INFO read EICV7_CS_cs_s9d4_nsds.dta                          -> s9d4_nsds                                       15,057 rows x   46 vars
+21:21:27 01_clean INFO read EICV7_CS_cs_s9d5_financial_services.dta            -> s9d5_financial_services                         15,054 rows x   23 vars
+21:21:28 01_clean INFO read EICV7_CS_cs_s9e_other_income.dta                   -> s9e_other_income                               397,176 rows x   15 vars
+21:21:28 01_clean INFO    joined eicv7_poverty_file                            100.00% of base rows matched, 25 columns added, identical copies dropped: ['cluster', 'prov', 'dist', 'urban', 'wt', 'pop_wt'], differing copies kept as _eicv7_poverty_file: ['quintile', 'pov_jan', 'poverty', 'epov_jan']
+21:21:28 01_clean INFO PASS  EICV7_CS: hhid unique in household base (15,054 households)
+21:21:28 01_clean INFO PASS  EICV7_CS: prov complete in household key table
+21:21:28 01_clean INFO PASS  EICV7_CS: dist complete in household key table
+21:21:28 01_clean INFO PASS  EICV7_CS: urban complete in household key table
+21:21:28 01_clean INFO PASS  EICV7_CS: cluster complete in household key table
+21:21:28 01_clean INFO PASS  EICV7_CS: wt complete in household key table
+21:21:28 01_clean INFO PASS  EICV7_CS: province codes 1-5
+21:21:28 01_clean INFO PASS  EICV7_CS: 30 districts on the 11-57 scheme
+21:21:28 01_clean INFO PASS  EICV7_CS: household weight > 0
+21:21:28 01_clean INFO wrote EICV_EICV7_CS_eicv7_poverty_file_clean.dta  (15,054 rows x 37 vars, 2.9 MB)
+21:21:28 01_clean INFO destring s7a2q5a (1468 values)
+21:21:28 01_clean INFO wrote EICV_EICV7_CS_s01_s5_s7_household_clean.dta  (15,054 rows x 117 vars, 3.1 MB)
+21:21:30 01_clean INFO wrote EICV_EICV7_CS_s0_s1_s2_s3_s4_s6a_s6b_s6c_person_clean.dta  (62,110 rows x 162 vars, 15.0 MB)
+21:21:30 01_clean INFO wrote EICV_EICV7_CS_s10a1_a2_credits_clean.dta  (20,509 rows x 25 vars, 1.2 MB)
+21:21:32 01_clean INFO wrote EICV_EICV7_CS_s10b_durables_clean.dta  (406,458 rows x 24 vars, 27.7 MB)
+21:21:32 01_clean INFO wrote EICV_EICV7_CS_s10c_savings_clean.dta  (43,810 rows x 24 vars, 2.6 MB)
+21:21:33 01_clean INFO wrote EICV_EICV7_CS_s5f_access_to_services_clean.dta  (225,810 rows x 27 vars, 14.5 MB)
+21:21:38 01_clean INFO wrote EICV_EICV7_CS_s8a1_expenditure_clean.dta  (1,159,158 rows x 22 vars, 71.9 MB)
+21:21:42 01_clean INFO wrote EICV_EICV7_CS_s8a2_expenditure_clean.dta  (978,382 rows x 22 vars, 60.7 MB)
+21:21:44 01_clean INFO wrote EICV_EICV7_CS_s8a3_expenditure_clean.dta  (346,220 rows x 26 vars, 25.6 MB)
+21:22:02 01_clean INFO wrote EICV_EICV7_CS_s8b_food_expenditure_consumption_clean.dta  (2,227,992 rows x 73 vars, 588.2 MB)
+21:22:03 01_clean INFO wrote EICV_EICV7_CS_s8c_food_away_from_home_clean.dta  (62,110 rows x 77 vars, 9.1 MB)
+21:22:03 01_clean INFO wrote EICV_EICV7_CS_s9a_transfers_out_clean.dta  (68,175 rows x 30 vars, 5.0 MB)
+21:22:04 01_clean INFO wrote EICV_EICV7_CS_s9b_transfers_in_clean.dta  (33,353 rows x 27 vars, 2.2 MB)
+21:22:04 01_clean INFO wrote EICV_EICV7_CS_s9c_other_expenditure_clean.dta  (198,588 rows x 18 vars, 10.9 MB)
+21:22:05 01_clean INFO wrote EICV_EICV7_CS_s9d1_direct_support_clean.dta  (15,056 rows x 42 vars, 1.4 MB)
+21:22:05 01_clean INFO wrote EICV_EICV7_CS_s9d2_classic_public_work_clean.dta  (15,054 rows x 45 vars, 1.5 MB)
+21:22:05 01_clean INFO wrote EICV_EICV7_CS_s9d3_expanded_public_work_clean.dta  (15,055 rows x 46 vars, 1.5 MB)
+21:22:05 01_clean INFO wrote EICV_EICV7_CS_s9d4_nsds_clean.dta  (15,057 rows x 51 vars, 1.5 MB)
+21:22:05 01_clean INFO wrote EICV_EICV7_CS_s9d5_financial_services_clean.dta  (15,054 rows x 28 vars, 1.0 MB)
+21:22:07 01_clean INFO wrote EICV_EICV7_CS_s9e_other_income_clean.dta  (397,176 rows x 20 vars, 23.8 MB)
+21:22:07 01_clean INFO module levels: {'eicv7_poverty_file': 'household', 's01_s5_s7_household': 'household', 's0_s1_s2_s3_s4_s6a_s6b_s6c_person': 'person', 's10a1_a2_credits': 'multi', 's10b_durables': 'multi', 's10c_savings': 'multi', 's5f_access_to_services': 'multi', 's8a1_expenditure': 'multi', 's8a2_expenditure': 'multi', 's8a3_expenditure': 'multi', 's8b_food_expenditure_consumption': 'multi', 's8c_food_away_from_home': 'person', 's9a_transfers_out': 'multi', 's9b_transfers_in': 'multi', 's9c_other_expenditure': 'multi', 's9d1_direct_support': 'multi', 's9d2_classic_public_work': 'household', 's9d3_expanded_public_work': 'multi', 's9d4_nsds': 'multi', 's9d5_financial_services': 'household', 's9e_other_income': 'multi'}
+21:22:07 01_clean INFO    joined s8c_food_away_from_home                       100.00% of base rows matched, 60 columns added, identical copies dropped: ['strata_id', 'epov_jan', 'pov_jan', 'poverty', 'quintile']
+21:22:07 01_clean INFO PASS  EICV7_CS: (hhid, pid) unique in the person file
+21:22:07 01_clean INFO PASS  EICV7_CS: wt present and > 0 on every person row
+21:22:07 01_clean INFO PASS  EICV7_CS: sex in {1,2}
+21:22:07 01_clean INFO EICV7_CS person file: 62,110 rows x 222 vars; weighted persons = 13,549,457
+21:22:09 01_clean INFO wrote EICV_EICV7_CS_person_clean.dta  (62,110 rows x 222 vars, 20.9 MB)
+21:22:09 01_clean INFO    joined s9d2_classic_public_work                      100.00% of base rows matched, 32 columns added, identical copies dropped: ['strata_id'], differing copies kept as _s9d2_classic_public_work: ['quintile', 'pov_jan', 'poverty', 'epov_jan']
+21:22:09 01_clean INFO    joined s9d5_financial_services                       100.00% of base rows matched, 15 columns added, identical copies dropped: ['strata_id'], differing copies kept as _s9d5_financial_services: ['s9d1q1', 'quintile', 'pov_jan', 'poverty', 'epov_jan']
+21:22:09 01_clean INFO PASS  EICV7_CS: one head (s1q2 == 1) per household: 100.0000%
+21:22:09 01_clean INFO PASS  EICV7_CS: hhid unique in the household file (15,054 households)
+21:22:09 01_clean INFO PASS  EICV7_CS: sum of hhsize == person rows
+21:22:09 01_clean INFO EICV7_CS household file: 15,054 rows x 192 vars; weighted households = 3,289,819
+21:22:09 01_clean INFO wrote EICV_EICV7_CS_household_clean.dta  (15,054 rows x 192 vars, 6.4 MB)
+21:22:09 01_clean INFO all hard checks passed (0 soft warnings)
+21:22:09 01_clean INFO ================ EICV7_VUP ================
+21:22:10 01_clean INFO read EICV7_VUP_vup_s01_s5_s7_household.dta              -> s01_s5_s7_household                              3,771 rows x  112 vars
+21:22:10 01_clean INFO read EICV7_VUP_vup_s0_s1_s2_s3_s4_s6a_s6b_s6c_person.dta -> s0_s1_s2_s3_s4_s6a_s6b_s6c_person               15,039 rows x  157 vars
+21:22:10 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:10 01_clean INFO read EICV7_VUP_vup_s10a1_a2_credits.dta                 -> s10a1_a2_credits                                 5,404 rows x   21 vars
+21:22:11 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:11 01_clean INFO read EICV7_VUP_vup_s10b_durables.dta                    -> s10b_durables                                  101,817 rows x   20 vars
+21:22:11 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:11 01_clean INFO read EICV7_VUP_vup_s10c_savings.dta                     -> s10c_savings                                    10,777 rows x   20 vars
+21:22:11 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:11 01_clean INFO read EICV7_VUP_vup_s5f_access_to_services.dta           -> s5f_access_to_services                          56,565 rows x   23 vars
+21:22:12 01_clean INFO read EICV7_VUP_vup_s8a1_expenditure.dta                 -> s8a1_expenditure                               290,367 rows x   17 vars
+21:22:13 01_clean INFO read EICV7_VUP_vup_s8a2_expenditure.dta                 -> s8a2_expenditure                               245,115 rows x   17 vars
+21:22:13 01_clean INFO read EICV7_VUP_vup_s8a3_expenditure.dta                 -> s8a3_expenditure                                86,623 rows x   21 vars
+21:22:15 01_clean INFO read EICV7_VUP_vup_s8b_food_expenditure_consumption.dta -> s8b_food_expenditure_consumption               558,108 rows x   64 vars
+21:22:16 01_clean INFO read EICV7_VUP_vup_s8c_food_away_from_home.dta          -> s8c_food_away_from_home                         15,039 rows x   68 vars
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9a_transfers_out.dta                -> s9a_transfers_out                               16,256 rows x   25 vars
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9b_transfers_in.dta                 -> s9b_transfers_in                                 9,313 rows x   23 vars
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9c_other_expenditure.dta            -> s9c_other_expenditure                           49,439 rows x   13 vars
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9d1_direct_support.dta              -> s9d1_direct_support                              1,003 rows x   37 vars
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9d2_classic_public_work.dta         -> s9d2_classic_public_work                           925 rows x   40 vars
+21:22:16 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9d3_expanded_public_work.dta        -> s9d3_expanded_public_work                          796 rows x   42 vars
+21:22:16 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9d4_nsds.dta                        -> s9d4_nsds                                          675 rows x   41 vars
+21:22:16 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9d5_financial_services.dta          -> s9d5_financial_services                            592 rows x   23 vars
+21:22:16 01_clean INFO name collision 'Province' vs 'province' -> renaming 'Province' to 'province_2'
+21:22:16 01_clean INFO read EICV7_VUP_vup_s9e_other_income.dta                 -> s9e_other_income                                98,878 rows x   16 vars
+21:22:16 01_clean INFO PASS  EICV7_VUP: hhid unique in household base (3,771 households)
+21:22:16 01_clean INFO PASS  EICV7_VUP: prov complete in household key table
+21:22:16 01_clean INFO PASS  EICV7_VUP: dist complete in household key table
+21:22:16 01_clean INFO PASS  EICV7_VUP: urban complete in household key table
+21:22:16 01_clean INFO PASS  EICV7_VUP: cluster complete in household key table
+21:22:16 01_clean INFO PASS  EICV7_VUP: wt complete in household key table
+21:22:16 01_clean INFO PASS  EICV7_VUP: province codes 1-5
+21:22:16 01_clean INFO PASS  EICV7_VUP: 30 districts on the 11-57 scheme
+21:22:16 01_clean INFO PASS  EICV7_VUP: household weight > 0
+21:22:16 01_clean INFO destring s7a2q5a (852 values)
+21:22:16 01_clean INFO wrote EICV_EICV7_VUP_s01_s5_s7_household_clean.dta  (3,771 rows x 117 vars, 0.8 MB)
+21:22:17 01_clean INFO wrote EICV_EICV7_VUP_s0_s1_s2_s3_s4_s6a_s6b_s6c_person_clean.dta  (15,039 rows x 162 vars, 3.6 MB)
+21:22:17 01_clean INFO wrote EICV_EICV7_VUP_s10a1_a2_credits_clean.dta  (5,404 rows x 26 vars, 0.4 MB)
+21:22:17 01_clean INFO wrote EICV_EICV7_VUP_s10b_durables_clean.dta  (101,817 rows x 25 vars, 7.1 MB)
+21:22:17 01_clean INFO wrote EICV_EICV7_VUP_s10c_savings_clean.dta  (10,777 rows x 25 vars, 0.7 MB)
+21:22:18 01_clean INFO wrote EICV_EICV7_VUP_s5f_access_to_services_clean.dta  (56,565 rows x 28 vars, 3.8 MB)
+21:22:19 01_clean INFO wrote EICV_EICV7_VUP_s8a1_expenditure_clean.dta  (290,367 rows x 22 vars, 18.3 MB)
+21:22:21 01_clean INFO wrote EICV_EICV7_VUP_s8a2_expenditure_clean.dta  (245,115 rows x 22 vars, 15.5 MB)
+21:22:21 01_clean INFO wrote EICV_EICV7_VUP_s8a3_expenditure_clean.dta  (86,623 rows x 26 vars, 6.5 MB)
+21:22:27 01_clean INFO wrote EICV_EICV7_VUP_s8b_food_expenditure_consumption_clean.dta  (558,108 rows x 69 vars, 143.5 MB)
+21:22:27 01_clean INFO wrote EICV_EICV7_VUP_s8c_food_away_from_home_clean.dta  (15,039 rows x 73 vars, 2.1 MB)
+21:22:27 01_clean INFO wrote EICV_EICV7_VUP_s9a_transfers_out_clean.dta  (16,256 rows x 30 vars, 1.2 MB)
+21:22:27 01_clean INFO wrote EICV_EICV7_VUP_s9b_transfers_in_clean.dta  (9,313 rows x 28 vars, 0.6 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9c_other_expenditure_clean.dta  (49,439 rows x 18 vars, 2.8 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9d1_direct_support_clean.dta  (1,003 rows x 42 vars, 0.2 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9d2_classic_public_work_clean.dta  (925 rows x 45 vars, 0.1 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9d3_expanded_public_work_clean.dta  (796 rows x 47 vars, 0.1 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9d4_nsds_clean.dta  (675 rows x 46 vars, 0.1 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9d5_financial_services_clean.dta  (592 rows x 28 vars, 0.1 MB)
+21:22:28 01_clean INFO wrote EICV_EICV7_VUP_s9e_other_income_clean.dta  (98,878 rows x 21 vars, 6.1 MB)
+21:22:28 01_clean INFO module levels: {'s01_s5_s7_household': 'household', 's0_s1_s2_s3_s4_s6a_s6b_s6c_person': 'person', 's10a1_a2_credits': 'multi', 's10b_durables': 'multi', 's10c_savings': 'multi', 's5f_access_to_services': 'multi', 's8a1_expenditure': 'multi', 's8a2_expenditure': 'multi', 's8a3_expenditure': 'multi', 's8b_food_expenditure_consumption': 'multi', 's8c_food_away_from_home': 'person', 's9a_transfers_out': 'multi', 's9b_transfers_in': 'multi', 's9c_other_expenditure': 'multi', 's9d1_direct_support': 'person', 's9d2_classic_public_work': 'person', 's9d3_expanded_public_work': 'person', 's9d4_nsds': 'household', 's9d5_financial_services': 'person', 's9e_other_income': 'multi'}
+21:22:28 01_clean INFO    joined s8c_food_away_from_home                       100.00% of base rows matched, 60 columns added, identical copies dropped: ['strata_id']
+21:22:28 01_clean INFO    joined s9d1_direct_support                             6.67% of base rows matched, 25 columns added, identical copies dropped: ['quintile', 'pov_jan', 'poverty', 'epov_jan', 'strata_id']
+21:22:29 01_clean INFO    joined s9d2_classic_public_work                        6.15% of base rows matched, 27 columns added, identical copies dropped: ['s9d1q1', 'quintile', 'pov_jan', 'poverty', 'epov_jan', 'strata_id']
+21:22:29 01_clean INFO    joined s9d3_expanded_public_work                       5.29% of base rows matched, 29 columns added, identical copies dropped: ['s9d1q1', 'quintile', 'pov_jan', 'poverty', 'epov_jan', 'strata_id']
+21:22:29 01_clean INFO    joined s9d5_financial_services                         3.94% of base rows matched, 9 columns added, identical copies dropped: ['province_2', 's9d1q1', 'quintile', 'pov_jan', 'poverty', 'epov_jan', 'strata_id']
+21:22:29 01_clean INFO PASS  EICV7_VUP: (hhid, pid) unique in the person file
+21:22:29 01_clean INFO PASS  EICV7_VUP: wt present and > 0 on every person row
+21:22:29 01_clean INFO PASS  EICV7_VUP: sex in {1,2}
+21:22:29 01_clean INFO EICV7_VUP person file: 15,039 rows x 312 vars; weighted persons = 1,591,579
+21:22:30 01_clean INFO wrote EICV_EICV7_VUP_person_clean.dta  (15,039 rows x 312 vars, 7.6 MB)
+21:22:30 01_clean INFO    joined s9d4_nsds                                      17.90% of base rows matched, 29 columns added, identical copies dropped: ['quintile', 'pov_jan', 'poverty', 'epov_jan', 'strata_id']
+21:22:30 01_clean INFO PASS  EICV7_VUP: one head (s1q2 == 1) per household: 100.0000%
+21:22:30 01_clean INFO PASS  EICV7_VUP: hhid unique in the household file (3,771 households)
+21:22:30 01_clean INFO PASS  EICV7_VUP: sum of hhsize == person rows
+21:22:30 01_clean INFO EICV7_VUP household file: 3,771 rows x 149 vars; weighted households = 390,878
+21:22:31 01_clean INFO wrote EICV_EICV7_VUP_household_clean.dta  (3,771 rows x 149 vars, 1.0 MB)
+21:22:31 01_clean INFO all hard checks passed (0 soft warnings)
+21:22:31 01_clean INFO 01_clean done for ['EICV5_VUP', 'EICV7_CS', 'EICV7_VUP']

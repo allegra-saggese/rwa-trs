@@ -1,0 +1,2954 @@
+{
+ "wave": "EICV3",
+ "year": 2011,
+ "sample": "CS",
+ "modules": {
+  "s01_hhmembers_s02_education_s03_health_s04_migration": {
+   "level": "person",
+   "rows": 68398,
+   "vars": 176,
+   "hh_match_rate": 1.0
+  },
+  "s05abcd_housing": {
+   "level": "household",
+   "rows": 14308,
+   "vars": 70,
+   "hh_match_rate": 1.0
+  },
+  "s05e_services": {
+   "level": "multi",
+   "rows": 200312,
+   "vars": 21,
+   "hh_match_rate": 1.0
+  },
+  "s06ab_occupation": {
+   "level": "person",
+   "rows": 56116,
+   "vars": 34,
+   "hh_match_rate": 1.0
+  },
+  "s06cdef_jobs": {
+   "level": "multi",
+   "rows": 61405,
+   "vars": 70,
+   "hh_match_rate": 1.0
+  },
+  "s06g_timeuse": {
+   "level": "person",
+   "rows": 56116,
+   "vars": 27,
+   "hh_match_rate": 1.0
+  },
+  "s07_enterprise": {
+   "level": "multi",
+   "rows": 61405,
+   "vars": 45,
+   "hh_match_rate": 1.0
+  },
+  "s08a1_livestock": {
+   "level": "multi",
+   "rows": 78432,
+   "vars": 29,
+   "hh_match_rate": 1.0
+  },
+  "s08a2_livestock": {
+   "level": "household",
+   "rows": 9804,
+   "vars": 23,
+   "hh_match_rate": 1.0
+  },
+  "s08a3_livestock": {
+   "level": "multi",
+   "rows": 68628,
+   "vars": 20,
+   "hh_match_rate": 1.0
+  },
+  "s08a4_livestock": {
+   "level": "multi",
+   "rows": 98040,
+   "vars": 23,
+   "hh_match_rate": 1.0
+  },
+  "s08b1_landtransactions": {
+   "level": "household",
+   "rows": 14308,
+   "vars": 36,
+   "hh_match_rate": 1.0
+  },
+  "s08b2_equipment": {
+   "level": "multi",
+   "rows": 201870,
+   "vars": 23,
+   "hh_match_rate": 1.0
+  },
+  "s08c_parcels": {
+   "level": "multi",
+   "rows": 59016,
+   "vars": 33,
+   "hh_match_rate": 1.0
+  },
+  "s08d_croplarge": {
+   "level": "multi",
+   "rows": 46621,
+   "vars": 30,
+   "hh_match_rate": 1.0
+  },
+  "s08e_cropsmall": {
+   "level": "multi",
+   "rows": 121882,
+   "vars": 29,
+   "hh_match_rate": 1.0
+  },
+  "s08f_otheragric": {
+   "level": "multi",
+   "rows": 18846,
+   "vars": 18,
+   "hh_match_rate": 1.0
+  },
+  "s08g_inputs": {
+   "level": "multi",
+   "rows": 205664,
+   "vars": 19,
+   "hh_match_rate": 1.0
+  },
+  "s08h_processing": {
+   "level": "multi",
+   "rows": 32981,
+   "vars": 30,
+   "hh_match_rate": 1.0
+  },
+  "s09a1_consnonfood": {
+   "level": "multi",
+   "rows": 1273412,
+   "vars": 17,
+   "hh_match_rate": 1.0
+  },
+  "s09a2_consnonfood": {
+   "level": "multi",
+   "rows": 672476,
+   "vars": 17,
+   "hh_match_rate": 1.0
+  },
+  "s09a3_consnonfood": {
+   "level": "multi",
+   "rows": 543704,
+   "vars": 27,
+   "hh_match_rate": 1.0
+  },
+  "s09b_consfood": {
+   "level": "multi",
+   "rows": 2103276,
+   "vars": 27,
+   "hh_match_rate": 1.0
+  },
+  "s09c_consownfood": {
+   "level": "multi",
+   "rows": 1414994,
+   "vars": 28,
+   "hh_match_rate": 1.0
+  },
+  "s10a_transfersout": {
+   "level": "multi",
+   "rows": 98521,
+   "vars": 24,
+   "hh_match_rate": 1.0
+  },
+  "s10b_transfersin": {
+   "level": "multi",
+   "rows": 89947,
+   "vars": 25,
+   "hh_match_rate": 1.0
+  },
+  "s10c_otherinc": {
+   "level": "multi",
+   "rows": 314776,
+   "vars": 16,
+   "hh_match_rate": 1.0
+  },
+  "s10d_schemes": {
+   "level": "household",
+   "rows": 14308,
+   "vars": 31,
+   "hh_match_rate": 1.0
+  },
+  "s10e_otherexp": {
+   "level": "multi",
+   "rows": 171696,
+   "vars": 15,
+   "hh_match_rate": 1.0
+  },
+  "s11a1_credit": {
+   "level": "household",
+   "rows": 14308,
+   "vars": 17,
+   "hh_match_rate": 1.0
+  },
+  "s11a2_credit": {
+   "level": "multi",
+   "rows": 22781,
+   "vars": 22,
+   "hh_match_rate": 1.0
+  },
+  "s11b_durables": {
+   "level": "multi",
+   "rows": 400624,
+   "vars": 27,
+   "hh_match_rate": 1.0
+  },
+  "s11c_savings": {
+   "level": "multi",
+   "rows": 14461,
+   "vars": 23,
+   "hh_match_rate": 1.0
+  },
+  "eicv3_povertyfile_jan2014": {
+   "level": "household",
+   "rows": 14308,
+   "vars": 49,
+   "hh_match_rate": 1.0
+  }
+ },
+ "person": {
+  "n": 68398,
+  "vars": [
+   "survey",
+   "year",
+   "wave",
+   "sample",
+   "prov",
+   "dist",
+   "urban",
+   "cluster",
+   "hhid",
+   "pid",
+   "sex",
+   "age",
+   "wt",
+   "wt_hh",
+   "quintile",
+   "poverty",
+   "s1q2",
+   "s1q3m",
+   "s1q4",
+   "s1q5",
+   "s1q6",
+   "s1q7",
+   "s1q8",
+   "s1q9",
+   "s1q10",
+   "s1q11",
+   "s1q12",
+   "s1q13",
+   "s1q14",
+   "s2aq1",
+   "s2aq2",
+   "s2aq3",
+   "s2aq4",
+   "s2aq5a",
+   "s2aq5b",
+   "s2aq6",
+   "s2aq7",
+   "s2aq8",
+   "s2aq9a",
+   "s2aq9b",
+   "s2aq10",
+   "s2aq11",
+   "s2aq12a",
+   "s2aq12b",
+   "s2aq12c",
+   "s2aq12d",
+   "s2aq12e",
+   "s2aq12f",
+   "s2aq12g",
+   "s2aq12h",
+   "s2aq13",
+   "s2aq14",
+   "s2aq15",
+   "s2aq16",
+   "s2b1q1",
+   "s2b1q2",
+   "s2b1q3",
+   "s2b1q4",
+   "s2b1q5",
+   "s2b1q6",
+   "s2b1q7",
+   "s2b1q8",
+   "s2b1q9",
+   "s2b1q10",
+   "s2b1q11",
+   "s2b1q12",
+   "s2b1q13",
+   "s2b2q14",
+   "s2b2q15",
+   "s2b2q16",
+   "s2b2q17",
+   "s2b2q18",
+   "s2b2q19",
+   "s2b2q20",
+   "s2b2q21",
+   "s2b2q22",
+   "s2b2q23",
+   "s2cq1m",
+   "s2cq1y",
+   "s2cq2",
+   "s2cq3",
+   "s2cq4",
+   "s2cq5",
+   "s2cq6",
+   "s2cq7",
+   "s2cq8",
+   "s2cq9",
+   "s2dq1",
+   "s2dq2",
+   "s2dq3",
+   "s2dq4",
+   "s2dq5",
+   "s2dq6",
+   "s2dq7",
+   "s2dq8",
+   "s2dq9",
+   "s2dq10",
+   "s2dq11",
+   "s2dq12",
+   "s2dq13",
+   "s2dq14",
+   "s2dq15",
+   "s3aq1",
+   "s3aq2",
+   "s3aq3y",
+   "s3aq3m",
+   "s3aq4",
+   "s3aq5",
+   "s3aq6",
+   "s3aq7y",
+   "s3aq7m",
+   "s3aq8",
+   "s3aq9",
+   "s3aq10",
+   "s3aq11",
+   "s3aq12",
+   "s3aq13",
+   "s3aq14",
+   "s3aq15",
+   "s3aq16",
+   "s3aq17",
+   "s3aq18",
+   "s3aq19",
+   "s3aq20",
+   "s3aq21",
+   "s3aq22",
+   "s3aq23",
+   "s3aq24",
+   "s3aq25",
+   "s3aq26",
+   "s3aq27",
+   "s3aq28",
+   "s3aq29",
+   "s3bq1",
+   "s3bq2",
+   "s3bq3",
+   "s3bq4a",
+   "s3bq4b",
+   "s3bq4c",
+   "s3bq4d",
+   "s3bq5a",
+   "s3bq5b",
+   "s3bq5c",
+   "s3bq5d",
+   "s3bq6",
+   "s3bq7",
+   "s3bq8",
+   "s4aq1",
+   "s4aq2",
+   "s4aq3y",
+   "s4aq3m",
+   "s4aq4",
+   "s4aq5",
+   "s4aq6",
+   "s4aq7",
+   "s4aq8",
+   "s4bq1",
+   "s4bq2",
+   "s4bq3a",
+   "s4bq3b",
+   "s4bq3c",
+   "s4bq4",
+   "s4bq5",
+   "s4bq6",
+   "s4bq7",
+   "s4bq8",
+   "s4bq9a",
+   "s4bq9b",
+   "s4bq9c",
+   "s4bq9d",
+   "s4bq9e",
+   "s4bq9f",
+   "s4bq9g",
+   "s4bq9h",
+   "s4bq10",
+   "pid_nisr",
+   "s6aq1",
+   "s6aq2",
+   "s6aq3",
+   "s6aq4",
+   "s6aq5",
+   "s6aq6",
+   "s6aq7",
+   "s6bq1",
+   "s6bq2",
+   "s6bq3",
+   "s6bq4",
+   "s6bq5",
+   "s6bq6a",
+   "s6bq6b",
+   "s6bq7",
+   "s6bq8",
+   "s6bq9",
+   "s6bq10y",
+   "s6bq10m",
+   "s6gq1",
+   "s6gq2",
+   "s6gq3",
+   "s6gq4",
+   "s6gq5",
+   "s6gq6",
+   "s6gq7",
+   "s6gq8",
+   "s6gq9",
+   "s6g10",
+   "s6gq11",
+   "s6gq12"
+  ],
+  "var_labels": {
+   "hhid": "Household id (unique within wave)",
+   "quintile": "Quintile",
+   "poverty": "Poverty status",
+   "cluster": "Sampling cluster / enumeration area (as shipped)",
+   "pid": "Person number within the household",
+   "s1q1": "Sex",
+   "s1q2": "Relation with the head of household",
+   "s1q3y": "Age (Years)",
+   "s1q3m": "Age (Months)",
+   "s1q4": "Marital status",
+   "s1q5": "Place of birth",
+   "s1q6": "Nationality",
+   "s1q7": "Absent from household in the last 12 months",
+   "s1q8": "Length of absence in the last 12 months",
+   "s1q9": "Main reason of absence from household in the last 12 months",
+   "s1q10": "Resident of another household in the last 12 months",
+   "s1q11": "Resident during enumeration period",
+   "s1q12": "Reason for absence during enumeration",
+   "s1q13": "Father still alive",
+   "s1q14": "Mother still alive",
+   "s2aq1": "PID of respondent",
+   "s2aq2": "Ever been to school",
+   "s2aq3": "Attended school in the last 12 months",
+   "s2aq4": "Current class",
+   "s2aq5a": "Class attended in 2009",
+   "s2aq5b": "Class attended in 2010",
+   "s2aq6": "Reason for repeating class",
+   "s2aq7": "Absent from school last week",
+   "s2aq8": "Cause of absence",
+   "s2aq9a": "Time required to go to school",
+   "s2aq9b": "Type of transport used to go to school",
+   "s2aq10": "Problems with school",
+   "s2aq11": "Separate toilet facilities at school",
+   "s2aq12a": "School,tuition and Registration fees",
+   "s2aq12b": "Parent contributions",
+   "s2aq12c": "School uniforms",
+   "s2aq12d": "Books and supplies",
+   "s2aq12e": "School transportation expenditures",
+   "s2aq12f": "School board and food expenditures",
+   "s2aq12g": "Other schooling expenditures",
+   "s2aq12h": "Total expenditures on school",
+   "s2aq13": "Responsible for payment of majority of school related expenditures",
+   "s2aq14": "School interuption",
+   "s2aq15": "Reason for leaving school",
+   "s2aq16": "Length of time of  school interuption",
+   "s2b1q1": "Last primary class successfully attained",
+   "s2b1q2": "Ever repeated primary school class",
+   "s2b1q3": "Number of times repeated primary class",
+   "s2b1q4": "Type of primary school attended",
+   "s2b1q5": "Currently in primary school",
+   "s2b1q6": "Obtained primary school certificate",
+   "s2b1q7": "School joined after primary school",
+   "s2b1q8": "Highest secondary school class succesfully attained",
+   "s2b1q9": "Ever repeated a secondary school class",
+   "s2b1q10": "Number of times repeated secondary school class",
+   "s2b1q11": "Highest diploma or class certificate received",
+   "s2b1q12": "Type of secondary school attended",
+   "s2b1q13": "Currently in secondary school",
+   "s2b2q14": "Attended or attending  vocational school or college",
+   "s2b2q15": "Highest class succefully attained in  vocational school",
+   "s2b2q16": "Highest vocational certificate obtained",
+   "s2b2q17": "Type of vocational school",
+   "s2b2q18": "Currently attending technical or vocational school",
+   "s2b2q19": "Attended or attending school of higher learning",
+   "s2b2q20": "Number of years in school of higher learning",
+   "s2b2q21": "Current institution of higher learning attended",
+   "s2b2q22": "Type of institution",
+   "s2b2q23": "Highset university diploma or certificate obtained",
+   "s2cq1m": "When last attended school (Month)",
+   "s2cq1y": "When last attended shool (Year)",
+   "s2cq2": "Reason for leaving school",
+   "s2cq3": "Highest class succesfully attained in school",
+   "s2cq4": "Highest school diploma or certificate obtained",
+   "s2cq5": "Attended any short-term training course<6 months",
+   "s2cq6": "Number of months attended short training course",
+   "s2cq7": "Amount paid on training fees last 12 months",
+   "s2cq8": "Amount paid on other training costs last 12 months",
+   "s2cq9": "Last training related to current employment",
+   "s2dq1": "Able to read a simple written note",
+   "s2dq2": "Language able to read",
+   "s2dq3": "Able to write a simple letter",
+   "s2dq4": "Language able to write",
+   "s2dq5": "Attended literacy training courses",
+   "s2dq6": "Able to do a written calculation",
+   "s2dq7": "Best writting language",
+   "s2dq8": "Ever used a computer",
+   "s2dq9": "Confidence to use computer",
+   "s2dq10": "Apprenticeship",
+   "s2dq11": "Length of apprenticeship",
+   "s2dq12": "Subject of apprenticeship",
+   "s2dq13": "Payment of apprenticeship",
+   "s2dq14": "Amount paid on fees for apprenticeship last 12 months",
+   "s2dq15": "Amount paid on other costs for apprenticeship last 12 months",
+   "s3aq1": "PID of respondent",
+   "s3aq2": "Main disability suffered",
+   "s3aq3y": "Duration of disability (years)",
+   "s3aq3m": "Duration of disability (months)",
+   "s3aq4": "Cause of disability",
+   "s3aq5": "Health problems in the last 2 weeks",
+   "s3aq6": "Major health problem",
+   "s3aq7y": "Duration of health problem (years)",
+   "s3aq7m": "Duration of health problem (months)",
+   "s3aq8": "Unable to leave house due to health problem",
+   "s3aq9": "Days unable to leave house",
+   "s3aq10": "Health insurance",
+   "s3aq11": "Medical consultation in the last 2 weeks",
+   "s3aq12": "Reason for medical consultation",
+   "s3aq13": "Person consulted",
+   "s3aq14": "Place of consultation",
+   "s3aq15": "Nature of medical establishment",
+   "s3aq16": "Amount paid for consultation by patient",
+   "s3aq17": "Amount paid for consultation by insurance or employer",
+   "s3aq18": "Medical examination or tests in the last 2 weeks",
+   "s3aq19": "Amount paid or to pay for examinations by patient",
+   "s3aq20": "Amount paid for medical examination by insurance or employer",
+   "s3aq21": "Admition at hospital or any medical establishment in the last 2 weeks",
+   "s3aq22": "Amount paid or to pay for medical services by patient",
+   "s3aq23": "Amount paid or to pay for medical services by insurance or employer",
+   "s3aq24": "Purchase of medicines or medical supplies in the last 2 weeks",
+   "s3aq25": "Amount paid or to  be paid for medicines and medical supplies by patient",
+   "s3aq26": "Amount paid for medicines  by insurance or employer",
+   "s3aq27": "Amount paid for transport to and from medical establishment in the last 2 weeks",
+   "s3aq28": "Amount paid for health care if not possible to itemize",
+   "s3aq29": "How much of total expsenses covered by insurance",
+   "s3bq1": "PID of respondent",
+   "s3bq2": "Ever been vaccinated",
+   "s3bq3": "Vaccination card",
+   "s3bq4a": "Infant vaccination BCG since birth",
+   "s3bq4b": "Infant vaccination Polio since birth",
+   "s3bq4c": "Infant vaccination DTC since birth",
+   "s3bq4d": "Infant vaccination Measles since birth",
+   "s3bq5a": "Vaccination BCG last 12 months",
+   "s3bq5b": "Vaccination polio last 12 months",
+   "s3bq5c": "Vaccination DTC last 12 months",
+   "s3bq5d": "Vaccination Measles last 12 months",
+   "s3bq6": "Place of last vaccination",
+   "s3bq7": "Amount paid or to pay for last vaccination",
+   "s3bq8": "Reason not vaccinated",
+   "s4aq1": "PID of respondent",
+   "s4aq2": "Always lived in the district",
+   "s4aq3y": "Duration since last move (years)",
+   "s4aq3m": "Duration since last move (months0",
+   "s4aq4": "District or foreign country lived prior to current place",
+   "s4aq5": "Kind of place lived prior to current place",
+   "s4aq6": "Duration lived in the previuos location years",
+   "s4aq7": "Primary reason for moving",
+   "s4aq8": "Who you moved with",
+   "s4bq1": "Take a domestic trip in the mast 12 months",
+   "s4bq2": "How many domestic trips taken in the last 12 month",
+   "s4bq3a": "Day trips taken in the last 12 months",
+   "s4bq3b": "Over night trips taken in the last 12 months",
+   "s4bq3c": "Total number if nights away from home",
+   "s4bq4": "Principal destination on the last trip",
+   "s4bq5": "Main purpose of the visit",
+   "s4bq6": "Nights away on the most recent trip",
+   "s4bq7": "Main type of accomodation on the most recent trip",
+   "s4bq8": "Mode of transport",
+   "s4bq9a": "Amount spent on accomodation",
+   "s4bq9b": "Amount spent on food and beverages",
+   "s4bq9c": "Amount spent on transport",
+   "s4bq9d": "Amount spent on tour guides",
+   "s4bq9e": "Amount spent on recreation or entertainment",
+   "s4bq9f": "Amount spent shopping",
+   "s4bq9g": "Amount spent on other services",
+   "s4bq9h": "Total amount spent on last trip",
+   "s4bq10": "Number of people covered by expenditure",
+   "prov": "Province (1-5, NISR codes)",
+   "dist": "District (11-57, NISR current codes)",
+   "urban": "Area of residence (1 urban, 2 rural)",
+   "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
+   "survey": "Source survey",
+   "year": "Survey year (mid-fieldwork)",
+   "wave": "Wave / round id",
+   "sample": "CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",
+   "wt_hh": "Household weight (same value as wt; sums to the number of households)",
+   "pid_nisr": "NISR person id as shipped (EICV3 PID = hhid*100 + person)",
+   "s6aq1": "PID of respondent",
+   "s6aq2": "Cultivated own farm in the alsat 12 months",
+   "s6aq3": "Paid agricultural activity in the last 12 months",
+   "s6aq4": "Worked fo salary or wages in non-farm sector in the last 12 months",
+   "s6aq5": "Run a non-fram business for cash or profit in the last 12 months",
+   "s6aq6": "Participation in VUP works program in the last 12 months",
+   "s6aq7": "Occupational status over last 12 months",
+   "s6bq1": "Atleast 1 hour work  last 7 days",
+   "s6bq2": "Reason not worked last 7 days",
+   "s6bq3": "Wish of additional or new employment",
+   "s6bq4": "Reason more employment not needed",
+   "s6bq5": "Number of desired extra work hours per week",
+   "s6bq6a": "Something done to secure employment-1",
+   "s6bq6b": "Something done to secure employment-2",
+   "s6bq7": "Full-time salaried position ever",
+   "s6bq8": "Kind of employer in last full-time salaried employment",
+   "s6bq9": "Still employed at full-time job",
+   "s6bq10y": "Year stopped working ful time job",
+   "s6bq10m": "Month stopped working full time job",
+   "s6gq1": "Foraging firewood for household last 7 days",
+   "s6gq2": "Number of hours spent foraging fire wood last 7 days",
+   "s6gq3": "Fodder serching or grazing for household animals last 7 days",
+   "s6gq4": "Number of hours spent carring or searching foder",
+   "s6gq5": "Water searching or fetching last 7 days",
+   "s6gq6": "Number of hours spent searching for water last 7 days",
+   "s6gq7": "Going to the market for household last 7 days",
+   "s6gq8": "Number of hours spent in market last 7 days",
+   "s6gq9": "Cooking for household last 7 days",
+   "s6g10": "Number of hours spent cooking over last 7 days",
+   "s6gq11": "Other household chores;laundry,cleaning,looking after children,etc last 7 days",
+   "s6gq12": "Number of hours spent on other househld chores last 7 days",
+   "sex": "Sex (1 male, 2 female)",
+   "age": "Age in years"
+  },
+  "value_labels": {
+   "quintile": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "poverty": {
+    "1": "Extremely poor",
+    "2": "Poor",
+    "3": "Non-poor"
+   },
+   "s1q2": {
+    "1": "Household head (HH)",
+    "2": "Spouse of HH",
+    "3": "Son or daughter of HH",
+    "4": "Step or adopted or foster child of HH",
+    "5": "Father or mother of HH",
+    "6": "Brother or sister of HH",
+    "7": "Grand child of HH",
+    "8": "Parent in law of HH",
+    "9": "Brother or  sister in law to HH",
+    "10": "Other relationship to HH",
+    "11": "No relationship to HH",
+    "12": "Domestic worker"
+   },
+   "s1q4": {
+    "1": "Married monogamously",
+    "2": "Married polygamously",
+    "3": "Living together",
+    "4": "Divorced",
+    "5": "Separated",
+    "6": "Single",
+    "7": "Widow or widower"
+   },
+   "s1q5": {
+    "1": "Nyarugenge",
+    "2": "Gasabo",
+    "3": "Kicukiro",
+    "4": "Nyanza",
+    "5": "Gisagara",
+    "6": "Nyaruguru",
+    "7": "Huye",
+    "8": "Nyamagabe",
+    "9": "Ruhango",
+    "10": "Muhanga",
+    "11": "Kamonyi",
+    "12": "Karongi",
+    "13": "Rutsiro",
+    "14": "Rubavu",
+    "15": "Nyabihu",
+    "16": "Ngororero",
+    "17": "Rusizi",
+    "18": "Nyamasheke",
+    "19": "Rulindo",
+    "20": "Gkenke",
+    "21": "Musanze",
+    "22": "Burera",
+    "23": "Gicumbi",
+    "24": "Rwamagana",
+    "25": "Nyagatare",
+    "26": "Gatsibo",
+    "27": "Kayonza",
+    "28": "Kirehe",
+    "29": "Ngoma",
+    "30": "Bugesera",
+    "40": "neighboring countries",
+    "50": "Others"
+   },
+   "s1q6": {
+    "40": "Rwandese",
+    "50": "Others"
+   },
+   "s1q7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s1q8": {
+    "0": "Less than one month",
+    "1": "1 month",
+    "2": "2 months",
+    "3": "3 months",
+    "4": "4 months",
+    "5": "5 months",
+    "6": "6 months",
+    "7": "7 months",
+    "8": "8 months",
+    "9": "9 months",
+    "10": "10 months",
+    "11": "11 months",
+    "12": "12 months"
+   },
+   "s1q9": {
+    "1": "Studies",
+    "2": "Seasonal work",
+    "3": "Working away now",
+    "4": "Health care",
+    "5": "Attend ceremony",
+    "6": "Visit friend or family",
+    "7": "Training",
+    "8": "Detention or compulsory service",
+    "9": "Unexplained absence",
+    "10": "Other"
+   },
+   "s1q10": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s1q11": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s1q12": {
+    "1": "Studies",
+    "2": "Seasonal work",
+    "3": "Working away now",
+    "4": "Health care",
+    "5": "Attend ceremony",
+    "6": "Visit friend or family",
+    "7": "Training",
+    "8": "Detention or compulsory service",
+    "9": "Unexplained absence",
+    "10": "Other"
+   },
+   "s1q13": {
+    "1": "Yes,and residing in the household",
+    "2": "Yes,but residing in onother household",
+    "3": "No",
+    "4": "Do not know"
+   },
+   "s1q14": {
+    "1": "Yes and resident in household",
+    "2": "Yes but residing in another household",
+    "3": "No",
+    "4": "Do not know"
+   },
+   "s2aq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2aq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2aq4": {
+    "1": "Pre-primary",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "98": "Don't Know"
+   },
+   "s2aq5a": {
+    "0": "Not in class",
+    "1": "Pre-primary",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "98": "Don't Know"
+   },
+   "s2aq5b": {
+    "0": "Not in class",
+    "1": "Pre-primary",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "98": "Don't Know"
+   },
+   "s2aq6": {
+    "1": "Failed year examinatios",
+    "2": "Sickness",
+    "3": "Financial problems",
+    "4": "Family problems",
+    "5": "Other pecify"
+   },
+   "s2aq7": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Not studying"
+   },
+   "s2aq8": {
+    "1": "Poor health",
+    "2": "Hunger",
+    "3": "Financial reasons",
+    "4": "Family circumstances",
+    "5": "Fear of punishment",
+    "6": "Holidays",
+    "7": "Other"
+   },
+   "s2aq9a": {
+    "0": "Live at school",
+    "95": "More than 90 minutes"
+   },
+   "s2aq9b": {
+    "0": "Live at school",
+    "1": "Foot",
+    "2": "Bicycle",
+    "3": "Motorcycle",
+    "4": "Vehicle",
+    "5": "Bus or minbus",
+    "6": "Boat",
+    "7": "Other"
+   },
+   "s2aq10": {
+    "1": "No problem",
+    "2": "Books and material shortage",
+    "3": "Poor instruction",
+    "4": "Absent teachers",
+    "5": "Too few teachers appointed",
+    "6": "Poor facilities",
+    "7": "Poor toilets",
+    "8": "Other problems,specify",
+    "9": "Do not know"
+   },
+   "s2aq11": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Do not know"
+   },
+   "s2aq12a": {
+    "0": "Zero"
+   },
+   "s2aq12b": {
+    "0": "Zero"
+   },
+   "s2aq12c": {
+    "0": "Zero"
+   },
+   "s2aq12d": {
+    "0": "Zero"
+   },
+   "s2aq12e": {
+    "0": "Zero"
+   },
+   "s2aq12f": {
+    "0": "Zero"
+   },
+   "s2aq12g": {
+    "0": "Zero"
+   },
+   "s2aq12h": {
+    "0": "Zero"
+   },
+   "s2aq13": {
+    "1": "Father",
+    "2": "Mother",
+    "3": "Both parents",
+    "4": "Other household members",
+    "5": "Other relatives",
+    "6": "Other non relatives",
+    "7": "Myself",
+    "8": "State",
+    "9": "Other organisations or associations",
+    "10": "SFAR",
+    "11": "Other"
+   },
+   "s2aq14": {
+    "1": "Interrupted primary",
+    "2": "Interrupted secondary",
+    "3": "Interrupted both primary and secondary",
+    "4": "Never interrupted"
+   },
+   "s2aq15": {
+    "1": "Cost",
+    "2": "Work",
+    "3": "Marriage",
+    "4": "Change of residence",
+    "5": "Excluded",
+    "6": "Lack of interest",
+    "7": "Family reasons",
+    "8": "War",
+    "9": "Health",
+    "10": "Other,specify"
+   },
+   "s2b1q1": {
+    "10": "No P or S class completed",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8"
+   },
+   "s2b1q2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b1q4": {
+    "1": "Public",
+    "2": "Private",
+    "3": "Free susdised"
+   },
+   "s2b1q5": {
+    "1": "Yes",
+    "2": "No he did finish",
+    "3": "No he didn't"
+   },
+   "s2b1q6": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b1q7": {
+    "1": "Secondary",
+    "2": "Technical or vocationsl",
+    "3": "Both secondary and technical",
+    "4": "None"
+   },
+   "s2b1q8": {
+    "30": "Did not complete fisrt year primary",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6"
+   },
+   "s2b1q9": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b1q11": {
+    "1": "Primary completed",
+    "2": "Secondary common",
+    "3": "Post primary certificate",
+    "4": "Diploma A3, D5, D4",
+    "5": "Humanities Diploma",
+    "6": "Bachelors",
+    "7": "Professional license",
+    "8": "Engineer",
+    "9": "Masters",
+    "10": "Doctorate"
+   },
+   "s2b1q12": {
+    "1": "Public",
+    "2": "Private",
+    "3": "Free or subsidized"
+   },
+   "s2b1q13": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b2q14": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b2q15": {
+    "20": "Never completed the first year",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8"
+   },
+   "s2b2q16": {
+    "1": "Primary completed",
+    "2": "Secondary common",
+    "3": "Post primary certificate",
+    "4": "Diploma A3, D5, D4",
+    "5": "Humanities Diploma",
+    "6": "Bachelors",
+    "7": "Professional license",
+    "8": "Engineer",
+    "9": "Masters",
+    "10": "Doctorate"
+   },
+   "s2b2q17": {
+    "1": "TechnIcal public",
+    "2": "Technical private",
+    "3": "Technical private with subsidy",
+    "4": "Vocational public",
+    "5": "Vocational private",
+    "6": "Vocational private with subsidy"
+   },
+   "s2b2q18": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b2q19": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2b2q21": {
+    "1": "College of education",
+    "2": "University",
+    "3": "Technical College",
+    "4": "Institute",
+    "5": "Other"
+   },
+   "s2b2q22": {
+    "1": "Public",
+    "2": "Private",
+    "3": "Free or subsidised"
+   },
+   "s2b2q23": {
+    "1": "Primary completed",
+    "2": "Secondary common",
+    "3": "Post primary certificate",
+    "4": "Diploma A3, D5, D4",
+    "5": "Humanities Diploma",
+    "6": "Bachelors",
+    "7": "Professional license",
+    "8": "Engineer",
+    "9": "Masters",
+    "10": "Doctorate"
+   },
+   "s2cq2": {
+    "1": "Cost",
+    "2": "Work",
+    "3": "Marriage",
+    "4": "Change of residence",
+    "5": "Excluded",
+    "6": "Lack of interest",
+    "7": "Family reasons",
+    "8": "War",
+    "9": "Health",
+    "10": "Completed studies",
+    "11": "Transition between levels",
+    "12": "Other"
+   },
+   "s2cq3": {
+    "1": "Pre-primary",
+    "10": "Not complete P1",
+    "11": "Primary 1",
+    "12": "Primary 2",
+    "13": "Primary 3",
+    "14": "Primary 4",
+    "15": "Primary 5",
+    "16": "Primary 6,7,8",
+    "20": "Not complete Vocat S1",
+    "21": "Post primary 1",
+    "22": "Post primary 2",
+    "23": "Post primary 3",
+    "24": "Post primary 4",
+    "25": "Post primary 5",
+    "26": "Post primary 6,7,8",
+    "30": "Not complete Sec S1",
+    "31": "Secondary 1",
+    "32": "Secondary 2",
+    "33": "Secondary 3",
+    "34": "Secondary 4",
+    "35": "Secondary 5",
+    "36": "Secondary 6",
+    "40": "Not complete Univ Bac1",
+    "41": "University 1",
+    "42": "University 2",
+    "43": "University 3",
+    "44": "University 4",
+    "45": "University 5",
+    "46": "University 6",
+    "47": "University 7",
+    "90": "Never finished first year",
+    "98": "Don't Know"
+   },
+   "s2cq4": {
+    "1": "Primary completed",
+    "2": "Secondary common",
+    "3": "Post primary certificate",
+    "4": "Diploma A3, D5, D4",
+    "5": "Humanities Diploma",
+    "6": "Bachelors",
+    "7": "Professional license",
+    "8": "Engineer",
+    "9": "Masters",
+    "10": "Doctorate",
+    "98": "Aucun Dipl\u00d6me"
+   },
+   "s2cq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2cq6": {
+    "0": ">1month"
+   },
+   "s2cq9": {
+    "1": "Yes, current employment",
+    "2": "Yes, future employment",
+    "3": "No"
+   },
+   "s2dq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2dq2": {
+    "1": "Rwandan",
+    "2": "Swahili",
+    "3": "French",
+    "4": "English",
+    "5": "Rwandan and Swahili",
+    "6": "Rwandan and French",
+    "7": "Rwandan and English",
+    "8": "French and English",
+    "9": "Swahili and French",
+    "10": "Swahili and English",
+    "11": "Rwandan, Swahili and French",
+    "12": "Rwandan, Swahili and English",
+    "13": "Rwandan, French and English",
+    "14": "Swahili, French and English",
+    "15": "All four languages (Rwandan, Swahili, French and English)"
+   },
+   "s2dq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2dq4": {
+    "1": "Rwandan",
+    "2": "Swahili",
+    "3": "French",
+    "4": "English",
+    "5": "Rwandan and Swahili",
+    "6": "Rwandan and French",
+    "7": "Rwandan and English",
+    "8": "French and English",
+    "9": "Swahili and French",
+    "10": "Swahili and English",
+    "11": "Rwandan, Swahili and French",
+    "12": "Rwandan, Swahili and English",
+    "13": "Rwandan, French and English",
+    "14": "Swahili, French and English",
+    "15": "All four languages (Rwandan, Swahili, French and English)"
+   },
+   "s2dq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2dq6": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2dq7": {
+    "1": "French",
+    "2": "English",
+    "3": "Both",
+    "4": "Others",
+    "5": "No language"
+   },
+   "s2dq8": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2dq9": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s2dq10": {
+    "1": "Yes, currently",
+    "2": "Yes, in the past",
+    "3": "No"
+   },
+   "s2dq11": {
+    "0": "Less than one month",
+    "99": "Missing"
+   },
+   "s2dq12": {
+    "1": "Jewelry",
+    "2": "Tile setting",
+    "3": "Calligraphy",
+    "4": " Chaudronnerie",
+    "5": "Driver's school",
+    "6": "Hair styling",
+    "7": "Tailor/Seamstress",
+    "8": " Cordonnerie",
+    "9": " Eb\u00e9nisterie",
+    "10": "Car elecletric systems",
+    "11": "Electric installations in buildings",
+    "12": "Electro-mechanical",
+    "13": "Electronics",
+    "14": " Ferraillerie",
+    "15": "Domestic refrigeration",
+    "16": " Forge/fonderie (marmite)",
+    "17": "Watch repair",
+    "18": "Mason",
+    "19": "Mechanic",
+    "20": "Caprentry",
+    "21": "Baker",
+    "22": "Painter",
+    "23": "Photography",
+    "24": "Plumbing",
+    "25": "Pottery",
+    "26": "Sculpture",
+    "27": "Sowing",
+    "28": " Tapisserie",
+    "29": "Dry cleaning",
+    "30": " Tisserand",
+    "31": " T\u00f4lerie/Peinture",
+    "32": " Tournage",
+    "33": " Tricoterie",
+    "34": " Vannerie",
+    "35": " Vulcanisation",
+    "36": "Others"
+   },
+   "s2dq13": {
+    "1": "Yes, in kind payment",
+    "2": "Yes, paid cash",
+    "3": "No"
+   },
+   "s3aq2": {
+    "1": "No disability",
+    "2": "Vision disability",
+    "3": "Deaf or mute",
+    "4": "Disability in the arms",
+    "5": "Disability in the legs",
+    "6": "Mental inability",
+    "7": "Traumaitized",
+    "8": "Very old",
+    "9": "Other"
+   },
+   "s3aq3y": {
+    "0": "Less than one month",
+    "95": "More than 95 years",
+    "97": "From birth"
+   },
+   "s3aq3m": {
+    "0": "Less than one month"
+   },
+   "s3aq4": {
+    "1": "Illness",
+    "2": "Accident",
+    "3": "War",
+    "4": "Genocide",
+    "5": "Land mine",
+    "6": "Age",
+    "7": "Other",
+    "8": "Do not know"
+   },
+   "s3aq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s3aq6": {
+    "1": "Malaria",
+    "2": "Internal parasites",
+    "3": "Respiratory infection",
+    "4": "Skin issues",
+    "5": "Accident of injury",
+    "6": "Diarrhea",
+    "7": "Dental problem",
+    "8": "Gynecological",
+    "9": "Other"
+   },
+   "s3aq7y": {
+    "95": "Greater than 95 years"
+   },
+   "s3aq7m": {
+    "0": "Less than ome month"
+   },
+   "s3aq8": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s3aq10": {
+    "1": "RAMA",
+    "2": "Mutual insurance",
+    "3": "Employer",
+    "4": "MMI",
+    "5": "Other insurance",
+    "6": "None"
+   },
+   "s3aq11": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Don't know"
+   },
+   "s3aq12": {
+    "1": "General visit or preventive",
+    "2": "Sickness or illness",
+    "3": "Injury",
+    "4": "Both sickness and injury",
+    "5": "Vaccination",
+    "6": "Prenatal care",
+    "7": "Postnatal care"
+   },
+   "s3aq13": {
+    "1": "Doctor",
+    "2": "Nurse",
+    "3": "Pharmacist",
+    "4": "Mid-wife",
+    "5": "Community health worker",
+    "6": "Tradutional birthing worker",
+    "7": "Healer",
+    "8": "Optician",
+    "9": "Dentist",
+    "10": "Other"
+   },
+   "s3aq14": {
+    "1": "Consultant's home",
+    "2": "Patient's home",
+    "3": "Hosiptal",
+    "4": "Pharmacy",
+    "5": "Clinic",
+    "6": "Dispensary",
+    "7": "Health care centre",
+    "8": "Other"
+   },
+   "s3aq15": {
+    "1": "Public",
+    "2": "Private",
+    "3": "Semi-private"
+   },
+   "s3aq16": {
+    "0": "Zero"
+   },
+   "s3aq17": {
+    "0": "Zero"
+   },
+   "s3aq18": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Do not know"
+   },
+   "s3aq19": {
+    "0": "Zero"
+   },
+   "s3aq20": {
+    "0": "Zero"
+   },
+   "s3aq21": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Do not know"
+   },
+   "s3aq22": {
+    "0": "Zero"
+   },
+   "s3aq23": {
+    "0": "Zero"
+   },
+   "s3aq24": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Do not know"
+   },
+   "s3aq25": {
+    "0": "Zero"
+   },
+   "s3aq26": {
+    "0": "Zero"
+   },
+   "s3aq27": {
+    "0": "Zero"
+   },
+   "s3aq28": {
+    "0": "Zero"
+   },
+   "s3aq29": {
+    "0": "Zero"
+   },
+   "s3bq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s3bq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s3bq4a": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq4b": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq4c": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq4d": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq5a": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq5b": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq5c": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq5d": {
+    "1": "Yes, complete dose",
+    "2": "Yes, incomplete dose",
+    "3": "No",
+    "4": "Do not know",
+    "5": "Not applicable"
+   },
+   "s3bq6": {
+    "1": "Hospital",
+    "2": "Health centre",
+    "3": "School",
+    "4": "Mobile unit",
+    "5": "Vaccination campaign",
+    "6": "Private clinic",
+    "7": "Other"
+   },
+   "s3bq8": {
+    "1": "Not informed",
+    "2": "Child absent from home",
+    "3": "Health centre too far",
+    "4": "Lack of money",
+    "5": "No vaccines at the clinic",
+    "6": "Not necessary",
+    "7": "Other"
+   },
+   "s4aq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s4aq3y": {
+    "0": "Less than one year"
+   },
+   "s4aq4": {
+    "1": "Nyarugenge",
+    "2": "Gasabo",
+    "3": "Kicukiro",
+    "4": "Nyanza",
+    "5": "Gisagara",
+    "6": "Nyaruguru",
+    "7": "Huye",
+    "8": "Nyamagabe",
+    "9": "Ruhango",
+    "10": "Muhanga",
+    "11": "Kamonyi",
+    "12": "Karongi",
+    "13": "Rutsiro",
+    "14": "Rubavu",
+    "15": "Nyabihu",
+    "16": "Ngororero",
+    "17": "Rusizi",
+    "18": "Nyamasheke",
+    "19": "Rulindo",
+    "20": "Gkenke",
+    "21": "Musanze",
+    "22": "Burera",
+    "23": "Gicumbi",
+    "24": "Rwamagana",
+    "25": "Nyagatare",
+    "26": "Gatsibo",
+    "27": "Kayonza",
+    "28": "Kirehe",
+    "29": "Ngoma",
+    "30": "Bugesera",
+    "41": "Burundi",
+    "42": "Democratic Republic of Congo",
+    "43": "Uganda",
+    "44": "Tanzania",
+    "45": "Othe African",
+    "46": "Rest of the world"
+   },
+   "s4aq5": {
+    "0": "Less than one year",
+    "1": "Capital",
+    "2": "Big city",
+    "3": "Other town",
+    "4": "Countryside"
+   },
+   "s4aq6": {
+    "0": "Less than one year"
+   },
+   "s4aq7": {
+    "1": "Employment",
+    "2": "Loss of employment",
+    "3": "Employment of spouse",
+    "4": "Marriage",
+    "5": "Othe family reasons",
+    "6": "Studies",
+    "7": "Disasters or conflicts",
+    "8": "Health",
+    "9": "Trade and business",
+    "10": "Lack of land",
+    "11": "Lack of employment",
+    "12": "Desire to return home",
+    "13": "Parents moved",
+    "14": "Other"
+   },
+   "s4aq8": {
+    "1": "Alone",
+    "2": "Part of family",
+    "3": "All of family"
+   },
+   "s4bq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s4bq4": {
+    "1": "Nyarugenge",
+    "2": "Gasabo",
+    "3": "Kicukiro",
+    "4": "Nyanza",
+    "5": "Gisagara",
+    "6": "Nyaruguru",
+    "7": "Huye",
+    "8": "Nyamagabe",
+    "9": "Ruhango",
+    "10": "Muhanga",
+    "11": "Kamonyi",
+    "12": "Karongi",
+    "13": "Rutsiro",
+    "14": "Rubavu",
+    "15": "Nyabihu",
+    "16": "Ngororero",
+    "17": "Rusizi",
+    "18": "Nyamasheke",
+    "19": "Rulindo",
+    "20": "Gkenke",
+    "21": "Musanze",
+    "22": "Burera",
+    "23": "Gicumbi",
+    "24": "Rwamagana",
+    "25": "Nyagatare",
+    "26": "Gatsibo",
+    "27": "Kayonza",
+    "28": "Kirehe",
+    "29": "Ngoma",
+    "30": "Bugesera",
+    "41": "Burundi",
+    "42": "Democratic Republic of Congo",
+    "43": "Uganda",
+    "44": "Tanzania",
+    "45": "Othe African",
+    "46": "Rest of the world"
+   },
+   "s4bq5": {
+    "1": "Leisure or vacation",
+    "2": "Visiting friends or relatives",
+    "3": "Business conference",
+    "4": "Medical",
+    "5": "Religious",
+    "6": "Other"
+   },
+   "s4bq7": {
+    "1": "Hotel or similar",
+    "2": "Friends or family",
+    "3": "Other"
+   },
+   "s4bq8": {
+    "1": "Private transport",
+    "2": "Bus or minibus",
+    "3": "Motorcycle",
+    "4": "Boat",
+    "5": "Foot (recoded)",
+    "6": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "dist": {
+    "11": "Nyarugenge",
+    "12": "Gasabo",
+    "13": "Kicukiro",
+    "21": "Nyanza",
+    "22": "Gisagara",
+    "23": "Nyaruguru",
+    "24": "Huye",
+    "25": "Nyamagabe",
+    "26": "Ruhango",
+    "27": "Muhanga",
+    "28": "Kamonyi",
+    "31": "Karongi",
+    "32": "Rutsiro",
+    "33": "Rubavu",
+    "34": "Nyabihu",
+    "35": "Ngororero",
+    "36": "Rusizi",
+    "37": "Nyamasheke",
+    "41": "Rulindo",
+    "42": "Gakenke",
+    "43": "Musanze",
+    "44": "Burera",
+    "45": "Gicumbi",
+    "51": "Rwamagana",
+    "52": "Nyagatare",
+    "53": "Gatsibo",
+    "54": "Kayonza",
+    "55": "Kirehe",
+    "56": "Ngoma",
+    "57": "Bugesera"
+   },
+   "urban": {
+    "1": "Urban",
+    "2": "Rural"
+   },
+   "s6aq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6aq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6aq4": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6aq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6aq6": {
+    "1": "Yes",
+    "2": "No",
+    "3": "VUP does not exist here"
+   },
+   "s6aq7": {
+    "1": "Domestic studies",
+    "2": "Student",
+    "3": "Retired",
+    "4": "Living on investments",
+    "5": "Sickness or health",
+    "6": "Old age",
+    "7": "Disabled",
+    "8": "Too young",
+    "9": "Jobless",
+    "10": "Other"
+   },
+   "s6bq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6bq2": {
+    "1": "Temporary absence or sickness",
+    "2": "Holiday",
+    "3": "No work available",
+    "4": "Dimissed or terminated",
+    "5": "Student",
+    "6": "Domestic duties",
+    "7": "Other"
+   },
+   "s6bq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6bq4": {
+    "1": "Work full time",
+    "2": "Satisfied urrent situation",
+    "3": "Occupied with domestic duties",
+    "4": "Discouraged by failure to secure employment",
+    "5": "Family reasons",
+    "6": "Too old to work",
+    "7": "Retired",
+    "8": "Too young to work",
+    "9": "Studies",
+    "10": "Sickness or incapacitation",
+    "11": "Other reasons"
+   },
+   "s6bq6a": {
+    "1": "Asked a friend or relaitve",
+    "2": "Applied for a job",
+    "3": "Called in employers",
+    "4": "Listened to radio announcements",
+    "5": "Read published announcements",
+    "6": "Attempting own job creations",
+    "7": "Other"
+   },
+   "s6bq6b": {
+    "1": "Asked a friend or relaitve",
+    "2": "Applied for a job",
+    "3": "Called in employers",
+    "4": "Listened to radio announcements",
+    "5": "Read published announcements",
+    "6": "Attempting own job creations",
+    "7": "Other"
+   },
+   "s6bq7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6bq8": {
+    "1": "Government",
+    "2": "Public non financial",
+    "3": "Public financial",
+    "4": "Private non financial (formal)",
+    "5": "Private non-financial (informal)",
+    "6": "Private financial (formal)",
+    "7": "Private financial (informal)",
+    "8": "Local NGO",
+    "9": "VUP",
+    "10": "Household",
+    "11": "International agency",
+    "12": "Other"
+   },
+   "s6bq9": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6bq10m": {
+    "0": ""
+   },
+   "s6gq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6gq2": {
+    "0": "Less than an hour"
+   },
+   "s6gq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6gq4": {
+    "0": "Less than an hour"
+   },
+   "s6gq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6gq6": {
+    "0": "Less than an hour"
+   },
+   "s6gq7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6gq8": {
+    "0": "Less than an hour"
+   },
+   "s6gq9": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6g10": {
+    "0": "Less than an hour"
+   },
+   "s6gq11": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s6gq12": {
+    "0": "Less than an hour"
+   },
+   "sex": {
+    "1": "Male",
+    "2": "Female"
+   },
+   "age": {}
+  },
+  "source": {
+   "pid": "PID % 100 (PID = hhid*100 + person)",
+   "prov": "province",
+   "dist": "district",
+   "urban": "urb2002",
+   "wt": "hh_wt",
+   "base module": "s01_hhmembers_s02_education_s03_health_s04_migration",
+   "quintile": "module s06g_timeuse",
+   "poverty": "module s06g_timeuse",
+   "s6aq1": "module s06ab_occupation",
+   "s6aq2": "module s06ab_occupation",
+   "s6aq3": "module s06ab_occupation",
+   "s6aq4": "module s06ab_occupation",
+   "s6aq5": "module s06ab_occupation",
+   "s6aq6": "module s06ab_occupation",
+   "s6aq7": "module s06ab_occupation",
+   "s6bq1": "module s06ab_occupation",
+   "s6bq2": "module s06ab_occupation",
+   "s6bq3": "module s06ab_occupation",
+   "s6bq4": "module s06ab_occupation",
+   "s6bq5": "module s06ab_occupation",
+   "s6bq6a": "module s06ab_occupation",
+   "s6bq6b": "module s06ab_occupation",
+   "s6bq7": "module s06ab_occupation",
+   "s6bq8": "module s06ab_occupation",
+   "s6bq9": "module s06ab_occupation",
+   "s6bq10y": "module s06ab_occupation",
+   "s6bq10m": "module s06ab_occupation",
+   "s6gq1": "module s06g_timeuse",
+   "s6gq2": "module s06g_timeuse",
+   "s6gq3": "module s06g_timeuse",
+   "s6gq4": "module s06g_timeuse",
+   "s6gq5": "module s06g_timeuse",
+   "s6gq6": "module s06g_timeuse",
+   "s6gq7": "module s06g_timeuse",
+   "s6gq8": "module s06g_timeuse",
+   "s6gq9": "module s06g_timeuse",
+   "s6g10": "module s06g_timeuse",
+   "s6gq11": "module s06g_timeuse",
+   "s6gq12": "module s06g_timeuse",
+   "sex": "s1q1",
+   "age": "s1q3y"
+  }
+ },
+ "household": {
+  "n": 14308,
+  "vars": [
+   "survey",
+   "year",
+   "wave",
+   "sample",
+   "prov",
+   "dist",
+   "urban",
+   "cluster",
+   "hhid",
+   "wt",
+   "wt_hh",
+   "quintile",
+   "poverty",
+   "s5aq1",
+   "s5aq2",
+   "s5aq3",
+   "s5aq4",
+   "s5aq5",
+   "s5aq6",
+   "s5aq7y",
+   "s5aq7m",
+   "s5aq8",
+   "s5aq9",
+   "s5aq10",
+   "s5aq11",
+   "s5bq1",
+   "s5bq2a",
+   "s5bq2b",
+   "s5bq3a",
+   "s5bq3b",
+   "s5bq4a",
+   "s5bq4b",
+   "s5bq5",
+   "s5bq6a",
+   "s5bq6b",
+   "s5bq7",
+   "s5bq8",
+   "s5bq9",
+   "s5bq10",
+   "s5bq11",
+   "s5cq1",
+   "s5cq2",
+   "s5cq3a",
+   "s5cq3b",
+   "s5cq4a",
+   "s5cq4b",
+   "s5cq5",
+   "s5cq6",
+   "s5cq7",
+   "s5cq8",
+   "s5cq9",
+   "s5cq10",
+   "s5cq11",
+   "s5cq12",
+   "s5cq13",
+   "s5cq14",
+   "s5cq15",
+   "s5cq16",
+   "s5cq17",
+   "s5cq18",
+   "s5cq19",
+   "s5cq20a",
+   "s5cq20b",
+   "s5cq20c",
+   "s5cq20d",
+   "s5cq20e",
+   "s5dq1",
+   "s5dq2",
+   "s5dq3",
+   "s5dq4",
+   "s8a2q1",
+   "s8a2q2",
+   "s8a2q3",
+   "s8a2q4a",
+   "s8a2q4b",
+   "s8a2q5",
+   "s8a2q6",
+   "s8a2q7",
+   "s8a2q8",
+   "s8a2q9",
+   "s8b1q1",
+   "s8b1q2",
+   "s8b1q3",
+   "s8b1q4",
+   "s8b1q5",
+   "s8b1q6",
+   "s8b1q7",
+   "s8b1q8",
+   "s8b1q9",
+   "s8b1q10",
+   "s8b1q11",
+   "s8b1q12",
+   "s8b1q13",
+   "s8b1q14",
+   "s8b1q15",
+   "s8b1q16",
+   "s8b1q17",
+   "s8b1q18",
+   "s8b1q19",
+   "s8b1q20",
+   "s8b1q21",
+   "s8b1q22",
+   "s8b1q23",
+   "s10dq1",
+   "s10dq2",
+   "s10dq3",
+   "s10dq4",
+   "s10dq5",
+   "s10dq6",
+   "s10dq7",
+   "s10dq8",
+   "s10dq9",
+   "s10dq10",
+   "s10dq11",
+   "s10dq12",
+   "s10dq13a",
+   "s10dq13b",
+   "s10dq13c",
+   "s10dq13d",
+   "s10dq13e",
+   "s10dq13f",
+   "s11aq1",
+   "s11aq2",
+   "s11aq3",
+   "s11aq4",
+   "clust",
+   "member",
+   "ae",
+   "id1",
+   "ur",
+   "cons1",
+   "cons1_ae",
+   "pop_wt",
+   "sol_jan",
+   "epoverty",
+   "poverty_eicv3_povertyfile_jan201",
+   "quintile_eicv3_povertyfile_jan20",
+   "exp1",
+   "exp3",
+   "exp4",
+   "exp5",
+   "exp6",
+   "exp7",
+   "exp8",
+   "exp9",
+   "exp10",
+   "exp11",
+   "exp12",
+   "exp13",
+   "exp14_2",
+   "exp15_2",
+   "exp16_2",
+   "exp17",
+   "exp18",
+   "exp2",
+   "exp12_wh",
+   "exp13_wh",
+   "exp14_1",
+   "exp15_1",
+   "exp16_1",
+   "exp16a_1",
+   "exp16a_2",
+   "hhsize",
+   "head_sex",
+   "head_age"
+  ],
+  "var_labels": {
+   "hhid": "Household id (unique within wave)",
+   "quintile": "Quintile",
+   "poverty": "Poverty status",
+   "cluster": "Sampling cluster / enumeration area (as shipped)",
+   "s5aq1": "Type of habitat",
+   "s5aq2": "Type of dwelling",
+   "s5aq3": "Number of rooms occupied by household",
+   "s5aq4": "Number of bed rooms for household",
+   "s5aq5": "Any rooms shared with other households",
+   "s5aq6": "Other households sharing dwelling",
+   "s5aq7y": "Duration household inhabited dwelling (years)",
+   "s5aq7m": "Duration household inhabited dwelling (months)",
+   "s5aq8": "Occupied other dwelling prior to current",
+   "s5aq9": "Reason for moving to current dwelling",
+   "s5aq10": "Owner of the dwelling",
+   "s5aq11": "Current occupancy status",
+   "s5bq1": "Motgage payment",
+   "s5bq2a": "Amount of motgage",
+   "s5bq2b": "Time unit",
+   "s5bq3a": "Estimated rent for dwelling",
+   "s5bq3b": "Time unit",
+   "s5bq4a": "Actual amount of rent paid",
+   "s5bq4b": "Time unit",
+   "s5bq5": "Any services provided in place of rent",
+   "s5bq6a": "Value of services annually",
+   "s5bq6b": "Time unit",
+   "s5bq7": "Anybody outside household paying rent",
+   "s5bq8": "Who is paying rent",
+   "s5bq9": "Amount of rent paid for you",
+   "s5bq10": "Amount paid for house construction  last 12 months",
+   "s5bq11": "Amount paid for house repairs and paintings expenses last 12 months",
+   "s5cq1": "Main source of drinking water",
+   "s5cq2": "Nearest source of drinking water",
+   "s5cq3a": "Type of  nearest drinking water source code",
+   "s5cq3b": "Distance to the nearest drinking water source (meters)",
+   "s5cq4a": "Amount of last water bill from RECO RWASCO (month)",
+   "s5cq4b": "Amount of last water bill from RECO RWASCO-amount",
+   "s5cq5": "Amount paid to private water vendor last 7 days",
+   "s5cq6": "Household contributions to maintain water source in the last month",
+   "s5cq7": "Sale of water to anybody else",
+   "s5cq8": "Amount earned from water sale last 7 days",
+   "s5cq9": "Main source of home lighting",
+   "s5cq10": "Amount paid on electricity in last 4 weeks",
+   "s5cq11": "Primary source of cooking fuel",
+   "s5cq12": "Mode of rubbish disposal",
+   "s5cq13": "Type of toilet household use",
+   "s5cq14": "Main source of info on environmental issues",
+   "s5cq15": "Problems of environmental destruction",
+   "s5cq16": "Major environmental destruction related problems faced",
+   "s5cq17": "Household own a working telephone",
+   "s5cq18": "Number of working mobile telephones",
+   "s5cq19": "Internet connection at home",
+   "s5cq20a": "Landline or LAN internet connection",
+   "s5cq20b": "Modem",
+   "s5cq20c": "Mobile phone",
+   "s5cq20d": "Wireless",
+   "s5cq20e": "Other",
+   "s5dq1": "Main construction material of exterior wall",
+   "s5dq2": "Main roofing material for dwelling",
+   "s5dq3": "Main floor material for dwelling",
+   "s5dq4": "Area of the floor for dwelling-outside",
+   "prov": "Province (1-5, NISR codes)",
+   "dist": "District (11-57, NISR current codes)",
+   "urban": "Area of residence (1 urban, 2 rural)",
+   "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
+   "survey": "Source survey",
+   "year": "Survey year (mid-fieldwork)",
+   "wave": "Wave / round id",
+   "sample": "CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",
+   "wt_hh": "Household weight (same value as wt; sums to the number of households)",
+   "s8a2q1": "Household ever received animal from Govt one-cow policy",
+   "s8a2q2": "Animal still with household",
+   "s8a2q3": "Household ever receiced animal from NGO or social protection",
+   "s8a2q4a": "Kind of animal 1st",
+   "s8a2q4b": "Kind of animal 2nd",
+   "s8a2q5": "Has the number of animals changed",
+   "s8a2q6": "Household uses a maintained pasture",
+   "s8a2q7": "Owner of pasture",
+   "s8a2q8": "Cost of using the pasture",
+   "s8a2q9": "Number of months in the past 12 in which pasture was utilized",
+   "s8b1q1": "Household or any member currently owning farm land",
+   "s8b1q2": "Household or any member owned farmland in last 12 months",
+   "s8b1q3": "Household bought land in last 12 months",
+   "s8b1q4": "Amount paid to purchase land in the last 12 months",
+   "s8b1q5": "Household bought land in the 4 years that preceded last year",
+   "s8b1q6": "Amount spent to purchase land in the 4 years preceding the last",
+   "s8b1q7": "Household sold land in the last 12 months",
+   "s8b1q8": "Amount received from the sale in the last 12 months",
+   "s8b1q9": "Household sold land in the 4 years preceding last year",
+   "s8b1q10": "Amount received from the sale in the 4 years prior to the last year",
+   "s8b1q11": "Household rented out land in the last 12 months",
+   "s8b1q12": "Amount received from the rental in the last 12 months",
+   "s8b1q13": "Household sharecropped any land in the past 12 months",
+   "s8b1q14": "Amount received from the sharecropping in the last 12 months",
+   "s8b1q15": "Household lent land to anybody in the past 12 months",
+   "s8b1q16": "Household received land gift in the last 12 months",
+   "s8b1q17": "Household given land gift in the last 12 months",
+   "s8b1q18": "Household applied for agricultural loan in the last 12 months",
+   "s8b1q19": "Agicultural loan approval",
+   "s8b1q20": "Amount of loan requested",
+   "s8b1q21": "Purpose of the agricultural loan",
+   "s8b1q22": "Exposure to LTR program",
+   "s8b1q23": "Status in LTR program",
+   "s10dq1": "Household was in Direct Support (VUP)",
+   "s10dq2": "Household currently in Direct Support program",
+   "s10dq3": "Why household not in Direct Support program",
+   "s10dq4": "Household saving part of Direct Support",
+   "s10dq5": "How much is saved",
+   "s10dq6": "Household spent part of the savings",
+   "s10dq7": "What household spent savings on",
+   "s10dq8": "Household ever received UCS loan",
+   "s10dq9": "Type of Loan",
+   "s10dq10": "How loan was used",
+   "s10dq11": "Loan received while in Direst Support",
+   "s10dq12": "Household benefited from RSSP",
+   "s10dq13a": "Forming cooperatives",
+   "s10dq13b": "Acces to subsidized credit (RIF)",
+   "s10dq13c": "Training",
+   "s10dq13d": "Swamp rehabilitation",
+   "s10dq13e": "Construction of markets and crop barns",
+   "s10dq13f": "Others",
+   "s11aq1": "Household members owe money",
+   "s11aq2": "Household member completely repaid loan in last 12 months",
+   "s11aq3": "Household member tried to obtain credit",
+   "s11aq4": "Reason why loan was denied",
+   "clust": "Cluster",
+   "member": "hhsize",
+   "ae": "Adult equivalent hhsize",
+   "id1": "Province",
+   "ur": "Urban/rural",
+   "cons1": "Aggregate consumption",
+   "cons1_ae": " Aggregate Consumption/ae",
+   "pop_wt": "Population weight",
+   "sol_jan": "Aggregate consumption/ae Jan14=100",
+   "epoverty": "Extreme poverty",
+   "poverty_eicv3_povertyfile_jan201": "Total Poverty",
+   "quintile_eicv3_povertyfile_jan20": "5 quantiles of sol_jan",
+   "exp1": "Education expenses",
+   "exp3": "Vaccination expenditures",
+   "exp4": "Imputed rents",
+   "exp5": "Actual rents",
+   "exp6": "Maintenance costs",
+   "exp7": "Water expenses",
+   "exp8": "Electricity expenses",
+   "exp9": "In-kind payments",
+   "exp10": "Provision of house",
+   "exp11": "Other benefits",
+   "exp12": "Annual non-food expenditures",
+   "exp13": "Monthly non-food expenditures",
+   "exp14_2": "Frequent non-food expenditures without filter questions",
+   "exp15_2": "Food expenditures without filter question",
+   "exp16_2": "own food consumption without filter question",
+   "exp17": "Use value of durable goods",
+   "exp18": "Received transfers",
+   "exp2": "Health care expenditures",
+   "exp12_wh": "Annual non-food expenditures (withouth health)",
+   "exp13_wh": "Monthly non-food expenditures (without health)",
+   "exp14_1": "Frequent non-food expenditures with filter questions 0",
+   "exp15_1": "Food expenditures with filter question 0",
+   "exp16_1": "own food consumption with filter question 0",
+   "exp16a_1": "own non-food consumption with filter question 0",
+   "exp16a_2": "own non-food consumption without filter question",
+   "_merge": null,
+   "hhsize": "Household size (persons in the roster)",
+   "head_sex": "Sex of household head (s1q2 == 1)",
+   "head_age": "Age of household head (s1q2 == 1)"
+  },
+  "value_labels": {
+   "quintile": {
+    "1": "Q1",
+    "2": "Q2",
+    "3": "Q3",
+    "4": "Q4",
+    "5": "Q5"
+   },
+   "poverty": {
+    "1": "Extremely poor",
+    "2": "Poor",
+    "3": "Non-poor"
+   },
+   "s5aq1": {
+    "1": "Umudugudu",
+    "2": "Unplanned clustered rural housing",
+    "3": "Isolated rural housing",
+    "4": "Aglomeration",
+    "5": "Unplanned urban housing",
+    "6": "Modern planned area",
+    "7": "Other"
+   },
+   "s5aq2": {
+    "1": "A single house dwelling",
+    "2": "A multiple household dwelling",
+    "3": "Mulit storied building (flat)",
+    "4": "Group of enclosed dwellings with multiple households",
+    "5": "Group of enclosed dwelling for single household",
+    "6": "Other"
+   },
+   "s5aq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5aq8": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5aq9": {
+    "1": "Resettlement policy",
+    "2": "Evacuated due to a disaster",
+    "3": "Better house",
+    "4": "Bought or built own house",
+    "5": "Renting cost",
+    "6": "Move to a better neighborhood",
+    "7": "Access to a different job",
+    "8": "Forced by owner or parent",
+    "9": "Other"
+   },
+   "s5aq10": {
+    "1": "Head",
+    "2": "Spouse",
+    "3": "Spouse with head",
+    "4": "Other household member",
+    "5": "Relative",
+    "6": "Non relative",
+    "7": "State",
+    "8": "Private company",
+    "9": "Other"
+   },
+   "s5aq11": {
+    "1": "Owner occupied",
+    "2": "Mortgaged",
+    "3": "Tenancy (renting)",
+    "4": "Dwelling provided by employer",
+    "5": "Dwelling provided free of charge",
+    "6": "Appropriation",
+    "7": "Temporary camp",
+    "8": "Other"
+   },
+   "s5bq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5bq2b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Year"
+   },
+   "s5bq3b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Year"
+   },
+   "s5bq4b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Year"
+   },
+   "s5bq5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5bq6b": {
+    "1": "Month",
+    "2": "Quarterly",
+    "3": "Year"
+   },
+   "s5bq7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5bq8": {
+    "1": "Relative of the head of household",
+    "2": "Non relative",
+    "3": "State",
+    "4": "Private company",
+    "5": "Association payment",
+    "6": "Other"
+   },
+   "s5cq1": {
+    "1": "Piped into dwelling",
+    "2": "Piped into yard",
+    "3": "Public standpipe",
+    "4": "Borehole",
+    "5": "Protected well",
+    "6": "Unprotected well",
+    "7": "Protected spring",
+    "8": "Unprotected spring",
+    "9": "Rain water",
+    "10": "Tanker truck",
+    "11": "Surface water (river or lake)",
+    "12": "Other"
+   },
+   "s5cq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5cq3a": {
+    "1": "Piped into dwelling",
+    "2": "Piped into yard",
+    "3": "Public standpipe",
+    "4": "Borehole",
+    "5": "Protected well",
+    "6": "Unprotected well",
+    "7": "Protected spring",
+    "8": "Unprotected spring",
+    "9": "Rain water",
+    "10": "Tanker truck",
+    "11": "Surface water (river or lake)",
+    "12": "Other"
+   },
+   "s5cq3b": {
+    "9990": "Greater than 9 km"
+   },
+   "s5cq7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5cq9": {
+    "1": "Electricity from RECO RWASCO",
+    "2": "Other electric distributors",
+    "3": "Biogaz",
+    "4": "Generator",
+    "5": "Oil lamp",
+    "6": "Firewood",
+    "7": "Candle",
+    "8": "Lantern",
+    "9": "Solar panel",
+    "10": "Piles",
+    "11": "Other"
+   },
+   "s5cq11": {
+    "1": "Firewood",
+    "2": "Charcoal",
+    "3": "Gas",
+    "4": "Biogaz",
+    "5": "Solar power",
+    "6": "Electricity",
+    "7": "Oil or kerosene",
+    "8": "Crop waste",
+    "9": "Animal dung",
+    "10": "Other"
+   },
+   "s5cq12": {
+    "1": "Publicly managed refuse area",
+    "2": "Rubbish collection service",
+    "3": "Thrown in bushes or fields",
+    "4": "Dumped in reiver or lake",
+    "5": "Burnt",
+    "6": "Compost heap",
+    "7": "Other"
+   },
+   "s5cq13": {
+    "1": "Flush toilet",
+    "2": "Pit latrine with solid slab",
+    "3": "Pit latrine without slab",
+    "4": "Other",
+    "5": "No toilet whatsoever"
+   },
+   "s5cq14": {
+    "1": "Meetings",
+    "2": "School",
+    "3": "Radio",
+    "4": "Other media",
+    "5": "Other",
+    "6": "None",
+    "7": "Do not know"
+   },
+   "s5cq15": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5cq16": {
+    "1": "Floods",
+    "2": "Erosion",
+    "3": "Reduction in agricultural production",
+    "4": "Change of climate",
+    "5": "Famine or drought",
+    "6": "Destructive rains",
+    "7": "Loss of soil fertility",
+    "8": "Other"
+   },
+   "s5cq17": {
+    "1": "Yes, landline",
+    "2": "Yes, mobile phone",
+    "3": "Yes, both land line and mobile phone",
+    "4": "None"
+   },
+   "s5cq19": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s5cq20a": {
+    "0": "None"
+   },
+   "s5cq20b": {
+    "0": "None"
+   },
+   "s5cq20c": {
+    "0": "None"
+   },
+   "s5cq20d": {
+    "0": "None"
+   },
+   "s5cq20e": {
+    "0": "None"
+   },
+   "s5dq1": {
+    "1": "Mud bricks",
+    "2": "Mud bricks covered with cement",
+    "3": "OVen fired bricks",
+    "4": "Cement bricks",
+    "5": "Wooden planks",
+    "6": "Stones",
+    "7": "Tree trunks with mud",
+    "8": "Tree trunks with mud and cement",
+    "9": "Plastic sheeting",
+    "10": "Other"
+   },
+   "s5dq2": {
+    "1": "Thatch or leaves",
+    "2": "Metal sheets",
+    "3": "Clay tiles",
+    "4": "Concrete",
+    "5": "Bamboo",
+    "6": "Plastic or plywood",
+    "7": "Other"
+   },
+   "s5dq3": {
+    "1": "Beaten earth",
+    "2": "Hardened dung",
+    "3": "Wooden floor",
+    "4": "Clay tiles",
+    "5": "Cement",
+    "6": "Bricks",
+    "7": "Other"
+   },
+   "s5dq4": {
+    "901": "Greater than 900 meters squared"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "dist": {
+    "11": "Nyarugenge",
+    "12": "Gasabo",
+    "13": "Kicukiro",
+    "21": "Nyanza",
+    "22": "Gisagara",
+    "23": "Nyaruguru",
+    "24": "Huye",
+    "25": "Nyamagabe",
+    "26": "Ruhango",
+    "27": "Muhanga",
+    "28": "Kamonyi",
+    "31": "Karongi",
+    "32": "Rutsiro",
+    "33": "Rubavu",
+    "34": "Nyabihu",
+    "35": "Ngororero",
+    "36": "Rusizi",
+    "37": "Nyamasheke",
+    "41": "Rulindo",
+    "42": "Gakenke",
+    "43": "Musanze",
+    "44": "Burera",
+    "45": "Gicumbi",
+    "51": "Rwamagana",
+    "52": "Nyagatare",
+    "53": "Gatsibo",
+    "54": "Kayonza",
+    "55": "Kirehe",
+    "56": "Ngoma",
+    "57": "Bugesera"
+   },
+   "urban": {
+    "1": "Urban",
+    "2": "Rural"
+   },
+   "s8a2q1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8a2q2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8a2q3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8a2q4a": {
+    "1": "Cattle",
+    "2": "Sheep",
+    "3": "Goat",
+    "4": "Poultry",
+    "5": "Pig",
+    "6": "Other"
+   },
+   "s8a2q5": {
+    "1": "Yes, increased",
+    "2": "Yes, reduced",
+    "3": "No, the same",
+    "4": "Not applicable"
+   },
+   "s8a2q6": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8a2q7": {
+    "1": "Household ownership",
+    "2": "Other person's property",
+    "3": "State owned",
+    "4": "District land"
+   },
+   "s8b1q1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q5": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q9": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q11": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q13": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q14": {
+    "0": ""
+   },
+   "s8b1q15": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q16": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q17": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q18": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q19": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q21": {
+    "1": "Terracing",
+    "2": "Irrigation",
+    "3": "Animal purchase",
+    "4": "Equipment",
+    "5": "Seeds and fertilizer",
+    "6": "Purchase of land",
+    "7": "Farm buildings",
+    "8": "Other"
+   },
+   "s8b1q22": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s8b1q23": {
+    "1": "Demarcation",
+    "2": "Adjudication",
+    "3": "Claims receipt issued",
+    "4": "Recording objections",
+    "5": "Publication of records",
+    "6": "Mediation period",
+    "7": "Registration",
+    "8": "Title issued"
+   },
+   "s10dq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq3": {
+    "1": "No longer eligible for DS",
+    "2": "Transfer to public works programme",
+    "3": "Did not participate in training",
+    "4": "Now getting old age grant",
+    "5": "Other"
+   },
+   "s10dq4": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Don't know"
+   },
+   "s10dq6": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Don't know"
+   },
+   "s10dq7": {
+    "1": "Consumption items (food, utensils, clothes)",
+    "2": "Buy durable assets",
+    "3": "Education of children",
+    "4": "Health/medical",
+    "5": "Buy animals",
+    "6": "Invest in farm",
+    "7": "Invest in business or income generating activity",
+    "8": "Improve house",
+    "9": "Other"
+   },
+   "s10dq8": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq9": {
+    "1": "Individual",
+    "2": "Group"
+   },
+   "s10dq10": {
+    "1": "Consumption items (food, utensils, clothes)",
+    "2": "Buy durable assets",
+    "3": "Pay for Children's education",
+    "4": "Health or medical expenses",
+    "5": "To buy animals",
+    "6": "Farm investment",
+    "7": "Business (small or large) investment",
+    "8": "House improvements",
+    "9": "Other"
+   },
+   "s10dq11": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq12": {
+    "1": "Yes",
+    "2": "No",
+    "3": "Don't Know"
+   },
+   "s10dq13a": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq13b": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq13c": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq13d": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq13e": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s10dq13f": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s11aq1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s11aq2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s11aq3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "s11aq4": {
+    "1": "Insuffivient Tevenue",
+    "2": "Insufficient guarantee",
+    "3": "Problems of debt history",
+    "4": "Unclear purpose of loan",
+    "5": "Other",
+    "9": "Missing"
+   },
+   "head_sex": {
+    "1": "Male",
+    "2": "Female"
+   }
+  },
+  "source": {
+   "base modules": "s05abcd_housing",
+   "survey": "module s05abcd_housing",
+   "year": "module s05abcd_housing",
+   "wave": "module s05abcd_housing",
+   "sample": "module s05abcd_housing",
+   "prov": "module s05abcd_housing",
+   "dist": "module s05abcd_housing",
+   "urban": "module s05abcd_housing",
+   "cluster": "module s05abcd_housing",
+   "hhid": "module s05abcd_housing",
+   "wt": "module s05abcd_housing",
+   "wt_hh": "module s05abcd_housing",
+   "quintile": "module s11a1_credit",
+   "poverty": "module s11a1_credit",
+   "s5aq1": "module s05abcd_housing",
+   "s5aq2": "module s05abcd_housing",
+   "s5aq3": "module s05abcd_housing",
+   "s5aq4": "module s05abcd_housing",
+   "s5aq5": "module s05abcd_housing",
+   "s5aq6": "module s05abcd_housing",
+   "s5aq7y": "module s05abcd_housing",
+   "s5aq7m": "module s05abcd_housing",
+   "s5aq8": "module s05abcd_housing",
+   "s5aq9": "module s05abcd_housing",
+   "s5aq10": "module s05abcd_housing",
+   "s5aq11": "module s05abcd_housing",
+   "s5bq1": "module s05abcd_housing",
+   "s5bq2a": "module s05abcd_housing",
+   "s5bq2b": "module s05abcd_housing",
+   "s5bq3a": "module s05abcd_housing",
+   "s5bq3b": "module s05abcd_housing",
+   "s5bq4a": "module s05abcd_housing",
+   "s5bq4b": "module s05abcd_housing",
+   "s5bq5": "module s05abcd_housing",
+   "s5bq6a": "module s05abcd_housing",
+   "s5bq6b": "module s05abcd_housing",
+   "s5bq7": "module s05abcd_housing",
+   "s5bq8": "module s05abcd_housing",
+   "s5bq9": "module s05abcd_housing",
+   "s5bq10": "module s05abcd_housing",
+   "s5bq11": "module s05abcd_housing",
+   "s5cq1": "module s05abcd_housing",
+   "s5cq2": "module s05abcd_housing",
+   "s5cq3a": "module s05abcd_housing",
+   "s5cq3b": "module s05abcd_housing",
+   "s5cq4a": "module s05abcd_housing",
+   "s5cq4b": "module s05abcd_housing",
+   "s5cq5": "module s05abcd_housing",
+   "s5cq6": "module s05abcd_housing",
+   "s5cq7": "module s05abcd_housing",
+   "s5cq8": "module s05abcd_housing",
+   "s5cq9": "module s05abcd_housing",
+   "s5cq10": "module s05abcd_housing",
+   "s5cq11": "module s05abcd_housing",
+   "s5cq12": "module s05abcd_housing",
+   "s5cq13": "module s05abcd_housing",
+   "s5cq14": "module s05abcd_housing",
+   "s5cq15": "module s05abcd_housing",
+   "s5cq16": "module s05abcd_housing",
+   "s5cq17": "module s05abcd_housing",
+   "s5cq18": "module s05abcd_housing",
+   "s5cq19": "module s05abcd_housing",
+   "s5cq20a": "module s05abcd_housing",
+   "s5cq20b": "module s05abcd_housing",
+   "s5cq20c": "module s05abcd_housing",
+   "s5cq20d": "module s05abcd_housing",
+   "s5cq20e": "module s05abcd_housing",
+   "s5dq1": "module s05abcd_housing",
+   "s5dq2": "module s05abcd_housing",
+   "s5dq3": "module s05abcd_housing",
+   "s5dq4": "module s05abcd_housing",
+   "s8a2q1": "module s08a2_livestock",
+   "s8a2q2": "module s08a2_livestock",
+   "s8a2q3": "module s08a2_livestock",
+   "s8a2q4a": "module s08a2_livestock",
+   "s8a2q4b": "module s08a2_livestock",
+   "s8a2q5": "module s08a2_livestock",
+   "s8a2q6": "module s08a2_livestock",
+   "s8a2q7": "module s08a2_livestock",
+   "s8a2q8": "module s08a2_livestock",
+   "s8a2q9": "module s08a2_livestock",
+   "s8b1q1": "module s08b1_landtransactions",
+   "s8b1q2": "module s08b1_landtransactions",
+   "s8b1q3": "module s08b1_landtransactions",
+   "s8b1q4": "module s08b1_landtransactions",
+   "s8b1q5": "module s08b1_landtransactions",
+   "s8b1q6": "module s08b1_landtransactions",
+   "s8b1q7": "module s08b1_landtransactions",
+   "s8b1q8": "module s08b1_landtransactions",
+   "s8b1q9": "module s08b1_landtransactions",
+   "s8b1q10": "module s08b1_landtransactions",
+   "s8b1q11": "module s08b1_landtransactions",
+   "s8b1q12": "module s08b1_landtransactions",
+   "s8b1q13": "module s08b1_landtransactions",
+   "s8b1q14": "module s08b1_landtransactions",
+   "s8b1q15": "module s08b1_landtransactions",
+   "s8b1q16": "module s08b1_landtransactions",
+   "s8b1q17": "module s08b1_landtransactions",
+   "s8b1q18": "module s08b1_landtransactions",
+   "s8b1q19": "module s08b1_landtransactions",
+   "s8b1q20": "module s08b1_landtransactions",
+   "s8b1q21": "module s08b1_landtransactions",
+   "s8b1q22": "module s08b1_landtransactions",
+   "s8b1q23": "module s08b1_landtransactions",
+   "s10dq1": "module s10d_schemes",
+   "s10dq2": "module s10d_schemes",
+   "s10dq3": "module s10d_schemes",
+   "s10dq4": "module s10d_schemes",
+   "s10dq5": "module s10d_schemes",
+   "s10dq6": "module s10d_schemes",
+   "s10dq7": "module s10d_schemes",
+   "s10dq8": "module s10d_schemes",
+   "s10dq9": "module s10d_schemes",
+   "s10dq10": "module s10d_schemes",
+   "s10dq11": "module s10d_schemes",
+   "s10dq12": "module s10d_schemes",
+   "s10dq13a": "module s10d_schemes",
+   "s10dq13b": "module s10d_schemes",
+   "s10dq13c": "module s10d_schemes",
+   "s10dq13d": "module s10d_schemes",
+   "s10dq13e": "module s10d_schemes",
+   "s10dq13f": "module s10d_schemes",
+   "s11aq1": "module s11a1_credit",
+   "s11aq2": "module s11a1_credit",
+   "s11aq3": "module s11a1_credit",
+   "s11aq4": "module s11a1_credit",
+   "clust": "module eicv3_povertyfile_jan2014",
+   "member": "module eicv3_povertyfile_jan2014",
+   "ae": "module eicv3_povertyfile_jan2014",
+   "id1": "module eicv3_povertyfile_jan2014",
+   "ur": "module eicv3_povertyfile_jan2014",
+   "cons1": "module eicv3_povertyfile_jan2014",
+   "cons1_ae": "module eicv3_povertyfile_jan2014",
+   "pop_wt": "module eicv3_povertyfile_jan2014",
+   "sol_jan": "module eicv3_povertyfile_jan2014",
+   "epoverty": "module eicv3_povertyfile_jan2014",
+   "poverty_eicv3_povertyfile_jan201": "module eicv3_povertyfile_jan2014",
+   "quintile_eicv3_povertyfile_jan20": "module eicv3_povertyfile_jan2014",
+   "exp1": "module eicv3_povertyfile_jan2014",
+   "exp3": "module eicv3_povertyfile_jan2014",
+   "exp4": "module eicv3_povertyfile_jan2014",
+   "exp5": "module eicv3_povertyfile_jan2014",
+   "exp6": "module eicv3_povertyfile_jan2014",
+   "exp7": "module eicv3_povertyfile_jan2014",
+   "exp8": "module eicv3_povertyfile_jan2014",
+   "exp9": "module eicv3_povertyfile_jan2014",
+   "exp10": "module eicv3_povertyfile_jan2014",
+   "exp11": "module eicv3_povertyfile_jan2014",
+   "exp12": "module eicv3_povertyfile_jan2014",
+   "exp13": "module eicv3_povertyfile_jan2014",
+   "exp14_2": "module eicv3_povertyfile_jan2014",
+   "exp15_2": "module eicv3_povertyfile_jan2014",
+   "exp16_2": "module eicv3_povertyfile_jan2014",
+   "exp17": "module eicv3_povertyfile_jan2014",
+   "exp18": "module eicv3_povertyfile_jan2014",
+   "exp2": "module eicv3_povertyfile_jan2014",
+   "exp12_wh": "module eicv3_povertyfile_jan2014",
+   "exp13_wh": "module eicv3_povertyfile_jan2014",
+   "exp14_1": "module eicv3_povertyfile_jan2014",
+   "exp15_1": "module eicv3_povertyfile_jan2014",
+   "exp16_1": "module eicv3_povertyfile_jan2014",
+   "exp16a_1": "module eicv3_povertyfile_jan2014",
+   "exp16a_2": "module eicv3_povertyfile_jan2014",
+   "_merge": "module eicv3_povertyfile_jan2014"
+  }
+ }
+}

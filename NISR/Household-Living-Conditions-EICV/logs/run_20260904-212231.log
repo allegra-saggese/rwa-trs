@@ -1,0 +1,841 @@
+21:22:32 02_merge INFO ==== 02_merge | run 20260904-212231 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:22:32 02_merge INFO ---------------- EICV_pooled_person.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'])
+21:22:35 02_merge INFO   loaded EICV1      EICV_EICV1_person_clean.dta                                32,153 rows x  438
+21:22:38 02_merge INFO   loaded EICV2      EICV_EICV2_person_clean.dta                                34,785 rows x  207
+21:22:42 02_merge INFO   loaded EICV3      EICV_EICV3_person_clean.dta                                68,398 rows x  207
+21:22:46 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_person_clean.dta                             66,081 rows x  141
+21:22:48 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_person_clean.dta                             64,314 rows x  120
+21:22:52 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_person_clean.dta                             62,110 rows x  222
+21:22:52 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS'], 'poverty_v2': ['EICV3', 'EICV4_CS'], 'poverty_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s1q10: {'s1q10': ['EICV3', 'EICV5_CS'], 's1q10_v2': ['EICV2', 'EICV4_CS'], 's1q10_v3': ['EICV7_CS'], 's1q10_v4': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q11: {'s1q11': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's1q11_v2': ['EICV1', 'EICV7_CS'], 's1q11_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s1q12: {'s1q12': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's1q12_v2': ['EICV7_CS'], 's1q12_v3': ['EICV2'], 's1q12_v4': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q13: {'s1q13': ['EICV3', 'EICV4_CS', 'EICV7_CS'], 's1q13_v2': ['EICV1', 'EICV2'], 's1q13_v3': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s1q14: {'s1q14': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's1q14_v2': ['EICV1', 'EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s1q15: {'s1q15': ['EICV5_CS'], 's1q15_v2': ['EICV4_CS'], 's1q15_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q16: {'s1q16': ['EICV5_CS'], 's1q16_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q4: {'s1q4': ['EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's1q4_v2': ['EICV1', 'EICV2']}
+21:22:52 02_merge INFO   VERSIONS s1q5: {'s1q5': ['EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS'], 's1q5_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q6: {'s1q6': ['EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's1q6_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q7: {'s1q7': ['EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS'], 's1q7_v2': ['EICV7_CS'], 's1q7_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q8: {'s1q8': ['EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's1q8_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s1q9: {'s1q9': ['EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS'], 's1q9_v2': ['EICV7_CS'], 's1q9_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq1: {'s2aq1': ['EICV1', 'EICV2'], 's2aq1_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s2aq10: {'s2aq10': ['EICV3'], 's2aq10_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq11: {'s2aq11': ['EICV3'], 's2aq11_v2': ['EICV2'], 's2aq11_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq12: {'s2aq12': ['EICV2'], 's2aq12_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq13: {'s2aq13': ['EICV1', 'EICV2'], 's2aq13_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s2aq14: {'s2aq14': ['EICV3'], 's2aq14_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq3: {'s2aq3': ['EICV3'], 's2aq3_v2': ['EICV2'], 's2aq3_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq4: {'s2aq4': ['EICV3'], 's2aq4_v2': ['EICV2'], 's2aq4_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq5: {'s2aq5': ['EICV2'], 's2aq5_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq6: {'s2aq6': ['EICV3'], 's2aq6_v2': ['EICV2'], 's2aq6_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq7: {'s2aq7': ['EICV1', 'EICV3'], 's2aq7_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s2aq8: {'s2aq8': ['EICV3'], 's2aq8_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq9a: {'s2aq9a': ['EICV3'], 's2aq9a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2aq9b: {'s2aq9b': ['EICV3'], 's2aq9b_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq10: {'s2bq10': ['EICV2'], 's2bq10_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq11: {'s2bq11': ['EICV2'], 's2bq11_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq12: {'s2bq12': ['EICV2'], 's2bq12_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq14: {'s2bq14': ['EICV2'], 's2bq14_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq15: {'s2bq15': ['EICV2'], 's2bq15_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq16: {'s2bq16': ['EICV2'], 's2bq16_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq18: {'s2bq18': ['EICV2'], 's2bq18_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq19: {'s2bq19': ['EICV2'], 's2bq19_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq2: {'s2bq2': ['EICV2'], 's2bq2_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq20: {'s2bq20': ['EICV2'], 's2bq20_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq21: {'s2bq21': ['EICV2'], 's2bq21_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq4: {'s2bq4': ['EICV2'], 's2bq4_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq5: {'s2bq5': ['EICV2'], 's2bq5_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq6: {'s2bq6': ['EICV2'], 's2bq6_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq8: {'s2bq8': ['EICV2'], 's2bq8_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2bq9: {'s2bq9': ['EICV2'], 's2bq9_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq1: {'s2cq1': ['EICV2'], 's2cq1_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq10: {'s2cq10': ['EICV2'], 's2cq10_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq11: {'s2cq11': ['EICV2'], 's2cq11_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq12: {'s2cq12': ['EICV2'], 's2cq12_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq14: {'s2cq14': ['EICV2'], 's2cq14_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq2: {'s2cq2': ['EICV3'], 's2cq2_v2': ['EICV2'], 's2cq2_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq3: {'s2cq3': ['EICV3'], 's2cq3_v2': ['EICV2'], 's2cq3_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq4: {'s2cq4': ['EICV3'], 's2cq4_v2': ['EICV2'], 's2cq4_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq5: {'s2cq5': ['EICV3'], 's2cq5_v2': ['EICV2'], 's2cq5_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq7: {'s2cq7': ['EICV3'], 's2cq7_v2': ['EICV2'], 's2cq7_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s2cq8: {'s2cq8': ['EICV3'], 's2cq8_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s2cq9: {'s2cq9': ['EICV3'], 's2cq9_v2': ['EICV2'], 's2cq9_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq1: {'s3aq1': ['EICV1', 'EICV2'], 's3aq1_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s3aq10: {'s3aq10': ['EICV2', 'EICV3'], 's3aq10_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq11: {'s3aq11': ['EICV3'], 's3aq11_v2': ['EICV2'], 's3aq11_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq13: {'s3aq13': ['EICV2', 'EICV3'], 's3aq13_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq14: {'s3aq14': ['EICV2', 'EICV3'], 's3aq14_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq15: {'s3aq15': ['EICV3'], 's3aq15_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s3aq16: {'s3aq16': ['EICV2', 'EICV3'], 's3aq16_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq17: {'s3aq17': ['EICV2', 'EICV3'], 's3aq17_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq18: {'s3aq18': ['EICV2', 'EICV3'], 's3aq18_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq19: {'s3aq19': ['EICV2', 'EICV3'], 's3aq19_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq2: {'s3aq2': ['EICV3'], 's3aq2_v2': ['EICV2'], 's3aq2_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq20: {'s3aq20': ['EICV2', 'EICV3'], 's3aq20_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq21: {'s3aq21': ['EICV3'], 's3aq21_v2': ['EICV2'], 's3aq21_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq22: {'s3aq22': ['EICV2', 'EICV3'], 's3aq22_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq23: {'s3aq23': ['EICV2', 'EICV3'], 's3aq23_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq24: {'s3aq24': ['EICV3'], 's3aq24_v2': ['EICV2'], 's3aq24_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq25: {'s3aq25': ['EICV2', 'EICV3'], 's3aq25_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq27: {'s3aq27': ['EICV3'], 's3aq27_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s3aq4: {'s3aq4': ['EICV2', 'EICV3'], 's3aq4_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq5: {'s3aq5': ['EICV2', 'EICV3'], 's3aq5_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq6: {'s3aq6': ['EICV2', 'EICV3'], 's3aq6_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq8: {'s3aq8': ['EICV3'], 's3aq8_v2': ['EICV2'], 's3aq8_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3aq9: {'s3aq9': ['EICV3'], 's3aq9_v2': ['EICV2'], 's3aq9_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq1: {'s3bq1': ['EICV1', 'EICV2'], 's3bq1_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s3bq10: {'s3bq10': ['EICV2'], 's3bq10_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq11: {'s3bq11': ['EICV2'], 's3bq11_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq12: {'s3bq12': ['EICV2'], 's3bq12_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq3: {'s3bq3': ['EICV3'], 's3bq3_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq4a: {'s3bq4a': ['EICV3'], 's3bq4a_v2': ['EICV2'], 's3bq4a_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq4b: {'s3bq4b': ['EICV3'], 's3bq4b_v2': ['EICV2'], 's3bq4b_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq5a: {'s3bq5a': ['EICV3'], 's3bq5a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq5b: {'s3bq5b': ['EICV3'], 's3bq5b_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq6: {'s3bq6': ['EICV3'], 's3bq6_v2': ['EICV2'], 's3bq6_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq7: {'s3bq7': ['EICV3'], 's3bq7_v2': ['EICV2'], 's3bq7_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3bq8: {'s3bq8': ['EICV2', 'EICV3'], 's3bq8_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3cq4a: {'s3cq4a': ['EICV2'], 's3cq4a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3cq4c: {'s3cq4c': ['EICV2'], 's3cq4c_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3cq4d: {'s3cq4d': ['EICV2'], 's3cq4d_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3cq7: {'s3cq7': ['EICV2'], 's3cq7_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3cq8: {'s3cq8': ['EICV2'], 's3cq8_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s3q10: {'s3q10': ['EICV7_CS'], 's3q10_v2': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q11: {'s3q11': ['EICV7_CS'], 's3q11_v2': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q2: {'s3q2': ['EICV5_CS', 'EICV7_CS'], 's3q2_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q3: {'s3q3': ['EICV4_CS', 'EICV7_CS'], 's3q3_v2': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q4: {'s3q4': ['EICV7_CS'], 's3q4_v2': ['EICV5_CS'], 's3q4_v3': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q5: {'s3q5': ['EICV5_CS', 'EICV7_CS'], 's3q5_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q6: {'s3q6': ['EICV4_CS', 'EICV7_CS'], 's3q6_v2': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s3q7: {'s3q7': ['EICV5_CS', 'EICV7_CS'], 's3q7_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq1: {'s4aq1': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's4aq1_v2': ['EICV3'], 's4aq1_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4aq10: {'s4aq10': ['EICV4_CS', 'EICV5_CS'], 's4aq10_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq11g: {'s4aq11g': ['EICV5_CS'], 's4aq11g_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq12: {'s4aq12': ['EICV5_CS'], 's4aq12_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq15: {'s4aq15': ['EICV4_CS', 'EICV5_CS'], 's4aq15_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq16: {'s4aq16': ['EICV4_CS', 'EICV5_CS'], 's4aq16_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq17: {'s4aq17': ['EICV4_CS', 'EICV5_CS'], 's4aq17_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq2: {'s4aq2': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's4aq2_v2': ['EICV3'], 's4aq2_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4aq3: {'s4aq3': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's4aq3_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4aq4: {'s4aq4': ['EICV3'], 's4aq4_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4aq5: {'s4aq5': ['EICV4_CS', 'EICV5_CS'], 's4aq5_v2': ['EICV3'], 's4aq5_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4aq6: {'s4aq6': ['EICV3'], 's4aq6_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4aq6c: {'s4aq6c': ['EICV7_CS'], 's4aq6c_v2': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s4aq7: {'s4aq7': ['EICV1', 'EICV5_CS', 'EICV7_CS'], 's4aq7_v2': ['EICV4_CS'], 's4aq7_v3': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4aq8: {'s4aq8': ['EICV4_CS', 'EICV7_CS'], 's4aq8_v2': ['EICV1', 'EICV5_CS'], 's4aq8_v3': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4aq9: {'s4aq9': ['EICV4_CS', 'EICV5_CS'], 's4aq9_v2': ['EICV7_CS'], 's4aq9_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq1: {'s4bq1': ['EICV5_CS', 'EICV7_CS'], 's4bq1_v2': ['EICV4_CS'], 's4bq1_v3': ['EICV3'], 's4bq1_v4': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq10: {'s4bq10': ['EICV7_CS'], 's4bq10_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq11: {'s4bq11': ['EICV7_CS'], 's4bq11_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq13a: {'s4bq13a': ['EICV7_CS'], 's4bq13a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq13b: {'s4bq13b': ['EICV7_CS'], 's4bq13b_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq15: {'s4bq15': ['EICV7_CS'], 's4bq15_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq16: {'s4bq16': ['EICV7_CS'], 's4bq16_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq17: {'s4bq17': ['EICV7_CS'], 's4bq17_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq19: {'s4bq19': ['EICV7_CS'], 's4bq19_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq2: {'s4bq2': ['EICV5_CS', 'EICV7_CS'], 's4bq2_v2': ['EICV4_CS'], 's4bq2_v3': ['EICV3'], 's4bq2_v4': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq20: {'s4bq20': ['EICV7_CS'], 's4bq20_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq22: {'s4bq22': ['EICV7_CS'], 's4bq22_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq23a: {'s4bq23a': ['EICV7_CS'], 's4bq23a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq23b: {'s4bq23b': ['EICV7_CS'], 's4bq23b_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq25: {'s4bq25': ['EICV7_CS'], 's4bq25_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq26: {'s4bq26': ['EICV7_CS'], 's4bq26_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq3: {'s4bq3': ['EICV5_CS', 'EICV7_CS'], 's4bq3_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s4bq3a: {'s4bq3a': ['EICV3'], 's4bq3a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq3b: {'s4bq3b': ['EICV3'], 's4bq3b_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq4: {'s4bq4': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's4bq4_v2': ['EICV3'], 's4bq4_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq5: {'s4bq5': ['EICV7_CS'], 's4bq5_v2': ['EICV5_CS'], 's4bq5_v3': ['EICV4_CS'], 's4bq5_v4': ['EICV3'], 's4bq5_v5': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq6: {'s4bq6': ['EICV7_CS'], 's4bq6_v2': ['EICV5_CS'], 's4bq6_v3': ['EICV4_CS'], 's4bq6_v4': ['EICV3'], 's4bq6_v5': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq7: {'s4bq7': ['EICV7_CS'], 's4bq7_v2': ['EICV5_CS'], 's4bq7_v3': ['EICV4_CS'], 's4bq7_v4': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq7a: {'s4bq7a': ['EICV5_CS'], 's4bq7a_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq8: {'s4bq8': ['EICV4_CS', 'EICV7_CS'], 's4bq8_v2': ['EICV3'], 's4bq8_v3': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq9: {'s4bq9': ['EICV7_CS'], 's4bq9_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS s4bq9a: {'s4bq9a': ['EICV5_CS'], 's4bq9a_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9b: {'s4bq9b': ['EICV5_CS'], 's4bq9b_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9c: {'s4bq9c': ['EICV5_CS'], 's4bq9c_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9d: {'s4bq9d': ['EICV5_CS'], 's4bq9d_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9e: {'s4bq9e': ['EICV5_CS'], 's4bq9e_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9f: {'s4bq9f': ['EICV5_CS'], 's4bq9f_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9g: {'s4bq9g': ['EICV5_CS'], 's4bq9g_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s4bq9h: {'s4bq9h': ['EICV5_CS'], 's4bq9h_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s6aq1: {'s6aq1': ['EICV3', 'EICV5_CS'], 's6aq1_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6aq2: {'s6aq2': ['EICV5_CS', 'EICV7_CS'], 's6aq2_v2': ['EICV3', 'EICV4_CS'], 's6aq2_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6aq3: {'s6aq3': ['EICV3', 'EICV4_CS'], 's6aq3_v2': ['EICV7_CS'], 's6aq3_v3': ['EICV5_CS'], 's6aq3_v4': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6aq4: {'s6aq4': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's6aq4_v2': ['EICV2', 'EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6aq5: {'s6aq5': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's6aq5_v2': ['EICV7_CS'], 's6aq5_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6aq6: {'s6aq6': ['EICV3', 'EICV5_CS'], 's6aq6_v2': ['EICV7_CS'], 's6aq6_v3': ['EICV4_CS'], 's6aq6_v4': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6aq7: {'s6aq7': ['EICV7_CS'], 's6aq7_v2': ['EICV3']}
+21:22:52 02_merge INFO   VERSIONS s6aq8: {'s6aq8': ['EICV4_CS', 'EICV5_CS'], 's6aq8_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6aq9: {'s6aq9': ['EICV7_CS'], 's6aq9_v2': ['EICV5_CS']}
+21:22:52 02_merge INFO   VERSIONS s6bq1: {'s6bq1': ['EICV2', 'EICV3'], 's6bq1_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6bq2: {'s6bq2': ['EICV2', 'EICV3'], 's6bq2_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6bq3: {'s6bq3': ['EICV7_CS'], 's6bq3_v2': ['EICV3'], 's6bq3_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6bq4: {'s6bq4': ['EICV2', 'EICV3'], 's6bq4_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6bq5: {'s6bq5': ['EICV7_CS'], 's6bq5_v2': ['EICV3'], 's6bq5_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6bq6a: {'s6bq6a': ['EICV3'], 's6bq6a_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6bq6b: {'s6bq6b': ['EICV3'], 's6bq6b_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6bq7: {'s6bq7': ['EICV2', 'EICV3'], 's6bq7_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6bq8: {'s6bq8': ['EICV2', 'EICV3'], 's6bq8_v2': ['EICV7_CS']}
+21:22:52 02_merge INFO   VERSIONS s6bq9a: {'s6bq9a': ['EICV7_CS'], 's6bq9a_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6bq9b: {'s6bq9b': ['EICV7_CS'], 's6bq9b_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq1: {'s6cq1': ['EICV7_CS'], 's6cq1_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq10: {'s6cq10': ['EICV7_CS'], 's6cq10_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq2: {'s6cq2': ['EICV7_CS'], 's6cq2_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq3: {'s6cq3': ['EICV7_CS'], 's6cq3_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq4: {'s6cq4': ['EICV7_CS'], 's6cq4_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq5: {'s6cq5': ['EICV7_CS'], 's6cq5_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq6: {'s6cq6': ['EICV7_CS'], 's6cq6_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq7: {'s6cq7': ['EICV7_CS'], 's6cq7_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq8: {'s6cq8': ['EICV7_CS'], 's6cq8_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6cq9: {'s6cq9': ['EICV7_CS'], 's6cq9_v2': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6eq1: {'s6eq1': ['EICV5_CS'], 's6eq1_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s6eq2: {'s6eq2': ['EICV5_CS'], 's6eq2_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s6eq3: {'s6eq3': ['EICV5_CS'], 's6eq3_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s6eq4: {'s6eq4': ['EICV5_CS'], 's6eq4_v2': ['EICV4_CS'], 's6eq4_v3': ['EICV2']}
+21:22:52 02_merge INFO   VERSIONS s6eq5: {'s6eq5': ['EICV5_CS'], 's6eq5_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS s6eq6: {'s6eq6': ['EICV5_CS'], 's6eq6_v2': ['EICV4_CS']}
+21:22:52 02_merge INFO   VERSIONS secocc: {'secocc': ['EICV2'], 'secocc_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS secsubs: {'secsubs': ['EICV2'], 'secsubs_v2': ['EICV1']}
+21:22:52 02_merge INFO   VERSIONS subsistence: {'subsistence': ['EICV2'], 'subsistence_v2': ['EICV1']}
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: pooled rows == sum of wave rows
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: EICV1 sum wt preserved
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: EICV2 sum wt preserved
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: EICV3 sum wt preserved
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: EICV4_CS sum wt preserved
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: EICV5_CS sum wt preserved
+21:23:34 02_merge INFO PASS  EICV_pooled_person.dta: EICV7_CS sum wt preserved
+21:23:43 02_merge INFO wrote EICV_pooled_person.dta  (327,841 rows x 1080 vars, 531.4 MB)
+21:23:43 02_merge INFO ---------------- EICV_pooled_person_vup.dta (['EICV4_VUP', 'EICV5_VUP', 'EICV7_VUP'])
+21:23:44 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_person_clean.dta                            10,606 rows x  130
+21:23:44 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_person_clean.dta                             6,596 rows x  148
+21:23:45 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_person_clean.dta                            15,039 rows x  312
+21:23:45 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV7_VUP'], 'poverty_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV7_VUP'], 'quintile_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q10: {'s1q10': ['EICV7_VUP'], 's1q10_v2': ['EICV5_VUP'], 's1q10_v3': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q11: {'s1q11': ['EICV4_VUP', 'EICV5_VUP'], 's1q11_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q12: {'s1q12': ['EICV4_VUP', 'EICV5_VUP'], 's1q12_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q13: {'s1q13': ['EICV4_VUP', 'EICV7_VUP'], 's1q13_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q14: {'s1q14': ['EICV4_VUP', 'EICV5_VUP'], 's1q14_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q15: {'s1q15': ['EICV5_VUP'], 's1q15_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q7: {'s1q7': ['EICV4_VUP', 'EICV5_VUP'], 's1q7_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s1q9: {'s1q9': ['EICV4_VUP', 'EICV5_VUP'], 's1q9_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s2q1: {'s2q1': ['EICV5_VUP'], 's2q1_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q10: {'s3q10': ['EICV7_VUP'], 's3q10_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q11: {'s3q11': ['EICV7_VUP'], 's3q11_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q2: {'s3q2': ['EICV5_VUP', 'EICV7_VUP'], 's3q2_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q3: {'s3q3': ['EICV4_VUP', 'EICV7_VUP'], 's3q3_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q4: {'s3q4': ['EICV7_VUP'], 's3q4_v2': ['EICV5_VUP'], 's3q4_v3': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q5: {'s3q5': ['EICV5_VUP', 'EICV7_VUP'], 's3q5_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q6: {'s3q6': ['EICV4_VUP', 'EICV7_VUP'], 's3q6_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s3q7: {'s3q7': ['EICV5_VUP', 'EICV7_VUP'], 's3q7_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq10: {'s4aq10': ['EICV4_VUP', 'EICV5_VUP'], 's4aq10_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq11g: {'s4aq11g': ['EICV5_VUP'], 's4aq11g_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq12: {'s4aq12': ['EICV5_VUP'], 's4aq12_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq15: {'s4aq15': ['EICV4_VUP', 'EICV5_VUP'], 's4aq15_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq16: {'s4aq16': ['EICV4_VUP', 'EICV5_VUP'], 's4aq16_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq17: {'s4aq17': ['EICV4_VUP', 'EICV5_VUP'], 's4aq17_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq6c: {'s4aq6c': ['EICV7_VUP'], 's4aq6c_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4aq9: {'s4aq9': ['EICV4_VUP', 'EICV5_VUP'], 's4aq9_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4bq1: {'s4bq1': ['EICV5_VUP', 'EICV7_VUP'], 's4bq1_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4bq2: {'s4bq2': ['EICV5_VUP', 'EICV7_VUP'], 's4bq2_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4bq3: {'s4bq3': ['EICV5_VUP', 'EICV7_VUP'], 's4bq3_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4bq5: {'s4bq5': ['EICV7_VUP'], 's4bq5_v2': ['EICV5_VUP'], 's4bq5_v3': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4bq6: {'s4bq6': ['EICV7_VUP'], 's4bq6_v2': ['EICV5_VUP'], 's4bq6_v3': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s4bq7: {'s4bq7': ['EICV7_VUP'], 's4bq7_v2': ['EICV5_VUP'], 's4bq7_v3': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq2: {'s6aq2': ['EICV5_VUP', 'EICV7_VUP'], 's6aq2_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq3: {'s6aq3': ['EICV7_VUP'], 's6aq3_v2': ['EICV5_VUP'], 's6aq3_v3': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq4: {'s6aq4': ['EICV4_VUP', 'EICV5_VUP'], 's6aq4_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq5: {'s6aq5': ['EICV4_VUP', 'EICV5_VUP'], 's6aq5_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq6: {'s6aq6': ['EICV4_VUP', 'EICV5_VUP'], 's6aq6_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq8: {'s6aq8': ['EICV4_VUP', 'EICV5_VUP'], 's6aq8_v2': ['EICV7_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6aq9: {'s6aq9': ['EICV7_VUP'], 's6aq9_v2': ['EICV5_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6eq1: {'s6eq1': ['EICV5_VUP'], 's6eq1_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6eq2: {'s6eq2': ['EICV5_VUP'], 's6eq2_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6eq3: {'s6eq3': ['EICV5_VUP'], 's6eq3_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6eq4: {'s6eq4': ['EICV5_VUP'], 's6eq4_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6eq5: {'s6eq5': ['EICV5_VUP'], 's6eq5_v2': ['EICV4_VUP']}
+21:23:45 02_merge INFO   VERSIONS s6eq6: {'s6eq6': ['EICV5_VUP'], 's6eq6_v2': ['EICV4_VUP']}
+21:23:46 02_merge INFO PASS  EICV_pooled_person_vup.dta: pooled rows == sum of wave rows
+21:23:46 02_merge INFO PASS  EICV_pooled_person_vup.dta: EICV4_VUP sum wt preserved
+21:23:46 02_merge INFO PASS  EICV_pooled_person_vup.dta: EICV5_VUP sum wt preserved
+21:23:46 02_merge INFO PASS  EICV_pooled_person_vup.dta: EICV7_VUP sum wt preserved
+21:23:47 02_merge INFO wrote EICV_pooled_person_vup.dta  (32,241 rows x 480 vars, 25.5 MB)
+21:23:47 02_merge INFO ---------------- EICV_pooled_household.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'])
+21:23:47 02_merge INFO   loaded EICV1      EICV_EICV1_household_clean.dta                              6,420 rows x  220
+21:23:47 02_merge INFO   loaded EICV2      EICV_EICV2_household_clean.dta                              6,900 rows x  110
+21:23:47 02_merge INFO   loaded EICV3      EICV_EICV3_household_clean.dta                             14,308 rows x  165
+21:23:48 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_household_clean.dta                          14,419 rows x  209
+21:23:48 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_household_clean.dta                          14,580 rows x  208
+21:23:49 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_household_clean.dta                          15,054 rows x  192
+21:23:49 02_merge INFO   VERSIONS ae: {'ae': ['EICV3', 'EICV5_CS', 'EICV7_CS'], 'ae_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS exp10: {'exp10': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp10_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp11: {'exp11': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp11_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp2: {'exp2': ['EICV7_CS'], 'exp2_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS exp3: {'exp3': ['EICV7_CS'], 'exp3_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS exp4: {'exp4': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp4_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp5: {'exp5': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp5_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp6: {'exp6': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp6_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp7: {'exp7': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp7_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp8: {'exp8': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp8_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS exp9: {'exp9': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'exp9_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS id1: {'id1': ['EICV3', 'EICV4_CS'], 'id1_v2': ['EICV2'], 'id1_v3': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS member: {'member': ['EICV3', 'EICV7_CS'], 'member_v2': ['EICV5_CS'], 'member_v3': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS poverty_s10a1_credits: {'poverty_s10a1_credits': ['EICV5_CS'], 'poverty_s10a1_credits_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS poverty_s7a2_livestock: {'poverty_s7a2_livestock': ['EICV5_CS'], 'poverty_s7a2_livestock_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS poverty_s7b1_land_agriculture: {'poverty_s7b1_land_agriculture': ['EICV5_CS'], 'poverty_s7b1_land_agricultur_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV1', 'EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s0q10: {'s0q10': ['EICV2'], 's0q10_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s0q14: {'s0q14': ['EICV2'], 's0q14_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s0q15: {'s0q15': ['EICV2'], 's0q15_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s10aq1: {'s10aq1': ['EICV5_CS'], 's10aq1_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s10aq3: {'s10aq3': ['EICV5_CS'], 's10aq3_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s11aq1: {'s11aq1': ['EICV2', 'EICV3'], 's11aq1_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s11aq2: {'s11aq2': ['EICV3'], 's11aq2_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s11aq3: {'s11aq3': ['EICV3'], 's11aq3_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5aq10: {'s5aq10': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's5aq10_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5aq3: {'s5aq3': ['EICV2', 'EICV3', 'EICV7_CS'], 's5aq3_v2': ['EICV4_CS', 'EICV5_CS']}
+21:23:49 02_merge INFO   VERSIONS s5aq4: {'s5aq4': ['EICV2', 'EICV4_CS', 'EICV5_CS'], 's5aq4_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5aq5: {'s5aq5': ['EICV4_CS', 'EICV5_CS'], 's5aq5_v2': ['EICV7_CS'], 's5aq5_v3': ['EICV3'], 's5aq5_v4': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5aq6: {'s5aq6': ['EICV4_CS', 'EICV5_CS'], 's5aq6_v2': ['EICV7_CS'], 's5aq6_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5aq7: {'s5aq7': ['EICV7_CS'], 's5aq7_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5aq8: {'s5aq8': ['EICV3', 'EICV4_CS'], 's5aq8_v2': ['EICV7_CS'], 's5aq8_v3': ['EICV5_CS'], 's5aq8_v4': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5aq9: {'s5aq9': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's5aq9_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq1: {'s5bq1': ['EICV4_CS', 'EICV5_CS'], 's5bq1_v2': ['EICV7_CS'], 's5bq1_v3': ['EICV3'], 's5bq1_v4': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq2: {'s5bq2': ['EICV4_CS', 'EICV5_CS'], 's5bq2_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq2a: {'s5bq2a': ['EICV7_CS'], 's5bq2a_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5bq3a: {'s5bq3a': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's5bq3a_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5bq4a: {'s5bq4a': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's5bq4a_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq5: {'s5bq5': ['EICV4_CS', 'EICV5_CS'], 's5bq5_v2': ['EICV3'], 's5bq5_v3': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq6: {'s5bq6': ['EICV7_CS'], 's5bq6_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq6a: {'s5bq6a': ['EICV4_CS', 'EICV5_CS'], 's5bq6a_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5bq7: {'s5bq7': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's5bq7_v2': ['EICV7_CS'], 's5bq7_v3': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5bq8: {'s5bq8': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 's5bq8_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5bq9: {'s5bq9': ['EICV7_CS'], 's5bq9_v2': ['EICV3'], 's5bq9_v3': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq10: {'s5cq10': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5cq10_v2': ['EICV3'], 's5cq10_v3': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq11: {'s5cq11': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5cq11_v2': ['EICV3'], 's5cq11_v3': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq12: {'s5cq12': ['EICV4_CS', 'EICV5_CS'], 's5cq12_v2': ['EICV7_CS'], 's5cq12_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq13: {'s5cq13': ['EICV4_CS', 'EICV5_CS'], 's5cq13_v2': ['EICV7_CS'], 's5cq13_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq14: {'s5cq14': ['EICV4_CS', 'EICV5_CS'], 's5cq14_v2': ['EICV7_CS'], 's5cq14_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq15: {'s5cq15': ['EICV4_CS', 'EICV5_CS'], 's5cq15_v2': ['EICV7_CS'], 's5cq15_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq16: {'s5cq16': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5cq16_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq17: {'s5cq17': ['EICV4_CS', 'EICV5_CS'], 's5cq17_v2': ['EICV7_CS'], 's5cq17_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq18: {'s5cq18': ['EICV4_CS', 'EICV5_CS'], 's5cq18_v2': ['EICV7_CS'], 's5cq18_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq19: {'s5cq19': ['EICV4_CS', 'EICV5_CS'], 's5cq19_v2': ['EICV7_CS'], 's5cq19_v3': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq2: {'s5cq2': ['EICV3', 'EICV4_CS'], 's5cq2_v2': ['EICV5_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq20: {'s5cq20': ['EICV4_CS', 'EICV5_CS'], 's5cq20_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq20b: {'s5cq20b': ['EICV7_CS'], 's5cq20b_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq20c: {'s5cq20c': ['EICV7_CS'], 's5cq20c_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq21: {'s5cq21': ['EICV4_CS', 'EICV5_CS'], 's5cq21_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq23: {'s5cq23': ['EICV7_CS'], 's5cq23_v2': ['EICV5_CS'], 's5cq23_v3': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq24: {'s5cq24': ['EICV4_CS', 'EICV5_CS'], 's5cq24_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq25: {'s5cq25': ['EICV4_CS', 'EICV5_CS'], 's5cq25_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq26: {'s5cq26': ['EICV4_CS', 'EICV5_CS'], 's5cq26_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq27: {'s5cq27': ['EICV4_CS', 'EICV5_CS'], 's5cq27_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s5cq2a: {'s5cq2a': ['EICV7_CS'], 's5cq2a_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq2b: {'s5cq2b': ['EICV7_CS'], 's5cq2b_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq3: {'s5cq3': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5cq3_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq4: {'s5cq4': ['EICV4_CS', 'EICV5_CS'], 's5cq4_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq4a: {'s5cq4a': ['EICV7_CS'], 's5cq4a_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq4b: {'s5cq4b': ['EICV7_CS'], 's5cq4b_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq5: {'s5cq5': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5cq5_v2': ['EICV2', 'EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq6: {'s5cq6': ['EICV4_CS', 'EICV5_CS'], 's5cq6_v2': ['EICV3'], 's5cq6_v3': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq7: {'s5cq7': ['EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5cq7_v2': ['EICV3']}
+21:23:49 02_merge INFO   VERSIONS s5cq8: {'s5cq8': ['EICV4_CS', 'EICV5_CS'], 's5cq8_v2': ['EICV7_CS'], 's5cq8_v3': ['EICV3'], 's5cq8_v4': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5cq9: {'s5cq9': ['EICV3'], 's5cq9_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5dq2: {'s5dq2': ['EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5dq2_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s5dq3: {'s5dq3': ['EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV7_CS'], 's5dq3_v2': ['EICV2']}
+21:23:49 02_merge INFO   VERSIONS s7a2q1: {'s7a2q1': ['EICV4_CS', 'EICV5_CS'], 's7a2q1_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s7a2q3: {'s7a2q3': ['EICV4_CS', 'EICV5_CS'], 's7a2q3_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s7a2q7: {'s7a2q7': ['EICV4_CS', 'EICV5_CS'], 's7a2q7_v2': ['EICV7_CS']}
+21:23:49 02_merge INFO   VERSIONS s8bq1: {'s8bq1': ['EICV2'], 's8bq1_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq12: {'s8bq12': ['EICV2'], 's8bq12_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq14: {'s8bq14': ['EICV2'], 's8bq14_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq16: {'s8bq16': ['EICV2'], 's8bq16_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq17: {'s8bq17': ['EICV2'], 's8bq17_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq4: {'s8bq4': ['EICV2'], 's8bq4_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq6: {'s8bq6': ['EICV2'], 's8bq6_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s8bq9: {'s8bq9': ['EICV2'], 's8bq9_v2': ['EICV1']}
+21:23:49 02_merge INFO   VERSIONS s9cq10: {'s9cq10': ['EICV5_CS'], 's9cq10_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq11: {'s9cq11': ['EICV5_CS'], 's9cq11_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq12: {'s9cq12': ['EICV5_CS'], 's9cq12_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq2: {'s9cq2': ['EICV5_CS'], 's9cq2_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq3: {'s9cq3': ['EICV5_CS'], 's9cq3_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq5: {'s9cq5': ['EICV5_CS'], 's9cq5_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq6: {'s9cq6': ['EICV5_CS'], 's9cq6_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq7: {'s9cq7': ['EICV5_CS'], 's9cq7_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq8: {'s9cq8': ['EICV5_CS'], 's9cq8_v2': ['EICV4_CS']}
+21:23:49 02_merge INFO   VERSIONS s9cq9: {'s9cq9': ['EICV5_CS'], 's9cq9_v2': ['EICV4_CS']}
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: pooled rows == sum of wave rows
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: EICV1 sum wt preserved
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: EICV2 sum wt preserved
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: EICV3 sum wt preserved
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: EICV4_CS sum wt preserved
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: EICV5_CS sum wt preserved
+21:23:53 02_merge INFO PASS  EICV_pooled_household.dta: EICV7_CS sum wt preserved
+21:23:55 02_merge INFO wrote EICV_pooled_household.dta  (71,681 rows x 817 vars, 117.9 MB)
+21:23:55 02_merge INFO ---------------- EICV_pooled_household_vup.dta (['EICV5_VUP', 'EICV7_VUP'])
+21:23:55 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_household_clean.dta                          1,644 rows x  201
+21:23:55 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_household_clean.dta                          3,771 rows x  149
+21:23:55 02_merge INFO   VERSIONS s5aq3: {'s5aq3': ['EICV7_VUP'], 's5aq3_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5aq5: {'s5aq5': ['EICV7_VUP'], 's5aq5_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5aq6: {'s5aq6': ['EICV7_VUP'], 's5aq6_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5aq8: {'s5aq8': ['EICV7_VUP'], 's5aq8_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5bq1: {'s5bq1': ['EICV7_VUP'], 's5bq1_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5bq3a: {'s5bq3a': ['EICV7_VUP'], 's5bq3a_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5bq7: {'s5bq7': ['EICV7_VUP'], 's5bq7_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5bq8: {'s5bq8': ['EICV7_VUP'], 's5bq8_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq12: {'s5cq12': ['EICV7_VUP'], 's5cq12_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq13: {'s5cq13': ['EICV7_VUP'], 's5cq13_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq14: {'s5cq14': ['EICV7_VUP'], 's5cq14_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq15: {'s5cq15': ['EICV7_VUP'], 's5cq15_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq17: {'s5cq17': ['EICV7_VUP'], 's5cq17_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq18: {'s5cq18': ['EICV7_VUP'], 's5cq18_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq19: {'s5cq19': ['EICV7_VUP'], 's5cq19_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq20: {'s5cq20': ['EICV7_VUP'], 's5cq20_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq21: {'s5cq21': ['EICV7_VUP'], 's5cq21_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq23: {'s5cq23': ['EICV7_VUP'], 's5cq23_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq24: {'s5cq24': ['EICV7_VUP'], 's5cq24_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq25: {'s5cq25': ['EICV7_VUP'], 's5cq25_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq26: {'s5cq26': ['EICV7_VUP'], 's5cq26_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq27: {'s5cq27': ['EICV7_VUP'], 's5cq27_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s5cq8: {'s5cq8': ['EICV7_VUP'], 's5cq8_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s7a2q2: {'s7a2q2': ['EICV7_VUP'], 's7a2q2_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s7a2q3: {'s7a2q3': ['EICV7_VUP'], 's7a2q3_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO   VERSIONS s7a2q7: {'s7a2q7': ['EICV7_VUP'], 's7a2q7_v2': ['EICV5_VUP']}
+21:23:55 02_merge INFO PASS  EICV_pooled_household_vup.dta: pooled rows == sum of wave rows
+21:23:55 02_merge INFO PASS  EICV_pooled_household_vup.dta: EICV5_VUP sum wt preserved
+21:23:55 02_merge INFO PASS  EICV_pooled_household_vup.dta: EICV7_VUP sum wt preserved
+21:23:56 02_merge INFO wrote EICV_pooled_household_vup.dta  (5,415 rows x 316 vars, 2.9 MB)
+21:23:56 02_merge INFO ---------------- EICV_pooled_agri_expenditure.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:23:56 02_merge INFO   loaded EICV1      EICV_EICV1_s8_farm_expense_clean.dta                       77,556 rows x   21
+21:23:56 02_merge INFO   loaded EICV2      EICV_EICV2_s8g_ag_expense_clean.dta                        78,190 rows x   21
+21:23:57 02_merge INFO   loaded EICV3      EICV_EICV3_s08g_inputs_clean.dta                          205,664 rows x   19
+21:23:58 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7g_expenditure_agriculture_clean.dta       230,704 rows x   25
+21:23:58 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7g_expenditure_agriculture_clean.dta       39,360 rows x   21
+21:23:59 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7g_expenditure_agriculture_clean.dta       233,232 rows x   17
+21:23:59 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7g_expenditure_agriculture_clean.dta       26,288 rows x   17
+21:23:59 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:23:59 02_merge INFO   VERSIONS s8gq3: {'s8gq3': ['EICV3'], 's8gq3_v2': ['EICV2']}
+21:23:59 02_merge INFO   VERSIONS s8gq4: {'s8gq4': ['EICV3'], 's8gq4_v2': ['EICV2']}
+21:23:59 02_merge INFO   VERSIONS s8gq6: {'s8gq6': ['EICV3'], 's8gq6_v2': ['EICV2']}
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: pooled rows == sum of wave rows
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV1 sum wt preserved
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV2 sum wt preserved
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV3 sum wt preserved
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV4_CS sum wt preserved
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV4_VUP sum wt preserved
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV5_CS sum wt preserved
+21:24:02 02_merge INFO PASS  EICV_pooled_agri_expenditure.dta: EICV5_VUP sum wt preserved
+21:24:06 02_merge INFO wrote EICV_pooled_agri_expenditure.dta  (890,994 rows x 53 vars, 128.3 MB)
+21:24:06 02_merge INFO ---------------- EICV_pooled_agri_income.dta (['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:24:07 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7f_income_agriculture_clean.dta            173,028 rows x   26
+21:24:07 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7f_income_agriculture_clean.dta            29,520 rows x   22
+21:24:07 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7f_income_agriculture_clean.dta            174,936 rows x   18
+21:24:07 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7f_income_agriculture_clean.dta            19,728 rows x   18
+21:24:07 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS'], 'poverty_v2': ['EICV4_CS']}
+21:24:08 02_merge INFO PASS  EICV_pooled_agri_income.dta: pooled rows == sum of wave rows
+21:24:08 02_merge INFO PASS  EICV_pooled_agri_income.dta: EICV4_CS sum wt preserved
+21:24:08 02_merge INFO PASS  EICV_pooled_agri_income.dta: EICV4_VUP sum wt preserved
+21:24:08 02_merge INFO PASS  EICV_pooled_agri_income.dta: EICV5_CS sum wt preserved
+21:24:08 02_merge INFO PASS  EICV_pooled_agri_income.dta: EICV5_VUP sum wt preserved
+21:24:09 02_merge INFO wrote EICV_pooled_agri_income.dta  (397,212 rows x 31 vars, 40.5 MB)
+21:24:10 02_merge INFO ---------------- EICV_pooled_agri_processing.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:24:10 02_merge INFO   loaded EICV1      EICV_EICV1_s8_farm_processing_clean.dta                    14,389 rows x   33
+21:24:10 02_merge INFO   loaded EICV2      EICV_EICV2_s8h_ag_process_clean.dta                        11,937 rows x   34
+21:24:10 02_merge INFO   loaded EICV3      EICV_EICV3_s08h_processing_clean.dta                       32,981 rows x   30
+21:24:10 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7h_transformation_agriculture_clean.dta     53,549 rows x   32
+21:24:10 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7h_transformation_agriculture_clean.dta     9,021 rows x   28
+21:24:10 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7h_transformation_agriculture_clean.dta     45,266 rows x   28
+21:24:10 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7h_transformation_agriculture_clean.dta     5,300 rows x   29
+21:24:10 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:24:10 02_merge INFO   VERSIONS s7hq3b: {'s7hq3b': ['EICV5_CS', 'EICV5_VUP'], 's7hq3b_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:10 02_merge INFO   VERSIONS s7hq7: {'s7hq7': ['EICV5_CS', 'EICV5_VUP'], 's7hq7_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:10 02_merge INFO   VERSIONS s7hq8a: {'s7hq8a': ['EICV5_CS', 'EICV5_VUP'], 's7hq8a_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:10 02_merge INFO   VERSIONS s7hq8b: {'s7hq8b': ['EICV5_CS', 'EICV5_VUP'], 's7hq8b_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:10 02_merge INFO   VERSIONS s7hq9a: {'s7hq9a': ['EICV5_CS', 'EICV5_VUP'], 's7hq9a_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:10 02_merge INFO   VERSIONS s7hq9b: {'s7hq9b': ['EICV5_CS', 'EICV5_VUP'], 's7hq9b_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:10 02_merge INFO   VERSIONS s8hq2: {'s8hq2': ['EICV3'], 's8hq2_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq4a: {'s8hq4a': ['EICV3'], 's8hq4a_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq4b: {'s8hq4b': ['EICV3'], 's8hq4b_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq4c: {'s8hq4c': ['EICV3'], 's8hq4c_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq5b: {'s8hq5b': ['EICV3'], 's8hq5b_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq5c: {'s8hq5c': ['EICV3'], 's8hq5c_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq6: {'s8hq6': ['EICV3'], 's8hq6_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq7: {'s8hq7': ['EICV3'], 's8hq7_v2': ['EICV2']}
+21:24:10 02_merge INFO   VERSIONS s8hq9: {'s8hq9': ['EICV3'], 's8hq9_v2': ['EICV2']}
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: pooled rows == sum of wave rows
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV1 sum wt preserved
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV2 sum wt preserved
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV3 sum wt preserved
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV4_CS sum wt preserved
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV4_VUP sum wt preserved
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV5_CS sum wt preserved
+21:24:11 02_merge INFO PASS  EICV_pooled_agri_processing.dta: EICV5_VUP sum wt preserved
+21:24:12 02_merge INFO wrote EICV_pooled_agri_processing.dta  (172,443 rows x 106 vars, 45.3 MB)
+21:24:12 02_merge INFO ---------------- EICV_pooled_credits.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'])
+21:24:12 02_merge INFO   loaded EICV1      EICV_EICV1_s12_credit_clean.dta                             7,178 rows x   26
+21:24:13 02_merge INFO   loaded EICV2      EICV_EICV2_s11a_credit_clean.dta                            5,509 rows x   24
+21:24:13 02_merge INFO   loaded EICV3      EICV_EICV3_s11a2_credit_clean.dta                          22,781 rows x   22
+21:24:13 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s10a2_credits_clean.dta                      20,974 rows x   30
+21:24:13 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s10a2_credits_clean.dta                      3,907 rows x   26
+21:24:13 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s10a2_listing_of_credits_clean.dta           15,800 rows x   24
+21:24:13 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s10a2_listing_of_credits_clean.dta           1,968 rows x   23
+21:24:13 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_s10a1_a2_credits_clean.dta                   20,509 rows x   25
+21:24:13 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_s10a1_a2_credits_clean.dta                   5,404 rows x   26
+21:24:13 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS', 'EICV7_VUP'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:24:13 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:24:13 02_merge INFO   VERSIONS s10aq10: {'s10aq10': ['EICV5_CS', 'EICV5_VUP'], 's10aq10_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:13 02_merge INFO   VERSIONS s10aq12: {'s10aq12': ['EICV5_CS', 'EICV5_VUP'], 's10aq12_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:13 02_merge INFO   VERSIONS s10aq6: {'s10aq6': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's10aq6_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:24:13 02_merge INFO   VERSIONS s10aq8: {'s10aq8': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's10aq8_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:24:13 02_merge INFO   VERSIONS s10aq9: {'s10aq9': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's10aq9_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:24:13 02_merge INFO   VERSIONS s11aq12: {'s11aq12': ['EICV3'], 's11aq12_v2': ['EICV2']}
+21:24:13 02_merge INFO   VERSIONS s11aq13: {'s11aq13': ['EICV3'], 's11aq13_v2': ['EICV2']}
+21:24:13 02_merge INFO   VERSIONS s11aq9: {'s11aq9': ['EICV3'], 's11aq9_v2': ['EICV2']}
+21:24:13 02_merge INFO PASS  EICV_pooled_credits.dta: pooled rows == sum of wave rows
+21:24:13 02_merge INFO PASS  EICV_pooled_credits.dta: EICV1 sum wt preserved
+21:24:13 02_merge INFO PASS  EICV_pooled_credits.dta: EICV2 sum wt preserved
+21:24:13 02_merge INFO PASS  EICV_pooled_credits.dta: EICV3 sum wt preserved
+21:24:14 02_merge INFO PASS  EICV_pooled_credits.dta: EICV4_CS sum wt preserved
+21:24:14 02_merge INFO PASS  EICV_pooled_credits.dta: EICV4_VUP sum wt preserved
+21:24:14 02_merge INFO PASS  EICV_pooled_credits.dta: EICV5_CS sum wt preserved
+21:24:14 02_merge INFO PASS  EICV_pooled_credits.dta: EICV5_VUP sum wt preserved
+21:24:14 02_merge INFO PASS  EICV_pooled_credits.dta: EICV7_CS sum wt preserved
+21:24:14 02_merge INFO PASS  EICV_pooled_credits.dta: EICV7_VUP sum wt preserved
+21:24:14 02_merge INFO wrote EICV_pooled_credits.dta  (104,030 rows x 82 vars, 18.6 MB)
+21:24:14 02_merge INFO ---------------- EICV_pooled_crop_large.dta (['EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:24:14 02_merge INFO   loaded EICV2      EICV_EICV2_s8d_ag_production1_clean.dta                    18,251 rows x   34
+21:24:14 02_merge INFO   loaded EICV3      EICV_EICV3_s08d_croplarge_clean.dta                        46,621 rows x   30
+21:24:14 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7d_large_crop_clean.dta                     44,453 rows x   32
+21:24:14 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7d_large_crop_clean.dta                     7,606 rows x   28
+21:24:15 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7d_large_crop_clean.dta                     38,326 rows x   20
+21:24:15 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7d_large_crop_clean.dta                     4,613 rows x   22
+21:24:15 02_merge INFO   VERSIONS crop: {'crop': ['EICV5_CS'], 'crop_v2': ['EICV3']}
+21:24:15 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:24:15 02_merge INFO   VERSIONS s7dq2: {'s7dq2': ['EICV4_CS', 'EICV4_VUP'], 's7dq2_v2': ['EICV5_VUP']}
+21:24:15 02_merge INFO   VERSIONS s7dq5: {'s7dq5': ['EICV5_CS', 'EICV5_VUP'], 's7dq5_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:15 02_merge INFO   VERSIONS s7dq7: {'s7dq7': ['EICV5_CS', 'EICV5_VUP'], 's7dq7_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:15 02_merge INFO   VERSIONS s8dq14: {'s8dq14': ['EICV3'], 's8dq14_v2': ['EICV2']}
+21:24:15 02_merge INFO   VERSIONS s8dq15: {'s8dq15': ['EICV3'], 's8dq15_v2': ['EICV2']}
+21:24:15 02_merge INFO   VERSIONS s8dq17: {'s8dq17': ['EICV3'], 's8dq17_v2': ['EICV2']}
+21:24:15 02_merge INFO   VERSIONS s8dq7: {'s8dq7': ['EICV3'], 's8dq7_v2': ['EICV2']}
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: pooled rows == sum of wave rows
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: EICV2 sum wt preserved
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: EICV3 sum wt preserved
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: EICV4_CS sum wt preserved
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: EICV4_VUP sum wt preserved
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: EICV5_CS sum wt preserved
+21:24:15 02_merge INFO PASS  EICV_pooled_crop_large.dta: EICV5_VUP sum wt preserved
+21:24:16 02_merge INFO wrote EICV_pooled_crop_large.dta  (159,870 rows x 72 vars, 35.7 MB)
+21:24:16 02_merge INFO ---------------- EICV_pooled_crop_small.dta (['EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:24:16 02_merge INFO   loaded EICV2      EICV_EICV2_s8e_ag_production2_clean.dta                    44,385 rows x   33
+21:24:17 02_merge INFO   loaded EICV3      EICV_EICV3_s08e_cropsmall_clean.dta                       121,882 rows x   29
+21:24:18 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7e_small_crop_clean.dta                    145,711 rows x   35
+21:24:18 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7e_small_crop_clean.dta                    25,271 rows x   31
+21:24:18 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7e_small_crop_clean.dta                    118,099 rows x   26
+21:24:18 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7e_small_crop_clean.dta                    14,136 rows x   27
+21:24:18 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:24:18 02_merge INFO   VERSIONS s7eq5: {'s7eq5': ['EICV5_CS', 'EICV5_VUP'], 's7eq5_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:18 02_merge INFO   VERSIONS s7eq6a: {'s7eq6a': ['EICV5_CS', 'EICV5_VUP'], 's7eq6a_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:18 02_merge INFO   VERSIONS s7eq8: {'s7eq8': ['EICV5_CS', 'EICV5_VUP'], 's7eq8_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:18 02_merge INFO   VERSIONS s7eq9: {'s7eq9': ['EICV5_CS', 'EICV5_VUP'], 's7eq9_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:18 02_merge INFO   VERSIONS s8eq10: {'s8eq10': ['EICV3'], 's8eq10_v2': ['EICV2']}
+21:24:18 02_merge INFO   VERSIONS s8eq11: {'s8eq11': ['EICV3'], 's8eq11_v2': ['EICV2']}
+21:24:18 02_merge INFO   VERSIONS s8eq12: {'s8eq12': ['EICV3'], 's8eq12_v2': ['EICV2']}
+21:24:18 02_merge INFO   VERSIONS s8eq6: {'s8eq6': ['EICV3'], 's8eq6_v2': ['EICV2']}
+21:24:18 02_merge INFO   VERSIONS s8eq9: {'s8eq9': ['EICV3'], 's8eq9_v2': ['EICV2']}
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: pooled rows == sum of wave rows
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: EICV2 sum wt preserved
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: EICV3 sum wt preserved
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: EICV4_CS sum wt preserved
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: EICV4_VUP sum wt preserved
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: EICV5_CS sum wt preserved
+21:24:21 02_merge INFO PASS  EICV_pooled_crop_small.dta: EICV5_VUP sum wt preserved
+21:24:24 02_merge INFO wrote EICV_pooled_crop_small.dta  (469,484 rows x 82 vars, 109.9 MB)
+21:24:24 02_merge INFO ---------------- EICV_pooled_durables.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'])
+21:24:25 02_merge INFO   loaded EICV1      EICV_EICV1_s12_durables_clean.dta                         147,637 rows x   25
+21:24:26 02_merge INFO   loaded EICV2      EICV_EICV2_s11b_durables_clean.dta                        186,300 rows x   26
+21:24:27 02_merge INFO   loaded EICV3      EICV_EICV3_s11b_durables_clean.dta                        400,624 rows x   27
+21:24:30 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s10b_goods_clean.dta                        389,313 rows x   33
+21:24:30 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s10b_goods_clean.dta                        66,420 rows x   29
+21:24:31 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s10b2_durable_household_goods_clean.dta     364,350 rows x   27
+21:24:31 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s10b2_durable_household_goods_clean.dta     41,100 rows x   28
+21:24:33 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_s10b_durables_clean.dta                     406,458 rows x   24
+21:24:33 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_s10b_durables_clean.dta                    101,817 rows x   25
+21:24:33 02_merge INFO   VERSIONS pov_jan: {'pov_jan': ['EICV7_VUP'], 'pov_jan_v2': ['EICV7_CS']}
+21:24:33 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS', 'EICV7_VUP'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:24:33 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:24:33 02_merge INFO   VERSIONS s10bq1: {'s10bq1': ['EICV7_CS', 'EICV7_VUP'], 's10bq1_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:33 02_merge INFO   VERSIONS s10bq2: {'s10bq2': ['EICV7_CS', 'EICV7_VUP'], 's10bq2_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: pooled rows == sum of wave rows
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV1 sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV2 sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV3 sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV4_CS sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV4_VUP sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV5_CS sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV5_VUP sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV7_CS sum wt preserved
+21:24:46 02_merge INFO PASS  EICV_pooled_durables.dta: EICV7_VUP sum wt preserved
+21:24:57 02_merge INFO wrote EICV_pooled_durables.dta  (2,104,019 rows x 98 vars, 587.1 MB)
+21:24:58 02_merge INFO ---------------- EICV_pooled_enterprise.dta (['EICV1', 'EICV2', 'EICV3'])
+21:24:58 02_merge INFO   loaded EICV1      EICV_EICV1_s10_enter_1_clean.dta                            6,560 rows x   35
+21:24:58 02_merge INFO   loaded EICV2      EICV_EICV2_s7_enterprise_clean.dta                          2,516 rows x   42
+21:24:58 02_merge INFO   loaded EICV3      EICV_EICV3_s07_enterprise_clean.dta                        61,405 rows x   45
+21:24:58 02_merge INFO   VERSIONS s7aq4: {'s7aq4': ['EICV3'], 's7aq4_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7aq5a: {'s7aq5a': ['EICV3'], 's7aq5a_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7aq5b: {'s7aq5b': ['EICV3'], 's7aq5b_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7aq5c: {'s7aq5c': ['EICV3'], 's7aq5c_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq11: {'s7bq11': ['EICV3'], 's7bq11_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq12: {'s7bq12': ['EICV3'], 's7bq12_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq13: {'s7bq13': ['EICV3'], 's7bq13_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq14: {'s7bq14': ['EICV3'], 's7bq14_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq16: {'s7bq16': ['EICV3'], 's7bq16_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq2: {'s7bq2': ['EICV3'], 's7bq2_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq3m: {'s7bq3m': ['EICV3'], 's7bq3m_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq5: {'s7bq5': ['EICV3'], 's7bq5_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq7: {'s7bq7': ['EICV3'], 's7bq7_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq8: {'s7bq8': ['EICV3'], 's7bq8_v2': ['EICV2']}
+21:24:58 02_merge INFO   VERSIONS s7bq9: {'s7bq9': ['EICV3'], 's7bq9_v2': ['EICV2']}
+21:24:59 02_merge INFO PASS  EICV_pooled_enterprise.dta: pooled rows == sum of wave rows
+21:24:59 02_merge INFO PASS  EICV_pooled_enterprise.dta: EICV1 sum wt preserved
+21:24:59 02_merge INFO PASS  EICV_pooled_enterprise.dta: EICV2 sum wt preserved
+21:24:59 02_merge INFO PASS  EICV_pooled_enterprise.dta: EICV3 sum wt preserved
+21:24:59 02_merge INFO wrote EICV_pooled_enterprise.dta  (70,481 rows x 93 vars, 12.8 MB)
+21:24:59 02_merge INFO ---------------- EICV_pooled_equipment.dta (['EICV1', 'EICV2', 'EICV3'])
+21:25:00 02_merge INFO   loaded EICV1      EICV_EICV1_s8_farm_assets_clean.dta                       101,757 rows x   25
+21:25:00 02_merge INFO   loaded EICV2      EICV_EICV2_s8b_ag_assets_clean.dta                         82,342 rows x   25
+21:25:01 02_merge INFO   loaded EICV3      EICV_EICV3_s08b2_equipment_clean.dta                      201,870 rows x   23
+21:25:01 02_merge INFO   VERSIONS s8b2q11: {'s8b2q11': ['EICV3'], 's8b2q11_v2': ['EICV2']}
+21:25:01 02_merge INFO   VERSIONS s8b2q3: {'s8b2q3': ['EICV3'], 's8b2q3_v2': ['EICV2']}
+21:25:01 02_merge INFO   VERSIONS s8b2q4: {'s8b2q4': ['EICV3'], 's8b2q4_v2': ['EICV2']}
+21:25:01 02_merge INFO   VERSIONS s8b2q5: {'s8b2q5': ['EICV3'], 's8b2q5_v2': ['EICV2']}
+21:25:02 02_merge INFO PASS  EICV_pooled_equipment.dta: pooled rows == sum of wave rows
+21:25:02 02_merge INFO PASS  EICV_pooled_equipment.dta: EICV1 sum wt preserved
+21:25:02 02_merge INFO PASS  EICV_pooled_equipment.dta: EICV2 sum wt preserved
+21:25:02 02_merge INFO PASS  EICV_pooled_equipment.dta: EICV3 sum wt preserved
+21:25:03 02_merge INFO wrote EICV_pooled_equipment.dta  (385,969 rows x 45 vars, 43.3 MB)
+21:25:03 02_merge INFO ---------------- EICV_pooled_expenditure_annual.dta (['EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'])
+21:25:05 02_merge INFO   loaded EICV2      EICV_EICV2_s9a1_nfood_annual_clean.dta                    469,200 rows x   18
+21:25:08 02_merge INFO   loaded EICV3      EICV_EICV3_s09a1_consnonfood_clean.dta                  1,273,412 rows x   17
+21:25:12 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s8a1_expenditure_clean.dta                  994,911 rows x   28
+21:25:12 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s8a1_expenditure_clean.dta                 169,740 rows x   24
+21:25:15 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s8a1_expenditure_clean.dta                1,006,020 rows x   19
+21:25:15 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s8a1_expenditure_clean.dta                 113,436 rows x   20
+21:25:19 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_s8a1_expenditure_clean.dta                1,159,158 rows x   22
+21:25:20 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_s8a1_expenditure_clean.dta                 290,367 rows x   22
+21:25:20 02_merge INFO   VERSIONS item: {'item': ['EICV3'], 'item_v2': ['EICV2']}
+21:25:20 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS', 'EICV7_VUP'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:25:20 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:25:20 02_merge INFO   VERSIONS s8a1q0: {'s8a1q0': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a1q0_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:25:20 02_merge INFO   VERSIONS s8a1q4: {'s8a1q4': ['EICV7_CS', 'EICV7_VUP'], 's8a1q4_v2': ['EICV5_CS', 'EICV5_VUP'], 's8a1q4_v3': ['EICV4_CS', 'EICV4_VUP']}
+21:25:20 02_merge INFO   VERSIONS s9a1q3: {'s9a1q3': ['EICV3'], 's9a1q3_v2': ['EICV2']}
+21:25:37 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: pooled rows == sum of wave rows
+21:25:37 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV2 sum wt preserved
+21:25:37 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV3 sum wt preserved
+21:25:38 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV4_CS sum wt preserved
+21:25:38 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV4_VUP sum wt preserved
+21:25:38 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV5_CS sum wt preserved
+21:25:38 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV5_VUP sum wt preserved
+21:25:38 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV7_CS sum wt preserved
+21:25:38 02_merge INFO PASS  EICV_pooled_expenditure_annual.dta: EICV7_VUP sum wt preserved
+21:26:01 02_merge INFO wrote EICV_pooled_expenditure_annual.dta  (5,476,244 rows x 52 vars, 772.2 MB)
+21:26:02 02_merge INFO ---------------- EICV_pooled_expenditure_frequent.dta (['EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'])
+21:26:03 02_merge INFO   loaded EICV2      EICV_EICV2_s9a3_nfood_freq_clean.dta                      303,600 rows x   28
+21:26:06 02_merge INFO   loaded EICV3      EICV_EICV3_s09a3_consnonfood_clean.dta                    543,704 rows x   27
+21:26:09 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s8a3_expenditure_clean.dta                  533,503 rows x   37
+21:26:10 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s8a3_expenditure_clean.dta                  91,020 rows x   33
+21:26:12 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s8a3_expenditure_clean.dta                  539,460 rows x   29
+21:26:13 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s8a3_expenditure_clean.dta                  60,828 rows x   30
+21:26:14 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_s8a3_expenditure_clean.dta                  346,220 rows x   26
+21:26:14 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_s8a3_expenditure_clean.dta                  86,623 rows x   26
+21:26:14 02_merge INFO   VERSIONS item: {'item': ['EICV3'], 'item_v2': ['EICV2']}
+21:26:14 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS', 'EICV7_VUP'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:26:14 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q0: {'s8a3q0': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a3q0_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q13: {'s8a3q13': ['EICV5_CS', 'EICV5_VUP'], 's8a3q13_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q2: {'s8a3q2': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a3q2_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q3: {'s8a3q3': ['EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'], 's8a3q3_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q4: {'s8a3q4': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a3q4_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q5: {'s8a3q5': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a3q5_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:26:14 02_merge INFO   VERSIONS s8a3q6: {'s8a3q6': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a3q6_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: pooled rows == sum of wave rows
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV2 sum wt preserved
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV3 sum wt preserved
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV4_CS sum wt preserved
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV4_VUP sum wt preserved
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV5_CS sum wt preserved
+21:26:31 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV5_VUP sum wt preserved
+21:26:32 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV7_CS sum wt preserved
+21:26:32 02_merge INFO PASS  EICV_pooled_expenditure_frequent.dta: EICV7_VUP sum wt preserved
+21:26:51 02_merge INFO wrote EICV_pooled_expenditure_frequent.dta  (2,504,958 rows x 77 vars, 636.3 MB)
+21:26:51 02_merge INFO ---------------- EICV_pooled_expenditure_monthly.dta (['EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'])
+21:26:52 02_merge INFO   loaded EICV2      EICV_EICV2_s9a2_nfood_month_clean.dta                     213,900 rows x   18
+21:26:55 02_merge INFO   loaded EICV3      EICV_EICV3_s09a2_consnonfood_clean.dta                    672,476 rows x   17
+21:27:00 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s8a2_expenditure_clean.dta                  793,045 rows x   28
+21:27:01 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s8a2_expenditure_clean.dta                 135,300 rows x   24
+21:27:04 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s8a2_expenditure_clean.dta                  801,900 rows x   19
+21:27:05 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s8a2_expenditure_clean.dta                  90,366 rows x   20
+21:27:09 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_s8a2_expenditure_clean.dta                  978,382 rows x   22
+21:27:11 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_s8a2_expenditure_clean.dta                 245,115 rows x   22
+21:27:11 02_merge INFO   VERSIONS item: {'item': ['EICV3'], 'item_v2': ['EICV2']}
+21:27:11 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS', 'EICV7_VUP'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:27:11 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:27:11 02_merge INFO   VERSIONS s8a2q0: {'s8a2q0': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8a2q0_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:27:11 02_merge INFO   VERSIONS s8a2q4: {'s8a2q4': ['EICV7_CS', 'EICV7_VUP'], 's8a2q4_v2': ['EICV5_CS', 'EICV5_VUP'], 's8a2q4_v3': ['EICV4_CS', 'EICV4_VUP']}
+21:27:11 02_merge INFO   VERSIONS s9a2q3: {'s9a2q3': ['EICV3'], 's9a2q3_v2': ['EICV2']}
+21:27:28 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: pooled rows == sum of wave rows
+21:27:28 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV2 sum wt preserved
+21:27:28 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV3 sum wt preserved
+21:27:28 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV4_CS sum wt preserved
+21:27:28 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV4_VUP sum wt preserved
+21:27:29 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV5_CS sum wt preserved
+21:27:29 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV5_VUP sum wt preserved
+21:27:29 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV7_CS sum wt preserved
+21:27:29 02_merge INFO PASS  EICV_pooled_expenditure_monthly.dta: EICV7_VUP sum wt preserved
+21:27:50 02_merge INFO wrote EICV_pooled_expenditure_monthly.dta  (3,930,484 rows x 52 vars, 558.2 MB)
+21:27:51 02_merge INFO ---------------- EICV_pooled_food.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP', 'EICV7_CS', 'EICV7_VUP'])
+21:27:58 02_merge INFO   loaded EICV1      EICV_EICV1_s9_expen_food_clean.dta                        879,539 rows x   47
+21:27:58 02_merge INFO   loaded EICV2      EICV_EICV2_s9b_food_clean.dta                             105,444 rows x   36
+21:28:09 02_merge INFO   loaded EICV3      EICV_EICV3_s09b_consfood_clean.dta                      2,103,276 rows x   27
+21:28:23 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s8b_expenditure_clean.dta                 2,119,593 rows x   37
+21:28:26 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s8b_expenditure_clean.dta                  361,620 rows x   33
+21:28:35 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s8b_expenditure_clean.dta                 2,187,000 rows x   29
+21:28:37 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s8b_expenditure_clean.dta                  246,600 rows x   30
+21:28:52 02_merge INFO   loaded EICV7_CS   EICV_EICV7_CS_s8b_food_expenditure_consumption_clean.dta 2,227,992 rows x   73
+21:28:56 02_merge INFO   loaded EICV7_VUP  EICV_EICV7_VUP_s8b_food_expenditure_consumption_clean.dta   558,108 rows x   69
+21:28:56 02_merge INFO   VERSIONS item: {'item': ['EICV3'], 'item_v2': ['EICV2']}
+21:28:56 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS', 'EICV7_CS'], 'poverty_v2': ['EICV3', 'EICV4_CS']}
+21:28:56 02_merge INFO   VERSIONS quintile: {'quintile': ['EICV1', 'EICV3', 'EICV4_CS', 'EICV5_CS'], 'quintile_v2': ['EICV7_CS']}
+21:28:56 02_merge INFO   VERSIONS s8bq0: {'s8bq0': ['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'], 's8bq0_v2': ['EICV7_CS', 'EICV7_VUP']}
+21:28:56 02_merge INFO   VERSIONS s8bq13: {'s8bq13': ['EICV5_CS', 'EICV5_VUP'], 's8bq13_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:28:56 02_merge INFO   VERSIONS s8bq3: {'s8bq3': ['EICV5_CS', 'EICV5_VUP'], 's8bq3_v2': ['EICV4_CS', 'EICV4_VUP']}
+21:31:12 02_merge INFO PASS  EICV_pooled_food.dta: pooled rows == sum of wave rows
+21:31:13 02_merge INFO PASS  EICV_pooled_food.dta: EICV1 sum wt preserved
+21:31:14 02_merge INFO PASS  EICV_pooled_food.dta: EICV2 sum wt preserved
+21:31:14 02_merge INFO PASS  EICV_pooled_food.dta: EICV3 sum wt preserved
+21:31:15 02_merge INFO PASS  EICV_pooled_food.dta: EICV4_CS sum wt preserved
+21:31:15 02_merge INFO PASS  EICV_pooled_food.dta: EICV4_VUP sum wt preserved
+21:31:15 02_merge INFO PASS  EICV_pooled_food.dta: EICV5_CS sum wt preserved
+21:31:16 02_merge INFO PASS  EICV_pooled_food.dta: EICV5_VUP sum wt preserved
+21:31:16 02_merge INFO PASS  EICV_pooled_food.dta: EICV7_CS sum wt preserved
+21:31:17 02_merge INFO PASS  EICV_pooled_food.dta: EICV7_VUP sum wt preserved
+21:34:27 02_merge INFO wrote EICV_pooled_food.dta  (10,789,172 rows x 168 vars, 5826.3 MB)
+21:34:37 02_merge INFO ---------------- EICV_pooled_jobs.dta (['EICV2', 'EICV3', 'EICV4_CS', 'EICV5_CS', 'EICV5_VUP'])
+21:34:37 02_merge INFO   loaded EICV2      EICV_EICV2_s6d_employ_roster_clean.dta                     23,213 rows x   39
+21:34:38 02_merge INFO   loaded EICV3      EICV_EICV3_s06cdef_jobs_clean.dta                          61,405 rows x   70
+21:34:39 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s6b_employement_6c_salaried_s6d_business_clean.dta    59,616 rows x   76
+21:34:40 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s6b_employement_6c_salaried_s6d_business_clean.dta    89,373 rows x   57
+21:34:40 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s6b_employement_6c_salaried_s6d_business_clean.dta     9,180 rows x   57
+21:34:40 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:34:40 02_merge INFO   VERSIONS s6bq3b: {'s6bq3b': ['EICV5_VUP'], 's6bq3b_v2': ['EICV5_CS'], 's6bq3b_v3': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6bq5: {'s6bq5': ['EICV5_CS', 'EICV5_VUP'], 's6bq5_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6bq7: {'s6bq7': ['EICV5_CS', 'EICV5_VUP'], 's6bq7_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6bq8: {'s6bq8': ['EICV5_CS', 'EICV5_VUP'], 's6bq8_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6cq18: {'s6cq18': ['EICV5_CS', 'EICV5_VUP'], 's6cq18_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6cq20: {'s6cq20': ['EICV5_CS', 'EICV5_VUP'], 's6cq20_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6cq22: {'s6cq22': ['EICV5_CS', 'EICV5_VUP'], 's6cq22_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6cq23a: {'s6cq23a': ['EICV5_CS', 'EICV5_VUP'], 's6cq23a_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6dq30: {'s6dq30': ['EICV5_CS', 'EICV5_VUP'], 's6dq30_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6dq31: {'s6dq31': ['EICV5_CS', 'EICV5_VUP'], 's6dq31_v2': ['EICV4_CS']}
+21:34:40 02_merge INFO   VERSIONS s6dq4: {'s6dq4': ['EICV3'], 's6dq4_v2': ['EICV2']}
+21:34:40 02_merge INFO   VERSIONS s6dq7: {'s6dq7': ['EICV3'], 's6dq7_v2': ['EICV2']}
+21:34:43 02_merge INFO PASS  EICV_pooled_jobs.dta: pooled rows == sum of wave rows
+21:34:43 02_merge INFO PASS  EICV_pooled_jobs.dta: EICV2 sum wt preserved
+21:34:43 02_merge INFO PASS  EICV_pooled_jobs.dta: EICV3 sum wt preserved
+21:34:43 02_merge INFO PASS  EICV_pooled_jobs.dta: EICV4_CS sum wt preserved
+21:34:43 02_merge INFO PASS  EICV_pooled_jobs.dta: EICV5_CS sum wt preserved
+21:34:43 02_merge INFO PASS  EICV_pooled_jobs.dta: EICV5_VUP sum wt preserved
+21:34:44 02_merge INFO wrote EICV_pooled_jobs.dta  (242,787 rows x 192 vars, 84.2 MB)
+21:34:44 02_merge INFO ---------------- EICV_pooled_land.dta (['EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:34:45 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7b2_land_agriculture_clean.dta             242,644 rows x   31
+21:34:46 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7b2_land_agriculture_clean.dta             43,090 rows x   27
+21:34:46 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7b2_land_agriculture_clean.dta             233,046 rows x   23
+21:34:46 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7b2_land_agriculture_clean.dta             27,198 rows x   23
+21:34:46 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV5_CS'], 'poverty_v2': ['EICV4_CS']}
+21:34:48 02_merge INFO PASS  EICV_pooled_land.dta: pooled rows == sum of wave rows
+21:34:48 02_merge INFO PASS  EICV_pooled_land.dta: EICV4_CS sum wt preserved
+21:34:48 02_merge INFO PASS  EICV_pooled_land.dta: EICV4_VUP sum wt preserved
+21:34:48 02_merge INFO PASS  EICV_pooled_land.dta: EICV5_CS sum wt preserved
+21:34:48 02_merge INFO PASS  EICV_pooled_land.dta: EICV5_VUP sum wt preserved
+21:34:50 02_merge INFO wrote EICV_pooled_land.dta  (545,978 rows x 36 vars, 57.9 MB)
+21:34:50 02_merge INFO ---------------- EICV_pooled_livestock.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:34:50 02_merge INFO   loaded EICV1      EICV_EICV1_s8_livestock_clean.dta                          31,907 rows x   30
+21:34:50 02_merge INFO   loaded EICV2      EICV_EICV2_s8a1_livestock_clean.dta                        37,936 rows x   31
+21:34:51 02_merge INFO   loaded EICV3      EICV_EICV3_s08a1_livestock_clean.dta                       78,432 rows x   29
+21:34:51 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7a1_livestock_clean.dta                     80,877 rows x   38
+21:34:51 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7a1_livestock_clean.dta                    14,479 rows x   34
+21:34:51 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7a1_livestock_clean.dta                     89,633 rows x   29
+21:34:51 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7a1_livestock_clean.dta                    11,867 rows x   29
+21:34:51 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s7aq10: {'s7aq10': ['EICV4_CS', 'EICV4_VUP'], 's7aq10_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s7aq11: {'s7aq11': ['EICV4_CS', 'EICV4_VUP'], 's7aq11_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s7aq6: {'s7aq6': ['EICV4_CS', 'EICV4_VUP'], 's7aq6_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s7aq7: {'s7aq7': ['EICV4_CS', 'EICV4_VUP'], 's7aq7_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s7aq8: {'s7aq8': ['EICV4_CS', 'EICV4_VUP'], 's7aq8_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s7aq9: {'s7aq9': ['EICV4_CS', 'EICV4_VUP'], 's7aq9_v2': ['EICV5_CS']}
+21:34:51 02_merge INFO   VERSIONS s8aq10: {'s8aq10': ['EICV2'], 's8aq10_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq12: {'s8aq12': ['EICV2'], 's8aq12_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq16: {'s8aq16': ['EICV2'], 's8aq16_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq2: {'s8aq2': ['EICV2'], 's8aq2_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq3: {'s8aq3': ['EICV2'], 's8aq3_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq4: {'s8aq4': ['EICV2'], 's8aq4_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq5: {'s8aq5': ['EICV2'], 's8aq5_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq6: {'s8aq6': ['EICV2'], 's8aq6_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq7: {'s8aq7': ['EICV2'], 's8aq7_v2': ['EICV1']}
+21:34:51 02_merge INFO   VERSIONS s8aq9: {'s8aq9': ['EICV2'], 's8aq9_v2': ['EICV1']}
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: pooled rows == sum of wave rows
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV1 sum wt preserved
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV2 sum wt preserved
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV3 sum wt preserved
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV4_CS sum wt preserved
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV4_VUP sum wt preserved
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV5_CS sum wt preserved
+21:34:54 02_merge INFO PASS  EICV_pooled_livestock.dta: EICV5_VUP sum wt preserved
+21:34:56 02_merge INFO wrote EICV_pooled_livestock.dta  (345,131 rows x 119 vars, 94.7 MB)
+21:34:56 02_merge INFO ---------------- EICV_pooled_livestock_expenditure.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:34:56 02_merge INFO   loaded EICV1      EICV_EICV1_s8_livestock_expense_clean.dta                  43,692 rows x   25
+21:34:56 02_merge INFO   loaded EICV2      EICV_EICV2_s8a3_livestock_expenditure_clean.dta            42,678 rows x   22
+21:34:57 02_merge INFO   loaded EICV3      EICV_EICV3_s08a4_livestock_clean.dta                       98,040 rows x   23
+21:34:57 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7a4_livestock_clean.dta                    109,359 rows x   28
+21:34:57 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7a4_livestock_clean.dta                    19,630 rows x   24
+21:34:58 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7a4_livestock_clean.dta                     98,582 rows x   20
+21:34:58 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7a4_livestock_clean.dta                    12,495 rows x   20
+21:34:58 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:34:58 02_merge INFO   VERSIONS s8aq21: {'s8aq21': ['EICV2'], 's8aq21_v2': ['EICV1']}
+21:34:58 02_merge INFO   VERSIONS s8aq23: {'s8aq23': ['EICV2'], 's8aq23_v2': ['EICV1']}
+21:34:58 02_merge INFO   VERSIONS s8aq24: {'s8aq24': ['EICV2'], 's8aq24_v2': ['EICV1']}
+21:34:58 02_merge INFO   VERSIONS s8aq26: {'s8aq26': ['EICV2'], 's8aq26_v2': ['EICV1']}
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: pooled rows == sum of wave rows
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV1 sum wt preserved
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV2 sum wt preserved
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV3 sum wt preserved
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV4_CS sum wt preserved
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV4_VUP sum wt preserved
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV5_CS sum wt preserved
+21:34:59 02_merge INFO PASS  EICV_pooled_livestock_expenditure.dta: EICV5_VUP sum wt preserved
+21:35:01 02_merge INFO wrote EICV_pooled_livestock_expenditure.dta  (424,476 rows x 65 vars, 72.6 MB)
+21:35:01 02_merge INFO ---------------- EICV_pooled_livestock_products.dta (['EICV1', 'EICV2', 'EICV3', 'EICV4_CS', 'EICV4_VUP', 'EICV5_CS', 'EICV5_VUP'])
+21:35:01 02_merge INFO   loaded EICV1      EICV_EICV1_s8_livestock_products_clean.dta                 29,128 rows x   17
+21:35:01 02_merge INFO   loaded EICV2      EICV_EICV2_s8a2_livestock_products_clean.dta               33,194 rows x   18
+21:35:02 02_merge INFO   loaded EICV3      EICV_EICV3_s08a3_livestock_clean.dta                       68,628 rows x   20
+21:35:02 02_merge INFO   loaded EICV4_CS   EICV_EICV4_CS_s7a3_livestock_clean.dta                     80,877 rows x   29
+21:35:02 02_merge INFO   loaded EICV4_VUP  EICV_EICV4_VUP_s7a3_livestock_clean.dta                    14,479 rows x   25
+21:35:02 02_merge INFO   loaded EICV5_CS   EICV_EICV5_CS_s7a3_livestock_clean.dta                     80,658 rows x   22
+21:35:02 02_merge INFO   loaded EICV5_VUP  EICV_EICV5_VUP_s7a3_livestock_clean.dta                    10,224 rows x   22
+21:35:02 02_merge INFO   VERSIONS poverty: {'poverty': ['EICV3', 'EICV4_CS'], 'poverty_v2': ['EICV5_CS']}
+21:35:02 02_merge INFO   VERSIONS s8aq18: {'s8aq18': ['EICV2'], 's8aq18_v2': ['EICV1']}
+21:35:02 02_merge INFO   VERSIONS s8aq19: {'s8aq19': ['EICV2'], 's8aq19_v2': ['EICV1']}
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: pooled rows == sum of wave rows
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV1 sum wt preserved
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV2 sum wt preserved
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV3 sum wt preserved
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV4_CS sum wt preserved
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV4_VUP sum wt preserved
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV5_CS sum wt preserved
+21:35:03 02_merge INFO PASS  EICV_pooled_livestock_products.dta: EICV5_VUP sum wt preserved
+21:35:05 02_merge INFO wrote EICV_pooled_livestock_products.dta  (317,188 rows x 55 vars, 54.0 MB)
