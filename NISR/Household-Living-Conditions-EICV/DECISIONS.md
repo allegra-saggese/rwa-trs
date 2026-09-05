@@ -95,3 +95,11 @@ households and 62,110 persons.
 
 **Labels.** NISR's EICV1/EICV2 SPSS files already carry English value labels, so nothing had to be
 translated for the pre-2006 rounds (the questionnaires themselves are French).
+
+## 2026-09-05 — three forced splits found while harmonising
+
+Section 6A/4B item numbers move between rounds and the label rule merged three pairs of different
+questions: `s6aq6` (EICV3 participation in VUP works / EICV5 worked in a non-farm business),
+`s6aq8` (EICV4 main reason for not working / EICV5 months occupied), `s4bq4` (EICV4 can write /
+EICV5–7 able to read). Listed in `FORCE_SPLIT` and the pooled files rebuilt; the harmonisation step
+follows the version columns through `logs/merge_alignment.json`.

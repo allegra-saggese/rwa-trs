@@ -26,7 +26,10 @@ KEYS = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", 
 STR_KEYS = ("survey", "wave", "sample", "cluster")
 SIM_THRESHOLD = 0.25
 FORCE_ALIGN = set()
-FORCE_SPLIT = {}
+# same name, different question, but labels too alike for the threshold (found while harmonising, 2026-09-05):
+# s6aq6 EICV3 'VUP works programme' vs EICV5 'worked in a non-farm business'; s6aq8 EICV5 'months occupied' vs
+# EICV4 'main reason for not working'; s4bq4 EICV4 'can write' vs EICV5/7 'able to read'.
+FORCE_SPLIT = {"s6aq6": ["EICV3"], "s6aq8": ["EICV5_CS", "EICV5_VUP"], "s4bq4": ["EICV4_CS", "EICV4_VUP"]}
 KEEP_DOUBLE = ("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight")
 
 # Canonical module names for files whose content repeats across waves (same questionnaire block).
@@ -70,9 +73,9 @@ def version_groups(v, waves, labs):
     if v in KEYS or v in FORCE_ALIGN or len(waves) == 1: return [list(waves)]
     groups = []
     for w in waves:
-        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append((labs[w], [w])); continue
+        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append(("__forced__", [w])); continue   # closed group: nothing else may join it
         for rep, ws in groups:
-            if not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD: ws.append(w); break
+            if rep != "__forced__" and (not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD): ws.append(w); break
         else: groups.append((labs[w], [w]))
     groups.sort(key=lambda g: (-len(g[1]), -max(CS_ORDER.get(x, 0) for x in g[1])))
     return [ws for _, ws in groups]

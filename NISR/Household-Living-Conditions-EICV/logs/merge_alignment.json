@@ -222,7 +222,7 @@
     "s4bq2_v4",
     "s4bq3a_v2",
     "s4bq3b_v2",
-    "s4bq4_v3",
+    "s4bq4_v4",
     "s4bq5_v5",
     "s4bq6_v5",
     "s4bq7a_v2",
@@ -714,7 +714,7 @@
     "s4bq3a",
     "s4bq3b",
     "s4bq3c",
-    "s4bq4_v2",
+    "s4bq4_v3",
     "s4bq5_v4",
     "s4bq6_v4",
     "s4bq7_v4",
@@ -734,7 +734,7 @@
     "s6aq3",
     "s6aq4",
     "s6aq5",
-    "s6aq6",
+    "s6aq6_v3",
     "s6aq7_v2",
     "s6bq3_v2",
     "s6bq5_v2",
@@ -810,15 +810,15 @@
     "s4bq1_v2",
     "s4bq2_v2",
     "s4bq3_v2",
-    "s4bq4",
+    "s4bq4_v2",
     "s4bq5_v3",
     "s4bq6_v3",
     "s4bq7_v3",
     "s4bq8",
-    "s6aq6_v3",
+    "s6aq6",
     "s6aq7a",
     "s6aq7b",
-    "s6aq8",
+    "s6aq8_v3",
     "s6eq1_v2",
     "s6eq2_v2",
     "s6eq3_v2",
@@ -883,6 +883,7 @@
     "s4bq1",
     "s4bq2",
     "s4bq3",
+    "s4bq4",
     "s4bq5_v2",
     "s4bq6_v2",
     "s4bq7_v2",
@@ -905,6 +906,7 @@
     "s4bq9n",
     "s6aq2",
     "s6aq3_v3",
+    "s6aq8_v2",
     "s6aq9_v2",
     "s6eq1",
     "s6eq2",
@@ -993,7 +995,7 @@
     "s6aq5_v2",
     "s6aq6_v2",
     "s6aq7",
-    "s6aq8_v2",
+    "s6aq8",
     "s6aq9",
     "s6aq10",
     "s6aq11",
@@ -9473,14 +9475,16 @@
      ],
      "versions": {
       "s4bq4": [
-       "EICV4_CS",
        "EICV5_CS",
        "EICV7_CS"
       ],
       "s4bq4_v2": [
-       "EICV3"
+       "EICV4_CS"
       ],
       "s4bq4_v3": [
+       "EICV3"
+      ],
+      "s4bq4_v4": [
        "EICV1"
       ]
      },
@@ -11821,14 +11825,14 @@
      ],
      "versions": {
       "s6aq6": [
-       "EICV3",
+       "EICV4_CS",
        "EICV5_CS"
       ],
       "s6aq6_v2": [
        "EICV7_CS"
       ],
       "s6aq6_v3": [
-       "EICV4_CS"
+       "EICV3"
       ],
       "s6aq6_v4": [
        "EICV2"
@@ -11904,11 +11908,13 @@
      ],
      "versions": {
       "s6aq8": [
-       "EICV4_CS",
-       "EICV5_CS"
+       "EICV7_CS"
       ],
       "s6aq8_v2": [
-       "EICV7_CS"
+       "EICV5_CS"
+      ],
+      "s6aq8_v3": [
+       "EICV4_CS"
       ]
      },
      "labels_by_wave": {
@@ -11916,7 +11922,7 @@
       "EICV5_CS": "Many months has been occupied during the last 12 months",
       "EICV7_CS": "work as an unpaid trainee worker or as a volunteer worker in any economic activi"
      },
-     "reference_label": "Many months has been occupied during the last 12 months"
+     "reference_label": "work as an unpaid trainee worker or as a volunteer worker in any economic activi"
     },
     "s6aq9": {
      "waves": [
@@ -15890,7 +15896,7 @@
     "s4bq1_v2",
     "s4bq2_v2",
     "s4bq3_v2",
-    "s4bq4",
+    "s4bq4_v2",
     "s4bq5_v3",
     "s4bq6_v3",
     "s4bq7_v3",
@@ -15902,7 +15908,7 @@
     "s6aq6",
     "s6aq7a",
     "s6aq7b",
-    "s6aq8",
+    "s6aq8_v3",
     "s6eq1_v2",
     "s6eq2_v2",
     "s6eq3_v2",
@@ -15962,6 +15968,7 @@
     "s4bq1",
     "s4bq2",
     "s4bq3",
+    "s4bq4",
     "s4bq5_v2",
     "s4bq6_v2",
     "s4bq7_v2",
@@ -15985,6 +15992,7 @@
     "s6aq1",
     "s6aq2",
     "s6aq3_v2",
+    "s6aq8_v2",
     "s6aq9_v2",
     "s6eq1",
     "s6eq2",
@@ -16105,7 +16113,7 @@
     "s6aq5_v2",
     "s6aq6_v2",
     "s6aq7",
-    "s6aq8_v2",
+    "s6aq8",
     "s6aq9",
     "s6aq10",
     "s6aq11",
@@ -19055,9 +19063,11 @@
      ],
      "versions": {
       "s4bq4": [
-       "EICV4_VUP",
        "EICV5_VUP",
        "EICV7_VUP"
+      ],
+      "s4bq4_v2": [
+       "EICV4_VUP"
       ]
      },
      "labels_by_wave": {
@@ -19632,11 +19642,13 @@
      ],
      "versions": {
       "s6aq8": [
-       "EICV4_VUP",
-       "EICV5_VUP"
+       "EICV7_VUP"
       ],
       "s6aq8_v2": [
-       "EICV7_VUP"
+       "EICV5_VUP"
+      ],
+      "s6aq8_v3": [
+       "EICV4_VUP"
       ]
      },
      "labels_by_wave": {
@@ -19644,7 +19656,7 @@
       "EICV5_VUP": "Many months has been occupied during the last 12 months",
       "EICV7_VUP": "work as an unpaid trainee worker or as a volunteer worker in any economic activi"
      },
-     "reference_label": "Many months has been occupied during the last 12 months"
+     "reference_label": "work as an unpaid trainee worker or as a volunteer worker in any economic activi"
     },
     "s6aq9": {
      "waves": [
