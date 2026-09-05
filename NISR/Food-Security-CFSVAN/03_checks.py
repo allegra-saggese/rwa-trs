@@ -47,6 +47,15 @@ export delimited using "{out}", replace
     else: report.append(f"Stata run produced no output (rc={r.returncode})"); fails += 1
 else: report.append("Stata not found -- section B skipped.")
 report += ["", "## C. Geography completeness (household file)", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+# sample sizes stated in the methodology annexes (DOCUMENTATION.md); 2018 is shipped larger than documented (informational)
+for w, n in {"2012": 7_498, "2015": 7_500, "2021": 9_000, "2024": 9_000}.items():
+    if (hh["wave"] == w).any(): row("C", f"{w} households vs methodology annex ({n:,})", int((hh["wave"] == w).sum()), n)
+if (hh["wave"] == "2018").any(): row("C", "2018 households in the shipped file (annex says 9,000; informational)", int((hh["wave"] == "2018").sum()), None)
+for uname, w, n in (("woman", "2015", 6_768), ("village", "2012", 748)):
+    f = P["final"] / f"CFSVA_pooled_{uname}.dta"
+    if f.exists():
+        u, _, _ = read_dta(f, usecols=["wave"]); row("C", f"{w} {uname} records vs methodology annex ({n:,})", int((u["wave"] == w).sum()), n)
+        if uname == "village" and (u["wave"] == "2018").any(): row("C", "2018 village records in the shipped file (annex says 749; informational)", int((u["wave"] == "2018").sum()), None)
 if hh is not None:
     for w, g in hh.groupby("wave", sort=False):
         expected = {"2006": 29, "2009": 27}.get(w, 30)      # 2006 covered 29 districts; 2009 excluded the three City of Kigali districts

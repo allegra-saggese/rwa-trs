@@ -11,6 +11,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 138,683 rows × 184 variables. Waves: 2017, 2020, 2024.
 
+*Universe (questionnaires and reports, DOCUMENTATION.md):* all members of agricultural households (roster); education and main-activity items asked of members above 10 years in 2017; 2024 roster uses the EICV7 relationship codes
+
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 73,665 | 48,726 | 16,292 |  |
@@ -201,6 +203,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `3_Final/AHS_pooled_household.dta` — one row per household
 
 30,447 rows × 453 variables. Waves: 2017, 2020, 2024.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: >= 1 member in crop or livestock production in 2016/17, listed in 1,560 segments; 2020: inverse-probability weighted sample; 2024: EICV7 households flagged agricultural in 600 EICV7 EAs)
 
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
@@ -662,6 +666,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 49,750 rows × 52 variables. Waves: 2017, 2020.
 
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
+
 | variable | label | type | value labels | N 2017 | N 2020 | notes |
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 26,500 | 23,250 |  |
@@ -720,6 +726,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `2_Intermediate/appended/AHS_pooled_credits.dta` — one row per credits
 
 31,947 rows × 89 variables. Waves: 2017, 2020, 2024.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* households / members who requested a loan (2020 asked of members aged 16+)
 
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
@@ -817,6 +825,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 58,853 rows × 49 variables. Waves: 2020, 2024.
 
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
+
 | variable | label | type | value labels | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 39,776 | 19,077 |  |
@@ -872,6 +882,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `2_Intermediate/appended/AHS_pooled_extension.dta` — one row per extension
 
 98,843 rows × 74 variables. Waves: 2017, 2020, 2024.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
 
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
@@ -954,6 +966,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 29,239 rows × 39 variables. Waves: 2020, 2024.
 
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
+
 | variable | label | type | value labels | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 20,046 | 9,193 |  |
@@ -999,6 +1013,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `2_Intermediate/appended/AHS_pooled_honey.dta` — one row per honey
 
 38,465 rows × 59 variables. Waves: 2017, 2020, 2024.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
 
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
@@ -1065,6 +1081,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `2_Intermediate/appended/AHS_pooled_inputs.dta` — one row per inputs
 
 26,723 rows × 246 variables. Waves: 2017, 2020.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
 
 | variable | label | type | value labels | N 2017 | N 2020 | notes |
 |---|---|---|---|---:|---:|---|
@@ -1319,6 +1337,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 72,211 rows × 88 variables. Waves: 2017, 2020, 2024.
 
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
+
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 16,057 | 32,888 | 23,266 |  |
@@ -1413,6 +1433,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `2_Intermediate/appended/AHS_pooled_livestock.dta` — one row per livestock
 
 65,808 rows × 119 variables. Waves: 2017, 2020, 2024.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
 
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
@@ -1540,6 +1562,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 59,594 rows × 78 variables. Waves: 2017, 2020, 2024.
 
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
+
 | variable | label | type | value labels | N 2017 | N 2020 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 3,237 | 44,148 | 12,209 |  |
@@ -1624,6 +1648,8 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 ## `2_Intermediate/appended/AHS_pooled_tools.dta` — one row per tools
 
 372,184 rows × 33 variables. Waves: 2017, 2024.
+
+*Universe (questionnaires and reports, DOCUMENTATION.md):* agricultural households (2017: any member in crop/livestock production at listing; 2024: EICV7 households flagged agricultural) and their members / plots / animals
 
 | variable | label | type | value labels | N 2017 | N 2024 | notes |
 |---|---|---|---|---:|---:|---|

@@ -21,9 +21,6 @@
 
 . export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Establish
 > ment-Census-EC/logs/stata_checks.csv", replace
-(file
-    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Establishment-Census-EC/logs/
-    > stata_checks.csv not found)
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Establishment-Census-EC/logs/s
 > tata_checks.csv saved
 

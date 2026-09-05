@@ -38,6 +38,7 @@ master.py           runs 00 -> 04; one log per run in logs/; stops at the first 
 03_checks.py        independent verification -> logs/checks_report.md
 04_codebook.py      CODEBOOK.md + codebook_<unit>.csv generated from 3_Final
 DECISIONS.md        every crucial step and decision, and why (hand-written, chronological)
+DOCUMENTATION.md    what z_Documentation says (per document: design, weights, universes, changes between waves) and how it was applied; Kinyarwanda-only documents listed as unread
 CODEBOOK.md         generated; do not hand-edit
 logs/               run logs, per-wave metadata, alignment decisions, check reports (committed)
 ```
@@ -82,6 +83,12 @@ are destringed. Storage types are the smallest exact ones (byte/int/long/float/d
 weights and ids stay double. Area in hectares, production in kilograms, money in nominal RWF
 with the year attached, age in years. Dates as Stata dates. Nothing is imputed or recoded
 beyond the key block.
+
+**Universes.** Who was asked each question is taken from the questionnaires (`DOCUMENTATION.md`)
+and shown in the codebook: per variable and year for the Census and LFS, per questionnaire
+section and round for EICV, per pooled file for EC, AHS, SAS and CFSVA. Age bases move across
+years (e.g. LFS `status1` 16+ until 2019 and 14+ from 2020; EICV economic activity 7+/6+; census
+employment 6+/5+/16+), so an analysis restricts on age explicitly rather than on non-missingness.
 
 **Verification.** Every step logs PASS/FAIL checks; a failure stops the run. Crucial
 numbers are computed two independent ways and compared: Python vs a Stata recomputation

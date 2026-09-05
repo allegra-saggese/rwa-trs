@@ -41,3 +41,12 @@ irrigation/tenure, screening) as `SAS_pooled_<module>_2017_2018`.
 **Layout (2026-09-04, Matteo).** `3_Final/` holds only the appended unit-level datasets; every
 module-level file — per wave at the top of `2_Intermediate/`, appended across waves in
 `2_Intermediate/appended/` — lives in Intermediate. For SAS: `3_Final/` = `SAS_pooled_plotcrop` (2017–2025) + `SAS_pooled_plotcrop_2013_2016`; every appended module (2013–16, 2017–18, 2019+) is in `2_Intermediate/appended/`.
+
+## 2026-09-04 — documentation pass (see DOCUMENTATION.md)
+
+The questionnaires confirm the three designs already implemented (2013 tract/plot phases, 2014–16
+farm-questionnaire parts, 2017+ plot questionnaire with small/large-scale farmer type from 2019)
+and the code lists (own 34-crop list in 2013/14, the 101–520 list from 2017, land-use 96–99 and
+strata 10/20/30/40/90 in the screening files). No sampling or weighting report is held, so the plot
+weights stay as shipped and no published total is checked. The codebook headers now state the
+universe of each pooled file.

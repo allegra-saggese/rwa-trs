@@ -7,15 +7,17 @@ Alignment rule: waves are grouped into versions of a variable by label similarit
 
 Files: `CFSVA_pooled_household.dta` (household, 50,890 rows), `CFSVA_pooled_woman.dta` (woman, 31,038 rows), `CFSVA_pooled_child.dta` (child, 35,764 rows), `CFSVA_pooled_village.dta` (village, 3,062 rows)
 
-## `CFSVA_pooled_household.dta` — one row per household
+## `3_Final/CFSVA_pooled_household.dta` — one row per household
 
 50,890 rows × 4529 variables. Waves: 2006, 2009, 2012, 2015, 2018, 2021, 2024.
+
+*Universe (methodology annexes and questionnaires, DOCUMENTATION.md):* households living in the sampled village at interview time (10 per village; 25 villages per district in 2012/2015, 30 in 2018/2024); 2009 unweighted
 
 | variable | label | type | value labels | N 2006 | N 2009 | N 2012 | N 2015 | N 2018 | N 2021 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 2,783 | 5,400 | 7,498 | 7,500 | 9,709 | 9,000 | 9,000 |  |
 | `year` | Survey year | int16 |  | 2,783 | 5,400 | 7,498 | 7,500 | 9,709 | 9,000 | 9,000 |  |
-| `wave` | Wave (survey year) | string |  | 50,890 | 50,890 | 50,890 | 50,890 | 50,890 | 50,890 | 50,890 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `unit` | Unit of the file (household, woman, child, village) | string |  | 2,783 | 5,400 | 7,498 | 7,500 | 9,709 | 9,000 | 9,000 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 2,783 | 5,400 | 7,498 | 7,500 | 9,709 | 9,000 | 9,000 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 2,783 | 5,400 | 7,498 | 7,500 | 9,709 | 9,000 | 9,000 |  |
@@ -4543,15 +4545,17 @@ Files: `CFSVA_pooled_household.dta` (household, 50,890 rows), `CFSVA_pooled_woma
 | `rcsimealadult_yes` | Restricted consumption by adults in order for small children to eat | int8 | 0=No, 1=Yes | 0 | 0 | 0 | 0 | 0 | 0 | 9,000 |  |
 | `dup` |  | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 9,000 |  |
 
-## `CFSVA_pooled_woman.dta` — one row per woman
+## `3_Final/CFSVA_pooled_woman.dta` — one row per woman
 
 31,038 rows × 809 variables. Waves: 2006, 2009, 2012, 2015, 2024.
+
+*Universe (methodology annexes and questionnaires, DOCUMENTATION.md):* women aged 15-49 in sampled households (one record per woman; anthropometry for the same ages); 2015 records do not link to the household file
 
 | variable | label | type | value labels | N 2006 | N 2009 | N 2012 | N 2015 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 3,671 | 6,252 | 7,456 | 6,768 | 6,891 |  |
 | `year` | Survey year | int16 |  | 3,671 | 6,252 | 7,456 | 6,768 | 6,891 |  |
-| `wave` | Wave (survey year) | string |  | 31,038 | 31,038 | 31,038 | 31,038 | 31,038 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 | 0 | 0 |  |
 | `unit` | Unit of the file (household, woman, child, village) | string |  | 3,671 | 6,252 | 7,456 | 6,768 | 6,891 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 3,671 | 6,252 | 7,456 | 6,768 | 6,891 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 3,671 | 6,252 | 7,456 | 6,768 | 6,891 |  |
@@ -5359,15 +5363,17 @@ Files: `CFSVA_pooled_household.dta` (household, 50,890 rows), `CFSVA_pooled_woma
 | `mddwless5` | MDD-Women | int8 | 1=<5 food groups, 2=5 food groups or more | 0 | 0 | 0 | 0 | 6,891 |  |
 | `dup` |  | int8 |  | 0 | 0 | 0 | 0 | 6,891 |  |
 
-## `CFSVA_pooled_child.dta` — one row per child
+## `3_Final/CFSVA_pooled_child.dta` — one row per child
 
 35,764 rows × 1374 variables. Waves: 2006, 2009, 2012, 2015, 2018, 2021, 2024.
+
+*Universe (methodology annexes and questionnaires, DOCUMENTATION.md):* children under 5 in sampled households (anthropometry 6-59 months, IYCF 6-23/24 months); 2015 records do not link to the household file
 
 | variable | label | type | value labels | N 2006 | N 2009 | N 2012 | N 2015 | N 2018 | N 2021 | N 2024 | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 2,059 | 7,819 | 4,601 | 4,058 | 6,736 | 5,776 | 4,715 |  |
 | `year` | Survey year | int16 |  | 2,059 | 7,819 | 4,601 | 4,058 | 6,736 | 5,776 | 4,715 |  |
-| `wave` | Wave (survey year) | string |  | 35,764 | 35,764 | 35,764 | 35,764 | 35,764 | 35,764 | 35,764 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `unit` | Unit of the file (household, woman, child, village) | string |  | 2,059 | 7,819 | 4,601 | 4,058 | 6,736 | 5,776 | 4,715 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 2,059 | 7,819 | 4,601 | 4,058 | 6,736 | 5,776 | 4,715 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 2,059 | 7,819 | 4,601 | 4,058 | 6,736 | 5,776 | 4,715 |  |
@@ -6740,15 +6746,17 @@ Files: `CFSVA_pooled_household.dta` (household, 50,890 rows), `CFSVA_pooled_woma
 | `s13_20_smt_3` | S13_20/Can't measure height | int8 | 0=No, 1=Yes | 0 | 0 | 0 | 0 | 0 | 0 | 4,261 | other versions: s13_20_smt_3_v2 (2021) |
 | `s13_20_smt_4` | S13_20/Can't measure MUAC | int8 | 0=No, 1=Yes | 0 | 0 | 0 | 0 | 0 | 0 | 4,261 | other versions: s13_20_smt_4_v2 (2021) |
 
-## `CFSVA_pooled_village.dta` — one row per village
+## `3_Final/CFSVA_pooled_village.dta` — one row per village
 
 3,062 rows × 453 variables. Waves: 2009, 2012, 2018, 2021.
+
+*Universe (methodology annexes and questionnaires, DOCUMENTATION.md):* one key-informant group interview per sampled village (village leaders, local government, teachers, health workers, farmers)
 
 | variable | label | type | value labels | N 2009 | N 2012 | N 2018 | N 2021 | notes |
 |---|---|---|---|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 427 | 748 | 987 | 900 |  |
 | `year` | Survey year | int16 |  | 427 | 748 | 987 | 900 |  |
-| `wave` | Wave (survey year) | string |  | 3,062 | 3,062 | 3,062 | 3,062 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 | 0 |  |
 | `unit` | Unit of the file (household, woman, child, village) | string |  | 427 | 748 | 987 | 900 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 427 | 748 | 987 | 900 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 427 | 748 | 987 | 900 |  |

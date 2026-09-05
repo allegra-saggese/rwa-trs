@@ -1,6 +1,6 @@
 variable,label,type,value_labels,n_value_labels,n_2011,n_2014,n_2017,n_2020,n_2023,source_by_year,version_years,other_versions,label_variants,value_label_conflicts
 survey,Source survey,string,,0,127662,77151,190288,232283,269326,,,,,
-year,Census year,int16,"1=1900-1949, 2=1950-1999, 3=2000-2004, 4=2005-2009, 5=2010-2011, 9=NS",6,127662,77151,190288,232283,269326,,,,,
+year,Census year,int16,"1=1900-1949, 2=1950-1999, 3=2000-2004, 4=2005-2009, 5=2010-2011, 9=NS",6,0,0,0,0,0,,,,,
 wave,Wave (census year),string,,0,127662,77151,190288,232283,269326,,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Estern Province",5,127662,77151,190288,232146,269326,2011: id1; 2014: id1; 2017: q1_1; 2020: q1_1; 2023: q1_1,,,,
 dist,"District (11-57, NISR codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara, 23=Nyaruguru …",30,127662,77151,190288,232283,269326,2011: districts_names (NISR 101-507 codes -> 11-57); 2014: id2; 2017: q1_2; 2020: q1_2; 2023: q1_2,,,,

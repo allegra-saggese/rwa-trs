@@ -29,3 +29,13 @@ input expenditures). Modules that exist in one wave only stay per-wave in `2_Int
 **Layout (2026-09-04, Matteo).** `3_Final/` holds only the appended unit-level datasets; every
 module-level file — per wave at the top of `2_Intermediate/`, appended across waves in
 `2_Intermediate/appended/` — lives in Intermediate. For AHS: `3_Final/` = person + household; the 13 appended modules are in `2_Intermediate/appended/`.
+
+## 2026-09-04 — documentation pass (see DOCUMENTATION.md)
+
+The 2017 report and the 2024 DDI describe two different frames: 2017 lists every household in 1,560
+SAS/village segments and interviews the 16,057 with any member in crop or livestock production;
+2024 takes all EICV7 households flagged agricultural in a 600-EA sub-sample of the EICV7 sample
+(weights inherit the EICV7 weights). 2020 is documented only as "inverse probability of selection".
+The waves are therefore pooled as independent cross-sections with their own weights, as already
+implemented; the published 2017 household count is now a check, and the age bases of the roster
+items (economic activity above 10 in 2017; savings/credit 16+ in 2020) are stated in the codebook.

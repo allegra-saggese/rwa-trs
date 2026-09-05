@@ -57,7 +57,8 @@ else:
     report.append("Stata not found on this machine -- section B skipped."); log.warning("Stata not found; skipping B")
 
 # ---- C. published figures (zz_Reports: EC 2011 report p.?, EC 2014, 2017, 2020 reports; 2023 report not held)
-PUB = {"2011 operating establishments (report: 123,526)": (ours[2011]["working"], 123_526, 0.01),
+PUB = {"2011 establishments enumerated (2014 project document: 127,662)": (ours[2011]["n"], 127_662, 0),
+       "2011 operating establishments (report: 123,526)": (ours[2011]["working"], 123_526, 0.01),
        "2014 weighted establishments (report: 154,236)": (ours[2014]["sum_wt"], 154_236, 0.001),
        "2017 establishments (report: 190,288)": (ours[2017]["n"], 190_288, 0),
        "2020 establishments (report: 232,283)": (ours[2020]["n"], 232_283, 0)}

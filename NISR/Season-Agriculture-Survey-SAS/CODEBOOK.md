@@ -11,6 +11,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 632,756 rows × 271 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C, 2019_A, 2019_B, 2019_C, 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C, 2024_A, 2024_B, 2024_C, 2025_A, 2025_B, 2025_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* 2017-2025: every plot x crop record of the plot questionnaire (part II) in sampled segments (small-scale, area frame) and on large-scale farms (list frame, from 2019 flagged by farm_type); seasons A (Sep-Feb), B (Mar-Aug), C (marshland)
+
 | variable | label | type | value labels | N 2017_A | N 2017_B | N 2017_C | N 2018_A | N 2018_B | N 2018_C | N 2019_A | N 2019_B | N 2019_C | N 2020_A | N 2020_B | N 2020_C | N 2021_A | N 2021_B | N 2021_C | N 2022_A | N 2022_B | N 2022_C | N 2023_A | N 2023_B | N 2023_C | N 2024_A | N 2024_B | N 2024_C | N 2025_A | N 2025_B | N 2025_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,313 | 35,773 | 4,283 | 41,634 | 35,869 | 3,416 | 41,589 | 36,005 | 5,818 | 39,038 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
@@ -289,6 +291,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 597,551 rows × 60 variables. Waves: 2013_A, 2014_A, 2014_B, 2014_C, 2015_A, 2015_B, 2016_A, 2016_B, 2016_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* 2013-2016: plot x crop records from the screening / planting / harvest / big-farmer files (record type in source_module); 2013 keys are tract and plot within segment
+
 | variable | label | type | value labels | N 2013_A | N 2014_A | N 2014_B | N 2014_C | N 2015_A | N 2015_B | N 2016_A | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 117,537 | 125,869 | 25,316 | 1,283 | 27,490 | 25,648 | 138,100 | 133,947 | 2,361 |  |
@@ -356,6 +360,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 28,051 rows × 16 variables. Waves: 2014_A, 2014_B, 2014_C, 2015_A, 2015_B, 2016_B, 2016_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2014_A | N 2014_B | N 2014_C | N 2015_A | N 2015_B | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 |  |
@@ -378,6 +384,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_farmq_part2a_2013_2016.dta` — one row per farmq_part2a
 
 68,996 rows × 18 variables. Waves: 2014_A, 2014_B, 2015_A, 2015_B, 2016_B, 2016_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2014_A | N 2014_B | N 2015_A | N 2015_B | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---|
@@ -404,6 +412,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 30,995 rows × 15 variables. Waves: 2014_A, 2016_B, 2016_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2014_A | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 13,079 | 16,029 | 1,887 |  |
@@ -426,6 +436,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 28,878 rows × 14 variables. Waves: 2014_C, 2015_A, 2015_B.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2014_C | N 2015_A | N 2015_B | notes |
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 1,379 | 14,043 | 13,456 |  |
@@ -447,6 +459,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 28,883 rows × 10 variables. Waves: 2014_C, 2015_A, 2015_B.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2014_C | N 2015_A | N 2015_B | notes |
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 1,379 | 14,048 | 13,456 |  |
@@ -463,6 +477,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_farmq_part4_2013_2016.dta` — one row per farmq_part4
 
 57,511 rows × 21 variables. Waves: 2014_A, 2015_A, 2015_B, 2016_B, 2016_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2014_A | N 2015_A | N 2015_B | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---|
@@ -492,6 +508,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 544,313 rows × 14 variables. Waves: 2015_A, 2015_B, 2016_B, 2016_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2015_A | N 2015_B | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 170,087 | 165,135 | 178,274 | 30,817 |  |
@@ -512,6 +530,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_farmq_part7_2013_2016.dta` — one row per farmq_part7
 
 34,626 rows × 31 variables. Waves: 2014_C, 2015_A, 2016_B, 2016_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2014_C | N 2015_A | N 2016_B | N 2016_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---|
@@ -551,6 +571,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 2,036 rows × 14 variables. Waves: 2014_B, 2016_B.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2014_B | N 2016_B | notes |
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 854 | 1,182 |  |
@@ -571,6 +593,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_lsf_farmq_part2b_2013_2016.dta` — one row per lsf_farmq_part2b
 
 2,081 rows × 15 variables. Waves: 2014_B, 2016_B.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2014_B | N 2016_B | notes |
 |---|---|---|---|---:|---:|---|
@@ -593,6 +617,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_lsf_screening_2013_2016.dta` — one row per lsf_screening
 
 15,710 rows × 21 variables. Waves: 2014_A, 2014_B, 2015_A, 2016_B.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2014_A | N 2014_B | N 2015_A | N 2016_B | notes |
 |---|---|---|---|---:|---:|---:|---:|---|
@@ -621,6 +647,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_ssf_screening_2013_2016.dta` — one row per ssf_screening
 
 219,362 rows × 23 variables. Waves: 2014_B, 2014_C, 2015_A.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2014_B | N 2014_C | N 2015_A | notes |
 |---|---|---|---|---:|---:|---:|---|
@@ -651,6 +679,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_fertilizers_pesticides.dta` — one row per fertilizers_pesticides
 
 225,110 rows × 140 variables. Waves: 2019_A, 2019_B, 2019_C, 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2019_A | N 2019_B | N 2019_C | N 2020_A | N 2020_B | N 2020_C | N 2021_A | N 2021_B | N 2021_C | N 2022_A | N 2022_B | N 2022_C | N 2023_A | N 2023_B | N 2023_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
@@ -799,6 +829,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 192,553 rows × 116 variables. Waves: 2019_A, 2019_B, 2019_C, 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2019_A | N 2019_B | N 2019_C | N 2020_A | N 2020_B | N 2020_C | N 2021_A | N 2021_B | N 2021_C | N 2022_A | N 2022_B | N 2022_C | N 2023_A | N 2023_B | N 2023_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 19,333 | 2,779 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
@@ -922,6 +954,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 450,923 rows × 40 variables. Waves: 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2020_A | N 2020_B | N 2020_C | N 2021_A | N 2021_B | N 2021_C | N 2022_A | N 2022_B | N 2022_C | N 2023_A | N 2023_B | N 2023_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 53,419 | 48,696 | 10,897 | 52,873 | 49,348 | 10,495 | 52,487 | 47,308 | 12,067 | 53,691 | 49,337 | 10,305 |  |
@@ -969,6 +1003,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 263,633 rows × 28 variables. Waves: 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2020_A | N 2020_B | N 2020_C | N 2021_A | N 2021_B | N 2021_C | N 2022_A | N 2022_B | N 2022_C | N 2023_A | N 2023_B | N 2023_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 27,564 | 29,526 | 5,057 | 30,596 | 30,122 | 5,063 | 34,477 | 33,192 | 4,937 | 31,778 | 26,391 | 4,930 |  |
@@ -1004,6 +1040,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 287,508 rows × 28 variables. Waves: 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2020_A | N 2020_B | N 2020_C | N 2021_A | N 2021_B | N 2021_C | N 2022_A | N 2022_B | N 2022_C | N 2023_A | N 2023_B | N 2023_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 30,078 | 29,822 | 7,945 | 33,890 | 36,257 | 5,668 | 35,362 | 34,483 | 4,937 | 34,765 | 29,371 | 4,930 |  |
@@ -1038,6 +1076,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_fertilizers_2017_2018.dta` — one row per fertilizers_2017_2018
 
 84,986 rows × 29 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2017_A | N 2017_B | N 2017_C | N 2018_A | N 2018_B | N 2018_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---|
@@ -1075,6 +1115,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 95,146 rows × 27 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2017_A | N 2017_B | N 2017_C | N 2018_A | N 2018_B | N 2018_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 15,110 | 14,153 | 6,792 | 45,976 | 11,828 | 1,287 |  |
@@ -1109,6 +1151,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 
 64,405 rows × 18 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
+
 | variable | label | type | value labels | N 2017_A | N 2017_B | N 2017_C | N 2018_A | N 2018_B | N 2018_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 16,080 | 15,031 | 5,094 | 13,825 | 13,080 | 1,295 |  |
@@ -1133,6 +1177,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_irrigation_land_tenure_2017_2018.dta` — one row per irrigation_land_tenure_2017_2018
 
 52,621 rows × 51 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2017_A | N 2017_B | N 2017_C | N 2018_A | N 2018_B | N 2018_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---|
@@ -1191,6 +1237,8 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 ## `2_Intermediate/appended/SAS_pooled_screening_2017_2018.dta` — one row per screening_2017_2018
 
 243,835 rows × 40 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
+
+*Universe (questionnaires, DOCUMENTATION.md):* plots of sampled segments (area frame, strata 10 hillside / 20 marshland / 30 rangeland / 40 mixed) and of large-scale farmers (list frame, stratum 90); one record per plot x crop x season
 
 | variable | label | type | value labels | N 2017_A | N 2017_B | N 2017_C | N 2018_A | N 2018_B | N 2018_C | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---|

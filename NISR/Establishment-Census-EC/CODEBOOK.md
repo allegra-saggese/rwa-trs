@@ -7,12 +7,14 @@ Alignment rule: years are grouped into versions of a variable by label similarit
 
 ## `EC_pooled_establishment.dta` — one row per establishment
 
+*Universe (questionnaires, DOCUMENTATION.md):* every establishment enumerated with a fixed location; select operating units with the working-status item (`s04` 2011, `q3` 2014, `q3_1` 2017+; 1 = working). 2014 is a weighted sample (`wt`).
+
 896,710 rows × 265 variables. Years: 2011, 2014, 2017, 2020, 2023.
 
 | variable | label | type | value labels | N 2011 | N 2014 | N 2017 | N 2020 | N 2023 | notes |
 |---|---|---|---|---:|---:|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 127,662 | 77,151 | 190,288 | 232,283 | 269,326 |  |
-| `year` | Census year | int16 | 1=1900-1949, 2=1950-1999, 3=2000-2004, 4=2005-2009, 5=2010-2011, 9=NS | 127,662 | 77,151 | 190,288 | 232,283 | 269,326 |  |
+| `year` | Census year | int16 | 1=1900-1949, 2=1950-1999, 3=2000-2004, 4=2005-2009, 5=2010-2011, 9=NS | 0 | 0 | 0 | 0 | 0 |  |
 | `wave` | Wave (census year) | string |  | 127,662 | 77,151 | 190,288 | 232,283 | 269,326 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Estern Province | 127,662 | 77,151 | 190,288 | 232,146 | 269,326 | source: 2011: id1; 2014: id1; 2017: q1_1; 2020: q1_1; 2023: q1_1 |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara, 23=Nyaruguru … | 127,662 | 77,151 | 190,288 | 232,283 | 269,326 | source: 2011: districts_names (NISR 101-507 codes -> 11-57); 2014: id2; 2017: q1_2; 2020: q1_2; 2023: q1_2 |

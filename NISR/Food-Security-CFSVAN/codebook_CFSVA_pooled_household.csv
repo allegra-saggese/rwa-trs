@@ -1,7 +1,7 @@
 variable,label,type,value_labels,n_value_labels,n_2006,n_2009,n_2012,n_2015,n_2018,n_2021,n_2024,source,versions,label_variants,value_label_conflicts
 survey,Source survey,string,,0,2783,5400,7498,7500,9709,9000,9000,,,,
 year,Survey year,int16,,0,2783,5400,7498,7500,9709,9000,9000,,,,
-wave,Wave (survey year),string,,0,50890,50890,50890,50890,50890,50890,50890,,,,
+wave,Wave (survey year),string,,0,0,0,0,0,0,0,0,,,,
 unit,"Unit of the file (household, woman, child, village)",string,,0,2783,5400,7498,7500,9709,9000,9000,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,2783,5400,7498,7500,9709,9000,9000,,,,
 dist,"District (11-57, NISR codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara …",30,2783,5400,7498,7500,9709,9000,9000,,,,

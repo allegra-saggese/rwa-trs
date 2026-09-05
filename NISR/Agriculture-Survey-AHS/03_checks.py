@@ -56,6 +56,8 @@ export delimited using "{outh}", replace
 else:
     report.append("Stata not found on this machine -- section B skipped."); log.warning("Stata not found; skipping B")
 report += ["", "## C. Household / person consistency", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+# AHS 2017 report table 2: 16,057 agricultural households interviewed (DOCUMENTATION.md)
+if (hh["wave"] == "2017").any(): row("C", "2017 households vs report table 2 (16,057)", int((hh["wave"] == "2017").sum()), 16_057)
 for w, g in hh.groupby("wave", sort=False):
     p = person[person.wave == w]
     row("C", f"{w} sum hhsize == person rows", g["hhsize"].sum(), len(p)); row("C", f"{w} households == distinct hhid in person file", len(g), p["hhid"].nunique()); row("C", f"{w} household rows unique", g["hhid"].nunique(), len(g))
