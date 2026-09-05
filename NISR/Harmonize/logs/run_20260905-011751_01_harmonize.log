@@ -1,0 +1,151 @@
+01:17:51 01_harmonize INFO ==== 01_harmonize | run 20260905-011751_01_harmonize | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+01:17:51 01_harmonize INFO ---------------- EICV / EICV_pooled_household.dta (household, 0.12 GB) -> H_EICV_household.dta
+01:18:00 01_harmonize INFO read EICV_pooled_household.dta: 71,681 rows x 817 vars (typed, 0.2 GB in memory)
+01:18:00 01_harmonize INFO PASS  H_EICV_household.dta: row count unchanged (71,681)
+01:18:02 01_harmonize INFO wrote H_EICV_household.dta  (71,681 rows x 820 vars, 119.9 MB)
+01:18:02 01_harmonize INFO ---------------- EICV / EICV_pooled_person.dta (person, 0.53 GB) -> H_EICV_person.dta
+01:19:18 01_harmonize INFO read EICV_pooled_person.dta: 327,841 rows x 1082 vars (typed, 0.9 GB in memory)
+01:19:19 01_harmonize INFO    h_marital   non-missing by wave: {'EICV1': 20750, 'EICV2': 22515, 'EICV3': 44193, 'EICV4_CS': 43681, 'EICV5_CS': 43240, 'EICV7_CS': 43529}
+01:19:19 01_harmonize INFO    h_relation  non-missing by wave: {'EICV1': 32153, 'EICV2': 34785, 'EICV3': 68397, 'EICV4_CS': 66081, 'EICV5_CS': 64314, 'EICV7_CS': 62110}
+01:19:19 01_harmonize INFO    h_educ      non-missing by wave: {'EICV1': 8747, 'EICV2': 28016, 'EICV3': 34295, 'EICV4_CS': 60442, 'EICV5_CS': 58701, 'EICV7_CS': 62110}
+01:19:19 01_harmonize INFO    h_literacy  non-missing by wave: {'EICV1': 23994, 'EICV2': 24491, 'EICV3': 41646, 'EICV4_CS': 47287, 'EICV5_CS': 46765, 'EICV7_CS': 46500}
+01:19:19 01_harmonize INFO    h_lfstatus  non-missing by wave: {'EICV1': 25193, 'EICV2': 27131, 'EICV3': 39085, 'EICV4_CS': 55061, 'EICV5_CS': 53664, 'EICV7_CS': 52900}
+01:19:19 01_harmonize INFO    h_empstat   non-missing by wave: {'EICV1': 15237, 'EICV2': 16290, 'EICV3': 0, 'EICV4_CS': 0, 'EICV5_CS': 0, 'EICV7_CS': 31289}
+01:19:19 01_harmonize INFO    h_isic1     non-missing by wave: {'EICV1': 15190, 'EICV2': 16186, 'EICV3': 0, 'EICV4_CS': 32967, 'EICV5_CS': 0, 'EICV7_CS': 31289}
+01:19:19 01_harmonize INFO    h_isco1     non-missing by wave: {'EICV1': 15214, 'EICV2': 16291, 'EICV3': 0, 'EICV4_CS': 32967, 'EICV5_CS': 0, 'EICV7_CS': 30353}
+01:19:19 01_harmonize INFO PASS  H_EICV_person.dta: row count unchanged (327,841)
+01:19:25 01_harmonize INFO wrote H_EICV_person.dta  (327,841 rows x 1098 vars, 554.1 MB)
+01:19:25 01_harmonize INFO ---------------- EICV / EICV3_4_panel_link.dta (link, 0.00 GB) -> H_EICV_EICV3_4_panel_link.dta
+01:19:26 01_harmonize INFO read EICV3_4_panel_link.dta: 8,310 rows x 38 vars (typed, 0.0 GB in memory)
+01:19:26 01_harmonize INFO PASS  H_EICV_EICV3_4_panel_link.dta: row count unchanged (8,310)
+01:19:26 01_harmonize INFO wrote H_EICV_EICV3_4_panel_link.dta  (8,310 rows x 39 vars, 1.8 MB)
+01:19:26 01_harmonize INFO ---------------- EICV / EICV5_vup_panel_link.dta (link, 0.00 GB) -> H_EICV_EICV5_vup_panel_link.dta
+01:19:26 01_harmonize INFO read EICV5_vup_panel_link.dta: 5,171 rows x 41 vars (typed, 0.0 GB in memory)
+01:19:26 01_harmonize INFO PASS  H_EICV_EICV5_vup_panel_link.dta: row count unchanged (5,171)
+01:19:26 01_harmonize INFO wrote H_EICV_EICV5_vup_panel_link.dta  (5,171 rows x 43 vars, 1.4 MB)
+01:19:26 01_harmonize INFO ---------------- EICV / EICV_pooled_agri_expenditure.dta (agri_expenditure, 0.13 GB) -> H_EICV_agri_expenditure.dta
+01:19:38 01_harmonize INFO read EICV_pooled_agri_expenditure.dta: 890,994 rows x 53 vars (typed, 0.2 GB in memory)
+01:19:39 01_harmonize INFO PASS  H_EICV_agri_expenditure.dta: row count unchanged (890,994)
+01:19:43 01_harmonize INFO wrote H_EICV_agri_expenditure.dta  (890,994 rows x 54 vars, 149.7 MB)
+01:19:43 01_harmonize INFO ---------------- EICV / EICV_pooled_agri_income.dta (agri_income, 0.04 GB) -> H_EICV_agri_income.dta
+01:19:46 01_harmonize INFO read EICV_pooled_agri_income.dta: 397,212 rows x 31 vars (typed, 0.0 GB in memory)
+01:19:46 01_harmonize INFO PASS  H_EICV_agri_income.dta: row count unchanged (397,212)
+01:19:47 01_harmonize INFO wrote H_EICV_agri_income.dta  (397,212 rows x 32 vars, 49.7 MB)
+01:19:48 01_harmonize INFO ---------------- EICV / EICV_pooled_agri_processing.dta (agri_processing, 0.05 GB) -> H_EICV_agri_processing.dta
+01:19:51 01_harmonize INFO read EICV_pooled_agri_processing.dta: 172,443 rows x 106 vars (typed, 0.1 GB in memory)
+01:19:51 01_harmonize INFO PASS  H_EICV_agri_processing.dta: row count unchanged (172,443)
+01:19:52 01_harmonize INFO wrote H_EICV_agri_processing.dta  (172,443 rows x 108 vars, 52.7 MB)
+01:19:52 01_harmonize INFO ---------------- EICV / EICV_pooled_credits.dta (credits, 0.02 GB) -> H_EICV_credits.dta
+01:19:53 01_harmonize INFO read EICV_pooled_credits.dta: 104,030 rows x 82 vars (typed, 0.0 GB in memory)
+01:19:53 01_harmonize INFO PASS  H_EICV_credits.dta: row count unchanged (104,030)
+01:19:54 01_harmonize INFO wrote H_EICV_credits.dta  (104,030 rows x 84 vars, 23.5 MB)
+01:19:54 01_harmonize INFO ---------------- EICV / EICV_pooled_crop_large.dta (crop_large, 0.04 GB) -> H_EICV_crop_large.dta
+01:19:56 01_harmonize INFO read EICV_pooled_crop_large.dta: 159,870 rows x 72 vars (typed, 0.0 GB in memory)
+01:19:56 01_harmonize INFO PASS  H_EICV_crop_large.dta: row count unchanged (159,870)
+01:19:57 01_harmonize INFO wrote H_EICV_crop_large.dta  (159,870 rows x 74 vars, 42.4 MB)
+01:19:57 01_harmonize INFO ---------------- EICV / EICV_pooled_crop_small.dta (crop_small, 0.11 GB) -> H_EICV_crop_small.dta
+01:20:06 01_harmonize INFO read EICV_pooled_crop_small.dta: 469,484 rows x 82 vars (typed, 0.1 GB in memory)
+01:20:06 01_harmonize INFO PASS  H_EICV_crop_small.dta: row count unchanged (469,484)
+01:20:08 01_harmonize INFO wrote H_EICV_crop_small.dta  (469,484 rows x 84 vars, 129.6 MB)
+01:20:08 01_harmonize INFO ---------------- EICV / EICV_pooled_durables.dta (durables, 0.59 GB) -> H_EICV_durables.dta
+01:21:03 01_harmonize INFO read EICV_pooled_durables.dta: 2,104,019 rows x 98 vars (typed, 0.8 GB in memory)
+01:21:05 01_harmonize INFO PASS  H_EICV_durables.dta: row count unchanged (2,104,019)
+01:21:16 01_harmonize INFO wrote H_EICV_durables.dta  (2,104,019 rows x 99 vars, 637.6 MB)
+01:21:16 01_harmonize INFO ---------------- EICV / EICV_pooled_enterprise.dta (enterprise, 0.01 GB) -> H_EICV_enterprise.dta
+01:21:17 01_harmonize INFO read EICV_pooled_enterprise.dta: 70,481 rows x 93 vars (typed, 0.0 GB in memory)
+01:21:17 01_harmonize INFO PASS  H_EICV_enterprise.dta: row count unchanged (70,481)
+01:21:18 01_harmonize INFO wrote H_EICV_enterprise.dta  (70,481 rows x 95 vars, 15.9 MB)
+01:21:18 01_harmonize INFO ---------------- EICV / EICV_pooled_equipment.dta (equipment, 0.04 GB) -> H_EICV_equipment.dta
+01:21:21 01_harmonize INFO read EICV_pooled_equipment.dta: 385,969 rows x 45 vars (typed, 0.1 GB in memory)
+01:21:22 01_harmonize INFO PASS  H_EICV_equipment.dta: row count unchanged (385,969)
+01:21:23 01_harmonize INFO wrote H_EICV_equipment.dta  (385,969 rows x 46 vars, 52.5 MB)
+01:21:23 01_harmonize INFO ---------------- EICV / EICV_pooled_expenditure_annual.dta (expenditure_annual, 0.77 GB) -> H_EICV_expenditure_annual.dta
+01:22:41 01_harmonize INFO read EICV_pooled_expenditure_annual.dta: 5,476,244 rows x 52 vars (typed, 1.0 GB in memory)
+01:22:44 01_harmonize INFO PASS  H_EICV_expenditure_annual.dta: row count unchanged (5,476,244)
+01:23:09 01_harmonize INFO wrote H_EICV_expenditure_annual.dta  (5,476,244 rows x 53 vars, 898.2 MB)
+01:23:10 01_harmonize INFO ---------------- EICV / EICV_pooled_expenditure_frequent.dta (expenditure_frequent, 0.64 GB) -> H_EICV_expenditure_frequent.dta
+01:24:04 01_harmonize INFO read EICV_pooled_expenditure_frequent.dta: 2,504,958 rows x 77 vars (typed, 0.8 GB in memory)
+01:24:05 01_harmonize INFO PASS  H_EICV_expenditure_frequent.dta: row count unchanged (2,504,958)
+01:24:19 01_harmonize INFO wrote H_EICV_expenditure_frequent.dta  (2,504,958 rows x 78 vars, 693.9 MB)
+01:24:20 01_harmonize INFO ---------------- EICV / EICV_pooled_expenditure_monthly.dta (expenditure_monthly, 0.56 GB) -> H_EICV_expenditure_monthly.dta
+01:25:15 01_harmonize INFO read EICV_pooled_expenditure_monthly.dta: 3,930,484 rows x 52 vars (typed, 0.7 GB in memory)
+01:25:17 01_harmonize INFO PASS  H_EICV_expenditure_monthly.dta: row count unchanged (3,930,484)
+01:25:35 01_harmonize INFO wrote H_EICV_expenditure_monthly.dta  (3,930,484 rows x 53 vars, 648.6 MB)
+01:25:35 01_harmonize INFO ---------------- EICV / EICV_pooled_food.dta (food, 5.83 GB) -> H_EICV_food.dta
+01:33:18 01_harmonize INFO read EICV_pooled_food.dta: 10,789,172 rows x 168 vars (typed, 8.3 GB in memory)
+01:33:29 01_harmonize INFO PASS  H_EICV_food.dta: row count unchanged (10,789,172)
+01:36:12 01_harmonize INFO wrote H_EICV_food.dta  (10,789,172 rows x 170 vars, 6365.8 MB)
+01:36:16 01_harmonize INFO ---------------- EICV / EICV_pooled_household_vup.dta (household, 0.00 GB) -> H_EICV_household_vup.dta
+01:36:16 01_harmonize INFO read EICV_pooled_household_vup.dta: 5,415 rows x 316 vars (typed, 0.0 GB in memory)
+01:36:16 01_harmonize INFO PASS  H_EICV_household_vup.dta: row count unchanged (5,415)
+01:36:16 01_harmonize INFO wrote H_EICV_household_vup.dta  (5,415 rows x 319 vars, 3.1 MB)
+01:36:16 01_harmonize INFO ---------------- EICV / EICV_pooled_jobs.dta (jobs, 0.08 GB) -> H_EICV_jobs.dta
+01:36:24 01_harmonize INFO read EICV_pooled_jobs.dta: 242,787 rows x 192 vars (typed, 0.1 GB in memory)
+01:36:24 01_harmonize INFO PASS  H_EICV_jobs.dta: row count unchanged (242,787)
+01:36:26 01_harmonize INFO wrote H_EICV_jobs.dta  (242,787 rows x 194 vars, 96.8 MB)
+01:36:26 01_harmonize INFO ---------------- EICV / EICV_pooled_land.dta (land, 0.06 GB) -> H_EICV_land.dta
+01:36:31 01_harmonize INFO read EICV_pooled_land.dta: 545,978 rows x 36 vars (typed, 0.1 GB in memory)
+01:36:31 01_harmonize INFO PASS  H_EICV_land.dta: row count unchanged (545,978)
+01:36:33 01_harmonize INFO wrote H_EICV_land.dta  (545,978 rows x 37 vars, 70.5 MB)
+01:36:33 01_harmonize INFO ---------------- EICV / EICV_pooled_livestock.dta (livestock, 0.09 GB) -> H_EICV_livestock.dta
+01:36:43 01_harmonize INFO read EICV_pooled_livestock.dta: 345,131 rows x 119 vars (typed, 0.1 GB in memory)
+01:36:43 01_harmonize INFO PASS  H_EICV_livestock.dta: row count unchanged (345,131)
+01:36:45 01_harmonize INFO wrote H_EICV_livestock.dta  (345,131 rows x 120 vars, 102.9 MB)
+01:36:45 01_harmonize INFO ---------------- EICV / EICV_pooled_livestock_expenditure.dta (livestock_expenditure, 0.07 GB) -> H_EICV_livestock_expenditure.dta
+01:36:51 01_harmonize INFO read EICV_pooled_livestock_expenditure.dta: 424,476 rows x 65 vars (typed, 0.1 GB in memory)
+01:36:51 01_harmonize INFO PASS  H_EICV_livestock_expenditure.dta: row count unchanged (424,476)
+01:36:53 01_harmonize INFO wrote H_EICV_livestock_expenditure.dta  (424,476 rows x 66 vars, 82.8 MB)
+01:36:53 01_harmonize INFO ---------------- EICV / EICV_pooled_livestock_products.dta (livestock_products, 0.05 GB) -> H_EICV_livestock_products.dta
+01:36:57 01_harmonize INFO read EICV_pooled_livestock_products.dta: 317,188 rows x 55 vars (typed, 0.1 GB in memory)
+01:36:57 01_harmonize INFO PASS  H_EICV_livestock_products.dta: row count unchanged (317,188)
+01:36:59 01_harmonize INFO wrote H_EICV_livestock_products.dta  (317,188 rows x 56 vars, 61.6 MB)
+01:36:59 01_harmonize INFO ---------------- EICV / EICV_pooled_other_expenditure.dta (other_expenditure, 0.09 GB) -> H_EICV_other_expenditure.dta
+01:37:07 01_harmonize INFO read EICV_pooled_other_expenditure.dta: 817,971 rows x 36 vars (typed, 0.1 GB in memory)
+01:37:07 01_harmonize INFO PASS  H_EICV_other_expenditure.dta: row count unchanged (817,971)
+01:37:10 01_harmonize INFO wrote H_EICV_other_expenditure.dta  (817,971 rows x 37 vars, 109.6 MB)
+01:37:10 01_harmonize INFO ---------------- EICV / EICV_pooled_other_income.dta (other_income, 0.22 GB) -> H_EICV_other_income.dta
+01:37:30 01_harmonize INFO read EICV_pooled_other_income.dta: 1,612,233 rows x 47 vars (typed, 0.3 GB in memory)
+01:37:31 01_harmonize INFO PASS  H_EICV_other_income.dta: row count unchanged (1,612,233)
+01:37:37 01_harmonize INFO wrote H_EICV_other_income.dta  (1,612,233 rows x 48 vars, 261.2 MB)
+01:37:37 01_harmonize INFO ---------------- EICV / EICV_pooled_own_consumption.dta (own_consumption, 2.06 GB) -> H_EICV_own_consumption.dta
+01:38:44 01_harmonize INFO read EICV_pooled_own_consumption.dta: 4,683,922 rows x 84 vars (typed, 2.2 GB in memory)
+01:38:47 01_harmonize INFO PASS  H_EICV_own_consumption.dta: row count unchanged (4,683,922)
+01:39:17 01_harmonize INFO wrote H_EICV_own_consumption.dta  (4,683,922 rows x 85 vars, 2164.0 MB)
+01:39:18 01_harmonize INFO ---------------- EICV / EICV_pooled_parcels.dta (parcels, 0.05 GB) -> H_EICV_parcels.dta
+01:39:22 01_harmonize INFO read EICV_pooled_parcels.dta: 207,503 rows x 118 vars (typed, 0.1 GB in memory)
+01:39:23 01_harmonize INFO PASS  H_EICV_parcels.dta: row count unchanged (207,503)
+01:39:24 01_harmonize INFO wrote H_EICV_parcels.dta  (207,503 rows x 120 vars, 62.2 MB)
+01:39:24 01_harmonize INFO ---------------- EICV / EICV_pooled_person_vup.dta (person, 0.03 GB) -> H_EICV_person_vup.dta
+01:39:27 01_harmonize INFO read EICV_pooled_person_vup.dta: 32,241 rows x 482 vars (typed, 0.0 GB in memory)
+01:39:27 01_harmonize INFO    h_marital   non-missing by wave: {'EICV4_VUP': 7220, 'EICV5_VUP': 4765, 'EICV7_VUP': 10571}
+01:39:27 01_harmonize INFO    h_relation  non-missing by wave: {'EICV4_VUP': 10606, 'EICV5_VUP': 6596, 'EICV7_VUP': 15039}
+01:39:27 01_harmonize INFO    h_educ      non-missing by wave: {'EICV4_VUP': 9929, 'EICV5_VUP': 6096, 'EICV7_VUP': 15039}
+01:39:27 01_harmonize INFO    h_literacy  non-missing by wave: {'EICV4_VUP': 7835, 'EICV5_VUP': 5114, 'EICV7_VUP': 11298}
+01:39:27 01_harmonize INFO    h_lfstatus  non-missing by wave: {'EICV4_VUP': 0, 'EICV5_VUP': 5731, 'EICV7_VUP': 12854}
+01:39:27 01_harmonize INFO    h_empstat   non-missing by wave: {'EICV4_VUP': 0, 'EICV5_VUP': 0, 'EICV7_VUP': 7093}
+01:39:27 01_harmonize INFO    h_isic1     non-missing by wave: {'EICV4_VUP': 0, 'EICV5_VUP': 0, 'EICV7_VUP': 7093}
+01:39:27 01_harmonize INFO    h_isco1     non-missing by wave: {'EICV4_VUP': 0, 'EICV5_VUP': 0, 'EICV7_VUP': 6816}
+01:39:27 01_harmonize INFO PASS  H_EICV_person_vup.dta: row count unchanged (32,241)
+01:39:28 01_harmonize INFO wrote H_EICV_person_vup.dta  (32,241 rows x 498 vars, 27.8 MB)
+01:39:28 01_harmonize INFO ---------------- EICV / EICV_pooled_savings.dta (savings, 0.03 GB) -> H_EICV_savings.dta
+01:39:30 01_harmonize INFO read EICV_pooled_savings.dta: 153,527 rows x 84 vars (typed, 0.0 GB in memory)
+01:39:30 01_harmonize INFO PASS  H_EICV_savings.dta: row count unchanged (153,527)
+01:39:31 01_harmonize INFO wrote H_EICV_savings.dta  (153,527 rows x 86 vars, 39.5 MB)
+01:39:31 01_harmonize INFO ---------------- EICV / EICV_pooled_services.dta (services, 0.16 GB) -> H_EICV_services.dta
+01:39:51 01_harmonize INFO read EICV_pooled_services.dta: 1,041,332 rows x 67 vars (typed, 0.2 GB in memory)
+01:39:51 01_harmonize INFO PASS  H_EICV_services.dta: row count unchanged (1,041,332)
+01:39:56 01_harmonize INFO wrote H_EICV_services.dta  (1,041,332 rows x 68 vars, 182.3 MB)
+01:39:56 01_harmonize INFO ---------------- EICV / EICV_pooled_tontine.dta (tontine, 0.00 GB) -> H_EICV_tontine.dta
+01:39:56 01_harmonize INFO read EICV_pooled_tontine.dta: 46,829 rows x 26 vars (typed, 0.0 GB in memory)
+01:39:56 01_harmonize INFO PASS  H_EICV_tontine.dta: row count unchanged (46,829)
+01:39:57 01_harmonize INFO wrote H_EICV_tontine.dta  (46,829 rows x 28 vars, 5.9 MB)
+01:39:57 01_harmonize INFO ---------------- EICV / EICV_pooled_transfers_in.dta (transfers_in, 0.08 GB) -> H_EICV_transfers_in.dta
+01:40:05 01_harmonize INFO read EICV_pooled_transfers_in.dta: 356,505 rows x 91 vars (typed, 0.1 GB in memory)
+01:40:05 01_harmonize INFO PASS  H_EICV_transfers_in.dta: row count unchanged (356,505)
+01:40:07 01_harmonize INFO wrote H_EICV_transfers_in.dta  (356,505 rows x 93 vars, 92.4 MB)
+01:40:07 01_harmonize INFO ---------------- EICV / EICV_pooled_transfers_out.dta (transfers_out, 0.08 GB) -> H_EICV_transfers_out.dta
+01:40:15 01_harmonize INFO read EICV_pooled_transfers_out.dta: 406,722 rows x 79 vars (typed, 0.1 GB in memory)
+01:40:16 01_harmonize INFO PASS  H_EICV_transfers_out.dta: row count unchanged (406,722)
+01:40:18 01_harmonize INFO wrote H_EICV_transfers_out.dta  (406,722 rows x 81 vars, 99.3 MB)
+01:40:18 01_harmonize INFO all hard checks passed (0 soft warnings)
+01:40:20 01_harmonize INFO 01_harmonize done: 77 files, 181 map rows

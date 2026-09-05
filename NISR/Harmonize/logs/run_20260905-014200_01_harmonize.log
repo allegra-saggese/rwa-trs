@@ -1,0 +1,19 @@
+01:42:00 01_harmonize INFO ==== 01_harmonize | run 20260905-014200_01_harmonize | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+01:42:02 01_harmonize INFO ---------------- LFS / LFS_pooled_household.dta (household, 0.03 GB) -> H_LFS_household.dta
+01:42:06 01_harmonize INFO read LFS_pooled_household.dta: 166,772 rows x 94 vars (typed, 0.1 GB in memory)
+01:42:06 01_harmonize INFO PASS  H_LFS_household.dta: row count unchanged (166,772)
+01:42:08 01_harmonize INFO wrote H_LFS_household.dta  (166,772 rows x 97 vars, 32.9 MB)
+01:42:08 01_harmonize INFO ---------------- LFS / LFS_pooled_person.dta (person, 0.65 GB) -> H_LFS_person.dta
+01:43:24 01_harmonize INFO read LFS_pooled_person.dta: 724,015 rows x 441 vars (typed, 0.8 GB in memory)
+01:43:26 01_harmonize INFO    h_marital   non-missing by wave: {'2017': 53099, '2018': 52785, '2019': 56595, '2020': 0, '2021': 50203, '2022': 49360, '2023': 50019, '2024': 71109, '2025': 70548}
+01:43:26 01_harmonize INFO    h_relation  non-missing by wave: {'2017': 77761, '2018': 76670, '2019': 81778, '2020': 70172, '2021': 71947, '2022': 70424, '2023': 71849, '2024': 100126, '2025': 100852}
+01:43:26 01_harmonize INFO    h_educ      non-missing by wave: {'2017': 49108, '2018': 48931, '2019': 52550, '2020': 0, '2021': 46562, '2022': 45780, '2023': 46701, '2024': 66303, '2025': 65721}
+01:43:26 01_harmonize INFO    h_literacy  non-missing by wave: {'2017': 32815, '2018': 32029, '2019': 34076, '2020': 0, '2021': 29902, '2022': 29679, '2023': 30406, '2024': 0, '2025': 0}
+01:43:26 01_harmonize INFO    h_lfstatus  non-missing by wave: {'2017': 45526, '2018': 45297, '2019': 48741, '2020': 45039, '2021': 46562, '2022': 45780, '2023': 46701, '2024': 66303, '2025': 65721}
+01:43:26 01_harmonize INFO    h_empstat   non-missing by wave: {'2017': 21394, '2018': 22033, '2019': 23550, '2020': 20440, '2021': 19142, '2022': 19947, '2023': 22214, '2024': 33166, '2025': 34181}
+01:43:26 01_harmonize INFO    h_isic1     non-missing by wave: {'2017': 21394, '2018': 22033, '2019': 23351, '2020': 20440, '2021': 19142, '2022': 19947, '2023': 22214, '2024': 33594, '2025': 34712}
+01:43:26 01_harmonize INFO    h_isco1     non-missing by wave: {'2017': 21394, '2018': 21836, '2019': 23351, '2020': 0, '2021': 19142, '2022': 19947, '2023': 22214, '2024': 33594, '2025': 34712}
+01:43:27 01_harmonize INFO PASS  H_LFS_person.dta: row count unchanged (724,015)
+01:43:41 01_harmonize INFO wrote H_LFS_person.dta  (724,015 rows x 457 vars, 685.5 MB)
+01:43:41 01_harmonize INFO all hard checks passed (0 soft warnings)
+01:43:41 01_harmonize INFO 01_harmonize done: 79 files, 265 map rows

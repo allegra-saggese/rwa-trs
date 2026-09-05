@@ -1,0 +1,1379 @@
+{
+ "stamp": "2026-09-05",
+ "files": {
+  "H_Census_household.dta": {
+   "source": "Census-PHC/3_Final/Census_pooled_household.dta",
+   "dataset": "Census",
+   "unit": "household",
+   "rows": 750115,
+   "vars": 295,
+   "h_vars": [
+    "h_hhkey",
+    "h_head_sex",
+    "h_head_age"
+   ],
+   "waves": [
+    "2002",
+    "2012",
+    "2022"
+   ]
+  },
+  "H_Census_person.dta": {
+   "source": "Census-PHC/3_Final/Census_pooled_person.dta",
+   "dataset": "Census",
+   "unit": "person",
+   "rows": 3165816,
+   "vars": 478,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey",
+    "h_sex",
+    "h_marital",
+    "h_relation",
+    "h_attend",
+    "h_educ",
+    "h_literacy",
+    "h_lfstatus",
+    "h_employed",
+    "h_lfs_def",
+    "h_empstat",
+    "h_isic1",
+    "h_isic1_approx",
+    "h_isco1",
+    "h_isco1_approx"
+   ],
+   "waves": [
+    "2002",
+    "2012",
+    "2022"
+   ]
+  },
+  "H_EC_establishment.dta": {
+   "source": "Establishment-Census-EC/3_Final/EC_pooled_establishment.dta",
+   "dataset": "EC",
+   "unit": "establishment",
+   "rows": 896710,
+   "vars": 265,
+   "h_vars": [],
+   "waves": [
+    "2011",
+    "2014",
+    "2017",
+    "2020",
+    "2023"
+   ]
+  },
+  "H_SAS_plotcrop.dta": {
+   "source": "Season-Agriculture-Survey-SAS/3_Final/SAS_pooled_plotcrop.dta",
+   "dataset": "SAS",
+   "unit": "plotcrop",
+   "rows": 632756,
+   "vars": 271,
+   "h_vars": [],
+   "waves": [
+    "2017_A",
+    "2017_B",
+    "2017_C",
+    "2018_A",
+    "2018_B",
+    "2018_C",
+    "2019_A",
+    "2019_B",
+    "2019_C",
+    "2020_A",
+    "2020_B",
+    "2020_C",
+    "2021_A",
+    "2021_B",
+    "2021_C",
+    "2022_A",
+    "2022_B",
+    "2022_C",
+    "2023_A",
+    "2023_B",
+    "2023_C",
+    "2024_A",
+    "2024_B",
+    "2024_C",
+    "2025_A",
+    "2025_B",
+    "2025_C"
+   ]
+  },
+  "H_SAS_plotcrop_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/3_Final/SAS_pooled_plotcrop_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "plotcrop_early",
+   "rows": 597551,
+   "vars": 60,
+   "h_vars": [],
+   "waves": [
+    "2013_A",
+    "2014_A",
+    "2014_B",
+    "2014_C",
+    "2015_A",
+    "2015_B",
+    "2016_A",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_agricultural_practice.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_agricultural_practice.dta",
+   "dataset": "SAS",
+   "unit": "agricultural_practice",
+   "rows": 192553,
+   "vars": 116,
+   "h_vars": [],
+   "waves": [
+    "2019_A",
+    "2019_B",
+    "2019_C",
+    "2020_A",
+    "2020_B",
+    "2020_C",
+    "2021_A",
+    "2021_B",
+    "2021_C",
+    "2022_A",
+    "2022_B",
+    "2022_C",
+    "2023_A",
+    "2023_B",
+    "2023_C"
+   ]
+  },
+  "H_SAS_antierosion_2017_2018.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_antierosion_2017_2018.dta",
+   "dataset": "SAS",
+   "unit": "antierosion_2017_2018",
+   "rows": 64405,
+   "vars": 18,
+   "h_vars": [],
+   "waves": [
+    "2017_A",
+    "2017_B",
+    "2017_C",
+    "2018_A",
+    "2018_B",
+    "2018_C"
+   ]
+  },
+  "H_SAS_farmq_part0_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part0_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part0",
+   "rows": 28051,
+   "vars": 16,
+   "h_vars": [],
+   "waves": [
+    "2014_A",
+    "2014_B",
+    "2014_C",
+    "2015_A",
+    "2015_B",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_farmq_part2a_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part2a_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part2a",
+   "rows": 68996,
+   "vars": 18,
+   "h_vars": [],
+   "waves": [
+    "2014_A",
+    "2014_B",
+    "2015_A",
+    "2015_B",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_farmq_part2b_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part2b_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part2b",
+   "rows": 30995,
+   "vars": 15,
+   "h_vars": [],
+   "waves": [
+    "2014_A",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_farmq_part2b_fertilizer_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part2b_fertilizer_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part2b_fertilizer",
+   "rows": 28878,
+   "vars": 14,
+   "h_vars": [],
+   "waves": [
+    "2014_C",
+    "2015_A",
+    "2015_B"
+   ]
+  },
+  "H_SAS_farmq_part2b_pesticide_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part2b_pesticide_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part2b_pesticide",
+   "rows": 28883,
+   "vars": 10,
+   "h_vars": [],
+   "waves": [
+    "2014_C",
+    "2015_A",
+    "2015_B"
+   ]
+  },
+  "H_SAS_farmq_part4_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part4_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part4",
+   "rows": 57511,
+   "vars": 21,
+   "h_vars": [],
+   "waves": [
+    "2014_A",
+    "2015_A",
+    "2015_B",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_farmq_part6a_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part6a_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part6a",
+   "rows": 544313,
+   "vars": 14,
+   "h_vars": [],
+   "waves": [
+    "2015_A",
+    "2015_B",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_farmq_part7_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_farmq_part7_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "farmq_part7",
+   "rows": 34626,
+   "vars": 31,
+   "h_vars": [],
+   "waves": [
+    "2014_C",
+    "2015_A",
+    "2016_B",
+    "2016_C"
+   ]
+  },
+  "H_SAS_fertilizers_2017_2018.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_fertilizers_2017_2018.dta",
+   "dataset": "SAS",
+   "unit": "fertilizers_2017_2018",
+   "rows": 84986,
+   "vars": 29,
+   "h_vars": [],
+   "waves": [
+    "2017_A",
+    "2017_B",
+    "2017_C",
+    "2018_A",
+    "2018_B",
+    "2018_C"
+   ]
+  },
+  "H_SAS_fertilizers_pesticides.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_fertilizers_pesticides.dta",
+   "dataset": "SAS",
+   "unit": "fertilizers_pesticides",
+   "rows": 225110,
+   "vars": 140,
+   "h_vars": [],
+   "waves": [
+    "2019_A",
+    "2019_B",
+    "2019_C",
+    "2020_A",
+    "2020_B",
+    "2020_C",
+    "2021_A",
+    "2021_B",
+    "2021_C",
+    "2022_A",
+    "2022_B",
+    "2022_C",
+    "2023_A",
+    "2023_B",
+    "2023_C"
+   ]
+  },
+  "H_SAS_irrigation_land_tenure_2017_2018.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_irrigation_land_tenure_2017_2018.dta",
+   "dataset": "SAS",
+   "unit": "irrigation_land_tenure_2017_2018",
+   "rows": 52621,
+   "vars": 51,
+   "h_vars": [],
+   "waves": [
+    "2017_A",
+    "2017_B",
+    "2017_C",
+    "2018_A",
+    "2018_B",
+    "2018_C"
+   ]
+  },
+  "H_SAS_lsf_farmq_part2a_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_lsf_farmq_part2a_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "lsf_farmq_part2a",
+   "rows": 2036,
+   "vars": 14,
+   "h_vars": [],
+   "waves": [
+    "2014_B",
+    "2016_B"
+   ]
+  },
+  "H_SAS_lsf_farmq_part2b_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_lsf_farmq_part2b_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "lsf_farmq_part2b",
+   "rows": 2081,
+   "vars": 15,
+   "h_vars": [],
+   "waves": [
+    "2014_B",
+    "2016_B"
+   ]
+  },
+  "H_SAS_lsf_screening_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_lsf_screening_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "lsf_screening",
+   "rows": 15710,
+   "vars": 21,
+   "h_vars": [],
+   "waves": [
+    "2014_A",
+    "2014_B",
+    "2015_A",
+    "2016_B"
+   ]
+  },
+  "H_SAS_pesticides_2017_2018.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_pesticides_2017_2018.dta",
+   "dataset": "SAS",
+   "unit": "pesticides_2017_2018",
+   "rows": 95146,
+   "vars": 27,
+   "h_vars": [],
+   "waves": [
+    "2017_A",
+    "2017_B",
+    "2017_C",
+    "2018_A",
+    "2018_B",
+    "2018_C"
+   ]
+  },
+  "H_SAS_screening_2017_2018.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_screening_2017_2018.dta",
+   "dataset": "SAS",
+   "unit": "screening_2017_2018",
+   "rows": 243835,
+   "vars": 40,
+   "h_vars": [],
+   "waves": [
+    "2017_A",
+    "2017_B",
+    "2017_C",
+    "2018_A",
+    "2018_B",
+    "2018_C"
+   ]
+  },
+  "H_SAS_screening_agroforestry.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_screening_agroforestry.dta",
+   "dataset": "SAS",
+   "unit": "screening_agroforestry",
+   "rows": 263633,
+   "vars": 28,
+   "h_vars": [],
+   "waves": [
+    "2020_A",
+    "2020_B",
+    "2020_C",
+    "2021_A",
+    "2021_B",
+    "2021_C",
+    "2022_A",
+    "2022_B",
+    "2022_C",
+    "2023_A",
+    "2023_B",
+    "2023_C"
+   ]
+  },
+  "H_SAS_screening_antierosion.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_screening_antierosion.dta",
+   "dataset": "SAS",
+   "unit": "screening_antierosion",
+   "rows": 287508,
+   "vars": 28,
+   "h_vars": [],
+   "waves": [
+    "2020_A",
+    "2020_B",
+    "2020_C",
+    "2021_A",
+    "2021_B",
+    "2021_C",
+    "2022_A",
+    "2022_B",
+    "2022_C",
+    "2023_A",
+    "2023_B",
+    "2023_C"
+   ]
+  },
+  "H_SAS_screening_crops.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_screening_crops.dta",
+   "dataset": "SAS",
+   "unit": "screening_crops",
+   "rows": 450923,
+   "vars": 40,
+   "h_vars": [],
+   "waves": [
+    "2020_A",
+    "2020_B",
+    "2020_C",
+    "2021_A",
+    "2021_B",
+    "2021_C",
+    "2022_A",
+    "2022_B",
+    "2022_C",
+    "2023_A",
+    "2023_B",
+    "2023_C"
+   ]
+  },
+  "H_SAS_ssf_screening_2013_2016.dta": {
+   "source": "Season-Agriculture-Survey-SAS/2_Intermediate/appended/SAS_pooled_ssf_screening_2013_2016.dta",
+   "dataset": "SAS",
+   "unit": "ssf_screening",
+   "rows": 219362,
+   "vars": 23,
+   "h_vars": [],
+   "waves": [
+    "2014_B",
+    "2014_C",
+    "2015_A"
+   ]
+  },
+  "H_CFSVA_child.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_child.dta",
+   "dataset": "CFSVA",
+   "unit": "child",
+   "rows": 35764,
+   "vars": 1375,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2018",
+    "2021",
+    "2024"
+   ]
+  },
+  "H_CFSVA_household.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_household.dta",
+   "dataset": "CFSVA",
+   "unit": "household",
+   "rows": 50890,
+   "vars": 4535,
+   "h_vars": [
+    "h_hhkey",
+    "h_head_sex",
+    "h_head_age",
+    "h_head_marital",
+    "h_head_educ",
+    "h_head_literacy"
+   ],
+   "waves": [
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2018",
+    "2021",
+    "2024"
+   ]
+  },
+  "H_CFSVA_village.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_village.dta",
+   "dataset": "CFSVA",
+   "unit": "village",
+   "rows": 3062,
+   "vars": 453,
+   "h_vars": [],
+   "waves": [
+    "2009",
+    "2012",
+    "2018",
+    "2021"
+   ]
+  },
+  "H_CFSVA_woman.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_woman.dta",
+   "dataset": "CFSVA",
+   "unit": "woman",
+   "rows": 31038,
+   "vars": 812,
+   "h_vars": [
+    "h_hhkey",
+    "h_educ",
+    "h_literacy"
+   ],
+   "waves": [
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2024"
+   ]
+  },
+  "H_AHS_household.dta": {
+   "source": "Agriculture-Survey-AHS/3_Final/AHS_pooled_household.dta",
+   "dataset": "AHS",
+   "unit": "household",
+   "rows": 30447,
+   "vars": 456,
+   "h_vars": [
+    "h_hhkey",
+    "h_head_sex",
+    "h_head_age"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_person.dta": {
+   "source": "Agriculture-Survey-AHS/3_Final/AHS_pooled_person.dta",
+   "dataset": "AHS",
+   "unit": "person",
+   "rows": 138683,
+   "vars": 201,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey",
+    "h_sex",
+    "h_marital",
+    "h_relation",
+    "h_attend",
+    "h_educ",
+    "h_literacy",
+    "h_lfstatus",
+    "h_employed",
+    "h_lfs_def",
+    "h_empstat",
+    "h_isic1",
+    "h_isic1_approx",
+    "h_isco1",
+    "h_isco1_approx"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_animal_inputs.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_animal_inputs.dta",
+   "dataset": "AHS",
+   "unit": "animal_inputs",
+   "rows": 49750,
+   "vars": 53,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020"
+   ]
+  },
+  "H_AHS_credits.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_credits.dta",
+   "dataset": "AHS",
+   "unit": "credits",
+   "rows": 31947,
+   "vars": 91,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_eggs.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_eggs.dta",
+   "dataset": "AHS",
+   "unit": "eggs",
+   "rows": 58853,
+   "vars": 50,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_extension.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_extension.dta",
+   "dataset": "AHS",
+   "unit": "extension",
+   "rows": 98843,
+   "vars": 75,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_fruits.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_fruits.dta",
+   "dataset": "AHS",
+   "unit": "fruits",
+   "rows": 29239,
+   "vars": 40,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_honey.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_honey.dta",
+   "dataset": "AHS",
+   "unit": "honey",
+   "rows": 38465,
+   "vars": 60,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_inputs.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_inputs.dta",
+   "dataset": "AHS",
+   "unit": "inputs",
+   "rows": 26723,
+   "vars": 247,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020"
+   ]
+  },
+  "H_AHS_land.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_land.dta",
+   "dataset": "AHS",
+   "unit": "land",
+   "rows": 72211,
+   "vars": 89,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_livestock.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_livestock.dta",
+   "dataset": "AHS",
+   "unit": "livestock",
+   "rows": 65808,
+   "vars": 120,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_milk.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_milk.dta",
+   "dataset": "AHS",
+   "unit": "milk",
+   "rows": 59594,
+   "vars": 79,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2020",
+    "2024"
+   ]
+  },
+  "H_AHS_tools.dta": {
+   "source": "Agriculture-Survey-AHS/2_Intermediate/appended/AHS_pooled_tools.dta",
+   "dataset": "AHS",
+   "unit": "tools",
+   "rows": 372184,
+   "vars": 34,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "2017",
+    "2024"
+   ]
+  },
+  "H_EICV_household.dta": {
+   "source": "Household-Living-Conditions-EICV/3_Final/EICV_pooled_household.dta",
+   "dataset": "EICV",
+   "unit": "household",
+   "rows": 71681,
+   "vars": 820,
+   "h_vars": [
+    "h_hhkey",
+    "h_head_sex",
+    "h_head_age"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV5_CS",
+    "EICV7_CS"
+   ]
+  },
+  "H_EICV_person.dta": {
+   "source": "Household-Living-Conditions-EICV/3_Final/EICV_pooled_person.dta",
+   "dataset": "EICV",
+   "unit": "person",
+   "rows": 327841,
+   "vars": 1098,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey",
+    "h_sex",
+    "h_marital",
+    "h_relation",
+    "h_attend",
+    "h_educ",
+    "h_literacy",
+    "h_lfstatus",
+    "h_employed",
+    "h_lfs_def",
+    "h_empstat",
+    "h_isic1",
+    "h_isic1_approx",
+    "h_isco1",
+    "h_isco1_approx"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV5_CS",
+    "EICV7_CS"
+   ]
+  },
+  "H_EICV_EICV3_4_panel_link.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV3_4_panel_link.dta",
+   "dataset": "EICV",
+   "unit": "link",
+   "rows": 8310,
+   "vars": 39,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV3_4_Panel"
+   ]
+  },
+  "H_EICV_EICV5_vup_panel_link.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV5_vup_panel_link.dta",
+   "dataset": "EICV",
+   "unit": "link",
+   "rows": 5171,
+   "vars": 43,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_agri_expenditure.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_agri_expenditure.dta",
+   "dataset": "EICV",
+   "unit": "agri_expenditure",
+   "rows": 890994,
+   "vars": 54,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_agri_income.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_agri_income.dta",
+   "dataset": "EICV",
+   "unit": "agri_income",
+   "rows": 397212,
+   "vars": 32,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_agri_processing.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_agri_processing.dta",
+   "dataset": "EICV",
+   "unit": "agri_processing",
+   "rows": 172443,
+   "vars": 108,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_credits.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_credits.dta",
+   "dataset": "EICV",
+   "unit": "credits",
+   "rows": 104030,
+   "vars": 84,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_crop_large.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_crop_large.dta",
+   "dataset": "EICV",
+   "unit": "crop_large",
+   "rows": 159870,
+   "vars": 74,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_crop_small.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_crop_small.dta",
+   "dataset": "EICV",
+   "unit": "crop_small",
+   "rows": 469484,
+   "vars": 84,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_durables.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_durables.dta",
+   "dataset": "EICV",
+   "skipped": "disk space: copy deleted on 2026-09-05 (the Mac was at 4 GB free); rerun `python 01_harmonize.py EICV` once space is available"
+  },
+  "H_EICV_enterprise.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_enterprise.dta",
+   "dataset": "EICV",
+   "unit": "enterprise",
+   "rows": 70481,
+   "vars": 95,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3"
+   ]
+  },
+  "H_EICV_equipment.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_equipment.dta",
+   "dataset": "EICV",
+   "unit": "equipment",
+   "rows": 385969,
+   "vars": 46,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3"
+   ]
+  },
+  "H_EICV_expenditure_annual.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_expenditure_annual.dta",
+   "dataset": "EICV",
+   "skipped": "disk space: copy deleted on 2026-09-05 (the Mac was at 4 GB free); rerun `python 01_harmonize.py EICV` once space is available"
+  },
+  "H_EICV_expenditure_frequent.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_expenditure_frequent.dta",
+   "dataset": "EICV",
+   "skipped": "disk space: copy deleted on 2026-09-05 (the Mac was at 4 GB free); rerun `python 01_harmonize.py EICV` once space is available"
+  },
+  "H_EICV_expenditure_monthly.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_expenditure_monthly.dta",
+   "dataset": "EICV",
+   "skipped": "disk space: copy deleted on 2026-09-05 (the Mac was at 4 GB free); rerun `python 01_harmonize.py EICV` once space is available"
+  },
+  "H_EICV_food.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_food.dta",
+   "dataset": "EICV",
+   "skipped": "disk space: copy deleted on 2026-09-05 (the Mac was at 4 GB free); rerun `python 01_harmonize.py EICV` once space is available"
+  },
+  "H_EICV_household_vup.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_household_vup.dta",
+   "dataset": "EICV",
+   "unit": "household",
+   "rows": 5415,
+   "vars": 319,
+   "h_vars": [
+    "h_hhkey",
+    "h_head_sex",
+    "h_head_age"
+   ],
+   "waves": [
+    "EICV5_VUP",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_jobs.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_jobs.dta",
+   "dataset": "EICV",
+   "unit": "jobs",
+   "rows": 242787,
+   "vars": 194,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_land.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_land.dta",
+   "dataset": "EICV",
+   "unit": "land",
+   "rows": 545978,
+   "vars": 37,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_livestock.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_livestock.dta",
+   "dataset": "EICV",
+   "unit": "livestock",
+   "rows": 345131,
+   "vars": 120,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_livestock_expenditure.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_livestock_expenditure.dta",
+   "dataset": "EICV",
+   "unit": "livestock_expenditure",
+   "rows": 424476,
+   "vars": 66,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_livestock_products.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_livestock_products.dta",
+   "dataset": "EICV",
+   "unit": "livestock_products",
+   "rows": 317188,
+   "vars": 56,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_other_expenditure.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_other_expenditure.dta",
+   "dataset": "EICV",
+   "unit": "other_expenditure",
+   "rows": 817971,
+   "vars": 37,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV3",
+    "EICV4_CS",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_other_income.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_other_income.dta",
+   "dataset": "EICV",
+   "unit": "other_income",
+   "rows": 1612233,
+   "vars": 48,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_own_consumption.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_own_consumption.dta",
+   "dataset": "EICV",
+   "skipped": "disk space: copy deleted on 2026-09-05 (the Mac was at 4 GB free); rerun `python 01_harmonize.py EICV` once space is available"
+  },
+  "H_EICV_parcels.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_parcels.dta",
+   "dataset": "EICV",
+   "unit": "parcels",
+   "rows": 207503,
+   "vars": 120,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_person_vup.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_person_vup.dta",
+   "dataset": "EICV",
+   "unit": "person",
+   "rows": 32241,
+   "vars": 498,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey",
+    "h_sex",
+    "h_marital",
+    "h_relation",
+    "h_attend",
+    "h_educ",
+    "h_literacy",
+    "h_lfstatus",
+    "h_employed",
+    "h_lfs_def",
+    "h_empstat",
+    "h_isic1",
+    "h_isic1_approx",
+    "h_isco1",
+    "h_isco1_approx"
+   ],
+   "waves": [
+    "EICV4_VUP",
+    "EICV5_VUP",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_savings.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_savings.dta",
+   "dataset": "EICV",
+   "unit": "savings",
+   "rows": 153527,
+   "vars": 86,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_services.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_services.dta",
+   "dataset": "EICV",
+   "unit": "services",
+   "rows": 1041332,
+   "vars": 68,
+   "h_vars": [
+    "h_hhkey"
+   ],
+   "waves": [
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_tontine.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_tontine.dta",
+   "dataset": "EICV",
+   "unit": "tontine",
+   "rows": 46829,
+   "vars": 28,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV5_CS",
+    "EICV5_VUP"
+   ]
+  },
+  "H_EICV_transfers_in.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_transfers_in.dta",
+   "dataset": "EICV",
+   "unit": "transfers_in",
+   "rows": 356505,
+   "vars": 93,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_EICV_transfers_out.dta": {
+   "source": "Household-Living-Conditions-EICV/2_Intermediate/appended/EICV_pooled_transfers_out.dta",
+   "dataset": "EICV",
+   "unit": "transfers_out",
+   "rows": 406722,
+   "vars": 81,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey"
+   ],
+   "waves": [
+    "EICV1",
+    "EICV2",
+    "EICV3",
+    "EICV4_CS",
+    "EICV4_VUP",
+    "EICV5_CS",
+    "EICV5_VUP",
+    "EICV7_CS",
+    "EICV7_VUP"
+   ]
+  },
+  "H_LFS_household.dta": {
+   "source": "Labour-Force-Survey-LFS/3_Final/LFS_pooled_household.dta",
+   "dataset": "LFS",
+   "unit": "household",
+   "rows": 166772,
+   "vars": 97,
+   "h_vars": [
+    "h_hhkey",
+    "h_head_sex",
+    "h_head_age"
+   ],
+   "waves": [
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ]
+  },
+  "H_LFS_person.dta": {
+   "source": "Labour-Force-Survey-LFS/3_Final/LFS_pooled_person.dta",
+   "dataset": "LFS",
+   "unit": "person",
+   "rows": 724015,
+   "vars": 457,
+   "h_vars": [
+    "h_hhkey",
+    "h_pkey",
+    "h_sex",
+    "h_marital",
+    "h_relation",
+    "h_attend",
+    "h_educ",
+    "h_literacy",
+    "h_lfstatus",
+    "h_employed",
+    "h_lfs_def",
+    "h_empstat",
+    "h_isic1",
+    "h_isic1_approx",
+    "h_isco1",
+    "h_isco1_approx"
+   ],
+   "waves": [
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ]
+  }
+ }
+}

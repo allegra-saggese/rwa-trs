@@ -99,6 +99,13 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 
 ---
 
+### Harmonised NISR layer ✅ (2026-09-05)
+- **Location** `$DB/Publicly-Available-NISR/Harmonized/` — `H_<dataset>_<unit or module>.dta`, one harmonised copy of every final and appended file of the seven NISR pipelines (71 written; the six largest EICV item-module copies — food, own consumption, expenditure annual/monthly/frequent, durables — were removed to free the Mac's disk and are listed as skipped until `python NISR/Harmonize/01_harmonize.py EICV` is rerun with space available)
+- **Coverage** every wave of LFS 2017–2025, Census 2002/2012/2022, EICV1–EICV7, EC 2011–2023, AHS 2017/2020/2024, SAS 2013–2025, CFSVA 2006–2024
+- **Source** built by `$R/NISR/Harmonize/` (`master.py`); map of every code rule in `harmonization_map.csv` (also in the repo), code lists and counts in `$R/NISR/Harmonize/HARMONIZATION_CODEBOOK.md`, reasoning in `DECISIONS.md`
+- **Contents** same rows and native variables as the source file, plus identical key-block labels and NISR geography value labels, cross-dataset keys `h_hhkey` / `h_pkey`, and on person / household / woman files the `h_*` concepts: sex, marital status, relationship to head, ever attended, education (4 levels), literacy, labour-force status with its definition code `h_lfs_def`, employed, status in employment, ISIC section, ISCO major group (approximation flags), head's sex and age
+- **Note** employment measures carry different definitions and age bases by source (`h_lfs_def` 1–8); do not compare levels across definitions. The census 2022 public file has no labour-force identification block, so its status is missing.
+
 ## Panel B — Conservation and environmental measures
 
 ### JRC Tropical Moist Forest (TMF) ✅
