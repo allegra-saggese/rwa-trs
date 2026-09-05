@@ -73,8 +73,9 @@ def version_pool(frames, labels, vlabs, out_name, label, unit, out_dir=None):
         if v in CORE_KEYS or v in FORCE_ALIGN or len(ws) == 1: groups = [list(ws)]
         else:
             for w in ws:
+                if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append(("__forced__", [w])); continue   # closed group: nothing else may join it
                 for rep, g in groups:
-                    if not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD: g.append(w); break
+                    if rep != "__forced__" and (not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD): g.append(w); break
                 else: groups.append((labs[w], [w]))
             groups.sort(key=lambda g: (-len(g[1]), -max(order[x] for x in g[1]))); groups = [g for _, g in groups]
         versions = {}

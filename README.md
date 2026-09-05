@@ -30,7 +30,10 @@ The survey microdata (LFS, Census, EICV, Establishment Census, AHS, SAS, CFSVA) 
 cleaned and pooled by independent Python pipelines in [`NISR/`](NISR/README.md): one
 folder per survey, `python master.py` runs it top to bottom, outputs go to the Dropbox
 data folder (`2_Intermediate/`, `3_Final/`), and each folder carries its `DECISIONS.md`,
-generated `CODEBOOK.md`, check reports and run logs. The `extract.py` survey loaders
+generated `CODEBOOK.md`, `DOCUMENTATION.md` (what the NISR documentation says and how it
+was applied), check reports and run logs. An eighth folder, `NISR/Harmonize/`, writes
+harmonised copies of every final and appended file (common keys, labels and `h_*` concept
+variables) to `Publicly-Available-NISR/Harmonized/`. The `extract.py` survey loaders
 below predate these pipelines; read `NISR/README.md` first for survey data.
 
 ## Setup

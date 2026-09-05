@@ -40,9 +40,9 @@ def version_groups(v, yrs, labs):
     groups = []            # [(representative_label, [years])]
     for y in yrs:
         if v in FORCE_SPLIT and y in FORCE_SPLIT[v]:
-            groups.append((labs[y], [y])); continue
+            groups.append(("__forced__", [y])); continue   # closed group: nothing else may join it
         for rep, ys in groups:
-            if not labs[y] or not rep or label_similarity(labs[y], rep) >= SIM_THRESHOLD:   # no label = no evidence of a change
+            if rep != "__forced__" and (not labs[y] or not rep or label_similarity(labs[y], rep) >= SIM_THRESHOLD):   # no label = no evidence of a change
                 ys.append(y); break
         else:
             groups.append((labs[y], [y]))

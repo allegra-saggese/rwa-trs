@@ -95,6 +95,19 @@ numbers are computed two independent ways and compared: Python vs a Stata recomp
 on the written files, new outputs vs the archived Stata pipeline's outputs (where those
 existed), weighted totals vs figures published in NISR reports.
 
+## Harmonize (cross-dataset layer)
+
+`NISR/Harmonize/` is an eighth code base with the same rules (own helpers, `master.py`, checks,
+codebook, DECISIONS). It reads every dataset's `3_Final/` and `2_Intermediate/appended/` files
+and writes a harmonised copy of each to `Publicly-Available-NISR/Harmonized/`
+(`H_<dataset>_<unit or module>.dta`): identical key-block labels and geography value labels,
+cross-dataset string keys `h_hhkey` / `h_pkey`, and on the person / household / woman files the
+common concepts as new `h_*` variables (sex, marital, relationship, education, literacy,
+labour-force status with its definition code, status in employment, ISIC section, ISCO major
+group, head's sex and age) with common codes. Native variables are never changed, no row is lost.
+`harmonization_map.csv` records every mapping; `HARMONIZATION_CODEBOOK.md` the code lists and
+counts. The July-2026 three-file harmonisation stays in `Archive/Harmonized/`.
+
 ## Running
 
 ```bash
@@ -105,3 +118,7 @@ python 01_clean.py 2019                                     # one wave (for debu
 
 Requirements: Python ≥ 3.10, pandas ≥ 2.0, numpy, pyreadstat (reading). Stata is optional
 (section B of the checks is skipped without it).
+
+**Forced splits (fix of 2026-09-05).** A year listed in `FORCE_SPLIT` now forms a *closed* version
+group: earlier the forced year was isolated but later years could still join it by label
+similarity, so the split had no effect. Applies to every `02_merge.py`.

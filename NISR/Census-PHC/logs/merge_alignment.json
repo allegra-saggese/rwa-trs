@@ -1,7 +1,20 @@
 {
  "threshold": 0.25,
  "force_align": [],
- "force_split": {},
+ "force_split": {
+  "p13": [
+   2002
+  ],
+  "p22": [
+   2002
+  ],
+  "p26": [
+   2002
+  ],
+  "h08": [
+   2012
+  ]
+ },
  "decisions": {
   "a46": {
    "years": [
@@ -483,10 +496,12 @@
    ],
    "versions": {
     "h08": [
-     2012,
      2022
     ],
     "h08_v2": [
+     2012
+    ],
+    "h08_v3": [
      2002
     ]
    },
@@ -4445,11 +4460,13 @@
    ],
    "versions": {
     "p13": [
-     2002,
-     2012
+     2022
     ],
     "p13_v2": [
-     2022
+     2012
+    ],
+    "p13_v3": [
+     2002
     ]
    },
    "labels_by_year": {
@@ -4457,7 +4474,7 @@
     "2012": "Type of insurance",
     "2022": "Religious affiliation"
    },
-   "reference_label": "Type of insurance"
+   "reference_label": "Religious affiliation"
   },
   "p14": {
    "years": [
@@ -4812,8 +4829,10 @@
    ],
    "versions": {
     "p22": [
-     2002,
      2012
+    ],
+    "p22_v2": [
+     2002
     ]
    },
    "labels_by_year": {
@@ -5003,8 +5022,10 @@
    ],
    "versions": {
     "p26": [
-     2002,
      2012
+    ],
+    "p26_v2": [
+     2002
     ]
    },
    "labels_by_year": {
@@ -6242,40 +6263,6 @@
     "Not related to head"
    ]
   },
-  "p13": {
-   "1": [
-    "Mutuelle",
-    "No major handicap"
-   ],
-   "2": [
-    "Blind",
-    "RAMA"
-   ],
-   "3": [
-    "Deaf/dumb",
-    "MMI"
-   ],
-   "4": [
-    "FARG",
-    "Infirmity of the legs/feet"
-   ],
-   "5": [
-    "Infirmity of the arms/hands",
-    "Insurance cie"
-   ],
-   "6": [
-    "Mental deficiency",
-    "School"
-   ],
-   "7": [
-    "NGO",
-    "Trauma"
-   ],
-   "8": [
-    "Employer",
-    "Other major handicap"
-   ]
-  },
   "p19": {
    "1": [
     "CE/FE",
@@ -6307,36 +6294,6 @@
    ],
    "9": [
     "Not stated",
-    "missing"
-   ]
-  },
-  "p26": {
-   "1": [
-    "Employee",
-    "Never married (bachelor/spinster)"
-   ],
-   "2": [
-    "Cohabitation / common-law union",
-    "Employer"
-   ],
-   "3": [
-    "Monogamous marriage",
-    "Self-employed"
-   ],
-   "4": [
-    "Contributing family worker",
-    "Polygamous married man"
-   ],
-   "5": [
-    "First wife in a polygamous marriage",
-    "Producers cooperative member"
-   ],
-   "6": [
-    "Other",
-    "Second wife in a polygamous marriage"
-   ],
-   "9": [
-    "Widowed",
     "missing"
    ]
   },
@@ -6444,7 +6401,7 @@
    "p10_v2",
    "p11_v2",
    "p12",
-   "p13",
+   "p13_v3",
    "personnes_handic",
    "p14_v2",
    "p15_v2",
@@ -6457,13 +6414,13 @@
    "p20_v2",
    "p21_v2",
    "p211",
-   "p22",
+   "p22_v2",
    "emploi_exerc",
    "p23_v2",
    "p24_v3",
    "p241",
    "p25_v2",
-   "p26",
+   "p26_v2",
    "etat_matri",
    "p27a",
    "p27b",
@@ -6503,7 +6460,7 @@
    "h05_v3",
    "h06_v3",
    "h07_v3",
-   "h08_v2",
+   "h08_v3",
    "h09_v3",
    "h10_v3",
    "h11_v3",
@@ -6546,6 +6503,7 @@
    "p12c5",
    "p12d6",
    "p12c6",
+   "p13_v2",
    "p14a",
    "p14b",
    "p14c",
@@ -6557,9 +6515,11 @@
    "p18b_v2",
    "p20",
    "p21",
+   "p22",
    "p23",
    "p24_v2",
    "p25",
+   "p26",
    "p27",
    "p28",
    "p29_v2",
@@ -6586,7 +6546,7 @@
    "h05_v2",
    "h06_v2",
    "h07_v2",
-   "h08",
+   "h08_v2",
    "h09_v2",
    "h10_v2",
    "h11_v2",
@@ -6636,7 +6596,7 @@
    "p11a",
    "p11b",
    "p12b",
-   "p13_v2",
+   "p13",
    "p14",
    "p15b",
    "p16b",
@@ -6681,6 +6641,7 @@
    "h05",
    "h06",
    "h07",
+   "h08",
    "h09",
    "h10",
    "h11",
@@ -6907,7 +6868,7 @@
    "h05_v3",
    "h06_v3",
    "h07_v3",
-   "h08_v2",
+   "h08_v3",
    "h09_v3",
    "h10_v3",
    "h11_v3",
@@ -6939,7 +6900,7 @@
    "h05_v2",
    "h06_v2",
    "h07_v2",
-   "h08",
+   "h08_v2",
    "h09_v2",
    "h10_v2",
    "h11_v2",
@@ -6977,6 +6938,7 @@
    "h05",
    "h06",
    "h07",
+   "h08",
    "h09",
    "h10",
    "h11",

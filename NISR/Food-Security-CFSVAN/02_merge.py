@@ -32,9 +32,9 @@ def version_groups(v, waves, labs):
     if v in KEYS or v in FORCE_ALIGN or len(waves) == 1: return [list(waves)]
     groups = []
     for w in waves:
-        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append((labs[w], [w])); continue
+        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append(("__forced__", [w])); continue   # closed group: nothing else may join it
         for rep, ws in groups:
-            if not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD: ws.append(w); break
+            if rep != "__forced__" and (not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD): ws.append(w); break
         else: groups.append((labs[w], [w]))
     groups.sort(key=lambda g: (-len(g[1]), -max(CS_ORDER.get(x, 0) for x in g[1])))
     return [ws for _, ws in groups]

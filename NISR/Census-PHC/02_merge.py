@@ -23,7 +23,10 @@ SIM_THRESHOLD = 0.25
 # Same question, reworded (checked against the questionnaires and value labels; see DECISIONS.md):
 FORCE_ALIGN = set()      # filled after reading the first VERSIONS log; see DECISIONS.md
 # Force a separate version for given years even if labels look alike:
-FORCE_SPLIT = {}
+# same name, different question, but labels too alike for the 0.25 threshold (found while harmonising, 2026-09-05):
+# p13 handicap (2002) vs insurance (2012); p22 occupation ISCO-88 (2002) vs activities done (2012);
+# p26 marital status (2002) vs status in employment (2012); h08 rooms for sleeping (2012) vs rooms (2022).
+FORCE_SPLIT = {"p13": [2002], "p22": [2002], "p26": [2002], "h08": [2012]}
 
 # ---------------------------------------------------------------- load per-year files
 data, labels, vlabs = {}, {}, {}
@@ -39,9 +42,9 @@ def version_groups(v, yrs, labs):
     groups = []            # [(representative_label, [years])]
     for y in yrs:
         if v in FORCE_SPLIT and y in FORCE_SPLIT[v]:
-            groups.append((labs[y], [y])); continue
+            groups.append(("__forced__", [y])); continue   # closed group: nothing else may join it
         for rep, ys in groups:
-            if not labs[y] or not rep or label_similarity(labs[y], rep) >= SIM_THRESHOLD:   # no label = no evidence of a change
+            if rep != "__forced__" and (not labs[y] or not rep or label_similarity(labs[y], rep) >= SIM_THRESHOLD):   # no label = no evidence of a change
                 ys.append(y); break
         else:
             groups.append((labs[y], [y]))

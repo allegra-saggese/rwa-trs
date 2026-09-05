@@ -110,3 +110,13 @@ derived for 2022 (2002 and 2012 carry NISR's own status variables `p211` / `rp20
 
 **New published checks:** 2012 weighted population vs the private-household population
 10,378,021 (labour-force report), and the weighted urban share per census vs 16.9 / 16.5 / 27.9%.
+
+## 2026-09-05 — four forced splits found while harmonising
+
+The label-similarity rule (token Jaccard ≥ 0.25) had merged four pairs of different questions
+that share a name and a word: `p13` (2002 type of handicap / 2012 type of insurance), `p22`
+(2002 occupation, ISCO-88 3-digit / 2012 activities done in the last 7 days), `p26` (2002
+marital status / 2012 status in employment) and `h08` (2012 rooms for sleeping / 2022 number of
+rooms). They are now listed in `FORCE_SPLIT` (2002 → `_v2`, 2012 `h08` → `_v2`) and the pooled
+files rebuilt. The harmonisation step reads the version columns through `logs/merge_alignment.json`,
+so it followed the split automatically.
