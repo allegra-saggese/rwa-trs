@@ -1,0 +1,47 @@
+21:38:32 01_clean INFO ==== 01_clean | run 20260904-213832_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:38:32 01_clean INFO ================ 2019 ================
+21:38:33 01_clean INFO PASS  2019/A/crop_production: province codes 1-5
+21:38:33 01_clean INFO wrote SAS_2019_A_crop_production_clean.dta  (32,906 rows x 54 vars, 5.9 MB)
+21:38:33 01_clean INFO PASS  2019/A/partiii_fertilizers_pesticides: weights > 0
+21:38:33 01_clean INFO PASS  2019/A/partiii_fertilizers_pesticides: province codes 1-5
+21:38:33 01_clean INFO wrote SAS_2019_A_partiii_fertilizers_pesticides_clean.dta  (18,786 rows x 33 vars, 2.0 MB)
+21:38:34 01_clean INFO PASS  2019/A/partiv_agricultural_practice: weights > 0
+21:38:34 01_clean INFO PASS  2019/A/partiv_agricultural_practice: province codes 1-5
+21:38:34 01_clean INFO wrote SAS_2019_A_partiv_agricultural_practice_clean.dta  (19,805 rows x 39 vars, 2.1 MB)
+21:38:34 01_clean INFO PASS  2019/A/partv_land_tenure: weights > 0
+21:38:34 01_clean INFO PASS  2019/A/partv_land_tenure: province codes 1-5
+21:38:34 01_clean INFO wrote SAS_2019_A_partv_land_tenure_clean.dta  (63,292 rows x 22 vars, 3.7 MB)
+21:38:35 01_clean INFO PASS  2019/A/screening: weights > 0
+21:38:35 01_clean INFO PASS  2019/A/screening: province codes 1-5
+21:38:35 01_clean INFO wrote SAS_2019_A_screening_clean.dta  (46,854 rows x 29 vars, 4.2 MB)
+21:38:36 01_clean INFO PASS  2019/B/crop_production: province codes 1-5
+21:38:36 01_clean INFO wrote SAS_2019_B_crop_production_clean.dta  (30,493 rows x 54 vars, 5.3 MB)
+21:38:36 01_clean INFO PASS  2019/B/partiii_fertilizers_pesticides: weights > 0
+21:38:36 01_clean INFO PASS  2019/B/partiii_fertilizers_pesticides: province codes 1-5
+21:38:36 01_clean INFO wrote SAS_2019_B_partiii_fertilizers_pesticides_clean.dta  (17,637 rows x 33 vars, 1.9 MB)
+21:38:37 01_clean INFO PASS  2019/B/partiv_agricultural_practice: weights > 0
+21:38:37 01_clean INFO PASS  2019/B/partiv_agricultural_practice: province codes 1-5
+21:38:37 01_clean INFO wrote SAS_2019_B_partiv_agricultural_practice_clean.dta  (19,222 rows x 39 vars, 2.1 MB)
+21:38:37 01_clean INFO PASS  2019/B/partv_land_tenure: weights > 0
+21:38:37 01_clean INFO PASS  2019/B/partv_land_tenure: province codes 1-5
+21:38:37 01_clean INFO wrote SAS_2019_B_partv_land_tenure_clean.dta  (61,548 rows x 22 vars, 3.3 MB)
+21:38:38 01_clean INFO PASS  2019/B/screening: weights > 0
+21:38:38 01_clean INFO PASS  2019/B/screening: province codes 1-5
+21:38:38 01_clean INFO wrote SAS_2019_B_screening_clean.dta  (43,411 rows x 29 vars, 3.8 MB)
+21:38:38 01_clean INFO PASS  2019/C/crop_production: province codes 1-5
+21:38:38 01_clean INFO wrote SAS_2019_C_crop_production_clean.dta  (1,667 rows x 54 vars, 0.4 MB)
+21:38:38 01_clean INFO PASS  2019/C/partiii_fertilizers_pesticides: weights > 0
+21:38:38 01_clean INFO PASS  2019/C/partiii_fertilizers_pesticides: province codes 1-5
+21:38:38 01_clean INFO wrote SAS_2019_C_partiii_fertilizers_pesticides_clean.dta  (1,832 rows x 32 vars, 0.2 MB)
+21:38:38 01_clean INFO PASS  2019/C/partiv_agricultural_practice: weights > 0
+21:38:38 01_clean INFO PASS  2019/C/partiv_agricultural_practice: province codes 1-5
+21:38:38 01_clean INFO wrote SAS_2019_C_partiv_agricultural_practice_clean.dta  (1,731 rows x 38 vars, 0.2 MB)
+21:38:38 01_clean INFO PASS  2019/C/partv_land_tenure: weights > 0
+21:38:38 01_clean INFO PASS  2019/C/partv_land_tenure: province codes 1-5
+21:38:38 01_clean INFO wrote SAS_2019_C_partv_land_tenure_clean.dta  (5,400 rows x 21 vars, 0.3 MB)
+21:38:38 01_clean INFO PASS  2019/C/screening: weights > 0
+21:38:38 01_clean INFO PASS  2019/C/screening: province codes 1-5
+21:38:38 01_clean INFO wrote SAS_2019_C_screening_clean.dta  (8,311 rows x 29 vars, 0.6 MB)
+21:38:38 01_clean INFO all hard checks passed (0 soft warnings)
+21:38:38 01_clean INFO 2019: 15 files cleaned
+21:38:38 01_clean INFO 01_clean done for ['2019']

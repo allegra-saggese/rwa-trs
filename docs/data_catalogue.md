@@ -27,9 +27,8 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
   - `Raw/2002/Census_2002.sav` — 814,432 rows × 112 vars
   - `Raw/2012/Census_2012.dta` — 1,038,369 × 115
   - `Raw/2022/Census_2022.dta` — 1,313,015 × 250
-  - `Cleaned/Census_2012_clean.dta` — 1,038,369 × 118
-  - `Cleaned/Census_2022_clean.dta` — 1,313,015 × 252
-  - `Merged Panel/Census_panel_2012_2022.dta` — 2,351,384 × 350
+  - `2_Intermediate/Census_<year>_person_clean.dta` and `Census_<year>_household_clean.dta` for 2002, 2012, 2022 (Python pipeline `rwa-trs/NISR/Census-PHC/`, 2026-09-04)
+  - `3_Final/Census_pooled_person.dta` — 3,165,816 × ~700 (2002 + 2012 + 2022) · `3_Final/Census_pooled_household.dta` — one row per private household
 - **Coverage** 3 waves: 2002, 2012, 2022
 - **Source** NISR, microdata.statistics.gov.rw
 - **Contents** Activity status; occupation, industry, employment status, public/private sector; migration (place of birth, previous residence, duration); education; housing and assets; sector population
@@ -38,10 +37,9 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 
 ### EICV ✅ (6 of 7 waves)
 - **Location** `$DB/Publicly-Available-NISR/Household-Living-Conditions-EICV/`
-  - `Raw/EICV1..EICV7_VUP/` — original NISR zips + questionnaires
-  - `Cleaned/EICV3_clean.dta` 68,398 × 174 · `EICV4_CS` 66,081 × 130 · `EICV4_VUP` 10,606 × 128 · `EICV5_CS` 64,314 × 119 · `EICV5_VUP` 6,596 × 120 · `EICV7_CS` 62,110 × 161 · `EICV7_VUP` 15,039 × 161
-  - `Merged Panel/EICV_pooled_crosssection.dta` — 260,903 × 539
-  - `Merged Panel/EICV3_4_panel.dta` — 8,310 × 34
+  - `1_Raw/EICV1..EICV7_VUP/` — original NISR data files (zips extracted; questionnaires in `z_Documentation/`)
+  - `2_Intermediate/EICV_<wave>_person_clean.dta`, `EICV_<wave>_household_clean.dta` and one file per module for EICV1, EICV2, EICV3, EICV4_CS/VUP, EICV5_CS/VUP, EICV7_CS/VUP
+  - `3_Final/EICV_pooled_person.dta` (EICV1–7 national cross-sections, 327,841 rows), `EICV_pooled_household.dta`, the `_vup` counterparts for the VUP boosters, pooled modules (`EICV_pooled_<module>.dta`) and the linking files `EICV3_4_panel_link.dta` / `EICV5_vup_panel_link.dta` — Python pipeline `rwa-trs/NISR/Household-Living-Conditions-EICV/` (2026-09-04); every module of every wave is in `2_Intermediate/`
 - **Coverage** 2000, 2005, 2011, 2013/14, 2016/17, 2023/24. **EICV6 (2020/21) missing** — not in the NISR public catalogue; covered ~40% of planned sample due to COVID
 - **Source** NISR, microdata.statistics.gov.rw (login + data request; the public study page carries documentation only)
 - **Contents** Consumption aggregate, poverty status, inequality; employment status, hours, own-farm work, nonfarm wage and business activity, ISCO occupation, ISIC industry, status in employment, contract type, main-job earnings; education, health, housing
@@ -50,15 +48,15 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 ### Labour Force Survey (LFS) ✅
 - **Location** `$DB/Publicly-Available-NISR/Labour-Force-Survey-LFS/`
   - `Raw/2017..2025/LFS_<year>.dta` + questionnaires
-  - `Cleaned/LFS_<year>_clean.dta` — 70,172 to 102,562 rows each
-  - `Merged Panel/LFS_panel_2017_2025.dta` — 724,015 × 419
+  - `2_Intermediate/LFS_<year>_person_clean.dta` and `LFS_<year>_household_clean.dta` (Python pipeline `rwa-trs/NISR/Labour-Force-Survey-LFS/`, 2026-09-04)
+  - `3_Final/LFS_pooled_person.dta` — 724,015 × 441 (person-interviews) · `3_Final/LFS_pooled_household.dta` — 166,772 household-interviews
 - **Coverage** annual, 2017–2025 (9 years, all present)
 - **Source** NISR, microdata.statistics.gov.rw
 - **Contents** Activity status; ISCO occupation and ISIC industry; formal/informal employment, contract type; time-related underemployment; entrepreneurship
 - **Note** The more consistent labour series over time than the EICV employment module. Finest geography is **district**; `psu` (1,242) is anonymised. LFS 2020 is a reduced file (55 vars) and 2019 has no urban variable.
 
 ### Establishment Census (EC) ✅ (all 5 rounds)
-- **Location** `$DB/Publicly-Available-NISR/Establishment-Census-EC/Raw/<year>/`
+- **Location** `$DB/Publicly-Available-NISR/Establishment-Census-EC/1_Raw/<year>/` (cleaned + pooled by `rwa-trs/NISR/Establishment-Census-EC/`: `3_Final/EC_pooled_establishment.dta`)
   - `EC_2011.sav` 127,662 establishments · `EC_2014.sav` 77,151 · `EC_2017.sav` 190,288 · `EC_2020.dta` 232,283 · `EC_2023.dta` 269,326
 - **Geographic depth degrades by round** 2011 → village · 2014 → **sector** (national code, matches Census 416/416) · 2017/2020/2023 → district only. `q1_5_1` in later rounds is *village type*, not a village id. EC 2011's ID2/ID3 are province-relative, not national codes, and are unmapped
 - **Coverage** 5 rounds: 2011, 2014, 2017, 2020, 2023
@@ -76,7 +74,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Hard limit** The only geographic breakdown in the published tables is the **five provinces**. No district, no sector. Cannot support a sector-level design; use as national/provincial context only.
 
 ### Agriculture Household Survey (AHS) ✅ (3 waves)
-- **Location** `$DB/Publicly-Available-NISR/Agriculture-Survey-AHS/AHS-2024-microdata/` — 14 section `.dta` files + DDI PDF
+- **Location** `$DB/Publicly-Available-NISR/Agriculture-Survey-AHS/1_Raw/<year>/` — 2017, 2020, 2024 section files (pooled by `rwa-trs/NISR/Agriculture-Survey-AHS/`: `3_Final/AHS_pooled_person.dta`, `AHS_pooled_household.dta`, pooled modules)
   - Section 1 household members 16,292 × 142 · Section 2 land tenure 23,266 × 20 · Sections 3–4 crops/inputs 32,616 × 331 · Section 5 fruits 9,193 · Section 6 extension 9,286 · Section 7 tools 9,981 · Section 8 sustainable ag 3,724 · Sections 9–12 livestock 9,947 · milk 12,209 · eggs 19,077 · honey 9,387 · credits 5,224 · savings 10,342 · Section 0 roster 3,724
 - **Coverage** 2017, 2020, 2024 — all three held (`Agriculture-Survey-AHS/AHS-<year>-microdata/`)
 - **Not poolable as-is** Identifiers differ per wave: 2017 `idquest` + `s0q1/s0q2`; 2020 `HHUID` + `s0q1/s0q2`; 2024 `hhid`/`clust` + named `province`/`district`. Match on question content, not code
@@ -84,7 +82,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Why it matters** Carries the crop area, yield and agricultural-income content EICV7 dropped when its agriculture module was discontinued. Geography: district.
 
 ### Seasonal Agriculture Survey (SAS) ✅ (2 waves)
-- **Location** `$DB/Publicly-Available-NISR/Season-Agriculture-Survey-SAS/SAS-{2019,2020}-microdata/` — 33 `.dta` files
+- **Location** `$DB/Publicly-Available-NISR/Season-Agriculture-Survey-SAS/1_Raw/<year>/` — 13 waves 2013–2025 (pooled by `rwa-trs/NISR/Season-Agriculture-Survey-SAS/`: `3_Final/SAS_pooled_plotcrop.dta` 2017–2025 plot × crop × season)
 - **Coverage** 2019, 2020. Not held: SAS 2021 (id **102**), SAS 2022 (id **103**)
 - **Source** NISR
 - **Unit** **PLOT within a sampled SEGMENT — not a household.** `Segment_ID`, `s1q1` province, `s1q2` district, `s1q3` stratum, `s1q4` segment, `s2q1` plot, `s2q2` plot area m². No household id, so it does not join to AHS or EICV at household level

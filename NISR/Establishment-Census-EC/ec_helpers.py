@@ -213,6 +213,13 @@ def write_dta(df: pd.DataFrame, path, var_labels: dict, value_labels: dict, data
             except (TypeError, ValueError): continue
             if -2147483647 <= kk <= 2147483620: dd[kk] = str(t)[:32000]     # Stata value labels are int32
             else: log.info("value label %s=%r on %s dropped (key outside int32)", k, str(t)[:30], c)
+        if dd:
+            total = sum(len(t) for t in dd.values())
+            if total > 30_000:                       # pandas/Stata cap: all labels of one variable < 32,000 chars
+                cut = max(8, 30_000 // max(1, len(dd)))
+                dd = {k: t[:cut] for k, t in dd.items()}
+                log.info("value labels on %s truncated to %d chars each (%d codes, %d chars shipped)", c, cut, len(dd), total)
+                if sum(len(t) for t in dd.values()) > 30_000: log.warning("value labels on %s dropped (too many codes)", c); dd = {}
         if dd: vv[c] = dd
     for c in df.columns:
         if df[c].dtype == object or pd.api.types.is_string_dtype(df[c]):

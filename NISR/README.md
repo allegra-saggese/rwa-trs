@@ -6,15 +6,21 @@ replicable code base: nothing is imported across folders, and `python master.py`
 whole pipeline top to bottom. Data never enter git; the code reads and writes the Dropbox
 folder, whose root is resolved from the login user (or `NISR_DB_ROOT`).
 
-| Folder | Survey | Status |
+| Folder | Survey | Final files (one row per …) |
 |---|---|---|
-| `Labour-Force-Survey-LFS/` | Labour Force Survey 2017–2025 | built |
-| `Census-PHC/` | Population and Housing Census 2002, 2012, 2022 | pending |
-| `Household-Living-Conditions-EICV/` | EICV1–EICV7 (+ VUP boosters, EICV3–4 panel) | pending |
-| `Establishment-Census-EC/` | Establishment Census 2011–2023 | pending |
-| `Agriculture-Survey-AHS/` | Agricultural Household Survey 2017, 2020, 2024 | pending |
-| `Season-Agriculture-Survey-SAS/` | Seasonal Agriculture Survey 2013–2025 | pending |
-| `Food-Security-CFSVAN/` | CFSVA 2006–2024 | pending |
+| `Labour-Force-Survey-LFS/` | Labour Force Survey 2017–2025 | person-interview; household-interview |
+| `Census-PHC/` | Population and Housing Census 2002, 2012, 2022 (10% public samples) | person; private household |
+| `Household-Living-Conditions-EICV/` | EICV1–EICV7 (+ VUP boosters, EICV3–4 and EICV5-VUP panel links) | person; household (national and VUP pools); pooled modules (jobs, enterprise, livestock, parcels, crops, transfers, credits, …); link files |
+| `Establishment-Census-EC/` | Establishment Census 2011–2023 | establishment |
+| `Agriculture-Survey-AHS/` | Agricultural Household Survey 2017, 2020, 2024 | person; household; pooled modules (milk, honey, land, extension, tools, livestock, credits) |
+| `Season-Agriculture-Survey-SAS/` | Seasonal Agriculture Survey 2013–2025 | plot × crop × season (2017–2025 core map; 2013–2014 crop-area records); pooled 2019+ modules |
+| `Food-Security-CFSVAN/` | CFSVA 2006–2024 (NISR/WFP) | household; woman; child; village |
+
+All seven were built and verified on 2026-09-04 (see each folder's `logs/checks_report.md`).
+Item-level EICV consumption/asset modules (food, expenditure, own consumption, durables) are
+cleaned per wave but not pooled — the pooled files run to several GB each (`POOL_ITEM_MODULES`
+in `02_merge.py` switches them on). Total footprint of `2_Intermediate/` + `3_Final/` across
+the seven datasets is roughly 20 GB.
 
 ## Layout of every dataset folder
 
@@ -52,7 +58,7 @@ harmonised within itself only.
 | `sector` | sector, NISR code 1101–5715 — only where the file carries it |
 | `urban` | 1 urban, 2 rural |
 | `cluster` | sampling cluster id (string, `<year>_<psu>`) |
-| `hhid`, `pid` | household id (unique within year [+ round]); person number within household |
+| `hhid`, `pid` | household id (unique within wave [+ round]); person number within household (EC: `estid`; SAS: `segment holder plot crop`) |
 | `sex`, `age` | person files only: 1 male / 2 female; age in years — plain renames, native codes |
 | `wt` | the weight that sums to the population of the unit (person weight in person files, household weight in household files) |
 

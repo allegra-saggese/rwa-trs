@@ -1,0 +1,168 @@
+21:36:09 01_clean INFO ==== 01_clean | run 20260904-213609_01_clean | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:36:09 01_clean INFO ================ 2017 ================
+21:36:09 01_clean INFO PASS  2017/A/lsf_antierosion: province codes 1-5
+21:36:09 01_clean INFO wrote SAS_2017_A_lsf_antierosion_clean.dta  (889 rows x 15 vars, 0.0 MB)
+21:36:09 01_clean INFO PASS  2017/A/lsf_crop_production: province codes 1-5
+21:36:09 01_clean INFO wrote SAS_2017_A_lsf_crop_production_clean.dta  (744 rows x 35 vars, 0.1 MB)
+21:36:10 01_clean INFO PASS  2017/A/lsf_fertilizers: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_lsf_fertilizers_clean.dta  (1,423 rows x 22 vars, 0.1 MB)
+21:36:10 01_clean INFO PASS  2017/A/lsf_irrigation_soil_preparation_and_land_tenure: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_lsf_irrigation_soil_preparation_and_land_tenure_clean.dta  (806 rows x 41 vars, 0.1 MB)
+21:36:10 01_clean INFO PASS  2017/A/lsf_pesticides: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_lsf_pesticides_clean.dta  (1,282 rows x 16 vars, 0.1 MB)
+21:36:10 01_clean INFO PASS  2017/A/lsf_screening: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_lsf_screening_clean.dta  (3,253 rows x 23 vars, 0.2 MB)
+21:36:10 01_clean INFO PASS  2017/A/ssf_antierosion: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_ssf_antierosion_clean.dta  (15,191 rows x 17 vars, 0.7 MB)
+21:36:10 01_clean INFO PASS  2017/A/ssf_crop_production: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_ssf_crop_production_clean.dta  (27,740 rows x 37 vars, 3.5 MB)
+21:36:10 01_clean INFO PASS  2017/A/ssf_fertilizers: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_ssf_fertilizers_clean.dta  (14,855 rows x 24 vars, 1.2 MB)
+21:36:10 01_clean INFO destring s4q15 (1 values)
+21:36:10 01_clean INFO PASS  2017/A/ssf_irrigation_soil_preparation_and_land_tenure: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_ssf_irrigation_soil_preparation_and_land_tenure_clean.dta  (13,325 rows x 43 vars, 1.2 MB)
+21:36:10 01_clean INFO PASS  2017/A/ssf_pesticides: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_ssf_pesticides_clean.dta  (13,828 rows x 17 vars, 0.8 MB)
+21:36:10 01_clean INFO PASS  2017/A/ssf_screening: weights > 0
+21:36:10 01_clean INFO PASS  2017/A/ssf_screening: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_A_ssf_screening_clean.dta  (68,212 rows x 32 vars, 6.1 MB)
+21:36:10 01_clean INFO PASS  2017/B/lsf_antierosion: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_B_lsf_antierosion_clean.dta  (1,204 rows x 15 vars, 0.1 MB)
+21:36:10 01_clean INFO PASS  2017/B/lsf_crop_production: province codes 1-5
+21:36:10 01_clean INFO wrote SAS_2017_B_lsf_crop_production_clean.dta  (1,591 rows x 35 vars, 0.2 MB)
+21:36:11 01_clean INFO PASS  2017/B/lsf_fertilizers: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_lsf_fertilizers_clean.dta  (1,248 rows x 22 vars, 0.1 MB)
+21:36:11 01_clean INFO PASS  2017/B/lsf_irrigation_soil_preparation_and_land_tenure: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_lsf_irrigation_soil_preparation_and_land_tenure_clean.dta  (1,019 rows x 41 vars, 0.1 MB)
+21:36:11 01_clean INFO PASS  2017/B/lsf_pesticides: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_lsf_pesticides_clean.dta  (1,173 rows x 16 vars, 0.1 MB)
+21:36:11 01_clean INFO PASS  2017/B/lsf_screening: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_lsf_screening_clean.dta  (2,807 rows x 23 vars, 0.2 MB)
+21:36:11 01_clean INFO PASS  2017/B/ssf_antierosion: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_ssf_antierosion_clean.dta  (13,827 rows x 17 vars, 0.6 MB)
+21:36:11 01_clean INFO PASS  2017/B/ssf_crop_production: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_ssf_crop_production_clean.dta  (25,529 rows x 37 vars, 3.2 MB)
+21:36:11 01_clean INFO PASS  2017/B/ssf_fertilizers: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_ssf_fertilizers_clean.dta  (12,938 rows x 24 vars, 1.0 MB)
+21:36:11 01_clean INFO PASS  2017/B/ssf_irrigation_soil_preparation_and_land_tenure: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_ssf_irrigation_soil_preparation_and_land_tenure_clean.dta  (12,156 rows x 43 vars, 1.3 MB)
+21:36:11 01_clean INFO PASS  2017/B/ssf_pesticides: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_ssf_pesticides_clean.dta  (12,980 rows x 17 vars, 0.7 MB)
+21:36:11 01_clean INFO PASS  2017/B/ssf_screening: weights > 0
+21:36:11 01_clean INFO PASS  2017/B/ssf_screening: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_B_ssf_screening_clean.dta  (59,985 rows x 32 vars, 5.2 MB)
+21:36:11 01_clean INFO PASS  2017/C/ssf_antierosion: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_C_ssf_antierosion_clean.dta  (5,094 rows x 17 vars, 0.2 MB)
+21:36:11 01_clean INFO PASS  2017/C/ssf_crop_production: province codes 1-5
+21:36:11 01_clean INFO wrote SAS_2017_C_ssf_crop_production_clean.dta  (1,907 rows x 37 vars, 0.3 MB)
+21:36:11 01_clean INFO PASS  2017/C/ssf_fertilizers: province codes 1-5
+21:36:12 01_clean INFO wrote SAS_2017_C_ssf_fertilizers_clean.dta  (6,792 rows x 24 vars, 0.4 MB)
+21:36:12 01_clean INFO PASS  2017/C/ssf_irrigation_soil_preparation_and_land_tenure: province codes 1-5
+21:36:12 01_clean INFO wrote SAS_2017_C_ssf_irrigation_soil_preparation_and_land_tenure_clean.dta  (1,698 rows x 43 vars, 0.2 MB)
+21:36:12 01_clean INFO PASS  2017/C/ssf_pesticides: province codes 1-5
+21:36:12 01_clean INFO wrote SAS_2017_C_ssf_pesticides_clean.dta  (6,792 rows x 17 vars, 0.4 MB)
+21:36:12 01_clean INFO PASS  2017/C/ssf_screening: weights > 0
+21:36:12 01_clean INFO PASS  2017/C/ssf_screening: province codes 1-5
+21:36:12 01_clean INFO wrote SAS_2017_C_ssf_screening_clean.dta  (7,853 rows x 32 vars, 0.7 MB)
+21:36:12 01_clean INFO all hard checks passed (0 soft warnings)
+21:36:13 01_clean INFO 2017: 30 files cleaned
+21:36:13 01_clean INFO ================ 2018 ================
+21:36:13 01_clean INFO wrote SAS_2018_A_lsf_antierosion_clean.dta  (1,361 rows x 14 vars, 0.1 MB)
+21:36:13 01_clean INFO PASS  2018/A/lsf_crop_production: province codes 1-5
+21:36:13 01_clean INFO wrote SAS_2018_A_lsf_crop_production_clean.dta  (1,346 rows x 51 vars, 0.3 MB)
+21:36:13 01_clean INFO PASS  2018/A/lsf_fertilizers: province codes 1-5
+21:36:13 01_clean INFO wrote SAS_2018_A_lsf_fertilizers_clean.dta  (3,417 rows x 22 vars, 0.3 MB)
+21:36:13 01_clean INFO wrote SAS_2018_A_lsf_irrigation_soil_preparation_and_land_tenure_clean.dta  (1,139 rows x 43 vars, 0.1 MB)
+21:36:13 01_clean INFO PASS  2018/A/lsf_pesticides: province codes 1-5
+21:36:13 01_clean INFO wrote SAS_2018_A_lsf_pesticides_clean.dta  (4,556 rows x 17 vars, 0.3 MB)
+21:36:13 01_clean INFO PASS  2018/A/lsf_screening: province codes 1-5
+21:36:13 01_clean INFO wrote SAS_2018_A_lsf_screening_clean.dta  (2,803 rows x 24 vars, 0.2 MB)
+21:36:13 01_clean INFO wrote SAS_2018_A_ssf_antierosion_clean.dta  (12,464 rows x 14 vars, 0.4 MB)
+21:36:13 01_clean INFO PASS  2018/A/ssf_crop_production: province codes 1-5
+21:36:13 01_clean INFO wrote SAS_2018_A_ssf_crop_production_clean.dta  (16,909 rows x 55 vars, 4.1 MB)
+21:36:14 01_clean INFO wrote SAS_2018_A_ssf_fertilizers_clean.dta  (31,065 rows x 21 vars, 2.3 MB)
+21:36:14 01_clean INFO wrote SAS_2018_A_ssf_irrigation_soil_preparation_and_land_tenure_clean.dta  (10,355 rows x 44 vars, 1.1 MB)
+21:36:14 01_clean INFO wrote SAS_2018_A_ssf_pesticides_clean.dta  (41,420 rows x 16 vars, 2.2 MB)
+21:36:14 01_clean INFO PASS  2018/A/ssf_screening: weights > 0
+21:36:14 01_clean INFO PASS  2018/A/ssf_screening: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_A_ssf_screening_clean.dta  (45,009 rows x 32 vars, 3.7 MB)
+21:36:14 01_clean INFO PASS  2018/B/lsf_antierosion: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_B_lsf_antierosion_clean.dta  (1,356 rows x 15 vars, 0.1 MB)
+21:36:14 01_clean INFO PASS  2018/B/lsf_crop_production: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_B_lsf_crop_production_clean.dta  (1,443 rows x 51 vars, 0.4 MB)
+21:36:14 01_clean INFO PASS  2018/B/lsf_fertilizers: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_B_lsf_fertilizers_clean.dta  (1,434 rows x 22 vars, 0.1 MB)
+21:36:14 01_clean INFO PASS  2018/B/lsf_irrigation_soil_preparation_and_land_tenure: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_B_lsf_irrigation_soil_preparation_and_land_tenure_clean.dta  (1,137 rows x 45 vars, 0.2 MB)
+21:36:14 01_clean INFO PASS  2018/B/lsf_pesticides: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_B_lsf_pesticides_clean.dta  (1,321 rows x 17 vars, 0.1 MB)
+21:36:14 01_clean INFO PASS  2018/B/lsf_screening: province codes 1-5
+21:36:14 01_clean INFO wrote SAS_2018_B_lsf_screening_clean.dta  (2,972 rows x 23 vars, 0.2 MB)
+21:36:14 01_clean INFO wrote SAS_2018_B_ssf_antierosion_clean.dta  (11,724 rows x 14 vars, 0.5 MB)
+21:36:15 01_clean INFO PASS  2018/B/ssf_crop_production: province codes 1-5
+21:36:15 01_clean INFO wrote SAS_2018_B_ssf_crop_production_clean.dta  (18,133 rows x 53 vars, 4.6 MB)
+21:36:15 01_clean INFO PASS  2018/B/ssf_fertilizers: province codes 1-5
+21:36:15 01_clean INFO wrote SAS_2018_B_ssf_fertilizers_clean.dta  (10,521 rows x 22 vars, 0.7 MB)
+21:36:15 01_clean INFO wrote SAS_2018_B_ssf_irrigation_soil_preparation_and_land_tenure_clean.dta  (9,731 rows x 43 vars, 1.1 MB)
+21:36:15 01_clean INFO wrote SAS_2018_B_ssf_pesticides_clean.dta  (10,507 rows x 16 vars, 0.6 MB)
+21:36:15 01_clean INFO PASS  2018/B/ssf_screening: weights > 0
+21:36:15 01_clean INFO PASS  2018/B/ssf_screening: province codes 1-5
+21:36:15 01_clean INFO wrote SAS_2018_B_ssf_screening_clean.dta  (44,381 rows x 32 vars, 3.6 MB)
+21:36:15 01_clean INFO wrote SAS_2018_C_ssf_antierosion_clean.dta  (1,295 rows x 14 vars, 0.1 MB)
+21:36:15 01_clean INFO PASS  2018/C/ssf_crop_production: province codes 1-5
+21:36:15 01_clean INFO wrote SAS_2018_C_ssf_crop_production_clean.dta  (1,462 rows x 53 vars, 0.4 MB)
+21:36:15 01_clean INFO PASS  2018/C/ssf_fertilizers: province codes 1-5
+21:36:15 01_clean INFO wrote SAS_2018_C_ssf_fertilizers_clean.dta  (1,293 rows x 22 vars, 0.1 MB)
+21:36:15 01_clean INFO wrote SAS_2018_C_ssf_irrigation_soil_preparation_and_land_tenure_clean.dta  (1,255 rows x 43 vars, 0.1 MB)
+21:36:15 01_clean INFO wrote SAS_2018_C_ssf_pesticides_clean.dta  (1,287 rows x 16 vars, 0.1 MB)
+21:36:15 01_clean INFO PASS  2018/C/ssf_screening: weights > 0
+21:36:15 01_clean INFO PASS  2018/C/ssf_screening: province codes 1-5
+21:36:15 01_clean INFO wrote SAS_2018_C_ssf_screening_clean.dta  (6,560 rows x 32 vars, 0.5 MB)
+21:36:15 01_clean INFO all hard checks passed (0 soft warnings)
+21:36:17 01_clean INFO 2018: 30 files cleaned
+21:36:17 01_clean INFO ================ 2019 ================
+21:36:17 01_clean INFO PASS  2019/A/crop_production: province codes 1-5
+21:36:17 01_clean INFO wrote SAS_2019_A_crop_production_clean.dta  (32,906 rows x 54 vars, 5.9 MB)
+21:36:18 01_clean INFO PASS  2019/A/partiii_fertilizers_pesticides: weights > 0
+21:36:18 01_clean INFO PASS  2019/A/partiii_fertilizers_pesticides: province codes 1-5
+21:36:18 01_clean INFO wrote SAS_2019_A_partiii_fertilizers_pesticides_clean.dta  (18,786 rows x 33 vars, 2.0 MB)
+21:36:18 01_clean INFO PASS  2019/A/partiv_agricultural_practice: weights > 0
+21:36:18 01_clean INFO PASS  2019/A/partiv_agricultural_practice: province codes 1-5
+21:36:18 01_clean INFO wrote SAS_2019_A_partiv_agricultural_practice_clean.dta  (19,805 rows x 39 vars, 2.1 MB)
+21:36:18 01_clean INFO PASS  2019/A/partv_land_tenure: weights > 0
+21:36:18 01_clean INFO PASS  2019/A/partv_land_tenure: province codes 1-5
+21:36:18 01_clean INFO wrote SAS_2019_A_partv_land_tenure_clean.dta  (63,292 rows x 22 vars, 3.7 MB)
+21:36:19 01_clean INFO PASS  2019/A/screening: weights > 0
+21:36:19 01_clean INFO PASS  2019/A/screening: province codes 1-5
+21:36:19 01_clean INFO wrote SAS_2019_A_screening_clean.dta  (46,854 rows x 29 vars, 4.2 MB)
+21:36:19 01_clean INFO PASS  2019/B/crop_production: province codes 1-5
+21:36:19 01_clean INFO wrote SAS_2019_B_crop_production_clean.dta  (30,493 rows x 54 vars, 5.3 MB)
+21:36:19 01_clean INFO PASS  2019/B/partiii_fertilizers_pesticides: weights > 0
+21:36:19 01_clean INFO PASS  2019/B/partiii_fertilizers_pesticides: province codes 1-5
+21:36:19 01_clean INFO wrote SAS_2019_B_partiii_fertilizers_pesticides_clean.dta  (17,637 rows x 33 vars, 1.9 MB)
+21:36:19 01_clean INFO PASS  2019/B/partiv_agricultural_practice: weights > 0
+21:36:19 01_clean INFO PASS  2019/B/partiv_agricultural_practice: province codes 1-5
+21:36:19 01_clean INFO wrote SAS_2019_B_partiv_agricultural_practice_clean.dta  (19,222 rows x 39 vars, 2.1 MB)
+21:36:20 01_clean INFO PASS  2019/B/partv_land_tenure: weights > 0
+21:36:20 01_clean INFO PASS  2019/B/partv_land_tenure: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_B_partv_land_tenure_clean.dta  (61,548 rows x 22 vars, 3.3 MB)
+21:36:20 01_clean INFO PASS  2019/B/screening: weights > 0
+21:36:20 01_clean INFO PASS  2019/B/screening: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_B_screening_clean.dta  (43,411 rows x 29 vars, 3.8 MB)
+21:36:20 01_clean INFO PASS  2019/C/crop_production: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_C_crop_production_clean.dta  (1,667 rows x 54 vars, 0.4 MB)
+21:36:20 01_clean INFO PASS  2019/C/partiii_fertilizers_pesticides: weights > 0
+21:36:20 01_clean INFO PASS  2019/C/partiii_fertilizers_pesticides: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_C_partiii_fertilizers_pesticides_clean.dta  (1,832 rows x 32 vars, 0.2 MB)
+21:36:20 01_clean INFO PASS  2019/C/partiv_agricultural_practice: weights > 0
+21:36:20 01_clean INFO PASS  2019/C/partiv_agricultural_practice: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_C_partiv_agricultural_practice_clean.dta  (1,731 rows x 38 vars, 0.2 MB)
+21:36:20 01_clean INFO PASS  2019/C/partv_land_tenure: weights > 0
+21:36:20 01_clean INFO PASS  2019/C/partv_land_tenure: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_C_partv_land_tenure_clean.dta  (5,400 rows x 21 vars, 0.3 MB)
+21:36:20 01_clean INFO PASS  2019/C/screening: weights > 0
+21:36:20 01_clean INFO PASS  2019/C/screening: province codes 1-5
+21:36:20 01_clean INFO wrote SAS_2019_C_screening_clean.dta  (8,311 rows x 29 vars, 0.6 MB)
+21:36:20 01_clean INFO all hard checks passed (0 soft warnings)
+21:36:22 01_clean INFO 2019: 15 files cleaned
+21:36:22 01_clean INFO 01_clean done for ['2017', '2018', '2019']

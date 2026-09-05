@@ -1,0 +1,7573 @@
+{
+ "A/large_scale_inorganicfertilizer_types": {
+  "file": "SAS_2013_a_large_scale_inorganicfertilizer_types.dta",
+  "rows": 364,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "pp7a": "CODE",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "pp7a": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME",
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "99": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_large_scale_inorganicfertilizer_types_clean.dta"
+ },
+ "A/small_scale_inorganicfertilizer_types": {
+  "file": "SAS_2013_a_small_scale_inorganicfertilizer_types.dta",
+  "rows": 1923,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id6": "Tract letter",
+   "id7": "Tract Number",
+   "pp2": "Have you already used inorganic fertilizers during this agriculture season?",
+   "pp7a": "CODE",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "pp7a": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {}
+  },
+  "out": "SAS_2013_A_small_scale_inorganicfertilizer_types_clean.dta"
+ },
+ "A/area_a": {
+  "file": "SAS_2013_area_a.dta",
+  "rows": 64365,
+  "vars": 15,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "holder": "idquest",
+   "crop": "crop_code",
+   "wt": "coef",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "area_ha": "Area in Hectare",
+   "association": "Pure and Mixed cropping",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "association": {
+    "1": "Pure crop",
+    "2": "Mixed crop"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {},
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2013_A_area_a_clean.dta"
+ },
+ "A/area_a_province": {
+  "file": "SAS_2013_area_a_province.dta",
+  "rows": 159,
+  "vars": 12,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "area_h_ssf": "Area in Hectare for small Scale Farmer",
+   "area_ha_lsf": "Area in Hectare for Large Scale Farmer",
+   "total_area": "Total area",
+   "group_crop": "Crop group",
+   "category": "Crop category",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "category": {
+    "1": "Cereals",
+    "2": "Tubers and Roots",
+    "3": "Banana",
+    "4": "Pulses",
+    "5": "Vegetables and Fruits",
+    "6": "Other crops"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_area_a_province_clean.dta"
+ },
+ "A/area_a_province_phys": {
+  "file": "SAS_2013_area_a_province_phys.dta",
+  "rows": 158,
+  "vars": 10,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "area_phys": "Physical Area Small Scale Farmer",
+   "area_phys_lsf": "Physical Area Large Scale Farmer",
+   "total_area_phy": "Total Area",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_area_a_province_phys_clean.dta"
+ },
+ "A/big_farmer_a": {
+  "file": "SAS_2013_big_farmer_a.dta",
+  "rows": 2226,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "crop_code",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "area_ha": "Area Hectare",
+   "association": "Pure and mixed cropping",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "association": {
+    "1": "Pure Crop Land",
+    "2": "Mixed Crop Land"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Urajwe",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_big_farmer_a_clean.dta"
+ },
+ "A/date_sowing_production_harvest": {
+  "file": "SAS_2013_date_sowing_production_harvest.dta",
+  "rows": 49434,
+  "vars": 17,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder",
+   "plot",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "wt": "coef",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "c03b": "1.3B Specify the crop planted - Crop Name",
+   "c05": "Starting date for sowing",
+   "c12": "Production expectation by 28th February 2013",
+   "c13": "Expected date for harvesting",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "c05": {
+    "1": "Before 01/09/12",
+    "2": "01 to15/09/12",
+    "3": "16 to 30/09/12",
+    "4": "After 30/09/12",
+    "5": "Not applicable"
+   },
+   "c12": {
+    "1": "Yes",
+    "2": "No",
+    "3": "N/A"
+   },
+   "c13": {
+    "1": "Before 01/12/12",
+    "2": "01 to 31/12/12",
+    "3": "1 to 31/01/13",
+    "4": "1 to 28/02/13",
+    "5": "After 28/02/13",
+    "6": "Not applicable"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2013_A_date_sowing_production_harvest_clean.dta"
+ },
+ "A/identifiant_a_lsf": {
+  "file": "SAS_2013_identifiant_a_lsf.dta",
+  "rows": 562,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "i15": "0.15 Are you a member of any Agriculture Cooperative",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "i15": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_identifiant_a_lsf_clean.dta"
+ },
+ "A/identifiant_a_small_scale_farmer": {
+  "file": "SAS_2013_identifiant_a_small_scale_farmer.dta",
+  "rows": 15441,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id6": "Tract letter",
+   "id7": "0.5B Tract number",
+   "operatot_type": null,
+   "i15": "Are you a member of any Agriculture Cooperative",
+   "i07": "Sex",
+   "i08": "Age of the operator",
+   "i09": "Education level of the operator",
+   "i14": "Agricultural activity",
+   "i10": "Resident",
+   "age_group": null,
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "operatot_type": {
+    "1": "Individual",
+    "2": "Cooperative"
+   },
+   "i15": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "i07": {
+    "1": "Male",
+    "2": "Female",
+    "3": "N/A"
+   },
+   "i09": {
+    "1": "Primary",
+    "2": "Secondary",
+    "3": "Tertiary",
+    "4": "No education",
+    "5": "N/A"
+   },
+   "i14": {
+    "1": "Cropping",
+    "2": "Livestock",
+    "3": "Cropping & Livestock"
+   },
+   "i10": {
+    "1": "Resident",
+    "2": "Non resident"
+   },
+   "age_group": {
+    "1": "14-24",
+    "2": "25-34",
+    "3": "35-44",
+    "4": "45-54",
+    "5": "55 and Above"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {},
+   "holder": {}
+  },
+  "out": "SAS_2013_A_identifiant_a_small_scale_farmer_clean.dta"
+ },
+ "A/lsf_antierrosion": {
+  "file": "SAS_2013_lsf_antierrosion.dta",
+  "rows": 562,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "ui24": "2.4 Did you practice any anti-erosion activity on this plot ? 1=Yes, 2=No, if 2",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "ui24": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_antierrosion_clean.dta"
+ },
+ "A/lsf_antierrosion_by_type": {
+  "file": "SAS_2013_lsf_antierrosion_by_type.dta",
+  "rows": 271,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "ui25": "2.5 Which anti erosion activities did you practice on this plot ? Code",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "ui25": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Terracing",
+    "4": "Progressive terracing",
+    "5": "Grasses",
+    "6": "Waterway",
+    "7": "Mulching",
+    "8": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_antierrosion_by_type_clean.dta"
+ },
+ "A/lsf_area_a_province": {
+  "file": "SAS_2013_lsf_area_a_province.dta",
+  "rows": 124,
+  "vars": 8,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "area_ha_lsf": "Area in Hectare Large Scale Farmer",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Urajwe",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_lsf_area_a_province_clean.dta"
+ },
+ "A/lsf_date_sowing_production_harvest": {
+  "file": "SAS_2013_lsf_date_sowing_production_harvest.dta",
+  "rows": 1512,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2": "0.2 District",
+   "id7": "0.5B Tract number",
+   "c05": "1.5 Starting date for sowing ? Code",
+   "c12": "1.12  Do you expect any production on this crop by 28th February 2013?",
+   "c13": "1.13 What is the expected date for harvesting?",
+   "prov": "Province (1-5, NISR codes)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "Before 01/09/12",
+    "2": "01 to15/09/12",
+    "3": "16 to 30/09/12",
+    "4": "After 30/09/12",
+    "5": "Not applicable",
+    "6": "No response"
+   },
+   "c12": {
+    "1": "Yes",
+    "2": "No",
+    "3": "N/A"
+   },
+   "c13": {
+    "1": "Before 01/12/12",
+    "2": "01 to 31/12/12",
+    "3": "1 to 31/01/13",
+    "4": "1 to 28/02/13",
+    "5": "After 28/02/13",
+    "6": "Not applicable"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Urajwe",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_lsf_date_sowing_production_harvest_clean.dta"
+ },
+ "A/lsf_improved_by_crop": {
+  "file": "SAS_2013_lsf_improved_by_crop.dta",
+  "rows": 349,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Urajwe",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_lsf_improved_by_crop_clean.dta"
+ },
+ "A/lsf_inorganic_a": {
+  "file": "SAS_2013_lsf_inorganic_a.dta",
+  "rows": 409,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "pp2": "2.8.1 Have you already used inorganic fertilizers during this agriculture season",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "pp2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_inorganic_a_clean.dta"
+ },
+ "A/lsf_irrigation": {
+  "file": "SAS_2013_lsf_irrigation.dta",
+  "rows": 562,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "irrigation": "Did you practice any irrigation activity on this plot?",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "irrigation": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_irrigation_clean.dta"
+ },
+ "A/lsf_irrigation_by_type": {
+  "file": "SAS_2013_lsf_irrigation_by_type.dta",
+  "rows": 28,
+  "vars": 9,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "ui03a": "2.2A Specify type of irrigation",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "ui03a": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water drainage",
+    "4": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_irrigation_by_type_clean.dta"
+ },
+ "A/lsf_organic_a": {
+  "file": "SAS_2013_lsf_organic_a.dta",
+  "rows": 562,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "pp1": "2.7 Have you already used organic fertilizers during this agriculture season? 1=",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "pp1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_organic_a_clean.dta"
+ },
+ "A/lsf_pesticide": {
+  "file": "SAS_2013_lsf_pesticide.dta",
+  "rows": 562,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "pesticide": "Have you already used pesticides during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "pesticide": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_pesticide_clean.dta"
+ },
+ "A/lsf_pesticide_by_type": {
+  "file": "SAS_2013_lsf_pesticide_by_type.dta",
+  "rows": 180,
+  "vars": 9,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "pp7a": "CODE",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "pp7a": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME",
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "99": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_pesticide_by_type_clean.dta"
+ },
+ "A/lsf_seeds": {
+  "file": "SAS_2013_lsf_seeds.dta",
+  "rows": 595,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "seeds": "Seeds used",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "seeds": {
+    "1": "Traditional",
+    "2": "Improved"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_lsf_seeds_clean.dta"
+ },
+ "A/lsf_small_equipment_exp": {
+  "file": "SAS_2013_lsf_small_equipment_exp.dta",
+  "rows": 2903,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "uic1": "2.20 Code of small tools and farm equipments",
+   "uic6": "2.24 Total amount spent on this tool/equipment Amount(RWF)",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Scie",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk ju(icyansi)/ Milk container",
+    "31": "Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike",
+    "36": "Bowl/ingeremeri",
+    "37": "Others(specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_small_equipment_exp_clean.dta"
+ },
+ "A/lsf_small_equipment_received": {
+  "file": "SAS_2013_lsf_small_equipment_received.dta",
+  "rows": 62,
+  "vars": 10,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id7": "0.5B Tract number",
+   "uic1": "2.20 Code of small tools and farm equipments",
+   "uic7": "2.25 Number received from a non agricultural donor? Number",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Scie",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk ju(icyansi)/ Milk container",
+    "31": "Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike",
+    "36": "Bowl/ingeremeri",
+    "37": "Others(specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_lsf_small_equipment_received_clean.dta"
+ },
+ "A/lsf_traditional_by_crop": {
+  "file": "SAS_2013_lsf_traditional_by_crop.dta",
+  "rows": 825,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Urajwe",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_lsf_traditional_by_crop_clean.dta"
+ },
+ "A/lsf_use_of_production": {
+  "file": "SAS_2013_lsf_use_of_production.dta",
+  "rows": 3413,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id6": "0.6 Tract number",
+   "c03b": "6.1 B-Crop Name",
+   "c01": "Did you harvest this crop in season A?",
+   "c02": "On the total production of this crop which quantity has been sold/will be sold?",
+   "c04": "On the total production of this crop which quantity has been used/will be used b",
+   "c05": "On the total production of this crop which quantity has been used/ will be used",
+   "c6a": "On the total production of this crop which quantity has been used/ will be used",
+   "c6b": "On the total production of this crop which quantity has offered/ will be offered",
+   "c7": "On the total production of this crop which quantity has been exchanged/ will be",
+   "c7b": "On the total production of this crop which quantity has been used/ will be used",
+   "c8": "On the total production of this crop which quantity has been used/ will be used",
+   "c8b": "On the total production of this crop which quantity has been stored/ will be sto",
+   "total_use": "Total",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c01": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops"
+   }
+  },
+  "out": "SAS_2013_A_lsf_use_of_production_clean.dta"
+ },
+ "A/production_yield_a": {
+  "file": "SAS_2013_production_yield_a.dta",
+  "rows": 105,
+  "vars": 14,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "group_crop": "Crop group",
+   "category": "Crop category",
+   "area_ha": "Area in Hectare",
+   "production": "Production",
+   "yield_p": "Province Yield",
+   "production_n": "National Production",
+   "area_ha_n": "National Area",
+   "yield_n": "National Yield",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "category": {
+    "1": "Cereals",
+    "2": "Tubers and Roots",
+    "3": "Banana",
+    "4": "Pulses",
+    "5": "Vegetables and Fruits",
+    "6": "Other crops"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_A_production_yield_a_clean.dta"
+ },
+ "A/ssf_antierrosion_a": {
+  "file": "SAS_2013_ssf_antierrosion_a.dta",
+  "rows": 15441,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui24": "2.4 Did you practice any anti-erosion activity on this plot ? 1=Yes, 2=No, if 2",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui24": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_antierrosion_a_clean.dta"
+ },
+ "A/ssf_antierrosion_by_type": {
+  "file": "SAS_2013_ssf_antierrosion_by_type.dta",
+  "rows": 5788,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui25": "2.5 Which anti erosion activities did you practice on this plot ? Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui25": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Terracing",
+    "4": "Progressive terracing",
+    "5": "Grasses",
+    "6": "Waterway",
+    "7": "Mulching",
+    "8": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_antierrosion_by_type_clean.dta"
+ },
+ "A/ssf_area_a_province": {
+  "file": "SAS_2013_ssf_area_a_province.dta",
+  "rows": 158,
+  "vars": 8,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "area_h_ssf": "Area in Hectare Small Scale Farmer",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_ssf_area_a_province_clean.dta"
+ },
+ "A/ssf_improved_by_crop": {
+  "file": "SAS_2013_ssf_improved_by_crop.dta",
+  "rows": 2188,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_ssf_improved_by_crop_clean.dta"
+ },
+ "A/ssf_inorganic_a": {
+  "file": "SAS_2013_ssf_inorganic_a.dta",
+  "rows": 15292,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id6": "0.5A Tract letter",
+   "id7": "0.5B Tract number",
+   "pp2": "Have you already used inorganic fertilizers during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp2": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {}
+  },
+  "out": "SAS_2013_A_ssf_inorganic_a_clean.dta"
+ },
+ "A/ssf_irrigation": {
+  "file": "SAS_2013_ssf_irrigation.dta",
+  "rows": 15279,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "irrigation": "Did you practice any Irrigation activity on this plot?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "irrigation": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_irrigation_clean.dta"
+ },
+ "A/ssf_irrigation_by_type": {
+  "file": "SAS_2013_ssf_irrigation_by_type.dta",
+  "rows": 338,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui03a": "2.2A Specify type of irrigation",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui03a": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water drainage",
+    "4": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_irrigation_by_type_clean.dta"
+ },
+ "A/ssf_organic_a": {
+  "file": "SAS_2013_ssf_organic_a.dta",
+  "rows": 15331,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id7": "0.5B Tract number",
+   "pp1": "Have you already used organic fertilizers during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp1": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {}
+  },
+  "out": "SAS_2013_A_ssf_organic_a_clean.dta"
+ },
+ "A/ssf_pesticide": {
+  "file": "SAS_2013_ssf_pesticide.dta",
+  "rows": 15292,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pesticide": "Have you already used pesticides during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_pesticide_clean.dta"
+ },
+ "A/ssf_pesticide_by_type": {
+  "file": "SAS_2013_ssf_pesticide_by_type.dta",
+  "rows": 1597,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp7a": "CODE",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7a": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME",
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "99": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_pesticide_by_type_clean.dta"
+ },
+ "A/ssf_seeds": {
+  "file": "SAS_2013_ssf_seeds.dta",
+  "rows": 12230,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "seeds": "Seeds used",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "seeds": {
+    "1": "Traditional seeds",
+    "2": "Improved seeds"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_A_ssf_seeds_clean.dta"
+ },
+ "A/ssf_small_equipment_exp": {
+  "file": "SAS_2013_ssf_small_equipment_exp.dta",
+  "rows": 36080,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id6": "0.5A Tract letter",
+   "id7": "0.5B Tract number",
+   "uic1": "2.20 Code of small tools and farm equipments",
+   "amount": "Total amount spent on this tool/equipment",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Scie",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk ju(icyansi)/ Milk container",
+    "31": "Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike",
+    "36": "Bowl/ingeremeri",
+    "37": "Others(specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {}
+  },
+  "out": "SAS_2013_A_ssf_small_equipment_exp_clean.dta"
+ },
+ "A/ssf_small_equipment_received": {
+  "file": "SAS_2013_ssf_small_equipment_received.dta",
+  "rows": 431,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id6": "0.5A Tract letter",
+   "id7": "0.5B Tract number",
+   "uic1": "2.20 Code of small tools and farm equipments",
+   "received": "Number received from a non agricultural donor?",
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Scie",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk ju(icyansi)/ Milk container",
+    "31": "Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike",
+    "36": "Bowl/ingeremeri",
+    "37": "Others(specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {}
+  },
+  "out": "SAS_2013_A_ssf_small_equipment_received_clean.dta"
+ },
+ "A/ssf_traditional_by_crop": {
+  "file": "SAS_2013_ssf_traditional_by_crop.dta",
+  "rows": 18058,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": " Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_A_ssf_traditional_by_crop_clean.dta"
+ },
+ "A/ssf_use_of_production": {
+  "file": "SAS_2013_ssf_use_of_production.dta",
+  "rows": 6425,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c03b": "6.1 B-Crop Name",
+   "c01": "Did you harvest this crop in season A?",
+   "c02": "On the total production of this crop which quantity has been sold/will be sold?",
+   "c04": "On the total production of this crop which quantity has been used/will be used b",
+   "c05": "On the total production of this crop which quantity has been used/ will be used",
+   "c6a": "On the total production of this crop which quantity has been used/ will be used",
+   "c6b": "On the total production of this crop which quantity has offered/ will be offered",
+   "c7": "On the total production of this crop which quantity has been exchanged/ will be",
+   "c7b": "On the total production of this crop which quantity has been used/ will be used",
+   "c8": "On the total production of this crop which quantity has been used/ will be used",
+   "c8b": "On the total production of this crop which quantity has been stored/ will be sto",
+   "total_use": "Total",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c01": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops"
+   }
+  },
+  "out": "SAS_2013_A_ssf_use_of_production_clean.dta"
+ },
+ "B/area": {
+  "file": "SAS_2013_area.dta",
+  "rows": 160,
+  "vars": 12,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "area_ha": "Area in Hectare",
+   "area_ha_lsf": "Area in Hectare Large Scale Farmer",
+   "total_area": "Total Area",
+   "group_crop": "Crop group",
+   "category": "Crop category",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "category": {
+    "1": "Cereals",
+    "2": "Tubers and Roots",
+    "3": "Banana",
+    "4": "Pulses",
+    "5": "Vegetables and Fruits",
+    "6": "Other crops"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_area_clean.dta"
+ },
+ "B/area_phy": {
+  "file": "SAS_2013_area_phy.dta",
+  "rows": 157,
+  "vars": 10,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "ssf_area_phy": "Physical Area Small Scale Farmer",
+   "lsf_area_phy": "Physical Area Large Scale Farmer",
+   "total_area_phys": "Total Area",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_area_phy_clean.dta"
+ },
+ "B/inorganic_type": {
+  "file": "SAS_2013_inorganic_type.dta",
+  "rows": 4028,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "id2": "0.2 District",
+   "pp10": "2.10 Fertilizers used/will be used in Season B 2013-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp10": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME",
+    "6": "OTHER Fertilizers"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_inorganic_type_clean.dta"
+ },
+ "B/lsf_antierosion_b": {
+  "file": "SAS_2013_lsf_antierosion_b.dta",
+  "rows": 503,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "province",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui24": "2.4 Did you practice any anti-erosion activity on this plot ? 1=Yes, 2=No, if 2",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui24": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_antierosion_b_clean.dta"
+ },
+ "B/lsf_antierosion_b_by_type": {
+  "file": "SAS_2013_lsf_antierosion_b_by_type.dta",
+  "rows": 91,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui25": "2.5 Which anti erosion activities did you practice on this plot ? Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui25": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Radical Terracing",
+    "4": "Progressive terracing",
+    "5": "Grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_antierosion_b_by_type_clean.dta"
+ },
+ "B/lsf_area": {
+  "file": "SAS_2013_lsf_area.dta",
+  "rows": 2991,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "crop_code",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c03b": "1.3B Specify the crop planted - Crop Name",
+   "superic": "Area hectare",
+   "association": "Pure and mixed cropping",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "association": {
+    "1": "Pure crop land",
+    "2": "Mixed crop land"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_lsf_area_clean.dta"
+ },
+ "B/lsf_ident": {
+  "file": "SAS_2013_lsf_ident.dta",
+  "rows": 503,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "i17": "0.17 Are you a member of any Agriculture Cooperative",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "i17": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_ident_clean.dta"
+ },
+ "B/lsf_improved_by_crop_b": {
+  "file": "SAS_2013_lsf_improved_by_crop_b.dta",
+  "rows": 221,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_lsf_improved_by_crop_b_clean.dta"
+ },
+ "B/lsf_inorganic_b": {
+  "file": "SAS_2013_lsf_inorganic_b.dta",
+  "rows": 503,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp9": "2.9  Fertilizers used:",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp9": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_inorganic_b_clean.dta"
+ },
+ "B/lsf_inorganic_type": {
+  "file": "SAS_2013_lsf_inorganic_type.dta",
+  "rows": 244,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp10": "2.10 Fertilizers used/will be used in Season B 2013-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp10": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME",
+    "6": "OTHER Fertilizers"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_inorganic_type_clean.dta"
+ },
+ "B/lsf_irrigation_b": {
+  "file": "SAS_2013_lsf_irrigation_b.dta",
+  "rows": 503,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "irrigation": "Did you practice irrigation on this plot?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "irrigation": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_irrigation_b_clean.dta"
+ },
+ "B/lsf_irrigation_b_by_type": {
+  "file": "SAS_2013_lsf_irrigation_b_by_type.dta",
+  "rows": 26,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui03a": "2.2A Specify type of irrigation and any amount paid for irrigation - Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui03a": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water way",
+    "4": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_irrigation_b_by_type_clean.dta"
+ },
+ "B/lsf_organic_b": {
+  "file": "SAS_2013_lsf_organic_b.dta",
+  "rows": 503,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp7": "2.7 Have you already used/ will you use organic fertilizers during this agricult",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_organic_b_clean.dta"
+ },
+ "B/lsf_pesticideb": {
+  "file": "SAS_2013_lsf_pesticideb.dta",
+  "rows": 503,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pesticides": "Have you already used pesticide during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticides": {
+    "1": "Used Pesticides",
+    "2": "Did not use pesticides"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_pesticideb_clean.dta"
+ },
+ "B/lsf_pesticideb_by_type": {
+  "file": "SAS_2013_lsf_pesticideb_by_type.dta",
+  "rows": 144,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp1a": "2.11 Pesticides used/will be used in Season B 2013-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp1a": {
+    "7": "DITHANE",
+    "8": "RIDOMIL",
+    "9": "DIMETHOATE",
+    "10": "CYPERMETRINE",
+    "11": "DURSIBAN",
+    "12": "TILT",
+    "13": "PILKARE",
+    "14": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_pesticideb_by_type_clean.dta"
+ },
+ "B/lsf_seeds_b": {
+  "file": "SAS_2013_lsf_seeds_b.dta",
+  "rows": 427,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "seeds": "Seeds used",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "seeds": {
+    "1": "Traditional seeds",
+    "2": "Improved seeds"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_lsf_seeds_b_clean.dta"
+ },
+ "B/lsf_small_equipment_b_exp": {
+  "file": "SAS_2013_lsf_small_equipment_b_exp.dta",
+  "rows": 2874,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id7": "0.5B Tract number",
+   "uic1": "2.20 Code of small tools and farm equipments",
+   "uic6": "Total amount spent on this tool/equipment",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Scie",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk ju(icyansi)/ Milk container",
+    "31": "Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike",
+    "36": "Bowl/ingeremeri",
+    "37": "Others(specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_B_lsf_small_equipment_b_exp_clean.dta"
+ },
+ "B/lsf_small_equipment_b_reic": {
+  "file": "SAS_2013_lsf_small_equipment_b_reic.dta",
+  "rows": 64,
+  "vars": 9,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id7": "0.5B Tract number",
+   "uic1": "2.20 Code of small tools and farm equipments",
+   "uic7": "Number of equipment received for free from a non agricultural donor",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Scie",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk ju(icyansi)/ Milk container",
+    "31": "Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike",
+    "36": "Bowl/ingeremeri",
+    "37": "Others(specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_B_lsf_small_equipment_b_reic_clean.dta"
+ },
+ "B/lsf_sowing_production_harvest": {
+  "file": "SAS_2013_lsf_sowing_production_harvest.dta",
+  "rows": 1513,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c03b": "1.3B Specify the crop planted - Crop Name",
+   "c05": "1.6 Starting date for sowing ? Code",
+   "c12": "1.13  Do you expect any production on this crop by 30th August 2013?",
+   "c13": "1.14 What is the expected date for harvesting?",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "Before 31/12/12",
+    "2": "01/01 to 28/12/13",
+    "3": "1 to 15/03/13",
+    "4": "16-31/03/2013",
+    "5": "After 31/03/2013",
+    "6": "Not Applicable"
+   },
+   "c12": {
+    "1": "Yes",
+    "2": "No",
+    "3": "N/A"
+   },
+   "c13": {
+    "1": "Before 01/06/13",
+    "2": "01 to 15/06/13",
+    "3": "15 to 30/06/13",
+    "4": "1 to 31/07/13",
+    "5": "After 31/07/13",
+    "6": "Not applicable"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_lsf_sowing_production_harvest_clean.dta"
+ },
+ "B/lsf_traditional_by_crop_b": {
+  "file": "SAS_2013_lsf_traditional_by_crop_b.dta",
+  "rows": 744,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_lsf_traditional_by_crop_b_clean.dta"
+ },
+ "B/lsf_use_of_production": {
+  "file": "SAS_2013_lsf_use_of_production.dta",
+  "rows": 194,
+  "vars": 18,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c03d": "2.1 B-Crop Name",
+   "c0": "On the total production of this crop which quantity has been sold/will be sold?",
+   "c0a": "On the total production of this crop which quantity has been used/will be used b",
+   "c0b": "On the total production of this crop which quantity has been used/ will be used",
+   "c6c": "On the total production of this crop which quantity has been used/ will be used",
+   "c6d": "On the total production of this crop which quantity has offered/ will be offered",
+   "ca": "On the total production of this crop which quantity has been exchanged/ will be",
+   "c7c": "On the total production of this crop which quantity has been used/ will be used",
+   "cb": "On the total production of this crop which quantity has been used/ will be used",
+   "c8c": "On the total production of this crop which quantity has been stored/ will be sto",
+   "total": "Total",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops"
+   }
+  },
+  "out": "SAS_2013_B_lsf_use_of_production_clean.dta"
+ },
+ "B/phys_area_b": {
+  "file": "SAS_2013_phys_area_b.dta",
+  "rows": 166,
+  "vars": 8,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "crop": "crop_code",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "area_phy": "Physical Area",
+   "prov": "Province (1-5, NISR codes)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_phys_area_b_clean.dta"
+ },
+ "B/prod_area_yield": {
+  "file": "SAS_2013_prod_area_yield.dta",
+  "rows": 95,
+  "vars": 14,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "group_crop": "Crop group",
+   "category": "Crop category",
+   "production": "Production",
+   "area_ha": "Area hectare",
+   "yield": "Yield",
+   "production_n": "National Production",
+   "area_ha_n": "National area",
+   "yield_n": "National yield",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "category": {
+    "1": "Cereals",
+    "2": "Tubers and Roots",
+    "3": "Banana",
+    "4": "Pulses",
+    "5": "Vegetables and Fruits",
+    "6": "Other crops"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_B_prod_area_yield_clean.dta"
+ },
+ "B/ssf_antierosion_b": {
+  "file": "SAS_2013_ssf_antierosion_b.dta",
+  "rows": 15730,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui24": "2.4 Did you practice any anti-erosion activity on this plot ? 1=Yes, 2=No, if 2",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui24": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_antierosion_b_clean.dta"
+ },
+ "B/ssf_antierosion_b_by_type": {
+  "file": "SAS_2013_ssf_antierosion_b_by_type.dta",
+  "rows": 1479,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui25": "2.5 Which anti erosion activities did you practice on this plot ? Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui25": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Radical Terracing",
+    "4": "Progressive terracing",
+    "5": "Grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_antierosion_b_by_type_clean.dta"
+ },
+ "B/ssf_identification_b": {
+  "file": "SAS_2013_ssf_identification_b.dta",
+  "rows": 15735,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "stratum": "id3",
+   "segment": "id4",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "id5": "0.5 Tract letter",
+   "id7": "0.6 Tract number",
+   "i08": "0.8 Nature of the Operator",
+   "i17": "0.17 Are you a member of any Agriculture Cooperative",
+   "i09": "Sex",
+   "i10": "0.10 Age of the operator",
+   "i11": "0.11 Education level of the operator",
+   "i16": "0.16 Agricultural activity",
+   "i12": "0.12 Resident",
+   "agegroup": null,
+   "prov": "Province (1-5, NISR codes)",
+   "stratum": "Sampling stratum (as shipped)",
+   "segment": "Segment id (area frame) or LSF id (list frame), as shipped",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "i08": {
+    "1": "Ordinary Farmer",
+    "2": "Cooperative/Institution",
+    "3": "Big Farmer"
+   },
+   "i17": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "i09": {
+    "1": "Male",
+    "2": "Female",
+    "3": "N/A"
+   },
+   "i11": {
+    "1": "Primary",
+    "2": "Secondary",
+    "3": "Tertiary",
+    "4": "No education"
+   },
+   "i16": {
+    "1": "Cropping",
+    "2": "Livestock",
+    "3": "Cropping & Livestock"
+   },
+   "i12": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "agegroup": {
+    "1": "14-24",
+    "2": "25-34",
+    "3": "35-44",
+    "4": "45-54",
+    "5": "55 and Above"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "stratum": {},
+   "segment": {},
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_identification_b_clean.dta"
+ },
+ "B/ssf_improved_by_crop_b": {
+  "file": "SAS_2013_ssf_improved_by_crop_b.dta",
+  "rows": 1144,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_ssf_improved_by_crop_b_clean.dta"
+ },
+ "B/ssf_inorganic_b": {
+  "file": "SAS_2013_ssf_inorganic_b.dta",
+  "rows": 15730,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "inorganic": "Have you already used inorganic fertilizers during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "inorganic": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_inorganic_b_clean.dta"
+ },
+ "B/ssf_irrigation_b": {
+  "file": "SAS_2013_ssf_irrigation_b.dta",
+  "rows": 15730,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "irrigation": "Did you practice irrigation this plot?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "irrigation": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_irrigation_b_clean.dta"
+ },
+ "B/ssf_irrigation_b_by_type": {
+  "file": "SAS_2013_ssf_irrigation_b_by_type.dta",
+  "rows": 424,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui03a": "2.2A Specify type of irrigation and any amount paid for irrigation - Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui03a": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water way",
+    "4": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_irrigation_b_by_type_clean.dta"
+ },
+ "B/ssf_organic_b": {
+  "file": "SAS_2013_ssf_organic_b.dta",
+  "rows": 15730,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp7": "2.7 Have you already used/ will you use organic fertilizers during this agricult",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_organic_b_clean.dta"
+ },
+ "B/ssf_pesticideb": {
+  "file": "SAS_2013_ssf_pesticideb.dta",
+  "rows": 15730,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pesticide": "Have you already used pesticides during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_pesticideb_clean.dta"
+ },
+ "B/ssf_pesticideb_by_type": {
+  "file": "SAS_2013_ssf_pesticideb_by_type.dta",
+  "rows": 2032,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp1a": "2.11 Pesticides used/will be used in Season B 2013-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp1a": {
+    "7": "DITHANE",
+    "8": "RIDOMIL",
+    "9": "DIMETHOATE",
+    "10": "CYPERMETRINE",
+    "11": "DURSIBAN",
+    "12": "TILT",
+    "13": "PILKARE",
+    "14": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_pesticideb_by_type_clean.dta"
+ },
+ "B/ssf_pure_mixed_crop_land": {
+  "file": "SAS_2013_ssf_pure_mixed_crop_land.dta",
+  "rows": 76153,
+  "vars": 14,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "crop_code",
+   "wt": "coef",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "c03b": "1.3B Specify the crop planted - Crop Name",
+   "area": "Area in hectare",
+   "association": "Pure and mixedd cropping",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "association": {
+    "1": "Pure Crop Land",
+    "2": "Mixed crop Land"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2013_B_ssf_pure_mixed_crop_land_clean.dta"
+ },
+ "B/ssf_seeds_b": {
+  "file": "SAS_2013_ssf_seeds_b.dta",
+  "rows": 15047,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "seeds": "seeds used",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "seeds": {
+    "1": "Traditional",
+    "2": "Improved"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_seeds_b_clean.dta"
+ },
+ "B/ssf_small_equipment_b_exp": {
+  "file": "SAS_2013_ssf_small_equipment_b_exp.dta",
+  "rows": 37045,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "uic1": "2.12 Code of small tools and farm equipments",
+   "amount": "Total amount spent on this tool/equipment",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Saw",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk jug(icyansi)/ Milk container",
+    "31": "Balance/Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike/Igitogoto",
+    "36": "Bowl/ingeremeri",
+    "37": "Sheeting",
+    "38": "Hoe Handle",
+    "39": "Others (specify)",
+    "40": "Others (Specify)",
+    "41": "Others (Specify)",
+    "42": "Others (Specify)",
+    "43": "Others (Specify)",
+    "44": "Others (Specify)",
+    "45": "Others (Specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_small_equipment_b_exp_clean.dta"
+ },
+ "B/ssf_small_equipment_b_reic": {
+  "file": "SAS_2013_ssf_small_equipment_b_reic.dta",
+  "rows": 215,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "uic1": "2.12 Code of small tools and farm equipments",
+   "received": "Number of equipment received for free from a non agricultural donor",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Hoe majagu",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Saw",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mixer/umuvure",
+    "18": "Mortar/isekuru",
+    "19": "Mill/urusyo",
+    "20": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Pitcher",
+    "24": "Winnower",
+    "25": "Basket/ikibo",
+    "26": "Basket/inkangara",
+    "27": "Churn/igisabo",
+    "28": "Calabash",
+    "29": "Milk can/igicuba",
+    "30": "Milk jug(icyansi)/ Milk container",
+    "31": "Balance/Scales",
+    "32": "Jerry-can",
+    "33": "Barrel",
+    "34": "Bike",
+    "35": "Craft bike/Igitogoto",
+    "36": "Bowl/ingeremeri",
+    "37": "Sheeting",
+    "38": "Hoe Handle",
+    "39": "Others (specify)",
+    "40": "Others (Specify)",
+    "41": "Others (Specify)",
+    "42": "Others (Specify)",
+    "43": "Others (Specify)",
+    "44": "Others (Specify)",
+    "45": "Others (Specify)"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_B_ssf_small_equipment_b_reic_clean.dta"
+ },
+ "B/ssf_sowing_production_harvest": {
+  "file": "SAS_2013_ssf_sowing_production_harvest.dta",
+  "rows": 59642,
+  "vars": 14,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "wt": "coef",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "c05": "Starting date for sowing",
+   "c12": "Production expectation by 28th February 2013",
+   "c13": "Expected date for harvesting",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "c05": {
+    "1": "Before 31/12/12",
+    "2": "01/01 to 28/12/13",
+    "3": "1 to 15/03/13",
+    "4": "16-31/03/2013",
+    "5": "After 31/03/2013",
+    "6": "Not Applicable"
+   },
+   "c12": {
+    "1": "Yes",
+    "2": "No",
+    "3": "N/A"
+   },
+   "c13": {
+    "1": "Before 01/06/13",
+    "2": "01 to 15/06/13",
+    "3": "15 to 30/06/13",
+    "4": "1 to 31/07/13",
+    "5": "After 31/07/13",
+    "6": "Not applicable"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2013_B_ssf_sowing_production_harvest_clean.dta"
+ },
+ "B/ssf_traditional_by_crop_b": {
+  "file": "SAS_2013_ssf_traditional_by_crop_b.dta",
+  "rows": 38385,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "98": "Fallow-Land",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_B_ssf_traditional_by_crop_b_clean.dta"
+ },
+ "B/ssf_use_of_production": {
+  "file": "SAS_2013_ssf_use_of_production.dta",
+  "rows": 7660,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "i08a": "0.8 Nature of Operator",
+   "c03d": "2.1 B-Crop Name",
+   "c0": "On the total production of this crop which quantity has been sold/will be sold?",
+   "c0a": "On the total production of this crop which quantity has been used/will be used b",
+   "c0b": "On the total production of this crop which quantity has been used/ will be used",
+   "c6c": "On the total production of this crop which quantity has been used/ will be used",
+   "c6d": "On the total production of this crop which quantity has offered/ will be offered",
+   "ca": "On the total production of this crop which quantity has been exchanged/ will be",
+   "c7c": "On the total production of this crop which quantity has been used/ will be used",
+   "cb": "On the total production of this crop which quantity has been used/ will be used",
+   "c8c": "On the total production of this crop which quantity has been stored/ will be sto",
+   "total": "Total",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops"
+   }
+  },
+  "out": "SAS_2013_B_ssf_use_of_production_clean.dta"
+ },
+ "C/area_province_crop_c": {
+  "file": "SAS_2013_area_province_crop_c.dta",
+  "rows": 5510,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "prov": "province",
+   "holder": "idquest",
+   "crop": "crop_code",
+   "wt": "coef",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "area": "Area in Hectare",
+   "group_crop": "Crop group",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beat",
+    "43": "Garlic",
+    "44": "Small eggplants",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccoli",
+    "49": "Sipinaci",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non agriculture"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2013_C_area_province_crop_c_clean.dta"
+ },
+ "C/area_province_crop_c_total2": {
+  "file": "SAS_2013_area_province_crop_c_total2.dta",
+  "rows": 29,
+  "vars": 8,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "province",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "group_crop": "Crop group",
+   "area": "Area in Hectare",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits",
+    "98": "Fallow land",
+    "99": "Uncultivated"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_C_area_province_crop_c_total2_clean.dta"
+ },
+ "C/ssf_antierosion_c": {
+  "file": "SAS_2013_ssf_antierosion_c.dta",
+  "rows": 1412,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "province",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui24": "2.4 Did you practice any anti-erosion activity on this plot ? 1=Yes, 2=No, if 2",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui24": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_antierosion_c_clean.dta"
+ },
+ "C/ssf_antierosion_c_by_type": {
+  "file": "SAS_2013_ssf_antierosion_c_by_type.dta",
+  "rows": 172,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui25": "2.5 Which anti erosion activities did you practice on this plot ? Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui25": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Radical Terracing",
+    "4": "Progressive terracing",
+    "5": "Grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_antierosion_c_by_type_clean.dta"
+ },
+ "C/ssf_identification_c": {
+  "file": "SAS_2013_ssf_identification_c.dta",
+  "rows": 1412,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "id2a": "An_District",
+   "i08a": "0.9 Nature of Operator",
+   "i09": "0.10 Sex",
+   "i10": "0.11 Age of the operator",
+   "i11": "0.12 Education level of the operator",
+   "ageclasse": null,
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "id2a": {
+    "1": "District1",
+    "2": "District2",
+    "3": "District3",
+    "4": "District4",
+    "5": "District5",
+    "6": "District6",
+    "7": "District7",
+    "8": "District8",
+    "9": "District9",
+    "10": "District10",
+    "11": "District11",
+    "12": "District12",
+    "13": "District3",
+    "14": "District14",
+    "15": "District15",
+    "16": "District16",
+    "17": "District17",
+    "18": "District18",
+    "19": "District19",
+    "20": "District20",
+    "21": "District21",
+    "22": "District22",
+    "23": "District23",
+    "24": "District24",
+    "25": "District25",
+    "26": "District26",
+    "27": "District27",
+    "28": "District28",
+    "29": "District29",
+    "30": "District30"
+   },
+   "i08a": {
+    "1": "Ordinary Farmer",
+    "2": "Cooperative/Institution",
+    "3": "Big Farmer"
+   },
+   "i09": {
+    "1": "Male",
+    "2": "Female",
+    "3": "N/A"
+   },
+   "i11": {
+    "1": "Primary",
+    "2": "Secondary",
+    "3": "Tertiary",
+    "4": "No education"
+   },
+   "ageclasse": {
+    "1": "14-24",
+    "2": "25-34",
+    "3": "35-44",
+    "4": "45-54",
+    "5": "55 and Above"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_identification_c_clean.dta"
+ },
+ "C/ssf_improved_by_crop_c": {
+  "file": "SAS_2013_ssf_improved_by_crop_c.dta",
+  "rows": 139,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "improved": "Did you used improved seeds?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "improved": {
+    "1": "Yes"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beat",
+    "43": "Garlic",
+    "44": "Small eggplants",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccoli",
+    "98": "Fallow",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_C_ssf_improved_by_crop_c_clean.dta"
+ },
+ "C/ssf_inorganic_c": {
+  "file": "SAS_2013_ssf_inorganic_c.dta",
+  "rows": 1412,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "inorganic": "Have you already used inorganic fertilizers during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "inorganic": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_inorganic_c_clean.dta"
+ },
+ "C/ssf_inorganic_c_type": {
+  "file": "SAS_2013_ssf_inorganic_c_type.dta",
+  "rows": 1183,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp10": "2.10.Inorganic  fertilizers used/to be used during this agricultural season C 20",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp10": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "LIME",
+    "6": "OTHER Inorganic Fertilizers"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_inorganic_c_type_clean.dta"
+ },
+ "C/ssf_irrigation_c": {
+  "file": "SAS_2013_ssf_irrigation_c.dta",
+  "rows": 1412,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "irrigation": "Did you practice irrigation?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "irrigation": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_irrigation_c_clean.dta"
+ },
+ "C/ssf_irrigation_c_by_type": {
+  "file": "SAS_2013_ssf_irrigation_c_by_type.dta",
+  "rows": 198,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui03a": "2.2A Specify type of irrigation and any amount paid for irrigation - Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui03a": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water way",
+    "4": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_irrigation_c_by_type_clean.dta"
+ },
+ "C/ssf_organic_c": {
+  "file": "SAS_2013_ssf_organic_c.dta",
+  "rows": 1412,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp7": "2.7 Did/Will you use organic fertilizers during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_organic_c_clean.dta"
+ },
+ "C/ssf_pesticidec": {
+  "file": "SAS_2013_ssf_pesticidec.dta",
+  "rows": 1412,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pesticide": "Have you already used pesticides during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_pesticidec_clean.dta"
+ },
+ "C/ssf_pesticidec_by_type": {
+  "file": "SAS_2013_ssf_pesticidec_by_type.dta",
+  "rows": 1639,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp1a": "2.11 Pesticides used/will be used in Season B 2013-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp1a": {
+    "7": "DITHANE",
+    "8": "RIDOMIL",
+    "9": "DIMETHOATE",
+    "10": "CYPERMETRINE",
+    "11": "DURSIBAN",
+    "12": "TILT",
+    "13": "PILKARE",
+    "14": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_pesticidec_by_type_clean.dta"
+ },
+ "C/ssf_pure_and_mixed_c": {
+  "file": "SAS_2013_ssf_pure_and_mixed_c.dta",
+  "rows": 6068,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "plot_number",
+   "crop": "crop_code",
+   "wt": "coef",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "area": "Area in Hectare",
+   "association": "Pure and mixed cropping",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "association": {
+    "1": "Pure crop land",
+    "2": "Mixed crop land"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beat",
+    "43": "Garlic",
+    "44": "Small eggplants",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccoli",
+    "49": "Sipinaci",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non agriculture"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2013_C_ssf_pure_and_mixed_c_clean.dta"
+ },
+ "C/ssf_seeds_c": {
+  "file": "SAS_2013_ssf_seeds_c.dta",
+  "rows": 1412,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "seeds": "seeds used",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "seeds": {
+    "1": "Traditional",
+    "2": "Improved"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_seeds_c_clean.dta"
+ },
+ "C/ssf_small_equipment_c": {
+  "file": "SAS_2013_ssf_small_equipment_c.dta",
+  "rows": 112,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "uic1": "2.12 Code of small tools and farm equipments",
+   "uic7": "2.17 Number received from a non agricultural donor? Number",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Fork Hoe",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Saw",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mortar/isekuru",
+    "18": "Mill/urusyo",
+    "19": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Winnower",
+    "24": "Basket/ikibo",
+    "25": "Basket/inkangara",
+    "26": "Balance/Scales",
+    "27": "Jerry-can",
+    "28": "Barrel",
+    "29": "Bike",
+    "30": "Craft bike/Igitogoto",
+    "31": "Bowl/ingeremeri",
+    "32": "Sheeting",
+    "33": "Hoe Sleeve",
+    "35": "Water Pump",
+    "36": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_small_equipment_c_clean.dta"
+ },
+ "C/ssf_small_equipment_c_exp": {
+  "file": "SAS_2013_ssf_small_equipment_c_exp.dta",
+  "rows": 3155,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "uic1": "2.12 Code of small tools and farm equipments",
+   "uic6": "2.16 Total amount spent on this tool/equipment Amount(RWF)",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Fork Hoe",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Sprayer",
+    "9": "Watering can",
+    "10": "Saw",
+    "11": "Sickle",
+    "12": "S\u00e9cataurs",
+    "13": "Scythe",
+    "14": "Axe/ishoka",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Mortar/isekuru",
+    "18": "Mill/urusyo",
+    "19": "Basket",
+    "21": "Sack",
+    "22": "Big basket",
+    "23": "Winnower",
+    "24": "Basket/ikibo",
+    "25": "Basket/inkangara",
+    "26": "Balance/Scales",
+    "27": "Jerry-can",
+    "28": "Barrel",
+    "29": "Bike",
+    "30": "Craft bike/Igitogoto",
+    "31": "Bowl/ingeremeri",
+    "32": "Sheeting",
+    "33": "Hoe Sleeve",
+    "35": "Water Pump",
+    "36": "Other"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2013_C_ssf_small_equipment_c_exp_clean.dta"
+ },
+ "C/ssf_sowing_production_harvest_c": {
+  "file": "SAS_2013_ssf_sowing_production_harvest_c.dta",
+  "rows": 1893,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c05": "1.6 Starting date for sowing ? Code",
+   "c12": "1.14  Do you expect any production on this crop before 31st August 2013?",
+   "c13": "1.15 What is the expected date for harvesting?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "Before 15/04/13",
+    "2": "15 to 30/04/2013",
+    "3": "1 to 30/05/13",
+    "4": "1 to 30/06/13",
+    "5": "1 to 31/07/13",
+    "6": "After 31/07/2013"
+   },
+   "c12": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "c13": {
+    "1": "Before 01/07/13",
+    "2": "01 to 15/07/13",
+    "3": "15 to 30/07/13",
+    "4": "1 to 31/08/13",
+    "5": "After 31/08/13"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beat",
+    "43": "Garlic",
+    "44": "Small eggplants",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccoli",
+    "98": "Fallow",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_C_ssf_sowing_production_harvest_c_clean.dta"
+ },
+ "C/ssf_traditional_by_crop_c": {
+  "file": "SAS_2013_ssf_traditional_by_crop_c.dta",
+  "rows": 1398,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "traditional": "Did you used traditional seeds?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "traditional": {
+    "1": "Yes"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "13": "Yams & Taro",
+    "14": "Tomatoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "19": "Eggplant",
+    "20": "Other vegetables",
+    "21": "Cooking Bananas",
+    "22": "Banana Fruit",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "34": "Other crops",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beat",
+    "43": "Garlic",
+    "44": "Small eggplants",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccoli",
+    "98": "Fallow",
+    "99": "Uncultivated"
+   }
+  },
+  "out": "SAS_2013_C_ssf_traditional_by_crop_c_clean.dta"
+ },
+ "C/ssf_use_of_productionc": {
+  "file": "SAS_2013_ssf_use_of_productionc.dta",
+  "rows": 1536,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c03d": "4.1 B-Crop Name",
+   "c0": "On the total production of this crop which quantity has been sold/will be sold?",
+   "c0a": "On the total production of this crop which quantity has been used/will be used b",
+   "c0b": "On the total production of this crop what is the quantity that has been used as",
+   "c6c": "On the total production of this crop which quantity has been used as farm rent?",
+   "c6d": "On the total production of this crop what is the quantity that has been offered",
+   "ca": "On the total production of this crop what is the quantity that has been exchange",
+   "c7c": "On the total production of this crop what is the quantity that has been used as",
+   "cb": "On the total production of this crop what is the quantity that has been used as",
+   "c8c": "On the total production of this crop what is the quantity that has been stored?",
+   "qty_damaged": "On the total production of this crop what is the quantity that has been damaged?",
+   "used_in_any_other_way": "On the total production of this crop what is the quantity that has been been use",
+   "total": "Total",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "holder": {},
+   "crop": {
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "11": "Irish potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabbage",
+    "17": "Onion",
+    "18": "Carrot",
+    "20": "Other vegetables",
+    "28": "Soya beans",
+    "34": "Other crops",
+    "36": "Sweet pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beat",
+    "43": "Garlic",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccoli"
+   }
+  },
+  "out": "SAS_2013_C_ssf_use_of_productionc_clean.dta"
+ },
+ "C/ssf_yield_production_area_c_crop": {
+  "file": "SAS_2013_ssf_yield_production_area_c_crop.dta",
+  "rows": 18,
+  "vars": 13,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov"
+  ],
+  "source": {
+   "prov": "id1",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "group_crop": "Crop group",
+   "production": "Production",
+   "yield": "Yield",
+   "area": "Area in Hectare",
+   "production_n": "National Production",
+   "area_n": "National area",
+   "yield_n": "National Yield",
+   "prov": "Province (1-5, NISR codes)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & Pulses",
+    "10": "Cassava",
+    "11": "Irish Potatoes",
+    "12": "Sweet Potatoes",
+    "13": "Yams & Taro",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "28": "Soya beans",
+    "29": "Groundnuts",
+    "34": "Other crops",
+    "80": "Vegetables",
+    "81": "Fruits"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   }
+  },
+  "out": "SAS_2013_C_ssf_yield_production_area_c_crop_clean.dta"
+ }
+}

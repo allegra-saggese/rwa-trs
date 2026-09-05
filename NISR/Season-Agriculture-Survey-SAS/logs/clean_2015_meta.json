@@ -1,0 +1,4791 @@
+{
+ "A/antierosion_lsf": {
+  "file": "SAS_2015_A_antierosion_lsf.dta",
+  "rows": 199,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "antierosion": "2.5 Are some antierosion activities made on this plot during this season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "antierosion": {
+    "1": "Practice antierosion",
+    "2": "Did not practice antierosion"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_antierosion_lsf_clean.dta"
+ },
+ "A/antierosion_type_lsf": {
+  "file": "SAS_2015_A_antierosion_type_lsf.dta",
+  "rows": 219,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "antierosion": "2.5 Are some antierosion activities made on this plot during this season?",
+   "ui26": "2.6.1 Specify any expenditure on anti erosion activities ?Code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "antierosion": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "ui26": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_antierosion_type_lsf_clean.dta"
+ },
+ "A/farmq_part0": {
+  "file": "SAS_2015_A_farmq_part0.dta",
+  "rows": 5502,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "i08a": "0.8 nature of operator",
+   "i09": "0.9 sex",
+   "i10": "0.10 age of the operator",
+   "i11": "0.11 education level of the operator",
+   "i16": "0.16 agricultural activity",
+   "i17": "0.17 are you a member of any agriculture cooperative",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "i08a": {
+    "1": "individual farmer",
+    "2": "cooperative/ institution/company",
+    "3": "individual big farmer",
+    "4": "cooperative/ institution/company taken as big farmer",
+    "5": "settlement"
+   },
+   "i09": {
+    "1": "male",
+    "2": "female"
+   },
+   "i11": {
+    "1": "primary",
+    "2": "secondary",
+    "3": "tertiary",
+    "4": "no education"
+   },
+   "i16": {
+    "1": "agriculture",
+    "2": "agriculture & livestock"
+   },
+   "i17": {
+    "1": "yes",
+    "2": "no"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_A_farmq_part0_clean.dta"
+ },
+ "A/farmq_part1": {
+  "file": "SAS_2015_A_farmq_part1.dta",
+  "rows": 27490,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "c05": "starting date for sowing",
+   "type_of_seeds_sown": "1.6 type of seeds sown",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "before 01/09/2014",
+    "2": "01-15/09/2014",
+    "3": "16- 30/09/2014",
+    "4": "01-15/10/2014",
+    "5": "16-31/10/2014",
+    "6": "after 31/10/2014",
+    "7": "not applicable"
+   },
+   "type_of_seeds_sown": {
+    "1": "traditional seeds",
+    "2": "improved seeds",
+    "3": "traditional and improved seeds"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "maize",
+    "2": "paddy rice",
+    "3": "sorghum",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "bush beans",
+    "7": "climbing beans",
+    "8": "peas",
+    "9": "other legumes & pulses",
+    "10": "cassava",
+    "11": "irish potatoes",
+    "12": "sweet potatoes",
+    "14": "tomotoes",
+    "15": "white cabbage",
+    "16": "flower cabage",
+    "17": "onions",
+    "18": "carrots",
+    "19": "eggplant",
+    "21": "cooking bananas",
+    "22": "dessert banana",
+    "23": "banana for beer",
+    "24": "pineapple",
+    "25": "avocado",
+    "26": "passion fruits",
+    "27": "other fruits",
+    "28": "soya beans",
+    "29": "ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "pyrethrum",
+    "35": "black eggplants",
+    "36": "sweet pepper",
+    "37": "pepper",
+    "38": "amaranths",
+    "39": "celery",
+    "40": "spinach",
+    "41": "small red beans",
+    "42": "sugar beet",
+    "43": "garlic",
+    "44": "african cabbage",
+    "45": "leeks",
+    "46": "french beans",
+    "47": "lettuce",
+    "48": "broccolli",
+    "49": "napia grass",
+    "50": "sugar cane",
+    "51": "fodder crop",
+    "52": "macadamia",
+    "53": "olive crop",
+    "54": "mango",
+    "55": "apple",
+    "56": "papaya",
+    "57": "tree tomato",
+    "58": "orange",
+    "59": "lemon",
+    "60": "guava",
+    "61": "white mulberry",
+    "62": "mucuna",
+    "63": "leucena",
+    "64": "desmodium",
+    "65": "millet",
+    "66": "stevia",
+    "67": "jatropha",
+    "68": "other tubers",
+    "69": "pumpkins",
+    "70": "cucumber",
+    "71": "palm tree",
+    "97": "pasture",
+    "98": "fallow-land",
+    "99": "uncultivated",
+    "131": "taro",
+    "132": "yams",
+    "201": "other seasonal vegetables",
+    "202": "other annual vegetables",
+    "203": "other perennial  vegetables",
+    "341": "other seasonal crops",
+    "342": "other annual crops",
+    "343": "other perennial crops"
+   }
+  },
+  "out": "SAS_2015_A_farmq_part1_clean.dta"
+ },
+ "A/farmq_part2a": {
+  "file": "SAS_2015_A_farmq_part2a.dta",
+  "rows": 12711,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "plot_no",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "used_any_irrigation_type": "2.3 have you used any irrigation type?",
+   "ui03d": "2.4.1 specify type of irrigation and any amount paid for irrigation - code",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "used_any_irrigation_type": {
+    "1": "yes",
+    "2": "no"
+   },
+   "ui03d": {
+    "1": "pumps/tube wells/irrigation machines",
+    "2": "watering can",
+    "3": "water channels",
+    "4": "others"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {}
+  },
+  "out": "SAS_2015_A_farmq_part2a_clean.dta"
+ },
+ "A/farmq_part2b_fertilizer": {
+  "file": "SAS_2015_A_farmq_part2b_fertilizer.dta",
+  "rows": 14043,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 plot no.",
+   "pp7": "2.8 have you already used organic fertilizers during this agriculture season?",
+   "inorganic": "2.10.1 have u already used this inorganic fertilizers",
+   "pp10": "2.10.2 inorgnic fertilizers used-type",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "yes",
+    "2": "no"
+   },
+   "inorganic": {
+    "1": "yes",
+    "2": "no"
+   },
+   "pp10": {
+    "1": "npk",
+    "2": "urea",
+    "3": "urea(liquid)",
+    "4": "dap",
+    "5": "other fertilizers"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_A_farmq_part2b_fertilizer_clean.dta"
+ },
+ "A/farmq_part2b_pesticide": {
+  "file": "SAS_2015_A_farmq_part2b_pesticide.dta",
+  "rows": 14048,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "id3",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 plot no.",
+   "pesticide": "2.11.1 have you used this pesticide?",
+   "pp1a": "2.11.2 pesticides used in season b 2014-type",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "yes",
+    "2": "no"
+   },
+   "pp1a": {
+    "6": "dithane",
+    "7": "ridomil",
+    "8": "dimethoate",
+    "9": "cypermetrine",
+    "10": "dursiban",
+    "11": "tilt",
+    "12": "pilkare",
+    "13": "other pesticide"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_A_farmq_part2b_pesticide_clean.dta"
+ },
+ "A/farmq_part4": {
+  "file": "SAS_2015_A_farmq_part4.dta",
+  "rows": 14366,
+  "vars": 19,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "sold": "quantity sold",
+   "c0a": "quantity used by  household",
+   "c0b": "quantity used as wage for hired labour",
+   "c6c": "quantity used as farm rent",
+   "c6d": "quantity offered as a gift",
+   "ca": "quantity exchanged with other things",
+   "c7c": "quantity used as seeds",
+   "cb": "quantity used as fodder",
+   "c8c": "quantity stored",
+   "damaged": "quantity damaged",
+   "other_way": "quantity used in any other way",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "stratum": {},
+   "holder": {},
+   "crop": {
+    "1": "maize",
+    "2": "paddy rice",
+    "3": "sorghum",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "bush beans",
+    "7": "climbing beans",
+    "8": "peas",
+    "9": "other legumes & pulses",
+    "10": "cassava",
+    "11": "irish potatoes",
+    "12": "sweet potatoes",
+    "14": "tomotoes",
+    "15": "white cabbage",
+    "16": "flower cabage",
+    "17": "onions",
+    "18": "carrots",
+    "19": "eggplant",
+    "21": "cooking bananas",
+    "22": "dessert banana",
+    "23": "banana for beer",
+    "24": "pineapple",
+    "25": "avocado",
+    "26": "passion fruits",
+    "27": "other fruits",
+    "28": "soya beans",
+    "29": "ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "pyrethrum",
+    "35": "black eggplants",
+    "36": "sweet pepper",
+    "37": "pepper",
+    "38": "amaranths",
+    "39": "celery",
+    "40": "spinach",
+    "41": "small red beans",
+    "42": "sugar beet",
+    "43": "garlic",
+    "44": "african cabbage",
+    "45": "leeks",
+    "46": "french beans",
+    "47": "lettuce",
+    "48": "broccolli",
+    "49": "napia grass",
+    "50": "sugar cane",
+    "51": "fodder crop",
+    "52": "macadamia",
+    "53": "olive crop",
+    "54": "mango",
+    "55": "apple",
+    "56": "papaya",
+    "57": "tree tomato",
+    "58": "orange",
+    "59": "lemon",
+    "60": "guava",
+    "61": "white mulberry",
+    "62": "mucuna",
+    "63": "leucena",
+    "64": "desmodium",
+    "65": "millet",
+    "66": "stevia",
+    "67": "jatropha",
+    "68": "other tubers",
+    "69": "pumpkins",
+    "70": "cucumber",
+    "71": "palm tree",
+    "97": "pasture",
+    "98": "fallow-land",
+    "99": "uncultivated",
+    "131": " taro",
+    "132": "yams",
+    "201": "other seasonal vegetables",
+    "202": "other annual vegetables",
+    "203": "other perennial  vegetables",
+    "341": "other seasonal crops",
+    "342": "other annual crops",
+    "343": "other perennial crops"
+   }
+  },
+  "out": "SAS_2015_A_farmq_part4_clean.dta"
+ },
+ "A/farmq_part6a": {
+  "file": "SAS_2015_A_farmq_part6a.dta",
+  "rows": 170087,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "uic1": "code of small tools and farm equipments",
+   "uic3": "6.1 did you buy this tool/equipment during this season?",
+   "uic4": "6.2 how many did you buy during this season? number",
+   "uic6": "6.4 total amount spent on this tool/equipment amount(rwf)",
+   "uic7": "6.5.1 number received from a non agricultural donor? number",
+   "uica": "6.5.2 number received from a non agricultural donor? cost",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "hoe",
+    "2": "spring hoe",
+    "3": "fork hoe",
+    "4": "rake",
+    "5": "pick/ ipiki",
+    "6": "wheelbarrow",
+    "7": "shovel/igitiyo",
+    "8": "watering pump",
+    "9": "crops sprayer",
+    "10": "watering can",
+    "11": "scie",
+    "12": "sickle",
+    "13": "secataur",
+    "14": "scythe",
+    "15": "machete",
+    "16": "billhook",
+    "17": "basket",
+    "18": "sack",
+    "19": "big  basket",
+    "20": "winnower",
+    "21": "basket(ikibo )",
+    "22": "basket(inkangara )",
+    "23": "scale",
+    "24": "jerry-can",
+    "25": "barrel",
+    "26": "bike",
+    "27": "craft bike",
+    "28": "bowl",
+    "29": "sheeting",
+    "30": "hoe sleeve",
+    "31": "others (specify)"
+   },
+   "uic3": {
+    "1": "yes",
+    "2": "no"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_A_farmq_part6a_clean.dta"
+ },
+ "A/farmq_part7": {
+  "file": "SAS_2015_A_farmq_part7.dta",
+  "rows": 16435,
+  "vars": 31,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "crop": "crop_codg",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "crop_planted": "7.1 crop planted?",
+   "traditional_seed": "7.2 traditional seed",
+   "improved_seed": "7.3 improved seed",
+   "equipment_oxen_used_for_land": "7.4.1 equipment/oxen used for land preparation-code",
+   "equipment_codf": "7.4.2 equipment code",
+   "equipment_code": "7.4.3 equipment code",
+   "any_irrigation_type": "7.5.1 any irrigation type",
+   "the_irrigation_type_codg": "7.5.2 the irrigation type code",
+   "the_irrigation_type_codf": "7.5.3 the irrigation type code",
+   "the_irrigation_type_code": "7.5.4 the irrigation type code",
+   "any_anti_erosion_activities": "7.6.1 any anti-erosion activities",
+   "any_anti_erosion_codg": "7.6.2 anti-erosion code",
+   "any_anti_erosion_codf": "7.6.3 anti-erosion code",
+   "any_anti_erosion_code": "7.6.4 anti-erosion code",
+   "organic_fertilizer_used": "7.7 organic fertilizer used",
+   "inorganic_fertilizer": "7.8.1 inorganic fertilizer",
+   "inorganic_fertilizer_codg": "7.8.2 inorganic fertilizer code",
+   "inorganic_fertilizer_codf": "7.8.3 inorganic fertilizer code",
+   "inorganic_fertilizer_code": "7.8.4 inorganic fertilizer code",
+   "pesticide_used": "7.9.1 pesticide used",
+   "pesticide_useg": "7.9.2 pesticide used  code",
+   "pesticide_usee": "7.9.3 pesticide used  code",
+   "pesticide_usef": "7.9.4 pesticide used  code",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "crop_planted": {
+    "1": "yes",
+    "2": "no"
+   },
+   "traditional_seed": {
+    "1": "yes",
+    "2": "no"
+   },
+   "improved_seed": {
+    "1": "yes",
+    "2": "no"
+   },
+   "equipment_oxen_used_for_land": {
+    "1": "yes",
+    "2": "no"
+   },
+   "equipment_codf": {
+    "1": "oxen",
+    "2": "tractor",
+    "3": "tractor with driver",
+    "4": "other mechanical equipment"
+   },
+   "equipment_code": {
+    "1": "oxen",
+    "2": "tractor",
+    "3": "tractor with driver",
+    "4": "other mechanical equipment"
+   },
+   "any_irrigation_type": {
+    "1": "yes",
+    "2": "no"
+   },
+   "the_irrigation_type_codg": {
+    "1": "pumps/tube wells/irrigation machines",
+    "2": "watering can",
+    "3": "water channels",
+    "4": "others"
+   },
+   "the_irrigation_type_codf": {
+    "1": "pumps/tube wells/irrigation machines",
+    "2": "watering can",
+    "3": "water channels",
+    "4": "others"
+   },
+   "the_irrigation_type_code": {
+    "1": "pumps/tube wells/irrigation machines",
+    "2": "watering can",
+    "3": "water channels",
+    "4": "others"
+   },
+   "any_anti_erosion_activities": {
+    "1": "yes",
+    "2": "no"
+   },
+   "any_anti_erosion_codg": {
+    "1": "distches",
+    "2": "trees",
+    "3": "bench terraces",
+    "4": "progressive terracing",
+    "5": "cover plants/grasses",
+    "6": "water drainage",
+    "7": "mulching",
+    "8": "beds",
+    "9": "other"
+   },
+   "any_anti_erosion_codf": {
+    "1": "distches",
+    "2": "trees",
+    "3": "bench terraces",
+    "4": "progressive terracing",
+    "5": "cover plants/grasses",
+    "6": "water drainage",
+    "7": "mulching",
+    "8": "beds",
+    "9": "other"
+   },
+   "any_anti_erosion_code": {
+    "1": "distches",
+    "2": "trees",
+    "3": "bench terraces",
+    "4": "progressive terracing",
+    "5": "cover plants/grasses",
+    "6": "water drainage",
+    "7": "mulching",
+    "8": "beds",
+    "9": "other"
+   },
+   "organic_fertilizer_used": {
+    "1": "yes",
+    "2": "no"
+   },
+   "inorganic_fertilizer": {
+    "1": "yes",
+    "2": "no"
+   },
+   "inorganic_fertilizer_codg": {
+    "1": "npk",
+    "2": "urea",
+    "3": "urea(liquid)",
+    "4": "dap",
+    "5": "other fertilizers"
+   },
+   "inorganic_fertilizer_codf": {
+    "1": "npk",
+    "2": "urea",
+    "3": "urea(liquid)",
+    "4": "dap",
+    "5": "other fertilizers"
+   },
+   "inorganic_fertilizer_code": {
+    "1": "npk",
+    "2": "urea",
+    "3": "urea(liquid)",
+    "4": "dap",
+    "5": "other fertilizers"
+   },
+   "pesticide_used": {
+    "1": "yes",
+    "2": "no"
+   },
+   "pesticide_useg": {
+    "6": "dithane",
+    "7": "ridomil",
+    "8": "dimethoate",
+    "9": "cypermetrine",
+    "10": "dursiban",
+    "11": "tilt",
+    "12": "pilkare",
+    "13": "other pesticide"
+   },
+   "pesticide_usee": {
+    "6": "dithane",
+    "7": "ridomil",
+    "8": "dimethoate",
+    "9": "cypermetrine",
+    "10": "dursiban",
+    "11": "tilt",
+    "12": "pilkare",
+    "13": "other pesticide"
+   },
+   "pesticide_usef": {
+    "6": "dithane",
+    "7": "ridomil",
+    "8": "dimethoate",
+    "9": "cypermetrine",
+    "10": "dursiban",
+    "11": "tilt",
+    "12": "pilkare",
+    "13": "other pesticide"
+   },
+   "stratum": {},
+   "holder": {},
+   "crop": {
+    "1": "maize",
+    "2": "paddy rice",
+    "3": "sorghum",
+    "4": "wheat",
+    "6": "bush beans",
+    "7": "climbing beans",
+    "8": "peas",
+    "10": "cassava",
+    "11": "irish potatoes",
+    "12": "sweet potatoes",
+    "21": "cooking banana",
+    "23": "banana for beer",
+    "28": "soybeans",
+    "29": "groundnuts",
+    "131": "taro",
+    "200": "vegetables",
+    "300": "fruits"
+   }
+  },
+  "out": "SAS_2015_A_farmq_part7_clean.dta"
+ },
+ "A/general_info_lsf": {
+  "file": "SAS_2015_A_general_info_lsf.dta",
+  "rows": 199,
+  "vars": 14,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "i08a": "0.8 Nature of Operator",
+   "i09": "0.9 Sex",
+   "i10": "0.10 Age of the operator",
+   "i11": "0.11 Education level of the operator",
+   "i16": "0.16 Agricultural activity",
+   "i17": "0.17 Are you a member of any Agriculture Cooperative",
+   "seeds": "1.6 Type of seeds sown",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "i08a": {
+    "1": "Individual farmer",
+    "2": "Cooperative/ Institution/Company",
+    "3": "Individual Big Farmer",
+    "4": "Cooperative/ Institution/Company taken as Big Farmer",
+    "5": "Settlement"
+   },
+   "i09": {
+    "1": "Male",
+    "2": "Female"
+   },
+   "i11": {
+    "1": "Primary",
+    "2": "Secondary",
+    "3": "Tertiary",
+    "4": "No education"
+   },
+   "i16": {
+    "1": "Agriculture",
+    "2": "Agriculture & Livestock"
+   },
+   "i17": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "seeds": {
+    "1": "Traditional seeds",
+    "2": "Improved seeds",
+    "3": "Traditional and Improved seeds",
+    "4": "No seeds used"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_general_info_lsf_clean.dta"
+ },
+ "A/ic_expense_small_tools_eq_lsf": {
+  "file": "SAS_2015_A_ic_expense_small_tools_eq_lsf.dta",
+  "rows": 6100,
+  "vars": 12,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder"
+  ],
+  "source": {
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "uic1": "Code of small tools and farm equipments",
+   "uic3": "6.1 Did you buy this tool/equipment during this season?",
+   "uic4": "6.2 How many did you buy during this season? Number",
+   "uic6": "6.4 Total amount spent on this tool/equipment Amount(RWF)",
+   "uic7": "6.5.1 Number received from a non agricultural donor? Number",
+   "uica": "6.5.2 Number received from a non agricultural donor? Cost",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Fork hoe",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Watering pump",
+    "9": "Crops Sprayer",
+    "10": "Watering can",
+    "11": "Scie",
+    "12": "Sickle",
+    "13": "Secataur",
+    "14": "Scythe",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Basket",
+    "18": "Sack",
+    "19": "Big  basket",
+    "20": "Winnower",
+    "21": "Basket(ikibo )",
+    "22": "Basket(inkangara )",
+    "23": "Scale",
+    "24": "Jerry-can",
+    "25": "Barrel",
+    "26": "Bike",
+    "27": "Craft bike",
+    "28": "Bowl",
+    "29": "Sheeting",
+    "30": "Hoe sleeve",
+    "31": "Others (Specify)"
+   },
+   "uic3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_ic_expense_small_tools_eq_lsf_clean.dta"
+ },
+ "A/inorganic_fertilizer_lsf": {
+  "file": "SAS_2015_A_inorganic_fertilizer_lsf.dta",
+  "rows": 1308,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp7a": "1.1 Plot No.",
+   "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp10": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_inorganic_fertilizer_lsf_clean.dta"
+ },
+ "A/inorganic_fertilizer_oper_lsf": {
+  "file": "SAS_2015_A_inorganic_fertilizer_oper_lsf.dta",
+  "rows": 199,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp10": null,
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp10": {
+    "1": "Used inorganic fertilizers",
+    "2": "Did not use inorganic fertilizers"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_inorganic_fertilizer_oper_lsf_clean.dta"
+ },
+ "A/irrigation_lsf": {
+  "file": "SAS_2015_A_irrigation_lsf.dta",
+  "rows": 199,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "irrigation": null,
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "irrigation": {
+    "1": "Practice irrigation",
+    "2": "Did not practice irrigation"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_irrigation_lsf_clean.dta"
+ },
+ "A/irrigation_type_lsf": {
+  "file": "SAS_2015_A_irrigation_type_lsf.dta",
+  "rows": 200,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui03d": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_irrigation_type_lsf_clean.dta"
+ },
+ "A/lsf_screening": {
+  "file": "SAS_2015_A_lsf_screening.dta",
+  "rows": 4067,
+  "vars": 14,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "province",
+   "holder": "idquest",
+   "plot": "plot_number",
+   "crop": "crop_code",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "land_use": "2.3 Land Use",
+   "non_agri_land_type": "2.4 Non-agri land type",
+   "season_a_crop": "2.8 Season A crop",
+   "plot_area": null,
+   "ha": "Area by crop in hectare",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "land_use": {
+    "96": "Agricultural Land",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agri Land"
+   },
+   "non_agri_land_type": {
+    "1": "Buildings",
+    "2": "Road/Path",
+    "3": "Forest/Bush",
+    "4": "Bare/Rocky soil",
+    "5": "Uncultivated marshlands",
+    "6": "Flooded  marshlands",
+    "7": "Water bodies",
+    "8": "Others"
+   },
+   "season_a_crop": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White Mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agriculture",
+    "131": "Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_A_lsf_screening_clean.dta"
+ },
+ "A/organic_fert_lsf": {
+  "file": "SAS_2015_A_organic_fert_lsf.dta",
+  "rows": 196,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pp7": "2.8 Have you already used organic fertilizers during this agriculture season?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_organic_fert_lsf_clean.dta"
+ },
+ "A/pesticides_oper_lsf": {
+  "file": "SAS_2015_A_pesticides_oper_lsf.dta",
+  "rows": 199,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pesticide": "2.11.1 Have you used this pesticide?",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "Used pesticides",
+    "2": "Did not use pesticides"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_pesticides_oper_lsf_clean.dta"
+ },
+ "A/pesticides_types_lsf": {
+  "file": "SAS_2015_A_pesticides_types_lsf.dta",
+  "rows": 287,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "pesticide": "2.11.1 Have you used this pesticide?",
+   "pp1a": "2.11.2 Pesticides used in Season B 2014-Type",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "pp1a": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_A_pesticides_types_lsf_clean.dta"
+ },
+ "A/plot_ident_lsf": {
+  "file": "SAS_2015_A_plot_ident_lsf.dta",
+  "rows": 1080,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "c05": "1.5 Starting date for sowing ? Code",
+   "seeds": "1.6 Type of seeds sown",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "Before 01/09/2014",
+    "2": "01-15/09/2014",
+    "3": "16- 30/09/2014",
+    "4": "01-15/10/2014",
+    "5": "16-31/10/2014",
+    "6": "After 31/10/2014",
+    "7": "Not Applicable"
+   },
+   "seeds": {
+    "1": "Traditional seeds",
+    "2": "Improved seeds",
+    "3": "Traditional and Improved seeds"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "Sun flower",
+    "31": "Other oil seeds",
+    "32": "Coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow-land",
+    "99": "Uncultivated",
+    "131": "Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_A_plot_ident_lsf_clean.dta"
+ },
+ "A/ssf_screening": {
+  "file": "SAS_2015_A_ssf_screening.dta",
+  "rows": 105474,
+  "vars": 21,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "plot_number",
+   "crop": "crop_code",
+   "wt": "weight",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "resident_in_the_segment": "2.3.6 resident in the segment",
+   "land_use": "2.6 land use",
+   "non_agri_land_type": "2.7 non-agri land type",
+   "anti_erosive_practice": "2.8.1 anti_erosive_practice",
+   "anti_erosive_activities": "2.8.2 anti erosive activities in this agricultural season",
+   "anti_erosive_activitieu": "2.8.2 anti erosive activities in this agricultural season",
+   "anti_erosive_activitiet": "2.8.2 anti erosive activities in this agricultural season",
+   "season_a_crop": "2.10 season a crop",
+   "plot_area": null,
+   "ha": "Area by crop in hectare",
+   "group_crop": null,
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "resident_in_the_segment": {
+    "1": "resident",
+    "2": "not resident"
+   },
+   "land_use": {
+    "96": "agricultural land",
+    "97": "pasture",
+    "98": "fallow",
+    "99": "non-agri land"
+   },
+   "non_agri_land_type": {
+    "1": "buildings",
+    "2": "road/path",
+    "3": "forest/bush",
+    "4": "bare/rocky soil",
+    "5": "uncultivated marshlands",
+    "6": "flooded  marshlands",
+    "7": "water bodies",
+    "8": "others"
+   },
+   "anti_erosive_practice": {
+    "1": "yes",
+    "2": "no"
+   },
+   "anti_erosive_activities": {
+    "1": "ditches",
+    "2": "trees",
+    "3": "bench terraces",
+    "4": "progressive terraces",
+    "5": "cover plants/grasses",
+    "6": "water drainage",
+    "7": "mulching",
+    "8": "beds",
+    "9": "others"
+   },
+   "anti_erosive_activitieu": {
+    "1": "ditches",
+    "2": "trees",
+    "3": "bench terraces",
+    "4": "progressive terraces",
+    "5": "cover plants/grasses",
+    "6": "water drainage",
+    "7": "mulching",
+    "8": "beds",
+    "9": "others"
+   },
+   "anti_erosive_activitiet": {
+    "1": "ditches",
+    "2": "trees",
+    "3": "bench terraces",
+    "4": "progressive terraces",
+    "5": "cover plants/grasses",
+    "6": "water drainage",
+    "7": "mulching",
+    "8": "beds",
+    "9": "others"
+   },
+   "season_a_crop": {
+    "1": "yes",
+    "2": "no"
+   },
+   "group_crop": {
+    "1": "sorghum",
+    "2": "maize",
+    "3": "wheat",
+    "4": "paddy rice",
+    "5": "beans",
+    "6": "peas",
+    "7": "ground nuts",
+    "8": "soya beans",
+    "9": "bananas",
+    "10": "irish potatoes",
+    "11": "sweet potatoes",
+    "12": "yams & taro",
+    "13": "cassava",
+    "14": "vegetables",
+    "15": "fruits",
+    "16": "other cereals",
+    "17": "other crops",
+    "18": "other legumes & pulses",
+    "97": "pasture",
+    "98": "fallow",
+    "99": "non-agriculture land"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "maize",
+    "2": "paddy rice",
+    "3": "sorghum",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "bush beans",
+    "7": "climbing beans",
+    "8": "peas",
+    "9": "other legumes & pulses",
+    "10": "cassava",
+    "11": "irish potatoes",
+    "12": "sweet potatoes",
+    "14": "tomotoes",
+    "15": "white cabbage",
+    "16": "flower cabage",
+    "17": "onions",
+    "18": "carrots",
+    "19": "eggplant",
+    "21": "cooking bananas",
+    "22": "dessert banana",
+    "23": "banana for beer",
+    "24": "pineapple",
+    "25": "avocado",
+    "26": "passion fruits",
+    "27": "other fruits",
+    "28": "soya beans",
+    "29": "ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "pyrethrum",
+    "35": "black eggplants",
+    "36": "sweet pepper",
+    "37": "pepper",
+    "38": "amaranths",
+    "39": "celery",
+    "40": "spinach",
+    "41": "small red beans",
+    "42": "sugar beet",
+    "43": "garlic",
+    "44": "african cabbage",
+    "45": "leeks",
+    "46": "french beans",
+    "47": "lettuce",
+    "48": "broccolli",
+    "49": "napia grass",
+    "50": "sugar cane",
+    "51": "fodder crop",
+    "52": "macadamia",
+    "53": "olive crop",
+    "54": "mango",
+    "55": "apple",
+    "56": "papaya",
+    "57": "tree tomato",
+    "58": "orange",
+    "59": "lemon",
+    "60": "guava",
+    "61": "white mulberry",
+    "62": "mucuna",
+    "63": "leucena",
+    "64": "desmodium",
+    "65": "millet",
+    "66": "stevia",
+    "67": "jatropha",
+    "68": "other tubers",
+    "69": "pumpkins",
+    "70": "cucumber",
+    "71": "palm tree",
+    "131": " taro",
+    "132": "yams",
+    "201": "other seasonal vegetables",
+    "202": "other annual vegetables",
+    "203": "other perennial  vegetables",
+    "341": "other seasonal crops",
+    "342": "other annual crops",
+    "343": "other perennial crops"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2015_A_ssf_screening_clean.dta"
+ },
+ "A/use_of_production_lsf": {
+  "file": "SAS_2015_A_use_of_production_lsf.dta",
+  "rows": 638,
+  "vars": 18,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "sold": "4.1 Qty Sold",
+   "c0a": "4.2 Used by the household",
+   "c0b": "4.3 Qty used as wage for hired labour",
+   "c6c": "4.4 Qty used as farm rent",
+   "c6d": "4.5 Quantity has offered as a gift",
+   "ca": "4.6 Qty exchanged with other things",
+   "c7c": "4.7 Qty been used as seeds",
+   "cb": "4.8 Qty used as fodder",
+   "c8c": "4.9 Qty Stored",
+   "damaged": "4.10 Qty damaged",
+   "other_way": "4.11 Qty used in any other way",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White Mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow-Land",
+    "99": "Uncultivated",
+    "131": " Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_A_use_of_production_lsf_clean.dta"
+ },
+ "A/yield": {
+  "file": "SAS_2015_A_yield.dta",
+  "rows": 20,
+  "vars": 9,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type"
+  ],
+  "source": {
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "group_crop": null,
+   "area": null,
+   "production": null,
+   "yield": null,
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "maize",
+    "2": "sorghum",
+    "3": "paddy rice",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "cassava",
+    "7": "sweet potatoes",
+    "8": "irish potatoes",
+    "9": "yams & taro",
+    "10": "cooking banana",
+    "11": "dessert banana",
+    "12": "banana for beer",
+    "13": "bush beans",
+    "14": "climbing beans",
+    "15": "peas",
+    "16": "groundnuts",
+    "17": "soya beans",
+    "18": "other legumes & pulses",
+    "19": "vegetables",
+    "20": "fruits",
+    "21": "other crops",
+    "22": "fallow",
+    "97": "pasture",
+    "99": "non agriculture"
+   }
+  },
+  "out": "SAS_2015_A_yield_clean.dta"
+ },
+ "B/farmq_part0": {
+  "file": "SAS_2015_B_farmq_part0.dta",
+  "rows": 5337,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "i08a": "0.8 nature of operator",
+   "i09": "0.9 sex",
+   "i10": "0.10 age of the operator",
+   "i11": "0.11 education level of the operator",
+   "i16": "0.16 agricultural activity",
+   "i17": "0.17 are you a member of any agriculture cooperative",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "i08a": {
+    "1": "individual farmer",
+    "2": "cooperative/ institution/company",
+    "3": "individual big farmer",
+    "4": "cooperative/ institution/company taken as big farmer",
+    "5": "settlement"
+   },
+   "i09": {
+    "1": "male",
+    "2": "female"
+   },
+   "i11": {
+    "1": "primary",
+    "2": "secondary",
+    "3": "tertiary",
+    "4": "no education"
+   },
+   "i16": {
+    "1": "agriculture",
+    "2": "agriculture & livestock"
+   },
+   "i17": {
+    "1": "yes",
+    "2": "no"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_B_farmq_part0_clean.dta"
+ },
+ "B/farmq_part1": {
+  "file": "SAS_2015_B_farmq_part1.dta",
+  "rows": 25648,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "c05": "starting date for sowing",
+   "seeds": "1.6 type of seeds sown",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "before 31/12/2014",
+    "2": "01-31/01/2015",
+    "3": "01- 28/02/2015",
+    "4": "01-15/03/2015",
+    "5": "16-31/03/2015",
+    "6": "after 31/03/2015",
+    "7": "not applicable"
+   },
+   "seeds": {
+    "1": "traditional seeds",
+    "2": "improved seeds",
+    "3": "traditional and improved seeds"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "maize",
+    "2": "paddy rice",
+    "3": "sorghum",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "bush beans",
+    "7": "climbing beans",
+    "8": "peas",
+    "9": "other legumes & pulses",
+    "10": "cassava",
+    "11": "irish potatoes",
+    "12": "sweet potatoes",
+    "14": "tomotoes",
+    "15": "white cabbage",
+    "16": "flower cabage",
+    "17": "onions",
+    "18": "carrots",
+    "19": "eggplant",
+    "21": "cooking bananas",
+    "22": "dessert banana",
+    "23": "banana for beer",
+    "24": "pineapple",
+    "25": "avocado",
+    "26": "passion fruits",
+    "27": "other fruits",
+    "28": "soya beans",
+    "29": "ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "pyrethrum",
+    "35": "black eggplants",
+    "36": "sweet pepper",
+    "37": "pepper",
+    "38": "amaranths",
+    "39": "celery",
+    "40": "spinach",
+    "41": "small red beans",
+    "42": "sugar beet",
+    "43": "garlic",
+    "44": "african cabbage",
+    "45": "leeks",
+    "46": "french beans",
+    "47": "lettuce",
+    "48": "broccolli",
+    "49": "napia grass",
+    "50": "sugar cane",
+    "51": "fodder crop",
+    "52": "macadamia",
+    "53": "olive crop",
+    "54": "mango",
+    "55": "apple",
+    "56": "papaya",
+    "57": "tree tomato",
+    "58": "orange",
+    "59": "lemon",
+    "60": "guava",
+    "61": "white mulberry",
+    "62": "mucuna",
+    "63": "leucena",
+    "64": "desmodium",
+    "65": "millet",
+    "66": "stevia",
+    "67": "jatropha",
+    "68": "other tubers",
+    "69": "pumpkins",
+    "70": "cucumber",
+    "71": "palm tree",
+    "97": "pasture",
+    "98": "fallow-land",
+    "99": "uncultivated",
+    "131": "taro",
+    "132": "yams",
+    "201": "other seasonal vegetables",
+    "202": "other annual vegetables",
+    "203": "other perennial  vegetables",
+    "341": "other seasonal crops",
+    "342": "other annual crops",
+    "343": "other perennial crops"
+   }
+  },
+  "out": "SAS_2015_B_farmq_part1_clean.dta"
+ },
+ "B/farmq_part2a": {
+  "file": "SAS_2015_B_farmq_part2a.dta",
+  "rows": 12412,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "plot_no",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "irrigation": "2.3 have you used any irrigation type?",
+   "ui03d": "2.4.1 specify type of irrigation and any amount paid for irrigation - code",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "irrigation": {
+    "1": "yes",
+    "2": "no"
+   },
+   "ui03d": {
+    "1": "pumps/tube wells/irrigation machines",
+    "2": "watering can",
+    "3": "water channels",
+    "4": "others"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {}
+  },
+  "out": "SAS_2015_B_farmq_part2a_clean.dta"
+ },
+ "B/farmq_part2b_fertilizer": {
+  "file": "SAS_2015_B_farmq_part2b_fertilizer.dta",
+  "rows": 13456,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 plot no.",
+   "pp7": "2.8 have you already used organic fertilizers during this agriculture season?",
+   "inorganic": "2.10.1 have u already used this inorganic fertilizers",
+   "pp10": "2.10.2 inorgnic fertilizers used-type",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "yes",
+    "2": "no"
+   },
+   "inorganic": {
+    "1": "yes",
+    "2": "no"
+   },
+   "pp10": {
+    "1": "npk",
+    "2": "urea",
+    "3": "urea(liquid)",
+    "4": "dap",
+    "5": "other fertilizers"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_B_farmq_part2b_fertilizer_clean.dta"
+ },
+ "B/farmq_part2b_pesticide": {
+  "file": "SAS_2015_B_farmq_part2b_pesticide.dta",
+  "rows": 13456,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 plot no.",
+   "pesticide": "2.11.1 have you used this pesticide?",
+   "pp1a": "2.11.2 pesticides used in season b 2014-type",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "yes",
+    "2": "no"
+   },
+   "pp1a": {
+    "6": "dithane",
+    "7": "ridomil",
+    "8": "dimethoate",
+    "9": "cypermetrine",
+    "10": "dursiban",
+    "11": "tilt",
+    "12": "pilkare",
+    "13": "other pesticide"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_B_farmq_part2b_pesticide_clean.dta"
+ },
+ "B/farmq_part4": {
+  "file": "SAS_2015_B_farmq_part4.dta",
+  "rows": 14371,
+  "vars": 19,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "sold": "4.1 qty sold",
+   "c0a": "4.2 used by the household",
+   "c0b": "4.3 qty used as wage for hired labour",
+   "c6c": "4.4 qty used as farm rent",
+   "c6d": "4.5 quantity has offered as a gift",
+   "ca": "4.6 qty exchanged with other things",
+   "c7c": "4.7 qty been used as seeds",
+   "cb": "4.8 qty used as fodder",
+   "c8c": "4.9 qty stored",
+   "damaged": "4.10 qty damaged",
+   "other_way": "4.11 qty used in any other way",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "stratum": {},
+   "holder": {},
+   "crop": {
+    "1": "maize",
+    "2": "paddy rice",
+    "3": "sorghum",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "bush beans",
+    "7": "climbing beans",
+    "8": "peas",
+    "9": "other legumes & pulses",
+    "10": "cassava",
+    "11": "irish potatoes",
+    "12": "sweet potatoes",
+    "14": "tomotoes",
+    "15": "white cabbage",
+    "16": "flower cabage",
+    "17": "onions",
+    "18": "carrots",
+    "19": "eggplant",
+    "21": "cooking bananas",
+    "22": "dessert banana",
+    "23": "banana for beer",
+    "24": "pineapple",
+    "25": "avocado",
+    "26": "passion fruits",
+    "27": "other fruits",
+    "28": "soya beans",
+    "29": "ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "pyrethrum",
+    "35": "black eggplants",
+    "36": "sweet pepper",
+    "37": "pepper",
+    "38": "amaranths",
+    "39": "celery",
+    "40": "spinach",
+    "41": "small red beans",
+    "42": "sugar beet",
+    "43": "garlic",
+    "44": "african cabbage",
+    "45": "leeks",
+    "46": "french beans",
+    "47": "lettuce",
+    "48": "broccolli",
+    "49": "napia grass",
+    "50": "sugar cane",
+    "51": "fodder crop",
+    "52": "macadamia",
+    "53": "olive crop",
+    "54": "mango",
+    "55": "apple",
+    "56": "papaya",
+    "57": "tree tomato",
+    "58": "orange",
+    "59": "lemon",
+    "60": "guava",
+    "61": "white mulberry",
+    "62": "mucuna",
+    "63": "leucena",
+    "64": "desmodium",
+    "65": "millet",
+    "66": "stevia",
+    "67": "jatropha",
+    "68": "other tubers",
+    "69": "pumpkins",
+    "70": "cucumber",
+    "71": "palm tree",
+    "97": "pasture",
+    "98": "fallow-land",
+    "99": "uncultivated",
+    "131": " taro",
+    "132": "yams",
+    "201": "other seasonal vegetables",
+    "202": "other annual vegetables",
+    "203": "other perennial  vegetables",
+    "341": "other seasonal crops",
+    "342": "other annual crops",
+    "343": "other perennial crops"
+   }
+  },
+  "out": "SAS_2015_B_farmq_part4_clean.dta"
+ },
+ "B/farmq_part6a": {
+  "file": "SAS_2015_B_farmq_part6a.dta",
+  "rows": 165135,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "id3",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "uic1": "code of small tools and farm equipments",
+   "uic3": "6.1 did you buy this tool/equipment during this season?",
+   "uic4": "6.2 how many did you buy during this season? number",
+   "uic6": "6.4 total amount spent on this tool/equipment amount(rwf)",
+   "uic7": "6.5.1 number received from a non agricultural donor? number",
+   "uica": "6.5.2 number received from a non agricultural donor? cost",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "hoe",
+    "2": "spring hoe",
+    "3": "fork hoe",
+    "4": "rake",
+    "5": "pick/ ipiki",
+    "6": "wheelbarrow",
+    "7": "shovel/igitiyo",
+    "8": "watering pump",
+    "9": "crops sprayer",
+    "10": "watering can",
+    "11": "scie",
+    "12": "sickle",
+    "13": "secataur",
+    "14": "scythe",
+    "15": "machete",
+    "16": "billhook",
+    "17": "basket",
+    "18": "sack",
+    "19": "big  basket",
+    "20": "winnower",
+    "21": "basket(ikibo )",
+    "22": "basket(inkangara )",
+    "23": "scale",
+    "24": "jerry-can",
+    "25": "barrel",
+    "26": "bike",
+    "27": "craft bike",
+    "28": "bowl",
+    "29": "sheeting",
+    "30": "hoe sleeve",
+    "31": "others (specify)"
+   },
+   "uic3": {
+    "1": "yes",
+    "2": "no"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_B_farmq_part6a_clean.dta"
+ },
+ "B/lsf_antierosion_op": {
+  "file": "SAS_2015_B_lsf_antierosion_op.dta",
+  "rows": 488,
+  "vars": 7,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder"
+  ],
+  "source": {
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "antierosion": null,
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "antierosion": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_antierosion_op_clean.dta"
+ },
+ "B/lsf_antierosion_type": {
+  "file": "SAS_2015_B_lsf_antierosion_type.dta",
+  "rows": 503,
+  "vars": 7,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder"
+  ],
+  "source": {
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "type": "2.6.2 Type of anti-erosion Activities made",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "type": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/Grasses",
+    "6": "Water dranage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_antierosion_type_clean.dta"
+ },
+ "B/lsf_impr_seeds": {
+  "file": "SAS_2015_B_lsf_impr_seeds.dta",
+  "rows": 107,
+  "vars": 7,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder"
+  ],
+  "source": {
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "improved_seed": "7.3 Improved seed",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "improved_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_impr_seeds_clean.dta"
+ },
+ "B/lsf_impr_seeds_op": {
+  "file": "SAS_2015_B_lsf_impr_seeds_op.dta",
+  "rows": 194,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "improved_seed": "7.3 Improved seed",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "improved_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_impr_seeds_op_clean.dta"
+ },
+ "B/lsf_screening_season_b": {
+  "file": "SAS_2015_B_lsf_screening_season_b.dta",
+  "rows": 4395,
+  "vars": 20,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "prov": "province",
+   "holder": "idquest",
+   "plot": "plot_number",
+   "crop": "crop_code",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "land_use": "2.3 Land Use",
+   "non_agri_land_type": "2.4 Non-agri land type",
+   "is_this_plot_being_used_bf_h": "2.5 Is this plot being used BF him/herself",
+   "anti_erosion_activities": "2.6.1 Anti-erosion activities made on this plot?",
+   "anti_erosion_activities_pr": "2.6.2 Type of anti-erosion Activities made",
+   "anti_erosion_activities_ps": "2.6.2 Type of anti-erosion Activities made",
+   "anti_erosion_activities_pt": "2.6.2 Type of anti-erosion Activities made",
+   "season_b_crop": "2.8 Season A crop",
+   "plot_area": null,
+   "ha": "Area by crop in hectare",
+   "group_crop": null,
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "land_use": {
+    "96": "Agricultural Land",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agri Land"
+   },
+   "non_agri_land_type": {
+    "1": "Buildings",
+    "2": "Road/Path",
+    "3": "Forest/Bush",
+    "4": "Bare/Rocky soil",
+    "5": "Uncultivated marshlands",
+    "6": "Flooded  marshlands",
+    "7": "Water bodies",
+    "8": "Others"
+   },
+   "is_this_plot_being_used_bf_h": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "anti_erosion_activities": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "anti_erosion_activities_pr": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/Grasses",
+    "6": "Water dranage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "anti_erosion_activities_ps": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/Grasses",
+    "6": "Water dranage",
+    "7": "Mulching",
+    "8": "Beds"
+   },
+   "anti_erosion_activities_pt": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/Grasses",
+    "6": "Water dranage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "season_b_crop": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "group_crop": {
+    "1": "Sorghum",
+    "2": "Maize",
+    "3": "Wheat",
+    "4": "Paddy rice",
+    "5": "Beans",
+    "6": "Peas",
+    "7": "Ground nuts",
+    "8": "Soya beans",
+    "9": "Bananas",
+    "10": "Irish potatoes",
+    "11": "Sweet potatoes",
+    "12": "Yams & Taro",
+    "13": "Cassava",
+    "14": "Vegetables",
+    "15": "Fruits",
+    "16": "Other Cereals",
+    "17": "Other crops",
+    "18": "Other legumes & pulses",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agriculture Land"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking Banana",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White Mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "131": " Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_B_lsf_screening_season_b_clean.dta"
+ },
+ "B/lsf_seeds_op": {
+  "file": "SAS_2015_B_lsf_seeds_op.dta",
+  "rows": 194,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "traditional_seed": "7.2 Traditional Seed",
+   "improved_seed": "7.3 Improved seed",
+   "seeds": null,
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "traditional_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "improved_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "seeds": {
+    "1": "Traditional",
+    "2": "Improved",
+    "3": "Both",
+    "4": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_seeds_op_clean.dta"
+ },
+ "B/lsf_summary": {
+  "file": "SAS_2015_B_lsf_summary.dta",
+  "rows": 587,
+  "vars": 30,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "holder": "idquest",
+   "crop": "crop_codg",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "crop_planted": "7.1 Crop planted?",
+   "traditional_seed": "7.2 Traditional Seed",
+   "improved_seed": "7.3 Improved seed",
+   "equipment_oxen_used_for_land": "7.4.1 equipment/oxen used for land preparation-code",
+   "equipment_codf": "7.4.2 equipment code",
+   "equipment_code": "7.4.3 equipment code",
+   "any_irrigation_type": "7.5.1 Any irrigation type",
+   "the_irrigation_type_codg": "7.5.2 The irrigation type code",
+   "the_irrigation_type_codf": "7.5.3 The irrigation type code",
+   "the_irrigation_type_code": "7.5.4 The irrigation type code",
+   "any_anti_erosion_activities": "7.6.1 Any anti-erosion activities",
+   "any_anti_erosion_codg": "7.6.2 Anti-erosion code",
+   "any_anti_erosion_codf": "7.6.3 Anti-erosion code",
+   "any_anti_erosion_code": "7.6.4 Anti-erosion code",
+   "organic_fertilizer_used": "7.7 Organic fertilizer used",
+   "inorganic_fertilizer": "7.8.1 Inorganic fertilizer",
+   "inorganic_fertilizer_codg": "7.8.2 Inorganic fertilizer code",
+   "inorganic_fertilizer_codf": "7.8.3 Inorganic fertilizer code",
+   "inorganic_fertilizer_code": "7.8.4 inorganic fertilizer code",
+   "pesticide_used": "7.9.1 Pesticide used",
+   "pesticide_useg": "7.9.2 pesticide used  code",
+   "pesticide_usee": "7.9.3 pesticide used  code",
+   "pesticide_usef": "7.9.4 pesticide used  code",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "crop_planted": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "traditional_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "improved_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "equipment_oxen_used_for_land": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "equipment_codf": {
+    "1": "Oxen",
+    "2": "Tractor",
+    "3": "Tractor with driver",
+    "4": "Other mechanical equipment"
+   },
+   "equipment_code": {
+    "1": "Oxen",
+    "2": "Tractor",
+    "3": "Tractor with driver",
+    "4": "Other mechanical equipment"
+   },
+   "any_irrigation_type": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "the_irrigation_type_codg": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "the_irrigation_type_codf": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "the_irrigation_type_code": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "any_anti_erosion_activities": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "any_anti_erosion_codg": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Other"
+   },
+   "any_anti_erosion_codf": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Other"
+   },
+   "any_anti_erosion_code": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Other"
+   },
+   "organic_fertilizer_used": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "inorganic_fertilizer": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "inorganic_fertilizer_codg": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "inorganic_fertilizer_codf": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "inorganic_fertilizer_code": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "pesticide_used": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "pesticide_useg": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "pesticide_usee": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "pesticide_usef": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "6": "Bush Beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "21": "Cooking banana",
+    "23": "Banana for beer",
+    "28": "Soybeans",
+    "29": "Groundnuts",
+    "131": "Taro",
+    "200": "Vegetables",
+    "300": "Fruits"
+   }
+  },
+  "out": "SAS_2015_B_lsf_summary_clean.dta"
+ },
+ "B/lsf_trad_seeds": {
+  "file": "SAS_2015_B_lsf_trad_seeds.dta",
+  "rows": 130,
+  "vars": 7,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder"
+  ],
+  "source": {
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "traditional_seed": "7.2 Traditional Seed",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "traditional_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_trad_seeds_clean.dta"
+ },
+ "B/lsf_trad_seeds_op": {
+  "file": "SAS_2015_B_lsf_trad_seeds_op.dta",
+  "rows": 194,
+  "vars": 8,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder"
+  ],
+  "source": {
+   "prov": "id1",
+   "holder": "idquest",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "traditional_seed": "7.2 Traditional Seed",
+   "prov": "Province (1-5, NISR codes)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "traditional_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "prov": {
+    "1": "City of Kigali",
+    "2": "Southern Province",
+    "3": "Western Province",
+    "4": "Northern Province",
+    "5": "Eastern Province"
+   },
+   "holder": {}
+  },
+  "out": "SAS_2015_B_lsf_trad_seeds_op_clean.dta"
+ },
+ "B/ssf_screening_segment": {
+  "file": "SAS_2015_B_ssf_screening_segment.dta",
+  "rows": 94858,
+  "vars": 21,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "plot_number",
+   "crop": "crop_code",
+   "wt": "weight",
+   "farm_type": "file name (ssf/lsf)"
+  },
+  "var_labels": {
+   "resident_in_the_segment": "2.3.6 Resident in the segment",
+   "land_use": "2.6 Land Use",
+   "non_agri_land_type": "2.7 Non-agri land type",
+   "anti_erosive_practice": "2.8.1 Anti_erosion activities done on this plot?",
+   "anti_erosive_activities": "2.8.2 Anti erosive activity-1",
+   "anti_erosive_activitieu": "2.8.2 Anti erosive activity-2",
+   "anti_erosive_activitiet": "2.8.2 Anti erosive activity-3",
+   "season_b_crop": "2.10 Season B crop",
+   "plot_area": null,
+   "ha": "Area by crop in hectare",
+   "group_crop": null,
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "resident_in_the_segment": {
+    "1": "Resident",
+    "2": "Not resident"
+   },
+   "land_use": {
+    "96": "Agricultural Land",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agri Land"
+   },
+   "non_agri_land_type": {
+    "1": "Buildings",
+    "2": "Road/Path",
+    "3": "Forest/Bush",
+    "4": "Bare/Rocky soil",
+    "5": "Uncultivated marshlands",
+    "6": "Flooded  marshlands",
+    "7": "Water bodies",
+    "8": "Others"
+   },
+   "anti_erosive_practice": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "anti_erosive_activities": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "anti_erosive_activitieu": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "anti_erosive_activitiet": {
+    "1": "Ditches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terraces",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "season_b_crop": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "group_crop": {
+    "1": "Sorghum",
+    "2": "Maize",
+    "3": "Wheat",
+    "4": "Paddy rice",
+    "5": "Beans",
+    "6": "Peas",
+    "7": "Ground nuts",
+    "8": "Soya beans",
+    "9": "Bananas",
+    "10": "Irish potatoes",
+    "11": "Sweet potatoes",
+    "12": "Yams & Taro",
+    "13": "Cassava",
+    "14": "Vegetables",
+    "15": "Fruits",
+    "16": "Other Cereals",
+    "17": "Other crops",
+    "18": "Other legumes & pulses",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agriculture Land"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking Banana",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White Mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "131": " Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2015_B_ssf_screening_segment_clean.dta"
+ },
+ "B/yield": {
+  "file": "SAS_2015_B_yield.dta",
+  "rows": 20,
+  "vars": 9,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type"
+  ],
+  "source": {
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "group_crop": null,
+   "area": null,
+   "production": null,
+   "yield": null,
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "maize",
+    "2": "sorghum",
+    "3": "paddy rice",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "cassava",
+    "7": "sweet potatoes",
+    "8": "irish potatoes",
+    "9": "yams & taro",
+    "10": "cooking banana",
+    "11": "dessert banana",
+    "12": "banana for beer",
+    "13": "bush beans",
+    "14": "climbing beans",
+    "15": "peas",
+    "16": "groundnuts",
+    "17": "soya beans",
+    "18": "other legumes & pulses",
+    "19": "vegetables",
+    "20": "fruits",
+    "21": "other crops",
+    "22": "fallow",
+    "97": "pasture",
+    "99": "non agriculture"
+   }
+  },
+  "out": "SAS_2015_B_yield_clean.dta"
+ },
+ "C/phase_2_part_0": {
+  "file": "SAS_2015_C_phase_2_part_0.dta",
+  "rows": 644,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "i08a": "0.8 Nature of Operator",
+   "i09": "0.9 Sex",
+   "i10": "0.10 Age of the operator",
+   "i11": "0.11 Education level of the operator",
+   "i16": "0.16 Agricultural activity",
+   "i17": "0.17 Are you a member of any Agriculture Cooperative",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "i08a": {
+    "1": "Individual farmer",
+    "2": "Cooperative/ Institution/Company",
+    "3": "Individual Big Farmer",
+    "4": "Cooperative/ Institution/Company taken as Big Farmer",
+    "5": "Settlement"
+   },
+   "i09": {
+    "1": "Male",
+    "2": "Female"
+   },
+   "i11": {
+    "1": "Primary",
+    "2": "Secondary",
+    "3": "Tertiary",
+    "4": "No education"
+   },
+   "i16": {
+    "1": "Agriculture",
+    "2": "Agriculture & Livestock"
+   },
+   "i17": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_C_phase_2_part_0_clean.dta"
+ },
+ "C/phase_2_part_1": {
+  "file": "SAS_2015_C_phase_2_part_1.dta",
+  "rows": 1554,
+  "vars": 11,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "c05": "1.5 Starting date for sowing ? Code",
+   "seeds": "1.6 Type of seeds sown",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "c05": {
+    "1": "Before 30/04/2015",
+    "2": "01-31/05/2015",
+    "3": "01- 30/06/2015",
+    "4": "01-31/07/2015",
+    "5": "After 31/07/2015"
+   },
+   "seeds": {
+    "1": "Traditional seeds",
+    "2": "Improved seeds",
+    "3": "Traditional and Improved seeds"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "Sun flower",
+    "31": "Other oil seeds",
+    "32": "Coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow-land",
+    "99": "Uncultivated",
+    "131": "Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_C_phase_2_part_1_clean.dta"
+ },
+ "C/phase_2_part_2_a": {
+  "file": "SAS_2015_C_phase_2_part_2_a.dta",
+  "rows": 1284,
+  "vars": 15,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "plot",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "plot": "b1",
+   "crop": "c03a",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "ui02a": "2.1 Equipment/oxen hired for land preparation? yes=1 , No=2",
+   "ui02e": "2.2.1 Specify if equipment/oxen were rented or hired for land preparation? - COD",
+   "irrigation": "2.3 Have you used any irrigation type?",
+   "ui03d": "2.4.1 Specify type of irrigation and any amount paid for irrigation - code",
+   "antierosion": "2.5 Are some antierosion activities made on this plot during this season?",
+   "ui26": "2.6.1 Specify any expenditure on anti erosion activities ?Code",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "plot": "Plot number within segment/holder",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "ui02a": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "ui02e": {
+    "1": "Oxen",
+    "2": "Tractor",
+    "3": "Tractor with driver",
+    "4": "Other mechanical equipment"
+   },
+   "irrigation": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "ui03d": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "antierosion": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "ui26": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Others"
+   },
+   "stratum": {},
+   "holder": {},
+   "plot": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "Sun flower",
+    "31": "Other oil seeds",
+    "32": "Coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow-land",
+    "99": "Uncultivated",
+    "131": "Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_C_phase_2_part_2_a_clean.dta"
+ },
+ "C/phase_2_part_2_b0": {
+  "file": "SAS_2015_C_phase_2_part_2_b0.dta",
+  "rows": 1227,
+  "vars": 9,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 Plot No.",
+   "pp7": "2.8 Have you already used organic fertilizers during this agriculture season?",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pp7": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_C_phase_2_part_2_b0_clean.dta"
+ },
+ "C/phase_2_part_2_b1": {
+  "file": "SAS_2015_C_phase_2_part_2_b1.dta",
+  "rows": 1306,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 Plot No.",
+   "inorganic": "2.10.1 have u already used this Inorganic Fertilizers",
+   "pp10": "2.10.2 Inorgnic Fertilizers used-Type",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "inorganic": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "pp10": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_C_phase_2_part_2_b1_clean.dta"
+ },
+ "C/phase_2_part_2_b2": {
+  "file": "SAS_2015_C_phase_2_part_2_b2.dta",
+  "rows": 1499,
+  "vars": 10,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "pp7a": "1.1 Plot No.",
+   "pesticide": "2.11.1 Have you used this pesticide?",
+   "pp1a": "2.11.2 Pesticides used in Season B 2015-Type",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "pesticide": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "pp1a": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_C_phase_2_part_2_b2_clean.dta"
+ },
+ "C/phase_2_part_4": {
+  "file": "SAS_2015_C_phase_2_part_4.dta",
+  "rows": 796,
+  "vars": 19,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "crop": "c03c",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "sold": "4.1 Qty Sold",
+   "c0a": "4.2 Used by the household",
+   "c0b": "4.3 Qty used as wage for hired labour",
+   "c6c": "4.4 Qty used as farm rent",
+   "c6d": "4.5 Quantity has offered as a gift",
+   "ca": "4.6 Qty exchanged with other things",
+   "c7c": "4.7 Qty been used as seeds",
+   "cb": "4.8 Qty used as fodder",
+   "c8c": "4.9 Qty Stored",
+   "damaged": "4.10 Qty damaged",
+   "other_way": "4.11 Qty used in any other way",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "stratum": {},
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking Bananas",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White Mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow-Land",
+    "99": "Uncultivated",
+    "131": " Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   }
+  },
+  "out": "SAS_2015_C_phase_2_part_4_clean.dta"
+ },
+ "C/phase_2_part_6_a": {
+  "file": "SAS_2015_C_phase_2_part_6_a.dta",
+  "rows": 19934,
+  "vars": 13,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "uic1": "Code of small tools and farm equipments",
+   "uic3": "6.1 Did you buy this tool/equipment during this season?",
+   "uic4": "6.2 How many did you buy during this season? Number",
+   "uic6": "6.4 Total amount spent on this tool/equipment Amount(RWF)",
+   "uic7": "6.5.1 Number received from a non agricultural donor? Number",
+   "uica": "6.5.2 Number received from a non agricultural donor? Cost",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "uic1": {
+    "1": "Hoe",
+    "2": "Spring Hoe",
+    "3": "Fork hoe",
+    "4": "Rake",
+    "5": "Pick/ Ipiki",
+    "6": "Wheelbarrow",
+    "7": "Shovel/igitiyo",
+    "8": "Watering pump",
+    "9": "Crops Sprayer",
+    "10": "Watering can",
+    "11": "Scie",
+    "12": "Sickle",
+    "13": "Secataur",
+    "14": "Scythe",
+    "15": "Machete",
+    "16": "Billhook",
+    "17": "Basket",
+    "18": "Sack",
+    "19": "Big  basket",
+    "20": "Winnower",
+    "21": "Basket(ikibo )",
+    "22": "Basket(inkangara )",
+    "23": "Scale",
+    "24": "Jerry-can",
+    "25": "Barrel",
+    "26": "Bike",
+    "27": "Craft bike",
+    "28": "Bowl",
+    "29": "Sheeting",
+    "30": "Hoe sleeve",
+    "31": "Others (Specify)"
+   },
+   "uic3": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "stratum": {},
+   "holder": {}
+  },
+  "out": "SAS_2015_C_phase_2_part_6_a_clean.dta"
+ },
+ "C/phase_2_part_7": {
+  "file": "SAS_2015_C_phase_2_part_7.dta",
+  "rows": 760,
+  "vars": 31,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "crop"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "crop": "crop_codg",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "crop_planted": "7.1 Crop planted?",
+   "traditional_seed": "7.2 Traditional Seed",
+   "improved_seed": "7.3 Improved seed",
+   "equipment_oxen_used_for_land": "7.4.1 equipment/oxen used for land preparation-code",
+   "equipment_codf": "7.4.2 equipment code",
+   "equipment_code": "7.4.3 equipment code",
+   "any_irrigation_type": "7.5.1 Any irrigation type",
+   "the_irrigation_type_codg": "7.5.2 The irrigation type code",
+   "the_irrigation_type_codf": "7.5.3 The irrigation type code",
+   "the_irrigation_type_code": "7.5.4 The irrigation type code",
+   "any_anti_erosion_activities": "7.6.1 Any anti-erosion activities",
+   "any_anti_erosion_codg": "7.6.2 Anti-erosion code",
+   "any_anti_erosion_codf": "7.6.3 Anti-erosion code",
+   "any_anti_erosion_code": "7.6.4 Anti-erosion code",
+   "organic_fertilizer_used": "7.7 Organic fertilizer used",
+   "inorganic_fertilizer": "7.8.1 Inorganic fertilizer",
+   "inorganic_fertilizer_codg": "7.8.2 Inorganic fertilizer code",
+   "inorganic_fertilizer_codf": "7.8.3 Inorganic fertilizer code",
+   "inorganic_fertilizer_code": "7.8.4 Inorganic fertilizer code",
+   "pesticide_used": "7.9.1 Pesticide used",
+   "pesticide_useg": "7.9.2 Pesticide used  code",
+   "pesticide_usee": "7.9.3 Pesticide used  code",
+   "pesticide_usef": "7.9.4 Pesticide used  code",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "crop_planted": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "traditional_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "improved_seed": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "equipment_oxen_used_for_land": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "equipment_codf": {
+    "1": "Oxen",
+    "2": "Tractor",
+    "3": "Tractor with driver",
+    "4": "Other mechanical equipment"
+   },
+   "equipment_code": {
+    "1": "Oxen",
+    "2": "Tractor",
+    "3": "Tractor with driver",
+    "4": "Other mechanical equipment"
+   },
+   "any_irrigation_type": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "the_irrigation_type_codg": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "the_irrigation_type_codf": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "the_irrigation_type_code": {
+    "1": "Pumps/tube wells/irrigation machines",
+    "2": "Watering can",
+    "3": "Water channels",
+    "4": "Others"
+   },
+   "any_anti_erosion_activities": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "any_anti_erosion_codg": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Other"
+   },
+   "any_anti_erosion_codf": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Other"
+   },
+   "any_anti_erosion_code": {
+    "1": "Distches",
+    "2": "Trees",
+    "3": "Bench terraces",
+    "4": "Progressive terracing",
+    "5": "Cover plants/grasses",
+    "6": "Water drainage",
+    "7": "Mulching",
+    "8": "Beds",
+    "9": "Other"
+   },
+   "organic_fertilizer_used": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "inorganic_fertilizer": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "inorganic_fertilizer_codg": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "inorganic_fertilizer_codf": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "inorganic_fertilizer_code": {
+    "1": "NPK",
+    "2": "UREA",
+    "3": "UREA(LIQUID)",
+    "4": "DAP",
+    "5": "OTHER Fertilizers"
+   },
+   "pesticide_used": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "pesticide_useg": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "pesticide_usee": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "pesticide_usef": {
+    "6": "DITHANE",
+    "7": "RIDOMIL",
+    "8": "DIMETHOATE",
+    "9": "CYPERMETRINE",
+    "10": "DURSIBAN",
+    "11": "TILT",
+    "12": "PILKARE",
+    "13": "OTHER PESTICIDE"
+   },
+   "stratum": {},
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "6": "Bush Beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "21": "Cooking banana",
+    "23": "Banana for beer",
+    "28": "Soybeans",
+    "29": "Groundnuts",
+    "131": "Taro",
+    "200": "Vegetables",
+    "300": "Fruits"
+   }
+  },
+  "out": "SAS_2015_C_phase_2_part_7_clean.dta"
+ },
+ "C/screening_c": {
+  "file": "SAS_2015_C_screening_c.dta",
+  "rows": 13269,
+  "vars": 14,
+  "level": "records",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "stratum",
+   "holder",
+   "crop",
+   "wt"
+  ],
+  "source": {
+   "stratum": "strate",
+   "holder": "idquest",
+   "crop": "crop_code",
+   "wt": "weight",
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "resident_in_the_segment": "2.3.6 Resident in the segment",
+   "plot_id": null,
+   "land_use": "2.6 Land Use",
+   "non_agri_land_type": "2.7 Non-agri land type",
+   "ha": "Area by crop in hectare",
+   "stratum": "Sampling stratum (as shipped)",
+   "holder": "Holder / questionnaire id (as shipped)",
+   "crop": "Crop code (native list of the wave; see codebook)",
+   "wt": "Weight (plot weight where shipped, else segment/stratum weight; missing where none is shipped)",
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "resident_in_the_segment": {
+    "1": "Yes",
+    "2": "No"
+   },
+   "land_use": {
+    "96": "Agricultural Land",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non-Agri Land"
+   },
+   "non_agri_land_type": {
+    "1": "Buildings",
+    "2": "Road/Path",
+    "3": "Forest/Bush",
+    "4": "Bare/Rocky soil",
+    "5": "Uncultivated marshlands",
+    "6": "Flooded  marshlands",
+    "7": "Water bodies",
+    "8": "Others"
+   },
+   "stratum": {},
+   "holder": {},
+   "crop": {
+    "1": "Maize",
+    "2": "Paddy rice",
+    "3": "Sorghum",
+    "4": "Wheat",
+    "5": "Other cereals",
+    "6": "Bush beans",
+    "7": "Climbing beans",
+    "8": "Peas",
+    "9": "Other legumes & pulses",
+    "10": "Cassava",
+    "11": "Irish potatoes",
+    "12": "Sweet potatoes",
+    "14": "Tomotoes",
+    "15": "White cabbage",
+    "16": "Flower cabage",
+    "17": "Onions",
+    "18": "Carrots",
+    "19": "Eggplant",
+    "21": "Cooking Banana",
+    "22": "Dessert banana",
+    "23": "Banana for beer",
+    "24": "Pineapple",
+    "25": "Avocado",
+    "26": "Passion fruits",
+    "27": "Other fruits",
+    "28": "Soya beans",
+    "29": "Ground nuts",
+    "30": "sun flower",
+    "31": "other oil seeds",
+    "32": "coffee",
+    "33": "Pyrethrum",
+    "35": "Black eggplants",
+    "36": "Sweet pepper",
+    "37": "Pepper",
+    "38": "Amaranths",
+    "39": "Celery",
+    "40": "Spinach",
+    "41": "Small red beans",
+    "42": "Sugar beet",
+    "43": "Garlic",
+    "44": "African cabbage",
+    "45": "Leeks",
+    "46": "French beans",
+    "47": "Lettuce",
+    "48": "Broccolli",
+    "49": "Napia grass",
+    "50": "Sugar cane",
+    "51": "Fodder crop",
+    "52": "Macadamia",
+    "53": "Olive crop",
+    "54": "Mango",
+    "55": "Apple",
+    "56": "Papaya",
+    "57": "Tree tomato",
+    "58": "Orange",
+    "59": "Lemon",
+    "60": "Guava",
+    "61": "White Mulberry",
+    "62": "Mucuna",
+    "63": "Leucena",
+    "64": "Desmodium",
+    "65": "Millet",
+    "66": "Stevia",
+    "67": "Jatropha",
+    "68": "Other tubers",
+    "69": "Pumpkins",
+    "70": "Cucumber",
+    "71": "Palm tree",
+    "97": "Pasture",
+    "98": "Fallow",
+    "99": "Non Agriculture",
+    "131": "Taro",
+    "132": "Yams",
+    "201": "Other seasonal vegetables",
+    "202": "Other annual vegetables",
+    "203": "Other perennial  vegetables",
+    "341": "Other seasonal crops",
+    "342": "Other annual crops",
+    "343": "Other perennial crops"
+   },
+   "wt": {}
+  },
+  "out": "SAS_2015_C_screening_c_clean.dta"
+ },
+ "C/yield": {
+  "file": "SAS_2015_C_yield.dta",
+  "rows": 7,
+  "vars": 9,
+  "level": "table",
+  "keys_present": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type"
+  ],
+  "source": {
+   "farm_type": "not identifiable"
+  },
+  "var_labels": {
+   "group_crop": null,
+   "area": null,
+   "production": null,
+   "yield": null,
+   "survey": "Source survey",
+   "year": "Agricultural year of the season (as in the NISR release)",
+   "season": "Season (A, B, C)",
+   "wave": "Wave id: <year>_<season>",
+   "farm_type": "1 small-scale farmer (area frame), 2 large-scale farmer (list frame)"
+  },
+  "value_labels": {
+   "group_crop": {
+    "1": "maize",
+    "2": "sorghum",
+    "3": "paddy rice",
+    "4": "wheat",
+    "5": "other cereals",
+    "6": "cassava",
+    "7": "sweet potatoes",
+    "8": "irish potatoes",
+    "9": "yams & taro",
+    "10": "cooking banana",
+    "11": "dessert banana",
+    "12": "banana for beer",
+    "13": "bush beans",
+    "14": "climbing beans",
+    "15": "peas",
+    "16": "groundnuts",
+    "17": "soya beans",
+    "18": "other legumes & pulses",
+    "19": "vegetables",
+    "20": "fruits",
+    "21": "other crops",
+    "22": "fallow",
+    "97": "pasture",
+    "99": "non agriculture"
+   }
+  },
+  "out": "SAS_2015_C_yield_clean.dta"
+ }
+}

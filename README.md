@@ -24,6 +24,15 @@ python variables.py --list labour     # print one workstream
 python variables.py --export          # regenerate docs/variable_lists.md
 ```
 
+## NISR microdata pipelines (`NISR/`)
+
+The survey microdata (LFS, Census, EICV, Establishment Census, AHS, SAS, CFSVA) are
+cleaned and pooled by independent Python pipelines in [`NISR/`](NISR/README.md): one
+folder per survey, `python master.py` runs it top to bottom, outputs go to the Dropbox
+data folder (`2_Intermediate/`, `3_Final/`), and each folder carries its `DECISIONS.md`,
+generated `CODEBOOK.md`, check reports and run logs. The `extract.py` survey loaders
+below predate these pipelines; read `NISR/README.md` first for survey data.
+
 ## Setup
 
 ```bash
