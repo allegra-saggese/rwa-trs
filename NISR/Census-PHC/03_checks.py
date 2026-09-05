@@ -1,5 +1,5 @@
 """
-03_checks.py -- Census: independent verification of 3_Final/ outputs -> logs/checks_report.md
+03_checks.py -- Census: independent verification of 3_Final/ outputs -> logs/checks_report.txt
 
   A. Python pooled file vs the OLD Stata pipeline's outputs (2012, 2022; logs/benchmark_old_stata.json)
   B. Python vs Stata 17 recomputation on the written files (skipped if Stata is absent)
@@ -104,6 +104,6 @@ for y, g in hh.groupby("year"):
     row("D", f"{y} sum hhsize == ordinary-household person rows", g["hhsize"].sum(), len(p))
     row("D", f"{y} households == distinct hhid", len(g), p["hhid"].nunique())
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+(LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("03_checks done")

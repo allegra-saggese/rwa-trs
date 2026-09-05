@@ -1,5 +1,5 @@
 """
-03_checks.py -- SAS: verification of 3_Final/SAS_pooled_plotcrop.dta -> logs/checks_report.md
+03_checks.py -- SAS: verification of 3_Final/SAS_pooled_plotcrop.dta -> logs/checks_report.txt
   A. pooled rows vs per-wave files   B. Stata 17 recomputation   C. internal consistency of the core quantities
 """
 import os, shutil, subprocess, sys
@@ -44,6 +44,6 @@ bad = int(((pc["crop_area_ha"] > pc["plot_area_ha"] * 1.05) & pc["crop_area_ha"]
 row("C", "rows with crop area > plot area (+5%) [count, informational]", bad, None)
 row("C", "rows with negative production", int((pc["production_kg"] < 0).sum()), 0)
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+(LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("03_checks done")

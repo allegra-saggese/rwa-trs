@@ -13,7 +13,7 @@ added as new h_* variables next to the native ones (never overwriting them):
 For HOUSEHOLD files: h_head_sex h_head_age (+ h_head_marital h_head_educ h_head_literacy for CFSVA, whose
 household file carries the head's characteristics directly); CFSVA woman file: h_educ h_literacy.
 Every code mapping is written to harmonization_map.csv (dataset, waves, file, h_variable, source, rule,
-level, quality, note). Scope and code lists: DECISIONS.md.
+level, quality, note). Scope and code lists: the project notes NISR-Harmonize.md (Green Jobs - TRS folder).
 """
 import csv, os, shutil, sys, time
 import numpy as np, pandas as pd
@@ -495,6 +495,5 @@ for tag in DATASETS:
 ck.done()
 with open(P_OUT / "harmonization_map.csv", "w", newline="") as fh:
     wr = csv.DictWriter(fh, fieldnames=["dataset", "waves", "file", "h_variable", "source_variables", "rule", "level", "quality", "note"]); wr.writeheader(); wr.writerows(MAP)
-shutil.copy(P_OUT / "harmonization_map.csv", LOGS.parent / "harmonization_map.csv")
 save_json(summary, LOGS / "harmonize_summary.json")
 log.info("01_harmonize done: %d files, %d map rows", len(summary["files"]), len(MAP))

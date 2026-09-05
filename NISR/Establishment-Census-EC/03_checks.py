@@ -1,5 +1,5 @@
 """
-03_checks.py -- EC: independent verification of 3_Final/EC_pooled_establishment.dta -> logs/checks_report.md
+03_checks.py -- EC: independent verification of 3_Final/EC_pooled_establishment.dta -> logs/checks_report.txt
   A. Python vs raw-file row counts (no prior processed outputs existed)
   B. Python vs Stata 17 recomputation on the written file
   C. Establishment and worker totals vs NISR's published EC reports
@@ -65,6 +65,6 @@ PUB = {"2011 establishments enumerated (2014 project document: 127,662)": (ours[
 report += ["", "## C. Against NISR published EC totals", "", "| section | statistic | Python | published | result |", "|---|---|---:|---:|---|"]
 for k, (o, ref, tol) in PUB.items(): row("C", k, o, ref, tol)
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+(LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("03_checks done")

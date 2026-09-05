@@ -4,7 +4,7 @@
 Per year: lower-case names, build the harmonised key block (survey year wave round
 quarter interview prov dist urban cluster psu hhid pid wt wt_round), keep every other
 variable under its own name, destring numeric-looking strings, downcast, back-check,
-write. Unit = person-interview (see DECISIONS.md).
+write. Unit = person-interview (see NISR-Labour-Force-Survey-LFS.md (decisions log)).
 """
 import json, sys
 import numpy as np, pandas as pd
@@ -44,7 +44,7 @@ PROV_LABELS = {1: "City of Kigali", 2: "Southern Province", 3: "Western Province
 URBAN_LABELS = {1: "Urban", 2: "Rural"}
 
 # --- Universe (who was asked) per variable, from the questionnaires 2017-2025 (z_Documentation; see
-#     DOCUMENTATION.md). Section universes did not change across years: A05 12+, A06-A11 5+, A25-A27
+#     NISR-Labour-Force-Survey-LFS.md (documentation notes)). Section universes did not change across years: A05 12+, A06-A11 5+, A25-A27
 #     children 5-13, sections B-H 14+, section I and H05-H11 household level. NISR's derived labour-force
 #     status (status1) is defined on 16+ in the 2017-2019 files and on 14+ from 2020 (verified in the data).
 #     Patterns are regexes on the lower-cased variable name; first match wins.

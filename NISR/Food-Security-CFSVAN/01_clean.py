@@ -4,7 +4,7 @@
 Units per wave: household, woman (15-49), child (under 5 / 6-59 months), village/community
 (where shipped). Every file is cleaned with the key block (survey year wave prov dist sector
 urban cluster hhid wt) attached where the file allows; women/child files carry the household
-id where the file links to it. See DECISIONS.md for the per-wave id, geography and weight sources.
+id where the file links to it. See NISR-Food-Security-CFSVAN.md (decisions log) for the per-wave id, geography and weight sources.
 """
 import re, sys
 import numpy as np, pandas as pd

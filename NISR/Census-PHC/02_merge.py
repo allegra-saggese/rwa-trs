@@ -20,8 +20,8 @@ P = paths(); ck = Checks(log)
 YEARS = [2002, 2012, 2022]
 KEYS = ["survey", "year", "wave", "prov", "dist", "sector", "urban", "cluster", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
 SIM_THRESHOLD = 0.25
-# Same question, reworded (checked against the questionnaires and value labels; see DECISIONS.md):
-FORCE_ALIGN = set()      # filled after reading the first VERSIONS log; see DECISIONS.md
+# Same question, reworded (checked against the questionnaires and value labels; see NISR-Census-PHC.md (decisions log)):
+FORCE_ALIGN = set()      # filled after reading the first VERSIONS log; see NISR-Census-PHC.md (decisions log)
 # Force a separate version for given years even if labels look alike:
 # same name, different question, but labels too alike for the 0.25 threshold (found while harmonising, 2026-09-05):
 # p13 handicap (2002) vs insurance (2012); p22 occupation ISCO-88 (2002) vs activities done (2012);

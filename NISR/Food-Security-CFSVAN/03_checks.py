@@ -1,5 +1,5 @@
 """
-03_checks.py -- CFSVA: verification of 3_Final/ -> logs/checks_report.md
+03_checks.py -- CFSVA: verification of 3_Final/ -> logs/checks_report.txt
   A. pooled files vs per-wave files   B. Stata 17 recomputation   C. geography completeness
 """
 import os, shutil, subprocess, sys
@@ -47,7 +47,7 @@ export delimited using "{out}", replace
     else: report.append(f"Stata run produced no output (rc={r.returncode})"); fails += 1
 else: report.append("Stata not found -- section B skipped.")
 report += ["", "## C. Geography completeness (household file)", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
-# sample sizes stated in the methodology annexes (DOCUMENTATION.md); 2018 is shipped larger than documented (informational)
+# sample sizes stated in the methodology annexes (NISR-Food-Security-CFSVAN.md (documentation notes)); 2018 is shipped larger than documented (informational)
 for w, n in {"2012": 7_498, "2015": 7_500, "2021": 9_000, "2024": 9_000}.items():
     if (hh["wave"] == w).any(): row("C", f"{w} households vs methodology annex ({n:,})", int((hh["wave"] == w).sum()), n)
 if (hh["wave"] == "2018").any(): row("C", "2018 households in the shipped file (annex says 9,000; informational)", int((hh["wave"] == "2018").sum()), None)
@@ -61,6 +61,6 @@ if hh is not None:
         expected = {"2006": 29, "2009": 27}.get(w, 30)      # 2006 covered 29 districts; 2009 excluded the three City of Kigali districts
         row("C", f"{w} districts present (survey coverage)", g["dist"].nunique(), expected); row("C", f"{w} rows with district", int(g["dist"].notna().sum()), len(g), 0.01)
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+(LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("03_checks done")

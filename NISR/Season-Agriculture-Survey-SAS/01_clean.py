@@ -5,7 +5,7 @@ Every shipped file is cleaned on its own: lower-case names, key block attached w
 file allows (survey year season wave farm_type prov dist stratum segment holder plot crop wt),
 destring, downcast, write. Small tabulation files (yield tables, province area summaries,
 weight tables) are written too but flagged `level = table`. The per-year key map below
-records which native variable feeds each key; nothing else is recoded. See DECISIONS.md.
+records which native variable feeds each key; nothing else is recoded. See NISR-Season-Agriculture-Survey-SAS.md (decisions log).
 """
 import re, sys
 import numpy as np, pandas as pd

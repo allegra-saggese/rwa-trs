@@ -10,7 +10,7 @@
                                  code and an area (2013 area files, 2014 screening); native crop lists
   2_Intermediate/appended/SAS_pooled_<module>*.dta   every module-level append (2013-16, 2017-18, 2019+)
   Rule: 3_Final holds only the appended unit-level datasets; module-level files live in 2_Intermediate.
-See DECISIONS.md.
+See NISR-Season-Agriculture-Survey-SAS.md (decisions log).
 """
 import json, re
 import numpy as np, pandas as pd

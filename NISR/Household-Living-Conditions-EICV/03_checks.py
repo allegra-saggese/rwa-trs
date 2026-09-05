@@ -1,5 +1,5 @@
 """
-03_checks.py -- EICV: independent verification of 3_Final/ outputs -> logs/checks_report.md
+03_checks.py -- EICV: independent verification of 3_Final/ outputs -> logs/checks_report.txt
 
   A. Python pooled person file vs the OLD Stata pipeline's outputs (EICV3-7; logs/benchmark_old_stata.json)
   B. Python vs Stata 17 recomputation on the written files (skipped if Stata is absent)
@@ -104,6 +104,6 @@ for w, g in hh.groupby("wave", sort=False):
     row("D", f"{w} sum hhsize == person rows", g["hhsize"].sum(), len(p)); row("D", f"{w} households == distinct hhid in person file", len(g), p["hhid"].nunique())
     row("D", f"{w} household rows unique", g["hhid"].nunique(), len(g))
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+(LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("03_checks done")

@@ -10,7 +10,7 @@ For each wave (EICV1, EICV2, EICV3, EICV4_CS/VUP, EICV5_CS/VUP, EICV7_CS/VUP, EI
   3. assemble the wave's PERSON file (roster base + every person-level module, 1:1) and
      HOUSEHOLD file (household base + every household-level module + poverty file, 1:1,
      plus hhsize and the head's sex/age from the roster).
-See DECISIONS.md for every choice.
+See NISR-Household-Living-Conditions-EICV.md (decisions log) for every choice.
 """
 import re, sys
 import numpy as np, pandas as pd
@@ -88,7 +88,7 @@ PID_NAMES = ("pid", "id", "idind")
 
 # ------------------------------------------------------------------ universes (who was asked), by wave and section
 # From the questionnaires in z_Documentation (EICV1/EICV2 French, EICV3 Kinyarwanda section headers + English
-# pdf sections, EICV4/5/7 English) — see DOCUMENTATION.md. Keyed by questionnaire section number; applied to
+# pdf sections, EICV4/5/7 English) — see NISR-Household-Living-Conditions-EICV.md (documentation notes). Keyed by questionnaire section number; applied to
 # variables named s<section><part>q<n> and to module stems s<section>..., so the codebook can show the universe.
 SECTION_UNIVERSE = {
     "EICV1": {1: "all household members (roster; marital status 12+)", 2: "members aged 7+ (general education; school career parts for under-40s; literacy 5+)",

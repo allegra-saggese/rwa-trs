@@ -4,7 +4,7 @@
 Per census: lower-case names, build the harmonised key block (survey year wave prov dist
 sector urban estid wt), attach NISR's current province/district/sector names as value
 labels, keep every other variable under its own name, destring, downcast, back-check, write.
-Unit = establishment. See DECISIONS.md.
+Unit = establishment. See NISR-Establishment-Census-EC.md (decisions log).
 """
 import difflib, sys
 import numpy as np, pandas as pd

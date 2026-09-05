@@ -1,7 +1,7 @@
 """
 03_checks.py -- LFS: independent verification of 3_Final/ outputs.
 
-Three comparisons, each PASS/FAIL, written to logs/checks_report.md:
+Three comparisons, each PASS/FAIL, written to logs/checks_report.txt:
   A. Python pooled file vs the OLD Stata pipeline's outputs (logs/benchmark_old_stata.json):
      rows, sum of annual weight, weighted working-age population, sex counts, by year.
   B. Python vs Stata: the same statistics recomputed by Stata 17 from the .dta files we wrote
@@ -98,7 +98,7 @@ for y, g in hh.groupby("year"):
     row("D", f"{y} household-interviews", len(g), p.drop_duplicates(["hhid", "interview"]).shape[0])
 
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report))
+(LOGS / "checks_report.txt").write_text("\n".join(report))
 log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("03_checks done")

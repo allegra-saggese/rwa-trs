@@ -10,7 +10,7 @@ For each wave (2017, 2020, 2024):
   3. assemble the wave's PERSON file (roster base + every person-level module, 1:1) and
      HOUSEHOLD file (household base + every household-level module + poverty file, 1:1,
      plus hhsize and the head's sex/age from the roster).
-See DECISIONS.md for every choice.
+See NISR-Agriculture-Survey-AHS.md (decisions log) for every choice.
 """
 import re, sys
 import numpy as np, pandas as pd

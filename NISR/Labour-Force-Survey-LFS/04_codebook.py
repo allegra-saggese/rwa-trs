@@ -1,14 +1,15 @@
 """
-04_codebook.py -- LFS: generate CODEBOOK.md (+ codebook_<unit>.csv) from the final files.
+04_codebook.py -- LFS: generate CODEBOOK_LFS.xlsx, the dataset's only codebook, in the Dropbox dataset folder next to README.txt.
 
 For every variable in each 3_Final file: label, storage type, value labels (first few),
 non-missing count per year, the raw source variable per year (key block), and the
 alignment decision + label variants recorded by 02_merge.py.
 """
-import json
+import json, re, time
 import numpy as np, pandas as pd
 from lfs_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE, DATASET
 
+TAG = "LFS"
 log = get_logger("04_codebook")
 P = paths()
 align = json.load(open(LOGS / "merge_alignment.json"))
@@ -28,6 +29,56 @@ def chunked_counts(path, key, chunk=250_000):
         order += [k for k in part[key].unique().tolist() if k not in order]
     return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
 
+
+FILE_UNIVERSE = {"LFS_pooled_person.dta": "all members of sampled households (roster); labour items 16+ to 2019 and 14+ from 2020, other sections in the universe column",
+                 "LFS_pooled_household.dta": "household interviews (one row per household x round/quarter)"}
+
+def sheet_name(fname, used):
+    """Excel sheet name for a file: the stem without the <TAG>_pooled_ prefix, <= 31 chars, unique."""
+    s = fname[:-4] if fname.endswith(".dta") else fname
+    for pre in (f"{TAG}_pooled_", f"{TAG}_"):
+        if s.startswith(pre): s = s[len(pre):]; break
+    s = re.sub(r"[\[\]:*?/\\]", "_", s)[:31] or "sheet"
+    base, i = s, 2
+    while s in used: s = f"{base[:28]}_{i}"; i += 1
+    used.add(s); return s
+
+
+def write_workbook(path, notes, books):
+    """One workbook per dataset (its only codebook, next to README.txt on Dropbox): README (notes), files
+    (overview), ONE SHEET PER FINAL DATASET (variable table), modules (every appended module file of
+    2_Intermediate/appended/ stacked in one sheet, file in the first column), value_labels (every code of
+    every labelled variable, all files) and checks (the latest logs/checks_report.txt)."""
+    from openpyxl.styles import Font
+    from openpyxl.utils import get_column_letter
+    used = {"README", "files", "modules", "value_labels", "checks"}
+    finals = [(cb, m) for cb, m, _ in books if m["folder"] == "3_Final"]
+    mods = [(cb, m) for cb, m, _ in books if m["folder"] != "3_Final"]
+    names = {m["file"]: sheet_name(m["file"], used) for _, m in finals}
+    names.update({m["file"]: "modules" for _, m in mods})
+    files = pd.DataFrame([dict(m, sheet=names[m["file"]]) for _, m, _ in books])
+    vls = pd.DataFrame([r for _, _, v in books for r in v], columns=["file", "variable", "code", "label"])
+    report = LOGS / "checks_report.txt"
+    checks = pd.DataFrame({"checks_report": report.read_text().splitlines() if report.exists() else ["(no logs/checks_report.txt yet: run 03_checks.py)"]})
+    with pd.ExcelWriter(path, engine="openpyxl") as xw:
+        pd.DataFrame({"README": notes}).to_excel(xw, sheet_name="README", index=False)
+        files.to_excel(xw, sheet_name="files", index=False)
+        for cb, m in finals: cb.to_excel(xw, sheet_name=names[m["file"]], index=False)
+        if mods:
+            stack = pd.concat([cb.assign(file=m["file"]) for cb, m in mods], ignore_index=True, sort=False)
+            lead = [c for c in ("file", "variable", "label", "type", "value_labels", "n_value_labels", "universe") if c in stack.columns]
+            ncols = sorted(c for c in stack.columns if c.startswith("n_") and c not in lead)
+            stack = stack[lead + ncols + [c for c in stack.columns if c not in lead + ncols]]
+            stack.to_excel(xw, sheet_name="modules", index=False)
+        vls.to_excel(xw, sheet_name="value_labels", index=False)
+        checks.to_excel(xw, sheet_name="checks", index=False)
+        for ws in xw.book.worksheets:
+            ws.freeze_panes = "A2"
+            for cell in ws[1]: cell.font = Font(bold=True)
+            for j, col in enumerate(ws.iter_cols(min_row=1, max_row=min(ws.max_row, 300)), start=1):
+                w = max((len(str(c.value)) for c in col if c.value is not None), default=8)
+                ws.column_dimensions[get_column_letter(j)].width = min(max(10, w + 2), 80)
+    log.info("wrote %s (%d final-dataset sheets, %d module files in one sheet, %d value-label rows)", path, len(finals), len(mods), len(vls))
 
 def codebook(fname, unit):
     df, vl, vv = read_dta(P["final"] / fname, row_limit=1)          # one row: columns and dtypes only
@@ -56,31 +107,19 @@ def codebook(fname, unit):
                      "source_by_year": src, "version_years": ",".join(map(str, ys_here)) if len(vers) > 1 else "",
                      "other_versions": other_versions,
                      "label_variants": variants, "value_label_conflicts": json.dumps(conf) if conf else ""})
-    cb = pd.DataFrame(rows)
-    cb.to_csv(HERE / f"codebook_{unit}.csv", index=False)
-    md = [f"## `{fname}` — one row per {unit}-interview", "",
-          f"{nrows:,} rows × {df.shape[1]} variables. Years: {', '.join(map(str, years))}.", "",
-          "| variable | label | type | value labels | " + " | ".join(f"N {y}" for y in years) + " | notes |",
-          "|---|---|---|---|" + "---:|" * len(years) + "---|"]
-    for r in rows:
-        notes = []
-        if r["source_by_year"]: notes.append("source: " + r["source_by_year"])
-        if r["universe"]: notes.append("universe: " + r["universe"])
-        if r["version_years"]: notes.append(f"version for {r['version_years']}; other versions: {r['other_versions']}")
-        if r["label_variants"]: notes.append("label variants — " + r["label_variants"])
-        if r["value_label_conflicts"]: notes.append("value-label text conflicts: " + r["value_label_conflicts"])
-        md.append("| `" + r["variable"] + "` | " + r["label"].replace("|", "/") + " | " + str(r["type"]) + " | " +
-                  r["value_labels"].replace("|", "/") + " | " + " | ".join(f"{r[f'n_{y}']:,}" for y in years) + " | " +
-                  "; ".join(notes).replace("|", "/") + " |")
-    return md
+    vl_rows = [{"file": fname, "variable": c, "code": k, "label": v} for c in df.columns for k, v in vv.get(c, {}).items()]
+    return pd.DataFrame(rows), {"file": fname, "folder": "3_Final", "unit": unit, "rows": nrows, "variables": df.shape[1],
+                                "years": ", ".join(map(str, years)), "universe": FILE_UNIVERSE.get(fname, "")}, vl_rows
 
-out = ["# LFS codebook", "", "Generated by `04_codebook.py` from `3_Final/`. Do not hand-edit; see `DECISIONS.md` for the reasoning.", "",
-       "Key block (identical names in every NISR dataset): `survey year wave round quarter interview prov dist urban cluster psu hhid pid wt wt_round`.",
-       f"Alignment rule: years are grouped into versions of a variable by label similarity (token Jaccard ≥ {align['threshold']}); the largest group keeps the name, the others are `<name>_v2`, `_v3` …; forced alignments: {', '.join(sorted(align.get('force_align', [])))}. "
-       "Value labels are the union over years; where the same code had different text the most recent year's text is kept and the conflict listed.", ""]
-out += codebook("LFS_pooled_person.dta", "person") + [""] + codebook("LFS_pooled_household.dta", "household")
-(HERE / "CODEBOOK.md").write_text("\n".join(out))
-log.info("wrote CODEBOOK.md, codebook_person.csv, codebook_household.csv")
+NOTES = [f"LFS codebook -- generated by rwa-trs/NISR/{DATASET}/04_codebook.py on {time.strftime('%Y-%m-%d %H:%M')} from 3_Final/ (and 2_Intermediate/appended/). Do not hand-edit: re-run python master.py 04.",
+         "Sheets: files = one row per final/appended file (folder, unit, rows, variables, years, universe, sheet); one sheet per FINAL dataset = one row per variable (label, storage type, first value labels, number of value labels, universe, non-missing count per year, source variable per year, versions, label variants, value-label text conflicts); modules = the same table for every appended module file of 2_Intermediate/appended/, stacked, file in the first column; value_labels = every code of every labelled variable (all files); checks = the latest verification report (logs/checks_report.txt).",
+         'Key block (identical names in every NISR dataset): survey year wave round quarter interview prov dist urban cluster psu hhid pid wt wt_round.',
+         f"Alignment rule: years are grouped into versions of a variable by label similarity (token Jaccard >= {align['threshold']}); the largest group keeps the name, the others are <name>_v2, _v3 ...; forced alignments: {', '.join(sorted(align.get('force_align', []))) or 'none'}; forced splits: {', '.join(f'{k} ({v})' for k, v in (align.get('force_split') or {}).items()) or 'none'}.",
+         "Value labels are the union over years within a version; where the same code had different text the most recent year's text is kept and the conflict listed.",
+         'universe = who was asked, from the questionnaires; per variable and year in the universe column of each sheet (status1 is defined on 16+ to 2019 and 14+ from 2020).',
+         f"Processing notes (what z_Documentation says and how it was applied; every decision and why) are kept in the project memory file NISR-{DATASET}.md (Green Jobs - TRS folder), not in git or Dropbox."]
+books = [codebook("LFS_pooled_person.dta", "person"), codebook("LFS_pooled_household.dta", "household")]
+write_workbook(P["root"] / f"CODEBOOK_{TAG}.xlsx", NOTES, books)
 
 # ---------------------------------------------------------------- README.txt on Dropbox
 # The dataset folder's README.txt keeps its hand-written sections; the block between the two
@@ -94,14 +133,15 @@ def update_readme():
     start, end = "=== PROCESSED OUTPUTS (generated by 04_codebook.py; do not edit inside) ===", "=== END PROCESSED OUTPUTS ==="
     finals = sorted(P["final"].glob("*.dta")); inters = sorted(P["inter"].glob("*.dta"))
     lines = [start, f"Pipeline: rwa-trs/NISR/{DATASET}/  (python master.py)   last run: {time.strftime('%Y-%m-%d %H:%M')}",
-             f"Code, decisions (DECISIONS.md), documentation notes (DOCUMENTATION.md: what z_Documentation says and how it was applied), codebook (CODEBOOK.md) and run logs live in the git repository, not here.", "",
+             f"Codebook: CODEBOOK_{TAG}.xlsx in this folder (sheets: README, files, one per final dataset, modules, value_labels, checks).",
+             f"Code and run logs: git repository rwa-trs/NISR/{DATASET}/. Processing notes (what z_Documentation says and how it was applied; every decision and why): project memory file NISR-{DATASET}.md (Green Jobs - TRS folder, outside git and Dropbox).", "",
              f"3_Final/  ({len(finals)} files)"]
     for f in finals:
         try:
             m = read_meta(f); lines.append(f"  {f.name:55s} {m.number_rows:>10,} rows x {len(m.column_names):>4} vars   {m.file_label or ''}")
         except Exception as e: lines.append(f"  {f.name:55s} (unreadable: {e})")
     app = sorted((P["inter"] / "appended").glob("*.dta")) if (P["inter"] / "appended").exists() else []
-    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK.md)"]
+    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK_{TAG}.xlsx)"]
     if app:
         lines.append(f"2_Intermediate/appended/  ({len(app)} module-level files appended across waves)")
         for f in app:

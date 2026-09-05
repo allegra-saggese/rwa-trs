@@ -20,8 +20,8 @@ P = paths(); ck = Checks(log)
 YEARS = [2011, 2014, 2017, 2020, 2023]
 KEYS = ["survey", "year", "wave", "prov", "dist", "sector", "urban", "estid", "wt"]
 SIM_THRESHOLD = 0.25
-# Same question, reworded (checked against the questionnaires and value labels; see DECISIONS.md):
-FORCE_ALIGN = set()      # filled after reading the first VERSIONS log; see DECISIONS.md
+# Same question, reworded (checked against the questionnaires and value labels; see NISR-Establishment-Census-EC.md (decisions log)):
+FORCE_ALIGN = set()      # filled after reading the first VERSIONS log; see NISR-Establishment-Census-EC.md (decisions log)
 # Force a separate version for given years even if labels look alike:
 FORCE_SPLIT = {}
 

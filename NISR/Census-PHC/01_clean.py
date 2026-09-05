@@ -5,7 +5,7 @@ Per census: lower-case names, build the harmonised key block (survey year wave p
 sector urban cluster hhid pid sex age wt wt_hh), attach NISR's current province / district /
 sector names as value labels, keep every other variable under its own name (2002: English
 variable and value labels from the questionnaire, French originals recorded; 2012: NISR recodes
-labelled, ISCO-08 titles on P25), record each variable's universe, destring, downcast, back-check, write. Unit = person (public-use 10% household samples; see DECISIONS.md).
+labelled, ISCO-08 titles on P25), record each variable's universe, destring, downcast, back-check, write. Unit = person (public-use 10% household samples; see NISR-Census-PHC.md (decisions log)).
 """
 import difflib, sys
 import numpy as np, pandas as pd
@@ -170,8 +170,8 @@ def translate_2002_values(vv, log):
     return done
 
 # --- 2012: NISR's recoded variables ship with their name as the only label; documented from the
-#     questionnaire, the edit specifications and the thematic reports (see DOCUMENTATION.md) and
-#     verified against the source variables in the data (cross-tabulations in DECISIONS.md).
+#     questionnaire, the edit specifications and the thematic reports (see NISR-Census-PHC.md (documentation notes)) and
+#     verified against the source variables in the data (cross-tabulations in NISR-Census-PHC.md (decisions log)).
 RP2012_LABELS = {
     "rp142": "Parental co-residence, residents under 18 (NISR recode of P14b x P14d)",
     "rp12": "Disability status, any difficulty (NISR recode of P12)",

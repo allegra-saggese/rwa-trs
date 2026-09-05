@@ -1,5 +1,5 @@
 """
-02_checks.py -- NISR/Harmonize: independent verification of Harmonized/ -> logs/checks_report.md
+02_checks.py -- NISR/Harmonize: independent verification of Harmonized/ -> logs/checks_report.txt
 
   A. No data loss: every harmonised file has exactly the rows and all the native columns of its source.
   B. Keys: h_hhkey unique per household within (survey, wave [, interview]); h_pkey unique per person.
@@ -97,6 +97,6 @@ for out in ("H_LFS_person.dta", "H_Census_person.dta", "H_EICV_person.dta", "H_A
         report.append(f"| D | {out[2:-4]} {w} | {int(g['h_lfs_def'].dropna().iloc[0]) if g['h_lfs_def'].notna().any() else ''} | {rate:.1f} | {emp:,.0f} | n/a |")
     del d
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
-(LOGS / "checks_report.md").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
-if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.md")
+(LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
+if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")
 log.info("02_checks done")
