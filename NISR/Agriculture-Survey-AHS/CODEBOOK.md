@@ -9,7 +9,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 
 ## `3_Final/AHS_pooled_person.dta` — one row per person
 
-138,683 rows × 184 variables. Waves: 2017, 2020, 2024.
+138,683 rows × 185 variables. Waves: 2017, 2020, 2024.
 
 *Universe (questionnaires and reports, DOCUMENTATION.md):* all members of agricultural households (roster); education and main-activity items asked of members above 10 years in 2017; 2024 roster uses the EICV7 relationship codes
 
@@ -30,7 +30,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `wt_hh` | Household weight (same value as wt; sums to the number of households) | double |  | 73,665 | 48,726 | 16,292 |  |
 | `s0q3` | 0.3 Stratum | int8 | 11=Intensive cropland on hillsides, 20=Intensive cropland in marshlands, 30=Rangelands, 41=Urban area, 42=Rural settlement | 73,665 | 0 | 0 |  |
 | `s0q4` | 0.4 Segment | int8 |  | 73,665 | 0 | 0 |  |
-| `s1q2` | Relation with the head of household | string |  | 73,665 | 48,726 | 16,292 | label variants — 2017: 1.2 Household member names |
+| `s1q2_v2` | [2017..2017 version] 1.2 Household member names | string |  | 73,665 | 48,726 | 16,292 | other versions: s1q2 (2024) |
 | `s1q3` | 1.3 What is the member relationship with the household Head? | int8 | 1=Head, 2=Spouse, 3=Son/Daughter, 4=Relatives, 5=Parent … | 73,665 | 0 | 0 |  |
 | `s1q6_v2` | [2017..2017 version] 1.6 Did this child schooled? | int8 | 1=Yes, 2=No | 22,244 | 0 | 0 | other versions: s1q6 (2024) |
 | `s1q7` | 1.7 Highest level of education attained by the [the name of household member] | int8 | 1=Some/Still Primary, 2=Completed Primary, 3=Vocational School, 4=some/still secondary, 5=Completed Secondary … | 51,421 | 41,363 | 0 | other versions: s1q7_v2 (2024); label variants — 2017: 1.7 What is the highest level of education attaine; value-label text conflicts: {"1": ["Primary", "Some/Still Primary"], "2": ["Completed Primary", "Secondary"], "3": ["Tertiary", "Vocational School"], "4": ["No education level", "some/still secondary"]} |
@@ -65,6 +65,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `agribus_n` | Agribusiness activities (in numbers) been involved by HH members | int8 |  | 0 | 48,726 | 0 |  |
 | `s1q10_1` | 1.10.1 [member name] involved in any of the following agribusiness activities | int8 | 1=Market oriented farming, 2=Agricultural production Processing, 3=Import of agricultural products, 4=Export of agricultural products, 5=Supply of agricultural inputs … | 0 | 2,757 | 0 |  |
 | `s1q10_2` | 1.10.2 [member name] involved in any of the following agribusiness activities | int8 | 1=Market oriented farming, 2=Agricultural production Processing, 3=Import of agricultural products, 4=Export of agricultural products, 5=Supply of agricultural inputs … | 0 | 31 | 0 |  |
+| `s1q2` | Relation with the head of household | int8 | 1=Household head (HH), 2=Spouse of HH, 3=Son or daughter of HH, 4=Step or adopted or foster child of HH, 5=Parent of HH … | 0 | 0 | 16,292 | other versions: s1q2_v2 (2017) |
 | `s1q3m` | Age (Months) | int8 |  | 0 | 0 | 2,273 |  |
 | `s1q4` | Marital status | int8 | 1=Married monogamously with legal certificate, 2=Married monogamously without legal certificate, 3=Married polygamously, 4=Divorced, 5=Separated … | 0 | 0 | 11,495 | other versions: s1q4_v2 (2020) |
 | `s1q5a` | country of birth | int8 | 1=Nigeria, Nigerie, 2=Ethiopia, Ethiopie, 3=Egypt, Egypte, 4=DR Congo, RD Congo,DRC, RDC, 5=Tanzania, Tanzanie … | 0 | 0 | 16,292 |  |

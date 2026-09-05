@@ -39,3 +39,8 @@ SAS/village segments and interviews the 16,057 with any member in crop or livest
 The waves are therefore pooled as independent cross-sections with their own weights, as already
 implemented; the published 2017 household count is now a check, and the age bases of the roster
 items (economic activity above 10 in 2017; savings/credit 16+ in 2020) are stated in the codebook.
+
+## 2026-09-05 — forced split found while harmonising
+
+`s1q2` is the member's name (text) in 2017 and the relationship code in 2024; the label rule had
+merged them. `FORCE_SPLIT = {"s1q2": ["2017"]}`; pooled files rebuilt.
