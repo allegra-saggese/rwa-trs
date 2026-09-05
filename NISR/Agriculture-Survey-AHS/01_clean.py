@@ -39,12 +39,13 @@ WAVES = {
 }
 WANT = sys.argv[1:] or list(WAVES)
 KEY_ORDER = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
-KEY_LABELS = {"survey": "Source survey", "year": "Survey year", "wave": "Wave (survey year)", "sample": "CS = national sample of agricultural households",
+KEY_LABELS = {"survey": "Source survey", "year": "Survey year", "wave": "Wave (survey year)",
+              "sample": "CS = sampled agricultural household; LSF = large-scale-farmer supplement record (2020: 2,345 list-frame farms with weight 1; 2024: 1,939 such records) -- not part of the household sample",
               "prov": "Province (1-5, NISR codes)", "dist": "District (11-57, NISR current codes)", "urban": "Area of residence (1 urban, 2 rural)",
               "cluster": "Sampling segment / cluster (as shipped)", "hhid": "Household id (unique within wave)",
               "pid": "Person number within the household", "sex": "Sex (1 male, 2 female)", "age": "Age in years",
-              "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
-              "wt_hh": "Household weight (same value as wt; sums to the number of households)", "pid_nisr": "NISR person id as shipped"}
+              "wt": "Household weight carried by every row (sums to persons in the person file, to households in the household file; repeated per record in module files)",
+              "wt_hh": "Household weight repeated on every row of this file -- sums to the number of households ONLY in the household file (one row per household)", "pid_nisr": "NISR person id as shipped"}
 PROV_LABELS = {1: "City of Kigali", 2: "Southern Province", 3: "Western Province", 4: "Northern Province", 5: "Eastern Province"}
 DIST_LABELS = {11: "Nyarugenge", 12: "Gasabo", 13: "Kicukiro", 21: "Nyanza", 22: "Gisagara", 23: "Nyaruguru", 24: "Huye", 25: "Nyamagabe", 26: "Ruhango",
                27: "Muhanga", 28: "Kamonyi", 31: "Karongi", 32: "Rutsiro", 33: "Rubavu", 34: "Nyabihu", 35: "Ngororero", 36: "Rusizi", 37: "Nyamasheke",
@@ -90,7 +91,8 @@ def normalise_keys(df, vl, vv, W, srcmap):
     return df, vl, vv
 
 def stamp(df, W, wave):
-    df["survey"] = "AHS"; df["year"] = np.int16(W["year"]); df["wave"] = wave; df["sample"] = W["sample"]
+    df["survey"] = "AHS"; df["year"] = np.int16(W["year"]); df["wave"] = wave
+    if "sample" not in df.columns: df["sample"] = W["sample"]           # module rows outside the household sample were marked LSF before stamping
     return df
 
 def join_1to1(base, other, on, tag, log):
@@ -149,9 +151,12 @@ for wave in WANT:
     for stem in W["base_hh"]:
         m = modules.get(stem)
         if m is None: continue
-        if not m["hhid"].is_unique:      # 2017 s0 lists dwellings with no household / repeated households: keep the first row per hhid
+        nmiss = int(m["hhid"].isna().sum())
+        if nmiss:                        # 2017 s0 lists 290 dwellings without a household id (no household interviewed): dropped from the base
+            m = m[m["hhid"].notna()]; log.info("%s: household base %s: %d rows without a household id dropped", wave, stem, nmiss)
+        if not m["hhid"].is_unique:
             ndup = int(m.duplicated("hhid").sum()); m = m.drop_duplicates("hhid", keep="first")
-            ck(False, f"{wave}: household base {stem} had {ndup} duplicate hhid rows; first row kept", hard=False)
+            ck(False, f"{wave}: household base {stem} had {ndup} duplicate non-missing hhid rows; first row kept", hard=False)
         hh_base = m if hh_base is None else join_1to1(hh_base, m, ["hhid"], stem, log)[0]
     keycols = [c for c in ["prov", "dist", "urban", "cluster", "wt"] if hh_base is not None and c in hh_base.columns]
     keys = hh_base[["hhid"] + keycols].drop_duplicates("hhid") if hh_base is not None else None
@@ -172,7 +177,15 @@ for wave in WANT:
             if need:
                 df = df.merge(keys[["hhid"] + need], on="hhid", how="left")
                 for c in need: srcmap[c] = f"household key table ({W['base_hh']})"
+            for c in [c for c in keycols if c in df.columns and c not in need]:     # a key column that exists but has gaps: filled from the table (AHS audit: 4,412 2017 livestock weights)
+                gap = df[c].isna() & df["hhid"].isin(keys["hhid"])
+                if gap.any():
+                    df[c] = df[c].where(~gap, df["hhid"].map(keys.set_index("hhid")[c])); srcmap[c] = f"{srcmap.get(c, c)}; {int(gap.sum())} missing values filled from the household key table"
+                    log.info("   %s: %d missing %s values filled from the household key table", name, int(gap.sum()), c)
             rate = df["hhid"].isin(keys["hhid"]).mean()
+            df["sample"] = np.where(df["hhid"].isin(keys["hhid"]), W["sample"], "LSF")                # records outside the household sample = the large-scale-farmer supplement
+            n_lsf = int((df["sample"] == "LSF").sum())
+            if n_lsf: log.info("   %s: %d rows outside the household sample -> sample = LSF (%d farms)", name, n_lsf, df.loc[df["sample"] == "LSF", "hhid"].nunique())
         else:
             rate = np.nan
         if "hhid" not in df.columns or (not np.isnan(rate) and rate < 0.5):
@@ -190,7 +203,11 @@ for wave in WANT:
         df = downcast(df, keep_double=("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight"))
         df = df[[c for c in KEY_ORDER if c in df.columns] + [c for c in df.columns if c not in KEY_ORDER]]
         modules[name] = df
-        meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4)}
+        dupcols = [c for c in df.columns if c not in ("survey", "year", "wave", "sample", "wt", "wt_hh")]
+        meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4),
+                              "n_lsf": int((df["sample"] == "LSF").sum()) if "sample" in df.columns else 0,
+                              "exact_duplicate_rows": int(df.duplicated(dupcols).sum()), "wt_missing": int(df["wt"].isna().sum()) if "wt" in df.columns else None,
+                              "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "var_labels": {k: v for k, v in vl.items() if k in df.columns}}
         write_dta(df, P["inter"] / f"AHS_{wave}_{name}_clean.dta", vl, vv, f"AHS {wave} module {name} ({lvl}-level)", log)
     log.info("module levels: %s", {k: v["level"] for k, v in meta_modules.items()})
 

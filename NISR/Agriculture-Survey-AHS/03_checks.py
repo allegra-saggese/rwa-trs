@@ -1,8 +1,11 @@
 """
 03_checks.py -- AHS: independent verification of 3_Final/ outputs -> logs/checks_report.txt
-  A. Pooled files vs per-wave files (rows, weights)     B. Stata 17 recomputation     C. household/person consistency
+  A. Pooled files vs per-wave files (rows, weights)     B. Stata 17 recomputation
+  C. household/person consistency and published totals (2017 / 2020 reports, 2024 DDI)
+  D. appended modules: sample weights complete, large-scale-farmer supplement rows, exact-duplicate rows
+  E. cross-wave coding compatibility within every pooled column (re-derived from the per-wave meta files)
 """
-import os, shutil, subprocess, sys
+import json, os, shutil, subprocess, sys
 import pandas as pd
 from ahs_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE
 
@@ -15,7 +18,7 @@ def row(section, name, ours, ref, tol=0.0):
     report.append(f"| {section} | {name} | {ours:,.0f} | {'' if ref is None else f'{ref:,.0f}'} | {'PASS' if ok else ('n/a' if ok is None else '**FAIL**')} |")
 
 person, _, _ = read_dta(P["final"] / "AHS_pooled_person.dta", usecols=["wave", "wt", "sex", "dist", "hhid"])
-hh, _, _ = read_dta(P["final"] / "AHS_pooled_household.dta", usecols=["wave", "wt", "hhsize", "hhid"])
+hh, _, _ = read_dta(P["final"] / "AHS_pooled_household.dta", usecols=["wave", "wt", "hhsize", "hhid", "head_sex"])
 ours = {w: {"n": len(g), "sum_wt": g["wt"].sum(), "n_hh": g["hhid"].nunique(), "male": int((g["sex"] == 1).sum()), "female": int((g["sex"] == 2).sum()), "n_dist": g["dist"].nunique()} for w, g in person.groupby("wave", sort=False)}
 report += ["## A. Pooled person file vs per-wave cleaned files", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 for w in ours:
@@ -61,6 +64,82 @@ if (hh["wave"] == "2017").any(): row("C", "2017 households vs report table 2 (16
 for w, g in hh.groupby("wave", sort=False):
     p = person[person.wave == w]
     row("C", f"{w} sum hhsize == person rows", g["hhsize"].sum(), len(p)); row("C", f"{w} households == distinct hhid in person file", len(g), p["hhid"].nunique()); row("C", f"{w} household rows unique", g["hhid"].nunique(), len(g))
+    row("C", f"{w} households with a head_sex", int(g["head_sex"].notna().sum()), len(g)); row("C", f"{w} weight constant within household (person file)", int((p.groupby("hhid")["wt"].nunique() > 1).sum()), 0)
+# Published totals (weighted): AHS 2017 report (2.1 million agricultural households, 9.7 million persons, average size 4.5, 27.8% female-headed),
+# AHS 2020 report (2.3 million households, 10.5 million persons, size 4.5, 28.2% female-headed), AHS 2024 DDI (2.2 million, size 4.4).
+# Published figures are rounded, hence the tolerances (households / persons to the published rounding, shares within 1 point).
+PUB = {"2017": {"hh_m": 2.1, "pop_m": 9.7, "size": 4.5, "fem": 27.8}, "2020": {"hh_m": 2.3, "pop_m": 10.5, "size": 4.5, "fem": 28.2}, "2024": {"hh_m": 2.2, "size": 4.4}}
+for w, g in hh.groupby("wave", sort=False):
+    if w not in PUB: continue
+    p = person[person.wave == w]; hw = g["wt"].sum(); pw = p["wt"].sum()
+    row("C", f"{w} weighted agricultural households (million x 100) vs published {PUB[w]['hh_m']} (published to one decimal: +/- 0.1 million)", 100 * hw / 1e6, 100 * PUB[w]["hh_m"], 0.1 / PUB[w]["hh_m"])
+    if "pop_m" in PUB[w]: row("C", f"{w} weighted persons (million x 100) vs published {PUB[w]['pop_m']} (+/- 0.1 million)", 100 * pw / 1e6, 100 * PUB[w]["pop_m"], 0.1 / PUB[w]["pop_m"])
+    row("C", f"{w} weighted average household size x 10 vs published {PUB[w]['size']}", 10 * pw / hw, 10 * PUB[w]["size"], 0.05 / PUB[w]["size"])
+    if "fem" in PUB[w]: row("C", f"{w} weighted female-headed share (%) vs published {PUB[w]['fem']}", 100 * g.loc[g["head_sex"] == 2, "wt"].sum() / g.loc[g["head_sex"].isin([1, 2]), "wt"].sum(), PUB[w]["fem"], 1.0 / PUB[w]["fem"])
+
+# ---------------------------------------------------------------- D. appended modules
+report += ["", "## D. Appended modules: weights, large-scale-farmer supplement, duplicate rows", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+align = json.load(open(LOGS / "merge_alignment.json"))
+metas = {w: json.load(open(LOGS / f"clean_{w}_meta.json")) for w in ("2017", "2020", "2024") if (LOGS / f"clean_{w}_meta.json").exists()}
+mods = [f for f, i in align["files"].items() if i.get("dir", "").endswith("appended")]
+lsf_rows, dup_rows, wt_gap = {}, {}, 0
+for f in mods:
+    d, _, _ = read_dta(P["root"] / align["files"][f]["dir"] / f, usecols=["wave", "sample", "wt", "hhid"])
+    cs = d[d["sample"] != "LSF"]
+    wt_gap += int(cs["wt"].isna().sum())
+    for w, g in d[d["sample"] == "LSF"].groupby("wave"): lsf_rows.setdefault(w, set()).update(g["hhid"].dropna().unique())
+    row("D", f"{f.replace('AHS_pooled_', '').replace('.dta', '')}: rows == sum of wave rows", len(d), sum(metas[w]["modules"][s]["rows"] for w, s in ((w, s) for w, mp in align["module_map"].items() for s, c in mp.items() if f == f"AHS_pooled_{c}.dta") if w in metas and s in metas[w]["modules"]))
+row("D", "household-sample rows (sample = CS) with a missing weight, all appended modules (must be 0)", wt_gap, 0)
+# 2020 report annex: the large-scale-farmer list (2,345 farms, HHUID 110667-113011, weight 1, owner = "big farmer") is enumerated exhaustively -- a census supplement
+row("D", "2020 large-scale farms outside the household sample (sample = LSF) -- documented list of 2,345", len(lsf_rows.get("2020", ())), 2_345)
+row("D", "2024 large-scale farms outside the household sample (sample = LSF; not documented, informational)", len(lsf_rows.get("2024", ())), None)
+row("D", "2017 rows outside the household sample (must be 0: no supplement in 2017)", len(lsf_rows.get("2017", ())), 0)
+for w, m in metas.items():
+    for s, i in m["modules"].items():
+        if i.get("exact_duplicate_rows"): row("D", f"{w} {s}: exact-duplicate rows as shipped (informational; kept)", i["exact_duplicate_rows"], None)
+        if i.get("wt_missing"): row("D", f"{w} {s}: rows with a missing weight after key attachment (LSF supplement rows carry weight 1; informational)", i["wt_missing"], None)
+
+# ---------------------------------------------------------------- E. cross-wave coding compatibility (re-derived from the per-wave meta files, independent of 02_merge)
+import difflib, re as _re
+thr = align.get("vl_threshold", 0.6)
+SENT = {98, 99, 998, 999, 9998, 9999}
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s): return " ".join(w for w in (_SYN.get(x, x) for x in _re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()) if w)
+def _same(x, y):
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= thr
+def _vls(w, fname, base):
+    """value labels of `base` in wave w's cleaned file behind pooled file fname (person / household / module stem)."""
+    m = metas.get(w, {})
+    if fname in ("AHS_pooled_person.dta", "AHS_pooled_household.dta"): src = m.get(fname.split("_")[2].split(".")[0], {})
+    else:
+        canon = fname.replace("AHS_pooled_", "").replace(".dta", "")
+        stem = next((s for s, c in align["module_map"].get(w, {}).items() if c == canon), None); src = m.get("modules", {}).get(stem, {})
+    return {float(k): v for k, v in src.get("value_labels", {}).get(base, {}).items() if str(k).replace('.', '', 1).lstrip('-').isdigit()}
+bad, ncols_split_vl, nsplit = [], 0, 0
+for fname, info in align["files"].items():
+    for base, d in info["decisions"].items():
+        if len(d["versions"]) > 1:
+            nsplit += 1
+            if any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): ncols_split_vl += 1
+        for col, ws in d["versions"].items():
+            labs = [(w, _vls(w, fname, base)) for w in ws if w in metas]
+            for i in range(len(labs)):
+                for j in range(i + 1, len(labs)):
+                    a, b = labs[i][1], labs[j][1]
+                    for c in set(a) & set(b):
+                        if c not in SENT and not _same(a[c], b[c]): bad.append((fname, col, labs[i][0], labs[j][0], c, a[c], b[c]))
+report += ["", "## E. Cross-wave coding compatibility within pooled columns (all pooled files)", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+row("E", "pooled columns holding waves with incompatible value-label texts for the same code (must be 0)", len({(b[0], b[1]) for b in bad}), 0)
+row("E", "variables split into versions (all pooled files; informational)", nsplit, None)
+row("E", "of which because of value labels or unlabelled ranges (informational)", ncols_split_vl, None)
+row("E", "variables with codes observed outside their own wave's value labels -- stale labels (informational)", sum(len(i.get("stale_labels", {})) for i in align["files"].values()), None)
+row("E", "forced splits x 1000 + forced alignments (informational)", len(align.get("force_split", {})) * 1000 + len(align.get("force_align", [])), None)
+if bad: report += ["", "Incompatible pairs: " + "; ".join(f"{f}:{c}: {y1}/{y2} code {k:g} {p!r} vs {q!r}" for f, c, y1, y2, k, p, q in bad[:20])]
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))
 if fails: sys.exit(f"{fails} check(s) failed -- see logs/checks_report.txt")

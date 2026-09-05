@@ -1,16 +1,19 @@
 """
 02_merge.py -- AHS: 2_Intermediate/AHS_<wave>_*_clean.dta -> 3_Final/ (person, household) and 2_Intermediate/appended/ (modules)
 
-  AHS_pooled_person.dta / AHS_pooled_household.dta          national cross-sections (AHS1,2,3,4_CS,5_CS,7_CS)
-  AHS_pooled_person_vup.dta / AHS_pooled_household_vup.dta  VUP booster samples (AHS4/5/7_VUP)
-  AHS_pooled_<module>.dta                                    modules with the same content in >= 2 waves (MODULE_MAP)
-  AHS3_4_panel_link.dta, AHS5_vup_panel_link.dta            NISR's household/person linking files, keys harmonised
+  3_Final/AHS_pooled_person.dta, AHS_pooled_household.dta   the three independent waves 2017, 2020, 2024 appended
+  2_Intermediate/appended/AHS_pooled_<module>.dta            modules with the same content in >= 2 waves (MODULE_MAP);
+                                                             rows outside the household sample carry sample = LSF
 
-Alignment rule as in every NISR dataset: waves are grouped into versions of a variable by
-label similarity (token Jaccard >= 0.25); the largest group keeps the name, others become
-<name>_v2, _v3 ...; FORCE_ALIGN lists rewordings judged to be the same question.
+Alignment rule: waves are grouped into versions of a variable when (a) their variable labels
+describe the same question (token Jaccard >= SIM_THRESHOLD) AND (b) their value labels are
+compatible (no code whose text means something else; an unlabelled wave's values inside the
+labelled range); the largest group keeps the name, others become <name>_v2 ...; FORCE_ALIGN
+skips test (a); FORCE_SPLIT lists closed groups of waves that must stay apart. The AHS
+questionnaires renumber items between waves, so many same-named items are different questions
+(AHS audit 2026-09-05): the confirmed ones are FORCE_SPLIT below, the rest are caught by (b).
 """
-import json
+import difflib, json, re
 from collections import Counter
 import numpy as np, pandas as pd
 from ahs_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
@@ -21,10 +24,17 @@ CS = ["2017", "2020", "2024"]
 VUP = []
 KEYS = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
 STR_KEYS = ("survey", "wave", "sample", "cluster")
-SIM_THRESHOLD = 0.25
+SIM_THRESHOLD = 0.5       # variable-label similarity (token Jaccard); 0.5 for AHS (items renumbered between waves; see the docstring)
+VL_THRESHOLD = 0.6        # value-label text similarity (difflib ratio) for the same code to mean the same thing
 FORCE_ALIGN = set()
-# 2017 s1q2 is the member's NAME (text), 2024 s1q2 the relationship code: split (found while harmonising, 2026-09-05)
-FORCE_SPLIT = {"s1q2": ["2017"]}
+# Same name, different question or coding (variable labels verified per wave, AHS audit 2026-09-05); closed groups:
+FORCE_SPLIT = {"s1q2": ["2017"],                       # 2017 member NAME (text) vs 2024 relationship code
+               "s1q7": ["2020"], "s1q8": ["2020"],      # 2017 education 4 codes vs 2020 7 codes; 2017 activity (cropping/non-farm) vs 2020 labour status
+               "s0q9": ["2020"], "s0q12": ["2020"],     # respondent is head (2017) vs head's marital status (2020); relationship (2017) vs respondent is head (2020)
+               "s0q13": ["2024"], "s0q15": ["2020", "2024"],   # activity (2017) vs relationship (2024); coop type (2017) / relationship (2020) / activity (2024)
+               "s0q7": ["2020"], "s0q11": ["2020"],     # head's name (2017) vs household number (2020); non-head contact (2017) vs head's contact (2020)
+               "s2q1": ["2020"], "s2q2": ["2020", "2024"], "s2q3": ["2020"],   # land items shift between 2017 and 2020; 2024 s2q2 = always lived in district
+               "s7q2": ["2024"]}                        # tool owned (2017) vs purchased and used this season (2024)
 KEEP_DOUBLE = ("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight")
 
 # Canonical module names for files whose content repeats across waves (same questionnaire block).
@@ -48,16 +58,67 @@ MODULE_MAP = {
              "section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices": "plotcrop"},
 }
 # ------------------------------------------------------------------ generic pooling
-def version_groups(v, waves, labs):
-    if v in KEYS or v in FORCE_ALIGN or len(waves) == 1: return [list(waves)]
-    groups = []
+SENTINELS = {98, 99, 998, 999, 9998, 9999}       # NISR's don't-know / missing codes: never evidence of a coding change
+MISSING_LIKE = {"not stated", "missing", "dont know", "dk", "unknown", "not known", "non determine", "nd", "ns", "not applicable", "na"}
+_SYN = {"others": "other", "yego": "yes", "oya": "no", "specify": "", "please": "", "specified": ""}
+def _norm(s):
+    toks = [_SYN.get(w, w) for w in re.sub(r"[^a-z0-9]+", " ", str(s).lower()).split()]
+    return " ".join(w for w in toks if w)
+def _same(x, y):
+    """same category? normalised texts equal, both missing-like, one's tokens contained in the other's, or close spelling"""
+    a, b = _norm(x), _norm(y)
+    if a == b or (a in MISSING_LIKE and b in MISSING_LIKE): return True
+    ta, tb = set(a.split()), set(b.split())
+    if ta and tb and (ta <= tb or tb <= ta): return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= VL_THRESHOLD
+def vl_conflicts(a, b):
+    return {c: (a[c], b[c]) for c in set(a) & set(b) if c not in SENTINELS and not _same(a[c], b[c])}
+def _range(s):
+    s = pd.to_numeric(s, errors="coerce") if s.dtype == object else s
+    if not pd.api.types.is_numeric_dtype(s): return None
+    s = s[s.notna() & ~s.isin(SENTINELS)]
+    return (float(s.min()), float(s.max())) if len(s) else None
+def _obs(s):
+    s = pd.to_numeric(s, errors="coerce") if s.dtype == object else s
+    return set(s.dropna().unique().tolist()) if pd.api.types.is_numeric_dtype(s) else set()
+def incompatible(y, z, vls, rng):
+    a, b = vls.get(y) or {}, vls.get(z) or {}
+    if a and b:
+        c = vl_conflicts(a, b)
+        if c: return f"{y} vs {z}: value labels differ -- " + "; ".join(f"{k:g}: {p!r} vs {q!r}" for k, (p, q) in sorted(c.items())[:3])
+    elif a or b:
+        lab, u = (a, z) if a else (b, y)
+        codes = [c for c in lab if c not in SENTINELS]
+        r = rng.get(u)
+        if len(codes) >= 2 and r and r[1] > max(codes):
+            return f"{y} vs {z}: {u} is unlabelled and its values reach {r[1]:g}, beyond the labelled codes ({min(codes):g}-{max(codes):g})"
+    return None
+
+def version_groups(v, waves, labs, vls, rng):
+    """Greedy grouping of waves: a wave joins the first group whose variable label is similar (skipped for FORCE_ALIGN)
+    AND whose value labels are compatible with every member; FORCE_SPLIT groups are closed. Returns (groups, reasons)."""
+    if v in KEYS or len(waves) == 1: return [list(waves)], []
+    forced = {}
+    for i, g in enumerate(FORCE_SPLIT.get(v, [])):
+        for w in ([g] if not isinstance(g, list) else g): forced[w] = i
+    groups, reasons = [], []
     for w in waves:
-        if v in FORCE_SPLIT and w in FORCE_SPLIT[v]: groups.append(("__forced__", [w])); continue   # closed group: nothing else may join it
+        if w in forced:
+            key = ("__forced__", forced[w])
+            for rep, ws in groups:
+                if rep == key: ws.append(w); break
+            else: groups.append((key, [w])); reasons.append(f"{w}: FORCE_SPLIT")
+            continue
         for rep, ws in groups:
-            if rep != "__forced__" and (not labs[w] or not rep or label_similarity(labs[w], rep) >= SIM_THRESHOLD): ws.append(w); break
+            if isinstance(rep, tuple): continue
+            if v not in FORCE_ALIGN and labs[w] and rep and label_similarity(labs[w], rep) < SIM_THRESHOLD:
+                reasons.append(f"{w} vs {ws[0]}: variable label differs ({labs[w][:40]!r} vs {rep[:40]!r})"); continue
+            why = next((x for z in ws for x in [incompatible(w, z, vls, rng)] if x), None)
+            if why: reasons.append(why); continue
+            ws.append(w); break
         else: groups.append((labs[w], [w]))
     groups.sort(key=lambda g: (-len(g[1]), -max(CS_ORDER.get(x, 0) for x in g[1])))
-    return [ws for _, ws in groups]
+    return [ws for _, ws in groups], (reasons if len(groups) > 1 else [])
 CS_ORDER = {w: i for i, w in enumerate(CS)}
 
 APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
@@ -71,16 +132,22 @@ def pool(files, out_name, label, unit, out_dir=None):
         log.info("  loaded %-10s %-55s %9s rows x %4d", w, f.name, f"{len(df):,}", df.shape[1])
     waves = list(files)
     allvars = sorted({c for df in data.values() for c in df.columns})
-    decisions, colname, vl_conflicts, var_labels, value_labels = {}, {}, {}, {}, {}
+    decisions, colname, vl_conflicts, var_labels, value_labels, stale_labels = {}, {}, {}, {}, {}, {}
     for v in allvars:
         ws = [w for w in waves if v in data[w].columns]
         labs = {w: (labels[w].get(v) or "").strip() for w in ws}
-        groups = version_groups(v, ws, labs); versions = {}
+        vls = {w: (vlabs[w].get(v) or {}) for w in ws}
+        rng = {w: _range(data[w][v]) for w in ws}
+        groups, reasons = version_groups(v, ws, labs, vls, rng); versions = {}
+        stale = {w: sorted(_obs(data[w][v]) - set(vls[w]) - SENTINELS)[:20] for w in ws if len(set(vls[w]) - SENTINELS) >= 3}
+        stale = {w: s for w, s in stale.items() if s}
+        if stale: stale_labels[v] = stale
         for i, g in enumerate(groups):
             name = v if i == 0 else f"{v[:28]}_v{i + 1}"; versions[name] = g
             for w in g: colname[(v, w)] = name
-        decisions[v] = {"waves": ws, "versions": versions, "labels_by_wave": labs, "reference_label": labs[groups[0][-1]]}
-        if len(groups) > 1: log.info("  VERSIONS %s: %s", v, versions)
+        decisions[v] = {"waves": ws, "versions": versions, "labels_by_wave": labs, "reference_label": labs[groups[0][-1]], "split_reasons": reasons}
+        if len(groups) > 1: log.info("  VERSIONS %s: %s | %s", v, versions, " / ".join(reasons[:2]))
+    if stale_labels: log.info("  %d variables with codes observed outside their own value labels (stale labels)", len(stale_labels))
     frames = []
     for w in waves:
         df, vl, vv = data[w].copy(), labels[w], vlabs[w]
@@ -111,9 +178,9 @@ def pool(files, out_name, label, unit, out_dir=None):
         for w in waves: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
     write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
     return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
-            "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}}
+            "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 
-summary = {"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "files": {}}
+summary = {"threshold": SIM_THRESHOLD, "vl_threshold": VL_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "files": {}}
 inter = P["inter"]
 for unit in ("person", "household"):
     for tag, waves in (("", CS),):
@@ -132,7 +199,7 @@ for canon, files in sorted(by_module.items()):
     if len(files) < 2: continue
     name = f"AHS_pooled_{canon}.dta"
     log.info("---------------- %s (%s)", name, list(files))
-    summary["files"][name] = pool(files, name, f"AHS pooled module '{canon}' (one row per {canon} record; see codebook)", canon, out_dir=APPENDED)
+    summary["files"][name] = pool(files, name, f"AHS pooled module '{canon}' (one row per record; sampled households plus large-scale-farmer supplement rows, sample = LSF -- filter on sample)", canon, out_dir=APPENDED)
 summary["module_map"] = MODULE_MAP
 
 save_json(summary, LOGS / "merge_alignment.json")
