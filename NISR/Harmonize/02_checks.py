@@ -1,13 +1,18 @@
 """
 02_checks.py -- NISR/Harmonize: independent verification of Harmonized/ -> logs/checks_report.txt
 
-  A. No data loss: every harmonised file has exactly the rows and all the native columns of its source.
-  B. Keys: h_hhkey unique per household within (survey, wave [, interview]); h_pkey unique per person.
-  C. Concepts recomputed independently from the native items (second route) and compared with h_*:
-     LFS status1 -> h_lfstatus (exact); Census 2012 rp2024 -> h_lfstatus; EICV4 lfs6 -> h_lfstatus;
-     h_sex == sex; relation: exactly one head per household in >= 99% of households.
-  D. Cross-dataset table (informational): weighted employment-to-population ratio of persons 16+ per
-     dataset and wave, with the definition code -- the numbers are NOT comparable across definitions.
+  A. Completeness and no data loss: every expected copy exists (declared disk skips excepted and listed), no stray
+     H_ file, every copy has exactly the rows and all the native columns of its CURRENT source.
+  B. Keys: h_hhkey unique per household file; h_pkey duplicates only where NISR ships duplicate person numbers
+     (enumerated exceptions); CFSVA woman / child keys link to the household file (2015 stand-alone files: blank).
+  C. Concepts recomputed independently from the native items (second route, written from the documented code
+     lists, not copied from 01_harmonize.py) and compared with h_*: LFS status1 -> h_lfstatus and h_employed
+     (on rows with an observed status); Census 2012 rp2024 + P23 -> h_lfstatus; Census 2002 p21; EICV1/2
+     econstatus; EICV3 work items incl. the VUP item; EICV4 lfs6; EICV education sentinel codes never tertiary;
+     h_sex == sex; one head per household; LFS 2024 relationship codes 10-14.
+  D. Cross-dataset table (informational): weighted employment-to-population ratio of persons 16+ per dataset and
+     wave with the definition code -- NOT comparable across definitions.
+Hard checks have a reference; rows without one are informational.
 """
 import json, sys
 import numpy as np, pandas as pd
@@ -20,72 +25,120 @@ def row(section, name, ours, ref, tol=0.0, fmt="{:,.0f}"):
     ok = None if ref is None else abs(float(ours) - float(ref)) <= tol * max(1.0, abs(float(ref)))
     fails += (ok is False)
     report.append(f"| {section} | {name} | {fmt.format(ours)} | {'' if ref is None else fmt.format(ref)} | {'PASS' if ok else ('n/a' if ok is None else '**FAIL**')} |")
+HDR = ["| section | statistic | harmonised | reference | result |", "|---|---|---:|---:|---|"]
 
-report += ["## A. No data loss (rows and native columns of the source file are all present)", "", "| section | statistic | harmonised | source | result |", "|---|---|---:|---:|---|"]
+# ---------------------------------------------------------------- A
+report += ["## A. Completeness and no data loss (rows and native columns of the CURRENT source file)", ""] + HDR
+declared = {f for f, i in summ["files"].items() if i.get("skipped") and "declared" in str(i.get("skipped"))}
+undeclared = {f for f, i in summ["files"].items() if i.get("skipped") and f not in declared}
+physical = {f.name for f in P_OUT.glob("H_*.dta")}
+row("A", "manifest entries skipped without a declared reason (must be 0)", len(undeclared), 0)
+row("A", "declared disk skips (EICV item modules; listed in the README; informational)", len(declared), None)
+row("A", "physical H_ files not in the manifest (stale copies; must be 0)", len(physical - set(summ["files"])), 0)
+row("A", "manifest files missing on disk (must be 0)", len({f for f in summ["files"] if f not in declared} - physical), 0)
+tested = 0
 for out, info in summ["files"].items():
     if info.get("skipped"): report.append(f"| A | {out} | skipped ({info['skipped']}) | | n/a |"); continue
     src = db_root() / info["source"]
-    ms, mo = read_meta(src), read_meta(P_OUT / out)
+    if not src.exists(): row("A", f"{out}: source file exists ({info['source']})", 0, 1); continue
+    ms, mo = read_meta(src), read_meta(P_OUT / out); tested += 1
     row("A", f"{out} rows", mo.number_rows, ms.number_rows)
     missing_cols = [c for c in ms.column_names if c not in mo.column_names]
     row("A", f"{out} native columns present", len(ms.column_names) - len(missing_cols), len(ms.column_names))
     if missing_cols: log.error("%s lost columns: %s", out, missing_cols[:10])
+row("A", "files tested against their source (must be > 0)", tested, tested if tested else 1)
 
-report += ["", "## B. Keys", "", "| section | statistic | harmonised | reference | result |", "|---|---|---:|---:|---|"]
-for out, info in summ["files"].items():
-    if info.get("skipped") or info.get("unit") not in ("person", "household", "woman", "child", "establishment"): continue
-    cols = [c for c in ("h_hhkey", "h_pkey", "hhid", "pid", "interview", "wave", "survey") if c in read_meta(P_OUT / out).column_names]
-    if "h_hhkey" not in cols: continue
-    df, _, _ = read_dta(P_OUT / out, usecols=cols)
-    hk = df.loc[df["h_hhkey"] != "", "h_hhkey"]
-    if info["unit"] == "household": row("B", f"{out}: h_hhkey unique (household file)", hk.nunique(), len(hk))
-    if "h_pkey" in df.columns and info["unit"] == "person":
-        pk = df.loc[df["h_pkey"] != "", "h_pkey"]; d = int(pk.duplicated().sum())
-        row("B", f"{out}: duplicate h_pkey (NISR's own duplicate person numbers, informational)", d, None)
-    del df
-
-report += ["", "## C. Concepts recomputed independently vs h_* (second route)", "", "| section | statistic | harmonised | independent | result |", "|---|---|---:|---:|---|"]
+# ---------------------------------------------------------------- B
+report += ["", "## B. Keys", ""] + HDR
+DUP_EXCEPTIONS = {"H_LFS_person.dta": 3}     # NISR's own duplicate person numbers (LFS 2020 round 1: 124302, 147508; 2022 round 2: 218810)
 def load(out, cols):
     m = read_meta(P_OUT / out); return read_dta(P_OUT / out, usecols=[c for c in cols if c in m.column_names])[0]
+hh_keys = {}
+ordered = sorted(summ["files"].items(), key=lambda kv: 0 if kv[1].get("unit") == "household" else 1)     # household files first: their keys feed the woman / child linkage rows
+for out, info in ordered:
+    if info.get("skipped") or info.get("unit") not in ("person", "household", "woman", "child", "establishment"): continue
+    m = read_meta(P_OUT / out)
+    if "h_hhkey" not in m.column_names: continue
+    df = load(out, ["h_hhkey", "h_pkey", "wave", "hhid"])
+    hk = df.loc[df["h_hhkey"] != "", "h_hhkey"]
+    row("B", f"{out}: rows with a household key (informational)", len(hk), None)
+    if info["unit"] == "household": row("B", f"{out}: h_hhkey unique (household file)", hk.nunique(), len(hk)); hh_keys[out] = set(hk)
+    if "h_pkey" in df.columns and info["unit"] == "person":
+        pk = df.loc[df["h_pkey"] != "", "h_pkey"]; d = int(pk.duplicated().sum())
+        row("B", f"{out}: duplicated non-blank h_pkey (allowed: {DUP_EXCEPTIONS.get(out, 0)} = NISR duplicate person numbers)", d, DUP_EXCEPTIONS.get(out, 0))
+    if info.get("dataset") == "CFSVA" and info["unit"] in ("woman", "child") and "H_CFSVA_household.dta" in hh_keys:
+        for w, g in df.groupby("wave"):
+            k = g.loc[g["h_hhkey"] != "", "h_hhkey"]
+            if w == "2015": row("B", f"{out} 2015: rows with a household key (stand-alone nutrition files: must be 0)", len(k), 0)
+            else: row("B", f"{out} {w}: household keys found in H_CFSVA_household (share x 1000; must be >= 900)", 1000 * k.isin(hh_keys["H_CFSVA_household.dta"]).mean() if len(k) else 0, 1000, 0.1)
+    del df
+
+# ---------------------------------------------------------------- C
+report += ["", "## C. Concepts recomputed independently vs h_* (second route)", "", "| section | statistic | harmonised | independent | result |", "|---|---|---:|---:|---|"]
+def eq(a, b): return int((a.astype("float") == b.astype("float")).sum())
 # LFS
 if "H_LFS_person.dta" in summ["files"] and not summ["files"]["H_LFS_person.dta"].get("skipped"):
-    d = load("H_LFS_person.dta", ["wave", "sex", "h_sex", "status1", "h_lfstatus", "h_employed", "a02", "h_relation", "h_hhkey", "wt", "age", "h_lfs_def"])
-    row("C", "LFS: h_sex == sex on every row", int((d["h_sex"].astype("float") == d["sex"].astype("float")).sum()), int(d["sex"].notna().sum()))
-    row("C", "LFS: h_lfstatus == status1 (all years)", int((d["h_lfstatus"].astype("float") == d["status1"].astype("float")).sum()), int(d["status1"].notna().sum()))
-    row("C", "LFS: h_employed == (status1 == 1)", int(((d["h_employed"] == 1) == (d["status1"] == 1)).sum()), len(d))
+    d = load("H_LFS_person.dta", ["wave", "sex", "h_sex", "status1", "h_lfstatus", "h_employed", "a02", "a02_v2", "h_relation", "h_hhkey", "wt", "age", "h_lfs_def"])
+    row("C", "LFS: h_sex == sex on every row", eq(d["h_sex"], d["sex"]), int(d["sex"].notna().sum()))
+    obs = d[d["status1"].notna()]
+    row("C", "LFS: h_lfstatus == status1 on rows with an observed status", eq(obs["h_lfstatus"], obs["status1"]), len(obs))
+    row("C", "LFS: h_employed == (status1 == 1) on rows with an observed status", int(((obs["h_employed"] == 1) == (obs["status1"] == 1)).sum()), len(obs))
+    row("C", "LFS: h_employed missing exactly where status1 is missing", int(d["h_employed"].isna().sum()), int(d["status1"].isna().sum()))
     heads = d[d["h_hhkey"] != ""].groupby("h_hhkey")["h_relation"].apply(lambda s: int((s == 1).sum()))
     row("C", "LFS: household-interviews with exactly one head (h_relation == 1), share x 1000", 1000 * heads.eq(1).mean(), 1000, 0.01)
+    for w in ("2024", "2025"):      # 14-code relationship list: 5-11 other relative, 12-14 non-relative (documented code list)
+        g = d[d["wave"] == w]; src = next((c for c in ("a02_v2", "a02") if c in g.columns and g[c].notna().any()), None)
+        if src is None: continue
+        ind = pd.to_numeric(g[src], errors="coerce").map({1: 1, 2: 2, 3: 3, 4: 3, **{k: 4 for k in range(5, 12)}, 12: 5, 13: 5, 14: 5})
+        row("C", f"LFS {w}: h_relation == independent recode of the 14-code list ({src})", eq(g["h_relation"], ind), int(ind.notna().sum()))
     del d
 # Census
 if "H_Census_person.dta" in summ["files"] and not summ["files"]["H_Census_person.dta"].get("skipped"):
-    d = load("H_Census_person.dta", ["wave", "sex", "h_sex", "rp2024", "h_lfstatus", "p02", "p02_v2", "h_relation", "h_hhkey", "collective", "p21_v2", "h_marital", "p26", "p29_v2", "p06", "age"])
-    row("C", "Census: h_sex == sex", int((d["h_sex"].astype("float") == d["sex"].astype("float")).sum()), int(d["sex"].notna().sum()))
-    c12 = d[d["wave"] == "2012"]; ind = c12["rp2024"].map({1: 1, 2: 2, 3: 2, 4: 3, 5: 3, 6: 3, 7: 3, 9: 3})
-    row("C", "Census 2012: h_lfstatus == independent recode of rp2024", int((c12["h_lfstatus"].astype("float") == ind.astype("float")).sum()), int(ind.notna().sum()))
-    c02 = d[d["wave"] == "2002"]; ind = c02["p21_v2"].map({1: 1, 2: 2, 3: 2, **{k: 3 for k in (4, 5, 6, 7, 8)}})
-    row("C", "Census 2002: h_lfstatus == independent recode of p21", int((c02["h_lfstatus"].astype("float") == ind.astype("float")).sum()), int(ind.notna().sum()))
+    d = load("H_Census_person.dta", ["wave", "sex", "h_sex", "rp2024", "p23", "h_lfstatus", "p02", "p02_v2", "h_relation", "h_hhkey", "collective", "p21_v2", "h_marital", "p26", "p29_v2", "p06", "age"])
+    row("C", "Census: h_sex == sex", eq(d["h_sex"], d["sex"]), int(d["sex"].notna().sum()))
+    c12 = d[d["wave"] == "2012"]; rp = pd.to_numeric(c12["rp2024"], errors="coerce"); av = pd.to_numeric(c12["p23"], errors="coerce")
+    ind = rp.map({1: 1, 2: 2, 3: 2, 4: 3, 5: 3, 6: 3, 7: 3}); ind = ind.where(rp != 9, np.where(av == 1, 2, np.where(av == 2, 3, np.nan)))
+    row("C", "Census 2012: h_lfstatus == independent recode of rp2024 + P23 (code 9 by availability)", eq(c12["h_lfstatus"], ind), int(pd.Series(ind).notna().sum()))
+    row("C", "Census 2012: code-9 persons available for work classified unemployed (6,471)", int(((rp == 9) & (av == 1) & (c12["h_lfstatus"] == 2)).sum()), 6_471)
+    c02 = d[d["wave"] == "2002"]; ind = pd.to_numeric(c02["p21_v2"], errors="coerce").map({1: 1, 2: 2, 3: 2, 8: 2, **{k: 3 for k in (4, 5, 6, 7)}})
+    row("C", "Census 2002: h_lfstatus == independent recode of p21 (8 jobless -> unemployed)", eq(c02["h_lfstatus"], ind), int(ind.notna().sum()))
     ordinary = d[(d["h_hhkey"] != "") & (d["collective"].fillna(0) == 0)]
     heads = ordinary.groupby("h_hhkey")["h_relation"].apply(lambda s: int((s == 1).sum()))
     row("C", "Census: private households with exactly one head, share x 1000", 1000 * heads.eq(1).mean(), 1000, 0.005)
     for w, src, mp in (("2022", "p06", {6: 1, 1: 2, 2: 2, 3: 2, 4: 3, 5: 3, 7: 4}), ("2012", "p29_v2", {1: 1, 2: 2, 3: 3, 5: 3, 4: 4})):
-        g = d[d["wave"] == w]; ind = g[src].map(mp)
-        row("C", f"Census {w}: h_marital == independent recode of {src}", int((g["h_marital"].astype("float") == ind.astype("float")).sum()), int(ind.notna().sum()))
+        g = d[d["wave"] == w]; ind = pd.to_numeric(g[src], errors="coerce").map(mp)
+        row("C", f"Census {w}: h_marital == independent recode of {src}", eq(g["h_marital"], ind), int(ind.notna().sum()))
     del d
 # EICV
 if "H_EICV_person.dta" in summ["files"] and not summ["files"]["H_EICV_person.dta"].get("skipped"):
-    m = read_meta(P_OUT / "H_EICV_person.dta"); lf = [c for c in m.column_names if c.startswith("lfs6")]
-    d = load("H_EICV_person.dta", ["wave", "sex", "h_sex", "h_lfstatus", "h_relation", "h_hhkey", "econstatus"] + lf)
-    row("C", "EICV: h_sex == sex", int((d["h_sex"].astype("float") == d["sex"].astype("float")).sum()), int(d["sex"].notna().sum()))
+    m = read_meta(P_OUT / "H_EICV_person.dta"); names = m.column_names
+    lf = [c for c in names if c.startswith("lfs6")]; work3 = [c for c in ("s6aq2_v3", "s6aq3_v4", "s6aq4", "s6aq5", "s6aq6_v3") if c in names]
+    edu = [c for c in names if c.startswith("s2aq3") or c.startswith("s2cq3") or c.startswith("s4aq2")]
+    d = load("H_EICV_person.dta", ["wave", "sex", "h_sex", "h_lfstatus", "h_relation", "h_hhkey", "econstatus", "h_educ", "age", "wt", "h_employed"] + lf + work3 + edu)
+    row("C", "EICV: h_sex == sex", eq(d["h_sex"], d["sex"]), int(d["sex"].notna().sum()))
     if lf:
         g = d[d["wave"] == "EICV4_CS"]; ind = pd.to_numeric(g[lf[0]], errors="coerce").map({1: 1, 2: 2, 3: 3})
-        row("C", "EICV4: h_lfstatus == independent recode of lfs6", int((g["h_lfstatus"].astype("float") == ind.astype("float")).sum()), int(ind.notna().sum()))
+        row("C", "EICV4: h_lfstatus == independent recode of lfs6", eq(g["h_lfstatus"], ind), int(ind.notna().sum()))
     if "econstatus" in d.columns:
         g = d[d["wave"].isin(["EICV1", "EICV2"])]; ind = pd.to_numeric(g["econstatus"], errors="coerce").map({1: 1, 2: 2, 3: 3, 5: 3})
-        row("C", "EICV1/2: h_lfstatus == independent recode of econstatus", int((g["h_lfstatus"].astype("float") == ind.astype("float")).sum()), int(ind.notna().sum()))
+        row("C", "EICV1/2: h_lfstatus == independent recode of econstatus", eq(g["h_lfstatus"], ind), int(ind.notna().sum()))
+    if len(work3) == 5:      # EICV3: any yes -> employed; all no (VUP item: 2 or 3 'VUP does not exist here') -> outside; else missing
+        g = d[d["wave"] == "EICV3"]; vals = {c: pd.to_numeric(g[c], errors="coerce") for c in work3}
+        anyw = pd.concat([v == 1 for v in vals.values()], axis=1).any(axis=1)
+        allno = pd.concat([(v == 2) | ((v == 3) if c == "s6aq6_v3" else False) for c, v in vals.items()], axis=1).all(axis=1)
+        ind = pd.Series(np.nan, index=g.index); ind[anyw] = 1; ind[~anyw & allno] = 3
+        row("C", "EICV3: h_lfstatus == independent recode of the five work items (VUP 3 = no)", eq(g["h_lfstatus"], ind), int(ind.notna().sum()))
+        row("C", "EICV3: nonworkers with VUP item = 3 left missing (must be 0)", int((~anyw & allno & (vals["s6aq6_v3"] == 3) & g["h_lfstatus"].isna()).sum()), 0)
+        a16 = g[(pd.to_numeric(g["age"], errors="coerce") >= 16) & g["h_employed"].notna()]; wt = a16["wt"].astype(float)
+        row("C", "EICV3: weighted employment / population ratio 16+ with a status (%; informational: was 95.1 before the fix)", 100 * (wt * (a16["h_employed"] == 1)).sum() / wt.sum(), None)
+    for c in edu:            # class codes 90 / 98 / 99 are sentinels (never finished first year, not known, none): never tertiary
+        v = pd.to_numeric(d[c], errors="coerce")
+        row("C", f"EICV: rows with h_educ = tertiary and {c} in (90, 98, 99) (must be 0)", int((v.isin([90, 98, 99]) & (d["h_educ"] == 3)).sum()), 0)
     heads = d[d["h_hhkey"] != ""].groupby("h_hhkey")["h_relation"].apply(lambda s: int((s == 1).sum()))
     row("C", "EICV: households with exactly one head, share x 1000", 1000 * heads.eq(1).mean(), 1000, 0.01)
     del d
 
+# ---------------------------------------------------------------- D
 report += ["", "## D. Weighted employment-to-population ratio, persons aged 16+ (informational: definitions differ, see h_lfs_def)", "",
            "| section | dataset / wave | h_lfs_def | employed 16+ / population 16+ with a status (%) | employed persons (weighted; LFS annual weights already average the rounds) | result |", "|---|---|---|---:|---:|---|"]
 for out in ("H_LFS_person.dta", "H_Census_person.dta", "H_EICV_person.dta", "H_AHS_person.dta"):

@@ -37,8 +37,8 @@ KEY_LABELS = {
     "pid": "Person number within the household", "sex": "Sex: 1 male, 2 female", "age": "Age in completed years",
     "wt": "Weight that sums to the population of the file's unit (person / household / establishment / plot)",
     "wt_hh": "Household weight (same value on every member)", "estid": "Establishment id (EC)",
-    "h_hhkey": "Harmonised household key: survey_wave[_interview]_hhid (string, unique across datasets)",
-    "h_pkey": "Harmonised person key: h_hhkey_pid (string)",
+    "h_hhkey": "Household key survey_wave[_interview]_hhid (string; blank where the public file has no household id)",
+    "h_pkey": "Person key h_hhkey_pid (string; blank where h_hhkey is blank; NISR's own duplicate person numbers repeat)",
 }
 geo = pd.read_csv(db_root() / "geodata-nisr" / "Village_Boundary_2022_924768113126413998.csv")
 SECT = geo.drop_duplicates("Sector ID")[["Province ID", "Province", "District ID", "District", "Sector ID", "Sector"]]
@@ -50,7 +50,7 @@ KEY_VALUES = {"prov": PROV_L, "dist": DIST_L, "sector": SECT_L, "urban": {1: "Ur
 H_LABELS = {
     "h_sex": "Sex (harmonised): 1 male, 2 female", "h_marital": "Marital status (harmonised, 4 groups)",
     "h_relation": "Relationship to household head (harmonised, 5 groups)", "h_attend": "Ever attended school (harmonised)",
-    "h_educ": "Highest level of education attended (harmonised, 4 levels)", "h_literacy": "Can read and write (harmonised)",
+    "h_educ": "Broad education level reported (harmonised 4 levels; source concept varies: attended / completed / attained, see map)", "h_literacy": "Can read and write (harmonised)",
     "h_lfstatus": "Labour-force status (harmonised codes; definition in h_lfs_def)", "h_employed": "Employed (harmonised; definition in h_lfs_def)",
     "h_lfs_def": "Definition and age base behind h_lfstatus / h_employed", "h_empstat": "Status in employment, main job (harmonised, 5 groups)",
     "h_isic1": "Industry of main job, ISIC Rev.4 section (harmonised 1-21)", "h_isic1_approx": "h_isic1 from an older/national classification (approximate)",
@@ -168,7 +168,7 @@ def concepts_census(df, dec, fname):
                 H.loc[m, "h_educ"] = e.values
             note_map(ds, [w], fname, "h_educ", f"{p17} (class code) + {p16}", "10-19 primary->1; 21-23 post-primary, 31-57 secondary (FP/FT/EG)->2; 61-69 university->3; never attended->0", LEVEL_EDU, "exact", "ages 6+; highest class successfully completed")
             apply_recode(df, m, C("p20"), "h_literacy", {1: [1], 0: [2, 3]}, ds, w, fname, LEVEL_EDU, "exact", "ages 6+; 'read only' -> 0")
-            apply_recode(df, m, C("p21"), "h_lfstatus", {1: [1], 2: [2, 3], 3: [4, 5, 6, 7, 8]}, ds, w, fname, LEVEL_LAB, "exact", "one-month reference period; ages 6+")
+            apply_recode(df, m, C("p21"), "h_lfstatus", {1: [1], 2: [2, 3, 8], 3: [4, 5, 6, 7]}, ds, w, fname, LEVEL_LAB, "exact", "one-month reference period; ages 6+; 8 'jobless / has no work' = without work -> unemployed (Harmonize audit 2026-09-05)")
             H.loc[m & H["h_lfstatus"].notna(), "h_lfs_def"] = 2
             apply_recode(df, m, C("p23"), "h_empstat", {1: [3, 4, 5], 2: [2], 3: [1], 4: [6], 5: [7]}, ds, w, fname, LEVEL_LAB, "exact", "economically active 6+")
             p24 = C("p24")
@@ -192,7 +192,12 @@ def concepts_census(df, dec, fname):
             if p16:
                 v = pd.to_numeric(df.loc[m, p16], errors="coerce").astype("float64"); H.loc[m, "h_literacy"] = v.map(lambda x: 0 if x == 0 else (1 if 1 <= x <= 15 else np.nan)).values
             note_map(ds, [w], fname, "h_literacy", p16 or "(none)", "P16 sum of languages read and written: 0->0, 1-15->1; 99/999 -> missing", LEVEL_EDU, "exact", "residents 3+")
-            apply_recode(df, m, C("rp2024"), "h_lfstatus", {1: [1], 2: [2, 3], 3: [4, 5, 6, 7, 9]}, ds, w, fname, LEVEL_LAB, "exact", "NISR rp2024; code 9 (not classified) -> outside the labour force")
+            apply_recode(df, m, C("rp2024"), "h_lfstatus", {1: [1], 2: [2, 3], 3: [4, 5, 6, 7]}, ds, w, fname, LEVEL_LAB, "exact", "NISR rp2024; code 9 (not classified residual) resolved by availability P23 below")
+            rp, p23 = C("rp2024"), C("p23")
+            if rp and p23:                     # residual code 9 (home workers / never worked / other, 86,066 persons): available for work -> unemployed under the relaxed definition, not available -> outside
+                nine = m & (pd.to_numeric(df[rp], errors="coerce").astype("float64") == 9); av = pd.to_numeric(df[p23], errors="coerce").astype("float64")
+                H.loc[nine & (av == 1), "h_lfstatus"] = 2; H.loc[nine & (av == 2), "h_lfstatus"] = 3
+                note_map(ds, [w], fname, "h_lfstatus", f"{rp} + {p23}", "rp2024 9 (not classified) & P23 available = 1 -> 2 (unemployed, relaxed); P23 = 2 -> 3; P23 missing -> missing", LEVEL_LAB, "exact", "Harmonize audit 2026-09-05: 6,471 of the 86,066 code-9 persons are available for work")
             H.loc[m & H["h_lfstatus"].notna(), "h_lfs_def"] = 3
             apply_recode(df, m, C("p26"), "h_empstat", {1: [1], 2: [2], 3: [3], 4: [4], 5: [5, 6]}, ds, w, fname, LEVEL_LAB, "exact", "9/99 -> missing")
             apply_recode(df, m, C("rp27"), "h_isic1", {k: [k] for k in range(1, 22)}, ds, w, fname, LEVEL_LAB, "exact", "NISR rp27 sections; 22/23 -> missing")
@@ -239,7 +244,10 @@ def concepts_eicv(df, dec, fname):
         if c:
             v = pd.to_numeric(df.loc[m, c], errors="coerce").astype("float64")
             if base == "EICV7": e[v.isin([1, 2])] = 0; e[v == 3] = 1; e[v.isin([4, 5, 6])] = 2; e[v == 7] = 3
-            else: e[v == 1] = 0; e[(v >= 10) & (v <= 19)] = 1; e[(v >= 20) & (v <= 39)] = 2; e[v >= 40] = 3
+            else:
+                e[v == 1] = 0; e[(v >= 10) & (v <= 19)] = 1; e[(v >= 20) & (v <= 39)] = 2; e[(v >= 40) & (v <= 49)] = 3     # 40-47 university years (40 = bac1 not completed)
+                if base == "EICV1": e[v == 99] = 0                                                                      # EICV1 99 'None'
+                # 90 'never finished first year', 98 'not known' / 'don't know' (EICV1, EICV3) stay missing (Harmonize audit 2026-09-05)
         if d:
             dv = pd.to_numeric(df.loc[m, d], errors="coerce").astype("float64")
             tert = dv.between(6, 10) if base != "EICV7" else dv.between(11, 15)
@@ -248,7 +256,7 @@ def concepts_eicv(df, dec, fname):
         if a: e[no(df.loc[m, a])] = 0
         H.loc[m, "h_educ"] = e.values
         rule = ("s4aq2 1,2->0; 3->1; 4,5,6->2; 7->3; diploma 11-15->3" if base == "EICV7" else
-                f"{cls} class code: 1 pre-primary->0; 10-19 primary->1; 20-39 post-primary/vocational/secondary->2; 40+ university->3; diploma {dip} 6-10 (bachelor..doctorate)->3")
+                f"{cls} class code: 1 pre-primary->0; 10-19 primary->1; 20-39 post-primary/vocational/secondary->2; 40-49 university->3 (90 never finished first year, 98 not known -> missing; EICV1 99 none -> 0); diploma {dip} 6-10 (bachelor..doctorate)->3")
         note_map(ds, [w], fname, "h_educ", f"{c} + {d} + {a}", rule + "; never attended->0", LEVEL_EDU, "exact", "")
         rd, wr = {"EICV1": ("s2cq1", "s2cq3"), "EICV2": ("s2cq1", "s2cq3"), "EICV3": ("s2dq1", "s2dq3"), "EICV4": ("s4bq3", "s4bq4"),
                   "EICV5": ("s4bq4", "s4bq5"), "EICV7": ("s4bq4", "s4bq6")}[base]
@@ -273,7 +281,8 @@ def concepts_eicv(df, dec, fname):
             reason = C({"EICV3": "s6aq7", "EICV5": "s6aq9", "EICV7": "s6aq10"}[base])
             if cols:
                 anyw = pd.concat([yes(df.loc[m, x]) for x in cols], axis=1).any(axis=1)
-                allno = pd.concat([no(df.loc[m, x]) for x in cols], axis=1).all(axis=1)
+                vup = C("s6aq6") if base == "EICV3" else None      # EICV3 s6aq6 (VUP works): code 3 'VUP does not exist here' is a no (Harmonize audit 2026-09-05: 17,006 nonworkers were left missing)
+                allno = pd.concat([no(df.loc[m, x]) | ((pd.to_numeric(df.loc[m, x], errors="coerce").astype("float64") == 3) if x == vup else False) for x in cols], axis=1).all(axis=1)
                 st = pd.Series(np.nan, index=df.index[m]); st[anyw] = 1
                 if base == "EICV5" and reason:
                     rv = pd.to_numeric(df.loc[m, reason], errors="coerce").astype("float64"); st[~anyw & (rv == 1)] = 2; st[~anyw & rv.between(2, 7)] = 3
@@ -281,7 +290,7 @@ def concepts_eicv(df, dec, fname):
                     st[~anyw & allno] = 3
                 H.loc[m, "h_lfstatus"] = st.values; H.loc[m & H["h_lfstatus"].notna(), "h_lfs_def"] = 5 if base != "EICV7" else 7
             note_map(ds, [w], fname, "h_lfstatus", " | ".join(cols) + (f" | {reason}" if reason else ""),
-                     "any work item = yes -> 1 (employed); " + ("EICV5: reason s6aq9 = 1 unemployed/seeking -> 2, 2-7 -> 3" if base == "EICV5" else "all work items = no -> 3 (no unemployment item)"),
+                     "any work item = yes -> 1 (employed); " + ("EICV5: reason s6aq9 = 1 unemployed/seeking -> 2, 2-7 -> 3" if base == "EICV5" else "all work items = no -> 3 (no unemployment item)" + ("; s6aq6 3 'VUP does not exist here' counts as no" if base == "EICV3" else "")),
                      LEVEL_LAB, "approximate", "12-month reference (EICV3/5) / 7-day reference (EICV7)")
         # status in employment
         if base == "EICV1": apply_recode(df, m, C("s4bq14"), "h_empstat", {1: [1], 2: [2], 3: [3], 4: [4], 5: [5]}, ds, w, fname, LEVEL_LAB, "exact", "main job work status; 6 no work / 7 not known -> missing")
@@ -418,6 +427,25 @@ def unit_of(tag, fname, align):
     if "files" in align and fname in align["files"]: return align["files"][fname].get("unit", "")
     return "person" if "person" in fname else "household" if "household" in fname else "establishment" if tag == "EC" else ""
 
+# Declared limitation (disk): these EICV item modules (about 10.5 GB of sources) are NOT copied while the Mac has no room for them.
+# Any OTHER file that the space rule would skip aborts the run BEFORE anything is written (Harmonize audit 2026-09-05).
+KNOWN_SKIPS = {"H_EICV_durables.dta", "H_EICV_expenditure_annual.dta", "H_EICV_expenditure_frequent.dta", "H_EICV_expenditure_monthly.dta", "H_EICV_food.dta", "H_EICV_own_consumption.dta"}
+def preflight():
+    free = shutil.disk_usage(P_OUT).free / 1e9; would_skip = []
+    for tag in DATASETS:
+        if ONLY and tag not in ONLY: continue
+        P = ds_paths(tag)
+        for folder in [P["final"]] + ([P["appended"]] if P["appended"].exists() else []):
+            for f in sorted(folder.glob("*.dta")):
+                out = P_OUT / out_name(tag, f.name); size = os.path.getsize(f) / 1e9; old = os.path.getsize(out) / 1e9 if out.exists() else 0.0
+                if free + old - size * 1.3 < MIN_FREE_GB: would_skip.append(out.name); continue
+                free += old - size * 1.05                    # a copy is about the source size
+    bad = [f for f in would_skip if f not in KNOWN_SKIPS]
+    if bad: sys.exit(f"preflight: {len(bad)} file(s) beyond the declared skips would not fit on disk ({shutil.disk_usage(P_OUT).free / 1e9:.1f} GB free, MIN_FREE_GB={MIN_FREE_GB}): {bad[:8]} -- free space first, nothing written")
+    if would_skip: log.warning("preflight: %d declared skips (disk): %s", len(would_skip), sorted(would_skip))
+    return set(would_skip)
+PLANNED_SKIPS = preflight()
+
 summary = {"stamp": STAMP, "files": {}}
 if ONLY and (LOGS / "harmonize_summary.json").exists():       # partial run: keep what was built for the other datasets
     import json
@@ -434,14 +462,18 @@ for tag in DATASETS:
         free_gb = shutil.disk_usage(P_OUT).free / 1e9; size_gb = os.path.getsize(f) / 1e9
         old_gb = os.path.getsize(out) / 1e9 if out.exists() else 0.0          # a rebuild replaces the previous copy: its space comes back
         if free_gb + old_gb - size_gb * 1.3 < MIN_FREE_GB:
-            log.warning("SKIPPED %s: %.1f GB file, only %.1f GB free (MIN_FREE_GB=%s) -- rerun when space is available", fname, size_gb, free_gb, MIN_FREE_GB)
-            summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "skipped": "disk space"}; continue
+            if out.name not in KNOWN_SKIPS: sys.exit(f"{fname}: would be skipped for disk space but is not a declared limitation -- aborting (free {free_gb:.1f} GB)")
+            log.warning("SKIPPED %s: %.1f GB file, only %.1f GB free (MIN_FREE_GB=%s) -- declared limitation, rerun when space is available", fname, size_gb, free_gb, MIN_FREE_GB)
+            if out.exists(): out.unlink(); log.warning("   stale previous copy %s removed (a skipped file must not linger as an old version)", out.name)
+            summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "skipped": "disk space (declared limitation: see README)"}; continue
         if out.exists(): out.unlink(); log.info("   previous %s removed before the rebuild (%.2f GB)", out.name, old_gb)
         log.info("---------------- %s / %s (%s, %.2f GB) -> %s", tag, fname, unit or "module", size_gb, out.name)
         df, vl, vv = read_dta_typed(f, log); n_in = len(df)
         # 1. common key labels and value labels; sex/age plain copies where present
         for c, t in KEY_LABELS.items():
+            if c == "wt" and unit not in ("person", "household", "establishment", "plotcrop", "plotcrop_early"): continue   # module / item files: the weight repeats a parent weight -- keep the source label
             if c in df.columns: vl[c] = t
+        if "wt" in df.columns and unit not in ("person", "household", "establishment", "plotcrop", "plotcrop_early"): vl["wt"] = (vl.get("wt") or "Weight") + " [repeats the parent household / plot weight on every record: not a record-level expansion weight]"
         for c, d in KEY_VALUES.items():
             if c in df.columns and pd.api.types.is_numeric_dtype(df[c]): vv[c] = d
         # 2. cross-dataset keys
@@ -451,11 +483,14 @@ for tag in DATASETS:
             return s_.astype(object).where(s_.notna(), "").astype(str).str.strip()
         if "hhid" in df.columns:
             hh_ok = df["hhid"].notna() & (df["hhid"].astype(str).str.strip() != "")
+            if pd.api.types.is_numeric_dtype(df["hhid"]): hh_ok &= df["hhid"].astype("float64") > 0      # 0 / negative ids are sentinels (CFSVA 2012 child: 282 rows), never a household
             key = df["survey"].astype(str) + "_" + df["wave"].astype(str) + ("_" + id_text("interview") if "interview" in df.columns else "") + "_" + id_text("hhid")
-            key = key.where(hh_ok, ""); df["h_hhkey"] = key
+            key = key.where(hh_ok, ""); df["h_hhkey"] = key; vl["h_hhkey"] = KEY_LABELS["h_hhkey"]
+            note_map(tag, sorted(df["wave"].unique()), fname, "h_hhkey", "survey + wave" + (" + interview" if "interview" in df.columns else "") + " + hhid", "string concatenation; blank where hhid is missing or <= 0", "all files", "exact", f"{int((key == '').sum()):,} blank of {len(key):,} rows")
             if "pid" in df.columns:
                 p_ok = df["pid"].notna() & (df["pid"].astype(str).str.strip() != "")
-                df["h_pkey"] = (key + "_" + id_text("pid")).where(p_ok & (key != ""), "")
+                df["h_pkey"] = (key + "_" + id_text("pid")).where(p_ok & (key != ""), ""); vl["h_pkey"] = KEY_LABELS["h_pkey"]
+                note_map(tag, sorted(df["wave"].unique()), fname, "h_pkey", "h_hhkey + pid", "string concatenation; blank where h_hhkey is blank or pid missing", "all person files", "exact", f"{int((df['h_pkey'] == '').sum()):,} blank; {int(df.loc[df['h_pkey'] != '', 'h_pkey'].duplicated().sum()):,} duplicated (NISR duplicate person numbers)")
         # 3. concepts
         fn = CONCEPTS.get((tag, unit)) or (CONCEPTS.get((tag, "person")) if (tag == "EICV" and fname == "EICV_pooled_person_vup.dta") else None)
         H = pd.DataFrame(index=df.index)             # the h_* columns are built apart from the wide native frame (memory), joined once at the end
@@ -467,6 +502,10 @@ for tag in DATASETS:
                 note_map(tag, sorted(df["wave"].unique()), fname, "h_sex", "sex", "1->1; 2->2", LEVEL_ALL, "exact", "")
                 fn(df, dec, fname)
                 H["h_employed"] = H["h_lfstatus"].map({1: 1, 2: 0, 3: 0})
+                note_map(tag, sorted(df["wave"].unique()), fname, "h_employed", "h_lfstatus", "1 -> 1; 2, 3 -> 0; missing -> missing", LEVEL_LAB, "exact", "definition in h_lfs_def")
+                note_map(tag, sorted(df["wave"].unique()), fname, "h_lfs_def", "(constant per dataset x wave)", "code list in H_VALUES / codebook code_lists", LEVEL_LAB, "exact", "set wherever h_lfstatus is set")
+                note_map(tag, sorted(df["wave"].unique()), fname, "h_isic1_approx", "h_isic1 source", "1 where h_isic1 comes from a crosswalk (ISIC Rev.3 divisions, EICV1/2 national groups), 0 for native ISIC Rev.4 sections", LEVEL_LAB, "exact", "")
+                note_map(tag, sorted(df["wave"].unique()), fname, "h_isco1_approx", "h_isco1 source", "1 where h_isco1 comes from a crosswalk (ISCO-88, EICV1/2 national groups), 0 for native ISCO-08 major groups", LEVEL_LAB, "exact", "")
                 for h in PERSON_H: vl[h] = H_LABELS[h]; vv[h] = H_VALUES.get(h, {})
                 H = downcast_new(H, PERSON_H)
                 for h in ("h_marital", "h_relation", "h_educ", "h_literacy", "h_lfstatus", "h_empstat", "h_isic1", "h_isco1"):
