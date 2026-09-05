@@ -59,9 +59,8 @@ representative. Modules with the same questionnaire block in two or more waves a
 under a canonical name (`MODULE_MAP` in `02_merge.py`: jobs, enterprise, livestock, parcels,
 crop_large/small, expenditure_*, food, transfers_in/out, credits, durables, savings, …);
 modules without a counterpart stay per-wave. **Item-level consumption and asset modules** (food,
-expenditure_annual/monthly/frequent, own_consumption, durables) are cleaned per wave but **not pooled**:
-their pooled files run to several GB each (food: 10.8m rows × 168 columns, 5.8 GB) and filled the
-disk; `POOL_ITEM_MODULES` in `02_merge.py` switches any of them on. NISR's linking files (EICV3–4 panel,
+expenditure_annual/monthly/frequent, own_consumption, durables) are pooled as well since the disk was freed (the food module alone is 10.8m rows × 168 columns,
+5.8 GB; `POOL_ITEM_MODULES` in `02_merge.py` can switch any of them off again). NISR's linking files (EICV3–4 panel,
 EICV5 VUP panel) are written to `3_Final/` with harmonised keys.
 
 **Labour is not harmonised** (as in the archived pipeline): activity, industry and

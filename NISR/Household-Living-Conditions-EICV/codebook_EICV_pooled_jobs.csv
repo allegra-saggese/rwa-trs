@@ -1,7 +1,7 @@
 variable,label,type,value_labels,n_value_labels,n_EICV2,n_EICV3,n_EICV4_CS,n_EICV5_CS,n_EICV5_VUP,source,versions,label_variants,value_label_conflicts
 survey,Source survey,string,,0,23213,61405,59616,89373,9180,,,,
 year,Survey year (mid-fieldwork),int16,,0,23213,61405,59616,89373,9180,,,,
-wave,Wave / round id,string,,0,242787,242787,242787,242787,242787,,,,
+wave,Wave / round id,string,,0,0,0,0,0,0,,,,
 sample,"CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",string,,0,23213,61405,59616,89373,9180,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,23213,61405,59526,89373,9180,,,,
 dist,"District (11-57, NISR current codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara …",30,23213,61405,59526,89373,9180,,,,

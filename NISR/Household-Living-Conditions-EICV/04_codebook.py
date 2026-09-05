@@ -13,10 +13,22 @@ log = get_logger("04_codebook"); P = paths()
 align = json.load(open(LOGS / "merge_alignment.json"))
 metas = {f.stem.replace("clean_", "").replace("_meta", ""): json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}
 
+def chunked_counts(path, key, chunk=250_000):
+    """non-missing counts per column by `key` (wave/year), reading the file in row chunks so
+    multi-GB pooled files never sit in memory whole; returns (counts DataFrame, ordered key values, n rows)."""
+    m = read_meta(path); counts, order = None, []
+    for off in range(0, m.number_rows, chunk):
+        part, _, _ = read_dta(path, row_offset=off, row_limit=chunk)
+        if key not in part.columns: part[key] = "all"
+        c = part.groupby(key, sort=False).count()
+        counts = c if counts is None else counts.add(c, fill_value=0)
+        order += [k for k in part[key].unique().tolist() if k not in order]
+    return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
+
+
 def codebook(fname, info):
-    df, vl, vv = read_dta(P["final"] / fname); m = read_meta(P["final"] / fname); types = m.readstat_variable_types
-    waves = list(dict.fromkeys(df["wave"].tolist())) if "wave" in df else ["all"]
-    nn = df.groupby("wave").count() if "wave" in df else None
+    df, vl, vv = read_dta(P["final"] / fname, row_limit=1); m = read_meta(P["final"] / fname); types = m.readstat_variable_types
+    nn, waves, nrows = chunked_counts(P["final"] / fname, "wave")     # chunked: pooled files can be several GB
     decisions = info.get("decisions", {}); rows = []
     unit = info.get("unit", "")
     for c in df.columns:
@@ -29,10 +41,10 @@ def codebook(fname, info):
         vlab = vv.get(c, {}); vtxt = ", ".join(f"{k}={v}" for k, v in list(vlab.items())[:5]) + (" …" if len(vlab) > 5 else "")
         conf = info.get("value_label_conflicts", {}).get(c)
         rows.append({"variable": c, "label": vl.get(c) or "", "type": types.get(c, ""), "value_labels": vtxt, "n_value_labels": len(vlab),
-                     **{f"n_{w}": int(nn.loc[w, c]) if nn is not None and w in nn.index and c in nn.columns else len(df) for w in waves},
+                     **{f"n_{w}": int(nn.loc[w, c]) if w in nn.index and c in nn.columns else 0 for w in waves},
                      "source": src, "versions": others, "label_variants": variants, "value_label_conflicts": json.dumps(conf) if conf else ""})
     cb = pd.DataFrame(rows); cb.to_csv(HERE / f"codebook_{fname[:-4]}.csv", index=False)
-    md = [f"## `{fname}` — one row per {unit}", "", f"{len(df):,} rows × {df.shape[1]} variables. Waves: {', '.join(waves)}.", "",
+    md = [f"## `{fname}` — one row per {unit}", "", f"{nrows:,} rows × {df.shape[1]} variables. Waves: {', '.join(map(str, waves))}.", "",
           "| variable | label | type | value labels | " + " | ".join(f"N {w}" for w in waves) + " | notes |", "|---|---|---|---|" + "---:|" * len(waves) + "---|"]
     for r in rows:
         notes = [x for x in (("source: " + r["source"]) if r["source"] else "", ("other versions: " + r["versions"]) if r["versions"] else "",

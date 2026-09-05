@@ -1,0 +1,3 @@
+23:06:22 04_codebook INFO ==== 04_codebook | run 20260904-230622_04_codebook | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+23:13:27 04_codebook INFO wrote CODEBOOK.md and codebook_*.csv for 33 files
+23:13:27 04_codebook INFO README.txt updated (/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Household-Living-Conditions-EICV/README.txt)

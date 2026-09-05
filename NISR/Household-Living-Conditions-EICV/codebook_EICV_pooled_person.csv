@@ -1,7 +1,7 @@
 variable,label,type,value_labels,n_value_labels,n_EICV1,n_EICV2,n_EICV3,n_EICV4_CS,n_EICV5_CS,n_EICV7_CS,source,versions,label_variants,value_label_conflicts
 survey,Source survey,string,,0,32153,34785,68398,66081,64314,62110,,,,
 year,Survey year (mid-fieldwork),int16,,0,32153,34785,68398,66081,64314,62110,,,,
-wave,Wave / round id,string,,0,327841,327841,327841,327841,327841,327841,,,,
+wave,Wave / round id,string,,0,0,0,0,0,0,0,,,,
 sample,"CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",string,,0,32153,34785,68398,66081,64314,62110,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,32153,34785,68398,66081,64314,62110,"EICV1: household key table (['s6_housing', 's0_id', 'eicv1_remap_weights']); EICV2: id1_n; EICV3: province; EICV4_CS: province; EICV5_CS: province; EICV7_CS: province",,,
 dist,"District (11-57, NISR current codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara …",30,32153,34785,68398,66081,64314,62110,"EICV1: household key table (['s6_housing', 's0_id', 'eicv1_remap_weights']); EICV2: id2_n; EICV3: district; EICV4_CS: district; EICV5_CS: district; EICV7_CS: district",,,

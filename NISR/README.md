@@ -17,10 +17,11 @@ folder, whose root is resolved from the login user (or `NISR_DB_ROOT`).
 | `Food-Security-CFSVAN/` | CFSVA 2006–2024 (NISR/WFP) | household; woman; child; village |
 
 All seven were built and verified on 2026-09-04 (see each folder's `logs/checks_report.md`).
-Item-level EICV consumption/asset modules (food, expenditure, own consumption, durables) are
-cleaned per wave but not pooled — the pooled files run to several GB each (`POOL_ITEM_MODULES`
-in `02_merge.py` switches them on). Total footprint of `2_Intermediate/` + `3_Final/` across
-the seven datasets is roughly 20 GB.
+`3_Final/` holds one appended-across-waves file per unit of observation and per module; nothing
+is merged across units or aggregated — household summaries are a `groupby` on the module files,
+whose rows all carry the key block. The EICV item-level consumption modules are large (the food
+module is 10.8m rows, 5.8 GB); `POOL_ITEM_MODULES` in its `02_merge.py` can switch them off.
+Total footprint of `2_Intermediate/` + `3_Final/` across the seven datasets is roughly 30 GB.
 
 ## Layout of every dataset folder
 

@@ -139,7 +139,7 @@ for unit in ("person", "household"):
 # multi-GB files (the food module alone reaches 10.8m rows x 168 vars = 5.8 GB); they are cleaned per
 # wave in 2_Intermediate/ and left out of the pooled set. Add a name to POOL_ITEM_MODULES to pool it.
 ITEM_MODULES = {"food", "expenditure_annual", "expenditure_monthly", "expenditure_frequent", "own_consumption", "durables"}
-POOL_ITEM_MODULES = set()
+POOL_ITEM_MODULES = set(ITEM_MODULES)      # 2026-09-04: pooled on Matteo's request (disk freed)
 by_module = {}
 for w, mp in MODULE_MAP.items():
     for stem, canon in mp.items():

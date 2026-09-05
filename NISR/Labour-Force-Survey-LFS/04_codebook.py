@@ -14,12 +14,24 @@ P = paths()
 align = json.load(open(LOGS / "merge_alignment.json"))
 srcs = {y: json.load(open(LOGS / f"clean_{y}_meta.json"))["source"] for y in range(2017, 2026)}
 
+def chunked_counts(path, key, chunk=250_000):
+    """non-missing counts per column by `key` (wave/year), reading the file in row chunks so
+    multi-GB pooled files never sit in memory whole; returns (counts DataFrame, ordered key values, n rows)."""
+    m = read_meta(path); counts, order = None, []
+    for off in range(0, m.number_rows, chunk):
+        part, _, _ = read_dta(path, row_offset=off, row_limit=chunk)
+        if key not in part.columns: part[key] = "all"
+        c = part.groupby(key, sort=False).count()
+        counts = c if counts is None else counts.add(c, fill_value=0)
+        order += [k for k in part[key].unique().tolist() if k not in order]
+    return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
+
+
 def codebook(fname, unit):
-    df, vl, vv = read_dta(P["final"] / fname)
+    df, vl, vv = read_dta(P["final"] / fname, row_limit=1)          # one row: columns and dtypes only
     m = read_meta(P["final"] / fname)
     types = m.readstat_variable_types
-    years = sorted(df["year"].unique())
-    nn = df.groupby("year").count()
+    nn, years, nrows = chunked_counts(P["final"] / fname, "year")
     rows = []
     for c in df.columns:
         base = c.rsplit("_v", 1)[0] if ("_v" in c and c.rsplit("_v", 1)[-1].isdigit()) else c
@@ -35,14 +47,14 @@ def codebook(fname, unit):
         conf = align["value_label_conflicts"].get(c)
         rows.append({"variable": c, "label": vl.get(c) or "", "type": types.get(c, str(df[c].dtype)),
                      "value_labels": vtxt, "n_value_labels": len(vlab),
-                     **{f"n_{y}": int(nn.loc[y, c]) if c in nn.columns else int((df.year == y).sum()) for y in years},
+                     **{f"n_{y}": int(nn.loc[y, c]) if c in nn.columns else 0 for y in years},
                      "source_by_year": src, "version_years": ",".join(map(str, ys_here)) if len(vers) > 1 else "",
                      "other_versions": other_versions,
                      "label_variants": variants, "value_label_conflicts": json.dumps(conf) if conf else ""})
     cb = pd.DataFrame(rows)
     cb.to_csv(HERE / f"codebook_{unit}.csv", index=False)
     md = [f"## `{fname}` — one row per {unit}-interview", "",
-          f"{len(df):,} rows × {df.shape[1]} variables. Years: {', '.join(map(str, years))}.", "",
+          f"{nrows:,} rows × {df.shape[1]} variables. Years: {', '.join(map(str, years))}.", "",
           "| variable | label | type | value labels | " + " | ".join(f"N {y}" for y in years) + " | notes |",
           "|---|---|---|---|" + "---:|" * len(years) + "---|"]
     for r in rows:
