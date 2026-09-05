@@ -7,211 +7,246 @@
    "level": "household",
    "rows": 14580,
    "vars": 104,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": ""
   },
   "s10a1_credits": {
    "level": "household",
    "rows": 14580,
    "vars": 17,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (credit, durables, savings)"
   },
   "s10a2_listing_of_credits": {
    "level": "multi",
    "rows": 15800,
    "vars": 24,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (credit, durables, savings)"
   },
   "s10b1_durable_household_goods": {
    "level": "multi",
    "rows": 73551,
    "vars": 18,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (credit, durables, savings)"
   },
   "s10b2_durable_household_goods": {
    "level": "multi",
    "rows": 364350,
    "vars": 27,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (credit, durables, savings)"
   },
   "s10c1_savings": {
    "level": "multi",
    "rows": 38142,
    "vars": 21,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (credit, durables, savings)"
   },
   "s10c2_tontine": {
    "level": "multi",
    "rows": 42252,
    "vars": 18,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (credit, durables, savings)"
   },
   "s1_s2_s3_s4_s6a_s6e_person": {
    "level": "person",
    "rows": 64314,
    "vars": 120,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "all household members (roster; marital status 12+)"
   },
   "s5f_access_to_services": {
    "level": "multi",
    "rows": 218700,
    "vars": 24,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (housing, services)"
   },
   "s6b_employement_6c_salaried_s6d_business": {
    "level": "multi",
    "rows": 89373,
    "vars": 57,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)"
   },
   "s7a1_livestock": {
    "level": "multi",
    "rows": 89633,
    "vars": 29,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7a2_livestock": {
    "level": "household",
    "rows": 8963,
    "vars": 24,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7a3_livestock": {
    "level": "multi",
    "rows": 80658,
    "vars": 22,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7a4_livestock": {
    "level": "multi",
    "rows": 98582,
    "vars": 20,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7b1_land_agriculture": {
    "level": "household",
    "rows": 14579,
    "vars": 26,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7b2_land_agriculture": {
    "level": "multi",
    "rows": 233046,
    "vars": 23,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7c_parcels": {
    "level": "multi",
    "rows": 42837,
    "vars": 34,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7d_large_crop": {
    "level": "multi",
    "rows": 38326,
    "vars": 20,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7e_small_crop": {
    "level": "multi",
    "rows": 118099,
    "vars": 26,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7f_income_agriculture": {
    "level": "multi",
    "rows": 174936,
    "vars": 18,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7g_expenditure_agriculture": {
    "level": "multi",
    "rows": 233232,
    "vars": 17,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s7h_transformation_agriculture": {
    "level": "multi",
    "rows": 45266,
    "vars": 28,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household / farm (agriculture, livestock)"
   },
   "s8a1_expenditure": {
    "level": "multi",
    "rows": 1006020,
    "vars": 19,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (expenditure and own consumption)"
   },
   "s8a2_expenditure": {
    "level": "multi",
    "rows": 801900,
    "vars": 19,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (expenditure and own consumption)"
   },
   "s8a3_expenditure": {
    "level": "multi",
    "rows": 539460,
    "vars": 29,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (expenditure and own consumption)"
   },
   "s8b_expenditure": {
    "level": "multi",
    "rows": 2187000,
    "vars": 29,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (expenditure and own consumption)"
   },
   "s8c_farming": {
    "level": "multi",
    "rows": 1472580,
    "vars": 30,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (expenditure and own consumption)"
   },
   "s9a_transfers_out": {
    "level": "multi",
    "rows": 85640,
    "vars": 27,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "s9b_transfers_in": {
    "level": "multi",
    "rows": 89487,
    "vars": 27,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "s9c3_vup_ubudehe_and_rssp_schemes": {
    "level": "multi",
    "rows": 294,
    "vars": 57,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "s9c4_vup_ubudehe_and_rssp_schemes": {
    "level": "multi",
    "rows": 137,
    "vars": 47,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "s9c_vup_ubudehe_and_rssp_schemes": {
    "level": "household",
    "rows": 14572,
    "vars": 54,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "s9d_other_income": {
    "level": "multi",
    "rows": 306060,
    "vars": 18,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "s9e_other_expenditure": {
    "level": "multi",
    "rows": 189468,
    "vars": 16,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": "household (transfers, VUP, other income)"
   },
   "eicv5_poverty_file": {
    "level": "household",
    "rows": 14580,
    "vars": 42,
-   "hh_match_rate": 1.0
+   "hh_match_rate": 1.0,
+   "universe": ""
   }
  },
  "person": {
@@ -1200,6 +1235,109 @@
    "base module": "s1_s2_s3_s4_s6a_s6e_person",
    "sex": "s1q1",
    "age": "s1q3y"
+  },
+  "universe": {
+   "s1q2": "all household members (roster; marital status 12+)",
+   "s1q3m": "all household members (roster; marital status 12+)",
+   "s1q4": "all household members (roster; marital status 12+)",
+   "s1q5": "all household members (roster; marital status 12+)",
+   "s1q6": "all household members (roster; marital status 12+)",
+   "s1q7": "all household members (roster; marital status 12+)",
+   "s1q8": "all household members (roster; marital status 12+)",
+   "s1q9": "all household members (roster; marital status 12+)",
+   "s1q10": "all household members (roster; marital status 12+)",
+   "s1q11": "all household members (roster; marital status 12+)",
+   "s1q12": "all household members (roster; marital status 12+)",
+   "s1q13": "all household members (roster; marital status 12+)",
+   "s1q14": "all household members (roster; marital status 12+)",
+   "s1q15": "all household members (roster; marital status 12+)",
+   "s1q16": "all household members (roster; marital status 12+)",
+   "s2q1": "all household members (migration)",
+   "s2q2": "all household members (migration)",
+   "s2q3y": "all household members (migration)",
+   "s2q3m": "all household members (migration)",
+   "s2q4": "all household members (migration)",
+   "s2q5": "all household members (migration)",
+   "s2q6": "all household members (migration)",
+   "s2q7": "all household members (migration)",
+   "s2q8": "all household members (migration)",
+   "s3q1": "all household members (health; disability items 5+)",
+   "s3q2": "all household members (health; disability items 5+)",
+   "s3q3": "all household members (health; disability items 5+)",
+   "s3q4": "all household members (health; disability items 5+)",
+   "s3q5": "all household members (health; disability items 5+)",
+   "s3q6": "all household members (health; disability items 5+)",
+   "s3q7": "all household members (health; disability items 5+)",
+   "s3q8": "all household members (health; disability items 5+)",
+   "s3q9": "all household members (health; disability items 5+)",
+   "s3q10": "all household members (health; disability items 5+)",
+   "s3q11": "all household members (health; disability items 5+)",
+   "s4aq1": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq2": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq3": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq4b": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq5": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq6a": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq6b": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq6c": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq7": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq8": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq9": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq10": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11a": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11b": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11c": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11d": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11e": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11f": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11g": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq11h": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq12": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq13": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq14": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq15": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq16": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4aq17": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq1": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq2": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq3": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq4": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq5": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq6": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq7": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq7a": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq8a": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq8b": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9a": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9b": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9c": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9d": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9e": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9f": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9g": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9h": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9i": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9j": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9k": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9l": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9m": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s4bq9n": "members aged 3+ (education; literacy and ICT part B 10+)",
+   "s6aq1": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq2": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq3": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq4": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq5": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq6": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq7a": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq7b": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq8": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6aq9": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6eq1": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6eq2": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6eq3": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6eq4": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6eq5": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)",
+   "s6eq6": "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)"
   }
  },
  "household": {
@@ -2874,6 +3012,159 @@
    "s9c5q46d": "module s9c_vup_ubudehe_and_rssp_schemes",
    "s9c5q46e": "module s9c_vup_ubudehe_and_rssp_schemes",
    "s9c5q46f": "module s9c_vup_ubudehe_and_rssp_schemes"
+  },
+  "universe": {
+   "s5aq1": "household (housing, services)",
+   "s5aq2": "household (housing, services)",
+   "s5aq3": "household (housing, services)",
+   "s5aq4": "household (housing, services)",
+   "s5aq5": "household (housing, services)",
+   "s5aq6": "household (housing, services)",
+   "s5aq7y": "household (housing, services)",
+   "s5aq7m": "household (housing, services)",
+   "s5aq8": "household (housing, services)",
+   "s5aq9": "household (housing, services)",
+   "s5aq10": "household (housing, services)",
+   "s5aq11": "household (housing, services)",
+   "s5bq1": "household (housing, services)",
+   "s5bq2": "household (housing, services)",
+   "s5bq3a": "household (housing, services)",
+   "s5bq3b": "household (housing, services)",
+   "s5bq4a": "household (housing, services)",
+   "s5bq4b": "household (housing, services)",
+   "s5bq5": "household (housing, services)",
+   "s5bq6a": "household (housing, services)",
+   "s5bq6b": "household (housing, services)",
+   "s5bq7": "household (housing, services)",
+   "s5bq8": "household (housing, services)",
+   "s5bq9a": "household (housing, services)",
+   "s5bq9b": "household (housing, services)",
+   "s5cq1": "household (housing, services)",
+   "s5cq2": "household (housing, services)",
+   "s5cq3": "household (housing, services)",
+   "s5cq4": "household (housing, services)",
+   "s5cq5": "household (housing, services)",
+   "s5cq6": "household (housing, services)",
+   "s5cq7": "household (housing, services)",
+   "s5cq8": "household (housing, services)",
+   "s5cq9a": "household (housing, services)",
+   "s5cq9b": "household (housing, services)",
+   "s5cq10": "household (housing, services)",
+   "s5cq11": "household (housing, services)",
+   "s5cq12": "household (housing, services)",
+   "s5cq13": "household (housing, services)",
+   "s5cq14": "household (housing, services)",
+   "s5cq15": "household (housing, services)",
+   "s5cq16": "household (housing, services)",
+   "s5cq16a1": "household (housing, services)",
+   "s5cq16a21": "household (housing, services)",
+   "s5cq16a22": "household (housing, services)",
+   "s5cq16a3": "household (housing, services)",
+   "s5cq16a4": "household (housing, services)",
+   "s5cq16a5": "household (housing, services)",
+   "s5cq16a6": "household (housing, services)",
+   "s5cq16a7": "household (housing, services)",
+   "s5cq16a8": "household (housing, services)",
+   "s5cq16a9": "household (housing, services)",
+   "s5cq16a10": "household (housing, services)",
+   "s5cq16a11": "household (housing, services)",
+   "s5cq17": "household (housing, services)",
+   "s5cq18b1": "household (housing, services)",
+   "s5cq18": "household (housing, services)",
+   "s5cq18b2": "household (housing, services)",
+   "s5cq18b32": "household (housing, services)",
+   "s5cq18b4": "household (housing, services)",
+   "s5cq18b5": "household (housing, services)",
+   "s5cq18b6": "household (housing, services)",
+   "s5cq18b71": "household (housing, services)",
+   "s5cq18b72": "household (housing, services)",
+   "s5cq18b8a": "household (housing, services)",
+   "s5cq18b8b": "household (housing, services)",
+   "s5cq18b91": "household (housing, services)",
+   "s5cq18b92": "household (housing, services)",
+   "s5cq19": "household (housing, services)",
+   "s5cq20": "household (housing, services)",
+   "s5cq21": "household (housing, services)",
+   "s5cq22": "household (housing, services)",
+   "s5cq23": "household (housing, services)",
+   "s5cq24": "household (housing, services)",
+   "s5cq25": "household (housing, services)",
+   "s5cq26": "household (housing, services)",
+   "s5cq27": "household (housing, services)",
+   "s5dq1": "household (housing, services)",
+   "s5dq2": "household (housing, services)",
+   "s5dq3": "household (housing, services)",
+   "s5dq4": "household (housing, services)",
+   "s5eq1": "household (housing, services)",
+   "s5eq21": "household (housing, services)",
+   "s5eq22": "household (housing, services)",
+   "s5eq3a": "household (housing, services)",
+   "s5eq3b": "household (housing, services)",
+   "s10aq1": "household (credit, durables, savings)",
+   "s10aq2": "household (credit, durables, savings)",
+   "s10aq3": "household (credit, durables, savings)",
+   "s7a2q1": "household / farm (agriculture, livestock)",
+   "s7a2q2": "household / farm (agriculture, livestock)",
+   "s7a2q3": "household / farm (agriculture, livestock)",
+   "s7a2q4a": "household / farm (agriculture, livestock)",
+   "s7a2q4b": "household / farm (agriculture, livestock)",
+   "s7a2q5": "household / farm (agriculture, livestock)",
+   "s7a2q6": "household / farm (agriculture, livestock)",
+   "s7a2q7": "household / farm (agriculture, livestock)",
+   "s7a2q8": "household / farm (agriculture, livestock)",
+   "s7a2q9": "household / farm (agriculture, livestock)",
+   "s7b1q1": "household / farm (agriculture, livestock)",
+   "s7b1q2": "household / farm (agriculture, livestock)",
+   "s7b1q3": "household / farm (agriculture, livestock)",
+   "s7b1q4": "household / farm (agriculture, livestock)",
+   "s7b1q5": "household / farm (agriculture, livestock)",
+   "s7b1q6": "household / farm (agriculture, livestock)",
+   "s7b1q7": "household / farm (agriculture, livestock)",
+   "s7b1q8": "household / farm (agriculture, livestock)",
+   "s7b1q9": "household / farm (agriculture, livestock)",
+   "s7b1q10": "household / farm (agriculture, livestock)",
+   "s7b1q11": "household / farm (agriculture, livestock)",
+   "s7b1q12": "household / farm (agriculture, livestock)",
+   "s9cq1": "household (transfers, VUP, other income)",
+   "s9cq2": "household (transfers, VUP, other income)",
+   "s9cq3": "household (transfers, VUP, other income)",
+   "s9cq4a": "household (transfers, VUP, other income)",
+   "s9cq4b": "household (transfers, VUP, other income)",
+   "s9cq4c": "household (transfers, VUP, other income)",
+   "s9cq4d": "household (transfers, VUP, other income)",
+   "s9cq4e": "household (transfers, VUP, other income)",
+   "s9cq4f": "household (transfers, VUP, other income)",
+   "s9cq4g": "household (transfers, VUP, other income)",
+   "s9cq4h": "household (transfers, VUP, other income)",
+   "s9cq4i": "household (transfers, VUP, other income)",
+   "s9cq4j": "household (transfers, VUP, other income)",
+   "s9cq5": "household (transfers, VUP, other income)",
+   "s9cq6": "household (transfers, VUP, other income)",
+   "s9cq7": "household (transfers, VUP, other income)",
+   "s9cq8": "household (transfers, VUP, other income)",
+   "s9cq9": "household (transfers, VUP, other income)",
+   "s9cq10": "household (transfers, VUP, other income)",
+   "s9cq11": "household (transfers, VUP, other income)",
+   "s9cq12": "household (transfers, VUP, other income)",
+   "s9cq13a": "household (transfers, VUP, other income)",
+   "s9cq13b": "household (transfers, VUP, other income)",
+   "s9cq13c": "household (transfers, VUP, other income)",
+   "s9cq13d": "household (transfers, VUP, other income)",
+   "s9cq13e": "household (transfers, VUP, other income)",
+   "s9cq13f": "household (transfers, VUP, other income)",
+   "s9cq13g": "household (transfers, VUP, other income)",
+   "s9cq13h": "household (transfers, VUP, other income)",
+   "s9cq13i": "household (transfers, VUP, other income)",
+   "s9cq13j": "household (transfers, VUP, other income)",
+   "s9cq13k": "household (transfers, VUP, other income)",
+   "s9cq13l": "household (transfers, VUP, other income)",
+   "s9c5q45": "household (transfers, VUP, other income)",
+   "s9c5q46a": "household (transfers, VUP, other income)",
+   "s9c5q46b": "household (transfers, VUP, other income)",
+   "s9c5q46c": "household (transfers, VUP, other income)",
+   "s9c5q46d": "household (transfers, VUP, other income)",
+   "s9c5q46e": "household (transfers, VUP, other income)",
+   "s9c5q46f": "household (transfers, VUP, other income)"
   }
  }
 }

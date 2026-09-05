@@ -86,6 +86,45 @@ URBAN_LABELS = {1: "Urban", 2: "Rural"}
 HH_ID_NAMES = ("hhid", "key")
 PID_NAMES = ("pid", "id", "idind")
 
+# ------------------------------------------------------------------ universes (who was asked), by wave and section
+# From the questionnaires in z_Documentation (EICV1/EICV2 French, EICV3 Kinyarwanda section headers + English
+# pdf sections, EICV4/5/7 English) — see DOCUMENTATION.md. Keyed by questionnaire section number; applied to
+# variables named s<section><part>q<n> and to module stems s<section>..., so the codebook can show the universe.
+SECTION_UNIVERSE = {
+    "EICV1": {1: "all household members (roster; marital status 12+)", 2: "members aged 7+ (general education; school career parts for under-40s; literacy 5+)",
+              3: "all household members (health)", 4: "members aged 7+ (economic activity over the last 12 months; main + secondary job)",
+              5: "members aged 15+ (migration)", 6: "household (housing)", 7: "household (identification of respondents for part B)",
+              8: "household / farm (agriculture, livestock)", 9: "household (expenditure and own consumption)", 10: "household (non-farm enterprises)",
+              11: "household (transfers)", 12: "household (credit, durables, savings)"},
+    "EICV2": {1: "all household members (roster; marital status 12+)", 2: "members aged 6+ (education, literacy)", 3: "all household members (health)",
+              4: "members aged 15+ (migration)", 5: "household (housing, services)", 6: "members aged 6+ (economic activity over the last 12 months; 6D-6F employed only)",
+              7: "household (non-farm enterprises)", 8: "household / farm (agriculture, livestock)", 9: "household (expenditure and own consumption)",
+              10: "household (transfers, other income)", 11: "household (credit, durables, savings)"},
+    "EICV3": {1: "all household members (roster)", 2: "members aged 6+ (education)", 3: "all household members (health, disability)",
+              4: "all household members (migration of 6+ months)", 5: "household (housing, services)", 6: "members aged 6+ (economic activity over the last 12 months; 6C-6F employed only)",
+              7: "household (non-farm enterprises)", 8: "household / farm (agriculture, livestock)", 9: "household (expenditure and own consumption)",
+              10: "household (transfers, other income)", 11: "household (credit, durables, savings)"},
+    "EICV4": {1: "all household members (roster; marital status 12+)", 2: "all household members (migration)", 3: "all household members (health)",
+              4: "members aged 3+ (education; literacy and ICT part B 10+)", 5: "household (housing, services)",
+              6: "members aged 6+ (usual activity over the last 12 months; 6B-6E employed; 6F domestic work 6+)", 7: "household / farm (agriculture, livestock)",
+              8: "household (expenditure and own consumption)", 9: "household (transfers, VUP, other income)", 10: "household (credit, durables, savings)"},
+    "EICV7": {0: "household (identification, food habits)", 1: "all household members (roster; marital status 12+)", 2: "all household members (migration)",
+              3: "all household members (health; disability items 5+)", 4: "members aged 3+ (education; literacy and ICT part B 10+)",
+              5: "household (housing, shocks, services)", 6: "members aged 6+ (economic activity over the LAST 7 DAYS, main job only; 6C domestic work 5-17)",
+              7: "household / farm (agriculture, livestock)", 8: "household (consumption by source)", 9: "household (cash transfers, VUP, other income)",
+              10: "household (credit, durables, savings)"},
+}
+SECTION_UNIVERSE["EICV5"] = dict(SECTION_UNIVERSE["EICV4"]); SECTION_UNIVERSE["EICV5"][3] = "all household members (health; disability items 5+)"
+def _base_wave(wave): return wave.split("_")[0] if wave != "EICV3_4_Panel" else "EICV3"
+def universe_for(wave, names):
+    """{name: universe text} for variable names (s<sec><part>q...) or module stems (s<sec>...)."""
+    import re
+    table = SECTION_UNIVERSE.get(_base_wave(wave), {}); out = {}
+    for n in names:
+        m = re.match(r"^s0?(\d{1,2})(?:[a-z]|q|_|$)", n)
+        if m and int(m.group(1)) in table: out[n] = table[int(m.group(1))]
+    return out
+
 def module_name(stem, prefixes):
     for p in prefixes:
         if stem.startswith(p): stem = stem[len(p):]; break
@@ -209,7 +248,8 @@ for wave in WANT:
         df = downcast(df, keep_double=("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight"))
         df = df[[c for c in KEY_ORDER if c in df.columns] + [c for c in df.columns if c not in KEY_ORDER]]
         modules[name] = df
-        meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4)}
+        meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4),
+                              "universe": universe_for(wave, [name]).get(name, "")}
         write_dta(df, P["inter"] / f"EICV_{wave}_{name}_clean.dta", vl, vv, f"EICV {wave} module {name} ({lvl}-level)", log)
     log.info("module levels: %s", {k: v["level"] for k, v in meta_modules.items()})
 
@@ -237,7 +277,8 @@ for wave in WANT:
         log.info("%s person file: %s rows x %s vars; weighted persons = %s", wave, f"{len(person):,}", person.shape[1], f"{person['wt'].sum():,.0f}")
         person = downcast(person, keep_double=("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight"))
         write_dta(person, P["inter"] / f"EICV_{wave}_person_clean.dta", pvl, pvv, f"EICV {wave} person file (roster + person-level modules)", log)
-        meta["person"] = {"n": len(person), "vars": list(person.columns), "var_labels": pvl, "value_labels": {k: v for k, v in pvv.items() if k in person.columns}, "source": psrc}
+        meta["person"] = {"n": len(person), "vars": list(person.columns), "var_labels": pvl, "value_labels": {k: v for k, v in pvv.items() if k in person.columns}, "source": psrc,
+                          "universe": universe_for(wave, person.columns)}
     else:
         person = None
 
@@ -279,7 +320,8 @@ for wave in WANT:
         log.info("%s household file: %s rows x %s vars; weighted households = %s", wave, f"{len(hh):,}", hh.shape[1], f"{hh['wt'].sum():,.0f}")
         hh = downcast(hh, keep_double=("wt", "wt_hh", "hhid", "pop_wt", "hh_wt", "pond", "weight"))
         write_dta(hh, P["inter"] / f"EICV_{wave}_household_clean.dta", hvl, hvv, f"EICV {wave} household file (household base + household-level modules)", log)
-        meta["household"] = {"n": len(hh), "vars": list(hh.columns), "var_labels": hvl, "value_labels": {k: v for k, v in hvv.items() if k in hh.columns}, "source": hsrc}
+        meta["household"] = {"n": len(hh), "vars": list(hh.columns), "var_labels": hvl, "value_labels": {k: v for k, v in hvv.items() if k in hh.columns}, "source": hsrc,
+                             "universe": universe_for(wave, hh.columns)}
     ck.done()
     save_json(meta, LOGS / f"clean_{wave}_meta.json")
 log.info("01_clean done for %s", WANT)

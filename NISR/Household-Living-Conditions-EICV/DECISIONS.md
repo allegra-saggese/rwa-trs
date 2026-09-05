@@ -75,3 +75,23 @@ figure of the EICV4 trend report, not the 44.9 of the original 2010/11 basis.
 **Layout (2026-09-04, Matteo).** `3_Final/` holds only the appended unit-level datasets; every
 module-level file — per wave at the top of `2_Intermediate/`, appended across waves in
 `2_Intermediate/appended/` — lives in Intermediate. For EICV that means `3_Final/` = `EICV_pooled_person` + `EICV_pooled_household` (the six national rounds); the VUP pools, the 27 appended modules and the two panel link files are in `2_Intermediate/appended/`.
+
+## 2026-09-04 — documentation pass (see DOCUMENTATION.md)
+
+**Universes recorded by questionnaire section and round.** The section that carries a concept moves
+across rounds (employment is section 4 in EICV1, 6 afterwards; migration 5/4/2; education 2/2/2/4)
+and its age base moves too (economic activity 7+ in EICV1, 6+ from EICV2; education 7+/6+/3+;
+literacy 5+/6+/10+). `SECTION_UNIVERSE` in `01_clean.py` maps each round's section numbers to the
+universe text and the codebook shows it per variable and per appended module.
+
+**EICV7 employment is not comparable with EICV1–5 without care.** EICV1–5 record all jobs over the
+last 12 months (usual activity) plus a 7-day filter; EICV7 records the main job over the last 7 days
+only. The round-specific variables are kept apart by the version rule, as before; the harmonisation
+step must treat "employed" in EICV7 as a current-status (7-day) measure.
+
+**Sample-size checks from the documentation** added to `03_checks.py` §C: EICV1 6,450 households
+allocated (6,420 interviewed, within 1%), EICV2 6,900, EICV4 14,419, EICV5 14,580, EICV7 15,054
+households and 62,110 persons.
+
+**Labels.** NISR's EICV1/EICV2 SPSS files already carry English value labels, so nothing had to be
+translated for the pre-2006 rounds (the questionnaires themselves are French).

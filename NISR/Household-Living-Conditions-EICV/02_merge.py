@@ -129,6 +129,7 @@ def pool(files, out_name, label, unit, out_dir=None):
         for w in waves: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
     write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
     return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
+            "stems": {w: [f.name.replace(f"EICV_{w}_", "").replace("_clean.dta", "")] for w, f in files.items()},
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}}
 
 summary = {"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "files": {}}

@@ -14697,6 +14697,26 @@
      "reference_label": "EA key"
     }
    },
+   "stems": {
+    "EICV1": [
+     "person"
+    ],
+    "EICV2": [
+     "person"
+    ],
+    "EICV3": [
+     "person"
+    ],
+    "EICV4_CS": [
+     "person"
+    ],
+    "EICV5_CS": [
+     "person"
+    ],
+    "EICV7_CS": [
+     "person"
+    ]
+   },
    "value_label_conflicts": {
     "s1q2": {
      "1": [
@@ -22859,6 +22879,17 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV4_VUP": [
+     "person"
+    ],
+    "EICV5_VUP": [
+     "person"
+    ],
+    "EICV7_VUP": [
+     "person"
+    ]
    },
    "value_label_conflicts": {
     "s1q2": {
@@ -35336,6 +35367,26 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "household"
+    ],
+    "EICV2": [
+     "household"
+    ],
+    "EICV3": [
+     "household"
+    ],
+    "EICV4_CS": [
+     "household"
+    ],
+    "EICV5_CS": [
+     "household"
+    ],
+    "EICV7_CS": [
+     "household"
+    ]
+   },
    "value_label_conflicts": {
     "id2": {
      "1": [
@@ -40717,6 +40768,14 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV5_VUP": [
+     "household"
+    ],
+    "EICV7_VUP": [
+     "household"
+    ]
+   },
    "value_label_conflicts": {
     "s5aq1": {
      "1": [
@@ -42098,6 +42157,29 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s8_farm_expense"
+    ],
+    "EICV2": [
+     "s8g_ag_expense"
+    ],
+    "EICV3": [
+     "s08g_inputs"
+    ],
+    "EICV4_CS": [
+     "s7g_expenditure_agriculture"
+    ],
+    "EICV4_VUP": [
+     "s7g_expenditure_agriculture"
+    ],
+    "EICV5_CS": [
+     "s7g_expenditure_agriculture"
+    ],
+    "EICV5_VUP": [
+     "s7g_expenditure_agriculture"
+    ]
+   },
    "value_label_conflicts": {
     "item": {
      "1": [
@@ -42791,6 +42873,20 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV4_CS": [
+     "s7f_income_agriculture"
+    ],
+    "EICV4_VUP": [
+     "s7f_income_agriculture"
+    ],
+    "EICV5_CS": [
+     "s7f_income_agriculture"
+    ],
+    "EICV5_VUP": [
+     "s7f_income_agriculture"
+    ]
    },
    "value_label_conflicts": {
     "region": {
@@ -44614,6 +44710,29 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s8_farm_processing"
+    ],
+    "EICV2": [
+     "s8h_ag_process"
+    ],
+    "EICV3": [
+     "s08h_processing"
+    ],
+    "EICV4_CS": [
+     "s7h_transformation_agriculture"
+    ],
+    "EICV4_VUP": [
+     "s7h_transformation_agriculture"
+    ],
+    "EICV5_CS": [
+     "s7h_transformation_agriculture"
+    ],
+    "EICV5_VUP": [
+     "s7h_transformation_agriculture"
+    ]
+   },
    "value_label_conflicts": {
     "region": {
      "1": [
@@ -46240,6 +46359,35 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s12_credit"
+    ],
+    "EICV2": [
+     "s11a_credit"
+    ],
+    "EICV3": [
+     "s11a2_credit"
+    ],
+    "EICV4_CS": [
+     "s10a2_credits"
+    ],
+    "EICV4_VUP": [
+     "s10a2_credits"
+    ],
+    "EICV5_CS": [
+     "s10a2_listing_of_credits"
+    ],
+    "EICV5_VUP": [
+     "s10a2_listing_of_credits"
+    ],
+    "EICV7_CS": [
+     "s10a1_a2_credits"
+    ],
+    "EICV7_VUP": [
+     "s10a1_a2_credits"
+    ]
+   },
    "value_label_conflicts": {
     "s11aq6": {
      "2": [
@@ -47665,6 +47813,26 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV2": [
+     "s8d_ag_production1"
+    ],
+    "EICV3": [
+     "s08d_croplarge"
+    ],
+    "EICV4_CS": [
+     "s7d_large_crop"
+    ],
+    "EICV4_VUP": [
+     "s7d_large_crop"
+    ],
+    "EICV5_CS": [
+     "s7d_large_crop"
+    ],
+    "EICV5_VUP": [
+     "s7d_large_crop"
+    ]
    },
    "value_label_conflicts": {
     "s8dq3": {
@@ -49267,6 +49435,26 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV2": [
+     "s8e_ag_production2"
+    ],
+    "EICV3": [
+     "s08e_cropsmall"
+    ],
+    "EICV4_CS": [
+     "s7e_small_crop"
+    ],
+    "EICV4_VUP": [
+     "s7e_small_crop"
+    ],
+    "EICV5_CS": [
+     "s7e_small_crop"
+    ],
+    "EICV5_VUP": [
+     "s7e_small_crop"
+    ]
    },
    "value_label_conflicts": {
     "s8eq3": {
@@ -51329,6 +51517,35 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s12_durables"
+    ],
+    "EICV2": [
+     "s11b_durables"
+    ],
+    "EICV3": [
+     "s11b_durables"
+    ],
+    "EICV4_CS": [
+     "s10b_goods"
+    ],
+    "EICV4_VUP": [
+     "s10b_goods"
+    ],
+    "EICV5_CS": [
+     "s10b2_durable_household_goods"
+    ],
+    "EICV5_VUP": [
+     "s10b2_durable_household_goods"
+    ],
+    "EICV7_CS": [
+     "s10b_durables"
+    ],
+    "EICV7_VUP": [
+     "s10b_durables"
+    ]
+   },
    "value_label_conflicts": {
     "item": {
      "1": [
@@ -52846,6 +53063,17 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s10_enter_1"
+    ],
+    "EICV2": [
+     "s7_enterprise"
+    ],
+    "EICV3": [
+     "s07_enterprise"
+    ]
+   },
    "value_label_conflicts": {}
   },
   "EICV_pooled_equipment.dta": {
@@ -53583,6 +53811,17 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV1": [
+     "s8_farm_assets"
+    ],
+    "EICV2": [
+     "s8b_ag_assets"
+    ],
+    "EICV3": [
+     "s08b2_equipment"
+    ]
    },
    "value_label_conflicts": {
     "item": {
@@ -54713,6 +54952,32 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV2": [
+     "s9a1_nfood_annual"
+    ],
+    "EICV3": [
+     "s09a1_consnonfood"
+    ],
+    "EICV4_CS": [
+     "s8a1_expenditure"
+    ],
+    "EICV4_VUP": [
+     "s8a1_expenditure"
+    ],
+    "EICV5_CS": [
+     "s8a1_expenditure"
+    ],
+    "EICV5_VUP": [
+     "s8a1_expenditure"
+    ],
+    "EICV7_CS": [
+     "s8a1_expenditure"
+    ],
+    "EICV7_VUP": [
+     "s8a1_expenditure"
+    ]
    },
    "value_label_conflicts": {
     "region": {
@@ -56387,6 +56652,32 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV2": [
+     "s9a3_nfood_freq"
+    ],
+    "EICV3": [
+     "s09a3_consnonfood"
+    ],
+    "EICV4_CS": [
+     "s8a3_expenditure"
+    ],
+    "EICV4_VUP": [
+     "s8a3_expenditure"
+    ],
+    "EICV5_CS": [
+     "s8a3_expenditure"
+    ],
+    "EICV5_VUP": [
+     "s8a3_expenditure"
+    ],
+    "EICV7_CS": [
+     "s8a3_expenditure"
+    ],
+    "EICV7_VUP": [
+     "s8a3_expenditure"
+    ]
+   },
    "value_label_conflicts": {
     "region": {
      "1": [
@@ -57540,6 +57831,32 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV2": [
+     "s9a2_nfood_month"
+    ],
+    "EICV3": [
+     "s09a2_consnonfood"
+    ],
+    "EICV4_CS": [
+     "s8a2_expenditure"
+    ],
+    "EICV4_VUP": [
+     "s8a2_expenditure"
+    ],
+    "EICV5_CS": [
+     "s8a2_expenditure"
+    ],
+    "EICV5_VUP": [
+     "s8a2_expenditure"
+    ],
+    "EICV7_CS": [
+     "s8a2_expenditure"
+    ],
+    "EICV7_VUP": [
+     "s8a2_expenditure"
+    ]
    },
    "value_label_conflicts": {
     "region": {
@@ -60761,6 +61078,35 @@
      },
      "reference_label": "Zone"
     }
+   },
+   "stems": {
+    "EICV1": [
+     "s9_expen_food"
+    ],
+    "EICV2": [
+     "s9b_food"
+    ],
+    "EICV3": [
+     "s09b_consfood"
+    ],
+    "EICV4_CS": [
+     "s8b_expenditure"
+    ],
+    "EICV4_VUP": [
+     "s8b_expenditure"
+    ],
+    "EICV5_CS": [
+     "s8b_expenditure"
+    ],
+    "EICV5_VUP": [
+     "s8b_expenditure"
+    ],
+    "EICV7_CS": [
+     "s8b_food_expenditure_consumption"
+    ],
+    "EICV7_VUP": [
+     "s8b_food_expenditure_consumption"
+    ]
    },
    "value_label_conflicts": {
     "quintile": {
@@ -64475,6 +64821,23 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV2": [
+     "s6d_employ_roster"
+    ],
+    "EICV3": [
+     "s06cdef_jobs"
+    ],
+    "EICV4_CS": [
+     "s6b_employement_6c_salaried_s6d_business"
+    ],
+    "EICV5_CS": [
+     "s6b_employement_6c_salaried_s6d_business"
+    ],
+    "EICV5_VUP": [
+     "s6b_employement_6c_salaried_s6d_business"
+    ]
+   },
    "value_label_conflicts": {
     "region": {
      "1": [
@@ -65388,6 +65751,20 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV4_CS": [
+     "s7b2_land_agriculture"
+    ],
+    "EICV4_VUP": [
+     "s7b2_land_agriculture"
+    ],
+    "EICV5_CS": [
+     "s7b2_land_agriculture"
+    ],
+    "EICV5_VUP": [
+     "s7b2_land_agriculture"
+    ]
    },
    "value_label_conflicts": {
     "region": {
@@ -67366,6 +67743,29 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s8_livestock"
+    ],
+    "EICV2": [
+     "s8a1_livestock"
+    ],
+    "EICV3": [
+     "s08a1_livestock"
+    ],
+    "EICV4_CS": [
+     "s7a1_livestock"
+    ],
+    "EICV4_VUP": [
+     "s7a1_livestock"
+    ],
+    "EICV5_CS": [
+     "s7a1_livestock"
+    ],
+    "EICV5_VUP": [
+     "s7a1_livestock"
+    ]
+   },
    "value_label_conflicts": {
     "s8aq14": {
      "2": [
@@ -68673,6 +69073,29 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s8_livestock_expense"
+    ],
+    "EICV2": [
+     "s8a3_livestock_expenditure"
+    ],
+    "EICV3": [
+     "s08a4_livestock"
+    ],
+    "EICV4_CS": [
+     "s7a4_livestock"
+    ],
+    "EICV4_VUP": [
+     "s7a4_livestock"
+    ],
+    "EICV5_CS": [
+     "s7a4_livestock"
+    ],
+    "EICV5_VUP": [
+     "s7a4_livestock"
+    ]
+   },
    "value_label_conflicts": {
     "item": {
      "2": [
@@ -69851,6 +70274,29 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s8_livestock_products"
+    ],
+    "EICV2": [
+     "s8a2_livestock_products"
+    ],
+    "EICV3": [
+     "s08a3_livestock"
+    ],
+    "EICV4_CS": [
+     "s7a3_livestock"
+    ],
+    "EICV4_VUP": [
+     "s7a3_livestock"
+    ],
+    "EICV5_CS": [
+     "s7a3_livestock"
+    ],
+    "EICV5_VUP": [
+     "s7a3_livestock"
+    ]
+   },
    "value_label_conflicts": {
     "item": {
      "2": [
@@ -70640,6 +71086,26 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV3": [
+     "s10e_otherexp"
+    ],
+    "EICV4_CS": [
+     "s9e_other_expenditure"
+    ],
+    "EICV5_CS": [
+     "s9e_other_expenditure"
+    ],
+    "EICV5_VUP": [
+     "s9e_other_expenditure"
+    ],
+    "EICV7_CS": [
+     "s9c_other_expenditure"
+    ],
+    "EICV7_VUP": [
+     "s9c_other_expenditure"
+    ]
    },
    "value_label_conflicts": {
     "region": {
@@ -71648,6 +72114,29 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV2": [
+     "s10c_misc"
+    ],
+    "EICV3": [
+     "s10c_otherinc"
+    ],
+    "EICV4_CS": [
+     "s9d_other_income"
+    ],
+    "EICV5_CS": [
+     "s9d_other_income"
+    ],
+    "EICV5_VUP": [
+     "s9d_other_income"
+    ],
+    "EICV7_CS": [
+     "s9e_other_income"
+    ],
+    "EICV7_VUP": [
+     "s9e_other_income"
+    ]
    },
    "value_label_conflicts": {
     "item": {
@@ -73364,6 +73853,26 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV2": [
+     "s9d_ex_owncons"
+    ],
+    "EICV3": [
+     "s09c_consownfood"
+    ],
+    "EICV4_CS": [
+     "s8c_farming"
+    ],
+    "EICV4_VUP": [
+     "s8c_farming"
+    ],
+    "EICV5_CS": [
+     "s8c_farming"
+    ],
+    "EICV5_VUP": [
+     "s8c_farming"
+    ]
    },
    "value_label_conflicts": {
     "region": {
@@ -75282,6 +75791,29 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s8_farm_plot_details"
+    ],
+    "EICV2": [
+     "s8c_ag_plots"
+    ],
+    "EICV3": [
+     "s08c_parcels"
+    ],
+    "EICV4_CS": [
+     "s7c_parcels"
+    ],
+    "EICV4_VUP": [
+     "s7c_parcels"
+    ],
+    "EICV5_CS": [
+     "s7c_parcels"
+    ],
+    "EICV5_VUP": [
+     "s7c_parcels"
+    ]
+   },
    "value_label_conflicts": {
     "s8cq5": {
      "1": [
@@ -76929,6 +77461,35 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV1": [
+     "s12_saving"
+    ],
+    "EICV2": [
+     "s11c_savings"
+    ],
+    "EICV3": [
+     "s11c_savings"
+    ],
+    "EICV4_CS": [
+     "s10c_savings"
+    ],
+    "EICV4_VUP": [
+     "s10c_savings"
+    ],
+    "EICV5_CS": [
+     "s10c1_savings"
+    ],
+    "EICV5_VUP": [
+     "s10c1_savings"
+    ],
+    "EICV7_CS": [
+     "s10c_savings"
+    ],
+    "EICV7_VUP": [
+     "s10c_savings"
+    ]
+   },
    "value_label_conflicts": {
     "pid": {
      "0": [
@@ -78366,6 +78927,32 @@
      "reference_label": "Survey year (mid-fieldwork)"
     }
    },
+   "stems": {
+    "EICV2": [
+     "s5e_services"
+    ],
+    "EICV3": [
+     "s05e_services"
+    ],
+    "EICV4_CS": [
+     "s5e_access_to_services"
+    ],
+    "EICV4_VUP": [
+     "s5e_access_to_services"
+    ],
+    "EICV5_CS": [
+     "s5f_access_to_services"
+    ],
+    "EICV5_VUP": [
+     "s5f_access_to_services"
+    ],
+    "EICV7_CS": [
+     "s5f_access_to_services"
+    ],
+    "EICV7_VUP": [
+     "s5f_access_to_services"
+    ]
+   },
    "value_label_conflicts": {
     "s5eq1": {
      "5": [
@@ -78899,6 +79486,14 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV5_CS": [
+     "s10c2_tontine"
+    ],
+    "EICV5_VUP": [
+     "s10c2_tontine"
+    ]
    },
    "value_label_conflicts": {}
   },
@@ -80609,6 +81204,35 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV1": [
+     "s11_tran_in"
+    ],
+    "EICV2": [
+     "s10b_transfer_in"
+    ],
+    "EICV3": [
+     "s10b_transfersin"
+    ],
+    "EICV4_CS": [
+     "s9b_transfers_in"
+    ],
+    "EICV4_VUP": [
+     "s9b_transfers_in"
+    ],
+    "EICV5_CS": [
+     "s9b_transfers_in"
+    ],
+    "EICV5_VUP": [
+     "s9b_transfers_in"
+    ],
+    "EICV7_CS": [
+     "s9b_transfers_in"
+    ],
+    "EICV7_VUP": [
+     "s9b_transfers_in"
+    ]
    },
    "value_label_conflicts": {
     "s10bq3": {
@@ -82428,6 +83052,35 @@
      },
      "reference_label": "Survey year (mid-fieldwork)"
     }
+   },
+   "stems": {
+    "EICV1": [
+     "s11_tran_out"
+    ],
+    "EICV2": [
+     "s10a_transfer_out"
+    ],
+    "EICV3": [
+     "s10a_transfersout"
+    ],
+    "EICV4_CS": [
+     "s9a_transfers_out"
+    ],
+    "EICV4_VUP": [
+     "s9a_transfers_out"
+    ],
+    "EICV5_CS": [
+     "s9a_transfers_out"
+    ],
+    "EICV5_VUP": [
+     "s9a_transfers_out"
+    ],
+    "EICV7_CS": [
+     "s9a_transfers_out"
+    ],
+    "EICV7_VUP": [
+     "s9a_transfers_out"
+    ]
    },
    "value_label_conflicts": {
     "s10aq3": {

@@ -83,6 +83,12 @@ else:
 PUB_POV = {"EICV3": 46.0, "EICV4_CS": 39.1, "EICV5_CS": 38.2, "EICV7_CS": 27.4}
 POVVAR = {"EICV3": "poverty", "EICV4_CS": "pov", "EICV5_CS": "pov_jan", "EICV7_CS": "pov_jan"}
 report += ["", "## C. Weighted poverty headcount (%) vs NISR published rates", "", "| section | statistic | Python | published | result |", "|---|---|---:|---:|---|"]
+# sample sizes stated in the documentation (z_Documentation): EICV1 6,450 households allocated (Megill 2004, table 6; 6,420 interviewed),
+# EICV2 6,900 (Muñoz 2004), EICV4 14,419 and EICV5 14,580 (EICV5 VUP thematic report), EICV7 15,054 households / 62,110 persons (DDI)
+PUB_HH = {"EICV1": (6_450, 0.01), "EICV2": (6_900, 0), "EICV4_CS": (14_419, 0), "EICV5_CS": (14_580, 0), "EICV7_CS": (15_054, 0)}
+for w, (n, tol) in PUB_HH.items():
+    if w in set(hh["wave"]): row("C", f"{w} households interviewed (documentation)", int((hh["wave"] == w).sum()), n, tol)
+if "EICV7_CS" in set(person["wave"]): row("C", "EICV7_CS person rows (DDI: 62,110)", int((person["wave"] == "EICV7_CS").sum()), 62_110)
 for w, pub in PUB_POV.items():
     g = hh[hh.wave == w]
     cands = [c for c in g.columns if c.startswith(POVVAR[w])]        # the flag may carry a version or module suffix
