@@ -10,18 +10,22 @@ folder, whose root is resolved from the login user (or `NISR_DB_ROOT`).
 |---|---|---|
 | `Labour-Force-Survey-LFS/` | Labour Force Survey 2017–2025 | person-interview; household-interview |
 | `Census-PHC/` | Population and Housing Census 2002, 2012, 2022 (10% public samples) | person; private household |
-| `Household-Living-Conditions-EICV/` | EICV1–EICV7 (+ VUP boosters, EICV3–4 and EICV5-VUP panel links) | person; household (national and VUP pools); pooled modules (jobs, enterprise, livestock, parcels, crops, transfers, credits, …); link files |
+| `Household-Living-Conditions-EICV/` | EICV1–EICV7 (+ VUP boosters, EICV3–4 and EICV5-VUP panel links) | person; household (national rounds) — VUP pools, 27 appended modules and link files in `2_Intermediate/appended/` |
 | `Establishment-Census-EC/` | Establishment Census 2011–2023 | establishment |
-| `Agriculture-Survey-AHS/` | Agricultural Household Survey 2017, 2020, 2024 | person; household; pooled modules (milk, honey, land, extension, tools, livestock, credits) |
-| `Season-Agriculture-Survey-SAS/` | Seasonal Agriculture Survey 2013–2025 | plot × crop × season (2017–2025 core map; 2013–2014 crop-area records); pooled 2019+ modules |
+| `Agriculture-Survey-AHS/` | Agricultural Household Survey 2017, 2020, 2024 | person; household — 13 appended modules in `2_Intermediate/appended/` |
+| `Season-Agriculture-Survey-SAS/` | Seasonal Agriculture Survey 2013–2025 | plot × crop × season 2017–2025 (core map) and 2013–2016 (pre-redesign records) — ~28 appended modules in `2_Intermediate/appended/` |
 | `Food-Security-CFSVAN/` | CFSVA 2006–2024 (NISR/WFP) | household; woman; child; village |
 
 All seven were built and verified on 2026-09-04 (see each folder's `logs/checks_report.md`).
-`3_Final/` holds one appended-across-waves file per unit of observation and per module; nothing
-is merged across units or aggregated — household summaries are a `groupby` on the module files,
-whose rows all carry the key block. The EICV item-level consumption modules are large (the food
-module is 10.8m rows, 5.8 GB); `POOL_ITEM_MODULES` in its `02_merge.py` can switch them off.
-Total footprint of `2_Intermediate/` + `3_Final/` across the seven datasets is roughly 30 GB.
+
+**Layout rule.** `3_Final/` holds only the appended unit-level datasets — at most 4–5 files per
+dataset (person, household; establishment; plot-crop; household/woman/child/village). Every
+module-level file lives in `2_Intermediate/`: one cleaned file per wave and module at the top
+level, and the module files appended across waves in `2_Intermediate/appended/` (EICV also keeps
+its VUP-booster person/household files and the panel link files there). Nothing is merged across
+units or aggregated — household summaries are a `groupby` on the appended module files, whose
+rows all carry the key block. Total footprint across the seven datasets is roughly 30 GB (the
+EICV food module alone is 10.8m rows, 5.8 GB).
 
 ## Layout of every dataset folder
 
@@ -40,8 +44,9 @@ logs/               run logs, per-wave metadata, alignment decisions, check repo
 
 ## Conventions (identical in every dataset)
 
-**Units.** One pooled file per unit of observation, named `<SURVEY>_pooled_<unit>.dta`;
-per-wave files `<SURVEY>_<wave>_<unit>_clean.dta`. Household surveys produce `person` and
+**Units.** One pooled file per unit of observation, named `<SURVEY>_pooled_<unit>.dta` in
+`3_Final/`; per-wave files `<SURVEY>_<wave>_<unit>_clean.dta` and appended module files
+`<SURVEY>_pooled_<module>.dta` (in `appended/`) in `2_Intermediate/`. Household surveys produce `person` and
 `household` (CFSVA also `child`, `village`); the Establishment Census `establishment`; the
 SAS `plotcrop` (plot × crop × season × year). No cross-survey harmonisation: each survey is
 harmonised within itself only.

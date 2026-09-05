@@ -2,7 +2,7 @@ variable,label,type,value_labels,n_value_labels,n_2020_A,n_2020_B,n_2020_C,n_202
 survey,Source survey,string,,0,30078,29822,7945,33890,36257,5668,35362,34483,4937,34765,29371,4930,,,,
 year,Agricultural year of the season (as in the NISR release),int16,,0,30078,29822,7945,33890,36257,5668,35362,34483,4937,34765,29371,4930,,,,
 season,"Season (A, B, C)",string,,0,30078,29822,7945,33890,36257,5668,35362,34483,4937,34765,29371,4930,,,,
-wave,Wave id: <year>_<season>,string,,0,287508,287508,287508,287508,287508,287508,287508,287508,287508,287508,287508,287508,,,,
+wave,Wave id: <year>_<season>,string,,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
 farm_type,"1 small-scale farmer (area frame), 2 large-scale farmer (list frame)",int8,,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,30078,29821,5594,32310,33724,5668,35362,34483,4937,34765,28177,4916,,,,
 dist,"District (11-57, NISR codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara …",30,30078,29822,5594,33847,33799,5668,35362,34483,4937,34765,29371,4930,,,,

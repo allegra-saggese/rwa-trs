@@ -2,7 +2,7 @@ variable,label,type,value_labels,n_value_labels,n_2013_A,n_2014_A,n_2014_B,n_201
 survey,Source survey,string,,0,117537,125869,25316,1283,27490,25648,138100,133947,2361,,,,
 year,Agricultural year of the season (as in the NISR release),int16,,0,117537,125869,25316,1283,27490,25648,138100,133947,2361,,,,
 season,"Season (A, B, C)",string,,0,117537,125869,25316,1283,27490,25648,138100,133947,2361,,,,
-wave,Wave id: <year>_<season>,string,,0,597551,597551,597551,597551,597551,597551,597551,597551,597551,,,,
+wave,Wave id: <year>_<season>,string,,0,0,0,0,0,0,0,0,0,0,,,,
 farm_type,"1 small-scale farmer (area frame), 2 large-scale farmer (list frame)",int8,,0,3738,1169,1754,0,0,0,7391,1914,0,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,117537,1169,1754,0,0,0,7391,1914,0,,,,
 stratum,Sampling stratum (as shipped),int8,,0,113799,124700,23562,1283,27490,25648,130709,132033,2361,,,,

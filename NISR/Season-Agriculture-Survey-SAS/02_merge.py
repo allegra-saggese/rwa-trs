@@ -8,7 +8,8 @@
                                  (version rule) -- 2017/2018 plot weights come from the screening file
   SAS_pooled_plotcrop_2013_2014.dta  crop-area records of the pre-redesign waves that carry a crop
                                  code and an area (2013 area files, 2014 screening); native crop lists
-  SAS_pooled_<module>.dta        other modules with the same content in >= 2 waves (2019+ design)
+  2_Intermediate/appended/SAS_pooled_<module>*.dta   every module-level append (2013-16, 2017-18, 2019+)
+  Rule: 3_Final holds only the appended unit-level datasets; module-level files live in 2_Intermediate.
 See DECISIONS.md.
 """
 import json, re
@@ -57,8 +58,12 @@ def conv(s, unit):
     x = pd.to_numeric(s, errors="coerce")
     return x / 10_000 if unit == "m2" else x
 
-def version_pool(frames, labels, vlabs, out_name, label, unit):
-    """generic pooling with the version rule (as in every NISR dataset); frames keyed by wave."""
+APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
+
+def version_pool(frames, labels, vlabs, out_name, label, unit, out_dir=None):
+    """generic pooling with the version rule (as in every NISR dataset); frames keyed by wave.
+    Writes to out_dir (default 3_Final; modules go to 2_Intermediate/appended)."""
+    out_dir = out_dir or P["final"]
     waves = list(frames); allvars = sorted({c for df in frames.values() for c in df.columns})
     decisions, colname, var_labels, value_labels, conflicts = {}, {}, {}, {}, {}
     order = {w: i for i, w in enumerate(waves)}
@@ -94,8 +99,8 @@ def version_pool(frames, labels, vlabs, out_name, label, unit):
     keys = [k for k in CORE_KEYS if k in pooled.columns]; pooled = pooled[keys + [c for c in pooled.columns if c not in keys]]
     pooled = downcast(pooled, keep_double=KEEP_DOUBLE)
     ck(len(pooled) == sum(len(d) for d in frames.values()), f"{out_name}: pooled rows == sum of wave rows")
-    write_dta(pooled, P["final"] / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(pooled), "vars": list(pooled.columns), "unit": unit, "waves": waves, "decisions": decisions,
+    write_dta(pooled, out_dir / out_name, var_labels, value_labels, label, log)
+    return {"rows": len(pooled), "vars": list(pooled.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in conflicts.items()}}
 
 summary = {"threshold": SIM_THRESHOLD, "force_align": [], "files": {}, "core_map": {y: {k: v for k, v in d.items()} for y, d in CORE.items()}}
@@ -177,7 +182,7 @@ for stem, fs in sorted(by_name.items()):
         if len(df) < 200: continue
         w = f"{f.name.split('_')[1]}_{df['season'].iloc[0]}"; frames[w], labels[w], vlabs[w] = df, vl, vv
     if len({w[:4] for w in frames}) >= 2:
-        summary["files"][f"SAS_pooled_{stem}_2013_2016.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{stem}_2013_2016.dta", f"SAS 2013-2016 pooled module '{stem}' (pre-redesign design)", stem)
+        summary["files"][f"SAS_pooled_{stem}_2013_2016.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{stem}_2013_2016.dta", f"SAS 2013-2016 pooled module '{stem}' (pre-redesign design)", stem, out_dir=APPENDED)
 
 # ---------------------------------------------------------------- other 2019+ modules
 for canon, (pat, years) in MODULES.items():
@@ -187,5 +192,5 @@ for canon, (pat, years) in MODULES.items():
             df, vl, vv = read_dta(f); wave = f"{y}_{df['season'].iloc[0]}" + ("_lsf" if "lsf_" in f.name else ("_ssf" if "ssf_" in f.name else ""))
             frames[wave], labels[wave], vlabs[wave] = df, vl, vv
     if len({w[:4] for w in frames}) >= 2:
-        summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS {min(years)}-{max(years)} pooled module '{canon}'", canon)
+        summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS {min(years)}-{max(years)} pooled module '{canon}'", canon, out_dir=APPENDED)
 save_json(summary, LOGS / "merge_alignment.json"); ck.done(); log.info("02_merge done")

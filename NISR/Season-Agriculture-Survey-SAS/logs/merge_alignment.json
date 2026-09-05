@@ -311,6 +311,7 @@
     "2025_B",
     "2025_C"
    ],
+   "dir": "3_Final",
    "decisions": {
     "aweight": {
      "waves": [
@@ -11521,6 +11522,7 @@
     "2016_B_lsf_farmq_part1",
     "2016_C_farmq_part1"
    ],
+   "dir": "3_Final",
    "decisions": {
     "age_group": {
      "waves": [
@@ -13456,6 +13458,7 @@
     "2016_B",
     "2016_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "agegroup": {
      "waves": [
@@ -13970,6 +13973,7 @@
     "2016_B",
     "2016_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "antierosion": {
      "waves": [
@@ -14410,6 +14414,7 @@
     "2016_B",
     "2016_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "farm_type": {
      "waves": [
@@ -14720,6 +14725,7 @@
     "2015_A",
     "2015_B"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "farm_type": {
      "waves": [
@@ -15006,6 +15012,7 @@
     "2015_A",
     "2015_B"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "farm_type": {
      "waves": [
@@ -15243,6 +15250,7 @@
     "2016_B",
     "2016_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "c0a": {
      "waves": [
@@ -15831,6 +15839,7 @@
     "2016_B",
     "2016_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "farm_type": {
      "waves": [
@@ -16200,6 +16209,7 @@
     "2016_B",
     "2016_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "any_anti_erosion_activities": {
      "waves": [
@@ -16940,6 +16950,7 @@
     "2014_B",
     "2016_B"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "are_some_antierosion_activit": {
      "waves": [
@@ -17197,6 +17208,7 @@
     "2014_B",
     "2016_B"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "farm_type": {
      "waves": [
@@ -17473,6 +17485,7 @@
     "2015_A",
     "2016_B"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "anti_erosive_activities": {
      "waves": [
@@ -17963,6 +17976,7 @@
     "2014_C",
     "2015_A"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "anti_erosive_activities": {
      "waves": [
@@ -18592,6 +18606,7 @@
     "2023_B",
     "2023_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "crop": {
      "waves": [
@@ -22594,6 +22609,7 @@
     "2023_B",
     "2023_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "area": {
      "waves": [
@@ -26566,6 +26582,7 @@
     "2023_B",
     "2023_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "area_ha": {
      "waves": [
@@ -28371,6 +28388,7 @@
     "2023_B",
     "2023_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "bloc_number": {
      "waves": [
@@ -29519,6 +29537,7 @@
     "2023_B",
     "2023_C"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "bloc_number": {
      "waves": [
@@ -30635,6 +30654,7 @@
     "2018_B_ssf",
     "2018_C_ssf"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "crop": {
      "waves": [
@@ -31706,6 +31726,7 @@
     "2018_B_ssf",
     "2018_C_ssf"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "dist": {
      "waves": [
@@ -32514,6 +32535,7 @@
     "2018_B_ssf",
     "2018_C_ssf"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "dist": {
      "waves": [
@@ -33270,6 +33292,7 @@
     "2018_B_ssf",
     "2018_C_ssf"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "crop_group": {
      "waves": [
@@ -35337,6 +35360,7 @@
     "2018_B_ssf",
     "2018_C_ssf"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "crop": {
      "waves": [

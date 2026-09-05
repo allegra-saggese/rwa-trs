@@ -2,7 +2,7 @@ variable,label,type,value_labels,n_value_labels,n_2015_A,n_2015_B,n_2016_B,n_201
 survey,Source survey,string,,0,170087,165135,178274,30817,,,,
 year,Agricultural year of the season (as in the NISR release),int16,,0,170087,165135,178274,30817,,,,
 season,"Season (A, B, C)",string,,0,170087,165135,178274,30817,,,,
-wave,Wave id: <year>_<season>,string,,0,544313,544313,544313,544313,,,,
+wave,Wave id: <year>_<season>,string,,0,0,0,0,0,,,,
 farm_type,"1 small-scale farmer (area frame), 2 large-scale farmer (list frame)",int8,,0,0,0,0,0,,,,
 stratum,Sampling stratum (as shipped),int8,,0,170087,165135,178274,30817,,,,
 holder,Holder / questionnaire id (as shipped),int32,,0,170087,165135,178274,30817,,,,

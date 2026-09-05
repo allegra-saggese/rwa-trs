@@ -1,5 +1,5 @@
 """
-02_merge.py -- AHS: 2_Intermediate/AHS_<wave>_*_clean.dta -> 3_Final/
+02_merge.py -- AHS: 2_Intermediate/AHS_<wave>_*_clean.dta -> 3_Final/ (person, household) and 2_Intermediate/appended/ (modules)
 
   AHS_pooled_person.dta / AHS_pooled_household.dta          national cross-sections (AHS1,2,3,4_CS,5_CS,7_CS)
   AHS_pooled_person_vup.dta / AHS_pooled_household_vup.dta  VUP booster samples (AHS4/5/7_VUP)
@@ -59,8 +59,11 @@ def version_groups(v, waves, labs):
     return [ws for _, ws in groups]
 CS_ORDER = {w: i for i, w in enumerate(CS)}
 
-def pool(files, out_name, label, unit):
-    """files: {wave: path}. Returns (frame, decisions) and writes the pooled file."""
+APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
+
+def pool(files, out_name, label, unit, out_dir=None):
+    """files: {wave: path}. Writes the pooled file to out_dir (default 3_Final) and returns its summary."""
+    out_dir = out_dir or P["final"]
     data, labels, vlabs = {}, {}, {}
     for w, f in files.items():
         df, vl, vv = read_dta(f); data[w], labels[w], vlabs[w] = df, vl, vv
@@ -105,8 +108,8 @@ def pool(files, out_name, label, unit):
     ck(len(out) == sum(len(d) for d in data.values()), f"{out_name}: pooled rows == sum of wave rows")
     if "wt" in out.columns:
         for w in waves: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
-    write_dta(out, P["final"] / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "decisions": decisions,
+    write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
+    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}}
 
 summary = {"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "files": {}}
@@ -128,7 +131,7 @@ for canon, files in sorted(by_module.items()):
     if len(files) < 2: continue
     name = f"AHS_pooled_{canon}.dta"
     log.info("---------------- %s (%s)", name, list(files))
-    summary["files"][name] = pool(files, name, f"AHS pooled module '{canon}' (one row per {canon} record; see codebook)", canon)
+    summary["files"][name] = pool(files, name, f"AHS pooled module '{canon}' (one row per {canon} record; see codebook)", canon, out_dir=APPENDED)
 summary["module_map"] = MODULE_MAP
 
 save_json(summary, LOGS / "merge_alignment.json")

@@ -37,3 +37,7 @@ carries one (2013 area files, 2014 screening), missing otherwise (2015–2016 sh
 area). Other 2013–2016 modules with the same file name in two or more years are appended as
 `SAS_pooled_<module>_2013_2016`; the 2017–2018 modules (fertilizers, pesticides, anti-erosion,
 irrigation/tenure, screening) as `SAS_pooled_<module>_2017_2018`.
+
+**Layout (2026-09-04, Matteo).** `3_Final/` holds only the appended unit-level datasets; every
+module-level file — per wave at the top of `2_Intermediate/`, appended across waves in
+`2_Intermediate/appended/` — lives in Intermediate. For SAS: `3_Final/` = `SAS_pooled_plotcrop` (2017–2025) + `SAS_pooled_plotcrop_2013_2016`; every appended module (2013–16, 2017–18, 2019+) is in `2_Intermediate/appended/`.

@@ -2,7 +2,7 @@ variable,label,type,value_labels,n_value_labels,n_2014_B,n_2016_B,source,version
 survey,Source survey,string,,0,1024,1057,,,,
 year,Agricultural year of the season (as in the NISR release),int16,,0,1024,1057,,,,
 season,"Season (A, B, C)",string,,0,1024,1057,,,,
-wave,Wave id: <year>_<season>,string,,0,2081,2081,,,,
+wave,Wave id: <year>_<season>,string,,0,0,0,,,,
 farm_type,"1 small-scale farmer (area frame), 2 large-scale farmer (list frame)",int8,,0,1024,1057,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,0,1057,,,,
 holder,Holder / questionnaire id (as shipped),int32,,0,1024,1057,,,,

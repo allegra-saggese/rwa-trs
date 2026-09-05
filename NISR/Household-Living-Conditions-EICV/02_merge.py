@@ -1,10 +1,13 @@
 """
-02_merge.py -- EICV: 2_Intermediate/EICV_<wave>_*_clean.dta -> 3_Final/
+02_merge.py -- EICV: 2_Intermediate/EICV_<wave>_*_clean.dta -> 3_Final/ and 2_Intermediate/appended/
 
-  EICV_pooled_person.dta / EICV_pooled_household.dta          national cross-sections (EICV1,2,3,4_CS,5_CS,7_CS)
-  EICV_pooled_person_vup.dta / EICV_pooled_household_vup.dta  VUP booster samples (EICV4/5/7_VUP)
-  EICV_pooled_<module>.dta                                    modules with the same content in >= 2 waves (MODULE_MAP)
-  EICV3_4_panel_link.dta, EICV5_vup_panel_link.dta            NISR's household/person linking files, keys harmonised
+  3_Final/EICV_pooled_person.dta, EICV_pooled_household.dta   the appended unit datasets (national rounds EICV1,2,3,4_CS,5_CS,7_CS)
+  2_Intermediate/appended/
+    EICV_pooled_person_vup.dta, EICV_pooled_household_vup.dta VUP booster samples (EICV4/5/7_VUP), appended
+    EICV_pooled_<module>.dta                                  modules with the same content in >= 2 waves (MODULE_MAP), appended
+    EICV3_4_panel_link.dta, EICV5_vup_panel_link.dta          NISR's household/person linking files, keys harmonised
+  Rule (Matteo, 2026-09-04): 3_Final holds only the appended unit-level datasets (<= 5 files);
+  every module-level file, per wave or appended, lives in 2_Intermediate.
 
 Alignment rule as in every NISR dataset: waves are grouped into versions of a variable by
 label similarity (token Jaccard >= 0.25); the largest group keeps the name, others become
@@ -75,8 +78,11 @@ def version_groups(v, waves, labs):
     return [ws for _, ws in groups]
 CS_ORDER = {w: i for i, w in enumerate(CS + VUP)}
 
-def pool(files, out_name, label, unit):
-    """files: {wave: path}. Returns (frame, decisions) and writes the pooled file."""
+APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
+
+def pool(files, out_name, label, unit, out_dir=None):
+    """files: {wave: path}. Writes the pooled file to out_dir (default 3_Final) and returns its summary."""
+    out_dir = out_dir or P["final"]
     data, labels, vlabs = {}, {}, {}
     for w, f in files.items():
         df, vl, vv = read_dta(f); data[w], labels[w], vlabs[w] = df, vl, vv
@@ -121,8 +127,8 @@ def pool(files, out_name, label, unit):
     ck(len(out) == sum(len(d) for d in data.values()), f"{out_name}: pooled rows == sum of wave rows")
     if "wt" in out.columns:
         for w in waves: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
-    write_dta(out, P["final"] / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "decisions": decisions,
+    write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
+    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}}
 
 summary = {"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "files": {}}
@@ -132,7 +138,8 @@ for unit in ("person", "household"):
         files = {w: inter / f"EICV_{w}_{unit}_clean.dta" for w in waves if (inter / f"EICV_{w}_{unit}_clean.dta").exists()}
         name = f"EICV_pooled_{unit}{tag}.dta"
         log.info("---------------- %s (%s)", name, list(files))
-        summary["files"][name] = pool(files, name, f"EICV pooled {unit} file, {'VUP booster samples' if tag else 'national cross-sections'}", unit)
+        summary["files"][name] = pool(files, name, f"EICV pooled {unit} file, {'VUP booster samples' if tag else 'national cross-sections'}", unit,
+                                      out_dir=APPENDED if tag else None)
 
 # ---- modules with the same content in >= 2 waves
 # Item-level consumption and asset modules (food, expenditure_*, own_consumption, durables) pool into
@@ -151,14 +158,14 @@ for canon, files in sorted(by_module.items()):
         log.info("---------------- %s: item-level module, not pooled (per-wave files in 2_Intermediate)", canon); continue
     name = f"EICV_pooled_{canon}.dta"
     log.info("---------------- %s (%s)", name, list(files))
-    summary["files"][name] = pool(files, name, f"EICV pooled module '{canon}' (one row per {canon} record; see codebook)", canon)
+    summary["files"][name] = pool(files, name, f"EICV pooled module '{canon}' (one row per {canon} record; see codebook)", canon, out_dir=APPENDED)
 summary["module_map"] = MODULE_MAP
 
 # ---- link files
 for w, stem, out in (("EICV3_4_Panel", "data_stata", "EICV3_4_panel_link.dta"), ("EICV5_VUP", "panel_for_merge", "EICV5_vup_panel_link.dta")):
     f = inter / f"EICV_{w}_{stem}_clean.dta"
     if f.exists():
-        df, vl, vv = read_dta(f); write_dta(df, P["final"] / out, vl, vv, f"NISR linking file {stem} ({w}), keys harmonised", log)
-        summary["files"][out] = {"rows": len(df), "vars": list(df.columns), "unit": "link", "waves": [w]}
+        df, vl, vv = read_dta(f); write_dta(df, APPENDED / out, vl, vv, f"NISR linking file {stem} ({w}), keys harmonised", log)
+        summary["files"][out] = {"rows": len(df), "vars": list(df.columns), "unit": "link", "waves": [w], "dir": str(APPENDED.relative_to(P["root"]))}
 save_json(summary, LOGS / "merge_alignment.json")
 ck.done(); log.info("02_merge done")

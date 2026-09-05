@@ -27,8 +27,9 @@ def chunked_counts(path, key, chunk=250_000):
 
 
 def codebook(fname, info):
-    df, vl, vv = read_dta(P["final"] / fname, row_limit=1); m = read_meta(P["final"] / fname); types = m.readstat_variable_types
-    nn, waves, nrows = chunked_counts(P["final"] / fname, "wave")     # chunked: pooled files can be several GB
+    path = P["root"] / info.get("dir", "3_Final") / fname          # unit files in 3_Final, modules in 2_Intermediate/appended
+    df, vl, vv = read_dta(path, row_limit=1); m = read_meta(path); types = m.readstat_variable_types
+    nn, waves, nrows = chunked_counts(path, "wave")                    # chunked: pooled files can be several GB
     decisions = info.get("decisions", {}); rows = []
     unit = info.get("unit", "")
     for c in df.columns:
@@ -44,7 +45,7 @@ def codebook(fname, info):
                      **{f"n_{w}": int(nn.loc[w, c]) if w in nn.index and c in nn.columns else 0 for w in waves},
                      "source": src, "versions": others, "label_variants": variants, "value_label_conflicts": json.dumps(conf) if conf else ""})
     cb = pd.DataFrame(rows); cb.to_csv(HERE / f"codebook_{fname[:-4]}.csv", index=False)
-    md = [f"## `{fname}` — one row per {unit}", "", f"{nrows:,} rows × {df.shape[1]} variables. Waves: {', '.join(map(str, waves))}.", "",
+    md = [f"## `{info.get('dir', '3_Final')}/{fname}` — one row per {unit}", "", f"{nrows:,} rows × {df.shape[1]} variables. Waves: {', '.join(map(str, waves))}.", "",
           "| variable | label | type | value labels | " + " | ".join(f"N {w}" for w in waves) + " | notes |", "|---|---|---|---|" + "---:|" * len(waves) + "---|"]
     for r in rows:
         notes = [x for x in (("source: " + r["source"]) if r["source"] else "", ("other versions: " + r["versions"]) if r["versions"] else "",
@@ -81,7 +82,14 @@ def update_readme():
         try:
             m = read_meta(f); lines.append(f"  {f.name:55s} {m.number_rows:>10,} rows x {len(m.column_names):>4} vars   {m.file_label or ''}")
         except Exception as e: lines.append(f"  {f.name:55s} (unreadable: {e})")
-    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK.md)", end]
+    app = sorted((P["inter"] / "appended").glob("*.dta")) if (P["inter"] / "appended").exists() else []
+    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK.md)"]
+    if app:
+        lines.append(f"2_Intermediate/appended/  ({len(app)} module-level files appended across waves)")
+        for f in app:
+            try: m = read_meta(f); lines.append(f"  {f.name:55s} {m.number_rows:>10,} rows x {len(m.column_names):>4} vars")
+            except Exception as e: lines.append(f"  {f.name:55s} (unreadable: {e})")
+    lines.append(end)
     txt = readme.read_text(encoding="utf-8", errors="replace")
     for stale in ["2_Intermediate/ and 3_Final/ are empty: no clean.do / merge.do written for\nthis survey yet. The Census, EICV and LFS folders have working examples.",
                   "2_Intermediate/  0 files (not built yet)", "3_Final/         0 files (not built yet)"]:

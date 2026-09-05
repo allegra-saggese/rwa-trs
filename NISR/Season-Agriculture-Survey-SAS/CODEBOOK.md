@@ -7,7 +7,7 @@ Alignment rule: waves are grouped into versions of a variable by label similarit
 
 Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_2013_2016.dta` (plotcrop_early, 597,551 rows), `SAS_pooled_farmq_part0_2013_2016.dta` (farmq_part0, 28,051 rows), `SAS_pooled_farmq_part2a_2013_2016.dta` (farmq_part2a, 68,996 rows), `SAS_pooled_farmq_part2b_2013_2016.dta` (farmq_part2b, 30,995 rows), `SAS_pooled_farmq_part2b_fertilizer_2013_2016.dta` (farmq_part2b_fertilizer, 28,878 rows), `SAS_pooled_farmq_part2b_pesticide_2013_2016.dta` (farmq_part2b_pesticide, 28,883 rows), `SAS_pooled_farmq_part4_2013_2016.dta` (farmq_part4, 57,511 rows), `SAS_pooled_farmq_part6a_2013_2016.dta` (farmq_part6a, 544,313 rows), `SAS_pooled_farmq_part7_2013_2016.dta` (farmq_part7, 34,626 rows), `SAS_pooled_lsf_farmq_part2a_2013_2016.dta` (lsf_farmq_part2a, 2,036 rows), `SAS_pooled_lsf_farmq_part2b_2013_2016.dta` (lsf_farmq_part2b, 2,081 rows), `SAS_pooled_lsf_screening_2013_2016.dta` (lsf_screening, 15,710 rows), `SAS_pooled_ssf_screening_2013_2016.dta` (ssf_screening, 219,362 rows), `SAS_pooled_fertilizers_pesticides.dta` (fertilizers_pesticides, 225,110 rows), `SAS_pooled_agricultural_practice.dta` (agricultural_practice, 192,553 rows), `SAS_pooled_screening_crops.dta` (screening_crops, 450,923 rows), `SAS_pooled_screening_agroforestry.dta` (screening_agroforestry, 263,633 rows), `SAS_pooled_screening_antierosion.dta` (screening_antierosion, 287,508 rows), `SAS_pooled_fertilizers_2017_2018.dta` (fertilizers_2017_2018, 84,986 rows), `SAS_pooled_pesticides_2017_2018.dta` (pesticides_2017_2018, 95,146 rows), `SAS_pooled_antierosion_2017_2018.dta` (antierosion_2017_2018, 64,405 rows), `SAS_pooled_irrigation_land_tenure_2017_2018.dta` (irrigation_land_tenure_2017_2018, 52,621 rows), `SAS_pooled_screening_2017_2018.dta` (screening_2017_2018, 243,835 rows)
 
-## `SAS_pooled_plotcrop.dta` — one row per plotcrop
+## `3_Final/SAS_pooled_plotcrop.dta` — one row per plotcrop
 
 632,756 rows × 271 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C, 2019_A, 2019_B, 2019_C, 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C, 2024_A, 2024_B, 2024_C, 2025_A, 2025_B, 2025_C.
 
@@ -16,7 +16,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,313 | 35,773 | 4,283 | 41,634 | 35,869 | 3,416 | 41,589 | 36,005 | 5,818 | 39,038 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,313 | 35,773 | 4,283 | 41,634 | 35,869 | 3,416 | 41,589 | 36,005 | 5,818 | 39,038 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
 | `season` | Season (A, B, C) | string |  | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,313 | 35,773 | 4,283 | 41,634 | 35,869 | 3,416 | 41,589 | 36,005 | 5,818 | 39,038 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 | 632,756 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,155 | 35,641 | 4,283 | 41,571 | 35,769 | 3,416 | 41,589 | 36,005 | 5,818 | 39,037 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,313 | 35,773 | 4,283 | 41,634 | 35,869 | 0 | 41,589 | 36,005 | 5,818 | 39,038 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 28,484 | 27,120 | 1,907 | 18,255 | 19,576 | 1,462 | 32,906 | 30,493 | 1,667 | 41,313 | 35,773 | 4,283 | 41,634 | 35,869 | 3,416 | 41,589 | 36,005 | 5,818 | 39,038 | 36,546 | 3,566 | 39,330 | 35,584 | 1,949 | 34,369 | 32,920 | 1,884 |  |
@@ -285,7 +285,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s2q25_other_v2` | Q.2.25.c.Qty transformed & used in other way | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1,884 | other versions: s2q25_other (2025_A, 2025_B) |
 | `yield_v2` | Yield | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1,884 | other versions: yield (2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C, 2025_A, 2025_B) |
 
-## `SAS_pooled_plotcrop_2013_2016.dta` — one row per plotcrop_early
+## `3_Final/SAS_pooled_plotcrop_2013_2016.dta` — one row per plotcrop_early
 
 597,551 rows × 60 variables. Waves: 2013_A, 2014_A, 2014_B, 2014_C, 2015_A, 2015_B, 2016_A, 2016_B, 2016_C.
 
@@ -294,7 +294,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 117,537 | 125,869 | 25,316 | 1,283 | 27,490 | 25,648 | 138,100 | 133,947 | 2,361 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 117,537 | 125,869 | 25,316 | 1,283 | 27,490 | 25,648 | 138,100 | 133,947 | 2,361 |  |
 | `season` | Season (A, B, C) | string |  | 117,537 | 125,869 | 25,316 | 1,283 | 27,490 | 25,648 | 138,100 | 133,947 | 2,361 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 597,551 | 597,551 | 597,551 | 597,551 | 597,551 | 597,551 | 597,551 | 597,551 | 597,551 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 3,738 | 1,169 | 1,754 | 0 | 0 | 0 | 7,391 | 1,914 | 0 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 117,537 | 1,169 | 1,754 | 0 | 0 | 0 | 7,391 | 1,914 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 113,799 | 124,700 | 23,562 | 1,283 | 27,490 | 25,648 | 130,709 | 132,033 | 2,361 |  |
@@ -352,7 +352,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `ha_p` | Physical area in hectare | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 102,381 | 0 |  |
 | `ha_d` | Developed area in hectare | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 102,381 | 0 |  |
 
-## `SAS_pooled_farmq_part0_2013_2016.dta` — one row per farmq_part0
+## `2_Intermediate/appended/SAS_pooled_farmq_part0_2013_2016.dta` — one row per farmq_part0
 
 28,051 rows × 16 variables. Waves: 2014_A, 2014_B, 2014_C, 2015_A, 2015_B, 2016_B, 2016_C.
 
@@ -361,7 +361,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 |  |
 | `season` | Season (A, B, C) | string |  | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 28,051 | 28,051 | 28,051 | 28,051 | 28,051 | 28,051 | 28,051 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 |  |
@@ -375,7 +375,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `i17` | 0.17 Are you a member of any Agriculture Cooperative | int8 | 1=Yes, 2=No | 5,216 | 4,856 | 609 | 5,502 | 5,337 | 5,568 | 963 | label variants — 2014_A: 0.18 are you a member of any agriculture cooperati; 2014_B: 0.17 are you a member of any agriculture cooperati; 2014_C: 0.17 are you a member of any agriculture cooperati; 2015_A: 0.17 are you a member of any agriculture cooperati; 2015_B: 0.17 are you a member of any agriculture cooperati |
 | `agegroup` | Age group | int8 | 1=14-24, 2=25-34, 3=35-44, 4=45-54, 5=55 and above | 5,183 | 0 | 0 | 0 | 0 | 5,532 | 953 |  |
 
-## `SAS_pooled_farmq_part2a_2013_2016.dta` — one row per farmq_part2a
+## `2_Intermediate/appended/SAS_pooled_farmq_part2a_2013_2016.dta` — one row per farmq_part2a
 
 68,996 rows × 18 variables. Waves: 2014_A, 2014_B, 2015_A, 2015_B, 2016_B, 2016_C.
 
@@ -384,7 +384,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 15,555 | 10,902 | 12,711 | 12,412 | 15,341 | 2,075 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 15,555 | 10,902 | 12,711 | 12,412 | 15,341 | 2,075 |  |
 | `season` | Season (A, B, C) | string |  | 15,555 | 10,902 | 12,711 | 12,412 | 15,341 | 2,075 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 68,996 | 68,996 | 68,996 | 68,996 | 68,996 | 68,996 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 15,555 | 10,902 | 12,711 | 12,412 | 15,341 | 2,075 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 15,555 | 10,902 | 12,711 | 12,412 | 15,341 | 2,075 |  |
@@ -400,7 +400,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `ui26` | 2.8 specify any expenditure on anti erosion activities ?code | int8 | 1=distches, 2=trees, 3=bench terraces, 4=progressive terracing, 5=cover plants/grasses … | 1,799 | 0 | 0 | 0 | 0 | 0 |  |
 | `used_any_irrigation_type` | 2.3 Have you used any irrigation type? | int8 | 1=Yes, 2=No | 0 | 0 | 12,711 | 0 | 13,141 | 1,582 | label variants — 2015_A: 2.3 have you used any irrigation type? |
 
-## `SAS_pooled_farmq_part2b_2013_2016.dta` — one row per farmq_part2b
+## `2_Intermediate/appended/SAS_pooled_farmq_part2b_2013_2016.dta` — one row per farmq_part2b
 
 30,995 rows × 15 variables. Waves: 2014_A, 2016_B, 2016_C.
 
@@ -409,7 +409,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 13,079 | 16,029 | 1,887 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 13,079 | 16,029 | 1,887 |  |
 | `season` | Season (A, B, C) | string |  | 13,079 | 16,029 | 1,887 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 30,995 | 30,995 | 30,995 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 13,079 | 16,029 | 1,887 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 13,079 | 16,029 | 1,887 |  |
@@ -422,7 +422,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `have_u_already_used_this_in` | 2.10.1 have u already used this Inorganic Fertilizers | int8 | 1=Yes, 2=No | 0 | 16,029 | 1,887 |  |
 | `have_you_used_this` | 2.11.1 Have you used this pesticide? | int8 | 1=Yes, 2=No | 0 | 16,029 | 1,887 |  |
 
-## `SAS_pooled_farmq_part2b_fertilizer_2013_2016.dta` — one row per farmq_part2b_fertilizer
+## `2_Intermediate/appended/SAS_pooled_farmq_part2b_fertilizer_2013_2016.dta` — one row per farmq_part2b_fertilizer
 
 28,878 rows × 14 variables. Waves: 2014_C, 2015_A, 2015_B.
 
@@ -431,7 +431,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 1,379 | 14,043 | 13,456 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 1,379 | 14,043 | 13,456 |  |
 | `season` | Season (A, B, C) | string |  | 1,379 | 14,043 | 13,456 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 28,878 | 28,878 | 28,878 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 1,379 | 14,043 | 13,456 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 1,379 | 14,043 | 13,456 |  |
@@ -443,7 +443,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `pesticide` | 2.11.1 have you used this pesticide? | int8 | 1=yes, 2=no | 1,379 | 0 | 0 |  |
 | `pp1a` | 2.11.2 pesticides used in season b 2014-type | int8 | 6=dithane, 7=ridomil, 8=dimethoate, 9=cypermetrine, 10=dursiban … | 873 | 0 | 0 |  |
 
-## `SAS_pooled_farmq_part2b_pesticide_2013_2016.dta` — one row per farmq_part2b_pesticide
+## `2_Intermediate/appended/SAS_pooled_farmq_part2b_pesticide_2013_2016.dta` — one row per farmq_part2b_pesticide
 
 28,883 rows × 10 variables. Waves: 2014_C, 2015_A, 2015_B.
 
@@ -452,7 +452,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 1,379 | 14,048 | 13,456 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 1,379 | 14,048 | 13,456 |  |
 | `season` | Season (A, B, C) | string |  | 1,379 | 14,048 | 13,456 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 28,883 | 28,883 | 28,883 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 1,379 | 14,048 | 13,456 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 1,379 | 14,048 | 13,456 |  |
@@ -460,7 +460,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `pesticide` | 2.11.1 have you used this pesticide? | int8 | 1=yes, 2=no | 1,379 | 14,042 | 13,456 |  |
 | `pp1a` | 2.11.2 pesticides used in season b 2014-type | int8 | 6=dithane, 7=ridomil, 8=dimethoate, 9=cypermetrine, 10=dursiban … | 873 | 2,020 | 2,009 |  |
 
-## `SAS_pooled_farmq_part4_2013_2016.dta` — one row per farmq_part4
+## `2_Intermediate/appended/SAS_pooled_farmq_part4_2013_2016.dta` — one row per farmq_part4
 
 57,511 rows × 21 variables. Waves: 2014_A, 2015_A, 2015_B, 2016_B, 2016_C.
 
@@ -469,7 +469,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 12,609 | 14,366 | 14,371 | 14,908 | 1,257 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 12,609 | 14,366 | 14,371 | 14,908 | 1,257 |  |
 | `season` | Season (A, B, C) | string |  | 12,609 | 14,366 | 14,371 | 14,908 | 1,257 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 57,511 | 57,511 | 57,511 | 57,511 | 57,511 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 12,609 | 14,366 | 14,371 | 14,908 | 1,257 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 12,609 | 14,366 | 14,371 | 14,908 | 1,257 |  |
@@ -488,7 +488,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `crop_proportion__the__field` | 4.1 Qty Sold | double |  | 0 | 0 | 0 | 14,908 | 1,257 |  |
 | `used_in_any_other_way` | 4.11 Qty used in any other way | double |  | 0 | 0 | 0 | 14,830 | 1,254 |  |
 
-## `SAS_pooled_farmq_part6a_2013_2016.dta` — one row per farmq_part6a
+## `2_Intermediate/appended/SAS_pooled_farmq_part6a_2013_2016.dta` — one row per farmq_part6a
 
 544,313 rows × 14 variables. Waves: 2015_A, 2015_B, 2016_B, 2016_C.
 
@@ -497,7 +497,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 170,087 | 165,135 | 178,274 | 30,817 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 170,087 | 165,135 | 178,274 | 30,817 |  |
 | `season` | Season (A, B, C) | string |  | 170,087 | 165,135 | 178,274 | 30,817 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 544,313 | 544,313 | 544,313 | 544,313 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 170,087 | 165,135 | 178,274 | 30,817 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 170,087 | 165,135 | 178,274 | 30,817 |  |
@@ -509,7 +509,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `uica` | 6.5.2 Number received from a non agricultural donor? Cost | int16 |  | 170,087 | 165,135 | 177,506 | 30,626 | label variants — 2015_A: 6.5.2 number received from a non agricultural dono; 2015_B: 6.5.2 number received from a non agricultural dono |
 | `uic5` | 6.3 How much did you pay for this tool/equipment?(unit price) | int32 |  | 0 | 0 | 10,537 | 1,669 |  |
 
-## `SAS_pooled_farmq_part7_2013_2016.dta` — one row per farmq_part7
+## `2_Intermediate/appended/SAS_pooled_farmq_part7_2013_2016.dta` — one row per farmq_part7
 
 34,626 rows × 31 variables. Waves: 2014_C, 2015_A, 2016_B, 2016_C.
 
@@ -518,7 +518,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 657 | 16,435 | 16,350 | 1,184 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 657 | 16,435 | 16,350 | 1,184 |  |
 | `season` | Season (A, B, C) | string |  | 657 | 16,435 | 16,350 | 1,184 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 34,626 | 34,626 | 34,626 | 34,626 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 657 | 16,435 | 16,350 | 1,184 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 657 | 16,435 | 16,350 | 1,184 |  |
@@ -547,7 +547,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `pesticide_usee` | 7.9.3 pesticide used  code | int8 | 6=DITHANE, 7=RIDOMIL, 8=DIMETHOATE, 9=CYPERMETRINE, 10=DURSIBAN … | 223 | 329 | 320 | 212 |  |
 | `pesticide_usef` | 7.9.4 pesticide used  code | int8 | 6=DITHANE, 7=RIDOMIL, 8=DIMETHOATE, 9=CYPERMETRINE, 10=DURSIBAN … | 66 | 137 | 141 | 48 |  |
 
-## `SAS_pooled_lsf_farmq_part2a_2013_2016.dta` — one row per lsf_farmq_part2a
+## `2_Intermediate/appended/SAS_pooled_lsf_farmq_part2a_2013_2016.dta` — one row per lsf_farmq_part2a
 
 2,036 rows × 14 variables. Waves: 2014_B, 2016_B.
 
@@ -556,7 +556,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 854 | 1,182 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 854 | 1,182 |  |
 | `season` | Season (A, B, C) | string |  | 854 | 1,182 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 2,036 | 2,036 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 854 | 1,182 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 1,182 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 854 | 1,182 |  |
@@ -568,7 +568,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `are_some_antierosion_activit` | 2.5 are some antierosion activities made on this plot during this season? | int8 | 1=yes, 2=no | 854 | 0 |  |
 | `ui26` | 2.6.1 specify any expenditure on anti erosion activities ?code | int8 | 1=distches, 2=trees, 3=bench terraces, 4=progressive terracing, 5=cover plants/grasses … | 81 | 0 |  |
 
-## `SAS_pooled_lsf_farmq_part2b_2013_2016.dta` — one row per lsf_farmq_part2b
+## `2_Intermediate/appended/SAS_pooled_lsf_farmq_part2b_2013_2016.dta` — one row per lsf_farmq_part2b
 
 2,081 rows × 15 variables. Waves: 2014_B, 2016_B.
 
@@ -577,7 +577,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 1,024 | 1,057 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 1,024 | 1,057 |  |
 | `season` | Season (A, B, C) | string |  | 1,024 | 1,057 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 2,081 | 2,081 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 1,024 | 1,057 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 1,057 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 1,024 | 1,057 |  |
@@ -590,7 +590,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `have_u_already_used_this_in` | 2.10.1 have u already used this Inorganic Fertilizers | int8 | 1=Yes, 2=No | 0 | 1,057 |  |
 | `have_you_used_this` | 2.11.1 Have you used this pesticide? | int8 | 1=Yes, 2=No | 0 | 1,057 |  |
 
-## `SAS_pooled_lsf_screening_2013_2016.dta` — one row per lsf_screening
+## `2_Intermediate/appended/SAS_pooled_lsf_screening_2013_2016.dta` — one row per lsf_screening
 
 15,710 rows × 21 variables. Waves: 2014_A, 2014_B, 2015_A, 2016_B.
 
@@ -599,7 +599,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 3,375 | 3,430 | 4,067 | 4,838 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 3,375 | 3,430 | 4,067 | 4,838 |  |
 | `season` | Season (A, B, C) | string |  | 3,375 | 3,430 | 4,067 | 4,838 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 15,710 | 15,710 | 15,710 | 15,710 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 3,375 | 3,430 | 4,067 | 4,838 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 3,375 | 3,430 | 4,067 | 4,838 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 3,375 | 3,430 | 4,067 | 4,838 |  |
@@ -618,7 +618,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `anti_erosive_activitiet` | 2.6.2 Anti erosive activity-3 | int8 | 1=Ditches, 2=Trees, 3=Bench terraces, 4=Progressive terraces, 5=Cover plants/grasses … | 0 | 0 | 0 | 84 |  |
 | `ha_phy` |  | double |  | 0 | 0 | 0 | 4,838 |  |
 
-## `SAS_pooled_ssf_screening_2013_2016.dta` — one row per ssf_screening
+## `2_Intermediate/appended/SAS_pooled_ssf_screening_2013_2016.dta` — one row per ssf_screening
 
 219,362 rows × 23 variables. Waves: 2014_B, 2014_C, 2015_A.
 
@@ -627,7 +627,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 104,572 | 9,316 | 105,474 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 104,572 | 9,316 | 105,474 |  |
 | `season` | Season (A, B, C) | string |  | 104,572 | 9,316 | 105,474 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 219,362 | 219,362 | 219,362 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 104,572 | 9,316 | 105,474 |  |
 | `stratum` | Sampling stratum (as shipped) | int8 |  | 104,572 | 9,316 | 105,474 |  |
 | `holder` | Holder / questionnaire id (as shipped) | int32 |  | 104,572 | 9,316 | 105,474 |  |
@@ -648,7 +648,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `plot_area_sqm` | plot area | double |  | 0 | 9,316 | 0 |  |
 | `group_of_crops` |  | int8 | 1=seasonal crops, 2=annual crops, 3=perenial crops, 4=fodder crops, 5=other crops | 0 | 3,975 | 0 |  |
 
-## `SAS_pooled_fertilizers_pesticides.dta` — one row per fertilizers_pesticides
+## `2_Intermediate/appended/SAS_pooled_fertilizers_pesticides.dta` — one row per fertilizers_pesticides
 
 225,110 rows × 140 variables. Waves: 2019_A, 2019_B, 2019_C, 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
@@ -657,7 +657,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 18,786 | 17,637 | 1,832 | 21,023 | 18,936 | 5,618 | 22,314 | 20,431 | 4,838 | 24,279 | 21,432 | 11,242 | 16,895 | 16,864 | 2,983 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 18,786 | 17,637 | 1,832 | 21,023 | 18,936 | 5,618 | 22,314 | 20,431 | 4,838 | 24,279 | 21,432 | 11,242 | 16,895 | 16,864 | 2,983 |  |
 | `season` | Season (A, B, C) | string |  | 18,786 | 17,637 | 1,832 | 21,023 | 18,936 | 5,618 | 22,314 | 20,431 | 4,838 | 24,279 | 21,432 | 11,242 | 16,895 | 16,864 | 2,983 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 | 225,110 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 20,911 | 18,821 | 5,618 | 22,257 | 20,344 | 4,838 | 24,246 | 21,432 | 0 | 16,895 | 16,864 | 0 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 18,786 | 17,637 | 1,832 | 21,023 | 18,936 | 5,618 | 22,314 | 20,431 | 0 | 24,279 | 21,432 | 11,242 | 16,895 | 16,864 | 2,983 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 18,786 | 17,637 | 1,832 | 21,023 | 18,936 | 5,618 | 22,314 | 20,431 | 4,838 | 24,279 | 21,432 | 11,242 | 16,895 | 16,864 | 2,983 |  |
@@ -795,7 +795,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `unit_price3` | 3 unit_price | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 337 |  |
 | `unit_price4` | 4 unit_price | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 83 |  |
 
-## `SAS_pooled_agricultural_practice.dta` — one row per agricultural_practice
+## `2_Intermediate/appended/SAS_pooled_agricultural_practice.dta` — one row per agricultural_practice
 
 192,553 rows × 116 variables. Waves: 2019_A, 2019_B, 2019_C, 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
@@ -804,7 +804,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 19,333 | 2,779 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 19,333 | 2,779 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
 | `season` | Season (A, B, C) | string |  | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 19,333 | 2,779 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 | 192,553 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 17,306 | 19,274 | 2,779 | 17,376 | 16,883 | 4,926 | 0 | 16,864 | 0 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 16,809 | 0 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 19,333 | 2,779 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
@@ -918,7 +918,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s4q7_o1` | 4.7 What do you gain as support from land consolidation program? | string |  | 19,805 | 19,222 | 1,731 | 16,830 | 16,398 | 3,251 | 17,342 | 19,333 | 2,779 | 17,376 | 16,883 | 4,926 | 16,830 | 16,864 | 2,983 |  |
 | `s4q18_5` | 4.18 What is the irrigation tool have you used?(tool5) | int8 | 1=Irrigation machine, 2=Pump, 3=Tube wells, 4=Water can, 5=Water channels … | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |
 
-## `SAS_pooled_screening_crops.dta` — one row per screening_crops
+## `2_Intermediate/appended/SAS_pooled_screening_crops.dta` — one row per screening_crops
 
 450,923 rows × 40 variables. Waves: 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
@@ -927,7 +927,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 53,419 | 48,696 | 10,897 | 52,873 | 49,348 | 10,495 | 52,487 | 47,308 | 12,067 | 53,691 | 49,337 | 10,305 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 53,419 | 48,696 | 10,897 | 52,873 | 49,348 | 10,495 | 52,487 | 47,308 | 12,067 | 53,691 | 49,337 | 10,305 |  |
 | `season` | Season (A, B, C) | string |  | 53,419 | 48,696 | 10,897 | 52,873 | 49,348 | 10,495 | 52,487 | 47,308 | 12,067 | 53,691 | 49,337 | 10,305 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 | 450,923 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 53,419 | 48,695 | 10,897 | 52,271 | 49,314 | 10,495 | 52,487 | 47,308 | 12,067 | 53,691 | 49,290 | 10,291 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 53,419 | 48,696 | 10,897 | 52,873 | 49,348 | 10,495 | 52,487 | 47,308 | 12,067 | 53,691 | 49,337 | 10,305 |  |
@@ -965,7 +965,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s3q7` | 3.7 What is the expect period of harvesting ? | int8 | 1=Before 01/12, 2=Between 01-15/12, 3=Between 16-31/12, 4=Between 01-15/01, 5=Between 16- 31/01 … | 0 | 0 | 0 | 0 | 0 | 0 | 52,142 | 40,740 | 3,171 | 46,987 | 42,602 | 2,608 | label variants — 2022_A: 3.7 What is the expected period for harvesting thi; 2022_B: 3.7 What is the expected period for harvesting thi; 2023_A: 3.7 What is the expected period for harvesting thi; 2023_B: 3.7 What is the expected period for harvesting thi; value-label text conflicts: {"5": ["Between 16- 31/01", "Between 16-31/01"], "8": ["Other season (applicable for all crops)", "Other season(applicable for all crops)"], "12": ["Between 01- 15/06", "Between 01-15/06"], "13": ["Between 16 -30/06", "Between 16-30/06"], "16": ["Between  01-31/08", "Between 01-31/08"], "18": ["Other season (applicable for all crops)", "Other season(applicable for all crops)"], "23": ["Between 16 -30/09", "Between 16-30/09"]} |
 | `cropcategory` | 3.1 Crop name | int16 | 1=Maize, 2=Sorghum, 3=Paddy rice, 4=Wheat, 5=Other cereals … | 0 | 0 | 0 | 0 | 0 | 0 | 46,787 | 40,968 | 0 | 47,407 | 42,845 | 0 | label variants — 2022_A: 3.1 Crop name; value-label text conflicts: {"6": ["Fruits", "Sweet potato"], "7": ["Irish potato", "Vegetables"], "8": ["Other crops", "Taro & Yams"], "9": ["Cassava", "Other cereals"], "10": ["Bush bean", "Taro & Yams"], "11": ["Climbing bean", "Fodder crops"]} |
 
-## `SAS_pooled_screening_agroforestry.dta` — one row per screening_agroforestry
+## `2_Intermediate/appended/SAS_pooled_screening_agroforestry.dta` — one row per screening_agroforestry
 
 263,633 rows × 28 variables. Waves: 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
@@ -974,7 +974,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 27,564 | 29,526 | 5,057 | 30,596 | 30,122 | 5,063 | 34,477 | 33,192 | 4,937 | 31,778 | 26,391 | 4,930 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 27,564 | 29,526 | 5,057 | 30,596 | 30,122 | 5,063 | 34,477 | 33,192 | 4,937 | 31,778 | 26,391 | 4,930 |  |
 | `season` | Season (A, B, C) | string |  | 27,564 | 29,526 | 5,057 | 30,596 | 30,122 | 5,063 | 34,477 | 33,192 | 4,937 | 31,778 | 26,391 | 4,930 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 | 263,633 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 27,564 | 29,525 | 5,057 | 29,217 | 30,066 | 5,063 | 34,477 | 33,192 | 4,937 | 31,778 | 25,388 | 4,916 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 27,564 | 29,526 | 5,057 | 30,596 | 30,122 | 5,063 | 34,477 | 33,192 | 4,937 | 31,778 | 26,391 | 4,930 |  |
@@ -1000,7 +1000,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `weight_plot_final` | Final weight | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4,937 | 0 | 0 | 0 |  |
 | `bloc_number` | Bloc number in case of Large farmer | int32 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 31,778 | 26,391 | 0 |  |
 
-## `SAS_pooled_screening_antierosion.dta` — one row per screening_antierosion
+## `2_Intermediate/appended/SAS_pooled_screening_antierosion.dta` — one row per screening_antierosion
 
 287,508 rows × 28 variables. Waves: 2020_A, 2020_B, 2020_C, 2021_A, 2021_B, 2021_C, 2022_A, 2022_B, 2022_C, 2023_A, 2023_B, 2023_C.
 
@@ -1009,7 +1009,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 30,078 | 29,822 | 7,945 | 33,890 | 36,257 | 5,668 | 35,362 | 34,483 | 4,937 | 34,765 | 29,371 | 4,930 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 30,078 | 29,822 | 7,945 | 33,890 | 36,257 | 5,668 | 35,362 | 34,483 | 4,937 | 34,765 | 29,371 | 4,930 |  |
 | `season` | Season (A, B, C) | string |  | 30,078 | 29,822 | 7,945 | 33,890 | 36,257 | 5,668 | 35,362 | 34,483 | 4,937 | 34,765 | 29,371 | 4,930 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 | 287,508 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 30,078 | 29,821 | 5,594 | 32,310 | 33,724 | 5,668 | 35,362 | 34,483 | 4,937 | 34,765 | 28,177 | 4,916 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 30,078 | 29,822 | 5,594 | 33,847 | 33,799 | 5,668 | 35,362 | 34,483 | 4,937 | 34,765 | 29,371 | 4,930 |  |
@@ -1035,7 +1035,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `weight_plot_final` | Final weight | double |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4,937 | 0 | 0 | 0 |  |
 | `bloc_number` | Bloc number in case of Large farmer | int32 |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 34,765 | 29,371 | 0 |  |
 
-## `SAS_pooled_fertilizers_2017_2018.dta` — one row per fertilizers_2017_2018
+## `2_Intermediate/appended/SAS_pooled_fertilizers_2017_2018.dta` — one row per fertilizers_2017_2018
 
 84,986 rows × 29 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
@@ -1044,7 +1044,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 16,278 | 14,186 | 6,792 | 34,482 | 11,955 | 1,293 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 16,278 | 14,186 | 6,792 | 34,482 | 11,955 | 1,293 |  |
 | `season` | Season (A, B, C) | string |  | 16,278 | 14,186 | 6,792 | 34,482 | 11,955 | 1,293 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 84,986 | 84,986 | 84,986 | 84,986 | 84,986 | 84,986 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 16,278 | 14,186 | 6,792 | 34,482 | 11,955 | 1,293 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,278 | 14,186 | 6,792 | 3,417 | 11,955 | 1,293 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,278 | 14,186 | 6,792 | 34,482 | 11,955 | 1,293 |  |
@@ -1071,7 +1071,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s3q13` | 3.13.what was the main crop the fertilizer used? | int16 | 101=Maize, 102=Paddy rice, 103=Sorghum, 104=Wheat, 105=Other cereal(specify) … | 0 | 0 | 0 | 919 | 0 | 0 |  |
 | `s2q2_v2` | 2.2 Ptot area in sqm | double |  | 0 | 0 | 0 | 0 | 10,521 | 1,293 | other versions: s2q2 (2017_A_lsf, 2017_A_ssf, 2017_B_lsf, 2017_B_ssf, 2017_C_ssf, 2018_A_lsf, 2018_A_ssf, 2018_B_lsf) |
 
-## `SAS_pooled_pesticides_2017_2018.dta` — one row per pesticides_2017_2018
+## `2_Intermediate/appended/SAS_pooled_pesticides_2017_2018.dta` — one row per pesticides_2017_2018
 
 95,146 rows × 27 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
@@ -1080,7 +1080,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 15,110 | 14,153 | 6,792 | 45,976 | 11,828 | 1,287 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 15,110 | 14,153 | 6,792 | 45,976 | 11,828 | 1,287 |  |
 | `season` | Season (A, B, C) | string |  | 15,110 | 14,153 | 6,792 | 45,976 | 11,828 | 1,287 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 95,146 | 95,146 | 95,146 | 95,146 | 95,146 | 95,146 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 15,110 | 14,153 | 6,792 | 45,976 | 11,828 | 1,287 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 15,110 | 14,153 | 6,792 | 4,556 | 1,321 | 0 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 15,110 | 14,153 | 6,792 | 4,556 | 11,828 | 1,287 |  |
@@ -1105,7 +1105,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s3q19` | 3.19 what was the main crop the pesticide was applied? | int16 | 101=Maize, 102=Paddy rice, 103=Sorghum, 104=Wheat, 105=Other cereal(specify) … | 0 | 0 | 0 | 2,790 | 2,619 | 610 | other versions: s3q19_v2 (2018_A_lsf); label variants — 2018_A_ssf: 3.19.What was the main crop the pesticide was appl |
 | `s2q2_v2` | 2.2 Ptot area in sqm | double |  | 0 | 0 | 0 | 0 | 10,507 | 1,287 | other versions: s2q2 (2017_A_lsf, 2017_A_ssf, 2017_B_lsf, 2017_B_ssf, 2017_C_ssf, 2018_A_lsf, 2018_B_lsf) |
 
-## `SAS_pooled_antierosion_2017_2018.dta` — one row per antierosion_2017_2018
+## `2_Intermediate/appended/SAS_pooled_antierosion_2017_2018.dta` — one row per antierosion_2017_2018
 
 64,405 rows × 18 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
@@ -1114,7 +1114,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 16,080 | 15,031 | 5,094 | 13,825 | 13,080 | 1,295 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 16,080 | 15,031 | 5,094 | 13,825 | 13,080 | 1,295 |  |
 | `season` | Season (A, B, C) | string |  | 16,080 | 15,031 | 5,094 | 13,825 | 13,080 | 1,295 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 64,405 | 64,405 | 64,405 | 64,405 | 64,405 | 64,405 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 16,080 | 15,031 | 5,094 | 13,825 | 13,080 | 1,295 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,080 | 15,031 | 5,094 | 0 | 1,356 | 0 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,080 | 15,031 | 5,094 | 13,825 | 13,080 | 1,295 |  |
@@ -1130,7 +1130,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s1q4` | 1.4 Segment number | int8 |  | 15,191 | 13,827 | 5,094 | 0 | 0 | 0 |  |
 | `s2q2_v2` | 2.2 Ptot area in sqm | double |  | 0 | 0 | 0 | 0 | 11,724 | 1,295 | other versions: s2q2 (2017_A_lsf, 2017_A_ssf, 2017_B_lsf, 2017_B_ssf, 2017_C_ssf, 2018_A_lsf, 2018_A_ssf, 2018_B_lsf) |
 
-## `SAS_pooled_irrigation_land_tenure_2017_2018.dta` — one row per irrigation_land_tenure_2017_2018
+## `2_Intermediate/appended/SAS_pooled_irrigation_land_tenure_2017_2018.dta` — one row per irrigation_land_tenure_2017_2018
 
 52,621 rows × 51 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
@@ -1139,7 +1139,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 14,131 | 13,175 | 1,698 | 11,494 | 10,868 | 1,255 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 14,131 | 13,175 | 1,698 | 11,494 | 10,868 | 1,255 |  |
 | `season` | Season (A, B, C) | string |  | 14,131 | 13,175 | 1,698 | 11,494 | 10,868 | 1,255 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 52,621 | 52,621 | 52,621 | 52,621 | 52,621 | 52,621 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 14,131 | 13,175 | 1,698 | 11,494 | 10,868 | 1,255 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 14,131 | 13,175 | 1,698 | 0 | 1,137 | 0 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 14,131 | 13,175 | 1,698 | 11,494 | 10,868 | 1,255 |  |
@@ -1188,7 +1188,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `s2q2_v2` | 2.2 Ptot area in sqm | double |  | 0 | 0 | 0 | 0 | 9,731 | 0 | other versions: s2q2 (2017_A_lsf, 2017_A_ssf, 2017_B_lsf, 2017_B_ssf, 2017_C_ssf, 2018_A_lsf, 2018_A_ssf, 2018_B_lsf) |
 | `q2_2` | 2.2 Ptot area in sqm | double |  | 0 | 0 | 0 | 0 | 0 | 1,255 |  |
 
-## `SAS_pooled_screening_2017_2018.dta` — one row per screening_2017_2018
+## `2_Intermediate/appended/SAS_pooled_screening_2017_2018.dta` — one row per screening_2017_2018
 
 243,835 rows × 40 variables. Waves: 2017_A, 2017_B, 2017_C, 2018_A, 2018_B, 2018_C.
 
@@ -1197,7 +1197,7 @@ Files: `SAS_pooled_plotcrop.dta` (plotcrop, 632,756 rows), `SAS_pooled_plotcrop_
 | `survey` | Source survey | string |  | 71,465 | 62,792 | 7,853 | 47,812 | 47,353 | 6,560 |  |
 | `year` | Agricultural year of the season (as in the NISR release) | int16 |  | 71,465 | 62,792 | 7,853 | 47,812 | 47,353 | 6,560 |  |
 | `season` | Season (A, B, C) | string |  | 71,465 | 62,792 | 7,853 | 47,812 | 47,353 | 6,560 |  |
-| `wave` | Wave id: <year>_<season> | string |  | 243,835 | 243,835 | 243,835 | 243,835 | 243,835 | 243,835 |  |
+| `wave` | Wave id: <year>_<season> | string |  | 0 | 0 | 0 | 0 | 0 | 0 |  |
 | `farm_type` | 1 small-scale farmer (area frame), 2 large-scale farmer (list frame) | int8 |  | 71,465 | 62,792 | 7,853 | 47,812 | 47,353 | 6,560 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 71,465 | 62,792 | 7,853 | 47,812 | 47,353 | 6,560 |  |
 | `dist` | District (11-57, NISR codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 71,465 | 62,792 | 7,853 | 47,812 | 47,353 | 6,560 |  |

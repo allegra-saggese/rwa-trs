@@ -1,7 +1,7 @@
 variable,label,type,value_labels,n_value_labels,n_2017,n_2024,source,versions,label_variants,value_label_conflicts
 survey,Source survey,string,,0,362203,9981,,,,
 year,Survey year,int16,,0,362203,9981,,,,
-wave,Wave (survey year),string,,0,372184,372184,,,,
+wave,Wave (survey year),string,,0,0,0,,,,
 sample,CS = national sample of agricultural households,string,,0,362203,9981,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,362203,9981,,,,
 dist,"District (11-57, NISR current codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara …",30,362203,9981,,,,

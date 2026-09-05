@@ -1095,6 +1095,7 @@
     "EICV5_CS",
     "EICV7_CS"
    ],
+   "dir": "3_Final",
    "decisions": {
     "age": {
      "waves": [
@@ -16274,6 +16275,7 @@
     "EICV5_VUP",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "age": {
      "waves": [
@@ -24148,6 +24150,7 @@
     "EICV5_CS",
     "EICV7_CS"
    ],
+   "dir": "3_Final",
    "decisions": {
     "ae": {
      "waves": [
@@ -36419,6 +36422,7 @@
     "EICV5_VUP",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -41121,6 +41125,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -42200,6 +42205,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -42941,6 +42947,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -44740,6 +44747,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -46446,6 +46454,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "c8dq1": {
      "waves": [
@@ -47901,6 +47910,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "c8eq1": {
      "waves": [
@@ -49551,6 +49561,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -51578,6 +51589,7 @@
     "EICV2",
     "EICV3"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -52891,6 +52903,7 @@
     "EICV2",
     "EICV3"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -53679,6 +53692,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -54905,6 +54919,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -56504,6 +56519,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -57806,6 +57822,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "age": {
      "waves": [
@@ -61572,6 +61589,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -64669,6 +64687,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -65528,6 +65547,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -67494,6 +67514,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -68790,6 +68811,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -69917,6 +69939,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -70716,6 +70739,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -71889,6 +71913,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -73497,6 +73522,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -75403,6 +75429,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -77032,6 +77059,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -78472,6 +78500,7 @@
     "EICV5_CS",
     "EICV5_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -78980,6 +79009,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -80828,6 +80858,7 @@
     "EICV7_CS",
     "EICV7_VUP"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -82601,7 +82632,8 @@
    "unit": "link",
    "waves": [
     "EICV3_4_Panel"
-   ]
+   ],
+   "dir": "2_Intermediate/appended"
   },
   "EICV5_vup_panel_link.dta": {
    "rows": 5171,
@@ -82651,7 +82683,8 @@
    "unit": "link",
    "waves": [
     "EICV5_VUP"
-   ]
+   ],
+   "dir": "2_Intermediate/appended"
   }
  },
  "module_map": {

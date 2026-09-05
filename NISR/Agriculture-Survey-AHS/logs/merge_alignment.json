@@ -196,6 +196,7 @@
     "2020",
     "2024"
    ],
+   "dir": "3_Final",
    "decisions": {
     "age": {
      "waves": [
@@ -3269,6 +3270,7 @@
     "2020",
     "2024"
    ],
+   "dir": "3_Final",
    "decisions": {
     "agricactivities_n": {
      "waves": [
@@ -9705,6 +9707,7 @@
     "2017",
     "2020"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -10563,6 +10566,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -11877,6 +11881,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "_merge": {
      "waves": [
@@ -12678,6 +12683,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -13814,6 +13820,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -14460,6 +14467,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "_merge": {
      "waves": [
@@ -15602,6 +15610,7 @@
     "2017",
     "2020"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -19175,6 +19184,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [
@@ -20453,6 +20463,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "_merge": {
      "waves": [
@@ -22271,6 +22282,7 @@
     "2020",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "av_daily_milk_cow": {
      "waves": [
@@ -23466,6 +23478,7 @@
     "2017",
     "2024"
    ],
+   "dir": "2_Intermediate/appended",
    "decisions": {
     "cluster": {
      "waves": [

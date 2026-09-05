@@ -25,3 +25,7 @@ numbered without titles; their content was mapped from the 2020 questionnaire (s
 tenure / crops & inputs / fruits, III = extension and programmes, IV = savings-credits, V–VI =
 livestock numbers and stock change, VII = milk / eggs / honey, VIII = animal health, IX = animal
 input expenditures). Modules that exist in one wave only stay per-wave in `2_Intermediate/`.
+
+**Layout (2026-09-04, Matteo).** `3_Final/` holds only the appended unit-level datasets; every
+module-level file — per wave at the top of `2_Intermediate/`, appended across waves in
+`2_Intermediate/appended/` — lives in Intermediate. For AHS: `3_Final/` = person + household; the 13 appended modules are in `2_Intermediate/appended/`.

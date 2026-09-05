@@ -97,7 +97,14 @@ def update_readme():
         try:
             m = read_meta(f); lines.append(f"  {f.name:55s} {m.number_rows:>10,} rows x {len(m.column_names):>4} vars   {m.file_label or ''}")
         except Exception as e: lines.append(f"  {f.name:55s} (unreadable: {e})")
-    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK.md)", end]
+    app = sorted((P["inter"] / "appended").glob("*.dta")) if (P["inter"] / "appended").exists() else []
+    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK.md)"]
+    if app:
+        lines.append(f"2_Intermediate/appended/  ({len(app)} module-level files appended across waves)")
+        for f in app:
+            try: m = read_meta(f); lines.append(f"  {f.name:55s} {m.number_rows:>10,} rows x {len(m.column_names):>4} vars")
+            except Exception as e: lines.append(f"  {f.name:55s} (unreadable: {e})")
+    lines.append(end)
     txt = readme.read_text(encoding="utf-8", errors="replace")
     for stale in ["2_Intermediate/ and 3_Final/ are empty: no clean.do / merge.do written for\nthis survey yet. The Census, EICV and LFS folders have working examples.",
                   "2_Intermediate/  0 files (not built yet)", "3_Final/         0 files (not built yet)"]:

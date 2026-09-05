@@ -7,7 +7,7 @@ Alignment rule: waves are grouped into versions of a variable by label similarit
 
 Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.dta` (person, 32,241 rows), `EICV_pooled_household.dta` (household, 71,681 rows), `EICV_pooled_household_vup.dta` (household, 5,415 rows), `EICV_pooled_agri_expenditure.dta` (agri_expenditure, 890,994 rows), `EICV_pooled_agri_income.dta` (agri_income, 397,212 rows), `EICV_pooled_agri_processing.dta` (agri_processing, 172,443 rows), `EICV_pooled_credits.dta` (credits, 104,030 rows), `EICV_pooled_crop_large.dta` (crop_large, 159,870 rows), `EICV_pooled_crop_small.dta` (crop_small, 469,484 rows), `EICV_pooled_durables.dta` (durables, 2,104,019 rows), `EICV_pooled_enterprise.dta` (enterprise, 70,481 rows), `EICV_pooled_equipment.dta` (equipment, 385,969 rows), `EICV_pooled_expenditure_annual.dta` (expenditure_annual, 5,476,244 rows), `EICV_pooled_expenditure_frequent.dta` (expenditure_frequent, 2,504,958 rows), `EICV_pooled_expenditure_monthly.dta` (expenditure_monthly, 3,930,484 rows), `EICV_pooled_food.dta` (food, 10,789,172 rows), `EICV_pooled_jobs.dta` (jobs, 242,787 rows), `EICV_pooled_land.dta` (land, 545,978 rows), `EICV_pooled_livestock.dta` (livestock, 345,131 rows), `EICV_pooled_livestock_expenditure.dta` (livestock_expenditure, 424,476 rows), `EICV_pooled_livestock_products.dta` (livestock_products, 317,188 rows), `EICV_pooled_other_expenditure.dta` (other_expenditure, 817,971 rows), `EICV_pooled_other_income.dta` (other_income, 1,612,233 rows), `EICV_pooled_own_consumption.dta` (own_consumption, 4,683,922 rows), `EICV_pooled_parcels.dta` (parcels, 207,503 rows), `EICV_pooled_savings.dta` (savings, 153,527 rows), `EICV_pooled_services.dta` (services, 1,041,332 rows), `EICV_pooled_tontine.dta` (tontine, 46,829 rows), `EICV_pooled_transfers_in.dta` (transfers_in, 356,505 rows), `EICV_pooled_transfers_out.dta` (transfers_out, 406,722 rows), `EICV3_4_panel_link.dta` (link, 8,310 rows), `EICV5_vup_panel_link.dta` (link, 5,171 rows)
 
-## `EICV_pooled_person.dta` — one row per person
+## `3_Final/EICV_pooled_person.dta` — one row per person
 
 327,841 rows × 1080 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV5_CS, EICV7_CS.
 
@@ -1094,7 +1094,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s8cq16_v5` | [EICV7_CS..EICV7_CS version] Amount paid for alcoholic drinks taken away from ho | int16 |  | 0 | 0 | 0 | 0 | 0 | 3,319 | source: EICV7_CS: module s8c_food_away_from_home |
 | `s8cq17_v5` | [EICV7_CS..EICV7_CS version] Point service | int8 | 1=Resitora/Cafetariat, 2=Butike/Cantine, 3=Bar, 4=In another Household, 5=Other | 0 | 0 | 0 | 0 | 0 | 3,320 | source: EICV7_CS: module s8c_food_away_from_home |
 
-## `EICV_pooled_person_vup.dta` — one row per person
+## `2_Intermediate/appended/EICV_pooled_person_vup.dta` — one row per person
 
 32,241 rows × 480 variables. Waves: EICV4_VUP, EICV5_VUP, EICV7_VUP.
 
@@ -1581,7 +1581,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s9d5q6` | Main project activity that originally planned for the loan | int8 | 1=Investment in Farming, 2=To buy Livestock, 3= Poultry keeping, 4= Business/Trade, 5=Handcraft (Tailoring, Carpentry and other professions) … | 0 | 0 | 584 | source: EICV7_VUP: module s9d5_financial_services |
 | `s9d5q7` | Main project activity implemented after receiving the loan | int8 | 1=Investment in Farming, 2=To buy Livestock, 3= Poultry keeping, 4= Business/Trade, 5=Handcraft (Tailoring, Carpentry and other professions) … | 0 | 0 | 584 | source: EICV7_VUP: module s9d5_financial_services |
 
-## `EICV_pooled_household.dta` — one row per household
+## `3_Final/EICV_pooled_household.dta` — one row per household
 
 71,681 rows × 817 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV5_CS, EICV7_CS.
 
@@ -2405,7 +2405,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `poverty_s9d5_financial_services` | Welfare Categories | int8 | 1=Severaly Poor, 2=Moderately poor, 3=Non Poor | 0 | 0 | 0 | 0 | 0 | 333 | source: EICV7_CS: module s9d5_financial_services |
 | `epov_jan_s9d5_financial_services` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 0 | 333 | source: EICV7_CS: module s9d5_financial_services |
 
-## `EICV_pooled_household_vup.dta` — one row per household
+## `2_Intermediate/appended/EICV_pooled_household_vup.dta` — one row per household
 
 5,415 rows × 316 variables. Waves: EICV5_VUP, EICV7_VUP.
 
@@ -2728,7 +2728,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s9d4q9c` | Number of delayed days of third last payment | int8 |  | 0 | 675 | source: EICV7_VUP: module s9d4_nsds |
 | `s9d4q10` | mode of receiving NSDS payment | int8 | 1=Umurenge SACCO, 2=Mobile Money/Airtel Money, 3=Not yet paid | 0 | 675 | source: EICV7_VUP: module s9d4_nsds |
 
-## `EICV_pooled_agri_expenditure.dta` — one row per agri_expenditure
+## `2_Intermediate/appended/EICV_pooled_agri_expenditure.dta` — one row per agri_expenditure
 
 890,994 rows × 53 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -2788,7 +2788,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 26,288 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 0 | 26,288 |  |
 
-## `EICV_pooled_agri_income.dta` — one row per agri_income
+## `2_Intermediate/appended/EICV_pooled_agri_income.dta` — one row per agri_income
 
 397,212 rows × 31 variables. Waves: EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -2826,7 +2826,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 19,728 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 19,728 |  |
 
-## `EICV_pooled_agri_processing.dta` — one row per agri_processing
+## `2_Intermediate/appended/EICV_pooled_agri_processing.dta` — one row per agri_processing
 
 172,443 rows × 106 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -2939,7 +2939,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 5,300 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 0 | 5,300 |  |
 
-## `EICV_pooled_credits.dta` — one row per credits
+## `2_Intermediate/appended/EICV_pooled_credits.dta` — one row per credits
 
 104,030 rows × 82 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -3028,7 +3028,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `epov_jan` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20,509 | 5,404 |  |
 | `province_2` | Province | int8 | 1=Kigali City, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5,404 |  |
 
-## `EICV_pooled_crop_large.dta` — one row per crop_large
+## `2_Intermediate/appended/EICV_pooled_crop_large.dta` — one row per crop_large
 
 159,870 rows × 72 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -3107,7 +3107,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 4,613 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 4,613 |  |
 
-## `EICV_pooled_crop_small.dta` — one row per crop_small
+## `2_Intermediate/appended/EICV_pooled_crop_small.dta` — one row per crop_small
 
 469,484 rows × 82 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -3196,7 +3196,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 14,136 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 14,136 |  |
 
-## `EICV_pooled_durables.dta` — one row per durables
+## `2_Intermediate/appended/EICV_pooled_durables.dta` — one row per durables
 
 2,104,019 rows × 98 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -3301,7 +3301,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `province_2` | Province | int8 | 1=Kigali City, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 101,817 |  |
 | `pov_jan` | Total Poverty Headcount Ratio | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 101,817 | other versions: pov_jan_v2 (EICV7_CS) |
 
-## `EICV_pooled_enterprise.dta` — one row per enterprise
+## `2_Intermediate/appended/EICV_pooled_enterprise.dta` — one row per enterprise
 
 70,481 rows × 93 variables. Waves: EICV1, EICV2, EICV3.
 
@@ -3401,7 +3401,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s7bq17` | Amount reimbursed on loan last 12 months | int32 |  | 0 | 0 | 979 |  |
 | `pid_nisr` | NISR person id as shipped (EICV3 PID = hhid*100 + person) | double |  | 0 | 0 | 61,405 |  |
 
-## `EICV_pooled_equipment.dta` — one row per equipment
+## `2_Intermediate/appended/EICV_pooled_equipment.dta` — one row per equipment
 
 385,969 rows × 45 variables. Waves: EICV1, EICV2, EICV3.
 
@@ -3453,7 +3453,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s8b2q5` | How old is equipment bought | int8 | 98=Gift, 99=Missing | 0 | 0 | 46,552 | other versions: s8b2q5_v2 (EICV2) |
 | `s8b2q11` | Amount received from the sale | int32 |  | 0 | 0 | 268 | other versions: s8b2q11_v2 (EICV2) |
 
-## `EICV_pooled_expenditure_annual.dta` — one row per expenditure_annual
+## `2_Intermediate/appended/EICV_pooled_expenditure_annual.dta` — one row per expenditure_annual
 
 5,476,244 rows × 52 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -3512,7 +3512,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `pov_jan` | Poverty Rate | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 1,159,158 | 290,367 |  |
 | `quintile_v2` | [EICV7_CS..EICV7_VUP version] Quintiles of real consumption per ae | int8 | 1=Q1, 2=Q2, 3=Q3, 4=Q4, 5=Q5 | 0 | 0 | 0 | 0 | 0 | 0 | 1,159,158 | 290,367 | other versions: quintile (EICV3, EICV4_CS, EICV5_CS) |
 
-## `EICV_pooled_expenditure_frequent.dta` — one row per expenditure_frequent
+## `2_Intermediate/appended/EICV_pooled_expenditure_frequent.dta` — one row per expenditure_frequent
 
 2,504,958 rows × 77 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -3596,7 +3596,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `pov_jan` | Poverty Rate | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 346,220 | 86,623 |  |
 | `quintile_v2` | [EICV7_CS..EICV7_VUP version] Quintiles of real consumption per ae | int8 | 1=Q1, 2=Q2, 3=Q3, 4=Q4, 5=Q5 | 0 | 0 | 0 | 0 | 0 | 0 | 346,220 | 86,623 | other versions: quintile (EICV3, EICV4_CS, EICV5_CS) |
 
-## `EICV_pooled_expenditure_monthly.dta` — one row per expenditure_monthly
+## `2_Intermediate/appended/EICV_pooled_expenditure_monthly.dta` — one row per expenditure_monthly
 
 3,930,484 rows × 52 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -3655,7 +3655,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `pov_jan` | Poverty Rate | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 978,382 | 245,115 |  |
 | `quintile_v2` | [EICV7_CS..EICV7_VUP version] Quintiles of real consumption per ae | int8 | 1=Q1, 2=Q2, 3=Q3, 4=Q4, 5=Q5 | 0 | 0 | 0 | 0 | 0 | 0 | 978,382 | 245,115 | other versions: quintile (EICV3, EICV4_CS, EICV5_CS) |
 
-## `EICV_pooled_food.dta` — one row per food
+## `2_Intermediate/appended/EICV_pooled_food.dta` — one row per food
 
 10,789,172 rows × 168 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -3830,7 +3830,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `pov_jan` | Poverty Rate | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2,227,992 | 0 |  |
 | `quintile_v2` | [EICV7_CS..EICV7_CS version] Quintiles of real consumption per ae | int8 | 1=Q1, 2=Q2, 3=Q3, 4=Q4, 5=Q5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2,227,992 | 0 | other versions: quintile (EICV1, EICV3, EICV4_CS, EICV5_CS) |
 
-## `EICV_pooled_jobs.dta` — one row per jobs
+## `2_Intermediate/appended/EICV_pooled_jobs.dta` — one row per jobs
 
 242,787 rows × 192 variables. Waves: EICV2, EICV3, EICV4_CS, EICV5_CS, EICV5_VUP.
 
@@ -4029,7 +4029,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 9,180 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 9,180 |  |
 
-## `EICV_pooled_land.dta` — one row per land
+## `2_Intermediate/appended/EICV_pooled_land.dta` — one row per land
 
 545,978 rows × 36 variables. Waves: EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -4072,7 +4072,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 27,198 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 27,198 |  |
 
-## `EICV_pooled_livestock.dta` — one row per livestock
+## `2_Intermediate/appended/EICV_pooled_livestock.dta` — one row per livestock
 
 345,131 rows × 119 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -4198,7 +4198,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 11,867 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 0 | 11,867 |  |
 
-## `EICV_pooled_livestock_expenditure.dta` — one row per livestock_expenditure
+## `2_Intermediate/appended/EICV_pooled_livestock_expenditure.dta` — one row per livestock_expenditure
 
 424,476 rows × 65 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -4270,7 +4270,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 12,495 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 0 | 12,495 |  |
 
-## `EICV_pooled_livestock_products.dta` — one row per livestock_products
+## `2_Intermediate/appended/EICV_pooled_livestock_products.dta` — one row per livestock_products
 
 317,188 rows × 55 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -4332,7 +4332,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 10,224 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 0 | 10,224 |  |
 
-## `EICV_pooled_other_expenditure.dta` — one row per other_expenditure
+## `2_Intermediate/appended/EICV_pooled_other_expenditure.dta` — one row per other_expenditure
 
 817,971 rows × 36 variables. Waves: EICV3, EICV4_CS, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -4375,7 +4375,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `pov_jan` | Total Poverty Headcount Ratio | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 198,588 | 49,439 |  |
 | `epov_jan` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 198,588 | 49,439 |  |
 
-## `EICV_pooled_other_income.dta` — one row per other_income
+## `2_Intermediate/appended/EICV_pooled_other_income.dta` — one row per other_income
 
 1,612,233 rows × 47 variables. Waves: EICV2, EICV3, EICV4_CS, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -4429,7 +4429,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `epov_jan` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 0 | 397,176 | 98,878 |  |
 | `province_2` | Province | int8 | 1=Kigali City, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 0 | 0 | 0 | 0 | 0 | 98,878 |  |
 
-## `EICV_pooled_own_consumption.dta` — one row per own_consumption
+## `2_Intermediate/appended/EICV_pooled_own_consumption.dta` — one row per own_consumption
 
 4,683,922 rows × 84 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -4520,7 +4520,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 166,044 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 166,044 |  |
 
-## `EICV_pooled_parcels.dta` — one row per parcels
+## `2_Intermediate/appended/EICV_pooled_parcels.dta` — one row per parcels
 
 207,503 rows × 118 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP.
 
@@ -4645,7 +4645,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 0 | 0 | 0 | 0 | 0 | 4,629 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 0 | 0 | 0 | 0 | 0 | 4,629 |  |
 
-## `EICV_pooled_savings.dta` — one row per savings
+## `2_Intermediate/appended/EICV_pooled_savings.dta` — one row per savings
 
 153,527 rows × 84 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -4736,7 +4736,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `epov_jan` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 43,810 | 10,777 |  |
 | `province_2` | Province | int8 | 1=Kigali City, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10,777 |  |
 
-## `EICV_pooled_services.dta` — one row per services
+## `2_Intermediate/appended/EICV_pooled_services.dta` — one row per services
 
 1,041,332 rows × 67 variables. Waves: EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -4810,7 +4810,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `epov_jan` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 0 | 0 | 225,810 | 56,565 |  |
 | `province_2` | Province | int8 | 1=Kigali City, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 56,565 |  |
 
-## `EICV_pooled_tontine.dta` — one row per tontine
+## `2_Intermediate/appended/EICV_pooled_tontine.dta` — one row per tontine
 
 46,829 rows × 26 variables. Waves: EICV5_CS, EICV5_VUP.
 
@@ -4843,7 +4843,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s0q18m` | Month of interview | int8 |  | 0 | 4,577 |  |
 | `s0q18y` | Year of interview | int16 |  | 0 | 4,577 |  |
 
-## `EICV_pooled_transfers_in.dta` — one row per transfers_in
+## `2_Intermediate/appended/EICV_pooled_transfers_in.dta` — one row per transfers_in
 
 356,505 rows × 91 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -4941,7 +4941,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `s9bq99` | More transfers in? | int8 | 1=Yes, 2=No | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8,161 |  |
 | `pov_jan` | Total Poverty Headcount Ratio | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9,313 | other versions: pov_jan_v2 (EICV7_CS) |
 
-## `EICV_pooled_transfers_out.dta` — one row per transfers_out
+## `2_Intermediate/appended/EICV_pooled_transfers_out.dta` — one row per transfers_out
 
 406,722 rows × 79 variables. Waves: EICV1, EICV2, EICV3, EICV4_CS, EICV4_VUP, EICV5_CS, EICV5_VUP, EICV7_CS, EICV7_VUP.
 
@@ -5027,7 +5027,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `pov_jan` | Total Poverty Headcount Ratio | int8 | 0=Non Poor, 100=Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 68,175 | 16,256 |  |
 | `epov_jan` | Extreme Poverty Headcount Ratio | int8 | 0=Non Extreme Poor, 100=Extreme Poor | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 68,175 | 16,256 |  |
 
-## `EICV3_4_panel_link.dta` — one row per link
+## `2_Intermediate/appended/EICV3_4_panel_link.dta` — one row per link
 
 8,310 rows × 38 variables. Waves: EICV3_4_Panel.
 
@@ -5072,7 +5072,7 @@ Files: `EICV_pooled_person.dta` (person, 327,841 rows), `EICV_pooled_person_vup.
 | `ur_eicv3` | Strata | int32 | 1=Urban, 2=Rural, 3=Peri urban, 4=Semi urban | 8,310 |  |
 | `ur` | urban&rural 2012 | int32 |  | 8,310 |  |
 
-## `EICV5_vup_panel_link.dta` — one row per link
+## `2_Intermediate/appended/EICV5_vup_panel_link.dta` — one row per link
 
 5,171 rows × 41 variables. Waves: EICV5_VUP.
 

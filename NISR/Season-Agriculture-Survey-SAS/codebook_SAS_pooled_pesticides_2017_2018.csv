@@ -2,7 +2,7 @@ variable,label,type,value_labels,n_value_labels,n_2017_A,n_2017_B,n_2017_C,n_201
 survey,Source survey,string,,0,15110,14153,6792,45976,11828,1287,,,,
 year,Agricultural year of the season (as in the NISR release),int16,,0,15110,14153,6792,45976,11828,1287,,,,
 season,"Season (A, B, C)",string,,0,15110,14153,6792,45976,11828,1287,,,,
-wave,Wave id: <year>_<season>,string,,0,95146,95146,95146,95146,95146,95146,,,,
+wave,Wave id: <year>_<season>,string,,0,0,0,0,0,0,0,,,,
 farm_type,"1 small-scale farmer (area frame), 2 large-scale farmer (list frame)",int8,,0,15110,14153,6792,45976,11828,1287,,,,
 prov,"Province (1-5, NISR codes)",int8,"1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province",5,15110,14153,6792,4556,1321,0,,,,
 dist,"District (11-57, NISR codes)",int8,"11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara …",30,15110,14153,6792,4556,11828,1287,,,,

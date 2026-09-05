@@ -7,7 +7,7 @@ Alignment rule: waves are grouped into versions of a variable by label similarit
 
 Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta` (household, 30,447 rows), `AHS_pooled_animal_inputs.dta` (animal_inputs, 49,750 rows), `AHS_pooled_credits.dta` (credits, 31,947 rows), `AHS_pooled_eggs.dta` (eggs, 58,853 rows), `AHS_pooled_extension.dta` (extension, 98,843 rows), `AHS_pooled_fruits.dta` (fruits, 29,239 rows), `AHS_pooled_honey.dta` (honey, 38,465 rows), `AHS_pooled_inputs.dta` (inputs, 26,723 rows), `AHS_pooled_land.dta` (land, 72,211 rows), `AHS_pooled_livestock.dta` (livestock, 65,808 rows), `AHS_pooled_milk.dta` (milk, 59,594 rows), `AHS_pooled_tools.dta` (tools, 372,184 rows)
 
-## `AHS_pooled_person.dta` — one row per person
+## `3_Final/AHS_pooled_person.dta` — one row per person
 
 138,683 rows × 184 variables. Waves: 2017, 2020, 2024.
 
@@ -15,7 +15,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 73,665 | 48,726 | 16,292 |  |
 | `year` | Survey year | int16 |  | 73,665 | 48,726 | 16,292 |  |
-| `wave` | Wave (survey year) | string |  | 138,683 | 138,683 | 138,683 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 73,665 | 48,726 | 16,292 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 73,665 | 48,726 | 16,292 | source: 2017: s0q1; 2020: s0q1; 2024: province |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 73,665 | 48,726 | 16,292 | source: 2017: s0q2; 2020: s0q2; 2024: district |
@@ -198,7 +198,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s6cq11` | Over the last 7 days, did spend any time on other household chores such as laund | int8 | 1=Yes, 2=No | 0 | 0 | 5,085 |  |
 | `s6cq12` | How many hours did spend on other household chores over the last 7 days? | int8 |  | 0 | 0 | 2,549 |  |
 
-## `AHS_pooled_household.dta` — one row per household
+## `3_Final/AHS_pooled_household.dta` — one row per household
 
 30,447 rows × 453 variables. Waves: 2017, 2020, 2024.
 
@@ -206,7 +206,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 16,057 | 10,666 | 3,724 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
 | `year` | Survey year | int16 |  | 16,057 | 10,666 | 3,724 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
-| `wave` | Wave (survey year) | string |  | 30,447 | 30,447 | 30,447 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
 | `sample` | CS = national sample of agricultural households | string |  | 16,057 | 10,666 | 3,724 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,057 | 10,666 | 3,724 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,057 | 10,666 | 3,724 | source: 2017: module s0_general_information; 2020: module section_0; 2024: module section0 |
@@ -658,7 +658,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s8q5` | 8.5 In this season, which of the following measures did your household adopt to | string |  | 16,057 | 10,666 | 3,724 | source: 2024: module section8_sustainable_agriculture |
 | `s8q6` | 8.6 To avoid environment-related risk, which of the following measures did your | string |  | 16,057 | 10,666 | 3,724 | source: 2024: module section8_sustainable_agriculture |
 
-## `AHS_pooled_animal_inputs.dta` — one row per animal_inputs
+## `2_Intermediate/appended/AHS_pooled_animal_inputs.dta` — one row per animal_inputs
 
 49,750 rows × 52 variables. Waves: 2017, 2020.
 
@@ -666,7 +666,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 26,500 | 23,250 |  |
 | `year` | Survey year | int16 |  | 26,500 | 23,250 |  |
-| `wave` | Wave (survey year) | string |  | 49,750 | 49,750 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 26,500 | 23,250 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 26,500 | 23,250 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 26,500 | 23,250 |  |
@@ -717,7 +717,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s9q12` | 9.12 Other expenditures | int32 |  | 0 | 20,440 |  |
 | `owner` | owner | string |  | 26,500 | 23,250 |  |
 
-## `AHS_pooled_credits.dta` — one row per credits
+## `2_Intermediate/appended/AHS_pooled_credits.dta` — one row per credits
 
 31,947 rows × 89 variables. Waves: 2017, 2020, 2024.
 
@@ -725,7 +725,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 16,057 | 10,666 | 5,224 |  |
 | `year` | Survey year | int16 |  | 16,057 | 10,666 | 5,224 |  |
-| `wave` | Wave (survey year) | string |  | 31,947 | 31,947 | 31,947 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 16,057 | 10,666 | 5,224 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,057 | 10,666 | 5,224 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,057 | 10,666 | 5,224 |  |
@@ -813,7 +813,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s10aq7_o` | Main purpose of loan | string |  | 16,057 | 10,666 | 5,224 |  |
 | `loan` | does any household member requested any loan? | int8 | 1=Yes, 2=No | 0 | 0 | 5,224 |  |
 
-## `AHS_pooled_eggs.dta` — one row per eggs
+## `2_Intermediate/appended/AHS_pooled_eggs.dta` — one row per eggs
 
 58,853 rows × 49 variables. Waves: 2020, 2024.
 
@@ -821,7 +821,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 39,776 | 19,077 |  |
 | `year` | Survey year | int16 |  | 39,776 | 19,077 |  |
-| `wave` | Wave (survey year) | string |  | 58,853 | 58,853 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 39,776 | 19,077 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 39,776 | 18,916 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 39,776 | 18,916 |  |
@@ -869,7 +869,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `owner` | owner | string |  | 39,776 | 19,077 |  |
 | `_merge` | Matching result from merge | int8 | 1=Master only (1), 2=Using only (2), 3=Matched (3), 4=Missing updated (4), 5=Nonmissing conflict (5) | 0 | 19,077 |  |
 
-## `AHS_pooled_extension.dta` — one row per extension
+## `2_Intermediate/appended/AHS_pooled_extension.dta` — one row per extension
 
 98,843 rows × 74 variables. Waves: 2017, 2020, 2024.
 
@@ -877,7 +877,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 64,228 | 25,329 | 9,286 |  |
 | `year` | Survey year | int16 |  | 64,228 | 25,329 | 9,286 |  |
-| `wave` | Wave (survey year) | string |  | 98,843 | 98,843 | 98,843 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 64,228 | 25,329 | 9,286 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 64,228 | 25,329 | 9,286 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 64,228 | 25,329 | 9,286 |  |
@@ -950,7 +950,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s6q15` |  What types of support/funds received? | int8 |  | 0 | 0 | 686 |  |
 | `s6q16` |  What is the origin of that support? | int8 |  | 0 | 0 | 686 |  |
 
-## `AHS_pooled_fruits.dta` — one row per fruits
+## `2_Intermediate/appended/AHS_pooled_fruits.dta` — one row per fruits
 
 29,239 rows × 39 variables. Waves: 2020, 2024.
 
@@ -958,7 +958,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 20,046 | 9,193 |  |
 | `year` | Survey year | int16 |  | 20,046 | 9,193 |  |
-| `wave` | Wave (survey year) | string |  | 29,239 | 29,239 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 20,046 | 9,193 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 20,046 | 9,193 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 20,046 | 9,193 |  |
@@ -996,7 +996,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s5_q8` | what is the quantity that has been used/ to be used as household consumption | int16 |  | 0 | 6,825 |  |
 | `s6_q9` | what is the quantity that has been used /to be used in any other way?  (Kg) | int16 |  | 0 | 6,825 |  |
 
-## `AHS_pooled_honey.dta` — one row per honey
+## `2_Intermediate/appended/AHS_pooled_honey.dta` — one row per honey
 
 38,465 rows × 59 variables. Waves: 2017, 2020, 2024.
 
@@ -1004,7 +1004,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 16,067 | 13,011 | 9,387 |  |
 | `year` | Survey year | int16 |  | 16,067 | 13,011 | 9,387 |  |
-| `wave` | Wave (survey year) | string |  | 38,465 | 38,465 | 38,465 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 16,067 | 13,011 | 9,387 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,067 | 13,011 | 9,387 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,067 | 13,011 | 9,387 |  |
@@ -1062,7 +1062,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `owner` | owner | string |  | 16,067 | 13,011 | 9,387 |  |
 | `_merge` | Matching result from merge | int8 | 1=Master only (1), 2=Using only (2), 3=Matched (3), 4=Missing updated (4), 5=Nonmissing conflict (5) | 0 | 0 | 9,387 |  |
 
-## `AHS_pooled_inputs.dta` — one row per inputs
+## `2_Intermediate/appended/AHS_pooled_inputs.dta` — one row per inputs
 
 26,723 rows × 246 variables. Waves: 2017, 2020.
 
@@ -1070,7 +1070,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 16,057 | 10,666 |  |
 | `year` | Survey year | int16 |  | 16,057 | 10,666 |  |
-| `wave` | Wave (survey year) | string |  | 26,723 | 26,723 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 16,057 | 10,666 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,057 | 10,666 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,057 | 10,666 |  |
@@ -1315,7 +1315,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s2q32` | 2.32 What was the irrigation tool used? | int8 | 1=Water cane /basin / bucket, 2=Water channels, 3=Tube wells, 4=SSIT tools (pumps, pivot?), 5=Irrigation machine … | 0 | 1,538 |  |
 | `s2q33` | 2.33 Source of water used for irrigation | int8 | 1=Rainwater harvesting, 2=Water treatment plant, 3=Underground water, 4=Lake/stream water, 5=Water(dam) … | 0 | 1,538 |  |
 
-## `AHS_pooled_land.dta` — one row per land
+## `2_Intermediate/appended/AHS_pooled_land.dta` — one row per land
 
 72,211 rows × 88 variables. Waves: 2017, 2020, 2024.
 
@@ -1323,7 +1323,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 16,057 | 32,888 | 23,266 |  |
 | `year` | Survey year | int16 |  | 16,057 | 32,888 | 23,266 |  |
-| `wave` | Wave (survey year) | string |  | 72,211 | 72,211 | 72,211 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 16,057 | 32,888 | 23,266 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 16,057 | 32,888 | 23,266 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 16,057 | 32,888 | 23,266 |  |
@@ -1410,7 +1410,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `pov_jan` | Poverty Rate | int8 |  | 0 | 0 | 23,266 |  |
 | `total_agr_land` | Total agriculture land/household in ha | double |  | 0 | 0 | 17,448 |  |
 
-## `AHS_pooled_livestock.dta` — one row per livestock
+## `2_Intermediate/appended/AHS_pooled_livestock.dta` — one row per livestock
 
 65,808 rows × 119 variables. Waves: 2017, 2020, 2024.
 
@@ -1418,7 +1418,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 32,611 | 23,250 | 9,947 |  |
 | `year` | Survey year | int16 |  | 32,611 | 23,250 | 9,947 |  |
-| `wave` | Wave (survey year) | string |  | 65,808 | 65,808 | 65,808 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 32,611 | 23,250 | 9,947 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 28,199 | 23,250 | 9,947 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 28,199 | 23,250 | 9,947 |  |
@@ -1536,7 +1536,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s12q12` |  12.12 Other expenditures in livestock | int32 |  | 0 | 0 | 8,033 |  |
 | `_merge` | Matching result from merge | int8 | 1=Master only (1), 2=Using only (2), 3=Matched (3), 4=Missing updated (4), 5=Nonmissing conflict (5) | 0 | 0 | 9,947 |  |
 
-## `AHS_pooled_milk.dta` — one row per milk
+## `2_Intermediate/appended/AHS_pooled_milk.dta` — one row per milk
 
 59,594 rows × 78 variables. Waves: 2017, 2020, 2024.
 
@@ -1544,7 +1544,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---:|---|
 | `survey` | Source survey | string |  | 3,237 | 44,148 | 12,209 |  |
 | `year` | Survey year | int16 |  | 3,237 | 44,148 | 12,209 |  |
-| `wave` | Wave (survey year) | string |  | 59,594 | 59,594 | 59,594 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 3,237 | 44,148 | 12,209 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 3,237 | 44,148 | 12,209 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 3,237 | 44,148 | 12,209 |  |
@@ -1621,7 +1621,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 | `s11q1_10` |  Total Quantity given as gift (liter) | double |  | 0 | 0 | 12,209 |  |
 | `s11q1_11` |  Total Quantity used in any other way (liter) | double |  | 0 | 0 | 12,209 |  |
 
-## `AHS_pooled_tools.dta` — one row per tools
+## `2_Intermediate/appended/AHS_pooled_tools.dta` — one row per tools
 
 372,184 rows × 33 variables. Waves: 2017, 2024.
 
@@ -1629,7 +1629,7 @@ Files: `AHS_pooled_person.dta` (person, 138,683 rows), `AHS_pooled_household.dta
 |---|---|---|---|---:|---:|---|
 | `survey` | Source survey | string |  | 362,203 | 9,981 |  |
 | `year` | Survey year | int16 |  | 362,203 | 9,981 |  |
-| `wave` | Wave (survey year) | string |  | 372,184 | 372,184 |  |
+| `wave` | Wave (survey year) | string |  | 0 | 0 |  |
 | `sample` | CS = national sample of agricultural households | string |  | 362,203 | 9,981 |  |
 | `prov` | Province (1-5, NISR codes) | int8 | 1=City of Kigali, 2=Southern Province, 3=Western Province, 4=Northern Province, 5=Eastern Province | 362,203 | 9,981 |  |
 | `dist` | District (11-57, NISR current codes) | int8 | 11=Nyarugenge, 12=Gasabo, 13=Kicukiro, 21=Nyanza, 22=Gisagara … | 362,203 | 9,981 |  |

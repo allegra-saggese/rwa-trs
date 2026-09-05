@@ -71,3 +71,7 @@ wave by wave and the version rule keeps different questions apart.
 flags weighted by `pop_wt`: EICV4 39.1, EICV5 38.2, EICV7 27.4 (revised basis). For EICV3 the shipped
 file is the January-2014-price re-expression made for the EICV3–EICV4 comparison and gives 46.0, the
 figure of the EICV4 trend report, not the 44.9 of the original 2010/11 basis.
+
+**Layout (2026-09-04, Matteo).** `3_Final/` holds only the appended unit-level datasets; every
+module-level file — per wave at the top of `2_Intermediate/`, appended across waves in
+`2_Intermediate/appended/` — lives in Intermediate. For EICV that means `3_Final/` = `EICV_pooled_person` + `EICV_pooled_household` (the six national rounds); the VUP pools, the 27 appended modules and the two panel link files are in `2_Intermediate/appended/`.
