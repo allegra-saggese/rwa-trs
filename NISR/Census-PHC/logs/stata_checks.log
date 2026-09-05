@@ -1,0 +1,48 @@
+
+. * stata_checks.do -- recompute Census check statistics in Stata (written by 0
+> 3_checks.py)
+. clear all
+
+. set more off
+
+. use year wt sex sector hhid using "/Users/matteo/Library/CloudStorage/Dropbox
+> /1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Census-PHC/3_Fi
+> nal/Census_pooled_person.dta", clear
+(Rwanda Census 2002/2012/2022 pooled person file (public-use samples, repeated 
+> cr)
+
+. gen byte male = sex == 1
+
+. gen byte female = sex == 2
+
+. gen long one = 1
+
+. bysort year sector: gen byte first_sector = _n == 1
+
+. collapse (sum) n=one sum_wt=wt male female n_sector=first_sector, by(year)
+
+. export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PH
+> C/logs/stata_checks.csv", replace
+(file
+    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks.
+    > csv not found)
+file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks.c
+> sv saved
+
+. use year wt hhsize hhid using "/Users/matteo/Library/CloudStorage/Dropbox/1-O
+> ngoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Census-PHC/3_Final/
+> Census_pooled_household.dta", clear
+(Rwanda Census 2002/2012/2022 pooled household file (public-use samples))
+
+. collapse (count) n_hh=hhid (sum) hhsize_sum=hhsize sum_wt_hh=wt, by(year)
+
+. export delimited using "/Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PH
+> C/logs/stata_checks_hh.csv", replace
+(file
+    /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks_
+    > hh.csv not found)
+file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks_h
+> h.csv saved
+
+. 
+end of do-file

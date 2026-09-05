@@ -1,0 +1,7165 @@
+{
+ "threshold": 0.25,
+ "force_align": [],
+ "force_split": {},
+ "decisions": {
+  "a46": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "a46": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy A46)"
+   },
+   "reference_label": "Age (NISR derived copy A46)"
+  },
+  "agcm": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "agcm": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy)"
+   },
+   "reference_label": "Age (NISR derived copy)"
+  },
+  "age": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "age": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age in years",
+    "2012": "Age in years",
+    "2022": "Age in years"
+   },
+   "reference_label": "Age in years"
+  },
+  "age18": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "age18": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 18)"
+   },
+   "reference_label": "Age (NISR derived copy 18)"
+  },
+  "age19": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "age19": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 19)"
+   },
+   "reference_label": "Age (NISR derived copy 19)"
+  },
+  "age1_1": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "age1_1": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 1-1)"
+   },
+   "reference_label": "Age (NISR derived copy 1-1)"
+  },
+  "age26": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "age26": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 26)"
+   },
+   "reference_label": "Age (NISR derived copy 26)"
+  },
+  "age_5": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "age_5": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy, 5)"
+   },
+   "reference_label": "Age (NISR derived copy, 5)"
+  },
+  "agebetween5_17": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "agebetween5_17": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Flag: age 5-17 (NISR derived)"
+   },
+   "reference_label": "Flag: age 5-17 (NISR derived)"
+  },
+  "agegrp_nisr": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "agegrp_nisr": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age group (NISR derived, 0-5; shipped as 'Age')"
+   },
+   "reference_label": "Age group (NISR derived, 0-5; shipped as 'Age')"
+  },
+  "aggroup5": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "aggroup5": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Five-Year Age-Group"
+   },
+   "reference_label": "Five-Year Age-Group"
+  },
+  "cluster": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "cluster": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Sampling cluster proxy (year_sector)",
+    "2012": "Sampling cluster proxy (year_sector)",
+    "2022": "Sampling cluster proxy (year_sector)"
+   },
+   "reference_label": "Sampling cluster proxy (year_sector)"
+  },
+  "collective": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "collective": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "1 = row belongs to a collective/institutional household (2002 only)"
+   },
+   "reference_label": "1 = row belongs to a collective/institutional household (2002 only)"
+  },
+  "dist": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "dist": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "District (11-57, NISR codes)",
+    "2012": "District (11-57, NISR codes)",
+    "2022": "District (11-57, NISR codes)"
+   },
+   "reference_label": "District (11-57, NISR codes)"
+  },
+  "district_code": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "district_code": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "District code (3-digit, as shipped)"
+   },
+   "reference_label": "District code (3-digit, as shipped)"
+  },
+  "emploi_exerc": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "emploi_exerc": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Occupation (NISR grouped)"
+   },
+   "reference_label": "Occupation (NISR grouped)"
+  },
+  "etat_matri": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "etat_matri": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Marital status (NISR grouped)"
+   },
+   "reference_label": "Marital status (NISR grouped)"
+  },
+  "filter__": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "filter__": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "P02 = 1 (FILTER)"
+   },
+   "reference_label": "P02 = 1 (FILTER)"
+  },
+  "fr_quentation": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "fr_quentation": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "School attendance (NISR grouped)"
+   },
+   "reference_label": "School attendance (NISR grouped)"
+  },
+  "gpe_age": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "gpe_age": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy, groups)"
+   },
+   "reference_label": "Age (NISR derived copy, groups)"
+  },
+  "grpage5": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "grpage5": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Five-year age group (NISR derived)"
+   },
+   "reference_label": "Five-year age group (NISR derived)"
+  },
+  "h01": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h01": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Type of housing",
+    "2012": "Type of Housing",
+    "2022": "Type of habitant"
+   },
+   "reference_label": "Type of habitant"
+  },
+  "h02": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h02": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Type of building",
+    "2012": "Type of Housing unit",
+    "2022": "Type of Building"
+   },
+   "reference_label": "Type of Building"
+  },
+  "h03": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h03": [
+     2022
+    ],
+    "h03_v2": [
+     2012
+    ],
+    "h03_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Roof material",
+    "2012": "Status of occupancy of house",
+    "2022": "Tenure of then housing unit"
+   },
+   "reference_label": "Tenure of then housing unit"
+  },
+  "h04": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h04": [
+     2022
+    ],
+    "h04_v2": [
+     2012
+    ],
+    "h04_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Outer wall material",
+    "2012": "Roof",
+    "2022": "Is this Household has its own housing unit  in this village or elsewhere"
+   },
+   "reference_label": "Is this Household has its own housing unit  in this village or elsewhere"
+  },
+  "h05": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h05": [
+     2022
+    ],
+    "h05_v2": [
+     2012
+    ],
+    "h05_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Floor material",
+    "2012": "Walls",
+    "2022": "main material used for the roof"
+   },
+   "reference_label": "main material used for the roof"
+  },
+  "h06": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h06": [
+     2022
+    ],
+    "h06_v2": [
+     2012
+    ],
+    "h06_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Number of living rooms",
+    "2012": "Floor",
+    "2022": "main material used for the walls"
+   },
+   "reference_label": "main material used for the walls"
+  },
+  "h07": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h07": [
+     2022
+    ],
+    "h07_v2": [
+     2012
+    ],
+    "h07_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Main source of water supply",
+    "2012": "Number of rooms",
+    "2022": "main material used for the floor"
+   },
+   "reference_label": "main material used for the floor"
+  },
+  "h08": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h08": [
+     2012,
+     2022
+    ],
+    "h08_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Main source of lighting",
+    "2012": "Number of rooms for sleeping",
+    "2022": "Number of rooms"
+   },
+   "reference_label": "Number of rooms"
+  },
+  "h09": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h09": [
+     2022
+    ],
+    "h09_v2": [
+     2012
+    ],
+    "h09_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Main cooking energy",
+    "2012": "Number of occupants",
+    "2022": "number of rooms are used for sleeping"
+   },
+   "reference_label": "number of rooms are used for sleeping"
+  },
+  "h10": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h10": [
+     2022
+    ],
+    "h10_v2": [
+     2012
+    ],
+    "h10_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Main toilet facility",
+    "2012": "Main source of water",
+    "2022": "Are Sleeping rooms  for Boys separated from those for Girls"
+   },
+   "reference_label": "Are Sleeping rooms  for Boys separated from those for Girls"
+  },
+  "h100": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h100": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Household type (100 = ordinary household)"
+   },
+   "reference_label": "Household type (100 = ordinary household)"
+  },
+  "h101": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h101": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Questionnaire serial number in household"
+   },
+   "reference_label": "Questionnaire serial number in household"
+  },
+  "h102": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h102": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Number of questionnaires filled in household"
+   },
+   "reference_label": "Number of questionnaires filled in household"
+  },
+  "h11": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h11": [
+     2022
+    ],
+    "h11_v2": [
+     2012
+    ],
+    "h11_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Main mode of household waste disposal",
+    "2012": "Type of toilet facility",
+    "2022": "Main source of water used for general purposes"
+   },
+   "reference_label": "Main source of water used for general purposes"
+  },
+  "h110": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h110": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: male residents present"
+   },
+   "reference_label": "Recap: male residents present"
+  },
+  "h111": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h111": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: male residents absent"
+   },
+   "reference_label": "Recap: male residents absent"
+  },
+  "h112": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h112": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: male residents total"
+   },
+   "reference_label": "Recap: male residents total"
+  },
+  "h113": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h113": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: male residents aged 17+"
+   },
+   "reference_label": "Recap: male residents aged 17+"
+  },
+  "h114": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h114": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: male visitors"
+   },
+   "reference_label": "Recap: male visitors"
+  },
+  "h115": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h115": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: female residents present"
+   },
+   "reference_label": "Recap: female residents present"
+  },
+  "h116": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h116": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: female residents absent"
+   },
+   "reference_label": "Recap: female residents absent"
+  },
+  "h117": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h117": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: female residents total"
+   },
+   "reference_label": "Recap: female residents total"
+  },
+  "h118": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h118": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: female residents aged 17+"
+   },
+   "reference_label": "Recap: female residents aged 17+"
+  },
+  "h119": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h119": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: female visitors"
+   },
+   "reference_label": "Recap: female visitors"
+  },
+  "h12": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h12": [
+     2022
+    ],
+    "h12_v2": [
+     2012
+    ],
+    "h12_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Occupancy status of the dwelling",
+    "2012": "Source of lighting",
+    "2022": "Main source of drinking water"
+   },
+   "reference_label": "Main source of drinking water"
+  },
+  "h120": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h120": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: residents present, total"
+   },
+   "reference_label": "Recap: residents present, total"
+  },
+  "h121": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h121": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: residents absent, total"
+   },
+   "reference_label": "Recap: residents absent, total"
+  },
+  "h122": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h122": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: residents, total"
+   },
+   "reference_label": "Recap: residents, total"
+  },
+  "h123": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h123": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: residents aged 17+, total"
+   },
+   "reference_label": "Recap: residents aged 17+, total"
+  },
+  "h124": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h124": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Recap: visitors, total"
+   },
+   "reference_label": "Recap: visitors, total"
+  },
+  "h13": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h13": [
+     2022
+    ],
+    "h13_v2": [
+     2012
+    ],
+    "h13_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Radio / television ownership",
+    "2012": "Energy of cooking",
+    "2022": "Toilet Facility"
+   },
+   "reference_label": "Toilet Facility"
+  },
+  "h14": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h14": [
+     2022
+    ],
+    "h14_v2": [
+     2012
+    ],
+    "h14_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Fixed-line / cell phone",
+    "2012": "Energy saving stove",
+    "2022": "Electricity (Grid line) connectivity"
+   },
+   "reference_label": "Electricity (Grid line) connectivity"
+  },
+  "h15": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h15": [
+     2022
+    ],
+    "h15_v2": [
+     2012
+    ],
+    "h15_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Computer / internet connection",
+    "2012": "Mode of household waste disposal",
+    "2022": "Main source of energy for lighting"
+   },
+   "reference_label": "Main source of energy for lighting"
+  },
+  "h16": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h16": [
+     2022
+    ],
+    "h16_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Mode of sewage disposal",
+    "2022": "Main source of energy for cooking"
+   },
+   "reference_label": "Main source of energy for cooking"
+  },
+  "h16a": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h16a": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Number of vehicles"
+   },
+   "reference_label": "Number of vehicles"
+  },
+  "h16b": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h16b": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Number of motorcycles"
+   },
+   "reference_label": "Number of motorcycles"
+  },
+  "h16c": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h16c": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Number of bicycles"
+   },
+   "reference_label": "Number of bicycles"
+  },
+  "h17": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h17": [
+     2022
+    ],
+    "h17_v2": [
+     2012
+    ],
+    "h17_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Total persons counted in the household",
+    "2012": "Radio",
+    "2022": "Secondary source of energy for cooking"
+   },
+   "reference_label": "Secondary source of energy for cooking"
+  },
+  "h18": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "h18": [
+     2022
+    ],
+    "h18_v2": [
+     2012
+    ],
+    "h18_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "(empty in the public file)",
+    "2012": "Television",
+    "2022": "Does your HH use a cooking energy saving stove?"
+   },
+   "reference_label": "Does your HH use a cooking energy saving stove?"
+  },
+  "h19": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h19": [
+     2022
+    ],
+    "h19_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Telephone (fixed line)",
+    "2022": "Main mode of household waste disposal used"
+   },
+   "reference_label": "Main mode of household waste disposal used"
+  },
+  "h19a": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h19a": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Any death of a resident member in the last 12 months"
+   },
+   "reference_label": "Any death of a resident member in the last 12 months"
+  },
+  "h19b": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h19b": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Number of deaths in the last 12 months"
+   },
+   "reference_label": "Number of deaths in the last 12 months"
+  },
+  "h20": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h20": [
+     2022
+    ],
+    "h20_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cell phone",
+    "2022": "Main mode of sewage"
+   },
+   "reference_label": "Main mode of sewage"
+  },
+  "h200": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "h200": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Collective household type (codes 201-214; not filled)"
+   },
+   "reference_label": "Collective household type (codes 201-214; not filled)"
+  },
+  "h21": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h21": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Refrigerator/ Freezer"
+   },
+   "reference_label": "Refrigerator/ Freezer"
+  },
+  "h21_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Radio"
+   },
+   "reference_label": "Functional assets own by HH: Radio"
+  },
+  "h21_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Television"
+   },
+   "reference_label": "Functional assets own by HH: Television"
+  },
+  "h21_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Refrigerator/Freezer for HH use only"
+   },
+   "reference_label": "Functional assets own by HH: Refrigerator/Freezer for HH use only"
+  },
+  "h21_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Gas/Electrical Cooker"
+   },
+   "reference_label": "Functional assets own by HH: Gas/Electrical Cooker"
+  },
+  "h21_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Washing machine"
+   },
+   "reference_label": "Functional assets own by HH: Washing machine"
+  },
+  "h21_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Microwave"
+   },
+   "reference_label": "Functional assets own by HH: Microwave"
+  },
+  "h21_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Mattress"
+   },
+   "reference_label": "Functional assets own by HH: Mattress"
+  },
+  "h21_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Bench/Chair"
+   },
+   "reference_label": "Functional assets own by HH: Bench/Chair"
+  },
+  "h21_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Bed"
+   },
+   "reference_label": "Functional assets own by HH: Bed"
+  },
+  "h21_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Tables"
+   },
+   "reference_label": "Functional assets own by HH: Tables"
+  },
+  "h21_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Sofa"
+   },
+   "reference_label": "Functional assets own by HH: Sofa"
+  },
+  "h21_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Computers"
+   },
+   "reference_label": "Functional assets own by HH: Computers"
+  },
+  "h21_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Vehicles for household use only"
+   },
+   "reference_label": "Functional assets own by HH: Vehicles for household use only"
+  },
+  "h21_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Motorcycles for household use only"
+   },
+   "reference_label": "Functional assets own by HH: Motorcycles for household use only"
+  },
+  "h21_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Bicycles for household use only"
+   },
+   "reference_label": "Functional assets own by HH: Bicycles for household use only"
+  },
+  "h21_16": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h21_16": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Functional assets own by HH: Electrical/Charcoal Iron"
+   },
+   "reference_label": "Functional assets own by HH: Electrical/Charcoal Iron"
+  },
+  "h22": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h22": [
+     2022
+    ],
+    "h22_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Computer",
+    "2022": "HH own livestock or beehive"
+   },
+   "reference_label": "HH own livestock or beehive"
+  },
+  "h22a_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Local breed cows reared"
+   },
+   "reference_label": "Local breed cows reared"
+  },
+  "h22a_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Exotic breed cows reared"
+   },
+   "reference_label": "Exotic breed cows reared"
+  },
+  "h22a_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cross breed cows reared"
+   },
+   "reference_label": "Cross breed cows reared"
+  },
+  "h22a_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Local goats reared"
+   },
+   "reference_label": "Local goats reared"
+  },
+  "h22a_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Exotic goats reared"
+   },
+   "reference_label": "Exotic goats reared"
+  },
+  "h22a_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cross goats reared"
+   },
+   "reference_label": "Cross goats reared"
+  },
+  "h22a_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Local sheep reared"
+   },
+   "reference_label": "Local sheep reared"
+  },
+  "h22a_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Exotic sheep reared"
+   },
+   "reference_label": "Exotic sheep reared"
+  },
+  "h22a_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Local pigs reared"
+   },
+   "reference_label": "Local pigs reared"
+  },
+  "h22a_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Exotic pig reared"
+   },
+   "reference_label": "Exotic pig reared"
+  },
+  "h22a_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cross pig reared"
+   },
+   "reference_label": "Cross pig reared"
+  },
+  "h22a_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Rabbits reared"
+   },
+   "reference_label": "Rabbits reared"
+  },
+  "h22a_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Broiler chicken reared"
+   },
+   "reference_label": "Broiler chicken reared"
+  },
+  "h22a_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Layers chicken reared"
+   },
+   "reference_label": "Layers chicken reared"
+  },
+  "h22a_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Dual purpose chicken reared"
+   },
+   "reference_label": "Dual purpose chicken reared"
+  },
+  "h22a_16": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_16": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Local chicken reared"
+   },
+   "reference_label": "Local chicken reared"
+  },
+  "h22a_17": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_17": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Duck reared"
+   },
+   "reference_label": "Duck reared"
+  },
+  "h22a_18": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_18": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Turkey reared"
+   },
+   "reference_label": "Turkey reared"
+  },
+  "h22a_19": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_19": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Other poultry reared"
+   },
+   "reference_label": "Other poultry reared"
+  },
+  "h22a_20": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_20": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Camel reared"
+   },
+   "reference_label": "Camel reared"
+  },
+  "h22a_21": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_21": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Bees hive reared"
+   },
+   "reference_label": "Bees hive reared"
+  },
+  "h22a_22": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_22": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Dogs reared"
+   },
+   "reference_label": "Dogs reared"
+  },
+  "h22a_23": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22a_23": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Other reared"
+   },
+   "reference_label": "Other reared"
+  },
+  "h22b1_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Local breed cows reared"
+   },
+   "reference_label": "Number of Local breed cows reared"
+  },
+  "h22b1_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Exotic breed cows reared"
+   },
+   "reference_label": "Number of Exotic breed cows reared"
+  },
+  "h22b1_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Cross breed cows reared"
+   },
+   "reference_label": "Number of Cross breed cows reared"
+  },
+  "h22b1_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Local goats reared"
+   },
+   "reference_label": "Number of Local goats reared"
+  },
+  "h22b1_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Exotic goats reared"
+   },
+   "reference_label": "Number of Exotic goats reared"
+  },
+  "h22b1_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Cross goats reared"
+   },
+   "reference_label": "Number of Cross goats reared"
+  },
+  "h22b1_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Local sheep reared"
+   },
+   "reference_label": "Number of Local sheep reared"
+  },
+  "h22b1_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Exotic sheep reared"
+   },
+   "reference_label": "Number of Exotic sheep reared"
+  },
+  "h22b1_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Local pigs reared"
+   },
+   "reference_label": "Number of Local pigs reared"
+  },
+  "h22b1_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Exotic pig reared"
+   },
+   "reference_label": "Number of Exotic pig reared"
+  },
+  "h22b1_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Cross pig reared"
+   },
+   "reference_label": "Number of Cross pig reared"
+  },
+  "h22b1_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Rabbits reared"
+   },
+   "reference_label": "Number of Rabbits reared"
+  },
+  "h22b1_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Broiler chicken reared"
+   },
+   "reference_label": "Number of Broiler chicken reared"
+  },
+  "h22b1_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Layers chicken reared"
+   },
+   "reference_label": "Number of Layers chicken reared"
+  },
+  "h22b1_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Dual purpose chicken reared"
+   },
+   "reference_label": "Number of Dual purpose chicken reared"
+  },
+  "h22b1_16": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_16": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Local chicken reared"
+   },
+   "reference_label": "Number of Local chicken reared"
+  },
+  "h22b1_17": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_17": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Duck reared"
+   },
+   "reference_label": "Number of Duck reared"
+  },
+  "h22b1_18": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_18": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Turkey reared"
+   },
+   "reference_label": "Number of Turkey reared"
+  },
+  "h22b1_19": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_19": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Other poultry reared"
+   },
+   "reference_label": "Number of Other poultry reared"
+  },
+  "h22b1_20": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_20": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Camel reared"
+   },
+   "reference_label": "Number of Camel reared"
+  },
+  "h22b1_21": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_21": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Bees hive reared"
+   },
+   "reference_label": "Number of Bees hive reared"
+  },
+  "h22b1_22": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_22": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Dogs reared"
+   },
+   "reference_label": "Number of Dogs reared"
+  },
+  "h22b1_23": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b1_23": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Other reared"
+   },
+   "reference_label": "Number of Other reared"
+  },
+  "h22b2_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Local breed cows reared"
+   },
+   "reference_label": "Location(District) where is Local breed cows reared"
+  },
+  "h22b2_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Exotic breed cows reared"
+   },
+   "reference_label": "Location(District) where is Exotic breed cows reared"
+  },
+  "h22b2_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Cross breed cows reared"
+   },
+   "reference_label": "Location(District) where is Cross breed cows reared"
+  },
+  "h22b2_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Local goats reared"
+   },
+   "reference_label": "Location(District) where is Local goats reared"
+  },
+  "h22b2_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Exotic goats reared"
+   },
+   "reference_label": "Location(District) where is Exotic goats reared"
+  },
+  "h22b2_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Cross goats reared"
+   },
+   "reference_label": "Location(District) where is Cross goats reared"
+  },
+  "h22b2_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Local sheep reared"
+   },
+   "reference_label": "Location(District) where is Local sheep reared"
+  },
+  "h22b2_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Exotic sheep reared"
+   },
+   "reference_label": "Location(District) where is Exotic sheep reared"
+  },
+  "h22b2_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Local pigs reared"
+   },
+   "reference_label": "Location(District) where is Local pigs reared"
+  },
+  "h22b2_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Exotic pig reared"
+   },
+   "reference_label": "Location(District) where is Exotic pig reared"
+  },
+  "h22b2_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Cross pig reared"
+   },
+   "reference_label": "Location(District) where is Cross pig reared"
+  },
+  "h22b2_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Rabbits reared"
+   },
+   "reference_label": "Location(District) where is Rabbits reared"
+  },
+  "h22b2_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Broiler chicken reared"
+   },
+   "reference_label": "Location(District) where is Broiler chicken reared"
+  },
+  "h22b2_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Layers chicken reared"
+   },
+   "reference_label": "Location(District) where is Layers chicken reared"
+  },
+  "h22b2_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Dual purpose chicken reared"
+   },
+   "reference_label": "Location(District) where is Dual purpose chicken reared"
+  },
+  "h22b2_16": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_16": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Local chicken reared"
+   },
+   "reference_label": "Location(District) where is Local chicken reared"
+  },
+  "h22b2_17": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_17": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Duck reared"
+   },
+   "reference_label": "Location(District) where is Duck reared"
+  },
+  "h22b2_18": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_18": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Turkey reared"
+   },
+   "reference_label": "Location(District) where is Turkey reared"
+  },
+  "h22b2_19": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_19": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Other poultry reared"
+   },
+   "reference_label": "Location(District) where is Other poultry reared"
+  },
+  "h22b2_20": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_20": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Camel reared"
+   },
+   "reference_label": "Location(District) where is Camel reared"
+  },
+  "h22b2_21": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_21": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Bees hive reared"
+   },
+   "reference_label": "Location(District) where is Bees hive reared"
+  },
+  "h22b2_22": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_22": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Dogs reared"
+   },
+   "reference_label": "Location(District) where is Dogs reared"
+  },
+  "h22b2_23": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h22b2_23": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Location(District) where is Other reared"
+   },
+   "reference_label": "Location(District) where is Other reared"
+  },
+  "h23": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h23": [
+     2022
+    ],
+    "h23_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Bicycles",
+    "2022": "Household grew crops in last 12 months"
+   },
+   "reference_label": "Household grew crops in last 12 months"
+  },
+  "h23a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h23a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Place where the agricultural activities is done"
+   },
+   "reference_label": "Place where the agricultural activities is done"
+  },
+  "h24": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h24": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Vehicles"
+   },
+   "reference_label": "Vehicles"
+  },
+  "h24_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Maize grown"
+   },
+   "reference_label": "Maize grown"
+  },
+  "h24_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Rice grown"
+   },
+   "reference_label": "Rice grown"
+  },
+  "h24_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Sorghum grown"
+   },
+   "reference_label": "Sorghum grown"
+  },
+  "h24_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Wheat grown"
+   },
+   "reference_label": "Wheat grown"
+  },
+  "h24_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Bean grown"
+   },
+   "reference_label": "Bean grown"
+  },
+  "h24_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Pea grown"
+   },
+   "reference_label": "Pea grown"
+  },
+  "h24_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Groundnut grown"
+   },
+   "reference_label": "Groundnut grown"
+  },
+  "h24_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Soybean grown"
+   },
+   "reference_label": "Soybean grown"
+  },
+  "h24_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cassava grown"
+   },
+   "reference_label": "Cassava grown"
+  },
+  "h24_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Sweet potato grown"
+   },
+   "reference_label": "Sweet potato grown"
+  },
+  "h24_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Irish potato grown"
+   },
+   "reference_label": "Irish potato grown"
+  },
+  "h24_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Yams& Taro grown"
+   },
+   "reference_label": "Yams& Taro grown"
+  },
+  "h24_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cooking Banana grown"
+   },
+   "reference_label": "Cooking Banana grown"
+  },
+  "h24_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Dessert Banana grown"
+   },
+   "reference_label": "Dessert Banana grown"
+  },
+  "h24_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Banana for Beer grown"
+   },
+   "reference_label": "Banana for Beer grown"
+  },
+  "h24_16": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_16": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Vegetables grown"
+   },
+   "reference_label": "Vegetables grown"
+  },
+  "h24_17": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_17": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Tea grown"
+   },
+   "reference_label": "Tea grown"
+  },
+  "h24_18": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_18": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Coffee grown"
+   },
+   "reference_label": "Coffee grown"
+  },
+  "h24_19": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_19": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Sugarcane grown"
+   },
+   "reference_label": "Sugarcane grown"
+  },
+  "h24_20": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_20": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Pyrethrum grown"
+   },
+   "reference_label": "Pyrethrum grown"
+  },
+  "h24_21": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_21": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Flowers grown"
+   },
+   "reference_label": "Flowers grown"
+  },
+  "h24_22": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h24_22": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Other crop type grown"
+   },
+   "reference_label": "Other crop type grown"
+  },
+  "h25": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h25": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Motorcycles"
+   },
+   "reference_label": "Motorcycles"
+  },
+  "h25_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Amaranths grown"
+   },
+   "reference_label": "Amaranths grown"
+  },
+  "h25_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Tomato grown"
+   },
+   "reference_label": "Tomato grown"
+  },
+  "h25_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cabbage grown"
+   },
+   "reference_label": "Cabbage grown"
+  },
+  "h25_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Onion grown"
+   },
+   "reference_label": "Onion grown"
+  },
+  "h25_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Carrot grown"
+   },
+   "reference_label": "Carrot grown"
+  },
+  "h25_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Eggplant grown"
+   },
+   "reference_label": "Eggplant grown"
+  },
+  "h25_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Black eggplant grown"
+   },
+   "reference_label": "Black eggplant grown"
+  },
+  "h25_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Sweet pepper grown"
+   },
+   "reference_label": "Sweet pepper grown"
+  },
+  "h25_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Pepper grown"
+   },
+   "reference_label": "Pepper grown"
+  },
+  "h25_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cauliflower grown"
+   },
+   "reference_label": "Cauliflower grown"
+  },
+  "h25_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "French beans grown"
+   },
+   "reference_label": "French beans grown"
+  },
+  "h25_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Beetroot grown"
+   },
+   "reference_label": "Beetroot grown"
+  },
+  "h25_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Garlic grown"
+   },
+   "reference_label": "Garlic grown"
+  },
+  "h25_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Lettuce grown"
+   },
+   "reference_label": "Lettuce grown"
+  },
+  "h25_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Broccoli grown"
+   },
+   "reference_label": "Broccoli grown"
+  },
+  "h25_16": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_16": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Spinach grown"
+   },
+   "reference_label": "Spinach grown"
+  },
+  "h25_17": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_17": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Celery grown"
+   },
+   "reference_label": "Celery grown"
+  },
+  "h25_18": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_18": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Leeks grown"
+   },
+   "reference_label": "Leeks grown"
+  },
+  "h25_19": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_19": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Pumpkin grown"
+   },
+   "reference_label": "Pumpkin grown"
+  },
+  "h25_20": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_20": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cocumber grown"
+   },
+   "reference_label": "Cocumber grown"
+  },
+  "h25_21": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_21": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Mushroom grown"
+   },
+   "reference_label": "Mushroom grown"
+  },
+  "h25_22": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_22": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Chayote grown"
+   },
+   "reference_label": "Chayote grown"
+  },
+  "h25_23": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_23": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Cassava Leaves grown"
+   },
+   "reference_label": "Cassava Leaves grown"
+  },
+  "h25_24": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h25_24": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Other vegetables grown"
+   },
+   "reference_label": "Other vegetables grown"
+  },
+  "h26": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h26": [
+     2022
+    ],
+    "h26_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Internet Access",
+    "2022": "Number of tea trees grown"
+   },
+   "reference_label": "Number of tea trees grown"
+  },
+  "h27": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h27": [
+     2022
+    ],
+    "h27_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Where do you access internet",
+    "2022": "Number of coffee trees grown"
+   },
+   "reference_label": "Number of coffee trees grown"
+  },
+  "h28a": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "h28a": [
+     2022
+    ],
+    "h28a_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cattle:Local breed cow",
+    "2022": "Any fruit tree"
+   },
+   "reference_label": "Any fruit tree"
+  },
+  "h28b": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h28b": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cattle: Cross breed cow"
+   },
+   "reference_label": "Cattle: Cross breed cow"
+  },
+  "h28b1_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Avocado"
+   },
+   "reference_label": "Grow Avocado"
+  },
+  "h28b1_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Orange"
+   },
+   "reference_label": "Grow Orange"
+  },
+  "h28b1_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Papaya"
+   },
+   "reference_label": "Grow Papaya"
+  },
+  "h28b1_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Guava"
+   },
+   "reference_label": "Grow Guava"
+  },
+  "h28b1_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Lemon"
+   },
+   "reference_label": "Grow Lemon"
+  },
+  "h28b1_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Mango"
+   },
+   "reference_label": "Grow Mango"
+  },
+  "h28b1_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Mandarin"
+   },
+   "reference_label": "Grow Mandarin"
+  },
+  "h28b1_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Jack fruits"
+   },
+   "reference_label": "Grow Jack fruits"
+  },
+  "h28b1_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Beefheart"
+   },
+   "reference_label": "Grow Beefheart"
+  },
+  "h28b1_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Passion fruits"
+   },
+   "reference_label": "Grow Passion fruits"
+  },
+  "h28b1_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Pineapple"
+   },
+   "reference_label": "Grow Pineapple"
+  },
+  "h28b1_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Tree tomato"
+   },
+   "reference_label": "Grow Tree tomato"
+  },
+  "h28b1_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Watermelon"
+   },
+   "reference_label": "Grow Watermelon"
+  },
+  "h28b1_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Strawberry"
+   },
+   "reference_label": "Grow Strawberry"
+  },
+  "h28b1_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b1_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Grow Other fruit"
+   },
+   "reference_label": "Grow Other fruit"
+  },
+  "h28b2_01": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_01": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Avocado"
+   },
+   "reference_label": "Number of Avocado"
+  },
+  "h28b2_02": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_02": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Orange"
+   },
+   "reference_label": "Number of Orange"
+  },
+  "h28b2_03": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_03": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Papaya"
+   },
+   "reference_label": "Number of Papaya"
+  },
+  "h28b2_04": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_04": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Guava"
+   },
+   "reference_label": "Number of Guava"
+  },
+  "h28b2_05": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_05": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Lemon"
+   },
+   "reference_label": "Number of Lemon"
+  },
+  "h28b2_06": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_06": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Mango"
+   },
+   "reference_label": "Number of Mango"
+  },
+  "h28b2_07": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_07": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Mandarin"
+   },
+   "reference_label": "Number of Mandarin"
+  },
+  "h28b2_08": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_08": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Jack fruits"
+   },
+   "reference_label": "Number of Jack fruits"
+  },
+  "h28b2_09": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_09": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Beefheart"
+   },
+   "reference_label": "Number of Beefheart"
+  },
+  "h28b2_10": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_10": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Passion fruits"
+   },
+   "reference_label": "Number of Passion fruits"
+  },
+  "h28b2_11": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_11": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Pineapple"
+   },
+   "reference_label": "Number of Pineapple"
+  },
+  "h28b2_12": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_12": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Tree tomato"
+   },
+   "reference_label": "Number of Tree tomato"
+  },
+  "h28b2_13": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_13": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Watermelon"
+   },
+   "reference_label": "Number of Watermelon"
+  },
+  "h28b2_14": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_14": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Strawberry"
+   },
+   "reference_label": "Number of Strawberry"
+  },
+  "h28b2_15": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "h28b2_15": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of Other fruit"
+   },
+   "reference_label": "Number of Other fruit"
+  },
+  "h28c": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h28c": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cattle: Exotic breed cow"
+   },
+   "reference_label": "Cattle: Exotic breed cow"
+  },
+  "h29": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h29": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Goats"
+   },
+   "reference_label": "Goats"
+  },
+  "h30": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h30": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Sheeps"
+   },
+   "reference_label": "Sheeps"
+  },
+  "h31": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h31": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Pigs"
+   },
+   "reference_label": "Pigs"
+  },
+  "h32": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h32": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Rabbits"
+   },
+   "reference_label": "Rabbits"
+  },
+  "h33": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h33": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Poultry/fowl"
+   },
+   "reference_label": "Poultry/fowl"
+  },
+  "h34": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h34": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Other"
+   },
+   "reference_label": "Other"
+  },
+  "h35": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "h35": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Land"
+   },
+   "reference_label": "Land"
+  },
+  "hhid": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "hhid": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Household id (unique within year)",
+    "2012": "Household id (unique within year)",
+    "2022": "Household id (unique within year)"
+   },
+   "reference_label": "Household id (unique within year)"
+  },
+  "hhsize": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "hhsize": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Household Size"
+   },
+   "reference_label": "Household Size"
+  },
+  "inclusionprobability_1_": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "inclusionprobability_1_": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Inclusion (Selection) Probability for Stage 1"
+   },
+   "reference_label": "Inclusion (Selection) Probability for Stage 1"
+  },
+  "l02": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "l02": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "District"
+   },
+   "reference_label": "District"
+  },
+  "l03": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "l03": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Sector"
+   },
+   "reference_label": "Sector"
+  },
+  "l07": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "l07": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Area of residence"
+   },
+   "reference_label": "Area of residence"
+  },
+  "m1": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "m1": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Death in the Household"
+   },
+   "reference_label": "Death in the Household"
+  },
+  "novdistr": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "novdistr": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "District name"
+   },
+   "reference_label": "District name"
+  },
+  "novprov": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "novprov": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Province name"
+   },
+   "reference_label": "Province name"
+  },
+  "novsect": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "novsect": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Sector name"
+   },
+   "reference_label": "Sector name"
+  },
+  "p00_mean": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p00_mean": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "NISR artefact: mean of P00 in household"
+   },
+   "reference_label": "NISR artefact: mean of P00 in household"
+  },
+  "p00_nu": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p00_nu": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "NISR artefact: count of P00 in household"
+   },
+   "reference_label": "NISR artefact: count of P00 in household"
+  },
+  "p02": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "p02": [
+     2002,
+     2012
+    ],
+    "p02_v2": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Relationship to household head",
+    "2012": "Relationship",
+    "2022": "Relationship (Private HH only)"
+   },
+   "reference_label": "Relationship"
+  },
+  "p02_hh": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p02_hh": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Flag: household head (P02 = 1)"
+   },
+   "reference_label": "Flag: household head (P02 = 1)"
+  },
+  "p03": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p03": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Residence status (present/absent resident, visitor, collective)"
+   },
+   "reference_label": "Residence status (present/absent resident, visitor, collective)"
+  },
+  "p04m": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p04m": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Month of Birth"
+   },
+   "reference_label": "Month of Birth"
+  },
+  "p04y": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p04y": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Year of Birth"
+   },
+   "reference_label": "Year of Birth"
+  },
+  "p05a": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p05a": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Month of birth"
+   },
+   "reference_label": "Month of birth"
+  },
+  "p05b": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p05b": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Year of birth"
+   },
+   "reference_label": "Year of birth"
+  },
+  "p05x": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p05x": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Day of birth"
+   },
+   "reference_label": "Day of birth"
+  },
+  "p06": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "p06": [
+     2022
+    ],
+    "p06_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Situation of residence",
+    "2022": "marital status"
+   },
+   "reference_label": "marital status"
+  },
+  "p061": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p061": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 1)"
+   },
+   "reference_label": "Age (NISR derived copy 1)"
+  },
+  "p062": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p062": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 2)"
+   },
+   "reference_label": "Age (NISR derived copy 2)"
+  },
+  "p063": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p063": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 3)"
+   },
+   "reference_label": "Age (NISR derived copy 3)"
+  },
+  "p0631": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p0631": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Age (NISR derived copy 3b)"
+   },
+   "reference_label": "Age (NISR derived copy 3b)"
+  },
+  "p07": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p07": [
+     2012
+    ],
+    "p07_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Nationality",
+    "2012": "Place of Birth"
+   },
+   "reference_label": "Place of Birth"
+  },
+  "p07a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p07a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Residence Status"
+   },
+   "reference_label": "Residence Status"
+  },
+  "p07b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p07b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Residence status of resident member"
+   },
+   "reference_label": "Residence status of resident member"
+  },
+  "p08": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p08": [
+     2012
+    ],
+    "p08_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Place of birth (district or country)",
+    "2012": "Nationality"
+   },
+   "reference_label": "Nationality"
+  },
+  "p08c": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p08c": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Age at first marriage"
+   },
+   "reference_label": "Age at first marriage"
+  },
+  "p09": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p09": [
+     2012
+    ],
+    "p09_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Duration of residence in this locality (years; 99 since birth)",
+    "2012": "Place of previous residence"
+   },
+   "reference_label": "Place of previous residence"
+  },
+  "p09a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p09a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Place of birth/country"
+   },
+   "reference_label": "Place of birth/country"
+  },
+  "p09b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p09b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Place of birh/district"
+   },
+   "reference_label": "Place of birh/district"
+  },
+  "p09c": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p09c": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Country of birth: country code"
+   },
+   "reference_label": "Country of birth: country code"
+  },
+  "p10": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p10": [
+     2012
+    ],
+    "p10_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Place of previous residence (district or country)",
+    "2012": "Duration of Residence"
+   },
+   "reference_label": "Duration of Residence"
+  },
+  "p10a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p10a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Duration of Residence"
+   },
+   "reference_label": "Duration of Residence"
+  },
+  "p10b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p10b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Place of previous residence"
+   },
+   "reference_label": "Place of previous residence"
+  },
+  "p11": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p11": [
+     2012
+    ],
+    "p11_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Languages spoken",
+    "2012": "Religion"
+   },
+   "reference_label": "Religion"
+  },
+  "p11a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p11a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "District of previous residence"
+   },
+   "reference_label": "District of previous residence"
+  },
+  "p11b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p11b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Country of previous residence: country code"
+   },
+   "reference_label": "Country of previous residence: country code"
+  },
+  "p12": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p12": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Religious affiliation"
+   },
+   "reference_label": "Religious affiliation"
+  },
+  "p12b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p12b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Nationality: country code"
+   },
+   "reference_label": "Nationality: country code"
+  },
+  "p12c1": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12c1": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cause of disability (C1)"
+   },
+   "reference_label": "Cause of disability (C1)"
+  },
+  "p12c2": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12c2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cause of disability (C2)"
+   },
+   "reference_label": "Cause of disability (C2)"
+  },
+  "p12c3": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12c3": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cause of disability (C3)"
+   },
+   "reference_label": "Cause of disability (C3)"
+  },
+  "p12c4": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12c4": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cause of disability (C4)"
+   },
+   "reference_label": "Cause of disability (C4)"
+  },
+  "p12c5": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12c5": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cause of disability (C5)"
+   },
+   "reference_label": "Cause of disability (C5)"
+  },
+  "p12c6": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12c6": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Cause of disability(C6)"
+   },
+   "reference_label": "Cause of disability(C6)"
+  },
+  "p12d1": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12d1": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Type of major disability (D1)"
+   },
+   "reference_label": "Type of major disability (D1)"
+  },
+  "p12d2": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12d2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Type of major disability (D2)"
+   },
+   "reference_label": "Type of major disability (D2)"
+  },
+  "p12d3": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12d3": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Type of major disability (D3)"
+   },
+   "reference_label": "Type of major disability (D3)"
+  },
+  "p12d4": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12d4": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Type of major disability (D4)"
+   },
+   "reference_label": "Type of major disability (D4)"
+  },
+  "p12d5": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12d5": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Type of major disability (D5)"
+   },
+   "reference_label": "Type of major disability (D5)"
+  },
+  "p12d6": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p12d6": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Type of major disability(D6)"
+   },
+   "reference_label": "Type of major disability(D6)"
+  },
+  "p13": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "p13": [
+     2002,
+     2012
+    ],
+    "p13_v2": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Type of major handicap",
+    "2012": "Type of insurance",
+    "2022": "Religious affiliation"
+   },
+   "reference_label": "Type of insurance"
+  },
+  "p14": {
+   "years": [
+    2002,
+    2022
+   ],
+   "versions": {
+    "p14": [
+     2022
+    ],
+    "p14_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Cause of handicap",
+    "2022": "Medical insurance"
+   },
+   "reference_label": "Medical insurance"
+  },
+  "p14a": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p14a": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Mother alive"
+   },
+   "reference_label": "Mother alive"
+  },
+  "p14b": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p14b": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Natural mother live in household"
+   },
+   "reference_label": "Natural mother live in household"
+  },
+  "p14c": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p14c": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Father alive"
+   },
+   "reference_label": "Father alive"
+  },
+  "p14d": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p14d": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Natural father live in household"
+   },
+   "reference_label": "Natural father live in household"
+  },
+  "p15": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p15": [
+     2012
+    ],
+    "p15_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Survival of parents",
+    "2012": "Birth Registration"
+   },
+   "reference_label": "Birth Registration"
+  },
+  "p15b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p15b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Level of difficulty of seeing"
+   },
+   "reference_label": "Level of difficulty of seeing"
+  },
+  "p16": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p16": [
+     2012
+    ],
+    "p16_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "School attendance (ever attended)",
+    "2012": "Languages reading and written"
+   },
+   "reference_label": "Languages reading and written"
+  },
+  "p16b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p16b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Level of difficulty of hearing"
+   },
+   "reference_label": "Level of difficulty of hearing"
+  },
+  "p17": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p17": [
+     2012
+    ],
+    "p17_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Highest class successfully completed",
+    "2012": "School attendance"
+   },
+   "reference_label": "School attendance"
+  },
+  "p171": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p171": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Educational level attained (NISR grouped)"
+   },
+   "reference_label": "Educational level attained (NISR grouped)"
+  },
+  "p17b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p17b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Level of difficulty of walking"
+   },
+   "reference_label": "Level of difficulty of walking"
+  },
+  "p18": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p18": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Area of specialisation (secondary/higher)"
+   },
+   "reference_label": "Area of specialisation (secondary/higher)"
+  },
+  "p18a": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p18a": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Educational level"
+   },
+   "reference_label": "Educational level"
+  },
+  "p18b": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "p18b": [
+     2022
+    ],
+    "p18b_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Years completed",
+    "2022": "Level of difficulty of communicating"
+   },
+   "reference_label": "Level of difficulty of communicating"
+  },
+  "p19": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p19": [
+     2002,
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Highest certificate or diploma obtained",
+    "2012": "Highest Certificate/Diploma"
+   },
+   "reference_label": "Highest Certificate/Diploma"
+  },
+  "p19b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p19b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Level of difficulty of remembering or concentrating"
+   },
+   "reference_label": "Level of difficulty of remembering or concentrating"
+  },
+  "p20": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p20": [
+     2012
+    ],
+    "p20_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Literacy",
+    "2012": "Work"
+   },
+   "reference_label": "Work"
+  },
+  "p20b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p20b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Level of difficulty with self-care such as washing all over or dressing"
+   },
+   "reference_label": "Level of difficulty with self-care such as washing all over or dressing"
+  },
+  "p21": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p21": [
+     2012
+    ],
+    "p21_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Economic activity situation (15/07-15/08/2002)",
+    "2012": "Why did not work"
+   },
+   "reference_label": "Why did not work"
+  },
+  "p211": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p211": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Activity status (NISR grouped)"
+   },
+   "reference_label": "Activity status (NISR grouped)"
+  },
+  "p21a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p21a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Has a problem of short stature"
+   },
+   "reference_label": "Has a problem of short stature"
+  },
+  "p22": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p22": [
+     2002,
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Main occupation (type of work done)",
+    "2012": "Work done"
+   },
+   "reference_label": "Work done"
+  },
+  "p22a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p22a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Has a disability with albinism"
+   },
+   "reference_label": "Has a disability with albinism"
+  },
+  "p23": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p23": [
+     2012
+    ],
+    "p23_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Status in employment",
+    "2012": "Ready to work"
+   },
+   "reference_label": "Ready to work"
+  },
+  "p23a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p23a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Biological mother alive"
+   },
+   "reference_label": "Biological mother alive"
+  },
+  "p23b": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p23b": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Biological mother live in this household"
+   },
+   "reference_label": "Biological mother live in this household"
+  },
+  "p23bb": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p23bb": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Select the name of the biological mother"
+   },
+   "reference_label": "Select the name of the biological mother"
+  },
+  "p23c": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p23c": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Biological father alive"
+   },
+   "reference_label": "Biological father alive"
+  },
+  "p23d": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p23d": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Biological father live in this household"
+   },
+   "reference_label": "Biological father live in this household"
+  },
+  "p23dd": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p23dd": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Select the name of the biological father"
+   },
+   "reference_label": "Select the name of the biological father"
+  },
+  "p24": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "p24": [
+     2022
+    ],
+    "p24_v2": [
+     2012
+    ],
+    "p24_v3": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Branch of economic activity",
+    "2012": "Seeking for work",
+    "2022": "Registered in the Civil Registration books"
+   },
+   "reference_label": "Registered in the Civil Registration books"
+  },
+  "p241": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p241": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Branch of economic activity (NISR grouped)"
+   },
+   "reference_label": "Branch of economic activity (NISR grouped)"
+  },
+  "p25": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p25": [
+     2012
+    ],
+    "p25_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Institutional sector of employment (public/parastatal/NGO/cooperative/other priv",
+    "2012": "Type of work"
+   },
+   "reference_label": "Type of work"
+  },
+  "p26": {
+   "years": [
+    2002,
+    2012
+   ],
+   "versions": {
+    "p26": [
+     2002,
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Marital status",
+    "2012": "Status in employment"
+   },
+   "reference_label": "Status in employment"
+  },
+  "p27": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p27": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Branch of economic activity"
+   },
+   "reference_label": "Branch of economic activity"
+  },
+  "p27a": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p27a": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Live births ever, boys"
+   },
+   "reference_label": "Live births ever, boys"
+  },
+  "p27b": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p27b": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Live births ever, girls"
+   },
+   "reference_label": "Live births ever, girls"
+  },
+  "p28": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p28": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Institutional sector of employment"
+   },
+   "reference_label": "Institutional sector of employment"
+  },
+  "p28a": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p28a": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Children surviving, boys"
+   },
+   "reference_label": "Children surviving, boys"
+  },
+  "p28b": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p28b": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Children surviving, girls"
+   },
+   "reference_label": "Children surviving, girls"
+  },
+  "p29": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "p29": [
+     2022
+    ],
+    "p29_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Marital status",
+    "2022": "Ever or currently attending  school"
+   },
+   "reference_label": "Ever or currently attending  school"
+  },
+  "p29a": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p29a": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Births in the last 12 months, boys"
+   },
+   "reference_label": "Births in the last 12 months, boys"
+  },
+  "p29b": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "p29b": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Births in the last 12 months, girls"
+   },
+   "reference_label": "Births in the last 12 months, girls"
+  },
+  "p30": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p30": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Number of spouses"
+   },
+   "reference_label": "Number of spouses"
+  },
+  "p30a": {
+   "years": [
+    2002,
+    2022
+   ],
+   "versions": {
+    "p30a": [
+     2022
+    ],
+    "p30a_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Of births in the last 12 months, surviving boys",
+    "2022": "Highest level of education"
+   },
+   "reference_label": "Highest level of education"
+  },
+  "p30b": {
+   "years": [
+    2002,
+    2022
+   ],
+   "versions": {
+    "p30b": [
+     2022
+    ],
+    "p30b_v2": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Of births in the last 12 months, surviving girls",
+    "2022": "Years of school complete successfully at that level"
+   },
+   "reference_label": "Years of school complete successfully at that level"
+  },
+  "p31": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "p31": [
+     2022
+    ],
+    "p31_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Current rank as spouse",
+    "2022": "Highest certificate/degree"
+   },
+   "reference_label": "Highest certificate/degree"
+  },
+  "p32": {
+   "years": [
+    2012,
+    2022
+   ],
+   "versions": {
+    "p32": [
+     2022
+    ],
+    "p32_v2": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Age at first marriage",
+    "2022": "Can read and write with understanding in the following languages"
+   },
+   "reference_label": "Can read and write with understanding in the following languages"
+  },
+  "p33": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p33": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Ever attended or currently attending Informal adult litteracy Program"
+   },
+   "reference_label": "Ever attended or currently attending Informal adult litteracy Program"
+  },
+  "p33f": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p33f": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Females ever born"
+   },
+   "reference_label": "Females ever born"
+  },
+  "p33m": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p33m": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Males ever born"
+   },
+   "reference_label": "Males ever born"
+  },
+  "p34": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p34": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Internet use"
+   },
+   "reference_label": "Internet use"
+  },
+  "p34f": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p34f": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Females alive"
+   },
+   "reference_label": "Females alive"
+  },
+  "p34m": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p34m": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Males alive"
+   },
+   "reference_label": "Males alive"
+  },
+  "p35": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p35": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Access to internet"
+   },
+   "reference_label": "Access to internet"
+  },
+  "p35f": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p35f": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Females born in 12 months"
+   },
+   "reference_label": "Females born in 12 months"
+  },
+  "p35m": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p35m": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Males born in 12 months"
+   },
+   "reference_label": "Males born in 12 months"
+  },
+  "p36c": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p36c": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "type of mobile phone"
+   },
+   "reference_label": "type of mobile phone"
+  },
+  "p36f": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p36f": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Females alive 12 months"
+   },
+   "reference_label": "Females alive 12 months"
+  },
+  "p36m": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "p36m": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Males alive in 12 months"
+   },
+   "reference_label": "Males alive in 12 months"
+  },
+  "p46": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p46": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Institutional sector"
+   },
+   "reference_label": "Institutional sector"
+  },
+  "p47a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p47a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "ISIC High level"
+   },
+   "reference_label": "ISIC High level"
+  },
+  "p48a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p48a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Main occupations(ISCO high level)"
+   },
+   "reference_label": "Main occupations(ISCO high level)"
+  },
+  "p49": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p49": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "status in employment"
+   },
+   "reference_label": "status in employment"
+  },
+  "p50a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p50a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "given birth"
+   },
+   "reference_label": "given birth"
+  },
+  "p50b_boys": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p50b_boys": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of live births ever had / boys"
+   },
+   "reference_label": "Number of live births ever had / boys"
+  },
+  "p50b_girls": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p50b_girls": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of live births ever had / girls"
+   },
+   "reference_label": "Number of live births ever had / girls"
+  },
+  "p50c_boys": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p50c_boys": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Among those children how many are still alive / Boys"
+   },
+   "reference_label": "Among those children how many are still alive / Boys"
+  },
+  "p50c_girls": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p50c_girls": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Among those children how many are still alive / Girls"
+   },
+   "reference_label": "Among those children how many are still alive / Girls"
+  },
+  "p51a": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p51a": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give"
+   },
+   "reference_label": "During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give"
+  },
+  "p51b_boys": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p51b_boys": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
+   },
+   "reference_label": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
+  },
+  "p51b_girls": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p51b_girls": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
+   },
+   "reference_label": "Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021"
+  },
+  "p51c_boys": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p51c_boys": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Among those children s,how many are still alive / Boys"
+   },
+   "reference_label": "Among those children s,how many are still alive / Boys"
+  },
+  "p51c_girls": {
+   "years": [
+    2022
+   ],
+   "versions": {
+    "p51c_girls": [
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2022": "Among those children s,how many are still alive / Girls"
+   },
+   "reference_label": "Among those children s,how many are still alive / Girls"
+  },
+  "personnes_handic": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "personnes_handic": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Persons with a handicap (NISR grouped)"
+   },
+   "reference_label": "Persons with a handicap (NISR grouped)"
+  },
+  "pid": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "pid": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Person number within the household",
+    "2012": "Person number within the household",
+    "2022": "Person number within the household"
+   },
+   "reference_label": "Person number within the household"
+  },
+  "pid_nisr": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "pid_nisr": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "NISR person number as shipped"
+   },
+   "reference_label": "NISR person number as shipped"
+  },
+  "probability": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "probability": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Inclusion (selection) probability"
+   },
+   "reference_label": "Inclusion (selection) probability"
+  },
+  "prov": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "prov": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Province (1-5, NISR codes)",
+    "2012": "Province (1-5, NISR codes)",
+    "2022": "Province (1-5, NISR codes)"
+   },
+   "reference_label": "Province (1-5, NISR codes)"
+  },
+  "rl07": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rl07": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RL07"
+   },
+   "reference_label": "RL07"
+  },
+  "rp04y": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp04y": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RP04Y"
+   },
+   "reference_label": "RP04Y"
+  },
+  "rp08": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp08": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RP08"
+   },
+   "reference_label": "RP08"
+  },
+  "rp12": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp12": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RP12"
+   },
+   "reference_label": "RP12"
+  },
+  "rp142": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp142": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RP142"
+   },
+   "reference_label": "RP142"
+  },
+  "rp2024": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp2024": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RP2024"
+   },
+   "reference_label": "RP2024"
+  },
+  "rp2124": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp2124": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "RP2124"
+   },
+   "reference_label": "RP2124"
+  },
+  "rp25": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp25": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Occupation group"
+   },
+   "reference_label": "Occupation group"
+  },
+  "rp27": {
+   "years": [
+    2012
+   ],
+   "versions": {
+    "rp27": [
+     2012
+    ]
+   },
+   "labels_by_year": {
+    "2012": "Industry group"
+   },
+   "reference_label": "Industry group"
+  },
+  "sector": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "sector": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Sector (1101-5715, NISR codes; names attached)",
+    "2012": "Sector (1101-5715, NISR codes; names attached)",
+    "2022": "Sector (1101-5715, NISR codes; names attached)"
+   },
+   "reference_label": "Sector (1101-5715, NISR codes; names attached)"
+  },
+  "sector_code_file": {
+   "years": [
+    2002
+   ],
+   "versions": {
+    "sector_code_file": [
+     2002
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Sector code as shipped in the 2002 file (before the name-based correction, see D"
+   },
+   "reference_label": "Sector code as shipped in the 2002 file (before the name-based correction, see D"
+  },
+  "sex": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "sex": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Sex (1 male, 2 female)",
+    "2012": "Sex (1 male, 2 female)",
+    "2022": "Sex (1 male, 2 female)"
+   },
+   "reference_label": "Sex (1 male, 2 female)"
+  },
+  "survey": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "survey": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Source survey",
+    "2012": "Source survey",
+    "2022": "Source survey"
+   },
+   "reference_label": "Source survey"
+  },
+  "urban": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "urban": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Area of residence (1 urban, 2 rural)",
+    "2012": "Area of residence (1 urban, 2 rural)",
+    "2022": "Area of residence (1 urban, 2 rural)"
+   },
+   "reference_label": "Area of residence (1 urban, 2 rural)"
+  },
+  "wave": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "wave": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Wave (census year)",
+    "2012": "Wave (census year)",
+    "2022": "Wave (census year)"
+   },
+   "reference_label": "Wave (census year)"
+  },
+  "wt": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "wt": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Person weight (sums to the census population)",
+    "2012": "Person weight (sums to the census population)",
+    "2022": "Person weight (sums to the census population)"
+   },
+   "reference_label": "Person weight (sums to the census population)"
+  },
+  "wt_hh": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "wt_hh": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa",
+    "2012": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa",
+    "2022": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa"
+   },
+   "reference_label": "Household weight (2022 as shipped; 2002/2012 = person weight of the household sa"
+  },
+  "year": {
+   "years": [
+    2002,
+    2012,
+    2022
+   ],
+   "versions": {
+    "year": [
+     2002,
+     2012,
+     2022
+    ]
+   },
+   "labels_by_year": {
+    "2002": "Census year",
+    "2012": "Census year",
+    "2022": "Census year"
+   },
+   "reference_label": "Census year"
+  }
+ },
+ "label_variants": {
+  "h01": {
+   "2002": "Type of housing",
+   "2012": "Type of Housing",
+   "2022": "Type of habitant"
+  },
+  "h02": {
+   "2002": "Type of building",
+   "2012": "Type of Housing unit",
+   "2022": "Type of Building"
+  },
+  "h03": {
+   "2002": "Roof material",
+   "2012": "Status of occupancy of house",
+   "2022": "Tenure of then housing unit"
+  },
+  "h04": {
+   "2002": "Outer wall material",
+   "2012": "Roof",
+   "2022": "Is this Household has its own housing unit  in this village or elsewhere"
+  },
+  "h05": {
+   "2002": "Floor material",
+   "2012": "Walls",
+   "2022": "main material used for the roof"
+  },
+  "h06": {
+   "2002": "Number of living rooms",
+   "2012": "Floor",
+   "2022": "main material used for the walls"
+  },
+  "h07": {
+   "2002": "Main source of water supply",
+   "2012": "Number of rooms",
+   "2022": "main material used for the floor"
+  },
+  "h08": {
+   "2002": "Main source of lighting",
+   "2012": "Number of rooms for sleeping",
+   "2022": "Number of rooms"
+  },
+  "h09": {
+   "2002": "Main cooking energy",
+   "2012": "Number of occupants",
+   "2022": "number of rooms are used for sleeping"
+  },
+  "h10": {
+   "2002": "Main toilet facility",
+   "2012": "Main source of water",
+   "2022": "Are Sleeping rooms  for Boys separated from those for Girls"
+  },
+  "h11": {
+   "2002": "Main mode of household waste disposal",
+   "2012": "Type of toilet facility",
+   "2022": "Main source of water used for general purposes"
+  },
+  "h12": {
+   "2002": "Occupancy status of the dwelling",
+   "2012": "Source of lighting",
+   "2022": "Main source of drinking water"
+  },
+  "h13": {
+   "2002": "Radio / television ownership",
+   "2012": "Energy of cooking",
+   "2022": "Toilet Facility"
+  },
+  "h14": {
+   "2002": "Fixed-line / cell phone",
+   "2012": "Energy saving stove",
+   "2022": "Electricity (Grid line) connectivity"
+  },
+  "h15": {
+   "2002": "Computer / internet connection",
+   "2012": "Mode of household waste disposal",
+   "2022": "Main source of energy for lighting"
+  },
+  "h16": {
+   "2012": "Mode of sewage disposal",
+   "2022": "Main source of energy for cooking"
+  },
+  "h17": {
+   "2002": "Total persons counted in the household",
+   "2012": "Radio",
+   "2022": "Secondary source of energy for cooking"
+  },
+  "h18": {
+   "2002": "(empty in the public file)",
+   "2012": "Television",
+   "2022": "Does your HH use a cooking energy saving stove?"
+  },
+  "h19": {
+   "2012": "Telephone (fixed line)",
+   "2022": "Main mode of household waste disposal used"
+  },
+  "h20": {
+   "2012": "Cell phone",
+   "2022": "Main mode of sewage"
+  },
+  "h22": {
+   "2012": "Computer",
+   "2022": "HH own livestock or beehive"
+  },
+  "h23": {
+   "2012": "Bicycles",
+   "2022": "Household grew crops in last 12 months"
+  },
+  "h26": {
+   "2012": "Internet Access",
+   "2022": "Number of tea trees grown"
+  },
+  "h27": {
+   "2012": "Where do you access internet",
+   "2022": "Number of coffee trees grown"
+  },
+  "h28a": {
+   "2012": "Cattle:Local breed cow",
+   "2022": "Any fruit tree"
+  },
+  "p02": {
+   "2002": "Relationship to household head",
+   "2012": "Relationship",
+   "2022": "Relationship (Private HH only)"
+  },
+  "p06": {
+   "2012": "Situation of residence",
+   "2022": "marital status"
+  },
+  "p07": {
+   "2002": "Nationality",
+   "2012": "Place of Birth"
+  },
+  "p08": {
+   "2002": "Place of birth (district or country)",
+   "2012": "Nationality"
+  },
+  "p09": {
+   "2002": "Duration of residence in this locality (years; 99 since birth)",
+   "2012": "Place of previous residence"
+  },
+  "p10": {
+   "2002": "Place of previous residence (district or country)",
+   "2012": "Duration of Residence"
+  },
+  "p11": {
+   "2002": "Languages spoken",
+   "2012": "Religion"
+  },
+  "p13": {
+   "2002": "Type of major handicap",
+   "2012": "Type of insurance",
+   "2022": "Religious affiliation"
+  },
+  "p14": {
+   "2002": "Cause of handicap",
+   "2022": "Medical insurance"
+  },
+  "p15": {
+   "2002": "Survival of parents",
+   "2012": "Birth Registration"
+  },
+  "p16": {
+   "2002": "School attendance (ever attended)",
+   "2012": "Languages reading and written"
+  },
+  "p17": {
+   "2002": "Highest class successfully completed",
+   "2012": "School attendance"
+  },
+  "p18b": {
+   "2012": "Years completed",
+   "2022": "Level of difficulty of communicating"
+  },
+  "p19": {
+   "2002": "Highest certificate or diploma obtained",
+   "2012": "Highest Certificate/Diploma"
+  },
+  "p20": {
+   "2002": "Literacy",
+   "2012": "Work"
+  },
+  "p21": {
+   "2002": "Economic activity situation (15/07-15/08/2002)",
+   "2012": "Why did not work"
+  },
+  "p22": {
+   "2002": "Main occupation (type of work done)",
+   "2012": "Work done"
+  },
+  "p23": {
+   "2002": "Status in employment",
+   "2012": "Ready to work"
+  },
+  "p24": {
+   "2002": "Branch of economic activity",
+   "2012": "Seeking for work",
+   "2022": "Registered in the Civil Registration books"
+  },
+  "p25": {
+   "2002": "Institutional sector of employment (public/parastatal/NGO/cooperative/other priv",
+   "2012": "Type of work"
+  },
+  "p26": {
+   "2002": "Marital status",
+   "2012": "Status in employment"
+  },
+  "p29": {
+   "2012": "Marital status",
+   "2022": "Ever or currently attending  school"
+  },
+  "p30a": {
+   "2002": "Of births in the last 12 months, surviving boys",
+   "2022": "Highest level of education"
+  },
+  "p30b": {
+   "2002": "Of births in the last 12 months, surviving girls",
+   "2022": "Years of school complete successfully at that level"
+  },
+  "p31": {
+   "2012": "Current rank as spouse",
+   "2022": "Highest certificate/degree"
+  },
+  "p32": {
+   "2012": "Age at first marriage",
+   "2022": "Can read and write with understanding in the following languages"
+  }
+ },
+ "value_label_conflicts": {
+  "p02": {
+   "1": [
+    "Chef de m\u00e9nage",
+    "Head of Household"
+   ],
+   "2": [
+    "Conjoint du chef",
+    "Spouse"
+   ],
+   "3": [
+    "Enfant du chef",
+    "Son/Daughter"
+   ],
+   "4": [
+    "Enfant accueilli",
+    "Unrelated Child"
+   ],
+   "5": [
+    "Father/Mother",
+    "P\u00e8re/m\u00e8re"
+   ],
+   "6": [
+    "Brother/Sister",
+    "Fr\u00e8re/soeur"
+   ],
+   "7": [
+    "Grandchild",
+    "Petit enfant"
+   ],
+   "8": [
+    "Autre lien de parent\u00e9",
+    "Other Relative"
+   ],
+   "9": [
+    "Non Relative",
+    "Sans lien de parent\u00e9"
+   ]
+  },
+  "p13": {
+   "2": [
+    "Aveugle",
+    "RAMA"
+   ],
+   "3": [
+    "MMI",
+    "Sourd/muet"
+   ],
+   "4": [
+    "FARG",
+    "Infirme des membres inf\u00e9r."
+   ],
+   "5": [
+    "Infirme des membres sup\u00e9r.",
+    "Insurance cie"
+   ],
+   "6": [
+    "D\u00e9ficience mentale",
+    "School"
+   ],
+   "7": [
+    "NGO",
+    "Traumatisme"
+   ],
+   "8": [
+    "Autre handicap",
+    "Employer"
+   ]
+  },
+  "p19": {
+   "1": [
+    "Aucun",
+    "CE/FE"
+   ],
+   "2": [
+    "EMA/ENTA",
+    "Ecole des monit. auxiliaires"
+   ],
+   "3": [
+    "A3/D4/D5",
+    "Dipl. Ens. Normal Terminal"
+   ],
+   "4": [
+    "A2/D6/D7",
+    "Dipl. Humanit\u00e9s ou \u00e9quivalent"
+   ],
+   "5": [
+    "A1:Bacc/Diploma",
+    "Baccalaur\u00e9at ou \u00e9quivalent"
+   ],
+   "6": [
+    "A0: Bachelor",
+    "Ma\u00eetrise, ing\u00e9niorat ou \u00e9quiv."
+   ],
+   "7": [
+    "Doctorat",
+    "MA: Master"
+   ],
+   "9": [
+    "Non d\u00e9termin\u00e9",
+    "missing"
+   ]
+  },
+  "p26": {
+   "1": [
+    "C\u00e9libataire",
+    "Employee"
+   ],
+   "2": [
+    "Employer",
+    "Union libre"
+   ],
+   "3": [
+    "Mariage monogamique",
+    "Self-employed"
+   ],
+   "4": [
+    "Contributing family worker",
+    "Homme polygame"
+   ],
+   "5": [
+    "1i\u00e8re femme mariage poly",
+    "Producers cooperative member"
+   ],
+   "6": [
+    "2i\u00e8me femme mariage poly",
+    "Other"
+   ],
+   "9": [
+    "Veuf/Veuve",
+    "missing"
+   ]
+  },
+  "h01": {
+   "1": [
+    "Planned rural settlement",
+    "Umudugudu",
+    "Umudugudu(Clustered rural settlement)"
+   ],
+   "2": [
+    "Ancien regroupement",
+    "Integrated Model Village",
+    "Old settlement"
+   ],
+   "3": [
+    "Dispersed/Isolated housing",
+    "Habitat isol\u00e9e",
+    "Old settlement"
+   ],
+   "4": [
+    "Lotissement cadastral",
+    "Planned urban housing",
+    "Unplanned clustered rural housing (Dispersed/Isolated housing)"
+   ],
+   "5": [
+    "Habitat spontan\u00e9e",
+    "Modern planned urban area",
+    "Spontaneous/squatter housing"
+   ],
+   "6": [
+    "Autre mode d'habitat",
+    "Other type of housing",
+    "Spontaneous/Squatter housing in Urban area"
+   ],
+   "9": [
+    "Habitat non d\u00e9termin\u00e9",
+    "missing"
+   ]
+  },
+  "h02": {
+   "1": [
+    "B\u00e2timent habit\u00e9 par un seul m\u00e9nage",
+    "House occupied by one household"
+   ],
+   "2": [
+    "B\u00e2timent habit\u00e9 par plusieurs m\u00e9nages",
+    "House occupied by several household",
+    "House occupied by several householdS"
+   ],
+   "3": [
+    "B\u00e2timent en \u00e9tage habit\u00e9 par un ou plusieurs m\u00e9nages",
+    "Storey building occupied by one household",
+    "Storey building occupied by one or more household"
+   ],
+   "4": [
+    "Plusieurs b\u00e2timents dans un enclos de plusieurs m\u00e9nages",
+    "Several buildings in a compound occupied by several househol",
+    "Storey building occupied by many households"
+   ],
+   "5": [
+    "Autre mode de construction",
+    "Other type of building",
+    "Several buildings in a compound occupied by one  household"
+   ]
+  }
+ },
+ "person": {
+  "rows": 3165816,
+  "vars": [
+   "survey",
+   "year",
+   "wave",
+   "prov",
+   "dist",
+   "sector",
+   "urban",
+   "cluster",
+   "hhid",
+   "pid",
+   "sex",
+   "age",
+   "wt",
+   "wt_hh",
+   "novprov",
+   "district_code",
+   "novdistr",
+   "sector_code_file",
+   "novsect",
+   "p02",
+   "p03",
+   "p05x",
+   "p05a",
+   "p05b",
+   "agcm",
+   "p061",
+   "p062",
+   "p063",
+   "p0631",
+   "age_5",
+   "gpe_age",
+   "age1_1",
+   "a46",
+   "age26",
+   "age18",
+   "age19",
+   "p07_v2",
+   "p08_v2",
+   "p09_v2",
+   "p10_v2",
+   "p11_v2",
+   "p12",
+   "p13",
+   "personnes_handic",
+   "p14_v2",
+   "p15_v2",
+   "p16_v2",
+   "fr_quentation",
+   "p17_v2",
+   "p171",
+   "p18",
+   "p19",
+   "p20_v2",
+   "p21_v2",
+   "p211",
+   "p22",
+   "emploi_exerc",
+   "p23_v2",
+   "p24_v3",
+   "p241",
+   "p25_v2",
+   "p26",
+   "etat_matri",
+   "p27a",
+   "p27b",
+   "p28a",
+   "p28b",
+   "p29a",
+   "p29b",
+   "p30a_v2",
+   "p30b_v2",
+   "grpage5",
+   "agebetween5_17",
+   "agegrp_nisr",
+   "p02_hh",
+   "h100",
+   "h200",
+   "h101",
+   "h102",
+   "h110",
+   "h111",
+   "h112",
+   "h113",
+   "h114",
+   "h115",
+   "h116",
+   "h117",
+   "h118",
+   "h119",
+   "h120",
+   "h121",
+   "h122",
+   "h123",
+   "h124",
+   "h01",
+   "h02",
+   "h03_v3",
+   "h04_v3",
+   "h05_v3",
+   "h06_v3",
+   "h07_v3",
+   "h08_v2",
+   "h09_v3",
+   "h10_v3",
+   "h11_v3",
+   "h12_v3",
+   "h13_v3",
+   "h14_v3",
+   "h15_v3",
+   "h16a",
+   "h16b",
+   "h16c",
+   "h17_v3",
+   "h18_v3",
+   "h19a",
+   "h19b",
+   "probability",
+   "p00_nu",
+   "p00_mean",
+   "pid_nisr",
+   "collective",
+   "l02",
+   "l03",
+   "l07",
+   "p04m",
+   "p04y",
+   "p06_v2",
+   "p07",
+   "p08",
+   "p09",
+   "p10",
+   "p11",
+   "p12d1",
+   "p12c1",
+   "p12d2",
+   "p12c2",
+   "p12d3",
+   "p12c3",
+   "p12d4",
+   "p12c4",
+   "p12d5",
+   "p12c5",
+   "p12d6",
+   "p12c6",
+   "p14a",
+   "p14b",
+   "p14c",
+   "p14d",
+   "p15",
+   "p16",
+   "p17",
+   "p18a",
+   "p18b_v2",
+   "p20",
+   "p21",
+   "p23",
+   "p24_v2",
+   "p25",
+   "p27",
+   "p28",
+   "p29_v2",
+   "p30",
+   "p31_v2",
+   "p32_v2",
+   "p33m",
+   "p33f",
+   "p34m",
+   "p34f",
+   "p35m",
+   "p35f",
+   "p36m",
+   "p36f",
+   "rp142",
+   "rp12",
+   "rp08",
+   "rp2024",
+   "rp2124",
+   "rl07",
+   "rp04y",
+   "h03_v2",
+   "h04_v2",
+   "h05_v2",
+   "h06_v2",
+   "h07_v2",
+   "h08",
+   "h09_v2",
+   "h10_v2",
+   "h11_v2",
+   "h12_v2",
+   "h13_v2",
+   "h14_v2",
+   "h15_v2",
+   "h16_v2",
+   "h17_v2",
+   "h18_v2",
+   "h19_v2",
+   "h20_v2",
+   "h21",
+   "h22_v2",
+   "h23_v2",
+   "h24",
+   "h25",
+   "h26_v2",
+   "h27_v2",
+   "h28a_v2",
+   "h28b",
+   "h28c",
+   "h29",
+   "h30",
+   "h31",
+   "h32",
+   "h33",
+   "h34",
+   "h35",
+   "m1",
+   "inclusionprobability_1_",
+   "hhsize",
+   "aggroup5",
+   "rp25",
+   "rp27",
+   "filter__",
+   "p02_v2",
+   "p06",
+   "p07a",
+   "p07b",
+   "p08c",
+   "p09a",
+   "p09b",
+   "p09c",
+   "p10a",
+   "p10b",
+   "p11a",
+   "p11b",
+   "p12b",
+   "p13_v2",
+   "p14",
+   "p15b",
+   "p16b",
+   "p17b",
+   "p18b",
+   "p19b",
+   "p20b",
+   "p21a",
+   "p22a",
+   "p23a",
+   "p23b",
+   "p23bb",
+   "p23c",
+   "p23d",
+   "p23dd",
+   "p24",
+   "p29",
+   "p30a",
+   "p30b",
+   "p31",
+   "p32",
+   "p33",
+   "p34",
+   "p35",
+   "p36c",
+   "p46",
+   "p47a",
+   "p48a",
+   "p49",
+   "p50a",
+   "p50b_boys",
+   "p50b_girls",
+   "p50c_boys",
+   "p50c_girls",
+   "p51a",
+   "p51b_boys",
+   "p51b_girls",
+   "p51c_boys",
+   "p51c_girls",
+   "h03",
+   "h04",
+   "h05",
+   "h06",
+   "h07",
+   "h09",
+   "h10",
+   "h11",
+   "h12",
+   "h13",
+   "h14",
+   "h15",
+   "h16",
+   "h17",
+   "h18",
+   "h19",
+   "h20",
+   "h21_01",
+   "h21_02",
+   "h21_03",
+   "h21_04",
+   "h21_05",
+   "h21_06",
+   "h21_07",
+   "h21_08",
+   "h21_09",
+   "h21_10",
+   "h21_11",
+   "h21_12",
+   "h21_13",
+   "h21_14",
+   "h21_15",
+   "h21_16",
+   "h22",
+   "h22a_01",
+   "h22a_02",
+   "h22a_03",
+   "h22a_04",
+   "h22a_05",
+   "h22a_06",
+   "h22a_07",
+   "h22a_08",
+   "h22a_09",
+   "h22a_10",
+   "h22a_11",
+   "h22a_12",
+   "h22a_13",
+   "h22a_14",
+   "h22a_15",
+   "h22a_16",
+   "h22a_17",
+   "h22a_18",
+   "h22a_19",
+   "h22a_20",
+   "h22a_21",
+   "h22a_22",
+   "h22a_23",
+   "h22b1_01",
+   "h22b1_02",
+   "h22b1_03",
+   "h22b1_04",
+   "h22b1_05",
+   "h22b1_06",
+   "h22b1_07",
+   "h22b1_08",
+   "h22b1_09",
+   "h22b1_10",
+   "h22b1_11",
+   "h22b1_12",
+   "h22b1_13",
+   "h22b1_14",
+   "h22b1_15",
+   "h22b1_16",
+   "h22b1_17",
+   "h22b1_18",
+   "h22b1_19",
+   "h22b1_20",
+   "h22b1_21",
+   "h22b1_22",
+   "h22b1_23",
+   "h22b2_01",
+   "h22b2_02",
+   "h22b2_03",
+   "h22b2_04",
+   "h22b2_05",
+   "h22b2_06",
+   "h22b2_07",
+   "h22b2_08",
+   "h22b2_09",
+   "h22b2_10",
+   "h22b2_11",
+   "h22b2_12",
+   "h22b2_13",
+   "h22b2_14",
+   "h22b2_15",
+   "h22b2_16",
+   "h22b2_17",
+   "h22b2_18",
+   "h22b2_19",
+   "h22b2_20",
+   "h22b2_21",
+   "h22b2_22",
+   "h22b2_23",
+   "h23",
+   "h23a",
+   "h24_01",
+   "h24_02",
+   "h24_03",
+   "h24_04",
+   "h24_05",
+   "h24_06",
+   "h24_07",
+   "h24_08",
+   "h24_09",
+   "h24_10",
+   "h24_11",
+   "h24_12",
+   "h24_13",
+   "h24_14",
+   "h24_15",
+   "h24_16",
+   "h24_17",
+   "h24_18",
+   "h24_19",
+   "h24_20",
+   "h24_21",
+   "h24_22",
+   "h25_01",
+   "h25_02",
+   "h25_03",
+   "h25_04",
+   "h25_05",
+   "h25_06",
+   "h25_07",
+   "h25_08",
+   "h25_09",
+   "h25_10",
+   "h25_11",
+   "h25_12",
+   "h25_13",
+   "h25_14",
+   "h25_15",
+   "h25_16",
+   "h25_17",
+   "h25_18",
+   "h25_19",
+   "h25_20",
+   "h25_21",
+   "h25_22",
+   "h25_23",
+   "h25_24",
+   "h26",
+   "h27",
+   "h28a",
+   "h28b1_01",
+   "h28b1_02",
+   "h28b1_03",
+   "h28b1_04",
+   "h28b1_05",
+   "h28b1_06",
+   "h28b1_07",
+   "h28b1_08",
+   "h28b1_09",
+   "h28b1_10",
+   "h28b1_11",
+   "h28b1_12",
+   "h28b1_13",
+   "h28b1_14",
+   "h28b1_15",
+   "h28b2_01",
+   "h28b2_02",
+   "h28b2_03",
+   "h28b2_04",
+   "h28b2_05",
+   "h28b2_06",
+   "h28b2_07",
+   "h28b2_08",
+   "h28b2_09",
+   "h28b2_10",
+   "h28b2_11",
+   "h28b2_12",
+   "h28b2_13",
+   "h28b2_14",
+   "h28b2_15"
+  ]
+ },
+ "household": {
+  "rows": 750115,
+  "vars": [
+   "survey",
+   "year",
+   "wave",
+   "prov",
+   "dist",
+   "sector",
+   "urban",
+   "cluster",
+   "hhid",
+   "wt",
+   "wt_hh",
+   "novprov",
+   "district_code",
+   "novdistr",
+   "sector_code_file",
+   "novsect",
+   "h100",
+   "h200",
+   "h101",
+   "h102",
+   "h110",
+   "h111",
+   "h112",
+   "h113",
+   "h114",
+   "h115",
+   "h116",
+   "h117",
+   "h118",
+   "h119",
+   "h120",
+   "h121",
+   "h122",
+   "h123",
+   "h124",
+   "h01",
+   "h02",
+   "h03_v3",
+   "h04_v3",
+   "h05_v3",
+   "h06_v3",
+   "h07_v3",
+   "h08_v2",
+   "h09_v3",
+   "h10_v3",
+   "h11_v3",
+   "h12_v3",
+   "h13_v3",
+   "h14_v3",
+   "h15_v3",
+   "h16a",
+   "h16b",
+   "h16c",
+   "h17_v3",
+   "h18_v3",
+   "h19a",
+   "h19b",
+   "probability",
+   "p00_nu",
+   "p00_mean",
+   "collective",
+   "hhsize",
+   "head_sex",
+   "head_age",
+   "l02",
+   "l03",
+   "l07",
+   "rp2124",
+   "rl07",
+   "h03_v2",
+   "h04_v2",
+   "h05_v2",
+   "h06_v2",
+   "h07_v2",
+   "h08",
+   "h09_v2",
+   "h10_v2",
+   "h11_v2",
+   "h12_v2",
+   "h13_v2",
+   "h14_v2",
+   "h15_v2",
+   "h16_v2",
+   "h17_v2",
+   "h18_v2",
+   "h19_v2",
+   "h20_v2",
+   "h21",
+   "h22_v2",
+   "h23_v2",
+   "h24",
+   "h25",
+   "h26_v2",
+   "h27_v2",
+   "h28a_v2",
+   "h28b",
+   "h28c",
+   "h29",
+   "h30",
+   "h31",
+   "h32",
+   "h33",
+   "h34",
+   "h35",
+   "m1",
+   "inclusionprobability_1_",
+   "p07a",
+   "h03",
+   "h04",
+   "h05",
+   "h06",
+   "h07",
+   "h09",
+   "h10",
+   "h11",
+   "h12",
+   "h13",
+   "h14",
+   "h15",
+   "h16",
+   "h17",
+   "h18",
+   "h19",
+   "h20",
+   "h21_01",
+   "h21_02",
+   "h21_03",
+   "h21_04",
+   "h21_05",
+   "h21_06",
+   "h21_07",
+   "h21_08",
+   "h21_09",
+   "h21_10",
+   "h21_11",
+   "h21_12",
+   "h21_13",
+   "h21_14",
+   "h21_15",
+   "h21_16",
+   "h22",
+   "h22a_01",
+   "h22a_02",
+   "h22a_03",
+   "h22a_04",
+   "h22a_05",
+   "h22a_06",
+   "h22a_07",
+   "h22a_08",
+   "h22a_09",
+   "h22a_10",
+   "h22a_11",
+   "h22a_12",
+   "h22a_13",
+   "h22a_14",
+   "h22a_15",
+   "h22a_16",
+   "h22a_17",
+   "h22a_18",
+   "h22a_19",
+   "h22a_20",
+   "h22a_21",
+   "h22a_22",
+   "h22a_23",
+   "h22b1_01",
+   "h22b1_02",
+   "h22b1_03",
+   "h22b1_04",
+   "h22b1_05",
+   "h22b1_06",
+   "h22b1_07",
+   "h22b1_08",
+   "h22b1_09",
+   "h22b1_10",
+   "h22b1_11",
+   "h22b1_12",
+   "h22b1_13",
+   "h22b1_14",
+   "h22b1_15",
+   "h22b1_16",
+   "h22b1_17",
+   "h22b1_18",
+   "h22b1_19",
+   "h22b1_20",
+   "h22b1_21",
+   "h22b1_22",
+   "h22b1_23",
+   "h22b2_01",
+   "h22b2_02",
+   "h22b2_03",
+   "h22b2_04",
+   "h22b2_05",
+   "h22b2_06",
+   "h22b2_07",
+   "h22b2_08",
+   "h22b2_09",
+   "h22b2_10",
+   "h22b2_11",
+   "h22b2_12",
+   "h22b2_13",
+   "h22b2_14",
+   "h22b2_15",
+   "h22b2_16",
+   "h22b2_17",
+   "h22b2_18",
+   "h22b2_19",
+   "h22b2_20",
+   "h22b2_21",
+   "h22b2_22",
+   "h22b2_23",
+   "h23",
+   "h23a",
+   "h24_01",
+   "h24_02",
+   "h24_03",
+   "h24_04",
+   "h24_05",
+   "h24_06",
+   "h24_07",
+   "h24_08",
+   "h24_09",
+   "h24_10",
+   "h24_11",
+   "h24_12",
+   "h24_13",
+   "h24_14",
+   "h24_15",
+   "h24_16",
+   "h24_17",
+   "h24_18",
+   "h24_19",
+   "h24_20",
+   "h24_21",
+   "h24_22",
+   "h25_01",
+   "h25_02",
+   "h25_03",
+   "h25_04",
+   "h25_05",
+   "h25_06",
+   "h25_07",
+   "h25_08",
+   "h25_09",
+   "h25_10",
+   "h25_11",
+   "h25_12",
+   "h25_13",
+   "h25_14",
+   "h25_15",
+   "h25_16",
+   "h25_17",
+   "h25_18",
+   "h25_19",
+   "h25_20",
+   "h25_21",
+   "h25_22",
+   "h25_23",
+   "h25_24",
+   "h26",
+   "h27",
+   "h28a",
+   "h28b1_01",
+   "h28b1_02",
+   "h28b1_03",
+   "h28b1_04",
+   "h28b1_05",
+   "h28b1_06",
+   "h28b1_07",
+   "h28b1_08",
+   "h28b1_09",
+   "h28b1_10",
+   "h28b1_11",
+   "h28b1_12",
+   "h28b1_13",
+   "h28b1_14",
+   "h28b1_15",
+   "h28b2_01",
+   "h28b2_02",
+   "h28b2_03",
+   "h28b2_04",
+   "h28b2_05",
+   "h28b2_06",
+   "h28b2_07",
+   "h28b2_08",
+   "h28b2_09",
+   "h28b2_10",
+   "h28b2_11",
+   "h28b2_12",
+   "h28b2_13",
+   "h28b2_14",
+   "h28b2_15"
+  ]
+ }
+}

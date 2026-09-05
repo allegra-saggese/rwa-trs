@@ -1,0 +1,168 @@
+21:21:12 01_clean INFO ==== 01_clean | run 20260904-212111 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:21:12 01_clean INFO ---------------- 2011 ----------------
+21:21:13 01_clean INFO read EC_2011.sav: 127,662 rows x 99 vars
+21:21:13 01_clean INFO 2011 sector names matched by closest spelling: [(11, 'MAGERAGERE', 'MAGEREGERE'), (21, 'CYABAKIMYI', 'CYABAKAMYI'), (21, 'KIBIRIZI', 'KIBILIZI'), (21, 'RWABICUMBI', 'RWABICUMA'), (22, 'KIBILIZI', 'KIBIRIZI'), (22, 'KIGIMBE', 'KIGEMBE'), (25, 'KIBILIZI', 'KIBIRIZI'), (33, 'KABATWA', 'KANAMA'), (33, 'NYAKILIBA', 'NYAKIRIBA'), (36, 'GIHURWE', 'GIHUNDWE'), (36, 'NKAKA', 'NKANKA'), (36, 'NYAKAENZO', 'NYAKARENZO'), (43, 'GATAGARA', 'GATARAGA'), (45, 'RUSHASHI', 'RUSHAKI'), (51, 'GAHENERI', 'GAHENGERI'), (51, 'GISHARI', 'GISHALI'), (51, 'MUYAGA', 'MUNYAGA'), (51, 'NYAKARIRO', 'NYAKALIRO'), (52, 'MUSHELI', 'MUSHERI'), (55, 'NYAMUGALI', 'NYAMUGARI'), (57, 'RUHUMA', 'RUHUHA')]
+21:21:13 01_clean WARNING 2011 sector names with no match (rows): {(33, 'KARAGO'): 268, (34, 'BUSASAMANA'): 40, (34, 'MUDENDE'): 311, (41, 'GATAGARA'): 2}
+21:21:13 01_clean INFO 2011: shipped sequence codes (ID1*1000+ID2*100+ID3) equal the name-matched sector code in 0.9936 of rows
+21:21:15 01_clean INFO PASS  row count unchanged (127,662)
+21:21:15 01_clean INFO PASS  estid unique
+21:21:15 01_clean INFO PASS  5 provinces on NISR codes
+21:21:15 01_clean INFO PASS  30 districts on the 11-57 scheme
+21:21:15 01_clean INFO PASS  district nests in province
+21:21:15 01_clean INFO PASS  sector codes within the NISR 416-sector list (416 sectors present)
+21:21:15 01_clean INFO PASS  sector nests in district
+21:21:15 01_clean INFO PASS  sector assigned for 99.51% of establishments
+21:21:15 01_clean INFO PASS  urban in {1,2}
+21:21:15 01_clean INFO PASS  wt present and > 0
+21:21:15 01_clean INFO PASS  working establishments 122,391 within 1% of published 123,526
+21:21:15 01_clean INFO urban share: 0.433 | total workers: n/a
+21:21:15 01_clean INFO all hard checks passed (0 soft warnings)
+21:21:15 01_clean INFO wrote EC_2011_establishment_clean.dta  (127,662 rows x 106 vars, 26.2 MB)
+21:21:15 01_clean INFO ---------------- 2014 ----------------
+21:21:16 01_clean INFO read EC_2014.sav: 77,151 rows x 91 vars
+21:21:17 01_clean INFO PASS  row count unchanged (77,151)
+21:21:17 01_clean INFO PASS  estid unique
+21:21:17 01_clean INFO PASS  5 provinces on NISR codes
+21:21:17 01_clean INFO PASS  30 districts on the 11-57 scheme
+21:21:17 01_clean INFO PASS  district nests in province
+21:21:17 01_clean INFO PASS  sector codes within the NISR 416-sector list (416 sectors present)
+21:21:17 01_clean INFO PASS  sector nests in district
+21:21:17 01_clean INFO PASS  sector assigned for 100.00% of establishments
+21:21:17 01_clean INFO PASS  urban in {1,2}
+21:21:17 01_clean INFO PASS  wt present and > 0
+21:21:17 01_clean INFO PASS  weighted establishments 154,236 within 1% of published 154,236
+21:21:17 01_clean INFO urban share: 0.379 | total workers: 12,252 (q20)
+21:21:17 01_clean INFO all hard checks passed (0 soft warnings)
+21:21:17 01_clean INFO wrote EC_2014_establishment_clean.dta  (77,151 rows x 96 vars, 14.2 MB)
+21:21:17 01_clean INFO ---------------- 2017 ----------------
+21:21:18 01_clean INFO read EC_2017.sav: 190,288 rows x 71 vars
+21:21:20 01_clean INFO PASS  row count unchanged (190,288)
+21:21:20 01_clean INFO PASS  estid unique
+21:21:20 01_clean INFO PASS  5 provinces on NISR codes
+21:21:20 01_clean INFO PASS  30 districts on the 11-57 scheme
+21:21:20 01_clean INFO PASS  district nests in province
+21:21:20 01_clean INFO PASS  urban in {1,2}
+21:21:20 01_clean INFO PASS  wt present and > 0
+21:21:20 01_clean INFO PASS  weighted establishments 190,288 within 1% of published 190,288
+21:21:20 01_clean INFO urban share: 0.396 | total workers: 616,737
+21:21:20 01_clean INFO all hard checks passed (0 soft warnings)
+21:21:21 01_clean INFO wrote EC_2017_establishment_clean.dta  (190,288 rows x 76 vars, 33.0 MB)
+21:21:21 01_clean INFO ---------------- 2020 ----------------
+21:21:26 01_clean INFO read EC_2020.dta: 232,283 rows x 70 vars
+21:21:27 01_clean INFO PASS  row count unchanged (232,283)
+21:21:27 01_clean INFO PASS  estid unique
+21:21:27 01_clean INFO PASS  5 provinces on NISR codes
+21:21:27 01_clean INFO PASS  30 districts on the 11-57 scheme
+21:21:27 01_clean INFO PASS  district nests in province
+21:21:27 01_clean INFO PASS  urban in {1,2}
+21:21:27 01_clean INFO PASS  wt present and > 0
+21:21:27 01_clean INFO PASS  weighted establishments 232,283 within 1% of published 232,283
+21:21:27 01_clean INFO urban share: 0.403 | total workers: 705,965
+21:21:27 01_clean INFO all hard checks passed (0 soft warnings)
+21:21:29 01_clean INFO wrote EC_2020_establishment_clean.dta  (232,283 rows x 75 vars, 40.2 MB)
+21:21:29 01_clean INFO ---------------- 2023 ----------------
+21:21:33 01_clean INFO read EC_2023.dta: 269,326 rows x 68 vars
+21:21:35 01_clean INFO PASS  row count unchanged (269,326)
+21:21:35 01_clean INFO PASS  estid unique
+21:21:35 01_clean INFO PASS  5 provinces on NISR codes
+21:21:35 01_clean INFO PASS  30 districts on the 11-57 scheme
+21:21:35 01_clean INFO PASS  district nests in province
+21:21:35 01_clean INFO PASS  urban in {1,2}
+21:21:35 01_clean INFO PASS  wt present and > 0
+21:21:35 01_clean INFO urban share: 0.503 | total workers: 927,739
+21:21:35 01_clean INFO all hard checks passed (0 soft warnings)
+21:21:37 01_clean INFO wrote EC_2023_establishment_clean.dta  (269,326 rows x 73 vars, 45.8 MB)
+21:21:37 01_clean INFO 01_clean done for [2011, 2014, 2017, 2020, 2023]
+21:21:38 02_merge INFO ==== 02_merge | run 20260904-212111 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:21:42 02_merge INFO loaded 2011: 127,662 rows x 106 vars
+21:21:43 02_merge INFO loaded 2014: 77,151 rows x 96 vars
+21:21:46 02_merge INFO loaded 2017: 190,288 rows x 76 vars
+21:21:50 02_merge INFO loaded 2020: 232,283 rows x 75 vars
+21:21:55 02_merge INFO loaded 2023: 269,326 rows x 73 vars
+21:21:55 02_merge INFO VERSIONS female_worker: {'female_worker': [2017, 2020], 'female_worker_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS foregner_workers: {'foregner_workers': [2017, 2020], 'foregner_workers_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS foreign_female: {'foreign_female': [2017, 2020], 'foreign_female_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS foreign_male: {'foreign_male': [2017, 2020], 'foreign_male_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS male_worker: {'male_worker': [2017, 2020], 'male_worker_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS q10: {'q10': [2017, 2020, 2023], 'q10_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q11: {'q11': [2017, 2020, 2023], 'q11_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q12: {'q12': [2017, 2020, 2023], 'q12_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q13: {'q13': [2017, 2020, 2023], 'q13_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q14: {'q14': [2017, 2020], 'q14_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q16: {'q16': [2017, 2020, 2023], 'q16_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q20: {'q20': [2017, 2020, 2023], 'q20_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q24: {'q24': [2017, 2020, 2023], 'q24_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q25: {'q25': [2017, 2020, 2023], 'q25_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q6_1: {'q6_1': [2017, 2020], 'q6_1_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS q8: {'q8': [2017, 2020, 2023], 'q8_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS q9: {'q9': [2017, 2020, 2023], 'q9_v2': [2014]}
+21:21:55 02_merge INFO VERSIONS rwandan_workers: {'rwandan_workers': [2017, 2020], 'rwandan_workers_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS start_y: {'start_y': [2017, 2020], 'start_y_v2': [2023]}
+21:21:55 02_merge INFO VERSIONS total_workers: {'total_workers': [2017, 2020], 'total_workers_v2': [2023]}
+21:22:18 02_merge INFO pooled person file: 896,710 rows x 265 vars; 20 variables with >1 version; 7 value-label text conflicts
+21:22:19 02_merge INFO PASS  no numeric column left object-typed after concat
+21:22:19 02_merge INFO PASS  pooled rows == sum of yearly rows
+21:22:19 02_merge INFO PASS  2011: sum wt preserved in pool
+21:22:19 02_merge INFO PASS  2014: sum wt preserved in pool
+21:22:19 02_merge INFO PASS  2017: sum wt preserved in pool
+21:22:19 02_merge INFO PASS  2020: sum wt preserved in pool
+21:22:19 02_merge INFO PASS  2023: sum wt preserved in pool
+21:22:30 02_merge INFO wrote EC_pooled_establishment.dta  (896,710 rows x 265 vars, 463.0 MB)
+21:22:30 02_merge INFO all hard checks passed (0 soft warnings)
+21:22:30 02_merge INFO 02_merge done
+21:22:32 03_checks INFO ==== 03_checks | run 20260904-212111 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:22:36 03_checks INFO 
+# EC checks report
+
+Generated by 03_checks.py.
+
+## A. Pooled file vs raw files as shipped
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | 2011 rows | 127,662 | 127,662 | PASS |
+| A | 2014 rows | 77,151 | 77,151 | PASS |
+| A | 2017 rows | 190,288 | 190,288 | PASS |
+| A | 2020 rows | 232,283 | 232,283 | PASS |
+| A | 2023 rows | 269,326 | 269,326 | PASS |
+
+## B. Stata 17 recomputation from the written .dta file
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2011 rows | 127,662 | 127,662 | PASS |
+| B | 2011 sum wt | 127,662 | 127,662 | PASS |
+| B | 2011 urban establishments | 55,292 | 55,292 | PASS |
+| B | 2011 districts | 30 | 30 | PASS |
+| B | 2014 rows | 77,151 | 77,151 | PASS |
+| B | 2014 sum wt | 154,236 | 154,236 | PASS |
+| B | 2014 urban establishments | 29,241 | 29,241 | PASS |
+| B | 2014 districts | 30 | 30 | PASS |
+| B | 2017 rows | 190,288 | 190,288 | PASS |
+| B | 2017 sum wt | 190,288 | 190,288 | PASS |
+| B | 2017 urban establishments | 75,449 | 75,449 | PASS |
+| B | 2017 districts | 30 | 30 | PASS |
+| B | 2017 total workers | 616,737 | 616,737 | PASS |
+| B | 2020 rows | 232,283 | 232,283 | PASS |
+| B | 2020 sum wt | 232,283 | 232,283 | PASS |
+| B | 2020 urban establishments | 93,622 | 93,622 | PASS |
+| B | 2020 districts | 30 | 30 | PASS |
+| B | 2020 total workers | 705,965 | 705,965 | PASS |
+| B | 2023 rows | 269,326 | 269,326 | PASS |
+| B | 2023 sum wt | 269,326 | 269,326 | PASS |
+| B | 2023 urban establishments | 135,373 | 135,373 | PASS |
+| B | 2023 districts | 30 | 30 | PASS |
+
+## C. Against NISR published EC totals
+
+| section | statistic | Python | published | result |
+|---|---|---:|---:|---|
+| C | 2011 operating establishments (report: 123,526) | 122,391 | 123,526 | PASS |
+| C | 2014 weighted establishments (report: 154,236) | 154,236 | 154,236 | PASS |
+| C | 2017 establishments (report: 190,288) | 190,288 | 190,288 | PASS |
+| C | 2020 establishments (report: 232,283) | 232,283 | 232,283 | PASS |
+
+**All checks passed.**
+21:22:36 03_checks INFO 03_checks done
+21:22:37 04_codebook INFO ==== 04_codebook | run 20260904-212111 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:23:38 04_codebook INFO wrote CODEBOOK.md, codebook_person.csv, codebook_household.csv

@@ -1,5 +1,5 @@
 """
-lfs_helpers.py -- dataset-local helpers for the LFS pipeline.
+census_helpers.py -- dataset-local helpers for the Census pipeline.
 
 Every NISR dataset folder carries its own copy of this pattern (paths, logging,
 Stata I/O, name/label hygiene) so each folder is independently replicable. Do not
@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 import pyreadstat
 
-DATASET = "Labour-Force-Survey-LFS"
+DATASET = "Census-PHC"
 HERE = Path(__file__).resolve().parent
 LOGS = HERE / "logs"
 
@@ -89,11 +89,28 @@ def read_dta(path, **kw):
                 df[c] = pd.to_numeric(df[c], errors="coerce")
     return df, dict(m.column_names_to_labels), {k: dict(v) for k, v in m.variable_value_labels.items()}
 
-def read_meta(path):
+def read_sav(path, **kw):
+    """SPSS reader with the same latin1 fallback and return shape as read_dta."""
     try:
-        _, m = pyreadstat.read_dta(str(path), metadataonly=True)
+        df, m = pyreadstat.read_sav(str(path), **kw)
     except UnicodeDecodeError:
-        _, m = pyreadstat.read_dta(str(path), metadataonly=True, encoding="latin1")
+        df, m = pyreadstat.read_sav(str(path), encoding="latin1", **kw)
+    for c in df.columns:
+        if df[c].dtype == object:
+            v = df[c].dropna()
+            if len(v) and v.map(lambda x: isinstance(x, (int, float, np.integer, np.floating))).all():
+                df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df, dict(m.column_names_to_labels), {k: dict(v) for k, v in m.variable_value_labels.items()}
+
+def read_any(path, **kw):
+    return read_sav(path, **kw) if str(path).lower().endswith(".sav") else read_dta(path, **kw)
+
+def read_meta(path):
+    rd = pyreadstat.read_sav if str(path).lower().endswith(".sav") else pyreadstat.read_dta
+    try:
+        _, m = rd(str(path), metadataonly=True)
+    except UnicodeDecodeError:
+        _, m = rd(str(path), metadataonly=True, encoding="latin1")
     return m
 
 _STATA_NAME = re.compile(r"[^A-Za-z0-9_]")

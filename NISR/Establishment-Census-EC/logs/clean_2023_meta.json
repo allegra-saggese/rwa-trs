@@ -1,0 +1,532 @@
+{
+ "n": 269326,
+ "vars": [
+  "survey",
+  "year",
+  "wave",
+  "prov",
+  "dist",
+  "urban",
+  "estid",
+  "wt",
+  "q2",
+  "q3",
+  "q4_2",
+  "q4_3",
+  "q7",
+  "q8",
+  "q9",
+  "q10",
+  "q11",
+  "q12",
+  "q13",
+  "owner_age",
+  "q15_1",
+  "q15_2",
+  "q15_2a",
+  "q15_2b",
+  "q15_2c",
+  "q15_2d",
+  "q15_2e",
+  "q16",
+  "q17_2",
+  "q17_3",
+  "rwandan_male",
+  "rwandan_female",
+  "rwandan_workers",
+  "foreign_male",
+  "foreign_female",
+  "foregner_workers",
+  "male_worker",
+  "female_worker",
+  "total_workers",
+  "q20",
+  "q21",
+  "q22",
+  "q22_other",
+  "q22a",
+  "q22b",
+  "q22c",
+  "q22d",
+  "q22e",
+  "q22f",
+  "q22g",
+  "q22h",
+  "q22i",
+  "q22j",
+  "q22z",
+  "q23_1",
+  "q23_2",
+  "q24",
+  "q24a",
+  "q24b",
+  "q24c",
+  "q24d",
+  "q24e",
+  "q24f",
+  "q24g",
+  "q24h",
+  "q24z",
+  "q25",
+  "q6_1",
+  "q5_2",
+  "start_y",
+  "owner_sex",
+  "size2",
+  "fi"
+ ],
+ "var_labels": {
+  "q2": "Q2. Working place",
+  "q3": "Q3.1. Working status",
+  "q4_2": "Q4.2 Manager sex",
+  "q4_3": "Q4.3 Manager age",
+  "q7": "Q7 Institutional sector",
+  "q8": "Q8 Categories of mixed sector",
+  "q9": "Q9 Nationality of owner",
+  "q10": "Q10 Legal status",
+  "q11": "Q11 Is the management of establishment completely separated from the household m",
+  "q12": "Q12 Is the owner of the establishment its manager?",
+  "q13": "Q13 Sex of the owner",
+  "owner_age": "Q14 Age of the owner",
+  "q15_1": "Q15.1 Does the establishment maintain regular accounts?",
+  "q15_2": "Q15.2 Which of the following books is used",
+  "q15_2a": "Q15_2A Ledgers",
+  "q15_2b": "Q15_2B Journals",
+  "q15_2c": "Q15_2C Balance sheet",
+  "q15_2d": "Q15_2D Income statement (Profit and loss account)",
+  "q15_2e": "Q15_2E Invoice",
+  "q16": "Q16 Establishment type",
+  "q17_2": "Q17.2 Total number of branches in rwanda including the head office",
+  "q17_3": "Q17.3 Total number of working persons in all branches in rwanda including the he",
+  "rwandan_male": "Number of MALE Rwandan staff",
+  "rwandan_female": "Number of FEMALE Rwandan staff",
+  "rwandan_workers": "Total number of Rwandan staff",
+  "foreign_male": "Number of MALE Foreigner staff",
+  "foreign_female": "Number of FEMALE Foreigner staff",
+  "foregner_workers": "Total number of Foreigner staff",
+  "male_worker": "Total MALE  staff",
+  "female_worker": "Total FEMALE staff",
+  "total_workers": "Total number of staff",
+  "q20": "Q20. Annual total turnover in 2022",
+  "q21": "Q21. Current employed capital",
+  "q22": "Q22. Is the establishment registered in any of the following institutions?",
+  "q22_other": "Q22. Specify other",
+  "q22a": "Q22A Sector",
+  "q22b": "Q22B District",
+  "q22c": "Q22C Rwanda cooperative Agency (RCA) only Cooperative",
+  "q22d": "Q22D Private sector Federation (PSF)",
+  "q22e": "Q22E Rwanda Governance Board (RGB) only NGO",
+  "q22f": "Q22F Social Security Board (RSSB)",
+  "q22g": "Q22G Rwanda Development Board (RDB)",
+  "q22h": "Q22H Rwanda Revenue Authority (RRA)",
+  "q22i": "Q22I Directorate of Immigration and Emigration",
+  "q22j": "Q22J Other",
+  "q22z": "Q22Z No registration",
+  "q23_1": "Q23.1 Did you have any transaction of goods with a foreign country during the la",
+  "q23_2": "Q23.2 Did you have any transaction of services with a foreign country during the",
+  "q24": "Q24. What type of taxes do you pay?",
+  "q24a": "Q24A Value Added Tax (VAT)",
+  "q24b": "Q24B TPR/PAYE",
+  "q24c": "Q24C Income tax",
+  "q24d": "Q24D Excise duties tax",
+  "q24e": "Q24E Import duties tax",
+  "q24f": "Q24F Trading license tax",
+  "q24g": "Q24G Rental income tax",
+  "q24h": "Q24H Flat tax",
+  "q24z": "Q24Z No tax",
+  "q25": "Q25. Do you have a tin number",
+  "q6_1": "ISIC1 Major economic activity",
+  "q5_2": "Year of starting operation in Rwanda",
+  "start_y": "Start year group",
+  "owner_sex": "Sex of owner of establishment",
+  "size2": "Size based on number of workers",
+  "fi": "Formal and Informal enterprises",
+  "prov": "Province (1-5, NISR codes)",
+  "dist": "District (11-57, NISR codes)",
+  "urban": "Area of residence (1 urban, 2 rural)",
+  "survey": "Source survey",
+  "year": "Census year",
+  "wave": "Wave (census year)",
+  "estid": "Establishment id (NISR key where shipped, else year*1e6 + row number)",
+  "wt": "Weight (1 for full enumerations; NISR final sampling weight in 2014)"
+ },
+ "value_labels": {
+  "q2": {
+   "1": "1. Within market place",
+   "2": "2. Outside market place",
+   "3": "3. Industrial zone",
+   "4": "4. ICPCs-Udukiriro"
+  },
+  "q3": {
+   "1": "1. Working",
+   "2": "2. Closed Temporarily",
+   "3": "3. Closed Permanently"
+  },
+  "q4_2": {
+   "1": "1-Male",
+   "2": "2-Female"
+  },
+  "q7": {
+   "1": "1. Private sector",
+   "2": "2. Cooperative",
+   "3": "3. Public sector",
+   "4": "4. Public Private Partnership",
+   "5": "5. NGO (Rwanda)",
+   "6": "6. NGO(International)"
+  },
+  "q8": {
+   "1": "1.\u00a0Profit seeking",
+   "2": "2. Nonprofit seeking"
+  },
+  "q9": {
+   "1": "Rwandan",
+   "2": "East African Community",
+   "3": "Other African countries",
+   "4": "Europe",
+   "5": "America",
+   "6": "Asia",
+   "7": "Oceania",
+   "8": "Joint (Rwandan + EAC)",
+   "9": "Joint (Rwandan + Other African countries)",
+   "10": "Joint (Rwandan + Other rest of world)",
+   "11": "Joint (more than one non Rwandan)"
+  },
+  "q10": {
+   "1": "1. Sole proprietorship",
+   "2": "2. Limited by shares",
+   "3": "3. Limited by guarantee",
+   "4": "4. Limited by shares and by guarantee",
+   "5": "5. Unlimited",
+   "6": "6. None"
+  },
+  "q11": {
+   "1": "Yes",
+   "2": "No"
+  },
+  "q12": {
+   "1": "Yes",
+   "2": "No"
+  },
+  "q13": {
+   "1": "Male",
+   "2": "Female"
+  },
+  "q15_1": {
+   "1": "Yes",
+   "2": "No"
+  },
+  "q15_2a": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q15_2b": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q15_2c": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q15_2d": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q15_2e": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q16": {
+   "1": "1. Head office",
+   "2": "2. Single unit establishment",
+   "3": "3. Branch",
+   "4": "4. Sub branch"
+  },
+  "q20": {
+   "1": "Less than 300.000",
+   "2": "300.000 - <12.000.000",
+   "3": "12 million - <20 million",
+   "4": "20 million - < 50 million",
+   "5": "50 million - < 400 million",
+   "6": "400 million - < 1billion",
+   "7": "Above 1 billion"
+  },
+  "q21": {
+   "1": "Less than 300.000",
+   "2": "300.000 - <12.000.000",
+   "3": "12 million - <20 million",
+   "4": "20 million - < 50 million",
+   "5": "50 million - < 400 million",
+   "6": "400 million - < 1billion",
+   "7": "Above 1 billion"
+  },
+  "q22a": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22b": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22c": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22d": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22e": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22f": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22g": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22h": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22i": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22j": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q22z": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q23_1": {
+   "1": "1. Yes, Export",
+   "2": "2. Yes, Import",
+   "3": "3. Yes, Export and Import",
+   "4": "4. No"
+  },
+  "q23_2": {
+   "1": "1. Yes, Export",
+   "2": "2. Yes, Import",
+   "3": "3. Yes, Export and Import",
+   "4": "4. No"
+  },
+  "q24a": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24b": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24c": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24d": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24e": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24f": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24g": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24h": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q24z": {
+   "0": "No",
+   "1": "Yes"
+  },
+  "q25": {
+   "1": "Yes",
+   "2": "No"
+  },
+  "q6_1": {
+   "1": "Agriculture, Forestry and Fishing",
+   "2": "Mining And Quarrying",
+   "3": "Manufacturing",
+   "4": "Electricity, gas, steam and air conditioning supply",
+   "5": "Water supply; sewerage, waste management and remediation activities",
+   "6": "Construction",
+   "7": "Wholesale And Retail Trade; Repair Of Motor Vehicles And Motorcycles",
+   "8": "Transportation And Storage",
+   "9": "Accommodation And Food Service Activities",
+   "10": "Information And Communication",
+   "11": "Financial And Insurance Activities",
+   "12": "Real Estate Activities",
+   "13": "Professional, Scientific And Technical Activities",
+   "14": "Administrative And Support Service Activities",
+   "15": "Public Administration And Defence; Compulsory Social Security",
+   "16": "Education",
+   "17": "Human Health And Social Work Activities",
+   "18": "Arts, Entertainment And Recreation",
+   "19": "Other Service Activities",
+   "20": "Activities Of Households As Employers; Undifferentiated Goods And Servicesproducing Activities Of Households For Own Use",
+   "21": "Activities Of Extraterritorial Organizations And Bodies"
+  },
+  "start_y": {
+   "1": "Before 1970",
+   "2": "1970 -1999",
+   "3": "2000 - 2011",
+   "4": "2012 - 2014",
+   "5": "2015 - 2017",
+   "6": "2018 - 2020",
+   "7": "2021 - 2023",
+   "8": "2024",
+   "9": "Not stated"
+  },
+  "owner_sex": {
+   "1": "Male",
+   "2": "Female"
+  },
+  "size2": {
+   "1": "Micro(1-3)",
+   "2": "Small(4-30)",
+   "3": "Medium(31-100)",
+   "4": "Large(100+)"
+  },
+  "fi": {
+   "1": "Formal",
+   "2": "Informal"
+  },
+  "prov": {
+   "1": "City of Kigali",
+   "2": "Southern Province",
+   "3": "Western Province",
+   "4": "Northern Province",
+   "5": "Estern Province"
+  },
+  "dist": {
+   "11": "Nyarugenge",
+   "12": "Gasabo",
+   "13": "Kicukiro",
+   "21": "Nyanza",
+   "22": "Gisagara",
+   "23": "Nyaruguru",
+   "24": "Huye",
+   "25": "Nyamagabe",
+   "26": "Ruhango",
+   "27": "Muhanga",
+   "28": "Kamonyi",
+   "31": "Karongi",
+   "32": "Rutsiro",
+   "33": "Rubavu",
+   "34": "Nyabihu",
+   "35": "Ngororero",
+   "36": "Rusizi",
+   "37": "Nyamasheke",
+   "41": "Rulindo",
+   "42": "Gakenke",
+   "43": "Musanze",
+   "44": "Burera",
+   "45": "Gicumbi",
+   "51": "Rwamagana",
+   "52": "Nyagatare",
+   "53": "Gatsibo",
+   "54": "Kayonza",
+   "55": "Kirehe",
+   "56": "Ngoma",
+   "57": "Bugesera"
+  },
+  "urban": {
+   "1": "Urban",
+   "2": "Rural"
+  }
+ },
+ "source": {
+  "prov": "q1_1",
+  "dist": "q1_2",
+  "urban": "q1_5_1",
+  "estid": "year*1e6 + row number (no establishment id shipped)",
+  "wt": "1 (full enumeration)"
+ },
+ "dtypes": {
+  "survey": "object",
+  "year": "Int16",
+  "wave": "object",
+  "prov": "Int8",
+  "dist": "Int8",
+  "urban": "Int8",
+  "estid": "int64",
+  "wt": "float64",
+  "q2": "Int8",
+  "q3": "Int8",
+  "q4_2": "Int8",
+  "q4_3": "Int8",
+  "q7": "Int8",
+  "q8": "Int8",
+  "q9": "Int8",
+  "q10": "Int8",
+  "q11": "Int8",
+  "q12": "Int8",
+  "q13": "Int8",
+  "owner_age": "Int8",
+  "q15_1": "Int8",
+  "q15_2": "object",
+  "q15_2a": "Int8",
+  "q15_2b": "Int8",
+  "q15_2c": "Int8",
+  "q15_2d": "Int8",
+  "q15_2e": "Int8",
+  "q16": "Int8",
+  "q17_2": "Int16",
+  "q17_3": "Int16",
+  "rwandan_male": "Int16",
+  "rwandan_female": "Int16",
+  "rwandan_workers": "Int16",
+  "foreign_male": "Int16",
+  "foreign_female": "Int16",
+  "foregner_workers": "Int16",
+  "male_worker": "Int16",
+  "female_worker": "Int16",
+  "total_workers": "Int16",
+  "q20": "Int8",
+  "q21": "Int8",
+  "q22": "object",
+  "q22_other": "object",
+  "q22a": "Int8",
+  "q22b": "Int8",
+  "q22c": "Int8",
+  "q22d": "Int8",
+  "q22e": "Int8",
+  "q22f": "Int8",
+  "q22g": "Int8",
+  "q22h": "Int8",
+  "q22i": "Int8",
+  "q22j": "Int8",
+  "q22z": "Int8",
+  "q23_1": "Int8",
+  "q23_2": "Int8",
+  "q24": "object",
+  "q24a": "Int8",
+  "q24b": "Int8",
+  "q24c": "Int8",
+  "q24d": "Int8",
+  "q24e": "Int8",
+  "q24f": "Int8",
+  "q24g": "Int8",
+  "q24h": "Int8",
+  "q24z": "Int8",
+  "q25": "Int8",
+  "q6_1": "Int8",
+  "q5_2": "Int16",
+  "start_y": "Int8",
+  "owner_sex": "Int8",
+  "size2": "Int8",
+  "fi": "Int8"
+ }
+}

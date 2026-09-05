@@ -1,0 +1,35 @@
+{
+ "source": "no prior outputs; raw NISR files as shipped",
+ "files": [
+  {
+   "file": "EC_2011.sav",
+   "year": 2011,
+   "n_rows": 127662,
+   "n_vars": 99
+  },
+  {
+   "file": "EC_2014.sav",
+   "year": 2014,
+   "n_rows": 77151,
+   "n_vars": 91
+  },
+  {
+   "file": "EC_2017.sav",
+   "year": 2017,
+   "n_rows": 190288,
+   "n_vars": 71
+  },
+  {
+   "file": "EC_2020.dta",
+   "year": 2020,
+   "n_rows": 232283,
+   "n_vars": 70
+  },
+  {
+   "file": "EC_2023.dta",
+   "year": 2023,
+   "n_rows": 269326,
+   "n_vars": 68
+  }
+ ]
+}
