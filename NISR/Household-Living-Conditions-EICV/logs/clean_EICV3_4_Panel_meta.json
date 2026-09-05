@@ -8,7 +8,139 @@
    "rows": 8310,
    "vars": 38,
    "hh_match_rate": null,
-   "universe": ""
+   "universe": "",
+   "value_labels": {
+    "id1": {
+     "1": "Kigali City",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "hhtype": {
+     "1": "New sample (cluster>=2000 and cluster<5000)",
+     "2": "Panel head of households in the same cluster",
+     "3": "Panel head of households outside cluster",
+     "4": "Panel other relative inside the same cluster",
+     "5": "Panel other relative outside cluster",
+     "6": "Replaced in the same household (dependent code 94)",
+     "7": "Replaced different household (dependent code 95)",
+     "8": "VUP"
+    },
+    "vup_strata": {
+     "1": "Direct Support (DS)",
+     "2": "Public Work (PW)",
+     "3": "Financial services loan (FS)"
+    },
+    "rwanda": {
+     "1": "All Rwanda"
+    },
+    "province_eicv3": {
+     "1": "Kigali City",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "quintile_eicv3": {
+     "1": "Q1",
+     "2": "Q2",
+     "3": "Q3",
+     "4": "Q4",
+     "5": "Q5"
+    },
+    "poverty_eicv3": {
+     "1": "Extremely poor",
+     "2": "Poor",
+     "3": "Non-poor"
+    },
+    "ur_eicv3": {
+     "1": "Urban",
+     "2": "Rural",
+     "3": "Peri urban",
+     "4": "Semi urban"
+    },
+    "prov": {
+     "1": "City of Kigali",
+     "2": "Southern Province",
+     "3": "Western Province",
+     "4": "Northern Province",
+     "5": "Eastern Province"
+    },
+    "dist": {
+     "11": "Nyarugenge",
+     "12": "Gasabo",
+     "13": "Kicukiro",
+     "21": "Nyanza",
+     "22": "Gisagara",
+     "23": "Nyaruguru",
+     "24": "Huye",
+     "25": "Nyamagabe",
+     "26": "Ruhango",
+     "27": "Muhanga",
+     "28": "Kamonyi",
+     "31": "Karongi",
+     "32": "Rutsiro",
+     "33": "Rubavu",
+     "34": "Nyabihu",
+     "35": "Ngororero",
+     "36": "Rusizi",
+     "37": "Nyamasheke",
+     "41": "Rulindo",
+     "42": "Gakenke",
+     "43": "Musanze",
+     "44": "Burera",
+     "45": "Gicumbi",
+     "51": "Rwamagana",
+     "52": "Nyagatare",
+     "53": "Gatsibo",
+     "54": "Kayonza",
+     "55": "Kirehe",
+     "56": "Ngoma",
+     "57": "Bugesera"
+    }
+   },
+   "var_labels": {
+    "hhid": "Household id (unique within wave)",
+    "caseid": "case unique identifier",
+    "hhid_eicv3": "EICV3 public household ID",
+    "caseid3": "eicv3 case unique identifier",
+    "id1": "Province",
+    "id2": "D.Code",
+    "hhtype": "Type of household according to the sample",
+    "vup_strata": "VUP stratum (province, component)",
+    "region": "Region",
+    "sol14": "(first) sol14",
+    "pov_eicv4": null,
+    "epov_eicv4": null,
+    "pov_eicv4_a": null,
+    "decile_eicv4": "10 quantiles of sol14",
+    "pop_wt": null,
+    "quintile": null,
+    "rwanda": "All Rwanda",
+    "province_eicv3": "Province",
+    "district_eicv3": "District (also stratum for SE calculation)",
+    "sol_jan_eicv3": "Aggregate consumption/ae Jan14=100",
+    "ur2_2012_eicv3": "(max) UR2_2012",
+    "pov_eicv3": null,
+    "epov_eicv3": null,
+    "quintile_eicv3": "Quintile",
+    "poverty_eicv3": "Poverty status",
+    "hh_wt_eicv3": "Final weight of household",
+    "pop_wt_eicv3": null,
+    "ur_eicv3": "Strata",
+    "ur": "urban&rural 2012",
+    "prov": "Province (1-5, NISR codes)",
+    "dist": "District (11-57, NISR current codes)",
+    "cluster": "Sampling cluster / enumeration area (as shipped)",
+    "wt": "Household weight carried by every row (sums to persons in person files, to households in household files)",
+    "survey": "Source survey",
+    "year": "Survey year (mid-fieldwork)",
+    "wave": "Wave / round id",
+    "sample": "CS = national cross-section, VUP = VUP booster, PANEL = EICV3-4 panel link",
+    "wt_hh": "Household weight (same value as wt; sums to the number of households)"
+   }
   }
- }
+ },
+ "joins": {}
 }

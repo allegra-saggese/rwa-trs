@@ -94,11 +94,18 @@ for w, (n, tol) in PUB_HH.items():
 if "EICV7_CS" in set(person["wave"]): row("C", "EICV7_CS person rows (DDI: 62,110)", int((person["wave"] == "EICV7_CS").sum()), 62_110)
 # The canonical flag is NISR's poverty file's variable under its plain name (01_clean makes the poverty file the
 # canonical source when it collides with the household base; the base's copy is suffixed _hhbase).
+_align = json.load(open(LOGS / "merge_alignment.json"))
+def col_for(base, w):
+    """the pooled column holding variable `base` for wave w (the version rule may have suffixed it)"""
+    d = _align["files"].get("EICV_pooled_household.dta", {}).get("decisions", {}).get(base, {})
+    return next((col for col, ws in d.get("versions", {}).items() if w in ws), base)
 for w, pub in PUB_POV.items():
-    g = hh[hh.wave == w]; var = POVVAR[w]
-    if var not in g.columns or not g[var].notna().any(): report.append(f"| C | {w} canonical poverty variable {var} missing | | | **FAIL** |"); fails += 1; continue
+    g = hh[hh.wave == w]; var = col_for(POVVAR[w], w)
+    if var not in hh.columns:
+        extra, _, _ = read_dta(P["final"] / "EICV_pooled_household.dta", usecols=["wave", var]); g = g.merge(extra[extra.wave == w][[var]], left_index=True, right_index=True, how="left")
+    if var not in g.columns or not g[var].notna().any(): report.append(f"| C | {w} canonical poverty variable {POVVAR[w]} ({var}) missing | | | **FAIL** |"); fails += 1; continue
     vals = set(pd.to_numeric(g[var], errors="coerce").dropna().unique())
-    row("C", f"{w} canonical poverty flag {var} coded 0/100 only (distinct values found: {len(vals)})", int(vals <= {0, 100}), 1)
+    row("C", f"{w} canonical poverty flag {POVVAR[w]} (column {var}) coded 0/100 only (distinct values found: {len(vals)})", int(vals <= {0, 100}), 1)
     wgt = g["pop_wt"] if "pop_wt" in g and g["pop_wt"].notna().all() else g["wt"] * g["hhsize"]
     rate = 100 * (wgt * (pd.to_numeric(g[var], errors="coerce") == 100)).sum() / wgt.sum()
     row("C", f"{w} poverty headcount ({var}, pop_wt-weighted)", rate, pub, 0.01, fmt="{:.2f}")
@@ -161,7 +168,7 @@ for fname, info in align["files"].items():
     for base, d in info["decisions"].items():
         if len(d["versions"]) > 1 and any("value labels" in r or "unlabelled" in r for r in d.get("split_reasons", [])): ncols_split_vl += 1
         for col, ws in d["versions"].items():
-            labs = [(w, {float(k): v for k, v in labels_of(w, fname, info, base).items()}) for w in ws]
+            labs = [(w, {float(k): v for k, v in labels_of(w, fname, info, base).items() if str(k).replace('.', '', 1).lstrip('-').isdigit()}) for w in ws]   # string-keyed labels skipped
             for i in range(len(labs)):
                 for j in range(i + 1, len(labs)):
                     a, b = labs[i][1], labs[j][1]
