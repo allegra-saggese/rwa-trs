@@ -4,15 +4,18 @@
 Per year: lower-case names, build the harmonised key block (survey year wave round
 quarter interview prov dist urban cluster psu hhid pid wt wt_round), keep every other
 variable under its own name, destring numeric-looking strings, downcast, back-check,
-write. Unit = person-interview (see NISR-Labour-Force-Survey-LFS.md (decisions log)).
+write under the clean names and labels of variable_names.csv (native names, labels and value labels stay in
+logs/clean_<year>_meta.json for 02_merge, 00_names and the codebook). Unit = person-interview
+(see NISR-Labour-Force-Survey-LFS.md (decisions log)).
 """
 import json, sys
 import numpy as np, pandas as pd
 from lfs_helpers import (paths, get_logger, Checks, read_dta, write_dta, lower_names,
-                         destring, downcast, save_json, LOGS)
+                         destring, downcast, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("01_clean")
 P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed)
 YEARS = [int(a) for a in sys.argv[1:]] or list(range(2017, 2026))
 
 # NISR round numbering as labelled inside the 2020 file (0 = AUG16 ... 12 = NOV20); the
@@ -237,9 +240,10 @@ for y in YEARS:
     ck.done()
 
     out = P["inter"] / f"LFS_{y}_person_clean.dta"
-    write_dta(df, out, vl, vv, f"Rwanda LFS {y} person-interview file (cleaned)", log)
+    out_df, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{y}", log)      # written under the clean names; native kept in the meta file
+    write_dta(out_df, out, vl_out, vv_out, f"Rwanda LFS {y} person-interview file (cleaned)", log)
     meta_all[y] = {"n": len(df), "vars": list(df.columns), "var_labels": vl,
                    "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "source": srcmap,
-                   "dtypes": {c: str(df[c].dtype) for c in df.columns}, "universe": universe_for(y, df.columns)}
+                   "dtypes": {c: str(df[c].dtype) for c in df.columns}, "universe": universe_for(y, df.columns), "clean_names": clean_names}
     save_json(meta_all[y], LOGS / f"clean_{y}_meta.json")
 log.info("01_clean done for %s", YEARS)

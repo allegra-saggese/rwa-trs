@@ -14,15 +14,19 @@ version (only compatible rewordings remain; the latest year's text wins and the 
 recorded). Codes observed in the data but absent from a year's own value labels are reported
 as "stale labels". Everything is written to logs/merge_alignment.json for the codebook.
 Rule (b) and FORCE_SPLIT groups were added after the LFS audit of 2026-09-05.
+Names: the per-year files are read back under NISR's native names (variable_names.csv inverted) and the rule works
+on the native labels and value labels saved by 01_clean in logs/clean_<year>_meta.json; the pooled person and
+household files (and the per-year household files) are written under the clean names and labels of the table.
 """
 import difflib, json, re
 from collections import Counter, defaultdict
 import numpy as np, pandas as pd
 from lfs_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
-                         resolve_object_columns, label_similarity, save_json, LOGS)
+                         resolve_object_columns, label_similarity, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("02_merge")
 P = paths(); ck = Checks(log)
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG); POOLED_P, POOLED_H = "pooled:LFS_pooled_person.dta", "pooled:LFS_pooled_household.dta"
 YEARS = list(range(2017, 2026))
 KEYS = ["survey", "year", "wave", "round", "quarter", "interview", "prov", "dist", "urban",
         "cluster", "psu", "hhid", "pid", "sex", "age", "wt", "wt_round"]
@@ -44,9 +48,18 @@ FORCE_SPLIT = {
 }
 
 # ---------------------------------------------------------------- load per-year files
+def _code(k):
+    """value-label code as saved in the meta file (json string) -> the number pyreadstat returns for a .dta"""
+    try: f = float(k)
+    except (TypeError, ValueError): return k
+    return int(f) if f.is_integer() else f
 data, labels, vlabs = {}, {}, {}
 for y in YEARS:
     df, vl, vv = read_dta(P["inter"] / f"LFS_{y}_person_clean.dta")
+    df, _, _ = NAMES.invert(df, vl, vv, f"wave:{y}")                       # native names; native labels and value labels from the meta file
+    meta = json.load(open(LOGS / f"clean_{y}_meta.json"))
+    vl = {c: meta["var_labels"].get(c, "") for c in df.columns}
+    vv = {c: {_code(k): t for k, t in d.items()} for c, d in meta["value_labels"].items() if c in df.columns}
     data[y], labels[y], vlabs[y] = df, vl, vv
     log.info("loaded %s: %s rows x %s vars", y, f"{len(df):,}", df.shape[1])
 
@@ -185,7 +198,8 @@ ck(len(person) == sum(len(d) for d in data.values()), "pooled rows == sum of yea
 for y in YEARS:
     ck(abs(person.loc[person.year == y, "wt"].sum() - data[y]["wt"].sum()) < 1e-6, f"{y}: sum wt preserved in pool")
 person, DUP_ROWS, DUP_WT = drop_exact_duplicates(person, "LFS_pooled_person.dta", log)
-write_dta(person, P["final"] / "LFS_pooled_person.dta", var_labels, value_labels,
+person_out, vl_p, vv_p, CLEAN_P = NAMES.apply(person, var_labels, value_labels, POOLED_P, log)      # clean names, labels and value labels
+write_dta(person_out, P["final"] / "LFS_pooled_person.dta", vl_p, vv_p,
           "Rwanda LFS 2017-2025 pooled person-interview file (repeated cross-section)", log)
 
 # ---------------------------------------------------------------- household files
@@ -220,15 +234,17 @@ hh_vl.update({"hhsize": "Household size (persons listed in this interview)",
               "head_sex": "Sex of household head (sex of a02==1)", "head_age": "Age of household head (age of a02==1)"})
 hh_vv["head_sex"] = value_labels.get("sex", {})
 household = downcast(household, keep_double=("wt", "wt_round", "hhid", "hhid_nisr"))
-write_dta(household, P["final"] / "LFS_pooled_household.dta", hh_vl, hh_vv,
+hh_out, vl_h, vv_h, CLEAN_H = NAMES.apply(household, hh_vl, hh_vv, POOLED_H, log)
+write_dta(hh_out, P["final"] / "LFS_pooled_household.dta", vl_h, vv_h,
           "Rwanda LFS 2017-2025 pooled household-interview file", log)
 for y in YEARS:
-    write_dta(household[household.year == y], P["inter"] / f"LFS_{y}_household_clean.dta", hh_vl, hh_vv,
+    write_dta(hh_out[hh_out[CLEAN_H["year"]] == y], P["inter"] / f"LFS_{y}_household_clean.dta", vl_h, vv_h,
               f"Rwanda LFS {y} household-interview file (cleaned)", log)
 
 save_json({"duplicates_dropped": {"LFS_pooled_person.dta": DUP_ROWS}, "wt_dropped": {"LFS_pooled_person.dta": DUP_WT}, "threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "decisions": decisions, "label_variants": label_variants,
            "value_label_conflicts": vl_text_conflicts, "stale_labels": stale_labels, "vl_threshold": VL_THRESHOLD,
-           "person": {"rows": len(person), "vars": list(person.columns)},
-           "household": {"rows": len(household), "vars": list(household.columns)}},
+           "person": {"rows": len(person), "vars": list(person.columns), "clean_vars": list(person_out.columns)},
+           "household": {"rows": len(household), "vars": list(household.columns), "clean_vars": list(hh_out.columns)},
+           "clean_names": {"LFS_pooled_person.dta": CLEAN_P, "LFS_pooled_household.dta": CLEAN_H}},
           LOGS / "merge_alignment.json")
 ck.done(); log.info("02_merge done")

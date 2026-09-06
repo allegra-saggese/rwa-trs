@@ -233,3 +233,301 @@ def label_similarity(a: str, b: str) -> float:
 
 def save_json(obj, path):
     Path(path).write_text(json.dumps(obj, indent=1, default=str))
+
+# ============================================================ clean variable names and labels (identical in every <ds>_helpers.py)
+
+import re, unicodedata
+
+STOP = {"the", "a", "an", "of", "in", "for", "to", "is", "are", "was", "were", "be", "been", "being", "do", "does", "did", "you", "your",
+        "this", "that", "these", "those", "by", "on", "at", "with", "from", "and", "or", "as", "any", "per", "during", "it", "its", "into",
+        "has", "have", "had", "there", "which", "what", "who", "whom", "whose", "how", "many", "much", "if", "then", "when", "where",
+        "also", "only", "all", "some", "more", "most", "very", "each", "every", "same", "such", "so", "please", "specify", "specified",
+        "i", "e", "g", "etc", "vs", "currently", "usually", "household's", "establishment's", "s", "de", "la", "le", "les", "du", "des",
+        "et", "en", "following", "one", "ones", "name", "code", "he", "she", "his", "her", "him", "they", "them", "their", "we", "our", "me", "my",
+        "person", "persons", "someone", "anyone", "anybody", "somebody", "even", "could", "would", "should", "can", "will", "shall", "may", "might",
+        "than", "ever", "still", "yet", "just", "about", "over", "under", "up", "down", "out", "within", "without", "among", "between", "whether",
+        "while", "because", "since", "until", "after", "before", "ago", "done", "get", "got", "take", "took", "taken", "give", "gave", "given", "make",
+        "made", "spend", "spent", "actually", "really", "generally", "mainly", "did", "were", "kindly", "respondent's", "member", "members", "ask",
+        "asked", "question", "answer", "say", "said", "state", "stated", "yes", "no", "indicate", "record", "write", "enter", "select", "choose"}
+GENERIC = {"total", "last", "main", "current", "own", "other", "type", "kind", "level", "number", "status", "general", "actual", "usual", "first", "second"}
+_TIMEFRAME = re.compile(r"\b(in|during|over|for|within)?\s*(the)?\s*(last|past|previous|next|preceding|reference)\s+(\d+|one|two|three|four|five|six|seven|twelve|thirty)?\s*(days?|weeks?|months?|years?|hours?|seasons?)\b", re.I)
+KEEP_SHORT = {"n", "hh", "id", "kg", "ha", "m2", "km", "rwf", "usd", "vup", "isic", "isco", "gdp", "vat", "tin", "rra", "rdb", "rca", "psf", "rgb", "rssb", "ngo", "hiv", "tv"}
+ABBREV = [("household", "hh"), ("agricultural", "agri"), ("agriculture", "agri"), ("expenditure", "expend"), ("production", "prod"), ("quantity", "qty"),
+          ("number", "num"), ("establishment", "estab"), ("employment", "employ"), ("education", "educ"), ("information", "info"), ("organisation", "org"),
+          ("organization", "org"), ("government", "govt"), ("community", "comm"), ("activities", "activ"), ("activity", "activ"), ("consumption", "consum"),
+          ("transport", "transp"), ("received", "recvd"), ("months", "mo"), ("month", "mo"), ("questionnaire", "quest"), ("population", "pop"),
+          ("average", "avg"), ("percentage", "pct"), ("percent", "pct"), ("secondary", "second"), ("primary", "prim"), ("international", "intl"),
+          ("environment", "environ"), ("development", "devt"), ("cooperative", "coop"), ("insurance", "insur"), ("purchased", "bought"),
+          ("relationship", "relation"), ("characteristics", "charact"), ("vegetables", "veg"), ("fertilizer", "fert"), ("fertiliser", "fert"),
+          ("pesticide", "pest"), ("irrigation", "irrig"), ("livestock", "lvstk"), ("equipment", "equip"), ("maintenance", "maint"),
+          ("registration", "regist"), ("respondent", "resp"), ("reference", "ref"), ("previous", "prev"), ("business", "biz"), ("services", "svc"),
+          ("service", "svc"), ("workers", "wkrs"), ("worker", "wkr"), ("employees", "emps"), ("employee", "emp"), ("foreigner", "foreign")]
+# French / Kinyarwanda -> English for label text (whole words, case-insensitive); extend per dataset in TRANSLATE_EXTRA
+TRANSLATE = {"secteur": "sector", "menage": "household", "ménage": "household", "taille du ménage": "household size", "taille du menage": "household size",
+             "identifiant du menage": "household id", "identifiant du ménage": "household id", "relation avec le cm": "relationship to the household head",
+             "niveau de pauvreté": "poverty level", "niveau de pauvrete": "poverty level", "niveau d'instruction": "level of education",
+             "montant des dépenses": "amount spent", "montant des depenses": "amount spent", "au cours des": "in the last", "dern.": "last",
+             "semaines": "weeks", "semaine": "week", "mois": "months", "année": "year", "annee": "year", "ans": "years", "oui": "yes", "non": "no",
+             "autres": "other", "autre": "other", "pays": "country", "enfants": "children", "enfant": "child", "femme": "woman", "homme": "man",
+             "âge": "age", "activité principale": "main activity", "activité": "activity", "travail": "work", "emploi": "employment", "dernier": "last",
+             "dépenses": "expenditure", "depenses": "expenditure", "nombre": "number", "chef de ménage": "household head", "cm": "household head",
+             "y-a-t-il eu": "were there", "wh pays": "who pays", "province": "province", "district": "district", "afrique": "africa", "europe": "europe",
+             "asie": "asia", "amérique": "america", "amerique": "america", "océanie": "oceania", "autres pays": "other countries",
+             "des": "of the", "du": "of the", "de": "of", "la": "the", "le": "the", "les": "the", "une": "a", "un": "a", "dans": "in", "avec": "with", "pour": "for",
+             "sur": "on", "et": "and", "ou": "or", "vous": "you", "votre": "your", "combien": "how many", "quel": "which", "quelle": "which",
+             "est-ce que": "", "dern": "last", "ménages": "households", "menages": "households", "personnes": "persons", "personne": "person"}
+
+_FRENCH = re.compile(r"(?<![a-z])(le|la|les|des|du|une|dans|avec|pour|sur|aux|vous|votre|quel|quelle|combien|est-ce|y-a-t-il|nombre de|au cours|dern\.|ménage|menage|chef de|autres?|niveau|pays|afrique|europe|asie|amérique|amerique|océanie|oceanie|d'instruction|d'[a-z]|l'[a-z]|dépenses|depenses|activité|secteur|taille)(?![a-z])", re.I)
+KINYARWANDA = {"yego": "yes", "oya": "no", "urajwe": "fallow", "marakuja": "passion fruit", "ingano y'ibyahinduwe": "quantity transformed",
+               "izindi mboga zerera igihembwe zitamara umwaka mu murima zivuge": "other seasonal vegetable", "ubwoko bw'ifumbire y'imborera": "type of organic fertiliser",
+               "umurenge": "sector", "akarere": "district", "intara": "province", "akagari": "cell", "umudugudu": "village", "urugo": "household"}
+def _translate(s, extra=None):
+    """French -> English only when the text reads as French (function words or accents); Kinyarwanda words always.
+    A whole label listed in the dataset's own dictionary (extra) is replaced first, exactly."""
+    if extra:
+        key = re.sub(r"\s+", " ", str(s)).strip().lower()
+        hit = next((v for k, v in extra.items() if re.sub(r"\s+", " ", k).strip().lower() == key), None)
+        if hit is not None: return hit
+    for k, v in sorted({**KINYARWANDA, **{k: v for k, v in (extra or {}).items() if k in KINYARWANDA}}.items(), key=lambda kv: -len(kv[0])):
+        s = re.sub(r"(?<![A-Za-z'])" + re.escape(k) + r"(?![A-Za-z])", v, s, flags=re.I)
+    if _FRENCH.search(s) or re.search(r"[àâçéèêëîïôûùüÿœ]", s, re.I):
+        for k, v in sorted({**TRANSLATE, **(extra or {})}.items(), key=lambda kv: -len(kv[0])):
+            s = re.sub(r"(?<![A-Za-z'])" + re.escape(k) + r"(?![A-Za-z])", v, s, flags=re.I)
+    return s
+
+def _ascii(s):
+    return unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode()
+
+# a leading question / item code: optional 1-4 letters (with optional dot), digits, then segments that carry a digit or a single
+# letter suffix, then separators -- "Q22A Sector", "2.7 Sowing", "4_14A. At which", "S4_09_2/Heat", "GS13_15 Yesterday", "2.15.v.6 Which",
+# "A.2x City", "s1q3. Age", "0.16.1 Agricultural". Applied to the ORIGINAL text (underscores intact), only when real text remains.
+_QNUM = re.compile(r"^\s*(?:q(?:uestion)?\.?\s*)?(?:[a-z]{1,4}\.?)?\d+(?:[._\-]?(?:[a-z]{1,2}\d{1,3}|\d{1,3}|[a-z]\b))*(?=[\s.:/)\-_,]|$)[\s.:/)\-_,]*", re.I)
+
+def clean_label(text, tag, extra=None):
+    """Plain English sentence for a variable label: question numbers, brackets, codes and version tags removed,
+    French / Kinyarwanda translated, '[NAME]' -> 'the person', tidy spacing and case; returns text WITHOUT the tag prefix."""
+    s = "" if text is None else str(text)
+    s2 = _QNUM.sub("", s)
+    if re.search(r"[a-z]{2}", s2, re.I) and not re.match(r"^\s*\d+\s+[a-z]", s, re.I): s = s2      # strip the item code only when text remains; "2 weeks" is text
+    s = re.sub(r"\s*[\[(]\s*(NAME|CHILD_?NAME|MEMBER|ITEM\s*NAME|you\s*/\s*name|name\s*/\s*you)\s*[\])]\s*", " the person ", s, flags=re.I)
+    s = re.sub(r"\bhe\s*/\s*she\b", "the person", s, flags=re.I); s = re.sub(r"\bhis\s*/\s*her\b", "their", s, flags=re.I)
+    s = re.sub(r"\bhim\s*/\s*her\b", "them", s, flags=re.I); s = re.sub(r"\bis\s*/\s*was\b", "is", s, flags=re.I)
+    s = re.sub(r"\?(?=[A-Za-z])", "? ", s)
+    s = re.sub(r"\[[^\]]*version[^\]]*\]", " ", s, flags=re.I)                        # "[2024-2025 version]"
+    s = re.sub(r"\[from [^\]]*\]|\[not shipped[^\]]*\]|\[not in [^\]]*\]", " ", s, flags=re.I)
+    s = re.sub(r"[\[\]{}|]", " ", s)
+    s = s.replace("--", ";").replace("_", " ")
+    s = re.sub(r"\s*\?\s*s\b", "'s", s); s = re.sub(r"\s+'s\b", "'s", s)          # "person ? s" / "person 's" -> "person's"
+    s = _translate(s, extra)
+    if sum(ch.isupper() for ch in s) > 0.6 * max(1, sum(ch.isalpha() for ch in s)): s = s.lower()      # ALL-CAPS source label -> sentence case
+    s = re.sub(r"\bhh\.?\b", "household", s); s = re.sub(r"\bnisr\b", "NISR", s); s = re.sub(r"\bisic\b", "ISIC", s); s = re.sub(r"\bisco\b", "ISCO", s)
+    s = re.sub(r"\s+", " ", s).strip(" .;:,-/")
+    s = _ascii(s)
+    s = _acronyms(s)
+    if s: s = s[0].upper() + s[1:]
+    return s
+
+ACRONYMS = ["isic", "isco", "nisr", "vup", "tpr", "paye", "rra", "rdb", "rca", "psf", "rgb", "rssb", "ngo", "vat", "tin", "gdp", "hiv", "aids", "eicv", "lfs",
+            "cfsva", "ahs", "sas", "phc", "gps", "psu", "ppp", "usd", "rwf", "wfp", "fao", "ilo", "ict", "tvet", "sme", "ebm", "nid", "sacco", "bnr", "mfi",
+            "vsla", "fcs", "cari", "rcsi", "hdds", "wdds", "muac", "iycf", "bmi", "ddi", "eicv1", "eicv2", "eicv3", "eicv4", "eicv5", "eicv7", "pca", "rdhs", "dhs"]
+_ACR = re.compile(r"\b(" + "|".join(ACRONYMS) + r")\b", re.I)
+def _acronyms(s):
+    return _ACR.sub(lambda m: m.group(1).upper(), s)
+
+def make_slug(label, tag, native="", maxlen=32):
+    """Name from a clean label: content words joined by underscores, prefixed with the dataset tag, <= maxlen and never
+    cut inside a word. Time-frame phrases ('in the last 7 days'), stopwords and standalone numbers are dropped; if the
+    name still does not fit, generic words (total, main, type ...) are dropped, then the abbreviation table is applied
+    word by word (longest words first), then trailing words are dropped."""
+    text = _TIMEFRAME.sub(" ", _ascii(label).lower())
+    words = [w for w in re.sub(r"[^a-z0-9]+", " ", text).split() if w and w not in STOP and not w.isdigit()]
+    if not words: words = [w for w in re.sub(r"[^a-z0-9]+", " ", _ascii(label).lower()).split() if w and w not in STOP]
+    if not words: words = [w for w in re.sub(r"[^a-z0-9]+", " ", str(native).lower()).split()] or ["var"]
+    def join(ws): return _fix(f"{tag}_" + "_".join(ws))
+    if len(join(words)) <= maxlen: return join(words)
+    words2 = [w for w in words if w not in GENERIC] or words
+    if len(join(words2)) <= maxlen: return join(words2)
+    ws = list(words2)
+    for full, ab in sorted(ABBREV, key=lambda p: -len(p[0])):
+        if len(join(ws)) <= maxlen: break
+        ws = [ab if w == full else w for w in ws]
+    out = []
+    for w in ws:                                             # keep whole words while they fit
+        if len(join(out + [w])) <= maxlen: out.append(w)
+        else: break
+    if not out: out = [ws[0][:maxlen - len(tag) - 1]]          # a single word longer than the budget: cut it (rare)
+    return join(out)
+
+def cut(name, maxlen):
+    """cut a name at a word boundary so that it fits maxlen"""
+    if len(name) <= maxlen: return name
+    c = name[:maxlen]
+    return c[:c.rfind("_")] if "_" in c[1:] and c.rfind("_") > len(name.split("_")[0]) else c
+
+def _fix(name):
+    name = re.sub(r"_+", "_", name).strip("_")
+    if name[len(name.split("_")[0]) + 1:][:1].isdigit(): name = name.split("_")[0] + "_n" + name[len(name.split("_")[0]) + 1:]   # tag_2017 -> tag_n2017
+    return name
+
+_TF = re.compile(r"\b(?:in|during|over|within|for)?\s*(?:the\s+)?(last|past|previous|preceding|next)\s+(\d+|one|two|three|four|five|six|seven|twelve|thirty)?\s*(days?|weeks?|months?|years?|hours?|seasons?)\b\s*,?\s*", re.I)
+_SCAFFOLD = [r"^(what|which|who|whom|when|where|why|how many|how much|how long|how often|how soon)\s+(is|are|was|were|does|do|did|has|have|had|would|could|will|can)?\s*(the person|you|your|their|the|this|that)?\s*",
+             r"^(did|does|do|is|are|was|were|has|have|had|will|would|could|can)\s+(the person|you|your household|the household|this household|anyone|someone|he|she|it)\s+",
+             r"\((?:do|does|have|has|is|are|was|were)\s*/\s*(?:do|does|have|has|is|are|was|were)\)\s*", r"\b(please|kindly)\s+(specify|indicate|state|record)\b", r"\bin your opinion,?\s*",
+             r"\s*\([^)]*\)"]
+def compress_label(text, room):
+    """A long question shortened to a descriptive phrase that fits `room`: the time frame ('last 7 days') is moved to
+    the end, question scaffolding ('During the past 7 days, did the person ...', 'How many ... does the person') and
+    parenthetical asides are removed step by step, and only then is the text cut at a clause or word boundary."""
+    s = re.sub(r"\s+", " ", str(text)).strip()
+    if len(s) <= room: return s
+    m = _TF.search(s); tf = ""
+    if m:
+        tf = f"{m.group(1).lower()} {m.group(2) + ' ' if m.group(2) else ''}{m.group(3).lower()}"; s = _TF.sub(" ", s, count=1)
+    s = re.sub(r"\s+", " ", s).strip(" ,;:-")
+    for pat in _SCAFFOLD:
+        if len(s) + (len(tf) + 2 if tf else 0) <= room: break
+        s = re.sub(pat, "", s, flags=re.I); s = re.sub(r"\s+", " ", s).strip(" ,;:-?")
+    s = s.rstrip("?").strip(" ,;:-")
+    if tf and len(s) + len(tf) + 2 <= room: s = f"{s}, {tf}"
+    if len(s) > room:
+        c = s[:room]; k = max(c.rfind(";"), c.rfind(","))
+        s = (c[:k] if k > room // 2 else c.rsplit(" ", 1)[0]).rstrip(" ,;:-")
+    return s[:1].upper() + s[1:]
+
+def label_with_tag(tag_upper, clean, years=None, maxlen=80):
+    """'EICV 2011-2017: text' or 'EICV: text'; a text that does not fit is compressed (compress_label), never cut mid-word."""
+    head = f"{tag_upper}{' ' + years if years else ''}: "
+    body = compress_label(clean, maxlen - len(head))
+    return head + (body[:1].upper() + body[1:])
+
+def _words(label):
+    return [w for w in re.sub(r"[^a-z0-9]+", " ", _ascii(label).lower()).split() if w and w not in STOP]
+
+def assign_names(tag, items, maxlen=32):
+    """items: list of (native, clean_label). Returns the list of unique clean names for one file: the slug of the label;
+    where labels give the same slug, the distinguishing words of each label are added, then the numeric suffix of the
+    native name (item 1, 2, ...), then the native code itself."""
+    slugs = [make_slug(l, tag, n, maxlen) for n, l in items]
+    groups = {}
+    for i, s in enumerate(slugs): groups.setdefault(s, []).append(i)
+    out = list(slugs)
+    for s, idx in groups.items():
+        if len(idx) == 1: continue
+        common = set.intersection(*[set(_words(items[i][1])) for i in idx])
+        for i in idx:
+            ws = _words(items[i][1]); distinct = [w for w in ws if w not in common][:3]
+            head = [w for w in ws if w in common][:2]
+            cand = make_slug(" ".join(head + distinct), tag, items[i][0], maxlen) if distinct else s
+            m = re.search(r"(\d+[a-z]?)$", str(items[i][0]))
+            if cand == s and m: cand = cut(s, maxlen - len(m.group(1)) - 1) + "_" + m.group(1)
+            out[i] = cand
+        seen = {}
+        for i in idx:                                         # still identical -> the native code
+            if out[i] in seen or out[i] in [out[j] for j in range(len(out)) if j not in idx]:
+                suf = "_" + re.sub(r"[^a-z0-9]+", "", str(items[i][0]).lower())[:10]
+                out[i] = cut(out[i], maxlen - len(suf)) + suf
+            seen[out[i]] = 1
+    return unique_names(out, [n for n, _ in items], maxlen)
+
+def unique_names(names, natives, maxlen=32):
+    """Resolve collisions inside one file: the second occurrence gets the native code as suffix."""
+    seen, out = {}, []
+    for n, nat in zip(names, natives):
+        if n not in seen: seen[n] = 1; out.append(n); continue
+        suf = "_" + re.sub(r"[^a-z0-9]+", "", str(nat).lower())[:8]
+        cand = cut(n, maxlen - len(suf)) + suf
+        k = 2
+        while cand in seen: cand = cut(n, maxlen - len(suf) - 2) + suf + str(k); k += 1
+        seen[cand] = 1; out.append(cand)
+    return out
+
+_VL_CODE = re.compile(r"^\s*(?:\d+|[a-z])\s*[.:)\-=]\s+(?=\S)", re.I)     # "1. Yes", "01 - Rural", "a) Cattle"
+def clean_value_label(text, extra=None):
+    """Plain English category text: leading code removed, translated, tidy spacing and sentence case."""
+    s = "" if text is None else str(text)
+    s = _VL_CODE.sub("", s)
+    s = re.sub(r"[\[\]{}|]", " ", s).replace("_", " ")
+    s = _translate(s, extra)
+    if sum(ch.isupper() for ch in s) > 0.6 * max(1, sum(ch.isalpha() for ch in s)): s = s.lower()
+    s = re.sub(r"\s+", " ", s).strip(" .;:,-/")
+    s = _acronyms(_ascii(s))
+    if s: s = s[0].upper() + s[1:]
+    return s
+
+def version_suffix(waves, wave_year):
+    """'_2017_2020' or '_2023' from the waves of one version (wave_year maps wave ids to survey years)."""
+    ys = sorted({int(wave_year(w)) for w in waves})
+    return f"_{ys[0]}" if len(ys) == 1 or ys[0] == ys[-1] else f"_{ys[0]}_{ys[-1]}"
+
+def versioned(name, suffix, maxlen=32):
+    return cut(name, maxlen - len(suffix)) + suffix
+
+# ------------------------------------------------------------ the name table (variable_names.csv next to the code)
+import csv as _csv
+from pathlib import Path as _Path
+
+KEY_STEMS = {   # native key-block / derived names -> clean stem (the dataset tag is prefixed) and label text
+    "survey": ("survey", "Source survey"), "year": ("year", "Survey year"), "wave": ("wave", "Wave identifier"),
+    "sample": ("sample", "Sample component"), "unit": ("unit", "Unit of observation of the file"),
+    "prov": ("province", "Province, NISR code 1-5"), "dist": ("district", "District, NISR code 11-57"),
+    "sector": ("sector", "Sector, NISR code 1101-5715"), "urban": ("urban", "Area of residence: 1 urban, 2 rural"),
+    "cluster": ("cluster", "Sampling cluster or village identifier"), "psu": ("psu", "Primary sampling unit"), "stratum": ("stratum", "Sampling stratum"),
+    "hhid": ("household_id", "Household identifier"), "pid": ("person_id", "Person number within the household"),
+    "estid": ("establishment_id", "Establishment identifier"), "sex": ("sex", "Sex: 1 male, 2 female"), "age": ("age", "Age in completed years"),
+    "wt": ("weight", "Sampling weight"), "wt_hh": ("household_weight", "Household weight"), "wt_round": ("round_weight", "Round weight"),
+    "hhsize": ("household_size", "Household size (persons in the roster)"), "head_sex": ("head_sex", "Sex of the household head"),
+    "head_age": ("head_age", "Age of the household head"), "interview": ("interview", "Interview number of the household in the year"),
+    "round": ("round", "Data collection round"), "quarter": ("quarter", "Quarter of the round"), "season": ("season", "Agricultural season"),
+    "farm_type": ("farm_type", "Farm type: 1 small-scale, 2 large-scale"), "segment": ("segment", "Segment or list-frame identifier"),
+    "holder": ("holder", "Holder or questionnaire identifier"), "plot": ("plot", "Plot number"), "crop": ("crop", "Crop code of the wave's own list"),
+    "crop_name": ("crop_name", "Crop name"), "crop_list": ("crop_code_list", "Crop code list generation"), "record_type": ("record_type", "Record type of the shipped file"),
+    "source_module": ("source_file", "Shipped file the row comes from"), "wt_source": ("weight_source", "Where the plot weight came from"),
+}
+
+class NameTable:
+    """native <-> clean names per scope ('wave:<id>' for a per-wave file, 'pooled:<file>' for a pooled file)."""
+    def __init__(self, path, tag):
+        self.path, self.tag, self.rows = _Path(path), tag, []
+        if self.path.exists():
+            with open(self.path, newline="", encoding="utf-8") as fh: self.rows = list(_csv.DictReader(fh))
+        self.by_scope = {}
+        for r in self.rows: self.by_scope.setdefault(r["scope"], {})[r["native"]] = r
+    def save(self):
+        with open(self.path, "w", newline="", encoding="utf-8") as fh:
+            wr = _csv.DictWriter(fh, fieldnames=["scope", "wave", "native", "clean_name", "clean_label", "native_label"]); wr.writeheader(); wr.writerows(self.rows)
+    def clean(self, scope):   return {n: r["clean_name"] for n, r in self.by_scope.get(scope, {}).items()}
+    def labels(self, scope):  return {r["clean_name"]: r["clean_label"] for r in self.by_scope.get(scope, {}).values()}
+    def native(self, scope):  return {r["clean_name"]: n for n, r in self.by_scope.get(scope, {}).items()}
+    def apply(self, df, vl, vv, scope, log=None, extra=None):
+        """rename a native-named frame to clean names and labels (value labels cleaned); unlisted columns get engine names"""
+        m = dict(self.clean(scope)); labs = self.labels(scope); used = set(m.values()); tagU = self.tag.upper()
+        missing = [c for c in df.columns if c not in m]
+        if missing:
+            names = assign_names(self.tag, [(c, clean_label(vl.get(c, "") or c, self.tag, extra)) for c in missing])
+            for c, n in zip(missing, names):
+                k = 2
+                while n in used: n = cut(n, 30) + f"_{k}"; k += 1
+                m[c] = n; used.add(n); labs[n] = label_with_tag(tagU, clean_label(vl.get(c, "") or c, self.tag, extra))
+                if log: log.warning("%s: variable %r not in variable_names.csv -> named %r", scope, c, n)
+        df = df.rename(columns=m)
+        vl2 = {m.get(c, c): labs.get(m.get(c, c), label_with_tag(tagU, clean_label(vl.get(c, ""), self.tag, extra))) for c in m}
+        vv2 = {m.get(c, c): {k: clean_value_label(t, extra) for k, t in d.items()} for c, d in vv.items() if c in m}
+        return df, vl2, vv2, m
+    def invert(self, df, vl, vv, scope):
+        """clean-named frame back to native names (labels as stored in the file)"""
+        inv = self.native(scope)
+        df = df.rename(columns=inv); vl = {inv.get(c, c): t for c, t in vl.items()}; vv = {inv.get(c, c): d for c, d in vv.items()}
+        return df, vl, vv
+
+
+# ------------------------------------------------------------ dataset-specific naming constants
+DATASET_TAG = "lfs"
+WAVE_YEAR = lambda w: int(str(w)[:4])                     # wave id -> survey year
+TRANSLATE_EXTRA = {}
+KEY_EXTRA = {"hhid_nisr": ("nisr_household_id", "NISR household identifier as shipped"),
+             "pid_nisr": ("nisr_person_id", "NISR person identifier as shipped"),
+             "psu_no": ("psu_number_shipped", "Primary sampling unit number as shipped by NISR"),
+             "qh_no": ("household_number_in_psu", "Household number within the primary sampling unit as shipped"),
+             "lfs_round": ("round_code_shipped", "Data collection round code as shipped by NISR"),
+             "phase": ("phase", "Data collection phase: 1 February round, 2 August round"),
+             "status1": ("labour_force_status", "Labour force status, NISR derived: 1 employed, 2 unemployed, 3 outside the labour force")}

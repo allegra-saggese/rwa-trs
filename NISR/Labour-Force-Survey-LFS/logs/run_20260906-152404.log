@@ -1,0 +1,520 @@
+15:24:06 01_clean INFO ==== 01_clean | run 20260906-152404 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+15:24:06 01_clean INFO ---------------- 2017 ----------------
+15:24:06 01_clean INFO read LFS_2017.dta: 77,761 rows x 230 vars
+15:24:06 01_clean INFO value labels corrected from the questionnaire: phase codes [1, 2]
+15:24:06 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:06 01_clean INFO value labels corrected from the questionnaire: d13 codes [5]
+15:24:06 01_clean INFO value labels corrected from the questionnaire: d16 codes [5]
+15:24:06 01_clean INFO value labels corrected from the questionnaire: i03 codes [3, 4]
+15:24:06 01_clean INFO PASS  status1 populated on ages 16+ and empty below (threshold 99%): 0 rows aged 16+ without status1
+15:24:08 01_clean INFO PASS  row count unchanged (77,761)
+15:24:08 01_clean INFO PASS  wt present and > 0 on every row
+15:24:08 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:08 01_clean INFO PASS  30 districts (found 30)
+15:24:08 01_clean INFO PASS  5 provinces (found 5)
+15:24:08 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:08 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 99)
+15:24:08 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 100.0000% of 17,938 (0 heads: 0, 2+: 0)
+15:24:08 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:08 01_clean INFO share of rows with a household key: 1.000
+15:24:08 01_clean INFO rounds: {'FEB17': 39051, 'AUG17': 38710}
+15:24:08 01_clean INFO weighted total (sum wt) = 11,628,681 ; wap16-weighted = 6,761,080
+15:24:08 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:08 01_clean INFO wrote LFS_2017_person_clean.dta  (77,761 rows x 240 vars, 24.2 MB)
+15:24:08 01_clean INFO ---------------- 2018 ----------------
+15:24:10 01_clean INFO read LFS_2018.dta: 76,670 rows x 189 vars
+15:24:10 01_clean INFO value labels corrected from the questionnaire: phase codes [1, 2]
+15:24:10 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:10 01_clean INFO PASS  status1 populated on ages 16+ and empty below (threshold 99%): 0 rows aged 16+ without status1
+15:24:11 01_clean INFO PASS  row count unchanged (76,670)
+15:24:11 01_clean INFO PASS  wt present and > 0 on every row
+15:24:11 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:11 01_clean INFO PASS  30 districts (found 30)
+15:24:11 01_clean INFO PASS  5 provinces (found 5)
+15:24:11 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:11 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:12 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 99.9944% of 17,861 (0 heads: 1, 2+: 0)
+15:24:12 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:12 01_clean INFO share of rows with a household key: 1.000
+15:24:12 01_clean INFO rounds: {'FEB18': 38371, 'AUG18': 38299}
+15:24:12 01_clean INFO weighted total (sum wt) = 11,889,219 ; wap16-weighted = 6,966,096
+15:24:12 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:12 01_clean INFO wrote LFS_2018_person_clean.dta  (76,670 rows x 199 vars, 22.7 MB)
+15:24:12 01_clean INFO ---------------- 2019 ----------------
+15:24:13 01_clean INFO read LFS_2019.dta: 81,778 rows x 238 vars
+15:24:13 01_clean INFO value labels corrected from the questionnaire: d03a codes [1]
+15:24:13 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:13 01_clean INFO value labels corrected from the questionnaire: i03 codes [3, 4]
+15:24:13 01_clean INFO PASS  status1 populated on ages 16+ and empty below (threshold 99%): 0 rows aged 16+ without status1
+15:24:15 01_clean INFO PASS  row count unchanged (81,778)
+15:24:15 01_clean INFO PASS  wt present and > 0 on every row
+15:24:15 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:15 01_clean INFO PASS  30 districts (found 30)
+15:24:15 01_clean INFO PASS  5 provinces (found 5)
+15:24:15 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:15 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:15 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 99.9897% of 19,325 (0 heads: 2, 2+: 0)
+15:24:15 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:15 01_clean INFO share of rows with a household key: 1.000
+15:24:15 01_clean INFO rounds: {'MAY19': 22293, 'NOV19': 21949, 'FEB19': 18849, 'AUG19': 18687}
+15:24:15 01_clean INFO weighted total (sum wt) = 12,216,163 ; wap16-weighted = 7,231,536
+15:24:15 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:16 01_clean INFO wrote LFS_2019_person_clean.dta  (81,778 rows x 251 vars, 46.4 MB)
+15:24:16 01_clean INFO ---------------- 2020 ----------------
+15:24:17 01_clean INFO read LFS_2020.dta: 70,172 rows x 51 vars
+15:24:17 01_clean INFO name collision 'district' vs 'District' -> dropping 'district' (all missing)
+15:24:17 01_clean INFO prov derived from dist // 10 (province not shipped in 2020)
+15:24:17 01_clean INFO PASS  status1 populated on ages 14+ and empty below (threshold 99%): 336 rows aged 14+ without status1 -- all of MAY20 age 14
+15:24:17 01_clean INFO PASS  row count unchanged (70,172)
+15:24:17 01_clean INFO PASS  wt present and > 0 on every row
+15:24:17 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:17 01_clean INFO PASS  30 districts (found 30)
+15:24:17 01_clean INFO PASS  5 provinces (found 5)
+15:24:17 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:17 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:17 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 99.9777% of 8,986 (0 heads: 2, 2+: 0)
+15:24:17 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 2 duplicate rows (kept, see DECISIONS)
+15:24:17 01_clean INFO share of rows with a household key: 0.532
+15:24:17 01_clean INFO rounds: {'AUG20': 18726, 'FEB20': 18593, 'NOV20': 18070, 'MAY20': 14783}
+15:24:17 01_clean INFO weighted total (sum wt) = 12,499,074 ; wap16-weighted = 7,472,601
+15:24:17 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:18 01_clean INFO wrote LFS_2020_person_clean.dta  (70,172 rows x 61 vars, 9.0 MB)
+15:24:18 01_clean INFO ---------------- 2021 ----------------
+15:24:21 01_clean INFO read LFS_2021.dta: 71,947 rows x 246 vars
+15:24:21 01_clean INFO PASS  HHID == PSU_NO*100 + QH_NO
+15:24:21 01_clean INFO PASS  interview index == rank of LFS_round within household
+15:24:21 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:21 01_clean INFO value labels corrected from the questionnaire: d13 codes [5]
+15:24:21 01_clean INFO value labels corrected from the questionnaire: d16 codes [5]
+15:24:21 01_clean INFO value labels corrected from the questionnaire: i03 codes [3, 4]
+15:24:21 01_clean INFO PASS  status1 populated on ages 14+ and empty below (threshold 99%): 0 rows aged 14+ without status1
+15:24:22 01_clean INFO PASS  row count unchanged (71,947)
+15:24:22 01_clean INFO PASS  wt present and > 0 on every row
+15:24:22 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:22 01_clean INFO PASS  30 districts (found 30)
+15:24:22 01_clean INFO PASS  5 provinces (found 5)
+15:24:22 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:22 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:23 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 100.0000% of 17,085 (0 heads: 0, 2+: 0)
+15:24:23 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:23 01_clean INFO share of rows with a household key: 1.000
+15:24:23 01_clean INFO rounds: {'FEB21': 18377, 'MAY21': 17961, 'NOV21': 17815, 'AUG21': 17794}
+15:24:23 01_clean INFO weighted total (sum wt) = 12,786,879 ; wap16-weighted = 7,718,871
+15:24:23 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:23 01_clean INFO wrote LFS_2021_person_clean.dta  (71,947 rows x 256 vars, 43.4 MB)
+15:24:23 01_clean INFO ---------------- 2022 ----------------
+15:24:26 01_clean INFO read LFS_2022.dta: 70,424 rows x 239 vars
+15:24:26 01_clean INFO PASS  HHID == PSU_NO*100 + QH_NO
+15:24:26 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:26 01_clean INFO value labels corrected from the questionnaire: d13 codes [5]
+15:24:26 01_clean INFO value labels corrected from the questionnaire: d16 codes [5]
+15:24:26 01_clean INFO value labels corrected from the questionnaire: i03 codes [3, 4]
+15:24:26 01_clean INFO PASS  status1 populated on ages 14+ and empty below (threshold 99%): 0 rows aged 14+ without status1
+15:24:27 01_clean INFO PASS  row count unchanged (70,424)
+15:24:27 01_clean INFO PASS  wt present and > 0 on every row
+15:24:27 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:27 01_clean INFO PASS  30 districts (found 30)
+15:24:27 01_clean INFO PASS  5 provinces (found 5)
+15:24:27 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:27 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:28 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 100.0000% of 16,572 (0 heads: 0, 2+: 0)
+15:24:28 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 1 duplicate rows (kept, see DECISIONS)
+15:24:28 01_clean INFO share of rows with a household key: 1.000
+15:24:28 01_clean INFO rounds: {'': 70424}
+15:24:28 01_clean INFO weighted total (sum wt) = 13,078,028 ; wap16-weighted = 7,963,586
+15:24:28 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:28 01_clean INFO wrote LFS_2022_person_clean.dta  (70,424 rows x 250 vars, 24.7 MB)
+15:24:28 01_clean INFO ---------------- 2023 ----------------
+15:24:31 01_clean INFO read LFS_2023.dta: 71,849 rows x 239 vars
+15:24:31 01_clean INFO PASS  HHID == PSU_NO*100 + QH_NO
+15:24:31 01_clean INFO PASS  file holds 4 quarter blocks (found 4)
+15:24:31 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:31 01_clean INFO value labels corrected from the questionnaire: d13 codes [5]
+15:24:31 01_clean INFO value labels corrected from the questionnaire: d16 codes [5]
+15:24:31 01_clean INFO value labels corrected from the questionnaire: i03 codes [3, 4]
+15:24:31 01_clean INFO PASS  status1 populated on ages 14+ and empty below (threshold 99%): 0 rows aged 14+ without status1
+15:24:32 01_clean INFO PASS  row count unchanged (71,849)
+15:24:32 01_clean INFO PASS  wt present and > 0 on every row
+15:24:32 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:32 01_clean INFO PASS  30 districts (found 30)
+15:24:32 01_clean INFO PASS  5 provinces (found 5)
+15:24:32 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:32 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:33 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 100.0000% of 17,756 (0 heads: 0, 2+: 0)
+15:24:33 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:33 01_clean INFO share of rows with a household key: 1.000
+15:24:33 01_clean INFO rounds: {'': 71849}
+15:24:33 01_clean INFO weighted total (sum wt) = 13,362,858 ; wap16-weighted = 8,071,962
+15:24:33 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:33 01_clean INFO wrote LFS_2023_person_clean.dta  (71,849 rows x 250 vars, 23.9 MB)
+15:24:33 01_clean INFO ---------------- 2024 ----------------
+15:24:36 01_clean INFO read LFS_2024.dta: 102,562 rows x 197 vars
+15:24:36 01_clean INFO PASS  HHID == PSU_NO*100 + QH_NO
+15:24:36 01_clean INFO PASS  file holds 4 quarter blocks (found 4)
+15:24:37 01_clean INFO value labels corrected from the questionnaire: a02 codes [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 98, 99]
+15:24:37 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:37 01_clean INFO stale value labels dropped: d24 (continuous in 2024)
+15:24:37 01_clean INFO PASS  status1 populated on ages 14+ and empty below (threshold 99%): 0 rows aged 14+ without status1
+15:24:38 01_clean INFO PASS  row count unchanged (102,562)
+15:24:38 01_clean INFO PASS  wt present and > 0 on every row
+15:24:38 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:38 01_clean INFO PASS  30 districts (found 30)
+15:24:38 01_clean INFO PASS  5 provinces (found 5)
+15:24:38 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:38 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:39 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 100.0000% of 25,867 (0 heads: 0, 2+: 0)
+15:24:39 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:39 01_clean INFO share of rows with a household key: 1.000
+15:24:39 01_clean INFO rounds: {'': 102562}
+15:24:39 01_clean INFO weighted total (sum wt) = 13,658,302 ; wap16-weighted = 8,303,568
+15:24:39 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:39 01_clean INFO wrote LFS_2024_person_clean.dta  (102,562 rows x 208 vars, 32.1 MB)
+15:24:39 01_clean INFO ---------------- 2025 ----------------
+15:24:43 01_clean INFO read LFS_2025.dta: 100,852 rows x 207 vars
+15:24:43 01_clean INFO PASS  HHID == PSU_NO*100 + QH_NO
+15:24:43 01_clean INFO PASS  file holds 4 quarter blocks (found 4)
+15:24:43 01_clean INFO value labels corrected from the questionnaire: b09 codes [2]
+15:24:43 01_clean INFO PASS  status1 populated on ages 14+ and empty below (threshold 99%): 0 rows aged 14+ without status1
+15:24:44 01_clean INFO PASS  row count unchanged (100,852)
+15:24:44 01_clean INFO PASS  wt present and > 0 on every row
+15:24:44 01_clean INFO PASS  wt constant within household-interview (household-level calibrated weight)
+15:24:44 01_clean INFO PASS  30 districts (found 30)
+15:24:44 01_clean INFO PASS  5 provinces (found 5)
+15:24:44 01_clean INFO PASS  sex (a01) in {1,2}
+15:24:44 01_clean INFO PASS  age (a04) in [0,120] (min 0, max 95)
+15:24:45 01_clean INFO PASS  one head per household-interview (threshold 99.9%; exceptions reported in 03_checks): 100.0000% of 25,382 (0 heads: 0, 2+: 0)
+15:24:45 01_clean INFO PASS  (hhid, interview, pid) unique up to NISR's own duplicates: 0 duplicate rows (kept, see DECISIONS)
+15:24:45 01_clean INFO share of rows with a household key: 1.000
+15:24:45 01_clean INFO rounds: {'': 100852}
+15:24:45 01_clean INFO weighted total (sum wt) = 13,958,542 ; wap16-weighted = 8,541,210
+15:24:45 01_clean INFO all hard checks passed (0 soft warnings)
+15:24:46 01_clean INFO wrote LFS_2025_person_clean.dta  (100,852 rows x 218 vars, 33.8 MB)
+15:24:46 01_clean INFO 01_clean done for [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+15:24:47 02_merge INFO ==== 02_merge | run 20260906-152404 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+15:24:49 02_merge INFO loaded 2017: 77,761 rows x 240 vars
+15:24:51 02_merge INFO loaded 2018: 76,670 rows x 199 vars
+15:24:54 02_merge INFO loaded 2019: 81,778 rows x 251 vars
+15:24:55 02_merge INFO loaded 2020: 70,172 rows x 61 vars
+15:24:58 02_merge INFO loaded 2021: 71,947 rows x 256 vars
+15:25:01 02_merge INFO loaded 2022: 70,424 rows x 250 vars
+15:25:04 02_merge INFO loaded 2023: 71,849 rows x 250 vars
+15:25:07 02_merge INFO loaded 2024: 102,562 rows x 208 vars
+15:25:11 02_merge INFO loaded 2025: 100,852 rows x 218 vars
+15:25:11 02_merge INFO VERSIONS a02: {'a02': [2017, 2018, 2019, 2020, 2021, 2022, 2023], 'a02_v2': [2024, 2025]} | 2024: FORCE_SPLIT
+15:25:11 02_merge INFO VERSIONS a12: {'a12': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'a12_v2': [2025]} | 2025 vs 2017: value labels differ -- 7: 'South Sudan' vs ' Rest of Africa'; 8: 'Rest of Africa' vs 'Other country'
+15:25:11 02_merge INFO VERSIONS a14a: {'a14a': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'a14a_v2': [2025]} | 2025 vs 2017: value labels differ -- 7: 'South Sudan' vs 'Rest of Africa'; 8: 'Rest of Africa' vs 'Other country'
+15:25:11 02_merge INFO VERSIONS a14b: {'a14b': [2017, 2018, 2019, 2021, 2022, 2023, 2025], 'a14b_v2': [2024]} | 2024: FORCE_SPLIT
+15:25:11 02_merge INFO VERSIONS a15: {'a15': [2019, 2022, 2023, 2024], 'a15_v2': [2021, 2025]} | 2021 vs 2019: variable label differs ('Since birth Has  ived in another distric' vs 'Has usual place of residence  always bee') / 2025 vs 2019: variable label differs ('Did he/she lived outside this district f' vs 'Has usual place of residence  always bee')
+15:25:11 02_merge INFO VERSIONS a17a: {'a17a': [2019, 2021, 2022, 2023, 2024], 'a17a_v2': [2025]} | 2025 vs 2019: value labels differ -- 7: 'South Sudan' vs 'Rest of Africa'; 8: 'Rest of Africa' vs 'Other country'
+15:25:12 02_merge INFO VERSIONS b10: {'b10': [2017, 2018, 2019, 2022, 2023, 2024], 'b10_v2': [2021, 2025]} | 2021 vs 2017: value labels differ -- 22: 'Ubwubatsi buhanitse/Cival Engeeniering' vs '22. Civil construction'; 47: 'Chollegraphy' vs 'Other' / 2025 vs 2017: value labels differ -- 22: 'Ubwubatsi buhanitse/Cival Engeeniering' vs '22. Civil construction'; 47: 'Chollegraphy' vs 'Other'
+15:25:12 02_merge INFO VERSIONS b13: {'b13': [2017, 2019, 2022, 2023, 2024], 'b13_v2': [2018, 2021, 2025]} | 2018 vs 2017: value labels differ -- 3: 'Yes with degree/Diploma' vs 'No' / 2021 vs 2017: value labels differ -- 3: 'Yes with degree/Diploma' vs 'No'
+15:25:12 02_merge INFO VERSIONS b14: {'b14': [2017, 2018, 2019, 2022, 2023, 2024], 'b14_v2': [2021, 2025]} | 2021 vs 2017: value labels differ -- 2: ' I was able to get a job' vs 'Starting own business'; 3: ' My salary increased' vs 'I was able to get a job'; 4: ' I was promoted at work' vs 'My salary increased' / 2025 vs 2017: value labels differ -- 2: ' I was able to get a job' vs 'Starting own business'; 3: ' My salary increased' vs 'I was able to get a job'; 4: ' I was promoted at work' vs 'My salary increased'
+15:25:12 02_merge INFO VERSIONS b15: {'b15': [2017, 2018, 2019, 2021], 'b15_v2': [2025]} | 2025 vs 2017: variable label differs ('How long did take(Name) to get a job or ' vs 'At what level could you use of computer?')
+15:25:12 02_merge INFO VERSIONS b16a: {'b16a': [2017, 2019], 'b16a_v2': [2021], 'b16a_v3': [2018]} | 2018 vs 2017: value labels differ -- 2: 'Good' vs 'Fair'; 3: 'Fair' vs "Don't Know" / 2021 vs 2017: value labels differ -- 1: 'Very well' vs 'Good'; 2: 'Well' vs 'Fair'; 3: 'Less' vs "Don't Know"
+15:25:12 02_merge INFO VERSIONS b16b: {'b16b': [2017, 2019], 'b16b_v2': [2021], 'b16b_v3': [2018]} | 2018 vs 2017: value labels differ -- 2: 'Good' vs 'Fair'; 3: 'Fair' vs "Don't Know" / 2021 vs 2017: value labels differ -- 1: 'Very well' vs 'Good'; 2: 'Well' vs 'Fair'; 3: 'Less' vs "Don't Know"
+15:25:12 02_merge INFO VERSIONS b16c: {'b16c': [2017, 2019], 'b16c_v2': [2021], 'b16c_v3': [2018]} | 2018 vs 2017: value labels differ -- 2: 'Good' vs 'Fair'; 3: 'Fair' vs "Don't Know" / 2021 vs 2017: value labels differ -- 1: 'Very well' vs 'Good'; 2: 'Well' vs 'Fair'; 3: 'Less' vs "Don't Know"
+15:25:13 02_merge INFO VERSIONS c07: {'c07': [2017, 2018, 2019, 2022, 2023, 2024, 2025], 'c07_v2': [2021]} | 2021 vs 2017: value labels differ -- 11: "Business / Gov't closed due to coronavirus legal restrictions" vs 'Other Specify'
+15:25:14 02_merge INFO VERSIONS c21a: {'c21a': [2018, 2021], 'c21a_v2': [2017, 2019], 'c21a_v3': [2024]} | 2018 vs 2017: variable label differs ('Arranging for financial ressources,apply' vs 'what did [NAME] do  in the last 4 weeks ') / 2021 vs 2017: variable label differs ('Arranging for financial ressources,apply' vs 'what did [NAME] do  in the last 4 weeks ')
+15:25:14 02_merge INFO VERSIONS c21b: {'c21b': [2018, 2021], 'c21b_v2': [2017, 2019], 'c21b_v3': [2024]} | 2018 vs 2017: variable label differs ('Looking for land,premises,machinery,supp' vs 'What did [NAME] do in the last 4 weeks t') / 2021 vs 2017: variable label differs ('Looking for land,premises,machinery,supp' vs 'What did [NAME] do in the last 4 weeks t')
+15:25:14 02_merge INFO VERSIONS c21c: {'c21c': [2018, 2021], 'c21c_v2': [2017, 2019], 'c21c_v3': [2024]} | 2018 vs 2017: variable label differs ('Seeking the assistance of friends,relati' vs 'What did [NAME] do in the last 4 weeks t') / 2021 vs 2017: variable label differs ('Seeking the assistance of friends,relati' vs 'What did [NAME] do in the last 4 weeks t')
+15:25:14 02_merge INFO VERSIONS c21d: {'c21d': [2018, 2021, 2024], 'c21d_v2': [2017, 2019]} | 2018 vs 2017: variable label differs ('Registering with or contacting public or' vs 'What did [NAME] do in the last 4 weeks t') / 2021 vs 2017: variable label differs ('Registering with or contacting public or' vs 'What did [NAME] do in the last 4 weeks t')
+15:25:14 02_merge INFO VERSIONS c21e: {'c21e': [2018, 2019, 2021], 'c21e_v2': [2024]} | 2024 vs 2018: variable label differs ('Take a test or Interview' vs 'Applying to employers directly,checking ')
+15:25:14 02_merge INFO VERSIONS c21f: {'c21f': [2018, 2019, 2021], 'c21f_v2': [2024]} | 2024 vs 2018: variable label differs ('Seek help from Relatives,friends,Others' vs 'Placing or answering newspaper or online')
+15:25:14 02_merge INFO VERSIONS c21g: {'c21g': [2018, 2019, 2021], 'c21g_v2': [2024]} | 2024 vs 2018: variable label differs ('Check at Factories worksite' vs 'Placing and updating resumes on professi')
+15:25:14 02_merge INFO VERSIONS c21h: {'c21h': [2018, 2019, 2021], 'c21h_v2': [2024]} | 2024 vs 2018: variable label differs ('Wait on the street to be recruited' vs 'No method')
+15:25:14 02_merge INFO VERSIONS c21l: {'c21l': [2018, 2021], 'c21l_v2': [2024]} | 2024 vs 2018: variable label differs ('No Method' vs 'Other')
+15:25:14 02_merge INFO VERSIONS c22: {'c22': [2018, 2019, 2021, 2025], 'c22_v2': [2017, 2022, 2023, 2024]} | 2018 vs 2017: 2018 is unlabelled and its values reach 60, beyond the labelled codes (1-6) / 2019 vs 2017: 2019 is unlabelled and its values reach 60, beyond the labelled codes (1-6)
+15:25:14 02_merge INFO VERSIONS c24: {'c24': [2017, 2018, 2019, 2022, 2023, 2024, 2025], 'c24_v2': [2021]} | 2021 vs 2017: value labels differ -- 14: 'Unable to move due to movements  restrictions  because of Covid-19/own or family quarantine' vs 'Other specify'
+15:25:14 02_merge INFO VERSIONS c26: {'c26': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'c26_v2': [2025]} | 2025 vs 2017: value labels differ -- 5: 'In Agriculture/fishing for Family use' vs 'Other'
+15:25:14 02_merge INFO VERSIONS d03a: {'d03a': [2019, 2021, 2025], 'd03a_v2': [2022, 2023, 2024]} | 2022 vs 2019: value labels differ -- 1: 'Valid name' vs 'Name of workplace' / 2023 vs 2019: value labels differ -- 1: 'Valid name' vs 'Name of workplace'
+15:25:14 02_merge INFO VERSIONS d03b1: {'d03b1': [2019, 2021], 'd03b1_v2': [2020]} | 2020: FORCE_SPLIT
+15:25:14 02_merge INFO VERSIONS d04: {'d04': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'd04_v2': [2025]} | 2025 vs 2017: value labels differ -- 8: 'VUP/Community based jobs' vs 'Others(Specify)'
+15:25:14 02_merge INFO VERSIONS d05: {'d05': [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], 'd05_v2': [2025]} | 2025 vs 2017: variable label differs ('Status of employment according to ICSE-9' vs 'In this job, is  [NAME] working as??')
+15:25:15 02_merge INFO VERSIONS d07: {'d07': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'd07_v2': [2025]} | 2025 vs 2017: value labels differ -- 2: 'Temporary  with a specific period of time' vs 'Temporary contract:'
+15:25:15 02_merge INFO VERSIONS d08: {'d08': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'd08_v2': [2025]} | 2025 vs 2017: value labels differ -- 1: 'Daily contract/Agreement' vs 'Day'; 2: 'Less than one month' vs 'Week'; 3: 'One to less than 3 months' vs 'Month'
+15:25:15 02_merge INFO VERSIONS d18a: {'d18a': [2025], 'd18a_v2': [2017]} | 2025 vs 2017: variable label differs ('How did (you/name) obtain your current e' vs 'What is the net monthly earnings of (NAM')
+15:25:15 02_merge INFO VERSIONS d23: {'d23': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'd23_v2': [2025]} | 2025 vs 2017: variable label differs ('Where is the business where [NAME] work ' vs 'In what type of place does [NAME] usuall')
+15:25:15 02_merge INFO VERSIONS d23a: {'d23a': [2025], 'd23a_v2': [2024]} | 2025 vs 2024: value labels differ -- 6: 'Private motobike' vs "Private Employer's car"; 8: 'Boat' vs 'Private bicycle'
+15:25:15 02_merge INFO VERSIONS d24: {'d24': [2017, 2019, 2020], 'd24_v2': [2024, 2025]} | 2024: FORCE_SPLIT
+15:25:16 02_merge INFO VERSIONS f02: {'f02': [2017, 2018, 2019, 2021, 2022, 2023, 2024], 'f02_v2': [2025]} | 2025 vs 2017: value labels differ -- 12: 'Other(specify)' vs 'Physical/ social harassment'
+15:25:16 02_merge INFO VERSIONS f06: {'f06': [2017, 2018], 'f06_v2': [2019]} | 2019 vs 2017: value labels differ -- 8: 'Other status, specify' vs 'Finish school,waiting for results'
+15:25:16 02_merge INFO VERSIONS f07: {'f07': [2017, 2018], 'f07_v2': [2019]} | 2019 vs 2017: value labels differ -- 4: 'Other (Please specify)' vs 'None'; 5: 'None' vs 'Other (Please specify)'
+15:25:17 02_merge INFO VERSIONS h02: {'h02': [2017, 2018, 2019, 2024, 2025], 'h02_v2': [2021, 2022, 2023]} | 2021: FORCE_SPLIT
+15:25:17 02_merge INFO VERSIONS h03: {'h03': [2017, 2018, 2019, 2024, 2025], 'h03_v2': [2021, 2022, 2023]} | 2021: FORCE_SPLIT
+15:25:17 02_merge INFO VERSIONS i01_a: {'i01_a': [2017, 2021, 2022, 2023], 'i01_a_v2': [2019]} | 2019 vs 2017: value labels differ -- 4: 'Bamboo' vs 'Plastic/plywood/impermanent material'; 5: 'Plastic/plywood/impermanent material' vs 'Other (specify)'
+15:25:17 02_merge INFO VERSIONS i06a: {'i06a': [2017, 2019, 2022, 2023], 'i06a_v2': [2021]} | 2021 vs 2017: value labels differ -- 11: 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)' vs 'Bottled Water'; 12: 'Bottled water' vs 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)'
+15:25:17 02_merge INFO VERSIONS i06b: {'i06b': [2017, 2019, 2022, 2023], 'i06b_v2': [2021]} | 2021 vs 2017: value labels differ -- 11: 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)' vs 'Bottled Water'; 12: 'Bottled Water' vs 'Surface Water (River/Lake/Pond/Stream/Irrigation Channel)'
+15:25:18 02_merge INFO VERSIONS intcash: {'intcash': [2022, 2023, 2024], 'intcash_v2': [2025]} | 2025 vs 2022: value labels differ -- 5: '100,000-199,999RWF' vs '100000 and above RWF'
+15:25:18 02_merge INFO VERSIONS lfs_round: {'lfs_round': [2021], 'lfs_round_v2': [2020]} | 2021 vs 2020: value labels differ -- 2: 'FEB17' vs 'AUG17'; 3: 'AUG17' vs 'FEB18'; 4: 'FEB18' vs 'AUG18'
+15:25:19 02_merge INFO VERSIONS subhrs: {'subhrs': [2024, 2025], 'subhrs_v2': [2022, 2023]} | 2022: FORCE_SPLIT
+15:25:20 02_merge INFO 34 variables with codes observed outside their own value labels (stale labels; listed in merge_alignment.json): ['a12', 'a14a', 'a14b', 'a17a', 'a20', 'b05b', 'b10', 'b13', 'b16a', 'b16b', 'b16c', 'c07', 'c22', 'c24', 'c26', 'd01b2', 'd03b1', 'd08', 'd12', 'd23', 'e01b1', 'f02', 'f03b1', 'f04b1', 'i04', 'i06b', 'indb05', 'isco2d', 'isco2digit', 'isco2f']
+15:25:21 02_merge INFO type conflict d24: numeric in some waves, numeric-looking text in others -> numeric
+15:25:22 02_merge INFO type conflict i08: numeric in some waves, numeric-looking text in others -> numeric
+15:25:22 02_merge INFO type conflict i09: numeric in some waves, numeric-looking text in others -> numeric
+15:25:22 02_merge INFO type conflict i10: numeric in some waves, numeric-looking text in others -> numeric
+15:25:22 02_merge INFO type conflict i11: numeric in some waves, numeric-looking text in others -> numeric
+15:25:22 02_merge INFO type conflict i12: numeric in some waves, numeric-looking text in others -> numeric
+15:25:44 02_merge INFO pooled person file: 724,015 rows x 478 vars; 47 variables with >1 version; 29 value-label text conflicts
+15:25:45 02_merge INFO PASS  no numeric column left object-typed after concat
+15:25:45 02_merge INFO PASS  pooled rows == sum of yearly rows
+15:25:45 02_merge INFO PASS  2017: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2018: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2019: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2020: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2021: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2022: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2023: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2024: sum wt preserved in pool
+15:25:45 02_merge INFO PASS  2025: sum wt preserved in pool
+15:25:48 02_merge INFO   LFS_pooled_person.dta: 3068 exact duplicate rows dropped (duplicates drop, all variables): {'2020': 3068}
+15:26:01 02_merge INFO wrote LFS_pooled_person.dta  (720,947 rows x 478 vars, 673.9 MB)
+15:26:01 02_merge INFO 2017: 77,761 of 77,761 rows have a household key
+15:26:01 02_merge INFO PASS  2017: household-interview rows unique
+15:26:01 02_merge INFO 2017: 17,938 household-interviews, 57 household-level variables carried
+15:26:01 02_merge INFO 2018: 76,670 of 76,670 rows have a household key
+15:26:02 02_merge INFO PASS  2018: household-interview rows unique
+15:26:02 02_merge INFO 2018: 17,861 household-interviews, 18 household-level variables carried
+15:26:02 02_merge INFO 2019: 81,778 of 81,778 rows have a household key
+15:26:02 02_merge INFO PASS  2019: household-interview rows unique
+15:26:02 02_merge INFO 2019: 19,325 household-interviews, 30 household-level variables carried
+15:26:02 02_merge INFO 2020: 37,319 of 70,172 rows have a household key
+15:26:02 02_merge INFO PASS  2020: household-interview rows unique
+15:26:02 02_merge INFO 2020: 8,986 household-interviews, 31 household-level variables carried
+15:26:02 02_merge INFO 2021: 71,947 of 71,947 rows have a household key
+15:26:03 02_merge INFO PASS  2021: household-interview rows unique
+15:26:03 02_merge INFO 2021: 17,085 household-interviews, 58 household-level variables carried
+15:26:03 02_merge INFO 2022: 70,424 of 70,424 rows have a household key
+15:26:03 02_merge INFO PASS  2022: household-interview rows unique
+15:26:03 02_merge INFO 2022: 16,572 household-interviews, 51 household-level variables carried
+15:26:03 02_merge INFO 2023: 71,849 of 71,849 rows have a household key
+15:26:03 02_merge INFO PASS  2023: household-interview rows unique
+15:26:03 02_merge INFO 2023: 17,756 household-interviews, 50 household-level variables carried
+15:26:03 02_merge INFO 2024: 102,562 of 102,562 rows have a household key
+15:26:04 02_merge INFO PASS  2024: household-interview rows unique
+15:26:04 02_merge INFO 2024: 25,867 household-interviews, 26 household-level variables carried
+15:26:04 02_merge INFO 2025: 100,852 of 100,852 rows have a household key
+15:26:04 02_merge INFO PASS  2025: household-interview rows unique
+15:26:04 02_merge INFO 2025: 25,382 household-interviews, 29 household-level variables carried
+15:26:07 02_merge INFO wrote LFS_pooled_household.dta  (166,772 rows x 97 vars, 30.3 MB)
+15:26:07 02_merge INFO wrote LFS_2017_household_clean.dta  (17,938 rows x 97 vars, 2.8 MB)
+15:26:07 02_merge INFO wrote LFS_2018_household_clean.dta  (17,861 rows x 97 vars, 2.8 MB)
+15:26:07 02_merge INFO wrote LFS_2019_household_clean.dta  (19,325 rows x 97 vars, 3.0 MB)
+15:26:07 02_merge INFO wrote LFS_2020_household_clean.dta  (8,986 rows x 97 vars, 1.4 MB)
+15:26:08 02_merge INFO wrote LFS_2021_household_clean.dta  (17,085 rows x 97 vars, 2.7 MB)
+15:26:08 02_merge INFO wrote LFS_2022_household_clean.dta  (16,572 rows x 97 vars, 2.5 MB)
+15:26:08 02_merge INFO wrote LFS_2023_household_clean.dta  (17,756 rows x 97 vars, 2.7 MB)
+15:26:08 02_merge INFO wrote LFS_2024_household_clean.dta  (25,867 rows x 97 vars, 4.7 MB)
+15:26:08 02_merge INFO wrote LFS_2025_household_clean.dta  (25,382 rows x 97 vars, 4.6 MB)
+15:26:08 02_merge INFO all hard checks passed (0 soft warnings)
+15:26:08 02_merge INFO 02_merge done
+15:26:09 03_checks INFO ==== 03_checks | run 20260906-152404 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+15:26:12 03_checks INFO 
+# LFS checks report
+
+Generated by 03_checks.py.
+
+## A. Python pooled file vs old Stata outputs (3 Jul 2026)
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | exact duplicate rows dropped before saving the pooled file (Matteo's rule; informational) | 3,068 | None | n/a |
+| A | 2017 rows | 77,761 | 77,761 | PASS |
+| A | 2017 sum wt | 11,628,681 | 11,628,681 | PASS |
+| A | 2017 weighted 16+ pop | 6,761,080 | 6,761,080 | PASS |
+| A | 2017 districts | 30 | 30 | PASS |
+| A | 2017 male | 37,447 | 37,447 | PASS |
+| A | 2017 female | 40,314 | 40,314 | PASS |
+| A | 2018 rows | 76,670 | 76,670 | PASS |
+| A | 2018 sum wt | 11,889,219 | 11,889,219 | PASS |
+| A | 2018 weighted 16+ pop | 6,966,096 | 6,966,096 | PASS |
+| A | 2018 districts | 30 | 30 | PASS |
+| A | 2018 male | 37,066 | 37,066 | PASS |
+| A | 2018 female | 39,604 | 39,604 | PASS |
+| A | 2019 rows | 81,778 | 81,778 | PASS |
+| A | 2019 sum wt | 12,216,163 | 12,216,163 | PASS |
+| A | 2019 weighted 16+ pop | 7,231,536 | 7,231,536 | PASS |
+| A | 2019 districts | 30 | 30 | PASS |
+| A | 2019 male | 39,337 | 39,337 | PASS |
+| A | 2019 female | 42,441 | 42,441 | PASS |
+| A | 2020 rows (+3068 exact duplicates dropped) | 67,104 | 67,104 | PASS |
+| A | 2020 sum wt | 11,947,769 | 11,947,769 | PASS |
+| A | 2020 weighted 16+ pop (old outputs include the duplicates; informational) | 7,442,354 | None | n/a |
+| A | 2020 districts | 30 | 30 | PASS |
+| A | 2020 male (informational, see above) | 32,304 | None | n/a |
+| A | 2020 female (informational, see above) | 34,800 | None | n/a |
+| A | 2021 rows | 71,947 | 71,947 | PASS |
+| A | 2021 sum wt | 12,786,879 | 12,786,879 | PASS |
+| A | 2021 weighted 16+ pop | 7,718,871 | 7,718,871 | PASS |
+| A | 2021 districts | 30 | 30 | PASS |
+| A | 2021 male | 34,652 | 34,652 | PASS |
+| A | 2021 female | 37,295 | 37,295 | PASS |
+| A | 2022 rows | 70,424 | 70,424 | PASS |
+| A | 2022 sum wt | 13,078,028 | 13,078,028 | PASS |
+| A | 2022 weighted 16+ pop | 7,963,586 | 7,963,586 | PASS |
+| A | 2022 districts | 30 | 30 | PASS |
+| A | 2022 male | 33,830 | 33,830 | PASS |
+| A | 2022 female | 36,594 | 36,594 | PASS |
+| A | 2023 rows | 71,849 | 71,849 | PASS |
+| A | 2023 sum wt | 13,362,858 | 13,362,858 | PASS |
+| A | 2023 weighted 16+ pop | 8,071,962 | 8,071,962 | PASS |
+| A | 2023 districts | 30 | 30 | PASS |
+| A | 2023 male | 34,513 | 34,513 | PASS |
+| A | 2023 female | 37,336 | 37,336 | PASS |
+| A | 2024 rows | 102,562 | 102,562 | PASS |
+| A | 2024 sum wt | 13,658,302 | 13,658,302 | PASS |
+| A | 2024 weighted 16+ pop | 8,303,568 | 8,303,568 | PASS |
+| A | 2024 districts | 30 | 30 | PASS |
+| A | 2024 male | 49,316 | 49,316 | PASS |
+| A | 2024 female | 53,246 | 53,246 | PASS |
+| A | 2025 rows | 100,852 | 100,852 | PASS |
+| A | 2025 sum wt | 13,958,542 | 13,958,542 | PASS |
+| A | 2025 weighted 16+ pop | 8,541,210 | 8,541,210 | PASS |
+| A | 2025 districts | 30 | 30 | PASS |
+| A | 2025 male | 48,154 | 48,154 | PASS |
+| A | 2025 female | 52,698 | 52,698 | PASS |
+
+## B. Stata 17 recomputation from the written .dta files
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2017 rows | 77,761 | 77,761 | PASS |
+| B | 2017 sum wt | 11,628,681 | 11,628,681 | PASS |
+| B | 2017 weighted 16+ pop | 6,761,080 | 6,761,080 | PASS |
+| B | 2017 male | 37,447 | 37,447 | PASS |
+| B | 2017 female | 40,314 | 40,314 | PASS |
+| B | 2018 rows | 76,670 | 76,670 | PASS |
+| B | 2018 sum wt | 11,889,219 | 11,889,219 | PASS |
+| B | 2018 weighted 16+ pop | 6,966,096 | 6,966,096 | PASS |
+| B | 2018 male | 37,066 | 37,066 | PASS |
+| B | 2018 female | 39,604 | 39,604 | PASS |
+| B | 2019 rows | 81,778 | 81,778 | PASS |
+| B | 2019 sum wt | 12,216,163 | 12,216,163 | PASS |
+| B | 2019 weighted 16+ pop | 7,231,536 | 7,231,536 | PASS |
+| B | 2019 male | 39,337 | 39,337 | PASS |
+| B | 2019 female | 42,441 | 42,441 | PASS |
+| B | 2020 rows | 67,104 | 67,104 | PASS |
+| B | 2020 sum wt | 11,947,769 | 11,947,769 | PASS |
+| B | 2020 weighted 16+ pop | 7,442,354 | 7,442,354 | PASS |
+| B | 2020 male | 32,304 | 32,304 | PASS |
+| B | 2020 female | 34,800 | 34,800 | PASS |
+| B | 2021 rows | 71,947 | 71,947 | PASS |
+| B | 2021 sum wt | 12,786,879 | 12,786,879 | PASS |
+| B | 2021 weighted 16+ pop | 7,718,871 | 7,718,871 | PASS |
+| B | 2021 male | 34,652 | 34,652 | PASS |
+| B | 2021 female | 37,295 | 37,295 | PASS |
+| B | 2022 rows | 70,424 | 70,424 | PASS |
+| B | 2022 sum wt | 13,078,028 | 13,078,028 | PASS |
+| B | 2022 weighted 16+ pop | 7,963,586 | 7,963,586 | PASS |
+| B | 2022 male | 33,830 | 33,830 | PASS |
+| B | 2022 female | 36,594 | 36,594 | PASS |
+| B | 2023 rows | 71,849 | 71,849 | PASS |
+| B | 2023 sum wt | 13,362,858 | 13,362,858 | PASS |
+| B | 2023 weighted 16+ pop | 8,071,962 | 8,071,962 | PASS |
+| B | 2023 male | 34,513 | 34,513 | PASS |
+| B | 2023 female | 37,336 | 37,336 | PASS |
+| B | 2024 rows | 102,562 | 102,562 | PASS |
+| B | 2024 sum wt | 13,658,302 | 13,658,302 | PASS |
+| B | 2024 weighted 16+ pop | 8,303,568 | 8,303,568 | PASS |
+| B | 2024 male | 49,316 | 49,316 | PASS |
+| B | 2024 female | 53,246 | 53,246 | PASS |
+| B | 2025 rows | 100,852 | 100,852 | PASS |
+| B | 2025 sum wt | 13,958,542 | 13,958,542 | PASS |
+| B | 2025 weighted 16+ pop | 8,541,210 | 8,541,210 | PASS |
+| B | 2025 male | 48,154 | 48,154 | PASS |
+| B | 2025 female | 52,698 | 52,698 | PASS |
+| B | 2017 household-interviews | 17,938 | 17,938 | PASS |
+| B | 2017 sum hhsize | 77,761 | 77,761 | PASS |
+| B | 2018 household-interviews | 17,861 | 17,861 | PASS |
+| B | 2018 sum hhsize | 76,670 | 76,670 | PASS |
+| B | 2019 household-interviews | 19,325 | 19,325 | PASS |
+| B | 2019 sum hhsize | 81,778 | 81,778 | PASS |
+| B | 2020 household-interviews | 8,986 | 8,986 | PASS |
+| B | 2020 sum hhsize | 37,319 | 37,319 | PASS |
+| B | 2021 household-interviews | 17,085 | 17,085 | PASS |
+| B | 2021 sum hhsize | 71,947 | 71,947 | PASS |
+| B | 2022 household-interviews | 16,572 | 16,572 | PASS |
+| B | 2022 sum hhsize | 70,424 | 70,424 | PASS |
+| B | 2023 household-interviews | 17,756 | 17,756 | PASS |
+| B | 2023 sum hhsize | 71,849 | 71,849 | PASS |
+| B | 2024 household-interviews | 25,867 | 25,867 | PASS |
+| B | 2024 sum hhsize | 102,562 | 102,562 | PASS |
+| B | 2025 household-interviews | 25,382 | 25,382 | PASS |
+| B | 2025 sum hhsize | 100,852 | 100,852 | PASS |
+
+## C. Weighted working-age population vs published NISR figures
+
+| section | statistic | Python | published | result |
+|---|---|---:|---:|---|
+| C | 2018 weighted 16+ pop | 6,966,096 | 6,966,096 | PASS |
+| C | 2019 weighted 16+ pop | 7,231,536 | 7,231,536 | PASS |
+| C | 2020 weighted 16+ pop | 7,442,354 | 7,472,601 | PASS |
+| C | 2021 weighted 16+ pop | 7,718,871 | 7,718,871 | PASS |
+| C | 2022 weighted 16+ pop | 7,963,586 | 7,963,586 | PASS |
+| C | 2024 weighted 16+ pop | 8,303,568 | 8,303,568 | PASS |
+| C | 2025 weighted 16+ pop | 8,541,210 | 8,541,210 | PASS |
+
+## D. Household file sanity
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| D | 2017 sum hhsize == person rows with hh key | 77,761 | 77,761 | PASS |
+| D | 2017 household-interviews | 17,938 | 17,938 | PASS |
+| D | 2017 household-interviews with exactly one head (0 heads: 0, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2017 household-interviews with head_sex missing | 0 | 0 | PASS |
+| D | 2017 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2018 sum hhsize == person rows with hh key | 76,670 | 76,670 | PASS |
+| D | 2018 household-interviews | 17,861 | 17,861 | PASS |
+| D | 2018 household-interviews with exactly one head (0 heads: 1, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2018 household-interviews with head_sex missing | 1 | 1 | PASS |
+| D | 2018 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2019 sum hhsize == person rows with hh key | 81,778 | 81,778 | PASS |
+| D | 2019 household-interviews | 19,325 | 19,325 | PASS |
+| D | 2019 household-interviews with exactly one head (0 heads: 2, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2019 household-interviews with head_sex missing | 2 | 2 | PASS |
+| D | 2019 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2020 sum hhsize == person rows with hh key | 37,319 | 37,319 | PASS |
+| D | 2020 household-interviews | 8,986 | 8,986 | PASS |
+| D | 2020 household-interviews with exactly one head (0 heads: 2, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2020 household-interviews with head_sex missing | 2 | 2 | PASS |
+| D | 2020 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2021 sum hhsize == person rows with hh key | 71,947 | 71,947 | PASS |
+| D | 2021 household-interviews | 17,085 | 17,085 | PASS |
+| D | 2021 household-interviews with exactly one head (0 heads: 0, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2021 household-interviews with head_sex missing | 0 | 0 | PASS |
+| D | 2021 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2022 sum hhsize == person rows with hh key | 70,424 | 70,424 | PASS |
+| D | 2022 household-interviews | 16,572 | 16,572 | PASS |
+| D | 2022 household-interviews with exactly one head (0 heads: 0, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2022 household-interviews with head_sex missing | 0 | 0 | PASS |
+| D | 2022 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2023 sum hhsize == person rows with hh key | 71,849 | 71,849 | PASS |
+| D | 2023 household-interviews | 17,756 | 17,756 | PASS |
+| D | 2023 household-interviews with exactly one head (0 heads: 0, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2023 household-interviews with head_sex missing | 0 | 0 | PASS |
+| D | 2023 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2024 sum hhsize == person rows with hh key | 102,562 | 102,562 | PASS |
+| D | 2024 household-interviews | 25,867 | 25,867 | PASS |
+| D | 2024 household-interviews with exactly one head (0 heads: 0, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2024 household-interviews with head_sex missing | 0 | 0 | PASS |
+| D | 2024 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+| D | 2025 sum hhsize == person rows with hh key | 100,852 | 100,852 | PASS |
+| D | 2025 household-interviews | 25,382 | 25,382 | PASS |
+| D | 2025 household-interviews with exactly one head (0 heads: 0, 2+: 0; threshold 99.9%) | 100 | 100 | PASS |
+| D | 2025 household-interviews with head_sex missing | 0 | 0 | PASS |
+| D | 2025 wt constant within household-interview (% of household-interviews) | 100 | 100 | PASS |
+
+## E. Cross-year coding compatibility within pooled columns
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| E | pooled columns holding years with incompatible value-label texts for the same code, must be 0 | 0 | 0 | PASS |
+| E | FORCE_ALIGN columns whose value-label wording differs across years (owner's judgement that the question is the same; informational) | 0 | None | n/a |
+| E | variables split into versions because of value labels or unlabelled ranges (informational) | 26 | None | n/a |
+| E | variables with codes observed outside their own year's value labels -- stale labels (informational; listed in merge_alignment.json) | 34 | None | n/a |
+| E | forced splits (FORCE_SPLIT entries) | 7 | None | n/a |
+
+**All checks passed.**
+15:26:12 03_checks INFO 03_checks done
+15:26:12 04_codebook INFO ==== 04_codebook | run 20260906-152404 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+15:26:58 04_codebook INFO wrote /Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Labour-Force-Survey-LFS/CODEBOOK_LFS.xlsx (2 final-dataset sheets, 0 module files in one sheet, 5496 value-label rows)
+15:26:58 04_codebook INFO README.txt updated (/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Labour-Force-Survey-LFS/README.txt)
