@@ -17,15 +17,52 @@ administrative code scheme.
 | `gee_extract.py` | Earth Engine layers: TMF, Dynamic World, RADD | `data/processed/` |
 | `fetch_geodata_rw.py` | Rwanda national geoportal layers (ArcGIS FeatureServers) | `geo-data/` |
 | `inventory.py` | Indexes every file and variable across the holdings | `docs/`, `data/processed/` |
-| `summary.py` | Descriptive tables and figures | `output/tables`, `output/figures` |
-| `maps.py` | Choropleths and spatial figures | `output/maps/` |
+| `summary.py` | Rainfall and WDI tables and figures | `output/tables`, `output/figures` |
+| `maps.py` | Rainfall and reference choropleths | `output/maps/` |
+| **`prelim_public_figures.py`** | **Every preliminary descriptive figure and map** | `output/figures/`, `output/maps/` |
+| `viz_style.py` | Shared palette, fonts and loaders for the figure scripts | — |
 | `variables.py` | EICV7 codebook by workstream, with a verifier | — |
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python extract.py --all && python summary.py --all && python maps.py --all
+python prelim_public_figures.py --all
 ```
+
+## Where the graphics come from
+
+**`prelim_public_figures.py` generates every preliminary figure and map** — 17
+outputs, all from **public data only**: NISR public-use microdata, Dynamic World,
+Hansen GFC, JRC TMF, RADD, WRI SDPT, CHIRPS, WDPA and geodata.rw, GRID3, Google
+Open Buildings, gridfinder, OpenStreetMap. Nothing here uses restricted RDB
+programme data, and nothing here is a causal estimate — these are descriptives
+for memos and grant applications.
+
+```bash
+python prelim_public_figures.py --all                    # rebuild everything
+python prelim_public_figures.py --list                   # what exists, by group
+python prelim_public_figures.py --group forest labour
+python prelim_public_figures.py --only distance_decay
+```
+
+| Group | Outputs |
+|---|---|
+| `forest` | hazard_vs_tmf, distance_decay, firewood_trend, firewood_vs_grid |
+| `landcover` | transition_matrices_yoy, transition_flows, transition_flows_district, landuse_stacked_district, dw_all_classes |
+| `labour` | tourism_employment, economy_composition, district_trajectories, agriculture_workers_forest |
+| `infrastructure` | infrastructure_vs_forest |
+| `spatial` | correlation_heatmap, lisa_clusters |
+| `cell` | cell_quadrants |
+
+`output/` is gitignored: the images are reproducible from the script, so the repo
+holds the code rather than the PNGs. Regenerate with `--all` after any data
+change. `viz_style.py` fixes the shared conventions — park-bordering red
+`#c1121f`, other navy `#1b4965`, one colour per land-cover class, and integer
+year axes — so the whole set reads as one system rather than 17 separate charts.
+
+Inputs come from the Dropbox `geo-data/` and `Publicly-Available-NISR/` folders;
+those paths are set in `viz_style.py` (`GEO`, `NISR`).
 
 ## NISR microdata pipelines (`NISR/`)
 
