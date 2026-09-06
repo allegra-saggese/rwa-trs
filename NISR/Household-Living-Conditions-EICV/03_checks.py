@@ -36,9 +36,11 @@ report += ["## A. Python pooled person file vs old Stata outputs (3 Jul 2026; EI
            "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 bench = json.load(open(LOGS / "benchmark_old_stata.json"))
 old = next(f for f in bench["files"] if f["file"].startswith("EICV_pooled"))["by_round"]
+_al = json.load(open(LOGS / "merge_alignment.json")); DUP = _al["files"].get("EICV_pooled_person.dta", {}).get("duplicates_dropped", {}); DUPW = _al["files"].get("EICV_pooled_person.dta", {}).get("wt_dropped", {})
+row("A", "exact duplicate rows dropped before saving the pooled files (Matteo's rule; all files; informational)", sum(sum(i.get("duplicates_dropped", {}).values()) for i in _al["files"].values()), None)
 for w in ["EICV3", "EICV4_CS", "EICV5_CS", "EICV7_CS"]:
-    o, b = ours[w], old[w]
-    row("A", f"{w} person rows", o["n"], b["n"]); row("A", f"{w} sum wt (persons)", o["sum_wt"], b["sum_wt"], 1e-9); row("A", f"{w} households", o["n_hh"], b["n_hh"])
+    o, b = ours[w], old[w]; dr, dw = DUP.get(w, 0), DUPW.get(w, 0.0)
+    row("A", f"{w} person rows" + (f" (+{dr} exact duplicates dropped)" if dr else ""), o["n"], b["n"] - dr); row("A", f"{w} sum wt (persons)", o["sum_wt"], b["sum_wt"] - dw, 1e-9); row("A", f"{w} households", o["n_hh"], b["n_hh"])
     row("A", f"{w} male", o["male"], b["sex_counts"].get("1")); row("A", f"{w} female", o["female"], b["sex_counts"].get("2"))
 
 report += ["", "## B. Stata 17 recomputation from the written .dta files", ""]

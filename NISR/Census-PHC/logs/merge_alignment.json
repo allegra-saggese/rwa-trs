@@ -1,4 +1,14 @@
 {
+ "duplicates_dropped": {
+  "Census_pooled_person.dta": {
+   "2002": 3
+  }
+ },
+ "wt_dropped": {
+  "Census_pooled_person.dta": {
+   "2002": 29.999965935606944
+  }
+ },
  "threshold": 0.25,
  "force_align": [],
  "force_split": {
@@ -7195,7 +7205,7 @@
  },
  "vl_threshold": 0.6,
  "person": {
-  "rows": 3165816,
+  "rows": 3165813,
   "vars": [
    "survey",
    "year",

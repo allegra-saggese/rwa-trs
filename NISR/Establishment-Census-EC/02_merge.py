@@ -154,6 +154,17 @@ for c in list(var_labels):
     if "_v" in c and c.rsplit("_v", 1)[-1].isdigit():
         base = c.rsplit("_v", 1)[0]; ys = decisions[base]["versions"][c]
         var_labels[c] = f"[{ys[0]}-{ys[-1]} version] " + var_labels[c][:60]
+
+def drop_exact_duplicates(df, name, log):
+    """Matteo's rule (2026-09-05): a saved dataset holds no duplicated rows (Stata `duplicates drop`, all variables).
+    Returns the frame without exact duplicates and the dropped rows per wave (+ their weight)."""
+    dup = df.duplicated(keep="first")
+    if not dup.any(): return df, {}, {}
+    key = "wave" if "wave" in df.columns else "year"
+    rows = {str(k): int(v) for k, v in df.loc[dup, key].value_counts().items()}
+    wts = {str(k): float(v) for k, v in df.loc[dup].groupby(key)["wt"].sum().items()} if "wt" in df.columns else {}
+    log.info("  %s: %d exact duplicate rows dropped (duplicates drop, all variables): %s", name, int(dup.sum()), rows)
+    return df.loc[~dup].reset_index(drop=True), rows, wts
 person = pd.concat(frames, ignore_index=True, sort=False)
 person = resolve_object_columns(person, log, keep_str=("survey", "wave", "s001", "s002", "s003", "q22_other"))
 person = person[KEYS + [c for c in person.columns if c not in KEYS]]
@@ -167,11 +178,12 @@ ck(not any(person[c].dtype == object and person[c].dropna().map(lambda x: isinst
 ck(len(person) == sum(len(d) for d in data.values()), "pooled rows == sum of yearly rows")
 for y in YEARS:
     ck(abs(person.loc[person.year == y, "wt"].sum() - data[y]["wt"].sum()) < 1e-6, f"{y}: sum wt preserved in pool")
+person, DUP_ROWS, DUP_WT = drop_exact_duplicates(person, "EC_pooled_establishment.dta", log)
 write_dta(person, P["final"] / "EC_pooled_establishment.dta", var_labels, value_labels,
           "Rwanda Establishment Census 2011-2023 pooled establishment file", log)
 
 save_json({"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "decisions": decisions, "label_variants": label_variants,
            "value_label_conflicts": vl_text_conflicts, "stale_labels": stale_labels, "vl_threshold": VL_THRESHOLD,
-           "establishment": {"rows": len(person), "vars": list(person.columns)}},
+           "establishment": {"rows": len(person), "vars": list(person.columns)}, "duplicates_dropped": {"EC_pooled_establishment.dta": DUP_ROWS}, "wt_dropped": {"EC_pooled_establishment.dta": DUP_WT}},
           LOGS / "merge_alignment.json")
 ck.done(); log.info("02_merge done")

@@ -19,14 +19,18 @@ def row(section, name, ours, ref, tol=0.0):
 units = [u for u in ("household", "woman", "child", "village") if (P["final"] / f"CFSVA_pooled_{u}.dta").exists()]
 report += ["## A. Pooled files vs per-wave cleaned files", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 hh = None; pooled = {}
+_al0 = json.load(open(LOGS / "merge_alignment.json"))
+row("A", "exact duplicate rows dropped before saving the pooled files (Matteo's rule; all files; informational)", sum(sum(i.get("duplicates_dropped", {}).values()) for i in _al0["files"].values()), None)
 for u in units:
+    DUP = _al0["files"].get(f"CFSVA_pooled_{u}.dta", {}).get("duplicates_dropped", {}); DUPW = _al0["files"].get(f"CFSVA_pooled_{u}.dta", {}).get("wt_dropped", {})
     cols = [c for c in ["wave", "wt", "dist", "hhid", "cluster", "urban"] if c in read_meta(P["final"] / f"CFSVA_pooled_{u}.dta").column_names]
     d, _, _ = read_dta(P["final"] / f"CFSVA_pooled_{u}.dta", usecols=cols); pooled[u] = d
     if u == "household": hh = d
     for w, g in d.groupby("wave", sort=False):
         p, _, _ = read_dta(P["inter"] / f"CFSVA_{w}_{u}_clean.dta", usecols=[c for c in cols if c != "wave"])
-        row("A", f"{w} {u} rows", len(g), len(p))
-        if "wt" in g and "wt" in p and g["wt"].notna().any(): row("A", f"{w} {u} sum wt", g["wt"].sum(), p["wt"].sum(), 1e-9)
+        dr, dw = DUP.get(w, 0), DUPW.get(w, 0.0)
+        row("A", f"{w} {u} rows" + (f" (+{dr} exact duplicates dropped)" if dr else ""), len(g), len(p) - dr)
+        if "wt" in g and "wt" in p and g["wt"].notna().any(): row("A", f"{w} {u} sum wt", g["wt"].sum(), p["wt"].sum() - dw, 1e-9)
 report += ["", "## B. Stata 17 recomputation (household file)", ""]
 stata = "/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp"
 if not os.path.exists(stata): stata = shutil.which("stata-mp") or shutil.which("stata")

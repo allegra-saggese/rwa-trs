@@ -21,9 +21,11 @@ person, _, _ = read_dta(P["final"] / "AHS_pooled_person.dta", usecols=["wave", "
 hh, _, _ = read_dta(P["final"] / "AHS_pooled_household.dta", usecols=["wave", "wt", "hhsize", "hhid", "head_sex"])
 ours = {w: {"n": len(g), "sum_wt": g["wt"].sum(), "n_hh": g["hhid"].nunique(), "male": int((g["sex"] == 1).sum()), "female": int((g["sex"] == 2).sum()), "n_dist": g["dist"].nunique()} for w, g in person.groupby("wave", sort=False)}
 report += ["## A. Pooled person file vs per-wave cleaned files", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
+_al0 = json.load(open(LOGS / "merge_alignment.json")); DUP = _al0["files"].get("AHS_pooled_person.dta", {}).get("duplicates_dropped", {}); DUPW = _al0["files"].get("AHS_pooled_person.dta", {}).get("wt_dropped", {})
+row("A", "exact duplicate rows dropped before saving the pooled files (Matteo's rule; all files; informational)", sum(sum(i.get("duplicates_dropped", {}).values()) for i in _al0["files"].values()), None)
 for w in ours:
-    p, _, _ = read_dta(P["inter"] / f"AHS_{w}_person_clean.dta", usecols=["wt", "hhid"])
-    row("A", f"{w} person rows", ours[w]["n"], len(p)); row("A", f"{w} sum wt", ours[w]["sum_wt"], p["wt"].sum(), 1e-9); row("A", f"{w} households", ours[w]["n_hh"], p["hhid"].nunique()); row("A", f"{w} districts", ours[w]["n_dist"], 30)
+    p, _, _ = read_dta(P["inter"] / f"AHS_{w}_person_clean.dta", usecols=["wt", "hhid"]); dr, dw = DUP.get(w, 0), DUPW.get(w, 0.0)
+    row("A", f"{w} person rows" + (f" (+{dr} exact duplicates dropped)" if dr else ""), ours[w]["n"], len(p) - dr); row("A", f"{w} sum wt", ours[w]["sum_wt"], p["wt"].sum() - dw, 1e-9); row("A", f"{w} households", ours[w]["n_hh"], p["hhid"].nunique()); row("A", f"{w} districts", ours[w]["n_dist"], 30)
 report += ["", "## B. Stata 17 recomputation from the written .dta files", ""]
 stata = "/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp"
 if not os.path.exists(stata): stata = shutil.which("stata-mp") or shutil.which("stata")
@@ -88,7 +90,8 @@ for f in mods:
     cs = d[d["sample"] != "LSF"]
     wt_gap += int(cs["wt"].isna().sum())
     for w, g in d[d["sample"] == "LSF"].groupby("wave"): lsf_rows.setdefault(w, set()).update(g["hhid"].dropna().unique())
-    row("D", f"{f.replace('AHS_pooled_', '').replace('.dta', '')}: rows == sum of wave rows", len(d), sum(metas[w]["modules"][s]["rows"] for w, s in ((w, s) for w, mp in align["module_map"].items() for s, c in mp.items() if f == f"AHS_pooled_{c}.dta") if w in metas and s in metas[w]["modules"]))
+    ndup = sum(align["files"][f].get("duplicates_dropped", {}).values())
+    row("D", f"{f.replace('AHS_pooled_', '').replace('.dta', '')}: rows == sum of wave rows" + (f" - {ndup:,} exact duplicates dropped" if ndup else ""), len(d), sum(metas[w]["modules"][s]["rows"] for w, s in ((w, s) for w, mp in align["module_map"].items() for s, c in mp.items() if f == f"AHS_pooled_{c}.dta") if w in metas and s in metas[w]["modules"]) - ndup)
 row("D", "household-sample rows (sample = CS) with a missing weight, all appended modules (must be 0)", wt_gap, 0)
 # 2020 report annex: the large-scale-farmer list (2,345 farms, HHUID 110667-113011, weight 1, owner = "big farmer") is enumerated exhaustively -- a census supplement
 row("D", "2020 large-scale farms outside the household sample (sample = LSF) -- documented list of 2,345", len(lsf_rows.get("2020", ())), 2_345)
@@ -96,7 +99,7 @@ row("D", "2024 large-scale farms outside the household sample (sample = LSF; not
 row("D", "2017 rows outside the household sample (must be 0: no supplement in 2017)", len(lsf_rows.get("2017", ())), 0)
 for w, m in metas.items():
     for s, i in m["modules"].items():
-        if i.get("exact_duplicate_rows"): row("D", f"{w} {s}: exact-duplicate rows as shipped (informational; kept)", i["exact_duplicate_rows"], None)
+        if i.get("exact_duplicate_rows"): row("D", f"{w} {s}: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file)", i["exact_duplicate_rows"], None)
         if i.get("wt_missing"): row("D", f"{w} {s}: rows with a missing weight after key attachment (LSF supplement rows carry weight 1; informational)", i["wt_missing"], None)
 
 # ---------------------------------------------------------------- E. cross-wave coding compatibility (re-derived from the per-wave meta files, independent of 02_merge)

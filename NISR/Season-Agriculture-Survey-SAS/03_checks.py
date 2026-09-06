@@ -28,9 +28,11 @@ pc, _, _ = read_dta(P["final"] / "SAS_pooled_plotcrop.dta", usecols=["wave", "ye
 info = align["files"]["SAS_pooled_plotcrop.dta"]; wm = info.get("wave_modules", {})
 ours = {w: {"n": len(g), "n_wt": int(g["wt"].notna().sum()), "sum_wt": g["wt"].sum(), "prod": g["production_kg"].sum()} for w, g in pc.groupby("wave", sort=False)}
 report += ["## A. Pooled crop-production file vs the per-wave cleaned files", ""] + HDR
+DUP = info.get("duplicates_dropped", {})
+row("A", "exact duplicate rows dropped before saving the pooled files (Matteo's rule; all files; informational)", sum(sum(i.get("duplicates_dropped", {}).values()) for i in align["files"].values()), None)
 for w, o in ours.items():
-    y, mk = wm.get(w, (None, None)); ref = metas.get(y, {}).get(mk, {}).get("rows") if y else None
-    row("A", f"{w} rows == cleaned file rows", o["n"], ref)
+    y, mk = wm.get(w, (None, None)); ref = metas.get(y, {}).get(mk, {}).get("rows") if y else None; dr = DUP.get(w, 0)
+    row("A", f"{w} rows == cleaned file rows" + (f" - {dr} exact duplicates dropped" if dr else ""), o["n"], None if ref is None else ref - dr)
     g = pc[pc.wave == w]
     row("A", f"{w} rows with a crop code (share x 1000; must be >= 990)", 1000 * g["crop"].notna().mean(), 1000, 0.01)
     row("A", f"{w} rows with a weight (informational; 2017-2018 LSF and part of 2020-2021 ship none)", o["n_wt"], None)

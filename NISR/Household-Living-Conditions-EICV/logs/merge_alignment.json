@@ -17158,6 +17158,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "person"
@@ -25431,6 +25433,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV4_VUP": [
      "person"
@@ -41286,6 +41290,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "household"
@@ -47610,6 +47616,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV4_VUP": [
      "household"
@@ -48881,6 +48889,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s8_farm_expense"
@@ -49609,6 +49619,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV4_CS": [
      "s7f_income_agriculture"
@@ -49660,7 +49672,7 @@
    "stale_labels": {}
   },
   "EICV_pooled_agri_processing.dta": {
-   "rows": 172443,
+   "rows": 172408,
    "vars": [
     "survey",
     "year",
@@ -51590,6 +51602,20 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV1": 9,
+    "EICV3": 9,
+    "EICV4_CS": 9,
+    "EICV2": 6,
+    "EICV4_VUP": 2
+   },
+   "wt_dropped": {
+    "EICV1": 2794.9896280000003,
+    "EICV2": 1515.8790279,
+    "EICV3": 1534.605769,
+    "EICV4_CS": 1482.8099700999999,
+    "EICV4_VUP": 143.13962108
+   },
    "stems": {
     "EICV1": [
      "s8_farm_processing"
@@ -53398,6 +53424,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s12_credit"
@@ -53482,7 +53510,7 @@
    }
   },
   "EICV_pooled_crop_large.dta": {
-   "rows": 159870,
+   "rows": 159868,
    "vars": [
     "survey",
     "year",
@@ -54889,6 +54917,14 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV2": 1,
+    "EICV3": 1
+   },
+   "wt_dropped": {
+    "EICV2": 360.2370199,
+    "EICV3": 151.7962702
+   },
    "stems": {
     "EICV2": [
      "s8d_ag_production1"
@@ -54948,7 +54984,7 @@
    }
   },
   "EICV_pooled_crop_small.dta": {
-   "rows": 469484,
+   "rows": 469456,
    "vars": [
     "survey",
     "year",
@@ -56521,6 +56557,18 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV2": 15,
+    "EICV3": 8,
+    "EICV4_CS": 4,
+    "EICV4_VUP": 1
+   },
+   "wt_dropped": {
+    "EICV2": 4519.9969677,
+    "EICV3": 1221.88610112,
+    "EICV4_CS": 649.9386837,
+    "EICV4_VUP": 50.49365079
+   },
    "stems": {
     "EICV2": [
      "s8e_ag_production2"
@@ -56606,7 +56654,7 @@
    }
   },
   "EICV_pooled_durables.dta": {
-   "rows": 2104019,
+   "rows": 2103971,
    "vars": [
     "survey",
     "year",
@@ -58617,6 +58665,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV5_VUP": 48
+   },
+   "wt_dropped": {
+    "EICV5_VUP": 1200.4486198425293
+   },
    "stems": {
     "EICV1": [
      "s12_durables"
@@ -60196,6 +60250,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s10_enter_1"
@@ -60257,7 +60313,7 @@
    }
   },
   "EICV_pooled_equipment.dta": {
-   "rows": 385969,
+   "rows": 385968,
    "vars": [
     "survey",
     "year",
@@ -61069,6 +61125,12 @@
      "reference_label": "Survey year (mid-fieldwork)",
      "split_reasons": []
     }
+   },
+   "duplicates_dropped": {
+    "EICV1": 1
+   },
+   "wt_dropped": {
+    "EICV1": 252.2854683
    },
    "stems": {
     "EICV1": [
@@ -62235,6 +62297,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV2": [
      "s9a1_nfood_annual"
@@ -64047,6 +64111,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV2": [
      "s9a3_nfood_freq"
@@ -65295,6 +65361,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV2": [
      "s9a2_nfood_month"
@@ -68716,6 +68784,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s9_expen_food"
@@ -68778,7 +68848,7 @@
    "stale_labels": {}
   },
   "EICV_pooled_jobs.dta": {
-   "rows": 242787,
+   "rows": 242580,
    "vars": [
     "survey",
     "year",
@@ -72137,6 +72207,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV5_VUP": 207
+   },
+   "wt_dropped": {
+    "EICV5_VUP": 13962.72756227851
+   },
    "stems": {
     "EICV2": [
      "s6d_employ_roster"
@@ -73009,6 +73085,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV4_CS": [
      "s7b2_land_agriculture"
@@ -75173,6 +75251,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s8_livestock"
@@ -76573,6 +76653,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s8_livestock_expense"
@@ -77811,6 +77893,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s8_livestock_products"
@@ -77861,7 +77945,7 @@
    "stale_labels": {}
   },
   "EICV_pooled_other_expenditure.dta": {
-   "rows": 817971,
+   "rows": 814696,
    "vars": [
     "survey",
     "year",
@@ -78652,6 +78736,14 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV7_CS": 2859,
+    "EICV7_VUP": 416
+   },
+   "wt_dropped": {
+    "EICV7_CS": 558542.3196159812,
+    "EICV7_VUP": 80793.9080543518
+   },
    "stems": {
     "EICV3": [
      "s10e_otherexp"
@@ -78711,7 +78803,7 @@
    "stale_labels": {}
   },
   "EICV_pooled_other_income.dta": {
-   "rows": 1612233,
+   "rows": 1605652,
    "vars": [
     "survey",
     "year",
@@ -79758,6 +79850,14 @@
      "reference_label": "Survey year (mid-fieldwork)",
      "split_reasons": []
     }
+   },
+   "duplicates_dropped": {
+    "EICV7_CS": 5749,
+    "EICV7_VUP": 832
+   },
+   "wt_dropped": {
+    "EICV7_CS": 1122946.6555157348,
+    "EICV7_VUP": 161587.8161087036
    },
    "stems": {
     "EICV2": [
@@ -81466,6 +81566,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV2": [
      "s9d_ex_owncons"
@@ -83598,6 +83700,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV1": [
      "s8_farm_plot_details"
@@ -83659,7 +83763,7 @@
    }
   },
   "EICV_pooled_savings.dta": {
-   "rows": 153527,
+   "rows": 153408,
    "vars": [
     "survey",
     "year",
@@ -85372,6 +85476,16 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV5_VUP": 76,
+    "EICV1": 36,
+    "EICV2": 7
+   },
+   "wt_dropped": {
+    "EICV1": 9108.89048745,
+    "EICV2": 2269.2170134,
+    "EICV5_VUP": 5146.094238758087
+   },
    "stems": {
     "EICV1": [
      "s12_saving"
@@ -86940,6 +87054,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "stems": {
     "EICV2": [
      "s5e_services"
@@ -87045,7 +87161,7 @@
    }
   },
   "EICV_pooled_tontine.dta": {
-   "rows": 46829,
+   "rows": 25113,
    "vars": [
     "survey",
     "year",
@@ -87505,6 +87621,14 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV5_CS": 21651,
+    "EICV5_VUP": 65
+   },
+   "wt_dropped": {
+    "EICV5_CS": 3947346.3389549255,
+    "EICV5_VUP": 3290.2824807167053
+   },
    "stems": {
     "EICV5_CS": [
      "s10c2_tontine"
@@ -87517,7 +87641,7 @@
    "stale_labels": {}
   },
   "EICV_pooled_transfers_in.dta": {
-   "rows": 356505,
+   "rows": 343860,
    "vars": [
     "survey",
     "year",
@@ -89373,6 +89497,26 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "EICV5_CS": 4134,
+    "EICV4_CS": 3609,
+    "EICV7_CS": 2670,
+    "EICV2": 1265,
+    "EICV4_VUP": 657,
+    "EICV1": 222,
+    "EICV7_VUP": 87,
+    "EICV5_VUP": 1
+   },
+   "wt_dropped": {
+    "EICV1": 72554.94782802,
+    "EICV2": 362025.45736897,
+    "EICV4_CS": 637745.77236865,
+    "EICV4_VUP": 43422.033317405,
+    "EICV5_CS": 745727.5577201843,
+    "EICV5_VUP": 77.41338348388672,
+    "EICV7_CS": 699071.7778707945,
+    "EICV7_VUP": 14308.808504104614
+   },
    "stems": {
     "EICV1": [
      "s11_tran_in"
@@ -89475,7 +89619,7 @@
    }
   },
   "EICV_pooled_transfers_out.dta": {
-   "rows": 406722,
+   "rows": 391466,
    "vars": [
     "survey",
     "year",
@@ -91302,6 +91446,26 @@
      "reference_label": "Survey year (mid-fieldwork)",
      "split_reasons": []
     }
+   },
+   "duplicates_dropped": {
+    "EICV5_CS": 5662,
+    "EICV4_CS": 4617,
+    "EICV2": 2409,
+    "EICV7_CS": 1292,
+    "EICV4_VUP": 775,
+    "EICV1": 348,
+    "EICV7_VUP": 150,
+    "EICV5_VUP": 3
+   },
+   "wt_dropped": {
+    "EICV1": 108110.51738494,
+    "EICV2": 692907.74258391,
+    "EICV4_CS": 823878.45380353,
+    "EICV4_VUP": 48530.498562258,
+    "EICV5_CS": 1005879.1235122681,
+    "EICV5_VUP": 99.61348247528076,
+    "EICV7_CS": 240506.91403013503,
+    "EICV7_VUP": 25415.647315979004
    },
    "stems": {
     "EICV1": [

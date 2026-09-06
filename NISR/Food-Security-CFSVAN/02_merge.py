@@ -97,6 +97,17 @@ def version_groups(v, waves, labs, vls, rng):
     return [ws for _, ws in groups], (reasons if len(groups) > 1 else [])
 CS_ORDER = {w: i for i, w in enumerate(CS)}
 
+def drop_exact_duplicates(df, name, log):
+    """Matteo's rule (2026-09-05): a saved dataset holds no duplicated rows (Stata `duplicates drop`, all variables).
+    Returns the frame without exact duplicates and the dropped rows per wave (+ their weight)."""
+    dup = df.duplicated(keep="first")
+    if not dup.any(): return df, {}, {}
+    key = "wave" if "wave" in df.columns else "year"
+    rows = {str(k): int(v) for k, v in df.loc[dup, key].value_counts().items()}
+    wts = {str(k): float(v) for k, v in df.loc[dup].groupby(key)["wt"].sum().items()} if "wt" in df.columns else {}
+    log.info("  %s: %d exact duplicate rows dropped (duplicates drop, all variables): %s", name, int(dup.sum()), rows)
+    return df.loc[~dup].reset_index(drop=True), rows, wts
+
 def pool(files, out_name, label, unit):
     """files: {wave: path}. Returns (frame, decisions) and writes the pooled file."""
     data, labels, vlabs = {}, {}, {}
@@ -149,8 +160,9 @@ def pool(files, out_name, label, unit):
     if "wt" in out.columns:
         for w in waves:
             if "wt" in data[w].columns: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
+    out, dup_rows, dup_wt = drop_exact_duplicates(out, out_name, log)
     write_dta(out, P["final"] / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "decisions": decisions,
+    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 
 summary = {"threshold": SIM_THRESHOLD, "vl_threshold": VL_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "files": {}}

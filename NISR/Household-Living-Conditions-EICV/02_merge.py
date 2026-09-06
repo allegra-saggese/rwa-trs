@@ -159,6 +159,17 @@ CS_ORDER = {w: i for i, w in enumerate(CS + VUP)}
 
 APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
 
+def drop_exact_duplicates(df, name, log):
+    """Matteo's rule (2026-09-05): a saved dataset holds no duplicated rows (Stata `duplicates drop`, all variables).
+    Returns the frame without exact duplicates and the dropped rows per wave (+ their weight)."""
+    dup = df.duplicated(keep="first")
+    if not dup.any(): return df, {}, {}
+    key = "wave" if "wave" in df.columns else "year"
+    rows = {str(k): int(v) for k, v in df.loc[dup, key].value_counts().items()}
+    wts = {str(k): float(v) for k, v in df.loc[dup].groupby(key)["wt"].sum().items()} if "wt" in df.columns else {}
+    log.info("  %s: %d exact duplicate rows dropped (duplicates drop, all variables): %s", name, int(dup.sum()), rows)
+    return df.loc[~dup].reset_index(drop=True), rows, wts
+
 def pool(files, out_name, label, unit, out_dir=None):
     """files: {wave: path}. Writes the pooled file to out_dir (default 3_Final) and returns its summary."""
     out_dir = out_dir or P["final"]
@@ -212,8 +223,9 @@ def pool(files, out_name, label, unit, out_dir=None):
     ck(len(out) == sum(len(d) for d in data.values()), f"{out_name}: pooled rows == sum of wave rows")
     if "wt" in out.columns:
         for w in waves: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
+    out, dup_rows, dup_wt = drop_exact_duplicates(out, out_name, log)
     write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
+    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
             "stems": {w: [f.name.replace(f"EICV_{w}_", "").replace("_clean.dta", "")] for w, f in files.items()},
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 

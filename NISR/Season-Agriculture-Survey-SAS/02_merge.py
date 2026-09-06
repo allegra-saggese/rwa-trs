@@ -10,6 +10,8 @@
                                  the wave's own list (crop_list, crop_name): two lists, 2017-2019 and 2020+.
                                  The official CULTIVATED-AREA universe is the screening crop record, not
                                  this file: see 2_Intermediate/appended/SAS_pooled_screening_crops.dta.
+  SAS_pooled_screening_crops.dta  one row per screened (planted) plot x crop record 2019-2025: the CULTIVATED-AREA
+                                 universe (crop_area x wt reproduces the published areas); crop = wave's own list
   SAS_pooled_plotcrop_2013_2016.dta  plot x crop records of the pre-redesign waves (screening / area /
                                  sowing-production / plot-roster files, record_type + source_module tag
                                  the shipped record); native crop lists; keys are NOT unique across record types
@@ -162,6 +164,17 @@ def conv(s, unit):
 APPENDED = P["inter"] / "appended"; APPENDED.mkdir(exist_ok=True)
 def labels_of(vl, c): return (vl.get(c) or "").strip()[:40]
 
+def drop_exact_duplicates(df, name, log):
+    """Matteo's rule (2026-09-05): a saved dataset holds no duplicated rows (Stata `duplicates drop`, all variables).
+    Returns the frame without exact duplicates and the dropped rows per wave (+ their weight)."""
+    dup = df.duplicated(keep="first")
+    if not dup.any(): return df, {}, {}
+    key = "wave" if "wave" in df.columns else "year"
+    rows = {str(k): int(v) for k, v in df.loc[dup, key].value_counts().items()}
+    wts = {str(k): float(v) for k, v in df.loc[dup].groupby(key)["wt"].sum().items()} if "wt" in df.columns else {}
+    log.info("  %s: %d exact duplicate rows dropped (duplicates drop, all variables): %s", name, int(dup.sum()), rows)
+    return df.loc[~dup].reset_index(drop=True), rows, wts
+
 def version_pool(frames, labels, vlabs, out_name, label, unit, out_dir=None, sources=None, crop_native=False):
     """generic pooling with the version rule (as in every NISR dataset); frames keyed by wave.
     Writes to out_dir (default 3_Final; modules go to 2_Intermediate/appended). sources: {wave: (year, 'S/stem')}
@@ -205,8 +218,9 @@ def version_pool(frames, labels, vlabs, out_name, label, unit, out_dir=None, sou
     keys = [k for k in CORE_KEYS if k in pooled.columns]; pooled = pooled[keys + [c for c in pooled.columns if c not in keys]]
     pooled = downcast(pooled, keep_double=KEEP_DOUBLE)
     ck(len(pooled) == sum(len(d) for d in frames.values()), f"{out_name}: pooled rows == sum of wave rows")
+    pooled, dup_rows, dup_wt = drop_exact_duplicates(pooled, out_name, log)
     write_dta(pooled, out_dir / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(pooled), "vars": list(pooled.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions,
+    return {"rows": len(pooled), "vars": list(pooled.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in conflicts.items()}, "stale_labels": stale_labels,
             "wave_modules": {w: list(s) for w, s in (sources or {}).items()}}
 
@@ -307,7 +321,9 @@ for canon, (pat, years) in MODULES.items():
             frames[wave], labels[wave], vlabs[wave] = df, vl, vv; sources[wave] = modkey(f)
     if len({w[:4] for w in frames}) >= 2:
         ys = sorted({w[:4] for w in frames})
-        summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS {ys[0]}-{ys[-1]} pooled module '{canon}' ({len(ys)} years; crop = wave's own list)", canon, out_dir=APPENDED, sources=sources, crop_native="crop" in {c for d in frames.values() for c in d.columns})
-for f in sorted(APPENDED.glob("*.dta")):                       # appended/ is entirely generated here: drop copies of modules no longer produced
-    if f.name not in summary["files"]: f.unlink(); log.info("removed superseded %s", f.name)
+        # the screening crop record is the CULTIVATED-AREA universe (reproduces the published areas): a FINAL file (Matteo, 2026-09-05); other modules stay in appended/
+        dest = P["final"] if canon == "screening_crops" else APPENDED
+        summary["files"][f"SAS_pooled_{canon}.dta"] = version_pool(frames, labels, vlabs, f"SAS_pooled_{canon}.dta", f"SAS {ys[0]}-{ys[-1]} pooled module '{canon}' ({len(ys)} years; crop = wave's own list)" if canon != "screening_crops" else f"SAS {ys[0]}-{ys[-1]} screening crop records (planted / cultivated area universe; crop = wave's own list)", canon, out_dir=dest, sources=sources, crop_native="crop" in {c for d in frames.values() for c in d.columns})
+for f in sorted(APPENDED.glob("*.dta")):                       # appended/ is entirely generated here: drop copies of modules no longer produced (or moved to 3_Final)
+    if f.name not in summary["files"] or summary["files"][f.name]["dir"] != "2_Intermediate/appended": f.unlink(); log.info("removed superseded %s", f.name)
 save_json(summary, LOGS / "merge_alignment.json"); ck.done(); log.info("02_merge done")

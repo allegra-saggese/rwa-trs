@@ -121,13 +121,15 @@ HARMONIZE (cross-dataset layer)
 --------------------------------------------------------------------------------
 NISR/Harmonize/ is an eighth code base with the same rules (own helpers, master.py, checks,
 codebook). It reads every dataset's 3_Final/ and 2_Intermediate/appended/ files and writes a
-harmonised copy of each to Publicly-Available-NISR/Harmonized/ (H_<dataset>_<unit or module>.dta):
+harmonised copy of each to the dataset's own 4_Harmonized/ folder (H_<dataset>_<unit or module>.dta;
+Matteo, 2026-09-05):
 identical key-block labels and geography value labels, cross-dataset string keys h_hhkey /
 h_pkey, and on the person / household / woman files the common concepts as new h_* variables
 (sex, marital, relationship, education, literacy, labour-force status with its definition code,
 status in employment, ISIC section, ISCO major group, head's sex and age) with common codes.
-Native variables are never changed, no row is lost. Harmonized/harmonization_map.csv records
-every mapping; Harmonized/CODEBOOK_Harmonized.xlsx the code lists and counts. The July-2026
+Native variables are never changed, no row is lost. Publicly-Available-NISR/Harmonized/ holds only the
+three cross-dataset documents: README.txt, harmonization_map.csv (every mapping) and
+CODEBOOK_Harmonized.xlsx (code lists and counts). The July-2026
 three-file harmonisation stays in Archive/Harmonized/.
 
 --------------------------------------------------------------------------------

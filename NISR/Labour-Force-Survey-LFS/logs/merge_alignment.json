@@ -1,4 +1,14 @@
 {
+ "duplicates_dropped": {
+  "LFS_pooled_person.dta": {
+   "2020": 3068
+  }
+ },
+ "wt_dropped": {
+  "LFS_pooled_person.dta": {
+   "2020": 551305.7278085947
+  }
+ },
  "threshold": 0.25,
  "force_align": [
   "b01",
@@ -12326,7 +12336,7 @@
  },
  "vl_threshold": 0.6,
  "person": {
-  "rows": 724015,
+  "rows": 720947,
   "vars": [
    "survey",
    "year",

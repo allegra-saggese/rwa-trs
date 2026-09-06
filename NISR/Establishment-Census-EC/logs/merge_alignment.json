@@ -4955,5 +4955,11 @@
    "q21_v2",
    "start_y"
   ]
+ },
+ "duplicates_dropped": {
+  "EC_pooled_establishment.dta": {}
+ },
+ "wt_dropped": {
+  "EC_pooled_establishment.dta": {}
  }
 }

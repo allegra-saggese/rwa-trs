@@ -39,9 +39,11 @@ report += ["## A. Python pooled file vs old Stata outputs (3 Jul 2026; 2002 was 
            "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 bench = json.load(open(LOGS / "benchmark_old_stata.json"))
 old = next(f for f in bench["files"] if f["file"].startswith("Census_panel"))["by_year"]
+_al = json.load(open(LOGS / "merge_alignment.json")); DUP = _al.get("duplicates_dropped", {}).get("Census_pooled_person.dta", {}); DUPW = _al.get("wt_dropped", {}).get("Census_pooled_person.dta", {})
+row("A", "exact duplicate rows dropped before saving the pooled file (Matteo's rule; informational)", sum(DUP.values()), None)
 for y in (2012, 2022):
-    o, b = ours[y], old[str(y)]
-    row("A", f"{y} rows", o["n"], b["n"]); row("A", f"{y} sum wt", o["sum_wt"], b["sum_wt"], 1e-9)
+    o, b = ours[y], old[str(y)]; dr, dw = DUP.get(str(y), 0), DUPW.get(str(y), 0.0)
+    row("A", f"{y} rows" + (f" (+{dr} exact duplicates dropped)" if dr else ""), o["n"], b["n"] - dr); row("A", f"{y} sum wt", o["sum_wt"], b["sum_wt"] - dw, 1e-9)
     row("A", f"{y} sectors", o["n_sector"], b["n_sector"]); row("A", f"{y} households", o["n_hh"], b["n_hh"])
     row("A", f"{y} male", o["male"], b["sex_counts"]["1"]); row("A", f"{y} female", o["female"], b["sex_counts"]["2"])
 

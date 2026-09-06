@@ -11537,6 +11537,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {
     "crop": {
      "201": [
@@ -12356,7 +12358,7 @@
    }
   },
   "SAS_pooled_plotcrop_2013_2016.dta": {
-   "rows": 1122323,
+   "rows": 1121780,
    "vars": [
     "survey",
     "year",
@@ -15828,6 +15830,26 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2013_A": 398,
+    "2013_B": 68,
+    "2016_A": 21,
+    "2014_A": 19,
+    "2015_A": 19,
+    "2015_B": 14,
+    "2014_C": 3,
+    "2016_B": 1
+   },
+   "wt_dropped": {
+    "2013_A": 170360.50666666662,
+    "2013_B": 23931.50333333333,
+    "2014_A": 431.7900085449219,
+    "2014_C": 349.88999938964844,
+    "2015_A": 2225.4400329589844,
+    "2015_B": 2259.7000000000003,
+    "2016_A": 7792.380133666992,
+    "2016_B": 0.0
+   },
    "value_label_conflicts": {
     "crop": {
      "98": [
@@ -16781,6 +16803,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {
     "i16": {
      "2": [
@@ -16822,7 +16846,7 @@
    }
   },
   "SAS_pooled_farmq_part2a_2013_2016.dta": {
-   "rows": 68996,
+   "rows": 68623,
    "vars": [
     "survey",
     "year",
@@ -17284,6 +17308,15 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2014_B": 100,
+    "2015_A": 96,
+    "2016_C": 66,
+    "2015_B": 55,
+    "2016_B": 33,
+    "2014_A": 23
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {},
    "wave_modules": {
@@ -17314,7 +17347,7 @@
    }
   },
   "SAS_pooled_farmq_part2b_2013_2016.dta": {
-   "rows": 30995,
+   "rows": 30944,
    "vars": [
     "survey",
     "year",
@@ -17638,6 +17671,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2014_A": 28,
+    "2016_C": 12,
+    "2016_B": 11
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "pp1a": {
@@ -17664,7 +17703,7 @@
    }
   },
   "SAS_pooled_farmq_part2b_fertilizer_2013_2016.dta": {
-   "rows": 28878,
+   "rows": 27825,
    "vars": [
     "survey",
     "year",
@@ -17966,6 +18005,16 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2015_B": 584,
+    "2015_A": 464,
+    "2014_C": 5
+   },
+   "wt_dropped": {
+    "2014_C": 694.3099975585938,
+    "2015_A": 0.0,
+    "2015_B": 0.0
+   },
    "value_label_conflicts": {},
    "stale_labels": {
     "pp1a": {
@@ -17990,7 +18039,7 @@
    }
   },
   "SAS_pooled_farmq_part2b_pesticide_2013_2016.dta": {
-   "rows": 28883,
+   "rows": 27585,
    "vars": [
     "survey",
     "year",
@@ -18222,6 +18271,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2015_A": 890,
+    "2015_B": 364,
+    "2014_C": 44
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "pp1a": {
@@ -18246,7 +18301,7 @@
    }
   },
   "SAS_pooled_farmq_part4_2013_2016.dta": {
-   "rows": 57511,
+   "rows": 57506,
    "vars": [
     "survey",
     "year",
@@ -18846,6 +18901,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2015_A": 2,
+    "2015_B": 2,
+    "2014_A": 1
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {
     "crop": {
      "9": [
@@ -18915,7 +18976,7 @@
    }
   },
   "SAS_pooled_farmq_part6a_2013_2016.dta": {
-   "rows": 544313,
+   "rows": 544186,
    "vars": [
     "survey",
     "year",
@@ -19278,6 +19339,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2016_B": 121,
+    "2016_C": 5,
+    "2015_B": 1
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {},
    "wave_modules": {
@@ -20088,6 +20155,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "inorganic_fertilizer_codg": {
@@ -20137,7 +20206,7 @@
    }
   },
   "SAS_pooled_lsf_farmq_part2a_2013_2016.dta": {
-   "rows": 2036,
+   "rows": 2023,
    "vars": [
     "survey",
     "year",
@@ -20405,6 +20474,11 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2016_B": 12,
+    "2014_B": 1
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {},
    "wave_modules": {
@@ -20419,7 +20493,7 @@
    }
   },
   "SAS_pooled_lsf_farmq_part2b_2013_2016.dta": {
-   "rows": 2081,
+   "rows": 2052,
    "vars": [
     "survey",
     "year",
@@ -20700,6 +20774,11 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2014_B": 17,
+    "2016_B": 12
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {},
    "wave_modules": {
@@ -20714,7 +20793,7 @@
    }
   },
   "SAS_pooled_fertilizers_pesticides.dta": {
-   "rows": 305316,
+   "rows": 305305,
    "vars": [
     "survey",
     "year",
@@ -27702,6 +27781,16 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2019_B": 7,
+    "2019_A": 3,
+    "2019_C": 1
+   },
+   "wt_dropped": {
+    "2019_A": 3.0,
+    "2019_B": 2755.3572692871094,
+    "2019_C": 686.9210237236646
+   },
    "value_label_conflicts": {
     "stratum": {
      "0": [
@@ -27910,7 +27999,7 @@
    }
   },
   "SAS_pooled_agricultural_practice.dta": {
-   "rows": 264781,
+   "rows": 264758,
    "vars": [
     "survey",
     "year",
@@ -33447,6 +33536,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2019_A": 23
+   },
+   "wt_dropped": {
+    "2019_A": 10155.54753437597
+   },
    "value_label_conflicts": {
     "stratum": {
      "11": [
@@ -33681,7 +33776,7 @@
    }
   },
   "SAS_pooled_screening_crops.dta": {
-   "rows": 752156,
+   "rows": 752143,
    "vars": [
     "survey",
     "year",
@@ -33820,7 +33915,7 @@
     "2025_B",
     "2025_C"
    ],
-   "dir": "2_Intermediate/appended",
+   "dir": "3_Final",
    "decisions": {
     "area_ha": {
      "waves": [
@@ -37462,6 +37557,16 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2022_C": 5,
+    "2024_C": 4,
+    "2025_C": 4
+   },
+   "wt_dropped": {
+    "2022_C": 5.0,
+    "2024_C": 416.2290930577473,
+    "2025_C": 818.9231470752217
+   },
    "value_label_conflicts": {
     "crop": {
      "165": [
@@ -37997,7 +38102,7 @@
    }
   },
   "SAS_pooled_screening_agroforestry.dta": {
-   "rows": 263633,
+   "rows": 261134,
    "vars": [
     "survey",
     "year",
@@ -39119,6 +39224,12 @@
      "reference_label": "Agricultural year of the season (as in the NISR release)",
      "split_reasons": []
     }
+   },
+   "duplicates_dropped": {
+    "2020_B": 2499
+   },
+   "wt_dropped": {
+    "2020_B": 2499.0
    },
    "value_label_conflicts": {
     "stratum": {
@@ -40439,6 +40550,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {
     "stratum": {
      "0": [
@@ -40537,7 +40650,7 @@
    }
   },
   "SAS_pooled_fertilizers_2017_2018.dta": {
-   "rows": 84986,
+   "rows": 63817,
    "vars": [
     "survey",
     "year",
@@ -41661,6 +41774,13 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2018_A": 16886,
+    "2017_C": 3665,
+    "2017_A": 549,
+    "2017_B": 69
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {
     "s3q11_v2": {
      "3": [
@@ -41750,7 +41870,7 @@
    }
   },
   "SAS_pooled_pesticides_2017_2018.dta": {
-   "rows": 95146,
+   "rows": 62660,
    "vars": [
     "survey",
     "year",
@@ -42610,6 +42730,14 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2018_A": 29182,
+    "2017_C": 3291,
+    "2017_A": 7,
+    "2017_B": 3,
+    "2018_B": 3
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "s3q15": {
@@ -42662,7 +42790,7 @@
    }
   },
   "SAS_pooled_antierosion_2017_2018.dta": {
-   "rows": 64405,
+   "rows": 63782,
    "vars": [
     "survey",
     "year",
@@ -43376,6 +43504,13 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2017_C": 589,
+    "2018_B": 16,
+    "2017_B": 11,
+    "2018_A": 7
+   },
+   "wt_dropped": {},
    "value_label_conflicts": {
     "s4q1": {
      "1": [
@@ -45473,6 +45608,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {
     "crop_group": {
      "214": [
@@ -47115,6 +47252,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {
     "crop_category": {
      "214": [

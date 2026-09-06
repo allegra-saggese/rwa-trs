@@ -43,14 +43,17 @@ for y, g in person.groupby("year"):
 report += ["## A. Python pooled file vs old Stata outputs (3 Jul 2026)", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 bench = json.load(open(LOGS / "benchmark_old_stata.json"))
 old = next(f for f in bench["files"] if f["file"].startswith("LFS_panel"))["by_year"]
+_al = json.load(open(LOGS / "merge_alignment.json")); DUP = _al.get("duplicates_dropped", {}).get("LFS_pooled_person.dta", {}); DUPW = _al.get("wt_dropped", {}).get("LFS_pooled_person.dta", {})
+row("A", "exact duplicate rows dropped before saving the pooled file (Matteo's rule; informational)", sum(DUP.values()), None)
 for y in sorted(ours):
-    o, b = ours[y], old.get(str(y), {})
-    row("A", f"{y} rows", o["n"], b.get("n"))
-    row("A", f"{y} sum wt", o["sum_wt"], b.get("sum_wt_annual"), 1e-9)
-    row("A", f"{y} weighted 16+ pop", o["wpop_wap16"], b.get("wpop_wap16"), 1e-9)
+    o, b = ours[y], old.get(str(y), {}); dr, dw = DUP.get(str(y), 0), DUPW.get(str(y), 0.0)
+    row("A", f"{y} rows" + (f" (+{dr} exact duplicates dropped)" if dr else ""), o["n"], None if b.get("n") is None else b["n"] - dr)
+    row("A", f"{y} sum wt", o["sum_wt"], None if b.get("sum_wt_annual") is None else b["sum_wt_annual"] - dw, 1e-9)
+    # the old Stata outputs still contain the exact duplicates: where rows were dropped, the sex counts and the weighted 16+ population are informational (the published WAP test in section C is the hard check)
+    row("A", f"{y} weighted 16+ pop" + (" (old outputs include the duplicates; informational)" if dr else ""), o["wpop_wap16"], None if dr else b.get("wpop_wap16"), 1e-9)
     row("A", f"{y} districts", o["n_dist"], b.get("n_dist"))
-    row("A", f"{y} male", o["male"], (b.get("A01_counts") or {}).get("1"))
-    row("A", f"{y} female", o["female"], (b.get("A01_counts") or {}).get("2"))
+    row("A", f"{y} male" + (" (informational, see above)" if dr else ""), o["male"], None if dr else (b.get("A01_counts") or {}).get("1"))
+    row("A", f"{y} female" + (" (informational, see above)" if dr else ""), o["female"], None if dr else (b.get("A01_counts") or {}).get("2"))
 
 # ---- B. Stata recomputation
 report += ["", "## B. Stata 17 recomputation from the written .dta files", ""]

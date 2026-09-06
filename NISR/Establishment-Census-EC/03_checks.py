@@ -31,7 +31,9 @@ ours = {int(y): {"n": len(g), "sum_wt": g["wt"].sum(), "n_dist": g["dist"].nuniq
 
 report += ["## A. Pooled file vs raw files as shipped", "", "| section | statistic | Python | reference | result |", "|---|---|---:|---:|---|"]
 bench = json.load(open(LOGS / "benchmark_old_stata.json"))
-for f in bench["files"]: row("A", f"{f['year']} rows", ours[f["year"]]["n"], f["n_rows"])
+_al = json.load(open(LOGS / "merge_alignment.json")); DUP = _al.get("duplicates_dropped", {}).get("EC_pooled_establishment.dta", {})
+row("A", "exact duplicate rows dropped before saving the pooled file (Matteo's rule; informational)", sum(DUP.values()), None)
+for f in bench["files"]: row("A", f"{f['year']} rows" + (f" (+{DUP.get(str(f['year']), 0)} exact duplicates dropped)" if DUP.get(str(f['year'])) else ""), ours[f["year"]]["n"], f["n_rows"] - DUP.get(str(f["year"]), 0))
 
 report += ["", "## B. Stata 17 recomputation from the written .dta file", ""]
 stata = "/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp"

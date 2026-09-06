@@ -11,7 +11,7 @@
 (Rwanda LFS 2017-2025 pooled person-interview file (repeated cross-section))
 
 . gen double wwap = wap16 * wt
-(290,406 missing values generated)
+(287,502 missing values generated)
 
 . gen byte male = sex == 1
 

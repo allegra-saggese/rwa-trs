@@ -3012,6 +3012,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {}
   },
@@ -10273,6 +10275,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "s1q10": {
@@ -11184,6 +11188,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {}
   },
@@ -12636,11 +12642,13 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {}
   },
   "AHS_pooled_eggs.dta": {
-   "rows": 58853,
+   "rows": 56074,
    "vars": [
     "survey",
     "year",
@@ -13462,6 +13470,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2024": 2779
+   },
+   "wt_dropped": {
+    "2024": 1586439.5279387431
+   },
    "value_label_conflicts": {},
    "stale_labels": {
     "s1q10": {
@@ -13473,7 +13487,7 @@
    }
   },
   "AHS_pooled_extension.dta": {
-   "rows": 98843,
+   "rows": 60701,
    "vars": [
     "survey",
     "year",
@@ -14718,6 +14732,12 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2017": 38142
+   },
+   "wt_dropped": {
+    "2017": 4973334.810097372
+   },
    "value_label_conflicts": {},
    "stale_labels": {}
   },
@@ -15384,11 +15404,13 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {}
   },
   "AHS_pooled_honey.dta": {
-   "rows": 38465,
+   "rows": 34955,
    "vars": [
     "survey",
     "year",
@@ -16400,6 +16422,12 @@
      "reference_label": "Survey year",
      "split_reasons": []
     }
+   },
+   "duplicates_dropped": {
+    "2024": 3510
+   },
+   "wt_dropped": {
+    "2024": 2044085.2655500893
    },
    "value_label_conflicts": {},
    "stale_labels": {
@@ -20386,6 +20414,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "s2q28_2": {
@@ -21773,6 +21803,8 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {
     "s2q16_1": {
@@ -23764,11 +23796,13 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {},
+   "wt_dropped": {},
    "value_label_conflicts": {},
    "stale_labels": {}
   },
   "AHS_pooled_milk.dta": {
-   "rows": 59594,
+   "rows": 56592,
    "vars": [
     "survey",
     "year",
@@ -25085,11 +25119,17 @@
      "split_reasons": []
     }
    },
+   "duplicates_dropped": {
+    "2024": 3002
+   },
+   "wt_dropped": {
+    "2024": 1750035.08107575
+   },
    "value_label_conflicts": {},
    "stale_labels": {}
   },
   "AHS_pooled_tools.dta": {
-   "rows": 372184,
+   "rows": 372169,
    "vars": [
     "survey",
     "year",
@@ -25617,6 +25657,12 @@
      "reference_label": "Survey year",
      "split_reasons": []
     }
+   },
+   "duplicates_dropped": {
+    "2017": 15
+   },
+   "wt_dropped": {
+    "2017": 2396.5587061554343
    },
    "value_label_conflicts": {},
    "stale_labels": {}
