@@ -5,10 +5,12 @@
 
 . set more off
 
-. use wave wt sex hhid using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongo
-> ing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Agriculture-Survey-AHS
-> /3_Final/AHS_pooled_person.dta", clear
+. use ahs_wave ahs_weight ahs_sex ahs_household_id using "/Users/matteo/Library
+> /CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available
+> -NISR/Agriculture-Survey-AHS/3_Final/AHS_pooled_person.dta", clear
 (AHS pooled person file (agricultural households))
+
+. rename (ahs_wave ahs_weight ahs_sex ahs_household_id) (wave wt sex hhid)
 
 . gen byte male = sex == 1
 
@@ -25,10 +27,14 @@
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Agriculture-Survey-AHS/logs/st
 > ata_checks.csv saved
 
-. use wave wt hhsize hhid using "/Users/matteo/Library/CloudStorage/Dropbox/1-O
-> ngoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Agriculture-Survey-
-> AHS/3_Final/AHS_pooled_household.dta", clear
+. use ahs_wave ahs_weight ahs_household_size ahs_household_id using "/Users/mat
+> teo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicl
+> y-Available-NISR/Agriculture-Survey-AHS/3_Final/AHS_pooled_household.dta", cl
+> ear
 (AHS pooled household file (agricultural households))
+
+. rename (ahs_wave ahs_weight ahs_household_size ahs_household_id) (wave wt hhs
+> ize hhid)
 
 . collapse (count) n_hh=hhid (sum) hhsize_sum=hhsize sum_wt_hh=wt, by(wave)
 
