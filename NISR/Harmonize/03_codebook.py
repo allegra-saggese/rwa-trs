@@ -8,7 +8,7 @@ full) and checks (logs/checks_report.txt).
 """
 import json, time
 import pandas as pd
-from harmonize_helpers import out_dir, read_dta, read_meta, get_logger, LOGS, HERE
+from harmonize_helpers import out_dir, h_path, read_dta, read_meta, get_logger, LOGS, HERE
 
 log = get_logger("03_codebook"); P_OUT = out_dir(); summ = json.load(open(LOGS / "harmonize_summary.json"))
 
@@ -26,8 +26,8 @@ def counts(path, cols, chunk=250_000):
 files = []
 for out, info in summ["files"].items():
     if info.get("skipped"):
-        files.append({"file": out, "source": info["source"], "unit": "", "rows": None, "variables": None, "waves": "", "h_variables": "", "skipped": info["skipped"]}); continue
-    files.append({"file": out, "source": info["source"], "unit": info["unit"], "rows": info["rows"], "variables": info["vars"],
+        files.append({"file": out, "folder": str(h_path(out, info).parent.relative_to(h_path(out, info).parent.parent.parent)), "source": info["source"], "unit": "", "rows": None, "variables": None, "waves": "", "h_variables": "", "skipped": info["skipped"]}); continue
+    files.append({"file": out, "folder": str(h_path(out, info).parent.relative_to(h_path(out, info).parent.parent.parent)), "source": info["source"], "unit": info["unit"], "rows": info["rows"], "variables": info["vars"],
                   "waves": ", ".join(info["waves"]), "h_variables": ", ".join(info["h_vars"]), "skipped": ""})
 files = pd.DataFrame(files)
 
@@ -35,7 +35,7 @@ files = pd.DataFrame(files)
 seen = {}
 for out, info in summ["files"].items():
     if info.get("skipped"): continue
-    m = read_meta(P_OUT / out)
+    m = read_meta(h_path(out, info))
     for c in info["h_vars"]:
         if c in seen or c not in m.column_names: continue
         seen[c] = (m.column_names_to_labels.get(c, ""), m.variable_value_labels.get(c, {}))
@@ -48,7 +48,7 @@ for out, info in summ["files"].items():
     if info.get("skipped") or not info["h_vars"]: continue
     hv = [c for c in info["h_vars"] if c not in ("h_hhkey", "h_pkey")]
     if not hv: continue
-    tab, order = counts(P_OUT / out, hv)
+    tab, order = counts(h_path(out, info), hv)
     if tab.empty: continue
     for w in order:
         for c in hv: cnt.append({"file": out, "wave": w, "h_variable": c, "n_nonmissing": int(tab.loc[w, c]) if c in tab.columns else 0})
@@ -84,13 +84,15 @@ log.info("wrote %s (%d files, %d code rows, %d count rows, %d map rows)", xlsx, 
 
 skipped = [f for f, i in summ["files"].items() if i.get("skipped")]
 readme = ["================================================================================",
-          "HARMONIZED/ - HARMONISED COPIES OF EVERY FINAL AND APPENDED NISR FILE",
+          "HARMONISED COPIES OF EVERY FINAL AND APPENDED NISR FILE -- <dataset>/4_Harmonized/ (data) and Harmonized/ (these documents)",
           f"Generated {time.strftime('%Y-%m-%d %H:%M')} by rwa-trs/NISR/Harmonize/master.py (do not hand-edit: regenerated on every run)",
           "Location: .../Rwanda - TRS/data/Publicly-Available-NISR/Harmonized",
           "================================================================================", "",
           "1. WHAT THIS IS",
-          "One file per source file, H_<dataset>_<unit or module>.dta: a harmonised COPY of each final (3_Final/) and appended",
-          "(2_Intermediate/appended/) file of the seven NISR pipelines (Census, LFS, EICV, EC, AHS, SAS, CFSVA). Same rows, same",
+          "One file per source file, <dataset>/4_Harmonized/H_<dataset>_<unit or module>.dta: a harmonised COPY of each final",
+          "(3_Final/) and appended (2_Intermediate/appended/) file of the seven NISR pipelines (Census, LFS, EICV, EC, AHS, SAS,",
+          "CFSVA), stored INSIDE each dataset folder as its fourth folder (Matteo, 2026-09-05). This Harmonized/ folder holds only",
+          "the three cross-dataset documents: this README, CODEBOOK_Harmonized.xlsx and harmonization_map.csv. Same rows, same",
           "native variables (nothing collapsed, aggregated, recoded in place or dropped), plus:",
           "  - the stylistic layer on EVERY file: identical key-block variable labels (survey year wave prov dist sector urban hhid pid",
           "    sex age wt wt_hh), identical province / district / sector value labels (from NISR's 2022 village boundary file) and",
@@ -119,6 +121,12 @@ readme = ["=====================================================================
           "    2017/2020 main activity. Census 2022 has no employment-identification block in the public file: status missing.",
           "    THESE MEASURES ARE NOT COMPARABLE ACROSS DEFINITIONS -- always condition on h_lfs_def (the checks report's section D",
           "    shows the spread of employment-to-population ratios). h_employed = (h_lfstatus == 1).",
+          "    WITHIN a dataset the definition is the same in every wave wherever the questionnaire allows it: LFS = NISR status1",
+          "    in every year; Census 2002 and 2012 = relaxed unemployment (without work, no job-search test) in both waves;",
+          "    EICV: h_employed (any work in the reference period) is defined the same way in every wave, while the UNEMPLOYED",
+          "    category exists only where an item supports it (EICV1/2 usual activity, EICV4 lfs6, EICV5 reason for not working;",
+          "    EICV3 and EICV7 have no unemployment item: non-workers are 'outside'); AHS: main activity in 2017/2020, any work",
+          "    in 2024. Compare over time within a dataset on h_employed, or on h_lfstatus with h_lfs_def held fixed.",
           "  h_empstat 1 employee (incl. paid apprentice), 2 employer, 3 own-account, 4 contributing family worker, 5 other.",
           "  h_isic1 ISIC Rev.4 section 1-21 (A-U); h_isco1 ISCO-08 major group 0-9; h_isic1_approx / h_isco1_approx = 1 where the",
           "    native code was crosswalked from an older or national list (Census 2002 ISIC Rev.3 / ISCO-88; EICV1/2 NISR groups).",
@@ -126,13 +134,13 @@ readme = ["=====================================================================
           "  Harmonisation LEVEL per variable (all household surveys / education group / employment group) and the exact rule per",
           "  dataset and wave are in harmonization_map.csv (columns dataset, waves, file, h_variable, source_variables, rule, level,",
           "  quality exact / approximate, note). Establishment (EC), plot x crop (SAS) and module files get the stylistic layer only.", "",
-          "3. FILES IN THIS FOLDER",
-          "  H_<dataset>_<unit or module>.dta   the copies (list below)." + (" DECLARED LIMITATION: " + ", ".join(sorted(skipped)) + " (EICV item" if skipped else ""),
+          "3. FILES",
+          "  <dataset>/4_Harmonized/H_<dataset>_<unit or module>.dta   the copies (list below)." + (" DECLARED LIMITATION: " + ", ".join(sorted(skipped)) + " (EICV item" if skipped else ""),
           "                                     modules, several GB each) are NOT copied while the Mac has no room for them -- use the" if skipped else "                                     Every expected copy is present (no disk skip in this run).",
           "                                     source files in Household-Living-Conditions-EICV/2_Intermediate/appended/." if skipped else "",
           "  harmonization_map.csv              every code mapping (the record of what was done)",
           "  CODEBOOK_Harmonized.xlsx           sheets README, files, code_lists, counts (non-missing h_* per file and wave), map, checks",
-          "  README.txt                         this file",
+          "  README.txt                         this file (the three documents above are the only content of Harmonized/)",
           "Code and run logs: git repository rwa-trs/NISR/Harmonize/ (helpers, 01_harmonize.py, 02_checks.py, 03_codebook.py,",
           "master.py). Processing notes (scope, code lists, decisions, incidents): project memory file NISR-Harmonize.md",
           "(Green Jobs - TRS folder, outside git and Dropbox). Per-dataset variable codebooks: CODEBOOK_<survey>.xlsx in each",
@@ -161,8 +169,9 @@ readme = ["=====================================================================
           "  - Declared skips (disk): rerun  cd rwa-trs/NISR/Harmonize && python 01_harmonize.py EICV && python 02_checks.py &&",
           "    python 03_codebook.py  once space is freed (e.g. 2_Intermediate/ online-only in Dropbox) and remove the six names",
           "    from KNOWN_SKIPS in 01_harmonize.py.", "",
-          "6. FILES (rows x variables [unit] <- source):"]
+          "6. FILES (folder / file: rows x variables [unit] <- source):"]
 for out, info in summ["files"].items():
-    readme.append(f"  {out:52s} {'skipped: ' + info['skipped'] if info.get('skipped') else f'{info['rows']:>10,} rows x {info['vars']:>4} vars  [{info['unit']}]  <- {info['source']}'}")
+    folder = str(h_path(out, info).parent.relative_to(h_path(out, info).parent.parent.parent))
+    readme.append(f"  {folder + '/' + out:90s} {'skipped: ' + info['skipped'] if info.get('skipped') else f'{info['rows']:>10,} rows x {info['vars']:>4} vars  [{info['unit']}]  <- {info['source']}'}")
 (P_OUT / "README.txt").write_text("\n".join(readme)); log.info("wrote Harmonized/README.txt")
 log.info("03_codebook done")

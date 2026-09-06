@@ -1,7 +1,8 @@
 """
 01_harmonize.py -- NISR/Harmonize: harmonised copies of every final and appended file of the seven datasets.
 
-For EVERY file in <dataset>/3_Final/ and <dataset>/2_Intermediate/appended/:
+For EVERY file in <dataset>/3_Final/ and <dataset>/2_Intermediate/appended/ -> <dataset>/4_Harmonized/H_<dataset>_<stem>.dta
+(the cross-dataset documents -- README, CODEBOOK_Harmonized.xlsx, harmonization_map.csv -- stay in Publicly-Available-NISR/Harmonized/):
   * identical key-block labels (survey year wave prov dist sector urban hhid pid sex age wt wt_hh) and
     identical province / district / sector / urban / sex value labels;
   * h_hhkey / h_pkey: string keys unique across datasets and waves (survey_wave[_interview]_hhid[_pid]);
@@ -17,12 +18,12 @@ level, quality, note). Scope and code lists: the project notes NISR-Harmonize.md
 """
 import csv, os, shutil, sys, time
 import numpy as np, pandas as pd
-from harmonize_helpers import (DATASETS, ds_paths, out_dir, alignment, decisions_for, col_for, get_logger, Checks,
+from harmonize_helpers import (DATASETS, ds_paths, out_dir, h_dir, alignment, decisions_for, col_for, get_logger, Checks,
                                read_dta, read_dta_typed, read_meta, write_dta, downcast_new, save_json, recode, flat, rule_text, LOGS, db_root)
 
 log = get_logger("01_harmonize"); P_OUT = out_dir(); ck = Checks(log)
 ONLY = sys.argv[1:]                                    # optional: dataset tags to (re)build, e.g. LFS Census
-MIN_FREE_GB = 12.0                                     # never fill the disk: skip a file if less would remain (the Mac needs room for Dropbox and swap)
+MIN_FREE_GB = 5.0                                      # never fill the disk: skip a file if less would remain (Matteo, 2026-09-05: 5 GB floor so the two big EICV item copies fit)
 STAMP = time.strftime("%Y-%m-%d")
 
 # ------------------------------------------------------------------ common labels
@@ -77,8 +78,8 @@ H_VALUES = {
     "h_literacy": {0: "Cannot read and write", 1: "Can read and write"},
     "h_lfstatus": {1: "Employed", 2: "Unemployed", 3: "Outside the labour force"}, "h_employed": {0: "Not employed", 1: "Employed"},
     "h_lfs_def": {1: "LFS: NISR status1, ILO 7-day; ages 16+ in 2017-2019, 14+ from 2020",
-                  2: "Census 2002: activity situation over 15/07-15/08/2002; ages 6+",
-                  3: "Census 2012: NISR rp2024, 7-day, relaxed unemployment (availability only); ages 5+",
+                  2: "Census 2002: activity situation over 15/07-15/08/2002, relaxed unemployment (without work, no search test); ages 6+",
+                  3: "Census 2012: NISR rp2024, 7-day, relaxed unemployment (without work and available, no search test); ages 5+",
                   4: "EICV1/EICV2: NISR econstatus, usual activity over 12 months; ages 7+ / 6+",
                   5: "EICV3/EICV5: any work in the last 12 months incl. own farm (no unemployment category in EICV3); ages 6+",
                   6: "EICV4: NISR lfs6, current status; ages 6+",
@@ -437,7 +438,7 @@ def preflight():
         P = ds_paths(tag)
         for folder in [P["final"]] + ([P["appended"]] if P["appended"].exists() else []):
             for f in sorted(folder.glob("*.dta")):
-                out = P_OUT / out_name(tag, f.name); size = os.path.getsize(f) / 1e9; old = os.path.getsize(out) / 1e9 if out.exists() else 0.0
+                out = h_dir(tag) / out_name(tag, f.name); size = os.path.getsize(f) / 1e9; old = os.path.getsize(out) / 1e9 if out.exists() else 0.0
                 if free + old - size * 1.3 < MIN_FREE_GB: would_skip.append(out.name); continue
                 free += old - size * 1.05                    # a copy is about the source size
     bad = [f for f in would_skip if f not in KNOWN_SKIPS]
@@ -458,14 +459,14 @@ for tag in DATASETS:
     P = ds_paths(tag); align = alignment(tag)
     files = [(P["final"], f) for f in sorted(P["final"].glob("*.dta"))] + ([(P["appended"], f) for f in sorted(P["appended"].glob("*.dta"))] if P["appended"].exists() else [])
     for folder, f in files:
-        fname = f.name; unit = unit_of(tag, fname, align); out = P_OUT / out_name(tag, fname)
+        fname = f.name; unit = unit_of(tag, fname, align); out = h_dir(tag) / out_name(tag, fname)
         free_gb = shutil.disk_usage(P_OUT).free / 1e9; size_gb = os.path.getsize(f) / 1e9
         old_gb = os.path.getsize(out) / 1e9 if out.exists() else 0.0          # a rebuild replaces the previous copy: its space comes back
         if free_gb + old_gb - size_gb * 1.3 < MIN_FREE_GB:
             if out.name not in KNOWN_SKIPS: sys.exit(f"{fname}: would be skipped for disk space but is not a declared limitation -- aborting (free {free_gb:.1f} GB)")
             log.warning("SKIPPED %s: %.1f GB file, only %.1f GB free (MIN_FREE_GB=%s) -- declared limitation, rerun when space is available", fname, size_gb, free_gb, MIN_FREE_GB)
             if out.exists(): out.unlink(); log.warning("   stale previous copy %s removed (a skipped file must not linger as an old version)", out.name)
-            summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "skipped": "disk space (declared limitation: see README)"}; continue
+            summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "out_dir": str(out.parent.relative_to(db_root())), "skipped": "disk space (declared limitation: see README)"}; continue
         if out.exists(): out.unlink(); log.info("   previous %s removed before the rebuild (%.2f GB)", out.name, old_gb)
         log.info("---------------- %s / %s (%s, %.2f GB) -> %s", tag, fname, unit or "module", size_gb, out.name)
         df, vl, vv = read_dta_typed(f, log); n_in = len(df)
@@ -530,13 +531,13 @@ for tag in DATASETS:
         del H
         ck(len(df) == n_in, f"{out.name}: row count unchanged ({n_in:,})")
         write_dta(df, out, vl, vv, f"H {STAMP}: {tag} {fname[:-4]} harmonised copy (keys, labels, h_* concepts)", log)
-        summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "unit": unit or "module", "rows": n_in, "vars": int(df.shape[1]),
+        summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "out_dir": str(out.parent.relative_to(db_root())), "unit": unit or "module", "rows": n_in, "vars": int(df.shape[1]),
                                       "h_vars": [c for c in df.columns if c.startswith("h_")], "waves": sorted(map(str, df["wave"].unique())) if "wave" in df.columns else []}
         del df
 for tag in DATASETS:                                                # copies whose source file no longer exists (module renamed / merged away) are removed
     if ONLY and tag not in ONLY: continue
-    for f in sorted(P_OUT.glob(f"H_{tag}_*.dta")):
-        if f.name not in summary["files"]: f.unlink(); log.info("removed superseded %s (no source file any more)", f.name)
+    for f in sorted(h_dir(tag).glob(f"H_{tag}_*.dta")) + sorted(P_OUT.glob(f"H_{tag}_*.dta")):     # (P_OUT: copies left from the pre-2026-09-05 single-folder layout)
+        if f.name not in summary["files"] or f.parent != h_dir(tag): f.unlink(); log.info("removed superseded %s from %s", f.name, f.parent.name)
 ck.done()
 with open(P_OUT / "harmonization_map.csv", "w", newline="") as fh:
     wr = csv.DictWriter(fh, fieldnames=["dataset", "waves", "file", "h_variable", "source_variables", "rule", "level", "quality", "note"]); wr.writeheader(); wr.writerows(MAP)

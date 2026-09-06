@@ -34,11 +34,23 @@ def db_root() -> Path:
     return p
 
 def out_dir() -> Path:
+    """Publicly-Available-NISR/Harmonized/: the cross-dataset DOCUMENTS only (README.txt, CODEBOOK_Harmonized.xlsx,
+    harmonization_map.csv). The copies live in each dataset's 4_Harmonized/ (Matteo, 2026-09-05)."""
     d = db_root() / "Harmonized"; d.mkdir(exist_ok=True); return d
+
+def h_dir(tag: str) -> Path:
+    """<dataset>/4_Harmonized/: the harmonised copies of that dataset (created on first use)."""
+    d = db_root() / DATASETS[tag] / "4_Harmonized"; d.mkdir(exist_ok=True); return d
+
+def h_path(out_name: str, info: dict | None = None) -> Path:
+    """Where a harmonised copy H_<tag>_<stem>.dta lives: the manifest's out_dir if recorded, else the dataset's 4_Harmonized/."""
+    if info and info.get("out_dir"): return db_root() / info["out_dir"] / out_name
+    tag = next((k for k in DATASETS if out_name.startswith(f"H_{k}_")), None)
+    return (h_dir(tag) if tag else out_dir()) / out_name
 
 def ds_paths(tag: str) -> dict[str, Path]:
     d = db_root() / DATASETS[tag]
-    return {"root": d, "final": d / "3_Final", "appended": d / "2_Intermediate" / "appended", "repo": REPO_NISR / DATASETS[tag]}
+    return {"root": d, "final": d / "3_Final", "appended": d / "2_Intermediate" / "appended", "harmonized": d / "4_Harmonized", "repo": REPO_NISR / DATASETS[tag]}
 
 def alignment(tag: str) -> dict:
     return json.load(open(ds_paths(tag)["repo"] / "logs" / "merge_alignment.json"))

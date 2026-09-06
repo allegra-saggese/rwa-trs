@@ -84,15 +84,17 @@ report += ["", "## D. Appended modules: weights, large-scale-farmer supplement, 
 align = json.load(open(LOGS / "merge_alignment.json"))
 metas = {w: json.load(open(LOGS / f"clean_{w}_meta.json")) for w in ("2017", "2020", "2024") if (LOGS / f"clean_{w}_meta.json").exists()}
 mods = [f for f, i in align["files"].items() if i.get("dir", "").endswith("appended")]
-lsf_rows, dup_rows, wt_gap = {}, {}, 0
+lsf_rows, dup_rows, wt_gap, lsf_wt_bad = {}, {}, 0, 0
 for f in mods:
     d, _, _ = read_dta(P["root"] / align["files"][f]["dir"] / f, usecols=["wave", "sample", "wt", "hhid"])
     cs = d[d["sample"] != "LSF"]
     wt_gap += int(cs["wt"].isna().sum())
     for w, g in d[d["sample"] == "LSF"].groupby("wave"): lsf_rows.setdefault(w, set()).update(g["hhid"].dropna().unique())
+    lsf_wt_bad += int(((d["sample"] == "LSF") & (d["wt"] != 1)).sum())
     ndup = sum(align["files"][f].get("duplicates_dropped", {}).values())
     row("D", f"{f.replace('AHS_pooled_', '').replace('.dta', '')}: rows == sum of wave rows" + (f" - {ndup:,} exact duplicates dropped" if ndup else ""), len(d), sum(metas[w]["modules"][s]["rows"] for w, s in ((w, s) for w, mp in align["module_map"].items() for s, c in mp.items() if f == f"AHS_pooled_{c}.dta") if w in metas and s in metas[w]["modules"]) - ndup)
 row("D", "household-sample rows (sample = CS) with a missing weight, all appended modules (must be 0)", wt_gap, 0)
+row("D", "large-scale-farmer supplement rows (sample = LSF) whose weight is not 1, all appended modules (must be 0; GPT re-audit 2026-09-05)", lsf_wt_bad, 0)
 # 2020 report annex: the large-scale-farmer list (2,345 farms, HHUID 110667-113011, weight 1, owner = "big farmer") is enumerated exhaustively -- a census supplement
 row("D", "2020 large-scale farms outside the household sample (sample = LSF) -- documented list of 2,345", len(lsf_rows.get("2020", ())), 2_345)
 row("D", "2024 large-scale farms outside the household sample (sample = LSF; not documented, informational)", len(lsf_rows.get("2024", ())), None)
