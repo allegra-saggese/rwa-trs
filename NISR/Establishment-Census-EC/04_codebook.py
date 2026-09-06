@@ -1,13 +1,13 @@
 """
 04_codebook.py -- EC: generate CODEBOOK_EC.xlsx, the dataset's only codebook, in the Dropbox dataset folder next to README.txt.
 
-For every variable in each 3_Final file: label, storage type, value labels (first few),
-non-missing count per year, the raw source variable per year (key block), and the
-alignment decision + label variants recorded by 02_merge.py.
+For every variable in each 3_Final file: clean name and label, NISR's native name and label
+(variable_names.csv), storage type, value labels (first few), non-missing count per year, the raw
+source variable per year (key block), and the alignment decision + label variants recorded by 02_merge.py.
 """
 import json, re, time
 import numpy as np, pandas as pd
-from ec_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE, DATASET
+from ec_helpers import paths, get_logger, read_dta, read_meta, LOGS, HERE, DATASET, NameTable, DATASET_TAG
 
 TAG = "EC"
 log = get_logger("04_codebook")
@@ -15,6 +15,7 @@ P = paths()
 align = json.load(open(LOGS / "merge_alignment.json"))
 metas = {y: json.load(open(LOGS / f"clean_{y}_meta.json")) for y in (2011, 2014, 2017, 2020, 2023)}
 srcs = {y: m["source"] for y, m in metas.items()}
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)
 orig = {}
 
 def chunked_counts(path, key, chunk=250_000):
@@ -30,7 +31,7 @@ def chunked_counts(path, key, chunk=250_000):
     return counts.reindex(order).fillna(0).astype(int), order, int(m.number_rows)
 
 
-FILE_UNIVERSE = {"EC_pooled_establishment.dta": "every establishment enumerated with a fixed location; NISR's operational universe = working (1) + temporarily closed (2) on the status item (s04 2011, q3 2014-2023) -- 2017-2023 files hold only those; permanently closed / refusals exist in 2011 only; 2014 is a weighted sample of working units (wt)"}
+FILE_UNIVERSE = {"EC_pooled_establishment.dta": "every establishment enumerated with a fixed location; NISR's operational universe = working (1) + temporarily closed (2) on the status item (ec_working_status_2011 = s04 in 2011, ec_working_status = q3 in 2014-2023) -- 2017-2023 files hold only those; permanently closed / refusals exist in 2011 only; 2014 is a weighted sample of working units (ec_weight)"}
 
 def sheet_name(fname, used):
     """Excel sheet name for a file: the stem without the <TAG>_pooled_ prefix, <= 31 chars, unique."""
@@ -83,24 +84,27 @@ def codebook(fname, unit):
     df, vl, vv = read_dta(P["final"] / fname, row_limit=1)          # one row: columns and dtypes only
     m = read_meta(P["final"] / fname)
     types = m.readstat_variable_types
-    nn, years, nrows = chunked_counts(P["final"] / fname, "year")
+    scope = f"pooled:{fname}"; NAT = NAMES.native(scope); CLEAN = NAMES.clean(scope)      # clean <-> native names of this file
+    nat_label = {r["clean_name"]: r.get("native_label", "") for r in NAMES.by_scope.get(scope, {}).values()}
+    nn, years, nrows = chunked_counts(P["final"] / fname, CLEAN.get("year", "year"))
     rows = []
-    for c in df.columns:
+    for c0 in df.columns:
+        c = NAT.get(c0, c0)                                            # native (NISR) name: the alignment log and sources are keyed on it
         base = c.rsplit("_v", 1)[0] if ("_v" in c and c.rsplit("_v", 1)[-1].isdigit()) else c
         d = align["decisions"].get(base) or {}
         vers = d.get("versions") or {}
         ys_here = vers.get(c, [])
         labs = {y: l for y, l in (d.get("labels_by_year") or {}).items() if int(y) in ys_here}
         variants = "; ".join(f"{y}: {l[:60]}" for y, l in labs.items() if l and l != d.get("reference_label")) if len(set(labs.values())) > 1 else ""
-        other_versions = ", ".join(f"{n} ({ys[0]}–{ys[-1]})" for n, ys in vers.items() if n != c) if len(vers) > 1 else ""
+        other_versions = ", ".join(f"{CLEAN.get(n, n)} ({ys[0]}–{ys[-1]})" for n, ys in vers.items() if n != c) if len(vers) > 1 else ""
         src = "; ".join(f"{y}: {s.get(c, s.get(base))}" for y, s in srcs.items() if (c in s or base in s) and (not ys_here or int(y) in ys_here))
-        if c in orig and orig[c] and orig[c] != (vl.get(c) or ""): src = (src + "; " if src else "") + f"2002 original label (FR): {orig[c][:60]}"
-        vlab = vv.get(c, {})
+        if c in orig and orig[c] and orig[c] != (vl.get(c0) or ""): src = (src + "; " if src else "") + f"2002 original label (FR): {orig[c][:60]}"
+        vlab = vv.get(c0, {})
         vtxt = ", ".join(f"{k}={v}" for k, v in list(vlab.items())[:6]) + (" …" if len(vlab) > 6 else "")
         conf = align["value_label_conflicts"].get(c)
-        rows.append({"variable": c, "label": vl.get(c) or "", "type": types.get(c, str(df[c].dtype)),
+        rows.append({"variable": c0, "label": vl.get(c0) or "", "native_name": c, "native_label": nat_label.get(c0, ""), "type": types.get(c0, str(df[c0].dtype)),
                      "value_labels": vtxt, "n_value_labels": len(vlab),
-                     **{f"n_{y}": int(nn.loc[y, c]) if c in nn.columns else 0 for y in years},
+                     **{f"n_{y}": int(nn.loc[y, c0]) if c0 in nn.columns else 0 for y in years},
                      "source_by_year": src, "version_years": ",".join(map(str, ys_here)) if len(vers) > 1 else "",
                      "other_versions": other_versions,
                      "label_variants": variants, "value_label_conflicts": json.dumps(conf) if conf else ""})
@@ -110,10 +114,11 @@ def codebook(fname, unit):
 
 NOTES = [f"EC codebook -- generated by rwa-trs/NISR/{DATASET}/04_codebook.py on {time.strftime('%Y-%m-%d %H:%M')} from 3_Final/ (and 2_Intermediate/appended/). Do not hand-edit: re-run python master.py 04.",
          "Sheets: files = one row per final/appended file (folder, unit, rows, variables, years, universe, sheet); one sheet per FINAL dataset = one row per variable (label, storage type, first value labels, number of value labels, universe, non-missing count per year, source variable per year, versions, label variants, value-label text conflicts); modules = the same table for every appended module file of 2_Intermediate/appended/, stacked, file in the first column; value_labels = every code of every labelled variable (all files); checks = the latest verification report (logs/checks_report.txt).",
-         'Key block (identical names in every NISR dataset): survey year wave prov dist sector urban estid wt.',
+         "Names and labels: every variable is named in lower-case English words with the ec_ prefix (at most 32 characters) and labelled in plain English starting with EC (at most 80 characters); the mapping to NISR's native names and labels is variable_names.csv next to the code (reviewed hand entries in variable_name_overrides.csv) and is repeated here in the columns native_name / native_label. A variable that exists in several versions (different question or coding across years) carries the years in its name and label.",
+         'Key block (identical names in every NISR dataset): ec_survey ec_year ec_wave ec_province ec_district ec_sector ec_urban ec_establishment_id ec_weight (native: survey year wave prov dist sector urban estid wt).',
          f"Alignment rule: years are grouped into versions of a variable by label similarity (token Jaccard >= {align['threshold']}); the largest group keeps the name, the others are <name>_v2, _v3 ...; forced alignments: {', '.join(sorted(align.get('force_align', []))) or 'none'}; forced splits: {', '.join(f'{k} ({v})' for k, v in (align.get('force_split') or {}).items()) or 'none'}.",
          "Value labels are the union over years within a version; where the same code had different text the most recent year's text is kept and the conflict listed.",
-         'universe (files sheet): every establishment enumerated with a fixed location; operating units are selected with the working-status item (s04 2011, q3 2014, q3_1 2017+; 1 = working). 2014 is a weighted sample (wt).',
+         'universe (files sheet): every establishment enumerated with a fixed location; operating units are selected with the working-status item (ec_working_status_2011 in 2011, ec_working_status in 2014-2023; 1 = working). 2014 is a weighted sample (ec_weight).',
          f"Processing notes (what z_Documentation says and how it was applied; every decision and why) are kept in the project memory file NISR-{DATASET}.md (Green Jobs - TRS folder), not in git or Dropbox."]
 books = [codebook("EC_pooled_establishment.dta", "establishment")]
 write_workbook(P["root"] / f"CODEBOOK_{TAG}.xlsx", NOTES, books)
@@ -131,6 +136,7 @@ def update_readme():
     finals = sorted(P["final"].glob("*.dta")); inters = sorted(P["inter"].glob("*.dta"))
     lines = [start, f"Pipeline: rwa-trs/NISR/{DATASET}/  (python master.py)   last run: {time.strftime('%Y-%m-%d %H:%M')}",
              f"Codebook: CODEBOOK_{TAG}.xlsx in this folder (sheets: README, files, one per final dataset, modules, value_labels, checks).",
+             f"Variable names: lower-case English words with the ec_ prefix; labels in plain English starting with EC. Native NISR names and labels: variable_names.csv in the git folder and the native_name / native_label columns of the codebook.",
              f"Code and run logs: git repository rwa-trs/NISR/{DATASET}/. Processing notes (what z_Documentation says and how it was applied; every decision and why): project memory file NISR-{DATASET}.md (Green Jobs - TRS folder, outside git and Dropbox).", "",
              f"3_Final/  ({len(finals)} files)"]
     for f in finals:

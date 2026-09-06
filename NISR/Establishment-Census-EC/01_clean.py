@@ -3,14 +3,18 @@
 
 Per census: lower-case names, build the harmonised key block (survey year wave prov dist
 sector urban estid wt), attach NISR's current province/district/sector names as value
-labels, keep every other variable under its own name, destring, downcast, back-check, write.
+labels, keep every other variable under its own name, destring, downcast, back-check, then write
+the file under the clean names and labels of variable_names.csv (the native names, labels and
+value labels stay in logs/clean_<year>_meta.json for 02_merge, 00_names and the codebook).
 Unit = establishment. See NISR-Establishment-Census-EC.md (decisions log).
 """
 import difflib, sys
 import numpy as np, pandas as pd
-from ec_helpers import (paths, db_root, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast, save_json, LOGS)
+from ec_helpers import (paths, db_root, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast, save_json, LOGS, HERE,
+                        NameTable, DATASET_TAG)
 
 log = get_logger("01_clean"); P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed)
 YEARS = [int(a) for a in sys.argv[1:]] or [2011, 2014, 2017, 2020, 2023]
 FILES = {2011: "EC_2011.sav", 2014: "EC_2014.sav", 2017: "EC_2017.sav", 2020: "EC_2020.dta", 2023: "EC_2023.dta"}
 PUBLISHED = {2011: 123_526, 2014: 154_236, 2017: 190_288, 2020: 232_283}   # establishments, NISR EC reports (2014 = weighted total)
@@ -179,7 +183,8 @@ for y in YEARS:
     log.info("urban share: %.3f | total workers: %s", (df["urban"] == 1).mean(),
              f"{df['total_workers'].sum():,.0f}" if "total_workers" in df else (f"{df['q20'].where(df['q20'] < 88888).sum():,.0f} (q20)" if "q20" in df else "n/a"))
     ck.done()
-    write_dta(df, P["inter"] / f"EC_{y}_establishment_clean.dta", vl, vv, f"Rwanda Establishment Census {y} (cleaned)", log)
+    out, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{y}", log)      # written under the clean names; native kept in the meta file
+    write_dta(out, P["inter"] / f"EC_{y}_establishment_clean.dta", vl_out, vv_out, f"Rwanda Establishment Census {y} (cleaned)", log)
     save_json({"n": len(df), "vars": list(df.columns), "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns},
-               "source": srcmap, "dtypes": {c: str(df[c].dtype) for c in df.columns}}, LOGS / f"clean_{y}_meta.json")
+               "source": srcmap, "dtypes": {c: str(df[c].dtype) for c in df.columns}, "clean_names": clean_names}, LOGS / f"clean_{y}_meta.json")
 log.info("01_clean done for %s", YEARS)

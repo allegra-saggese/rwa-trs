@@ -1,0 +1,695 @@
+scope,wave,native,clean_name,clean_label,native_label
+pooled:EC_pooled_establishment.dta,2014,a29b,ec_pays_tpr_paye_2014,EC 2014: Pays TPR / PAYE,TPR/PAYE
+pooled:EC_pooled_establishment.dta,2014,ao2,ec_owner_age_group_derived_2014,"EC 2014: Age group of the owner (14-35, 36 and over), NISR derived",Age of owner
+pooled:EC_pooled_establishment.dta,2011,cell_seq_2011,ec_cell_sequence_2011,EC 2011: Cell sequence within the sector as shipped,"2011 cell sequence within sector (ID4, as shipped)"
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",dist,ec_district,"EC: District, NISR code 11-57","District (11-57, NISR codes)"
+pooled:EC_pooled_establishment.dta,2011,districts_names,ec_district_code_shipped_2011,EC 2011: District code as shipped by NISR (101-507 scheme),District names
+pooled:EC_pooled_establishment.dta,2011,est_size2,ec_size_class_derived_2011,"EC 2011: Size class by number of workers, NISR derived",Size of establishment based on number of workers
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",estid,ec_establishment_id,EC: Establishment identifier,"Establishment id (NISR key where shipped, else year*1e6 + row number)"
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",female_worker,ec_female_workers,EC 2017-2023: Number of female workers,Total FEMALE staff
+pooled:EC_pooled_establishment.dta,"2014,2017,2020,2023",fi,ec_formal_informal_derived,"EC 2014-2023: Formal or informal establishment, NISR derived",Formal and Informal enterprises
+pooled:EC_pooled_establishment.dta,2011,fi_1,ec_formality_three_criteria_2011,"EC 2011: Formal or informal by registration, accounts and size, NISR derived","Formal_Informal based on registration, keeping account and size"
+pooled:EC_pooled_establishment.dta,2011,fi_2,ec_formality_two_criteria_2011,"EC 2011: Formal or informal by registration and accounts, NISR derived",Formality based on registration and keeking account
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",foregner_workers,ec_foreign_workers,EC 2017-2023: Number of non-Rwandan workers,Total number of Foreigner staff
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",foreign_female,ec_foreign_female_workers,EC 2017-2023: Number of non-Rwandan female workers,Number of FEMALE Foreigner staff
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",foreign_male,ec_foreign_male_workers,EC 2017-2023: Number of non-Rwandan male workers,Number of MALE Foreigner staff
+pooled:EC_pooled_establishment.dta,2011,geo_conflict_2011,ec_district_name_conflict_2011,EC 2011: District code disagreed with the district name; the names were used,2011: 1 = the numeric district code (Districts_names) disagreed with the district NAME (S002); district and sector taken from the names (622 establishments)
+pooled:EC_pooled_establishment.dta,2011,id10,ec_manager_sex_2011,EC 2011: Sex of the manager,GENDER OF MANAGER
+pooled:EC_pooled_establishment.dta,2011,id2,ec_district_sequence_2011,EC 2011: District sequence number within the province as shipped,DISTRICT
+pooled:EC_pooled_establishment.dta,2011,id3,ec_sector_sequence_2011,EC 2011: Sector sequence number within the district as shipped,SECTOR
+pooled:EC_pooled_establishment.dta,2011,id6,ec_serial_in_village_2011,EC 2011: Serial number of the establishment within the village,SERIAL NUMBER WITHIN THE VILLAGE
+pooled:EC_pooled_establishment.dta,2014,inclusionprobability_1_,ec_inclusion_probability_2014,EC 2014: Inclusion probability of the establishment in the sample,Inclusion (Selection) Probability for Stage 1
+pooled:EC_pooled_establishment.dta,2011,isic1_comp,ec_isic_section_comparable_2011,"EC 2011: ISIC section recoded for comparison with 2014, NISR derived",ISIC for comparison with 2014
+pooled:EC_pooled_establishment.dta,2014,isic1q6b,ec_main_activity_section_2014,"EC 2014: Main economic activity, ISIC section (one digit)",MAIN ECONOMIC ACTIVITY_1 DIGIT
+pooled:EC_pooled_establishment.dta,2014,isic1q7b,ec_second_activity_section_2014,"EC 2014: Secondary economic activity, ISIC section (one digit)",SECONDARY ECONOMIC ACTIVITY_1 DIGIT
+pooled:EC_pooled_establishment.dta,2011,isic_fl_ent,ec_isic_section_2011,"EC 2011: ISIC section (one digit), NISR variable isic_fl_ent",ISIC _1DIGIT
+pooled:EC_pooled_establishment.dta,2011,isic_level1,ec_main_activity_section_2011,"EC 2011: Main activity ISIC section, NISR variable isic_level1",ISIC_LEVEL1_MAIN ACTIVITY
+pooled:EC_pooled_establishment.dta,"2011,2014",key,ec_nisr_establishment_key,EC 2011-2014: NISR establishment key as shipped (2011 and 2014),Unique identifier of establishment
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",male_worker,ec_male_workers,EC 2017-2023: Number of male workers,Total MALE  staff
+pooled:EC_pooled_establishment.dta,2014,new_sector,ec_inst_sector_derived_2014,"EC 2014: Institutional sector, NISR derived",Created institutional sector
+pooled:EC_pooled_establishment.dta,2011,no_detail_employ,ec_employees_without_details,EC 2011: Employees without details,Employees without details
+pooled:EC_pooled_establishment.dta,2017,owner,ec_owner_sex_derived_2017,"EC 2017: Sex of the owner, NISR derived variable named owner",Owner of establishment
+pooled:EC_pooled_establishment.dta,"2017,2020",owner_age,ec_owner_age_derived_2017_2020,"EC 2017-2020: Age of the owner, NISR derived",Age of owner
+pooled:EC_pooled_establishment.dta,2023,owner_age_v2,ec_owner_age_2023,"EC 2023: Age of the owner, questionnaire item Q14",Q14 Age of the owner
+pooled:EC_pooled_establishment.dta,2011,owner_gender,ec_owner_sex_derived_2011,"EC 2011: Sex of the owner, NISR derived",Gender of owner
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",owner_sex,ec_owner_sex_derived,"EC 2017-2023: Sex of the owner, NISR derived",Sex of owner of establishment
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",prov,ec_province,"EC: Province, NISR code 1-5","Province (1-5, NISR codes)"
+pooled:EC_pooled_establishment.dta,2020,prov_derived,ec_province_derived,EC 2020: Province derived from the district code where missing,1 = province was missing in the file and derived as district // 10 (2020: 137 establishments)
+pooled:EC_pooled_establishment.dta,2011,psf,ec_member_psf_2011,EC 2011: Member of the Private Sector Federation (PSF),PSF
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q10,ec_legal_status_2017_2023,EC 2017-2023: Legal status,Q10 Legal status
+pooled:EC_pooled_establishment.dta,2014,q10_v2,ec_mixed_sector_category_2014,EC 2014: Category of mixed-sector establishment,CATEGORIES OF MIXED SECTOR
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q11,ec_management_2017_2023,EC 2017-2023: Management completely separated from the household,Q11 Is the management of establishment completely separated from the household m
+pooled:EC_pooled_establishment.dta,2014,q11_v2,ec_owner_nationality_2014,EC 2014: Nationality of the owners,NATIONALITY OF OWNERS
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q12,ec_owner_is_manager_2017_2023,EC 2017-2023: The owner is also the manager,Q12 Is the owner of the establishment its manager?
+pooled:EC_pooled_establishment.dta,2014,q12_v2,ec_legal_status_2014,EC 2014: Legal status,LEGAL STATUS
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q13,ec_owner_sex_2017_2023,EC 2017-2023: Sex of the owner,Q13 Sex of the owner
+pooled:EC_pooled_establishment.dta,2014,q13_v2,ec_management_separated_2014,EC 2014: Management completely separated from the household,IS THE MANAGEMENT OF ESTABLISHMENT COMPLETELY SEPARATED FROM THE HH. MANAGEM
+pooled:EC_pooled_establishment.dta,"2017,2020",q14,ec_owner_age_2017_2020,EC 2017-2020: Age of the owner,Q14 Age of the owner
+pooled:EC_pooled_establishment.dta,2014,q14_v2,ec_owner_is_manager_2014,EC 2014: The owner is also the manager,IS THE OWNER OF THE ESTABLISHMENT ITS MANAGER
+pooled:EC_pooled_establishment.dta,2014,q15,ec_owner_sex_2014,EC 2014: Sex of the owner,THE SEX OF OWNER
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_1,ec_regular_accounts,EC 2017-2023: Keeps regular accounts,Q15.1 Does the establishment maintain regular accounts?
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_2,ec_books_used,EC 2017-2023: Type of books used,Q15.2 Which of the following books is used
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_2a,ec_books_ledgers,EC 2017-2023: Books used: ledgers,Q15_2A Ledgers
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_2b,ec_books_journals,EC 2017-2023: Books used: journals,Q15_2B Journals
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_2c,ec_books_balance_sheet,EC 2017-2023: Books used: balance sheet,Q15_2C Balance sheet
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_2d,ec_books_income_statement,EC 2017-2023: Books used: income statement (profit and loss),Q15_2D Income statement (Profit and loss account)
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q15_2e,ec_books_invoices,EC 2017-2023: Books used: invoices,Q15_2E Invoice
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q16,ec_establishment_type_2017_2023,"EC 2017-2023: Establishment type: head office, single unit, branch",Q16 Establishment type
+pooled:EC_pooled_establishment.dta,2014,q16_v2,ec_owner_age_2014,EC 2014: Age of the owner,AGE OF OWNER
+pooled:EC_pooled_establishment.dta,2014,q17,ec_regular_accounts_2014,EC 2014: Keeps regular accounting,DOES THE ESTABLISHMENT MAINTAIN REGULAR ACCOUNTING?
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q17_2,ec_branches_rwanda,EC 2017-2023: Number of branches in Rwanda including the head office,Q17.2 Total number of branches in rwanda including the head office
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q17_3,ec_persons_all_branches,"EC 2017-2023: Persons working in all branches in Rwanda, head office included",Q17.3 Total number of working persons in all branches in rwanda including the he
+pooled:EC_pooled_establishment.dta,2014,q18,ec_establishment_type_2014,"EC 2014: Establishment type: head office, single unit, branch",ESTABLISHMENT TYPE
+pooled:EC_pooled_establishment.dta,2014,q19,ec_branches_rwanda_2014,EC 2014: Number of branches in Rwanda including the head office,TOTAL NUMBER OF BRANCHES IN RWANDA INCLUDING THE HEAD OFFICE
+pooled:EC_pooled_establishment.dta,"2014,2017,2020,2023",q2,ec_working_place,EC 2014-2023: Working place of the establishment,Q2. Working place
+pooled:EC_pooled_establishment.dta,"2017,2020",q20,ec_annual_turnover_2017_2020,"EC 2017-2020: Annual total turnover in the previous year, bracket",Q20. Annual total turnover in 2019
+pooled:EC_pooled_establishment.dta,2023,q20_v2,ec_annual_total_turnover_2023,EC 2023: Annual total turnover in 2022,Q20. Annual total turnover in 2022
+pooled:EC_pooled_establishment.dta,2014,q20_v3,ec_persons_all_branches_2014,"EC 2014: Persons working in all branches in Rwanda, head office included",TOTAL NUMBER OF WORKING PERSONS IN ALL BRANCHES IN RWANDA INCLUDING THE HEAD
+pooled:EC_pooled_establishment.dta,"2017,2020",q21,ec_capital_employed_2017_2020,"EC 2017-2020: Current employed capital, bracket in Rwandan francs",Q21. Current employed capital
+pooled:EC_pooled_establishment.dta,2023,q21_v2,ec_current_employed_capital_2023,EC 2023: Current employed capital,Q21. Current employed capital
+pooled:EC_pooled_establishment.dta,2014,q21a1,ec_rwandan_workers_2014,"EC 2014: Rwandan workers, total",Rwandan Total
+pooled:EC_pooled_establishment.dta,2014,q21a2,ec_rwandan_male_workers_2014,"EC 2014: Rwandan workers, male",Rwandan Male
+pooled:EC_pooled_establishment.dta,2014,q21a3,ec_rwandan_female_workers_2014,"EC 2014: Rwandan workers, female",Rwandan Female
+pooled:EC_pooled_establishment.dta,2014,q21b1,ec_foreign_workers_2014,"EC 2014: Non-Rwandan workers, total",Foreigner Total
+pooled:EC_pooled_establishment.dta,2014,q21b2,ec_foreign_male_workers_2014,"EC 2014: Non-Rwandan workers, male",Foreigner Male
+pooled:EC_pooled_establishment.dta,2014,q21b3,ec_foreign_female_workers_2014,"EC 2014: Non-Rwandan workers, female",Foreigner Female
+pooled:EC_pooled_establishment.dta,2014,q21c1,ec_total_workers_2014,EC 2014: Total workers,TOTAL
+pooled:EC_pooled_establishment.dta,2014,q21c2,ec_male_workers_2014,"EC 2014: Total workers, male",TOTAL  Male
+pooled:EC_pooled_establishment.dta,2014,q21c3,ec_female_workers_2014,"EC 2014: Total workers, female",TOTAL  Female
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22,ec_registered_any_institution,EC 2017-2023: Registered with any institution,Q22. Is the establishment registered in any of the following institutions?
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22_other,ec_registered_other_text,"EC 2017-2023: Other registration institution, text",Q22. Specify other
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22a,ec_registered_sector,EC 2017-2023: Registered with the sector,Q22A Sector
+pooled:EC_pooled_establishment.dta,2014,q22a1,ec_working_owners_total_2014,"EC 2014: Working owners, total",Working Owners    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22a2,ec_working_owners_male_2014,"EC 2014: Working owners, male",Working Owners    MALE
+pooled:EC_pooled_establishment.dta,2014,q22a3,ec_working_owners_female_2014,"EC 2014: Working owners, female",Working Owners    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22b,ec_registered_district,EC 2017-2023: Registered with the district,Q22B District
+pooled:EC_pooled_establishment.dta,2014,q22b1,ec_unpaid_workers_total_2014,"EC 2014: Unpaid workers, total",Unpaid    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22b2,ec_unpaid_workers_male_2014,"EC 2014: Unpaid workers, male",Unpaid    MALE
+pooled:EC_pooled_establishment.dta,2014,q22b3,ec_unpaid_workers_female_2014,"EC 2014: Unpaid workers, female",Unpaid    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22c,ec_registered_rca,EC 2017-2023: Registered with the Rwanda Cooperative Agency (RCA),Q22C Rwanda cooperative Agency (RCA) only Cooperative
+pooled:EC_pooled_establishment.dta,2014,q22c1,ec_apprentices_total_2014,"EC 2014: Apprentices, total",Apprentice    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22c2,ec_apprentices_male_2014,"EC 2014: Apprentices, male",Apprentice    MALE
+pooled:EC_pooled_establishment.dta,2014,q22c3,ec_apprentices_female_2014,"EC 2014: Apprentices, female",Apprentice    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22d,ec_registered_psf,EC 2017-2023: Registered with the Private Sector Federation (PSF),Q22D Private sector Federation (PSF)
+pooled:EC_pooled_establishment.dta,2014,q22d1,ec_contract_under_1m_total_2014,"EC 2014: Workers on contracts under 1 month, total",<1 Months    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22d2,ec_contract_under_1m_male_2014,"EC 2014: Workers on contracts under 1 month, male",<1 Months    MALE
+pooled:EC_pooled_establishment.dta,2014,q22d3,ec_contract_under_1m_female_2014,"EC 2014: Workers on contracts under 1 month, female",<1 Months    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22e,ec_registered_rgb,EC 2017-2023: Registered with the Rwanda Governance Board (RGB),Q22E Rwanda Governance Board (RGB) only NGO
+pooled:EC_pooled_establishment.dta,2014,q22e1,ec_contract_1_6m_total_2014,"EC 2014: Workers on contracts of 1 to 6 months, total",1-6 Months    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22e2,ec_contract_1_6m_male_2014,"EC 2014: Workers on contracts of 1 to 6 months, male",1-6 Months    MALE
+pooled:EC_pooled_establishment.dta,2014,q22e3,ec_contract_1_6m_female_2014,"EC 2014: Workers on contracts of 1 to 6 months, female",1-6 Months    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22f,ec_registered_rssb,EC 2017-2023: Registered with the Social Security Board (RSSB),Q22F Social Security Board (RSSB)
+pooled:EC_pooled_establishment.dta,2014,q22f1,ec_contract_over_6m_total_2014,"EC 2014: Workers on contracts above 6 months, total",Above 6 Months    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22f2,ec_contract_over_6m_male_2014,"EC 2014: Workers on contracts above 6 months, male",Above 6 Months    MALE
+pooled:EC_pooled_establishment.dta,2014,q22f3,ec_contract_over_6m_female_2014,"EC 2014: Workers on contracts above 6 months, female",Above 6 Months    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22g,ec_registered_rdb,EC 2017-2023: Registered with the Rwanda Development Board (RDB),Q22G Rwanda Development Board (RDB)
+pooled:EC_pooled_establishment.dta,2014,q22g1,ec_open_contract_total_2014,"EC 2014: Workers on open-ended contracts, total",Open contract    TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22g2,ec_open_contract_male_2014,"EC 2014: Workers on open-ended contracts, male",Open contract    MALE
+pooled:EC_pooled_establishment.dta,2014,q22g3,ec_open_contract_female_2014,"EC 2014: Workers on open-ended contracts, female",Open contract    FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22h,ec_registered_rra,EC 2017-2023: Registered with the Rwanda Revenue Authority (RRA),Q22H Rwanda Revenue Authority (RRA)
+pooled:EC_pooled_establishment.dta,2014,q22h1,ec_all_workers_total_2014,"EC 2014: All workers, total",TOTAL          TOTAL
+pooled:EC_pooled_establishment.dta,2014,q22h2,ec_all_workers_male_2014,"EC 2014: All workers, male",TOTAL          MALE
+pooled:EC_pooled_establishment.dta,2014,q22h3,ec_all_workers_female_2014,"EC 2014: All workers, female",TOTAL          FEMALE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22i,ec_registered_immigration,EC 2017-2023: Registered with the Directorate of Immigration and Emigration,Q22I Directorate of Immigration and Emigration
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22j,ec_registered_other,EC 2017-2023: Registered with another institution,Q22J Other
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q22z,ec_registered_none,EC 2017-2023: No registration,Q22Z No registration
+pooled:EC_pooled_establishment.dta,2014,q23,ec_annual_turnover_2014,"EC 2014: Annual total turnover in 2013, bracket in Rwandan francs",ANNUAL TOTAL TURNOVER IN 2013
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q23_1,ec_trades_goods_abroad,EC 2017-2023: Traded goods with a foreign country in the last year,Q23.1 Did you have any transaction of goods with a foreign country during the la
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q23_2,ec_trades_services_abroad,EC 2017-2023: Traded services with a foreign country in the last year,Q23.2 Did you have any transaction of services with a foreign country during the
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24,ec_type_taxes_paid_2017_2023,EC 2017-2023: Type of taxes paid,Q24. What type of taxes do you pay?
+pooled:EC_pooled_establishment.dta,2014,q24_v2,ec_capital_employed_2014,"EC 2014: Employed capital, bracket in Rwandan francs",EMPLOYED CAPITAL
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24a,ec_pays_vat,EC 2017-2023: Pays value added tax (VAT),Q24A Value Added Tax (VAT)
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24b,ec_pays_tpr_paye,EC 2017-2023: Pays TPR / PAYE,Q24B TPR/PAYE
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24c,ec_pays_income_tax,EC 2017-2023: Pays income tax,Q24C Income tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24d,ec_pays_excise_duty,EC 2017-2023: Pays excise duties,Q24D Excise duties tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24e,ec_pays_import_duty,EC 2017-2023: Pays import duties,Q24E Import duties tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24f,ec_pays_trading_license,EC 2017-2023: Pays the trading license tax,Q24F Trading license tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24g,ec_pays_rental_income_tax,EC 2017-2023: Pays rental income tax,Q24G Rental income tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24h,ec_pays_flat_tax,EC 2017-2023: Pays the flat tax,Q24H Flat tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q24z,ec_pays_no_tax,EC 2017-2023: Pays no tax,Q24Z No tax
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q25,ec_has_tin_2017_2023,EC 2017-2023: Has a taxpayer identification number (TIN),Q25. Do you have a tin number
+pooled:EC_pooled_establishment.dta,2014,q25_v2,ec_annual_income_2014,"EC 2014: Annual income in 2013, bracket in Rwandan francs",REVENUE/INCOME IN 2013
+pooled:EC_pooled_establishment.dta,2014,q26,ec_start_contribution_2014,"EC 2014: Contribution to start the establishment, bracket in Rwandan francs",CONTRIBUTIONS
+pooled:EC_pooled_establishment.dta,2014,q27a,ec_registered_sector_2014,EC 2014: Registered with the sector,Registration at Sector
+pooled:EC_pooled_establishment.dta,2014,q27b,ec_registered_district_2014,EC 2014: Registered with the district,Registration at District
+pooled:EC_pooled_establishment.dta,2014,q27c,ec_registered_rca_2014,EC 2014: Registered with the Rwanda Cooperative Agency (RCA),Registration at Rwanda Cooperative Agency (RCA)
+pooled:EC_pooled_establishment.dta,2014,q27d,ec_registered_psf_2014,EC 2014: Registered with the Private Sector Federation (PSF),Registration at Private Sector Federation (PSF)
+pooled:EC_pooled_establishment.dta,2014,q27e,ec_registered_rgb_2014,EC 2014: Registered with the Rwanda Governance Board (RGB),Registration at Rwanda Governance Board (RGB)
+pooled:EC_pooled_establishment.dta,2014,q27f,ec_registered_rssb_2014,EC 2014: Registered with the Social Security Fund (RSSB),Registration at Social Security Fund (RSSB)
+pooled:EC_pooled_establishment.dta,2014,q27g,ec_registered_rdb_2014,EC 2014: Registered with the Rwanda Development Board (RDB),Registration at Rwanda Development Board (RDB)
+pooled:EC_pooled_establishment.dta,2014,q27h,ec_registered_rra_2014,EC 2014: Registered with the Rwanda Revenue Authority (RRA),Registrastion at Rwanda Revenue Authority (RRA)
+pooled:EC_pooled_establishment.dta,2014,q27ia,ec_registered_other_2014,EC 2014: Registered with other institutions,Registration at Other institutions
+pooled:EC_pooled_establishment.dta,2014,q28,ec_trades_abroad_2014,EC 2014: Buys or sells goods or services abroad,DO YOU BUY OR SELL GOODS/SERVICES ABROAD
+pooled:EC_pooled_establishment.dta,2014,q29a,ec_pays_vat_2014,EC 2014: Pays value added tax (VAT),Value Added Tax (VAT)
+pooled:EC_pooled_establishment.dta,2014,q29c,ec_pays_income_tax_2014,EC 2014: Pays income tax,Income tax
+pooled:EC_pooled_establishment.dta,2014,q29d,ec_pays_excise_duty_2014,EC 2014: Pays excise duties,Excise duties tax
+pooled:EC_pooled_establishment.dta,2014,q29e,ec_pays_import_duty_2014,EC 2014: Pays import duties,Import duties tax
+pooled:EC_pooled_establishment.dta,2014,q29f,ec_pays_trading_license_2014,EC 2014: Pays the trading license tax,Trading license tax
+pooled:EC_pooled_establishment.dta,2014,q29g,ec_pays_rental_income_tax_2014,EC 2014: Pays rental income tax,Rental income tax
+pooled:EC_pooled_establishment.dta,2014,q29h,ec_pays_flat_tax_2014,EC 2014: Pays the flat tax,Flat tax
+pooled:EC_pooled_establishment.dta,"2014,2017,2020,2023",q3,ec_working_status,"EC 2014-2023: Working status (operating, closed temporarily or permanently)",Q3.1. Working status
+pooled:EC_pooled_establishment.dta,2014,q30,ec_has_tin_2014,EC 2014: Has a taxpayer identification number (TIN),DO YOU HAVE A TIN NUMBER ?
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q4_2,ec_manager_sex,EC 2017-2023: Sex of the manager,Q4.2 Manager sex
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q4_3,ec_manager_age,EC 2017-2023: Age of the manager,Q4.3 Manager age
+pooled:EC_pooled_establishment.dta,2014,q4b,ec_manager_sex_2014,EC 2014: Sex of the manager,GENDER OF MANAGER
+pooled:EC_pooled_establishment.dta,2014,q4c,ec_manager_age_2014,EC 2014: Age of the manager,AGE OF MANAGER
+pooled:EC_pooled_establishment.dta,"2017,2020",q5_1,ec_start_month,EC 2017-2020: Month of starting operation in Rwanda,Q5.1 Month of starting operation in Rwanda
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q5_2,ec_start_year,EC 2017-2023: Year of starting operation in Rwanda,Year of starting operation in Rwanda
+pooled:EC_pooled_establishment.dta,2014,q5a,ec_start_month_2014,EC 2014: Month of starting operation,MONTH OF STARTING OPERATION
+pooled:EC_pooled_establishment.dta,2014,q5b,ec_start_year_2014,EC 2014: Year of starting operation,YEAR OF STARTING OPERATION
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q6_1,ec_main_activity_section,"EC 2017-2023: Main economic activity, ISIC section (one digit)",ISIC1 Major economic activity
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q7,ec_institutional_sector,EC 2017-2023: Institutional sector,Q7 Institutional sector
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",q8,ec_mixed_sector_2017_2023,EC 2017-2023: Category of mixed-sector establishment,Q8 Categories of mixed sector
+pooled:EC_pooled_establishment.dta,2014,q8_v2,ec_institutional_sector_2014,EC 2014: Institutional sector,INSITUTIONAL SECTOR
+pooled:EC_pooled_establishment.dta,"2017,2020",q9,ec_owner_nationality_2017_2020,EC 2017-2020: Nationality of the owner,Q9 Nationality of owner
+pooled:EC_pooled_establishment.dta,2023,q9_v2,ec_nationality_owner_2023,EC 2023: Nationality of owner,Q9 Nationality of owner
+pooled:EC_pooled_establishment.dta,2014,q9_v3,ec_private_sector_category_2014,EC 2014: Category of private-sector establishment,CATEGORIES OF PRIVATE SECTOR
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",rwandan_female,ec_rwandan_female_workers,EC 2017-2023: Number of Rwandan female workers,Number of FEMALE Rwandan staff
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",rwandan_male,ec_rwandan_male_workers,EC 2017-2023: Number of Rwandan male workers,Number of MALE Rwandan staff
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",rwandan_workers,ec_rwandan_workers,EC 2017-2023: Number of Rwandan workers,Total number of Rwandan staff
+pooled:EC_pooled_establishment.dta,2011,s001,ec_province_name_2011,EC 2011: Name of the province as shipped,Name of Province
+pooled:EC_pooled_establishment.dta,2011,s002,ec_district_name_2011,EC 2011: Name of the district as shipped,Name of District
+pooled:EC_pooled_establishment.dta,2011,s003,ec_sector_name_2011,EC 2011: Name of the sector as shipped,Name of Sector
+pooled:EC_pooled_establishment.dta,2011,s03,ec_working_place_2011,EC 2011: Working place of the establishment,WORKING PLACE
+pooled:EC_pooled_establishment.dta,2011,s04,ec_working_status_2011,"EC 2011: Working status (operating, closed temporarily or permanently)",WORKING STATUS
+pooled:EC_pooled_establishment.dta,2011,s05,ec_institutional_sector_2011,EC 2011: Institutional sector,SECTOR
+pooled:EC_pooled_establishment.dta,2011,s06,ec_ownership_2011,EC 2011: Ownership of the establishment,OWNERSHIP
+pooled:EC_pooled_establishment.dta,2011,s07,ec_start_year_2011,EC 2011: Year of starting operation,YEAR OF STARTING OPERATION
+pooled:EC_pooled_establishment.dta,2011,s08b,ec_main_activity_isic_2011,"EC 2011: Main economic activity, ISIC code (three to four digits)",ISIC CODE
+pooled:EC_pooled_establishment.dta,2011,s09,ec_legal_status_2011,EC 2011: Legal status,LEGAL STATUS
+pooled:EC_pooled_establishment.dta,2011,s10a,ec_registered_rssb_2011,EC 2011: Registered with the Social Security Fund (RSSB),Social Security Fund
+pooled:EC_pooled_establishment.dta,2011,s10b,ec_registered_rra_2011,EC 2011: Registered with the Rwanda Revenue Authority (RRA),Rwanda Revenue Authority
+pooled:EC_pooled_establishment.dta,2011,s10c,ec_registered_rdb_2011,EC 2011: Registered with the Rwanda Development Board (RDB),Rwanda Development Board
+pooled:EC_pooled_establishment.dta,2011,s10d,ec_registered_district_2011,EC 2011: Registered with the district,District
+pooled:EC_pooled_establishment.dta,2011,s10e,ec_registered_sector_2011,EC 2011: Registered with the sector,Sector
+pooled:EC_pooled_establishment.dta,2011,s10f,ec_registered_rca_2011,EC 2011: Registered with the Rwanda Cooperative Agency (RCA),Rwanda cooperative Agency
+pooled:EC_pooled_establishment.dta,2011,s10g,ec_registered_other_gov_2011,EC 2011: Registered with other government agencies,Other GoR Agencies
+pooled:EC_pooled_establishment.dta,2011,s11a,ec_pays_vat_2011,EC 2011: Pays value added tax (VAT),VAT
+pooled:EC_pooled_establishment.dta,2011,s11b,ec_pays_tpr_2011,EC 2011: Pays TPR (pay-as-you-earn income tax on staff),TPR
+pooled:EC_pooled_establishment.dta,2011,s11c,ec_pays_income_tax_2011,EC 2011: Pays income tax,Income tax
+pooled:EC_pooled_establishment.dta,2011,s12,ec_regular_accounts_2011,EC 2011: Keeps regular operational accounts,DOES THE ESTABLISHMENT MAINTAIN REGULAR OPERATIONAL ACCOU
+pooled:EC_pooled_establishment.dta,2011,s13,ec_capital_employed_2011,EC 2011: Capital employed in Rwandan francs,EMPLOYED CAPITAL
+pooled:EC_pooled_establishment.dta,2011,s14a,ec_staff_noqual_rwandan_perm_m,"EC 2011: Staff, no qualification: Rwandan, permanent contract, male",Without qualification R_P_M (Rwandan Permanent Male)
+pooled:EC_pooled_establishment.dta,2011,s14aa,ec_staff_primary_rwandan_temp_m,"EC 2011: Staff, primary education: Rwandan, temporary contract, male",PrimaryT_R_M
+pooled:EC_pooled_establishment.dta,2011,s14ab,ec_staff_primary_rwandan_temp_f,"EC 2011: Staff, primary education: Rwandan, temporary contract, female",PrimaryT_R_F
+pooled:EC_pooled_establishment.dta,2011,s14ac,ec_staff_primary_foreign_temp_m,"EC 2011: Staff, primary education: non-Rwandan, temporary contract, male",PrimaryT_N_R_M
+pooled:EC_pooled_establishment.dta,2011,s14ad,ec_staff_primary_foreign_temp_f,"EC 2011: Staff, primary education: non-Rwandan, temporary contract, female",PrimaryT_N_R_F
+pooled:EC_pooled_establishment.dta,2011,s14b,ec_staff_noqual_rwandan_perm_f,"EC 2011: Staff, no qualification: Rwandan, permanent contract, female",Without qualification R_P_F (Rwandan Permanent Female)
+pooled:EC_pooled_establishment.dta,2011,s14ba,ec_staff_second_rwandan_temp_m,"EC 2011: Staff, secondary education: Rwandan, temporary contract, male",SecondaryT_R_M
+pooled:EC_pooled_establishment.dta,2011,s14bb,ec_staff_second_rwandan_temp_f,"EC 2011: Staff, secondary education: Rwandan, temporary contract, female",SecondaryT_R_F
+pooled:EC_pooled_establishment.dta,2011,s14bc,ec_staff_second_foreign_temp_m,"EC 2011: Staff, secondary education: non-Rwandan, temporary contract, male",SecondaryT_N_R_M
+pooled:EC_pooled_establishment.dta,2011,s14bd,ec_staff_second_foreign_temp_f,"EC 2011: Staff, secondary education: non-Rwandan, temporary contract, female",SecondaryT_N_R_F
+pooled:EC_pooled_establishment.dta,2011,s14c,ec_staff_noqual_rwandan_total_m,"EC 2011: Staff, no qualification: Rwandan, all contracts, male",Without qualificationR_T_M (Rwandan Tatal male)
+pooled:EC_pooled_establishment.dta,2011,s14ca,ec_staff_univ_rwandan_temp_m,"EC 2011: Staff, university education: Rwandan, temporary contract, male",UniversityT_R_M
+pooled:EC_pooled_establishment.dta,2011,s14cb,ec_staff_univ_rwandan_temp_f,"EC 2011: Staff, university education: Rwandan, temporary contract, female",UniversityT_R_F
+pooled:EC_pooled_establishment.dta,2011,s14cc,ec_staff_univ_foreign_temp_m,"EC 2011: Staff, university education: non-Rwandan, temporary contract, male",UniversityT_N_R_M
+pooled:EC_pooled_establishment.dta,2011,s14cd,ec_staff_univ_foreign_temp_f,"EC 2011: Staff, university education: non-Rwandan, temporary contract, female",UniversityT_N_R_F
+pooled:EC_pooled_establishment.dta,2011,s14d,ec_staff_noqual_rwandan_total_f,"EC 2011: Staff, no qualification: Rwandan, all contracts, female",Without qualificationR_T_F
+pooled:EC_pooled_establishment.dta,2011,s14da,ec_staff_noqual_rwandan_temp_m,"EC 2011: Staff, no qualification: Rwandan, temporary contract, male",Without qualificationT_R_M
+pooled:EC_pooled_establishment.dta,2011,s14db,ec_staff_noqual_rwandan_temp_f,"EC 2011: Staff, no qualification: Rwandan, temporary contract, female",Without qualificationT_R_F
+pooled:EC_pooled_establishment.dta,2011,s14dc,ec_staff_noqual_foreign_temp_m,"EC 2011: Staff, no qualification: non-Rwandan, temporary contract, male",Without qualificationT_N_R_M
+pooled:EC_pooled_establishment.dta,2011,s14dd,ec_staff_noqual_foreign_temp_f,"EC 2011: Staff, no qualification: non-Rwandan, temporary contract, female",Without qualificationT_N_R_F
+pooled:EC_pooled_establishment.dta,2011,s14e,ec_staff_noqual_foreign_perm_m,"EC 2011: Staff, no qualification: non-Rwandan, permanent contract, male",Without qualificationN_R_P_M (Non-Rwandan Permanent Male)
+pooled:EC_pooled_establishment.dta,2011,s14f,ec_staff_noqual_foreign_perm_f,"EC 2011: Staff, no qualification: non-Rwandan, permanent contract, female",Without qualificationN_R_P_F
+pooled:EC_pooled_establishment.dta,2011,s14g,ec_staff_noqual_foreign_total_m,"EC 2011: Staff, no qualification: non-Rwandan, all contracts, male",Without qualificationN_R_T_M
+pooled:EC_pooled_establishment.dta,2011,s14h,ec_staff_noqual_foreign_total_f,"EC 2011: Staff, no qualification: non-Rwandan, all contracts, female",Without qualificationN_R_T_F
+pooled:EC_pooled_establishment.dta,2011,s14m,ec_staff_primary_rwandan_perm_m,"EC 2011: Staff, primary education: Rwandan, permanent contract, male",PrimaryR_P_M
+pooled:EC_pooled_establishment.dta,2011,s14n,ec_staff_primary_rwandan_perm_f,"EC 2011: Staff, primary education: Rwandan, permanent contract, female",PrimaryR_P_F
+pooled:EC_pooled_establishment.dta,2011,s14o,ec_staff_primary_rwandan_total_m,"EC 2011: Staff, primary education: Rwandan, all contracts, male",PrimaryR_T_M
+pooled:EC_pooled_establishment.dta,2011,s14oa,ec_staff_second_rwandan_total_m,"EC 2011: Staff, secondary education: Rwandan, all contracts, male",SecondaryR_T_M
+pooled:EC_pooled_establishment.dta,2011,s14ob,ec_staff_univ_rwandan_total_m,"EC 2011: Staff, university education: Rwandan, all contracts, male",UniversityR_T_M
+pooled:EC_pooled_establishment.dta,2011,s14p,ec_staff_primary_rwandan_total_f,"EC 2011: Staff, primary education: Rwandan, all contracts, female",PrimaryR_T_F
+pooled:EC_pooled_establishment.dta,2011,s14pa,ec_staff_second_rwandan_total_f,"EC 2011: Staff, secondary education: Rwandan, all contracts, female",SecondaryR_T_F
+pooled:EC_pooled_establishment.dta,2011,s14pb,ec_staff_univ_rwandan_total_f,"EC 2011: Staff, university education: Rwandan, all contracts, female",UniversityR_T_F
+pooled:EC_pooled_establishment.dta,2011,s14q,ec_staff_primary_foreign_perm_m,"EC 2011: Staff, primary education: non-Rwandan, permanent contract, male",PrimaryN_R_P_M
+pooled:EC_pooled_establishment.dta,2011,s14qa,ec_staff_second_foreign_perm_m,"EC 2011: Staff, secondary education: non-Rwandan, permanent contract, male",SecondaryN_R_P_M
+pooled:EC_pooled_establishment.dta,2011,s14qb,ec_staff_univ_foreign_perm_m,"EC 2011: Staff, university education: non-Rwandan, permanent contract, male",UniversityN_R_P_M
+pooled:EC_pooled_establishment.dta,2011,s14r,ec_staff_primary_foreign_perm_f,"EC 2011: Staff, primary education: non-Rwandan, permanent contract, female",PrimaryN_R_P_F
+pooled:EC_pooled_establishment.dta,2011,s14ra,ec_staff_second_foreign_perm_f,"EC 2011: Staff, secondary education: non-Rwandan, permanent contract, female",SecondaryN_R_P_F
+pooled:EC_pooled_establishment.dta,2011,s14rb,ec_staff_univ_foreign_perm_f,"EC 2011: Staff, university education: non-Rwandan, permanent contract, female",UniversityN_R_P_F
+pooled:EC_pooled_establishment.dta,2011,s14s,ec_staff_primary_foreign_total_m,"EC 2011: Staff, primary education: non-Rwandan, all contracts, male",PrimaryN_R_T_M
+pooled:EC_pooled_establishment.dta,2011,s14sa,ec_staff_second_foreign_total_m,"EC 2011: Staff, secondary education: non-Rwandan, all contracts, male",SecondaryN_R_T_M
+pooled:EC_pooled_establishment.dta,2011,s14sb,ec_staff_univ_foreign_total_m,"EC 2011: Staff, university education: non-Rwandan, all contracts, male",UniversityN_R_T_M
+pooled:EC_pooled_establishment.dta,2011,s14t,ec_staff_primary_foreign_total_f,"EC 2011: Staff, primary education: non-Rwandan, all contracts, female",PrimaryN_R_T_F
+pooled:EC_pooled_establishment.dta,2011,s14ta,ec_staff_second_foreign_total_f,"EC 2011: Staff, secondary education: non-Rwandan, all contracts, female",SecondaryN_R_T_F
+pooled:EC_pooled_establishment.dta,2011,s14tb,ec_staff_univ_foreign_total_f,"EC 2011: Staff, university education: non-Rwandan, all contracts, female",UniversityN_R_T_F
+pooled:EC_pooled_establishment.dta,2011,s14y,ec_staff_second_rwandan_perm_m,"EC 2011: Staff, secondary education: Rwandan, permanent contract, male",SecondaryR_P_M
+pooled:EC_pooled_establishment.dta,2011,s14ya,ec_staff_univ_rwandan_perm_m,"EC 2011: Staff, university education: Rwandan, permanent contract, male",UniversityR_P_M
+pooled:EC_pooled_establishment.dta,2011,s14z,ec_staff_second_rwandan_perm_f,"EC 2011: Staff, secondary education: Rwandan, permanent contract, female",SecondaryR_P_F
+pooled:EC_pooled_establishment.dta,2011,s14za,ec_staff_univ_rwandan_perm_f,"EC 2011: Staff, university education: Rwandan, permanent contract, female",UniversityR_P_F
+pooled:EC_pooled_establishment.dta,2011,s15,ec_establishment_type_2011,"EC 2011: Establishment type (head office, single unit, branch)",ESTABLISHMENT TYPE
+pooled:EC_pooled_establishment.dta,2011,s163,ec_main_activity_isic4_2011,"EC 2011: Main economic activity, ISIC Rev. 4 four-digit code",ISIC _4 DIGITS
+pooled:EC_pooled_establishment.dta,2011,s163b,ec_persons_all_branches_2011,"EC 2011: Persons working in all branches in Rwanda, head office included",Total Number of working persons in all branches in Rwan
+pooled:EC_pooled_establishment.dta,2011,s16a,ec_branches_rwanda_2011,EC 2011: Number of branches in Rwanda including the head office,Total Number of Branches in Rwanda
+pooled:EC_pooled_establishment.dta,2011,s91,ec_owner_sex_2011,EC 2011: Sex of the owner,Gender of owner
+pooled:EC_pooled_establishment.dta,2011,s92,ec_owner_is_manager_2011,EC 2011: The owner is also the manager,Is the owner of the establishment its manager
+pooled:EC_pooled_establishment.dta,2011,s_sector,ec_inst_sector_derived_2011,"EC 2011: Institutional sector, short NISR version",Short Intitutional sector
+pooled:EC_pooled_establishment.dta,2014,sampleweightcumulative_1_,ec_sampling_weight_2014,EC 2014: NISR sampling weight,Cumulative Sampling Weight for Stage 1
+pooled:EC_pooled_establishment.dta,"2011,2014",sector,ec_sector,"EC 2011-2014: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; 2011 and 2014 only)"
+pooled:EC_pooled_establishment.dta,2014,size,ec_size_class_derived_2014,"EC 2014: Size class by number of workers, NISR derived",Created Size based on number of workers
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",size2,ec_size_class_derived,"EC 2017-2023: Size class by number of workers, NISR derived",Size based on number of workers
+pooled:EC_pooled_establishment.dta,2014,so2,ec_owner_sex_derived_2014,"EC 2014: Sex of the owner, NISR derived",Sex of owner
+pooled:EC_pooled_establishment.dta,2023,start_y,ec_start_year_group_2023,"EC 2023: Year the establishment started operating, grouped",Start year group
+pooled:EC_pooled_establishment.dta,2020,start_y_v2,ec_year_starting_intervals_2020,EC 2020: Year of starting intervals,Year of starting intervals
+pooled:EC_pooled_establishment.dta,2017,start_y_v3,ec_year_starting_intervals_2017,EC 2017: Year of starting intervals,Year of starting intervals
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",survey,ec_survey,EC: Source survey,Source survey
+pooled:EC_pooled_establishment.dta,2014,time_period,ec_start_period_derived_2014,EC 2014: Period of start of operations in three-year intervals,Period in 3 year Interval
+pooled:EC_pooled_establishment.dta,2011,total_emp2,ec_total_workers_2011,EC 2011: Total number of workers (999999 = not operating or refusal),Total number of workers
+pooled:EC_pooled_establishment.dta,"2017,2020,2023",total_workers,ec_total_workers,EC 2017-2023: Total number of workers (male + female),Total number of staff
+pooled:EC_pooled_establishment.dta,"2011,2014",u_r,ec_urban_rural_shipped,"EC 2011-2014: Urban or rural as shipped by NISR, coding differs by year",Created Urban and Rural
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",urban,ec_urban,"EC: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+pooled:EC_pooled_establishment.dta,2011,village_seq_2011,ec_village_sequence_2011,EC 2011: Village sequence within the cell as shipped,"2011 village sequence within cell (ID5, as shipped)"
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",wave,ec_wave,EC: Wave identifier,Wave (census year)
+pooled:EC_pooled_establishment.dta,2011,working_status,ec_working_status_derived_2011,"EC 2011: Working status, short NISR version",Short working status
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",wt,ec_weight,EC: Sampling weight,Weight (1 for full enumerations; NISR final sampling weight in 2014)
+pooled:EC_pooled_establishment.dta,"2011,2014,2017,2020,2023",year,ec_year,EC: Survey year,Census year
+pooled:EC_pooled_establishment.dta,2011,year_nisr,ec_nisr_year_variable,"EC 2011: NISR variable named year as shipped, a year-of-start group","NISR's own variable named Year as shipped (2011: year-of-start group), kept -- the census year is in `year`"
+wave:2011,2011,survey,ec_survey,EC: Source survey,Source survey
+wave:2011,2011,year,ec_year,EC: Survey year,Census year
+wave:2011,2011,wave,ec_wave,EC: Wave identifier,Wave (census year)
+wave:2011,2011,prov,ec_province,"EC: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2011,2011,dist,ec_district,"EC: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2011,2011,sector,ec_sector,"EC 2011-2014: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; 2011 and 2014 only)"
+wave:2011,2011,urban,ec_urban,"EC: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2011,2011,estid,ec_establishment_id,EC: Establishment identifier,"Establishment id (NISR key where shipped, else year*1e6 + row number)"
+wave:2011,2011,wt,ec_weight,EC: Sampling weight,Weight (1 for full enumerations; NISR final sampling weight in 2014)
+wave:2011,2011,key,ec_nisr_establishment_key,EC 2011-2014: NISR establishment key as shipped (2011 and 2014),Unique Identifier
+wave:2011,2011,id2,ec_district_sequence_2011,EC 2011: District sequence number within the province as shipped,DISTRICT
+wave:2011,2011,id3,ec_sector_sequence_2011,EC 2011: Sector sequence number within the district as shipped,SECTOR
+wave:2011,2011,cell_seq_2011,ec_cell_sequence_2011,EC 2011: Cell sequence within the sector as shipped,"2011 cell sequence within sector (ID4, as shipped)"
+wave:2011,2011,village_seq_2011,ec_village_sequence_2011,EC 2011: Village sequence within the cell as shipped,"2011 village sequence within cell (ID5, as shipped)"
+wave:2011,2011,id6,ec_serial_in_village_2011,EC 2011: Serial number of the establishment within the village,SERIAL NUMBER WITHIN THE VILLAGE
+wave:2011,2011,s001,ec_province_name_2011,EC 2011: Name of the province as shipped,Name of Province
+wave:2011,2011,s002,ec_district_name_2011,EC 2011: Name of the district as shipped,Name of District
+wave:2011,2011,s003,ec_sector_name_2011,EC 2011: Name of the sector as shipped,Name of Sector
+wave:2011,2011,id10,ec_manager_sex_2011,EC 2011: Sex of the manager,GENDER OF MANAGER
+wave:2011,2011,s03,ec_working_place_2011,EC 2011: Working place of the establishment,WORKING PLACE
+wave:2011,2011,s04,ec_working_status_2011,"EC 2011: Working status (operating, closed temporarily or permanently)",WORKING STATUS
+wave:2011,2011,s05,ec_institutional_sector_2011,EC 2011: Institutional sector,SECTOR
+wave:2011,2011,s06,ec_ownership_2011,EC 2011: Ownership of the establishment,OWNERSHIP
+wave:2011,2011,s07,ec_start_year_2011,EC 2011: Year of starting operation,YEAR OF STARTING OPERATION
+wave:2011,2011,s08b,ec_main_activity_isic_2011,"EC 2011: Main economic activity, ISIC code (three to four digits)",ISIC CODE
+wave:2011,2011,isic_level1,ec_main_activity_section_2011,"EC 2011: Main activity ISIC section, NISR variable isic_level1",ISIC_LEVEL1_MAIN ACTIVITY
+wave:2011,2011,s09,ec_legal_status_2011,EC 2011: Legal status,LEGAL STATUS
+wave:2011,2011,s92,ec_owner_is_manager_2011,EC 2011: The owner is also the manager,Is the owner of the establishment its manager
+wave:2011,2011,s91,ec_owner_sex_2011,EC 2011: Sex of the owner,Gender of owner
+wave:2011,2011,s10a,ec_registered_rssb_2011,EC 2011: Registered with the Social Security Fund (RSSB),Social Security Fund
+wave:2011,2011,s10b,ec_registered_rra_2011,EC 2011: Registered with the Rwanda Revenue Authority (RRA),Rwanda Revenue Authority
+wave:2011,2011,s10c,ec_registered_rdb_2011,EC 2011: Registered with the Rwanda Development Board (RDB),Rwanda Development Board
+wave:2011,2011,s10f,ec_registered_rca_2011,EC 2011: Registered with the Rwanda Cooperative Agency (RCA),Rwanda cooperative Agency
+wave:2011,2011,s10d,ec_registered_district_2011,EC 2011: Registered with the district,District
+wave:2011,2011,s10e,ec_registered_sector_2011,EC 2011: Registered with the sector,Sector
+wave:2011,2011,psf,ec_member_psf_2011,EC 2011: Member of the Private Sector Federation (PSF),PSF
+wave:2011,2011,s10g,ec_registered_other_gov_2011,EC 2011: Registered with other government agencies,Other GoR Agencies
+wave:2011,2011,s11a,ec_pays_vat_2011,EC 2011: Pays value added tax (VAT),VAT
+wave:2011,2011,s11b,ec_pays_tpr_2011,EC 2011: Pays TPR (pay-as-you-earn income tax on staff),TPR
+wave:2011,2011,s11c,ec_pays_income_tax_2011,EC 2011: Pays income tax,Income tax
+wave:2011,2011,s12,ec_regular_accounts_2011,EC 2011: Keeps regular operational accounts,DOES THE ESTABLISHMENT MAINTAIN REGULAR OPERATIONAL ACCOU
+wave:2011,2011,s13,ec_capital_employed_2011,EC 2011: Capital employed in Rwandan francs,EMPLOYED CAPITAL
+wave:2011,2011,s14a,ec_staff_noqual_rwandan_perm_m,"EC 2011: Staff, no qualification: Rwandan, permanent contract, male",Without qualification R_P_M (Rwandan Permanent Male)
+wave:2011,2011,s14b,ec_staff_noqual_rwandan_perm_f,"EC 2011: Staff, no qualification: Rwandan, permanent contract, female",Without qualification R_P_F (Rwandan Permanent Female)
+wave:2011,2011,s14c,ec_staff_noqual_rwandan_total_m,"EC 2011: Staff, no qualification: Rwandan, all contracts, male",Without qualificationR_T_M (Rwandan Tatal male)
+wave:2011,2011,s14d,ec_staff_noqual_rwandan_total_f,"EC 2011: Staff, no qualification: Rwandan, all contracts, female",Without qualificationR_T_F
+wave:2011,2011,s14e,ec_staff_noqual_foreign_perm_m,"EC 2011: Staff, no qualification: non-Rwandan, permanent contract, male",Without qualificationN_R_P_M (Non-Rwandan Permanent Male)
+wave:2011,2011,s14f,ec_staff_noqual_foreign_perm_f,"EC 2011: Staff, no qualification: non-Rwandan, permanent contract, female",Without qualificationN_R_P_F
+wave:2011,2011,s14g,ec_staff_noqual_foreign_total_m,"EC 2011: Staff, no qualification: non-Rwandan, all contracts, male",Without qualificationN_R_T_M
+wave:2011,2011,s14h,ec_staff_noqual_foreign_total_f,"EC 2011: Staff, no qualification: non-Rwandan, all contracts, female",Without qualificationN_R_T_F
+wave:2011,2011,s14da,ec_staff_noqual_rwandan_temp_m,"EC 2011: Staff, no qualification: Rwandan, temporary contract, male",Without qualificationT_R_M
+wave:2011,2011,s14db,ec_staff_noqual_rwandan_temp_f,"EC 2011: Staff, no qualification: Rwandan, temporary contract, female",Without qualificationT_R_F
+wave:2011,2011,s14dc,ec_staff_noqual_foreign_temp_m,"EC 2011: Staff, no qualification: non-Rwandan, temporary contract, male",Without qualificationT_N_R_M
+wave:2011,2011,s14dd,ec_staff_noqual_foreign_temp_f,"EC 2011: Staff, no qualification: non-Rwandan, temporary contract, female",Without qualificationT_N_R_F
+wave:2011,2011,s14m,ec_staff_primary_rwandan_perm_m,"EC 2011: Staff, primary education: Rwandan, permanent contract, male",PrimaryR_P_M
+wave:2011,2011,s14n,ec_staff_primary_rwandan_perm_f,"EC 2011: Staff, primary education: Rwandan, permanent contract, female",PrimaryR_P_F
+wave:2011,2011,s14o,ec_staff_primary_rwandan_total_m,"EC 2011: Staff, primary education: Rwandan, all contracts, male",PrimaryR_T_M
+wave:2011,2011,s14p,ec_staff_primary_rwandan_total_f,"EC 2011: Staff, primary education: Rwandan, all contracts, female",PrimaryR_T_F
+wave:2011,2011,s14q,ec_staff_primary_foreign_perm_m,"EC 2011: Staff, primary education: non-Rwandan, permanent contract, male",PrimaryN_R_P_M
+wave:2011,2011,s14r,ec_staff_primary_foreign_perm_f,"EC 2011: Staff, primary education: non-Rwandan, permanent contract, female",PrimaryN_R_P_F
+wave:2011,2011,s14s,ec_staff_primary_foreign_total_m,"EC 2011: Staff, primary education: non-Rwandan, all contracts, male",PrimaryN_R_T_M
+wave:2011,2011,s14t,ec_staff_primary_foreign_total_f,"EC 2011: Staff, primary education: non-Rwandan, all contracts, female",PrimaryN_R_T_F
+wave:2011,2011,s14aa,ec_staff_primary_rwandan_temp_m,"EC 2011: Staff, primary education: Rwandan, temporary contract, male",PrimaryT_R_M
+wave:2011,2011,s14ab,ec_staff_primary_rwandan_temp_f,"EC 2011: Staff, primary education: Rwandan, temporary contract, female",PrimaryT_R_F
+wave:2011,2011,s14ac,ec_staff_primary_foreign_temp_m,"EC 2011: Staff, primary education: non-Rwandan, temporary contract, male",PrimaryT_N_R_M
+wave:2011,2011,s14ad,ec_staff_primary_foreign_temp_f,"EC 2011: Staff, primary education: non-Rwandan, temporary contract, female",PrimaryT_N_R_F
+wave:2011,2011,s14y,ec_staff_second_rwandan_perm_m,"EC 2011: Staff, secondary education: Rwandan, permanent contract, male",SecondaryR_P_M
+wave:2011,2011,s14z,ec_staff_second_rwandan_perm_f,"EC 2011: Staff, secondary education: Rwandan, permanent contract, female",SecondaryR_P_F
+wave:2011,2011,s14oa,ec_staff_second_rwandan_total_m,"EC 2011: Staff, secondary education: Rwandan, all contracts, male",SecondaryR_T_M
+wave:2011,2011,s14pa,ec_staff_second_rwandan_total_f,"EC 2011: Staff, secondary education: Rwandan, all contracts, female",SecondaryR_T_F
+wave:2011,2011,s14qa,ec_staff_second_foreign_perm_m,"EC 2011: Staff, secondary education: non-Rwandan, permanent contract, male",SecondaryN_R_P_M
+wave:2011,2011,s14ra,ec_staff_second_foreign_perm_f,"EC 2011: Staff, secondary education: non-Rwandan, permanent contract, female",SecondaryN_R_P_F
+wave:2011,2011,s14sa,ec_staff_second_foreign_total_m,"EC 2011: Staff, secondary education: non-Rwandan, all contracts, male",SecondaryN_R_T_M
+wave:2011,2011,s14ta,ec_staff_second_foreign_total_f,"EC 2011: Staff, secondary education: non-Rwandan, all contracts, female",SecondaryN_R_T_F
+wave:2011,2011,s14ba,ec_staff_second_rwandan_temp_m,"EC 2011: Staff, secondary education: Rwandan, temporary contract, male",SecondaryT_R_M
+wave:2011,2011,s14bb,ec_staff_second_rwandan_temp_f,"EC 2011: Staff, secondary education: Rwandan, temporary contract, female",SecondaryT_R_F
+wave:2011,2011,s14bc,ec_staff_second_foreign_temp_m,"EC 2011: Staff, secondary education: non-Rwandan, temporary contract, male",SecondaryT_N_R_M
+wave:2011,2011,s14bd,ec_staff_second_foreign_temp_f,"EC 2011: Staff, secondary education: non-Rwandan, temporary contract, female",SecondaryT_N_R_F
+wave:2011,2011,s14ya,ec_staff_univ_rwandan_perm_m,"EC 2011: Staff, university education: Rwandan, permanent contract, male",UniversityR_P_M
+wave:2011,2011,s14za,ec_staff_univ_rwandan_perm_f,"EC 2011: Staff, university education: Rwandan, permanent contract, female",UniversityR_P_F
+wave:2011,2011,s14ob,ec_staff_univ_rwandan_total_m,"EC 2011: Staff, university education: Rwandan, all contracts, male",UniversityR_T_M
+wave:2011,2011,s14pb,ec_staff_univ_rwandan_total_f,"EC 2011: Staff, university education: Rwandan, all contracts, female",UniversityR_T_F
+wave:2011,2011,s14qb,ec_staff_univ_foreign_perm_m,"EC 2011: Staff, university education: non-Rwandan, permanent contract, male",UniversityN_R_P_M
+wave:2011,2011,s14rb,ec_staff_univ_foreign_perm_f,"EC 2011: Staff, university education: non-Rwandan, permanent contract, female",UniversityN_R_P_F
+wave:2011,2011,s14sb,ec_staff_univ_foreign_total_m,"EC 2011: Staff, university education: non-Rwandan, all contracts, male",UniversityN_R_T_M
+wave:2011,2011,s14tb,ec_staff_univ_foreign_total_f,"EC 2011: Staff, university education: non-Rwandan, all contracts, female",UniversityN_R_T_F
+wave:2011,2011,s14ca,ec_staff_univ_rwandan_temp_m,"EC 2011: Staff, university education: Rwandan, temporary contract, male",UniversityT_R_M
+wave:2011,2011,s14cb,ec_staff_univ_rwandan_temp_f,"EC 2011: Staff, university education: Rwandan, temporary contract, female",UniversityT_R_F
+wave:2011,2011,s14cc,ec_staff_univ_foreign_temp_m,"EC 2011: Staff, university education: non-Rwandan, temporary contract, male",UniversityT_N_R_M
+wave:2011,2011,s14cd,ec_staff_univ_foreign_temp_f,"EC 2011: Staff, university education: non-Rwandan, temporary contract, female",UniversityT_N_R_F
+wave:2011,2011,s15,ec_establishment_type_2011,"EC 2011: Establishment type (head office, single unit, branch)",ESTABLISHMENT TYPE
+wave:2011,2011,s16a,ec_branches_rwanda_2011,EC 2011: Number of branches in Rwanda including the head office,Total Number of Branches in Rwanda
+wave:2011,2011,s163,ec_main_activity_isic4_2011,"EC 2011: Main economic activity, ISIC Rev. 4 four-digit code",ISIC _4 DIGITS
+wave:2011,2011,isic_fl_ent,ec_isic_section_2011,"EC 2011: ISIC section (one digit), NISR variable isic_fl_ent",ISIC _1DIGIT
+wave:2011,2011,s163b,ec_persons_all_branches_2011,"EC 2011: Persons working in all branches in Rwanda, head office included",Total Number of working persons in all branches in Rwan
+wave:2011,2011,total_emp2,ec_total_workers_2011,EC 2011: Total number of workers (999999 = not operating or refusal),Total number of workers
+wave:2011,2011,no_detail_employ,ec_employees_without_details,EC 2011: Employees without details,Employees without details
+wave:2011,2011,working_status,ec_working_status_derived_2011,"EC 2011: Working status, short NISR version",Short working status
+wave:2011,2011,year_nisr,ec_nisr_year_variable,"EC 2011: NISR variable named year as shipped, a year-of-start group","NISR's own variable named Year as shipped (2011: year-of-start group), kept -- the census year is in `year`"
+wave:2011,2011,owner_gender,ec_owner_sex_derived_2011,"EC 2011: Sex of the owner, NISR derived",Gender of owner
+wave:2011,2011,est_size2,ec_size_class_derived_2011,"EC 2011: Size class by number of workers, NISR derived",Size of establishment based on number of workers
+wave:2011,2011,districts_names,ec_district_code_shipped_2011,EC 2011: District code as shipped by NISR (101-507 scheme),District names
+wave:2011,2011,s_sector,ec_inst_sector_derived_2011,"EC 2011: Institutional sector, short NISR version",Short Intitutional sector
+wave:2011,2011,u_r,ec_urban_rural_shipped,"EC 2011-2014: Urban or rural as shipped by NISR, coding differs by year",Urban/Rural
+wave:2011,2011,isic1_comp,ec_isic_section_comparable_2011,"EC 2011: ISIC section recoded for comparison with 2014, NISR derived",ISIC for comparison with 2014
+wave:2011,2011,fi_1,ec_formality_three_criteria_2011,"EC 2011: Formal or informal by registration, accounts and size, NISR derived","Formal_Informal based on registration, keeping account and size"
+wave:2011,2011,fi_2,ec_formality_two_criteria_2011,"EC 2011: Formal or informal by registration and accounts, NISR derived",Formality based on registration and keeking account
+wave:2011,2011,geo_conflict_2011,ec_district_name_conflict_2011,EC 2011: District code disagreed with the district name; the names were used,2011: 1 = the numeric district code (Districts_names) disagreed with the district NAME (S002); district and sector taken from the names (622 establishments)
+wave:2014,2014,survey,ec_survey,EC: Source survey,Source survey
+wave:2014,2014,year,ec_year,EC: Survey year,Census year
+wave:2014,2014,wave,ec_wave,EC: Wave identifier,Wave (census year)
+wave:2014,2014,prov,ec_province,"EC: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2014,2014,dist,ec_district,"EC: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2014,2014,sector,ec_sector,"EC 2011-2014: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; 2011 and 2014 only)"
+wave:2014,2014,urban,ec_urban,"EC: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2014,2014,estid,ec_establishment_id,EC: Establishment identifier,"Establishment id (NISR key where shipped, else year*1e6 + row number)"
+wave:2014,2014,wt,ec_weight,EC: Sampling weight,Weight (1 for full enumerations; NISR final sampling weight in 2014)
+wave:2014,2014,key,ec_nisr_establishment_key,EC 2011-2014: NISR establishment key as shipped (2011 and 2014),Unique identifier of establishment
+wave:2014,2014,q2,ec_working_place,EC 2014-2023: Working place of the establishment,WORKING PLACE
+wave:2014,2014,q3,ec_working_status,"EC 2014-2023: Working status (operating, closed temporarily or permanently)",WORKING STATUS
+wave:2014,2014,q4b,ec_manager_sex_2014,EC 2014: Sex of the manager,GENDER OF MANAGER
+wave:2014,2014,q4c,ec_manager_age_2014,EC 2014: Age of the manager,AGE OF MANAGER
+wave:2014,2014,q5a,ec_start_month_2014,EC 2014: Month of starting operation,MONTH OF STARTING OPERATION
+wave:2014,2014,q5b,ec_start_year_2014,EC 2014: Year of starting operation,YEAR OF STARTING OPERATION
+wave:2014,2014,isic1q6b,ec_main_activity_section_2014,"EC 2014: Main economic activity, ISIC section (one digit)",MAIN ECONOMIC ACTIVITY_1 DIGIT
+wave:2014,2014,isic1q7b,ec_second_activity_section_2014,"EC 2014: Secondary economic activity, ISIC section (one digit)",SECONDARY ECONOMIC ACTIVITY_1 DIGIT
+wave:2014,2014,q8,ec_institutional_sector_2014,EC 2014: Institutional sector,INSITUTIONAL SECTOR
+wave:2014,2014,q9,ec_private_sector_category_2014,EC 2014: Category of private-sector establishment,CATEGORIES OF PRIVATE SECTOR
+wave:2014,2014,q10,ec_mixed_sector_category_2014,EC 2014: Category of mixed-sector establishment,CATEGORIES OF MIXED SECTOR
+wave:2014,2014,q11,ec_owner_nationality_2014,EC 2014: Nationality of the owners,NATIONALITY OF OWNERS
+wave:2014,2014,q12,ec_legal_status_2014,EC 2014: Legal status,LEGAL STATUS
+wave:2014,2014,q13,ec_management_separated_2014,EC 2014: Management completely separated from the household,IS THE MANAGEMENT OF ESTABLISHMENT COMPLETELY SEPARATED FROM THE HH. MANAGEM
+wave:2014,2014,q14,ec_owner_is_manager_2014,EC 2014: The owner is also the manager,IS THE OWNER OF THE ESTABLISHMENT ITS MANAGER
+wave:2014,2014,q15,ec_owner_sex_2014,EC 2014: Sex of the owner,THE SEX OF OWNER
+wave:2014,2014,q16,ec_owner_age_2014,EC 2014: Age of the owner,AGE OF OWNER
+wave:2014,2014,q17,ec_regular_accounts_2014,EC 2014: Keeps regular accounting,DOES THE ESTABLISHMENT MAINTAIN REGULAR ACCOUNTING?
+wave:2014,2014,q18,ec_establishment_type_2014,"EC 2014: Establishment type: head office, single unit, branch",ESTABLISHMENT TYPE
+wave:2014,2014,q19,ec_branches_rwanda_2014,EC 2014: Number of branches in Rwanda including the head office,TOTAL NUMBER OF BRANCHES IN RWANDA INCLUDING THE HEAD OFFICE
+wave:2014,2014,q20,ec_persons_all_branches_2014,"EC 2014: Persons working in all branches in Rwanda, head office included",TOTAL NUMBER OF WORKING PERSONS IN ALL BRANCHES IN RWANDA INCLUDING THE HEAD
+wave:2014,2014,q21a1,ec_rwandan_workers_2014,"EC 2014: Rwandan workers, total",Rwandan Total
+wave:2014,2014,q21a2,ec_rwandan_male_workers_2014,"EC 2014: Rwandan workers, male",Rwandan Male
+wave:2014,2014,q21a3,ec_rwandan_female_workers_2014,"EC 2014: Rwandan workers, female",Rwandan Female
+wave:2014,2014,q21b1,ec_foreign_workers_2014,"EC 2014: Non-Rwandan workers, total",Foreigner Total
+wave:2014,2014,q21b2,ec_foreign_male_workers_2014,"EC 2014: Non-Rwandan workers, male",Foreigner Male
+wave:2014,2014,q21b3,ec_foreign_female_workers_2014,"EC 2014: Non-Rwandan workers, female",Foreigner Female
+wave:2014,2014,q21c1,ec_total_workers_2014,EC 2014: Total workers,TOTAL
+wave:2014,2014,q21c2,ec_male_workers_2014,"EC 2014: Total workers, male",TOTAL  Male
+wave:2014,2014,q21c3,ec_female_workers_2014,"EC 2014: Total workers, female",TOTAL  Female
+wave:2014,2014,q22a1,ec_working_owners_total_2014,"EC 2014: Working owners, total",Working Owners    TOTAL
+wave:2014,2014,q22a2,ec_working_owners_male_2014,"EC 2014: Working owners, male",Working Owners    MALE
+wave:2014,2014,q22a3,ec_working_owners_female_2014,"EC 2014: Working owners, female",Working Owners    FEMALE
+wave:2014,2014,q22b1,ec_unpaid_workers_total_2014,"EC 2014: Unpaid workers, total",Unpaid    TOTAL
+wave:2014,2014,q22b2,ec_unpaid_workers_male_2014,"EC 2014: Unpaid workers, male",Unpaid    MALE
+wave:2014,2014,q22b3,ec_unpaid_workers_female_2014,"EC 2014: Unpaid workers, female",Unpaid    FEMALE
+wave:2014,2014,q22c1,ec_apprentices_total_2014,"EC 2014: Apprentices, total",Apprentice    TOTAL
+wave:2014,2014,q22c2,ec_apprentices_male_2014,"EC 2014: Apprentices, male",Apprentice    MALE
+wave:2014,2014,q22c3,ec_apprentices_female_2014,"EC 2014: Apprentices, female",Apprentice    FEMALE
+wave:2014,2014,q22d1,ec_contract_under_1m_total_2014,"EC 2014: Workers on contracts under 1 month, total",<1 Months    TOTAL
+wave:2014,2014,q22d2,ec_contract_under_1m_male_2014,"EC 2014: Workers on contracts under 1 month, male",<1 Months    MALE
+wave:2014,2014,q22d3,ec_contract_under_1m_female_2014,"EC 2014: Workers on contracts under 1 month, female",<1 Months    FEMALE
+wave:2014,2014,q22e1,ec_contract_1_6m_total_2014,"EC 2014: Workers on contracts of 1 to 6 months, total",1-6 Months    TOTAL
+wave:2014,2014,q22e2,ec_contract_1_6m_male_2014,"EC 2014: Workers on contracts of 1 to 6 months, male",1-6 Months    MALE
+wave:2014,2014,q22e3,ec_contract_1_6m_female_2014,"EC 2014: Workers on contracts of 1 to 6 months, female",1-6 Months    FEMALE
+wave:2014,2014,q22f1,ec_contract_over_6m_total_2014,"EC 2014: Workers on contracts above 6 months, total",Above 6 Months    TOTAL
+wave:2014,2014,q22f2,ec_contract_over_6m_male_2014,"EC 2014: Workers on contracts above 6 months, male",Above 6 Months    MALE
+wave:2014,2014,q22f3,ec_contract_over_6m_female_2014,"EC 2014: Workers on contracts above 6 months, female",Above 6 Months    FEMALE
+wave:2014,2014,q22g1,ec_open_contract_total_2014,"EC 2014: Workers on open-ended contracts, total",Open contract    TOTAL
+wave:2014,2014,q22g2,ec_open_contract_male_2014,"EC 2014: Workers on open-ended contracts, male",Open contract    MALE
+wave:2014,2014,q22g3,ec_open_contract_female_2014,"EC 2014: Workers on open-ended contracts, female",Open contract    FEMALE
+wave:2014,2014,q22h1,ec_all_workers_total_2014,"EC 2014: All workers, total",TOTAL          TOTAL
+wave:2014,2014,q22h2,ec_all_workers_male_2014,"EC 2014: All workers, male",TOTAL          MALE
+wave:2014,2014,q22h3,ec_all_workers_female_2014,"EC 2014: All workers, female",TOTAL          FEMALE
+wave:2014,2014,q23,ec_annual_turnover_2014,"EC 2014: Annual total turnover in 2013, bracket in Rwandan francs",ANNUAL TOTAL TURNOVER IN 2013
+wave:2014,2014,q24,ec_capital_employed_2014,"EC 2014: Employed capital, bracket in Rwandan francs",EMPLOYED CAPITAL
+wave:2014,2014,q25,ec_annual_income_2014,"EC 2014: Annual income in 2013, bracket in Rwandan francs",REVENUE/INCOME IN 2013
+wave:2014,2014,q26,ec_start_contribution_2014,"EC 2014: Contribution to start the establishment, bracket in Rwandan francs",CONTRIBUTIONS
+wave:2014,2014,q27a,ec_registered_sector_2014,EC 2014: Registered with the sector,Registration at Sector
+wave:2014,2014,q27b,ec_registered_district_2014,EC 2014: Registered with the district,Registration at District
+wave:2014,2014,q27c,ec_registered_rca_2014,EC 2014: Registered with the Rwanda Cooperative Agency (RCA),Registration at Rwanda Cooperative Agency (RCA)
+wave:2014,2014,q27d,ec_registered_psf_2014,EC 2014: Registered with the Private Sector Federation (PSF),Registration at Private Sector Federation (PSF)
+wave:2014,2014,q27e,ec_registered_rgb_2014,EC 2014: Registered with the Rwanda Governance Board (RGB),Registration at Rwanda Governance Board (RGB)
+wave:2014,2014,q27f,ec_registered_rssb_2014,EC 2014: Registered with the Social Security Fund (RSSB),Registration at Social Security Fund (RSSB)
+wave:2014,2014,q27g,ec_registered_rdb_2014,EC 2014: Registered with the Rwanda Development Board (RDB),Registration at Rwanda Development Board (RDB)
+wave:2014,2014,q27h,ec_registered_rra_2014,EC 2014: Registered with the Rwanda Revenue Authority (RRA),Registrastion at Rwanda Revenue Authority (RRA)
+wave:2014,2014,q27ia,ec_registered_other_2014,EC 2014: Registered with other institutions,Registration at Other institutions
+wave:2014,2014,q28,ec_trades_abroad_2014,EC 2014: Buys or sells goods or services abroad,DO YOU BUY OR SELL GOODS/SERVICES ABROAD
+wave:2014,2014,q29a,ec_pays_vat_2014,EC 2014: Pays value added tax (VAT),Value Added Tax (VAT)
+wave:2014,2014,a29b,ec_pays_tpr_paye_2014,EC 2014: Pays TPR / PAYE,TPR/PAYE
+wave:2014,2014,q29c,ec_pays_income_tax_2014,EC 2014: Pays income tax,Income tax
+wave:2014,2014,q29d,ec_pays_excise_duty_2014,EC 2014: Pays excise duties,Excise duties tax
+wave:2014,2014,q29e,ec_pays_import_duty_2014,EC 2014: Pays import duties,Import duties tax
+wave:2014,2014,q29f,ec_pays_trading_license_2014,EC 2014: Pays the trading license tax,Trading license tax
+wave:2014,2014,q29g,ec_pays_rental_income_tax_2014,EC 2014: Pays rental income tax,Rental income tax
+wave:2014,2014,q29h,ec_pays_flat_tax_2014,EC 2014: Pays the flat tax,Flat tax
+wave:2014,2014,q30,ec_has_tin_2014,EC 2014: Has a taxpayer identification number (TIN),DO YOU HAVE A TIN NUMBER ?
+wave:2014,2014,u_r,ec_urban_rural_shipped,"EC 2011-2014: Urban or rural as shipped by NISR, coding differs by year",Created Urban and Rural
+wave:2014,2014,size,ec_size_class_derived_2014,"EC 2014: Size class by number of workers, NISR derived",Created Size based on number of workers
+wave:2014,2014,new_sector,ec_inst_sector_derived_2014,"EC 2014: Institutional sector, NISR derived",Created institutional sector
+wave:2014,2014,so2,ec_owner_sex_derived_2014,"EC 2014: Sex of the owner, NISR derived",Sex of owner
+wave:2014,2014,ao2,ec_owner_age_group_derived_2014,"EC 2014: Age group of the owner (14-35, 36 and over), NISR derived",Age of owner
+wave:2014,2014,fi,ec_formal_informal_derived,"EC 2014-2023: Formal or informal establishment, NISR derived",Formal/Informal
+wave:2014,2014,time_period,ec_start_period_derived_2014,EC 2014: Period of start of operations in three-year intervals,Period in 3 year Interval
+wave:2014,2014,inclusionprobability_1_,ec_inclusion_probability_2014,EC 2014: Inclusion probability of the establishment in the sample,Inclusion (Selection) Probability for Stage 1
+wave:2014,2014,sampleweightcumulative_1_,ec_sampling_weight_2014,EC 2014: NISR sampling weight,Cumulative Sampling Weight for Stage 1
+wave:2017,2017,survey,ec_survey,EC: Source survey,Source survey
+wave:2017,2017,year,ec_year,EC: Survey year,Census year
+wave:2017,2017,wave,ec_wave,EC: Wave identifier,Wave (census year)
+wave:2017,2017,prov,ec_province,"EC: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2017,2017,dist,ec_district,"EC: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2017,2017,urban,ec_urban,"EC: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2017,2017,estid,ec_establishment_id,EC: Establishment identifier,"Establishment id (NISR key where shipped, else year*1e6 + row number)"
+wave:2017,2017,wt,ec_weight,EC: Sampling weight,Weight (1 for full enumerations; NISR final sampling weight in 2014)
+wave:2017,2017,q2,ec_working_place,EC 2014-2023: Working place of the establishment,Q2. Working place
+wave:2017,2017,q3,ec_working_status,"EC 2014-2023: Working status (operating, closed temporarily or permanently)",Q3. Working status
+wave:2017,2017,q4_2,ec_manager_sex,EC 2017-2023: Sex of the manager,Q4.2 Manager sex
+wave:2017,2017,q4_3,ec_manager_age,EC 2017-2023: Age of the manager,Q4.3 Manager age
+wave:2017,2017,q5_1,ec_start_month,EC 2017-2020: Month of starting operation in Rwanda,Q5.1 Month of starting operation in Rwanda
+wave:2017,2017,q5_2,ec_start_year,EC 2017-2023: Year of starting operation in Rwanda,Q5.2 Year of starting operation in Rwanda
+wave:2017,2017,q6_1,ec_main_activity_section,"EC 2017-2023: Main economic activity, ISIC section (one digit)",ISIC_1_digit
+wave:2017,2017,q7,ec_institutional_sector,EC 2017-2023: Institutional sector,Q7 Institutional sector
+wave:2017,2017,q8,ec_mixed_sector_2017_2023,EC 2017-2023: Category of mixed-sector establishment,Q8 Categories of mixed sector
+wave:2017,2017,q9,ec_owner_nationality_2017_2020,EC 2017-2020: Nationality of the owner,Q9 Nationality of owner
+wave:2017,2017,q10,ec_legal_status_2017_2023,EC 2017-2023: Legal status,Q10 Legal status
+wave:2017,2017,q11,ec_management_2017_2023,EC 2017-2023: Management completely separated from the household,Q11 Is the management of establishment completely separated from the household m
+wave:2017,2017,q12,ec_owner_is_manager_2017_2023,EC 2017-2023: The owner is also the manager,Q12 Is the owner of the establishment its manager?
+wave:2017,2017,q13,ec_owner_sex_2017_2023,EC 2017-2023: Sex of the owner,Q13 Sex of the owner
+wave:2017,2017,q14,ec_owner_age_2017_2020,EC 2017-2020: Age of the owner,Q14 Age of the owner
+wave:2017,2017,q15_1,ec_regular_accounts,EC 2017-2023: Keeps regular accounts,Q15.1 Does the establishment maintain regular accounts?
+wave:2017,2017,q15_2,ec_books_used,EC 2017-2023: Type of books used,Q15.2 Which of the following books is used
+wave:2017,2017,q15_2a,ec_books_ledgers,EC 2017-2023: Books used: ledgers,Q15_2A Ledgers
+wave:2017,2017,q15_2b,ec_books_journals,EC 2017-2023: Books used: journals,Q15_2B Journals
+wave:2017,2017,q15_2c,ec_books_balance_sheet,EC 2017-2023: Books used: balance sheet,Q15_2C Balance sheet
+wave:2017,2017,q15_2d,ec_books_income_statement,EC 2017-2023: Books used: income statement (profit and loss),Q15_2D Income statement (Profit and loss account)
+wave:2017,2017,q15_2e,ec_books_invoices,EC 2017-2023: Books used: invoices,Q15_2E Invoice
+wave:2017,2017,q16,ec_establishment_type_2017_2023,"EC 2017-2023: Establishment type: head office, single unit, branch",Q16 Establishment type
+wave:2017,2017,q17_2,ec_branches_rwanda,EC 2017-2023: Number of branches in Rwanda including the head office,Q17.2 Total number of branches in rwanda including the head office
+wave:2017,2017,q17_3,ec_persons_all_branches,"EC 2017-2023: Persons working in all branches in Rwanda, head office included",Q17.3 Total number of working persons in all branches in rwanda including the he
+wave:2017,2017,q20,ec_annual_turnover_2017_2020,"EC 2017-2020: Annual total turnover in the previous year, bracket",Q20. Annual total turnover in 2016
+wave:2017,2017,q21,ec_capital_employed_2017_2020,"EC 2017-2020: Current employed capital, bracket in Rwandan francs",Q21. Current employed capital
+wave:2017,2017,q22,ec_registered_any_institution,EC 2017-2023: Registered with any institution,Q22. Is the establishment registered in any of the following institutions?
+wave:2017,2017,q22_other,ec_registered_other_text,"EC 2017-2023: Other registration institution, text",Q22. Specify other
+wave:2017,2017,q22a,ec_registered_sector,EC 2017-2023: Registered with the sector,Q22A Sector
+wave:2017,2017,q22b,ec_registered_district,EC 2017-2023: Registered with the district,Q22B District
+wave:2017,2017,q22c,ec_registered_rca,EC 2017-2023: Registered with the Rwanda Cooperative Agency (RCA),Q22C Rwanda cooperative Agency (RCA) only Cooperative
+wave:2017,2017,q22d,ec_registered_psf,EC 2017-2023: Registered with the Private Sector Federation (PSF),Q22D Private sector Federation (PSF)
+wave:2017,2017,q22e,ec_registered_rgb,EC 2017-2023: Registered with the Rwanda Governance Board (RGB),Q22E Rwanda Governance Board (RGB) only NGO
+wave:2017,2017,q22f,ec_registered_rssb,EC 2017-2023: Registered with the Social Security Board (RSSB),Q22F Social Security Board (RSSB)
+wave:2017,2017,q22g,ec_registered_rdb,EC 2017-2023: Registered with the Rwanda Development Board (RDB),Q22G Rwanda Development Board (RDB)
+wave:2017,2017,q22h,ec_registered_rra,EC 2017-2023: Registered with the Rwanda Revenue Authority (RRA),Q22H Rwanda Revenue Authority (RRA)
+wave:2017,2017,q22i,ec_registered_immigration,EC 2017-2023: Registered with the Directorate of Immigration and Emigration,Q22I Directorate of Immigration and Emigration
+wave:2017,2017,q22j,ec_registered_other,EC 2017-2023: Registered with another institution,Q22J Other
+wave:2017,2017,q22z,ec_registered_none,EC 2017-2023: No registration,Q22Z No registration
+wave:2017,2017,q23_1,ec_trades_goods_abroad,EC 2017-2023: Traded goods with a foreign country in the last year,Q23.1 Did you have any transaction of goods with a foreign country during the la
+wave:2017,2017,q23_2,ec_trades_services_abroad,EC 2017-2023: Traded services with a foreign country in the last year,Q23.2 Did you have any transaction of services with a foreign country during the
+wave:2017,2017,q24,ec_type_taxes_paid_2017_2023,EC 2017-2023: Type of taxes paid,Q24. What type of taxes do you pay?
+wave:2017,2017,q24a,ec_pays_vat,EC 2017-2023: Pays value added tax (VAT),Q24A Value Added Tax (VAT)
+wave:2017,2017,q24b,ec_pays_tpr_paye,EC 2017-2023: Pays TPR / PAYE,Q24B TPR/PAYE
+wave:2017,2017,q24c,ec_pays_income_tax,EC 2017-2023: Pays income tax,Q24C Income tax
+wave:2017,2017,q24d,ec_pays_excise_duty,EC 2017-2023: Pays excise duties,Q24D Excise duties tax
+wave:2017,2017,q24e,ec_pays_import_duty,EC 2017-2023: Pays import duties,Q24E Import duties tax
+wave:2017,2017,q24f,ec_pays_trading_license,EC 2017-2023: Pays the trading license tax,Q24F Trading license tax
+wave:2017,2017,q24g,ec_pays_rental_income_tax,EC 2017-2023: Pays rental income tax,Q24G Rental income tax
+wave:2017,2017,q24h,ec_pays_flat_tax,EC 2017-2023: Pays the flat tax,Q24H Flat tax
+wave:2017,2017,q24z,ec_pays_no_tax,EC 2017-2023: Pays no tax,Q24Z No tax
+wave:2017,2017,q25,ec_has_tin_2017_2023,EC 2017-2023: Has a taxpayer identification number (TIN),Q25. Do you have a tin number
+wave:2017,2017,owner_sex,ec_owner_sex_derived,"EC 2017-2023: Sex of the owner, NISR derived",Sex of owner
+wave:2017,2017,owner_age,ec_owner_age_derived_2017_2020,"EC 2017-2020: Age of the owner, NISR derived",Age of owner
+wave:2017,2017,fi,ec_formal_informal_derived,"EC 2014-2023: Formal or informal establishment, NISR derived",Formal and Informal enterprises
+wave:2017,2017,owner,ec_owner_sex_derived_2017,"EC 2017: Sex of the owner, NISR derived variable named owner",Owner of establishment
+wave:2017,2017,start_y,ec_year_starting_intervals_2017,EC 2017: Year of starting intervals,Year of starting intervals
+wave:2017,2017,male_worker,ec_male_workers,EC 2017-2023: Number of male workers,Enterprise male workers
+wave:2017,2017,female_worker,ec_female_workers,EC 2017-2023: Number of female workers,Enterprise female workers
+wave:2017,2017,total_workers,ec_total_workers,EC 2017-2023: Total number of workers (male + female),Enterprise total workers
+wave:2017,2017,foreign_male,ec_foreign_male_workers,EC 2017-2023: Number of non-Rwandan male workers,Enterprise Foreign male workers
+wave:2017,2017,rwandan_workers,ec_rwandan_workers,EC 2017-2023: Number of Rwandan workers,Enterprise Rwandan workers
+wave:2017,2017,rwandan_male,ec_rwandan_male_workers,EC 2017-2023: Number of Rwandan male workers,Enterprise Rwandan male workers
+wave:2017,2017,foregner_workers,ec_foreign_workers,EC 2017-2023: Number of non-Rwandan workers,Enterprise Foreigner workers
+wave:2017,2017,rwandan_female,ec_rwandan_female_workers,EC 2017-2023: Number of Rwandan female workers,Enterprise Rwandan female workers
+wave:2017,2017,foreign_female,ec_foreign_female_workers,EC 2017-2023: Number of non-Rwandan female workers,Enterprise foreign female workers
+wave:2017,2017,size2,ec_size_class_derived,"EC 2017-2023: Size class by number of workers, NISR derived",Size based on number of workers at enterprise level
+wave:2020,2020,survey,ec_survey,EC: Source survey,Source survey
+wave:2020,2020,year,ec_year,EC: Survey year,Census year
+wave:2020,2020,wave,ec_wave,EC: Wave identifier,Wave (census year)
+wave:2020,2020,prov,ec_province,"EC: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2020,2020,dist,ec_district,"EC: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2020,2020,urban,ec_urban,"EC: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2020,2020,estid,ec_establishment_id,EC: Establishment identifier,"Establishment id (NISR key where shipped, else year*1e6 + row number)"
+wave:2020,2020,wt,ec_weight,EC: Sampling weight,Weight (1 for full enumerations; NISR final sampling weight in 2014)
+wave:2020,2020,q2,ec_working_place,EC 2014-2023: Working place of the establishment,Q2. Working place
+wave:2020,2020,q3,ec_working_status,"EC 2014-2023: Working status (operating, closed temporarily or permanently)",Q3. Working status
+wave:2020,2020,q4_2,ec_manager_sex,EC 2017-2023: Sex of the manager,Q4.2 Manager sex
+wave:2020,2020,q4_3,ec_manager_age,EC 2017-2023: Age of the manager,Q4.3 Manager age
+wave:2020,2020,q5_1,ec_start_month,EC 2017-2020: Month of starting operation in Rwanda,Q5.1 Month of starting operation in Rwanda
+wave:2020,2020,q5_2,ec_start_year,EC 2017-2023: Year of starting operation in Rwanda,Q5.2 Year of starting operation in Rwanda
+wave:2020,2020,q6_1,ec_main_activity_section,"EC 2017-2023: Main economic activity, ISIC section (one digit)",ISIC_1_digit
+wave:2020,2020,q7,ec_institutional_sector,EC 2017-2023: Institutional sector,Q7 Institutional sector
+wave:2020,2020,q8,ec_mixed_sector_2017_2023,EC 2017-2023: Category of mixed-sector establishment,Q8 Categories of mixed sector
+wave:2020,2020,q9,ec_owner_nationality_2017_2020,EC 2017-2020: Nationality of the owner,Q9 Nationality of owner
+wave:2020,2020,q10,ec_legal_status_2017_2023,EC 2017-2023: Legal status,Q10 Legal status
+wave:2020,2020,q11,ec_management_2017_2023,EC 2017-2023: Management completely separated from the household,Q11 Is the management of establishment completely separated from the household m
+wave:2020,2020,q12,ec_owner_is_manager_2017_2023,EC 2017-2023: The owner is also the manager,Q12 Is the owner of the establishment its manager?
+wave:2020,2020,q13,ec_owner_sex_2017_2023,EC 2017-2023: Sex of the owner,Q13 Sex of the owner
+wave:2020,2020,q14,ec_owner_age_2017_2020,EC 2017-2020: Age of the owner,Q14 Age of the owner
+wave:2020,2020,q15_1,ec_regular_accounts,EC 2017-2023: Keeps regular accounts,Q15.1 Does the establishment maintain regular accounts?
+wave:2020,2020,q15_2,ec_books_used,EC 2017-2023: Type of books used,Q15.2 Which of the following books is used
+wave:2020,2020,q15_2a,ec_books_ledgers,EC 2017-2023: Books used: ledgers,Q15_2A Ledgers
+wave:2020,2020,q15_2b,ec_books_journals,EC 2017-2023: Books used: journals,Q15_2B Journals
+wave:2020,2020,q15_2c,ec_books_balance_sheet,EC 2017-2023: Books used: balance sheet,Q15_2C Balance sheet
+wave:2020,2020,q15_2d,ec_books_income_statement,EC 2017-2023: Books used: income statement (profit and loss),Q15_2D Income statement (Profit and loss account)
+wave:2020,2020,q15_2e,ec_books_invoices,EC 2017-2023: Books used: invoices,Q15_2E Invoice
+wave:2020,2020,q16,ec_establishment_type_2017_2023,"EC 2017-2023: Establishment type: head office, single unit, branch",Q16 Establishment type
+wave:2020,2020,q17_2,ec_branches_rwanda,EC 2017-2023: Number of branches in Rwanda including the head office,Q17.2 Total number of branches in rwanda including the head office
+wave:2020,2020,q17_3,ec_persons_all_branches,"EC 2017-2023: Persons working in all branches in Rwanda, head office included",Q17.3 Total number of working persons in all branches in rwanda including the he
+wave:2020,2020,q20,ec_annual_turnover_2017_2020,"EC 2017-2020: Annual total turnover in the previous year, bracket",Q20. Annual total turnover in 2019
+wave:2020,2020,q21,ec_capital_employed_2017_2020,"EC 2017-2020: Current employed capital, bracket in Rwandan francs",Q21. Current employed capital
+wave:2020,2020,q22,ec_registered_any_institution,EC 2017-2023: Registered with any institution,Q22. Is the establishment registered in any of the following institutions?
+wave:2020,2020,q22_other,ec_registered_other_text,"EC 2017-2023: Other registration institution, text",Q22. Specify other
+wave:2020,2020,q22a,ec_registered_sector,EC 2017-2023: Registered with the sector,Q22A Sector
+wave:2020,2020,q22b,ec_registered_district,EC 2017-2023: Registered with the district,Q22B District
+wave:2020,2020,q22c,ec_registered_rca,EC 2017-2023: Registered with the Rwanda Cooperative Agency (RCA),Q22C Rwanda cooperative Agency (RCA) only Cooperative
+wave:2020,2020,q22d,ec_registered_psf,EC 2017-2023: Registered with the Private Sector Federation (PSF),Q22D Private sector Federation (PSF)
+wave:2020,2020,q22e,ec_registered_rgb,EC 2017-2023: Registered with the Rwanda Governance Board (RGB),Q22E Rwanda Governance Board (RGB) only NGO
+wave:2020,2020,q22f,ec_registered_rssb,EC 2017-2023: Registered with the Social Security Board (RSSB),Q22F Social Security Board (RSSB)
+wave:2020,2020,q22g,ec_registered_rdb,EC 2017-2023: Registered with the Rwanda Development Board (RDB),Q22G Rwanda Development Board (RDB)
+wave:2020,2020,q22h,ec_registered_rra,EC 2017-2023: Registered with the Rwanda Revenue Authority (RRA),Q22H Rwanda Revenue Authority (RRA)
+wave:2020,2020,q22i,ec_registered_immigration,EC 2017-2023: Registered with the Directorate of Immigration and Emigration,Q22I Directorate of Immigration and Emigration
+wave:2020,2020,q22j,ec_registered_other,EC 2017-2023: Registered with another institution,Q22J Other
+wave:2020,2020,q22z,ec_registered_none,EC 2017-2023: No registration,Q22Z No registration
+wave:2020,2020,q23_1,ec_trades_goods_abroad,EC 2017-2023: Traded goods with a foreign country in the last year,Q23.1 Did you have any transaction of goods with a foreign country during the la
+wave:2020,2020,q23_2,ec_trades_services_abroad,EC 2017-2023: Traded services with a foreign country in the last year,Q23.2 Did you have any transaction of services with a foreign country during the
+wave:2020,2020,q24,ec_type_taxes_paid_2017_2023,EC 2017-2023: Type of taxes paid,Q24. What type of taxes do you pay?
+wave:2020,2020,q24a,ec_pays_vat,EC 2017-2023: Pays value added tax (VAT),Q24A Value Added Tax (VAT)
+wave:2020,2020,q24b,ec_pays_tpr_paye,EC 2017-2023: Pays TPR / PAYE,Q24B TPR/PAYE
+wave:2020,2020,q24c,ec_pays_income_tax,EC 2017-2023: Pays income tax,Q24C Income tax
+wave:2020,2020,q24d,ec_pays_excise_duty,EC 2017-2023: Pays excise duties,Q24D Excise duties tax
+wave:2020,2020,q24e,ec_pays_import_duty,EC 2017-2023: Pays import duties,Q24E Import duties tax
+wave:2020,2020,q24f,ec_pays_trading_license,EC 2017-2023: Pays the trading license tax,Q24F Trading license tax
+wave:2020,2020,q24g,ec_pays_rental_income_tax,EC 2017-2023: Pays rental income tax,Q24G Rental income tax
+wave:2020,2020,q24h,ec_pays_flat_tax,EC 2017-2023: Pays the flat tax,Q24H Flat tax
+wave:2020,2020,q24z,ec_pays_no_tax,EC 2017-2023: Pays no tax,Q24Z No tax
+wave:2020,2020,q25,ec_has_tin_2017_2023,EC 2017-2023: Has a taxpayer identification number (TIN),Q25. Do you have a tin number
+wave:2020,2020,owner_sex,ec_owner_sex_derived,"EC 2017-2023: Sex of the owner, NISR derived",Sex of owner
+wave:2020,2020,owner_age,ec_owner_age_derived_2017_2020,"EC 2017-2020: Age of the owner, NISR derived",Age of owner
+wave:2020,2020,fi,ec_formal_informal_derived,"EC 2014-2023: Formal or informal establishment, NISR derived",Formal and Informal enterprises
+wave:2020,2020,start_y,ec_year_starting_intervals_2020,EC 2020: Year of starting intervals,Year of starting intervals
+wave:2020,2020,male_worker,ec_male_workers,EC 2017-2023: Number of male workers,Enterprise male workers
+wave:2020,2020,female_worker,ec_female_workers,EC 2017-2023: Number of female workers,Enterprise female workers
+wave:2020,2020,total_workers,ec_total_workers,EC 2017-2023: Total number of workers (male + female),Enterprise total workers
+wave:2020,2020,foreign_male,ec_foreign_male_workers,EC 2017-2023: Number of non-Rwandan male workers,Enterprise foreign male workers
+wave:2020,2020,rwandan_workers,ec_rwandan_workers,EC 2017-2023: Number of Rwandan workers,Enterprise Rwandan workers
+wave:2020,2020,rwandan_male,ec_rwandan_male_workers,EC 2017-2023: Number of Rwandan male workers,Enterprise Rwandan male workers
+wave:2020,2020,foregner_workers,ec_foreign_workers,EC 2017-2023: Number of non-Rwandan workers,Enterprise foreigner workers
+wave:2020,2020,rwandan_female,ec_rwandan_female_workers,EC 2017-2023: Number of Rwandan female workers,Enterprise Rwandan female workers
+wave:2020,2020,foreign_female,ec_foreign_female_workers,EC 2017-2023: Number of non-Rwandan female workers,Enterprise foreign female workers
+wave:2020,2020,size2,ec_size_class_derived,"EC 2017-2023: Size class by number of workers, NISR derived",Size based on number of workers at enterprise level
+wave:2020,2020,prov_derived,ec_province_derived,EC 2020: Province derived from the district code where missing,1 = province was missing in the file and derived as district // 10 (2020: 137 establishments)
+wave:2023,2023,survey,ec_survey,EC: Source survey,Source survey
+wave:2023,2023,year,ec_year,EC: Survey year,Census year
+wave:2023,2023,wave,ec_wave,EC: Wave identifier,Wave (census year)
+wave:2023,2023,prov,ec_province,"EC: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2023,2023,dist,ec_district,"EC: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2023,2023,urban,ec_urban,"EC: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2023,2023,estid,ec_establishment_id,EC: Establishment identifier,"Establishment id (NISR key where shipped, else year*1e6 + row number)"
+wave:2023,2023,wt,ec_weight,EC: Sampling weight,Weight (1 for full enumerations; NISR final sampling weight in 2014)
+wave:2023,2023,q2,ec_working_place,EC 2014-2023: Working place of the establishment,Q2. Working place
+wave:2023,2023,q3,ec_working_status,"EC 2014-2023: Working status (operating, closed temporarily or permanently)",Q3.1. Working status
+wave:2023,2023,q4_2,ec_manager_sex,EC 2017-2023: Sex of the manager,Q4.2 Manager sex
+wave:2023,2023,q4_3,ec_manager_age,EC 2017-2023: Age of the manager,Q4.3 Manager age
+wave:2023,2023,q7,ec_institutional_sector,EC 2017-2023: Institutional sector,Q7 Institutional sector
+wave:2023,2023,q8,ec_mixed_sector_2017_2023,EC 2017-2023: Category of mixed-sector establishment,Q8 Categories of mixed sector
+wave:2023,2023,q9,ec_nationality_owner_2023,EC 2023: Nationality of owner,Q9 Nationality of owner
+wave:2023,2023,q10,ec_legal_status_2017_2023,EC 2017-2023: Legal status,Q10 Legal status
+wave:2023,2023,q11,ec_management_2017_2023,EC 2017-2023: Management completely separated from the household,Q11 Is the management of establishment completely separated from the household m
+wave:2023,2023,q12,ec_owner_is_manager_2017_2023,EC 2017-2023: The owner is also the manager,Q12 Is the owner of the establishment its manager?
+wave:2023,2023,q13,ec_owner_sex_2017_2023,EC 2017-2023: Sex of the owner,Q13 Sex of the owner
+wave:2023,2023,owner_age,ec_owner_age_2023,"EC 2023: Age of the owner, questionnaire item Q14",Q14 Age of the owner
+wave:2023,2023,q15_1,ec_regular_accounts,EC 2017-2023: Keeps regular accounts,Q15.1 Does the establishment maintain regular accounts?
+wave:2023,2023,q15_2,ec_books_used,EC 2017-2023: Type of books used,Q15.2 Which of the following books is used
+wave:2023,2023,q15_2a,ec_books_ledgers,EC 2017-2023: Books used: ledgers,Q15_2A Ledgers
+wave:2023,2023,q15_2b,ec_books_journals,EC 2017-2023: Books used: journals,Q15_2B Journals
+wave:2023,2023,q15_2c,ec_books_balance_sheet,EC 2017-2023: Books used: balance sheet,Q15_2C Balance sheet
+wave:2023,2023,q15_2d,ec_books_income_statement,EC 2017-2023: Books used: income statement (profit and loss),Q15_2D Income statement (Profit and loss account)
+wave:2023,2023,q15_2e,ec_books_invoices,EC 2017-2023: Books used: invoices,Q15_2E Invoice
+wave:2023,2023,q16,ec_establishment_type_2017_2023,"EC 2017-2023: Establishment type: head office, single unit, branch",Q16 Establishment type
+wave:2023,2023,q17_2,ec_branches_rwanda,EC 2017-2023: Number of branches in Rwanda including the head office,Q17.2 Total number of branches in rwanda including the head office
+wave:2023,2023,q17_3,ec_persons_all_branches,"EC 2017-2023: Persons working in all branches in Rwanda, head office included",Q17.3 Total number of working persons in all branches in rwanda including the he
+wave:2023,2023,rwandan_male,ec_rwandan_male_workers,EC 2017-2023: Number of Rwandan male workers,Number of MALE Rwandan staff
+wave:2023,2023,rwandan_female,ec_rwandan_female_workers,EC 2017-2023: Number of Rwandan female workers,Number of FEMALE Rwandan staff
+wave:2023,2023,rwandan_workers,ec_rwandan_workers,EC 2017-2023: Number of Rwandan workers,Total number of Rwandan staff
+wave:2023,2023,foreign_male,ec_foreign_male_workers,EC 2017-2023: Number of non-Rwandan male workers,Number of MALE Foreigner staff
+wave:2023,2023,foreign_female,ec_foreign_female_workers,EC 2017-2023: Number of non-Rwandan female workers,Number of FEMALE Foreigner staff
+wave:2023,2023,foregner_workers,ec_foreign_workers,EC 2017-2023: Number of non-Rwandan workers,Total number of Foreigner staff
+wave:2023,2023,male_worker,ec_male_workers,EC 2017-2023: Number of male workers,Total MALE  staff
+wave:2023,2023,female_worker,ec_female_workers,EC 2017-2023: Number of female workers,Total FEMALE staff
+wave:2023,2023,total_workers,ec_total_workers,EC 2017-2023: Total number of workers (male + female),Total number of staff
+wave:2023,2023,q20,ec_annual_total_turnover_2023,EC 2023: Annual total turnover in 2022,Q20. Annual total turnover in 2022
+wave:2023,2023,q21,ec_current_employed_capital_2023,EC 2023: Current employed capital,Q21. Current employed capital
+wave:2023,2023,q22,ec_registered_any_institution,EC 2017-2023: Registered with any institution,Q22. Is the establishment registered in any of the following institutions?
+wave:2023,2023,q22_other,ec_registered_other_text,"EC 2017-2023: Other registration institution, text",Q22. Specify other
+wave:2023,2023,q22a,ec_registered_sector,EC 2017-2023: Registered with the sector,Q22A Sector
+wave:2023,2023,q22b,ec_registered_district,EC 2017-2023: Registered with the district,Q22B District
+wave:2023,2023,q22c,ec_registered_rca,EC 2017-2023: Registered with the Rwanda Cooperative Agency (RCA),Q22C Rwanda cooperative Agency (RCA) only Cooperative
+wave:2023,2023,q22d,ec_registered_psf,EC 2017-2023: Registered with the Private Sector Federation (PSF),Q22D Private sector Federation (PSF)
+wave:2023,2023,q22e,ec_registered_rgb,EC 2017-2023: Registered with the Rwanda Governance Board (RGB),Q22E Rwanda Governance Board (RGB) only NGO
+wave:2023,2023,q22f,ec_registered_rssb,EC 2017-2023: Registered with the Social Security Board (RSSB),Q22F Social Security Board (RSSB)
+wave:2023,2023,q22g,ec_registered_rdb,EC 2017-2023: Registered with the Rwanda Development Board (RDB),Q22G Rwanda Development Board (RDB)
+wave:2023,2023,q22h,ec_registered_rra,EC 2017-2023: Registered with the Rwanda Revenue Authority (RRA),Q22H Rwanda Revenue Authority (RRA)
+wave:2023,2023,q22i,ec_registered_immigration,EC 2017-2023: Registered with the Directorate of Immigration and Emigration,Q22I Directorate of Immigration and Emigration
+wave:2023,2023,q22j,ec_registered_other,EC 2017-2023: Registered with another institution,Q22J Other
+wave:2023,2023,q22z,ec_registered_none,EC 2017-2023: No registration,Q22Z No registration
+wave:2023,2023,q23_1,ec_trades_goods_abroad,EC 2017-2023: Traded goods with a foreign country in the last year,Q23.1 Did you have any transaction of goods with a foreign country during the la
+wave:2023,2023,q23_2,ec_trades_services_abroad,EC 2017-2023: Traded services with a foreign country in the last year,Q23.2 Did you have any transaction of services with a foreign country during the
+wave:2023,2023,q24,ec_type_taxes_paid_2017_2023,EC 2017-2023: Type of taxes paid,Q24. What type of taxes do you pay?
+wave:2023,2023,q24a,ec_pays_vat,EC 2017-2023: Pays value added tax (VAT),Q24A Value Added Tax (VAT)
+wave:2023,2023,q24b,ec_pays_tpr_paye,EC 2017-2023: Pays TPR / PAYE,Q24B TPR/PAYE
+wave:2023,2023,q24c,ec_pays_income_tax,EC 2017-2023: Pays income tax,Q24C Income tax
+wave:2023,2023,q24d,ec_pays_excise_duty,EC 2017-2023: Pays excise duties,Q24D Excise duties tax
+wave:2023,2023,q24e,ec_pays_import_duty,EC 2017-2023: Pays import duties,Q24E Import duties tax
+wave:2023,2023,q24f,ec_pays_trading_license,EC 2017-2023: Pays the trading license tax,Q24F Trading license tax
+wave:2023,2023,q24g,ec_pays_rental_income_tax,EC 2017-2023: Pays rental income tax,Q24G Rental income tax
+wave:2023,2023,q24h,ec_pays_flat_tax,EC 2017-2023: Pays the flat tax,Q24H Flat tax
+wave:2023,2023,q24z,ec_pays_no_tax,EC 2017-2023: Pays no tax,Q24Z No tax
+wave:2023,2023,q25,ec_has_tin_2017_2023,EC 2017-2023: Has a taxpayer identification number (TIN),Q25. Do you have a tin number
+wave:2023,2023,q6_1,ec_main_activity_section,"EC 2017-2023: Main economic activity, ISIC section (one digit)",ISIC1 Major economic activity
+wave:2023,2023,q5_2,ec_start_year,EC 2017-2023: Year of starting operation in Rwanda,Year of starting operation in Rwanda
+wave:2023,2023,start_y,ec_start_year_group_2023,"EC 2023: Year the establishment started operating, grouped",Start year group
+wave:2023,2023,owner_sex,ec_owner_sex_derived,"EC 2017-2023: Sex of the owner, NISR derived",Sex of owner of establishment
+wave:2023,2023,size2,ec_size_class_derived,"EC 2017-2023: Size class by number of workers, NISR derived",Size based on number of workers
+wave:2023,2023,fi,ec_formal_informal_derived,"EC 2014-2023: Formal or informal establishment, NISR derived",Formal and Informal enterprises

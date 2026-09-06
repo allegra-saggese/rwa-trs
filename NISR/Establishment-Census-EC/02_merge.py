@@ -14,15 +14,19 @@ a version (only compatible rewordings remain; the latest year's text wins and th
 recorded). Codes observed in the data but absent from a year's own value labels are reported
 as "stale labels". Everything is written to logs/merge_alignment.json for the codebook.
 Rule (b), FORCE_ALIGN and FORCE_SPLIT follow the EC audit of 2026-09-05.
+Names: the per-year files are read back under NISR's native names (variable_names.csv inverted) and the rule
+works on the native labels and value labels saved by 01_clean in logs/clean_<year>_meta.json; the pooled file
+is written under the clean names and labels of variable_names.csv (scope pooled:EC_pooled_establishment.dta).
 """
 import difflib, json, re
 from collections import Counter, defaultdict
 import numpy as np, pandas as pd
 from ec_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
-                         resolve_object_columns, label_similarity, save_json, LOGS)
+                         resolve_object_columns, label_similarity, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("02_merge")
 P = paths(); ck = Checks(log)
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG); POOLED = "pooled:EC_pooled_establishment.dta"
 YEARS = [2011, 2014, 2017, 2020, 2023]
 KEYS = ["survey", "year", "wave", "prov", "dist", "sector", "urban", "estid", "wt"]
 SIM_THRESHOLD = 0.25      # variable-label similarity (token Jaccard) for two years to be the same question
@@ -38,9 +42,18 @@ FORCE_SPLIT = {"start_y": [2017, 2023],    # 18 three-year bins in 2017; 7 bins 
                "owner_age": [2023]}          # 2017-20: derived, broadly populated; 2023 = the conditional Q14 item (owner not the manager), 4,849 rows
 
 # ---------------------------------------------------------------- load per-year files
+def _code(k):
+    """value-label code as saved in the meta file (json string) -> the number pyreadstat returns for a .dta"""
+    try: f = float(k)
+    except (TypeError, ValueError): return k
+    return int(f) if f.is_integer() else f
 data, labels, vlabs = {}, {}, {}
 for y in YEARS:
     df, vl, vv = read_dta(P["inter"] / f"EC_{y}_establishment_clean.dta")
+    df, _, _ = NAMES.invert(df, vl, vv, f"wave:{y}")                       # native names; native labels and value labels from the meta file
+    meta = json.load(open(LOGS / f"clean_{y}_meta.json"))
+    vl = {c: meta["var_labels"].get(c, "") for c in df.columns}
+    vv = {c: {_code(k): t for k, t in d.items()} for c, d in meta["value_labels"].items() if c in df.columns}
     data[y], labels[y], vlabs[y] = df, vl, vv
     log.info("loaded %s: %s rows x %s vars", y, f"{len(df):,}", df.shape[1])
 
@@ -179,11 +192,12 @@ ck(len(person) == sum(len(d) for d in data.values()), "pooled rows == sum of yea
 for y in YEARS:
     ck(abs(person.loc[person.year == y, "wt"].sum() - data[y]["wt"].sum()) < 1e-6, f"{y}: sum wt preserved in pool")
 person, DUP_ROWS, DUP_WT = drop_exact_duplicates(person, "EC_pooled_establishment.dta", log)
-write_dta(person, P["final"] / "EC_pooled_establishment.dta", var_labels, value_labels,
+out, vl_out, vv_out, CLEAN = NAMES.apply(person, var_labels, value_labels, POOLED, log)      # clean names, labels and value labels
+write_dta(out, P["final"] / "EC_pooled_establishment.dta", vl_out, vv_out,
           "Rwanda Establishment Census 2011-2023 pooled establishment file", log)
 
 save_json({"threshold": SIM_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "decisions": decisions, "label_variants": label_variants,
            "value_label_conflicts": vl_text_conflicts, "stale_labels": stale_labels, "vl_threshold": VL_THRESHOLD,
-           "establishment": {"rows": len(person), "vars": list(person.columns)}, "duplicates_dropped": {"EC_pooled_establishment.dta": DUP_ROWS}, "wt_dropped": {"EC_pooled_establishment.dta": DUP_WT}},
+           "establishment": {"rows": len(person), "vars": list(person.columns), "clean_vars": list(out.columns)}, "clean_names": CLEAN, "duplicates_dropped": {"EC_pooled_establishment.dta": DUP_ROWS}, "wt_dropped": {"EC_pooled_establishment.dta": DUP_WT}},
           LOGS / "merge_alignment.json")
 ck.done(); log.info("02_merge done")
