@@ -484,7 +484,8 @@ for tag in DATASETS:
             return s_.astype(object).where(s_.notna(), "").astype(str).str.strip()
         if "hhid" in df.columns:
             hh_ok = df["hhid"].notna() & (df["hhid"].astype(str).str.strip() != "")
-            if pd.api.types.is_numeric_dtype(df["hhid"]): hh_ok &= df["hhid"].astype("float64") > 0      # 0 / negative ids are sentinels (CFSVA 2012 child: 282 rows), never a household
+            num = pd.to_numeric(df["hhid"], errors="coerce")                                              # ids that are numbers -- also inside a string column (CFSVA mixes composite string ids and numbers)
+            hh_ok &= ~(num.notna() & (num <= 0))                                                          # 0 / negative ids are sentinels (CFSVA 2012 child: 282 rows), never a household (GPT2 re-audit 2026-09-05)
             key = df["survey"].astype(str) + "_" + df["wave"].astype(str) + ("_" + id_text("interview") if "interview" in df.columns else "") + "_" + id_text("hhid")
             key = key.where(hh_ok, ""); df["h_hhkey"] = key; vl["h_hhkey"] = KEY_LABELS["h_hhkey"]
             note_map(tag, sorted(df["wave"].unique()), fname, "h_hhkey", "survey + wave" + (" + interview" if "interview" in df.columns else "") + " + hhid", "string concatenation; blank where hhid is missing or <= 0", "all files", "exact", f"{int((key == '').sum()):,} blank of {len(key):,} rows")

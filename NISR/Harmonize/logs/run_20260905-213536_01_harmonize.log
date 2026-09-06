@@ -1,0 +1,23 @@
+21:35:36 01_harmonize INFO ==== 01_harmonize | run 20260905-213536_01_harmonize | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:35:44 01_harmonize INFO    previous H_CFSVA_child.dta removed before the rebuild (0.12 GB)
+21:35:44 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_child.dta (child, 0.11 GB) -> H_CFSVA_child.dta
+21:35:52 01_harmonize INFO read CFSVA_pooled_child.dta: 35,763 rows x 1388 vars (typed, 0.1 GB in memory)
+21:35:52 01_harmonize INFO PASS  H_CFSVA_child.dta: row count unchanged (35,763)
+21:35:55 01_harmonize INFO wrote H_CFSVA_child.dta  (35,763 rows x 1389 vars, 116.6 MB)
+21:35:55 01_harmonize INFO    previous H_CFSVA_household.dta removed before the rebuild (0.67 GB)
+21:35:55 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_household.dta (household, 0.66 GB) -> H_CFSVA_household.dta
+21:36:43 01_harmonize INFO read CFSVA_pooled_household.dta: 50,890 rows x 4825 vars (typed, 0.7 GB in memory)
+21:36:44 01_harmonize INFO PASS  H_CFSVA_household.dta: row count unchanged (50,890)
+21:37:09 01_harmonize INFO wrote H_CFSVA_household.dta  (50,890 rows x 4831 vars, 666.6 MB)
+21:37:09 01_harmonize INFO    previous H_CFSVA_village.dta removed before the rebuild (0.01 GB)
+21:37:09 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_village.dta (village, 0.01 GB) -> H_CFSVA_village.dta
+21:37:10 01_harmonize INFO read CFSVA_pooled_village.dta: 3,812 rows x 508 vars (typed, 0.0 GB in memory)
+21:37:10 01_harmonize INFO PASS  H_CFSVA_village.dta: row count unchanged (3,812)
+21:37:10 01_harmonize INFO wrote H_CFSVA_village.dta  (3,812 rows x 508 vars, 7.0 MB)
+21:37:10 01_harmonize INFO    previous H_CFSVA_woman.dta removed before the rebuild (0.05 GB)
+21:37:10 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_woman.dta (woman, 0.05 GB) -> H_CFSVA_woman.dta
+21:37:17 01_harmonize INFO read CFSVA_pooled_woman.dta: 31,030 rows x 813 vars (typed, 0.1 GB in memory)
+21:37:17 01_harmonize INFO PASS  H_CFSVA_woman.dta: row count unchanged (31,030)
+21:37:18 01_harmonize INFO wrote H_CFSVA_woman.dta  (31,030 rows x 816 vars, 50.5 MB)
+21:37:18 01_harmonize INFO all hard checks passed (0 soft warnings)
+21:37:18 01_harmonize INFO 01_harmonize done: 77 files, 358 map rows

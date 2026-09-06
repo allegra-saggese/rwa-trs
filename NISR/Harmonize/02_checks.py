@@ -67,6 +67,7 @@ for out, info in ordered:
     df = load(out, ["h_hhkey", "h_pkey", "wave", "hhid"])
     hk = df.loc[df["h_hhkey"] != "", "h_hhkey"]
     row("B", f"{out}: rows with a household key (informational)", len(hk), None)
+    row("B", f"{out}: keys built from a zero / negative id (must be 0)", int(hk.str.match(r".*_(0|0\.0|-\d+)$").sum()), 0)
     if info["unit"] == "household": row("B", f"{out}: h_hhkey unique (household file)", hk.nunique(), len(hk)); hh_keys[out] = set(hk)
     if "h_pkey" in df.columns and info["unit"] == "person":
         pk = df.loc[df["h_pkey"] != "", "h_pkey"]; d = int(pk.duplicated().sum())
