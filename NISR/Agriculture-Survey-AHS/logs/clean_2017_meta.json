@@ -171,6 +171,16 @@
     "s0q21"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q0": "ahs_household_segment",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
@@ -190,17 +200,7 @@
     "s0q18": "ahs_enumerator_2017",
     "s0q19": "ahs_team_leader",
     "s0q20": "ahs_regional_supervisor",
-    "s0q21": "ahs_control_results",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "cluster": "ahs_cluster",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s0q21": "ahs_control_results"
    }
   },
   "s10_1_cattle_milk_production": {
@@ -322,6 +322,16 @@
     "s10q1_7"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s10q1_1": "ahs_lactating_cow_number",
@@ -333,17 +343,7 @@
     "s10q1_4_2": "ahs_dail_milk_prod_low_lactating",
     "s10q1_5": "ahs_months_year_calving",
     "s10q1_6": "ahs_cattle_problem_caused_low",
-    "s10q1_7": "ahs_major_problems_caused_low",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s10q1_7": "ahs_major_problems_caused_low"
    }
   },
   "s10_2_cattle_milk_production_use": {
@@ -455,18 +455,18 @@
     "s10q2_10"
    ],
    "clean_names": {
-    "s0q3": "ahs_stratum",
-    "s0q4": "ahs_segment",
-    "hhid": "ahs_household_id",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
     "survey": "ahs_survey",
     "year": "ahs_year",
     "wave": "ahs_wave",
     "sample": "ahs_sample",
     "prov": "ahs_province",
+    "dist": "ahs_district",
     "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
     "wt_hh": "ahs_household_weight",
+    "s0q3": "ahs_stratum",
+    "s0q4": "ahs_segment",
     "s10q2_1": "ahs_lactation_period",
     "s10q2_2": "ahs_average_daily_qty_consumed",
     "s10q2_3": "ahs_average_daily_qty_others",
@@ -583,6 +583,16 @@
     "s10q3_7"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s10q3_1": "ahs_type_bee_hive",
@@ -591,17 +601,7 @@
     "s10q3_4": "ahs_qty_produced_honey_consumed",
     "s10q3_5": "ahs_sale_qty",
     "s10q3_6": "ahs_sale_sale_price",
-    "s10q3_7": "ahs_honey_stored_end_v2017",
-    "hhid": "ahs_household_id",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "prov": "ahs_province",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s10q3_7": "ahs_honey_stored_end_v2017"
    }
   },
   "s11_animal_inputs_and_services": {
@@ -724,6 +724,16 @@
     "s11q14"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s11q1": "ahs_animal_category",
@@ -739,17 +749,7 @@
     "s11q11": "ahs_amount_purchasing_pesticides",
     "s11q12": "ahs_amount_farm_maint_2017",
     "s11q13": "ahs_amount_purchasing_payment",
-    "s11q14": "ahs_purchasing_expenditures",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s11q14": "ahs_purchasing_expenditures"
    }
   },
   "s1_household_members_characteristics": {
@@ -915,6 +915,17 @@
     "s1q21"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "pid": "ahs_person_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s1q2": "ahs_household_names_2017",
@@ -933,19 +944,8 @@
     "s1q17": "ahs_days_household_worked_feb",
     "s1q18": "ahs_days_household_worked_march",
     "s1q19": "ahs_days_household_worked_april",
-    "s1q20": "ahs_number_days_household_worked",
+    "s1q20": "ahs_days_household_worked_may",
     "s1q21": "ahs_days_household_worked_jun",
-    "hhid": "ahs_household_id",
-    "pid": "ahs_person_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight",
     "s1q4": "ahs_sex_household",
     "s1q5": "ahs_age_household"
    }
@@ -2211,6 +2211,16 @@
     "s2q16_3"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s2q1": "ahs_hh_land_used_v3_2017",
@@ -2236,17 +2246,7 @@
     "s2q15_3": "ahs_major_crops_hh_grow_3",
     "s2q16_1": "ahs_major_crops_duri",
     "s2q16_2": "ahs_major_crops_duri_s2q162",
-    "s2q16_3": "ahs_major_crops_duri_s2q163",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s2q16_3": "ahs_major_crops_duri_s2q163"
    }
   },
   "s3_extension_services_and_agricultural_programmes": {
@@ -2476,6 +2476,16 @@
     "s3q16"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s3q1": "ahs_hh_benefited_extension_svc",
@@ -2495,17 +2505,7 @@
     "s3q13": "ahs_hh_cow_provided_girinka",
     "s3q14": "ahs_why_doesn_t_cow",
     "s3q15": "ahs_child_hh_benefit_cup_milk",
-    "s3q16": "ahs_kitchen_garden_home_2017",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s3q16": "ahs_kitchen_garden_home_2017"
    }
   },
   "s4_funding_during_2016": {
@@ -2708,6 +2708,16 @@
     "s4q13"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s4q1": "ahs_household_bank_account",
@@ -2722,17 +2732,7 @@
     "s4q10": "ahs_requested_loan3_approved",
     "s4q11": "ahs_agri_loan3_requested_2017",
     "s4q12": "ahs_recvd_fund_grant_agri_2017",
-    "s4q13": "ahs_origin_grant_2017",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s4q13": "ahs_origin_grant_2017"
    }
   },
   "s5_agricultural_inputs": {
@@ -4161,6 +4161,16 @@
     "s5q4_18_c"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s5q1_1": "ahs_hh_use_organic_fert_least_1",
@@ -4318,17 +4328,7 @@
     "s5q4_15_c": "ahs_source_improved_s5q415c",
     "s5q4_16_c": "ahs_qty_improved_seeds_s5q416c",
     "s5q4_17_c": "ahs_qty_improved_seeds_s5q417c",
-    "s5q4_18_c": "ahs_amount_purchase_2017_s5q418c",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s5q4_18_c": "ahs_amount_purchase_2017_s5q418c"
    }
   },
   "s6_agricultural_practices": {
@@ -4653,6 +4653,16 @@
     "s6q2_5_3"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "dummy_cropping_b": "ahs_cropping_season_b",
     "cropping": "ahs_household_cropping",
     "s2q7_1": "ahs_major_crops_hh_grow_crop1",
@@ -4688,17 +4698,7 @@
     "s6q2_4": "ahs_use_mechanical_equipment",
     "s6q2_5_1": "ahs_mechanical_equip_used_2017",
     "s6q2_5_2": "ahs_mechanical_equip_s6q252",
-    "s6q2_5_3": "ahs_mechanical_equip_s6q253",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s6q2_5_3": "ahs_mechanical_equip_s6q253"
    }
   },
   "s7_1_agricultural_small_tools": {
@@ -4833,6 +4833,16 @@
     "s7q7"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s7q1": "ahs_small_tools_2017",
@@ -4841,17 +4851,7 @@
     "s7q4": "ahs_tools_puchased_hh_agri_2017",
     "s7q5": "ahs_unit_price_bought_tool_2017",
     "s7q6": "ahs_tool_rented_household_2017",
-    "s7q7": "ahs_amount_paid_rented_2017",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s7q7": "ahs_amount_paid_rented_2017"
    }
   },
   "s7_2_agricultural_durable_tools": {
@@ -4978,18 +4978,18 @@
     "s7q14"
    ],
    "clean_names": {
-    "s0q3": "ahs_stratum",
-    "s0q4": "ahs_segment",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
     "survey": "ahs_survey",
     "year": "ahs_year",
     "wave": "ahs_wave",
     "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
     "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
     "wt_hh": "ahs_household_weight",
+    "s0q3": "ahs_stratum",
+    "s0q4": "ahs_segment",
     "s7q8": "ahs_durable_tool",
     "s7q9": "ahs_household_use_equipment",
     "s7q10": "ahs_tool_existing_farm_day",
@@ -5235,18 +5235,18 @@
     "s8q1_1_25"
    ],
    "clean_names": {
-    "s0q3": "ahs_stratum",
-    "s0q4": "ahs_segment",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
     "survey": "ahs_survey",
     "year": "ahs_year",
     "wave": "ahs_wave",
     "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
     "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
     "wt_hh": "ahs_household_weight",
+    "s0q3": "ahs_stratum",
+    "s0q4": "ahs_segment",
     "s8q1_1_1": "ahs_crop",
     "s8q1_1_2": "ahs_crop_code1",
     "s8q1_1_3": "ahs_quantity_produced_kg_season",
@@ -5512,18 +5512,18 @@
     "s8q1_1_50"
    ],
    "clean_names": {
-    "s0q3": "ahs_stratum",
-    "s0q4": "ahs_segment",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
     "survey": "ahs_survey",
     "year": "ahs_year",
     "wave": "ahs_wave",
     "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
     "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
     "wt_hh": "ahs_household_weight",
+    "s0q3": "ahs_stratum",
+    "s0q4": "ahs_segment",
     "s8q1_1_26": "ahs_crop",
     "s8q1_1_27": "ahs_crop_code1",
     "s8q1_1_28": "ahs_quantity_produced_kg_season",
@@ -5722,6 +5722,16 @@
     "s9q9_28"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "cluster": "ahs_cluster",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q3": "ahs_stratum",
     "s0q4": "ahs_segment",
     "s9q9_1": "ahs_animal_reared_1",
@@ -5755,17 +5765,7 @@
     "s9q9_25": "ahs_number_eggs_sold_week",
     "s9q9_26": "ahs_unit_price_egg_sold",
     "s9q9_27": "ahs_number_eggs_damaged_week",
-    "s9q9_28": "ahs_number_eggs_other_ways_week",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "cluster": "ahs_cluster",
-    "wt_hh": "ahs_household_weight"
+    "s9q9_28": "ahs_number_eggs_other_ways_week"
    }
   }
  },
@@ -5971,7 +5971,7 @@
    "s1q17": "ahs_days_household_worked_feb",
    "s1q18": "ahs_days_household_worked_march",
    "s1q19": "ahs_days_household_worked_april",
-   "s1q20": "ahs_number_days_household_worked",
+   "s1q20": "ahs_days_household_worked_may",
    "s1q21": "ahs_days_household_worked_jun"
   }
  },

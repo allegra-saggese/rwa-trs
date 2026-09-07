@@ -20,7 +20,7 @@ pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",a13,lfs_r
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024",a14a,lfs_country_of_birth_2017_2024,LFS 2017-2024: Country or area of birth,Country/Area of birth
 pooled:LFS_pooled_person.dta,2025,a14a_v2,lfs_country_of_birth_2025,LFS 2025: Country or area of birth,Country/Area of birth
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2025",a14b,lfs_district_of_birth_2017_2025,LFS 2017-2025: District of birth,District of birth
-pooled:LFS_pooled_person.dta,2024,a14b_v2,lfs_district_of_birth_2024,LFS 2024: District of birth; the 2024 file mixes district and sector codes,District of birth -- 2024 file mixes district codes (11-57) and sector codes (11
+pooled:LFS_pooled_person.dta,2024,a14b_v2,lfs_district_of_birth_2024,LFS 2024: District of birth; the 2024 file mixes district and sector codes,District of birth -- 2024 file mixes district codes (11-57) and sector codes (1101-5714; district = code // 100)
 pooled:LFS_pooled_person.dta,"2019,2022,2023,2024",a15,lfs_always_in_district_2019_2024,LFS 2019-2024: Usual residence always in this district,Has usual place of residence  always been in this district?
 pooled:LFS_pooled_person.dta,"2021,2025",a15_v2,lfs_lived_outside_6m_2021_2025,LFS 2021-2025: Lived outside this district for at least 6 months,Did he/she lived outside this district for at least 6 consecutive months?
 pooled:LFS_pooled_person.dta,"2019,2021,2022,2023,2024,2025",a16y,lfs_years_since_last_move,LFS 2019-2025: Years since the last move of usual residence,The period of usual place of residence( last move)-Years
@@ -182,7 +182,7 @@ pooled:LFS_pooled_person.dta,"2022,2023,2024",d03a_v2,lfs_workplace_name_2022_20
 pooled:LFS_pooled_person.dta,"2019,2021",d03a1,lfs_workplace_name_text,"LFS 2019-2021: Name of the workplace of the main job, text",The workplace name
 pooled:LFS_pooled_person.dta,"2019,2021",d03b,lfs_main_job_goods_services,LFS 2019-2021: Main goods or services produced at the workplace,What are the main goods or services produced at (NAME)?s place of work or its ma
 pooled:LFS_pooled_person.dta,"2019,2021",d03b1,lfs_isic_main_job_2019_2021,LFS 2019-2021: ISIC code of the main job,Main goods and services(ISIC code)
-pooled:LFS_pooled_person.dta,2020,d03b1_v2,lfs_isic_main_job_2020,LFS 2020: ISIC code of the main job; two-digit divisions in the 2020 file,ISIC code of the main job -- 2-digit divisions in the reduced 2020 file (4-digit
+pooled:LFS_pooled_person.dta,2020,d03b1_v2,lfs_isic_main_job_2020,LFS 2020: ISIC code of the main job; two-digit divisions in the 2020 file,"ISIC code of the main job -- 2-digit divisions in the reduced 2020 file (4-digit classes in 2019, 2021)"
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024",d04,lfs_inst_sector_main_2017_2024,LFS 2017-2024: Institutional sector of the main job,Does (Name) work in....
 pooled:LFS_pooled_person.dta,2025,d04_v2,lfs_inst_sector_main_2025,LFS 2025: Institutional sector of the main job,Does (Name) work in....
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024",d05,lfs_employment_status_2017_2024,LFS 2017-2024: Status in employment in the main job,"In this job, is  [NAME] working as??"
@@ -235,7 +235,7 @@ pooled:LFS_pooled_person.dta,2025,d23a,lfs_commute_transport_2025,LFS 2025: Main
 pooled:LFS_pooled_person.dta,2024,d23a_v2,lfs_commute_transport_2024,LFS 2024: Main means of transport to work,What means of transportation do you mainly use to commute to your place of work?
 pooled:LFS_pooled_person.dta,"2024,2025",d23b,lfs_commute_time,LFS 2024-2025: Time to get to work,How long does it normally take you to get to work?
 pooled:LFS_pooled_person.dta,"2017,2019,2020",d24,lfs_work_experience_2017_2020,LFS 2017-2020: Total work experience,How long have [NAME] been working (total experience)?
-pooled:LFS_pooled_person.dta,"2024,2025",d24_v2,lfs_work_experience_2024_2025,LFS 2024-2025: Total work experience in years,"Total work experience in years (2025 questionnaire D24; 2017 = duration bands, 2"
+pooled:LFS_pooled_person.dta,"2024,2025",d24_v2,lfs_work_experience_2024_2025,LFS 2024-2025: Total work experience in years,"Total work experience in years (2025 questionnaire D24; 2017 = duration bands, 2019-2023 = d24a)"
 pooled:LFS_pooled_person.dta,"2019,2021,2022,2023",d24a,lfs_work_experience_years,LFS 2019-2023: Total work experience in years,How long have [NAME] been working (total experience)-Years?
 pooled:LFS_pooled_person.dta,2025,d24b,lfs_months_worked_per_year,LFS 2025: Months worked in a year in the main job,"In your main job or business, how many months do you typically work in a year?"
 pooled:LFS_pooled_person.dta,"2017,2018,2019",d25,lfs_computer_needed_at_work,LFS 2017-2019: Needs a computer in day-to-day work,In day to day work does [NAME] need the computer to perform his/her duties?
@@ -398,7 +398,7 @@ pooled:LFS_pooled_person.dta,"2017,2018",indf03,lfs_isco_major_last_job,LFS 2017
 pooled:LFS_pooled_person.dta,"2017,2018",indf04,lfs_isic_section_last_job,LFS 2017-2018: ISIC section of the last job,ISIC High level_past
 pooled:LFS_pooled_person.dta,"2022,2023,2024",intcash,lfs_income_interval_2022_2024,"LFS 2022-2024: Income interval, NISR derived",Income interval
 pooled:LFS_pooled_person.dta,2025,intcash_v2,lfs_income_interval_2025,"LFS 2025: Income interval, NISR derived",Cash Income interval for employees
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",interview,lfs_interview,LFS: Interview number of the household in the year,"Interview number of the household within the year (1, 2): rank of the quarter wh"
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",interview,lfs_interview,LFS: Interview number of the household in the year,"Interview number of the household within the year (1, 2): rank of the quarter where known; order of appearance in the file in 2022"
 pooled:LFS_pooled_person.dta,2021,is,lfs_formal_sector_2021,"LFS 2021: Formal or informal sector of employment, NISR derived",Informal&Formal sector employment
 pooled:LFS_pooled_person.dta,"2017,2018",isco2d,lfs_isco_2digit_main_2017_2018,LFS 2017-2018: ISCO two-digit group of the main job,Isco_2digits_mainjob
 pooled:LFS_pooled_person.dta,"2022,2023,2024,2025",isco2digit,lfs_isco_two_digit_main_job,LFS 2022-2025: ISCO two-digit group of the main job,occupation activity at two digit
@@ -426,7 +426,7 @@ pooled:LFS_pooled_person.dta,2021,more_person,lfs_more_persons_flag_2021,LFS 202
 pooled:LFS_pooled_person.dta,"2019,2021,2022,2023,2024,2025",neetyoung,lfs_neet_16_30,"LFS 2019-2025: Not in employment, education or training, aged 16-30",NEET 16-30
 pooled:LFS_pooled_person.dta,"2022,2023,2024,2025",neetyouth,lfs_neet_16_24,"LFS 2022-2025: Not in employment, education or training, aged 16-24",NEET 16-24
 pooled:LFS_pooled_person.dta,"2017,2018",phase,lfs_phase,"LFS 2017-2018: Data collection phase: 1 February round, 2 August round",Data collection round
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",pid,lfs_person_id,LFS: Person number within the household,Person number within the household (2025: row order within the household-intervi
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",pid,lfs_person_id,LFS: Person number within the household,Person number within the household (2025: row order within the household-interview; no person id shipped)
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024",pid_nisr,lfs_nisr_person_id,LFS 2017-2024: NISR person identifier as shipped,NISR person id as shipped (pid / pkey)
 pooled:LFS_pooled_person.dta,2019,pkey,lfs_nisr_person_key_2019,LFS 2019: NISR person key as shipped,identifier
 pooled:LFS_pooled_person.dta,"2017,2019,2020,2021,2022,2023,2024,2025",plf,lfs_potential_labour_force,"LFS 2017-2025: Potential labour force category, NISR derived",Potential labour force
@@ -438,18 +438,18 @@ pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",psu,
 pooled:LFS_pooled_person.dta,2021,psu_id,lfs_psu_identifier_2021,LFS 2021: Primary sampling unit identifier as shipped,Primary Sampling Unit
 pooled:LFS_pooled_person.dta,"2017,2018,2020,2021,2022,2023,2024,2025",psu_no,lfs_psu_number_shipped,LFS 2017-2025: Primary sampling unit number as shipped by NISR,Primary Sampling Unit
 pooled:LFS_pooled_person.dta,"2021,2022,2023,2024,2025",qh_no,lfs_household_number_in_psu,LFS 2021-2025: Household number within the primary sampling unit as shipped,QUESTIONNAIRE  NUMBER
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",quarter,lfs_quarter,LFS: Quarter of the round,"Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl"
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",quarter,lfs_quarter,LFS: Quarter of the round,"Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's block structure in 2023-2025; missing in 2022"
 pooled:LFS_pooled_person.dta,2021,quintile,lfs_wealth_quintile_2021,LFS 2021: Wealth quintile as shipped,quintiles
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",round,lfs_round,LFS: Data collection round,Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",round,lfs_round,LFS: Data collection round,Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025 (not shipped)
 pooled:LFS_pooled_person.dta,2017,ryear,lfs_nisr_year_variable_2017,LFS 2017: NISR variable named year as shipped,Year
 pooled:LFS_pooled_person.dta,"2017,2018",samehh,lfs_same_household_visited,LFS 2017-2018: Same household as visited last time,The same Household Visited last time?
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",sex,lfs_sex,"LFS: Sex: 1 male, 2 female","Sex (1 male, 2 female)"
 pooled:LFS_pooled_person.dta,2021,sihh,lfs_still_in_household_2021,LFS 2021: Still in the household,Still in the Household
 pooled:LFS_pooled_person.dta,"2021,2022,2023",sm,lfs_search_methods_2021_2023,"LFS 2021-2023: Job-search methods, NISR summary",Search methods
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",status1,lfs_labour_force_status,"LFS: Labour force status, NISR derived: 1 employed, 2 unemployed","Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed"
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",status1,lfs_labour_force_status,"LFS: Labour force status, NISR derived: 1 employed, 2 unemployed","Labour force status (NISR derived; population aged 14+: 1 employed, 2 unemployed, 3 outside the labour force)"
 pooled:LFS_pooled_person.dta,"2017,2018,2020,2021,2022,2023,2024,2025",sub,lfs_subsistence_producer,"LFS 2017-2025: Subsistence foodstuff producer, NISR derived",Subsistance foodstaff producers
 pooled:LFS_pooled_person.dta,"2024,2025",subhrs,lfs_subsistence_hours_2024_2025,"LFS 2024-2025: Hours in subsistence activities, NISR derived",Time spent in subsistance activities
-pooled:LFS_pooled_person.dta,"2022,2023",subhrs_v2,lfs_subsistence_hours_2022_2023,"LFS 2022-2023: NISR subsistence hours, product of two weekly measures","NISR subsistence hours = h02 x h03; in 2022-2023 both inputs are weekly hours, s"
+pooled:LFS_pooled_person.dta,"2022,2023",subhrs_v2,lfs_subsistence_hours_2022_2023,"LFS 2022-2023: NISR subsistence hours, product of two weekly measures","NISR subsistence hours = h02 x h03; in 2022-2023 both inputs are weekly hours, so this is NOT hours per week"
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",survey,lfs_survey,LFS: Source survey,Source survey
 pooled:LFS_pooled_person.dta,"2022,2023,2024,2025",timegood,lfs_own_use_hours_goods,LFS 2022-2025: Time spent producing goods for own use,Time spent in production of good
 pooled:LFS_pooled_person.dta,"2022,2023,2024,2025",timeservice,lfs_own_use_hours_services,LFS 2022-2025: Time spent producing services for own use,Time spent in production of services
@@ -480,9 +480,9 @@ pooled:LFS_pooled_person.dta,"2022,2023,2024,2025",yur1,lfs_youth_unemployment_r
 pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",survey,lfs_survey,LFS: Source survey,Source survey
 pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",year,lfs_year,LFS: Survey year,Survey year
 pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",wave,lfs_wave,LFS: Wave identifier,Wave (survey year)
-pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",round,lfs_round,LFS: Data collection round,Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025
-pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",quarter,lfs_quarter,LFS: Quarter of the round,"Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's bl"
-pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",interview,lfs_interview,LFS: Interview number of the household in the year,"Interview number of the household within the year (1, 2): rank of the quarter wh"
+pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",round,lfs_round,LFS: Data collection round,Data-collection round as labelled by NISR (FEB17 ... NOV21); empty in 2022-2025 (not shipped)
+pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",quarter,lfs_quarter,LFS: Quarter of the round,"Quarter (1 Feb, 2 May, 3 Aug, 4 Nov): from the round to 2021, from the file's block structure in 2023-2025; missing in 2022"
+pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",interview,lfs_interview,LFS: Interview number of the household in the year,"Interview number of the household within the year (1, 2): rank of the quarter where known; order of appearance in the file in 2022"
 pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",prov,lfs_province,"LFS: Province, NISR code 1-5","Province (1-5, NISR codes)"
 pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",dist,lfs_district,"LFS: District, NISR code 11-57","District (11-57, NISR codes)"
 pooled:LFS_pooled_household.dta,"2017,2018,2019,2020,2021,2022,2023,2024,2025",urban,lfs_urban,"LFS: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"

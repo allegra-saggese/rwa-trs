@@ -187,6 +187,15 @@
     "s0q18"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -199,16 +208,7 @@
     "s0q16_3": "ahs_agri_activity_household_3",
     "s0q16_4": "ahs_agri_activity_household_4",
     "s0q17": "ahs_agri_livelihood_activity_hh",
-    "s0q18": "ahs_non_agri_activity_support_hh",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt": "ahs_weight",
-    "wt_hh": "ahs_household_weight"
+    "s0q18": "ahs_non_agri_activity_support_hh"
    }
   },
   "section_1": {
@@ -478,6 +478,16 @@
     "s1q10_2"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "pid": "ahs_person_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -498,17 +508,7 @@
     "s1q9": "ahs_engaged_agric_activ_2020",
     "agribus_n": "ahs_agribusiness_activities_n",
     "s1q10_1": "ahs_involved_agribusiness_1",
-    "s1q10_2": "ahs_involved_agribusiness_2",
-    "hhid": "ahs_household_id",
-    "pid": "ahs_person_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s1q10_2": "ahs_involved_agribusiness_2"
    }
   },
   "section_2_1": {
@@ -1022,6 +1022,15 @@
     "s2q13"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -1061,16 +1070,7 @@
     "s2q11_4": "ahs_mechanical_equip_used_4",
     "s2q11_5": "ahs_mechanical_equip_used_5",
     "s2q12": "ahs_tractor_oxen_used_plot_2020",
-    "s2q13": "ahs_plot_land_consolidated_2020",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s2q13": "ahs_plot_land_consolidated_2020"
    }
   },
   "section_2_2": {
@@ -2339,6 +2339,15 @@
     "s2q33"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -2416,16 +2425,7 @@
     "s2q30": "ahs_hh_practice_irrig_least",
     "s2q31": "ahs_irrig_technique_used_plot",
     "s2q32": "ahs_irrigation_tool_used",
-    "s2q33": "ahs_source_water_used_irrigation",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s2q33": "ahs_source_water_used_irrigation"
    }
   },
   "section_2_3": {
@@ -2655,6 +2655,15 @@
     "s2q40"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -2672,16 +2681,7 @@
     "s2q37": "ahs_fruits_trees_harvested_agri",
     "s2q38": "ahs_prod_harvested_fruits_kg",
     "s2q39": "ahs_percentage_fruits_sold",
-    "s2q40": "ahs_percentage_fruits_consumed",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s2q40": "ahs_percentage_fruits_consumed"
    }
   },
   "section_3_1": {
@@ -2935,6 +2935,15 @@
     "s3q4"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -2953,16 +2962,7 @@
     "s3q2": "ahs_extension_2020",
     "s3q3_3_1": "ahs_male",
     "s3q3_3_2": "ahs_female",
-    "s3q4": "ahs_source_extension_2020",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s3q4": "ahs_source_extension_2020"
    }
   },
   "section_3_2": {
@@ -3353,6 +3353,15 @@
     "s3q22"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -3397,16 +3406,7 @@
     "s3q19": "ahs_source_small_lvstk_donated",
     "s3q20": "ahs_recvd_support_fund_grant",
     "s3q21": "ahs_types_support_fund_received",
-    "s3q22": "ahs_origin_support",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s3q22": "ahs_origin_support"
    }
   },
   "section_4": {
@@ -4176,6 +4176,15 @@
     "s4q13"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -4230,16 +4239,7 @@
     "s4q10_4": "ahs_loan_requested_4",
     "s4q11": "ahs_loans_requested_2020",
     "s4q12": "ahs_loan_rejected_reason_2020",
-    "s4q13": "ahs_main_use_rejected_loan_2020",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "s4q13": "ahs_main_use_rejected_loan_2020"
    }
   },
   "section_5": {
@@ -4482,6 +4482,15 @@
     "total"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -4508,16 +4517,7 @@
     "s5q4_7": "ahs_male_animal_above_months_7",
     "s5q4_8": "ahs_female_animal_above_months_8",
     "owner": "ahs_owner",
-    "total": "ahs_total_unlabelled",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "total": "ahs_total_unlabelled"
    }
   },
   "section_6": {
@@ -4776,6 +4776,15 @@
     "owner"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -4787,15 +4796,6 @@
     "s0q16_4": "ahs_agri_activity_household_4",
     "s0q17": "ahs_agri_livelihood_activity_hh",
     "s0q18": "ahs_non_agri_activity_support_hh",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight",
     "s5q2": "ahs_animal_reared",
     "s5q2_o": "ahs_other_animal_reared",
     "s6q2_1": "ahs_animals_born_male",
@@ -5042,6 +5042,15 @@
     "av_daily_milk_cow"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -5062,16 +5071,7 @@
     "s7q1_7": "ahs_price_litre",
     "s7q1_8": "ahs_quantity_gift_litre",
     "s7q1_9": "ahs_quantity_used_way_litre",
-    "av_daily_milk_cow": "ahs_average_cow_daily_milk_prod",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "av_daily_milk_cow": "ahs_average_cow_daily_milk_prod"
    }
   },
   "section_7_2": {
@@ -5357,6 +5357,15 @@
     "total_egg"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -5383,16 +5392,7 @@
     "s7q2_5": "ahs_number_eggs_sold_month_5",
     "s7q2_6": "ahs_price_egg_price_sold_eggs_6",
     "s7q2_7": "ahs_quantity_used_other_way",
-    "total_egg": "ahs_eggs_total",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "total_egg": "ahs_eggs_total"
    }
   },
   "section_7_3": {
@@ -5668,6 +5668,15 @@
     "honey_produce"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belong",
@@ -5696,16 +5705,7 @@
     "s7q3_7": "ahs_quantity_sold_kg_kg",
     "s7q3_8": "ahs_average_selling_price_kg_rwf",
     "s7q3_9": "ahs_quantity_used_other_s7q39",
-    "honey_produce": "ahs_honey_produced",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "honey_produce": "ahs_honey_produced"
    }
   },
   "section_8": {
@@ -5985,6 +5985,15 @@
     "owner"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -5996,15 +6005,6 @@
     "s0q16_4": "ahs_agri_activity_household_4",
     "s0q17": "ahs_agri_livelihood_activity_hh",
     "s0q18": "ahs_non_agri_activity_support_hh",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight",
     "s5q2": "ahs_animal_reared",
     "s5q2_o": "ahs_other_animal_reared",
     "s5q3": "ahs_number_animals_reared_now",
@@ -6257,6 +6257,15 @@
     "owner"
    ],
    "clean_names": {
+    "survey": "ahs_survey",
+    "year": "ahs_year",
+    "wave": "ahs_wave",
+    "sample": "ahs_sample",
+    "prov": "ahs_province",
+    "dist": "ahs_district",
+    "hhid": "ahs_household_id",
+    "wt": "ahs_weight",
+    "wt_hh": "ahs_household_weight",
     "s0q7": "ahs_household_number",
     "s0q9": "ahs_marital_household_head",
     "s0q10": "ahs_ubudehe_category_hh_belongs",
@@ -6282,16 +6291,7 @@
     "s9q10": "ahs_amount_farm_maint_2020",
     "s9q11": "ahs_amount_payment_shepherds",
     "s9q12": "ahs_other_expenditures",
-    "owner": "ahs_owner",
-    "hhid": "ahs_household_id",
-    "prov": "ahs_province",
-    "dist": "ahs_district",
-    "wt": "ahs_weight",
-    "survey": "ahs_survey",
-    "year": "ahs_year",
-    "wave": "ahs_wave",
-    "sample": "ahs_sample",
-    "wt_hh": "ahs_household_weight"
+    "owner": "ahs_owner"
    }
   }
  },

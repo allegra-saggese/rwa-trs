@@ -244,13 +244,16 @@ STOP = {"the", "a", "an", "of", "in", "for", "to", "is", "are", "was", "were", "
         "also", "only", "all", "some", "more", "most", "very", "each", "every", "same", "such", "so", "please", "specify", "specified",
         "i", "e", "g", "etc", "vs", "currently", "usually", "household's", "establishment's", "s", "de", "la", "le", "les", "du", "des",
         "et", "en", "following", "one", "ones", "name", "code", "he", "she", "his", "her", "him", "they", "them", "their", "we", "our", "me", "my",
-        "person", "persons", "someone", "anyone", "anybody", "somebody", "even", "could", "would", "should", "can", "will", "shall", "may", "might",
+        "person", "persons", "someone", "anyone", "anybody", "somebody", "even", "could", "would", "should", "can", "will", "shall", "might",   # "may" is kept: it is a month
         "than", "ever", "still", "yet", "just", "about", "over", "under", "up", "down", "out", "within", "without", "among", "between", "whether",
         "while", "because", "since", "until", "after", "before", "ago", "done", "get", "got", "take", "took", "taken", "give", "gave", "given", "make",
         "made", "spend", "spent", "actually", "really", "generally", "mainly", "did", "were", "kindly", "respondent's", "member", "members", "ask",
         "asked", "question", "answer", "say", "said", "state", "stated", "yes", "no", "indicate", "record", "write", "enter", "select", "choose"}
+_ORDINAL = {"1": "first", "2": "second", "3": "third", "4": "fourth", "5": "fifth", "6": "sixth", "7": "seventh", "8": "eighth", "9": "ninth", "10": "tenth"}
+_ORD = re.compile(r"\b(\d{1,2})(?:st|nd|rd|th)\b", re.I)
+_COUNTED = re.compile(r"\b(visit|item|article|product|season|line|member|child|spouse|plot|parcel|field|crop|animal|job|round|payment|trip|source|method|methode|reason|problem|option|choice|rank|part|section|wave|phase|stage|episode|type|loan|seed|measure|activity|service|institution|code|name|person|month|year|day|week|quarter|group|category|level|grade|class|unit|tree|bird|cow|goat|pig|sheep|hive|kind|other)\s*[-_ ]?\s*(\d{1,3})\b", re.I)
 GENERIC = {"total", "last", "main", "current", "own", "other", "type", "kind", "level", "number", "status", "general", "actual", "usual", "first", "second"}
-_TIMEFRAME = re.compile(r"\b(in|during|over|for|within)?\s*(the)?\s*(last|past|previous|next|preceding|reference)\s+(\d+|one|two|three|four|five|six|seven|twelve|thirty)?\s*(days?|weeks?|months?|years?|hours?|seasons?)\b", re.I)
+_TIMEFRAME = re.compile(r"\b(in|during|over|for|within)?\s*(the)?\s*(last|past|previous|next|preceding|reference)\s+(\d+|one|two|three|four|five|six|seven|twelve|thirty)?\s*(days?|weeks?|months?|years?|hours?|hrs?|seasons?)\b", re.I)
 KEEP_SHORT = {"n", "hh", "id", "kg", "ha", "m2", "km", "rwf", "usd", "vup", "isic", "isco", "gdp", "vat", "tin", "rra", "rdb", "rca", "psf", "rgb", "rssb", "ngo", "hiv", "tv"}
 ABBREV = [("household", "hh"), ("agricultural", "agri"), ("agriculture", "agri"), ("expenditure", "expend"), ("production", "prod"), ("quantity", "qty"),
           ("number", "num"), ("establishment", "estab"), ("employment", "employ"), ("education", "educ"), ("information", "info"), ("organisation", "org"),
@@ -285,14 +288,20 @@ def _translate(s, extra=None):
     """French -> English only when the text reads as French (function words or accents); Kinyarwanda words always.
     A whole label listed in the dataset's own dictionary (extra) is replaced first, exactly."""
     if extra:
-        key = re.sub(r"\s+", " ", str(s)).strip().lower()
-        hit = next((v for k, v in extra.items() if re.sub(r"\s+", " ", k).strip().lower() == key), None)
+        fold = lambda x: re.sub(r"\s+", " ", _QNUM.sub("", _ascii(str(x).replace("\u2019", "'")))).strip().lower()
+        key = fold(s)
+        hit = next((v for k, v in extra.items() if not k.startswith("re:") and fold(k) == key), None)
         if hit is not None: return hit
-    for k, v in sorted({**KINYARWANDA, **{k: v for k, v in (extra or {}).items() if k in KINYARWANDA}}.items(), key=lambda kv: -len(kv[0])):
-        s = re.sub(r"(?<![A-Za-z'])" + re.escape(k) + r"(?![A-Za-z])", v, s, flags=re.I)
+        for k, v in extra.items():                                   # "re:<pattern>" rows: regular expressions applied to the whole label
+            if k.startswith("re:"):
+                s2, n = re.subn(k[3:], v, s)
+                if n: return s2
+    words = {k: v for k, v in (extra or {}).items() if not k.startswith("re:")}       # whole-label rows only match whole labels
+    for k, v in sorted({**KINYARWANDA, **{k: v for k, v in words.items() if k in KINYARWANDA}}.items(), key=lambda kv: -len(kv[0])):
+        s = re.sub(r"(?<![A-Za-z'])" + re.escape(k) + r"(?![A-Za-z])", lambda m, v=v: v, s, flags=re.I)
     if _FRENCH.search(s) or re.search(r"[àâçéèêëîïôûùüÿœ]", s, re.I):
-        for k, v in sorted({**TRANSLATE, **(extra or {})}.items(), key=lambda kv: -len(kv[0])):
-            s = re.sub(r"(?<![A-Za-z'])" + re.escape(k) + r"(?![A-Za-z])", v, s, flags=re.I)
+        for k, v in sorted({**TRANSLATE, **words}.items(), key=lambda kv: -len(kv[0])):
+            s = re.sub(r"(?<![A-Za-z'])" + re.escape(k) + r"(?![A-Za-z])", lambda m, v=v: v, s, flags=re.I)
     return s
 
 def _ascii(s):
@@ -307,8 +316,11 @@ def clean_label(text, tag, extra=None):
     """Plain English sentence for a variable label: question numbers, brackets, codes and version tags removed,
     French / Kinyarwanda translated, '[NAME]' -> 'the person', tidy spacing and case; returns text WITHOUT the tag prefix."""
     s = "" if text is None else str(text)
+    if not s.strip(): return ""
     s2 = _QNUM.sub("", s)
     if re.search(r"[a-z]{2}", s2, re.I) and not re.match(r"^\s*\d+\s+[a-z]", s, re.I): s = s2      # strip the item code only when text remains; "2 weeks" is text
+    s3 = re.sub(r"^\s*[A-Za-z]{1,3}\d+(?:_\d+)*(?:_[a-z]{1,3}\d*)*\s*[/:\-]?\s*(?=[A-Za-z])", "", s)        # "AS10_05_4/May of 2023", "Q1_13Age1", "S8_09_1 If yes"
+    if s3 != s and re.search(r"[a-z]{3}", s3, re.I): s = s3
     s = re.sub(r"\s*[\[(]\s*(NAME|CHILD_?NAME|MEMBER|ITEM\s*NAME|you\s*/\s*name|name\s*/\s*you)\s*[\])]\s*", " the person ", s, flags=re.I)
     s = re.sub(r"\bhe\s*/\s*she\b", "the person", s, flags=re.I); s = re.sub(r"\bhis\s*/\s*her\b", "their", s, flags=re.I)
     s = re.sub(r"\bhim\s*/\s*her\b", "them", s, flags=re.I); s = re.sub(r"\bis\s*/\s*was\b", "is", s, flags=re.I)
@@ -321,6 +333,7 @@ def clean_label(text, tag, extra=None):
     s = _translate(s, extra)
     if sum(ch.isupper() for ch in s) > 0.6 * max(1, sum(ch.isalpha() for ch in s)): s = s.lower()      # ALL-CAPS source label -> sentence case
     s = re.sub(r"\bhh\.?\b", "household", s); s = re.sub(r"\bnisr\b", "NISR", s); s = re.sub(r"\bisic\b", "ISIC", s); s = re.sub(r"\bisco\b", "ISCO", s)
+    s = _ORD.sub(lambda m: _ORDINAL.get(m.group(1), m.group(0)), s)                   # "1st shock" -> "first shock"
     s = re.sub(r"\s+", " ", s).strip(" .;:,-/")
     s = _ascii(s)
     s = _acronyms(s)
@@ -340,8 +353,10 @@ def make_slug(label, tag, native="", maxlen=32):
     name still does not fit, generic words (total, main, type ...) are dropped, then the abbreviation table is applied
     word by word (longest words first), then trailing words are dropped."""
     text = _TIMEFRAME.sub(" ", _ascii(label).lower())
+    text = _COUNTED.sub(lambda m: f"{m.group(1)}{m.group(2)}", text)                       # "visit 2" -> visit2, "item 3" -> item3
     words = [w for w in re.sub(r"[^a-z0-9]+", " ", text).split() if w and w not in STOP and not w.isdigit()]
     if not words: words = [w for w in re.sub(r"[^a-z0-9]+", " ", _ascii(label).lower()).split() if w and w not in STOP]
+    if not words and not str(label).strip(): return _fix(f"{tag}_unlabelled_" + re.sub(r"[^a-z0-9]+", "_", str(native).lower()))[:maxlen]
     if not words: words = [w for w in re.sub(r"[^a-z0-9]+", " ", str(native).lower()).split()] or ["var"]
     def join(ws): return _fix(f"{tag}_" + "_".join(ws))
     if len(join(words)) <= maxlen: return join(words)
@@ -351,10 +366,13 @@ def make_slug(label, tag, native="", maxlen=32):
     for full, ab in sorted(ABBREV, key=lambda p: -len(p[0])):
         if len(join(ws)) <= maxlen: break
         ws = [ab if w == full else w for w in ws]
+    keep_last = ws[-1] if len(ws) > 1 and re.search(r"\d", ws[-1]) else None      # "visit2", "item3", "2nd": the counted token is what distinguishes the item
+    body = ws[:-1] if keep_last else ws
     out = []
-    for w in ws:                                             # keep whole words while they fit
-        if len(join(out + [w])) <= maxlen: out.append(w)
+    for w in body:                                           # keep whole words while they fit
+        if len(join(out + [w] + ([keep_last] if keep_last else []))) <= maxlen: out.append(w)
         else: break
+    if keep_last: out.append(keep_last)
     if not out: out = [ws[0][:maxlen - len(tag) - 1]]          # a single word longer than the budget: cut it (rare)
     return join(out)
 
@@ -401,7 +419,8 @@ def label_with_tag(tag_upper, clean, years=None, maxlen=80):
     return head + (body[:1].upper() + body[1:])
 
 def _words(label):
-    return [w for w in re.sub(r"[^a-z0-9]+", " ", _ascii(label).lower()).split() if w and w not in STOP]
+    text = _COUNTED.sub(lambda m: f"{m.group(1)}{m.group(2)}", _TIMEFRAME.sub(" ", _ascii(label).lower()))
+    return [w for w in re.sub(r"[^a-z0-9]+", " ", text).split() if w and w not in STOP and not w.isdigit()]
 
 def assign_names(tag, items, maxlen=32):
     """items: list of (native, clean_label). Returns the list of unique clean names for one file: the slug of the label;
@@ -500,6 +519,7 @@ class NameTable:
     def native(self, scope):  return {r["clean_name"]: n for n, r in self.by_scope.get(scope, {}).items()}
     def apply(self, df, vl, vv, scope, log=None, extra=None):
         """rename a native-named frame to clean names and labels (value labels cleaned); unlisted columns get engine names"""
+        if extra is None: extra = globals().get("TRANSLATE_EXTRA") or {}                  # the dataset's own dictionary (value_label_translations.csv)
         m = dict(self.clean(scope)); labs = self.labels(scope); used = set(m.values()); tagU = self.tag.upper()
         missing = [c for c in df.columns if c not in m]
         if missing:

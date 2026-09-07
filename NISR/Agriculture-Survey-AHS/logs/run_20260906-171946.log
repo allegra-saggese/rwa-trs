@@ -1,0 +1,506 @@
+17:19:47 01_clean INFO ==== 01_clean | run 20260906-171946 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+17:19:47 01_clean INFO ================ 2017 ================
+17:19:47 01_clean INFO read AHS_2017_s0_general_information.dta                -> s0_general_information                          23,709 rows x   25 vars
+17:19:47 01_clean INFO read AHS_2017_s10_1_cattle_milk_production.dta          -> s10_1_cattle_milk_production                     3,237 rows x   16 vars
+17:19:47 01_clean INFO read AHS_2017_s10_2_cattle_milk_production_use.dta      -> s10_2_cattle_milk_production_use                 3,989 rows x   15 vars
+17:19:47 01_clean INFO read AHS_2017_s10_3_honey_production.dta                -> s10_3_honey_production                          16,067 rows x   12 vars
+17:19:47 01_clean INFO read AHS_2017_s11_animal_inputs_and_services.dta        -> s11_animal_inputs_and_services                  26,500 rows x   20 vars
+17:19:48 01_clean INFO read AHS_2017_s1_household_members_characteristics.dta  -> s1_household_members_characteristics            73,665 rows x   27 vars
+17:19:48 01_clean INFO read AHS_2017_s2_land_tenure_and_crops_planted.dta      -> s2_land_tenure_and_crops_planted                16,057 rows x   30 vars
+17:19:48 01_clean INFO read AHS_2017_s3_extension_services_and_agricultural_programmes.dta -> s3_extension_services_and_agricultural_programmes   64,228 rows x   24 vars
+17:19:48 01_clean INFO read AHS_2017_s4_funding_during_2016.dta                -> s4_funding_during_2016                          16,057 rows x   19 vars
+17:19:48 01_clean INFO read AHS_2017_s5_agricultural_inputs.dta                -> s5_agricultural_inputs                          16,057 rows x  162 vars
+17:19:48 01_clean INFO read AHS_2017_s6_agricultural_practices.dta             -> s6_agricultural_practices                       16,057 rows x   40 vars
+17:19:49 01_clean INFO read AHS_2017_s7_1_agricultural_small_tools.dta         -> s7_1_agricultural_small_tools                  362,203 rows x   13 vars
+17:19:49 01_clean INFO read AHS_2017_s7_2_agricultural_durable_tools.dta       -> s7_2_agricultural_durable_tools                207,049 rows x   13 vars
+17:19:50 01_clean INFO read AHS_2017_s8_a_production_use_storage_and_expenses.dta -> s8_a_production_use_storage_and_expenses        35,844 rows x   31 vars
+17:19:50 01_clean INFO read AHS_2017_s8_b_production_use_storage_and_expenses.dta -> s8_b_production_use_storage_and_expenses        34,167 rows x   31 vars
+17:19:50 01_clean INFO read AHS_2017_s9_number_of_animals.dta                  -> s9_number_of_animals                            32,611 rows x   38 vars
+17:19:50 01_clean INFO 2017: household base s0_general_information: 290 rows without a household id dropped
+17:19:50 01_clean INFO PASS  2017: hhid unique in household base (23,419 households)
+17:19:50 01_clean INFO PASS  2017: prov complete in household key table
+17:19:50 01_clean INFO PASS  2017: dist complete in household key table
+17:19:50 01_clean INFO PASS  2017: cluster complete in household key table
+17:19:50 01_clean INFO PASS  2017: wt complete in household key table
+17:19:50 01_clean INFO PASS  2017: province codes 1-5
+17:19:50 01_clean INFO PASS  2017: 30 districts on the 11-57 scheme
+17:19:50 01_clean INFO PASS  2017: household weight > 0
+17:19:50 01_clean INFO    s0_general_information: 290 rows outside the household sample -> sample = LSF (0 farms)
+17:19:50 01_clean INFO wrote AHS_2017_s0_general_information_clean.dta  (23,709 rows x 30 vars, 1.6 MB)
+17:19:50 01_clean INFO wrote AHS_2017_s10_1_cattle_milk_production_clean.dta  (3,237 rows x 22 vars, 0.2 MB)
+17:19:50 01_clean INFO wrote AHS_2017_s10_2_cattle_milk_production_use_clean.dta  (3,989 rows x 22 vars, 0.4 MB)
+17:19:50 01_clean INFO wrote AHS_2017_s10_3_honey_production_clean.dta  (16,067 rows x 19 vars, 1.3 MB)
+17:19:51 01_clean INFO wrote AHS_2017_s11_animal_inputs_and_services_clean.dta  (26,500 rows x 26 vars, 2.6 MB)
+17:19:51 01_clean INFO wrote AHS_2017_s1_household_members_characteristics_clean.dta  (73,665 rows x 33 vars, 5.0 MB)
+17:19:51 01_clean INFO wrote AHS_2017_s2_land_tenure_and_crops_planted_clean.dta  (16,057 rows x 36 vars, 1.3 MB)
+17:19:51 01_clean INFO wrote AHS_2017_s3_extension_services_and_agricultural_programmes_clean.dta  (64,228 rows x 30 vars, 4.1 MB)
+17:19:51 01_clean INFO wrote AHS_2017_s4_funding_during_2016_clean.dta  (16,057 rows x 25 vars, 1.0 MB)
+17:19:52 01_clean INFO wrote AHS_2017_s5_agricultural_inputs_clean.dta  (16,057 rows x 168 vars, 10.3 MB)
+17:19:52 01_clean INFO wrote AHS_2017_s6_agricultural_practices_clean.dta  (16,057 rows x 46 vars, 2.8 MB)
+17:19:53 01_clean INFO wrote AHS_2017_s7_1_agricultural_small_tools_clean.dta  (362,203 rows x 19 vars, 22.1 MB)
+17:19:54 01_clean INFO wrote AHS_2017_s7_2_agricultural_durable_tools_clean.dta  (207,049 rows x 19 vars, 12.6 MB)
+17:19:54 01_clean INFO wrote AHS_2017_s8_a_production_use_storage_and_expenses_clean.dta  (35,844 rows x 37 vars, 7.0 MB)
+17:19:54 01_clean INFO wrote AHS_2017_s8_b_production_use_storage_and_expenses_clean.dta  (34,167 rows x 37 vars, 6.6 MB)
+17:19:54 01_clean INFO    s9_number_of_animals: 4412 missing prov values filled from the household key table
+17:19:54 01_clean INFO    s9_number_of_animals: 4412 missing dist values filled from the household key table
+17:19:54 01_clean INFO    s9_number_of_animals: 4412 missing wt values filled from the household key table
+17:19:54 01_clean INFO wrote AHS_2017_s9_number_of_animals_clean.dta  (32,611 rows x 44 vars, 3.2 MB)
+17:19:54 01_clean INFO module levels: {'s0_general_information': 'multi', 's10_1_cattle_milk_production': 'multi', 's10_2_cattle_milk_production_use': 'multi', 's10_3_honey_production': 'multi', 's11_animal_inputs_and_services': 'multi', 's1_household_members_characteristics': 'person', 's2_land_tenure_and_crops_planted': 'household', 's3_extension_services_and_agricultural_programmes': 'multi', 's4_funding_during_2016': 'household', 's5_agricultural_inputs': 'household', 's6_agricultural_practices': 'household', 's7_1_agricultural_small_tools': 'multi', 's7_2_agricultural_durable_tools': 'multi', 's8_a_production_use_storage_and_expenses': 'multi', 's8_b_production_use_storage_and_expenses': 'multi', 's9_number_of_animals': 'multi'}
+17:19:54 01_clean INFO PASS  2017: (hhid, pid) unique in the person file
+17:19:54 01_clean INFO PASS  2017: wt present and > 0 on every person row
+17:19:54 01_clean INFO PASS  2017: sex in {1,2}
+17:19:54 01_clean INFO 2017 person file: 73,665 rows x 33 vars; weighted persons = 9,682,214
+17:19:55 01_clean INFO wrote AHS_2017_person_clean.dta  (73,665 rows x 33 vars, 5.0 MB)
+17:19:55 01_clean WARNING WARN  2017: 7362 household-base rows without any roster member dropped (dwellings listed but not interviewed)
+17:19:55 01_clean INFO    joined s2_land_tenure_and_crops_planted              100.00% of base rows matched, 24 columns added, identical copies dropped: ['s0q3', 's0q4']
+17:19:55 01_clean INFO    joined s4_funding_during_2016                        100.00% of base rows matched, 13 columns added, identical copies dropped: ['s0q3', 's0q4']
+17:19:55 01_clean INFO    joined s5_agricultural_inputs                        100.00% of base rows matched, 156 columns added, identical copies dropped: ['s0q3', 's0q4']
+17:19:55 01_clean INFO    joined s6_agricultural_practices                     100.00% of base rows matched, 28 columns added, identical copies dropped: ['s2q7_1', 's2q7_2', 's2q7_3', 's2q15_1', 's2q15_2', 's2q15_3', 's0q3', 's0q4']
+17:19:55 01_clean INFO PASS  2017: one head (s1q3 == 1) per household: 100.0000%
+17:19:55 01_clean INFO PASS  2017: hhid unique in the household file (16,057 households)
+17:19:55 01_clean INFO PASS  2017: sum of hhsize == person rows
+17:19:55 01_clean INFO 2017 household file: 16,057 rows x 254 vars; weighted households = 2,164,610
+17:19:56 01_clean INFO wrote AHS_2017_household_clean.dta  (16,057 rows x 254 vars, 13.5 MB)
+17:19:56 01_clean INFO all hard checks passed (1 soft warnings)
+17:19:56 01_clean INFO ================ 2020 ================
+17:19:56 01_clean INFO read AHS_2020_section_0.dta                             -> section_0                                       10,666 rows x   16 vars
+17:19:56 01_clean INFO read AHS_2020_section_1.dta                             -> section_1                                       48,726 rows x   26 vars
+17:19:56 01_clean INFO read AHS_2020_section_2_1.dta                           -> section_2_1                                     32,888 rows x   44 vars
+17:19:56 01_clean INFO read AHS_2020_section_2_2.dta                           -> section_2_2                                     10,666 rows x   82 vars
+17:19:56 01_clean INFO read AHS_2020_section_2_3.dta                           -> section_2_3                                     20,046 rows x   22 vars
+17:19:56 01_clean INFO read AHS_2020_section_3_1.dta                           -> section_3_1                                     25,329 rows x   23 vars
+17:19:56 01_clean INFO read AHS_2020_section_3_2.dta                           -> section_3_2                                     10,666 rows x   49 vars
+17:19:56 01_clean INFO read AHS_2020_section_4.dta                             -> section_4                                       10,666 rows x   59 vars
+17:19:57 01_clean INFO read AHS_2020_section_5.dta                             -> section_5                                       23,250 rows x   31 vars
+17:19:57 01_clean INFO read AHS_2020_section_6.dta                             -> section_6                                       23,250 rows x   41 vars
+17:19:57 01_clean INFO read AHS_2020_section_7_1.dta                           -> section_7_1                                     44,148 rows x   25 vars
+17:19:57 01_clean INFO read AHS_2020_section_7_2.dta                           -> section_7_2                                     39,776 rows x   31 vars
+17:19:57 01_clean INFO read AHS_2020_section_7_3.dta                           -> section_7_3                                     13,011 rows x   33 vars
+17:19:58 01_clean INFO read AHS_2020_section_8.dta                             -> section_8                                       23,250 rows x   31 vars
+17:19:58 01_clean INFO read AHS_2020_section_9.dta                             -> section_9                                       23,250 rows x   30 vars
+17:19:58 01_clean INFO household weight taken from module section_1 (10666 households)
+17:19:58 01_clean INFO    joined section_1_wt                                  100.00% of base rows matched, 1 columns added
+17:19:58 01_clean INFO PASS  2020: hhid unique in household base (10,666 households)
+17:19:58 01_clean INFO PASS  2020: prov complete in household key table
+17:19:58 01_clean INFO PASS  2020: dist complete in household key table
+17:19:58 01_clean INFO PASS  2020: wt complete in household key table
+17:19:58 01_clean INFO PASS  2020: province codes 1-5
+17:19:58 01_clean INFO PASS  2020: 30 districts on the 11-57 scheme
+17:19:58 01_clean INFO PASS  2020: household weight > 0
+17:19:58 01_clean INFO wrote AHS_2020_section_0_clean.dta  (10,666 rows x 22 vars, 0.5 MB)
+17:19:58 01_clean INFO wrote AHS_2020_section_1_clean.dta  (48,726 rows x 31 vars, 2.8 MB)
+17:19:58 01_clean INFO wrote AHS_2020_section_2_1_clean.dta  (32,888 rows x 49 vars, 2.7 MB)
+17:19:59 01_clean INFO wrote AHS_2020_section_2_2_clean.dta  (10,666 rows x 87 vars, 1.3 MB)
+17:19:59 01_clean INFO wrote AHS_2020_section_2_3_clean.dta  (20,046 rows x 27 vars, 1.2 MB)
+17:19:59 01_clean INFO wrote AHS_2020_section_3_1_clean.dta  (25,329 rows x 28 vars, 1.4 MB)
+17:19:59 01_clean INFO wrote AHS_2020_section_3_2_clean.dta  (10,666 rows x 54 vars, 0.9 MB)
+17:19:59 01_clean INFO wrote AHS_2020_section_4_clean.dta  (10,666 rows x 64 vars, 1.0 MB)
+17:19:59 01_clean INFO    section_5: 4550 rows outside the household sample -> sample = LSF (2345 farms)
+17:19:59 01_clean INFO wrote AHS_2020_section_5_clean.dta  (23,250 rows x 36 vars, 2.3 MB)
+17:19:59 01_clean INFO    section_6: 4550 rows outside the household sample -> sample = LSF (2345 farms)
+17:19:59 01_clean INFO wrote AHS_2020_section_6_clean.dta  (23,250 rows x 46 vars, 3.0 MB)
+17:19:59 01_clean INFO    section_7_1: 17301 rows outside the household sample -> sample = LSF (2345 farms)
+17:20:00 01_clean INFO wrote AHS_2020_section_7_1_clean.dta  (44,148 rows x 30 vars, 3.7 MB)
+17:20:00 01_clean INFO    section_7_2: 6813 rows outside the household sample -> sample = LSF (2343 farms)
+17:20:00 01_clean INFO wrote AHS_2020_section_7_2_clean.dta  (39,776 rows x 36 vars, 3.2 MB)
+17:20:00 01_clean INFO    section_7_3: 2345 rows outside the household sample -> sample = LSF (2345 farms)
+17:20:00 01_clean INFO wrote AHS_2020_section_7_3_clean.dta  (13,011 rows x 38 vars, 1.0 MB)
+17:20:00 01_clean INFO    section_8: 4550 rows outside the household sample -> sample = LSF (2345 farms)
+17:20:00 01_clean INFO wrote AHS_2020_section_8_clean.dta  (23,250 rows x 36 vars, 2.9 MB)
+17:20:00 01_clean INFO    section_9: 4550 rows outside the household sample -> sample = LSF (2345 farms)
+17:20:00 01_clean INFO wrote AHS_2020_section_9_clean.dta  (23,250 rows x 35 vars, 2.7 MB)
+17:20:00 01_clean INFO module levels: {'section_0': 'household', 'section_1': 'person', 'section_2_1': 'multi', 'section_2_2': 'household', 'section_2_3': 'multi', 'section_3_1': 'multi', 'section_3_2': 'household', 'section_4': 'household', 'section_5': 'multi', 'section_6': 'multi', 'section_7_1': 'multi', 'section_7_2': 'multi', 'section_7_3': 'household', 'section_8': 'multi', 'section_9': 'multi'}
+17:20:00 01_clean INFO PASS  2020: (hhid, pid) unique in the person file
+17:20:00 01_clean INFO PASS  2020: wt present and > 0 on every person row
+17:20:00 01_clean INFO PASS  2020: sex in {1,2}
+17:20:00 01_clean INFO 2020 person file: 48,726 rows x 31 vars; weighted persons = 10,486,251
+17:20:00 01_clean INFO wrote AHS_2020_person_clean.dta  (48,726 rows x 31 vars, 2.8 MB)
+17:20:00 01_clean INFO    joined section_2_2                                   100.00% of base rows matched, 72 columns added, identical copies dropped: ['s0q7', 's0q9', 's0q10', 's0q12', 's0q16_1', 's0q18'], differing copies kept as _section_2_2: ['s0q15', 's0q16_2', 's0q16_3', 's0q16_4', 's0q17']
+17:20:00 01_clean INFO    joined section_3_2                                   100.00% of base rows matched, 39 columns added, identical copies dropped: ['s0q7', 's0q9', 's0q10', 's0q12', 's0q16_1', 's0q18'], differing copies kept as _section_3_2: ['s0q15', 's0q16_2', 's0q16_3', 's0q16_4', 's0q17']
+17:20:00 01_clean INFO    joined section_4                                     100.00% of base rows matched, 49 columns added, identical copies dropped: ['s0q7', 's0q9', 's0q10', 's0q12', 's0q16_1', 's0q18'], differing copies kept as _section_4: ['s0q15', 's0q16_2', 's0q16_3', 's0q16_4', 's0q17']
+17:20:00 01_clean INFO    joined section_7_3                                   100.00% of base rows matched, 23 columns added, identical copies dropped: ['s0q7', 's0q9', 's0q10', 's0q12', 's0q16_1', 's0q18'], differing copies kept as _section_7_3: ['s0q15', 's0q16_2', 's0q16_3', 's0q16_4', 's0q17']
+17:20:00 01_clean INFO PASS  2020: one head (s1q4 == 1) per household: 100.0000%
+17:20:00 01_clean INFO PASS  2020: hhid unique in the household file (10,666 households)
+17:20:00 01_clean INFO PASS  2020: sum of hhsize == person rows
+17:20:00 01_clean INFO 2020 household file: 10,666 rows x 208 vars; weighted households = 2,321,662
+17:20:01 01_clean INFO wrote AHS_2020_household_clean.dta  (10,666 rows x 208 vars, 2.7 MB)
+17:20:01 01_clean INFO all hard checks passed (0 soft warnings)
+17:20:01 01_clean INFO ================ 2024 ================
+17:20:01 01_clean INFO read AHS_2024_credits.dta                               -> credits                                          5,224 rows x   12 vars
+17:20:01 01_clean INFO read AHS_2024_saving.dta                                -> saving                                          10,342 rows x   14 vars
+17:20:01 01_clean INFO read AHS_2024_section0.dta                              -> section0                                         3,724 rows x    9 vars
+17:20:01 01_clean INFO read AHS_2024_section11_1_cattle_milk_production_and_use.dta -> section11_1_cattle_milk_production_and_use      12,209 rows x   40 vars
+17:20:01 01_clean INFO read AHS_2024_section11_2_egg_production.dta            -> section11_2_egg_production                      19,077 rows x   17 vars
+17:20:01 01_clean INFO read AHS_2024_section11_3_honey_production.dta          -> section11_3_honey_production                     9,387 rows x   16 vars
+17:20:01 01_clean INFO read AHS_2024_section1_household_members_characteristics.dta -> section1_household_members_characteristics      16,292 rows x  142 vars
+17:20:01 01_clean INFO read AHS_2024_section2_land_tenure.dta                  -> section2_land_tenure                            23,266 rows x   20 vars
+17:20:03 01_clean INFO read AHS_2024_section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices.dta -> section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices   32,616 rows x  331 vars
+17:20:03 01_clean INFO read AHS_2024_section5_fruits_production.dta            -> section5_fruits_production                       9,193 rows x   16 vars
+17:20:03 01_clean INFO read AHS_2024_section6_extension_services_and_agricultural_programmes.dta -> section6_extension_services_and_agricultural_programmes    9,286 rows x   30 vars
+17:20:03 01_clean INFO read AHS_2024_section7_agricultural_tools.dta           -> section7_agricultural_tools                      9,981 rows x   20 vars
+17:20:03 01_clean INFO read AHS_2024_section8_sustainable_agriculture.dta      -> section8_sustainable_agriculture                 3,724 rows x   11 vars
+17:20:03 01_clean INFO read AHS_2024_section9_10_12_livestock_and_animal_inputs_expenditures.dta -> section9_10_12_livestock_and_animal_inputs_expenditures    9,947 rows x   54 vars
+17:20:03 01_clean INFO    joined section8_sustainable_agriculture              100.00% of base rows matched, 6 columns added, identical copies dropped: ['cluster', 'prov', 'dist', 'wt']
+17:20:03 01_clean INFO PASS  2024: hhid unique in household base (3,724 households)
+17:20:03 01_clean INFO PASS  2024: prov complete in household key table
+17:20:03 01_clean INFO PASS  2024: dist complete in household key table
+17:20:03 01_clean INFO PASS  2024: cluster complete in household key table
+17:20:03 01_clean INFO PASS  2024: wt complete in household key table
+17:20:03 01_clean INFO PASS  2024: province codes 1-5
+17:20:03 01_clean INFO PASS  2024: 30 districts on the 11-57 scheme
+17:20:03 01_clean INFO PASS  2024: household weight > 0
+17:20:03 01_clean INFO wrote AHS_2024_credits_clean.dta  (5,224 rows x 20 vars, 0.4 MB)
+17:20:03 01_clean INFO wrote AHS_2024_saving_clean.dta  (10,342 rows x 20 vars, 0.5 MB)
+17:20:03 01_clean INFO wrote AHS_2024_section0_clean.dta  (3,724 rows x 14 vars, 0.2 MB)
+17:20:03 01_clean INFO wrote AHS_2024_section11_1_cattle_milk_production_and_use_clean.dta  (12,209 rows x 45 vars, 2.6 MB)
+17:20:03 01_clean INFO    section11_2_egg_production: 4854 rows outside the household sample -> sample = LSF (1939 farms)
+17:20:04 01_clean INFO wrote AHS_2024_section11_2_egg_production_clean.dta  (19,077 rows x 22 vars, 1.4 MB)
+17:20:04 01_clean INFO    section11_3_honey_production: 1939 rows outside the household sample -> sample = LSF (1939 farms)
+17:20:04 01_clean INFO wrote AHS_2024_section11_3_honey_production_clean.dta  (9,387 rows x 21 vars, 0.9 MB)
+17:20:04 01_clean INFO wrote AHS_2024_section1_household_members_characteristics_clean.dta  (16,292 rows x 148 vars, 4.4 MB)
+17:20:04 01_clean INFO destring s2q3 (23266 values)
+17:20:04 01_clean INFO destring s2q8 (18821 values)
+17:20:04 01_clean INFO destring s2q9 (18756 values)
+17:20:04 01_clean INFO wrote AHS_2024_section2_land_tenure_clean.dta  (23,266 rows x 25 vars, 2.2 MB)
+17:20:04 01_clean INFO    section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices: 1 rows outside the household sample -> sample = LSF (1 farms)
+17:20:04 01_clean INFO destring s4_q2 (20965 values)
+17:20:04 01_clean INFO destring s4_q18 (32616 values)
+17:20:04 01_clean INFO destring s4_q24 (1683 values)
+17:20:04 01_clean INFO destring s4_q25 (1683 values)
+17:20:06 01_clean INFO wrote AHS_2024_section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices_clean.dta  (32,616 rows x 336 vars, 65.3 MB)
+17:20:06 01_clean INFO wrote AHS_2024_section5_fruits_production_clean.dta  (9,193 rows x 21 vars, 0.6 MB)
+17:20:06 01_clean INFO destring s6q2 (8079 values)
+17:20:06 01_clean INFO destring s6q3 (8079 values)
+17:20:06 01_clean INFO destring s6q5_a (709 values)
+17:20:06 01_clean INFO destring s6q6_a (661 values)
+17:20:06 01_clean INFO destring s6q7_a (322 values)
+17:20:06 01_clean INFO destring s6q8_a (312 values)
+17:20:06 01_clean INFO destring s6q9_a (334 values)
+17:20:06 01_clean INFO destring s6q10_a (1716 values)
+17:20:06 01_clean INFO destring s6q11 (1716 values)
+17:20:06 01_clean INFO destring s6q12 (1716 values)
+17:20:06 01_clean INFO destring s6q15 (686 values)
+17:20:06 01_clean INFO destring s6q16 (686 values)
+17:20:06 01_clean INFO wrote AHS_2024_section6_extension_services_and_agricultural_programmes_clean.dta  (9,286 rows x 35 vars, 0.8 MB)
+17:20:06 01_clean INFO wrote AHS_2024_section7_agricultural_tools_clean.dta  (9,981 rows x 25 vars, 1.4 MB)
+17:20:07 01_clean INFO wrote AHS_2024_section8_sustainable_agriculture_clean.dta  (3,724 rows x 16 vars, 0.2 MB)
+17:20:07 01_clean INFO    section9_10_12_livestock_and_animal_inputs_expenditures: 2055 rows outside the household sample -> sample = LSF (1939 farms)
+17:20:07 01_clean INFO wrote AHS_2024_section9_10_12_livestock_and_animal_inputs_expenditures_clean.dta  (9,947 rows x 59 vars, 1.9 MB)
+17:20:07 01_clean INFO module levels: {'credits': 'multi', 'saving': 'multi', 'section0': 'household', 'section11_1_cattle_milk_production_and_use': 'multi', 'section11_2_egg_production': 'multi', 'section11_3_honey_production': 'multi', 'section1_household_members_characteristics': 'person', 'section2_land_tenure': 'multi', 'section3_4_crop_grown_seeds_and_production_agricultural_inputs_and_practices': 'multi', 'section5_fruits_production': 'multi', 'section6_extension_services_and_agricultural_programmes': 'multi', 'section7_agricultural_tools': 'multi', 'section8_sustainable_agriculture': 'household', 'section9_10_12_livestock_and_animal_inputs_expenditures': 'multi'}
+17:20:07 01_clean INFO PASS  2024: (hhid, pid) unique in the person file
+17:20:07 01_clean INFO PASS  2024: wt present and > 0 on every person row
+17:20:07 01_clean INFO PASS  2024: sex in {1,2}
+17:20:07 01_clean INFO 2024 person file: 16,292 rows x 148 vars; weighted persons = 9,561,842
+17:20:07 01_clean INFO wrote AHS_2024_person_clean.dta  (16,292 rows x 148 vars, 4.4 MB)
+17:20:07 01_clean INFO PASS  2024: one head (s1q2 == 1) per household: 100.0000%
+17:20:07 01_clean INFO PASS  2024: hhid unique in the household file (3,724 households)
+17:20:07 01_clean INFO PASS  2024: sum of hhsize == person rows
+17:20:07 01_clean INFO 2024 household file: 3,724 rows x 23 vars; weighted households = 2,163,580
+17:20:07 01_clean INFO wrote AHS_2024_household_clean.dta  (3,724 rows x 23 vars, 0.3 MB)
+17:20:07 01_clean INFO all hard checks passed (0 soft warnings)
+17:20:07 01_clean INFO 01_clean done for ['2017', '2020', '2024']
+17:20:08 02_merge INFO ==== 02_merge | run 20260906-171946 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+17:20:08 02_merge INFO ---------------- AHS_pooled_person.dta (['2017', '2020', '2024'])
+17:20:08 02_merge INFO   loaded 2017       AHS_2017_person_clean.dta                                  73,665 rows x   33
+17:20:08 02_merge INFO   loaded 2020       AHS_2020_person_clean.dta                                  48,726 rows x   31
+17:20:09 02_merge INFO   loaded 2024       AHS_2024_person_clean.dta                                  16,292 rows x  148
+17:20:09 02_merge INFO   VERSIONS s1q10: {'s1q10': ['2024'], 's1q10_v2': ['2017']} | 2024 vs 2017: variable label differs ('Will be resident in the household during' vs '1.10 Average number of Hours/day that th')
+17:20:09 02_merge INFO   VERSIONS s1q11: {'s1q11': ['2024'], 's1q11_v2': ['2017']} | 2024 vs 2017: variable label differs ('primary n reason for absence during enum' vs '1.11 Number of days that the household m')
+17:20:09 02_merge INFO   VERSIONS s1q12: {'s1q12': ['2024'], 's1q12_v2': ['2017']} | 2024 vs 2017: variable label differs ('Father still alive' vs '1.12 Number of days that the household m')
+17:20:09 02_merge INFO   VERSIONS s1q13: {'s1q13': ['2024'], 's1q13_v2': ['2017']} | 2024 vs 2017: variable label differs ('Mother still alive' vs '1.13 Number of days that the household m')
+17:20:09 02_merge INFO   VERSIONS s1q14: {'s1q14': ['2024'], 's1q14_v2': ['2017']} | 2024 vs 2017: variable label differs ('Household membership' vs '1.14 Number of days that the household m')
+17:20:09 02_merge INFO   VERSIONS s1q2: {'s1q2': ['2024'], 's1q2_v2': ['2017']} | 2017: FORCE_SPLIT
+17:20:09 02_merge INFO   VERSIONS s1q4: {'s1q4': ['2024'], 's1q4_v2': ['2020']} | 2024 vs 2020: variable label differs ('Marital status' vs "1.4 What is the household member's relat")
+17:20:09 02_merge INFO   VERSIONS s1q6: {'s1q6': ['2024'], 's1q6_v2': ['2017']} | 2024 vs 2017: variable label differs ('Nationality' vs '1.6 Did this child schooled?')
+17:20:09 02_merge INFO   VERSIONS s1q7: {'s1q7': ['2024'], 's1q7_v2': ['2020'], 's1q7_v3': ['2017']} | 2020: FORCE_SPLIT / 2024 vs 2017: variable label differs ('how many months has been away from this ' vs '1.7 What is the highest level of educati')
+17:20:09 02_merge INFO   VERSIONS s1q8: {'s1q8': ['2024'], 's1q8_v2': ['2020'], 's1q8_v3': ['2017']} | 2020: FORCE_SPLIT / 2024 vs 2017: variable label differs ('primary  reason of absence from househol' vs '1.8 What is the main economic activity o')
+17:20:09 02_merge INFO   VERSIONS s1q9: {'s1q9': ['2024'], 's1q9_v2': ['2020'], 's1q9_v3': ['2017']} | 2020 vs 2017: variable label differs ('1.9 [member name] engaged in agric. acti' vs '1.9 Where the farming activity is locate') / 2024 vs 2017: variable label differs ('Resident of another household in the las' vs '1.9 Where the farming activity is locate')
+17:20:11 02_merge INFO PASS  AHS_pooled_person.dta: pooled rows == sum of wave rows
+17:20:11 02_merge INFO PASS  AHS_pooled_person.dta: 2017 sum wt preserved
+17:20:11 02_merge INFO PASS  AHS_pooled_person.dta: 2020 sum wt preserved
+17:20:11 02_merge INFO PASS  AHS_pooled_person.dta: 2024 sum wt preserved
+17:20:12 02_merge INFO wrote AHS_pooled_person.dta  (138,683 rows x 187 vars, 42.5 MB)
+17:20:12 02_merge INFO ---------------- AHS_pooled_household.dta (['2017', '2020', '2024'])
+17:20:13 02_merge INFO   loaded 2017       AHS_2017_household_clean.dta                               16,057 rows x  254
+17:20:13 02_merge INFO   loaded 2020       AHS_2020_household_clean.dta                               10,666 rows x  208
+17:20:13 02_merge INFO   loaded 2024       AHS_2024_household_clean.dta                                3,724 rows x   23
+17:20:13 02_merge INFO   VERSIONS s0q10: {'s0q10': ['2020'], 's0q10_v2': ['2017']} | 2020 vs 2017: variable label differs ('0.10 Which Ubudehe category does the hou' vs '0.10 Names of the respondent if not the ')
+17:20:13 02_merge INFO   VERSIONS s0q11: {'s0q11': ['2020'], 's0q11_v2': ['2017']} | 2020: FORCE_SPLIT
+17:20:13 02_merge INFO   VERSIONS s0q12: {'s0q12': ['2020'], 's0q12_v2': ['2017']} | 2020: FORCE_SPLIT
+17:20:13 02_merge INFO   VERSIONS s0q13: {'s0q13': ['2024'], 's0q13_v2': ['2017']} | 2024: FORCE_SPLIT
+17:20:13 02_merge INFO   VERSIONS s0q14: {'s0q14': ['2024'], 's0q14_v2': ['2017']} | 2024 vs 2017: variable label differs ('0.14 The main livelihood activity of you' vs '0.14 Is any member of the Household belo')
+17:20:13 02_merge INFO   VERSIONS s0q15: {'s0q15': ['2024'], 's0q15_v2': ['2020'], 's0q15_v3': ['2017']} | 2020: FORCE_SPLIT / 2024: FORCE_SPLIT
+17:20:13 02_merge INFO   VERSIONS s0q16: {'s0q16': ['2024'], 's0q16_v2': ['2017']} | 2024 vs 2017: variable label differs ('0.16 No agricultural activities' vs '0.16 Total Number of Household members')
+17:20:13 02_merge INFO   VERSIONS s0q17: {'s0q17': ['2020'], 's0q17_v2': ['2017']} | 2020 vs 2017: variable label differs ('0.17 Is agriculture the main livelihood ' vs '0.17 Date of interview')
+17:20:13 02_merge INFO   VERSIONS s0q18: {'s0q18': ['2020'], 's0q18_v2': ['2017']} | 2020 vs 2017: variable label differs ('0.18 What is the other non-agricultural ' vs '0.18 Enumerator code')
+17:20:13 02_merge INFO   VERSIONS s0q7: {'s0q7': ['2020'], 's0q7_v2': ['2017']} | 2020: FORCE_SPLIT
+17:20:13 02_merge INFO   VERSIONS s0q9: {'s0q9': ['2020'], 's0q9_v2': ['2017']} | 2020: FORCE_SPLIT
+17:20:13 02_merge INFO   VERSIONS s2q14: {'s2q14': ['2020'], 's2q14_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.14 Did any member of your HH grow crop' vs '2.14 Did any member of your household re')
+17:20:13 02_merge INFO   VERSIONS s2q15_1: {'s2q15_1': ['2020'], 's2q15_1_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.15.1 Which crops that have been grown?' vs '2.15.1 What are major 3 crops did your h')
+17:20:13 02_merge INFO   VERSIONS s2q15_2: {'s2q15_2': ['2020'], 's2q15_2_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.15.2 Which crops that have been grown?' vs '2.15. 2 What are major 3 crops did your ')
+17:20:13 02_merge INFO   VERSIONS s2q15_3: {'s2q15_3': ['2020'], 's2q15_3_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.15.3 Which crops that have been grown?' vs '2.15.3 What are major 3 crops did your h')
+17:20:13 02_merge INFO   VERSIONS s4q11: {'s4q11': ['2020'], 's4q11_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.11 Among loans requested were there so' vs '4.11 If the agricultural loan 3 was requ')
+17:20:13 02_merge INFO   VERSIONS s4q12: {'s4q12': ['2020'], 's4q12_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.12 If the loan was rejected what was t' vs '4.12 Have you received any fund for gran')
+17:20:13 02_merge INFO   VERSIONS s4q13: {'s4q13': ['2020'], 's4q13_v2': ['2017']} | 2020 vs 2017: variable label differs ('What was the main use of the rejected lo' vs '4.13 What is the origin of that grant?')
+17:20:13 02_merge INFO   VERSIONS s4q4: {'s4q4': ['2020'], 's4q4_v2': ['2017']} | 2020 vs 2017: variable label differs ('Is there any household member belonging ' vs '4.4 Was the requested loan 1 approved?')
+17:20:13 02_merge INFO   VERSIONS s4q5: {'s4q5': ['2020'], 's4q5_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.5 Did any household member have saving' vs '4.5 If the agricultural loan 1 was reque')
+17:20:13 02_merge INFO   VERSIONS s4q8: {'s4q8': ['2020'], 's4q8_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.8 Did any member of your household req' vs '4.8 If the agricultural loan 2 was reque')
+17:20:13 02_merge INFO   7 variables with codes observed outside their own value labels (stale labels)
+17:20:14 02_merge INFO PASS  AHS_pooled_household.dta: pooled rows == sum of wave rows
+17:20:14 02_merge INFO PASS  AHS_pooled_household.dta: 2017 sum wt preserved
+17:20:14 02_merge INFO PASS  AHS_pooled_household.dta: 2020 sum wt preserved
+17:20:14 02_merge INFO PASS  AHS_pooled_household.dta: 2024 sum wt preserved
+17:20:15 02_merge INFO wrote AHS_pooled_household.dta  (30,447 rows x 459 vars, 32.4 MB)
+17:20:15 02_merge INFO ---------------- AHS_pooled_animal_inputs.dta (['2017', '2020'])
+17:20:15 02_merge INFO   loaded 2017       AHS_2017_s11_animal_inputs_and_services_clean.dta          26,500 rows x   26
+17:20:16 02_merge INFO   loaded 2020       AHS_2020_section_9_clean.dta                               23,250 rows x   35
+17:20:16 02_merge INFO PASS  AHS_pooled_animal_inputs.dta: pooled rows == sum of wave rows
+17:20:16 02_merge INFO PASS  AHS_pooled_animal_inputs.dta: 2017 sum wt preserved
+17:20:16 02_merge INFO PASS  AHS_pooled_animal_inputs.dta: 2020 sum wt preserved
+17:20:16 02_merge INFO wrote AHS_pooled_animal_inputs.dta  (49,750 rows x 52 vars, 9.0 MB)
+17:20:16 02_merge INFO ---------------- AHS_pooled_credits.dta (['2017', '2020', '2024'])
+17:20:16 02_merge INFO   loaded 2017       AHS_2017_s4_funding_during_2016_clean.dta                  16,057 rows x   25
+17:20:16 02_merge INFO   loaded 2020       AHS_2020_section_4_clean.dta                               10,666 rows x   64
+17:20:16 02_merge INFO   loaded 2024       AHS_2024_credits_clean.dta                                  5,224 rows x   20
+17:20:16 02_merge INFO   VERSIONS s4q11: {'s4q11': ['2020'], 's4q11_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.11 Among loans requested were there so' vs '4.11 If the agricultural loan 3 was requ')
+17:20:16 02_merge INFO   VERSIONS s4q12: {'s4q12': ['2020'], 's4q12_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.12 If the loan was rejected what was t' vs '4.12 Have you received any fund for gran')
+17:20:16 02_merge INFO   VERSIONS s4q13: {'s4q13': ['2020'], 's4q13_v2': ['2017']} | 2020 vs 2017: variable label differs ('What was the main use of the rejected lo' vs '4.13 What is the origin of that grant?')
+17:20:16 02_merge INFO   VERSIONS s4q4: {'s4q4': ['2020'], 's4q4_v2': ['2017']} | 2020 vs 2017: variable label differs ('Is there any household member belonging ' vs '4.4 Was the requested loan 1 approved?')
+17:20:16 02_merge INFO   VERSIONS s4q5: {'s4q5': ['2020'], 's4q5_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.5 Did any household member have saving' vs '4.5 If the agricultural loan 1 was reque')
+17:20:16 02_merge INFO   VERSIONS s4q8: {'s4q8': ['2020'], 's4q8_v2': ['2017']} | 2020 vs 2017: variable label differs ('4.8 Did any member of your household req' vs '4.8 If the agricultural loan 2 was reque')
+17:20:17 02_merge INFO PASS  AHS_pooled_credits.dta: pooled rows == sum of wave rows
+17:20:17 02_merge INFO PASS  AHS_pooled_credits.dta: 2017 sum wt preserved
+17:20:17 02_merge INFO PASS  AHS_pooled_credits.dta: 2020 sum wt preserved
+17:20:17 02_merge INFO PASS  AHS_pooled_credits.dta: 2024 sum wt preserved
+17:20:17 02_merge INFO wrote AHS_pooled_credits.dta  (31,947 rows x 89 vars, 4.9 MB)
+17:20:17 02_merge INFO ---------------- AHS_pooled_eggs.dta (['2020', '2024'])
+17:20:17 02_merge INFO   loaded 2020       AHS_2020_section_7_2_clean.dta                             39,776 rows x   36
+17:20:17 02_merge INFO   loaded 2024       AHS_2024_section11_2_egg_production_clean.dta              19,077 rows x   22
+17:20:17 02_merge INFO   1 variables with codes observed outside their own value labels (stale labels)
+17:20:18 02_merge INFO PASS  AHS_pooled_eggs.dta: pooled rows == sum of wave rows
+17:20:18 02_merge INFO PASS  AHS_pooled_eggs.dta: 2020 sum wt preserved
+17:20:18 02_merge INFO PASS  AHS_pooled_eggs.dta: 2024 sum wt preserved
+17:20:18 02_merge INFO   AHS_pooled_eggs.dta: 2779 exact duplicate rows dropped (duplicates drop, all variables): {'2024': 2779}
+17:20:18 02_merge INFO wrote AHS_pooled_eggs.dta  (56,074 rows x 49 vars, 6.5 MB)
+17:20:18 02_merge INFO ---------------- AHS_pooled_extension.dta (['2017', '2020', '2024'])
+17:20:18 02_merge INFO   loaded 2017       AHS_2017_s3_extension_services_and_agricultural_programmes_clean.dta    64,228 rows x   30
+17:20:18 02_merge INFO   loaded 2020       AHS_2020_section_3_1_clean.dta                             25,329 rows x   28
+17:20:18 02_merge INFO   loaded 2024       AHS_2024_section6_extension_services_and_agricultural_programmes_clean.dta     9,286 rows x   35
+17:20:18 02_merge INFO   VERSIONS s3q2: {'s3q2': ['2020'], 's3q2_v2': ['2017']} | 2020 vs 2017: variable label differs ('3.2. Extension code and name' vs '3.2 What type of extension service provi')
+17:20:19 02_merge INFO PASS  AHS_pooled_extension.dta: pooled rows == sum of wave rows
+17:20:19 02_merge INFO PASS  AHS_pooled_extension.dta: 2017 sum wt preserved
+17:20:19 02_merge INFO PASS  AHS_pooled_extension.dta: 2020 sum wt preserved
+17:20:19 02_merge INFO PASS  AHS_pooled_extension.dta: 2024 sum wt preserved
+17:20:19 02_merge INFO   AHS_pooled_extension.dta: 38142 exact duplicate rows dropped (duplicates drop, all variables): {'2017': 38142}
+17:20:19 02_merge INFO wrote AHS_pooled_extension.dta  (60,701 rows x 74 vars, 8.1 MB)
+17:20:19 02_merge INFO ---------------- AHS_pooled_fruits.dta (['2020', '2024'])
+17:20:19 02_merge INFO   loaded 2020       AHS_2020_section_2_3_clean.dta                             20,046 rows x   27
+17:20:20 02_merge INFO   loaded 2024       AHS_2024_section5_fruits_production_clean.dta               9,193 rows x   21
+17:20:20 02_merge INFO PASS  AHS_pooled_fruits.dta: pooled rows == sum of wave rows
+17:20:20 02_merge INFO PASS  AHS_pooled_fruits.dta: 2020 sum wt preserved
+17:20:20 02_merge INFO PASS  AHS_pooled_fruits.dta: 2024 sum wt preserved
+17:20:20 02_merge INFO wrote AHS_pooled_fruits.dta  (29,239 rows x 39 vars, 2.4 MB)
+17:20:20 02_merge INFO ---------------- AHS_pooled_honey.dta (['2017', '2020', '2024'])
+17:20:20 02_merge INFO   loaded 2017       AHS_2017_s10_3_honey_production_clean.dta                  16,067 rows x   19
+17:20:20 02_merge INFO   loaded 2020       AHS_2020_section_7_3_clean.dta                             13,011 rows x   38
+17:20:20 02_merge INFO   loaded 2024       AHS_2024_section11_3_honey_production_clean.dta             9,387 rows x   21
+17:20:20 02_merge INFO   1 variables with codes observed outside their own value labels (stale labels)
+17:20:20 02_merge INFO PASS  AHS_pooled_honey.dta: pooled rows == sum of wave rows
+17:20:20 02_merge INFO PASS  AHS_pooled_honey.dta: 2017 sum wt preserved
+17:20:20 02_merge INFO PASS  AHS_pooled_honey.dta: 2020 sum wt preserved
+17:20:20 02_merge INFO PASS  AHS_pooled_honey.dta: 2024 sum wt preserved
+17:20:20 02_merge INFO   AHS_pooled_honey.dta: 3510 exact duplicate rows dropped (duplicates drop, all variables): {'2024': 3510}
+17:20:20 02_merge INFO wrote AHS_pooled_honey.dta  (34,955 rows x 59 vars, 6.4 MB)
+17:20:20 02_merge INFO ---------------- AHS_pooled_inputs.dta (['2017', '2020'])
+17:20:21 02_merge INFO   loaded 2017       AHS_2017_s5_agricultural_inputs_clean.dta                  16,057 rows x  168
+17:20:21 02_merge INFO   loaded 2020       AHS_2020_section_2_2_clean.dta                             10,666 rows x   87
+17:20:21 02_merge INFO   4 variables with codes observed outside their own value labels (stale labels)
+17:20:22 02_merge INFO PASS  AHS_pooled_inputs.dta: pooled rows == sum of wave rows
+17:20:22 02_merge INFO PASS  AHS_pooled_inputs.dta: 2017 sum wt preserved
+17:20:22 02_merge INFO PASS  AHS_pooled_inputs.dta: 2020 sum wt preserved
+17:20:22 02_merge INFO wrote AHS_pooled_inputs.dta  (26,723 rows x 246 vars, 19.3 MB)
+17:20:22 02_merge INFO ---------------- AHS_pooled_land.dta (['2017', '2020', '2024'])
+17:20:22 02_merge INFO   loaded 2017       AHS_2017_s2_land_tenure_and_crops_planted_clean.dta        16,057 rows x   36
+17:20:22 02_merge INFO   loaded 2020       AHS_2020_section_2_1_clean.dta                             32,888 rows x   49
+17:20:22 02_merge INFO   loaded 2024       AHS_2024_section2_land_tenure_clean.dta                    23,266 rows x   25
+17:20:22 02_merge INFO   VERSIONS s2q1: {'s2q1': ['2024'], 's2q1_v2': ['2020'], 's2q1_v3': ['2017']} | 2020: FORCE_SPLIT / 2024 vs 2017: variable label differs ('2.1 Plot No.' vs '2.1 Did any member of your household own')
+17:20:22 02_merge INFO   VERSIONS s2q10: {'s2q10': ['2020'], 's2q10_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.10 Did you cultivate this plot during ' vs '2.10 Did any member of your household ow')
+17:20:22 02_merge INFO   VERSIONS s2q12: {'s2q12': ['2020'], 's2q12_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.12 If no tractor or oxen was used for ' vs '2.12 Did any member of your household re')
+17:20:22 02_merge INFO   VERSIONS s2q13: {'s2q13': ['2020'], 's2q13_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.13 Was this plot in land consolidated ' vs '2.13 Did any member of your household re')
+17:20:22 02_merge INFO   VERSIONS s2q2: {'s2q2': ['2024'], 's2q2_v2': ['2020'], 's2q2_v3': ['2017']} | 2020: FORCE_SPLIT / 2024: FORCE_SPLIT
+17:20:22 02_merge INFO   VERSIONS s2q3: {'s2q3': ['2024'], 's2q3_v2': ['2020'], 's2q3_v3': ['2017']} | 2020: FORCE_SPLIT / 2024 vs 2017: variable label differs ('2.3 Owners/users of this plot' vs '2.3 Did any member of your household own')
+17:20:22 02_merge INFO   VERSIONS s2q4: {'s2q4': ['2024'], 's2q4_v2': ['2020'], 's2q4_v3': ['2017']} | 2020 vs 2017: variable label differs ('2.4 How many agricultural plots on which' vs '2.4 Did any     member of your household') / 2024 vs 2017: variable label differs ('2.4 How did the owners/users get access ' vs '2.4 Did any     member of your household')
+17:20:22 02_merge INFO   VERSIONS s2q5: {'s2q5': ['2024'], 's2q5_v2': ['2020'], 's2q5_v3': ['2017']} | 2020 vs 2017: variable label differs ('2.5 Plot No.' vs '2.5 Did any member of your household ren') / 2024 vs 2017: variable label differs ('2.5 How much did you pay in cash for ren' vs '2.5 Did any member of your household ren')
+17:20:22 02_merge INFO   VERSIONS s2q6: {'s2q6': ['2024'], 's2q6_v2': ['2020'], 's2q6_v3': ['2017']} | 2020 vs 2017: variable label differs ('2.6 Plot area (sqm)' vs '2.6 Did any member of your household ren') / 2024 vs 2017: variable label differs ('2.6 What is the value of the products yo' vs '2.6 Did any member of your household ren')
+17:20:22 02_merge INFO   VERSIONS s2q7_1: {'s2q7_1': ['2020'], 's2q7_1_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.7.1 HH members (in numbers) with right' vs '2.7.1 What are major 3 crops did your ho')
+17:20:22 02_merge INFO   VERSIONS s2q7_2: {'s2q7_2': ['2020'], 's2q7_2_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.7.2 HH members (in numbers) with right' vs '2.7.2 What are major 3 crops did your ho')
+17:20:22 02_merge INFO   VERSIONS s2q7_3: {'s2q7_3': ['2020'], 's2q7_3_v2': ['2017']} | 2020 vs 2017: variable label differs ('2.7.3 HH members (in numbers) with right' vs '2.7.3 What are major 3 crops did your ho')
+17:20:22 02_merge INFO   VERSIONS s2q8: {'s2q8': ['2024'], 's2q8_v2': ['2020']} | 2024 vs 2020: variable label differs ('2.8 Household members with the right to ' vs '2.8 How did the owner get access to agri')
+17:20:22 02_merge INFO   VERSIONS s2q9: {'s2q9': ['2024'], 's2q9_v2': ['2017']} | 2024 vs 2017: variable label differs ('2.9 Household members with the right to ' vs '2.9 Did any member of your household own')
+17:20:23 02_merge INFO   2 variables with codes observed outside their own value labels (stale labels)
+17:20:23 02_merge INFO PASS  AHS_pooled_land.dta: pooled rows == sum of wave rows
+17:20:23 02_merge INFO PASS  AHS_pooled_land.dta: 2017 sum wt preserved
+17:20:23 02_merge INFO PASS  AHS_pooled_land.dta: 2020 sum wt preserved
+17:20:23 02_merge INFO PASS  AHS_pooled_land.dta: 2024 sum wt preserved
+17:20:23 02_merge INFO wrote AHS_pooled_land.dta  (72,211 rows x 91 vars, 13.5 MB)
+17:20:23 02_merge INFO ---------------- AHS_pooled_livestock.dta (['2017', '2020', '2024'])
+17:20:24 02_merge INFO   loaded 2017       AHS_2017_s9_number_of_animals_clean.dta                    32,611 rows x   44
+17:20:24 02_merge INFO   loaded 2020       AHS_2020_section_5_clean.dta                               23,250 rows x   36
+17:20:24 02_merge INFO   loaded 2024       AHS_2024_section9_10_12_livestock_and_animal_inputs_expenditures_clean.dta     9,947 rows x   59
+17:20:25 02_merge INFO PASS  AHS_pooled_livestock.dta: pooled rows == sum of wave rows
+17:20:25 02_merge INFO PASS  AHS_pooled_livestock.dta: 2017 sum wt preserved
+17:20:25 02_merge INFO PASS  AHS_pooled_livestock.dta: 2020 sum wt preserved
+17:20:25 02_merge INFO PASS  AHS_pooled_livestock.dta: 2024 sum wt preserved
+17:20:25 02_merge INFO wrote AHS_pooled_livestock.dta  (65,808 rows x 119 vars, 19.5 MB)
+17:20:25 02_merge INFO ---------------- AHS_pooled_milk.dta (['2017', '2020', '2024'])
+17:20:25 02_merge INFO   loaded 2017       AHS_2017_s10_1_cattle_milk_production_clean.dta             3,237 rows x   22
+17:20:26 02_merge INFO   loaded 2020       AHS_2020_section_7_1_clean.dta                             44,148 rows x   30
+17:20:26 02_merge INFO   loaded 2024       AHS_2024_section11_1_cattle_milk_production_and_use_clean.dta    12,209 rows x   45
+17:20:26 02_merge INFO PASS  AHS_pooled_milk.dta: pooled rows == sum of wave rows
+17:20:26 02_merge INFO PASS  AHS_pooled_milk.dta: 2017 sum wt preserved
+17:20:26 02_merge INFO PASS  AHS_pooled_milk.dta: 2020 sum wt preserved
+17:20:26 02_merge INFO PASS  AHS_pooled_milk.dta: 2024 sum wt preserved
+17:20:26 02_merge INFO   AHS_pooled_milk.dta: 3002 exact duplicate rows dropped (duplicates drop, all variables): {'2024': 3002}
+17:20:26 02_merge INFO wrote AHS_pooled_milk.dta  (56,592 rows x 78 vars, 16.7 MB)
+17:20:26 02_merge INFO ---------------- AHS_pooled_tools.dta (['2017', '2024'])
+17:20:28 02_merge INFO   loaded 2017       AHS_2017_s7_1_agricultural_small_tools_clean.dta          362,203 rows x   19
+17:20:28 02_merge INFO   loaded 2024       AHS_2024_section7_agricultural_tools_clean.dta              9,981 rows x   25
+17:20:28 02_merge INFO   VERSIONS s7q1: {'s7q1': ['2024'], 's7q1_v2': ['2017']} | 2024 vs 2017: variable label differs ('tool_name' vs '7.1 small tools name')
+17:20:28 02_merge INFO   VERSIONS s7q2: {'s7q2': ['2024'], 's7q2_v2': ['2017']} | 2024: FORCE_SPLIT
+17:20:28 02_merge INFO   VERSIONS s7q3: {'s7q3': ['2024'], 's7q3_v2': ['2017']} | 2024 vs 2017: variable label differs ('7.3 Number of tools purchased and used d' vs '7.3 The number of this tool owned by the')
+17:20:28 02_merge INFO   VERSIONS s7q4: {'s7q4': ['2024'], 's7q4_v2': ['2017']} | 2024 vs 2017: variable label differs ('7.4 What was the average unit price for ' vs '7.4 Number of tools puchased by your hou')
+17:20:28 02_merge INFO   VERSIONS s7q5: {'s7q5': ['2024'], 's7q5_v2': ['2017']} | 2024 vs 2017: variable label differs ('7.5 What is the number of the tool that ' vs '7.5 Unit price for the purchased tool')
+17:20:28 02_merge INFO   VERSIONS s7q6: {'s7q6': ['2024'], 's7q6_v2': ['2017']} | 2024 vs 2017: variable label differs ('7.6 Amount paid for rented small tools' vs '7.6 Number of this tool rented by your h')
+17:20:28 02_merge INFO   VERSIONS s7q7: {'s7q7': ['2024'], 's7q7_v2': ['2017']} | 2024 vs 2017: variable label differs ('tool_name' vs '7.7 Amount paid for rented small tools')
+17:20:30 02_merge INFO PASS  AHS_pooled_tools.dta: pooled rows == sum of wave rows
+17:20:30 02_merge INFO PASS  AHS_pooled_tools.dta: 2017 sum wt preserved
+17:20:30 02_merge INFO PASS  AHS_pooled_tools.dta: 2024 sum wt preserved
+17:20:30 02_merge INFO   AHS_pooled_tools.dta: 15 exact duplicate rows dropped (duplicates drop, all variables): {'2017': 15}
+17:20:31 02_merge INFO wrote AHS_pooled_tools.dta  (372,169 rows x 34 vars, 60.3 MB)
+17:20:31 02_merge INFO all hard checks passed (0 soft warnings)
+17:20:31 02_merge INFO 02_merge done
+17:20:32 03_checks INFO ==== 03_checks | run 20260906-171946 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+17:20:34 03_checks INFO 
+# AHS checks report
+
+Generated by 03_checks.py.
+
+## A. Pooled person file vs per-wave cleaned files
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | exact duplicate rows dropped before saving the pooled files (Matteo's rule; all files; informational) | 47,448 |  | n/a |
+| A | 2017 person rows | 73,665 | 73,665 | PASS |
+| A | 2017 sum wt | 9,682,214 | 9,682,214 | PASS |
+| A | 2017 households | 16,057 | 16,057 | PASS |
+| A | 2017 districts | 30 | 30 | PASS |
+| A | 2020 person rows | 48,726 | 48,726 | PASS |
+| A | 2020 sum wt | 10,486,251 | 10,486,251 | PASS |
+| A | 2020 households | 10,666 | 10,666 | PASS |
+| A | 2020 districts | 30 | 30 | PASS |
+| A | 2024 person rows | 16,292 | 16,292 | PASS |
+| A | 2024 sum wt | 9,561,842 | 9,561,842 | PASS |
+| A | 2024 households | 3,724 | 3,724 | PASS |
+| A | 2024 districts | 30 | 30 | PASS |
+
+## B. Stata 17 recomputation from the written .dta files
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2017 person rows | 73,665 | 73,665 | PASS |
+| B | 2017 sum wt | 9,682,214 | 9,682,214 | PASS |
+| B | 2017 male | 34,951 | 34,951 | PASS |
+| B | 2017 female | 38,714 | 38,714 | PASS |
+| B | 2020 person rows | 48,726 | 48,726 | PASS |
+| B | 2020 sum wt | 10,486,251 | 10,486,251 | PASS |
+| B | 2020 male | 23,139 | 23,139 | PASS |
+| B | 2020 female | 25,587 | 25,587 | PASS |
+| B | 2024 person rows | 16,292 | 16,292 | PASS |
+| B | 2024 sum wt | 9,561,842 | 9,561,842 | PASS |
+| B | 2024 male | 7,794 | 7,794 | PASS |
+| B | 2024 female | 8,498 | 8,498 | PASS |
+| B | 2017 households | 16,057 | 16,057 | PASS |
+| B | 2017 sum hhsize | 73,665 | 73,665 | PASS |
+| B | 2017 sum household weight | 2,164,610 | 2,164,610 | PASS |
+| B | 2020 households | 10,666 | 10,666 | PASS |
+| B | 2020 sum hhsize | 48,726 | 48,726 | PASS |
+| B | 2020 sum household weight | 2,321,662 | 2,321,662 | PASS |
+| B | 2024 households | 3,724 | 3,724 | PASS |
+| B | 2024 sum hhsize | 16,292 | 16,292 | PASS |
+| B | 2024 sum household weight | 2,163,580 | 2,163,580 | PASS |
+
+## C. Household / person consistency
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| C | 2017 households vs report table 2 (16,057) | 16,057 | 16,057 | PASS |
+| C | 2017 sum hhsize == person rows | 73,665 | 73,665 | PASS |
+| C | 2017 households == distinct hhid in person file | 16,057 | 16,057 | PASS |
+| C | 2017 household rows unique | 16,057 | 16,057 | PASS |
+| C | 2017 households with a head_sex | 16,057 | 16,057 | PASS |
+| C | 2017 weight constant within household (person file) | 0 | 0 | PASS |
+| C | 2020 sum hhsize == person rows | 48,726 | 48,726 | PASS |
+| C | 2020 households == distinct hhid in person file | 10,666 | 10,666 | PASS |
+| C | 2020 household rows unique | 10,666 | 10,666 | PASS |
+| C | 2020 households with a head_sex | 10,666 | 10,666 | PASS |
+| C | 2020 weight constant within household (person file) | 0 | 0 | PASS |
+| C | 2024 sum hhsize == person rows | 16,292 | 16,292 | PASS |
+| C | 2024 households == distinct hhid in person file | 3,724 | 3,724 | PASS |
+| C | 2024 household rows unique | 3,724 | 3,724 | PASS |
+| C | 2024 households with a head_sex | 3,724 | 3,724 | PASS |
+| C | 2024 weight constant within household (person file) | 0 | 0 | PASS |
+| C | 2017 weighted agricultural households (million x 100) vs published 2.1 (published to one decimal: +/- 0.1 million) | 216 | 210 | PASS |
+| C | 2017 weighted persons (million x 100) vs published 9.7 (+/- 0.1 million) | 968 | 970 | PASS |
+| C | 2017 weighted average household size x 10 vs published 4.5 | 45 | 45 | PASS |
+| C | 2017 weighted female-headed share (%) vs published 27.8 | 28 | 28 | PASS |
+| C | 2020 weighted agricultural households (million x 100) vs published 2.3 (published to one decimal: +/- 0.1 million) | 232 | 230 | PASS |
+| C | 2020 weighted persons (million x 100) vs published 10.5 (+/- 0.1 million) | 1,049 | 1,050 | PASS |
+| C | 2020 weighted average household size x 10 vs published 4.5 | 45 | 45 | PASS |
+| C | 2020 weighted female-headed share (%) vs published 28.2 | 28 | 28 | PASS |
+| C | 2024 weighted agricultural households (million x 100) vs published 2.2 (published to one decimal: +/- 0.1 million) | 216 | 220 | PASS |
+| C | 2024 weighted average household size x 10 vs published 4.4 | 44 | 44 | PASS |
+
+## D. Appended modules: weights, large-scale-farmer supplement, duplicate rows
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| D | animal_inputs: rows == sum of wave rows | 49,750 | 49,750 | PASS |
+| D | credits: rows == sum of wave rows | 31,947 | 31,947 | PASS |
+| D | eggs: rows == sum of wave rows - 2,779 exact duplicates dropped | 56,074 | 56,074 | PASS |
+| D | extension: rows == sum of wave rows - 38,142 exact duplicates dropped | 60,701 | 60,701 | PASS |
+| D | fruits: rows == sum of wave rows | 29,239 | 29,239 | PASS |
+| D | honey: rows == sum of wave rows - 3,510 exact duplicates dropped | 34,955 | 34,955 | PASS |
+| D | inputs: rows == sum of wave rows | 26,723 | 26,723 | PASS |
+| D | land: rows == sum of wave rows | 72,211 | 72,211 | PASS |
+| D | livestock: rows == sum of wave rows | 65,808 | 65,808 | PASS |
+| D | milk: rows == sum of wave rows - 3,002 exact duplicates dropped | 56,592 | 56,592 | PASS |
+| D | tools: rows == sum of wave rows - 15 exact duplicates dropped | 372,169 | 372,169 | PASS |
+| D | household-sample rows (sample = CS) with a missing weight, all appended modules (must be 0) | 0 | 0 | PASS |
+| D | large-scale-farmer supplement rows (sample = LSF) whose weight is not 1, all appended modules (must be 0; GPT re-audit 2026-09-05) | 0 | 0 | PASS |
+| D | 2020 large-scale farms outside the household sample (sample = LSF) -- documented list of 2,345 | 2,345 | 2,345 | PASS |
+| D | 2024 large-scale farms outside the household sample (sample = LSF; not documented, informational) | 1,939 |  | n/a |
+| D | 2017 rows outside the household sample (must be 0: no supplement in 2017) | 0 | 0 | PASS |
+| D | 2017 s3_extension_services_and_agricultural_programmes: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 38,142 |  | n/a |
+| D | 2017 s7_1_agricultural_small_tools: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 15 |  | n/a |
+| D | 2017 s7_2_agricultural_durable_tools: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 53 |  | n/a |
+| D | 2017 s8_a_production_use_storage_and_expenses: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 3 |  | n/a |
+| D | 2017 s8_b_production_use_storage_and_expenses: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 5 |  | n/a |
+| D | 2024 section11_1_cattle_milk_production_and_use: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 3,035 |  | n/a |
+| D | 2024 section11_2_egg_production: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 2,806 |  | n/a |
+| D | 2024 section11_3_honey_production: exact-duplicate rows as shipped in the per-wave file (informational; dropped from the pooled file) | 3,547 |  | n/a |
+
+## E. Cross-wave coding compatibility within pooled columns (all pooled files)
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| E | pooled columns holding waves with incompatible value-label texts for the same code (must be 0) | 0 | 0 | PASS |
+| E | variables split into versions (all pooled files; informational) | 60 |  | n/a |
+| E | of which because of value labels or unlabelled ranges (informational) | 0 |  | n/a |
+| E | variables with codes observed outside their own wave's value labels -- stale labels (informational) | 15 |  | n/a |
+| E | forced splits x 1000 + forced alignments (informational) | 13,000 |  | n/a |
+
+**All checks passed.**
+17:20:34 03_checks INFO 03_checks done
+17:20:34 04_codebook INFO ==== 04_codebook | run 20260906-171946 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+17:20:49 04_codebook INFO wrote /Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Agriculture-Survey-AHS/CODEBOOK_AHS.xlsx (2 final-dataset sheets, 11 module files in one sheet, 10406 value-label rows)
+17:20:49 04_codebook INFO README.txt updated (/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Agriculture-Survey-AHS/README.txt)

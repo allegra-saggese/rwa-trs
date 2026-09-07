@@ -46,19 +46,30 @@ def resolve(names, items, all_waves):
     out = list(names)
     for n, idx in groups.items():
         if len(idx) == 1: continue
-        labels = [items[i][2] for i in idx]; common = set.intersection(*[set(_words(l)) for l in labels])
+        labels = [items[i][5] for i in idx]; common = set.intersection(*[set(_words(l)) for l in labels])      # distinguishing words of the CLEAN labels
         for i in idx:
-            col, base, lab, ws, multi, text = items[i]; suf = _suffix(ws, multi, all_waves)
-            ws_ = [w for w in _words(lab) if w not in common][:3]; head = [w for w in _words(lab) if w in common][:2]
+            col, base, lab, ws, multi, text, fixed = items[i]; suf = _suffix(ws, multi, all_waves)
+            if fixed: continue                                                              # a key or reviewed stem keeps its name
+            stem = n[:-len(suf)] if suf and n.endswith(suf) else n                          # the years suffix always stays at the end
+            ws_ = [w for w in _words(text) if w not in common][:3]; head = [w for w in _words(text) if w in common][:2]
             cand = (make_slug(" ".join(head + ws_), TAG, col, 32 - len(suf)) + suf) if ws_ else n
+            others = {str(items[j][0]) for j in range(len(items)) if j != i}
+            tail = next((str(col)[len(o) + 1:] for o in sorted(others, key=len, reverse=True) if str(col).startswith(o + "_") and len(str(col)) > len(o) + 1), None)
+            if tail is None:
+                mm = re.match(r"^([a-z]+\d+[a-z]?\d*[a-z]?|[a-z]{2,10}\d{0,4})_((?:s\d|c\d|eicv|comm|poverty|vup|hh)[a-z0-9_]{2,}|v?_?\d{1,2}|[a-z]_?\d{1,2})$", str(col))
+                if mm: tail = mm.group(2)
+            if cand == n and tail:                                                           # "<item>_<sub-item or module stem>": that part tells them apart
+                x = "_" + re.sub(r"[^a-z0-9]+", "_", tail.lower()).strip("_")[:14]; cand = cut(stem, 32 - len(x) - len(suf)) + x + suf
             if cand == n and not multi and set(map(str, ws)) != set(map(str, all_waves)): cand = versioned(n, version_suffix(ws, WAVE_YEAR))
             m = re.search(r"(\d+[a-z]?)$", str(col).replace("_v", "v"))
-            if cand == n and m: cand = cut(n, 32 - len(m.group(1)) - 1) + "_" + m.group(1)
+            if cand == n and m: cand = cut(stem, 32 - len(m.group(1)) - 1 - len(suf)) + "_" + m.group(1) + suf
             out[i] = cand
         seen = set(out[j] for j in range(len(out)) if j not in idx)
         for i in idx:
             if out[i] in seen:
                 suf = "_" + re.sub(r"[^a-z0-9]+", "", str(items[i][0]).lower())[:10]; out[i] = cut(out[i], 32 - len(suf)) + suf
+                k = 2
+                while out[i] in seen: out[i] = cut(out[i], 30 - len(str(k))) + f"_{k}"; k += 1
             seen.add(out[i])
     return out
 
@@ -74,7 +85,7 @@ def name_pooled(fname, decisions, wave_labels):
             lab = lb.get(str(ws[-1]), lb.get(ws[-1])) or d.get("reference_label") or ""
             if col in OVERRIDES: text = OVERRIDES[col][1]; stem = OVERRIDES[col][0]
             elif col in stems: text = stems[col][1]; stem = stems[col][0]
-            else: text = clean_label(lab, TAG, TRANSLATE_EXTRA); stem = None
+            else: text = clean_label(lab, TAG, TRANSLATE_EXTRA) or f"Unlabelled column {col} as shipped by NISR"; stem = None
             text = re.sub(r"^(19|20)\d\d(\s*-\s*(19|20)\d\d)?[:,]?\s+", "", text)      # the years come from the waves covered
             items.append((col, base, lab, ws, multi, text, stem))
     all_waves = sorted({w for _, _, _, ws, _, _, _ in items for w in ws}, key=str)
@@ -87,7 +98,7 @@ def name_pooled(fname, decisions, wave_labels):
             if suf and not re.search(r"_(19|20)\d\d(_(19|20)\d\d)?$", n): n = versioned(n, suf)          # unless the stem carries its years
         else: n = make_slug(text, TAG, col, 32 - len(suf)) + suf
         names.append(n)
-    names = resolve(names, [(col, base, lab, ws, multi, text) for col, base, lab, ws, multi, text, stem in items], all_waves)
+    names = resolve(names, [(col, base, lab, ws, multi, text, bool(stem)) for col, base, lab, ws, multi, text, stem in items], all_waves)
     for (col, base, lab, ws, multi, text, stem), n in zip(items, names):
         years = _years_text(ws) if (multi or set(map(str, ws)) != set(map(str, all_waves))) else None
         table.rows.append({"scope": f"pooled:{fname}", "wave": ",".join(map(str, ws)), "native": col, "clean_name": n,
@@ -106,11 +117,50 @@ def name_wave(scope, wave, vars_, labels, pooled_map):
             r = table.by_scope_pooled[pooled_names[v]]; rows.append({"scope": scope, "wave": wave, "native": v, "clean_name": r["clean_name"], "clean_label": r["clean_label"], "native_label": labels.get(v, "")}); taken.add(r["clean_name"])
         else: todo.append(v)
     if todo:
-        gen = assign_names(TAG, [(v, clean_label(labels.get(v, "") or v, TAG, TRANSLATE_EXTRA)) for v in todo])
+        gen = assign_names(TAG, [(v, clean_label(labels.get(v, ""), TAG, TRANSLATE_EXTRA)) for v in todo])
         for v, n in zip(todo, gen):
             if v in OVERRIDES: n = f"{TAG}_{OVERRIDES[v][0]}"; lab = label_with_tag(TAGU, OVERRIDES[v][1])
             elif v in stems: n = f"{TAG}_{stems[v][0]}"; lab = label_with_tag(TAGU, stems[v][1])
-            else: lab = label_with_tag(TAGU, clean_label(labels.get(v, "") or v, TAG, TRANSLATE_EXTRA))
+            else: lab = label_with_tag(TAGU, clean_label(labels.get(v, ""), TAG, TRANSLATE_EXTRA) or f"Unlabelled column {v} as shipped by NISR")
+            k = 2
+            while n in taken: n = cut(n, 30) + f"_{k}"; k += 1
+            taken.add(n); rows.append({"scope": scope, "wave": wave, "native": v, "clean_name": n, "clean_label": lab, "native_label": labels.get(v, "")})
+    table.rows += rows
+
+def name_plain(scope, vars_, labels, wave=""):
+    """a file without alignment decisions (linking files): names from its own labels, keys and overrides fixed"""
+    taken, rows, todo = set(), [], []
+    gen = assign_names(TAG, [(v, clean_label(labels.get(v, ""), TAG, TRANSLATE_EXTRA)) for v in vars_])
+    for v, n in zip(vars_, gen):
+        if v in OVERRIDES: n = f"{TAG}_{OVERRIDES[v][0]}"; lab = label_with_tag(TAGU, OVERRIDES[v][1])
+        elif v in stems: n = f"{TAG}_{stems[v][0]}"; lab = label_with_tag(TAGU, stems[v][1])
+        else: lab = label_with_tag(TAGU, clean_label(labels.get(v, ""), TAG, TRANSLATE_EXTRA) or f"Unlabelled column {v} as shipped by NISR")
+        k = 2
+        while n in taken: n = cut(n, 30) + f"_{k}"; k += 1
+        taken.add(n); rows.append({"scope": scope, "wave": wave, "native": v, "clean_name": n, "clean_label": lab, "native_label": labels.get(v, "")})
+    table.rows += rows
+
+def _index(pooled_map):
+    return {(base, str(w)): col for col, (base, ws) in pooled_map.items() for w in ws}
+
+def name_wave_multi(scope, wave, vars_, labels, maps):
+    """per-wave file whose columns may come from several pooled files: maps = [(pooled scope, pooled_map), ...] in order of
+    preference; a column found in a pooled file (for this wave) takes that pooled name; the rest are named from their labels"""
+    idx = [(sc, _index(pm)) for sc, pm in maps]; rows_by_scope = {sc: {r["native"]: r for r in table.rows if r["scope"] == sc} for sc, _ in maps}
+    taken, rows, todo = set(), [], []
+    for v in vars_:
+        hit = next(((sc, ix[(v, str(wave))]) for sc, ix in idx if (v, str(wave)) in ix), None)
+        if hit and hit[1] in rows_by_scope[hit[0]]:
+            r = rows_by_scope[hit[0]][hit[1]]
+            if r["clean_name"] in taken: todo.append(v); continue
+            rows.append({"scope": scope, "wave": wave, "native": v, "clean_name": r["clean_name"], "clean_label": r["clean_label"], "native_label": labels.get(v, "")}); taken.add(r["clean_name"])
+        else: todo.append(v)
+    if todo:
+        gen = assign_names(TAG, [(v, clean_label(labels.get(v, ""), TAG, TRANSLATE_EXTRA)) for v in todo])
+        for v, n in zip(todo, gen):
+            if v in OVERRIDES: n = f"{TAG}_{OVERRIDES[v][0]}"; lab = label_with_tag(TAGU, OVERRIDES[v][1])
+            elif v in stems: n = f"{TAG}_{stems[v][0]}"; lab = label_with_tag(TAGU, stems[v][1])
+            else: lab = label_with_tag(TAGU, clean_label(labels.get(v, ""), TAG, TRANSLATE_EXTRA) or f"Unlabelled column {v} as shipped by NISR")
             k = 2
             while n in taken: n = cut(n, 30) + f"_{k}"; k += 1
             taken.add(n); rows.append({"scope": scope, "wave": wave, "native": v, "clean_name": n, "clean_label": lab, "native_label": labels.get(v, "")})
