@@ -9,6 +9,8 @@ rasterio>=1.3
 rasterstats>=0.19
 shapely>=2.0
 mapclassify>=2.5          # classification schemes for choropleths
+libpysal>=4.9             # Queen contiguity weights for Moran's I / LISA
+esda>=2.5                 # Moran's I and local indicators (LISA cluster maps)
 
 # Survey microdata
 pyreadstat>=1.2           # .dta/.sav with value labels intact
