@@ -46,8 +46,8 @@ pooled:EICV_pooled_person.dta,"EICV1,EICV2",id6,eicv_household_number,EICV 2001-
 pooled:EICV_pooled_person.dta,"EICV1,EICV2",id_strate,eicv_stratum_census_eas,EICV 2001-2006: Stratum based on the census enumeration areas,New strata based on census EAs
 pooled:EICV_pooled_person.dta,EICV1,indfarmer,eicv_independent_farmer,"EICV 2001: Independent farmer, NISR derived",Independent farmer
 pooled:EICV_pooled_person.dta,EICV1,indfarmer_nu,eicv_independent_farmers_hh,"EICV 2001: Number of independent farmers in the household, NISR derived",Number Hhd of Ind Farmers
-pooled:EICV_pooled_person.dta,EICV4_CS,isco,eicv_occupation_isco,"EICV 2014: Occupation of the current main job, ISCO code",Current main Occupation
-pooled:EICV_pooled_person.dta,EICV4_CS,isic,eicv_industry_isic,"EICV 2014: Industry of the current main job, ISIC code",Current main economic activity
+pooled:EICV_pooled_person.dta,EICV4_CS,isco,eicv_occupation_isco_shipped,"EICV 2014: Occupation of the current main job, ISCO code as shipped",Current main Occupation
+pooled:EICV_pooled_person.dta,EICV4_CS,isic,eicv_industry_isic_shipped,"EICV 2014: Industry of the current main job, ISIC code as shipped",Current main economic activity
 pooled:EICV_pooled_person.dta,EICV2,isicgroup,eicv_industry_group,"EICV 2006: Industry group of the main job, NISR derived",Industry Group
 pooled:EICV_pooled_person.dta,EICV2,isicgroup_mainjob_short,eicv_industry_mainjob_short,EICV 2006: Industry Group,Industry Group
 pooled:EICV_pooled_person.dta,"EICV1,EICV2",isicshort,eicv_industry_group_short,"EICV 2001-2006: Short industry group of the main job, NISR derived",ShortIndustry Group
@@ -10407,7 +10407,7 @@ wave:EICV2:total_jobs,EICV2,s7bq13,eicv_sought_credit_formal,EICV: Sought credit
 wave:EICV2:total_jobs,EICV2,s7bq14,eicv_primary_source_credit,EICV: Primary source of credit,primary source of credit
 wave:EICV2:total_jobs,EICV2,s7bq15,eicv_amount_borrowed_twelve_mo,EICV: Amount borrowed in the last twelve (12) months,amount borrowed in the last twelve (12) months
 wave:EICV2:total_jobs,EICV2,s7bq16,eicv_amount_loan_repaid,EICV: Amount of loan repaid,amount of loan repaid
-wave:EICV2:total_jobs,EICV2,isic,eicv_industry_isic,"EICV: Industry of the current main job, ISIC code",activity of industry
+wave:EICV2:total_jobs,EICV2,isic,eicv_industry_isic_shipped,"EICV: Industry of the current main job, ISIC code as shipped",activity of industry
 wave:EICV2:total_jobs,EICV2,isicgrou,eicv_industry_group,EICV: Industry group,industry group
 wave:EICV2:total_jobs,EICV2,s7aq3_nu,eicv_non_farm_enterprises_hh,EICV: Number of non-farm enterprises in household,number of non-farm enterprises in household
 wave:EICV2:total_jobs,EICV2,ownfarm,eicv_works_own_farm,EICV: Works on own farm,works on own farm
@@ -12130,8 +12130,8 @@ wave:EICV4_CS:person,EICV4_CS,ur,eicv_unemployment_rate,EICV 2014: Unemployment 
 wave:EICV4_CS:person,EICV4_CS,epr,eicv_employment_ratio,"EICV 2014: Employment-to-population ratio base, NISR derived",Employment to population ratio
 wave:EICV4_CS:person,EICV4_CS,twh,eicv_hours_worked_jobs,EICV 2014: Hours worked in all jobs,Hours worked in all jobs
 wave:EICV4_CS:person,EICV4_CS,truu,eicv_time_related,EICV 2014: Time related underemployment,Time related underemployment
-wave:EICV4_CS:person,EICV4_CS,isco,eicv_occupation_isco,"EICV 2014: Occupation of the current main job, ISCO code",Current main Occupation
-wave:EICV4_CS:person,EICV4_CS,isic,eicv_industry_isic,"EICV 2014: Industry of the current main job, ISIC code",Current main economic activity
+wave:EICV4_CS:person,EICV4_CS,isco,eicv_occupation_isco_shipped,"EICV 2014: Occupation of the current main job, ISCO code as shipped",Current main Occupation
+wave:EICV4_CS:person,EICV4_CS,isic,eicv_industry_isic_shipped,"EICV 2014: Industry of the current main job, ISIC code as shipped",Current main economic activity
 wave:EICV4_CS:household,EICV4_CS,survey,eicv_survey,EICV: Source survey,Source survey
 wave:EICV4_CS:household,EICV4_CS,year,eicv_year,EICV: Survey year,Survey year (mid-fieldwork)
 wave:EICV4_CS:household,EICV4_CS,wave,eicv_wave,EICV: Wave identifier,Wave / round id
@@ -13540,8 +13540,8 @@ wave:EICV4_CS:current_main_activity6,EICV4_CS,ur,eicv_unemployment_rate,EICV 201
 wave:EICV4_CS:current_main_activity6,EICV4_CS,epr,eicv_employment_ratio,"EICV 2014: Employment-to-population ratio base, NISR derived",Employment to population ratio
 wave:EICV4_CS:current_main_activity6,EICV4_CS,twh,eicv_hours_worked_jobs,EICV 2014: Hours worked in all jobs,Hours worked in all jobs
 wave:EICV4_CS:current_main_activity6,EICV4_CS,truu,eicv_time_related,EICV 2014: Time related underemployment,Time related underemployment
-wave:EICV4_CS:current_main_activity6,EICV4_CS,isco,eicv_occupation_isco,"EICV 2014: Occupation of the current main job, ISCO code",Current main Occupation
-wave:EICV4_CS:current_main_activity6,EICV4_CS,isic,eicv_industry_isic,"EICV 2014: Industry of the current main job, ISIC code",Current main economic activity
+wave:EICV4_CS:current_main_activity6,EICV4_CS,isco,eicv_occupation_isco_shipped,"EICV 2014: Occupation of the current main job, ISCO code as shipped",Current main Occupation
+wave:EICV4_CS:current_main_activity6,EICV4_CS,isic,eicv_industry_isic_shipped,"EICV 2014: Industry of the current main job, ISIC code as shipped",Current main economic activity
 wave:EICV4_CS:current_main_activity6,EICV4_CS,s0q19m,eicv_interview_month_2014,EICV 2014: Month of the interview,Month of interview
 wave:EICV4_CS:current_main_activity6,EICV4_CS,s0q19y,eicv_interview_year_2014,EICV 2014: Year of the interview,Year of interview
 wave:EICV4_CS:current_main_activity6,EICV4_CS,quintile,eicv_quintile_2011_2017,"EICV 2011-2017: Consumption quintile, NISR",QUINTILE

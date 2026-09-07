@@ -1966,7 +1966,7 @@
   "a02": "lfs_relation_to_head_2024_2025",
   "a03m": "lfs_birth_month",
   "a03y": "lfs_birth_year",
-  "a05": "lfs_marital_status",
+  "a05": "lfs_present_marital_status",
   "a06": "lfs_difficulty_seeing",
   "a07": "lfs_difficulty_hearing",
   "a08": "lfs_difficulty_walking",

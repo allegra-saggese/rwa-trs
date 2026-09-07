@@ -503,6 +503,15 @@ def versioned(name, suffix, maxlen=32):
 import csv as _csv
 from pathlib import Path as _Path
 
+# Stems reserved for the harmonised concepts written by NISR/Harmonize (<ds>_<stem>, the same stem in every
+# dataset). A native variable must never take one of them: the harmonised variable would collide with it.
+# Two exceptions are deliberate and checked there: sex and head_sex / head_age are already in the common
+# coding, so the dataset's own columns ARE the harmonised ones and are harmonised in place.
+HARMONISED_STEMS = {"marital_status", "relationship_to_head", "school_attendance", "education_level", "literacy",
+                    "labour_status", "employed", "labour_definition", "employment_status", "industry_isic",
+                    "industry_isic_approx", "occupation_isco", "occupation_isco_approx", "head_marital_status",
+                    "head_education_level", "head_literacy", "household_key", "person_key"}
+
 KEY_STEMS = {   # native key-block / derived names -> clean stem (the dataset tag is prefixed) and label text
     "survey": ("survey", "Source survey"), "year": ("year", "Survey year"), "wave": ("wave", "Wave identifier"),
     "sample": ("sample", "Sample component"), "unit": ("unit", "Unit of observation of the file"),

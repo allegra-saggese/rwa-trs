@@ -7439,7 +7439,7 @@
     "s11_06": "cfsva_household_benefit_other",
     "s11_07": "cfsva_type_assistance_provided",
     "s11_07_smt_1": "cfsva_access_credit_inc",
-    "s11_07_smt_2": "cfsva_access_credit_activ",
+    "s11_07_smt_2": "cfsva_access_credit_s1107smt2",
     "s11_07_smt_3": "cfsva_agri_input_smt_3",
     "s11_07_smt_4": "cfsva_training_technical_prac",
     "s11_07_smt_5": "cfsva_large_livestock_eg_smt_5",

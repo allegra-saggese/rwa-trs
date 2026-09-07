@@ -1,25 +1,31 @@
 """
-01_harmonize.py -- NISR/Harmonize: harmonised copies of every final and appended file of the seven datasets.
+01_harmonize.py -- NISR/Harmonize: a harmonised copy of every FINAL file of the seven datasets.
 
-For EVERY file in <dataset>/3_Final/ and <dataset>/2_Intermediate/appended/ -> <dataset>/4_Harmonized/H_<dataset>_<stem>.dta
+4_Harmonized/ mirrors 3_Final/ exactly (Matteo, 2026-09-06): one copy per final file, nothing else.
+For EVERY file in <dataset>/3_Final/ -> <dataset>/4_Harmonized/H_<dataset>_<stem>.dta
 (the cross-dataset documents -- README, CODEBOOK_Harmonized.xlsx, harmonization_map.csv -- stay in Publicly-Available-NISR/Harmonized/):
   * identical key-block labels (survey year wave prov dist sector urban hhid pid sex age wt wt_hh) and
     identical province / district / sector / urban / sex value labels;
   * h_hhkey / h_pkey: string keys unique across datasets and waves (survey_wave[_interview]_hhid[_pid]);
   * nothing dropped, no rows lost, native variables untouched (renamed/labelled in place only).
-For the PERSON files of the household surveys (LFS, Census, EICV incl. VUP, AHS) the common concepts are
-added as new h_* variables next to the native ones (never overwriting them):
-  h_sex h_marital h_relation h_attend h_educ h_literacy h_lfstatus h_employed h_lfs_def h_empstat
-  h_isic1 h_isic1_approx h_isco1 h_isco1_approx
-For HOUSEHOLD files: h_head_sex h_head_age (+ h_head_marital h_head_educ h_head_literacy for CFSVA, whose
-household file carries the head's characteristics directly); CFSVA woman file: h_educ h_literacy.
+Names: the final files carry the datasets' clean names (<ds>_<english words>); they are read back under NISR's
+native names (variable_names.csv inverted -- the concept rules and merge_alignment.json are keyed on those) and
+written under the clean names again. The harmonised concepts are added next to the native columns and share one
+stem across datasets, with the dataset prefix: <ds>_marital_status, <ds>_relationship_to_head, <ds>_school_attendance,
+<ds>_education_level, <ds>_literacy, <ds>_labour_status, <ds>_employed, <ds>_labour_definition, <ds>_employment_status,
+<ds>_industry_isic (+_approx), <ds>_occupation_isco (+_approx) on the person files of LFS, Census, EICV (incl. VUP)
+and AHS; <ds>_head_sex <ds>_head_age (+ <ds>_head_marital_status <ds>_head_education_level <ds>_head_literacy for
+CFSVA, whose household file carries the head's characteristics directly) on household files; <ds>_education_level
+<ds>_literacy on the CFSVA woman file; <ds>_household_key / <ds>_person_key everywhere. Sex is not repeated as a
+harmonised variable: <ds>_sex is already 1 male / 2 female in every dataset.
 Every code mapping is written to harmonization_map.csv (dataset, waves, file, h_variable, source, rule,
 level, quality, note). Scope and code lists: the project notes NISR-Harmonize.md (Green Jobs - TRS folder).
 """
-import csv, os, shutil, sys, time
+import csv, os, re, shutil, sys, time
 import numpy as np, pandas as pd
 from harmonize_helpers import (DATASETS, ds_paths, out_dir, h_dir, alignment, decisions_for, col_for, get_logger, Checks,
-                               read_dta, read_dta_typed, read_meta, write_dta, downcast_new, save_json, recode, flat, rule_text, LOGS, db_root)
+                               read_dta, read_dta_typed, read_meta, write_dta, downcast_new, save_json, recode, flat, rule_text, LOGS, db_root,
+                               name_maps, h_name, H_STEM)
 
 log = get_logger("01_harmonize"); P_OUT = out_dir(); ck = Checks(log)
 ONLY = sys.argv[1:]                                    # optional: dataset tags to (re)build, e.g. LFS Census
@@ -38,15 +44,17 @@ KEY_LABELS = {
     "pid": "Person number within the household", "sex": "Sex: 1 male, 2 female", "age": "Age in completed years",
     "wt": "Weight that sums to the population of the file's unit (person / household / establishment / plot)",
     "wt_hh": "Household weight (same value on every member)", "estid": "Establishment id (EC)",
+    "head_sex": "Sex of household head (harmonised): 1 male, 2 female", "head_age": "Age of household head (harmonised)",
     "h_hhkey": "Household key survey_wave[_interview]_hhid (string; blank where the public file has no household id)",
-    "h_pkey": "Person key h_hhkey_pid (string; blank where h_hhkey is blank; NISR's own duplicate person numbers repeat)",
+    "h_pkey": "Person key: the household key and the person number (blank where the household key is blank)",
 }
 geo = pd.read_csv(db_root() / "geodata-nisr" / "Village_Boundary_2022_924768113126413998.csv")
 SECT = geo.drop_duplicates("Sector ID")[["Province ID", "Province", "District ID", "District", "Sector ID", "Sector"]]
 PROV_L = {int(k): s for k, s in SECT.drop_duplicates("Province ID")[["Province ID", "Province"]].values}
 DIST_L = {int(k): s for k, s in SECT.drop_duplicates("District ID")[["District ID", "District"]].values}
 SECT_L = {int(k): s for k, s in SECT[["Sector ID", "Sector"]].values}
-KEY_VALUES = {"prov": PROV_L, "dist": DIST_L, "sector": SECT_L, "urban": {1: "Urban", 2: "Rural"}, "sex": {1: "Male", 2: "Female"}}
+KEY_VALUES = {"prov": PROV_L, "dist": DIST_L, "sector": SECT_L, "urban": {1: "Urban", 2: "Rural"}, "sex": {1: "Male", 2: "Female"},
+              "head_sex": {1: "Male", 2: "Female"}}
 
 H_LABELS = {
     "h_sex": "Sex (harmonised): 1 male, 2 female", "h_marital": "Marital status (harmonised, 4 groups)",
@@ -97,8 +105,10 @@ for k in ("h_head_sex", "h_head_marital", "h_head_educ", "h_head_literacy"): H_V
 MAP = []
 H = pd.DataFrame()
 def note_map(dataset, waves, fname, hvar, source, rule, level, quality, note=""):
+    """one row of harmonization_map.csv; the concept is recorded under the name it carries in the file (<ds>_<stem>)"""
     MAP.append({"dataset": dataset, "waves": ",".join(map(str, waves)) if not isinstance(waves, str) else waves, "file": fname,
-                "h_variable": hvar, "source_variables": source, "rule": rule, "level": level, "quality": quality, "note": note})
+                "h_variable": h_name(dataset, hvar) if hvar in H_STEM else hvar, "source_variables": source, "rule": rule,
+                "level": level, "quality": quality, "note": note})
 
 LEVEL_ALL = "all household surveys (LFS, Census, EICV, AHS) + CFSVA head/woman"
 LEVEL_LAB = "employment group: LFS, Census, EICV (+ AHS where asked)"
@@ -414,7 +424,7 @@ def woman_concepts_cfsva(df, dec, fname):
 
 CONCEPTS = {("LFS", "person"): concepts_lfs, ("Census", "person"): concepts_census, ("EICV", "person"): concepts_eicv,
             ("AHS", "person"): concepts_ahs, ("CFSVA", "household"): head_concepts_cfsva, ("CFSVA", "woman"): woman_concepts_cfsva}
-PERSON_H = ["h_sex", "h_marital", "h_relation", "h_attend", "h_educ", "h_literacy", "h_lfstatus", "h_employed", "h_lfs_def", "h_empstat",
+PERSON_H = ["h_marital", "h_relation", "h_attend", "h_educ", "h_literacy", "h_lfstatus", "h_employed", "h_lfs_def", "h_empstat",
             "h_isic1", "h_isic1_approx", "h_isco1", "h_isco1_approx"]
 
 # ------------------------------------------------------------------ the generic pass
@@ -428,15 +438,14 @@ def unit_of(tag, fname, align):
     if "files" in align and fname in align["files"]: return align["files"][fname].get("unit", "")
     return "person" if "person" in fname else "household" if "household" in fname else "establishment" if tag == "EC" else ""
 
-# Declared limitation (disk): these EICV item modules (about 10.5 GB of sources) are NOT copied while the Mac has no room for them.
-# Any OTHER file that the space rule would skip aborts the run BEFORE anything is written (Harmonize audit 2026-09-05).
-KNOWN_SKIPS = {"H_EICV_durables.dta", "H_EICV_expenditure_annual.dta", "H_EICV_expenditure_frequent.dta", "H_EICV_expenditure_monthly.dta", "H_EICV_food.dta", "H_EICV_own_consumption.dta"}
+# A file the space rule would skip aborts the run BEFORE anything is written (Harmonize audit 2026-09-05).
+KNOWN_SKIPS: set[str] = set()          # the item-level module copies are gone (4_Harmonized mirrors 3_Final): nothing is skipped
 def preflight():
     free = shutil.disk_usage(P_OUT).free / 1e9; would_skip = []
     for tag in DATASETS:
         if ONLY and tag not in ONLY: continue
         P = ds_paths(tag)
-        for folder in [P["final"]] + ([P["appended"]] if P["appended"].exists() else []):
+        for folder in [P["final"]]:                                   # 4_Harmonized mirrors 3_Final: nothing from 2_Intermediate
             for f in sorted(folder.glob("*.dta")):
                 out = h_dir(tag) / out_name(tag, f.name); size = os.path.getsize(f) / 1e9; old = os.path.getsize(out) / 1e9 if out.exists() else 0.0
                 if free + old - size * 1.3 < MIN_FREE_GB: would_skip.append(out.name); continue
@@ -457,7 +466,7 @@ if ONLY and (LOGS / "harmonize_summary.json").exists():       # partial run: kee
 for tag in DATASETS:
     if ONLY and tag not in ONLY: continue
     P = ds_paths(tag); align = alignment(tag)
-    files = [(P["final"], f) for f in sorted(P["final"].glob("*.dta"))] + ([(P["appended"], f) for f in sorted(P["appended"].glob("*.dta"))] if P["appended"].exists() else [])
+    files = [(P["final"], f) for f in sorted(P["final"].glob("*.dta"))]        # 4_Harmonized mirrors 3_Final exactly
     for folder, f in files:
         fname = f.name; unit = unit_of(tag, fname, align); out = h_dir(tag) / out_name(tag, fname)
         free_gb = shutil.disk_usage(P_OUT).free / 1e9; size_gb = os.path.getsize(f) / 1e9
@@ -470,6 +479,8 @@ for tag in DATASETS:
         if out.exists(): out.unlink(); log.info("   previous %s removed before the rebuild (%.2f GB)", out.name, old_gb)
         log.info("---------------- %s / %s (%s, %.2f GB) -> %s", tag, fname, unit or "module", size_gb, out.name)
         df, vl, vv = read_dta_typed(f, log); n_in = len(df)
+        clean_of, native_of = name_maps(tag, fname)                  # the final file carries clean names; the rules below work on NISR's native ones
+        df = df.rename(columns=native_of); vl = {native_of.get(c, c): x for c, x in vl.items()}; vv = {native_of.get(c, c): d for c, d in vv.items()}
         # 1. common key labels and value labels; sex/age plain copies where present
         for c, t in KEY_LABELS.items():
             if c == "wt" and unit not in ("person", "household", "establishment", "plotcrop", "plotcrop_early"): continue   # module / item files: the weight repeats a parent weight -- keep the source label
@@ -500,8 +511,6 @@ for tag in DATASETS:
             dec = decisions_for(tag, fname, align)
             if unit == "person" or fname == "EICV_pooled_person_vup.dta":
                 for h in PERSON_H: H[h] = np.nan
-                if "sex" in df.columns: H["h_sex"] = recode(df["sex"], {1: 1, 2: 2}).values
-                note_map(tag, sorted(df["wave"].unique()), fname, "h_sex", "sex", "1->1; 2->2", LEVEL_ALL, "exact", "")
                 fn(df, dec, fname)
                 H["h_employed"] = H["h_lfstatus"].map({1: 1, 2: 0, 3: 0})
                 note_map(tag, sorted(df["wave"].unique()), fname, "h_employed", "h_lfstatus", "1 -> 1; 2, 3 -> 0; missing -> missing", LEVEL_LAB, "exact", "definition in h_lfs_def")
@@ -523,17 +532,25 @@ for tag in DATASETS:
                 for h in ("h_educ", "h_literacy"): vl[h] = H_LABELS[h]; vv[h] = H_VALUES[h]
                 H = downcast_new(H, ["h_educ", "h_literacy"])
         elif unit == "household" and "head_sex" in df.columns:
-            H["h_head_sex"] = recode(df["head_sex"], {1: 1, 2: 2}); H["h_head_age"] = pd.to_numeric(df["head_age"], errors="coerce").astype("float64") if "head_age" in df.columns else np.nan
-            vl["h_head_sex"], vl["h_head_age"] = H_LABELS["h_head_sex"], H_LABELS["h_head_age"]; vv["h_head_sex"] = H_VALUES["h_head_sex"]
-            H = downcast_new(H, ["h_head_sex", "h_head_age"])
-            note_map(tag, sorted(df["wave"].unique()), fname, "h_head_sex", "head_sex", "1->1; 2->2", LEVEL_ALL, "exact", "head = relationship code 1 in the roster")
-            note_map(tag, sorted(df["wave"].unique()), fname, "h_head_age", "head_age", "as shipped", LEVEL_ALL, "exact", "")
+            # the dataset pipeline already builds head_sex / head_age from the roster (relationship code 1) in the
+            # common coding: they ARE the harmonised head variables and are harmonised in place (label + value labels
+            # above), never copied under a second name -- as for sex on the person files.
+            note_map(tag, sorted(df["wave"].unique()), fname, "h_head_sex", "head_sex", "already in the harmonised coding: 1 male, 2 female (head = relationship code 1 in the roster)", LEVEL_ALL, "exact", "harmonised in place, not copied")
+            note_map(tag, sorted(df["wave"].unique()), fname, "h_head_age", "head_age", "as shipped (age of the person whose relationship code is 1)", LEVEL_ALL, "exact", "harmonised in place, not copied")
         if len(H.columns): df = pd.concat([df, H], axis=1)
         del H
         ck(len(df) == n_in, f"{out.name}: row count unchanged ({n_in:,})")
-        write_dta(df, out, vl, vv, f"H {STAMP}: {tag} {fname[:-4]} harmonised copy (keys, labels, h_* concepts)", log)
+        # back to the clean names, with the harmonised concepts under the stem every dataset shares
+        ren = {**clean_of, **{c: h_name(tag, c) for c in df.columns if c in H_STEM}}
+        dup = [n for n in ren.values() if list(ren.values()).count(n) > 1]
+        if dup: sys.exit(f"{out.name}: {sorted(set(dup))} would name two columns at once -- a harmonised concept collides with a variable the dataset already has; harmonise that one in place instead")
+        wave_col = ren.get("wave", "wave")
+        df = df.rename(columns=ren); vl = {ren.get(c, c): x for c, x in vl.items()}; vv = {ren.get(c, c): d for c, d in vv.items()}
+        h_vars = sorted(ren[c] for c in ren if c in H_STEM and ren[c] in df.columns)
+        ck(all(re.fullmatch(r"[a-z][a-z0-9_]{0,31}", c) for c in df.columns), f"{out.name}: every column is a clean lower-case name of at most 32 characters")
+        write_dta(df, out, vl, vv, f"H {STAMP}: {tag} {fname[:-4]} harmonised copy (keys, labels, harmonised concepts)", log)
         summary["files"][out.name] = {"source": str(f.relative_to(db_root())), "dataset": tag, "out_dir": str(out.parent.relative_to(db_root())), "unit": unit or "module", "rows": n_in, "vars": int(df.shape[1]),
-                                      "h_vars": [c for c in df.columns if c.startswith("h_")], "waves": sorted(map(str, df["wave"].unique())) if "wave" in df.columns else []}
+                                      "h_vars": h_vars, "waves": sorted(map(str, df[wave_col].unique())) if wave_col in df.columns else []}
         del df
 for tag in DATASETS:                                                # copies whose source file no longer exists (module renamed / merged away) are removed
     if ONLY and tag not in ONLY: continue

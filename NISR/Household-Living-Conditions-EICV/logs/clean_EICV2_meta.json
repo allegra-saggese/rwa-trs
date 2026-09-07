@@ -19059,7 +19059,7 @@
     "s7bq14": "eicv_primary_source_credit",
     "s7bq15": "eicv_amount_borrowed_twelve_mo",
     "s7bq16": "eicv_amount_loan_repaid",
-    "isic": "eicv_industry_isic",
+    "isic": "eicv_industry_isic_shipped",
     "isicgrou": "eicv_industry_group",
     "s7aq3_nu": "eicv_non_farm_enterprises_hh",
     "ownfarm": "eicv_works_own_farm",

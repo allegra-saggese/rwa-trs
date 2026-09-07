@@ -1,4 +1,0 @@
-16:56:47 00_names INFO ==== 00_names | run 20260906-165647_00_names | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
-16:56:48 00_names INFO variable_names.csv written: 1250 names in 5 files (pooled + per-wave)
-16:56:48 00_names INFO pooled names that needed an abbreviation to fit 32 characters: 2
-16:56:48 00_names INFO pooled names that carry the native code to stay unique: 0 (e.g. [])

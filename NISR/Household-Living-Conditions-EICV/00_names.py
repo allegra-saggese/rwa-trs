@@ -12,7 +12,7 @@ Run after a build whose logs carry the native labels; the table is committed nex
 """
 import json, re, sys
 from eicv_helpers import (paths, get_logger, LOGS, HERE, DATASET_TAG, NameTable, KEY_STEMS, KEY_EXTRA, WAVE_YEAR, TRANSLATE_EXTRA,
-                       clean_label, assign_names, label_with_tag, version_suffix, versioned, cut, make_slug, _words)
+                       clean_label, assign_names, label_with_tag, version_suffix, versioned, cut, make_slug, _words, HARMONISED_STEMS)
 
 log = get_logger("00_names"); P = paths(); TAG = DATASET_TAG; TAGU = TAG.upper()
 align = json.load(open(LOGS / "merge_alignment.json"))
@@ -54,7 +54,8 @@ def resolve(names, items, all_waves):
             ws_ = [w for w in _words(text) if w not in common][:3]; head = [w for w in _words(text) if w in common][:2]
             cand = (make_slug(" ".join(head + ws_), TAG, col, 32 - len(suf)) + suf) if ws_ else n
             others = {str(items[j][0]) for j in range(len(items)) if j != i}
-            tail = next((str(col)[len(o) + 1:] for o in sorted(others, key=len, reverse=True) if str(col).startswith(o + "_") and len(str(col)) > len(o) + 1), None)
+            tail = next((str(col)[len(o) + 1:] for o in sorted(others, key=lambda s: (-len(s), s))      # sorted fully: the table must not depend on set order
+                         if str(col).startswith(o + "_") and len(str(col)) > len(o) + 1), None)
             if tail is None:
                 mm = re.match(r"^([a-z]+\d+[a-z]?\d*[a-z]?|[a-z]{2,10}\d{0,4})_((?:s\d|c\d|eicv|comm|poverty|vup|hh)[a-z0-9_]{2,}|v?_?\d{1,2}|[a-z]_?\d{1,2})$", str(col))
                 if mm: tail = mm.group(2)
@@ -184,6 +185,12 @@ for w, m in metas.items():
         cols = mm.get("columns") or list(mm.get("var_labels", {}))
         name_wave_multi(f"wave:{w}:{stem}", w, cols, mm.get("var_labels", {}), pooled + unit_maps)
 
+reserved = {f"{TAG}_{s}" for s in HARMONISED_STEMS} & {r["clean_name"] for r in table.rows}
+if reserved:
+    for r in table.rows:
+        if r["clean_name"] in reserved: log.error("%s (%s) takes %r, a name reserved for the harmonised concept", r["native"], r["scope"], r["clean_name"])
+    sys.exit(f"{len(reserved)} name(s) reserved for the harmonised concepts of NISR/Harmonize are taken by a native "
+             f"variable: {sorted(reserved)} -- give those items their own name in variable_name_overrides.csv")
 table.save()
 n_scopes = len({r["scope"] for r in table.rows})
 log.info("variable_names.csv written: %d names in %d files (pooled + per-wave)", len(table.rows), n_scopes)

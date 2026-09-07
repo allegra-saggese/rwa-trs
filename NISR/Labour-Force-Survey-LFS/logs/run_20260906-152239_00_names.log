@@ -1,5 +1,0 @@
-15:22:39 00_names INFO ==== 00_names | run 20260906-152239_00_names | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
-15:22:39 00_names WARNING label cut to 80 characters: status1 -> LFS: Labour force status, NISR derived: 1 employed, 2 unemployed
-15:22:39 00_names INFO variable_names.csv written: 2508 names in 11 files (pooled + per-wave)
-15:22:39 00_names INFO pooled names that needed an abbreviation to fit 32 characters: 28
-15:22:39 00_names INFO pooled names that carry the native code to stay unique: 5 (e.g. ['lfs_own_use_item_h04', 'lfs_underutilisation_lu2', 'lfs_underutilisation_lu3', 'lfs_underutilisation_lu4', 'lfs_own_use_item_h04'])

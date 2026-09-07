@@ -4,7 +4,9 @@ NISR MICRODATA PIPELINES  (rwa-trs/NISR/)
 One folder per NISR dataset, named exactly as the data folder on Dropbox
 (Rwanda - TRS/data/Publicly-Available-NISR/<dataset>/). Each folder is an
 independent, replicable code base: nothing is imported across folders, and
-"python master.py" runs the whole pipeline top to bottom. Data never enter git;
+"python master.py" runs that dataset top to bottom. NISR/master.py is the master of
+masters: it runs the seven datasets in order and then the harmonisation step, so one
+command reproduces everything from 1_Raw to 4_Harmonized. Data never enter git;
 the code reads and writes the Dropbox folder, whose root is resolved from the
 login user (or NISR_DB_ROOT).
 
@@ -39,7 +41,20 @@ Season-Agriculture-Survey-SAS/     Seasonal Agriculture Survey 2013-2025
 Food-Security-CFSVAN/              CFSVA 2006-2024 (NISR/WFP); final: household; woman; child; village
 Harmonize/                         cross-dataset layer (see HARMONIZE below)
 
-All seven were built and verified on 2026-09-04/05 (each folder's logs/checks_report.txt).
+All seven were built and verified on 2026-09-04/05 and rebuilt on 2026-09-06 with the naming
+layer (each folder's logs/checks_report.txt).
+
+NAMES AND LABELS (Matteo, 2026-09-06). From 2_Intermediate onwards every variable is named in
+lower-case English words joined by underscores, prefixed with the dataset it comes from
+(lfs_ census_ eicv_ ec_ ahs_ sas_ cfsva_), at most 32 characters, full words unless the name does
+not fit; every label is a plain English sentence of at most 80 characters starting with the
+dataset tag. Nothing is left in French or Kinyarwanda. The mapping to NISR's native names is
+variable_names.csv, committed next to each dataset's code and applied by 01_clean / 02_merge;
+02_merge, 03_checks, 04_codebook and Harmonize read the files back under the native names through
+the same table, so every rule stays written next to the questionnaires. Reviewed hand entries are
+in variable_name_overrides.csv (and value_label_translations.csv where NISR shipped another
+language). Rebuild a table with `python master.py names` inside the dataset folder, review it,
+commit it, then rerun the pipeline: names never change silently.
 
 Layout rule. 3_Final/ holds only the appended unit-level datasets -- at most 4-5 files per
 dataset (person, household; establishment; plot-crop; household/woman/child/village). Every
@@ -120,13 +135,15 @@ totals vs figures published in NISR reports.
 HARMONIZE (cross-dataset layer)
 --------------------------------------------------------------------------------
 NISR/Harmonize/ is an eighth code base with the same rules (own helpers, master.py, checks,
-codebook). It reads every dataset's 3_Final/ and 2_Intermediate/appended/ files and writes a
-harmonised copy of each to the dataset's own 4_Harmonized/ folder (H_<dataset>_<unit or module>.dta;
-Matteo, 2026-09-05):
-identical key-block labels and geography value labels, cross-dataset string keys h_hhkey /
-h_pkey, and on the person / household / woman files the common concepts as new h_* variables
-(sex, marital, relationship, education, literacy, labour-force status with its definition code,
-status in employment, ISIC section, ISCO major group, head's sex and age) with common codes.
+codebook). 4_Harmonized MIRRORS 3_Final (Matteo, 2026-09-06): it reads every dataset's 3_Final/
+files -- and nothing else -- and writes one harmonised copy of each to that dataset's own
+4_Harmonized/ folder (H_<dataset>_<unit>.dta): identical key-block labels and geography value
+labels, the cross-dataset string keys <ds>_household_key / <ds>_person_key, and on the person /
+household / woman files the common concepts as new variables sharing one stem across datasets
+(<ds>_marital_status, <ds>_relationship_to_head, <ds>_education_level, <ds>_literacy,
+<ds>_school_attendance, <ds>_labour_status with <ds>_labour_definition, <ds>_employed,
+<ds>_employment_status, <ds>_industry_isic, <ds>_occupation_isco, <ds>_head_sex, <ds>_head_age)
+with common codes. Sex is not repeated: <ds>_sex is already harmonised.
 Native variables are never changed, no row is lost. Publicly-Available-NISR/Harmonized/ holds only the
 three cross-dataset documents: README.txt, harmonization_map.csv (every mapping) and
 CODEBOOK_Harmonized.xlsx (code lists and counts). The July-2026
@@ -135,8 +152,12 @@ three-file harmonisation stays in Archive/Harmonized/.
 --------------------------------------------------------------------------------
 RUNNING
 --------------------------------------------------------------------------------
-cd NISR/Labour-Force-Survey-LFS && python master.py        # everything
+python NISR/master.py                                       # everything: 7 datasets, then Harmonize
+python NISR/master.py EC LFS                                # selected datasets
+python NISR/master.py --from EICV                           # from that dataset onwards
+cd NISR/Labour-Force-Survey-LFS && python master.py        # one dataset, all its steps
 python master.py 01 02                                      # selected steps
+python master.py names                                      # rebuild variable_names.csv (review, commit, rerun)
 python 01_clean.py 2019                                     # one wave (for debugging)
 
 Requirements: Python >= 3.10, pandas >= 2.0, numpy, pyreadstat, openpyxl (codebooks), xlrd

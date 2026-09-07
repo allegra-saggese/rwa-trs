@@ -10782,8 +10782,8 @@
     "epr": "eicv_employment_ratio",
     "twh": "eicv_hours_worked_jobs",
     "truu": "eicv_time_related",
-    "isco": "eicv_occupation_isco",
-    "isic": "eicv_industry_isic",
+    "isco": "eicv_occupation_isco_shipped",
+    "isic": "eicv_industry_isic_shipped",
     "s0q19m": "eicv_interview_month_2014",
     "s0q19y": "eicv_interview_year_2014",
     "quintile": "eicv_quintile_2011_2017",
@@ -12564,8 +12564,8 @@
    "epr": "eicv_employment_ratio",
    "twh": "eicv_hours_worked_jobs",
    "truu": "eicv_time_related",
-   "isco": "eicv_occupation_isco",
-   "isic": "eicv_industry_isic"
+   "isco": "eicv_occupation_isco_shipped",
+   "isic": "eicv_industry_isic_shipped"
   }
  },
  "household": {

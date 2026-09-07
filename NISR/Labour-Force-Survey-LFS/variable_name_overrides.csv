@@ -3,7 +3,7 @@ a02,relation_to_head,Relationship to the household head
 a02_v2,relation_to_head,"Relationship to the household head, 14-code list"
 a03m,birth_month,Month of birth
 a03y,birth_year,Year of birth
-a05,marital_status,Marital status
+a05,present_marital_status,Present marital status as reported
 a06,difficulty_seeing,"Difficulty seeing, even with glasses (Washington Group)"
 a07,difficulty_hearing,"Difficulty hearing, even with a hearing aid (Washington Group)"
 a08,difficulty_walking,Difficulty walking or climbing steps (Washington Group)
@@ -63,7 +63,7 @@ b04,place_of_qualification,Place where the highest qualification was obtained
 b05a,specialisation_area,Area of specialisation
 b05b,esced_code,ESCED code of the specialisation
 b05c,esced_name,ESCED name of the specialisation
-b06,literacy,Ability to read and write
+b06,read_and_write,Ability to read and write
 b07,attending_tvet,Currently attending a trade or technical skills school
 b08,learned_tvet,Learned a trade or technical vocational course (TVET)
 b09,training_duration,Duration of the training

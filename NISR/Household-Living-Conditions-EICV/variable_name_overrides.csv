@@ -42,8 +42,8 @@ id_strate,stratum_census_eas,Stratum based on the census enumeration areas
 idmenag,household_key_shipped,Household key as shipped (idmenag)
 indfarmer,independent_farmer,"Independent farmer, NISR derived"
 indfarmer_nu,independent_farmers_hh,"Number of independent farmers in the household, NISR derived"
-isco,occupation_isco,"Occupation of the current main job, ISCO code"
-isic,industry_isic,"Industry of the current main job, ISIC code"
+isco,occupation_isco_shipped,"Occupation of the current main job, ISCO code as shipped"
+isic,industry_isic_shipped,"Industry of the current main job, ISIC code as shipped"
 isicgroup,industry_group,"Industry group of the main job, NISR derived"
 isicshort,industry_group_short,"Short industry group of the main job, NISR derived"
 lfs16,labour_force_status_16,"Labour force status, population aged 16 and over, NISR derived"

@@ -3,7 +3,7 @@ pooled:LFS_pooled_person.dta,"2017,2018,2019,2020,2021,2022,2023",a02,lfs_relati
 pooled:LFS_pooled_person.dta,"2024,2025",a02_v2,lfs_relation_to_head_2024_2025,"LFS 2024-2025: Relationship to the household head, 14-code list",Relationship
 pooled:LFS_pooled_person.dta,"2017,2018,2022,2023,2024,2025",a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 pooled:LFS_pooled_person.dta,"2017,2018,2022,2023,2024,2025",a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -64,7 +64,7 @@ pooled:LFS_pooled_person.dta,"2017,2018,2019",b04,lfs_place_of_qualification,LFS
 pooled:LFS_pooled_person.dta,"2018,2019,2021",b05a,lfs_specialisation_area,LFS 2018-2021: Area of specialisation,Area of specialization
 pooled:LFS_pooled_person.dta,"2017,2019,2021",b05b,lfs_esced_code,LFS 2017-2021: ESCED code of the specialisation,ESCED code
 pooled:LFS_pooled_person.dta,"2019,2021",b05c,lfs_esced_name,LFS 2019-2021: ESCED name of the specialisation,ESCED name
-pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023",b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023",b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 pooled:LFS_pooled_person.dta,"2017,2018,2019,2021,2022,2023,2024,2025",b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -599,7 +599,7 @@ wave:2017,2017,ryear,lfs_nisr_year_variable_2017,LFS 2017: NISR variable named y
 wave:2017,2017,a02,lfs_relation_to_head_2017_2023,LFS 2017-2023: Relationship to the household head,Relationship
 wave:2017,2017,a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 wave:2017,2017,a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-wave:2017,2017,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2017,2017,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2017,2017,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2017,2017,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2017,2017,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -634,7 +634,7 @@ wave:2017,2017,b02b,lfs_years_completed_in_level,LFS 2017-2025: Years completed 
 wave:2017,2017,b03,lfs_highest_certificate,LFS 2017-2023: Highest certificate obtained,Highest certificate obtained
 wave:2017,2017,b04,lfs_place_of_qualification,LFS 2017-2019: Place where the highest qualification was obtained,The place of  the highest qualification attained
 wave:2017,2017,b05b,lfs_esced_code,LFS 2017-2021: ESCED code of the specialisation,ESCED code
-wave:2017,2017,b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+wave:2017,2017,b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 wave:2017,2017,b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 wave:2017,2017,b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 wave:2017,2017,b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -838,7 +838,7 @@ wave:2018,2018,hhrg,lfs_rotation_group,LFS 2017-2021: Rotation group of the hous
 wave:2018,2018,a02,lfs_relation_to_head_2017_2023,LFS 2017-2023: Relationship to the household head,Relationship
 wave:2018,2018,a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 wave:2018,2018,a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-wave:2018,2018,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2018,2018,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2018,2018,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2018,2018,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2018,2018,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -862,7 +862,7 @@ wave:2018,2018,b02b,lfs_years_completed_in_level,LFS 2017-2025: Years completed 
 wave:2018,2018,b03,lfs_highest_certificate,LFS 2017-2023: Highest certificate obtained,Highest certificate obtained
 wave:2018,2018,b04,lfs_place_of_qualification,LFS 2017-2019: Place where the highest qualification was obtained,The place of  the highest qualification attained
 wave:2018,2018,b05a,lfs_specialisation_area,LFS 2018-2021: Area of specialisation,Area of specialization
-wave:2018,2018,b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+wave:2018,2018,b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 wave:2018,2018,b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 wave:2018,2018,b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 wave:2018,2018,b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -1032,7 +1032,7 @@ wave:2019,2019,wt,lfs_weight,LFS: Sampling weight,Annual person weight (sums to 
 wave:2019,2019,wt_round,lfs_round_weight,LFS: Round weight,Round weight (where released)
 wave:2019,2019,pkey,lfs_nisr_person_key_2019,LFS 2019: NISR person key as shipped,identifier
 wave:2019,2019,a02,lfs_relation_to_head_2017_2023,LFS 2017-2023: Relationship to the household head,Relationship
-wave:2019,2019,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2019,2019,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2019,2019,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2019,2019,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2019,2019,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -1072,7 +1072,7 @@ wave:2019,2019,b04,lfs_place_of_qualification,LFS 2017-2019: Place where the hig
 wave:2019,2019,b05a,lfs_specialisation_area,LFS 2018-2021: Area of specialisation,Area of specialization
 wave:2019,2019,b05b,lfs_esced_code,LFS 2017-2021: ESCED code of the specialisation,ESCED code
 wave:2019,2019,b05c,lfs_esced_name,LFS 2019-2021: ESCED name of the specialisation,ESCED name
-wave:2019,2019,b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+wave:2019,2019,b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 wave:2019,2019,b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 wave:2019,2019,b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 wave:2019,2019,b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -1352,7 +1352,7 @@ wave:2021,2021,consent,lfs_consent_2021,LFS 2021: Consent to the interview,Conse
 wave:2021,2021,decode,lfs_data_entry_code_2021,LFS 2021: Data entry code,Data entry code
 wave:2021,2021,sihh,lfs_still_in_household_2021,LFS 2021: Still in the household,Still in the Household
 wave:2021,2021,a02,lfs_relation_to_head_2017_2023,LFS 2017-2023: Relationship to the household head,Relationship
-wave:2021,2021,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2021,2021,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2021,2021,more_person,lfs_more_persons_flag_2021,LFS 2021: More persons flag as shipped,More person
 wave:2021,2021,a12,lfs_nationality_2017_2024,LFS 2017-2024: Nationality,What is nationality?
 wave:2021,2021,a13,lfs_residential_status,LFS 2017-2025: Residential status in Rwanda,Residential Status in Rwanda
@@ -1382,7 +1382,7 @@ wave:2021,2021,b03,lfs_highest_certificate,LFS 2017-2023: Highest certificate ob
 wave:2021,2021,b05a,lfs_specialisation_area,LFS 2018-2021: Area of specialisation,Area of specialization
 wave:2021,2021,b05b,lfs_esced_code,LFS 2017-2021: ESCED code of the specialisation,ESCED code
 wave:2021,2021,b05c,lfs_esced_name,LFS 2019-2021: ESCED name of the specialisation,ESCED name
-wave:2021,2021,b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+wave:2021,2021,b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 wave:2021,2021,b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 wave:2021,2021,b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 wave:2021,2021,b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -1604,7 +1604,7 @@ wave:2022,2022,lfs_year,lfs_data_collection_year,LFS 2020-2025: LFS data collect
 wave:2022,2022,a02,lfs_relation_to_head_2017_2023,LFS 2017-2023: Relationship to the household head,Relationship
 wave:2022,2022,a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 wave:2022,2022,a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-wave:2022,2022,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2022,2022,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2022,2022,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2022,2022,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2022,2022,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -1630,7 +1630,7 @@ wave:2022,2022,b01,lfs_student,LFS 2017-2025: Currently a student attending scho
 wave:2022,2022,b02a,lfs_education_level_highest,LFS 2017-2025: Highest educational level attended,What is the Highest educational level is/ have [NAME] attending / attended?
 wave:2022,2022,b02b,lfs_years_completed_in_level,LFS 2017-2025: Years completed in that level of education,How many years have you completed in that level of education?
 wave:2022,2022,b03,lfs_highest_certificate,LFS 2017-2023: Highest certificate obtained,Highest certificate obtained
-wave:2022,2022,b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+wave:2022,2022,b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 wave:2022,2022,b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 wave:2022,2022,b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 wave:2022,2022,b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -1854,7 +1854,7 @@ wave:2023,2023,lfs_year,lfs_data_collection_year,LFS 2020-2025: LFS data collect
 wave:2023,2023,a02,lfs_relation_to_head_2017_2023,LFS 2017-2023: Relationship to the household head,Relationship
 wave:2023,2023,a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 wave:2023,2023,a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-wave:2023,2023,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2023,2023,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2023,2023,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2023,2023,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2023,2023,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -1880,7 +1880,7 @@ wave:2023,2023,b01,lfs_student,LFS 2017-2025: Currently a student attending scho
 wave:2023,2023,b02a,lfs_education_level_highest,LFS 2017-2025: Highest educational level attended,What is the Highest educational level is/ have [NAME] attending / attended?
 wave:2023,2023,b02b,lfs_years_completed_in_level,LFS 2017-2025: Years completed in that level of education,How many years have you completed in that level of education?
 wave:2023,2023,b03,lfs_highest_certificate,LFS 2017-2023: Highest certificate obtained,Highest certificate obtained
-wave:2023,2023,b06,lfs_literacy,LFS 2017-2023: Ability to read and write,Ability to read and write
+wave:2023,2023,b06,lfs_read_and_write,LFS 2017-2023: Ability to read and write,Ability to read and write
 wave:2023,2023,b07,lfs_attending_tvet,LFS 2017-2025: Currently attending a trade or technical skills school,Currently attending any trade or technical Skills school
 wave:2023,2023,b08,lfs_learned_tvet,LFS 2017-2025: Learned a trade or technical vocational course (TVET),Did you learn any Trade or Technical vocational course (TVET)?
 wave:2023,2023,b09,lfs_training_duration,LFS 2017-2025: Duration of the training,How long will/did this Training take?
@@ -2105,7 +2105,7 @@ wave:2024,2024,lfs_year,lfs_data_collection_year,LFS 2020-2025: LFS data collect
 wave:2024,2024,a02,lfs_relation_to_head_2024_2025,"LFS 2024-2025: Relationship to the household head, 14-code list",Relationship
 wave:2024,2024,a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 wave:2024,2024,a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-wave:2024,2024,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2024,2024,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2024,2024,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2024,2024,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2024,2024,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
@@ -2313,7 +2313,7 @@ wave:2025,2025,lfs_year,lfs_data_collection_year,LFS 2020-2025: LFS data collect
 wave:2025,2025,a02,lfs_relation_to_head_2024_2025,"LFS 2024-2025: Relationship to the household head, 14-code list",Relationship
 wave:2025,2025,a03m,lfs_birth_month,LFS 2017-2025: Month of birth,Date of birth Month
 wave:2025,2025,a03y,lfs_birth_year,LFS 2017-2025: Year of birth,date of birth year
-wave:2025,2025,a05,lfs_marital_status,LFS 2017-2025: Marital status,Present marital status
+wave:2025,2025,a05,lfs_present_marital_status,LFS 2017-2025: Present marital status as reported,Present marital status
 wave:2025,2025,a06,lfs_difficulty_seeing,"LFS 2017-2025: Difficulty seeing, even with glasses (Washington Group)","Do you have difficulty seeing, even if wearing glasses?"
 wave:2025,2025,a07,lfs_difficulty_hearing,"LFS 2017-2025: Difficulty hearing, even with a hearing aid (Washington Group)","Do you have difficulty hearing, even if using a hearing aid?"
 wave:2025,2025,a08,lfs_difficulty_walking,LFS 2017-2025: Difficulty walking or climbing steps (Washington Group),Do you have difficulty walking or climbing steps?
