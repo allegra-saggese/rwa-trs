@@ -1,7 +1,8 @@
 * stata_checks.do -- recompute CFSVA check statistics in Stata (written by 03_checks.py)
 clear all
 set more off
-use wave wt dist using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Food-Security-CFSVAN/3_Final/CFSVA_pooled_household.dta", clear
+use cfsva_wave cfsva_weight cfsva_district using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Food-Security-CFSVAN/3_Final/CFSVA_pooled_household.dta", clear
+rename (cfsva_wave cfsva_weight cfsva_district) (wave wt dist)
 gen long one = 1
 bysort wave dist: gen byte first_dist = _n == 1
 collapse (sum) n=one sum_wt=wt n_dist=first_dist, by(wave)

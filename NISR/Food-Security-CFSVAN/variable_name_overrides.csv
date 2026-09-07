@@ -1,0 +1,28 @@
+native,clean_stem,clean_label
+q1_13a1,deceased_first_age,Age of the first household member who died
+q1_13a2,deceased_second_age,Age of the second household member who died
+q1_13a3,deceased_third_age,Age of the third household member who died
+q1_13c1,deceased_first_cause,Cause of death of the first member who died
+q1_13c2,deceased_second_cause,Cause of death of the second member who died
+q1_13c3,deceased_third_cause,Cause of death of the third member who died
+q1_13s1,deceased_first_sex,Sex of the first household member who died
+q1_13s2,deceased_second_sex,Sex of the second household member who died
+q1_13s3,deceased_third_sex,Sex of the third household member who died
+s1_15a1,chronic_ill_first_age,Age of the first chronically ill member
+s1_15a2,chronic_ill_second_age,Age of the second chronically ill member
+s1_15a3,chronic_ill_third_age,Age of the third chronically ill member
+s1_15c1,chronic_ill_first_cond,Condition of the first chronically ill member
+s1_15c2,chronic_ill_second_cond,Condition of the second chronically ill member
+s1_15c3,chronic_ill_third_cond,Condition of the third chronically ill member
+s1_15s1,chronic_ill_first_sex,Sex of the first chronically ill member
+s1_15s2,chronic_ill_second_sex,Sex of the second chronically ill member
+s1_15s3,chronic_ill_third_sex,Sex of the third chronically ill member
+s1_23a1,migrant_first_age,Age of the first migrant household member
+s1_23a2,migrant_second_age,Age of the second migrant household member
+s1_23a3,migrant_third_age,Age of the third migrant household member
+s1_23s1,migrant_first_sex,Sex of the first migrant household member
+s1_23s2,migrant_second_sex,Sex of the second migrant household member
+s1_23s3,migrant_third_sex,Sex of the third migrant household member
+s1_23st1,migrant_first_status,Status of the first migrant household member
+s1_23st2,migrant_second_status,Status of the second migrant household member
+s1_23st3,migrant_third_status,Status of the third migrant household member
