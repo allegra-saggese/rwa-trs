@@ -9,9 +9,10 @@ records which native variable feeds each key; nothing else is recoded. See NISR-
 """
 import re, sys
 import numpy as np, pandas as pd
-from sas_helpers import (paths, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast, save_json, LOGS)
+from sas_helpers import (paths, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("01_clean"); P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed); scopes wave:<year>:<S/stem>
 YEARS = sys.argv[1:] or [str(y) for y in range(2013, 2026)]
 KEY_ORDER = ["survey", "year", "season", "wave", "farm_type", "prov", "dist", "stratum", "segment", "holder", "plot", "crop", "wt"]
 KEY_LABELS = {"survey": "Source survey", "year": "Agricultural year of the season (as in the NISR release)", "season": "Season (A, B, C)",
@@ -102,9 +103,10 @@ for y in YEARS:
         if "wt" in df.columns: ck((df["wt"].dropna() > 0).all(), f"{y}/{season}/{name}: weights > 0", hard=False)
         if "prov" in df.columns: ck(set(pd.to_numeric(df["prov"], errors="coerce").dropna().unique()) <= set(PROV_LABELS), f"{y}/{season}/{name}: province codes 1-5", hard=False)
         out = f"SAS_{y}_{season}_{name}_clean.dta"
-        write_dta(df, P["inter"] / out, vl, vv, f"SAS {y} season {season} module {name} ({level})", log)
-        mods[f"{season}/{name}"] = {"file": f.name, "rows": len(df), "vars": df.shape[1], "level": level, "keys_present": [k for k in KEY_ORDER if k in df.columns],
-                                   "source": srcmap, "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "out": out}
+        out_df, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{y}:{season}/{name}", log)      # written under the clean names; native kept in the meta
+        write_dta(out_df, P["inter"] / out, vl_out, vv_out, f"SAS {y} season {season} module {name} ({level})", log)
+        mods[f"{season}/{name}"] = {"file": f.name, "rows": len(df), "vars": df.shape[1], "columns": list(df.columns), "level": level, "keys_present": [k for k in KEY_ORDER if k in df.columns],
+                                   "source": srcmap, "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "out": out, "clean_names": clean_names}
     ck.done(); meta_all[y] = mods; save_json(mods, LOGS / f"clean_{y}_meta.json")
     log.info("%s: %d files cleaned", y, len(mods))
 log.info("01_clean done for %s", YEARS)

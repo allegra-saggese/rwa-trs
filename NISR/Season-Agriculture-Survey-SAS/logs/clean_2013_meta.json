@@ -3,6 +3,17 @@
   "file": "SAS_2013_a_large_scale_inorganicfertilizer_types.dta",
   "rows": 364,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "pp7a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -83,12 +94,37 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_large_scale_inorganicfertilizer_types_clean.dta"
+  "out": "SAS_2013_A_large_scale_inorganicfertilizer_types_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "pp7a": "sas_pp7a"
+  }
  },
  "A/small_scale_inorganicfertilizer_types": {
   "file": "SAS_2013_a_small_scale_inorganicfertilizer_types.dta",
   "rows": 1923,
   "vars": 12,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "id6",
+   "id7",
+   "pp2",
+   "pp7a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -142,12 +178,44 @@
    "stratum": {},
    "segment": {}
   },
-  "out": "SAS_2013_A_small_scale_inorganicfertilizer_types_clean.dta"
+  "out": "SAS_2013_A_small_scale_inorganicfertilizer_types_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "id6": "sas_tract_letter",
+   "id7": "sas_tract_number",
+   "pp2": "sas_already_used_inorganic",
+   "pp7a": "sas_pp7a"
+  }
  },
  "A/area_a": {
   "file": "SAS_2013_area_a.dta",
   "rows": 64365,
   "vars": 16,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder",
+   "crop",
+   "wt",
+   "id2a",
+   "id7",
+   "area_ha",
+   "association",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -277,12 +345,45 @@
    },
    "wt": {}
   },
-  "out": "SAS_2013_A_area_a_clean.dta"
+  "out": "SAS_2013_A_area_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "wt": "sas_weight",
+   "id2a": "sas_district_2013_id2a",
+   "id7": "sas_tract_number",
+   "area_ha": "sas_area_hectare_ha",
+   "association": "sas_association_unlabelled",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/area_a_province": {
   "file": "SAS_2013_area_a_province.dta",
   "rows": 159,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "area_h_ssf",
+   "area_ha_lsf",
+   "total_area",
+   "group_crop",
+   "category",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -394,12 +495,40 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_area_a_province_clean.dta"
+  "out": "SAS_2013_A_area_a_province_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "area_h_ssf": "sas_area_hectare_small_scale",
+   "area_ha_lsf": "sas_area_hectare_large_scale",
+   "total_area": "sas_total_area",
+   "group_crop": "sas_group_crop_unlabelled",
+   "category": "sas_crop_category",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/area_a_province_phys": {
   "file": "SAS_2013_area_a_province_phys.dta",
   "rows": 158,
   "vars": 11,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "area_phys",
+   "area_phys_lsf",
+   "total_area_phy",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -476,12 +605,40 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_area_a_province_phys_clean.dta"
+  "out": "SAS_2013_A_area_a_province_phys_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "area_phys": "sas_physical_area_small_scale",
+   "area_phys_lsf": "sas_physical_area_large_scale",
+   "total_area_phy": "sas_total_area",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/big_farmer_a": {
   "file": "SAS_2013_big_farmer_a.dta",
   "rows": 2226,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "id2a",
+   "area_ha",
+   "association",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -602,12 +759,47 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_big_farmer_a_clean.dta"
+  "out": "SAS_2013_A_big_farmer_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "id2a": "sas_district_2013_id2a",
+   "area_ha": "sas_area_hectare_ha",
+   "association": "sas_association_unlabelled",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/date_sowing_production_harvest": {
   "file": "SAS_2013_date_sowing_production_harvest.dta",
   "rows": 49434,
   "vars": 18,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder",
+   "plot",
+   "crop",
+   "wt",
+   "id2a",
+   "c03b",
+   "c05",
+   "c12",
+   "c13",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -758,12 +950,43 @@
    },
    "wt": {}
   },
-  "out": "SAS_2013_A_date_sowing_production_harvest_clean.dta"
+  "out": "SAS_2013_A_date_sowing_production_harvest_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "wt": "sas_weight",
+   "id2a": "sas_district_2013_id2a",
+   "c03b": "sas_crop_planted_crop",
+   "c05": "sas_starting_date_sowing_v4_2013",
+   "c12": "sas_prod_expectation_28th_2013",
+   "c13": "sas_expected_date_harvesting",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/identifiant_a_lsf": {
   "file": "SAS_2013_identifiant_a_lsf.dta",
   "rows": 562,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "i15"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -833,12 +1056,45 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_identifiant_a_lsf_clean.dta"
+  "out": "SAS_2013_A_identifiant_a_lsf_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "i15": "sas_agriculture_cooperative"
+  }
  },
  "A/identifiant_a_small_scale_farmer": {
   "file": "SAS_2013_identifiant_a_small_scale_farmer.dta",
   "rows": 15441,
   "vars": 20,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder",
+   "id2a",
+   "id6",
+   "id7",
+   "operatot_type",
+   "i15",
+   "i07",
+   "i08",
+   "i09",
+   "i14",
+   "i10",
+   "age_group"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -960,12 +1216,45 @@
    "segment": {},
    "holder": {}
   },
-  "out": "SAS_2013_A_identifiant_a_small_scale_farmer_clean.dta"
+  "out": "SAS_2013_A_identifiant_a_small_scale_farmer_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "holder": "sas_holder",
+   "id2a": "sas_district",
+   "id6": "sas_tract_letter",
+   "id7": "sas_tract_number",
+   "operatot_type": "sas_unlabelled_operatot_type",
+   "i15": "sas_agriculture_cooperative",
+   "i07": "sas_sex",
+   "i08": "sas_age_operator",
+   "i09": "sas_education_level_operator",
+   "i14": "sas_agricultural_activity",
+   "i10": "sas_resident",
+   "age_group": "sas_age_group_unlabelled"
+  }
  },
  "A/lsf_antierrosion": {
   "file": "SAS_2013_lsf_antierrosion.dta",
   "rows": 562,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "ui24"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1035,12 +1324,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_antierrosion_clean.dta"
+  "out": "SAS_2013_A_lsf_antierrosion_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "ui24": "sas_practice_anti_erosion_activ"
+  }
  },
  "A/lsf_antierrosion_by_type": {
   "file": "SAS_2013_lsf_antierrosion_by_type.dta",
   "rows": 271,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "ui25"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1116,12 +1427,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_antierrosion_by_type_clean.dta"
+  "out": "SAS_2013_A_lsf_antierrosion_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "ui25": "sas_anti_erosion_activ_practice"
+  }
  },
  "A/lsf_area_a_province": {
   "file": "SAS_2013_lsf_area_a_province.dta",
   "rows": 124,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "area_ha_lsf",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -1196,12 +1529,39 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_lsf_area_a_province_clean.dta"
+  "out": "SAS_2013_A_lsf_area_a_province_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "area_ha_lsf": "sas_area_hectare_large_scale",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/lsf_date_sowing_production_harvest": {
   "file": "SAS_2013_lsf_date_sowing_production_harvest.dta",
   "rows": 1512,
   "vars": 14,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "plot",
+   "crop",
+   "id2",
+   "id7",
+   "c05",
+   "c12",
+   "c13",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1305,12 +1665,39 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_lsf_date_sowing_production_harvest_clean.dta"
+  "out": "SAS_2013_A_lsf_date_sowing_production_harvest_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "id2": "sas_district_2013",
+   "id7": "sas_tract_number",
+   "c05": "sas_starting_date_sowing_v4_2013",
+   "c12": "sas_prod_expectation_28th_2013",
+   "c13": "sas_expected_date_harvesting",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/lsf_improved_by_crop": {
   "file": "SAS_2013_lsf_improved_by_crop.dta",
   "rows": 349,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1388,12 +1775,34 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_lsf_improved_by_crop_clean.dta"
+  "out": "SAS_2013_A_lsf_improved_by_crop_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/lsf_inorganic_a": {
   "file": "SAS_2013_lsf_inorganic_a.dta",
   "rows": 409,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "pp2"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1463,12 +1872,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_inorganic_a_clean.dta"
+  "out": "SAS_2013_A_lsf_inorganic_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "pp2": "sas_already_used_inorganic"
+  }
  },
  "A/lsf_irrigation": {
   "file": "SAS_2013_lsf_irrigation.dta",
   "rows": 562,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "irrigation"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1538,12 +1969,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_irrigation_clean.dta"
+  "out": "SAS_2013_A_lsf_irrigation_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "irrigation": "sas_practice_irrig_activity_plot"
+  }
  },
  "A/lsf_irrigation_by_type": {
   "file": "SAS_2013_lsf_irrigation_by_type.dta",
   "rows": 28,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "ui03a"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -1615,12 +2068,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_irrigation_by_type_clean.dta"
+  "out": "SAS_2013_A_lsf_irrigation_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "ui03a": "sas_type_irrigation"
+  }
  },
  "A/lsf_organic_a": {
   "file": "SAS_2013_lsf_organic_a.dta",
   "rows": 562,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "pp1"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1690,12 +2165,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_organic_a_clean.dta"
+  "out": "SAS_2013_A_lsf_organic_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "pp1": "sas_already_used_organic"
+  }
  },
  "A/lsf_pesticide": {
   "file": "SAS_2013_lsf_pesticide.dta",
   "rows": 562,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "pesticide"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1765,12 +2262,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_pesticide_clean.dta"
+  "out": "SAS_2013_A_lsf_pesticide_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "pesticide": "sas_already_used_pesticides_agri"
+  }
  },
  "A/lsf_pesticide_by_type": {
   "file": "SAS_2013_lsf_pesticide_by_type.dta",
   "rows": 180,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "pp7a"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -1851,12 +2370,33 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_pesticide_by_type_clean.dta"
+  "out": "SAS_2013_A_lsf_pesticide_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "pp7a": "sas_pp7a"
+  }
  },
  "A/lsf_seeds": {
   "file": "SAS_2013_lsf_seeds.dta",
   "rows": 595,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "seeds"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -1896,12 +2436,34 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_lsf_seeds_clean.dta"
+  "out": "SAS_2013_A_lsf_seeds_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "seeds": "sas_seeds_used"
+  }
  },
  "A/lsf_small_equipment_exp": {
   "file": "SAS_2013_lsf_small_equipment_exp.dta",
   "rows": 2903,
   "vars": 10,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "uic1",
+   "uic6"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2007,12 +2569,36 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_small_equipment_exp_clean.dta"
+  "out": "SAS_2013_A_lsf_small_equipment_exp_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "uic1": "sas_small_tools_farm_equipments",
+   "uic6": "sas_amount_tool_equip_amount_rwf"
+  }
  },
  "A/lsf_small_equipment_received": {
   "file": "SAS_2013_lsf_small_equipment_received.dta",
   "rows": 62,
   "vars": 10,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id2a",
+   "id7",
+   "uic1",
+   "uic7"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -2118,12 +2704,35 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_lsf_small_equipment_received_clean.dta"
+  "out": "SAS_2013_A_lsf_small_equipment_received_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id2a": "sas_district",
+   "id7": "sas_tract_number",
+   "uic1": "sas_small_tools_farm_equipments",
+   "uic7": "sas_received_non_agri_donor"
+  }
  },
  "A/lsf_traditional_by_crop": {
   "file": "SAS_2013_lsf_traditional_by_crop.dta",
   "rows": 825,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2201,12 +2810,46 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_lsf_traditional_by_crop_clean.dta"
+  "out": "SAS_2013_A_lsf_traditional_by_crop_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/lsf_use_of_production": {
   "file": "SAS_2013_lsf_use_of_production.dta",
   "rows": 3413,
   "vars": 21,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "id6",
+   "c03b",
+   "c01",
+   "c02",
+   "c04",
+   "c05",
+   "c6a",
+   "c6b",
+   "c7",
+   "c7b",
+   "c8",
+   "c8b",
+   "total_use",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2295,12 +2938,51 @@
     "34": "Other crops"
    }
   },
-  "out": "SAS_2013_A_lsf_use_of_production_clean.dta"
+  "out": "SAS_2013_A_lsf_use_of_production_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "id6": "sas_tract_number",
+   "c03b": "sas_b_crop",
+   "c01": "sas_harvest_crop_season",
+   "c02": "sas_prod_crop_quantity_sold_sold",
+   "c04": "sas_prod_crop_qty_used_used_b",
+   "c05": "sas_prod_crop_quantity_used_05",
+   "c6a": "sas_prod_crop_quantity_used_6a",
+   "c6b": "sas_prod_crop_qty_offered",
+   "c7": "sas_prod_crop_quantity_exchanged",
+   "c7b": "sas_prod_crop_quantity_used_7b",
+   "c8": "sas_prod_crop_quantity_used_8",
+   "c8b": "sas_prod_crop_qty_stored_sto",
+   "total_use": "sas_total",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/production_yield_a": {
   "file": "SAS_2013_production_yield_a.dta",
   "rows": 105,
   "vars": 14,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "group_crop",
+   "category",
+   "area_ha",
+   "production",
+   "yield_p",
+   "production_n",
+   "area_ha_n",
+   "yield_n"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -2372,12 +3054,38 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_A_production_yield_a_clean.dta"
+  "out": "SAS_2013_A_production_yield_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "group_crop": "sas_group_crop_unlabelled",
+   "category": "sas_crop_category",
+   "area_ha": "sas_area_hectare",
+   "production": "sas_production",
+   "yield_p": "sas_province_yield",
+   "production_n": "sas_national_production",
+   "area_ha_n": "sas_national_area",
+   "yield_n": "sas_national_yield"
+  }
  },
  "A/ssf_antierrosion_a": {
   "file": "SAS_2013_ssf_antierrosion_a.dta",
   "rows": 15441,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui24"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2417,12 +3125,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_antierrosion_a_clean.dta"
+  "out": "SAS_2013_A_ssf_antierrosion_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui24": "sas_practice_anti_erosion_activ"
+  }
  },
  "A/ssf_antierrosion_by_type": {
   "file": "SAS_2013_ssf_antierrosion_by_type.dta",
   "rows": 5788,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui25"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2468,12 +3196,33 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_antierrosion_by_type_clean.dta"
+  "out": "SAS_2013_A_ssf_antierrosion_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui25": "sas_anti_erosion_activ_practice"
+  }
  },
  "A/ssf_area_a_province": {
   "file": "SAS_2013_ssf_area_a_province.dta",
   "rows": 158,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "area_h_ssf",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -2548,12 +3297,34 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_ssf_area_a_province_clean.dta"
+  "out": "SAS_2013_A_ssf_area_a_province_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "area_h_ssf": "sas_area_hectare_small_scale",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/ssf_improved_by_crop": {
   "file": "SAS_2013_ssf_improved_by_crop.dta",
   "rows": 2188,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2631,12 +3402,36 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_ssf_improved_by_crop_clean.dta"
+  "out": "SAS_2013_A_ssf_improved_by_crop_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/ssf_inorganic_a": {
   "file": "SAS_2013_ssf_inorganic_a.dta",
   "rows": 15292,
   "vars": 11,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "id6",
+   "id7",
+   "pp2"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2682,12 +3477,35 @@
    "stratum": {},
    "segment": {}
   },
-  "out": "SAS_2013_A_ssf_inorganic_a_clean.dta"
+  "out": "SAS_2013_A_ssf_inorganic_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "id6": "sas_tract_letter",
+   "id7": "sas_tract_number",
+   "pp2": "sas_already_used_inorganic"
+  }
  },
  "A/ssf_irrigation": {
   "file": "SAS_2013_ssf_irrigation.dta",
   "rows": 15279,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "irrigation"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2727,12 +3545,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_irrigation_clean.dta"
+  "out": "SAS_2013_A_ssf_irrigation_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "irrigation": "sas_practice_irrig_activity_plot"
+  }
  },
  "A/ssf_irrigation_by_type": {
   "file": "SAS_2013_ssf_irrigation_by_type.dta",
   "rows": 338,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui03a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2774,12 +3612,34 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_irrigation_by_type_clean.dta"
+  "out": "SAS_2013_A_ssf_irrigation_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui03a": "sas_type_irrigation"
+  }
  },
  "A/ssf_organic_a": {
   "file": "SAS_2013_ssf_organic_a.dta",
   "rows": 15331,
   "vars": 10,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "id7",
+   "pp1"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2824,12 +3684,34 @@
    "stratum": {},
    "segment": {}
   },
-  "out": "SAS_2013_A_ssf_organic_a_clean.dta"
+  "out": "SAS_2013_A_ssf_organic_a_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "id7": "sas_tract_number",
+   "pp1": "sas_already_used_organic"
+  }
  },
  "A/ssf_pesticide": {
   "file": "SAS_2013_ssf_pesticide.dta",
   "rows": 15292,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pesticide"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2869,12 +3751,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_pesticide_clean.dta"
+  "out": "SAS_2013_A_ssf_pesticide_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pesticide": "sas_already_used_pesticides_agri"
+  }
  },
  "A/ssf_pesticide_by_type": {
   "file": "SAS_2013_ssf_pesticide_by_type.dta",
   "rows": 1597,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp7a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2925,12 +3827,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_pesticide_by_type_clean.dta"
+  "out": "SAS_2013_A_ssf_pesticide_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp7a": "sas_pp7a"
+  }
  },
  "A/ssf_seeds": {
   "file": "SAS_2013_ssf_seeds.dta",
   "rows": 12230,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "seeds"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -2970,12 +3892,36 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_A_ssf_seeds_clean.dta"
+  "out": "SAS_2013_A_ssf_seeds_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "seeds": "sas_seeds_used"
+  }
  },
  "A/ssf_small_equipment_exp": {
   "file": "SAS_2013_ssf_small_equipment_exp.dta",
   "rows": 36080,
   "vars": 12,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "id6",
+   "id7",
+   "uic1",
+   "amount"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3057,12 +4003,40 @@
    "stratum": {},
    "segment": {}
   },
-  "out": "SAS_2013_A_ssf_small_equipment_exp_clean.dta"
+  "out": "SAS_2013_A_ssf_small_equipment_exp_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "id6": "sas_tract_letter",
+   "id7": "sas_tract_number",
+   "uic1": "sas_small_tools_farm_equipments",
+   "amount": "sas_total_amount_tool_equipment"
+  }
  },
  "A/ssf_small_equipment_received": {
   "file": "SAS_2013_ssf_small_equipment_received.dta",
   "rows": 431,
   "vars": 12,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "id6",
+   "id7",
+   "uic1",
+   "received"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3144,12 +4118,37 @@
    "stratum": {},
    "segment": {}
   },
-  "out": "SAS_2013_A_ssf_small_equipment_received_clean.dta"
+  "out": "SAS_2013_A_ssf_small_equipment_received_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "id6": "sas_tract_letter",
+   "id7": "sas_tract_number",
+   "uic1": "sas_small_tools_farm_equipments",
+   "received": "sas_received_non_agri_donor"
+  }
  },
  "A/ssf_traditional_by_crop": {
   "file": "SAS_2013_ssf_traditional_by_crop.dta",
   "rows": 18058,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3227,12 +4226,46 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_A_ssf_traditional_by_crop_clean.dta"
+  "out": "SAS_2013_A_ssf_traditional_by_crop_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "A/ssf_use_of_production": {
   "file": "SAS_2013_ssf_use_of_production.dta",
   "rows": 6425,
   "vars": 21,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "c03b",
+   "c01",
+   "c02",
+   "c04",
+   "c05",
+   "c6a",
+   "c6b",
+   "c7",
+   "c7b",
+   "c8",
+   "c8b",
+   "total_use",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3324,12 +4357,50 @@
     "34": "Other crops"
    }
   },
-  "out": "SAS_2013_A_ssf_use_of_production_clean.dta"
+  "out": "SAS_2013_A_ssf_use_of_production_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "c03b": "sas_b_crop",
+   "c01": "sas_harvest_crop_season",
+   "c02": "sas_prod_crop_quantity_sold_sold",
+   "c04": "sas_prod_crop_qty_used_used_b",
+   "c05": "sas_prod_crop_quantity_used_05",
+   "c6a": "sas_prod_crop_quantity_used_6a",
+   "c6b": "sas_prod_crop_qty_offered",
+   "c7": "sas_prod_crop_quantity_exchanged",
+   "c7b": "sas_prod_crop_quantity_used_7b",
+   "c8": "sas_prod_crop_quantity_used_8",
+   "c8b": "sas_prod_crop_qty_stored_sto",
+   "total_use": "sas_total",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/area": {
   "file": "SAS_2013_area.dta",
   "rows": 160,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "area_ha",
+   "area_ha_lsf",
+   "total_area",
+   "group_crop",
+   "category",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -3441,12 +4512,40 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_area_clean.dta"
+  "out": "SAS_2013_B_area_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "area_ha": "sas_area_hectare",
+   "area_ha_lsf": "sas_area_hectare_large_scale",
+   "total_area": "sas_total_area",
+   "group_crop": "sas_group_crop_unlabelled",
+   "category": "sas_crop_category",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/area_phy": {
   "file": "SAS_2013_area_phy.dta",
   "rows": 157,
   "vars": 11,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "ssf_area_phy",
+   "lsf_area_phy",
+   "total_area_phys",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -3523,12 +4622,36 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_area_phy_clean.dta"
+  "out": "SAS_2013_B_area_phy_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "ssf_area_phy": "sas_physical_area_small_scale",
+   "lsf_area_phy": "sas_physical_area_large_scale",
+   "total_area_phys": "sas_total_area",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/inorganic_type": {
   "file": "SAS_2013_inorganic_type.dta",
   "rows": 4028,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "id2",
+   "pp10"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3573,12 +4696,33 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_inorganic_type_clean.dta"
+  "out": "SAS_2013_B_inorganic_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "id2": "sas_district",
+   "pp10": "sas_fertilizers_used_used_season"
+  }
  },
  "B/lsf_antierosion_b": {
   "file": "SAS_2013_lsf_antierosion_b.dta",
   "rows": 503,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui24"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3618,12 +4762,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_antierosion_b_clean.dta"
+  "out": "SAS_2013_B_lsf_antierosion_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui24": "sas_practice_anti_erosion_activ"
+  }
  },
  "B/lsf_antierosion_b_by_type": {
   "file": "SAS_2013_lsf_antierosion_b_by_type.dta",
   "rows": 91,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui25"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3669,12 +4833,37 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_antierosion_b_by_type_clean.dta"
+  "out": "SAS_2013_B_lsf_antierosion_b_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui25": "sas_anti_erosion_activ_practice"
+  }
  },
  "B/lsf_area": {
   "file": "SAS_2013_lsf_area.dta",
   "rows": 2991,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "c03b",
+   "superic",
+   "association",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3763,12 +4952,38 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_lsf_area_clean.dta"
+  "out": "SAS_2013_B_lsf_area_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "c03b": "sas_crop_planted_crop",
+   "superic": "sas_area_hectare_2013_superic",
+   "association": "sas_association_unlabelled",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/lsf_ident": {
   "file": "SAS_2013_lsf_ident.dta",
   "rows": 503,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "id2a",
+   "i17"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3841,12 +5056,34 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_ident_clean.dta"
+  "out": "SAS_2013_B_lsf_ident_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "id2a": "sas_district",
+   "i17": "sas_agriculture_cooperative"
+  }
  },
  "B/lsf_improved_by_crop_b": {
   "file": "SAS_2013_lsf_improved_by_crop_b.dta",
   "rows": 221,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3924,12 +5161,33 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_lsf_improved_by_crop_b_clean.dta"
+  "out": "SAS_2013_B_lsf_improved_by_crop_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/lsf_inorganic_b": {
   "file": "SAS_2013_lsf_inorganic_b.dta",
   "rows": 503,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp9"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -3969,12 +5227,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_inorganic_b_clean.dta"
+  "out": "SAS_2013_B_lsf_inorganic_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp9": "sas_fertilizers_used"
+  }
  },
  "B/lsf_inorganic_type": {
   "file": "SAS_2013_lsf_inorganic_type.dta",
   "rows": 244,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp10"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4018,12 +5296,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_inorganic_type_clean.dta"
+  "out": "SAS_2013_B_lsf_inorganic_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp10": "sas_fertilizers_used_used_season"
+  }
  },
  "B/lsf_irrigation_b": {
   "file": "SAS_2013_lsf_irrigation_b.dta",
   "rows": 503,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "irrigation"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4063,12 +5361,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_irrigation_b_clean.dta"
+  "out": "SAS_2013_B_lsf_irrigation_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "irrigation": "sas_practice_irrigation_plot"
+  }
  },
  "B/lsf_irrigation_b_by_type": {
   "file": "SAS_2013_lsf_irrigation_b_by_type.dta",
   "rows": 26,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui03a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4110,12 +5428,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_irrigation_b_by_type_clean.dta"
+  "out": "SAS_2013_B_lsf_irrigation_b_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui03a": "sas_irrig_amount_paid_irrig"
+  }
  },
  "B/lsf_organic_b": {
   "file": "SAS_2013_lsf_organic_b.dta",
   "rows": 503,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp7"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4155,12 +5493,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_organic_b_clean.dta"
+  "out": "SAS_2013_B_lsf_organic_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp7": "sas_already_used_use_organic"
+  }
  },
  "B/lsf_pesticideb": {
   "file": "SAS_2013_lsf_pesticideb.dta",
   "rows": 503,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pesticides"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4200,12 +5558,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_pesticideb_clean.dta"
+  "out": "SAS_2013_B_lsf_pesticideb_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pesticides": "sas_already_used_pest_agri"
+  }
  },
  "B/lsf_pesticideb_by_type": {
   "file": "SAS_2013_lsf_pesticideb_by_type.dta",
   "rows": 144,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp1a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4251,12 +5629,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_pesticideb_by_type_clean.dta"
+  "out": "SAS_2013_B_lsf_pesticideb_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp1a": "sas_pesticides_used_used_season"
+  }
  },
  "B/lsf_seeds_b": {
   "file": "SAS_2013_lsf_seeds_b.dta",
   "rows": 427,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "seeds"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4296,12 +5694,33 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_lsf_seeds_b_clean.dta"
+  "out": "SAS_2013_B_lsf_seeds_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "seeds": "sas_seeds_used"
+  }
  },
  "B/lsf_small_equipment_b_exp": {
   "file": "SAS_2013_lsf_small_equipment_b_exp.dta",
   "rows": 2874,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id7",
+   "uic1",
+   "uic6"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4374,12 +5793,34 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_B_lsf_small_equipment_b_exp_clean.dta"
+  "out": "SAS_2013_B_lsf_small_equipment_b_exp_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id7": "sas_tract_number",
+   "uic1": "sas_small_tools_farm_equipments",
+   "uic6": "sas_total_amount_tool_equipment"
+  }
  },
  "B/lsf_small_equipment_b_reic": {
   "file": "SAS_2013_lsf_small_equipment_b_reic.dta",
   "rows": 64,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "id7",
+   "uic1",
+   "uic7"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -4452,12 +5893,38 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_B_lsf_small_equipment_b_reic_clean.dta"
+  "out": "SAS_2013_B_lsf_small_equipment_b_reic_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "id7": "sas_tract_number",
+   "uic1": "sas_small_tools_farm_equipments",
+   "uic7": "sas_equip_recvd_free_non_agri"
+  }
  },
  "B/lsf_sowing_production_harvest": {
   "file": "SAS_2013_lsf_sowing_production_harvest.dta",
   "rows": 1513,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "plot",
+   "crop",
+   "c03b",
+   "c05",
+   "c12",
+   "c13",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4554,12 +6021,38 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_lsf_sowing_production_harvest_clean.dta"
+  "out": "SAS_2013_B_lsf_sowing_production_harvest_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "c03b": "sas_crop_planted_crop",
+   "c05": "sas_starting_date_sowing_v3_2013",
+   "c12": "sas_expect_prod_crop_31st_2013",
+   "c13": "sas_expected_date_harvesting",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/lsf_traditional_by_crop_b": {
   "file": "SAS_2013_lsf_traditional_by_crop_b.dta",
   "rows": 744,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4637,12 +6130,44 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_lsf_traditional_by_crop_b_clean.dta"
+  "out": "SAS_2013_B_lsf_traditional_by_crop_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/lsf_use_of_production": {
   "file": "SAS_2013_lsf_use_of_production.dta",
   "rows": 194,
   "vars": 19,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "crop",
+   "c03d",
+   "c0",
+   "c0a",
+   "c0b",
+   "c6c",
+   "c6d",
+   "ca",
+   "c7c",
+   "cb",
+   "c8c",
+   "total",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4719,12 +6244,44 @@
     "34": "Other crops"
    }
   },
-  "out": "SAS_2013_B_lsf_use_of_production_clean.dta"
+  "out": "SAS_2013_B_lsf_use_of_production_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "c03d": "sas_b_crop",
+   "c0": "sas_prod_crop_quantity_sold_sold",
+   "c0a": "sas_prod_crop_qty_used_used_b",
+   "c0b": "sas_prod_crop_quantity_used_0b",
+   "c6c": "sas_prod_crop_quantity_used_6c",
+   "c6d": "sas_prod_crop_qty_offered",
+   "ca": "sas_prod_crop_quantity_exchanged",
+   "c7c": "sas_prod_crop_quantity_used_7c",
+   "cb": "sas_prod_crop_quantity_used_used",
+   "c8c": "sas_prod_crop_qty_stored_sto",
+   "total": "sas_total",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/phys_area_b": {
   "file": "SAS_2013_phys_area_b.dta",
   "rows": 166,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "crop",
+   "area_phy",
+   "crop_name"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -4799,12 +6356,39 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_phys_area_b_clean.dta"
+  "out": "SAS_2013_B_phys_area_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "crop": "sas_crop",
+   "area_phy": "sas_physical_area",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/prod_area_yield": {
   "file": "SAS_2013_prod_area_yield.dta",
   "rows": 95,
   "vars": 14,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "group_crop",
+   "category",
+   "production",
+   "area_ha",
+   "yield",
+   "production_n",
+   "area_ha_n",
+   "yield_n"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -4876,12 +6460,38 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_B_prod_area_yield_clean.dta"
+  "out": "SAS_2013_B_prod_area_yield_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "group_crop": "sas_group_crop_unlabelled",
+   "category": "sas_crop_category",
+   "production": "sas_production",
+   "area_ha": "sas_area_hectare",
+   "yield": "sas_yield_shipped",
+   "production_n": "sas_national_production",
+   "area_ha_n": "sas_national_area",
+   "yield_n": "sas_national_yield"
+  }
  },
  "B/ssf_antierosion_b": {
   "file": "SAS_2013_ssf_antierosion_b.dta",
   "rows": 15730,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui24"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4921,12 +6531,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_antierosion_b_clean.dta"
+  "out": "SAS_2013_B_ssf_antierosion_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui24": "sas_practice_anti_erosion_activ"
+  }
  },
  "B/ssf_antierosion_b_by_type": {
   "file": "SAS_2013_ssf_antierosion_b_by_type.dta",
   "rows": 1479,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui25"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -4972,12 +6602,44 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_antierosion_b_by_type_clean.dta"
+  "out": "SAS_2013_B_ssf_antierosion_b_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui25": "sas_anti_erosion_activ_practice"
+  }
  },
  "B/ssf_identification_b": {
   "file": "SAS_2013_ssf_identification_b.dta",
   "rows": 15735,
   "vars": 20,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "stratum",
+   "segment",
+   "holder",
+   "id2a",
+   "id5",
+   "id7",
+   "i08",
+   "i17",
+   "i09",
+   "i10",
+   "i11",
+   "i16",
+   "i12",
+   "agegroup"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5099,12 +6761,45 @@
    "segment": {},
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_identification_b_clean.dta"
+  "out": "SAS_2013_B_ssf_identification_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "stratum": "sas_stratum",
+   "segment": "sas_segment",
+   "holder": "sas_holder",
+   "id2a": "sas_district",
+   "id5": "sas_tract_letter",
+   "id7": "sas_tract_number",
+   "i08": "sas_nature_operator",
+   "i17": "sas_agriculture_cooperative",
+   "i09": "sas_sex",
+   "i10": "sas_age_operator",
+   "i11": "sas_education_level_operator",
+   "i16": "sas_agricultural_activity",
+   "i12": "sas_resident",
+   "agegroup": "sas_unlabelled_agegroup"
+  }
  },
  "B/ssf_improved_by_crop_b": {
   "file": "SAS_2013_ssf_improved_by_crop_b.dta",
   "rows": 1144,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5182,12 +6877,33 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_ssf_improved_by_crop_b_clean.dta"
+  "out": "SAS_2013_B_ssf_improved_by_crop_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/ssf_inorganic_b": {
   "file": "SAS_2013_ssf_inorganic_b.dta",
   "rows": 15730,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "inorganic"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5227,12 +6943,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_inorganic_b_clean.dta"
+  "out": "SAS_2013_B_ssf_inorganic_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "inorganic": "sas_already_used_inorganic"
+  }
  },
  "B/ssf_irrigation_b": {
   "file": "SAS_2013_ssf_irrigation_b.dta",
   "rows": 15730,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "irrigation"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5272,12 +7008,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_irrigation_b_clean.dta"
+  "out": "SAS_2013_B_ssf_irrigation_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "irrigation": "sas_practice_irrigation_plot"
+  }
  },
  "B/ssf_irrigation_b_by_type": {
   "file": "SAS_2013_ssf_irrigation_b_by_type.dta",
   "rows": 424,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui03a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5319,12 +7075,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_irrigation_b_by_type_clean.dta"
+  "out": "SAS_2013_B_ssf_irrigation_b_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui03a": "sas_irrig_amount_paid_irrig"
+  }
  },
  "B/ssf_organic_b": {
   "file": "SAS_2013_ssf_organic_b.dta",
   "rows": 15730,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp7"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5364,12 +7140,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_organic_b_clean.dta"
+  "out": "SAS_2013_B_ssf_organic_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp7": "sas_already_used_use_organic"
+  }
  },
  "B/ssf_pesticideb": {
   "file": "SAS_2013_ssf_pesticideb.dta",
   "rows": 15730,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pesticide"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5409,12 +7205,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_pesticideb_clean.dta"
+  "out": "SAS_2013_B_ssf_pesticideb_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pesticide": "sas_already_used_pesticides_agri"
+  }
  },
  "B/ssf_pesticideb_by_type": {
   "file": "SAS_2013_ssf_pesticideb_by_type.dta",
   "rows": 2032,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp1a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5460,12 +7276,39 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_pesticideb_by_type_clean.dta"
+  "out": "SAS_2013_B_ssf_pesticideb_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp1a": "sas_pesticides_used_used_season"
+  }
  },
  "B/ssf_pure_mixed_crop_land": {
   "file": "SAS_2013_ssf_pure_mixed_crop_land.dta",
   "rows": 76153,
   "vars": 15,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "wt",
+   "id2a",
+   "c03b",
+   "area",
+   "association",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5591,12 +7434,39 @@
    },
    "wt": {}
   },
-  "out": "SAS_2013_B_ssf_pure_mixed_crop_land_clean.dta"
+  "out": "SAS_2013_B_ssf_pure_mixed_crop_land_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "wt": "sas_weight",
+   "id2a": "sas_district_2013_id2a",
+   "c03b": "sas_crop_planted_crop",
+   "area": "sas_area_hectare_2013",
+   "association": "sas_association_unlabelled",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/ssf_seeds_b": {
   "file": "SAS_2013_ssf_seeds_b.dta",
   "rows": 15047,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "seeds"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5636,12 +7506,33 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_seeds_b_clean.dta"
+  "out": "SAS_2013_B_ssf_seeds_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "seeds": "sas_seeds_used"
+  }
  },
  "B/ssf_small_equipment_b_exp": {
   "file": "SAS_2013_ssf_small_equipment_b_exp.dta",
   "rows": 37045,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "uic1",
+   "amount"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5725,12 +7616,34 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_small_equipment_b_exp_clean.dta"
+  "out": "SAS_2013_B_ssf_small_equipment_b_exp_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "uic1": "sas_small_tools_farm_equipments",
+   "amount": "sas_total_amount_tool_equipment"
+  }
  },
  "B/ssf_small_equipment_b_reic": {
   "file": "SAS_2013_ssf_small_equipment_b_reic.dta",
   "rows": 215,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "uic1",
+   "received"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5814,12 +7727,40 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_B_ssf_small_equipment_b_reic_clean.dta"
+  "out": "SAS_2013_B_ssf_small_equipment_b_reic_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "uic1": "sas_small_tools_farm_equipments",
+   "received": "sas_equip_recvd_free_non_agri"
+  }
  },
  "B/ssf_sowing_production_harvest": {
   "file": "SAS_2013_ssf_sowing_production_harvest.dta",
   "rows": 59642,
   "vars": 15,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "wt",
+   "id2a",
+   "c05",
+   "c12",
+   "c13",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -5962,12 +7903,40 @@
    },
    "wt": {}
   },
-  "out": "SAS_2013_B_ssf_sowing_production_harvest_clean.dta"
+  "out": "SAS_2013_B_ssf_sowing_production_harvest_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "wt": "sas_weight",
+   "id2a": "sas_district_2013_id2a",
+   "c05": "sas_starting_date_sowing_v3_2013",
+   "c12": "sas_prod_expectation_28th_2013",
+   "c13": "sas_expected_date_harvesting",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/ssf_traditional_by_crop_b": {
   "file": "SAS_2013_ssf_traditional_by_crop_b.dta",
   "rows": 38385,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6045,12 +8014,46 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_B_ssf_traditional_by_crop_b_clean.dta"
+  "out": "SAS_2013_B_ssf_traditional_by_crop_b_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "crop_name": "sas_crop_name"
+  }
  },
  "B/ssf_use_of_production": {
   "file": "SAS_2013_ssf_use_of_production.dta",
   "rows": 7660,
   "vars": 21,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "i08a",
+   "c03d",
+   "c0",
+   "c0a",
+   "c0b",
+   "c6c",
+   "c6d",
+   "ca",
+   "c7c",
+   "cb",
+   "c8c",
+   "total",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6138,12 +8141,49 @@
     "34": "Other crops"
    }
   },
-  "out": "SAS_2013_B_ssf_use_of_production_clean.dta"
+  "out": "SAS_2013_B_ssf_use_of_production_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "i08a": "sas_nature_operator",
+   "c03d": "sas_b_crop",
+   "c0": "sas_prod_crop_quantity_sold_sold",
+   "c0a": "sas_prod_crop_qty_used_used_b",
+   "c0b": "sas_prod_crop_quantity_used_0b",
+   "c6c": "sas_prod_crop_quantity_used_6c",
+   "c6d": "sas_prod_crop_qty_offered",
+   "ca": "sas_prod_crop_quantity_exchanged",
+   "c7c": "sas_prod_crop_quantity_used_7c",
+   "cb": "sas_prod_crop_quantity_used_used",
+   "c8c": "sas_prod_crop_qty_stored_sto",
+   "total": "sas_total",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/area_province_crop_c": {
   "file": "SAS_2013_area_province_crop_c.dta",
   "rows": 5510,
   "vars": 12,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "wt",
+   "area",
+   "group_crop",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6268,12 +8308,36 @@
    },
    "wt": {}
   },
-  "out": "SAS_2013_C_area_province_crop_c_clean.dta"
+  "out": "SAS_2013_C_area_province_crop_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "wt": "sas_weight",
+   "area": "sas_area_hectare_2013",
+   "group_crop": "sas_group_crop_v3_2013_2014",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/area_province_crop_c_total2": {
   "file": "SAS_2013_area_province_crop_c_total2.dta",
   "rows": 29,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "group_crop",
+   "area"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -6331,12 +8395,32 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_C_area_province_crop_c_total2_clean.dta"
+  "out": "SAS_2013_C_area_province_crop_c_total2_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "group_crop": "sas_group_crop_unlabelled",
+   "area": "sas_area_hectare"
+  }
  },
  "C/ssf_antierosion_c": {
   "file": "SAS_2013_ssf_antierosion_c.dta",
   "rows": 1412,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui24"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6376,12 +8460,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_antierosion_c_clean.dta"
+  "out": "SAS_2013_C_ssf_antierosion_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui24": "sas_practice_anti_erosion_activ"
+  }
  },
  "C/ssf_antierosion_c_by_type": {
   "file": "SAS_2013_ssf_antierosion_c_by_type.dta",
   "rows": 172,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui25"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6427,12 +8531,37 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_antierosion_c_by_type_clean.dta"
+  "out": "SAS_2013_C_ssf_antierosion_c_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui25": "sas_anti_erosion_activ_practice"
+  }
  },
  "C/ssf_identification_c": {
   "file": "SAS_2013_ssf_identification_c.dta",
   "rows": 1412,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "id2a",
+   "i08a",
+   "i09",
+   "i10",
+   "i11",
+   "ageclasse"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6528,12 +8657,39 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_identification_c_clean.dta"
+  "out": "SAS_2013_C_ssf_identification_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "id2a": "sas_district",
+   "i08a": "sas_nature_operator",
+   "i09": "sas_sex",
+   "i10": "sas_age_operator",
+   "i11": "sas_education_level_operator",
+   "ageclasse": "sas_unlabelled_ageclasse"
+  }
  },
  "C/ssf_improved_by_crop_c": {
   "file": "SAS_2013_ssf_improved_by_crop_c.dta",
   "rows": 139,
   "vars": 10,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "improved",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6629,12 +8785,34 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_C_ssf_improved_by_crop_c_clean.dta"
+  "out": "SAS_2013_C_ssf_improved_by_crop_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "improved": "sas_used_improved_seeds",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/ssf_inorganic_c": {
   "file": "SAS_2013_ssf_inorganic_c.dta",
   "rows": 1412,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "inorganic"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6674,12 +8852,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_inorganic_c_clean.dta"
+  "out": "SAS_2013_C_ssf_inorganic_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "inorganic": "sas_already_used_inorganic"
+  }
  },
  "C/ssf_inorganic_c_type": {
   "file": "SAS_2013_ssf_inorganic_c_type.dta",
   "rows": 1183,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp10"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6723,12 +8921,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_inorganic_c_type_clean.dta"
+  "out": "SAS_2013_C_ssf_inorganic_c_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp10": "sas_inorganic_fertilizers_used"
+  }
  },
  "C/ssf_irrigation_c": {
   "file": "SAS_2013_ssf_irrigation_c.dta",
   "rows": 1412,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "irrigation"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6768,12 +8986,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_irrigation_c_clean.dta"
+  "out": "SAS_2013_C_ssf_irrigation_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "irrigation": "sas_practice_irrigation"
+  }
  },
  "C/ssf_irrigation_c_by_type": {
   "file": "SAS_2013_ssf_irrigation_c_by_type.dta",
   "rows": 198,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "ui03a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6815,12 +9053,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_irrigation_c_by_type_clean.dta"
+  "out": "SAS_2013_C_ssf_irrigation_c_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "ui03a": "sas_irrig_amount_paid_irrig"
+  }
  },
  "C/ssf_organic_c": {
   "file": "SAS_2013_ssf_organic_c.dta",
   "rows": 1412,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp7"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6860,12 +9118,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_organic_c_clean.dta"
+  "out": "SAS_2013_C_ssf_organic_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp7": "sas_use_organic_fertilizers_agri"
+  }
  },
  "C/ssf_pesticidec": {
   "file": "SAS_2013_ssf_pesticidec.dta",
   "rows": 1412,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pesticide"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6905,12 +9183,32 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_pesticidec_clean.dta"
+  "out": "SAS_2013_C_ssf_pesticidec_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pesticide": "sas_already_used_pesticides_agri"
+  }
  },
  "C/ssf_pesticidec_by_type": {
   "file": "SAS_2013_ssf_pesticidec_by_type.dta",
   "rows": 1639,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "pp1a"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -6956,12 +9254,37 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_pesticidec_by_type_clean.dta"
+  "out": "SAS_2013_C_ssf_pesticidec_by_type_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "pp1a": "sas_pesticides_used_used_season"
+  }
  },
  "C/ssf_pure_and_mixed_c": {
   "file": "SAS_2013_ssf_pure_and_mixed_c.dta",
   "rows": 6068,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "wt",
+   "area",
+   "association",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7069,12 +9392,37 @@
    },
    "wt": {}
   },
-  "out": "SAS_2013_C_ssf_pure_and_mixed_c_clean.dta"
+  "out": "SAS_2013_C_ssf_pure_and_mixed_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "wt": "sas_weight",
+   "area": "sas_area_hectare_2013",
+   "association": "sas_association_unlabelled",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/ssf_seeds_c": {
   "file": "SAS_2013_ssf_seeds_c.dta",
   "rows": 1412,
   "vars": 8,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "seeds"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7114,12 +9462,33 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_seeds_c_clean.dta"
+  "out": "SAS_2013_C_ssf_seeds_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "seeds": "sas_seeds_used"
+  }
  },
  "C/ssf_small_equipment_c": {
   "file": "SAS_2013_ssf_small_equipment_c.dta",
   "rows": 112,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "uic1",
+   "uic7"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7192,12 +9561,34 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_small_equipment_c_clean.dta"
+  "out": "SAS_2013_C_ssf_small_equipment_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "uic1": "sas_small_tools_farm_equipments",
+   "uic7": "sas_received_non_agri_donor"
+  }
  },
  "C/ssf_small_equipment_c_exp": {
   "file": "SAS_2013_ssf_small_equipment_c_exp.dta",
   "rows": 3155,
   "vars": 9,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "uic1",
+   "uic6"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7270,12 +9661,38 @@
    },
    "holder": {}
   },
-  "out": "SAS_2013_C_ssf_small_equipment_c_exp_clean.dta"
+  "out": "SAS_2013_C_ssf_small_equipment_c_exp_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "uic1": "sas_small_tools_farm_equipments",
+   "uic6": "sas_amount_tool_equip_amount_rwf"
+  }
  },
  "C/ssf_sowing_production_harvest_c": {
   "file": "SAS_2013_ssf_sowing_production_harvest_c.dta",
   "rows": 1893,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "plot",
+   "crop",
+   "c05",
+   "c12",
+   "c13",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7393,12 +9810,39 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_C_ssf_sowing_production_harvest_c_clean.dta"
+  "out": "SAS_2013_C_ssf_sowing_production_harvest_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "plot": "sas_plot",
+   "crop": "sas_crop",
+   "c05": "sas_starting_date_sowing_v6_2013",
+   "c12": "sas_expect_prod_crop_31st_2013",
+   "c13": "sas_expected_date_harvesting",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/ssf_traditional_by_crop_c": {
   "file": "SAS_2013_ssf_traditional_by_crop_c.dta",
   "rows": 1398,
   "vars": 10,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "holder",
+   "crop",
+   "traditional",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7494,12 +9938,47 @@
     "99": "Uncultivated"
    }
   },
-  "out": "SAS_2013_C_ssf_traditional_by_crop_c_clean.dta"
+  "out": "SAS_2013_C_ssf_traditional_by_crop_c_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "traditional": "sas_used_traditional_seeds",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/ssf_use_of_productionc": {
   "file": "SAS_2013_ssf_use_of_productionc.dta",
   "rows": 1536,
   "vars": 21,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "holder",
+   "crop",
+   "c03d",
+   "c0",
+   "c0a",
+   "c0b",
+   "c6c",
+   "c6d",
+   "ca",
+   "c7c",
+   "cb",
+   "c8c",
+   "qty_damaged",
+   "used_in_any_other_way",
+   "total",
+   "crop_name"
+  ],
   "level": "records",
   "keys_present": [
    "survey",
@@ -7568,12 +10047,50 @@
     "48": "Broccoli"
    }
   },
-  "out": "SAS_2013_C_ssf_use_of_productionc_clean.dta"
+  "out": "SAS_2013_C_ssf_use_of_productionc_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "holder": "sas_holder",
+   "crop": "sas_crop",
+   "c03d": "sas_b_crop",
+   "c0": "sas_prod_crop_quantity_sold_sold",
+   "c0a": "sas_prod_crop_qty_used_used_b",
+   "c0b": "sas_prod_crop_quantity_used_0b",
+   "c6c": "sas_prod_crop_qty_used_farm_rent",
+   "c6d": "sas_prod_crop_quantity_offered",
+   "ca": "sas_prod_crop_quantity_exchange",
+   "c7c": "sas_prod_crop_quantity_used_7c",
+   "cb": "sas_prod_crop_quantity_used",
+   "c8c": "sas_prod_crop_quantity_stored",
+   "qty_damaged": "sas_prod_crop_quantity_damaged",
+   "used_in_any_other_way": "sas_production_crop_quantity_use",
+   "total": "sas_total",
+   "crop_name": "sas_crop_name"
+  }
  },
  "C/ssf_yield_production_area_c_crop": {
   "file": "SAS_2013_ssf_yield_production_area_c_crop.dta",
   "rows": 18,
   "vars": 13,
+  "columns": [
+   "survey",
+   "year",
+   "season",
+   "wave",
+   "farm_type",
+   "prov",
+   "group_crop",
+   "production",
+   "yield",
+   "area",
+   "production_n",
+   "area_n",
+   "yield_n"
+  ],
   "level": "table",
   "keys_present": [
    "survey",
@@ -7634,6 +10151,21 @@
     "5": "Eastern Province"
    }
   },
-  "out": "SAS_2013_C_ssf_yield_production_area_c_crop_clean.dta"
+  "out": "SAS_2013_C_ssf_yield_production_area_c_crop_clean.dta",
+  "clean_names": {
+   "survey": "sas_survey",
+   "year": "sas_year",
+   "season": "sas_season",
+   "wave": "sas_wave",
+   "farm_type": "sas_farm_type",
+   "prov": "sas_province",
+   "group_crop": "sas_group_crop_unlabelled",
+   "production": "sas_production",
+   "yield": "sas_yield_shipped",
+   "area": "sas_area_hectare",
+   "production_n": "sas_national_production",
+   "area_n": "sas_national_area",
+   "yield_n": "sas_national_yield"
+  }
  }
 }

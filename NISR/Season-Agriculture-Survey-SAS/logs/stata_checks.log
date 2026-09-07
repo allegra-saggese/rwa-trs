@@ -5,11 +5,15 @@
 
 . set more off
 
-. use wave wt production_kg plot_area_ha using "/Users/matteo/Library/CloudStor
-> age/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Seas
-> on-Agriculture-Survey-SAS/3_Final/SAS_pooled_plotcrop.dta", clear
+. use sas_wave sas_weight sas_production_kg sas_plot_area_ha using "/Users/matt
+> eo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly
+> -Available-NISR/Season-Agriculture-Survey-SAS/3_Final/SAS_pooled_plotcrop.dta
+> ", clear
 (SAS 2017-2025 pooled crop-production records (plot x crop x season; crop = wav
 > e')
+
+. rename (sas_wave sas_weight sas_production_kg sas_plot_area_ha) (wave wt prod
+> uction_kg plot_area_ha)
 
 . gen long one = 1
 
