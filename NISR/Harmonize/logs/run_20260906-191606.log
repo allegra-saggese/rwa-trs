@@ -1,0 +1,296 @@
+20:17:26 01_harmonize INFO ==== 01_harmonize | run 20260906-191606 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+20:17:26 01_harmonize INFO    previous H_LFS_household.dta removed before the rebuild (0.03 GB)
+20:17:26 01_harmonize INFO ---------------- LFS / LFS_pooled_household.dta (household, 0.03 GB) -> H_LFS_household.dta
+20:17:31 01_harmonize INFO read LFS_pooled_household.dta: 166,772 rows x 97 vars (typed, 0.1 GB in memory)
+20:17:31 01_harmonize INFO PASS  H_LFS_household.dta: row count unchanged (166,772)
+20:17:31 01_harmonize INFO PASS  H_LFS_household.dta: every column is a clean lower-case name of at most 32 characters
+20:17:35 01_harmonize INFO wrote H_LFS_household.dta  (166,772 rows x 98 vars, 33.1 MB)
+20:17:35 01_harmonize INFO    previous H_LFS_person.dta removed before the rebuild (0.71 GB)
+20:17:35 01_harmonize INFO ---------------- LFS / LFS_pooled_person.dta (person, 0.67 GB) -> H_LFS_person.dta
+20:19:38 01_harmonize INFO read LFS_pooled_person.dta: 720,947 rows x 478 vars (typed, 0.9 GB in memory)
+20:19:41 01_harmonize INFO    h_marital   non-missing by wave: {'2017': 53099, '2018': 52785, '2019': 56595, '2020': 0, '2021': 50203, '2022': 49360, '2023': 50019, '2024': 71109, '2025': 70548}
+20:19:41 01_harmonize INFO    h_relation  non-missing by wave: {'2017': 77761, '2018': 76670, '2019': 81778, '2020': 67104, '2021': 71947, '2022': 70424, '2023': 71849, '2024': 102562, '2025': 100852}
+20:19:41 01_harmonize INFO    h_educ      non-missing by wave: {'2017': 49108, '2018': 48931, '2019': 52550, '2020': 0, '2021': 46562, '2022': 45780, '2023': 46701, '2024': 66303, '2025': 65721}
+20:19:41 01_harmonize INFO    h_literacy  non-missing by wave: {'2017': 32815, '2018': 32029, '2019': 34076, '2020': 0, '2021': 29902, '2022': 29679, '2023': 30406, '2024': 0, '2025': 0}
+20:19:41 01_harmonize INFO    h_lfstatus  non-missing by wave: {'2017': 45526, '2018': 45297, '2019': 48741, '2020': 44707, '2021': 46562, '2022': 45780, '2023': 46701, '2024': 66303, '2025': 65721}
+20:19:41 01_harmonize INFO    h_empstat   non-missing by wave: {'2017': 21394, '2018': 22033, '2019': 23550, '2020': 20436, '2021': 19142, '2022': 19947, '2023': 22214, '2024': 33166, '2025': 34181}
+20:19:41 01_harmonize INFO    h_isic1     non-missing by wave: {'2017': 21394, '2018': 22033, '2019': 23351, '2020': 20436, '2021': 19142, '2022': 19947, '2023': 22214, '2024': 33594, '2025': 34712}
+20:19:41 01_harmonize INFO    h_isco1     non-missing by wave: {'2017': 21394, '2018': 21836, '2019': 23351, '2020': 0, '2021': 19142, '2022': 19947, '2023': 22214, '2024': 33594, '2025': 34712}
+20:19:41 01_harmonize INFO PASS  H_LFS_person.dta: row count unchanged (720,947)
+20:19:41 01_harmonize INFO PASS  H_LFS_person.dta: every column is a clean lower-case name of at most 32 characters
+20:20:00 01_harmonize INFO wrote H_LFS_person.dta  (720,947 rows x 493 vars, 710.0 MB)
+20:20:00 01_harmonize INFO    previous H_Census_household.dta removed before the rebuild (0.33 GB)
+20:20:00 01_harmonize INFO ---------------- Census / Census_pooled_household.dta (household, 0.32 GB) -> H_Census_household.dta
+20:21:28 01_harmonize INFO read Census_pooled_household.dta: 750,115 rows x 289 vars (typed, 0.6 GB in memory)
+20:21:28 01_harmonize INFO PASS  H_Census_household.dta: row count unchanged (750,115)
+20:21:29 01_harmonize INFO PASS  H_Census_household.dta: every column is a clean lower-case name of at most 32 characters
+20:21:38 01_harmonize INFO wrote H_Census_household.dta  (750,115 rows x 290 vars, 331.1 MB)
+20:21:38 01_harmonize INFO    previous H_Census_person.dta removed before the rebuild (2.20 GB)
+20:21:38 01_harmonize INFO ---------------- Census / Census_pooled_person.dta (person, 2.03 GB) -> H_Census_person.dta
+20:29:30 01_harmonize INFO read Census_pooled_person.dta: 3,165,813 rows x 465 vars (typed, 3.6 GB in memory)
+20:29:42 01_harmonize INFO    h_marital   non-missing by wave: {'2002': 499639, '2012': 681318, '2022': 910862}
+20:29:42 01_harmonize INFO    h_relation  non-missing by wave: {'2002': 791992, '2012': 1038369, '2022': 1313015}
+20:29:42 01_harmonize INFO    h_educ      non-missing by wave: {'2002': 630662, '2012': 938201, '2022': 1312841}
+20:29:42 01_harmonize INFO    h_literacy  non-missing by wave: {'2002': 613063, '2012': 940001, '2022': 971201}
+20:29:42 01_harmonize INFO    h_lfstatus  non-missing by wave: {'2002': 607987, '2012': 883622, '2022': 0}
+20:29:42 01_harmonize INFO    h_empstat   non-missing by wave: {'2002': 336001, '2012': 410351, '2022': 359336}
+20:29:43 01_harmonize INFO    h_isic1     non-missing by wave: {'2002': 340067, '2012': 418732, '2022': 352641}
+20:29:43 01_harmonize INFO    h_isco1     non-missing by wave: {'2002': 341140, '2012': 418930, '2022': 359323}
+20:29:44 01_harmonize INFO PASS  H_Census_person.dta: row count unchanged (3,165,813)
+20:29:45 01_harmonize INFO PASS  H_Census_person.dta: every column is a clean lower-case name of at most 32 characters
+20:30:37 01_harmonize INFO wrote H_Census_person.dta  (3,165,813 rows x 480 vars, 2203.9 MB)
+20:30:38 01_harmonize INFO    previous H_EICV_household.dta removed before the rebuild (0.15 GB)
+20:30:38 01_harmonize INFO ---------------- EICV / EICV_pooled_household.dta (household, 0.15 GB) -> H_EICV_household.dta
+20:30:51 01_harmonize INFO read EICV_pooled_household.dta: 71,681 rows x 1029 vars (typed, 0.2 GB in memory)
+20:30:51 01_harmonize INFO PASS  H_EICV_household.dta: row count unchanged (71,681)
+20:30:51 01_harmonize INFO PASS  H_EICV_household.dta: every column is a clean lower-case name of at most 32 characters
+20:30:53 01_harmonize INFO wrote H_EICV_household.dta  (71,681 rows x 1030 vars, 152.6 MB)
+20:30:54 01_harmonize INFO    previous H_EICV_person.dta removed before the rebuild (0.59 GB)
+20:30:54 01_harmonize INFO ---------------- EICV / EICV_pooled_person.dta (person, 0.57 GB) -> H_EICV_person.dta
+20:33:11 01_harmonize INFO read EICV_pooled_person.dta: 327,841 rows x 1180 vars (typed, 1.0 GB in memory)
+20:33:13 01_harmonize INFO    h_marital   non-missing by wave: {'EICV1': 20750, 'EICV2': 22515, 'EICV3': 44193, 'EICV4_CS': 43681, 'EICV5_CS': 43240, 'EICV7_CS': 43529}
+20:33:13 01_harmonize INFO    h_relation  non-missing by wave: {'EICV1': 32153, 'EICV2': 34785, 'EICV3': 68397, 'EICV4_CS': 66081, 'EICV5_CS': 64314, 'EICV7_CS': 62110}
+20:33:13 01_harmonize INFO    h_educ      non-missing by wave: {'EICV1': 8744, 'EICV2': 28016, 'EICV3': 34235, 'EICV4_CS': 60441, 'EICV5_CS': 58692, 'EICV7_CS': 62110}
+20:33:13 01_harmonize INFO    h_literacy  non-missing by wave: {'EICV1': 23994, 'EICV2': 24491, 'EICV3': 41646, 'EICV4_CS': 47287, 'EICV5_CS': 46765, 'EICV7_CS': 46500}
+20:33:13 01_harmonize INFO    h_lfstatus  non-missing by wave: {'EICV1': 25193, 'EICV2': 27133, 'EICV3': 56091, 'EICV4_CS': 55061, 'EICV5_CS': 53664, 'EICV7_CS': 52900}
+20:33:13 01_harmonize INFO    h_empstat   non-missing by wave: {'EICV1': 15237, 'EICV2': 16292, 'EICV3': 0, 'EICV4_CS': 0, 'EICV5_CS': 0, 'EICV7_CS': 31289}
+20:33:13 01_harmonize INFO    h_isic1     non-missing by wave: {'EICV1': 15190, 'EICV2': 16186, 'EICV3': 0, 'EICV4_CS': 32967, 'EICV5_CS': 0, 'EICV7_CS': 31289}
+20:33:13 01_harmonize INFO    h_isco1     non-missing by wave: {'EICV1': 15214, 'EICV2': 16293, 'EICV3': 0, 'EICV4_CS': 32967, 'EICV5_CS': 0, 'EICV7_CS': 30353}
+20:33:13 01_harmonize INFO PASS  H_EICV_person.dta: row count unchanged (327,841)
+20:33:13 01_harmonize INFO PASS  H_EICV_person.dta: every column is a clean lower-case name of at most 32 characters
+20:33:22 01_harmonize INFO wrote H_EICV_person.dta  (327,841 rows x 1195 vars, 589.6 MB)
+20:33:22 01_harmonize INFO    previous H_EC_establishment.dta removed before the rebuild (0.48 GB)
+20:33:22 01_harmonize INFO ---------------- EC / EC_pooled_establishment.dta (establishment, 0.46 GB) -> H_EC_establishment.dta
+20:34:45 01_harmonize INFO read EC_pooled_establishment.dta: 896,710 rows x 265 vars (typed, 0.6 GB in memory)
+20:34:47 01_harmonize INFO PASS  H_EC_establishment.dta: row count unchanged (896,710)
+20:34:47 01_harmonize INFO PASS  H_EC_establishment.dta: every column is a clean lower-case name of at most 32 characters
+20:34:56 01_harmonize INFO wrote H_EC_establishment.dta  (896,710 rows x 266 vars, 477.3 MB)
+20:34:56 01_harmonize INFO    previous H_AHS_household.dta removed before the rebuild (0.03 GB)
+20:34:56 01_harmonize INFO ---------------- AHS / AHS_pooled_household.dta (household, 0.03 GB) -> H_AHS_household.dta
+20:35:00 01_harmonize INFO read AHS_pooled_household.dta: 30,447 rows x 459 vars (typed, 0.0 GB in memory)
+20:35:00 01_harmonize INFO PASS  H_AHS_household.dta: row count unchanged (30,447)
+20:35:00 01_harmonize INFO PASS  H_AHS_household.dta: every column is a clean lower-case name of at most 32 characters
+20:35:00 01_harmonize INFO wrote H_AHS_household.dta  (30,447 rows x 460 vars, 33.0 MB)
+20:35:00 01_harmonize INFO    previous H_AHS_person.dta removed before the rebuild (0.05 GB)
+20:35:00 01_harmonize INFO ---------------- AHS / AHS_pooled_person.dta (person, 0.04 GB) -> H_AHS_person.dta
+20:35:06 01_harmonize INFO read AHS_pooled_person.dta: 138,683 rows x 187 vars (typed, 0.1 GB in memory)
+20:35:07 01_harmonize INFO    h_marital   non-missing by wave: {'2017': 0, '2020': 0, '2024': 11495}
+20:35:07 01_harmonize INFO    h_relation  non-missing by wave: {'2017': 73665, '2020': 48726, '2024': 16292}
+20:35:07 01_harmonize INFO    h_educ      non-missing by wave: {'2017': 51421, '2020': 41244, '2024': 16292}
+20:35:07 01_harmonize INFO    h_literacy  non-missing by wave: {'2017': 0, '2020': 0, '2024': 12305}
+20:35:07 01_harmonize INFO    h_lfstatus  non-missing by wave: {'2017': 51421, '2020': 41365, '2024': 14019}
+20:35:07 01_harmonize INFO    h_empstat   non-missing by wave: {'2017': 0, '2020': 24489, '2024': 8417}
+20:35:07 01_harmonize INFO    h_isic1     non-missing by wave: {'2017': 0, '2020': 0, '2024': 0}
+20:35:07 01_harmonize INFO    h_isco1     non-missing by wave: {'2017': 0, '2020': 0, '2024': 0}
+20:35:07 01_harmonize INFO PASS  H_AHS_person.dta: row count unchanged (138,683)
+20:35:07 01_harmonize INFO PASS  H_AHS_person.dta: every column is a clean lower-case name of at most 32 characters
+20:35:08 01_harmonize INFO wrote H_AHS_person.dta  (138,683 rows x 202 vars, 50.3 MB)
+20:35:08 01_harmonize INFO    previous H_SAS_plotcrop.dta removed before the rebuild (1.52 GB)
+20:35:08 01_harmonize INFO ---------------- SAS / SAS_pooled_plotcrop.dta (plotcrop, 1.50 GB) -> H_SAS_plotcrop.dta
+20:36:07 01_harmonize INFO read SAS_pooled_plotcrop.dta: 632,756 rows x 299 vars (typed, 1.0 GB in memory)
+20:36:08 01_harmonize INFO PASS  H_SAS_plotcrop.dta: row count unchanged (632,756)
+20:36:09 01_harmonize INFO PASS  H_SAS_plotcrop.dta: every column is a clean lower-case name of at most 32 characters
+20:36:29 01_harmonize INFO wrote H_SAS_plotcrop.dta  (632,756 rows x 300 vars, 1518.9 MB)
+20:36:29 01_harmonize INFO    previous H_SAS_plotcrop_2013_2016.dta removed before the rebuild (0.40 GB)
+20:36:29 01_harmonize INFO ---------------- SAS / SAS_pooled_plotcrop_2013_2016.dta (plotcrop_early, 0.37 GB) -> H_SAS_plotcrop_2013_2016.dta
+20:36:59 01_harmonize INFO read SAS_pooled_plotcrop_2013_2016.dta: 1,121,780 rows x 84 vars (typed, 0.4 GB in memory)
+20:37:01 01_harmonize INFO PASS  H_SAS_plotcrop_2013_2016.dta: row count unchanged (1,121,780)
+20:37:01 01_harmonize INFO PASS  H_SAS_plotcrop_2013_2016.dta: every column is a clean lower-case name of at most 32 characters
+20:37:13 01_harmonize INFO wrote H_SAS_plotcrop_2013_2016.dta  (1,121,780 rows x 85 vars, 399.4 MB)
+20:37:13 01_harmonize INFO    previous H_SAS_screening_crops.dta removed before the rebuild (0.65 GB)
+20:37:13 01_harmonize INFO ---------------- SAS / SAS_pooled_screening_crops.dta (screening_crops, 0.63 GB) -> H_SAS_screening_crops.dta
+20:37:56 01_harmonize INFO read SAS_pooled_screening_crops.dta: 752,143 rows x 112 vars (typed, 0.4 GB in memory)
+20:37:58 01_harmonize INFO PASS  H_SAS_screening_crops.dta: row count unchanged (752,143)
+20:37:58 01_harmonize INFO PASS  H_SAS_screening_crops.dta: every column is a clean lower-case name of at most 32 characters
+20:38:20 01_harmonize INFO wrote H_SAS_screening_crops.dta  (752,143 rows x 113 vars, 649.9 MB)
+20:38:20 01_harmonize INFO    previous H_CFSVA_child.dta removed before the rebuild (0.12 GB)
+20:38:20 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_child.dta (child, 0.11 GB) -> H_CFSVA_child.dta
+20:38:32 01_harmonize INFO read CFSVA_pooled_child.dta: 35,763 rows x 1388 vars (typed, 0.1 GB in memory)
+20:38:32 01_harmonize INFO PASS  H_CFSVA_child.dta: row count unchanged (35,763)
+20:38:32 01_harmonize INFO PASS  H_CFSVA_child.dta: every column is a clean lower-case name of at most 32 characters
+20:38:35 01_harmonize INFO wrote H_CFSVA_child.dta  (35,763 rows x 1389 vars, 116.6 MB)
+20:38:35 01_harmonize INFO    previous H_CFSVA_household.dta removed before the rebuild (0.67 GB)
+20:38:35 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_household.dta (household, 0.66 GB) -> H_CFSVA_household.dta
+20:39:30 01_harmonize INFO read CFSVA_pooled_household.dta: 50,890 rows x 4825 vars (typed, 0.7 GB in memory)
+20:39:31 01_harmonize INFO PASS  H_CFSVA_household.dta: row count unchanged (50,890)
+20:39:31 01_harmonize INFO PASS  H_CFSVA_household.dta: every column is a clean lower-case name of at most 32 characters
+20:39:54 01_harmonize INFO wrote H_CFSVA_household.dta  (50,890 rows x 4831 vars, 666.6 MB)
+20:39:54 01_harmonize INFO    previous H_CFSVA_village.dta removed before the rebuild (0.01 GB)
+20:39:54 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_village.dta (village, 0.01 GB) -> H_CFSVA_village.dta
+20:39:54 01_harmonize INFO read CFSVA_pooled_village.dta: 3,812 rows x 508 vars (typed, 0.0 GB in memory)
+20:39:54 01_harmonize INFO PASS  H_CFSVA_village.dta: row count unchanged (3,812)
+20:39:54 01_harmonize INFO PASS  H_CFSVA_village.dta: every column is a clean lower-case name of at most 32 characters
+20:39:55 01_harmonize INFO wrote H_CFSVA_village.dta  (3,812 rows x 508 vars, 7.0 MB)
+20:39:55 01_harmonize INFO    previous H_CFSVA_woman.dta removed before the rebuild (0.05 GB)
+20:39:55 01_harmonize INFO ---------------- CFSVA / CFSVA_pooled_woman.dta (woman, 0.05 GB) -> H_CFSVA_woman.dta
+20:40:00 01_harmonize INFO read CFSVA_pooled_woman.dta: 31,030 rows x 813 vars (typed, 0.1 GB in memory)
+20:40:00 01_harmonize INFO PASS  H_CFSVA_woman.dta: row count unchanged (31,030)
+20:40:00 01_harmonize INFO PASS  H_CFSVA_woman.dta: every column is a clean lower-case name of at most 32 characters
+20:40:02 01_harmonize INFO wrote H_CFSVA_woman.dta  (31,030 rows x 816 vars, 50.5 MB)
+20:40:02 01_harmonize INFO all hard checks passed (0 soft warnings)
+20:40:02 01_harmonize INFO 01_harmonize done: 16 files, 267 map rows
+20:40:03 02_checks INFO ==== 02_checks | run 20260906-191606 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+20:41:36 02_checks INFO 
+# Harmonization checks report
+
+Generated by 02_checks.py.
+
+## A. Completeness and no data loss (rows and native columns of the CURRENT source file)
+
+| section | statistic | harmonised | reference | result |
+|---|---|---:|---:|---|
+| A | H_ data files left in the documents folder Harmonized/ (must be 0) | 0 | 0 | PASS |
+| A | manifest entries skipped without a declared reason (must be 0) | 0 | 0 | PASS |
+| A | declared skips (none: 4_Harmonized mirrors 3_Final; informational) | 0 | 0 | PASS |
+| A | physical H_ files not in the manifest (stale copies; must be 0) | 0 | 0 | PASS |
+| A | manifest files missing on disk (must be 0) | 0 | 0 | PASS |
+| A | copies found in the wrong dataset folder (must be 0) | 0 | 0 | PASS |
+| A | H_LFS_household.dta rows | 166,772 | 166,772 | PASS |
+| A | H_LFS_household.dta native columns present | 97 | 97 | PASS |
+| A | H_LFS_person.dta rows | 720,947 | 720,947 | PASS |
+| A | H_LFS_person.dta native columns present | 478 | 478 | PASS |
+| A | H_Census_household.dta rows | 750,115 | 750,115 | PASS |
+| A | H_Census_household.dta native columns present | 289 | 289 | PASS |
+| A | H_Census_person.dta rows | 3,165,813 | 3,165,813 | PASS |
+| A | H_Census_person.dta native columns present | 465 | 465 | PASS |
+| A | H_EICV_household.dta rows | 71,681 | 71,681 | PASS |
+| A | H_EICV_household.dta native columns present | 1,029 | 1,029 | PASS |
+| A | H_EICV_person.dta rows | 327,841 | 327,841 | PASS |
+| A | H_EICV_person.dta native columns present | 1,180 | 1,180 | PASS |
+| A | H_EC_establishment.dta rows | 896,710 | 896,710 | PASS |
+| A | H_EC_establishment.dta native columns present | 265 | 265 | PASS |
+| A | H_AHS_household.dta rows | 30,447 | 30,447 | PASS |
+| A | H_AHS_household.dta native columns present | 459 | 459 | PASS |
+| A | H_AHS_person.dta rows | 138,683 | 138,683 | PASS |
+| A | H_AHS_person.dta native columns present | 187 | 187 | PASS |
+| A | H_SAS_plotcrop.dta rows | 632,756 | 632,756 | PASS |
+| A | H_SAS_plotcrop.dta native columns present | 299 | 299 | PASS |
+| A | H_SAS_plotcrop_2013_2016.dta rows | 1,121,780 | 1,121,780 | PASS |
+| A | H_SAS_plotcrop_2013_2016.dta native columns present | 84 | 84 | PASS |
+| A | H_SAS_screening_crops.dta rows | 752,143 | 752,143 | PASS |
+| A | H_SAS_screening_crops.dta native columns present | 112 | 112 | PASS |
+| A | H_CFSVA_child.dta rows | 35,763 | 35,763 | PASS |
+| A | H_CFSVA_child.dta native columns present | 1,388 | 1,388 | PASS |
+| A | H_CFSVA_household.dta rows | 50,890 | 50,890 | PASS |
+| A | H_CFSVA_household.dta native columns present | 4,825 | 4,825 | PASS |
+| A | H_CFSVA_village.dta rows | 3,812 | 3,812 | PASS |
+| A | H_CFSVA_village.dta native columns present | 508 | 508 | PASS |
+| A | H_CFSVA_woman.dta rows | 31,030 | 31,030 | PASS |
+| A | H_CFSVA_woman.dta native columns present | 813 | 813 | PASS |
+| A | files tested against their source (must be > 0) | 16 | 16 | PASS |
+
+## B. Keys
+
+| section | statistic | harmonised | reference | result |
+|---|---|---:|---:|---|
+| B | H_LFS_household.dta: rows with a household key (informational) | 166,772 |  | n/a |
+| B | H_LFS_household.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_LFS_household.dta: h_hhkey unique (household file) | 166,772 | 166,772 | PASS |
+| B | H_Census_household.dta: rows with a household key (informational) | 750,115 |  | n/a |
+| B | H_Census_household.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_Census_household.dta: h_hhkey unique (household file) | 750,115 | 750,115 | PASS |
+| B | H_EICV_household.dta: rows with a household key (informational) | 71,681 |  | n/a |
+| B | H_EICV_household.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_EICV_household.dta: h_hhkey unique (household file) | 71,681 | 71,681 | PASS |
+| B | H_AHS_household.dta: rows with a household key (informational) | 30,447 |  | n/a |
+| B | H_AHS_household.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_AHS_household.dta: h_hhkey unique (household file) | 30,447 | 30,447 | PASS |
+| B | H_CFSVA_household.dta: rows with a household key (informational) | 50,890 |  | n/a |
+| B | H_CFSVA_household.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_CFSVA_household.dta: h_hhkey unique (household file) | 50,890 | 50,890 | PASS |
+| B | H_LFS_person.dta: rows with a household key (informational) | 691,162 |  | n/a |
+| B | H_LFS_person.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_LFS_person.dta: duplicated non-blank h_pkey (allowed: 3 = NISR duplicate person numbers) | 3 | 3 | PASS |
+| B | H_Census_person.dta: rows with a household key (informational) | 3,149,099 |  | n/a |
+| B | H_Census_person.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_Census_person.dta: duplicated non-blank h_pkey (allowed: 0 = NISR duplicate person numbers) | 0 | 0 | PASS |
+| B | H_EICV_person.dta: rows with a household key (informational) | 327,841 |  | n/a |
+| B | H_EICV_person.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_EICV_person.dta: duplicated non-blank h_pkey (allowed: 0 = NISR duplicate person numbers) | 0 | 0 | PASS |
+| B | H_AHS_person.dta: rows with a household key (informational) | 138,683 |  | n/a |
+| B | H_AHS_person.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_AHS_person.dta: duplicated non-blank h_pkey (allowed: 0 = NISR duplicate person numbers) | 0 | 0 | PASS |
+| B | H_CFSVA_child.dta: rows with a household key (informational) | 31,423 |  | n/a |
+| B | H_CFSVA_child.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_CFSVA_child.dta 2006: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_child.dta 2009: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_child.dta 2012: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_child.dta 2015: rows with a household key (stand-alone nutrition files: must be 0) | 0 | 0 | PASS |
+| B | H_CFSVA_child.dta 2018: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_child.dta 2021: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_child.dta 2024: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_woman.dta: rows with a household key (informational) | 24,262 |  | n/a |
+| B | H_CFSVA_woman.dta: keys built from a zero / negative id (must be 0) | 0 | 0 | PASS |
+| B | H_CFSVA_woman.dta 2006: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_woman.dta 2009: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_woman.dta 2012: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+| B | H_CFSVA_woman.dta 2015: rows with a household key (stand-alone nutrition files: must be 0) | 0 | 0 | PASS |
+| B | H_CFSVA_woman.dta 2024: household keys found in H_CFSVA_household (share x 1000; must be >= 900) | 1,000 | 1,000 | PASS |
+
+## C. Concepts recomputed independently vs h_* (second route)
+
+| section | statistic | harmonised | independent | result |
+|---|---|---:|---:|---|
+| C | LFS: h_lfstatus == status1 on rows with an observed status | 455,338 | 455,338 | PASS |
+| C | LFS: h_employed == (status1 == 1) on rows with an observed status | 455,338 | 455,338 | PASS |
+| C | LFS: h_employed missing exactly where status1 is missing | 265,609 | 265,609 | PASS |
+| C | LFS: household-interviews with exactly one head (h_relation == 1), share x 1000 | 1,000 | 1,000 | PASS |
+| C | LFS 2024: h_relation == independent recode of the 14-code list (a02_v2) | 102,562 | 102,562 | PASS |
+| C | LFS 2025: h_relation == independent recode of the 14-code list (a02_v2) | 100,852 | 100,852 | PASS |
+| C | Census 2012: h_lfstatus == independent recode of rp2024 + P23 (code 9 by availability) | 883,622 | 883,622 | PASS |
+| C | Census 2012: code-9 persons available for work classified unemployed (6,471) | 6,471 | 6,471 | PASS |
+| C | Census 2002: h_lfstatus == independent recode of p21 (8 jobless -> unemployed) | 607,987 | 607,987 | PASS |
+| C | Census: private households with exactly one head, share x 1000 | 1,000 | 1,000 | PASS |
+| C | Census 2022: h_marital == independent recode of p06 | 910,862 | 910,862 | PASS |
+| C | Census 2012: h_marital == independent recode of p29_v2 | 681,318 | 681,318 | PASS |
+| C | EICV4: h_lfstatus == independent recode of lfs6 | 55,061 | 55,061 | PASS |
+| C | EICV1/2: h_lfstatus == independent recode of econstatus | 52,326 | 52,326 | PASS |
+| C | EICV3: h_lfstatus == independent recode of the five work items (VUP 3 = no) | 56,091 | 56,091 | PASS |
+| C | EICV3: nonworkers with VUP item = 3 left missing (must be 0) | 0 | 0 | PASS |
+| C | EICV3: weighted employment / population ratio 16+ with a status (%; informational: was 95.1 before the fix) | 84 |  | n/a |
+| C | EICV: rows with h_educ = tertiary and s2aq3_v3 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s2cq3_v3 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq2_v5 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s2aq3_v2 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s2cq3_v2 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s2aq3 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s2cq3 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq2_v4 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq2_v3 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq2_v2 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq2 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq2a in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: rows with h_educ = tertiary and s4aq20 in (90, 98, 99) (must be 0) | 0 | 0 | PASS |
+| C | EICV: households with exactly one head, share x 1000 | 1,000 | 1,000 | PASS |
+
+## D. Weighted employment-to-population ratio, persons aged 16+ (informational: definitions differ, see h_lfs_def)
+
+| section | dataset / wave | <ds>_labour_definition | employed 16+ / population 16+ with a status (%) | employed persons (weighted; LFS annual weights already average the rounds) | result |
+|---|---|---|---:|---:|---|
+| D | LFS_person 2017 | 1 | 44.2 | 2,989,249 | n/a |
+| D | LFS_person 2018 | 1 | 46.0 | 3,207,336 | n/a |
+| D | LFS_person 2019 | 1 | 45.3 | 3,273,921 | n/a |
+| D | LFS_person 2020 | 1 | 46.5 | 3,460,294 | n/a |
+| D | LFS_person 2021 | 1 | 42.6 | 3,287,697 | n/a |
+| D | LFS_person 2022 | 1 | 44.5 | 3,546,352 | n/a |
+| D | LFS_person 2023 | 1 | 49.0 | 3,958,817 | n/a |
+| D | LFS_person 2024 | 1 | 53.5 | 4,444,684 | n/a |
+| D | LFS_person 2025 | 1 | 55.9 | 4,772,705 | n/a |
+| D | Census_person 2002 | 2 | 77.8 | 3,209,626 | n/a |
+| D | Census_person 2012 | 3 | 71.0 | 4,151,298 | n/a |
+| D | EICV_person EICV1 | 4 | 86.7 | 3,570,734 | n/a |
+| D | EICV_person EICV2 | 4 | 84.0 | 4,299,206 | n/a |
+| D | EICV_person EICV3 | 5 | 84.3 | 4,959,170 | n/a |
+| D | EICV_person EICV4_CS | 6 | 85.6 | 5,478,572 | n/a |
+| D | EICV_person EICV5_CS | 5 | 86.2 | 5,825,473 | n/a |
+| D | EICV_person EICV7_CS | 7 | 80.4 | 6,591,830 | n/a |
+| D | AHS_person 2017 | 8 | 83.8 | 4,496,557 | n/a |
+| D | AHS_person 2020 | 8 | 84.4 | 5,143,622 | n/a |
+| D | AHS_person 2024 | 7 | 82.7 | 4,741,217 | n/a |
+
+**All checks passed.**
+20:41:36 02_checks INFO 02_checks done
+20:41:36 03_codebook INFO ==== 03_codebook | run 20260906-191606 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+20:42:07 03_codebook INFO wrote /Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Harmonized/CODEBOOK_Harmonized.xlsx (16 files, 310 code rows, 383 count rows, 267 map rows)
+20:42:07 03_codebook INFO wrote Harmonized/README.txt
+20:42:07 03_codebook INFO 03_codebook done

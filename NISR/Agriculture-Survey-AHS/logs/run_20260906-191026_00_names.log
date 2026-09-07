@@ -1,0 +1,151 @@
+19:10:26 00_names INFO ==== 00_names | run 20260906-191026_00_names | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+19:10:26 00_names WARNING label cut to 80 characters: s0q18 -> AHS 2020: Other non-agricultural activity which support your household
+19:10:26 00_names WARNING label cut to 80 characters: s1q10_v2 -> AHS 2017: Average number of Hours/day that the household member worked per day
+19:10:26 00_names WARNING label cut to 80 characters: s1q16 -> AHS 2017: Average number of Hours/day that the household member worked per day
+19:10:26 00_names WARNING label cut to 80 characters: s1q7_v2 -> AHS 2020: Highest level of education attained by the the name of household
+19:10:26 00_names WARNING label cut to 80 characters: s1q7_v3 -> AHS 2017: Highest level of education attained by the household member
+19:10:26 00_names WARNING label cut to 80 characters: s4bq21 -> AHS 2024: Use of the internet for seeking health information, last three months
+19:10:26 00_names WARNING label cut to 80 characters: s4bq23d -> AHS 2024: Use any social media (whatsapp or facebook
+19:10:26 00_names WARNING label cut to 80 characters: s6aq8 -> AHS 2024: Work as an unpaid trainee worker or as a volunteer worker in any
+19:10:26 00_names WARNING label cut to 80 characters: s6bq5 -> AHS 2024: 's institutional sector of the main economic activity
+19:10:26 00_names WARNING label cut to 80 characters: s6cq12 -> AHS 2024: How many hours did spend on other household chores, last 7 days
+19:10:26 00_names WARNING label cut to 80 characters: s6cq5 -> AHS 2024: Searching for fodder or grazing for the household's anima, last 7 days
+19:10:26 00_names WARNING label cut to 80 characters: s6cq6 -> AHS 2024: How many hours spend caring for or searching for fodder, last 7 days
+19:10:26 00_names WARNING label cut to 80 characters: s6cq7 -> AHS 2024: Did go to the market for the household for shopping, last 7 days
+19:10:26 00_names WARNING label cut to 80 characters: s6cq8 -> AHS 2024: Hours did spend going to market for shopping (to and fr, last 7 days
+19:10:26 00_names WARNING label cut to 80 characters: s0q14_v2 -> AHS 2017: Is any member of the Household belonging to any agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s1q10 -> AHS 2020: Has member name been engaged in agricultural activities during last
+19:10:26 00_names WARNING label cut to 80 characters: s1q7 -> AHS 2020: Highest level of education attained by the household member
+19:10:26 00_names WARNING label cut to 80 characters: s2q1 -> AHS 2017: Did any member of your household own land used for dwelling during
+19:10:26 00_names WARNING label cut to 80 characters: s2q10 -> AHS 2017: Did any member of your household own land used for cropping during
+19:10:26 00_names WARNING label cut to 80 characters: s2q11 -> AHS 2017: Did any member of your household own land used for grazing during
+19:10:26 00_names WARNING label cut to 80 characters: s2q12 -> AHS 2017: Did any member of your household rented land used for cropping for
+19:10:26 00_names WARNING label cut to 80 characters: s2q13 -> AHS 2017: Did any member of your household rented land used for cropping and
+19:10:26 00_names WARNING label cut to 80 characters: s2q14 -> AHS 2020: Did any member of your HH grow crops during 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q14_v2 -> AHS 2017: Did any member of your household rented land used for cropping
+19:10:26 00_names WARNING label cut to 80 characters: s2q15_2_v2 -> AHS 2017: 2 What are major 3 crops did your household grow during Season B
+19:10:26 00_names WARNING label cut to 80 characters: s2q19 -> AHS 2020: Any member of your HH used improved seeds during 2019/2020 agric. year
+19:10:26 00_names WARNING label cut to 80 characters: s2q2 -> AHS 2017: Did any member of your household own land used for cropping during
+19:10:26 00_names WARNING label cut to 80 characters: s2q22 -> AHS 2020: Any member of your HH used organic fertilizers in 2019/2020 agric.
+19:10:26 00_names WARNING label cut to 80 characters: s2q23 -> AHS 2020: Any member of your HH used inorganic fertilizers in 2019/2020 agric.
+19:10:26 00_names WARNING label cut to 80 characters: s2q26 -> AHS 2020: Any member of your HH used pesticides during 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q3 -> AHS 2017: Did any member of your household own land used for grazing during
+19:10:26 00_names WARNING label cut to 80 characters: s2q30 -> AHS 2020: Any HH member practice irrigation at least in 1 of the plots in 2017
+19:10:26 00_names WARNING label cut to 80 characters: s2q4 -> AHS 2017: Did any member of your household rented land used for cropping for
+19:10:26 00_names WARNING label cut to 80 characters: s2q5 -> AHS 2017: Did any member of your household rented land used for cropping and
+19:10:26 00_names WARNING label cut to 80 characters: s2q6 -> AHS 2017: Did any member of your household rented land used for cropping
+19:10:26 00_names WARNING label cut to 80 characters: s2q9 -> AHS 2017: Did any member of your household own land used for dwelling during
+19:10:26 00_names WARNING label cut to 80 characters: s3q11_1 -> AHS 2020: Types of services do you get from these cooperative/or associations
+19:10:26 00_names WARNING label cut to 80 characters: s3q11_2 -> AHS 2020: Types of services do you get from these cooperative/or associations
+19:10:26 00_names WARNING label cut to 80 characters: s3q11_3 -> AHS 2020: Types of services do you get from these cooperative/or associations
+19:10:26 00_names WARNING label cut to 80 characters: s3q11_4 -> AHS 2020: Types of services do you get from these cooperative/or associations
+19:10:26 00_names WARNING label cut to 80 characters: s3q13 -> AHS 2020: Was there any reared cow received from GIRINKA program in your
+19:10:26 00_names WARNING label cut to 80 characters: s3q7 -> AHS 2020: Is there any household member who benefited from contract farming
+19:10:26 00_names WARNING label cut to 80 characters: s3q8 -> AHS 2020: Is there any household member who took agriculture insurance during
+19:10:26 00_names WARNING label cut to 80 characters: s3q9 -> AHS 2020: Does any member of this household belong to agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s4q11_v2 -> AHS 2017: If the agricultural loan 3 was requested but not approved what was
+19:10:26 00_names WARNING label cut to 80 characters: s4q5_v2 -> AHS 2017: If the agricultural loan 1 was requested but not approved what was
+19:10:26 00_names WARNING label cut to 80 characters: s4q8 -> AHS 2020: Did any member of your household request any loan, last 12 months
+19:10:26 00_names WARNING label cut to 80 characters: s4q8_v2 -> AHS 2017: If the agricultural loan 2 was requested but not approved what was
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_1 -> AHS 2017: Did any member of your household use organic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_10 -> AHS 2017: Quantity of organic fertilizer used during agricultural Season B 2017
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_13 -> AHS 2017: Amount paid for purchasing the organic fertilizer during agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_15 -> AHS 2017: Is there any quantity of used organic fertilizer that any member of
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_16 -> AHS 2017: Did any member of your household use lime or gypsum at least in one
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_2 -> AHS 2017: Quantity of organic fertilizer used during agricultural Season A 2017
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_5 -> AHS 2017: Amount paid for purchasing the organic fertilizer during agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_7 -> AHS 2017: Quantity of used organic fertilizer that any member of the household
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_8 -> AHS 2017: Did any member of your household use lime or gypsum at least in one
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_9 -> AHS 2017: Did any member of your household use organic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q2_1 -> AHS 2017: Did any member of your household use inorganic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q2_20 -> AHS 2017: Did any member of your household use inorganic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q3_1 -> AHS 2017: Did any member of your household applied pesticide at least in one of
+19:10:26 00_names WARNING label cut to 80 characters: s5q3_23 -> AHS 2017: Did any member of your household applied pesticide at least in one of
+19:10:26 00_names WARNING label cut to 80 characters: s6q1_1 -> AHS 2017: Did any member of your household practice any type of erosion control
+19:10:26 00_names WARNING label cut to 80 characters: s6q1_3 -> AHS 2017: Is soil erosion on any of your household member's land increasing
+19:10:26 00_names WARNING label cut to 80 characters: s7q3_4 -> AHS 2020: Quantity of honey produced from traditional bee hives during 12
+19:10:26 00_names WARNING label cut to 80 characters: s7q3_5 -> AHS 2020: Quantity of honey produced from modern bee hive during 12, last months
+19:10:26 00_names WARNING label cut to 80 characters: s8q3 -> AHS 2024: Among the following specific measures to mitigate the environmental
+19:10:26 00_names WARNING label cut to 80 characters: s8q5 -> AHS 2024: In this season, which of the following measures did your household
+19:10:26 00_names WARNING label cut to 80 characters: s8q6 -> AHS 2024: To avoid environment-related risk, which of the following measures
+19:10:26 00_names WARNING label cut to 80 characters: s11q11 -> AHS 2017: Amount spent on purchasing Pesticides used to protect animal from
+19:10:26 00_names WARNING label cut to 80 characters: s4q11_v2 -> AHS 2017: If the agricultural loan 3 was requested but not approved what was
+19:10:26 00_names WARNING label cut to 80 characters: s4q5_v2 -> AHS 2017: If the agricultural loan 1 was requested but not approved what was
+19:10:26 00_names WARNING label cut to 80 characters: s4q8 -> AHS 2020: Did any member of your household request any loan, last 12 months
+19:10:26 00_names WARNING label cut to 80 characters: s4q8_v2 -> AHS 2017: If the agricultural loan 2 was requested but not approved what was
+19:10:26 00_names WARNING label cut to 80 characters: s1q10 -> AHS 2020: Has...been/engaged in any of the following agribusiness activities
+19:10:26 00_names WARNING label cut to 80 characters: s1q7 -> AHS 2020: Highest level of education attained by the household member
+19:10:26 00_names WARNING label cut to 80 characters: s3q1 -> AHS 2017: Has any member of this household benefited from any extension service
+19:10:26 00_names WARNING label cut to 80 characters: s3q10 -> AHS 2017: Was there any reared cow donated by friends during 2016-2017
+19:10:26 00_names WARNING label cut to 80 characters: s3q11 -> AHS 2017: Was there any reared cow bought by any household member during
+19:10:26 00_names WARNING label cut to 80 characters: s3q12 -> AHS 2017: Was there any reared cow that was neither bought nor donated but own
+19:10:26 00_names WARNING label cut to 80 characters: s3q13 -> AHS 2017: Does any member of this household still have cow provided by GIRINKA
+19:10:26 00_names WARNING label cut to 80 characters: s3q15 -> AHS 2017: Does any child of your household benefit one cup of milk at school
+19:10:26 00_names WARNING label cut to 80 characters: s6q10 -> AHS 2024: Does any member of this household belong to agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s6q10_a -> AHS 2024: Does any member of this household belong to agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s6q12 -> AHS 2024: Types of services do you get from these cooperative/or associations
+19:10:26 00_names WARNING label cut to 80 characters: s6q3 -> AHS 2024: Household members who received extension/advisory services in this
+19:10:26 00_names WARNING label cut to 80 characters: s6q7 -> AHS 2024: Is there any household member who benefited from contract farming in
+19:10:26 00_names WARNING label cut to 80 characters: s6q7_a -> AHS 2024: Is there any household member who benefited from contract farming in
+19:10:26 00_names WARNING label cut to 80 characters: s6q9 -> AHS 2024: Is there any household member who took livestock insurance in this
+19:10:26 00_names WARNING label cut to 80 characters: s6q9_a -> AHS 2024: Is there any household member who took livestock insurance in this
+19:10:26 00_names WARNING label cut to 80 characters: s5_q6 -> AHS 2024: On the total production of this fruit what is the quantity that has
+19:10:26 00_names WARNING label cut to 80 characters: s10q3_4 -> AHS 2017: Quantity of produced honey that has been consumed at home during 12
+19:10:26 00_names WARNING label cut to 80 characters: s11q3_4 -> AHS 2024: Quantity of honey produced from traditional bee hives during 6
+19:10:26 00_names WARNING label cut to 80 characters: s11q3_5 -> AHS 2024: Quantity of honey produced from modern bee hive during 6, last months
+19:10:26 00_names WARNING label cut to 80 characters: s1q10 -> AHS 2020: Has member name been engaged in agricultural activities during last
+19:10:26 00_names WARNING label cut to 80 characters: s1q7 -> AHS 2020: Highest level of education attained by the household member
+19:10:26 00_names WARNING label cut to 80 characters: s7q3_4 -> AHS 2020: Quantity of honey produced from traditional bee hives during 12
+19:10:26 00_names WARNING label cut to 80 characters: s7q3_5 -> AHS 2020: Quantity of honey produced from modern bee hive during 12, last months
+19:10:26 00_names WARNING label cut to 80 characters: s2q14 -> AHS 2020: Did any member of your HH grow crops during 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q19 -> AHS 2020: Any member of your HH used improved seeds during 2019/2020 agric. year
+19:10:26 00_names WARNING label cut to 80 characters: s2q22 -> AHS 2020: Any member of your HH used organic fertilizers in 2019/2020 agric.
+19:10:26 00_names WARNING label cut to 80 characters: s2q23 -> AHS 2020: Any member of your HH used inorganic fertilizers in 2019/2020 agric.
+19:10:26 00_names WARNING label cut to 80 characters: s2q26 -> AHS 2020: Any member of your HH used pesticides during 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q30 -> AHS 2020: Any HH member practice irrigation at least in 1 of the plots in 2017
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_1 -> AHS 2017: Did any member of your household use organic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_10 -> AHS 2017: Quantity of organic fertilizer used during agricultural Season B 2017
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_13 -> AHS 2017: Amount paid for purchasing the organic fertilizer during agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_15 -> AHS 2017: Is there any quantity of used organic fertilizer that any member of
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_16 -> AHS 2017: Did any member of your household use lime or gypsum at least in one
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_2 -> AHS 2017: Quantity of organic fertilizer used during agricultural Season A 2017
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_5 -> AHS 2017: Amount paid for purchasing the organic fertilizer during agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_7 -> AHS 2017: Quantity of used organic fertilizer that any member of the household
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_8 -> AHS 2017: Did any member of your household use lime or gypsum at least in one
+19:10:26 00_names WARNING label cut to 80 characters: s5q1_9 -> AHS 2017: Did any member of your household use organic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q2_1 -> AHS 2017: Did any member of your household use inorganic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q2_20 -> AHS 2017: Did any member of your household use inorganic fertilizer at least in
+19:10:26 00_names WARNING label cut to 80 characters: s5q3_1 -> AHS 2017: Did any member of your household applied pesticide at least in one of
+19:10:26 00_names WARNING label cut to 80 characters: s5q3_23 -> AHS 2017: Did any member of your household applied pesticide at least in one of
+19:10:26 00_names WARNING label cut to 80 characters: equipment_n -> AHS 2020: Mechanical equipment used in cultivation in 2019/2020 agric. year
+19:10:26 00_names WARNING label cut to 80 characters: s2q1_v2 -> AHS 2020: Any member of your HH have land used for cropping in 2019/2020 agric.
+19:10:26 00_names WARNING label cut to 80 characters: s2q1_v3 -> AHS 2017: Did any member of your household own land used for dwelling during
+19:10:26 00_names WARNING label cut to 80 characters: s2q10_v2 -> AHS 2017: Did any member of your household own land used for cropping during
+19:10:26 00_names WARNING label cut to 80 characters: s2q11 -> AHS 2017: Did any member of your household own land used for grazing during
+19:10:26 00_names WARNING label cut to 80 characters: s2q11_1 -> AHS 2020: Mechanical equipment used in cultivation in 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q11_2 -> AHS 2020: Mechanical equipment used in cultivation in 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q11_3 -> AHS 2020: Mechanical equipment used in cultivation in 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q11_4 -> AHS 2020: Mechanical equipment used in cultivation in 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q11_5 -> AHS 2020: Mechanical equipment used in cultivation in 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q12_v2 -> AHS 2017: Did any member of your household rented land used for cropping for
+19:10:26 00_names WARNING label cut to 80 characters: s2q13 -> AHS 2020: Was this plot in land consolidated site during 2019/2020 agricultural
+19:10:26 00_names WARNING label cut to 80 characters: s2q13_v2 -> AHS 2017: Did any member of your household rented land used for cropping and
+19:10:26 00_names WARNING label cut to 80 characters: s2q14 -> AHS 2017: Did any member of your household rented land used for cropping
+19:10:26 00_names WARNING label cut to 80 characters: s2q15_2 -> AHS 2017: 2 What are major 3 crops did your household grow during Season B
+19:10:26 00_names WARNING label cut to 80 characters: s2q2_v2 -> AHS 2020: Any member of your HH have land used for fodder crop/pasture in
+19:10:26 00_names WARNING label cut to 80 characters: s2q2_v3 -> AHS 2017: Did any member of your household own land used for cropping during
+19:10:26 00_names WARNING label cut to 80 characters: s2q3_v3 -> AHS 2017: Did any member of your household own land used for grazing during
+19:10:26 00_names WARNING label cut to 80 characters: s2q4_v3 -> AHS 2017: Did any member of your household rented land used for cropping for
+19:10:26 00_names WARNING label cut to 80 characters: s2q5_v3 -> AHS 2017: Did any member of your household rented land used for cropping and
+19:10:26 00_names WARNING label cut to 80 characters: s2q6_v3 -> AHS 2017: Did any member of your household rented land used for cropping
+19:10:26 00_names WARNING label cut to 80 characters: s2q8 -> AHS 2024: Household members with the right to sell/use the land as a guarantee
+19:10:26 00_names WARNING label cut to 80 characters: s2q9_v2 -> AHS 2017: Did any member of your household own land used for dwelling during
+19:10:26 00_names WARNING label cut to 80 characters: s9q9_2 -> AHS 2017: Did any memnber of your household rear this animal during 2016-2017
+19:10:26 00_names WARNING label cut to 80 characters: s11q1_5 -> AHS 2024: Total Number of days that cattle were lactating in this/that month of
+19:10:26 00_names WARNING label cut to 80 characters: s7q11 -> AHS 2024: Number of the equipment that any member of your household has rented
+19:10:26 00_names WARNING label cut to 80 characters: s7q2 -> AHS 2024: Has any member of your household purchased and used this tool during
+19:10:26 00_names WARNING label cut to 80 characters: s7q4_v2 -> AHS 2017: Number of tools puchased by your household during agricultural year
+19:10:26 00_names WARNING label cut to 80 characters: s7q8 -> AHS 2024: Has any member of your household purchased this equipment during this
+19:10:27 00_names INFO variable_names.csv written: 4312 names in 64 files (pooled + per-wave)
+19:10:27 00_names INFO pooled names that needed an abbreviation to fit 32 characters: 553
+19:10:27 00_names INFO pooled names that carry the native code to stay unique: 195 (e.g. ['ahs_class_attended_2024_s4aq6b', 'ahs_class_attended_2024_s4aq6c', 'ahs_agri_activity_s0q163sect', 'ahs_agri_activity_hh_s0q163sect', 'ahs_agri_activity_s0q164sect', 'ahs_agri_activity_hh_s0q164sect', 'ahs_household_own_b_s2q10', 'ahs_household_own_b_s2q11'])

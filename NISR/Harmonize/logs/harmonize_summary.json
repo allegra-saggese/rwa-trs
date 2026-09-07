@@ -157,6 +157,24 @@
     "EICV7_CS"
    ]
   },
+  "H_EC_establishment.dta": {
+   "source": "Establishment-Census-EC/3_Final/EC_pooled_establishment.dta",
+   "dataset": "EC",
+   "out_dir": "Establishment-Census-EC/4_Harmonized",
+   "unit": "establishment",
+   "rows": 896710,
+   "vars": 266,
+   "h_vars": [
+    "ec_establishment_key"
+   ],
+   "waves": [
+    "2011",
+    "2014",
+    "2017",
+    "2020",
+    "2023"
+   ]
+  },
   "H_AHS_household.dta": {
    "source": "Agriculture-Survey-AHS/3_Final/AHS_pooled_household.dta",
    "dataset": "AHS",
@@ -201,105 +219,6 @@
     "2017",
     "2020",
     "2024"
-   ]
-  },
-  "H_CFSVA_child.dta": {
-   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_child.dta",
-   "dataset": "CFSVA",
-   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
-   "unit": "child",
-   "rows": 35763,
-   "vars": 1389,
-   "h_vars": [
-    "cfsva_household_key"
-   ],
-   "waves": [
-    "2006",
-    "2009",
-    "2012",
-    "2015",
-    "2018",
-    "2021",
-    "2024"
-   ]
-  },
-  "H_CFSVA_household.dta": {
-   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_household.dta",
-   "dataset": "CFSVA",
-   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
-   "unit": "household",
-   "rows": 50890,
-   "vars": 4831,
-   "h_vars": [
-    "cfsva_head_age",
-    "cfsva_head_education_level",
-    "cfsva_head_literacy",
-    "cfsva_head_marital_status",
-    "cfsva_head_sex",
-    "cfsva_household_key"
-   ],
-   "waves": [
-    "2006",
-    "2009",
-    "2012",
-    "2015",
-    "2018",
-    "2021",
-    "2024"
-   ]
-  },
-  "H_CFSVA_village.dta": {
-   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_village.dta",
-   "dataset": "CFSVA",
-   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
-   "unit": "village",
-   "rows": 3812,
-   "vars": 508,
-   "h_vars": [],
-   "waves": [
-    "2009",
-    "2012",
-    "2015",
-    "2018",
-    "2021"
-   ]
-  },
-  "H_CFSVA_woman.dta": {
-   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_woman.dta",
-   "dataset": "CFSVA",
-   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
-   "unit": "woman",
-   "rows": 31030,
-   "vars": 816,
-   "h_vars": [
-    "cfsva_education_level",
-    "cfsva_household_key",
-    "cfsva_literacy"
-   ],
-   "waves": [
-    "2006",
-    "2009",
-    "2012",
-    "2015",
-    "2024"
-   ]
-  },
-  "H_EC_establishment.dta": {
-   "source": "Establishment-Census-EC/3_Final/EC_pooled_establishment.dta",
-   "dataset": "EC",
-   "out_dir": "Establishment-Census-EC/4_Harmonized",
-   "unit": "establishment",
-   "rows": 896710,
-   "vars": 266,
-   "h_vars": [
-    "ec_establishment_key"
-   ],
-   "waves": [
-    "2011",
-    "2014",
-    "2017",
-    "2020",
-    "2023"
    ]
   },
   "H_SAS_plotcrop.dta": {
@@ -399,6 +318,87 @@
     "2025_A",
     "2025_B",
     "2025_C"
+   ]
+  },
+  "H_CFSVA_child.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_child.dta",
+   "dataset": "CFSVA",
+   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
+   "unit": "child",
+   "rows": 35763,
+   "vars": 1389,
+   "h_vars": [
+    "cfsva_household_key"
+   ],
+   "waves": [
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2018",
+    "2021",
+    "2024"
+   ]
+  },
+  "H_CFSVA_household.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_household.dta",
+   "dataset": "CFSVA",
+   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
+   "unit": "household",
+   "rows": 50890,
+   "vars": 4831,
+   "h_vars": [
+    "cfsva_head_age",
+    "cfsva_head_education_level",
+    "cfsva_head_literacy",
+    "cfsva_head_marital_status",
+    "cfsva_head_sex",
+    "cfsva_household_key"
+   ],
+   "waves": [
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2018",
+    "2021",
+    "2024"
+   ]
+  },
+  "H_CFSVA_village.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_village.dta",
+   "dataset": "CFSVA",
+   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
+   "unit": "village",
+   "rows": 3812,
+   "vars": 508,
+   "h_vars": [],
+   "waves": [
+    "2009",
+    "2012",
+    "2015",
+    "2018",
+    "2021"
+   ]
+  },
+  "H_CFSVA_woman.dta": {
+   "source": "Food-Security-CFSVAN/3_Final/CFSVA_pooled_woman.dta",
+   "dataset": "CFSVA",
+   "out_dir": "Food-Security-CFSVAN/4_Harmonized",
+   "unit": "woman",
+   "rows": 31030,
+   "vars": 816,
+   "h_vars": [
+    "cfsva_education_level",
+    "cfsva_household_key",
+    "cfsva_literacy"
+   ],
+   "waves": [
+    "2006",
+    "2009",
+    "2012",
+    "2015",
+    "2024"
    ]
   }
  }
