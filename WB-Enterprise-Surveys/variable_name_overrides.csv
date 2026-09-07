@@ -1,0 +1,180 @@
+native,clean_stem,clean_label
+a14d,start_day,Day the interview started
+a14h,start_hour,Hour the interview started
+a14m,start_month,Month the interview started
+a14min,start_minute,Minute the interview started
+a14y,start_year_2011_2023,Year the interview started
+a15d,end_day,Day the interview ended
+a15h,end_hour,Hour the interview ended
+a15m,end_month,Month the interview ended
+a15min,end_minute,Minute the interview ended
+a15y,end_year_2011_2023,Year the interview ended
+afs4,cost_aids_programs,Cost of all AIDS and HIV programs and activities in FY2010
+b1_rwa,legal_status_rwanda,Legal status of the establishment on the Rwanda list of company forms
+b1x,legal_status_other,Other legal status specified
+c1a,sales_manufacturing,Percentage of sales from manufacturing
+c1b,sales_services,Percentage of sales from services
+c1c,sales_other_activity,Percentage of sales from other activities
+c1cx,other_activity,Other activity specified
+c2a1,sales_paid_before,Percentage of sales paid for before delivery
+c2a2,sales_paid_on_delivery,Percentage of sales paid for on delivery
+c34b,water_unit,Unit of measure of the water consumption reported
+c34bx,water_unit_other,Other unit of measure of water consumption specified
+c35b,losses_water_shortages,Value of the losses due to water shortages in the last fiscal year
+c3a1,first_product_name,Name and description of the first main product
+c3b1,second_product_name,Name and description of the second main product
+c3b2,second_product_isic,Four-digit ISIC code of the second main product
+c3b3,second_product_sales,Percentage of total sales from the second main product
+c41b,losses_internet,Value of the losses due to internet disruptions in the last fiscal year
+c6b3a1,export_country_first,Name of the first export destination country
+c6b3a2,export_share_first,Percentage of exports to the first destination country
+c6b3b1,export_country_second,Name of the second export destination country
+c6b3b2,export_share_second,Percentage of exports to the second destination country
+c8,outage_hours,"Average duration of power outages in a typical month, in hours"
+c8a5x,incentive_other,Other export or investment incentive specified
+c8bx,no_incentive_other,Other main reason for using no export or investment incentive
+c9b,losses_power_outages,Value of the losses due to power outages in the last fiscal year
+callback,callback_made,The interview required a callback
+cards,show_cards,Set of show cards used in the interview
+d1a2,product_isic_rev_3,"Main product or service, ISIC Revision 3.1 code"
+d1a2_v4,product_isic_rev_4,"Main product or service, ISIC Revision 4 code"
+d1a6c,hotel_room_area_unit,Unit of measure of the total area of the hotel rooms
+d1a6cx,hotel_room_unit_other,Other unit of measure of the hotel room area specified
+d2,total_annual_sales,Total annual sales in the last fiscal year
+d2a1,sales_two_years_ago,Total sales two fiscal years ago
+d2a1x,written_sales_2_years,Sales two years ago written out in words
+d2x,sales_written_out,Total annual sales written out in words
+d36a,days_border_export,Average days for exported goods to clear all border controls
+d6,export_losses_theft,"Export losses due to theft, as a share of the value of the shipment"
+d7,export_losses_breakage,"Export losses due to breakage or spoilage, as a share of the shipment"
+e31b,market_share_largest,Market share of the largest competitor in the last fiscal year
+g7a,losses_breakage,Percentage of domestic shipments lost to breakage in transit
+g7b,losses_theft,Percentage of domestic shipments lost to theft in transit
+h1a,court_fair,"The courts are fair, impartial and uncorrupted"
+h1b,court_quick,The courts are quick
+h1c,court_affordable,The courts are affordable
+h1d,court_enforces,The courts are able to enforce their decisions
+h6,new_marketing_methods,Introduced new or improved marketing methods in the last three years
+industry,industry_group,Industry group of the establishment in the World Bank grouping
+j30_courts_pos,rotation_position_courts,Position of the courts in the rotation of J30
+j30_instability_pos,rotation_position_political,Position of political instability in the rotation of J30
+j30_permit_pos,rotation_position_permit,Position of business permits in the rotation of J30
+j30_taxadmin_pos,rotation_position_tax_admin,Position of tax administration in the rotation of J30
+j30_taxrate_pos,rotation_position_tax_rates,Position of tax rates in the rotation of J30
+j6ax,hiring_channel_other,Other channel through which the most recent employee was found
+j6d,would_have_hired,Would have hired employees but for the labor regulations
+j6e,number_would_hire,Number of employees the establishment would have hired
+j6f,would_have_fired,Would have fired employees but for the labor regulations
+j6g,number_would_fire,Number of employees the establishment would have fired
+k1c1,land_owned_share,Percentage of the land occupied that the establishment owns
+k1c2,land_rented_share,Percentage of the land occupied that the establishment rents
+k1c3,land_other_share,Percentage of the land occupied held under another arrangement
+k1c3x,land_other,Other land arrangement specified
+l1,permanent_employees,Permanent full-time employees at the end of the last fiscal year
+l1a,part_time_employees,Part-time employees at the end of the last fiscal year
+l2,permanent_employees_3_years,Permanent full-time employees three fiscal years ago
+l2c,cost_depreciation,"Total annual depreciation of land, buildings and equipment"
+l2d,cost_rental,"Total annual cost of renting land, buildings and equipment"
+l3a,production_workers,Full-time production workers at the end of the last fiscal year
+l3b,non_production,"Full-time non-production workers, last fiscal year"
+l3b_v2,cost_fuel,Annual cost of fuel
+l3c,cost_water,Annual cost of water
+l3d,cost_transport_goods,"Annual cost of transport of goods, excluding fuel"
+l3e,cost_communications,Annual cost of telephone and communications
+l3f,cost_royalties,"Annual cost of royalties, duties and license fees"
+l4a,spending_machinery,"Spending on the purchase of machinery, vehicles and equipment"
+l4b,low_skilled,Permanent full-time low-skilled production workers
+l4b_v2,spending_land,Spending on the purchase of land and buildings
+l4c,spending_technology,Spending on the purchase of information technology
+l5,female_employees,Full-time female employees at the end of the last fiscal year
+l5a,female_production,"Full-time female production workers, last fiscal year"
+l5a_v2,book_value_machinery,"Net book value of machinery, vehicles and equipment at year end"
+l5b,female_non_prod,"Full-time female non-production workers, last fiscal year"
+l5b_v2,book_value_land,Net book value of land and buildings at the end of the year
+l6,temporary_employees,Full-time temporary employees at the end of the last fiscal year
+l6a,female_temporary,Female temporary full-time workers employed throughout the year
+l6a_2006,buying_cost_machinery,"Cost of buying the machinery and equipment used, as they were"
+l6b,buying_cost_land,"Cost of buying the land and buildings occupied, as they were"
+l7,replacement_cost_new,Cost of replacing all equipment and machinery with new ones
+n3,sales_three_years_ago,Total sales three fiscal years ago
+n3x,written_sales_3_years,Sales three years ago written out in words
+o3a,alternative_arbitration,Arbitration is a reliable alternative to the courts for disputes
+o3b,alternative_mediation,Mediation is a reliable alternative to the courts for disputes
+rwae6_pos1,option_position_rwae6_1,Answer option shown in position 1 of question RWAe6
+rwae6_pos10,option_position_rwae6_10,Answer option shown in position 10 of question RWAe6
+rwae6_pos2,option_position_rwae6_2,Answer option shown in position 2 of question RWAe6
+rwae6_pos3,option_position_rwae6_3,Answer option shown in position 3 of question RWAe6
+rwae6_pos4,option_position_rwae6_4,Answer option shown in position 4 of question RWAe6
+rwae6_pos5,option_position_rwae6_5,Answer option shown in position 5 of question RWAe6
+rwae6_pos6,option_position_rwae6_6,Answer option shown in position 6 of question RWAe6
+rwae6_pos7,option_position_rwae6_7,Answer option shown in position 7 of question RWAe6
+rwae6_pos8,option_position_rwae6_8,Answer option shown in position 8 of question RWAe6
+rwae6_pos9,option_position_rwae6_9,Answer option shown in position 9 of question RWAe6
+rwal3a,foreign_managers,Permanent full-time foreign managers in the last fiscal year
+rwal3b,foreign_professionals,Permanent full-time foreign professionals in the last fiscal year
+rwal3c,foreign_technicians,Permanent full-time foreign technicians and associate staff
+rwal3d,foreign_clerical,Permanent full-time foreign clerical support workers
+rwal3e,foreign_service_sales,Permanent full-time foreign service and sales workers
+rwal3f,foreign_operators,Permanent full-time foreign plant and machine operators
+rwal3g,foreign_other,Permanent full-time foreign workers in other occupations
+rwal7,tried_to_hire,Tried to hire new employees in the past two years
+status2019,panel_status_2019,Status in 2019 of the firm interviewed in 2011
+stratificationpanelcode,panel_stratum,Panel code used in the stratification
+u11_pos1,option_position_u11_1,Answer option shown in position 1 of question U11
+u11_pos10,option_position_u11_10,Answer option shown in position 10 of question U11
+u11_pos11,option_position_u11_11,Answer option shown in position 11 of question U11
+u11_pos2,option_position_u11_2,Answer option shown in position 2 of question U11
+u11_pos3,option_position_u11_3,Answer option shown in position 3 of question U11
+u11_pos4,option_position_u11_4,Answer option shown in position 4 of question U11
+u11_pos5,option_position_u11_5,Answer option shown in position 5 of question U11
+u11_pos6,option_position_u11_6,Answer option shown in position 6 of question U11
+u11_pos7,option_position_u11_7,Answer option shown in position 7 of question U11
+u11_pos8,option_position_u11_8,Answer option shown in position 8 of question U11
+u11_pos9,option_position_u11_9,Answer option shown in position 9 of question U11
+u14_pos1,option_position_u14_1,Answer option shown in position 1 of question U14
+u14_pos10,option_position_u14_10,Answer option shown in position 10 of question U14
+u14_pos11,option_position_u14_11,Answer option shown in position 11 of question U14
+u14_pos2,option_position_u14_2,Answer option shown in position 2 of question U14
+u14_pos3,option_position_u14_3,Answer option shown in position 3 of question U14
+u14_pos4,option_position_u14_4,Answer option shown in position 4 of question U14
+u14_pos5,option_position_u14_5,Answer option shown in position 5 of question U14
+u14_pos6,option_position_u14_6,Answer option shown in position 6 of question U14
+u14_pos7,option_position_u14_7,Answer option shown in position 7 of question U14
+u14_pos8,option_position_u14_8,Answer option shown in position 8 of question U14
+u14_pos9,option_position_u14_9,Answer option shown in position 9 of question U14
+u2_pos1,option_position_u2_1,Answer option shown in position 1 of question U2
+u2_pos10,option_position_u2_10,Answer option shown in position 10 of question U2
+u2_pos11,option_position_u2_11,Answer option shown in position 11 of question U2
+u2_pos2,option_position_u2_2,Answer option shown in position 2 of question U2
+u2_pos3,option_position_u2_3,Answer option shown in position 3 of question U2
+u2_pos4,option_position_u2_4,Answer option shown in position 4 of question U2
+u2_pos5,option_position_u2_5,Answer option shown in position 5 of question U2
+u2_pos6,option_position_u2_6,Answer option shown in position 6 of question U2
+u2_pos7,option_position_u2_7,Answer option shown in position 7 of question U2
+u2_pos8,option_position_u2_8,Answer option shown in position 8 of question U2
+u2_pos9,option_position_u2_9,Answer option shown in position 9 of question U2
+u5_pos1,option_position_u5_1,Answer option shown in position 1 of question U5
+u5_pos10,option_position_u5_10,Answer option shown in position 10 of question U5
+u5_pos11,option_position_u5_11,Answer option shown in position 11 of question U5
+u5_pos2,option_position_u5_2,Answer option shown in position 2 of question U5
+u5_pos3,option_position_u5_3,Answer option shown in position 3 of question U5
+u5_pos4,option_position_u5_4,Answer option shown in position 4 of question U5
+u5_pos5,option_position_u5_5,Answer option shown in position 5 of question U5
+u5_pos6,option_position_u5_6,Answer option shown in position 6 of question U5
+u5_pos7,option_position_u5_7,Answer option shown in position 7 of question U5
+u5_pos8,option_position_u5_8,Answer option shown in position 8 of question U5
+u5_pos9,option_position_u5_9,Answer option shown in position 9 of question U5
+u8_pos1,option_position_u8_1,Answer option shown in position 1 of question U8
+u8_pos10,option_position_u8_10,Answer option shown in position 10 of question U8
+u8_pos11,option_position_u8_11,Answer option shown in position 11 of question U8
+u8_pos2,option_position_u8_2,Answer option shown in position 2 of question U8
+u8_pos3,option_position_u8_3,Answer option shown in position 3 of question U8
+u8_pos4,option_position_u8_4,Answer option shown in position 4 of question U8
+u8_pos5,option_position_u8_5,Answer option shown in position 5 of question U8
+u8_pos6,option_position_u8_6,Answer option shown in position 6 of question U8
+u8_pos7,option_position_u8_7,Answer option shown in position 7 of question U8
+u8_pos8,option_position_u8_8,Answer option shown in position 8 of question U8
+u8_pos9,option_position_u8_9,Answer option shown in position 9 of question U8
+u8a,rule_conflict_first,First rule or regulation that was in conflict with another
+u8b,rule_conflict_second,Second rule or regulation that was in conflict with another
+zone,zone,"Zone as shipped in the 2006 file, with an undocumented yes/no coding"
