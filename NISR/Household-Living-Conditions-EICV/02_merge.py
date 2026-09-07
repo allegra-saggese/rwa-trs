@@ -23,9 +23,29 @@ import difflib, json, re
 from collections import Counter
 import numpy as np, pandas as pd
 from eicv_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
-                          resolve_object_columns, label_similarity, save_json, LOGS)
+                          resolve_object_columns, label_similarity, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("02_merge"); P = paths(); ck = Checks(log)
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # per-wave files are read back under NISR's native names; pooled files written under the clean names
+METAS = {f.stem[6:-5]: json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}
+def _code(k):
+    """value-label code as saved in the meta file (json string) -> the number pyreadstat returns for a .dta"""
+    try: f = float(k)
+    except (TypeError, ValueError): return k
+    return int(f) if f.is_integer() else f
+def read_native(w, f):
+    """a per-wave file under native names, with the native labels and value labels saved by 01_clean in the meta file"""
+    stem = f.name[len(f"EICV_{w}_"):-len("_clean.dta")]
+    df, vl, vv = read_dta(f)
+    m = METAS.get(w, {}); entry = m.get(stem) if stem in ("person", "household") else m.get("modules", {}).get(stem)
+    if entry and entry.get("clean_names"):                                  # exact map written by 01_clean (covers columns the table did not list)
+        inv = {c: n for n, c in entry["clean_names"].items()}; df = df.rename(columns=inv)
+    else: df, _, _ = NAMES.invert(df, vl, vv, f"wave:{w}:{stem}")
+    if entry:
+        vl = {c: entry.get("var_labels", {}).get(c, "") for c in df.columns}
+        vv = {c: {_code(k): t for k, t in d.items()} for c, d in entry.get("value_labels", {}).items() if c in df.columns}
+    else: log.warning("%s %s: no meta entry, labels taken from the file", w, stem)
+    return df, vl, vv
 CS = ["EICV1", "EICV2", "EICV3", "EICV4_CS", "EICV5_CS", "EICV7_CS"]
 VUP = ["EICV4_VUP", "EICV5_VUP", "EICV7_VUP"]
 KEYS = ["survey", "year", "wave", "sample", "prov", "dist", "urban", "cluster", "stratum", "hhid", "pid", "sex", "age", "wt", "wt_hh"]
@@ -175,7 +195,7 @@ def pool(files, out_name, label, unit, out_dir=None):
     out_dir = out_dir or P["final"]
     data, labels, vlabs = {}, {}, {}
     for w, f in files.items():
-        df, vl, vv = read_dta(f); data[w], labels[w], vlabs[w] = df, vl, vv
+        df, vl, vv = read_native(w, f); data[w], labels[w], vlabs[w] = df, vl, vv
         log.info("  loaded %-10s %-55s %9s rows x %4d", w, f.name, f"{len(df):,}", df.shape[1])
     waves = list(files)
     allvars = sorted({c for df in data.values() for c in df.columns})
@@ -224,8 +244,9 @@ def pool(files, out_name, label, unit, out_dir=None):
     if "wt" in out.columns:
         for w in waves: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
     out, dup_rows, dup_wt = drop_exact_duplicates(out, out_name, log)
-    write_dta(out, out_dir / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
+    out_c, vl_c, vv_c, clean_names = NAMES.apply(out, var_labels, value_labels, f"pooled:{out_name}", log)      # clean names, labels and value labels
+    write_dta(out_c, out_dir / out_name, vl_c, vv_c, label, log)
+    return {"rows": len(out), "vars": list(out.columns), "clean_vars": list(out_c.columns), "clean_names": clean_names, "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
             "stems": {w: [f.name.replace(f"EICV_{w}_", "").replace("_clean.dta", "")] for w, f in files.items()},
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 
@@ -263,7 +284,9 @@ summary["module_map"] = MODULE_MAP
 for w, stem, out in (("EICV3_4_Panel", "data_stata", "EICV3_4_panel_link.dta"), ("EICV5_VUP", "panel_for_merge", "EICV5_vup_panel_link.dta")):
     f = inter / f"EICV_{w}_{stem}_clean.dta"
     if f.exists():
-        df, vl, vv = read_dta(f); write_dta(df, APPENDED / out, vl, vv, f"NISR linking file {stem} ({w}), keys harmonised", log)
-        summary["files"][out] = {"rows": len(df), "vars": list(df.columns), "unit": "link", "waves": [w], "dir": str(APPENDED.relative_to(P["root"]))}
+        df, vl, vv = read_native(w, f)
+        df_c, vl_c, vv_c, clean_names = NAMES.apply(df, vl, vv, f"pooled:{out}", log)
+        write_dta(df_c, APPENDED / out, vl_c, vv_c, f"NISR linking file {stem} ({w}), keys harmonised", log)
+        summary["files"][out] = {"rows": len(df), "vars": list(df.columns), "clean_vars": list(df_c.columns), "clean_names": clean_names, "unit": "link", "waves": [w], "dir": str(APPENDED.relative_to(P["root"]))}
 save_json(summary, LOGS / "merge_alignment.json")
 ck.done(); log.info("02_merge done")
