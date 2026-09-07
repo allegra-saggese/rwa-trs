@@ -190,7 +190,8 @@ H_STEM = {"h_marital": "marital_status", "h_relation": "relationship_to_head", "
           "h_isic1_approx": "industry_isic_approx", "h_isco1": "occupation_isco", "h_isco1_approx": "occupation_isco_approx",
           "h_head_sex": "head_sex", "h_head_age": "head_age", "h_head_marital": "head_marital_status",
           "h_head_educ": "head_education_level", "h_head_literacy": "head_literacy",
-          "h_hhkey": "household_key", "h_pkey": "person_key"}
+          "h_hhkey": "household_key", "h_pkey": "person_key",
+          "h_estkey": "establishment_key", "h_plotkey": "plot_key"}
 
 def h_name(tag: str, h: str) -> str:
     """the harmonised concept `h` as it is named in `tag`'s files: lfs_labour_status, census_labour_status ..."""

@@ -78,13 +78,13 @@ hh_keys = {}
 ordered = sorted(summ["files"].items(), key=lambda kv: 0 if kv[1].get("unit") == "household" else 1)     # household files first: their keys feed the woman / child linkage rows
 for out, info in ordered:
     if info.get("skipped") or info.get("unit") not in ("person", "household", "woman", "child", "establishment"): continue
-    if "<ds>_household_key" not in names_of(out): continue
+    if "h_hhkey" not in names_of(out): continue
     df = load(out, ["h_hhkey", "h_pkey", "wave", "hhid"])
     hk = df.loc[df["h_hhkey"] != "", "h_hhkey"]
     row("B", f"{out}: rows with a household key (informational)", len(hk), None)
     row("B", f"{out}: keys built from a zero / negative id (must be 0)", int(hk.str.match(r".*_(0|0\.0|-\d+)$").sum()), 0)
     if info["unit"] == "household": row("B", f"{out}: h_hhkey unique (household file)", hk.nunique(), len(hk)); hh_keys[out] = set(hk)
-    if "<ds>_person_key" in df.columns and info["unit"] == "person":
+    if "h_pkey" in df.columns and info["unit"] == "person":
         pk = df.loc[df["h_pkey"] != "", "h_pkey"]; d = int(pk.duplicated().sum())
         row("B", f"{out}: duplicated non-blank h_pkey (allowed: {DUP_EXCEPTIONS.get(out, 0)} = NISR duplicate person numbers)", d, DUP_EXCEPTIONS.get(out, 0))
     if info.get("dataset") == "CFSVA" and info["unit"] in ("woman", "child") and "H_CFSVA_household.dta" in hh_keys:
@@ -165,7 +165,7 @@ for out in ("H_LFS_person.dta", "H_Census_person.dta", "H_EICV_person.dta", "H_A
     d = d[(pd.to_numeric(d["age"], errors="coerce") >= 16) & d["h_employed"].notna()]
     for w, g in d.groupby("wave"):
         wt = g["wt"].astype("float"); rate = 100 * (wt * (g["h_employed"] == 1)).sum() / wt.sum(); emp = (wt * (g["h_employed"] == 1)).sum()
-        report.append(f"| D | {out[2:-4]} {w} | {int(g['<ds>_labour_definition'].dropna().iloc[0]) if g['<ds>_labour_definition'].notna().any() else ''} | {rate:.1f} | {emp:,.0f} | n/a |")
+        report.append(f"| D | {out[2:-4]} {w} | {int(g['h_lfs_def'].dropna().iloc[0]) if g['h_lfs_def'].notna().any() else ''} | {rate:.1f} | {emp:,.0f} | n/a |")
     del d
 report += ["", f"**{fails} check(s) failed.**" if fails else "**All checks passed.**"]
 (LOGS / "checks_report.txt").write_text("\n".join(report)); log.info("\n" + "\n".join(report))

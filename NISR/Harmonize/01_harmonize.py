@@ -47,6 +47,8 @@ KEY_LABELS = {
     "head_sex": "Sex of household head (harmonised): 1 male, 2 female", "head_age": "Age of household head (harmonised)",
     "h_hhkey": "Household key survey_wave[_interview]_hhid (string; blank where the public file has no household id)",
     "h_pkey": "Person key: the household key and the person number (blank where the household key is blank)",
+    "h_estkey": "Establishment key survey_wave_establishment id (string; the unit of the EC file)",
+    "h_plotkey": "Plot key survey_wave_segment_holder_plot (string; the unit of the SAS plot files)",
 }
 geo = pd.read_csv(db_root() / "geodata-nisr" / "Village_Boundary_2022_924768113126413998.csv")
 SECT = geo.drop_duplicates("Sector ID")[["Province ID", "Province", "District ID", "District", "Sector ID", "Sector"]]
@@ -504,6 +506,19 @@ for tag in DATASETS:
                 p_ok = df["pid"].notna() & (df["pid"].astype(str).str.strip() != "")
                 df["h_pkey"] = (key + "_" + id_text("pid")).where(p_ok & (key != ""), ""); vl["h_pkey"] = KEY_LABELS["h_pkey"]
                 note_map(tag, sorted(df["wave"].unique()), fname, "h_pkey", "h_hhkey + pid", "string concatenation; blank where h_hhkey is blank or pid missing", "all person files", "exact", f"{int((df['h_pkey'] == '').sum()):,} blank; {int(df.loc[df['h_pkey'] != '', 'h_pkey'].duplicated().sum()):,} duplicated (NISR duplicate person numbers)")
+        if "estid" in df.columns:                                  # EC: the unit is an establishment, not a household
+            ok = df["estid"].notna() & (df["estid"].astype(str).str.strip() != "")
+            df["h_estkey"] = (df["survey"].astype(str) + "_" + df["wave"].astype(str) + "_" + id_text("estid")).where(ok, "")
+            vl["h_estkey"] = KEY_LABELS["h_estkey"]
+            note_map(tag, sorted(df["wave"].unique()), fname, "h_estkey", "survey + wave + estid", "string concatenation; blank where the establishment id is missing", "establishment files", "exact",
+                     f"{int((df['h_estkey'] == '').sum()):,} blank of {len(df):,} rows; {int(df.loc[df['h_estkey'] != '', 'h_estkey'].duplicated().sum()):,} duplicated")
+        if {"segment", "holder", "plot"} <= set(df.columns):        # SAS: the unit is a plot x crop record
+            parts = [df["survey"].astype(str), df["wave"].astype(str)] + [id_text(c) for c in ("segment", "holder", "plot")]
+            ok = df[["segment", "holder", "plot"]].notna().all(axis=1)
+            df["h_plotkey"] = parts[0].str.cat(parts[1:], sep="_").where(ok, "")
+            vl["h_plotkey"] = KEY_LABELS["h_plotkey"]
+            note_map(tag, sorted(df["wave"].unique()), fname, "h_plotkey", "survey + wave + segment + holder + plot", "string concatenation; blank where any of the three is missing", "plot files", "exact",
+                     f"{int((df['h_plotkey'] == '').sum()):,} blank of {len(df):,} rows; the plot is not a panel unit, so the key repeats across seasons only by coincidence")
         # 3. concepts
         fn = CONCEPTS.get((tag, unit)) or (CONCEPTS.get((tag, "person")) if (tag == "EICV" and fname == "EICV_pooled_person_vup.dta") else None)
         H = pd.DataFrame(index=df.index)             # the h_* columns are built apart from the wide native frame (memory), joined once at the end

@@ -492,7 +492,7 @@ from pathlib import Path as _Path
 HARMONISED_STEMS = {"marital_status", "relationship_to_head", "school_attendance", "education_level", "literacy",
                     "labour_status", "employed", "labour_definition", "employment_status", "industry_isic",
                     "industry_isic_approx", "occupation_isco", "occupation_isco_approx", "head_marital_status",
-                    "head_education_level", "head_literacy", "household_key", "person_key"}
+                    "head_education_level", "head_literacy", "household_key", "person_key", "establishment_key", "plot_key"}
 
 KEY_STEMS = {   # native key-block / derived names -> clean stem (the dataset tag is prefixed) and label text
     "survey": ("survey", "Source survey"), "year": ("year", "Survey year"), "wave": ("wave", "Wave identifier"),
