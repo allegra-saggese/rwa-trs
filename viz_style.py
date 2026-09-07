@@ -134,3 +134,28 @@ def frame_map(ax, title: str, park_layer=None) -> None:
     ax.set_title(title)
     ax.set_axis_off()
     ax.set_aspect("equal")
+    # An equal-aspect map rarely fills its grid cell. Anchoring north pins the
+    # map to the top of the cell so titles align across a row of facets.
+    ax.set_anchor("N")
+
+
+TABLES = ROOT / "output" / "tables"
+
+
+def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:
+    """Write a table as CSV and, where jinja2 is available, LaTeX.
+
+    LaTeX export is best-effort: a missing jinja2 must not take down a figure
+    run, so the CSV is always written first.
+    """
+    TABLES.mkdir(parents=True, exist_ok=True)
+    p = TABLES / f"{name}.csv"
+    df.to_csv(p)
+    print(f"  -> {p.relative_to(ROOT)}", flush=True)
+    try:
+        (TABLES / f"{name}.tex").write_text(
+            df.to_latex(float_format=lambda v: float_fmt % v, escape=True)
+        )
+    except Exception as exc:  # noqa: BLE001 - LaTeX is optional
+        print(f"  . no .tex ({type(exc).__name__})", flush=True)
+    return p
