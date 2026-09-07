@@ -139,13 +139,13 @@ def update_readme():
              f"Codebook: CODEBOOK_{TAG}.xlsx in this folder (sheets: README, files, one per final dataset, modules, value_labels, checks).",
              f"Variable names: lower-case English words with the wbes_ prefix; labels in plain English starting with WBES. The World Bank's own codes and labels: variable_names.csv in the git folder and the native_name / native_label columns of the codebook.",
              f"Code and run logs: git repository rwa-trs/{DATASET}/. Processing notes (what z_Documentation says and how it was applied; every decision and why): project memory file WBES.md (Green Jobs - TRS folder, outside git and Dropbox).", "",
-             f"3_Final/  ({len(finals)} files)"]
+             f"3_Final/  ({len(finals)} file{'s' if len(finals) != 1 else ''})"]
     for f in finals:
         try:
             m = read_meta(f); lines.append(f"  {f.name:55s} {m.number_rows:>10,} rows x {len(m.column_names):>4} vars   {m.file_label or ''}")
         except Exception as e: lines.append(f"  {f.name:55s} (unreadable: {e})")
     app = sorted((P["inter"] / "appended").glob("*.dta")) if (P["inter"] / "appended").exists() else []
-    lines += ["", f"2_Intermediate/  ({len(inters)} files: one cleaned file per wave and unit/module; see CODEBOOK_{TAG}.xlsx)"]
+    lines += ["", f"2_Intermediate/  ({len(inters)} cleaned round files; see CODEBOOK_{TAG}.xlsx)"]
     if app:
         lines.append(f"2_Intermediate/appended/  ({len(app)} module-level files appended across waves)")
         for f in app:
