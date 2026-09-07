@@ -1,0 +1,1251 @@
+scope,wave,native,clean_name,clean_label,native_label
+pooled:Census_pooled_person.dta,2002,a46,census_age_copy_a46_2002,"CENSUS 2002: Age, NISR derived copy A46",Age (NISR derived copy A46)
+pooled:Census_pooled_person.dta,2002,agcm,census_age_copy_agcm_2002,"CENSUS 2002: Age, NISR derived copy",Age (NISR derived copy)
+pooled:Census_pooled_person.dta,"2002,2012,2022",age,census_age,CENSUS: Age in completed years,Age in years
+pooled:Census_pooled_person.dta,2002,age18,census_age_copy_18_2002,"CENSUS 2002: Age, NISR derived copy 18",Age (NISR derived copy 18)
+pooled:Census_pooled_person.dta,2002,age19,census_age_copy_19_2002,"CENSUS 2002: Age, NISR derived copy 19",Age (NISR derived copy 19)
+pooled:Census_pooled_person.dta,2002,age1_1,census_age_copy_1_1_2002,"CENSUS 2002: Age, NISR derived copy 1-1",Age (NISR derived copy 1-1)
+pooled:Census_pooled_person.dta,2002,age26,census_age_copy_26_2002,"CENSUS 2002: Age, NISR derived copy 26",Age (NISR derived copy 26)
+pooled:Census_pooled_person.dta,2002,age_5,census_age_copy_5_2002,"CENSUS 2002: Age, NISR derived copy 5","Age (NISR derived copy, 5)"
+pooled:Census_pooled_person.dta,2002,agebetween5_17,census_age_5_17_flag_2002,"CENSUS 2002: Flag: aged 5 to 17, NISR derived",Flag: age 5-17 (NISR derived)
+pooled:Census_pooled_person.dta,2002,agegrp_nisr,census_age_group_nisr_2002,"CENSUS 2002: Age group 0-5, NISR derived (shipped as Age)","Age group (NISR derived, 0-5; shipped as 'Age')"
+pooled:Census_pooled_person.dta,2012,aggroup5,census_age_group_5_years_2012,CENSUS 2012: Five-year age group,Five-Year Age-Group
+pooled:Census_pooled_person.dta,"2002,2012,2022",cluster,census_cluster,CENSUS: Sampling cluster or village identifier,Sampling cluster proxy (year_sector)
+pooled:Census_pooled_person.dta,2002,collective,census_collective_household,CENSUS 2002: Collective (non-private) household or institution,1 = row belongs to a collective/institutional household (2002 only)
+pooled:Census_pooled_person.dta,"2002,2012,2022",dist,census_district,"CENSUS: District, NISR code 11-57","District (11-57, NISR codes)"
+pooled:Census_pooled_person.dta,2002,district_code,census_district_shipped_2002,"CENSUS 2002: District code as shipped, three digits","District code (3-digit, as shipped)"
+pooled:Census_pooled_person.dta,2002,emploi_exerc,census_occupation_grouped_2002,"CENSUS 2002: Occupation, NISR grouped",Occupation (NISR grouped)
+pooled:Census_pooled_person.dta,2002,etat_matri,census_marital_grouped_2002,"CENSUS 2002: Marital status, NISR grouped",Marital status (NISR grouped)
+pooled:Census_pooled_person.dta,2012,filter__,census_head_filter_2012,CENSUS 2012: Filter: household head (P02 = 1),P02 = 1 (FILTER)
+pooled:Census_pooled_person.dta,2002,fr_quentation,census_attendance_grouped_2002,"CENSUS 2002: School attendance, NISR grouped",School attendance (NISR grouped)
+pooled:Census_pooled_person.dta,2002,gpe_age,census_age_group_copy_2002,"CENSUS 2002: Age groups, NISR derived copy","Age (NISR derived copy, groups)"
+pooled:Census_pooled_person.dta,2002,grpage5,census_age_group_5_years_2002,"CENSUS 2002: Five-year age group, NISR derived",Five-year age group (NISR derived)
+pooled:Census_pooled_person.dta,"2002,2012",h01,census_settlement_2002_2012,CENSUS 2002-2012: Type of housing settlement,Type of Housing
+pooled:Census_pooled_person.dta,2022,h01_v2,census_settlement_2022,"CENSUS 2022: Type of settlement, 2022 coding",Type of habitant
+pooled:Census_pooled_person.dta,"2002,2012",h02,census_dwelling_type_2002_2012,CENSUS 2002-2012: Type of housing unit,Type of Housing unit
+pooled:Census_pooled_person.dta,2022,h02_v2,census_dwelling_type_2022,"CENSUS 2022: Type of building, 2022 coding",Type of Building
+pooled:Census_pooled_person.dta,2022,h03,census_tenure_2022,CENSUS 2022: Tenure of the housing unit,Tenure of then housing unit
+pooled:Census_pooled_person.dta,2012,h03_v2,census_tenure_2012,CENSUS 2012: Status of occupancy of the house,Status of occupancy of house
+pooled:Census_pooled_person.dta,2002,h03_v3,census_roof_material_2002,CENSUS 2002: Roof material,Roof material
+pooled:Census_pooled_person.dta,2022,h04,census_owns_housing_unit_2022,CENSUS 2022: Household owns a housing unit in this village or elsewhere,Is this Household has its own housing unit  in this village or elsewhere
+pooled:Census_pooled_person.dta,2012,h04_v2,census_roof_material_2012,CENSUS 2012: Roof material,Roof
+pooled:Census_pooled_person.dta,2002,h04_v3,census_wall_material_2002,CENSUS 2002: Outer wall material,Outer wall material
+pooled:Census_pooled_person.dta,2022,h05,census_roof_material_2022,CENSUS 2022: Main material of the roof,main material used for the roof
+pooled:Census_pooled_person.dta,2012,h05_v2,census_wall_material_2012,CENSUS 2012: Wall material,Walls
+pooled:Census_pooled_person.dta,2002,h05_v3,census_floor_material_2002,CENSUS 2002: Floor material,Floor material
+pooled:Census_pooled_person.dta,2022,h06,census_wall_material_2022,CENSUS 2022: Main material of the walls,main material used for the walls
+pooled:Census_pooled_person.dta,2012,h06_v2,census_floor_material_2012,CENSUS 2012: Floor material,Floor
+pooled:Census_pooled_person.dta,2002,h06_v3,census_living_rooms_2002,CENSUS 2002: Number of living rooms,Number of living rooms
+pooled:Census_pooled_person.dta,2022,h07,census_floor_material_2022,CENSUS 2022: Main material of the floor,main material used for the floor
+pooled:Census_pooled_person.dta,2012,h07_v2,census_rooms_2012,CENSUS 2012: Number of rooms,Number of rooms
+pooled:Census_pooled_person.dta,2002,h07_v3,census_water_source_2002,CENSUS 2002: Main source of water supply,Main source of water supply
+pooled:Census_pooled_person.dta,2022,h08,census_rooms_2022,CENSUS 2022: Number of rooms,Number of rooms
+pooled:Census_pooled_person.dta,2012,h08_v2,census_sleeping_rooms_2012,CENSUS 2012: Number of rooms for sleeping,Number of rooms for sleeping
+pooled:Census_pooled_person.dta,2002,h08_v3,census_lighting_source_2002,CENSUS 2002: Main source of lighting,Main source of lighting
+pooled:Census_pooled_person.dta,2022,h09,census_sleeping_rooms_2022,CENSUS 2022: Number of rooms used for sleeping,number of rooms are used for sleeping
+pooled:Census_pooled_person.dta,2012,h09_v2,census_occupants_2012,CENSUS 2012: Number of occupants,Number of occupants
+pooled:Census_pooled_person.dta,2002,h09_v3,census_cooking_energy_2002,CENSUS 2002: Main cooking energy,Main cooking energy
+pooled:Census_pooled_person.dta,2022,h10,census_rooms_boys_girls_2022,CENSUS 2022: Sleeping rooms for boys separated from those for girls,Are Sleeping rooms  for Boys separated from those for Girls
+pooled:Census_pooled_person.dta,2012,h10_v2,census_water_source_2012,CENSUS 2012: Main source of water,Main source of water
+pooled:Census_pooled_person.dta,2002,h10_v3,census_toilet_facility_2002,CENSUS 2002: Main toilet facility,Main toilet facility
+pooled:Census_pooled_person.dta,2002,h100,census_household_type_2002,CENSUS 2002: Household type: 100 = ordinary household,Household type (100 = ordinary household)
+pooled:Census_pooled_person.dta,2002,h101,census_questionnaire_serial_2002,CENSUS 2002: Questionnaire serial number in the household,Questionnaire serial number in household
+pooled:Census_pooled_person.dta,2002,h102,census_questionnaires_count_2002,CENSUS 2002: Number of questionnaires filled in the household,Number of questionnaires filled in household
+pooled:Census_pooled_person.dta,2022,h11,census_water_source_2022,CENSUS 2022: Main source of water for general purposes,Main source of water used for general purposes
+pooled:Census_pooled_person.dta,2012,h11_v2,census_toilet_facility_2012,CENSUS 2012: Type of toilet facility,Type of toilet facility
+pooled:Census_pooled_person.dta,2002,h11_v3,census_waste_disposal_2002,CENSUS 2002: Main mode of household waste disposal,Main mode of household waste disposal
+pooled:Census_pooled_person.dta,2002,h110,census_recap_male_present,CENSUS 2002: Recap: male residents present,Recap: male residents present
+pooled:Census_pooled_person.dta,2002,h111,census_recap_male_absent,CENSUS 2002: Recap: male residents absent,Recap: male residents absent
+pooled:Census_pooled_person.dta,2002,h112,census_recap_male_total,CENSUS 2002: Recap: male residents total,Recap: male residents total
+pooled:Census_pooled_person.dta,2002,h113,census_recap_male_aged_17_2002,CENSUS 2002: Recap: male residents aged 17 and over,Recap: male residents aged 17+
+pooled:Census_pooled_person.dta,2002,h114,census_recap_male_visitors,CENSUS 2002: Recap: male visitors,Recap: male visitors
+pooled:Census_pooled_person.dta,2002,h115,census_recap_female_present,CENSUS 2002: Recap: female residents present,Recap: female residents present
+pooled:Census_pooled_person.dta,2002,h116,census_recap_female_absent,CENSUS 2002: Recap: female residents absent,Recap: female residents absent
+pooled:Census_pooled_person.dta,2002,h117,census_recap_female_total,CENSUS 2002: Recap: female residents total,Recap: female residents total
+pooled:Census_pooled_person.dta,2002,h118,census_recap_female_aged_17_2002,CENSUS 2002: Recap: female residents aged 17 and over,Recap: female residents aged 17+
+pooled:Census_pooled_person.dta,2002,h119,census_recap_female_visitors,CENSUS 2002: Recap: female visitors,Recap: female visitors
+pooled:Census_pooled_person.dta,2022,h12,census_drinking_water_2022,CENSUS 2022: Main source of drinking water,Main source of drinking water
+pooled:Census_pooled_person.dta,2012,h12_v2,census_lighting_source_2012,CENSUS 2012: Source of lighting,Source of lighting
+pooled:Census_pooled_person.dta,2002,h12_v3,census_tenure_2002,CENSUS 2002: Occupancy status of the dwelling,Occupancy status of the dwelling
+pooled:Census_pooled_person.dta,2002,h120,census_recap_residents_present,"CENSUS 2002: Recap: residents present, total","Recap: residents present, total"
+pooled:Census_pooled_person.dta,2002,h121,census_recap_residents_absent,"CENSUS 2002: Recap: residents absent, total","Recap: residents absent, total"
+pooled:Census_pooled_person.dta,2002,h122,census_recap_residents_total,"CENSUS 2002: Recap: residents, total","Recap: residents, total"
+pooled:Census_pooled_person.dta,2002,h123,census_recap_aged_17_total_2002,"CENSUS 2002: Recap: residents aged 17 and over, total","Recap: residents aged 17+, total"
+pooled:Census_pooled_person.dta,2002,h124,census_recap_visitors_total,"CENSUS 2002: Recap: visitors, total","Recap: visitors, total"
+pooled:Census_pooled_person.dta,2022,h13,census_toilet_facility_2022,CENSUS 2022: Toilet facility,Toilet Facility
+pooled:Census_pooled_person.dta,2012,h13_v2,census_cooking_energy_2012,CENSUS 2012: Energy for cooking,Energy of cooking
+pooled:Census_pooled_person.dta,2002,h13_v3,census_radio_television_2002,CENSUS 2002: Radio or television ownership,Radio / television ownership
+pooled:Census_pooled_person.dta,2022,h14,census_grid_electricity_2022,CENSUS 2022: Connected to the electricity grid,Electricity (Grid line) connectivity
+pooled:Census_pooled_person.dta,2012,h14_v2,census_energy_saving_stove_2012,CENSUS 2012: Energy-saving stove,Energy saving stove
+pooled:Census_pooled_person.dta,2002,h14_v3,census_telephone_2002,CENSUS 2002: Fixed-line or cell phone ownership,Fixed-line / cell phone
+pooled:Census_pooled_person.dta,2022,h15,census_lighting_source_2022,CENSUS 2022: Main source of energy for lighting,Main source of energy for lighting
+pooled:Census_pooled_person.dta,2012,h15_v2,census_waste_disposal_2012,CENSUS 2012: Mode of household waste disposal,Mode of household waste disposal
+pooled:Census_pooled_person.dta,2002,h15_v3,census_computer_internet_2002,CENSUS 2002: Computer or internet connection,Computer / internet connection
+pooled:Census_pooled_person.dta,2022,h16,census_cooking_energy_2022,CENSUS 2022: Main source of energy for cooking,Main source of energy for cooking
+pooled:Census_pooled_person.dta,2012,h16_v2,census_sewage_disposal_2012,CENSUS 2012: Mode of sewage disposal,Mode of sewage disposal
+pooled:Census_pooled_person.dta,2002,h16a,census_vehicles_2002,CENSUS 2002: Number of vehicles,Number of vehicles
+pooled:Census_pooled_person.dta,2002,h16b,census_motorcycles_2002,CENSUS 2002: Number of motorcycles,Number of motorcycles
+pooled:Census_pooled_person.dta,2002,h16c,census_bicycles_2002,CENSUS 2002: Number of bicycles,Number of bicycles
+pooled:Census_pooled_person.dta,2022,h17,census_cooking_energy_2nd_2022,CENSUS 2022: Secondary source of energy for cooking,Secondary source of energy for cooking
+pooled:Census_pooled_person.dta,2012,h17_v2,census_radios_2012,CENSUS 2012: Number of radios,Radio
+pooled:Census_pooled_person.dta,2002,h17_v3,census_persons_counted_2002,CENSUS 2002: Total persons counted in the household,Total persons counted in the household
+pooled:Census_pooled_person.dta,2022,h18,census_energy_saving_stove_2022,CENSUS 2022: Uses an energy-saving cooking stove,Does your HH use a cooking energy saving stove?
+pooled:Census_pooled_person.dta,2012,h18_v2,census_televisions_2012,CENSUS 2012: Number of televisions,Television
+pooled:Census_pooled_person.dta,2002,h18_v3,census_empty_item_h18_2002,CENSUS 2002: Empty item in the public file,(empty in the public file)
+pooled:Census_pooled_person.dta,2022,h19,census_waste_disposal_2022,CENSUS 2022: Main mode of household waste disposal,Main mode of household waste disposal used
+pooled:Census_pooled_person.dta,2012,h19_v2,census_fixed_telephones_2012,CENSUS 2012: Number of fixed-line telephones,Telephone (fixed line)
+pooled:Census_pooled_person.dta,2002,h19a,census_death_last_12m_2002,CENSUS 2002: Any death of a resident member in the last 12 months,Any death of a resident member in the last 12 months
+pooled:Census_pooled_person.dta,2002,h19b,census_deaths_last_12m_2002,CENSUS 2002: Number of deaths in the last 12 months,Number of deaths in the last 12 months
+pooled:Census_pooled_person.dta,2022,h20,census_sewage_disposal_2022,CENSUS 2022: Main mode of sewage disposal,Main mode of sewage
+pooled:Census_pooled_person.dta,2012,h20_v2,census_cell_phones_2012,CENSUS 2012: Number of cell phones,Cell phone
+pooled:Census_pooled_person.dta,2002,h200,census_collective_type_2002,"CENSUS 2002: Collective household type, codes 201-214",Collective household type (codes 201-214; not filled)
+pooled:Census_pooled_person.dta,2012,h21,census_refrigerators_2012,CENSUS 2012: Number of refrigerators or freezers,Refrigerator/ Freezer
+pooled:Census_pooled_person.dta,2022,h21_01,census_asset_radio_2022,CENSUS 2022: Owns a functional radio,Functional assets own by HH: Radio
+pooled:Census_pooled_person.dta,2022,h21_02,census_asset_television_2022,CENSUS 2022: Owns a functional television,Functional assets own by HH: Television
+pooled:Census_pooled_person.dta,2022,h21_03,census_asset_refrigerator_2022,CENSUS 2022: Owns a functional refrigerator or freezer,Functional assets own by HH: Refrigerator/Freezer for HH use only
+pooled:Census_pooled_person.dta,2022,h21_04,census_asset_cooker_2022,CENSUS 2022: Owns a functional gas or electrical cooker,Functional assets own by HH: Gas/Electrical Cooker
+pooled:Census_pooled_person.dta,2022,h21_05,census_asset_washer_2022,CENSUS 2022: Owns a functional washing machine,Functional assets own by HH: Washing machine
+pooled:Census_pooled_person.dta,2022,h21_06,census_asset_microwave_2022,CENSUS 2022: Owns a functional microwave,Functional assets own by HH: Microwave
+pooled:Census_pooled_person.dta,2022,h21_07,census_asset_mattress_2022,CENSUS 2022: Owns a mattress,Functional assets own by HH: Mattress
+pooled:Census_pooled_person.dta,2022,h21_08,census_asset_chair_2022,CENSUS 2022: Owns a bench or chair,Functional assets own by HH: Bench/Chair
+pooled:Census_pooled_person.dta,2022,h21_09,census_asset_bed_2022,CENSUS 2022: Owns a bed,Functional assets own by HH: Bed
+pooled:Census_pooled_person.dta,2022,h21_10,census_asset_table_2022,CENSUS 2022: Owns tables,Functional assets own by HH: Tables
+pooled:Census_pooled_person.dta,2022,h21_11,census_asset_sofa_2022,CENSUS 2022: Owns a sofa,Functional assets own by HH: Sofa
+pooled:Census_pooled_person.dta,2022,h21_12,census_asset_computer_2022,CENSUS 2022: Owns a functional computer,Functional assets own by HH: Computers
+pooled:Census_pooled_person.dta,2022,h21_13,census_asset_vehicle_2022,CENSUS 2022: Owns a vehicle for household use,Functional assets own by HH: Vehicles for household use only
+pooled:Census_pooled_person.dta,2022,h21_14,census_asset_motorcycle_2022,CENSUS 2022: Owns a motorcycle for household use,Functional assets own by HH: Motorcycles for household use only
+pooled:Census_pooled_person.dta,2022,h21_15,census_asset_bicycle_2022,CENSUS 2022: Owns a bicycle for household use,Functional assets own by HH: Bicycles for household use only
+pooled:Census_pooled_person.dta,2022,h21_16,census_asset_iron_2022,CENSUS 2022: Owns an electrical or charcoal iron,Functional assets own by HH: Electrical/Charcoal Iron
+pooled:Census_pooled_person.dta,2022,h22,census_owns_livestock_2022,CENSUS 2022: Household owns livestock or beehives,HH own livestock or beehive
+pooled:Census_pooled_person.dta,2012,h22_v2,census_computers_2012,CENSUS 2012: Number of computers,Computer
+pooled:Census_pooled_person.dta,2022,h22a_01,census_rears_local_cows_2022,CENSUS 2022: Rears local breed cows,Local breed cows reared
+pooled:Census_pooled_person.dta,2022,h22a_02,census_rears_exotic_cows_2022,CENSUS 2022: Rears exotic breed cows,Exotic breed cows reared
+pooled:Census_pooled_person.dta,2022,h22a_03,census_rears_cross_cows_2022,CENSUS 2022: Rears cross breed cows,Cross breed cows reared
+pooled:Census_pooled_person.dta,2022,h22a_04,census_rears_local_goats_2022,CENSUS 2022: Rears local goats,Local goats reared
+pooled:Census_pooled_person.dta,2022,h22a_05,census_rears_exotic_goats_2022,CENSUS 2022: Rears exotic goats,Exotic goats reared
+pooled:Census_pooled_person.dta,2022,h22a_06,census_rears_cross_goats_2022,CENSUS 2022: Rears cross goats,Cross goats reared
+pooled:Census_pooled_person.dta,2022,h22a_07,census_rears_local_sheep_2022,CENSUS 2022: Rears local sheep,Local sheep reared
+pooled:Census_pooled_person.dta,2022,h22a_08,census_rears_exotic_sheep_2022,CENSUS 2022: Rears exotic sheep,Exotic sheep reared
+pooled:Census_pooled_person.dta,2022,h22a_09,census_rears_local_pigs_2022,CENSUS 2022: Rears local pigs,Local pigs reared
+pooled:Census_pooled_person.dta,2022,h22a_10,census_rears_exotic_pigs_2022,CENSUS 2022: Rears exotic pigs,Exotic pig reared
+pooled:Census_pooled_person.dta,2022,h22a_11,census_rears_cross_pigs_2022,CENSUS 2022: Rears cross pigs,Cross pig reared
+pooled:Census_pooled_person.dta,2022,h22a_12,census_rears_rabbits_2022,CENSUS 2022: Rears rabbits,Rabbits reared
+pooled:Census_pooled_person.dta,2022,h22a_13,census_rears_broilers_2022,CENSUS 2022: Rears broilers,Broiler chicken reared
+pooled:Census_pooled_person.dta,2022,h22a_14,census_rears_layers_2022,CENSUS 2022: Rears layers,Layers chicken reared
+pooled:Census_pooled_person.dta,2022,h22a_15,census_rears_dual_chicken_2022,CENSUS 2022: Rears dual-purpose chicken,Dual purpose chicken reared
+pooled:Census_pooled_person.dta,2022,h22a_16,census_rears_local_chicken_2022,CENSUS 2022: Rears local chicken,Local chicken reared
+pooled:Census_pooled_person.dta,2022,h22a_17,census_rears_ducks_2022,CENSUS 2022: Rears ducks,Duck reared
+pooled:Census_pooled_person.dta,2022,h22a_18,census_rears_turkeys_2022,CENSUS 2022: Rears turkeys,Turkey reared
+pooled:Census_pooled_person.dta,2022,h22a_19,census_rears_other_poultry_2022,CENSUS 2022: Rears other poultry,Other poultry reared
+pooled:Census_pooled_person.dta,2022,h22a_20,census_rears_camels_2022,CENSUS 2022: Rears camels,Camel reared
+pooled:Census_pooled_person.dta,2022,h22a_21,census_rears_beehives_2022,CENSUS 2022: Rears beehives,Bees hive reared
+pooled:Census_pooled_person.dta,2022,h22a_22,census_rears_dogs_2022,CENSUS 2022: Rears dogs,Dogs reared
+pooled:Census_pooled_person.dta,2022,h22a_23,census_rears_other_animals_2022,CENSUS 2022: Rears other animals,Other reared
+pooled:Census_pooled_person.dta,2022,h22b1_01,census_local_cows_count_2022,CENSUS 2022: Number of local breed cows reared,Number of Local breed cows reared
+pooled:Census_pooled_person.dta,2022,h22b1_02,census_exotic_cows_count_2022,CENSUS 2022: Number of exotic breed cows reared,Number of Exotic breed cows reared
+pooled:Census_pooled_person.dta,2022,h22b1_03,census_cross_cows_count_2022,CENSUS 2022: Number of cross breed cows reared,Number of Cross breed cows reared
+pooled:Census_pooled_person.dta,2022,h22b1_04,census_local_goats_count_2022,CENSUS 2022: Number of local goats reared,Number of Local goats reared
+pooled:Census_pooled_person.dta,2022,h22b1_05,census_exotic_goats_count_2022,CENSUS 2022: Number of exotic goats reared,Number of Exotic goats reared
+pooled:Census_pooled_person.dta,2022,h22b1_06,census_cross_goats_count_2022,CENSUS 2022: Number of cross goats reared,Number of Cross goats reared
+pooled:Census_pooled_person.dta,2022,h22b1_07,census_local_sheep_count_2022,CENSUS 2022: Number of local sheep reared,Number of Local sheep reared
+pooled:Census_pooled_person.dta,2022,h22b1_08,census_exotic_sheep_count_2022,CENSUS 2022: Number of exotic sheep reared,Number of Exotic sheep reared
+pooled:Census_pooled_person.dta,2022,h22b1_09,census_local_pigs_count_2022,CENSUS 2022: Number of local pigs reared,Number of Local pigs reared
+pooled:Census_pooled_person.dta,2022,h22b1_10,census_exotic_pigs_count_2022,CENSUS 2022: Number of exotic pigs reared,Number of Exotic pig reared
+pooled:Census_pooled_person.dta,2022,h22b1_11,census_cross_pigs_count_2022,CENSUS 2022: Number of cross pigs reared,Number of Cross pig reared
+pooled:Census_pooled_person.dta,2022,h22b1_12,census_rabbits_count_2022,CENSUS 2022: Number of rabbits reared,Number of Rabbits reared
+pooled:Census_pooled_person.dta,2022,h22b1_13,census_broilers_count_2022,CENSUS 2022: Number of broilers reared,Number of Broiler chicken reared
+pooled:Census_pooled_person.dta,2022,h22b1_14,census_layers_count_2022,CENSUS 2022: Number of layers reared,Number of Layers chicken reared
+pooled:Census_pooled_person.dta,2022,h22b1_15,census_dual_chicken_count_2022,CENSUS 2022: Number of dual-purpose chicken reared,Number of Dual purpose chicken reared
+pooled:Census_pooled_person.dta,2022,h22b1_16,census_local_chicken_count_2022,CENSUS 2022: Number of local chicken reared,Number of Local chicken reared
+pooled:Census_pooled_person.dta,2022,h22b1_17,census_ducks_count_2022,CENSUS 2022: Number of ducks reared,Number of Duck reared
+pooled:Census_pooled_person.dta,2022,h22b1_18,census_turkeys_count_2022,CENSUS 2022: Number of turkeys reared,Number of Turkey reared
+pooled:Census_pooled_person.dta,2022,h22b1_19,census_other_poultry_count_2022,CENSUS 2022: Number of other poultry reared,Number of Other poultry reared
+pooled:Census_pooled_person.dta,2022,h22b1_20,census_camels_count_2022,CENSUS 2022: Number of camels reared,Number of Camel reared
+pooled:Census_pooled_person.dta,2022,h22b1_21,census_beehives_count_2022,CENSUS 2022: Number of beehives reared,Number of Bees hive reared
+pooled:Census_pooled_person.dta,2022,h22b1_22,census_dogs_count_2022,CENSUS 2022: Number of dogs reared,Number of Dogs reared
+pooled:Census_pooled_person.dta,2022,h22b1_23,census_other_animals_count_2022,CENSUS 2022: Number of other animals reared,Number of Other reared
+pooled:Census_pooled_person.dta,2022,h22b2_01,census_where_local_cows_2022,CENSUS 2022: District where the local breed cows are reared,Location(District) where is Local breed cows reared
+pooled:Census_pooled_person.dta,2022,h22b2_02,census_where_exotic_cows_2022,CENSUS 2022: District where the exotic breed cows are reared,Location(District) where is Exotic breed cows reared
+pooled:Census_pooled_person.dta,2022,h22b2_03,census_where_cross_cows_2022,CENSUS 2022: District where the cross breed cows are reared,Location(District) where is Cross breed cows reared
+pooled:Census_pooled_person.dta,2022,h22b2_04,census_where_local_goats_2022,CENSUS 2022: District where the local goats are reared,Location(District) where is Local goats reared
+pooled:Census_pooled_person.dta,2022,h22b2_05,census_where_exotic_goats_2022,CENSUS 2022: District where the exotic goats are reared,Location(District) where is Exotic goats reared
+pooled:Census_pooled_person.dta,2022,h22b2_06,census_where_cross_goats_2022,CENSUS 2022: District where the cross goats are reared,Location(District) where is Cross goats reared
+pooled:Census_pooled_person.dta,2022,h22b2_07,census_where_local_sheep_2022,CENSUS 2022: District where the local sheep are reared,Location(District) where is Local sheep reared
+pooled:Census_pooled_person.dta,2022,h22b2_08,census_where_exotic_sheep_2022,CENSUS 2022: District where the exotic sheep are reared,Location(District) where is Exotic sheep reared
+pooled:Census_pooled_person.dta,2022,h22b2_09,census_where_local_pigs_2022,CENSUS 2022: District where the local pigs are reared,Location(District) where is Local pigs reared
+pooled:Census_pooled_person.dta,2022,h22b2_10,census_where_exotic_pigs_2022,CENSUS 2022: District where the exotic pigs are reared,Location(District) where is Exotic pig reared
+pooled:Census_pooled_person.dta,2022,h22b2_11,census_where_cross_pigs_2022,CENSUS 2022: District where the cross pigs are reared,Location(District) where is Cross pig reared
+pooled:Census_pooled_person.dta,2022,h22b2_12,census_where_rabbits_2022,CENSUS 2022: District where the rabbits are reared,Location(District) where is Rabbits reared
+pooled:Census_pooled_person.dta,2022,h22b2_13,census_where_broilers_2022,CENSUS 2022: District where the broilers are reared,Location(District) where is Broiler chicken reared
+pooled:Census_pooled_person.dta,2022,h22b2_14,census_where_layers_2022,CENSUS 2022: District where the layers are reared,Location(District) where is Layers chicken reared
+pooled:Census_pooled_person.dta,2022,h22b2_15,census_where_dual_chicken_2022,CENSUS 2022: District where the dual-purpose chicken are reared,Location(District) where is Dual purpose chicken reared
+pooled:Census_pooled_person.dta,2022,h22b2_16,census_where_local_chicken_2022,CENSUS 2022: District where the local chicken are reared,Location(District) where is Local chicken reared
+pooled:Census_pooled_person.dta,2022,h22b2_17,census_where_ducks_2022,CENSUS 2022: District where the ducks are reared,Location(District) where is Duck reared
+pooled:Census_pooled_person.dta,2022,h22b2_18,census_where_turkeys_2022,CENSUS 2022: District where the turkeys are reared,Location(District) where is Turkey reared
+pooled:Census_pooled_person.dta,2022,h22b2_19,census_where_other_poultry_2022,CENSUS 2022: District where the other poultry are reared,Location(District) where is Other poultry reared
+pooled:Census_pooled_person.dta,2022,h22b2_20,census_where_camels_2022,CENSUS 2022: District where the camels are reared,Location(District) where is Camel reared
+pooled:Census_pooled_person.dta,2022,h22b2_21,census_where_beehives_2022,CENSUS 2022: District where the beehives are reared,Location(District) where is Bees hive reared
+pooled:Census_pooled_person.dta,2022,h22b2_22,census_where_dogs_2022,CENSUS 2022: District where the dogs are reared,Location(District) where is Dogs reared
+pooled:Census_pooled_person.dta,2022,h22b2_23,census_where_other_animals_2022,CENSUS 2022: District where the other animals are reared,Location(District) where is Other reared
+pooled:Census_pooled_person.dta,2022,h23,census_grew_crops_2022,CENSUS 2022: Household grew crops in the last 12 months,Household grew crops in last 12 months
+pooled:Census_pooled_person.dta,2012,h23_v2,census_bicycles_2012,CENSUS 2012: Number of bicycles,Bicycles
+pooled:Census_pooled_person.dta,2022,h23a,census_farming_place_2022,CENSUS 2022: Place where the agricultural activities are done,Place where the agricultural activities is done
+pooled:Census_pooled_person.dta,2012,h24,census_vehicles_2012,CENSUS 2012: Number of vehicles,Vehicles
+pooled:Census_pooled_person.dta,2022,h24_01,census_maize_grown,CENSUS 2022: Maize grown,Maize grown
+pooled:Census_pooled_person.dta,2022,h24_02,census_rice_grown,CENSUS 2022: Rice grown,Rice grown
+pooled:Census_pooled_person.dta,2022,h24_03,census_sorghum_grown,CENSUS 2022: Sorghum grown,Sorghum grown
+pooled:Census_pooled_person.dta,2022,h24_04,census_wheat_grown,CENSUS 2022: Wheat grown,Wheat grown
+pooled:Census_pooled_person.dta,2022,h24_05,census_bean_grown,CENSUS 2022: Bean grown,Bean grown
+pooled:Census_pooled_person.dta,2022,h24_06,census_pea_grown,CENSUS 2022: Pea grown,Pea grown
+pooled:Census_pooled_person.dta,2022,h24_07,census_groundnut_grown,CENSUS 2022: Groundnut grown,Groundnut grown
+pooled:Census_pooled_person.dta,2022,h24_08,census_soybean_grown,CENSUS 2022: Soybean grown,Soybean grown
+pooled:Census_pooled_person.dta,2022,h24_09,census_cassava_grown,CENSUS 2022: Cassava grown,Cassava grown
+pooled:Census_pooled_person.dta,2022,h24_10,census_sweet_potato_grown,CENSUS 2022: Sweet potato grown,Sweet potato grown
+pooled:Census_pooled_person.dta,2022,h24_11,census_irish_potato_grown,CENSUS 2022: Irish potato grown,Irish potato grown
+pooled:Census_pooled_person.dta,2022,h24_12,census_yams_taro_grown,CENSUS 2022: Yams& Taro grown,Yams& Taro grown
+pooled:Census_pooled_person.dta,2022,h24_13,census_cooking_banana_grown,CENSUS 2022: Cooking Banana grown,Cooking Banana grown
+pooled:Census_pooled_person.dta,2022,h24_14,census_dessert_banana_grown,CENSUS 2022: Dessert Banana grown,Dessert Banana grown
+pooled:Census_pooled_person.dta,2022,h24_15,census_banana_beer_grown,CENSUS 2022: Banana for Beer grown,Banana for Beer grown
+pooled:Census_pooled_person.dta,2022,h24_16,census_vegetables_grown,CENSUS 2022: Vegetables grown,Vegetables grown
+pooled:Census_pooled_person.dta,2022,h24_17,census_tea_grown,CENSUS 2022: Tea grown,Tea grown
+pooled:Census_pooled_person.dta,2022,h24_18,census_coffee_grown,CENSUS 2022: Coffee grown,Coffee grown
+pooled:Census_pooled_person.dta,2022,h24_19,census_sugarcane_grown,CENSUS 2022: Sugarcane grown,Sugarcane grown
+pooled:Census_pooled_person.dta,2022,h24_20,census_pyrethrum_grown,CENSUS 2022: Pyrethrum grown,Pyrethrum grown
+pooled:Census_pooled_person.dta,2022,h24_21,census_flowers_grown,CENSUS 2022: Flowers grown,Flowers grown
+pooled:Census_pooled_person.dta,2022,h24_22,census_other_crop_type_grown,CENSUS 2022: Other crop type grown,Other crop type grown
+pooled:Census_pooled_person.dta,2012,h25,census_motorcycles_2012,CENSUS 2012: Number of motorcycles,Motorcycles
+pooled:Census_pooled_person.dta,2022,h25_01,census_amaranths_grown,CENSUS 2022: Amaranths grown,Amaranths grown
+pooled:Census_pooled_person.dta,2022,h25_02,census_tomato_grown,CENSUS 2022: Tomato grown,Tomato grown
+pooled:Census_pooled_person.dta,2022,h25_03,census_cabbage_grown,CENSUS 2022: Cabbage grown,Cabbage grown
+pooled:Census_pooled_person.dta,2022,h25_04,census_onion_grown,CENSUS 2022: Onion grown,Onion grown
+pooled:Census_pooled_person.dta,2022,h25_05,census_carrot_grown,CENSUS 2022: Carrot grown,Carrot grown
+pooled:Census_pooled_person.dta,2022,h25_06,census_eggplant_grown,CENSUS 2022: Eggplant grown,Eggplant grown
+pooled:Census_pooled_person.dta,2022,h25_07,census_black_eggplant_grown,CENSUS 2022: Black eggplant grown,Black eggplant grown
+pooled:Census_pooled_person.dta,2022,h25_08,census_sweet_pepper_grown,CENSUS 2022: Sweet pepper grown,Sweet pepper grown
+pooled:Census_pooled_person.dta,2022,h25_09,census_pepper_grown,CENSUS 2022: Pepper grown,Pepper grown
+pooled:Census_pooled_person.dta,2022,h25_10,census_cauliflower_grown,CENSUS 2022: Cauliflower grown,Cauliflower grown
+pooled:Census_pooled_person.dta,2022,h25_11,census_french_beans_grown,CENSUS 2022: French beans grown,French beans grown
+pooled:Census_pooled_person.dta,2022,h25_12,census_beetroot_grown,CENSUS 2022: Beetroot grown,Beetroot grown
+pooled:Census_pooled_person.dta,2022,h25_13,census_garlic_grown,CENSUS 2022: Garlic grown,Garlic grown
+pooled:Census_pooled_person.dta,2022,h25_14,census_lettuce_grown,CENSUS 2022: Lettuce grown,Lettuce grown
+pooled:Census_pooled_person.dta,2022,h25_15,census_broccoli_grown,CENSUS 2022: Broccoli grown,Broccoli grown
+pooled:Census_pooled_person.dta,2022,h25_16,census_spinach_grown,CENSUS 2022: Spinach grown,Spinach grown
+pooled:Census_pooled_person.dta,2022,h25_17,census_celery_grown,CENSUS 2022: Celery grown,Celery grown
+pooled:Census_pooled_person.dta,2022,h25_18,census_leeks_grown,CENSUS 2022: Leeks grown,Leeks grown
+pooled:Census_pooled_person.dta,2022,h25_19,census_pumpkin_grown,CENSUS 2022: Pumpkin grown,Pumpkin grown
+pooled:Census_pooled_person.dta,2022,h25_20,census_cocumber_grown,CENSUS 2022: Cocumber grown,Cocumber grown
+pooled:Census_pooled_person.dta,2022,h25_21,census_mushroom_grown,CENSUS 2022: Mushroom grown,Mushroom grown
+pooled:Census_pooled_person.dta,2022,h25_22,census_chayote_grown,CENSUS 2022: Chayote grown,Chayote grown
+pooled:Census_pooled_person.dta,2022,h25_23,census_cassava_leaves_grown,CENSUS 2022: Cassava Leaves grown,Cassava Leaves grown
+pooled:Census_pooled_person.dta,2022,h25_24,census_other_vegetables_grown,CENSUS 2022: Other vegetables grown,Other vegetables grown
+pooled:Census_pooled_person.dta,2022,h26,census_tea_trees_2022,CENSUS 2022: Number of tea trees,Number of tea trees grown
+pooled:Census_pooled_person.dta,2012,h26_v2,census_internet_access_2012,CENSUS 2012: Internet access,Internet Access
+pooled:Census_pooled_person.dta,2022,h27,census_coffee_trees_2022,CENSUS 2022: Number of coffee trees,Number of coffee trees grown
+pooled:Census_pooled_person.dta,2012,h27_v2,census_internet_place_2012,CENSUS 2012: Where the household accesses the internet,Where do you access internet
+pooled:Census_pooled_person.dta,2022,h28a,census_fruit_trees_2022,CENSUS 2022: Any fruit tree,Any fruit tree
+pooled:Census_pooled_person.dta,2012,h28a_v2,census_local_cows_2012,CENSUS 2012: Cattle: local breed cows,Cattle:Local breed cow
+pooled:Census_pooled_person.dta,2012,h28b,census_cross_cows_2012,CENSUS 2012: Cattle: cross breed cows,Cattle: Cross breed cow
+pooled:Census_pooled_person.dta,2022,h28b1_01,census_grow_avocado,CENSUS 2022: Grow Avocado,Grow Avocado
+pooled:Census_pooled_person.dta,2022,h28b1_02,census_grow_orange,CENSUS 2022: Grow Orange,Grow Orange
+pooled:Census_pooled_person.dta,2022,h28b1_03,census_grow_papaya,CENSUS 2022: Grow Papaya,Grow Papaya
+pooled:Census_pooled_person.dta,2022,h28b1_04,census_grow_guava,CENSUS 2022: Grow Guava,Grow Guava
+pooled:Census_pooled_person.dta,2022,h28b1_05,census_grow_lemon,CENSUS 2022: Grow Lemon,Grow Lemon
+pooled:Census_pooled_person.dta,2022,h28b1_06,census_grow_mango,CENSUS 2022: Grow Mango,Grow Mango
+pooled:Census_pooled_person.dta,2022,h28b1_07,census_grow_mandarin,CENSUS 2022: Grow Mandarin,Grow Mandarin
+pooled:Census_pooled_person.dta,2022,h28b1_08,census_grow_jack_fruits,CENSUS 2022: Grow Jack fruits,Grow Jack fruits
+pooled:Census_pooled_person.dta,2022,h28b1_09,census_grow_beefheart,CENSUS 2022: Grow Beefheart,Grow Beefheart
+pooled:Census_pooled_person.dta,2022,h28b1_10,census_grow_passion_fruits,CENSUS 2022: Grow Passion fruits,Grow Passion fruits
+pooled:Census_pooled_person.dta,2022,h28b1_11,census_grow_pineapple,CENSUS 2022: Grow Pineapple,Grow Pineapple
+pooled:Census_pooled_person.dta,2022,h28b1_12,census_grow_tree_tomato,CENSUS 2022: Grow Tree tomato,Grow Tree tomato
+pooled:Census_pooled_person.dta,2022,h28b1_13,census_grow_watermelon,CENSUS 2022: Grow Watermelon,Grow Watermelon
+pooled:Census_pooled_person.dta,2022,h28b1_14,census_grow_strawberry,CENSUS 2022: Grow Strawberry,Grow Strawberry
+pooled:Census_pooled_person.dta,2022,h28b1_15,census_grow_other_fruit,CENSUS 2022: Grow Other fruit,Grow Other fruit
+pooled:Census_pooled_person.dta,2022,h28b2_01,census_number_avocado,CENSUS 2022: Number of Avocado,Number of Avocado
+pooled:Census_pooled_person.dta,2022,h28b2_02,census_number_orange,CENSUS 2022: Number of Orange,Number of Orange
+pooled:Census_pooled_person.dta,2022,h28b2_03,census_number_papaya,CENSUS 2022: Number of Papaya,Number of Papaya
+pooled:Census_pooled_person.dta,2022,h28b2_04,census_number_guava,CENSUS 2022: Number of Guava,Number of Guava
+pooled:Census_pooled_person.dta,2022,h28b2_05,census_number_lemon,CENSUS 2022: Number of Lemon,Number of Lemon
+pooled:Census_pooled_person.dta,2022,h28b2_06,census_number_mango,CENSUS 2022: Number of Mango,Number of Mango
+pooled:Census_pooled_person.dta,2022,h28b2_07,census_number_mandarin,CENSUS 2022: Number of Mandarin,Number of Mandarin
+pooled:Census_pooled_person.dta,2022,h28b2_08,census_number_jack_fruits,CENSUS 2022: Number of Jack fruits,Number of Jack fruits
+pooled:Census_pooled_person.dta,2022,h28b2_09,census_number_beefheart,CENSUS 2022: Number of Beefheart,Number of Beefheart
+pooled:Census_pooled_person.dta,2022,h28b2_10,census_number_passion_fruits,CENSUS 2022: Number of Passion fruits,Number of Passion fruits
+pooled:Census_pooled_person.dta,2022,h28b2_11,census_number_pineapple,CENSUS 2022: Number of Pineapple,Number of Pineapple
+pooled:Census_pooled_person.dta,2022,h28b2_12,census_number_tree_tomato,CENSUS 2022: Number of Tree tomato,Number of Tree tomato
+pooled:Census_pooled_person.dta,2022,h28b2_13,census_number_watermelon,CENSUS 2022: Number of Watermelon,Number of Watermelon
+pooled:Census_pooled_person.dta,2022,h28b2_14,census_number_strawberry,CENSUS 2022: Number of Strawberry,Number of Strawberry
+pooled:Census_pooled_person.dta,2022,h28b2_15,census_number_other_fruit,CENSUS 2022: Number of Other fruit,Number of Other fruit
+pooled:Census_pooled_person.dta,2012,h28c,census_exotic_cows_2012,CENSUS 2012: Cattle: exotic breed cows,Cattle: Exotic breed cow
+pooled:Census_pooled_person.dta,2012,h29,census_goats_2012,CENSUS 2012: Number of goats,Goats
+pooled:Census_pooled_person.dta,2012,h30,census_sheep_2012,CENSUS 2012: Number of sheep,Sheeps
+pooled:Census_pooled_person.dta,2012,h31,census_pigs_2012,CENSUS 2012: Number of pigs,Pigs
+pooled:Census_pooled_person.dta,2012,h32,census_rabbits_2012,CENSUS 2012: Number of rabbits,Rabbits
+pooled:Census_pooled_person.dta,2012,h33,census_poultry_2012,CENSUS 2012: Number of poultry,Poultry/fowl
+pooled:Census_pooled_person.dta,2012,h34,census_other_animals_2012,CENSUS 2012: Number of other animals,Other
+pooled:Census_pooled_person.dta,2012,h35,census_land_2012,CENSUS 2012: Land ownership or use,Land
+pooled:Census_pooled_person.dta,"2002,2012,2022",hhid,census_household_id,CENSUS: Household identifier,Household id (unique within year)
+pooled:Census_pooled_person.dta,2012,hhsize,census_household_size,CENSUS 2012: Household size (persons in the public-use roster),Household Size
+pooled:Census_pooled_person.dta,2012,inclusionprobability_1_,census_selection_prob_2012,"CENSUS 2012: Inclusion (selection) probability, stage 1",Inclusion (Selection) Probability for Stage 1
+pooled:Census_pooled_person.dta,2012,l02,census_district_shipped_2012,CENSUS 2012: District as shipped,District
+pooled:Census_pooled_person.dta,2012,l03,census_sector_shipped_2012,CENSUS 2012: Sector as shipped,Sector
+pooled:Census_pooled_person.dta,2012,l07,census_area_residence_2012,"CENSUS 2012: Area of residence: urban, rural, peri-urban",Area of residence
+pooled:Census_pooled_person.dta,2012,m1,census_death_in_household_2012,CENSUS 2012: Death in the household,Death in the Household
+pooled:Census_pooled_person.dta,2002,novdistr,census_district_name_shipped,CENSUS 2002: District name as shipped by NISR,District name
+pooled:Census_pooled_person.dta,2002,novprov,census_province_name_shipped,CENSUS 2002: Province name as shipped by NISR,Province name
+pooled:Census_pooled_person.dta,2002,novsect,census_sector_name_shipped,CENSUS 2002: Sector name as shipped by NISR,Sector name
+pooled:Census_pooled_person.dta,2002,p00_mean,census_p00_mean_artefact_2002,CENSUS 2002: NISR artefact: mean of P00 in the household,NISR artefact: mean of P00 in household
+pooled:Census_pooled_person.dta,2002,p00_nu,census_p00_count_artefact_2002,CENSUS 2002: NISR artefact: count of P00 in the household,NISR artefact: count of P00 in household
+pooled:Census_pooled_person.dta,"2002,2012",p02,census_relation_head_2002_2012,CENSUS 2002-2012: Relationship to the household head,Relationship
+pooled:Census_pooled_person.dta,2022,p02_v2,census_relation_head_2022,"CENSUS 2022: Relationship to the household head, 14 codes",Relationship (Private HH only)
+pooled:Census_pooled_person.dta,2002,p02_hh,census_head_flag_2002,CENSUS 2002: Flag: household head,Flag: household head (P02 = 1)
+pooled:Census_pooled_person.dta,2002,p03,census_residence_status_2002,"CENSUS 2002: Residence status: present or absent resident, visitor, collective","Residence status (present/absent resident, visitor, collective)"
+pooled:Census_pooled_person.dta,2012,p04m,census_birth_month_2012,CENSUS 2012: Month of birth,Month of Birth
+pooled:Census_pooled_person.dta,2012,p04y,census_birth_year_2012,CENSUS 2012: Year of birth,Year of Birth
+pooled:Census_pooled_person.dta,2002,p05a,census_birth_month_2002,CENSUS 2002: Month of birth,Month of birth
+pooled:Census_pooled_person.dta,2002,p05b,census_birth_year_2002,CENSUS 2002: Year of birth,Year of birth
+pooled:Census_pooled_person.dta,2002,p05x,census_birth_day_2002,CENSUS 2002: Day of birth,Day of birth
+pooled:Census_pooled_person.dta,2022,p06,census_marital_status_2022,CENSUS 2022: Marital status,marital status
+pooled:Census_pooled_person.dta,2012,p06_v2,census_residence_status_2012,CENSUS 2012: Situation of residence,Situation of residence
+pooled:Census_pooled_person.dta,2002,p061,census_age_copy_p061_2002,"CENSUS 2002: Age, NISR derived copy 1",Age (NISR derived copy 1)
+pooled:Census_pooled_person.dta,2002,p062,census_age_copy_p062_2002,"CENSUS 2002: Age, NISR derived copy 2",Age (NISR derived copy 2)
+pooled:Census_pooled_person.dta,2002,p063,census_age_copy_p063_2002,"CENSUS 2002: Age, NISR derived copy 3",Age (NISR derived copy 3)
+pooled:Census_pooled_person.dta,2002,p0631,census_age_copy_p0631_2002,"CENSUS 2002: Age, NISR derived copy 3b",Age (NISR derived copy 3b)
+pooled:Census_pooled_person.dta,2012,p07,census_birth_place_2012,CENSUS 2012: Place of birth,Place of Birth
+pooled:Census_pooled_person.dta,2002,p07_v2,census_nationality_2002,CENSUS 2002: Nationality,Nationality
+pooled:Census_pooled_person.dta,2022,p07a,census_residence_status_2022,CENSUS 2022: Residence status: usual resident or visitor,Residence Status
+pooled:Census_pooled_person.dta,2022,p07b,census_slept_here_2022,CENSUS 2022: Resident member slept in the household last night,Residence status of resident member
+pooled:Census_pooled_person.dta,2012,p08,census_nationality_2012,CENSUS 2012: Nationality,Nationality
+pooled:Census_pooled_person.dta,2002,p08_v2,census_birth_place_2002,"CENSUS 2002: Place of birth, district or country",Place of birth (district or country)
+pooled:Census_pooled_person.dta,2022,p08c,census_age_first_marriage_2022,CENSUS 2022: Age at first marriage,Age at first marriage
+pooled:Census_pooled_person.dta,2012,p09,census_previous_residence_2012,CENSUS 2012: Place of previous residence,Place of previous residence
+pooled:Census_pooled_person.dta,2002,p09_v2,census_residence_duration_2002,"CENSUS 2002: Duration of residence in this locality, years",Duration of residence in this locality (years; 99 since birth)
+pooled:Census_pooled_person.dta,2022,p09a,census_born_in_rwanda_2022,CENSUS 2022: Born in Rwanda or abroad,Place of birth/country
+pooled:Census_pooled_person.dta,2022,p09b,census_birth_district_2022,CENSUS 2022: District of birth,Place of birh/district
+pooled:Census_pooled_person.dta,2022,p09c,census_birth_country_2022,"CENSUS 2022: Country of birth, country code",Country of birth: country code
+pooled:Census_pooled_person.dta,2012,p10,census_residence_duration_2012,CENSUS 2012: Duration of residence,Duration of Residence
+pooled:Census_pooled_person.dta,2002,p10_v2,census_previous_residence_2002,"CENSUS 2002: Place of previous residence, district or country",Place of previous residence (district or country)
+pooled:Census_pooled_person.dta,2022,p10a,census_residence_duration_2022,CENSUS 2022: Duration of residence,Duration of Residence
+pooled:Census_pooled_person.dta,2022,p10b,census_previous_in_rwanda_2022,CENSUS 2022: Previous residence in Rwanda or abroad,Place of previous residence
+pooled:Census_pooled_person.dta,2012,p11,census_religion_2012,CENSUS 2012: Religion,Religion
+pooled:Census_pooled_person.dta,2002,p11_v2,census_languages_spoken_2002,CENSUS 2002: Languages spoken,Languages spoken
+pooled:Census_pooled_person.dta,2022,p11a,census_previous_district_2022,CENSUS 2022: District of previous residence,District of previous residence
+pooled:Census_pooled_person.dta,2022,p11b,census_previous_country_2022,"CENSUS 2022: Country of previous residence, country code",Country of previous residence: country code
+pooled:Census_pooled_person.dta,2002,p12,census_religion_2002,CENSUS 2002: Religious affiliation,Religious affiliation
+pooled:Census_pooled_person.dta,2022,p12b,census_nationality_country_2022,"CENSUS 2022: Nationality, country code",Nationality: country code
+pooled:Census_pooled_person.dta,2012,p12c1,census_disability_cause_1_2012,"CENSUS 2012: Cause of disability, first",Cause of disability (C1)
+pooled:Census_pooled_person.dta,2012,p12c2,census_disability_cause_2_2012,"CENSUS 2012: Cause of disability, second",Cause of disability (C2)
+pooled:Census_pooled_person.dta,2012,p12c3,census_disability_cause_3_2012,"CENSUS 2012: Cause of disability, third",Cause of disability (C3)
+pooled:Census_pooled_person.dta,2012,p12c4,census_disability_cause_4_2012,"CENSUS 2012: Cause of disability, fourth",Cause of disability (C4)
+pooled:Census_pooled_person.dta,2012,p12c5,census_disability_cause_5_2012,"CENSUS 2012: Cause of disability, fifth",Cause of disability (C5)
+pooled:Census_pooled_person.dta,2012,p12c6,census_disability_cause_6_2012,"CENSUS 2012: Cause of disability, sixth",Cause of disability(C6)
+pooled:Census_pooled_person.dta,2012,p12d1,census_disability_type_1_2012,"CENSUS 2012: Type of major disability, first",Type of major disability (D1)
+pooled:Census_pooled_person.dta,2012,p12d2,census_disability_type_2_2012,"CENSUS 2012: Type of major disability, second",Type of major disability (D2)
+pooled:Census_pooled_person.dta,2012,p12d3,census_disability_type_3_2012,"CENSUS 2012: Type of major disability, third",Type of major disability (D3)
+pooled:Census_pooled_person.dta,2012,p12d4,census_disability_type_4_2012,"CENSUS 2012: Type of major disability, fourth",Type of major disability (D4)
+pooled:Census_pooled_person.dta,2012,p12d5,census_disability_type_5_2012,"CENSUS 2012: Type of major disability, fifth",Type of major disability (D5)
+pooled:Census_pooled_person.dta,2012,p12d6,census_disability_type_6_2012,"CENSUS 2012: Type of major disability, sixth",Type of major disability(D6)
+pooled:Census_pooled_person.dta,2022,p13,census_religion_2022,CENSUS 2022: Religious affiliation,Religious affiliation
+pooled:Census_pooled_person.dta,2012,p13_v2,census_insurance_type_2012,CENSUS 2012: Type of insurance,Type of insurance
+pooled:Census_pooled_person.dta,2002,p13_v3,census_handicap_type_2002,CENSUS 2002: Type of major handicap,Type of major handicap
+pooled:Census_pooled_person.dta,2022,p14,census_medical_insurance_2022,CENSUS 2022: Medical insurance,Medical insurance
+pooled:Census_pooled_person.dta,2002,p14_v2,census_handicap_cause_2002,CENSUS 2002: Cause of handicap,Cause of handicap
+pooled:Census_pooled_person.dta,2012,p14a,census_mother_alive_2012,CENSUS 2012: Mother alive,Mother alive
+pooled:Census_pooled_person.dta,2012,p14b,census_mother_in_household_2012,CENSUS 2012: Natural mother lives in the household,Natural mother live in household
+pooled:Census_pooled_person.dta,2012,p14c,census_father_alive_2012,CENSUS 2012: Father alive,Father alive
+pooled:Census_pooled_person.dta,2012,p14d,census_father_in_household_2012,CENSUS 2012: Natural father lives in the household,Natural father live in household
+pooled:Census_pooled_person.dta,2012,p15,census_birth_registered_2012,CENSUS 2012: Birth registration,Birth Registration
+pooled:Census_pooled_person.dta,2002,p15_v2,census_parents_survival_2002,CENSUS 2002: Survival of parents,Survival of parents
+pooled:Census_pooled_person.dta,2022,p15b,census_difficulty_seeing_2022,CENSUS 2022: Level of difficulty seeing,Level of difficulty of seeing
+pooled:Census_pooled_person.dta,2012,p16,census_languages_literate_2012,CENSUS 2012: Languages read and written,Languages reading and written
+pooled:Census_pooled_person.dta,2002,p16_v2,census_ever_attended_school_2002,"CENSUS 2002: School attendance, ever attended",School attendance (ever attended)
+pooled:Census_pooled_person.dta,2022,p16b,census_difficulty_hearing_2022,CENSUS 2022: Level of difficulty hearing,Level of difficulty of hearing
+pooled:Census_pooled_person.dta,2012,p17,census_school_attendance_2012,CENSUS 2012: School attendance,School attendance
+pooled:Census_pooled_person.dta,2002,p17_v2,census_highest_class_2002,CENSUS 2002: Highest class successfully completed,Highest class successfully completed
+pooled:Census_pooled_person.dta,2002,p171,census_education_grouped_2002,"CENSUS 2002: Educational level attained, NISR grouped",Educational level attained (NISR grouped)
+pooled:Census_pooled_person.dta,2022,p17b,census_difficulty_walking_2022,CENSUS 2022: Level of difficulty walking,Level of difficulty of walking
+pooled:Census_pooled_person.dta,2002,p18,census_specialisation_2002,"CENSUS 2002: Area of specialisation, secondary or higher",Area of specialisation (secondary/higher)
+pooled:Census_pooled_person.dta,2012,p18a,census_education_level_2012,CENSUS 2012: Educational level,Educational level
+pooled:Census_pooled_person.dta,2022,p18b,census_difficulty_communic_2022,CENSUS 2022: Level of difficulty communicating,Level of difficulty of communicating
+pooled:Census_pooled_person.dta,2012,p18b_v2,census_years_completed_2012,CENSUS 2012: Years completed,Years completed
+pooled:Census_pooled_person.dta,2012,p19,census_highest_certificate_2012,CENSUS 2012: Highest certificate or diploma,Highest Certificate/Diploma
+pooled:Census_pooled_person.dta,2002,p19_v2,census_highest_certificate_2002,CENSUS 2002: Highest certificate or diploma obtained,Highest certificate or diploma obtained
+pooled:Census_pooled_person.dta,2022,p19b,census_difficulty_remember_2022,CENSUS 2022: Level of difficulty remembering or concentrating,Level of difficulty of remembering or concentrating
+pooled:Census_pooled_person.dta,2012,p20,census_worked_2012,CENSUS 2012: Worked (activity question),Work
+pooled:Census_pooled_person.dta,2002,p20_v2,census_literacy_2002,CENSUS 2002: Literacy,Literacy
+pooled:Census_pooled_person.dta,2022,p20b,census_difficulty_self_care_2022,CENSUS 2022: Level of difficulty with self-care,Level of difficulty with self-care such as washing all over or dressing
+pooled:Census_pooled_person.dta,2012,p21,census_reason_not_working_2012,CENSUS 2012: Why the person did not work,Why did not work
+pooled:Census_pooled_person.dta,2002,p21_v2,census_activity_status_2002,CENSUS 2002: Economic activity situation in the reference month,Economic activity situation (15/07-15/08/2002)
+pooled:Census_pooled_person.dta,2002,p211,census_activity_grouped_2002,"CENSUS 2002: Activity status, NISR grouped",Activity status (NISR grouped)
+pooled:Census_pooled_person.dta,2022,p21a,census_short_stature_2022,CENSUS 2022: Has a problem of short stature,Has a problem of short stature
+pooled:Census_pooled_person.dta,2012,p22,census_work_done_2012,CENSUS 2012: Type of work done,Work done
+pooled:Census_pooled_person.dta,2002,p22_v2,census_occupation_isco88_2002,"CENSUS 2002: Main occupation, ISCO-88 minor group",Main occupation (type of work done)
+pooled:Census_pooled_person.dta,2022,p22a,census_albinism_2022,CENSUS 2022: Has a disability with albinism,Has a disability with albinism
+pooled:Census_pooled_person.dta,2012,p23,census_ready_to_work_2012,CENSUS 2012: Ready to work,Ready to work
+pooled:Census_pooled_person.dta,2002,p23_v2,census_employment_status_2002,CENSUS 2002: Status in employment,Status in employment
+pooled:Census_pooled_person.dta,2022,p23a,census_mother_alive_2022,CENSUS 2022: Biological mother alive,Biological mother alive
+pooled:Census_pooled_person.dta,2022,p23b,census_mother_in_household_2022,CENSUS 2022: Biological mother lives in this household,Biological mother live in this household
+pooled:Census_pooled_person.dta,2022,p23bb,census_mother_line_2022,CENSUS 2022: Line number of the biological mother,Select the name of the biological mother
+pooled:Census_pooled_person.dta,2022,p23c,census_father_alive_2022,CENSUS 2022: Biological father alive,Biological father alive
+pooled:Census_pooled_person.dta,2022,p23d,census_father_in_household_2022,CENSUS 2022: Biological father lives in this household,Biological father live in this household
+pooled:Census_pooled_person.dta,2022,p23dd,census_father_line_2022,CENSUS 2022: Line number of the biological father,Select the name of the biological father
+pooled:Census_pooled_person.dta,2022,p24,census_civil_registered_2022,CENSUS 2022: Registered in the civil registration books,Registered in the Civil Registration books
+pooled:Census_pooled_person.dta,2012,p24_v2,census_seeking_work_2012,CENSUS 2012: Seeking work,Seeking for work
+pooled:Census_pooled_person.dta,2002,p24_v3,census_industry_isic3_2002,"CENSUS 2002: Branch of economic activity, ISIC Rev. 3 group",Branch of economic activity
+pooled:Census_pooled_person.dta,2002,p241,census_industry_grouped_2002,"CENSUS 2002: Branch of economic activity, NISR grouped",Branch of economic activity (NISR grouped)
+pooled:Census_pooled_person.dta,2012,p25,census_occupation_isco08_2012,"CENSUS 2012: Main occupation, ISCO-08 four-digit","Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code list; 1-digit groups in rp25)"
+pooled:Census_pooled_person.dta,2002,p25_v2,census_inst_sector_2002,CENSUS 2002: Institutional sector of employment,Institutional sector of employment (public/parastatal/NGO/cooperative/other private)
+pooled:Census_pooled_person.dta,2012,p26,census_employment_status_2012,CENSUS 2012: Status in employment,Status in employment
+pooled:Census_pooled_person.dta,2002,p26_v2,census_marital_status_2002,CENSUS 2002: Marital status,Marital status
+pooled:Census_pooled_person.dta,2012,p27,census_industry_isic4_2012,"CENSUS 2012: Branch of economic activity, ISIC Rev. 4 class","Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabelled by NISR; sections in rp27)"
+pooled:Census_pooled_person.dta,2002,p27a,census_births_boys_2002,"CENSUS 2002: Live births ever, boys","Live births ever, boys"
+pooled:Census_pooled_person.dta,2002,p27b,census_births_girls_2002,"CENSUS 2002: Live births ever, girls","Live births ever, girls"
+pooled:Census_pooled_person.dta,2012,p28,census_inst_sector_2012,CENSUS 2012: Institutional sector of employment,Institutional sector of employment
+pooled:Census_pooled_person.dta,2002,p28a,census_children_alive_boys_2002,"CENSUS 2002: Children surviving, boys","Children surviving, boys"
+pooled:Census_pooled_person.dta,2002,p28b,census_children_alive_girls_2002,"CENSUS 2002: Children surviving, girls","Children surviving, girls"
+pooled:Census_pooled_person.dta,2022,p29,census_school_attendance_2022,CENSUS 2022: Ever or currently attending school,Ever or currently attending  school
+pooled:Census_pooled_person.dta,2012,p29_v2,census_marital_status_2012,CENSUS 2012: Marital status,Marital status
+pooled:Census_pooled_person.dta,2002,p29a,census_births_12m_boys_2002,"CENSUS 2002: Births in the last 12 months, boys","Births in the last 12 months, boys"
+pooled:Census_pooled_person.dta,2002,p29b,census_births_12m_girls_2002,"CENSUS 2002: Births in the last 12 months, girls","Births in the last 12 months, girls"
+pooled:Census_pooled_person.dta,2012,p30,census_spouses_2012,CENSUS 2012: Number of spouses,Number of spouses
+pooled:Census_pooled_person.dta,2022,p30a,census_education_level_2022,CENSUS 2022: Highest level of education,Highest level of education
+pooled:Census_pooled_person.dta,2002,p30a_v2,census_surviving_12m_boys_2002,CENSUS 2002: Surviving boys among the births of the last 12 months,"Of births in the last 12 months, surviving boys"
+pooled:Census_pooled_person.dta,2022,p30b,census_years_completed_2022,CENSUS 2022: Years of school completed at that level,Years of school complete successfully at that level
+pooled:Census_pooled_person.dta,2002,p30b_v2,census_surviving_12m_girls_2002,CENSUS 2002: Surviving girls among the births of the last 12 months,"Of births in the last 12 months, surviving girls"
+pooled:Census_pooled_person.dta,2022,p31,census_highest_certificate_2022,CENSUS 2022: Highest certificate or degree,Highest certificate/degree
+pooled:Census_pooled_person.dta,2012,p31_v2,census_spouse_rank_2012,CENSUS 2012: Current rank as spouse,Current rank as spouse
+pooled:Census_pooled_person.dta,2022,p32,census_literacy_languages_2022,"CENSUS 2022: Reads and writes with understanding, languages",Can read and write with understanding in the following languages
+pooled:Census_pooled_person.dta,2012,p32_v2,census_age_first_marriage_2012,CENSUS 2012: Age at first marriage,Age at first marriage
+pooled:Census_pooled_person.dta,2022,p33,census_adult_literacy_2022,CENSUS 2022: Ever attended an informal adult literacy programme,Ever attended or currently attending Informal adult litteracy Program
+pooled:Census_pooled_person.dta,2012,p33f,census_births_girls_2012,CENSUS 2012: Females ever born,Females ever born
+pooled:Census_pooled_person.dta,2012,p33m,census_births_boys_2012,CENSUS 2012: Males ever born,Males ever born
+pooled:Census_pooled_person.dta,2022,p34,census_internet_use_2022,CENSUS 2022: Internet use,Internet use
+pooled:Census_pooled_person.dta,2012,p34f,census_children_alive_girls_2012,CENSUS 2012: Females alive,Females alive
+pooled:Census_pooled_person.dta,2012,p34m,census_children_alive_boys_2012,CENSUS 2012: Males alive,Males alive
+pooled:Census_pooled_person.dta,2022,p35,census_internet_place_2022,CENSUS 2022: Where the internet is accessed,Access to internet
+pooled:Census_pooled_person.dta,2012,p35f,census_births_12m_girls_2012,CENSUS 2012: Females born in the last 12 months,Females born in 12 months
+pooled:Census_pooled_person.dta,2012,p35m,census_births_12m_boys_2012,CENSUS 2012: Males born in the last 12 months,Males born in 12 months
+pooled:Census_pooled_person.dta,2022,p36c,census_mobile_phone_type_2022,CENSUS 2022: Type of mobile phone,type of mobile phone
+pooled:Census_pooled_person.dta,2012,p36f,census_surviving_12m_girls_2012,CENSUS 2012: Females born in the last 12 months still alive,Females alive 12 months
+pooled:Census_pooled_person.dta,2012,p36m,census_surviving_12m_boys_2012,CENSUS 2012: Males born in the last 12 months still alive,Males alive in 12 months
+pooled:Census_pooled_person.dta,2022,p46,census_inst_sector_2022,CENSUS 2022: Institutional sector,Institutional sector
+pooled:Census_pooled_person.dta,2022,p47a,census_isic_section_2022,"CENSUS 2022: Branch of economic activity, ISIC section",ISIC High level
+pooled:Census_pooled_person.dta,2022,p48a,census_isco_major_group_2022,"CENSUS 2022: Main occupation, ISCO major group",Main occupations(ISCO high level)
+pooled:Census_pooled_person.dta,2022,p49,census_employment_status_2022,CENSUS 2022: Status in employment,status in employment
+pooled:Census_pooled_person.dta,2022,p50a,census_ever_given_birth_2022,CENSUS 2022: Ever given birth,given birth
+pooled:Census_pooled_person.dta,2022,p50b_boys,census_births_boys_2022,"CENSUS 2022: Live births ever, boys",Number of live births ever had / boys
+pooled:Census_pooled_person.dta,2022,p50b_girls,census_births_girls_2022,"CENSUS 2022: Live births ever, girls",Number of live births ever had / girls
+pooled:Census_pooled_person.dta,2022,p50c_boys,census_children_alive_boys_2022,"CENSUS 2022: Children still alive, boys",Among those children how many are still alive / Boys
+pooled:Census_pooled_person.dta,2022,p50c_girls,census_children_alive_girls_2022,"CENSUS 2022: Children still alive, girls",Among those children how many are still alive / Girls
+pooled:Census_pooled_person.dta,2022,p51a,census_birth_last_12m_2022,CENSUS 2022: Gave birth in the last 12 months,During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give
+pooled:Census_pooled_person.dta,2022,p51b_boys,census_births_12m_boys_2022,"CENSUS 2022: Live births in the last 12 months, boys",Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021
+pooled:Census_pooled_person.dta,2022,p51b_girls,census_births_12m_girls_2022,"CENSUS 2022: Live births in the last 12 months, girls",Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021
+pooled:Census_pooled_person.dta,2022,p51c_boys,census_surviving_12m_boys_2022,"CENSUS 2022: Births of the last 12 months still alive, boys","Among those children s,how many are still alive / Boys"
+pooled:Census_pooled_person.dta,2022,p51c_girls,census_surviving_12m_girls_2022,"CENSUS 2022: Births of the last 12 months still alive, girls","Among those children s,how many are still alive / Girls"
+pooled:Census_pooled_person.dta,2002,personnes_handic,census_handicap_grouped_2002,"CENSUS 2002: Persons with a handicap, NISR grouped",Persons with a handicap (NISR grouped)
+pooled:Census_pooled_person.dta,"2002,2012,2022",pid,census_person_id,CENSUS: Person number within the household,Person number within the household
+pooled:Census_pooled_person.dta,2002,pid_nisr,census_nisr_person_id,CENSUS 2002: NISR person identifier as shipped,NISR person number as shipped
+pooled:Census_pooled_person.dta,2002,probability,census_selection_probability,CENSUS 2002: Selection probability of the household in the public-use sample,Inclusion (selection) probability
+pooled:Census_pooled_person.dta,"2002,2012,2022",prov,census_province,"CENSUS: Province, NISR code 1-5","Province (1-5, NISR codes)"
+pooled:Census_pooled_person.dta,2012,rl07,census_urban_rural_nisr_2012,"CENSUS 2012: Urban or rural, NISR two-way recode of L07","Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urban = 2)"
+pooled:Census_pooled_person.dta,2012,rp04y,census_birth_year_copy_2012,"CENSUS 2012: Year of birth, NISR copy of P04Y",Year of birth (NISR copy of P04Y)
+pooled:Census_pooled_person.dta,2012,rp08,census_nationality_group_2012,"CENSUS 2012: Nationality group, NISR recode of P08",Nationality group (NISR recode of P08)
+pooled:Census_pooled_person.dta,2012,rp12,census_disability_any_2012,"CENSUS 2012: Any disability, NISR recode of P12","Disability status, any difficulty (NISR recode of P12)"
+pooled:Census_pooled_person.dta,2012,rp142,census_parental_coresidence_2012,"CENSUS 2012: Parental co-residence of residents under 18, NISR recode","Parental co-residence, residents under 18 (NISR recode of P14b x P14d)"
+pooled:Census_pooled_person.dta,2012,rp2024,census_activity_status_2012,"CENSUS 2012: Activity status of residents aged 5 and over, NISR recode","Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on leave, 2/3 = did not work and available, 4-7 inactive)"
+pooled:Census_pooled_person.dta,2012,rp2124,census_reason_inactive_2012,"CENSUS 2012: Reason for not working, inactive only, NISR recode","Reason for not working (NISR recode of P21, inactive only)"
+pooled:Census_pooled_person.dta,2012,rp25,census_isco_major_group_2012,"CENSUS 2012: Occupation group, ISCO major group",Occupation group
+pooled:Census_pooled_person.dta,2012,rp27,census_isic_section_2012,"CENSUS 2012: Industry group, ISIC section",Industry group
+pooled:Census_pooled_person.dta,"2002,2012,2022",sector,census_sector,"CENSUS: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; names attached)"
+pooled:Census_pooled_person.dta,2002,sector_code_file,census_sector_code_shipped_2002,CENSUS 2002: Sector code as shipped before the name-based correction,"Sector code as shipped in the 2002 file (before the name-based correction, see DECISIONS)"
+pooled:Census_pooled_person.dta,"2002,2012,2022",sex,census_sex,"CENSUS: Sex: 1 male, 2 female","Sex (1 male, 2 female)"
+pooled:Census_pooled_person.dta,"2002,2012,2022",survey,census_survey,CENSUS: Source survey,Source survey
+pooled:Census_pooled_person.dta,"2002,2012,2022",urban,census_urban,"CENSUS: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+pooled:Census_pooled_person.dta,"2002,2012,2022",wave,census_wave,CENSUS: Wave identifier,Wave (census year)
+pooled:Census_pooled_person.dta,"2002,2012,2022",wt,census_weight,CENSUS: Sampling weight,Person weight (sums to the census population)
+pooled:Census_pooled_person.dta,"2002,2012,2022",wt_hh,census_household_weight,CENSUS: Household weight,Household weight (2022 as shipped; 2002/2012 = person weight of the household sample)
+pooled:Census_pooled_person.dta,"2002,2012,2022",year,census_year,CENSUS: Survey year,Census year
+pooled:Census_pooled_household.dta,"2002,2012,2022",survey,census_survey,CENSUS: Source survey,Source survey
+pooled:Census_pooled_household.dta,"2002,2012,2022",year,census_year,CENSUS: Survey year,Census year
+pooled:Census_pooled_household.dta,"2002,2012,2022",wave,census_wave,CENSUS: Wave identifier,Wave (census year)
+pooled:Census_pooled_household.dta,"2002,2012,2022",prov,census_province,"CENSUS: Province, NISR code 1-5","Province (1-5, NISR codes)"
+pooled:Census_pooled_household.dta,"2002,2012,2022",dist,census_district,"CENSUS: District, NISR code 11-57","District (11-57, NISR codes)"
+pooled:Census_pooled_household.dta,"2002,2012,2022",sector,census_sector,"CENSUS: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; names attached)"
+pooled:Census_pooled_household.dta,"2002,2012,2022",urban,census_urban,"CENSUS: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+pooled:Census_pooled_household.dta,"2002,2012,2022",cluster,census_cluster,CENSUS: Sampling cluster or village identifier,Sampling cluster proxy (year_sector)
+pooled:Census_pooled_household.dta,"2002,2012,2022",hhid,census_household_id,CENSUS: Household identifier,Household id (unique within year)
+pooled:Census_pooled_household.dta,"2002,2012,2022",wt,census_weight,CENSUS: Sampling weight,Person weight (sums to the census population)
+pooled:Census_pooled_household.dta,"2002,2012,2022",wt_hh,census_household_weight,CENSUS: Household weight,Household weight (2022 as shipped; 2002/2012 = person weight of the household sample)
+pooled:Census_pooled_household.dta,2002,novprov,census_province_name_shipped,CENSUS 2002: Province name as shipped by NISR,Province name
+pooled:Census_pooled_household.dta,2002,district_code,census_district_shipped_2002,"CENSUS 2002: District code as shipped, three digits","District code (3-digit, as shipped)"
+pooled:Census_pooled_household.dta,2002,novdistr,census_district_name_shipped,CENSUS 2002: District name as shipped by NISR,District name
+pooled:Census_pooled_household.dta,2002,sector_code_file,census_sector_code_shipped_2002,CENSUS 2002: Sector code as shipped before the name-based correction,"Sector code as shipped in the 2002 file (before the name-based correction, see DECISIONS)"
+pooled:Census_pooled_household.dta,2002,novsect,census_sector_name_shipped,CENSUS 2002: Sector name as shipped by NISR,Sector name
+pooled:Census_pooled_household.dta,2002,h100,census_household_type_2002,CENSUS 2002: Household type: 100 = ordinary household,Household type (100 = ordinary household)
+pooled:Census_pooled_household.dta,2002,h200,census_collective_type_2002,"CENSUS 2002: Collective household type, codes 201-214",Collective household type (codes 201-214; not filled)
+pooled:Census_pooled_household.dta,2002,h101,census_questionnaire_serial_2002,CENSUS 2002: Questionnaire serial number in the household,Questionnaire serial number in household
+pooled:Census_pooled_household.dta,2002,h102,census_questionnaires_count_2002,CENSUS 2002: Number of questionnaires filled in the household,Number of questionnaires filled in household
+pooled:Census_pooled_household.dta,2002,h110,census_recap_male_present,CENSUS 2002: Recap: male residents present,Recap: male residents present
+pooled:Census_pooled_household.dta,2002,h111,census_recap_male_absent,CENSUS 2002: Recap: male residents absent,Recap: male residents absent
+pooled:Census_pooled_household.dta,2002,h112,census_recap_male_total,CENSUS 2002: Recap: male residents total,Recap: male residents total
+pooled:Census_pooled_household.dta,2002,h113,census_recap_male_aged_17_2002,CENSUS 2002: Recap: male residents aged 17 and over,Recap: male residents aged 17+
+pooled:Census_pooled_household.dta,2002,h114,census_recap_male_visitors,CENSUS 2002: Recap: male visitors,Recap: male visitors
+pooled:Census_pooled_household.dta,2002,h115,census_recap_female_present,CENSUS 2002: Recap: female residents present,Recap: female residents present
+pooled:Census_pooled_household.dta,2002,h116,census_recap_female_absent,CENSUS 2002: Recap: female residents absent,Recap: female residents absent
+pooled:Census_pooled_household.dta,2002,h117,census_recap_female_total,CENSUS 2002: Recap: female residents total,Recap: female residents total
+pooled:Census_pooled_household.dta,2002,h118,census_recap_female_aged_17_2002,CENSUS 2002: Recap: female residents aged 17 and over,Recap: female residents aged 17+
+pooled:Census_pooled_household.dta,2002,h119,census_recap_female_visitors,CENSUS 2002: Recap: female visitors,Recap: female visitors
+pooled:Census_pooled_household.dta,2002,h120,census_recap_residents_present,"CENSUS 2002: Recap: residents present, total","Recap: residents present, total"
+pooled:Census_pooled_household.dta,2002,h121,census_recap_residents_absent,"CENSUS 2002: Recap: residents absent, total","Recap: residents absent, total"
+pooled:Census_pooled_household.dta,2002,h122,census_recap_residents_total,"CENSUS 2002: Recap: residents, total","Recap: residents, total"
+pooled:Census_pooled_household.dta,2002,h123,census_recap_aged_17_total_2002,"CENSUS 2002: Recap: residents aged 17 and over, total","Recap: residents aged 17+, total"
+pooled:Census_pooled_household.dta,2002,h124,census_recap_visitors_total,"CENSUS 2002: Recap: visitors, total","Recap: visitors, total"
+pooled:Census_pooled_household.dta,"2002,2012",h01,census_settlement_2002_2012,CENSUS 2002-2012: Type of housing settlement,Type of Housing
+pooled:Census_pooled_household.dta,"2002,2012",h02,census_dwelling_type_2002_2012,CENSUS 2002-2012: Type of housing unit,Type of Housing unit
+pooled:Census_pooled_household.dta,2002,h03_v3,census_roof_material_2002,CENSUS 2002: Roof material,Roof material
+pooled:Census_pooled_household.dta,2002,h04_v3,census_wall_material_2002,CENSUS 2002: Outer wall material,Outer wall material
+pooled:Census_pooled_household.dta,2002,h05_v3,census_floor_material_2002,CENSUS 2002: Floor material,Floor material
+pooled:Census_pooled_household.dta,2002,h06_v3,census_living_rooms_2002,CENSUS 2002: Number of living rooms,Number of living rooms
+pooled:Census_pooled_household.dta,2002,h07_v3,census_water_source_2002,CENSUS 2002: Main source of water supply,Main source of water supply
+pooled:Census_pooled_household.dta,2002,h08_v3,census_lighting_source_2002,CENSUS 2002: Main source of lighting,Main source of lighting
+pooled:Census_pooled_household.dta,2002,h09_v3,census_cooking_energy_2002,CENSUS 2002: Main cooking energy,Main cooking energy
+pooled:Census_pooled_household.dta,2002,h10_v3,census_toilet_facility_2002,CENSUS 2002: Main toilet facility,Main toilet facility
+pooled:Census_pooled_household.dta,2002,h11_v3,census_waste_disposal_2002,CENSUS 2002: Main mode of household waste disposal,Main mode of household waste disposal
+pooled:Census_pooled_household.dta,2002,h12_v3,census_tenure_2002,CENSUS 2002: Occupancy status of the dwelling,Occupancy status of the dwelling
+pooled:Census_pooled_household.dta,2002,h13_v3,census_radio_television_2002,CENSUS 2002: Radio or television ownership,Radio / television ownership
+pooled:Census_pooled_household.dta,2002,h14_v3,census_telephone_2002,CENSUS 2002: Fixed-line or cell phone ownership,Fixed-line / cell phone
+pooled:Census_pooled_household.dta,2002,h15_v3,census_computer_internet_2002,CENSUS 2002: Computer or internet connection,Computer / internet connection
+pooled:Census_pooled_household.dta,2002,h16a,census_vehicles_2002,CENSUS 2002: Number of vehicles,Number of vehicles
+pooled:Census_pooled_household.dta,2002,h16b,census_motorcycles_2002,CENSUS 2002: Number of motorcycles,Number of motorcycles
+pooled:Census_pooled_household.dta,2002,h16c,census_bicycles_2002,CENSUS 2002: Number of bicycles,Number of bicycles
+pooled:Census_pooled_household.dta,2002,h17_v3,census_persons_counted_2002,CENSUS 2002: Total persons counted in the household,Total persons counted in the household
+pooled:Census_pooled_household.dta,2002,h19a,census_death_last_12m_2002,CENSUS 2002: Any death of a resident member in the last 12 months,Any death of a resident member in the last 12 months
+pooled:Census_pooled_household.dta,2002,h19b,census_deaths_last_12m_2002,CENSUS 2002: Number of deaths in the last 12 months,Number of deaths in the last 12 months
+pooled:Census_pooled_household.dta,2002,probability,census_selection_probability,CENSUS 2002: Selection probability of the household in the public-use sample,Inclusion (selection) probability
+pooled:Census_pooled_household.dta,2002,collective,census_collective_household,CENSUS 2002: Collective (non-private) household or institution,1 = row belongs to a collective/institutional household (2002 only)
+pooled:Census_pooled_household.dta,2012,hhsize,census_household_size,CENSUS 2012: Household size (persons in the public-use roster),Household Size
+pooled:Census_pooled_household.dta,,head_sex,census_head_sex,CENSUS: Sex of the household head,
+pooled:Census_pooled_household.dta,,head_age,census_head_age,CENSUS: Age of the household head,
+pooled:Census_pooled_household.dta,2012,l02,census_district_shipped_2012,CENSUS 2012: District as shipped,District
+pooled:Census_pooled_household.dta,2012,l03,census_sector_shipped_2012,CENSUS 2012: Sector as shipped,Sector
+pooled:Census_pooled_household.dta,2012,l07,census_area_residence_2012,"CENSUS 2012: Area of residence: urban, rural, peri-urban",Area of residence
+pooled:Census_pooled_household.dta,2012,rl07,census_urban_rural_nisr_2012,"CENSUS 2012: Urban or rural, NISR two-way recode of L07","Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urban = 2)"
+pooled:Census_pooled_household.dta,2012,h03_v2,census_tenure_2012,CENSUS 2012: Status of occupancy of the house,Status of occupancy of house
+pooled:Census_pooled_household.dta,2012,h04_v2,census_roof_material_2012,CENSUS 2012: Roof material,Roof
+pooled:Census_pooled_household.dta,2012,h05_v2,census_wall_material_2012,CENSUS 2012: Wall material,Walls
+pooled:Census_pooled_household.dta,2012,h06_v2,census_floor_material_2012,CENSUS 2012: Floor material,Floor
+pooled:Census_pooled_household.dta,2012,h07_v2,census_rooms_2012,CENSUS 2012: Number of rooms,Number of rooms
+pooled:Census_pooled_household.dta,2012,h08_v2,census_sleeping_rooms_2012,CENSUS 2012: Number of rooms for sleeping,Number of rooms for sleeping
+pooled:Census_pooled_household.dta,2012,h09_v2,census_occupants_2012,CENSUS 2012: Number of occupants,Number of occupants
+pooled:Census_pooled_household.dta,2012,h10_v2,census_water_source_2012,CENSUS 2012: Main source of water,Main source of water
+pooled:Census_pooled_household.dta,2012,h11_v2,census_toilet_facility_2012,CENSUS 2012: Type of toilet facility,Type of toilet facility
+pooled:Census_pooled_household.dta,2012,h12_v2,census_lighting_source_2012,CENSUS 2012: Source of lighting,Source of lighting
+pooled:Census_pooled_household.dta,2012,h13_v2,census_cooking_energy_2012,CENSUS 2012: Energy for cooking,Energy of cooking
+pooled:Census_pooled_household.dta,2012,h14_v2,census_energy_saving_stove_2012,CENSUS 2012: Energy-saving stove,Energy saving stove
+pooled:Census_pooled_household.dta,2012,h15_v2,census_waste_disposal_2012,CENSUS 2012: Mode of household waste disposal,Mode of household waste disposal
+pooled:Census_pooled_household.dta,2012,h16_v2,census_sewage_disposal_2012,CENSUS 2012: Mode of sewage disposal,Mode of sewage disposal
+pooled:Census_pooled_household.dta,2012,h17_v2,census_radios_2012,CENSUS 2012: Number of radios,Radio
+pooled:Census_pooled_household.dta,2012,h18_v2,census_televisions_2012,CENSUS 2012: Number of televisions,Television
+pooled:Census_pooled_household.dta,2012,h19_v2,census_fixed_telephones_2012,CENSUS 2012: Number of fixed-line telephones,Telephone (fixed line)
+pooled:Census_pooled_household.dta,2012,h20_v2,census_cell_phones_2012,CENSUS 2012: Number of cell phones,Cell phone
+pooled:Census_pooled_household.dta,2012,h21,census_refrigerators_2012,CENSUS 2012: Number of refrigerators or freezers,Refrigerator/ Freezer
+pooled:Census_pooled_household.dta,2012,h22_v2,census_computers_2012,CENSUS 2012: Number of computers,Computer
+pooled:Census_pooled_household.dta,2012,h23_v2,census_bicycles_2012,CENSUS 2012: Number of bicycles,Bicycles
+pooled:Census_pooled_household.dta,2012,h24,census_vehicles_2012,CENSUS 2012: Number of vehicles,Vehicles
+pooled:Census_pooled_household.dta,2012,h25,census_motorcycles_2012,CENSUS 2012: Number of motorcycles,Motorcycles
+pooled:Census_pooled_household.dta,2012,h26_v2,census_internet_access_2012,CENSUS 2012: Internet access,Internet Access
+pooled:Census_pooled_household.dta,2012,h27_v2,census_internet_place_2012,CENSUS 2012: Where the household accesses the internet,Where do you access internet
+pooled:Census_pooled_household.dta,2012,h28a_v2,census_local_cows_2012,CENSUS 2012: Cattle: local breed cows,Cattle:Local breed cow
+pooled:Census_pooled_household.dta,2012,h28b,census_cross_cows_2012,CENSUS 2012: Cattle: cross breed cows,Cattle: Cross breed cow
+pooled:Census_pooled_household.dta,2012,h28c,census_exotic_cows_2012,CENSUS 2012: Cattle: exotic breed cows,Cattle: Exotic breed cow
+pooled:Census_pooled_household.dta,2012,h29,census_goats_2012,CENSUS 2012: Number of goats,Goats
+pooled:Census_pooled_household.dta,2012,h30,census_sheep_2012,CENSUS 2012: Number of sheep,Sheeps
+pooled:Census_pooled_household.dta,2012,h31,census_pigs_2012,CENSUS 2012: Number of pigs,Pigs
+pooled:Census_pooled_household.dta,2012,h32,census_rabbits_2012,CENSUS 2012: Number of rabbits,Rabbits
+pooled:Census_pooled_household.dta,2012,h33,census_poultry_2012,CENSUS 2012: Number of poultry,Poultry/fowl
+pooled:Census_pooled_household.dta,2012,h34,census_other_animals_2012,CENSUS 2012: Number of other animals,Other
+pooled:Census_pooled_household.dta,2012,h35,census_land_2012,CENSUS 2012: Land ownership or use,Land
+pooled:Census_pooled_household.dta,2012,m1,census_death_in_household_2012,CENSUS 2012: Death in the household,Death in the Household
+pooled:Census_pooled_household.dta,2012,inclusionprobability_1_,census_selection_prob_2012,"CENSUS 2012: Inclusion (selection) probability, stage 1",Inclusion (Selection) Probability for Stage 1
+pooled:Census_pooled_household.dta,2022,h01_v2,census_settlement_2022,"CENSUS 2022: Type of settlement, 2022 coding",Type of habitant
+pooled:Census_pooled_household.dta,2022,h02_v2,census_dwelling_type_2022,"CENSUS 2022: Type of building, 2022 coding",Type of Building
+pooled:Census_pooled_household.dta,2022,h03,census_tenure_2022,CENSUS 2022: Tenure of the housing unit,Tenure of then housing unit
+pooled:Census_pooled_household.dta,2022,h04,census_owns_housing_unit_2022,CENSUS 2022: Household owns a housing unit in this village or elsewhere,Is this Household has its own housing unit  in this village or elsewhere
+pooled:Census_pooled_household.dta,2022,h05,census_roof_material_2022,CENSUS 2022: Main material of the roof,main material used for the roof
+pooled:Census_pooled_household.dta,2022,h06,census_wall_material_2022,CENSUS 2022: Main material of the walls,main material used for the walls
+pooled:Census_pooled_household.dta,2022,h07,census_floor_material_2022,CENSUS 2022: Main material of the floor,main material used for the floor
+pooled:Census_pooled_household.dta,2022,h08,census_rooms_2022,CENSUS 2022: Number of rooms,Number of rooms
+pooled:Census_pooled_household.dta,2022,h09,census_sleeping_rooms_2022,CENSUS 2022: Number of rooms used for sleeping,number of rooms are used for sleeping
+pooled:Census_pooled_household.dta,2022,h10,census_rooms_boys_girls_2022,CENSUS 2022: Sleeping rooms for boys separated from those for girls,Are Sleeping rooms  for Boys separated from those for Girls
+pooled:Census_pooled_household.dta,2022,h11,census_water_source_2022,CENSUS 2022: Main source of water for general purposes,Main source of water used for general purposes
+pooled:Census_pooled_household.dta,2022,h12,census_drinking_water_2022,CENSUS 2022: Main source of drinking water,Main source of drinking water
+pooled:Census_pooled_household.dta,2022,h13,census_toilet_facility_2022,CENSUS 2022: Toilet facility,Toilet Facility
+pooled:Census_pooled_household.dta,2022,h14,census_grid_electricity_2022,CENSUS 2022: Connected to the electricity grid,Electricity (Grid line) connectivity
+pooled:Census_pooled_household.dta,2022,h15,census_lighting_source_2022,CENSUS 2022: Main source of energy for lighting,Main source of energy for lighting
+pooled:Census_pooled_household.dta,2022,h16,census_cooking_energy_2022,CENSUS 2022: Main source of energy for cooking,Main source of energy for cooking
+pooled:Census_pooled_household.dta,2022,h17,census_cooking_energy_2nd_2022,CENSUS 2022: Secondary source of energy for cooking,Secondary source of energy for cooking
+pooled:Census_pooled_household.dta,2022,h18,census_energy_saving_stove_2022,CENSUS 2022: Uses an energy-saving cooking stove,Does your HH use a cooking energy saving stove?
+pooled:Census_pooled_household.dta,2022,h19,census_waste_disposal_2022,CENSUS 2022: Main mode of household waste disposal,Main mode of household waste disposal used
+pooled:Census_pooled_household.dta,2022,h20,census_sewage_disposal_2022,CENSUS 2022: Main mode of sewage disposal,Main mode of sewage
+pooled:Census_pooled_household.dta,2022,h21_01,census_asset_radio_2022,CENSUS 2022: Owns a functional radio,Functional assets own by HH: Radio
+pooled:Census_pooled_household.dta,2022,h21_02,census_asset_television_2022,CENSUS 2022: Owns a functional television,Functional assets own by HH: Television
+pooled:Census_pooled_household.dta,2022,h21_03,census_asset_refrigerator_2022,CENSUS 2022: Owns a functional refrigerator or freezer,Functional assets own by HH: Refrigerator/Freezer for HH use only
+pooled:Census_pooled_household.dta,2022,h21_04,census_asset_cooker_2022,CENSUS 2022: Owns a functional gas or electrical cooker,Functional assets own by HH: Gas/Electrical Cooker
+pooled:Census_pooled_household.dta,2022,h21_05,census_asset_washer_2022,CENSUS 2022: Owns a functional washing machine,Functional assets own by HH: Washing machine
+pooled:Census_pooled_household.dta,2022,h21_06,census_asset_microwave_2022,CENSUS 2022: Owns a functional microwave,Functional assets own by HH: Microwave
+pooled:Census_pooled_household.dta,2022,h21_07,census_asset_mattress_2022,CENSUS 2022: Owns a mattress,Functional assets own by HH: Mattress
+pooled:Census_pooled_household.dta,2022,h21_08,census_asset_chair_2022,CENSUS 2022: Owns a bench or chair,Functional assets own by HH: Bench/Chair
+pooled:Census_pooled_household.dta,2022,h21_09,census_asset_bed_2022,CENSUS 2022: Owns a bed,Functional assets own by HH: Bed
+pooled:Census_pooled_household.dta,2022,h21_10,census_asset_table_2022,CENSUS 2022: Owns tables,Functional assets own by HH: Tables
+pooled:Census_pooled_household.dta,2022,h21_11,census_asset_sofa_2022,CENSUS 2022: Owns a sofa,Functional assets own by HH: Sofa
+pooled:Census_pooled_household.dta,2022,h21_12,census_asset_computer_2022,CENSUS 2022: Owns a functional computer,Functional assets own by HH: Computers
+pooled:Census_pooled_household.dta,2022,h21_13,census_asset_vehicle_2022,CENSUS 2022: Owns a vehicle for household use,Functional assets own by HH: Vehicles for household use only
+pooled:Census_pooled_household.dta,2022,h21_14,census_asset_motorcycle_2022,CENSUS 2022: Owns a motorcycle for household use,Functional assets own by HH: Motorcycles for household use only
+pooled:Census_pooled_household.dta,2022,h21_15,census_asset_bicycle_2022,CENSUS 2022: Owns a bicycle for household use,Functional assets own by HH: Bicycles for household use only
+pooled:Census_pooled_household.dta,2022,h21_16,census_asset_iron_2022,CENSUS 2022: Owns an electrical or charcoal iron,Functional assets own by HH: Electrical/Charcoal Iron
+pooled:Census_pooled_household.dta,2022,h22,census_owns_livestock_2022,CENSUS 2022: Household owns livestock or beehives,HH own livestock or beehive
+pooled:Census_pooled_household.dta,2022,h22a_01,census_rears_local_cows_2022,CENSUS 2022: Rears local breed cows,Local breed cows reared
+pooled:Census_pooled_household.dta,2022,h22a_02,census_rears_exotic_cows_2022,CENSUS 2022: Rears exotic breed cows,Exotic breed cows reared
+pooled:Census_pooled_household.dta,2022,h22a_03,census_rears_cross_cows_2022,CENSUS 2022: Rears cross breed cows,Cross breed cows reared
+pooled:Census_pooled_household.dta,2022,h22a_04,census_rears_local_goats_2022,CENSUS 2022: Rears local goats,Local goats reared
+pooled:Census_pooled_household.dta,2022,h22a_05,census_rears_exotic_goats_2022,CENSUS 2022: Rears exotic goats,Exotic goats reared
+pooled:Census_pooled_household.dta,2022,h22a_06,census_rears_cross_goats_2022,CENSUS 2022: Rears cross goats,Cross goats reared
+pooled:Census_pooled_household.dta,2022,h22a_07,census_rears_local_sheep_2022,CENSUS 2022: Rears local sheep,Local sheep reared
+pooled:Census_pooled_household.dta,2022,h22a_08,census_rears_exotic_sheep_2022,CENSUS 2022: Rears exotic sheep,Exotic sheep reared
+pooled:Census_pooled_household.dta,2022,h22a_09,census_rears_local_pigs_2022,CENSUS 2022: Rears local pigs,Local pigs reared
+pooled:Census_pooled_household.dta,2022,h22a_10,census_rears_exotic_pigs_2022,CENSUS 2022: Rears exotic pigs,Exotic pig reared
+pooled:Census_pooled_household.dta,2022,h22a_11,census_rears_cross_pigs_2022,CENSUS 2022: Rears cross pigs,Cross pig reared
+pooled:Census_pooled_household.dta,2022,h22a_12,census_rears_rabbits_2022,CENSUS 2022: Rears rabbits,Rabbits reared
+pooled:Census_pooled_household.dta,2022,h22a_13,census_rears_broilers_2022,CENSUS 2022: Rears broilers,Broiler chicken reared
+pooled:Census_pooled_household.dta,2022,h22a_14,census_rears_layers_2022,CENSUS 2022: Rears layers,Layers chicken reared
+pooled:Census_pooled_household.dta,2022,h22a_15,census_rears_dual_chicken_2022,CENSUS 2022: Rears dual-purpose chicken,Dual purpose chicken reared
+pooled:Census_pooled_household.dta,2022,h22a_16,census_rears_local_chicken_2022,CENSUS 2022: Rears local chicken,Local chicken reared
+pooled:Census_pooled_household.dta,2022,h22a_17,census_rears_ducks_2022,CENSUS 2022: Rears ducks,Duck reared
+pooled:Census_pooled_household.dta,2022,h22a_18,census_rears_turkeys_2022,CENSUS 2022: Rears turkeys,Turkey reared
+pooled:Census_pooled_household.dta,2022,h22a_19,census_rears_other_poultry_2022,CENSUS 2022: Rears other poultry,Other poultry reared
+pooled:Census_pooled_household.dta,2022,h22a_20,census_rears_camels_2022,CENSUS 2022: Rears camels,Camel reared
+pooled:Census_pooled_household.dta,2022,h22a_21,census_rears_beehives_2022,CENSUS 2022: Rears beehives,Bees hive reared
+pooled:Census_pooled_household.dta,2022,h22a_22,census_rears_dogs_2022,CENSUS 2022: Rears dogs,Dogs reared
+pooled:Census_pooled_household.dta,2022,h22a_23,census_rears_other_animals_2022,CENSUS 2022: Rears other animals,Other reared
+pooled:Census_pooled_household.dta,2022,h22b1_01,census_local_cows_count_2022,CENSUS 2022: Number of local breed cows reared,Number of Local breed cows reared
+pooled:Census_pooled_household.dta,2022,h22b1_02,census_exotic_cows_count_2022,CENSUS 2022: Number of exotic breed cows reared,Number of Exotic breed cows reared
+pooled:Census_pooled_household.dta,2022,h22b1_03,census_cross_cows_count_2022,CENSUS 2022: Number of cross breed cows reared,Number of Cross breed cows reared
+pooled:Census_pooled_household.dta,2022,h22b1_04,census_local_goats_count_2022,CENSUS 2022: Number of local goats reared,Number of Local goats reared
+pooled:Census_pooled_household.dta,2022,h22b1_05,census_exotic_goats_count_2022,CENSUS 2022: Number of exotic goats reared,Number of Exotic goats reared
+pooled:Census_pooled_household.dta,2022,h22b1_06,census_cross_goats_count_2022,CENSUS 2022: Number of cross goats reared,Number of Cross goats reared
+pooled:Census_pooled_household.dta,2022,h22b1_07,census_local_sheep_count_2022,CENSUS 2022: Number of local sheep reared,Number of Local sheep reared
+pooled:Census_pooled_household.dta,2022,h22b1_08,census_exotic_sheep_count_2022,CENSUS 2022: Number of exotic sheep reared,Number of Exotic sheep reared
+pooled:Census_pooled_household.dta,2022,h22b1_09,census_local_pigs_count_2022,CENSUS 2022: Number of local pigs reared,Number of Local pigs reared
+pooled:Census_pooled_household.dta,2022,h22b1_10,census_exotic_pigs_count_2022,CENSUS 2022: Number of exotic pigs reared,Number of Exotic pig reared
+pooled:Census_pooled_household.dta,2022,h22b1_11,census_cross_pigs_count_2022,CENSUS 2022: Number of cross pigs reared,Number of Cross pig reared
+pooled:Census_pooled_household.dta,2022,h22b1_12,census_rabbits_count_2022,CENSUS 2022: Number of rabbits reared,Number of Rabbits reared
+pooled:Census_pooled_household.dta,2022,h22b1_13,census_broilers_count_2022,CENSUS 2022: Number of broilers reared,Number of Broiler chicken reared
+pooled:Census_pooled_household.dta,2022,h22b1_14,census_layers_count_2022,CENSUS 2022: Number of layers reared,Number of Layers chicken reared
+pooled:Census_pooled_household.dta,2022,h22b1_15,census_dual_chicken_count_2022,CENSUS 2022: Number of dual-purpose chicken reared,Number of Dual purpose chicken reared
+pooled:Census_pooled_household.dta,2022,h22b1_16,census_local_chicken_count_2022,CENSUS 2022: Number of local chicken reared,Number of Local chicken reared
+pooled:Census_pooled_household.dta,2022,h22b1_17,census_ducks_count_2022,CENSUS 2022: Number of ducks reared,Number of Duck reared
+pooled:Census_pooled_household.dta,2022,h22b1_18,census_turkeys_count_2022,CENSUS 2022: Number of turkeys reared,Number of Turkey reared
+pooled:Census_pooled_household.dta,2022,h22b1_19,census_other_poultry_count_2022,CENSUS 2022: Number of other poultry reared,Number of Other poultry reared
+pooled:Census_pooled_household.dta,2022,h22b1_20,census_camels_count_2022,CENSUS 2022: Number of camels reared,Number of Camel reared
+pooled:Census_pooled_household.dta,2022,h22b1_21,census_beehives_count_2022,CENSUS 2022: Number of beehives reared,Number of Bees hive reared
+pooled:Census_pooled_household.dta,2022,h22b1_22,census_dogs_count_2022,CENSUS 2022: Number of dogs reared,Number of Dogs reared
+pooled:Census_pooled_household.dta,2022,h22b1_23,census_other_animals_count_2022,CENSUS 2022: Number of other animals reared,Number of Other reared
+pooled:Census_pooled_household.dta,2022,h22b2_01,census_where_local_cows_2022,CENSUS 2022: District where the local breed cows are reared,Location(District) where is Local breed cows reared
+pooled:Census_pooled_household.dta,2022,h22b2_02,census_where_exotic_cows_2022,CENSUS 2022: District where the exotic breed cows are reared,Location(District) where is Exotic breed cows reared
+pooled:Census_pooled_household.dta,2022,h22b2_03,census_where_cross_cows_2022,CENSUS 2022: District where the cross breed cows are reared,Location(District) where is Cross breed cows reared
+pooled:Census_pooled_household.dta,2022,h22b2_04,census_where_local_goats_2022,CENSUS 2022: District where the local goats are reared,Location(District) where is Local goats reared
+pooled:Census_pooled_household.dta,2022,h22b2_05,census_where_exotic_goats_2022,CENSUS 2022: District where the exotic goats are reared,Location(District) where is Exotic goats reared
+pooled:Census_pooled_household.dta,2022,h22b2_06,census_where_cross_goats_2022,CENSUS 2022: District where the cross goats are reared,Location(District) where is Cross goats reared
+pooled:Census_pooled_household.dta,2022,h22b2_07,census_where_local_sheep_2022,CENSUS 2022: District where the local sheep are reared,Location(District) where is Local sheep reared
+pooled:Census_pooled_household.dta,2022,h22b2_08,census_where_exotic_sheep_2022,CENSUS 2022: District where the exotic sheep are reared,Location(District) where is Exotic sheep reared
+pooled:Census_pooled_household.dta,2022,h22b2_09,census_where_local_pigs_2022,CENSUS 2022: District where the local pigs are reared,Location(District) where is Local pigs reared
+pooled:Census_pooled_household.dta,2022,h22b2_10,census_where_exotic_pigs_2022,CENSUS 2022: District where the exotic pigs are reared,Location(District) where is Exotic pig reared
+pooled:Census_pooled_household.dta,2022,h22b2_11,census_where_cross_pigs_2022,CENSUS 2022: District where the cross pigs are reared,Location(District) where is Cross pig reared
+pooled:Census_pooled_household.dta,2022,h22b2_12,census_where_rabbits_2022,CENSUS 2022: District where the rabbits are reared,Location(District) where is Rabbits reared
+pooled:Census_pooled_household.dta,2022,h22b2_13,census_where_broilers_2022,CENSUS 2022: District where the broilers are reared,Location(District) where is Broiler chicken reared
+pooled:Census_pooled_household.dta,2022,h22b2_14,census_where_layers_2022,CENSUS 2022: District where the layers are reared,Location(District) where is Layers chicken reared
+pooled:Census_pooled_household.dta,2022,h22b2_15,census_where_dual_chicken_2022,CENSUS 2022: District where the dual-purpose chicken are reared,Location(District) where is Dual purpose chicken reared
+pooled:Census_pooled_household.dta,2022,h22b2_16,census_where_local_chicken_2022,CENSUS 2022: District where the local chicken are reared,Location(District) where is Local chicken reared
+pooled:Census_pooled_household.dta,2022,h22b2_17,census_where_ducks_2022,CENSUS 2022: District where the ducks are reared,Location(District) where is Duck reared
+pooled:Census_pooled_household.dta,2022,h22b2_18,census_where_turkeys_2022,CENSUS 2022: District where the turkeys are reared,Location(District) where is Turkey reared
+pooled:Census_pooled_household.dta,2022,h22b2_19,census_where_other_poultry_2022,CENSUS 2022: District where the other poultry are reared,Location(District) where is Other poultry reared
+pooled:Census_pooled_household.dta,2022,h22b2_20,census_where_camels_2022,CENSUS 2022: District where the camels are reared,Location(District) where is Camel reared
+pooled:Census_pooled_household.dta,2022,h22b2_21,census_where_beehives_2022,CENSUS 2022: District where the beehives are reared,Location(District) where is Bees hive reared
+pooled:Census_pooled_household.dta,2022,h22b2_22,census_where_dogs_2022,CENSUS 2022: District where the dogs are reared,Location(District) where is Dogs reared
+pooled:Census_pooled_household.dta,2022,h22b2_23,census_where_other_animals_2022,CENSUS 2022: District where the other animals are reared,Location(District) where is Other reared
+pooled:Census_pooled_household.dta,2022,h23,census_grew_crops_2022,CENSUS 2022: Household grew crops in the last 12 months,Household grew crops in last 12 months
+pooled:Census_pooled_household.dta,2022,h23a,census_farming_place_2022,CENSUS 2022: Place where the agricultural activities are done,Place where the agricultural activities is done
+pooled:Census_pooled_household.dta,2022,h24_01,census_maize_grown,CENSUS 2022: Maize grown,Maize grown
+pooled:Census_pooled_household.dta,2022,h24_02,census_rice_grown,CENSUS 2022: Rice grown,Rice grown
+pooled:Census_pooled_household.dta,2022,h24_03,census_sorghum_grown,CENSUS 2022: Sorghum grown,Sorghum grown
+pooled:Census_pooled_household.dta,2022,h24_04,census_wheat_grown,CENSUS 2022: Wheat grown,Wheat grown
+pooled:Census_pooled_household.dta,2022,h24_05,census_bean_grown,CENSUS 2022: Bean grown,Bean grown
+pooled:Census_pooled_household.dta,2022,h24_06,census_pea_grown,CENSUS 2022: Pea grown,Pea grown
+pooled:Census_pooled_household.dta,2022,h24_07,census_groundnut_grown,CENSUS 2022: Groundnut grown,Groundnut grown
+pooled:Census_pooled_household.dta,2022,h24_08,census_soybean_grown,CENSUS 2022: Soybean grown,Soybean grown
+pooled:Census_pooled_household.dta,2022,h24_09,census_cassava_grown,CENSUS 2022: Cassava grown,Cassava grown
+pooled:Census_pooled_household.dta,2022,h24_10,census_sweet_potato_grown,CENSUS 2022: Sweet potato grown,Sweet potato grown
+pooled:Census_pooled_household.dta,2022,h24_11,census_irish_potato_grown,CENSUS 2022: Irish potato grown,Irish potato grown
+pooled:Census_pooled_household.dta,2022,h24_12,census_yams_taro_grown,CENSUS 2022: Yams& Taro grown,Yams& Taro grown
+pooled:Census_pooled_household.dta,2022,h24_13,census_cooking_banana_grown,CENSUS 2022: Cooking Banana grown,Cooking Banana grown
+pooled:Census_pooled_household.dta,2022,h24_14,census_dessert_banana_grown,CENSUS 2022: Dessert Banana grown,Dessert Banana grown
+pooled:Census_pooled_household.dta,2022,h24_15,census_banana_beer_grown,CENSUS 2022: Banana for Beer grown,Banana for Beer grown
+pooled:Census_pooled_household.dta,2022,h24_16,census_vegetables_grown,CENSUS 2022: Vegetables grown,Vegetables grown
+pooled:Census_pooled_household.dta,2022,h24_17,census_tea_grown,CENSUS 2022: Tea grown,Tea grown
+pooled:Census_pooled_household.dta,2022,h24_18,census_coffee_grown,CENSUS 2022: Coffee grown,Coffee grown
+pooled:Census_pooled_household.dta,2022,h24_19,census_sugarcane_grown,CENSUS 2022: Sugarcane grown,Sugarcane grown
+pooled:Census_pooled_household.dta,2022,h24_20,census_pyrethrum_grown,CENSUS 2022: Pyrethrum grown,Pyrethrum grown
+pooled:Census_pooled_household.dta,2022,h24_21,census_flowers_grown,CENSUS 2022: Flowers grown,Flowers grown
+pooled:Census_pooled_household.dta,2022,h24_22,census_other_crop_type_grown,CENSUS 2022: Other crop type grown,Other crop type grown
+pooled:Census_pooled_household.dta,2022,h25_01,census_amaranths_grown,CENSUS 2022: Amaranths grown,Amaranths grown
+pooled:Census_pooled_household.dta,2022,h25_02,census_tomato_grown,CENSUS 2022: Tomato grown,Tomato grown
+pooled:Census_pooled_household.dta,2022,h25_03,census_cabbage_grown,CENSUS 2022: Cabbage grown,Cabbage grown
+pooled:Census_pooled_household.dta,2022,h25_04,census_onion_grown,CENSUS 2022: Onion grown,Onion grown
+pooled:Census_pooled_household.dta,2022,h25_05,census_carrot_grown,CENSUS 2022: Carrot grown,Carrot grown
+pooled:Census_pooled_household.dta,2022,h25_06,census_eggplant_grown,CENSUS 2022: Eggplant grown,Eggplant grown
+pooled:Census_pooled_household.dta,2022,h25_07,census_black_eggplant_grown,CENSUS 2022: Black eggplant grown,Black eggplant grown
+pooled:Census_pooled_household.dta,2022,h25_08,census_sweet_pepper_grown,CENSUS 2022: Sweet pepper grown,Sweet pepper grown
+pooled:Census_pooled_household.dta,2022,h25_09,census_pepper_grown,CENSUS 2022: Pepper grown,Pepper grown
+pooled:Census_pooled_household.dta,2022,h25_10,census_cauliflower_grown,CENSUS 2022: Cauliflower grown,Cauliflower grown
+pooled:Census_pooled_household.dta,2022,h25_11,census_french_beans_grown,CENSUS 2022: French beans grown,French beans grown
+pooled:Census_pooled_household.dta,2022,h25_12,census_beetroot_grown,CENSUS 2022: Beetroot grown,Beetroot grown
+pooled:Census_pooled_household.dta,2022,h25_13,census_garlic_grown,CENSUS 2022: Garlic grown,Garlic grown
+pooled:Census_pooled_household.dta,2022,h25_14,census_lettuce_grown,CENSUS 2022: Lettuce grown,Lettuce grown
+pooled:Census_pooled_household.dta,2022,h25_15,census_broccoli_grown,CENSUS 2022: Broccoli grown,Broccoli grown
+pooled:Census_pooled_household.dta,2022,h25_16,census_spinach_grown,CENSUS 2022: Spinach grown,Spinach grown
+pooled:Census_pooled_household.dta,2022,h25_17,census_celery_grown,CENSUS 2022: Celery grown,Celery grown
+pooled:Census_pooled_household.dta,2022,h25_18,census_leeks_grown,CENSUS 2022: Leeks grown,Leeks grown
+pooled:Census_pooled_household.dta,2022,h25_19,census_pumpkin_grown,CENSUS 2022: Pumpkin grown,Pumpkin grown
+pooled:Census_pooled_household.dta,2022,h25_20,census_cocumber_grown,CENSUS 2022: Cocumber grown,Cocumber grown
+pooled:Census_pooled_household.dta,2022,h25_21,census_mushroom_grown,CENSUS 2022: Mushroom grown,Mushroom grown
+pooled:Census_pooled_household.dta,2022,h25_22,census_chayote_grown,CENSUS 2022: Chayote grown,Chayote grown
+pooled:Census_pooled_household.dta,2022,h25_23,census_cassava_leaves_grown,CENSUS 2022: Cassava Leaves grown,Cassava Leaves grown
+pooled:Census_pooled_household.dta,2022,h25_24,census_other_vegetables_grown,CENSUS 2022: Other vegetables grown,Other vegetables grown
+pooled:Census_pooled_household.dta,2022,h26,census_tea_trees_2022,CENSUS 2022: Number of tea trees,Number of tea trees grown
+pooled:Census_pooled_household.dta,2022,h27,census_coffee_trees_2022,CENSUS 2022: Number of coffee trees,Number of coffee trees grown
+pooled:Census_pooled_household.dta,2022,h28a,census_fruit_trees_2022,CENSUS 2022: Any fruit tree,Any fruit tree
+pooled:Census_pooled_household.dta,2022,h28b1_01,census_grow_avocado,CENSUS 2022: Grow Avocado,Grow Avocado
+pooled:Census_pooled_household.dta,2022,h28b1_02,census_grow_orange,CENSUS 2022: Grow Orange,Grow Orange
+pooled:Census_pooled_household.dta,2022,h28b1_03,census_grow_papaya,CENSUS 2022: Grow Papaya,Grow Papaya
+pooled:Census_pooled_household.dta,2022,h28b1_04,census_grow_guava,CENSUS 2022: Grow Guava,Grow Guava
+pooled:Census_pooled_household.dta,2022,h28b1_05,census_grow_lemon,CENSUS 2022: Grow Lemon,Grow Lemon
+pooled:Census_pooled_household.dta,2022,h28b1_06,census_grow_mango,CENSUS 2022: Grow Mango,Grow Mango
+pooled:Census_pooled_household.dta,2022,h28b1_07,census_grow_mandarin,CENSUS 2022: Grow Mandarin,Grow Mandarin
+pooled:Census_pooled_household.dta,2022,h28b1_08,census_grow_jack_fruits,CENSUS 2022: Grow Jack fruits,Grow Jack fruits
+pooled:Census_pooled_household.dta,2022,h28b1_09,census_grow_beefheart,CENSUS 2022: Grow Beefheart,Grow Beefheart
+pooled:Census_pooled_household.dta,2022,h28b1_10,census_grow_passion_fruits,CENSUS 2022: Grow Passion fruits,Grow Passion fruits
+pooled:Census_pooled_household.dta,2022,h28b1_11,census_grow_pineapple,CENSUS 2022: Grow Pineapple,Grow Pineapple
+pooled:Census_pooled_household.dta,2022,h28b1_12,census_grow_tree_tomato,CENSUS 2022: Grow Tree tomato,Grow Tree tomato
+pooled:Census_pooled_household.dta,2022,h28b1_13,census_grow_watermelon,CENSUS 2022: Grow Watermelon,Grow Watermelon
+pooled:Census_pooled_household.dta,2022,h28b1_14,census_grow_strawberry,CENSUS 2022: Grow Strawberry,Grow Strawberry
+pooled:Census_pooled_household.dta,2022,h28b1_15,census_grow_other_fruit,CENSUS 2022: Grow Other fruit,Grow Other fruit
+pooled:Census_pooled_household.dta,2022,h28b2_01,census_number_avocado,CENSUS 2022: Number of Avocado,Number of Avocado
+pooled:Census_pooled_household.dta,2022,h28b2_02,census_number_orange,CENSUS 2022: Number of Orange,Number of Orange
+pooled:Census_pooled_household.dta,2022,h28b2_03,census_number_papaya,CENSUS 2022: Number of Papaya,Number of Papaya
+pooled:Census_pooled_household.dta,2022,h28b2_04,census_number_guava,CENSUS 2022: Number of Guava,Number of Guava
+pooled:Census_pooled_household.dta,2022,h28b2_05,census_number_lemon,CENSUS 2022: Number of Lemon,Number of Lemon
+pooled:Census_pooled_household.dta,2022,h28b2_06,census_number_mango,CENSUS 2022: Number of Mango,Number of Mango
+pooled:Census_pooled_household.dta,2022,h28b2_07,census_number_mandarin,CENSUS 2022: Number of Mandarin,Number of Mandarin
+pooled:Census_pooled_household.dta,2022,h28b2_08,census_number_jack_fruits,CENSUS 2022: Number of Jack fruits,Number of Jack fruits
+pooled:Census_pooled_household.dta,2022,h28b2_09,census_number_beefheart,CENSUS 2022: Number of Beefheart,Number of Beefheart
+pooled:Census_pooled_household.dta,2022,h28b2_10,census_number_passion_fruits,CENSUS 2022: Number of Passion fruits,Number of Passion fruits
+pooled:Census_pooled_household.dta,2022,h28b2_11,census_number_pineapple,CENSUS 2022: Number of Pineapple,Number of Pineapple
+pooled:Census_pooled_household.dta,2022,h28b2_12,census_number_tree_tomato,CENSUS 2022: Number of Tree tomato,Number of Tree tomato
+pooled:Census_pooled_household.dta,2022,h28b2_13,census_number_watermelon,CENSUS 2022: Number of Watermelon,Number of Watermelon
+pooled:Census_pooled_household.dta,2022,h28b2_14,census_number_strawberry,CENSUS 2022: Number of Strawberry,Number of Strawberry
+pooled:Census_pooled_household.dta,2022,h28b2_15,census_number_other_fruit,CENSUS 2022: Number of Other fruit,Number of Other fruit
+wave:2002,2002,survey,census_survey,CENSUS: Source survey,Source survey
+wave:2002,2002,year,census_year,CENSUS: Survey year,Census year
+wave:2002,2002,wave,census_wave,CENSUS: Wave identifier,Wave (census year)
+wave:2002,2002,prov,census_province,"CENSUS: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2002,2002,dist,census_district,"CENSUS: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2002,2002,sector,census_sector,"CENSUS: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; names attached)"
+wave:2002,2002,urban,census_urban,"CENSUS: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2002,2002,cluster,census_cluster,CENSUS: Sampling cluster or village identifier,Sampling cluster proxy (year_sector)
+wave:2002,2002,hhid,census_household_id,CENSUS: Household identifier,Household id (unique within year)
+wave:2002,2002,pid,census_person_id,CENSUS: Person number within the household,Person number within the household
+wave:2002,2002,sex,census_sex,"CENSUS: Sex: 1 male, 2 female","Sex (1 male, 2 female)"
+wave:2002,2002,age,census_age,CENSUS: Age in completed years,Age in years
+wave:2002,2002,wt,census_weight,CENSUS: Sampling weight,Person weight (sums to the census population)
+wave:2002,2002,wt_hh,census_household_weight,CENSUS: Household weight,Household weight (2022 as shipped; 2002/2012 = person weight of the household sample)
+wave:2002,2002,novprov,census_province_name_shipped,CENSUS 2002: Province name as shipped by NISR,Province name
+wave:2002,2002,district_code,census_district_shipped_2002,"CENSUS 2002: District code as shipped, three digits","District code (3-digit, as shipped)"
+wave:2002,2002,novdistr,census_district_name_shipped,CENSUS 2002: District name as shipped by NISR,District name
+wave:2002,2002,sector_code_file,census_sector_code_shipped_2002,CENSUS 2002: Sector code as shipped before the name-based correction,"Sector code as shipped in the 2002 file (before the name-based correction, see DECISIONS)"
+wave:2002,2002,novsect,census_sector_name_shipped,CENSUS 2002: Sector name as shipped by NISR,Sector name
+wave:2002,2002,p02,census_relation_head_2002_2012,CENSUS 2002-2012: Relationship to the household head,Relationship to household head
+wave:2002,2002,p03,census_residence_status_2002,"CENSUS 2002: Residence status: present or absent resident, visitor, collective","Residence status (present/absent resident, visitor, collective)"
+wave:2002,2002,p05x,census_birth_day_2002,CENSUS 2002: Day of birth,Day of birth
+wave:2002,2002,p05a,census_birth_month_2002,CENSUS 2002: Month of birth,Month of birth
+wave:2002,2002,p05b,census_birth_year_2002,CENSUS 2002: Year of birth,Year of birth
+wave:2002,2002,agcm,census_age_copy_agcm_2002,"CENSUS 2002: Age, NISR derived copy",Age (NISR derived copy)
+wave:2002,2002,p061,census_age_copy_p061_2002,"CENSUS 2002: Age, NISR derived copy 1",Age (NISR derived copy 1)
+wave:2002,2002,p062,census_age_copy_p062_2002,"CENSUS 2002: Age, NISR derived copy 2",Age (NISR derived copy 2)
+wave:2002,2002,p063,census_age_copy_p063_2002,"CENSUS 2002: Age, NISR derived copy 3",Age (NISR derived copy 3)
+wave:2002,2002,p0631,census_age_copy_p0631_2002,"CENSUS 2002: Age, NISR derived copy 3b",Age (NISR derived copy 3b)
+wave:2002,2002,age_5,census_age_copy_5_2002,"CENSUS 2002: Age, NISR derived copy 5","Age (NISR derived copy, 5)"
+wave:2002,2002,gpe_age,census_age_group_copy_2002,"CENSUS 2002: Age groups, NISR derived copy","Age (NISR derived copy, groups)"
+wave:2002,2002,age1_1,census_age_copy_1_1_2002,"CENSUS 2002: Age, NISR derived copy 1-1",Age (NISR derived copy 1-1)
+wave:2002,2002,a46,census_age_copy_a46_2002,"CENSUS 2002: Age, NISR derived copy A46",Age (NISR derived copy A46)
+wave:2002,2002,age26,census_age_copy_26_2002,"CENSUS 2002: Age, NISR derived copy 26",Age (NISR derived copy 26)
+wave:2002,2002,age18,census_age_copy_18_2002,"CENSUS 2002: Age, NISR derived copy 18",Age (NISR derived copy 18)
+wave:2002,2002,age19,census_age_copy_19_2002,"CENSUS 2002: Age, NISR derived copy 19",Age (NISR derived copy 19)
+wave:2002,2002,p07,census_nationality_2002,CENSUS 2002: Nationality,Nationality
+wave:2002,2002,p08,census_birth_place_2002,"CENSUS 2002: Place of birth, district or country",Place of birth (district or country)
+wave:2002,2002,p09,census_residence_duration_2002,"CENSUS 2002: Duration of residence in this locality, years",Duration of residence in this locality (years; 99 since birth)
+wave:2002,2002,p10,census_previous_residence_2002,"CENSUS 2002: Place of previous residence, district or country",Place of previous residence (district or country)
+wave:2002,2002,p11,census_languages_spoken_2002,CENSUS 2002: Languages spoken,Languages spoken
+wave:2002,2002,p12,census_religion_2002,CENSUS 2002: Religious affiliation,Religious affiliation
+wave:2002,2002,p13,census_handicap_type_2002,CENSUS 2002: Type of major handicap,Type of major handicap
+wave:2002,2002,personnes_handic,census_handicap_grouped_2002,"CENSUS 2002: Persons with a handicap, NISR grouped",Persons with a handicap (NISR grouped)
+wave:2002,2002,p14,census_handicap_cause_2002,CENSUS 2002: Cause of handicap,Cause of handicap
+wave:2002,2002,p15,census_parents_survival_2002,CENSUS 2002: Survival of parents,Survival of parents
+wave:2002,2002,p16,census_ever_attended_school_2002,"CENSUS 2002: School attendance, ever attended",School attendance (ever attended)
+wave:2002,2002,fr_quentation,census_attendance_grouped_2002,"CENSUS 2002: School attendance, NISR grouped",School attendance (NISR grouped)
+wave:2002,2002,p17,census_highest_class_2002,CENSUS 2002: Highest class successfully completed,Highest class successfully completed
+wave:2002,2002,p171,census_education_grouped_2002,"CENSUS 2002: Educational level attained, NISR grouped",Educational level attained (NISR grouped)
+wave:2002,2002,p18,census_specialisation_2002,"CENSUS 2002: Area of specialisation, secondary or higher",Area of specialisation (secondary/higher)
+wave:2002,2002,p19,census_highest_certificate_2002,CENSUS 2002: Highest certificate or diploma obtained,Highest certificate or diploma obtained
+wave:2002,2002,p20,census_literacy_2002,CENSUS 2002: Literacy,Literacy
+wave:2002,2002,p21,census_activity_status_2002,CENSUS 2002: Economic activity situation in the reference month,Economic activity situation (15/07-15/08/2002)
+wave:2002,2002,p211,census_activity_grouped_2002,"CENSUS 2002: Activity status, NISR grouped",Activity status (NISR grouped)
+wave:2002,2002,p22,census_occupation_isco88_2002,"CENSUS 2002: Main occupation, ISCO-88 minor group",Main occupation (type of work done)
+wave:2002,2002,emploi_exerc,census_occupation_grouped_2002,"CENSUS 2002: Occupation, NISR grouped",Occupation (NISR grouped)
+wave:2002,2002,p23,census_employment_status_2002,CENSUS 2002: Status in employment,Status in employment
+wave:2002,2002,p24,census_industry_isic3_2002,"CENSUS 2002: Branch of economic activity, ISIC Rev. 3 group",Branch of economic activity
+wave:2002,2002,p241,census_industry_grouped_2002,"CENSUS 2002: Branch of economic activity, NISR grouped",Branch of economic activity (NISR grouped)
+wave:2002,2002,p25,census_inst_sector_2002,CENSUS 2002: Institutional sector of employment,Institutional sector of employment (public/parastatal/NGO/cooperative/other private)
+wave:2002,2002,p26,census_marital_status_2002,CENSUS 2002: Marital status,Marital status
+wave:2002,2002,etat_matri,census_marital_grouped_2002,"CENSUS 2002: Marital status, NISR grouped",Marital status (NISR grouped)
+wave:2002,2002,p27a,census_births_boys_2002,"CENSUS 2002: Live births ever, boys","Live births ever, boys"
+wave:2002,2002,p27b,census_births_girls_2002,"CENSUS 2002: Live births ever, girls","Live births ever, girls"
+wave:2002,2002,p28a,census_children_alive_boys_2002,"CENSUS 2002: Children surviving, boys","Children surviving, boys"
+wave:2002,2002,p28b,census_children_alive_girls_2002,"CENSUS 2002: Children surviving, girls","Children surviving, girls"
+wave:2002,2002,p29a,census_births_12m_boys_2002,"CENSUS 2002: Births in the last 12 months, boys","Births in the last 12 months, boys"
+wave:2002,2002,p29b,census_births_12m_girls_2002,"CENSUS 2002: Births in the last 12 months, girls","Births in the last 12 months, girls"
+wave:2002,2002,p30a,census_surviving_12m_boys_2002,CENSUS 2002: Surviving boys among the births of the last 12 months,"Of births in the last 12 months, surviving boys"
+wave:2002,2002,p30b,census_surviving_12m_girls_2002,CENSUS 2002: Surviving girls among the births of the last 12 months,"Of births in the last 12 months, surviving girls"
+wave:2002,2002,grpage5,census_age_group_5_years_2002,"CENSUS 2002: Five-year age group, NISR derived",Five-year age group (NISR derived)
+wave:2002,2002,agebetween5_17,census_age_5_17_flag_2002,"CENSUS 2002: Flag: aged 5 to 17, NISR derived",Flag: age 5-17 (NISR derived)
+wave:2002,2002,agegrp_nisr,census_age_group_nisr_2002,"CENSUS 2002: Age group 0-5, NISR derived (shipped as Age)","Age group (NISR derived, 0-5; shipped as 'Age')"
+wave:2002,2002,p02_hh,census_head_flag_2002,CENSUS 2002: Flag: household head,Flag: household head (P02 = 1)
+wave:2002,2002,h100,census_household_type_2002,CENSUS 2002: Household type: 100 = ordinary household,Household type (100 = ordinary household)
+wave:2002,2002,h200,census_collective_type_2002,"CENSUS 2002: Collective household type, codes 201-214",Collective household type (codes 201-214; not filled)
+wave:2002,2002,h101,census_questionnaire_serial_2002,CENSUS 2002: Questionnaire serial number in the household,Questionnaire serial number in household
+wave:2002,2002,h102,census_questionnaires_count_2002,CENSUS 2002: Number of questionnaires filled in the household,Number of questionnaires filled in household
+wave:2002,2002,h110,census_recap_male_present,CENSUS 2002: Recap: male residents present,Recap: male residents present
+wave:2002,2002,h111,census_recap_male_absent,CENSUS 2002: Recap: male residents absent,Recap: male residents absent
+wave:2002,2002,h112,census_recap_male_total,CENSUS 2002: Recap: male residents total,Recap: male residents total
+wave:2002,2002,h113,census_recap_male_aged_17_2002,CENSUS 2002: Recap: male residents aged 17 and over,Recap: male residents aged 17+
+wave:2002,2002,h114,census_recap_male_visitors,CENSUS 2002: Recap: male visitors,Recap: male visitors
+wave:2002,2002,h115,census_recap_female_present,CENSUS 2002: Recap: female residents present,Recap: female residents present
+wave:2002,2002,h116,census_recap_female_absent,CENSUS 2002: Recap: female residents absent,Recap: female residents absent
+wave:2002,2002,h117,census_recap_female_total,CENSUS 2002: Recap: female residents total,Recap: female residents total
+wave:2002,2002,h118,census_recap_female_aged_17_2002,CENSUS 2002: Recap: female residents aged 17 and over,Recap: female residents aged 17+
+wave:2002,2002,h119,census_recap_female_visitors,CENSUS 2002: Recap: female visitors,Recap: female visitors
+wave:2002,2002,h120,census_recap_residents_present,"CENSUS 2002: Recap: residents present, total","Recap: residents present, total"
+wave:2002,2002,h121,census_recap_residents_absent,"CENSUS 2002: Recap: residents absent, total","Recap: residents absent, total"
+wave:2002,2002,h122,census_recap_residents_total,"CENSUS 2002: Recap: residents, total","Recap: residents, total"
+wave:2002,2002,h123,census_recap_aged_17_total_2002,"CENSUS 2002: Recap: residents aged 17 and over, total","Recap: residents aged 17+, total"
+wave:2002,2002,h124,census_recap_visitors_total,"CENSUS 2002: Recap: visitors, total","Recap: visitors, total"
+wave:2002,2002,h01,census_settlement_2002_2012,CENSUS 2002-2012: Type of housing settlement,Type of housing
+wave:2002,2002,h02,census_dwelling_type_2002_2012,CENSUS 2002-2012: Type of housing unit,Type of building
+wave:2002,2002,h03,census_roof_material_2002,CENSUS 2002: Roof material,Roof material
+wave:2002,2002,h04,census_wall_material_2002,CENSUS 2002: Outer wall material,Outer wall material
+wave:2002,2002,h05,census_floor_material_2002,CENSUS 2002: Floor material,Floor material
+wave:2002,2002,h06,census_living_rooms_2002,CENSUS 2002: Number of living rooms,Number of living rooms
+wave:2002,2002,h07,census_water_source_2002,CENSUS 2002: Main source of water supply,Main source of water supply
+wave:2002,2002,h08,census_lighting_source_2002,CENSUS 2002: Main source of lighting,Main source of lighting
+wave:2002,2002,h09,census_cooking_energy_2002,CENSUS 2002: Main cooking energy,Main cooking energy
+wave:2002,2002,h10,census_toilet_facility_2002,CENSUS 2002: Main toilet facility,Main toilet facility
+wave:2002,2002,h11,census_waste_disposal_2002,CENSUS 2002: Main mode of household waste disposal,Main mode of household waste disposal
+wave:2002,2002,h12,census_tenure_2002,CENSUS 2002: Occupancy status of the dwelling,Occupancy status of the dwelling
+wave:2002,2002,h13,census_radio_television_2002,CENSUS 2002: Radio or television ownership,Radio / television ownership
+wave:2002,2002,h14,census_telephone_2002,CENSUS 2002: Fixed-line or cell phone ownership,Fixed-line / cell phone
+wave:2002,2002,h15,census_computer_internet_2002,CENSUS 2002: Computer or internet connection,Computer / internet connection
+wave:2002,2002,h16a,census_vehicles_2002,CENSUS 2002: Number of vehicles,Number of vehicles
+wave:2002,2002,h16b,census_motorcycles_2002,CENSUS 2002: Number of motorcycles,Number of motorcycles
+wave:2002,2002,h16c,census_bicycles_2002,CENSUS 2002: Number of bicycles,Number of bicycles
+wave:2002,2002,h17,census_persons_counted_2002,CENSUS 2002: Total persons counted in the household,Total persons counted in the household
+wave:2002,2002,h18,census_empty_item_h18_2002,CENSUS 2002: Empty item in the public file,(empty in the public file)
+wave:2002,2002,h19a,census_death_last_12m_2002,CENSUS 2002: Any death of a resident member in the last 12 months,Any death of a resident member in the last 12 months
+wave:2002,2002,h19b,census_deaths_last_12m_2002,CENSUS 2002: Number of deaths in the last 12 months,Number of deaths in the last 12 months
+wave:2002,2002,probability,census_selection_probability,CENSUS 2002: Selection probability of the household in the public-use sample,Inclusion (selection) probability
+wave:2002,2002,p00_nu,census_p00_count_artefact_2002,CENSUS 2002: NISR artefact: count of P00 in the household,NISR artefact: count of P00 in household
+wave:2002,2002,p00_mean,census_p00_mean_artefact_2002,CENSUS 2002: NISR artefact: mean of P00 in the household,NISR artefact: mean of P00 in household
+wave:2002,2002,pid_nisr,census_nisr_person_id,CENSUS 2002: NISR person identifier as shipped,NISR person number as shipped
+wave:2002,2002,collective,census_collective_household,CENSUS 2002: Collective (non-private) household or institution,1 = row belongs to a collective/institutional household (2002 only)
+wave:2012,2012,survey,census_survey,CENSUS: Source survey,Source survey
+wave:2012,2012,year,census_year,CENSUS: Survey year,Census year
+wave:2012,2012,wave,census_wave,CENSUS: Wave identifier,Wave (census year)
+wave:2012,2012,prov,census_province,"CENSUS: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2012,2012,dist,census_district,"CENSUS: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2012,2012,sector,census_sector,"CENSUS: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; names attached)"
+wave:2012,2012,urban,census_urban,"CENSUS: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2012,2012,cluster,census_cluster,CENSUS: Sampling cluster or village identifier,Sampling cluster proxy (year_sector)
+wave:2012,2012,hhid,census_household_id,CENSUS: Household identifier,Household id (unique within year)
+wave:2012,2012,pid,census_person_id,CENSUS: Person number within the household,Person number within the household
+wave:2012,2012,sex,census_sex,"CENSUS: Sex: 1 male, 2 female","Sex (1 male, 2 female)"
+wave:2012,2012,age,census_age,CENSUS: Age in completed years,Age in years
+wave:2012,2012,wt,census_weight,CENSUS: Sampling weight,Person weight (sums to the census population)
+wave:2012,2012,wt_hh,census_household_weight,CENSUS: Household weight,Household weight (2022 as shipped; 2002/2012 = person weight of the household sample)
+wave:2012,2012,l02,census_district_shipped_2012,CENSUS 2012: District as shipped,District
+wave:2012,2012,l03,census_sector_shipped_2012,CENSUS 2012: Sector as shipped,Sector
+wave:2012,2012,l07,census_area_residence_2012,"CENSUS 2012: Area of residence: urban, rural, peri-urban",Area of residence
+wave:2012,2012,p02,census_relation_head_2002_2012,CENSUS 2002-2012: Relationship to the household head,Relationship
+wave:2012,2012,p04m,census_birth_month_2012,CENSUS 2012: Month of birth,Month of Birth
+wave:2012,2012,p04y,census_birth_year_2012,CENSUS 2012: Year of birth,Year of Birth
+wave:2012,2012,p06,census_residence_status_2012,CENSUS 2012: Situation of residence,Situation of residence
+wave:2012,2012,p07,census_birth_place_2012,CENSUS 2012: Place of birth,Place of Birth
+wave:2012,2012,p08,census_nationality_2012,CENSUS 2012: Nationality,Nationality
+wave:2012,2012,p09,census_previous_residence_2012,CENSUS 2012: Place of previous residence,Place of previous residence
+wave:2012,2012,p10,census_residence_duration_2012,CENSUS 2012: Duration of residence,Duration of Residence
+wave:2012,2012,p11,census_religion_2012,CENSUS 2012: Religion,Religion
+wave:2012,2012,p12d1,census_disability_type_1_2012,"CENSUS 2012: Type of major disability, first",Type of major disability (D1)
+wave:2012,2012,p12c1,census_disability_cause_1_2012,"CENSUS 2012: Cause of disability, first",Cause of disability (C1)
+wave:2012,2012,p12d2,census_disability_type_2_2012,"CENSUS 2012: Type of major disability, second",Type of major disability (D2)
+wave:2012,2012,p12c2,census_disability_cause_2_2012,"CENSUS 2012: Cause of disability, second",Cause of disability (C2)
+wave:2012,2012,p12d3,census_disability_type_3_2012,"CENSUS 2012: Type of major disability, third",Type of major disability (D3)
+wave:2012,2012,p12c3,census_disability_cause_3_2012,"CENSUS 2012: Cause of disability, third",Cause of disability (C3)
+wave:2012,2012,p12d4,census_disability_type_4_2012,"CENSUS 2012: Type of major disability, fourth",Type of major disability (D4)
+wave:2012,2012,p12c4,census_disability_cause_4_2012,"CENSUS 2012: Cause of disability, fourth",Cause of disability (C4)
+wave:2012,2012,p12d5,census_disability_type_5_2012,"CENSUS 2012: Type of major disability, fifth",Type of major disability (D5)
+wave:2012,2012,p12c5,census_disability_cause_5_2012,"CENSUS 2012: Cause of disability, fifth",Cause of disability (C5)
+wave:2012,2012,p12d6,census_disability_type_6_2012,"CENSUS 2012: Type of major disability, sixth",Type of major disability(D6)
+wave:2012,2012,p12c6,census_disability_cause_6_2012,"CENSUS 2012: Cause of disability, sixth",Cause of disability(C6)
+wave:2012,2012,p13,census_insurance_type_2012,CENSUS 2012: Type of insurance,Type of insurance
+wave:2012,2012,p14a,census_mother_alive_2012,CENSUS 2012: Mother alive,Mother alive
+wave:2012,2012,p14b,census_mother_in_household_2012,CENSUS 2012: Natural mother lives in the household,Natural mother live in household
+wave:2012,2012,p14c,census_father_alive_2012,CENSUS 2012: Father alive,Father alive
+wave:2012,2012,p14d,census_father_in_household_2012,CENSUS 2012: Natural father lives in the household,Natural father live in household
+wave:2012,2012,p15,census_birth_registered_2012,CENSUS 2012: Birth registration,Birth Registration
+wave:2012,2012,p16,census_languages_literate_2012,CENSUS 2012: Languages read and written,Languages reading and written
+wave:2012,2012,p17,census_school_attendance_2012,CENSUS 2012: School attendance,School attendance
+wave:2012,2012,p18a,census_education_level_2012,CENSUS 2012: Educational level,Educational level
+wave:2012,2012,p18b,census_years_completed_2012,CENSUS 2012: Years completed,Years completed
+wave:2012,2012,p19,census_highest_certificate_2012,CENSUS 2012: Highest certificate or diploma,Highest Certificate/Diploma
+wave:2012,2012,p20,census_worked_2012,CENSUS 2012: Worked (activity question),Work
+wave:2012,2012,p21,census_reason_not_working_2012,CENSUS 2012: Why the person did not work,Why did not work
+wave:2012,2012,p22,census_work_done_2012,CENSUS 2012: Type of work done,Work done
+wave:2012,2012,p23,census_ready_to_work_2012,CENSUS 2012: Ready to work,Ready to work
+wave:2012,2012,p24,census_seeking_work_2012,CENSUS 2012: Seeking work,Seeking for work
+wave:2012,2012,p25,census_occupation_isco08_2012,"CENSUS 2012: Main occupation, ISCO-08 four-digit","Main occupation, ISCO-08 4-digit (labels from z_Documentation/2012 ISCO code list; 1-digit groups in rp25)"
+wave:2012,2012,p26,census_employment_status_2012,CENSUS 2012: Status in employment,Status in employment
+wave:2012,2012,p27,census_industry_isic4_2012,"CENSUS 2012: Branch of economic activity, ISIC Rev. 4 class","Branch of economic activity, ISIC Rev.4 class (3-4 digit code as shipped, unlabelled by NISR; sections in rp27)"
+wave:2012,2012,p28,census_inst_sector_2012,CENSUS 2012: Institutional sector of employment,Institutional sector of employment
+wave:2012,2012,p29,census_marital_status_2012,CENSUS 2012: Marital status,Marital status
+wave:2012,2012,p30,census_spouses_2012,CENSUS 2012: Number of spouses,Number of spouses
+wave:2012,2012,p31,census_spouse_rank_2012,CENSUS 2012: Current rank as spouse,Current rank as spouse
+wave:2012,2012,p32,census_age_first_marriage_2012,CENSUS 2012: Age at first marriage,Age at first marriage
+wave:2012,2012,p33m,census_births_boys_2012,CENSUS 2012: Males ever born,Males ever born
+wave:2012,2012,p33f,census_births_girls_2012,CENSUS 2012: Females ever born,Females ever born
+wave:2012,2012,p34m,census_children_alive_boys_2012,CENSUS 2012: Males alive,Males alive
+wave:2012,2012,p34f,census_children_alive_girls_2012,CENSUS 2012: Females alive,Females alive
+wave:2012,2012,p35m,census_births_12m_boys_2012,CENSUS 2012: Males born in the last 12 months,Males born in 12 months
+wave:2012,2012,p35f,census_births_12m_girls_2012,CENSUS 2012: Females born in the last 12 months,Females born in 12 months
+wave:2012,2012,p36m,census_surviving_12m_boys_2012,CENSUS 2012: Males born in the last 12 months still alive,Males alive in 12 months
+wave:2012,2012,p36f,census_surviving_12m_girls_2012,CENSUS 2012: Females born in the last 12 months still alive,Females alive 12 months
+wave:2012,2012,rp142,census_parental_coresidence_2012,"CENSUS 2012: Parental co-residence of residents under 18, NISR recode","Parental co-residence, residents under 18 (NISR recode of P14b x P14d)"
+wave:2012,2012,rp12,census_disability_any_2012,"CENSUS 2012: Any disability, NISR recode of P12","Disability status, any difficulty (NISR recode of P12)"
+wave:2012,2012,rp08,census_nationality_group_2012,"CENSUS 2012: Nationality group, NISR recode of P08",Nationality group (NISR recode of P08)
+wave:2012,2012,rp2024,census_activity_status_2012,"CENSUS 2012: Activity status of residents aged 5 and over, NISR recode","Activity status, residents aged 5+ (NISR recode of P20-P24; 1 = worked or on leave, 2/3 = did not work and available, 4-7 inactive)"
+wave:2012,2012,rp2124,census_reason_inactive_2012,"CENSUS 2012: Reason for not working, inactive only, NISR recode","Reason for not working (NISR recode of P21, inactive only)"
+wave:2012,2012,rl07,census_urban_rural_nisr_2012,"CENSUS 2012: Urban or rural, NISR two-way recode of L07","Urban/rural, 2-way (NISR recode of L07: urban + semi-urban = 1, rural + peri-urban = 2)"
+wave:2012,2012,rp04y,census_birth_year_copy_2012,"CENSUS 2012: Year of birth, NISR copy of P04Y",Year of birth (NISR copy of P04Y)
+wave:2012,2012,h01,census_settlement_2002_2012,CENSUS 2002-2012: Type of housing settlement,Type of Housing
+wave:2012,2012,h02,census_dwelling_type_2002_2012,CENSUS 2002-2012: Type of housing unit,Type of Housing unit
+wave:2012,2012,h03,census_tenure_2012,CENSUS 2012: Status of occupancy of the house,Status of occupancy of house
+wave:2012,2012,h04,census_roof_material_2012,CENSUS 2012: Roof material,Roof
+wave:2012,2012,h05,census_wall_material_2012,CENSUS 2012: Wall material,Walls
+wave:2012,2012,h06,census_floor_material_2012,CENSUS 2012: Floor material,Floor
+wave:2012,2012,h07,census_rooms_2012,CENSUS 2012: Number of rooms,Number of rooms
+wave:2012,2012,h08,census_sleeping_rooms_2012,CENSUS 2012: Number of rooms for sleeping,Number of rooms for sleeping
+wave:2012,2012,h09,census_occupants_2012,CENSUS 2012: Number of occupants,Number of occupants
+wave:2012,2012,h10,census_water_source_2012,CENSUS 2012: Main source of water,Main source of water
+wave:2012,2012,h11,census_toilet_facility_2012,CENSUS 2012: Type of toilet facility,Type of toilet facility
+wave:2012,2012,h12,census_lighting_source_2012,CENSUS 2012: Source of lighting,Source of lighting
+wave:2012,2012,h13,census_cooking_energy_2012,CENSUS 2012: Energy for cooking,Energy of cooking
+wave:2012,2012,h14,census_energy_saving_stove_2012,CENSUS 2012: Energy-saving stove,Energy saving stove
+wave:2012,2012,h15,census_waste_disposal_2012,CENSUS 2012: Mode of household waste disposal,Mode of household waste disposal
+wave:2012,2012,h16,census_sewage_disposal_2012,CENSUS 2012: Mode of sewage disposal,Mode of sewage disposal
+wave:2012,2012,h17,census_radios_2012,CENSUS 2012: Number of radios,Radio
+wave:2012,2012,h18,census_televisions_2012,CENSUS 2012: Number of televisions,Television
+wave:2012,2012,h19,census_fixed_telephones_2012,CENSUS 2012: Number of fixed-line telephones,Telephone (fixed line)
+wave:2012,2012,h20,census_cell_phones_2012,CENSUS 2012: Number of cell phones,Cell phone
+wave:2012,2012,h21,census_refrigerators_2012,CENSUS 2012: Number of refrigerators or freezers,Refrigerator/ Freezer
+wave:2012,2012,h22,census_computers_2012,CENSUS 2012: Number of computers,Computer
+wave:2012,2012,h23,census_bicycles_2012,CENSUS 2012: Number of bicycles,Bicycles
+wave:2012,2012,h24,census_vehicles_2012,CENSUS 2012: Number of vehicles,Vehicles
+wave:2012,2012,h25,census_motorcycles_2012,CENSUS 2012: Number of motorcycles,Motorcycles
+wave:2012,2012,h26,census_internet_access_2012,CENSUS 2012: Internet access,Internet Access
+wave:2012,2012,h27,census_internet_place_2012,CENSUS 2012: Where the household accesses the internet,Where do you access internet
+wave:2012,2012,h28a,census_local_cows_2012,CENSUS 2012: Cattle: local breed cows,Cattle:Local breed cow
+wave:2012,2012,h28b,census_cross_cows_2012,CENSUS 2012: Cattle: cross breed cows,Cattle: Cross breed cow
+wave:2012,2012,h28c,census_exotic_cows_2012,CENSUS 2012: Cattle: exotic breed cows,Cattle: Exotic breed cow
+wave:2012,2012,h29,census_goats_2012,CENSUS 2012: Number of goats,Goats
+wave:2012,2012,h30,census_sheep_2012,CENSUS 2012: Number of sheep,Sheeps
+wave:2012,2012,h31,census_pigs_2012,CENSUS 2012: Number of pigs,Pigs
+wave:2012,2012,h32,census_rabbits_2012,CENSUS 2012: Number of rabbits,Rabbits
+wave:2012,2012,h33,census_poultry_2012,CENSUS 2012: Number of poultry,Poultry/fowl
+wave:2012,2012,h34,census_other_animals_2012,CENSUS 2012: Number of other animals,Other
+wave:2012,2012,h35,census_land_2012,CENSUS 2012: Land ownership or use,Land
+wave:2012,2012,m1,census_death_in_household_2012,CENSUS 2012: Death in the household,Death in the Household
+wave:2012,2012,inclusionprobability_1_,census_selection_prob_2012,"CENSUS 2012: Inclusion (selection) probability, stage 1",Inclusion (Selection) Probability for Stage 1
+wave:2012,2012,hhsize,census_household_size,CENSUS 2012: Household size (persons in the public-use roster),Household Size
+wave:2012,2012,aggroup5,census_age_group_5_years_2012,CENSUS 2012: Five-year age group,Five-Year Age-Group
+wave:2012,2012,rp25,census_isco_major_group_2012,"CENSUS 2012: Occupation group, ISCO major group",Occupation group
+wave:2012,2012,rp27,census_isic_section_2012,"CENSUS 2012: Industry group, ISIC section",Industry group
+wave:2012,2012,filter__,census_head_filter_2012,CENSUS 2012: Filter: household head (P02 = 1),P02 = 1 (FILTER)
+wave:2022,2022,survey,census_survey,CENSUS: Source survey,Source survey
+wave:2022,2022,year,census_year,CENSUS: Survey year,Census year
+wave:2022,2022,wave,census_wave,CENSUS: Wave identifier,Wave (census year)
+wave:2022,2022,prov,census_province,"CENSUS: Province, NISR code 1-5","Province (1-5, NISR codes)"
+wave:2022,2022,dist,census_district,"CENSUS: District, NISR code 11-57","District (11-57, NISR codes)"
+wave:2022,2022,sector,census_sector,"CENSUS: Sector, NISR code 1101-5715","Sector (1101-5715, NISR codes; names attached)"
+wave:2022,2022,urban,census_urban,"CENSUS: Area of residence: 1 urban, 2 rural","Area of residence (1 urban, 2 rural)"
+wave:2022,2022,cluster,census_cluster,CENSUS: Sampling cluster or village identifier,Sampling cluster proxy (year_sector)
+wave:2022,2022,hhid,census_household_id,CENSUS: Household identifier,Household id (unique within year)
+wave:2022,2022,pid,census_person_id,CENSUS: Person number within the household,Person number within the household
+wave:2022,2022,sex,census_sex,"CENSUS: Sex: 1 male, 2 female","Sex (1 male, 2 female)"
+wave:2022,2022,age,census_age,CENSUS: Age in completed years,Age in years
+wave:2022,2022,wt,census_weight,CENSUS: Sampling weight,Person weight (sums to the census population)
+wave:2022,2022,wt_hh,census_household_weight,CENSUS: Household weight,Household weight (2022 as shipped; 2002/2012 = person weight of the household sample)
+wave:2022,2022,p02,census_relation_head_2022,"CENSUS 2022: Relationship to the household head, 14 codes",Relationship (Private HH only)
+wave:2022,2022,p06,census_marital_status_2022,CENSUS 2022: Marital status,marital status
+wave:2022,2022,p07a,census_residence_status_2022,CENSUS 2022: Residence status: usual resident or visitor,Residence Status
+wave:2022,2022,p07b,census_slept_here_2022,CENSUS 2022: Resident member slept in the household last night,Residence status of resident member
+wave:2022,2022,p08c,census_age_first_marriage_2022,CENSUS 2022: Age at first marriage,Age at first marriage
+wave:2022,2022,p09a,census_born_in_rwanda_2022,CENSUS 2022: Born in Rwanda or abroad,Place of birth/country
+wave:2022,2022,p09b,census_birth_district_2022,CENSUS 2022: District of birth,Place of birh/district
+wave:2022,2022,p09c,census_birth_country_2022,"CENSUS 2022: Country of birth, country code",Country of birth: country code
+wave:2022,2022,p10a,census_residence_duration_2022,CENSUS 2022: Duration of residence,Duration of Residence
+wave:2022,2022,p10b,census_previous_in_rwanda_2022,CENSUS 2022: Previous residence in Rwanda or abroad,Place of previous residence
+wave:2022,2022,p11a,census_previous_district_2022,CENSUS 2022: District of previous residence,District of previous residence
+wave:2022,2022,p11b,census_previous_country_2022,"CENSUS 2022: Country of previous residence, country code",Country of previous residence: country code
+wave:2022,2022,p12b,census_nationality_country_2022,"CENSUS 2022: Nationality, country code",Nationality: country code
+wave:2022,2022,p13,census_religion_2022,CENSUS 2022: Religious affiliation,Religious affiliation
+wave:2022,2022,p14,census_medical_insurance_2022,CENSUS 2022: Medical insurance,Medical insurance
+wave:2022,2022,p15b,census_difficulty_seeing_2022,CENSUS 2022: Level of difficulty seeing,Level of difficulty of seeing
+wave:2022,2022,p16b,census_difficulty_hearing_2022,CENSUS 2022: Level of difficulty hearing,Level of difficulty of hearing
+wave:2022,2022,p17b,census_difficulty_walking_2022,CENSUS 2022: Level of difficulty walking,Level of difficulty of walking
+wave:2022,2022,p18b,census_difficulty_communic_2022,CENSUS 2022: Level of difficulty communicating,Level of difficulty of communicating
+wave:2022,2022,p19b,census_difficulty_remember_2022,CENSUS 2022: Level of difficulty remembering or concentrating,Level of difficulty of remembering or concentrating
+wave:2022,2022,p20b,census_difficulty_self_care_2022,CENSUS 2022: Level of difficulty with self-care,Level of difficulty with self-care such as washing all over or dressing
+wave:2022,2022,p21a,census_short_stature_2022,CENSUS 2022: Has a problem of short stature,Has a problem of short stature
+wave:2022,2022,p22a,census_albinism_2022,CENSUS 2022: Has a disability with albinism,Has a disability with albinism
+wave:2022,2022,p23a,census_mother_alive_2022,CENSUS 2022: Biological mother alive,Biological mother alive
+wave:2022,2022,p23b,census_mother_in_household_2022,CENSUS 2022: Biological mother lives in this household,Biological mother live in this household
+wave:2022,2022,p23bb,census_mother_line_2022,CENSUS 2022: Line number of the biological mother,Select the name of the biological mother
+wave:2022,2022,p23c,census_father_alive_2022,CENSUS 2022: Biological father alive,Biological father alive
+wave:2022,2022,p23d,census_father_in_household_2022,CENSUS 2022: Biological father lives in this household,Biological father live in this household
+wave:2022,2022,p23dd,census_father_line_2022,CENSUS 2022: Line number of the biological father,Select the name of the biological father
+wave:2022,2022,p24,census_civil_registered_2022,CENSUS 2022: Registered in the civil registration books,Registered in the Civil Registration books
+wave:2022,2022,p29,census_school_attendance_2022,CENSUS 2022: Ever or currently attending school,Ever or currently attending  school
+wave:2022,2022,p30a,census_education_level_2022,CENSUS 2022: Highest level of education,Highest level of education
+wave:2022,2022,p30b,census_years_completed_2022,CENSUS 2022: Years of school completed at that level,Years of school complete successfully at that level
+wave:2022,2022,p31,census_highest_certificate_2022,CENSUS 2022: Highest certificate or degree,Highest certificate/degree
+wave:2022,2022,p32,census_literacy_languages_2022,"CENSUS 2022: Reads and writes with understanding, languages",Can read and write with understanding in the following languages
+wave:2022,2022,p33,census_adult_literacy_2022,CENSUS 2022: Ever attended an informal adult literacy programme,Ever attended or currently attending Informal adult litteracy Program
+wave:2022,2022,p34,census_internet_use_2022,CENSUS 2022: Internet use,Internet use
+wave:2022,2022,p35,census_internet_place_2022,CENSUS 2022: Where the internet is accessed,Access to internet
+wave:2022,2022,p36c,census_mobile_phone_type_2022,CENSUS 2022: Type of mobile phone,type of mobile phone
+wave:2022,2022,p46,census_inst_sector_2022,CENSUS 2022: Institutional sector,Institutional sector
+wave:2022,2022,p47a,census_isic_section_2022,"CENSUS 2022: Branch of economic activity, ISIC section", ISIC High level
+wave:2022,2022,p48a,census_isco_major_group_2022,"CENSUS 2022: Main occupation, ISCO major group",Main occupations(ISCO high level)
+wave:2022,2022,p49,census_employment_status_2022,CENSUS 2022: Status in employment,status in employment
+wave:2022,2022,p50a,census_ever_given_birth_2022,CENSUS 2022: Ever given birth,given birth
+wave:2022,2022,p50b_boys,census_births_boys_2022,"CENSUS 2022: Live births ever, boys",Number of live births ever had / boys
+wave:2022,2022,p50b_girls,census_births_girls_2022,"CENSUS 2022: Live births ever, girls",Number of live births ever had / girls
+wave:2022,2022,p50c_boys,census_children_alive_boys_2022,"CENSUS 2022: Children still alive, boys",Among those children how many are still alive / Boys
+wave:2022,2022,p50c_girls,census_children_alive_girls_2022,"CENSUS 2022: Children still alive, girls",Among those children how many are still alive / Girls
+wave:2022,2022,p51a,census_birth_last_12m_2022,CENSUS 2022: Gave birth in the last 12 months,During the last 12 months (From 15/08/2020-15/08/2021) [NAME] Have you ever give
+wave:2022,2022,p51b_boys,census_births_12m_boys_2022,"CENSUS 2022: Live births in the last 12 months, boys",Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021
+wave:2022,2022,p51b_girls,census_births_12m_girls_2022,"CENSUS 2022: Live births in the last 12 months, girls",Number of live births  had during the last 12 months (From 15/08/2020-15/08/2021
+wave:2022,2022,p51c_boys,census_surviving_12m_boys_2022,"CENSUS 2022: Births of the last 12 months still alive, boys","Among those children s,how many are still alive / Boys"
+wave:2022,2022,p51c_girls,census_surviving_12m_girls_2022,"CENSUS 2022: Births of the last 12 months still alive, girls","Among those children s,how many are still alive / Girls"
+wave:2022,2022,h01,census_settlement_2022,"CENSUS 2022: Type of settlement, 2022 coding",Type of habitant
+wave:2022,2022,h02,census_dwelling_type_2022,"CENSUS 2022: Type of building, 2022 coding",Type of Building
+wave:2022,2022,h03,census_tenure_2022,CENSUS 2022: Tenure of the housing unit,Tenure of then housing unit
+wave:2022,2022,h04,census_owns_housing_unit_2022,CENSUS 2022: Household owns a housing unit in this village or elsewhere,Is this Household has its own housing unit  in this village or elsewhere
+wave:2022,2022,h05,census_roof_material_2022,CENSUS 2022: Main material of the roof,main material used for the roof
+wave:2022,2022,h06,census_wall_material_2022,CENSUS 2022: Main material of the walls,main material used for the walls
+wave:2022,2022,h07,census_floor_material_2022,CENSUS 2022: Main material of the floor,main material used for the floor
+wave:2022,2022,h08,census_rooms_2022,CENSUS 2022: Number of rooms,Number of rooms
+wave:2022,2022,h09,census_sleeping_rooms_2022,CENSUS 2022: Number of rooms used for sleeping,number of rooms are used for sleeping
+wave:2022,2022,h10,census_rooms_boys_girls_2022,CENSUS 2022: Sleeping rooms for boys separated from those for girls,Are Sleeping rooms  for Boys separated from those for Girls
+wave:2022,2022,h11,census_water_source_2022,CENSUS 2022: Main source of water for general purposes,Main source of water used for general purposes
+wave:2022,2022,h12,census_drinking_water_2022,CENSUS 2022: Main source of drinking water,Main source of drinking water
+wave:2022,2022,h13,census_toilet_facility_2022,CENSUS 2022: Toilet facility,Toilet Facility
+wave:2022,2022,h14,census_grid_electricity_2022,CENSUS 2022: Connected to the electricity grid,Electricity (Grid line) connectivity
+wave:2022,2022,h15,census_lighting_source_2022,CENSUS 2022: Main source of energy for lighting,Main source of energy for lighting
+wave:2022,2022,h16,census_cooking_energy_2022,CENSUS 2022: Main source of energy for cooking,Main source of energy for cooking
+wave:2022,2022,h17,census_cooking_energy_2nd_2022,CENSUS 2022: Secondary source of energy for cooking,Secondary source of energy for cooking
+wave:2022,2022,h18,census_energy_saving_stove_2022,CENSUS 2022: Uses an energy-saving cooking stove,Does your HH use a cooking energy saving stove?
+wave:2022,2022,h19,census_waste_disposal_2022,CENSUS 2022: Main mode of household waste disposal,Main mode of household waste disposal used
+wave:2022,2022,h20,census_sewage_disposal_2022,CENSUS 2022: Main mode of sewage disposal,Main mode of sewage
+wave:2022,2022,h21_01,census_asset_radio_2022,CENSUS 2022: Owns a functional radio,Functional assets own by HH: Radio
+wave:2022,2022,h21_02,census_asset_television_2022,CENSUS 2022: Owns a functional television,Functional assets own by HH: Television
+wave:2022,2022,h21_03,census_asset_refrigerator_2022,CENSUS 2022: Owns a functional refrigerator or freezer,Functional assets own by HH: Refrigerator/Freezer for HH use only
+wave:2022,2022,h21_04,census_asset_cooker_2022,CENSUS 2022: Owns a functional gas or electrical cooker,Functional assets own by HH: Gas/Electrical Cooker
+wave:2022,2022,h21_05,census_asset_washer_2022,CENSUS 2022: Owns a functional washing machine,Functional assets own by HH: Washing machine
+wave:2022,2022,h21_06,census_asset_microwave_2022,CENSUS 2022: Owns a functional microwave,Functional assets own by HH: Microwave
+wave:2022,2022,h21_07,census_asset_mattress_2022,CENSUS 2022: Owns a mattress,Functional assets own by HH: Mattress
+wave:2022,2022,h21_08,census_asset_chair_2022,CENSUS 2022: Owns a bench or chair,Functional assets own by HH: Bench/Chair
+wave:2022,2022,h21_09,census_asset_bed_2022,CENSUS 2022: Owns a bed,Functional assets own by HH: Bed
+wave:2022,2022,h21_10,census_asset_table_2022,CENSUS 2022: Owns tables,Functional assets own by HH: Tables
+wave:2022,2022,h21_11,census_asset_sofa_2022,CENSUS 2022: Owns a sofa,Functional assets own by HH: Sofa
+wave:2022,2022,h21_12,census_asset_computer_2022,CENSUS 2022: Owns a functional computer,Functional assets own by HH: Computers
+wave:2022,2022,h21_13,census_asset_vehicle_2022,CENSUS 2022: Owns a vehicle for household use,Functional assets own by HH: Vehicles for household use only
+wave:2022,2022,h21_14,census_asset_motorcycle_2022,CENSUS 2022: Owns a motorcycle for household use,Functional assets own by HH: Motorcycles for household use only
+wave:2022,2022,h21_15,census_asset_bicycle_2022,CENSUS 2022: Owns a bicycle for household use,Functional assets own by HH: Bicycles for household use only
+wave:2022,2022,h21_16,census_asset_iron_2022,CENSUS 2022: Owns an electrical or charcoal iron,Functional assets own by HH: Electrical/Charcoal Iron
+wave:2022,2022,h22,census_owns_livestock_2022,CENSUS 2022: Household owns livestock or beehives,HH own livestock or beehive
+wave:2022,2022,h22a_01,census_rears_local_cows_2022,CENSUS 2022: Rears local breed cows,Local breed cows reared
+wave:2022,2022,h22a_02,census_rears_exotic_cows_2022,CENSUS 2022: Rears exotic breed cows,Exotic breed cows reared
+wave:2022,2022,h22a_03,census_rears_cross_cows_2022,CENSUS 2022: Rears cross breed cows,Cross breed cows reared
+wave:2022,2022,h22a_04,census_rears_local_goats_2022,CENSUS 2022: Rears local goats,Local goats reared
+wave:2022,2022,h22a_05,census_rears_exotic_goats_2022,CENSUS 2022: Rears exotic goats,Exotic goats reared
+wave:2022,2022,h22a_06,census_rears_cross_goats_2022,CENSUS 2022: Rears cross goats,Cross goats reared
+wave:2022,2022,h22a_07,census_rears_local_sheep_2022,CENSUS 2022: Rears local sheep,Local sheep reared
+wave:2022,2022,h22a_08,census_rears_exotic_sheep_2022,CENSUS 2022: Rears exotic sheep,Exotic sheep reared
+wave:2022,2022,h22a_09,census_rears_local_pigs_2022,CENSUS 2022: Rears local pigs,Local pigs reared
+wave:2022,2022,h22a_10,census_rears_exotic_pigs_2022,CENSUS 2022: Rears exotic pigs,Exotic pig reared
+wave:2022,2022,h22a_11,census_rears_cross_pigs_2022,CENSUS 2022: Rears cross pigs,Cross pig reared
+wave:2022,2022,h22a_12,census_rears_rabbits_2022,CENSUS 2022: Rears rabbits,Rabbits reared
+wave:2022,2022,h22a_13,census_rears_broilers_2022,CENSUS 2022: Rears broilers,Broiler chicken reared
+wave:2022,2022,h22a_14,census_rears_layers_2022,CENSUS 2022: Rears layers,Layers chicken reared
+wave:2022,2022,h22a_15,census_rears_dual_chicken_2022,CENSUS 2022: Rears dual-purpose chicken,Dual purpose chicken reared
+wave:2022,2022,h22a_16,census_rears_local_chicken_2022,CENSUS 2022: Rears local chicken,Local chicken reared
+wave:2022,2022,h22a_17,census_rears_ducks_2022,CENSUS 2022: Rears ducks,Duck reared
+wave:2022,2022,h22a_18,census_rears_turkeys_2022,CENSUS 2022: Rears turkeys,Turkey reared
+wave:2022,2022,h22a_19,census_rears_other_poultry_2022,CENSUS 2022: Rears other poultry,Other poultry reared
+wave:2022,2022,h22a_20,census_rears_camels_2022,CENSUS 2022: Rears camels,Camel reared
+wave:2022,2022,h22a_21,census_rears_beehives_2022,CENSUS 2022: Rears beehives,Bees hive reared
+wave:2022,2022,h22a_22,census_rears_dogs_2022,CENSUS 2022: Rears dogs,Dogs reared
+wave:2022,2022,h22a_23,census_rears_other_animals_2022,CENSUS 2022: Rears other animals,Other reared
+wave:2022,2022,h22b1_01,census_local_cows_count_2022,CENSUS 2022: Number of local breed cows reared,Number of Local breed cows reared
+wave:2022,2022,h22b1_02,census_exotic_cows_count_2022,CENSUS 2022: Number of exotic breed cows reared,Number of Exotic breed cows reared
+wave:2022,2022,h22b1_03,census_cross_cows_count_2022,CENSUS 2022: Number of cross breed cows reared,Number of Cross breed cows reared
+wave:2022,2022,h22b1_04,census_local_goats_count_2022,CENSUS 2022: Number of local goats reared,Number of Local goats reared
+wave:2022,2022,h22b1_05,census_exotic_goats_count_2022,CENSUS 2022: Number of exotic goats reared,Number of Exotic goats reared
+wave:2022,2022,h22b1_06,census_cross_goats_count_2022,CENSUS 2022: Number of cross goats reared,Number of Cross goats reared
+wave:2022,2022,h22b1_07,census_local_sheep_count_2022,CENSUS 2022: Number of local sheep reared,Number of Local sheep reared
+wave:2022,2022,h22b1_08,census_exotic_sheep_count_2022,CENSUS 2022: Number of exotic sheep reared,Number of Exotic sheep reared
+wave:2022,2022,h22b1_09,census_local_pigs_count_2022,CENSUS 2022: Number of local pigs reared,Number of Local pigs reared
+wave:2022,2022,h22b1_10,census_exotic_pigs_count_2022,CENSUS 2022: Number of exotic pigs reared,Number of Exotic pig reared
+wave:2022,2022,h22b1_11,census_cross_pigs_count_2022,CENSUS 2022: Number of cross pigs reared,Number of Cross pig reared
+wave:2022,2022,h22b1_12,census_rabbits_count_2022,CENSUS 2022: Number of rabbits reared,Number of Rabbits reared
+wave:2022,2022,h22b1_13,census_broilers_count_2022,CENSUS 2022: Number of broilers reared,Number of Broiler chicken reared
+wave:2022,2022,h22b1_14,census_layers_count_2022,CENSUS 2022: Number of layers reared,Number of Layers chicken reared
+wave:2022,2022,h22b1_15,census_dual_chicken_count_2022,CENSUS 2022: Number of dual-purpose chicken reared,Number of Dual purpose chicken reared
+wave:2022,2022,h22b1_16,census_local_chicken_count_2022,CENSUS 2022: Number of local chicken reared,Number of Local chicken reared
+wave:2022,2022,h22b1_17,census_ducks_count_2022,CENSUS 2022: Number of ducks reared,Number of Duck reared
+wave:2022,2022,h22b1_18,census_turkeys_count_2022,CENSUS 2022: Number of turkeys reared,Number of Turkey reared
+wave:2022,2022,h22b1_19,census_other_poultry_count_2022,CENSUS 2022: Number of other poultry reared,Number of Other poultry reared
+wave:2022,2022,h22b1_20,census_camels_count_2022,CENSUS 2022: Number of camels reared,Number of Camel reared
+wave:2022,2022,h22b1_21,census_beehives_count_2022,CENSUS 2022: Number of beehives reared,Number of Bees hive reared
+wave:2022,2022,h22b1_22,census_dogs_count_2022,CENSUS 2022: Number of dogs reared,Number of Dogs reared
+wave:2022,2022,h22b1_23,census_other_animals_count_2022,CENSUS 2022: Number of other animals reared,Number of Other reared
+wave:2022,2022,h22b2_01,census_where_local_cows_2022,CENSUS 2022: District where the local breed cows are reared,Location(District) where is Local breed cows reared
+wave:2022,2022,h22b2_02,census_where_exotic_cows_2022,CENSUS 2022: District where the exotic breed cows are reared,Location(District) where is Exotic breed cows reared
+wave:2022,2022,h22b2_03,census_where_cross_cows_2022,CENSUS 2022: District where the cross breed cows are reared,Location(District) where is Cross breed cows reared
+wave:2022,2022,h22b2_04,census_where_local_goats_2022,CENSUS 2022: District where the local goats are reared,Location(District) where is Local goats reared
+wave:2022,2022,h22b2_05,census_where_exotic_goats_2022,CENSUS 2022: District where the exotic goats are reared,Location(District) where is Exotic goats reared
+wave:2022,2022,h22b2_06,census_where_cross_goats_2022,CENSUS 2022: District where the cross goats are reared,Location(District) where is Cross goats reared
+wave:2022,2022,h22b2_07,census_where_local_sheep_2022,CENSUS 2022: District where the local sheep are reared,Location(District) where is Local sheep reared
+wave:2022,2022,h22b2_08,census_where_exotic_sheep_2022,CENSUS 2022: District where the exotic sheep are reared,Location(District) where is Exotic sheep reared
+wave:2022,2022,h22b2_09,census_where_local_pigs_2022,CENSUS 2022: District where the local pigs are reared,Location(District) where is Local pigs reared
+wave:2022,2022,h22b2_10,census_where_exotic_pigs_2022,CENSUS 2022: District where the exotic pigs are reared,Location(District) where is Exotic pig reared
+wave:2022,2022,h22b2_11,census_where_cross_pigs_2022,CENSUS 2022: District where the cross pigs are reared,Location(District) where is Cross pig reared
+wave:2022,2022,h22b2_12,census_where_rabbits_2022,CENSUS 2022: District where the rabbits are reared,Location(District) where is Rabbits reared
+wave:2022,2022,h22b2_13,census_where_broilers_2022,CENSUS 2022: District where the broilers are reared,Location(District) where is Broiler chicken reared
+wave:2022,2022,h22b2_14,census_where_layers_2022,CENSUS 2022: District where the layers are reared,Location(District) where is Layers chicken reared
+wave:2022,2022,h22b2_15,census_where_dual_chicken_2022,CENSUS 2022: District where the dual-purpose chicken are reared,Location(District) where is Dual purpose chicken reared
+wave:2022,2022,h22b2_16,census_where_local_chicken_2022,CENSUS 2022: District where the local chicken are reared,Location(District) where is Local chicken reared
+wave:2022,2022,h22b2_17,census_where_ducks_2022,CENSUS 2022: District where the ducks are reared,Location(District) where is Duck reared
+wave:2022,2022,h22b2_18,census_where_turkeys_2022,CENSUS 2022: District where the turkeys are reared,Location(District) where is Turkey reared
+wave:2022,2022,h22b2_19,census_where_other_poultry_2022,CENSUS 2022: District where the other poultry are reared,Location(District) where is Other poultry reared
+wave:2022,2022,h22b2_20,census_where_camels_2022,CENSUS 2022: District where the camels are reared,Location(District) where is Camel reared
+wave:2022,2022,h22b2_21,census_where_beehives_2022,CENSUS 2022: District where the beehives are reared,Location(District) where is Bees hive reared
+wave:2022,2022,h22b2_22,census_where_dogs_2022,CENSUS 2022: District where the dogs are reared,Location(District) where is Dogs reared
+wave:2022,2022,h22b2_23,census_where_other_animals_2022,CENSUS 2022: District where the other animals are reared,Location(District) where is Other reared
+wave:2022,2022,h23,census_grew_crops_2022,CENSUS 2022: Household grew crops in the last 12 months,Household grew crops in last 12 months
+wave:2022,2022,h23a,census_farming_place_2022,CENSUS 2022: Place where the agricultural activities are done,Place where the agricultural activities is done
+wave:2022,2022,h24_01,census_maize_grown,CENSUS 2022: Maize grown,Maize grown
+wave:2022,2022,h24_02,census_rice_grown,CENSUS 2022: Rice grown,Rice grown
+wave:2022,2022,h24_03,census_sorghum_grown,CENSUS 2022: Sorghum grown,Sorghum grown
+wave:2022,2022,h24_04,census_wheat_grown,CENSUS 2022: Wheat grown,Wheat grown
+wave:2022,2022,h24_05,census_bean_grown,CENSUS 2022: Bean grown,Bean grown
+wave:2022,2022,h24_06,census_pea_grown,CENSUS 2022: Pea grown,Pea grown
+wave:2022,2022,h24_07,census_groundnut_grown,CENSUS 2022: Groundnut grown,Groundnut grown
+wave:2022,2022,h24_08,census_soybean_grown,CENSUS 2022: Soybean grown,Soybean grown
+wave:2022,2022,h24_09,census_cassava_grown,CENSUS 2022: Cassava grown,Cassava grown
+wave:2022,2022,h24_10,census_sweet_potato_grown,CENSUS 2022: Sweet potato grown,Sweet potato grown
+wave:2022,2022,h24_11,census_irish_potato_grown,CENSUS 2022: Irish potato grown,Irish potato grown
+wave:2022,2022,h24_12,census_yams_taro_grown,CENSUS 2022: Yams& Taro grown,Yams& Taro grown
+wave:2022,2022,h24_13,census_cooking_banana_grown,CENSUS 2022: Cooking Banana grown,Cooking Banana grown
+wave:2022,2022,h24_14,census_dessert_banana_grown,CENSUS 2022: Dessert Banana grown,Dessert Banana grown
+wave:2022,2022,h24_15,census_banana_beer_grown,CENSUS 2022: Banana for Beer grown,Banana for Beer grown
+wave:2022,2022,h24_16,census_vegetables_grown,CENSUS 2022: Vegetables grown,Vegetables grown
+wave:2022,2022,h24_17,census_tea_grown,CENSUS 2022: Tea grown,Tea grown
+wave:2022,2022,h24_18,census_coffee_grown,CENSUS 2022: Coffee grown,Coffee grown
+wave:2022,2022,h24_19,census_sugarcane_grown,CENSUS 2022: Sugarcane grown,Sugarcane grown
+wave:2022,2022,h24_20,census_pyrethrum_grown,CENSUS 2022: Pyrethrum grown,Pyrethrum grown
+wave:2022,2022,h24_21,census_flowers_grown,CENSUS 2022: Flowers grown,Flowers grown
+wave:2022,2022,h24_22,census_other_crop_type_grown,CENSUS 2022: Other crop type grown,Other crop type grown
+wave:2022,2022,h25_01,census_amaranths_grown,CENSUS 2022: Amaranths grown,Amaranths grown
+wave:2022,2022,h25_02,census_tomato_grown,CENSUS 2022: Tomato grown,Tomato grown
+wave:2022,2022,h25_03,census_cabbage_grown,CENSUS 2022: Cabbage grown,Cabbage grown
+wave:2022,2022,h25_04,census_onion_grown,CENSUS 2022: Onion grown,Onion grown
+wave:2022,2022,h25_05,census_carrot_grown,CENSUS 2022: Carrot grown,Carrot grown
+wave:2022,2022,h25_06,census_eggplant_grown,CENSUS 2022: Eggplant grown,Eggplant grown
+wave:2022,2022,h25_07,census_black_eggplant_grown,CENSUS 2022: Black eggplant grown,Black eggplant grown
+wave:2022,2022,h25_08,census_sweet_pepper_grown,CENSUS 2022: Sweet pepper grown,Sweet pepper grown
+wave:2022,2022,h25_09,census_pepper_grown,CENSUS 2022: Pepper grown,Pepper grown
+wave:2022,2022,h25_10,census_cauliflower_grown,CENSUS 2022: Cauliflower grown,Cauliflower grown
+wave:2022,2022,h25_11,census_french_beans_grown,CENSUS 2022: French beans grown,French beans grown
+wave:2022,2022,h25_12,census_beetroot_grown,CENSUS 2022: Beetroot grown,Beetroot grown
+wave:2022,2022,h25_13,census_garlic_grown,CENSUS 2022: Garlic grown,Garlic grown
+wave:2022,2022,h25_14,census_lettuce_grown,CENSUS 2022: Lettuce grown,Lettuce grown
+wave:2022,2022,h25_15,census_broccoli_grown,CENSUS 2022: Broccoli grown,Broccoli grown
+wave:2022,2022,h25_16,census_spinach_grown,CENSUS 2022: Spinach grown,Spinach grown
+wave:2022,2022,h25_17,census_celery_grown,CENSUS 2022: Celery grown,Celery grown
+wave:2022,2022,h25_18,census_leeks_grown,CENSUS 2022: Leeks grown,Leeks grown
+wave:2022,2022,h25_19,census_pumpkin_grown,CENSUS 2022: Pumpkin grown,Pumpkin grown
+wave:2022,2022,h25_20,census_cocumber_grown,CENSUS 2022: Cocumber grown,Cocumber grown
+wave:2022,2022,h25_21,census_mushroom_grown,CENSUS 2022: Mushroom grown,Mushroom grown
+wave:2022,2022,h25_22,census_chayote_grown,CENSUS 2022: Chayote grown,Chayote grown
+wave:2022,2022,h25_23,census_cassava_leaves_grown,CENSUS 2022: Cassava Leaves grown,Cassava Leaves grown
+wave:2022,2022,h25_24,census_other_vegetables_grown,CENSUS 2022: Other vegetables grown,Other vegetables grown
+wave:2022,2022,h26,census_tea_trees_2022,CENSUS 2022: Number of tea trees,Number of tea trees grown
+wave:2022,2022,h27,census_coffee_trees_2022,CENSUS 2022: Number of coffee trees,Number of coffee trees grown
+wave:2022,2022,h28a,census_fruit_trees_2022,CENSUS 2022: Any fruit tree,Any fruit tree
+wave:2022,2022,h28b1_01,census_grow_avocado,CENSUS 2022: Grow Avocado,Grow Avocado
+wave:2022,2022,h28b1_02,census_grow_orange,CENSUS 2022: Grow Orange,Grow Orange
+wave:2022,2022,h28b1_03,census_grow_papaya,CENSUS 2022: Grow Papaya,Grow Papaya
+wave:2022,2022,h28b1_04,census_grow_guava,CENSUS 2022: Grow Guava,Grow Guava
+wave:2022,2022,h28b1_05,census_grow_lemon,CENSUS 2022: Grow Lemon,Grow Lemon
+wave:2022,2022,h28b1_06,census_grow_mango,CENSUS 2022: Grow Mango,Grow Mango
+wave:2022,2022,h28b1_07,census_grow_mandarin,CENSUS 2022: Grow Mandarin,Grow Mandarin
+wave:2022,2022,h28b1_08,census_grow_jack_fruits,CENSUS 2022: Grow Jack fruits,Grow Jack fruits
+wave:2022,2022,h28b1_09,census_grow_beefheart,CENSUS 2022: Grow Beefheart,Grow Beefheart
+wave:2022,2022,h28b1_10,census_grow_passion_fruits,CENSUS 2022: Grow Passion fruits,Grow Passion fruits
+wave:2022,2022,h28b1_11,census_grow_pineapple,CENSUS 2022: Grow Pineapple,Grow Pineapple
+wave:2022,2022,h28b1_12,census_grow_tree_tomato,CENSUS 2022: Grow Tree tomato,Grow Tree tomato
+wave:2022,2022,h28b1_13,census_grow_watermelon,CENSUS 2022: Grow Watermelon,Grow Watermelon
+wave:2022,2022,h28b1_14,census_grow_strawberry,CENSUS 2022: Grow Strawberry,Grow Strawberry
+wave:2022,2022,h28b1_15,census_grow_other_fruit,CENSUS 2022: Grow Other fruit,Grow Other fruit
+wave:2022,2022,h28b2_01,census_number_avocado,CENSUS 2022: Number of Avocado,Number of Avocado
+wave:2022,2022,h28b2_02,census_number_orange,CENSUS 2022: Number of Orange,Number of Orange
+wave:2022,2022,h28b2_03,census_number_papaya,CENSUS 2022: Number of Papaya,Number of Papaya
+wave:2022,2022,h28b2_04,census_number_guava,CENSUS 2022: Number of Guava,Number of Guava
+wave:2022,2022,h28b2_05,census_number_lemon,CENSUS 2022: Number of Lemon,Number of Lemon
+wave:2022,2022,h28b2_06,census_number_mango,CENSUS 2022: Number of Mango,Number of Mango
+wave:2022,2022,h28b2_07,census_number_mandarin,CENSUS 2022: Number of Mandarin,Number of Mandarin
+wave:2022,2022,h28b2_08,census_number_jack_fruits,CENSUS 2022: Number of Jack fruits,Number of Jack fruits
+wave:2022,2022,h28b2_09,census_number_beefheart,CENSUS 2022: Number of Beefheart,Number of Beefheart
+wave:2022,2022,h28b2_10,census_number_passion_fruits,CENSUS 2022: Number of Passion fruits,Number of Passion fruits
+wave:2022,2022,h28b2_11,census_number_pineapple,CENSUS 2022: Number of Pineapple,Number of Pineapple
+wave:2022,2022,h28b2_12,census_number_tree_tomato,CENSUS 2022: Number of Tree tomato,Number of Tree tomato
+wave:2022,2022,h28b2_13,census_number_watermelon,CENSUS 2022: Number of Watermelon,Number of Watermelon
+wave:2022,2022,h28b2_14,census_number_strawberry,CENSUS 2022: Number of Strawberry,Number of Strawberry
+wave:2022,2022,h28b2_15,census_number_other_fruit,CENSUS 2022: Number of Other fruit,Number of Other fruit

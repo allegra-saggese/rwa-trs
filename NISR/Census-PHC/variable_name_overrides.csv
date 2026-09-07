@@ -1,0 +1,357 @@
+native,clean_stem,clean_label
+a46,age_copy_a46_2002,"Age, NISR derived copy A46"
+agcm,age_copy_agcm_2002,"Age, NISR derived copy"
+age18,age_copy_18_2002,"Age, NISR derived copy 18"
+age19,age_copy_19_2002,"Age, NISR derived copy 19"
+age1_1,age_copy_1_1_2002,"Age, NISR derived copy 1-1"
+age26,age_copy_26_2002,"Age, NISR derived copy 26"
+age_5,age_copy_5_2002,"Age, NISR derived copy 5"
+agebetween5_17,age_5_17_flag_2002,"Flag: aged 5 to 17, NISR derived"
+agegrp_nisr,age_group_nisr_2002,"Age group 0-5, NISR derived (shipped as Age)"
+aggroup5,age_group_5_years_2012,Five-year age group
+district_code,district_shipped_2002,"District code as shipped, three digits"
+emploi_exerc,occupation_grouped_2002,"Occupation, NISR grouped"
+etat_matri,marital_grouped_2002,"Marital status, NISR grouped"
+filter__,head_filter_2012,Filter: household head (P02 = 1)
+fr_quentation,attendance_grouped_2002,"School attendance, NISR grouped"
+gpe_age,age_group_copy_2002,"Age groups, NISR derived copy"
+grpage5,age_group_5_years_2002,"Five-year age group, NISR derived"
+h01,settlement_2002_2012,Type of housing settlement
+h01_v2,settlement_2022,"Type of settlement, 2022 coding"
+h02,dwelling_type_2002_2012,Type of housing unit
+h02_v2,dwelling_type_2022,"Type of building, 2022 coding"
+h03,tenure_2022,Tenure of the housing unit
+h03_v2,tenure_2012,Status of occupancy of the house
+h03_v3,roof_material_2002,Roof material
+h04,owns_housing_unit_2022,Household owns a housing unit in this village or elsewhere
+h04_v2,roof_material_2012,Roof material
+h04_v3,wall_material_2002,Outer wall material
+h05,roof_material_2022,Main material of the roof
+h05_v2,wall_material_2012,Wall material
+h05_v3,floor_material_2002,Floor material
+h06,wall_material_2022,Main material of the walls
+h06_v2,floor_material_2012,Floor material
+h06_v3,living_rooms_2002,Number of living rooms
+h07,floor_material_2022,Main material of the floor
+h07_v2,rooms_2012,Number of rooms
+h07_v3,water_source_2002,Main source of water supply
+h08,rooms_2022,Number of rooms
+h08_v2,sleeping_rooms_2012,Number of rooms for sleeping
+h08_v3,lighting_source_2002,Main source of lighting
+h09,sleeping_rooms_2022,Number of rooms used for sleeping
+h09_v2,occupants_2012,Number of occupants
+h09_v3,cooking_energy_2002,Main cooking energy
+h10,rooms_boys_girls_2022,Sleeping rooms for boys separated from those for girls
+h100,household_type_2002,Household type: 100 = ordinary household
+h101,questionnaire_serial_2002,Questionnaire serial number in the household
+h102,questionnaires_count_2002,Number of questionnaires filled in the household
+h10_v2,water_source_2012,Main source of water
+h10_v3,toilet_facility_2002,Main toilet facility
+h11,water_source_2022,Main source of water for general purposes
+h113,recap_male_aged_17_2002,Recap: male residents aged 17 and over
+h118,recap_female_aged_17_2002,Recap: female residents aged 17 and over
+h11_v2,toilet_facility_2012,Type of toilet facility
+h11_v3,waste_disposal_2002,Main mode of household waste disposal
+h12,drinking_water_2022,Main source of drinking water
+h123,recap_aged_17_total_2002,"Recap: residents aged 17 and over, total"
+h12_v2,lighting_source_2012,Source of lighting
+h12_v3,tenure_2002,Occupancy status of the dwelling
+h13,toilet_facility_2022,Toilet facility
+h13_v2,cooking_energy_2012,Energy for cooking
+h13_v3,radio_television_2002,Radio or television ownership
+h14,grid_electricity_2022,Connected to the electricity grid
+h14_v2,energy_saving_stove_2012,Energy-saving stove
+h14_v3,telephone_2002,Fixed-line or cell phone ownership
+h15,lighting_source_2022,Main source of energy for lighting
+h15_v2,waste_disposal_2012,Mode of household waste disposal
+h15_v3,computer_internet_2002,Computer or internet connection
+h16,cooking_energy_2022,Main source of energy for cooking
+h16_v2,sewage_disposal_2012,Mode of sewage disposal
+h16a,vehicles_2002,Number of vehicles
+h16b,motorcycles_2002,Number of motorcycles
+h16c,bicycles_2002,Number of bicycles
+h17,cooking_energy_2nd_2022,Secondary source of energy for cooking
+h17_v2,radios_2012,Number of radios
+h17_v3,persons_counted_2002,Total persons counted in the household
+h18,energy_saving_stove_2022,Uses an energy-saving cooking stove
+h18_v2,televisions_2012,Number of televisions
+h18_v3,empty_item_h18_2002,Empty item in the public file
+h19,waste_disposal_2022,Main mode of household waste disposal
+h19_v2,fixed_telephones_2012,Number of fixed-line telephones
+h19a,death_last_12m_2002,Any death of a resident member in the last 12 months
+h19b,deaths_last_12m_2002,Number of deaths in the last 12 months
+h20,sewage_disposal_2022,Main mode of sewage disposal
+h200,collective_type_2002,"Collective household type, codes 201-214"
+h20_v2,cell_phones_2012,Number of cell phones
+h21,refrigerators_2012,Number of refrigerators or freezers
+h21_01,asset_radio_2022,Owns a functional radio
+h21_02,asset_television_2022,Owns a functional television
+h21_03,asset_refrigerator_2022,Owns a functional refrigerator or freezer
+h21_04,asset_cooker_2022,Owns a functional gas or electrical cooker
+h21_05,asset_washer_2022,Owns a functional washing machine
+h21_06,asset_microwave_2022,Owns a functional microwave
+h21_07,asset_mattress_2022,Owns a mattress
+h21_08,asset_chair_2022,Owns a bench or chair
+h21_09,asset_bed_2022,Owns a bed
+h21_10,asset_table_2022,Owns tables
+h21_11,asset_sofa_2022,Owns a sofa
+h21_12,asset_computer_2022,Owns a functional computer
+h21_13,asset_vehicle_2022,Owns a vehicle for household use
+h21_14,asset_motorcycle_2022,Owns a motorcycle for household use
+h21_15,asset_bicycle_2022,Owns a bicycle for household use
+h21_16,asset_iron_2022,Owns an electrical or charcoal iron
+h22,owns_livestock_2022,Household owns livestock or beehives
+h22_v2,computers_2012,Number of computers
+h22a_01,rears_local_cows_2022,Rears local breed cows
+h22a_02,rears_exotic_cows_2022,Rears exotic breed cows
+h22a_03,rears_cross_cows_2022,Rears cross breed cows
+h22a_04,rears_local_goats_2022,Rears local goats
+h22a_05,rears_exotic_goats_2022,Rears exotic goats
+h22a_06,rears_cross_goats_2022,Rears cross goats
+h22a_07,rears_local_sheep_2022,Rears local sheep
+h22a_08,rears_exotic_sheep_2022,Rears exotic sheep
+h22a_09,rears_local_pigs_2022,Rears local pigs
+h22a_10,rears_exotic_pigs_2022,Rears exotic pigs
+h22a_11,rears_cross_pigs_2022,Rears cross pigs
+h22a_12,rears_rabbits_2022,Rears rabbits
+h22a_13,rears_broilers_2022,Rears broilers
+h22a_14,rears_layers_2022,Rears layers
+h22a_15,rears_dual_chicken_2022,Rears dual-purpose chicken
+h22a_16,rears_local_chicken_2022,Rears local chicken
+h22a_17,rears_ducks_2022,Rears ducks
+h22a_18,rears_turkeys_2022,Rears turkeys
+h22a_19,rears_other_poultry_2022,Rears other poultry
+h22a_20,rears_camels_2022,Rears camels
+h22a_21,rears_beehives_2022,Rears beehives
+h22a_22,rears_dogs_2022,Rears dogs
+h22a_23,rears_other_animals_2022,Rears other animals
+h22b1_01,local_cows_count_2022,Number of local breed cows reared
+h22b1_02,exotic_cows_count_2022,Number of exotic breed cows reared
+h22b1_03,cross_cows_count_2022,Number of cross breed cows reared
+h22b1_04,local_goats_count_2022,Number of local goats reared
+h22b1_05,exotic_goats_count_2022,Number of exotic goats reared
+h22b1_06,cross_goats_count_2022,Number of cross goats reared
+h22b1_07,local_sheep_count_2022,Number of local sheep reared
+h22b1_08,exotic_sheep_count_2022,Number of exotic sheep reared
+h22b1_09,local_pigs_count_2022,Number of local pigs reared
+h22b1_10,exotic_pigs_count_2022,Number of exotic pigs reared
+h22b1_11,cross_pigs_count_2022,Number of cross pigs reared
+h22b1_12,rabbits_count_2022,Number of rabbits reared
+h22b1_13,broilers_count_2022,Number of broilers reared
+h22b1_14,layers_count_2022,Number of layers reared
+h22b1_15,dual_chicken_count_2022,Number of dual-purpose chicken reared
+h22b1_16,local_chicken_count_2022,Number of local chicken reared
+h22b1_17,ducks_count_2022,Number of ducks reared
+h22b1_18,turkeys_count_2022,Number of turkeys reared
+h22b1_19,other_poultry_count_2022,Number of other poultry reared
+h22b1_20,camels_count_2022,Number of camels reared
+h22b1_21,beehives_count_2022,Number of beehives reared
+h22b1_22,dogs_count_2022,Number of dogs reared
+h22b1_23,other_animals_count_2022,Number of other animals reared
+h22b2_01,where_local_cows_2022,District where the local breed cows are reared
+h22b2_02,where_exotic_cows_2022,District where the exotic breed cows are reared
+h22b2_03,where_cross_cows_2022,District where the cross breed cows are reared
+h22b2_04,where_local_goats_2022,District where the local goats are reared
+h22b2_05,where_exotic_goats_2022,District where the exotic goats are reared
+h22b2_06,where_cross_goats_2022,District where the cross goats are reared
+h22b2_07,where_local_sheep_2022,District where the local sheep are reared
+h22b2_08,where_exotic_sheep_2022,District where the exotic sheep are reared
+h22b2_09,where_local_pigs_2022,District where the local pigs are reared
+h22b2_10,where_exotic_pigs_2022,District where the exotic pigs are reared
+h22b2_11,where_cross_pigs_2022,District where the cross pigs are reared
+h22b2_12,where_rabbits_2022,District where the rabbits are reared
+h22b2_13,where_broilers_2022,District where the broilers are reared
+h22b2_14,where_layers_2022,District where the layers are reared
+h22b2_15,where_dual_chicken_2022,District where the dual-purpose chicken are reared
+h22b2_16,where_local_chicken_2022,District where the local chicken are reared
+h22b2_17,where_ducks_2022,District where the ducks are reared
+h22b2_18,where_turkeys_2022,District where the turkeys are reared
+h22b2_19,where_other_poultry_2022,District where the other poultry are reared
+h22b2_20,where_camels_2022,District where the camels are reared
+h22b2_21,where_beehives_2022,District where the beehives are reared
+h22b2_22,where_dogs_2022,District where the dogs are reared
+h22b2_23,where_other_animals_2022,District where the other animals are reared
+h23,grew_crops_2022,Household grew crops in the last 12 months
+h23_v2,bicycles_2012,Number of bicycles
+h23a,farming_place_2022,Place where the agricultural activities are done
+h24,vehicles_2012,Number of vehicles
+h25,motorcycles_2012,Number of motorcycles
+h26,tea_trees_2022,Number of tea trees
+h26_v2,internet_access_2012,Internet access
+h27,coffee_trees_2022,Number of coffee trees
+h27_v2,internet_place_2012,Where the household accesses the internet
+h28a,fruit_trees_2022,Any fruit tree
+h28a_v2,local_cows_2012,Cattle: local breed cows
+h28b,cross_cows_2012,Cattle: cross breed cows
+h28c,exotic_cows_2012,Cattle: exotic breed cows
+h29,goats_2012,Number of goats
+h30,sheep_2012,Number of sheep
+h31,pigs_2012,Number of pigs
+h32,rabbits_2012,Number of rabbits
+h33,poultry_2012,Number of poultry
+h34,other_animals_2012,Number of other animals
+h35,land_2012,Land ownership or use
+inclusionprobability_1_,selection_prob_2012,"Inclusion (selection) probability, stage 1"
+l02,district_shipped_2012,District as shipped
+l03,sector_shipped_2012,Sector as shipped
+l07,area_residence_2012,"Area of residence: urban, rural, peri-urban"
+m1,death_in_household_2012,Death in the household
+p00_mean,p00_mean_artefact_2002,NISR artefact: mean of P00 in the household
+p00_nu,p00_count_artefact_2002,NISR artefact: count of P00 in the household
+p02,relation_head_2002_2012,Relationship to the household head
+p02_hh,head_flag_2002,Flag: household head
+p02_v2,relation_head_2022,"Relationship to the household head, 14 codes"
+p03,residence_status_2002,"Residence status: present or absent resident, visitor, collective"
+p04m,birth_month_2012,Month of birth
+p04y,birth_year_2012,Year of birth
+p05a,birth_month_2002,Month of birth
+p05b,birth_year_2002,Year of birth
+p05x,birth_day_2002,Day of birth
+p06,marital_status_2022,Marital status
+p061,age_copy_p061_2002,"Age, NISR derived copy 1"
+p062,age_copy_p062_2002,"Age, NISR derived copy 2"
+p063,age_copy_p063_2002,"Age, NISR derived copy 3"
+p0631,age_copy_p0631_2002,"Age, NISR derived copy 3b"
+p06_v2,residence_status_2012,Situation of residence
+p07,birth_place_2012,Place of birth
+p07_v2,nationality_2002,Nationality
+p07a,residence_status_2022,Residence status: usual resident or visitor
+p07b,slept_here_2022,Resident member slept in the household last night
+p08,nationality_2012,Nationality
+p08_v2,birth_place_2002,"Place of birth, district or country"
+p08c,age_first_marriage_2022,Age at first marriage
+p09,previous_residence_2012,Place of previous residence
+p09_v2,residence_duration_2002,"Duration of residence in this locality, years"
+p09a,born_in_rwanda_2022,Born in Rwanda or abroad
+p09b,birth_district_2022,District of birth
+p09c,birth_country_2022,"Country of birth, country code"
+p10,residence_duration_2012,Duration of residence
+p10_v2,previous_residence_2002,"Place of previous residence, district or country"
+p10a,residence_duration_2022,Duration of residence
+p10b,previous_in_rwanda_2022,Previous residence in Rwanda or abroad
+p11,religion_2012,Religion
+p11_v2,languages_spoken_2002,Languages spoken
+p11a,previous_district_2022,District of previous residence
+p11b,previous_country_2022,"Country of previous residence, country code"
+p12,religion_2002,Religious affiliation
+p12b,nationality_country_2022,"Nationality, country code"
+p12c1,disability_cause_1_2012,"Cause of disability, first"
+p12c2,disability_cause_2_2012,"Cause of disability, second"
+p12c3,disability_cause_3_2012,"Cause of disability, third"
+p12c4,disability_cause_4_2012,"Cause of disability, fourth"
+p12c5,disability_cause_5_2012,"Cause of disability, fifth"
+p12c6,disability_cause_6_2012,"Cause of disability, sixth"
+p12d1,disability_type_1_2012,"Type of major disability, first"
+p12d2,disability_type_2_2012,"Type of major disability, second"
+p12d3,disability_type_3_2012,"Type of major disability, third"
+p12d4,disability_type_4_2012,"Type of major disability, fourth"
+p12d5,disability_type_5_2012,"Type of major disability, fifth"
+p12d6,disability_type_6_2012,"Type of major disability, sixth"
+p13,religion_2022,Religious affiliation
+p13_v2,insurance_type_2012,Type of insurance
+p13_v3,handicap_type_2002,Type of major handicap
+p14,medical_insurance_2022,Medical insurance
+p14_v2,handicap_cause_2002,Cause of handicap
+p14a,mother_alive_2012,Mother alive
+p14b,mother_in_household_2012,Natural mother lives in the household
+p14c,father_alive_2012,Father alive
+p14d,father_in_household_2012,Natural father lives in the household
+p15,birth_registered_2012,Birth registration
+p15_v2,parents_survival_2002,Survival of parents
+p15b,difficulty_seeing_2022,Level of difficulty seeing
+p16,languages_literate_2012,Languages read and written
+p16_v2,ever_attended_school_2002,"School attendance, ever attended"
+p16b,difficulty_hearing_2022,Level of difficulty hearing
+p17,school_attendance_2012,School attendance
+p171,education_grouped_2002,"Educational level attained, NISR grouped"
+p17_v2,highest_class_2002,Highest class successfully completed
+p17b,difficulty_walking_2022,Level of difficulty walking
+p18,specialisation_2002,"Area of specialisation, secondary or higher"
+p18a,education_level_2012,Educational level
+p18b,difficulty_communic_2022,Level of difficulty communicating
+p18b_v2,years_completed_2012,Years completed
+p19,highest_certificate_2012,Highest certificate or diploma
+p19_v2,highest_certificate_2002,Highest certificate or diploma obtained
+p19b,difficulty_remember_2022,Level of difficulty remembering or concentrating
+p20,worked_2012,Worked (activity question)
+p20_v2,literacy_2002,Literacy
+p20b,difficulty_self_care_2022,Level of difficulty with self-care
+p21,reason_not_working_2012,Why the person did not work
+p211,activity_grouped_2002,"Activity status, NISR grouped"
+p21_v2,activity_status_2002,Economic activity situation in the reference month
+p21a,short_stature_2022,Has a problem of short stature
+p22,work_done_2012,Type of work done
+p22_v2,occupation_isco88_2002,"Main occupation, ISCO-88 minor group"
+p22a,albinism_2022,Has a disability with albinism
+p23,ready_to_work_2012,Ready to work
+p23_v2,employment_status_2002,Status in employment
+p23a,mother_alive_2022,Biological mother alive
+p23b,mother_in_household_2022,Biological mother lives in this household
+p23bb,mother_line_2022,Line number of the biological mother
+p23c,father_alive_2022,Biological father alive
+p23d,father_in_household_2022,Biological father lives in this household
+p23dd,father_line_2022,Line number of the biological father
+p24,civil_registered_2022,Registered in the civil registration books
+p241,industry_grouped_2002,"Branch of economic activity, NISR grouped"
+p24_v2,seeking_work_2012,Seeking work
+p24_v3,industry_isic3_2002,"Branch of economic activity, ISIC Rev. 3 group"
+p25,occupation_isco08_2012,"Main occupation, ISCO-08 four-digit"
+p25_v2,inst_sector_2002,Institutional sector of employment
+p26,employment_status_2012,Status in employment
+p26_v2,marital_status_2002,Marital status
+p27,industry_isic4_2012,"Branch of economic activity, ISIC Rev. 4 class"
+p27a,births_boys_2002,"Live births ever, boys"
+p27b,births_girls_2002,"Live births ever, girls"
+p28,inst_sector_2012,Institutional sector of employment
+p28a,children_alive_boys_2002,"Children surviving, boys"
+p28b,children_alive_girls_2002,"Children surviving, girls"
+p29,school_attendance_2022,Ever or currently attending school
+p29_v2,marital_status_2012,Marital status
+p29a,births_12m_boys_2002,"Births in the last 12 months, boys"
+p29b,births_12m_girls_2002,"Births in the last 12 months, girls"
+p30,spouses_2012,Number of spouses
+p30a,education_level_2022,Highest level of education
+p30a_v2,surviving_12m_boys_2002,Surviving boys among the births of the last 12 months
+p30b,years_completed_2022,Years of school completed at that level
+p30b_v2,surviving_12m_girls_2002,Surviving girls among the births of the last 12 months
+p31,highest_certificate_2022,Highest certificate or degree
+p31_v2,spouse_rank_2012,Current rank as spouse
+p32,literacy_languages_2022,"Reads and writes with understanding, languages"
+p32_v2,age_first_marriage_2012,Age at first marriage
+p33,adult_literacy_2022,Ever attended an informal adult literacy programme
+p33f,births_girls_2012,Females ever born
+p33m,births_boys_2012,Males ever born
+p34,internet_use_2022,Internet use
+p34f,children_alive_girls_2012,Females alive
+p34m,children_alive_boys_2012,Males alive
+p35,internet_place_2022,Where the internet is accessed
+p35f,births_12m_girls_2012,Females born in the last 12 months
+p35m,births_12m_boys_2012,Males born in the last 12 months
+p36c,mobile_phone_type_2022,Type of mobile phone
+p36f,surviving_12m_girls_2012,Females born in the last 12 months still alive
+p36m,surviving_12m_boys_2012,Males born in the last 12 months still alive
+p46,inst_sector_2022,Institutional sector
+p47a,isic_section_2022,"Branch of economic activity, ISIC section"
+p48a,isco_major_group_2022,"Main occupation, ISCO major group"
+p49,employment_status_2022,Status in employment
+p50a,ever_given_birth_2022,Ever given birth
+p50b_boys,births_boys_2022,"Live births ever, boys"
+p50b_girls,births_girls_2022,"Live births ever, girls"
+p50c_boys,children_alive_boys_2022,"Children still alive, boys"
+p50c_girls,children_alive_girls_2022,"Children still alive, girls"
+p51a,birth_last_12m_2022,Gave birth in the last 12 months
+p51b_boys,births_12m_boys_2022,"Live births in the last 12 months, boys"
+p51b_girls,births_12m_girls_2022,"Live births in the last 12 months, girls"
+p51c_boys,surviving_12m_boys_2022,"Births of the last 12 months still alive, boys"
+p51c_girls,surviving_12m_girls_2022,"Births of the last 12 months still alive, girls"
+personnes_handic,handicap_grouped_2002,"Persons with a handicap, NISR grouped"
+rl07,urban_rural_nisr_2012,"Urban or rural, NISR two-way recode of L07"
+rp04y,birth_year_copy_2012,"Year of birth, NISR copy of P04Y"
+rp08,nationality_group_2012,"Nationality group, NISR recode of P08"
+rp12,disability_any_2012,"Any disability, NISR recode of P12"
+rp142,parental_coresidence_2012,"Parental co-residence of residents under 18, NISR recode"
+rp2024,activity_status_2012,"Activity status of residents aged 5 and over, NISR recode"
+rp2124,reason_inactive_2012,"Reason for not working, inactive only, NISR recode"
+rp25,isco_major_group_2012,"Occupation group, ISCO major group"
+rp27,isic_section_2012,"Industry group, ISIC section"
+sector_code_file,sector_code_shipped_2002,Sector code as shipped before the name-based correction

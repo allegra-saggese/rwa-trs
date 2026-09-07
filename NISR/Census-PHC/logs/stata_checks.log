@@ -5,11 +5,15 @@
 
 . set more off
 
-. use year wt sex sector hhid using "/Users/matteo/Library/CloudStorage/Dropbox
-> /1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Census-PHC/3_Fi
-> nal/Census_pooled_person.dta", clear
+. use census_year census_weight census_sex census_sector census_household_id us
+> ing "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - T
+> RS/data/Publicly-Available-NISR/Census-PHC/3_Final/Census_pooled_person.dta",
+>  clear
 (Rwanda Census 2002/2012/2022 pooled person file (public-use samples, repeated 
 > cr)
+
+. rename (census_year census_weight census_sex census_sector census_household_i
+> d) (year wt sex sector hhid)
 
 . gen byte male = sex == 1
 
@@ -26,10 +30,14 @@
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Census-PHC/logs/stata_checks.c
 > sv saved
 
-. use year wt hhsize hhid using "/Users/matteo/Library/CloudStorage/Dropbox/1-O
-> ngoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Census-PHC/3_Final/
-> Census_pooled_household.dta", clear
+. use census_year census_weight census_household_size census_household_id using
+>  "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/
+> data/Publicly-Available-NISR/Census-PHC/3_Final/Census_pooled_household.dta",
+>  clear
 (Rwanda Census 2002/2012/2022 pooled household file (public-use samples))
+
+. rename (census_year census_weight census_household_size census_household_id) 
+> (year wt hhsize hhid)
 
 . collapse (count) n_hh=hhid (sum) hhsize_sum=hhsize sum_wt_hh=wt, by(year)
 

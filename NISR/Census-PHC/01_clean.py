@@ -10,10 +10,11 @@ labelled, ISCO-08 titles on P25), record each variable's universe, destring, dow
 import difflib, sys
 import numpy as np, pandas as pd
 from census_helpers import (paths, db_root, get_logger, Checks, read_any, write_dta, lower_names,
-                            destring, downcast, save_json, LOGS)
+                            destring, downcast, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("01_clean")
 P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed)
 YEARS = [int(a) for a in sys.argv[1:]] or [2002, 2012, 2022]
 PUBLISHED_POP = {2002: 8_128_553, 2012: 10_515_973, 2022: 13_246_394}   # NISR published census totals
 
@@ -363,9 +364,10 @@ for y in YEARS:
     ck.done()
 
     out = P["inter"] / f"Census_{y}_person_clean.dta"
-    write_dta(df, out, vl, vv, f"Rwanda Census {y} person file (public-use sample, cleaned)", log)
+    out_df, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{y}", log)      # written under the clean names; native kept in the meta file
+    write_dta(out_df, out, vl_out, vv_out, f"Rwanda Census {y} person file (public-use sample, cleaned)", log)
     meta = {"n": len(df), "vars": list(df.columns), "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns},
-            "source": srcmap, "dtypes": {c: str(df[c].dtype) for c in df.columns}}
+            "source": srcmap, "dtypes": {c: str(df[c].dtype) for c in df.columns}, "clean_names": clean_names}
     if vl_original: meta["var_labels_original"] = vl_original
     if y == 2002: meta["value_labels_original"] = {k: v for k, v in vv_original.items() if k in df.columns}
     meta["universe"] = universe_for(y, df.columns)
