@@ -65,6 +65,17 @@ across units or aggregated -- household summaries are a groupby on the appended 
 whose rows all carry the key block. Total footprint across the seven datasets is roughly 30 GB
 (the EICV food module alone is 10.8m rows, 5.8 GB).
 
+Analysis datasets (Matteo, 2026-09-07). Anything built FOR an analysis -- a regression sample, a
+descriptive table's input, a collapsed panel -- is an output of the analysis, not of the pipeline,
+and never goes in 3_Final/ or 4_Harmonized/. It goes in one of two places:
+  <dataset>/5_Analysis/     a dataset built from that survey alone (created per dataset when first
+                            needed; Census-PHC/5_Analysis exists)
+  Analysis/                 (directly under Publicly-Available-NISR/) a dataset that combines more
+                            than one source, whether two NISR surveys or a NISR survey with WBES,
+                            DHS, RDB or the geo-data
+The pipelines never write to either folder: 01-04 stop at 3_Final and the harmonisation step at
+4_Harmonized, so a rerun can never overwrite an analysis file.
+
 --------------------------------------------------------------------------------
 LAYOUT OF EVERY DATASET FOLDER (code only)
 --------------------------------------------------------------------------------
