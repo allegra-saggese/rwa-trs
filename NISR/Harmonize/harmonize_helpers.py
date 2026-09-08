@@ -177,3 +177,36 @@ def flat(spec: dict) -> dict:
 
 def rule_text(spec: dict) -> str:
     return "; ".join(f"{','.join(str(s) for s in ss)}->{t}" for t, ss in spec.items())
+
+# ------------------------------------------------------------ clean names (the datasets' variable_names.csv)
+# Every dataset writes 3_Final under clean names (<ds>_<english words>). Harmonize reads those files back under
+# NISR's native names -- the concept rules and merge_alignment.json are keyed on the native names -- and writes the
+# harmonised copy under the clean names again, with the shared concepts named <ds>_<stem> (the prefix says which
+# dataset the row comes from, never that the file is harmonised).
+import csv as _csv
+H_STEM = {"h_marital": "marital_status", "h_relation": "relationship_to_head", "h_attend": "school_attendance",
+          "h_educ": "education_level", "h_literacy": "literacy", "h_lfstatus": "labour_status", "h_employed": "employed",
+          "h_lfs_def": "labour_definition", "h_empstat": "employment_status", "h_isic1": "industry_isic",
+          "h_isic1_approx": "industry_isic_approx", "h_isco1": "occupation_isco", "h_isco1_approx": "occupation_isco_approx",
+          "h_head_sex": "head_sex", "h_head_age": "head_age", "h_head_marital": "head_marital_status",
+          "h_head_educ": "head_education_level", "h_head_literacy": "head_literacy",
+          "h_hhkey": "household_key", "h_pkey": "person_key",
+          "h_estkey": "establishment_key", "h_plotkey": "plot_key"}
+
+def h_name(tag: str, h: str) -> str:
+    """the harmonised concept `h` as it is named in `tag`'s files: lfs_labour_status, census_labour_status ..."""
+    return f"{tag.lower()}_{H_STEM[h]}"
+
+_NAME_TABLES: dict[str, list] = {}
+def _rows(tag: str) -> list:
+    if tag not in _NAME_TABLES:
+        f = ds_paths(tag)["repo"] / "variable_names.csv"
+        with open(f, newline="", encoding="utf-8") as fh: _NAME_TABLES[tag] = list(_csv.DictReader(fh))
+    return _NAME_TABLES[tag]
+
+def name_maps(tag: str, fname: str) -> tuple[dict, dict]:
+    """(native -> clean, clean -> native) for one 3_Final file of `tag`, from its committed variable_names.csv"""
+    rows = [r for r in _rows(tag) if r["scope"] == f"pooled:{fname}"]
+    if not rows: sys.exit(f"{tag}: variable_names.csv has no scope 'pooled:{fname}' -- run that dataset's `python master.py names` first")
+    clean_of = {r["native"]: r["clean_name"] for r in rows}
+    return clean_of, {v: k for k, v in clean_of.items()}

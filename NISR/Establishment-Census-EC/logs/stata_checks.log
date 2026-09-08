@@ -5,10 +5,14 @@
 
 . set more off
 
-. use year wt dist urban estid total_workers using "/Users/matteo/Library/Cloud
-> Storage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/
-> Establishment-Census-EC/3_Final/EC_pooled_establishment.dta", clear
+. use ec_year ec_weight ec_district ec_urban ec_establishment_id ec_total_worke
+> rs using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwand
+> a - TRS/data/Publicly-Available-NISR/Establishment-Census-EC/3_Final/EC_poole
+> d_establishment.dta", clear
 (Rwanda Establishment Census 2011-2023 pooled establishment file)
+
+. rename (ec_year ec_weight ec_district ec_urban ec_establishment_id ec_total_w
+> orkers) (year wt dist urban estid total_workers)
 
 . gen long one = 1
 

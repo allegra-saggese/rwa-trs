@@ -1,0 +1,246 @@
+native,clean_stem,clean_label
+a29b,pays_tpr_paye_2014,pays TPR / PAYE
+ao2,owner_age_group_derived_2014,"Age group of the owner (14-35, 36 and over), NISR derived"
+districts_names,district_code_shipped_2011,district code as shipped by NISR (101-507 scheme)
+est_size2,size_class_derived_2011,"Size class by number of workers, NISR derived"
+female_worker,female_workers,Number of female workers
+fi,formal_informal_derived,"Formal or informal establishment, NISR derived"
+fi_1,formality_three_criteria_2011,"Formal or informal by registration, accounts and size, NISR derived"
+fi_2,formality_two_criteria_2011,"Formal or informal by registration and accounts, NISR derived"
+foregner_workers,foreign_workers,Number of non-Rwandan workers
+foreign_female,foreign_female_workers,Number of non-Rwandan female workers
+foreign_male,foreign_male_workers,Number of non-Rwandan male workers
+id10,manager_sex_2011,sex of the manager
+id2,district_sequence_2011,district sequence number within the province as shipped
+id3,sector_sequence_2011,sector sequence number within the district as shipped
+id6,serial_in_village_2011,serial number of the establishment within the village
+inclusionprobability_1_,inclusion_probability_2014,inclusion probability of the establishment in the sample
+isic1_comp,isic_section_comparable_2011,"ISIC section recoded for comparison with 2014, NISR derived"
+isic1q6b,main_activity_section_2014,"Main economic activity, ISIC section (one digit)"
+isic1q7b,second_activity_section_2014,"Secondary economic activity, ISIC section (one digit)"
+isic_fl_ent,isic_section_2011,"ISIC section (one digit), NISR variable isic_fl_ent"
+isic_level1,main_activity_section_2011,"Main activity ISIC section, NISR variable isic_level1"
+male_worker,male_workers,Number of male workers
+new_sector,inst_sector_derived_2014,"Institutional sector, NISR derived"
+no_detail_employ,employees_without_details,Employees without details
+owner,owner_sex_derived_2017,"Sex of the owner, NISR derived variable named owner"
+owner_age,owner_age_derived,"Age of the owner, NISR derived"
+owner_age_v2,owner_age,"Age of the owner, questionnaire item Q14"
+owner_gender,owner_sex_derived_2011,"Sex of the owner, NISR derived"
+owner_sex,owner_sex_derived,"Sex of the owner, NISR derived"
+psf,member_psf_2011,member of the Private Sector Federation (PSF)
+q10,legal_status,Legal status
+q10_v2,mixed_sector_category_2014,Category of mixed-sector establishment
+q11,management_separated,Management completely separated from the household
+q11_v2,owner_nationality_2014,Nationality of the owners
+q12,owner_is_manager,The owner is also the manager
+q12_v2,legal_status_2014,Legal status
+q13,owner_sex,Sex of the owner
+q13_v2,management_separated_2014,Management completely separated from the household
+q14,owner_age,Age of the owner
+q14_v2,owner_is_manager_2014,The owner is also the manager
+q15,owner_sex_2014,Sex of the owner
+q15_1,regular_accounts,Keeps regular accounts
+q15_2,books_used,Type of books used
+q15_2a,books_ledgers,Books used: ledgers
+q15_2b,books_journals,Books used: journals
+q15_2c,books_balance_sheet,Books used: balance sheet
+q15_2d,books_income_statement,Books used: income statement (profit and loss)
+q15_2e,books_invoices,Books used: invoices
+q16,establishment_type,"Establishment type: head office, single unit, branch"
+q16_v2,owner_age_2014,Age of the owner
+q17,regular_accounts_2014,Keeps regular accounting
+q17_2,branches_rwanda,Number of branches in Rwanda including the head office
+q17_3,persons_all_branches,"Persons working in all branches in Rwanda, head office included"
+q18,establishment_type_2014,"Establishment type: head office, single unit, branch"
+q19,branches_rwanda_2014,Number of branches in Rwanda including the head office
+q2,working_place,Working place of the establishment
+q20,annual_turnover,"Annual total turnover in the previous year, bracket"
+q20_v3,persons_all_branches_2014,"Persons working in all branches in Rwanda, head office included"
+q21,capital_employed,"Current employed capital, bracket in Rwandan francs"
+q21a1,rwandan_workers_2014,"Rwandan workers, total"
+q21a2,rwandan_male_workers_2014,"Rwandan workers, male"
+q21a3,rwandan_female_workers_2014,"Rwandan workers, female"
+q21b1,foreign_workers_2014,"Non-Rwandan workers, total"
+q21b2,foreign_male_workers_2014,"Non-Rwandan workers, male"
+q21b3,foreign_female_workers_2014,"Non-Rwandan workers, female"
+q21c1,total_workers_2014,Total workers
+q21c2,male_workers_2014,"Total workers, male"
+q21c3,female_workers_2014,"Total workers, female"
+q22,registered_any_institution,Registered with any institution
+q22_other,registered_other_text,"Other registration institution, text"
+q22a,registered_sector,Registered with the sector
+q22a1,working_owners_total_2014,"Working owners, total"
+q22a2,working_owners_male_2014,"Working owners, male"
+q22a3,working_owners_female_2014,"Working owners, female"
+q22b,registered_district,Registered with the district
+q22b1,unpaid_workers_total_2014,"Unpaid workers, total"
+q22b2,unpaid_workers_male_2014,"Unpaid workers, male"
+q22b3,unpaid_workers_female_2014,"Unpaid workers, female"
+q22c,registered_rca,Registered with the Rwanda Cooperative Agency (RCA)
+q22c1,apprentices_total_2014,"Apprentices, total"
+q22c2,apprentices_male_2014,"Apprentices, male"
+q22c3,apprentices_female_2014,"Apprentices, female"
+q22d,registered_psf,Registered with the Private Sector Federation (PSF)
+q22d1,contract_under_1m_total_2014,"Workers on contracts under 1 month, total"
+q22d2,contract_under_1m_male_2014,"Workers on contracts under 1 month, male"
+q22d3,contract_under_1m_female_2014,"Workers on contracts under 1 month, female"
+q22e,registered_rgb,Registered with the Rwanda Governance Board (RGB)
+q22e1,contract_1_6m_total_2014,"Workers on contracts of 1 to 6 months, total"
+q22e2,contract_1_6m_male_2014,"Workers on contracts of 1 to 6 months, male"
+q22e3,contract_1_6m_female_2014,"Workers on contracts of 1 to 6 months, female"
+q22f,registered_rssb,Registered with the Social Security Board (RSSB)
+q22f1,contract_over_6m_total_2014,"Workers on contracts above 6 months, total"
+q22f2,contract_over_6m_male_2014,"Workers on contracts above 6 months, male"
+q22f3,contract_over_6m_female_2014,"Workers on contracts above 6 months, female"
+q22g,registered_rdb,Registered with the Rwanda Development Board (RDB)
+q22g1,open_contract_total_2014,"Workers on open-ended contracts, total"
+q22g2,open_contract_male_2014,"Workers on open-ended contracts, male"
+q22g3,open_contract_female_2014,"Workers on open-ended contracts, female"
+q22h,registered_rra,Registered with the Rwanda Revenue Authority (RRA)
+q22h1,all_workers_total_2014,"All workers, total"
+q22h2,all_workers_male_2014,"All workers, male"
+q22h3,all_workers_female_2014,"All workers, female"
+q22i,registered_immigration,Registered with the Directorate of Immigration and Emigration
+q22j,registered_other,Registered with another institution
+q22z,registered_none,No registration
+q23,annual_turnover_2014,"Annual total turnover in 2013, bracket in Rwandan francs"
+q23_1,trades_goods_abroad,Traded goods with a foreign country in the last year
+q23_2,trades_services_abroad,Traded services with a foreign country in the last year
+q24,type_taxes_paid,Type of taxes paid
+q24_v2,capital_employed_2014,"Employed capital, bracket in Rwandan francs"
+q24a,pays_vat,Pays value added tax (VAT)
+q24b,pays_tpr_paye,Pays TPR / PAYE
+q24c,pays_income_tax,Pays income tax
+q24d,pays_excise_duty,Pays excise duties
+q24e,pays_import_duty,Pays import duties
+q24f,pays_trading_license,Pays the trading license tax
+q24g,pays_rental_income_tax,Pays rental income tax
+q24h,pays_flat_tax,Pays the flat tax
+q24z,pays_no_tax,Pays no tax
+q25,has_tin,Has a taxpayer identification number (TIN)
+q25_v2,annual_income_2014,"Annual income in 2013, bracket in Rwandan francs"
+q26,start_contribution_2014,"Contribution to start the establishment, bracket in Rwandan francs"
+q27a,registered_sector_2014,Registered with the sector
+q27b,registered_district_2014,Registered with the district
+q27c,registered_rca_2014,Registered with the Rwanda Cooperative Agency (RCA)
+q27d,registered_psf_2014,Registered with the Private Sector Federation (PSF)
+q27e,registered_rgb_2014,Registered with the Rwanda Governance Board (RGB)
+q27f,registered_rssb_2014,Registered with the Social Security Fund (RSSB)
+q27g,registered_rdb_2014,Registered with the Rwanda Development Board (RDB)
+q27h,registered_rra_2014,Registered with the Rwanda Revenue Authority (RRA)
+q27ia,registered_other_2014,Registered with other institutions
+q28,trades_abroad_2014,Buys or sells goods or services abroad
+q29a,pays_vat_2014,Pays value added tax (VAT)
+q29c,pays_income_tax_2014,Pays income tax
+q29d,pays_excise_duty_2014,Pays excise duties
+q29e,pays_import_duty_2014,Pays import duties
+q29f,pays_trading_license_2014,Pays the trading license tax
+q29g,pays_rental_income_tax_2014,Pays rental income tax
+q29h,pays_flat_tax_2014,Pays the flat tax
+q3,working_status,"Working status (operating, closed temporarily or permanently)"
+q30,has_tin_2014,Has a taxpayer identification number (TIN)
+q4_2,manager_sex,Sex of the manager
+q4_3,manager_age,Age of the manager
+q4b,manager_sex_2014,Sex of the manager
+q4c,manager_age_2014,Age of the manager
+q5_1,start_month,Month of starting operation in Rwanda
+q5_2,start_year,Year of starting operation in Rwanda
+q5a,start_month_2014,Month of starting operation
+q5b,start_year_2014,Year of starting operation
+q6_1,main_activity_section,"Main economic activity, ISIC section (one digit)"
+q7,institutional_sector,Institutional sector
+q8,mixed_sector_category,Category of mixed-sector establishment
+q8_v2,institutional_sector_2014,Institutional sector
+q9,owner_nationality,Nationality of the owner
+q9_v3,private_sector_category_2014,Category of private-sector establishment
+rwandan_female,rwandan_female_workers,Number of Rwandan female workers
+rwandan_male,rwandan_male_workers,Number of Rwandan male workers
+rwandan_workers,rwandan_workers,Number of Rwandan workers
+s001,province_name_2011,Name of the province as shipped
+s002,district_name_2011,Name of the district as shipped
+s003,sector_name_2011,Name of the sector as shipped
+s03,working_place_2011,Working place of the establishment
+s04,working_status_2011,"Working status (operating, closed temporarily or permanently)"
+s05,institutional_sector_2011,Institutional sector
+s06,ownership_2011,Ownership of the establishment
+s07,start_year_2011,Year of starting operation
+s08b,main_activity_isic_2011,"Main economic activity, ISIC code (three to four digits)"
+s09,legal_status_2011,Legal status
+s10a,registered_rssb_2011,registered with the Social Security Fund (RSSB)
+s10b,registered_rra_2011,registered with the Rwanda Revenue Authority (RRA)
+s10c,registered_rdb_2011,registered with the Rwanda Development Board (RDB)
+s10d,registered_district_2011,registered with the district
+s10e,registered_sector_2011,registered with the sector
+s10f,registered_rca_2011,registered with the Rwanda Cooperative Agency (RCA)
+s10g,registered_other_gov_2011,registered with other government agencies
+s11a,pays_vat_2011,pays value added tax (VAT)
+s11b,pays_tpr_2011,pays TPR (pay-as-you-earn income tax on staff)
+s11c,pays_income_tax_2011,pays income tax
+s12,regular_accounts_2011,keeps regular operational accounts
+s13,capital_employed_2011,Capital employed in Rwandan francs
+s14a,staff_noqual_rwandan_perm_m,"Staff, no qualification: Rwandan, permanent contract, male"
+s14aa,staff_primary_rwandan_temp_m,"Staff, primary education: Rwandan, temporary contract, male"
+s14ab,staff_primary_rwandan_temp_f,"Staff, primary education: Rwandan, temporary contract, female"
+s14ac,staff_primary_foreign_temp_m,"Staff, primary education: non-Rwandan, temporary contract, male"
+s14ad,staff_primary_foreign_temp_f,"Staff, primary education: non-Rwandan, temporary contract, female"
+s14b,staff_noqual_rwandan_perm_f,"Staff, no qualification: Rwandan, permanent contract, female"
+s14ba,staff_second_rwandan_temp_m,"Staff, secondary education: Rwandan, temporary contract, male"
+s14bb,staff_second_rwandan_temp_f,"Staff, secondary education: Rwandan, temporary contract, female"
+s14bc,staff_second_foreign_temp_m,"Staff, secondary education: non-Rwandan, temporary contract, male"
+s14bd,staff_second_foreign_temp_f,"Staff, secondary education: non-Rwandan, temporary contract, female"
+s14c,staff_noqual_rwandan_total_m,"Staff, no qualification: Rwandan, all contracts, male"
+s14ca,staff_univ_rwandan_temp_m,"Staff, university education: Rwandan, temporary contract, male"
+s14cb,staff_univ_rwandan_temp_f,"Staff, university education: Rwandan, temporary contract, female"
+s14cc,staff_univ_foreign_temp_m,"Staff, university education: non-Rwandan, temporary contract, male"
+s14cd,staff_univ_foreign_temp_f,"Staff, university education: non-Rwandan, temporary contract, female"
+s14d,staff_noqual_rwandan_total_f,"Staff, no qualification: Rwandan, all contracts, female"
+s14da,staff_noqual_rwandan_temp_m,"Staff, no qualification: Rwandan, temporary contract, male"
+s14db,staff_noqual_rwandan_temp_f,"Staff, no qualification: Rwandan, temporary contract, female"
+s14dc,staff_noqual_foreign_temp_m,"Staff, no qualification: non-Rwandan, temporary contract, male"
+s14dd,staff_noqual_foreign_temp_f,"Staff, no qualification: non-Rwandan, temporary contract, female"
+s14e,staff_noqual_foreign_perm_m,"Staff, no qualification: non-Rwandan, permanent contract, male"
+s14f,staff_noqual_foreign_perm_f,"Staff, no qualification: non-Rwandan, permanent contract, female"
+s14g,staff_noqual_foreign_total_m,"Staff, no qualification: non-Rwandan, all contracts, male"
+s14h,staff_noqual_foreign_total_f,"Staff, no qualification: non-Rwandan, all contracts, female"
+s14m,staff_primary_rwandan_perm_m,"Staff, primary education: Rwandan, permanent contract, male"
+s14n,staff_primary_rwandan_perm_f,"Staff, primary education: Rwandan, permanent contract, female"
+s14o,staff_primary_rwandan_total_m,"Staff, primary education: Rwandan, all contracts, male"
+s14oa,staff_second_rwandan_total_m,"Staff, secondary education: Rwandan, all contracts, male"
+s14ob,staff_univ_rwandan_total_m,"Staff, university education: Rwandan, all contracts, male"
+s14p,staff_primary_rwandan_total_f,"Staff, primary education: Rwandan, all contracts, female"
+s14pa,staff_second_rwandan_total_f,"Staff, secondary education: Rwandan, all contracts, female"
+s14pb,staff_univ_rwandan_total_f,"Staff, university education: Rwandan, all contracts, female"
+s14q,staff_primary_foreign_perm_m,"Staff, primary education: non-Rwandan, permanent contract, male"
+s14qa,staff_second_foreign_perm_m,"Staff, secondary education: non-Rwandan, permanent contract, male"
+s14qb,staff_univ_foreign_perm_m,"Staff, university education: non-Rwandan, permanent contract, male"
+s14r,staff_primary_foreign_perm_f,"Staff, primary education: non-Rwandan, permanent contract, female"
+s14ra,staff_second_foreign_perm_f,"Staff, secondary education: non-Rwandan, permanent contract, female"
+s14rb,staff_univ_foreign_perm_f,"Staff, university education: non-Rwandan, permanent contract, female"
+s14s,staff_primary_foreign_total_m,"Staff, primary education: non-Rwandan, all contracts, male"
+s14sa,staff_second_foreign_total_m,"Staff, secondary education: non-Rwandan, all contracts, male"
+s14sb,staff_univ_foreign_total_m,"Staff, university education: non-Rwandan, all contracts, male"
+s14t,staff_primary_foreign_total_f,"Staff, primary education: non-Rwandan, all contracts, female"
+s14ta,staff_second_foreign_total_f,"Staff, secondary education: non-Rwandan, all contracts, female"
+s14tb,staff_univ_foreign_total_f,"Staff, university education: non-Rwandan, all contracts, female"
+s14y,staff_second_rwandan_perm_m,"Staff, secondary education: Rwandan, permanent contract, male"
+s14ya,staff_univ_rwandan_perm_m,"Staff, university education: Rwandan, permanent contract, male"
+s14z,staff_second_rwandan_perm_f,"Staff, secondary education: Rwandan, permanent contract, female"
+s14za,staff_univ_rwandan_perm_f,"Staff, university education: Rwandan, permanent contract, female"
+s15,establishment_type_2011,"establishment type (head office, single unit, branch)"
+s163,main_activity_isic4_2011,"Main economic activity, ISIC Rev. 4 four-digit code"
+s163b,persons_all_branches_2011,"Persons working in all branches in Rwanda, head office included"
+s16a,branches_rwanda_2011,number of branches in Rwanda including the head office
+s91,owner_sex_2011,sex of the owner
+s92,owner_is_manager_2011,the owner is also the manager
+s_sector,inst_sector_derived_2011,"Institutional sector, short NISR version"
+sampleweightcumulative_1_,sampling_weight_2014,NISR sampling weight
+size,size_class_derived_2014,"Size class by number of workers, NISR derived"
+size2,size_class_derived,"Size class by number of workers, NISR derived"
+so2,owner_sex_derived_2014,"Sex of the owner, NISR derived"
+start_y,start_year_group,"Year the establishment started operating, grouped"
+time_period,start_period_derived_2014,Period of start of operations in three-year intervals
+total_emp2,total_workers_2011,total number of workers (999999 = not operating or refusal)
+total_workers,total_workers,Total number of workers (male + female)
+u_r,urban_rural_shipped,"Urban or rural as shipped by NISR, coding differs by year"
+working_status,working_status_derived_2011,"Working status, short NISR version"

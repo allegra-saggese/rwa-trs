@@ -15,10 +15,11 @@ See NISR-Agriculture-Survey-AHS.md (decisions log) for every choice.
 import re, sys
 import numpy as np, pandas as pd
 from ahs_helpers import (paths, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast,
-                          save_json, LOGS)
+                          save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("01_clean")
 P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed); scopes wave:<wave>:<stem>
 
 # ------------------------------------------------------------------ wave configuration
 # raw: folder under 1_Raw; base_hh: household base module stem(s); base_p: roster module stem;
@@ -208,7 +209,9 @@ for wave in WANT:
                               "n_lsf": int((df["sample"] == "LSF").sum()) if "sample" in df.columns else 0,
                               "exact_duplicate_rows": int(df.duplicated(dupcols).sum()), "wt_missing": int(df["wt"].isna().sum()) if "wt" in df.columns else None,
                               "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "var_labels": {k: v for k, v in vl.items() if k in df.columns}}
-        write_dta(df, P["inter"] / f"AHS_{wave}_{name}_clean.dta", vl, vv, f"AHS {wave} module {name} ({lvl}-level)", log)
+        out_df, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{wave}:{name}", log)      # written under the clean names; native kept in the meta
+        meta_modules[name]["columns"] = list(df.columns); meta_modules[name]["clean_names"] = clean_names
+        write_dta(out_df, P["inter"] / f"AHS_{wave}_{name}_clean.dta", vl_out, vv_out, f"AHS {wave} module {name} ({lvl}-level)", log)
     log.info("module levels: %s", {k: v["level"] for k, v in meta_modules.items()})
 
     # ---------------- PERSON file
@@ -234,8 +237,9 @@ for wave in WANT:
         if "sex" in person: ck(set(person["sex"].dropna().unique()) <= {1, 2}, f"{wave}: sex in {{1,2}}")
         log.info("%s person file: %s rows x %s vars; weighted persons = %s", wave, f"{len(person):,}", person.shape[1], f"{person['wt'].sum():,.0f}")
         person = downcast(person, keep_double=("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight"))
-        write_dta(person, P["inter"] / f"AHS_{wave}_person_clean.dta", pvl, pvv, f"AHS {wave} person file (roster + person-level modules)", log)
-        meta["person"] = {"n": len(person), "vars": list(person.columns), "var_labels": pvl, "value_labels": {k: v for k, v in pvv.items() if k in person.columns}, "source": psrc}
+        p_out, pvl_out, pvv_out, p_clean = NAMES.apply(person, pvl, pvv, f"wave:{wave}:person", log)
+        write_dta(p_out, P["inter"] / f"AHS_{wave}_person_clean.dta", pvl_out, pvv_out, f"AHS {wave} person file (roster + person-level modules)", log)
+        meta["person"] = {"n": len(person), "vars": list(person.columns), "var_labels": pvl, "value_labels": {k: v for k, v in pvv.items() if k in person.columns}, "source": psrc, "clean_names": p_clean}
     else:
         person = None
 
@@ -279,8 +283,9 @@ for wave in WANT:
         if person is not None: ck(hh["hhsize"].sum() == len(person), f"{wave}: sum of hhsize == person rows")
         log.info("%s household file: %s rows x %s vars; weighted households = %s", wave, f"{len(hh):,}", hh.shape[1], f"{hh['wt'].sum():,.0f}")
         hh = downcast(hh, keep_double=("wt", "wt_hh", "hhid", "pop_wt", "hh_wt", "pond", "weight"))
-        write_dta(hh, P["inter"] / f"AHS_{wave}_household_clean.dta", hvl, hvv, f"AHS {wave} household file (household base + household-level modules)", log)
-        meta["household"] = {"n": len(hh), "vars": list(hh.columns), "var_labels": hvl, "value_labels": {k: v for k, v in hvv.items() if k in hh.columns}, "source": hsrc}
+        h_out, hvl_out, hvv_out, h_clean = NAMES.apply(hh, hvl, hvv, f"wave:{wave}:household", log)
+        write_dta(h_out, P["inter"] / f"AHS_{wave}_household_clean.dta", hvl_out, hvv_out, f"AHS {wave} household file (household base + household-level modules)", log)
+        meta["household"] = {"n": len(hh), "vars": list(hh.columns), "var_labels": hvl, "value_labels": {k: v for k, v in hvv.items() if k in hh.columns}, "source": hsrc, "clean_names": h_clean}
     ck.done()
     save_json(meta, LOGS / f"clean_{wave}_meta.json")
 log.info("01_clean done for %s", WANT)

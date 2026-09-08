@@ -15,10 +15,11 @@ See NISR-Household-Living-Conditions-EICV.md (decisions log) for every choice.
 import re, sys
 import numpy as np, pandas as pd
 from eicv_helpers import (paths, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast,
-                          save_json, LOGS)
+                          save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("01_clean")
 P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed); scopes wave:<wave>:<stem>
 
 # ------------------------------------------------------------------ wave configuration
 # raw: folder under 1_Raw; base_hh: household base module stem(s); base_p: roster module stem;
@@ -309,10 +310,11 @@ for wave in WANT:
         df = downcast(df, keep_double=("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight"))
         df = df[[c for c in KEY_ORDER if c in df.columns] + [c for c in df.columns if c not in KEY_ORDER]]
         modules[name] = df
-        meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4),
+        out_df, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{wave}:{name}", log)      # written under the clean names; native kept in the meta
+        meta_modules[name] = {"level": lvl, "rows": len(df), "vars": df.shape[1], "columns": list(df.columns), "hh_match_rate": None if np.isnan(rate) else round(float(rate), 4),
                               "universe": universe_for(wave, [name]).get(name, ""), "value_labels": {k: v for k, v in vv.items() if k in df.columns},
-                              "var_labels": {k: v for k, v in vl.items() if k in df.columns}}
-        write_dta(df, P["inter"] / f"EICV_{wave}_{name}_clean.dta", vl, vv, f"EICV {wave} module {name} ({lvl}-level)", log)
+                              "var_labels": {k: v for k, v in vl.items() if k in df.columns}, "clean_names": clean_names}
+        write_dta(out_df, P["inter"] / f"EICV_{wave}_{name}_clean.dta", vl_out, vv_out, f"EICV {wave} module {name} ({lvl}-level)", log)
     log.info("module levels: %s", {k: v["level"] for k, v in meta_modules.items()})
 
     # ---------------- PERSON file
@@ -338,9 +340,10 @@ for wave in WANT:
         if "sex" in person: ck(set(person["sex"].dropna().unique()) <= {1, 2}, f"{wave}: sex in {{1,2}}")
         log.info("%s person file: %s rows x %s vars; weighted persons = %s", wave, f"{len(person):,}", person.shape[1], f"{person['wt'].sum():,.0f}")
         person = downcast(person, keep_double=("wt", "wt_hh", "hhid", "pid_nisr", "pop_wt", "hh_wt", "pond", "weight"))
-        write_dta(person, P["inter"] / f"EICV_{wave}_person_clean.dta", pvl, pvv, f"EICV {wave} person file (roster + person-level modules)", log)
+        p_out, pvl_out, pvv_out, p_clean = NAMES.apply(person, pvl, pvv, f"wave:{wave}:person", log)
+        write_dta(p_out, P["inter"] / f"EICV_{wave}_person_clean.dta", pvl_out, pvv_out, f"EICV {wave} person file (roster + person-level modules)", log)
         meta["person"] = {"n": len(person), "vars": list(person.columns), "var_labels": pvl, "value_labels": {k: v for k, v in pvv.items() if k in person.columns}, "source": psrc,
-                          "universe": universe_for(wave, person.columns)}
+                          "universe": universe_for(wave, person.columns), "clean_names": p_clean}
     else:
         person = None
 
@@ -386,9 +389,10 @@ for wave in WANT:
         if person is not None: ck(hh["hhsize"].sum() == len(person), f"{wave}: sum of hhsize == person rows")
         log.info("%s household file: %s rows x %s vars; weighted households = %s", wave, f"{len(hh):,}", hh.shape[1], f"{hh['wt'].sum():,.0f}")
         hh = downcast(hh, keep_double=("wt", "wt_hh", "hhid", "pop_wt", "hh_wt", "pond", "weight"))
-        write_dta(hh, P["inter"] / f"EICV_{wave}_household_clean.dta", hvl, hvv, f"EICV {wave} household file (household base + household-level modules)", log)
+        h_out, hvl_out, hvv_out, h_clean = NAMES.apply(hh, hvl, hvv, f"wave:{wave}:household", log)
+        write_dta(h_out, P["inter"] / f"EICV_{wave}_household_clean.dta", hvl_out, hvv_out, f"EICV {wave} household file (household base + household-level modules)", log)
         meta["household"] = {"n": len(hh), "vars": list(hh.columns), "var_labels": hvl, "value_labels": {k: v for k, v in hvv.items() if k in hh.columns}, "source": hsrc,
-                             "universe": universe_for(wave, hh.columns)}
+                             "universe": universe_for(wave, hh.columns), "clean_names": h_clean}
     ck(bool(person is not None or not W["base_p"]), f"{wave}: person file assembled (manifest)")
     ck(bool(hh_base is not None or not W["base_hh"]), f"{wave}: household file assembled (manifest)")
     for m_, lvl_ in ((W.get("crosswalk") and "mainjob_short", "person"), ("poverty_file", "household")):

@@ -1,0 +1,222 @@
+12:36:48 01_clean INFO ==== 01_clean | run 20260906-123647 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:36:48 01_clean INFO ---------------- 2011 ----------------
+12:36:49 01_clean INFO read EC_2011.sav: 127,662 rows x 99 vars
+12:36:49 01_clean INFO 2011 sector names matched by closest spelling (district, shipped name, current name): [(11, 'MAGERAGERE', 'MAGEREGERE'), (43, 'GATAGARA', 'GATARAGA'), (21, 'CYABAKIMYI', 'CYABAKAMYI'), (21, 'KIBIRIZI', 'KIBILIZI'), (21, 'RWABICUMBI', 'RWABICUMA'), (22, 'KIBILIZI', 'KIBIRIZI'), (22, 'KIGIMBE', 'KIGEMBE'), (25, 'KIBILIZI', 'KIBIRIZI'), (33, 'NYAKILIBA', 'NYAKIRIBA'), (36, 'GIHURWE', 'GIHUNDWE'), (36, 'NKAKA', 'NKANKA'), (36, 'NYAKAENZO', 'NYAKARENZO'), (43, 'GATAGARA', 'GATARAGA'), (45, 'RUSHASHI', 'RUSHAKI'), (51, 'GAHENERI', 'GAHENGERI'), (51, 'GISHARI', 'GISHALI'), (51, 'MUYAGA', 'MUNYAGA'), (51, 'NYAKARIRO', 'NYAKALIRO'), (52, 'MUSHELI', 'MUSHERI'), (55, 'NYAMUGALI', 'NYAMUGARI'), (57, 'RUHUMA', 'RUHUHA')]
+12:36:49 01_clean INFO 2011 rows whose numeric district disagrees with the district name -- names used ((code, name, sector) -> (district, rows)): {(41, 'MUSANZE', 'GATAGARA'): (43, 2), (33, 'NYABIHU', 'KABATWA'): (34, 1), (33, 'NYABIHU', 'KARAGO'): (34, 268), (34, 'RUBAVU', 'BUSASAMANA'): (33, 40), (34, 'RUBAVU', 'MUDENDE'): (33, 311)}
+12:36:49 01_clean INFO 2011: shipped sequence codes (ID1*1000+ID2*100+ID3) equal the name-matched sector code in 0.9936 of rows
+12:36:50 01_clean INFO PASS  row count unchanged (127,662)
+12:36:50 01_clean INFO PASS  estid unique
+12:36:50 01_clean INFO PASS  5 provinces on NISR codes
+12:36:50 01_clean INFO PASS  30 districts on the 11-57 scheme
+12:36:50 01_clean INFO PASS  province and district complete on every establishment
+12:36:50 01_clean INFO PASS  district nests in province (no missing comparisons)
+12:36:50 01_clean INFO PASS  sector codes within the NISR 416-sector list (416 sectors present)
+12:36:50 01_clean INFO PASS  sector nests in district
+12:36:50 01_clean INFO PASS  sector assigned for 100.00% of establishments
+12:36:50 01_clean INFO PASS  urban in {1,2}
+12:36:50 01_clean INFO PASS  wt present and > 0
+12:36:50 01_clean INFO 2011: status s04 -> operating (working + temporarily closed) 123,526 of 127,662 establishments
+12:36:50 01_clean INFO PASS  operating (status 1 or 2) establishments 123,526 == published 123,526 (exact)
+12:36:50 01_clean INFO urban share: 0.433 | total workers: n/a
+12:36:50 01_clean INFO all hard checks passed (0 soft warnings)
+12:36:50 01_clean INFO wrote EC_2011_establishment_clean.dta  (127,662 rows x 108 vars, 26.4 MB)
+12:36:50 01_clean INFO ---------------- 2014 ----------------
+12:36:51 01_clean INFO read EC_2014.sav: 77,151 rows x 91 vars
+12:36:51 01_clean INFO PASS  row count unchanged (77,151)
+12:36:51 01_clean INFO PASS  estid unique
+12:36:51 01_clean INFO PASS  5 provinces on NISR codes
+12:36:51 01_clean INFO PASS  30 districts on the 11-57 scheme
+12:36:51 01_clean INFO PASS  province and district complete on every establishment
+12:36:51 01_clean INFO PASS  district nests in province (no missing comparisons)
+12:36:51 01_clean INFO PASS  sector codes within the NISR 416-sector list (416 sectors present)
+12:36:51 01_clean INFO PASS  sector nests in district
+12:36:51 01_clean INFO PASS  sector assigned for 100.00% of establishments
+12:36:51 01_clean INFO PASS  urban in {1,2}
+12:36:51 01_clean INFO PASS  wt present and > 0
+12:36:51 01_clean INFO 2014: status q3 -> operating (working + temporarily closed) 77,151 of 77,151 establishments
+12:36:51 01_clean INFO PASS  weighted establishments 154,236 == published 154,236 (0.1%)
+12:36:51 01_clean INFO urban share: 0.379 | total workers: 12,252 (q20)
+12:36:51 01_clean INFO all hard checks passed (0 soft warnings)
+12:36:51 01_clean INFO wrote EC_2014_establishment_clean.dta  (77,151 rows x 96 vars, 14.2 MB)
+12:36:51 01_clean INFO ---------------- 2017 ----------------
+12:36:53 01_clean INFO read EC_2017.sav: 190,288 rows x 71 vars
+12:36:54 01_clean INFO PASS  row count unchanged (190,288)
+12:36:54 01_clean INFO PASS  estid unique
+12:36:54 01_clean INFO PASS  5 provinces on NISR codes
+12:36:54 01_clean INFO PASS  30 districts on the 11-57 scheme
+12:36:54 01_clean INFO PASS  province and district complete on every establishment
+12:36:54 01_clean INFO PASS  district nests in province (no missing comparisons)
+12:36:54 01_clean INFO PASS  urban in {1,2}
+12:36:54 01_clean INFO PASS  wt present and > 0
+12:36:54 01_clean INFO 2017: status q3 -> operating (working + temporarily closed) 190,288 of 190,288 establishments
+12:36:54 01_clean INFO PASS  weighted establishments 190,288 == published 190,288 (exact)
+12:36:54 01_clean INFO urban share: 0.396 | total workers: 616,737
+12:36:54 01_clean INFO all hard checks passed (0 soft warnings)
+12:36:54 01_clean INFO wrote EC_2017_establishment_clean.dta  (190,288 rows x 76 vars, 33.0 MB)
+12:36:54 01_clean INFO ---------------- 2020 ----------------
+12:36:57 01_clean INFO read EC_2020.dta: 232,283 rows x 70 vars
+12:36:57 01_clean INFO 2020: province derived from district for 137 establishments
+12:36:59 01_clean INFO PASS  row count unchanged (232,283)
+12:36:59 01_clean INFO PASS  estid unique
+12:36:59 01_clean INFO PASS  5 provinces on NISR codes
+12:36:59 01_clean INFO PASS  30 districts on the 11-57 scheme
+12:36:59 01_clean INFO PASS  province and district complete on every establishment
+12:36:59 01_clean INFO PASS  district nests in province (no missing comparisons)
+12:36:59 01_clean INFO PASS  urban in {1,2}
+12:36:59 01_clean INFO PASS  wt present and > 0
+12:36:59 01_clean INFO 2020: status q3 -> operating (working + temporarily closed) 232,283 of 232,283 establishments
+12:36:59 01_clean INFO PASS  weighted establishments 232,283 == published 232,283 (exact)
+12:36:59 01_clean INFO urban share: 0.403 | total workers: 705,965
+12:36:59 01_clean INFO all hard checks passed (0 soft warnings)
+12:36:59 01_clean INFO wrote EC_2020_establishment_clean.dta  (232,283 rows x 76 vars, 40.5 MB)
+12:37:00 01_clean INFO ---------------- 2023 ----------------
+12:37:03 01_clean INFO read EC_2023.dta: 269,326 rows x 68 vars
+12:37:04 01_clean INFO PASS  row count unchanged (269,326)
+12:37:04 01_clean INFO PASS  estid unique
+12:37:04 01_clean INFO PASS  5 provinces on NISR codes
+12:37:04 01_clean INFO PASS  30 districts on the 11-57 scheme
+12:37:04 01_clean INFO PASS  province and district complete on every establishment
+12:37:04 01_clean INFO PASS  district nests in province (no missing comparisons)
+12:37:04 01_clean INFO PASS  urban in {1,2}
+12:37:04 01_clean INFO PASS  wt present and > 0
+12:37:04 01_clean INFO 2023: status q3 -> operating (working + temporarily closed) 269,326 of 269,326 establishments
+12:37:04 01_clean INFO urban share: 0.503 | total workers: 927,739
+12:37:04 01_clean INFO all hard checks passed (0 soft warnings)
+12:37:05 01_clean INFO wrote EC_2023_establishment_clean.dta  (269,326 rows x 73 vars, 45.8 MB)
+12:37:05 01_clean INFO 01_clean done for [2011, 2014, 2017, 2020, 2023]
+12:37:06 02_merge INFO ==== 02_merge | run 20260906-123647 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:37:09 02_merge INFO loaded 2011: 127,662 rows x 108 vars
+12:37:10 02_merge INFO loaded 2014: 77,151 rows x 96 vars
+12:37:12 02_merge INFO loaded 2017: 190,288 rows x 76 vars
+12:37:16 02_merge INFO loaded 2020: 232,283 rows x 76 vars
+12:37:19 02_merge INFO loaded 2023: 269,326 rows x 73 vars
+12:37:19 02_merge INFO VERSIONS owner_age: {'owner_age': [2017, 2020], 'owner_age_v2': [2023]} | 2023: FORCE_SPLIT
+12:37:19 02_merge INFO VERSIONS q10: {'q10': [2017, 2020, 2023], 'q10_v2': [2014]} | 2017 vs 2014: variable label differs ('Q10 Legal status' vs 'CATEGORIES OF MIXED SECTOR') / 2020 vs 2014: variable label differs ('Q10 Legal status' vs 'CATEGORIES OF MIXED SECTOR')
+12:37:19 02_merge INFO VERSIONS q11: {'q11': [2017, 2020, 2023], 'q11_v2': [2014]} | 2017 vs 2014: variable label differs ('Q11 Is the management of establishment c' vs 'NATIONALITY OF OWNERS') / 2020 vs 2014: variable label differs ('Q11 Is the management of establishment c' vs 'NATIONALITY OF OWNERS')
+12:37:20 02_merge INFO VERSIONS q12: {'q12': [2017, 2020, 2023], 'q12_v2': [2014]} | 2017 vs 2014: variable label differs ('Q12 Is the owner of the establishment it' vs 'LEGAL STATUS') / 2020 vs 2014: variable label differs ('Q12 Is the owner of the establishment it' vs 'LEGAL STATUS')
+12:37:20 02_merge INFO VERSIONS q13: {'q13': [2017, 2020, 2023], 'q13_v2': [2014]} | 2017 vs 2014: variable label differs ('Q13 Sex of the owner' vs 'IS THE MANAGEMENT OF ESTABLISHMENT COMPL') / 2020 vs 2014: variable label differs ('Q13 Sex of the owner' vs 'IS THE MANAGEMENT OF ESTABLISHMENT COMPL')
+12:37:20 02_merge INFO VERSIONS q14: {'q14': [2017, 2020], 'q14_v2': [2014]} | 2017 vs 2014: variable label differs ('Q14 Age of the owner' vs 'IS THE OWNER OF THE ESTABLISHMENT ITS MA') / 2020 vs 2014: variable label differs ('Q14 Age of the owner' vs 'IS THE OWNER OF THE ESTABLISHMENT ITS MA')
+12:37:20 02_merge INFO VERSIONS q16: {'q16': [2017, 2020, 2023], 'q16_v2': [2014]} | 2017 vs 2014: variable label differs ('Q16 Establishment type' vs 'AGE OF OWNER') / 2020 vs 2014: variable label differs ('Q16 Establishment type' vs 'AGE OF OWNER')
+12:37:20 02_merge INFO VERSIONS q20: {'q20': [2017, 2020], 'q20_v2': [2023], 'q20_v3': [2014]} | 2017 vs 2014: variable label differs ('Q20. Annual total turnover in 2016' vs 'TOTAL NUMBER OF WORKING PERSONS IN ALL B') / 2020 vs 2014: variable label differs ('Q20. Annual total turnover in 2019' vs 'TOTAL NUMBER OF WORKING PERSONS IN ALL B')
+12:37:20 02_merge INFO VERSIONS q21: {'q21': [2017, 2020], 'q21_v2': [2023]} | 2023: FORCE_SPLIT
+12:37:21 02_merge INFO VERSIONS q24: {'q24': [2017, 2020, 2023], 'q24_v2': [2014]} | 2017 vs 2014: variable label differs ('Q24. What type of taxes do you pay?' vs 'EMPLOYED CAPITAL') / 2020 vs 2014: variable label differs ('Q24. What type of taxes do you pay?' vs 'EMPLOYED CAPITAL')
+12:37:21 02_merge INFO VERSIONS q25: {'q25': [2017, 2020, 2023], 'q25_v2': [2014]} | 2017 vs 2014: variable label differs ('Q25. Do you have a tin number' vs 'REVENUE/INCOME IN 2013') / 2020 vs 2014: variable label differs ('Q25. Do you have a tin number' vs 'REVENUE/INCOME IN 2013')
+12:37:21 02_merge INFO VERSIONS q8: {'q8': [2017, 2020, 2023], 'q8_v2': [2014]} | 2017 vs 2014: variable label differs ('Q8 Categories of mixed sector' vs 'INSITUTIONAL SECTOR') / 2020 vs 2014: variable label differs ('Q8 Categories of mixed sector' vs 'INSITUTIONAL SECTOR')
+12:37:21 02_merge INFO VERSIONS q9: {'q9': [2017, 2020], 'q9_v2': [2023], 'q9_v3': [2014]} | 2017 vs 2014: variable label differs ('Q9 Nationality of owner' vs 'CATEGORIES OF PRIVATE SECTOR') / 2020 vs 2014: variable label differs ('Q9 Nationality of owner' vs 'CATEGORIES OF PRIVATE SECTOR')
+12:37:22 02_merge INFO VERSIONS start_y: {'start_y': [2023], 'start_y_v2': [2020], 'start_y_v3': [2017]} | 2017: FORCE_SPLIT / 2023: FORCE_SPLIT
+12:37:23 02_merge INFO 5 variables with codes observed outside their own value labels (stale labels; listed in merge_alignment.json): ['q10', 'q20', 'q21', 'q9', 's08b']
+12:37:38 02_merge INFO pooled person file: 896,710 rows x 265 vars; 14 variables with >1 version; 3 value-label text conflicts
+12:37:39 02_merge INFO PASS  no numeric column left object-typed after concat
+12:37:39 02_merge INFO PASS  pooled rows == sum of yearly rows
+12:37:39 02_merge INFO PASS  2011: sum wt preserved in pool
+12:37:39 02_merge INFO PASS  2014: sum wt preserved in pool
+12:37:39 02_merge INFO PASS  2017: sum wt preserved in pool
+12:37:39 02_merge INFO PASS  2020: sum wt preserved in pool
+12:37:39 02_merge INFO PASS  2023: sum wt preserved in pool
+12:37:47 02_merge INFO wrote EC_pooled_establishment.dta  (896,710 rows x 265 vars, 456.7 MB)
+12:37:47 02_merge INFO all hard checks passed (0 soft warnings)
+12:37:47 02_merge INFO 02_merge done
+12:37:48 03_checks INFO ==== 03_checks | run 20260906-123647 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:37:51 03_checks INFO 
+# EC checks report
+
+Generated by 03_checks.py.
+
+## A. Pooled file vs raw files as shipped
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| A | exact duplicate rows dropped before saving the pooled file (Matteo's rule; informational) | 0 |  | n/a |
+| A | 2011 rows | 127,662 | 127,662 | PASS |
+| A | 2014 rows | 77,151 | 77,151 | PASS |
+| A | 2017 rows | 190,288 | 190,288 | PASS |
+| A | 2020 rows | 232,283 | 232,283 | PASS |
+| A | 2023 rows | 269,326 | 269,326 | PASS |
+
+## B. Stata 17 recomputation from the written .dta file
+
+| section | statistic | Python | Stata | result |
+|---|---|---:|---:|---|
+| B | 2011 rows | 127,662 | 127,662 | PASS |
+| B | 2011 sum wt | 127,662 | 127,662 | PASS |
+| B | 2011 urban establishments | 55,292 | 55,292 | PASS |
+| B | 2011 districts | 30 | 30 | PASS |
+| B | 2014 rows | 77,151 | 77,151 | PASS |
+| B | 2014 sum wt | 154,236 | 154,236 | PASS |
+| B | 2014 urban establishments | 29,241 | 29,241 | PASS |
+| B | 2014 districts | 30 | 30 | PASS |
+| B | 2017 rows | 190,288 | 190,288 | PASS |
+| B | 2017 sum wt | 190,288 | 190,288 | PASS |
+| B | 2017 urban establishments | 75,449 | 75,449 | PASS |
+| B | 2017 districts | 30 | 30 | PASS |
+| B | 2017 total workers | 616,737 | 616,737 | PASS |
+| B | 2020 rows | 232,283 | 232,283 | PASS |
+| B | 2020 sum wt | 232,283 | 232,283 | PASS |
+| B | 2020 urban establishments | 93,622 | 93,622 | PASS |
+| B | 2020 districts | 30 | 30 | PASS |
+| B | 2020 total workers | 705,965 | 705,965 | PASS |
+| B | 2023 rows | 269,326 | 269,326 | PASS |
+| B | 2023 sum wt | 269,326 | 269,326 | PASS |
+| B | 2023 urban establishments | 135,373 | 135,373 | PASS |
+| B | 2023 districts | 30 | 30 | PASS |
+| B | 2023 total workers | 927,739 | 927,739 | PASS |
+
+## C. Against NISR published EC totals
+
+| section | statistic | Python | published | result |
+|---|---|---:|---:|---|
+| C | 2011 establishments enumerated (2014 project document: 127,662) | 127,662 | 127,662 | PASS |
+| C | 2011 operating establishments = status 1 working + 2 temporarily closed (report: 123,526; exact) | 123,526 | 123,526 | PASS |
+| C | 2011 workers in operating establishments, sentinel 999999 excluded (report: 281,946; exact) | 281,946 | 281,946 | PASS |
+| C | 2014 weighted establishments (report: 154,236) | 154,236 | 154,236 | PASS |
+| C | 2014 weighted workers q21c1 x wt vs the full-census report 493,302 (public sample; 0.66% off -- informational) | 496,548 |  | n/a |
+| C | 2017 establishments (report: 190,288; all rows are status 1 or 2) | 190,288 | 190,288 | PASS |
+| C | 2017 workers = male + female (report: 616,737; exact) | 616,737 | 616,737 | PASS |
+| C | 2020 establishments (report: 232,283; incl. 24,457 temporarily closed) | 232,283 | 232,283 | PASS |
+| C | 2020 workers = male + female (report: 706,140; exact) | 706,140 | 706,140 | PASS |
+| C | 2020 shipped total_workers (705,965: 175 short of the components -- use male + female; informational) | 705,965 |  | n/a |
+| C | 2023 establishments (no report held; all rows are status 1 or 2; informational) | 269,326 |  | n/a |
+| C | 2023 workers = male + female (no report held; equals shipped total_workers; informational) | 927,739 |  | n/a |
+
+## D. Status accounting, geography, worker identities, sentinels
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| D | 2011 status accounting: rows == operating (1-2) + permanently closed (3) + refusals (4) | 127,662 | 127,662 | PASS |
+| D | 2011 province complete (% of establishments) | 100 | 100 | PASS |
+| D | 2011 district complete (% of establishments) | 100 | 100 | PASS |
+| D | 2011 sector assigned (% of establishments) | 100 | 100 | PASS |
+| D | 2011 establishments whose numeric district contradicted the district name (names used; informational) | 622 |  | n/a |
+| D | 2011 total_emp2 == 999999 sentinel rows (labelled not applicable; informational) | 4,136 |  | n/a |
+| D | 2014 status accounting: rows == operating (1-2) + permanently closed (3) + refusals (4) | 77,151 | 77,151 | PASS |
+| D | 2014 province complete (% of establishments) | 100 | 100 | PASS |
+| D | 2014 district complete (% of establishments) | 100 | 100 | PASS |
+| D | 2014 sector assigned (% of establishments) | 100 | 100 | PASS |
+| D | 2017 status accounting: rows == operating (1-2) + permanently closed (3) + refusals (4) | 190,288 | 190,288 | PASS |
+| D | 2017 province complete (% of establishments) | 100 | 100 | PASS |
+| D | 2017 district complete (% of establishments) | 100 | 100 | PASS |
+| D | 2017 establishments whose shipped total_workers != male + female (informational) | 3,466 |  | n/a |
+| D | 2020 status accounting: rows == operating (1-2) + permanently closed (3) + refusals (4) | 232,283 | 232,283 | PASS |
+| D | 2020 province complete (% of establishments) | 100 | 100 | PASS |
+| D | 2020 district complete (% of establishments) | 100 | 100 | PASS |
+| D | 2020 establishments with province derived from district (informational) | 137 |  | n/a |
+| D | 2020 establishments whose shipped total_workers != male + female (informational) | 2,768 |  | n/a |
+| D | 2023 status accounting: rows == operating (1-2) + permanently closed (3) + refusals (4) | 269,326 | 269,326 | PASS |
+| D | 2023 province complete (% of establishments) | 100 | 100 | PASS |
+| D | 2023 district complete (% of establishments) | 100 | 100 | PASS |
+| D | 2023 establishments whose shipped total_workers != male + female (informational) | 0 |  | n/a |
+
+## E. Cross-year coding compatibility within pooled columns
+
+| section | statistic | Python | reference | result |
+|---|---|---:|---:|---|
+| E | pooled columns holding years with incompatible value-label texts for the same code (must be 0) | 0 | 0 | PASS |
+| E | variables split into versions because of value labels or unlabelled ranges (informational) | 0 |  | n/a |
+| E | variables with codes observed outside their own year's value labels -- stale labels (informational) | 5 |  | n/a |
+| E | forced splits / forced alignments (informational) | 5,010 |  | n/a |
+
+**All checks passed.**
+12:37:51 03_checks INFO 03_checks done
+12:37:52 04_codebook INFO ==== 04_codebook | run 20260906-123647 | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+12:38:21 04_codebook INFO wrote /Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Establishment-Census-EC/CODEBOOK_EC.xlsx (1 final-dataset sheets, 0 module files in one sheet, 2018 value-label rows)
+12:38:21 04_codebook INFO README.txt updated (/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Establishment-Census-EC/README.txt)

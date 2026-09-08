@@ -5,10 +5,13 @@
 
 . set more off
 
-. use "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - T
-> RS/data/Publicly-Available-NISR/Labour-Force-Survey-LFS/3_Final/LFS_pooled_pe
-> rson.dta", clear
+. use lfs_year lfs_weight lfs_working_age_16_plus lfs_sex using "/Users/matteo/
+> Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Av
+> ailable-NISR/Labour-Force-Survey-LFS/3_Final/LFS_pooled_person.dta", clear
 (Rwanda LFS 2017-2025 pooled person-interview file (repeated cross-section))
+
+. rename (lfs_year lfs_weight lfs_working_age_16_plus lfs_sex) (year wt wap16 s
+> ex)
 
 . gen double wwap = wap16 * wt
 (287,502 missing values generated)
@@ -26,10 +29,12 @@
 file /Users/matteo/Documents/GitHub/rwa-trs/NISR/Labour-Force-Survey-LFS/logs/s
 > tata_checks.csv saved
 
-. use "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - T
-> RS/data/Publicly-Available-NISR/Labour-Force-Survey-LFS/3_Final/LFS_pooled_ho
-> usehold.dta", clear
+. use lfs_year lfs_household_id lfs_household_size using "/Users/matteo/Library
+> /CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available
+> -NISR/Labour-Force-Survey-LFS/3_Final/LFS_pooled_household.dta", clear
 (Rwanda LFS 2017-2025 pooled household-interview file)
+
+. rename (lfs_year lfs_household_id lfs_household_size) (year hhid hhsize)
 
 . collapse (count) n_hh=hhid (sum) hhsize_sum=hhsize, by(year)
 

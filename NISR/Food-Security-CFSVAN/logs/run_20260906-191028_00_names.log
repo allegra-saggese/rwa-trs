@@ -1,0 +1,1067 @@
+19:10:28 00_names INFO ==== 00_names | run 20260906-191028_00_names | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+19:10:35 00_names WARNING label cut to 80 characters: as10_05_v2 -> CFSVA 2021: One of these shocks did your household consider the first most
+19:10:35 00_names WARNING label cut to 80 characters: as10_05_2 -> CFSVA 2021-2024: Has $ AS10C1 caused a reduction or loss of income (in nature
+19:10:35 00_names WARNING label cut to 80 characters: as10_05_4_v2 -> CFSVA 2021: In which period of the year that shock manifested itself
+19:10:35 00_names WARNING label cut to 80 characters: as11_04_3 -> CFSVA 2021-2024: Provided Food for school children
+19:10:35 00_names WARNING label cut to 80 characters: as11_04_3_2 -> CFSVA 2021: Specify other providers for Food for school children (eaten at
+19:10:35 00_names WARNING label cut to 80 characters: as11_05 -> CFSVA 2018: One of these shocks did your household consider the first most
+19:10:35 00_names WARNING label cut to 80 characters: as11_05_2 -> CFSVA 2018: Has shock name caused a reduction or loss of income
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3 -> CFSVA 2021-2024: Provided Access to credit/loans for agricultural/livestock
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_10 -> CFSVA 2021: Was the provided Fish ponds in response to the impact of Covid-19
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_11 -> CFSVA 2021: Was the provided Veterinary services in response to the impact of
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_15 -> CFSVA 2021: Was the provided Construction/building materials in response to the
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_16 -> CFSVA 2021: Was the provided Water and/or sanitation in response to the impact
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_17 -> CFSVA 2021: Was the provided Other non food assistance in response to the
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_2 -> CFSVA 2021: What other providers provided the assistance you received
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_4 -> CFSVA 2021: Was the provided Access to credit/loans for agricultural/livestock
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_5 -> CFSVA 2021: Was the provided Access to credit/loans for Other NON
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_6 -> CFSVA 2021: Was the provided Agricultural input assistance
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_7 -> CFSVA 2021: Was the provided Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: as11_07_3_8 -> CFSVA 2021: Was the provided Large Livestock in response to the impact of
+19:10:35 00_names WARNING label cut to 80 characters: as12_07_3 -> CFSVA 2018: Provided Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: as5_02 -> CFSVA 2018-2024: Grow commodity name during the season of 2024A
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_2 -> CFSVA 2018-2021: % of your production for this crop did you or plan to directly
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_2_2 -> CFSVA 2018-2024: How long, did or will the stock for this commodity name kept
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_3 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_3_2 -> CFSVA 2018-2024: To whom did you or plan to sell the majority of this commodity
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_4 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_5 -> CFSVA 2018-2024: Quantity of your production for this cop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_6 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: as5_04_7 -> CFSVA 2018-2024: Quantity of your production for this crop is lost/became
+19:10:35 00_names WARNING label cut to 80 characters: as5_05_2 -> CFSVA 2021-2024: How did you acquire these the fetilizer that you used on
+19:10:35 00_names WARNING label cut to 80 characters: as5_05_2_v2 -> CFSVA 2018: How did you acquire these the fetilizer that you used on commodity
+19:10:35 00_names WARNING label cut to 80 characters: as5_05_3 -> CFSVA 2021-2024: How did you acquire the pestcides that you used on commodity
+19:10:35 00_names WARNING label cut to 80 characters: as5_05_3_v2 -> CFSVA 2018: How did you acquire the pestcides that you used on commodity name
+19:10:35 00_names WARNING label cut to 80 characters: as8_03 -> CFSVA 2024: How many days did your household eat Cereals, roots an, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: as8_03_2 -> CFSVA 2024: Was yesterday one of the days your househod ate Cereals:** sorghum
+19:10:35 00_names WARNING label cut to 80 characters: as8_03_3 -> CFSVA 2024: Was yesterday one of the days your househod ate Roots and tubers
+19:10:35 00_names WARNING label cut to 80 characters: as8_03_4 -> CFSVA 2024: How did you mainly acquire these Cereals, grains
+19:10:35 00_names WARNING label cut to 80 characters: as9_02_2 -> CFSVA 2018-2024: Days has your household had to Rely On the, past 7 days
+19:10:35 00_names WARNING label cut to 80 characters: as9_04 -> CFSVA 2021-2024: Did anyone in your household have to Sell househ, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: bs10_05 -> CFSVA 2024: One of these shocks did your household consider the second most
+19:10:35 00_names WARNING label cut to 80 characters: bs10_05_v2 -> CFSVA 2021: One of these shocks did your household consider the second most
+19:10:35 00_names WARNING label cut to 80 characters: bs10_05_2 -> CFSVA 2021-2024: Has shock name caused a reduction or loss of income (in nature
+19:10:35 00_names WARNING label cut to 80 characters: bs10_05_3 -> CFSVA 2021-2024: Did Shock name create a decrease or loss of assets or
+19:10:35 00_names WARNING label cut to 80 characters: bs10_05_4_v2 -> CFSVA 2021: In which period of the year that shock manifested itself
+19:10:35 00_names WARNING label cut to 80 characters: bs11_04_3 -> CFSVA 2021-2024: Provided Food for pregnant and breastfeeding women and small
+19:10:35 00_names WARNING label cut to 80 characters: bs11_04_3_2 -> CFSVA 2021: Specify other providers for Food for pregnant and breastfeeding
+19:10:35 00_names WARNING label cut to 80 characters: bs11_05 -> CFSVA 2018: One of these shocks did your household consider the second most
+19:10:35 00_names WARNING label cut to 80 characters: bs11_05_2 -> CFSVA 2018: Has shock name caused a reduction or loss of income
+19:10:35 00_names WARNING label cut to 80 characters: bs11_07_3 -> CFSVA 2021-2024: Provided Access to credit/loans for Other NON
+19:10:35 00_names WARNING label cut to 80 characters: bs11_07_3_2 -> CFSVA 2021: Specify other providers for Access to credit/loans for Other NON
+19:10:35 00_names WARNING label cut to 80 characters: bs12_04_3 -> CFSVA 2018: Provided Food for pregnant and breastfeeding women and small
+19:10:35 00_names WARNING label cut to 80 characters: bs12_07_3 -> CFSVA 2018: Provided Access to credit/loans for Other NON
+19:10:35 00_names WARNING label cut to 80 characters: bs4_06_3 -> CFSVA 2018-2024: Of these number goats does your household manage for others
+19:10:35 00_names WARNING label cut to 80 characters: bs5_02 -> CFSVA 2018-2024: Grow commodity name during the season of 2024A
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_2 -> CFSVA 2018-2021: % of your production for this crop did you or plan to directly
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_2_2 -> CFSVA 2018-2024: How long, did or will the stock for this commodity name kept
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_3 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_3_2 -> CFSVA 2018-2024: To whom did you or plan to sell the majority of this commodity
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_4 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_5 -> CFSVA 2018-2024: Quantity of your production for this cop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_6 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: bs5_04_7 -> CFSVA 2018-2024: Quantity of your production for this crop is lost/became
+19:10:35 00_names WARNING label cut to 80 characters: bs5_05_2 -> CFSVA 2021-2024: How did you acquire these the fetilizer that you used on
+19:10:35 00_names WARNING label cut to 80 characters: bs5_05_2_v2 -> CFSVA 2018: How did you acquire these the fetilizer that you used on commodity
+19:10:35 00_names WARNING label cut to 80 characters: bs5_05_3 -> CFSVA 2021-2024: How did you acquire the pestcides that you used on commodity
+19:10:35 00_names WARNING label cut to 80 characters: bs5_05_3_v2 -> CFSVA 2018: How did you acquire the pestcides that you used on commodity name
+19:10:35 00_names WARNING label cut to 80 characters: bs8_03 -> CFSVA 2024: How many days did your household eat orange fleshed sw, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: bs8_03_2 -> CFSVA 2024: Did your household eat orange fleshed sweet, last 24 hours
+19:10:35 00_names WARNING label cut to 80 characters: bs9_02_2 -> CFSVA 2018-2024: Days has your household had to Borrow Food, past 7 days
+19:10:35 00_names WARNING label cut to 80 characters: bs9_04 -> CFSVA 2021-2024: Did anyone in your household have to spend savin, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: cs10_05_v2 -> CFSVA 2021: One of these shocks did your household consider the third most
+19:10:35 00_names WARNING label cut to 80 characters: cs10_05_2 -> CFSVA 2021-2024: Has shock name caused a reduction or loss of income (in nature
+19:10:35 00_names WARNING label cut to 80 characters: cs10_05_3 -> CFSVA 2021-2024: Did Shock name create a decrease or loss of assets or
+19:10:35 00_names WARNING label cut to 80 characters: cs10_05_4_v2 -> CFSVA 2021: In which period of the year that shock manifested itself
+19:10:35 00_names WARNING label cut to 80 characters: cs11_05 -> CFSVA 2018: One of these shocks did your household consider the third most
+19:10:35 00_names WARNING label cut to 80 characters: cs11_05_2 -> CFSVA 2018: Has shock name caused a reduction or loss of income
+19:10:35 00_names WARNING label cut to 80 characters: cs11_07_3 -> CFSVA 2021-2024: Provided Agricultural input assistance (tools, seeds
+19:10:35 00_names WARNING label cut to 80 characters: cs11_07_3_2 -> CFSVA 2021: Specify other providers for Agricultural input assistance (tools
+19:10:35 00_names WARNING label cut to 80 characters: cs12_07_3 -> CFSVA 2018: Provided Agricultural input assistance
+19:10:35 00_names WARNING label cut to 80 characters: cs4_06_3 -> CFSVA 2018-2024: Of these number pigs does your household manage for others
+19:10:35 00_names WARNING label cut to 80 characters: cs5_02 -> CFSVA 2018-2024: Grow commodity name during the season of 2024A
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_2 -> CFSVA 2018-2021: % of your production for this crop did you or plan to directly
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_2_2 -> CFSVA 2018-2024: How long, did or will the stock for this commodity name kept
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_3 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_3_2 -> CFSVA 2018-2024: To whom did you or plan to sell the majority of this commodity
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_4 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_5 -> CFSVA 2018-2024: Quantity of your production for this cop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_6 -> CFSVA 2018-2024: Quantity of your production for this crop did you or plan to
+19:10:35 00_names WARNING label cut to 80 characters: cs5_04_7 -> CFSVA 2018-2024: Quantity of your production for this crop is lost/became
+19:10:35 00_names WARNING label cut to 80 characters: cs5_05_2 -> CFSVA 2021-2024: How did you acquire these the fetilizer that you used on
+19:10:35 00_names WARNING label cut to 80 characters: cs5_05_2_v2 -> CFSVA 2018: How did you acquire these the fetilizer that you used on commodity
+19:10:35 00_names WARNING label cut to 80 characters: cs5_05_3 -> CFSVA 2021-2024: How did you acquire the pestcides that you used on commodity
+19:10:35 00_names WARNING label cut to 80 characters: cs5_05_3_v2 -> CFSVA 2018: How did you acquire the pestcides that you used on commodity name
+19:10:35 00_names WARNING label cut to 80 characters: cs9_02_2 -> CFSVA 2018-2024: Days has your household had to Limit Porti, past 7 days
+19:10:35 00_names WARNING label cut to 80 characters: cs9_04 -> CFSVA 2021-2024: Did anyone in your household have to sell more a, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: cvd_0 -> CFSVA 2021: All activities reported by household members in the demographic
+19:10:35 00_names WARNING label cut to 80 characters: cvd_0_1 -> CFSVA 2021: Are they the same activities your household was doing before
+19:10:35 00_names WARNING label cut to 80 characters: cvd_0_smt_1 -> CFSVA 2021: Agricultural Production (On Own Farm/Land Or On Other Farm/Land
+19:10:35 00_names WARNING label cut to 80 characters: cvd_0_smt_2 -> CFSVA 2021: Daily Labour Agricultural Work (On Others Farm For In Kind Or Cash
+19:10:35 00_names WARNING label cut to 80 characters: cvd_5 -> CFSVA 2021: Has there been any change in the provision of health services
+19:10:35 00_names WARNING label cut to 80 characters: cvd_6 -> CFSVA 2021: Has there been any change in the provision of education in your
+19:10:35 00_names WARNING label cut to 80 characters: cvd_8 -> CFSVA 2021: Faced food access issues due to your immediate family member who
+19:10:35 00_names WARNING label cut to 80 characters: cvd_9 -> CFSVA 2021: Enhanced your hygiene practices d
+19:10:35 00_names WARNING label cut to 80 characters: ds11_07_3 -> CFSVA 2021-2024: Provided Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: ds11_07_3_2 -> CFSVA 2021: Specify other providers for Training and technical assistance in
+19:10:35 00_names WARNING label cut to 80 characters: ds12_07_3 -> CFSVA 2018: Provided Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: ds4_06_3 -> CFSVA 2018-2024: Of these number sheep does your household manage for others
+19:10:35 00_names WARNING label cut to 80 characters: ds8_03 -> CFSVA 2024: How many days did your household eat Legume/nuts : bea, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: ds9_02_2 -> CFSVA 2018-2024: Days has your household had to Restrict Co, past 7 days
+19:10:35 00_names WARNING label cut to 80 characters: ds9_04 -> CFSVA 2021-2024: Did anyone in your household have to purchased f, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: es8_03 -> CFSVA 2024: How many days did your household eat bio-fortied beans, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: es9_02_2 -> CFSVA 2018-2024: Days has your household had to Reduce Numb, past 7 days
+19:10:35 00_names WARNING label cut to 80 characters: es9_04 -> CFSVA 2021-2024: Did anyone in your household have to harvest imm, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: foodaccess -> CFSVA 2015: HH had food access problems in specific months, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: fs4_06 -> CFSVA 2018-2024: Ducks and other poultry is your household currently rearing
+19:10:35 00_names WARNING label cut to 80 characters: fs8_03 -> CFSVA 2024: How many days did your household drink Milk or eat oth, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: fs8_03_2 -> CFSVA 2024: Did your household eat Milk and other dairy, last 24 hours
+19:10:35 00_names WARNING label cut to 80 characters: fs9_04 -> CFSVA 2021-2024: Did anyone in your household have to consume see, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: gas8_03 -> CFSVA 2024: How many days did your household eat flesh Meat : goa, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: gbs8_03 -> CFSVA 2024: How many days did your household eat Offal : liver, k, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: gcs8_03 -> CFSVA 2024: How many days did your household eat Fish or other se, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: gcs8_03_2 -> CFSVA 2024: Did your household eat fish or other seafoo, last 24 hours
+19:10:35 00_names WARNING label cut to 80 characters: gds8_03 -> CFSVA 2024: How many days did your household eat Eggs: (an egg pe, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: gs8_03 -> CFSVA 2024: How many days did your household eat Meat, fish or egg, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: gs8_03_2 -> CFSVA 2024: How did you mainly acquire these meat that your household ate
+19:10:35 00_names WARNING label cut to 80 characters: gs9_04 -> CFSVA 2021-2024: Did anyone in your household have to decrease ex, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: has8_03 -> CFSVA 2024: How many days did your household eat Orange vegetable, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: hbs8_03 -> CFSVA 2024: How many days did your household eat Dark green leafy, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: hs8_03 -> CFSVA 2024: How many days did your household eat Vegetables: all, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: hs9_04 -> CFSVA 2021-2024: Did anyone in your household have to Begg due to, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: ias8_03 -> CFSVA 2024: How many days did your household eat Orange fruit (Vi, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: ias8_04 -> CFSVA 2024: Are there any tree foods in the homestead or your farm for easy
+19:10:35 00_names WARNING label cut to 80 characters: ias8_04_1 -> CFSVA 2024: Are there any tree foods in the homestead or your farm for easy
+19:10:35 00_names WARNING label cut to 80 characters: improved_toilet -> CFSVA 2015: Improved toilet
+19:10:35 00_names WARNING label cut to 80 characters: improved_wall -> CFSVA 2015: Improved wall
+19:10:35 00_names WARNING label cut to 80 characters: inactive_members -> CFSVA 2024: Total inactive members
+19:10:35 00_names WARNING label cut to 80 characters: is8_03 -> CFSVA 2024: How many days did your household eat Fruit : banana, A, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: is8_03_3 -> CFSVA 2024: How did you mainly acquire these fruits that your household ate
+19:10:35 00_names WARNING label cut to 80 characters: is9_04 -> CFSVA 2021-2024: Did anyone in your household have to sell last f, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: js8_03 -> CFSVA 2024: How many days did your household eat Oil/fat/butter: c, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: js8_03_2 -> CFSVA 2024: Did your household eat Oil / fat / butter, last 24 hours
+19:10:35 00_names WARNING label cut to 80 characters: js9_04 -> CFSVA 2021-2024: Your entire household migrate due to a lack of e, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: ks11_07_3_2 -> CFSVA 2021: Specify other providers for medical services
+19:10:35 00_names WARNING label cut to 80 characters: ks8_03 -> CFSVA 2024: How many days did your household eat Sweet sugar or pr, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: ls8_03 -> CFSVA 2024: How many days did your household eat Spices / Condimen, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: ls8_03_2 -> CFSVA 2024: Did your household eat Condiments / Spices, last 24 hours
+19:10:35 00_names WARNING label cut to 80 characters: months_fa -> CFSVA 2012-2015: Number of months in which household had difficulty in having
+19:10:35 00_names WARNING label cut to 80 characters: months_fa_cat -> CFSVA 2012-2015: Number of months in which household had difficulty in having
+19:10:35 00_names WARNING label cut to 80 characters: n13_21 -> CFSVA 2021: Hear or receive any message on feeding a child aged 6 months to 2
+19:10:35 00_names WARNING label cut to 80 characters: n13_22 -> CFSVA 2021: Were there any occasions in which you did not attend a scheduled
+19:10:35 00_names WARNING label cut to 80 characters: n13_23 -> CFSVA 2021: Seek advice or treatment for the illness outside the home during
+19:10:35 00_names WARNING label cut to 80 characters: n13_25 -> CFSVA 2021: Felt worried about not having enough food to eat, past 12 months
+19:10:35 00_names WARNING label cut to 80 characters: n13_27 -> CFSVA 2021: Hear or receive any message on breastfeeding of infants in the
+19:10:35 00_names WARNING label cut to 80 characters: n13_29 -> CFSVA 2021: Due to COVID19, Have you enhanced your hygiene practices (e.g.
+19:10:35 00_names WARNING label cut to 80 characters: n_qa1206_1 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related activities
+19:10:35 00_names WARNING label cut to 80 characters: n_qa1206_2_1 -> CFSVA 2012: Provider Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: n_qb1203_1 -> CFSVA 2012: Food for pregnant and breastfeeding
+19:10:35 00_names WARNING label cut to 80 characters: n_qb1203_2_1 -> CFSVA 2012: Food for pregnant and breastfeeding Provider
+19:10:35 00_names WARNING label cut to 80 characters: n_qb1206_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: n_qb1206_2_1 -> CFSVA 2012: Provider Access to credit/loans for Other NON
+19:10:35 00_names WARNING label cut to 80 characters: n_qc1206_1 -> CFSVA 2012: Agricultural input assistance
+19:10:35 00_names WARNING label cut to 80 characters: n_qc1206_2_1 -> CFSVA 2012: Provider Agricultural input assistance
+19:10:35 00_names WARNING label cut to 80 characters: n_qd1206_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: n_qd1206_2_1 -> CFSVA 2012: Provider Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: n_qf1206_1 -> CFSVA 2012: Small livestock
+19:10:35 00_names WARNING label cut to 80 characters: n_qf1206_2_1 -> CFSVA 2012: Provider Small livestock
+19:10:35 00_names WARNING label cut to 80 characters: n_qg1203_2_1 -> CFSVA 2012: Other food assistance programs Provider
+19:10:35 00_names WARNING label cut to 80 characters: n_qi1206_1 -> CFSVA 2012: For education
+19:10:35 00_names WARNING label cut to 80 characters: n_qi1206_2_1 -> CFSVA 2012: Provider For education
+19:10:35 00_names WARNING label cut to 80 characters: n_qj1206_2_1 -> CFSVA 2012: Provider Direct transfers
+19:10:35 00_names WARNING label cut to 80 characters: n_qk1206_1 -> CFSVA 2012: Medical services
+19:10:35 00_names WARNING label cut to 80 characters: n_qk1206_2_1 -> CFSVA 2012: Provider medical services
+19:10:35 00_names WARNING label cut to 80 characters: n_ql1206_2_1 -> CFSVA 2012: Provider Construction/building materials
+19:10:35 00_names WARNING label cut to 80 characters: no_agri_practice -> CFSVA 2018: Household practices agriculture as a livelihood No agricultural
+19:10:35 00_names WARNING label cut to 80 characters: purchase_sale -> CFSVA 2012: COMPUTE Purchase sale=PS agri + PS livestock products + PS
+19:10:35 00_names WARNING label cut to 80 characters: q1001 -> CFSVA 2012: Have there been times when your household did not have enough food
+19:10:35 00_names WARNING label cut to 80 characters: q1101 -> CFSVA 2012: Were there any specific months in which your household found it
+19:10:35 00_names WARNING label cut to 80 characters: q114_1 -> CFSVA 2012: Hosting any person that is temporally resident in your household
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_1 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_2 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_3 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_4 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_d -> CFSVA 2012: Main crop - What % of your total land do you generally use for this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_e -> CFSVA 2012: Main crop - What % of your production for this crop do you directly
+19:10:35 00_names WARNING label cut to 80 characters: q1503_f_2 -> CFSVA 2012: Main crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q1503_g -> CFSVA 2012: Main crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q1503_h_1 -> CFSVA 2012: Main crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q202_1 -> CFSVA 2012: Is the house your household live in located in an village
+19:10:35 00_names WARNING label cut to 80 characters: q209_1 -> CFSVA 2012: Current main source of drinking water for your household
+19:10:35 00_names WARNING label cut to 80 characters: q211 -> CFSVA 2012: Is there a time in the year when your household uses an alternate
+19:10:35 00_names WARNING label cut to 80 characters: q212_1 -> CFSVA 2012: Main alternative source of drinking water for your household
+19:10:35 00_names WARNING label cut to 80 characters: q214_1_1 -> CFSVA 2012: Main source:How do you or your household members go to your water
+19:10:35 00_names WARNING label cut to 80 characters: q214_1_2 -> CFSVA 2012: Specify other:How do you or your household members go to your water
+19:10:35 00_names WARNING label cut to 80 characters: q214_2_1 -> CFSVA 2012: Alternative source:How do you or your household members go to your
+19:10:35 00_names WARNING label cut to 80 characters: q214_2_2 -> CFSVA 2012: Specify other:How do you or your household members go to your water
+19:10:35 00_names WARNING label cut to 80 characters: q215_1 -> CFSVA 2012: Main source in minutes:How far is the source of water for your
+19:10:35 00_names WARNING label cut to 80 characters: q215_2 -> CFSVA 2012: Alternative source in minutes:How far is the source of water for
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_1 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_2 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_3 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_4 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_d -> CFSVA 2012: Second crop - What % of your total land do you generally use for
+19:10:35 00_names WARNING label cut to 80 characters: q2503_e -> CFSVA 2012: Second crop - What % of your production for this crop do you
+19:10:35 00_names WARNING label cut to 80 characters: q2503_f_2 -> CFSVA 2012: Second crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q2503_g -> CFSVA 2012: Second crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q2503_h_1 -> CFSVA 2012: Second crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q303_1 -> CFSVA 2012: Tell me what was your household's total cash income, last month
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_1 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_2 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_3 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_4 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_d -> CFSVA 2012: Third crop - What % of your total land do you generally use for
+19:10:35 00_names WARNING label cut to 80 characters: q3503_e -> CFSVA 2012: Third crop - What % of your production for this crop do you
+19:10:35 00_names WARNING label cut to 80 characters: q3503_f_2 -> CFSVA 2012: Third crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q3503_g -> CFSVA 2012: Third crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q3503_h_1 -> CFSVA 2012: Third crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q402_1 -> CFSVA 2012: Share Cropped:Out of the total land that your household farms
+19:10:35 00_names WARNING label cut to 80 characters: q402_2 -> CFSVA 2012: Owned:Out of the total land that your household farms, how much is
+19:10:35 00_names WARNING label cut to 80 characters: q402_3 -> CFSVA 2012: Rented / Leased:Out of the total land that your household farms
+19:10:35 00_names WARNING label cut to 80 characters: q402_4 -> CFSVA 2012: Free use / loaned or appropriated:Out of the total land that your
+19:10:35 00_names WARNING label cut to 80 characters: q402_5 -> CFSVA 2012: Other:Out of the total land that your household farms, how much is
+19:10:35 00_names WARNING label cut to 80 characters: q405 -> CFSVA 2012: Use fertilizer and/or insecticides, past 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q406_1 -> CFSVA 2012: Bought:If yes where did you get it from
+19:10:35 00_names WARNING label cut to 80 characters: q406_2 -> CFSVA 2012: Bought with voucher:If yes where did you get it from
+19:10:35 00_names WARNING label cut to 80 characters: q406_3 -> CFSVA 2012: Received from NGO, Government Institutions:If yes where did you get
+19:10:35 00_names WARNING label cut to 80 characters: q406_4 -> CFSVA 2012: Free / Own production:If yes where did you get it from
+19:10:35 00_names WARNING label cut to 80 characters: q408_1 -> CFSVA 2012: Is any of the land that your household farms protected against soil
+19:10:35 00_names WARNING label cut to 80 characters: q408_2 -> CFSVA 2012: If yes, how much of the land you farm is protected against soil
+19:10:35 00_names WARNING label cut to 80 characters: q409_07 -> CFSVA 2012: Plough / Ox plough:Does your household own any of the following
+19:10:35 00_names WARNING label cut to 80 characters: q409_15 -> CFSVA 2012: Living room suite (chairs sofa:Does your household own any of the
+19:10:35 00_names WARNING label cut to 80 characters: q409_18 -> CFSVA 2012: Motorized vehicle of any kind:Does your household own any of the
+19:10:35 00_names WARNING label cut to 80 characters: q409_19 -> CFSVA 2012: Fishing boat / Canoe:Does your household own any of the following
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_1 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_2 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_3 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_4 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_d -> CFSVA 2012: Fourth crop - What % of your total land do you generally use for
+19:10:35 00_names WARNING label cut to 80 characters: q4503_e -> CFSVA 2012: Fourth crop - What % of your production for this crop do you
+19:10:35 00_names WARNING label cut to 80 characters: q4503_f_2 -> CFSVA 2012: Fourth crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q4503_g -> CFSVA 2012: Fourth crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q4503_h_1 -> CFSVA 2012: Fourth crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q502 -> CFSVA 2012: Is any member of your household a member of a farmer
+19:10:35 00_names WARNING label cut to 80 characters: q602 -> CFSVA 2012: Household receive from remittances, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q701 -> CFSVA 2012: Have you or any household member taken a loan in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q702_1 -> CFSVA 2012: What was the main use of the largest loan taken, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q905 -> CFSVA 2012: R household prefered staple food (other than beans, soup)
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_3 -> CFSVA 2012: First shock - Did shock create a decrease or loss of income in cash
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_4 -> CFSVA 2012: First shock - Did shock create a decrease or loss of assets or
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_5 -> CFSVA 2012: First shock - Did shock create an unusual decrease in your
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_6 -> CFSVA 2012: First shock - What did the household do to compensate for those
+19:10:35 00_names WARNING label cut to 80 characters: qa1206_2_1 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qa302_2 -> CFSVA 2012: Main activity - Using proportional piling methods
+19:10:35 00_names WARNING label cut to 80 characters: qa302_4 -> CFSVA 2012: Main activity - Is this livelihood activity seasonal
+19:10:35 00_names WARNING label cut to 80 characters: qa803_2_exp_gshr -> CFSVA 2012: Medical expenses, health care percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_3 -> CFSVA 2012: Second shock - Did shock create a decrease or loss of income in
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_4 -> CFSVA 2012: Second shock - Did shock create a decrease or loss of assets or
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_5 -> CFSVA 2012: Second shock - Did shock create an unusual decrease in your
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_6 -> CFSVA 2012: Second shock - What did the household do to compensate for those
+19:10:35 00_names WARNING label cut to 80 characters: qb1206_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qb1206_2_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qb802_2_exp_gshr -> CFSVA 2012: Soap and other personal hygiene items percentage out of total non
+19:10:35 00_names WARNING label cut to 80 characters: qb802_2_exp_shr -> CFSVA 2012: Soap and other personal hygiene items percentage out of total
+19:10:35 00_names WARNING label cut to 80 characters: qb803_2_exp_gshr -> CFSVA 2012: Education, school fees, uniform percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qc1206_1 -> CFSVA 2012: Agricultural input assistance - Was this assistance provided
+19:10:35 00_names WARNING label cut to 80 characters: qc1206_2_1 -> CFSVA 2012: Agricultural input assistance Provider
+19:10:35 00_names WARNING label cut to 80 characters: qc302_4 -> CFSVA 2012: Third activity - Is this livelihood activity seasonal
+19:10:35 00_names WARNING label cut to 80 characters: qd1206_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: qd1206_2_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: qd802_2 -> CFSVA 2012: Lighting and cooking energy materials (eg: Firewood/ - If yes
+19:10:35 00_names WARNING label cut to 80 characters: qd802_2_exp_gshr -> CFSVA 2012: Lighting and cooking energy materials percentage out of total non
+19:10:35 00_names WARNING label cut to 80 characters: qd802_2_exp_shr -> CFSVA 2012: Lighting and cooking energy materials percentage out of total
+19:10:35 00_names WARNING label cut to 80 characters: qd803_2_exp_gshr -> CFSVA 2012: Household furnishings and appliances percentage out of total non
+19:10:35 00_names WARNING label cut to 80 characters: qd803_2_exp_shr -> CFSVA 2012: Household furnishings and appliances percentage out of total
+19:10:35 00_names WARNING label cut to 80 characters: qe803_2_exp_gshr -> CFSVA 2012: Construction, house repair percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qf803_2_exp_gshr -> CFSVA 2012: Agriculture and related expenses percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qg803_2_exp_gshr -> CFSVA 2012: Livestock and related expenditures percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qg803_2_exp_shr -> CFSVA 2012: Livestock and related expenditures percentage out of total
+19:10:35 00_names WARNING label cut to 80 characters: qh803_2_exp_gshr -> CFSVA 2012: Hiring non-agricultural labour percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qh904_2 -> CFSVA 2012: Carrot, orange sweet potato or other tubers that are orange inside
+19:10:35 00_names WARNING label cut to 80 characters: qi801_2_exp_gshr -> CFSVA 2012: Beans, peas and other pulses percentage out of total food
+19:10:35 00_names WARNING label cut to 80 characters: qi803_2_exp_gshr -> CFSVA 2012: Debts/mortgage/loan repayment percentage out of total non food
+19:10:35 00_names WARNING label cut to 80 characters: qo801_2_exp_gshr -> CFSVA 2012: Other non alcoholic beverages percentage out of total food
+19:10:35 00_names WARNING label cut to 80 characters: qp801_2_exp_gshr -> CFSVA 2012: Meals and drinks taken outside the house percentage out of total
+19:10:35 00_names WARNING label cut to 80 characters: qp801_2_exp_shr -> CFSVA 2012: Meals and drinks taken outside the house percentage out of total
+19:10:35 00_names WARNING label cut to 80 characters: s10_01_2 -> CFSVA 2024: If yes, in which months did your household found it does not have
+19:10:35 00_names WARNING label cut to 80 characters: s10_01_2_v2 -> CFSVA 2021: If yes, in which months did your household found it does not have
+19:10:35 00_names WARNING label cut to 80 characters: s10_01_3 -> CFSVA 2021-2024: Was this situation usual for your household at that time of
+19:10:35 00_names WARNING label cut to 80 characters: s10_02 -> CFSVA 2021-2024: Or your household experience any unusual situation during the
+19:10:35 00_names WARNING label cut to 80 characters: s10_03 -> CFSVA 2021-2024: If yes, tell us all the problems that affected your household
+19:10:35 00_names WARNING label cut to 80 characters: s11_01_2 -> CFSVA 2018: If yes, in which months did your household found it does not have
+19:10:35 00_names WARNING label cut to 80 characters: s11_01_3 -> CFSVA 2018: Was this situation usual for your household at that time of the year
+19:10:35 00_names WARNING label cut to 80 characters: s11_02_v3 -> CFSVA 2021: Kind of social protection program or support have you received from
+19:10:35 00_names WARNING label cut to 80 characters: s11_05_1 -> CFSVA 2021: Recevied any financial assistance pack, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s11_07_smt_1 -> CFSVA 2021-2024: Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: s11_07_smt_2 -> CFSVA 2021-2024: Access to credit/loans for Other NON agricultural/livestock
+19:10:35 00_names WARNING label cut to 80 characters: s11_07_smt_4 -> CFSVA 2021-2024: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: s12_04_smt_1 -> CFSVA 2018: Type of FOOD assistance was provided? (Food for school children
+19:10:35 00_names WARNING label cut to 80 characters: s12_04_smt_2 -> CFSVA 2018: Type of FOOD assistance was provided? (Food for pregnant and
+19:10:35 00_names WARNING label cut to 80 characters: s12_05_smt_1 -> CFSVA 2018: At least one household member benefited from, last 12 month
+19:10:35 00_names WARNING label cut to 80 characters: s12_05_smt_2 -> CFSVA 2018: At least one household member benefited from, last 12 month
+19:10:35 00_names WARNING label cut to 80 characters: s12_07_2_1_0_new -> CFSVA 2015: Access to credit/loans for agricultural/livestock related activities
+19:10:35 00_names WARNING label cut to 80 characters: s12_07_2_2_0_new -> CFSVA 2015: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: s12_07_2_4_0_new -> CFSVA 2015: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: s12_07_smt_7 -> CFSVA 2018: At least one household member benefited from, last 12 month
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_12_v2 -> CFSVA 2015: Household with at least one child 7-14 years currently attending
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_13 -> CFSVA 2021-2024: Did HH Head miss school for one week or more since january
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_13_v2 -> CFSVA 2015: At least one child missed school for one week or more since january
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_13_1 -> CFSVA 2015: Number of males 7-14 who missed school for one or more week since
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_13_2 -> CFSVA 2015: Number of females 7-14 who missed school for one or more week since
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_14 -> CFSVA 2021: Main reason that made household head absent from school
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_15 -> CFSVA 2021: Income generating activity is household head mainly involved in
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_15_2 -> CFSVA 2018-2024: Does HH Head's income contribute to the household living basket
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_15_smt_1 -> CFSVA 2021-2024: Agricultural Production (On Own Farm/Land Or On Other
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_15_smt_2 -> CFSVA 2021-2024: Daily Labour Agricultural Work (On Others Farm For In Kind Or
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_16 -> CFSVA 2018-2021: Is household head currently a member of any association or
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_16_2 -> CFSVA 2021-2024: Does HH Head hold any manegerial role in that cooperative or
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_17 -> CFSVA 2021-2024: Does HH Head hold any managerial roles in the community you
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_4_2 -> CFSVA 2021: Does household head have birth card for proper DOB and other
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_7_hc88_s -> CFSVA 2015: % of household members under 7 years old
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_8_s1 -> CFSVA 2015: % of HH members with unknown education level
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_8_s2 -> CFSVA 2015: % of HH members with low education level
+19:10:35 00_names WARNING label cut to 80 characters: s1_01_8_s3 -> CFSVA 2015: % of HH members with Medium to high educaion level
+19:10:35 00_names WARNING label cut to 80 characters: s2_04 -> CFSVA 2015-2021: Is the house your household is living in located in a village
+19:10:35 00_names WARNING label cut to 80 characters: s2_04_v2 -> CFSVA 2024: Is the house your household is living in located in a village new
+19:10:35 00_names WARNING label cut to 80 characters: s2_07 -> CFSVA 2021-2024: Kind of toilet facility does your household use here in your
+19:10:35 00_names WARNING label cut to 80 characters: s2_07_2 -> CFSVA 2015-2024: If your household does not have its own toilet facility
+19:10:35 00_names WARNING label cut to 80 characters: s2_10 -> CFSVA 2018-2024: Current main source of water that your household use
+19:10:35 00_names WARNING label cut to 80 characters: s2_10_3 -> CFSVA 2015-2024: How do you or your household members go to this main source of
+19:10:35 00_names WARNING label cut to 80 characters: s2_10_3_v2 -> CFSVA 2018: Household members' main transport mean to and from the main water
+19:10:35 00_names WARNING label cut to 80 characters: s2_10_4 -> CFSVA 2021-2024: How far is this main source of water (count in minutes
+19:10:35 00_names WARNING label cut to 80 characters: s2_10_5 -> CFSVA 2021: Usually fetches most of the water your household uses from this
+19:10:35 00_names WARNING label cut to 80 characters: s2_11 -> CFSVA 2015-2024: Is there a time in the year when your household uses an
+19:10:35 00_names WARNING label cut to 80 characters: s2_11_2 -> CFSVA 2018-2024: Main alternative source of water that your household use
+19:10:35 00_names WARNING label cut to 80 characters: s2_11_4 -> CFSVA 2021-2024: How do you or your household members go to your alternate
+19:10:35 00_names WARNING label cut to 80 characters: s2_11_4_v2 -> CFSVA 2018: Household members' main transport mean to and from the alternative
+19:10:35 00_names WARNING label cut to 80 characters: s2_11_5 -> CFSVA 2021-2024: How far is this alternate source of water (count in minutes
+19:10:35 00_names WARNING label cut to 80 characters: s2_11_5_v2 -> CFSVA 2018: Distance from household to main alternative source of water
+19:10:35 00_names WARNING label cut to 80 characters: s2_12 -> CFSVA 2015-2024: R household normally do to treat its water prior to drinking
+19:10:35 00_names WARNING label cut to 80 characters: s2_13 -> CFSVA 2015-2024: On average, how many liters of water does your household use
+19:10:35 00_names WARNING label cut to 80 characters: s3_01 -> CFSVA 2021-2024: All activities reported by household members in the
+19:10:35 00_names WARNING label cut to 80 characters: s3_01_smt_1 -> CFSVA 2021-2024: Agricultural Production (On Own Farm/Land Or On Other
+19:10:35 00_names WARNING label cut to 80 characters: s3_01_smt_2 -> CFSVA 2021-2024: Daily Labour Agricultural Work (On Others Farm For In Kind Or
+19:10:35 00_names WARNING label cut to 80 characters: s3_02_2 -> CFSVA 2021-2024: Using proportional piling or 'divide the pie' methods
+19:10:35 00_names WARNING label cut to 80 characters: s3_02_3 -> CFSVA 2021-2024: During which months of the year is this activity important for
+19:10:35 00_names WARNING label cut to 80 characters: s3_03_2 -> CFSVA 2021-2024: Using proportional piling or 'divide the pie' methods
+19:10:35 00_names WARNING label cut to 80 characters: s3_03_3 -> CFSVA 2021-2024: During which months of the year is this activity important for
+19:10:35 00_names WARNING label cut to 80 characters: s3_04_2 -> CFSVA 2021-2024: Using proportional piling or 'divide the pie' methods
+19:10:35 00_names WARNING label cut to 80 characters: s3_04_3 -> CFSVA 2021-2024: During which months of the year is this activity important for
+19:10:35 00_names WARNING label cut to 80 characters: s3_05 -> CFSVA 2021-2024: Approximately, how much money did your household earn during
+19:10:35 00_names WARNING label cut to 80 characters: s4_01 -> CFSVA 2015-2024: Own farming land including pastures for livestock
+19:10:35 00_names WARNING label cut to 80 characters: s4_01_5 -> CFSVA 2015: Is any part of the farming land that your household own consolidated
+19:10:35 00_names WARNING label cut to 80 characters: s4_01_6 -> CFSVA 2015: Is any part of your land registered to be used for public related
+19:10:35 00_names WARNING label cut to 80 characters: s4_01_7 -> CFSVA 2015: Is any of the farming land that your household own protected
+19:10:35 00_names WARNING label cut to 80 characters: s4_02_1 -> CFSVA 2021-2024: Ever practice "share cropping" on the farming land that your
+19:10:35 00_names WARNING label cut to 80 characters: s4_02_2 -> CFSVA 2021-2024: Is "land consolidation program" applied on any portion of the
+19:10:35 00_names WARNING label cut to 80 characters: s4_02_3 -> CFSVA 2018-2021: Is the faming land that your household owns protected against
+19:10:35 00_names WARNING label cut to 80 characters: s4_02_3_v2 -> CFSVA 2024: Is the faming land that your household owns protected against soil
+19:10:35 00_names WARNING label cut to 80 characters: s4_03_3 -> CFSVA 2018-2024: Is the food that you usually grow in that garden mainly used
+19:10:35 00_names WARNING label cut to 80 characters: s4_04_smt_16_v2 -> CFSVA 2018: Of the following items does your houeshold own? (Cooker (gas or
+19:10:35 00_names WARNING label cut to 80 characters: s4_04_smt_18_v2 -> CFSVA 2018: Of the following items does your houeshold own? (Living room suite
+19:10:35 00_names WARNING label cut to 80 characters: s4_04_smt_21_v2 -> CFSVA 2018: Of the following items does your houeshold own? (Motorized Vehicle
+19:10:35 00_names WARNING label cut to 80 characters: s4_04_smt_22_v2 -> CFSVA 2018: Of the following items does your houeshold own
+19:10:35 00_names WARNING label cut to 80 characters: s4_05 -> CFSVA 2021-2024: Of the following animals does your household own or manage
+19:10:35 00_names WARNING label cut to 80 characters: s4_07 -> CFSVA 2021-2024: Did your household consume any product from the a, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s4_08_2 -> CFSVA 2021-2024: Did your household sell any product from the anim, last month
+19:10:35 00_names WARNING label cut to 80 characters: s4_09 -> CFSVA 2018-2024: Which animal health services did your household, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_2_smt_1_v3 -> CFSVA 2018: Household paid for animals services, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_2_smt_3_v2 -> CFSVA 2018: Household paid for animals services, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_2_smt_5_v2 -> CFSVA 2018: Household paid for animals services, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_3 -> CFSVA 2018-2024: How Is easy was it for your household to access these animal
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_smt_1_v3 -> CFSVA 2018: Household acquired animals services, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_smt_3_v2 -> CFSVA 2018: Household acquired animals services, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s4_09_smt_5_v2 -> CFSVA 2018: Household acquired animals services, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s5_01_v2 -> CFSVA 2015: Is any member of your household a member of a farmer
+19:10:35 00_names WARNING label cut to 80 characters: s5_06 -> CFSVA 2018-2024: Storage facility does your household use to store your
+19:10:35 00_names WARNING label cut to 80 characters: s5_06_v2 -> CFSVA 2015: Use fertilizer and/or insecticides, past 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s5_06_2 -> CFSVA 2015: % of those fertilizer and or pestcides were Bought with cash
+19:10:35 00_names WARNING label cut to 80 characters: s5_06_3 -> CFSVA 2015: % of those fertilizer and or pestcides were Bought with voucher
+19:10:35 00_names WARNING label cut to 80 characters: s5_06_4 -> CFSVA 2015: % of those fertilizer and or pestcides were Received from NGO
+19:10:35 00_names WARNING label cut to 80 characters: s5_06_5 -> CFSVA 2015: % of those fertilizer and or pestcides were Free or from your Own
+19:10:35 00_names WARNING label cut to 80 characters: s5_06_smt_5 -> CFSVA 2021-2024: In certified warehouses for which you received a receipt
+19:10:35 00_names WARNING label cut to 80 characters: s5_07 -> CFSVA 2015: Crops did your household cultivate in the last agriculture year
+19:10:35 00_names WARNING label cut to 80 characters: s6_01 -> CFSVA 2018-2024: Or any household member request for a loan in the in the last
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_3 -> CFSVA 2018-2024: % of loan was spent in buying or preparing farming or pasture
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_4 -> CFSVA 2018-2024: % of loan was spent in buying inputs ( seeds, chemicals
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_5 -> CFSVA 2018-2024: % of loan was used on post-harvet and production handling and
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_6 -> CFSVA 2024: For the last loan you requested, who in your household decided on
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_1_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_10_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_11_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_12_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_2 -> CFSVA 2021: Agricultural and livestock activities (crop/livestock production
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_2_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_3_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_4_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_5_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_6_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_7_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_8_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_04_smt_9_v2 -> CFSVA 2018: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s6_0_1_smt_3 -> CFSVA 2024: To receive a payment
+19:10:35 00_names WARNING label cut to 80 characters: s7_01 -> CFSVA 2021-2024: Did your household spend any money in buying food, past 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_v2 -> CFSVA 2015: Or any household member request for a loan in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_01 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_02 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_03 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_04 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_05 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_06 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_07 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_08 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_09 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_10 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_11 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_11_2 -> CFSVA 2021-2024: For data quality purposes, repeat the previoius amount Mu
+19:10:35 00_names WARNING label cut to 80 characters: s7_01_12 -> CFSVA 2021-2024: How much money did your household sepend in bu, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02 -> CFSVA 2015: Main use of the largest loan taken in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_01 -> CFSVA 2021-2024: Money did your household spend in buying Alcohol, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_02 -> CFSVA 2021-2024: Money did your household spend in buying Soap an, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_03 -> CFSVA 2021-2024: Money did your household spend on Transport, for, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_04 -> CFSVA 2021-2024: Money did your household spend in buying lightin, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_05 -> CFSVA 2021-2024: Money did your household spend in buying cooking, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_06 -> CFSVA 2021-2024: Money did your household spend in household Wast, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_07 -> CFSVA 2021-2024: Money did your household spend in buying Rent (h, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_08 -> CFSVA 2021-2024: Money did your household spend in buying Milling, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_09 -> CFSVA 2021-2024: Money did your household spend in buying Communi, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_02_10 -> CFSVA 2021-2024: Money did your household spend in buying Other n, last 30 days
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_01 -> CFSVA 2021-2024: Money did your household spend on Medical expen, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_02 -> CFSVA 2021-2024: Money did your household spend on Education, sc, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_03 -> CFSVA 2021-2024: Money did your household spend on Clothing, sho, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_04 -> CFSVA 2021-2024: Money did your household spend on household fur, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_05 -> CFSVA 2021-2024: Money did your household spend on Construction, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_06 -> CFSVA 2021-2024: Money did your household spend on Agriculture a, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_07 -> CFSVA 2021-2024: Money did your household spend on Livestock and, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_08 -> CFSVA 2021-2024: Money did your household spend on Hiring non-ag, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_09 -> CFSVA 2021-2024: Money did your household spend on Debts/mortgag, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_10 -> CFSVA 2021-2024: Money did your household spend on Fines, taxes, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_11 -> CFSVA 2021-2024: Money did your household spend on Ceremonies, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_12 -> CFSVA 2021-2024: Money did your household spend on Gifts/donatio, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_13 -> CFSVA 2021-2024: Money did your household spend on Leisure, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_03_14 -> CFSVA 2021-2024: Money did your household spend on Other service, last 3 months
+19:10:35 00_names WARNING label cut to 80 characters: s7_04 -> CFSVA 2015: Total amount of money the household has borrowed in Francs
+19:10:35 00_names WARNING label cut to 80 characters: s8_01 -> CFSVA 2018-2024: Yesterday, how many times did the male adults in this
+19:10:35 00_names WARNING label cut to 80 characters: s8_01_2 -> CFSVA 2018-2024: Yesterday, how many times did the female adults in this
+19:10:35 00_names WARNING label cut to 80 characters: s8_02 -> CFSVA 2018-2024: Yesterday, how many times did the children in this ho
+19:10:35 00_names WARNING label cut to 80 characters: s8_02_2 -> CFSVA 2018-2024: Yesterday, how many times did the children in this
+19:10:35 00_names WARNING label cut to 80 characters: s8_09 -> CFSVA 2024: Did your household spend a full day without eating due, last 7 days
+19:10:35 00_names WARNING label cut to 80 characters: s9_01_2 -> CFSVA 2018-2024: Mainly caused the food shortage that you earlier mentioned
+19:10:35 00_names WARNING label cut to 80 characters: s9_01_3 -> CFSVA 2018-2024: Think can be done to alleviate food access problems
+19:10:35 00_names WARNING label cut to 80 characters: s9_02 -> CFSVA 2015: Yesterday, how many times did the children in this household eat
+19:10:35 00_names WARNING label cut to 80 characters: s9_04 -> CFSVA 2015: R household prefered staple food (other than beans, soup)
+19:10:35 00_names WARNING label cut to 80 characters: seasonal_fa -> CFSVA 2012: Household having seasonal/cyclical difficulties in accessing food
+19:10:35 00_names WARNING label cut to 80 characters: sh_agricultural_production -> CFSVA 2015: Contribution from Agricultural Production On Own Farm/Land Or On
+19:10:35 00_names WARNING label cut to 80 characters: sh_selling_fish_hunt -> CFSVA 2015: Contribution from Purchase Sale Of Product From Fishing Hunting
+19:10:35 00_names WARNING label cut to 80 characters: underweightcu5 -> CFSVA 2012: Underweight children under 5 years are there in the household
+19:10:35 00_names WARNING label cut to 80 characters: urban_nisr -> CFSVA 2012: Area of residence as shipped
+19:10:35 00_names WARNING label cut to 80 characters: v_name -> CFSVA 2012: Village name
+19:10:35 00_names WARNING label cut to 80 characters: v_s3_01 -> CFSVA 2015: Percentage of households in this village have access to electricity
+19:10:35 00_names WARNING label cut to 80 characters: v_s3_02_2 -> CFSVA 2015: If not, then how far away on average is the nearest functioning
+19:10:35 00_names WARNING label cut to 80 characters: v_s3_03_2 -> CFSVA 2015: If not, then how far away on average is the nearest functioning
+19:10:35 00_names WARNING label cut to 80 characters: v_s4_02_3 -> CFSVA 2015: If this is not the main market for the village or there is no
+19:10:35 00_names WARNING label cut to 80 characters: v_s4_02_4 -> CFSVA 2015: Is the road to the main market for your community accessible all
+19:10:35 00_names WARNING label cut to 80 characters: vup_support -> CFSVA 2015: Household received any VUP or ubudehe support
+19:10:35 00_names WARNING label cut to 80 characters: wasted_muaccu5 -> CFSVA 2012: Ted (MUAC) children under 5 years are there in the household
+19:10:35 00_names WARNING label cut to 80 characters: as12_17 -> CFSVA 2024: Foods made from grains (Porridge, bread, rice
+19:10:35 00_names WARNING label cut to 80 characters: bs12_17 -> CFSVA 2024: White roots and tubers and plantains (White potatoes, white yams
+19:10:35 00_names WARNING label cut to 80 characters: ds12_17 -> CFSVA 2024: Nuts and seeds (Any tree nut, groundnut/peanut or certain seeds
+19:10:35 00_names WARNING label cut to 80 characters: es12_17 -> CFSVA 2024: Milk and milk products (Milk, cheese
+19:10:35 00_names WARNING label cut to 80 characters: es13_07 -> CFSVA 2015: Any flesh food such as fresh or dried fish, shellfish, or seafood
+19:10:35 00_names WARNING label cut to 80 characters: gs12_17 -> CFSVA 2024: Organ meat (Liver, kidney, heart or other organ meats or
+19:10:35 00_names WARNING label cut to 80 characters: hs12_17 -> CFSVA 2024: Meat and poultry (Beef, pork, lamb, goat, rabbit, wild game meat
+19:10:35 00_names WARNING label cut to 80 characters: key -> CFSVA 2015: Woman nutrition-form record id ; NOT the household id
+19:10:35 00_names WARNING label cut to 80 characters: ks12_17 -> CFSVA 2024: Dark green leafy vegetables (List examples of any medium-to-dark
+19:10:35 00_names WARNING label cut to 80 characters: ls12_17 -> CFSVA 2024: Vitamin A-rich vegetables, roots and tubers (Pumpkin, carrots
+19:10:35 00_names WARNING label cut to 80 characters: q1001 -> CFSVA 2012: Have there been times when your household did not have enough food
+19:10:35 00_names WARNING label cut to 80 characters: q102_10b -> CFSVA 2012: Wash your hand After cleaning a child when they go to the toilet
+19:10:35 00_names WARNING label cut to 80 characters: q102_13 -> CFSVA 2012: Does this woman have any disability preventing her from being
+19:10:35 00_names WARNING label cut to 80 characters: q1101 -> CFSVA 2012: Were there any specific months in which your household found it
+19:10:35 00_names WARNING label cut to 80 characters: q114_1 -> CFSVA 2012: Hosting any person that is temporally resident in your household
+19:10:35 00_names WARNING label cut to 80 characters: q1202 -> CFSVA 2012: Or one of its members benefit from any in kind food assistance
+19:10:35 00_names WARNING label cut to 80 characters: q1205 -> CFSVA 2012: Or one of its members benefit from any other non-food assistance
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_1 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_2 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_3 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_c_4 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_d -> CFSVA 2012: Main crop - What % of your total land do you generally use for this
+19:10:35 00_names WARNING label cut to 80 characters: q1503_e -> CFSVA 2012: Main crop - What % of your production for this crop do you directly
+19:10:35 00_names WARNING label cut to 80 characters: q1503_f_2 -> CFSVA 2012: Main crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q1503_g -> CFSVA 2012: Main crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q1503_h_1 -> CFSVA 2012: Main crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q202_1 -> CFSVA 2012: Is the house your household live in located in an village
+19:10:35 00_names WARNING label cut to 80 characters: q209_1 -> CFSVA 2012: Current main source of drinking water for your household
+19:10:35 00_names WARNING label cut to 80 characters: q211 -> CFSVA 2012: Is there a time in the year when your household uses an alternate
+19:10:35 00_names WARNING label cut to 80 characters: q212_1 -> CFSVA 2012: Main alternative source of drinking water for your household
+19:10:35 00_names WARNING label cut to 80 characters: q214_1_1 -> CFSVA 2012: Main source:How do you or your household members go to your water
+19:10:35 00_names WARNING label cut to 80 characters: q214_1_2 -> CFSVA 2012: Specify other:How do you or your household members go to your water
+19:10:35 00_names WARNING label cut to 80 characters: q214_2_1 -> CFSVA 2012: Alternative source:How do you or your household members go to your
+19:10:35 00_names WARNING label cut to 80 characters: q214_2_2 -> CFSVA 2012: Specify other:How do you or your household members go to your water
+19:10:35 00_names WARNING label cut to 80 characters: q215_1 -> CFSVA 2012: Main source in minutes:How far is the source of water for your
+19:10:35 00_names WARNING label cut to 80 characters: q215_2 -> CFSVA 2012: Alternative source in minutes:How far is the source of water for
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_1 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_2 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_3 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_c_4 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q2503_d -> CFSVA 2012: Second crop - What % of your total land do you generally use for
+19:10:35 00_names WARNING label cut to 80 characters: q2503_e -> CFSVA 2012: Second crop - What % of your production for this crop do you
+19:10:35 00_names WARNING label cut to 80 characters: q2503_f_2 -> CFSVA 2012: Second crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q2503_g -> CFSVA 2012: Second crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q2503_h_1 -> CFSVA 2012: Second crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q303_1 -> CFSVA 2012: Tell me what was your household's total cash income, last month
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_1 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_2 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_3 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_c_4 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:35 00_names WARNING label cut to 80 characters: q3503_d -> CFSVA 2012: Third crop - What % of your total land do you generally use for
+19:10:35 00_names WARNING label cut to 80 characters: q3503_e -> CFSVA 2012: Third crop - What % of your production for this crop do you
+19:10:35 00_names WARNING label cut to 80 characters: q3503_f_2 -> CFSVA 2012: Third crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q3503_g -> CFSVA 2012: Third crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q3503_h_1 -> CFSVA 2012: Third crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q402_1 -> CFSVA 2012: Share Cropped:Out of the total land that your household farms
+19:10:35 00_names WARNING label cut to 80 characters: q402_2 -> CFSVA 2012: Owned:Out of the total land that your household farms, how much is
+19:10:35 00_names WARNING label cut to 80 characters: q402_3 -> CFSVA 2012: Rented / Leased:Out of the total land that your household farms
+19:10:35 00_names WARNING label cut to 80 characters: q402_4 -> CFSVA 2012: Free use / loaned or appropriated:Out of the total land that your
+19:10:35 00_names WARNING label cut to 80 characters: q402_5 -> CFSVA 2012: Other:Out of the total land that your household farms, how much is
+19:10:35 00_names WARNING label cut to 80 characters: q405 -> CFSVA 2012: Use fertilizer and/or insecticides, past 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q406_1 -> CFSVA 2012: Bought:If yes where did you get it from
+19:10:35 00_names WARNING label cut to 80 characters: q406_2 -> CFSVA 2012: Bought with voucher:If yes where did you get it from
+19:10:35 00_names WARNING label cut to 80 characters: q406_3 -> CFSVA 2012: Received from NGO, Government Institutions:If yes where did you get
+19:10:35 00_names WARNING label cut to 80 characters: q406_4 -> CFSVA 2012: Free / Own production:If yes where did you get it from
+19:10:35 00_names WARNING label cut to 80 characters: q408_1 -> CFSVA 2012: Is any of the land that your household farms protected against soil
+19:10:35 00_names WARNING label cut to 80 characters: q408_2 -> CFSVA 2012: If yes, how much of the land you farm is protected against soil
+19:10:35 00_names WARNING label cut to 80 characters: q409_07 -> CFSVA 2012: Plough / Ox plough:Does your household own any of the following
+19:10:35 00_names WARNING label cut to 80 characters: q409_15 -> CFSVA 2012: Living room suite (chairs sofa:Does your household own any of the
+19:10:35 00_names WARNING label cut to 80 characters: q409_18 -> CFSVA 2012: Motorized vehicle of any kind:Does your household own any of the
+19:10:35 00_names WARNING label cut to 80 characters: q409_19 -> CFSVA 2012: Fishing boat / Canoe:Does your household own any of the following
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_1 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_2 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_3 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_c_4 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:35 00_names WARNING label cut to 80 characters: q4503_d -> CFSVA 2012: Fourth crop - What % of your total land do you generally use for
+19:10:35 00_names WARNING label cut to 80 characters: q4503_e -> CFSVA 2012: Fourth crop - What % of your production for this crop do you
+19:10:35 00_names WARNING label cut to 80 characters: q4503_f_2 -> CFSVA 2012: Fourth crop - What % of your production for this crop do you give a
+19:10:35 00_names WARNING label cut to 80 characters: q4503_g -> CFSVA 2012: Fourth crop - Of this major crop approximately what percentage is
+19:10:35 00_names WARNING label cut to 80 characters: q4503_h_1 -> CFSVA 2012: Fourth crop - How do you normally acquire major crop seeds/planting
+19:10:35 00_names WARNING label cut to 80 characters: q502 -> CFSVA 2012: Is any member of your household a member of a farmer
+19:10:35 00_names WARNING label cut to 80 characters: q602 -> CFSVA 2012: Household receive from remittances, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q701 -> CFSVA 2012: Have you or any household member taken a loan in the, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q702_1 -> CFSVA 2012: What was the main use of the largest loan taken, last 12 months
+19:10:35 00_names WARNING label cut to 80 characters: q905 -> CFSVA 2012: R household prefered staple food (other than beans, soup)
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_3 -> CFSVA 2012: First shock - Did shock create a decrease or loss of income in cash
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_4 -> CFSVA 2012: First shock - Did shock create a decrease or loss of assets or
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_5 -> CFSVA 2012: First shock - Did shock create an unusual decrease in your
+19:10:35 00_names WARNING label cut to 80 characters: qa1106_6 -> CFSVA 2012: First shock - What did the household do to compensate for those
+19:10:35 00_names WARNING label cut to 80 characters: qa1203_1 -> CFSVA 2012: Food for school children - Was this aid provided
+19:10:35 00_names WARNING label cut to 80 characters: qa1203_2_1 -> CFSVA 2012: Food for school children - Who provided it
+19:10:35 00_names WARNING label cut to 80 characters: qa1206_1 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qa1206_2_1 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qa1206_2_2 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qa302_2 -> CFSVA 2012: Main activity - Using proportional piling methods
+19:10:35 00_names WARNING label cut to 80 characters: qa302_4 -> CFSVA 2012: Main activity - Is this livelihood activity seasonal
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_3 -> CFSVA 2012: Second shock - Did shock create a decrease or loss of income in
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_4 -> CFSVA 2012: Second shock - Did shock create a decrease or loss of assets or
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_5 -> CFSVA 2012: Second shock - Did shock create an unusual decrease in your
+19:10:35 00_names WARNING label cut to 80 characters: qb1106_6 -> CFSVA 2012: Second shock - What did the household do to compensate for those
+19:10:35 00_names WARNING label cut to 80 characters: qb1203_1 -> CFSVA 2012: Food for pregnant and breastfeeding women and small children - Was
+19:10:35 00_names WARNING label cut to 80 characters: qb1203_2_1 -> CFSVA 2012: Food for pregnant and breastfeeding women and small children - Who
+19:10:35 00_names WARNING label cut to 80 characters: qb1203_2_2 -> CFSVA 2012: Food for pregnant and breastfeeding women and small children
+19:10:35 00_names WARNING label cut to 80 characters: qb1206_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qb1206_2_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qb1206_2_2 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:35 00_names WARNING label cut to 80 characters: qc1206_1 -> CFSVA 2012: Agricultural input assistance - Was this assistance provided
+19:10:35 00_names WARNING label cut to 80 characters: qc1206_2_1 -> CFSVA 2012: Agricultural input assistance - Who provided it
+19:10:35 00_names WARNING label cut to 80 characters: qc302_4 -> CFSVA 2012: Third activity - Is this livelihood activity seasonal
+19:10:35 00_names WARNING label cut to 80 characters: qd1206_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: qd1206_2_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: qd1206_2_2 -> CFSVA 2012: Training and technical assistance in improved
+19:10:35 00_names WARNING label cut to 80 characters: qd802_2 -> CFSVA 2012: Lighting and cooking energy materials (eg: Firewood/ - If yes
+19:10:35 00_names WARNING label cut to 80 characters: qf1206_1 -> CFSVA 2012: Small livestock - Was this assistance provided
+19:10:35 00_names WARNING label cut to 80 characters: qh904_2 -> CFSVA 2012: Carrot, orange sweet potato or other tubers that are orange inside
+19:10:35 00_names WARNING label cut to 80 characters: qi1206_1 -> CFSVA 2012: For education (e.g. school materials) - Was this assistance provided
+19:10:35 00_names WARNING label cut to 80 characters: qk1206_1 -> CFSVA 2012: Medical services - Was this assistance provided
+19:10:35 00_names WARNING label cut to 80 characters: s12_06 -> CFSVA 2024: During your last pregnancy, have you ever been visited by a
+19:10:35 00_names WARNING label cut to 80 characters: s12_07 -> CFSVA 2024: During the first 6 weeks that s/he was born (the child that you're
+19:10:35 00_names WARNING label cut to 80 characters: s12_10_0 -> CFSVA 2024: Pregnant Women are usually given iron pills. Which are you enrolled
+19:10:35 00_names WARNING label cut to 80 characters: s12_15 -> CFSVA 2024: Does the woman present any disability the prevents her from being
+19:10:35 00_names WARNING label cut to 80 characters: s13_01 -> CFSVA 2015: Women between 15 and 49 years old are present in this household
+19:10:35 00_names WARNING label cut to 80 characters: s13_03_3 -> CFSVA 2015: During the first 6 weeks that s/he was born
+19:10:35 00_names WARNING label cut to 80 characters: s13_03_6 -> CFSVA 2015: Months pregnant were you when you first received antenatal care for
+19:10:35 00_names WARNING label cut to 80 characters: s13_03_7 -> CFSVA 2015: Antenatal care visits did you attend during your last pregnancy
+19:10:35 00_names WARNING label cut to 80 characters: s13_03_9 -> CFSVA 2015: For how long did you take iron pills during your last pregnancy
+19:10:35 00_names WARNING label cut to 80 characters: s13_04_2 -> CFSVA 2015: Nights a week or how many nights did you use mosquito net, last week
+19:10:35 00_names WARNING label cut to 80 characters: s13_04_4 -> CFSVA 2015: Were sick, did you consult any healthcare service, last 2 weeks
+19:10:35 00_names WARNING label cut to 80 characters: s13_05_2 -> CFSVA 2015: Use to wash your hands after visiting toilet or at any other time
+19:10:35 00_names WARNING label cut to 80 characters: s13_06 -> CFSVA 2015: Does the woman presen any disability the prevents her from being
+19:10:35 00_names WARNING label cut to 80 characters: s14_01 -> CFSVA 2015: Children under 5 years old are present in this household
+19:10:35 00_names WARNING label cut to 80 characters: urban_nisr -> CFSVA 2012: Area of residence as shipped
+19:10:35 00_names WARNING label cut to 80 characters: v_name -> CFSVA 2012: Village name
+19:10:36 00_names WARNING label cut to 80 characters: as13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: as13_17 -> CFSVA 2018: Foods made from grains (Porridge, bread, rice
+19:10:36 00_names WARNING label cut to 80 characters: as14_08 -> CFSVA 2015: Porridge, bread, rice, noodles, or other foods made from grains
+19:10:36 00_names WARNING label cut to 80 characters: as14_15_3 -> CFSVA 2018: After birth did you first put child name to the breast after birth
+19:10:36 00_names WARNING label cut to 80 characters: as14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Porridge
+19:10:36 00_names WARNING label cut to 80 characters: bs13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: bs13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: bs13_16_1 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: bs13_17 -> CFSVA 2018: White roots and tubers and plantains (White potatoes, white yams
+19:10:36 00_names WARNING label cut to 80 characters: bs14_08 -> CFSVA 2015: Pumpkin, carrots, squash, or sweet potatoes that are yellow or
+19:10:36 00_names WARNING label cut to 80 characters: bs14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any White
+19:10:36 00_names WARNING label cut to 80 characters: cs13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: cs13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: cs13_17 -> CFSVA 2018: Pulses, the
+19:10:36 00_names WARNING label cut to 80 characters: cs14_08 -> CFSVA 2015: White potatoes, white yams, manioc, cassava, plantains
+19:10:36 00_names WARNING label cut to 80 characters: cs14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink any drinks
+19:10:36 00_names WARNING label cut to 80 characters: ds13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ds13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ds13_17 -> CFSVA 2018: Nuts and seeds (Any tree nut, groundnut/peanut or certain seeds
+19:10:36 00_names WARNING label cut to 80 characters: ds14_08 -> CFSVA 2015: Any dark green leafy vegetables
+19:10:36 00_names WARNING label cut to 80 characters: ds14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name consume Milk
+19:10:36 00_names WARNING label cut to 80 characters: ds14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Milk
+19:10:36 00_names WARNING label cut to 80 characters: es13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: es13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: es13_17 -> CFSVA 2018: Milk and milk products (Milk, cheese
+19:10:36 00_names WARNING label cut to 80 characters: es14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Liver
+19:10:36 00_names WARNING label cut to 80 characters: fs13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: fs13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: fs14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink any clear
+19:10:36 00_names WARNING label cut to 80 characters: fs14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any meat
+19:10:36 00_names WARNING label cut to 80 characters: gs13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: gs13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: gs13_17 -> CFSVA 2018: Organ meat (Liver, kidney, heart or other organ meats or
+19:10:36 00_names WARNING label cut to 80 characters: gs14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink any sour
+19:10:36 00_names WARNING label cut to 80 characters: gs14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Fresh or
+19:10:36 00_names WARNING label cut to 80 characters: hs13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: hs13_17 -> CFSVA 2018: Meat and poultry (Beef, pork, lamb, goat, rabbit, wild game meat
+19:10:36 00_names WARNING label cut to 80 characters: hs14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink any
+19:10:36 00_names WARNING label cut to 80 characters: is13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: is13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: is14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink any other
+19:10:36 00_names WARNING label cut to 80 characters: is14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Vit A
+19:10:36 00_names WARNING label cut to 80 characters: js13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: js13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: js14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink any thin
+19:10:36 00_names WARNING label cut to 80 characters: js14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any dark
+19:10:36 00_names WARNING label cut to 80 characters: ks13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ks13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ks13_17 -> CFSVA 2018: Dark green leafy vegetables (List examples of any medium-to-dark
+19:10:36 00_names WARNING label cut to 80 characters: ks14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drinkTea or
+19:10:36 00_names WARNING label cut to 80 characters: ks14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Ripe
+19:10:36 00_names WARNING label cut to 80 characters: ls13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ls13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ls13_17 -> CFSVA 2018: Vitamin A-rich vegetables, roots and tubers (Pumpkin, carrots
+19:10:36 00_names WARNING label cut to 80 characters: mhn_key -> CFSVA 2015: Mother's record id
+19:10:36 00_names WARNING label cut to 80 characters: ms13_15 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ms13_15_1 -> CFSVA 2021: Has your child's the person food consumption changed because of
+19:10:36 00_names WARNING label cut to 80 characters: ms13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ms13_17 -> CFSVA 2021: Has the frequency of food consumption of your child the person
+19:10:36 00_names WARNING label cut to 80 characters: ms14_08 -> CFSVA 2015: Foods made with red palm oil, red palm nut
+19:10:36 00_names WARNING label cut to 80 characters: ms14_15 -> CFSVA 2018: Yesterday, during the day or night, did child name drink anything
+19:10:36 00_names WARNING label cut to 80 characters: ms14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Foods
+19:10:36 00_names WARNING label cut to 80 characters: ns13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ns14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any shisha
+19:10:36 00_names WARNING label cut to 80 characters: os13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: os14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any other
+19:10:36 00_names WARNING label cut to 80 characters: ps13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: ps14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any RUTF
+19:10:36 00_names WARNING label cut to 80 characters: purchase_sale -> CFSVA 2012: COMPUTE Purchase sale=PS agri + PS livestock products + PS
+19:10:36 00_names WARNING label cut to 80 characters: q1001 -> CFSVA 2012: Have there been times when your household did not have enough food
+19:10:36 00_names WARNING label cut to 80 characters: q1101 -> CFSVA 2012: Were there any specific months in which your household found it
+19:10:36 00_names WARNING label cut to 80 characters: q114_1 -> CFSVA 2012: Hosting any person that is temporally resident in your household
+19:10:36 00_names WARNING label cut to 80 characters: q1202 -> CFSVA 2012: Or one of its members benefit from any in kind food assistance
+19:10:36 00_names WARNING label cut to 80 characters: q1205 -> CFSVA 2012: Or one of its members benefit from any other non-food assistance
+19:10:36 00_names WARNING label cut to 80 characters: q1503_c_1 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q1503_c_2 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q1503_c_3 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q1503_c_4 -> CFSVA 2012: Main crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q1503_d -> CFSVA 2012: Main crop - What % of your total land do you generally use for this
+19:10:36 00_names WARNING label cut to 80 characters: q1503_e -> CFSVA 2012: Main crop - What % of your production for this crop do you directly
+19:10:36 00_names WARNING label cut to 80 characters: q1503_f_2 -> CFSVA 2012: Main crop - What % of your production for this crop do you give a
+19:10:36 00_names WARNING label cut to 80 characters: q1503_g -> CFSVA 2012: Main crop - Of this major crop approximately what percentage is
+19:10:36 00_names WARNING label cut to 80 characters: q1503_h_1 -> CFSVA 2012: Main crop - How do you normally acquire major crop seeds/planting
+19:10:36 00_names WARNING label cut to 80 characters: q202_1 -> CFSVA 2012: Is the house your household live in located in an village
+19:10:36 00_names WARNING label cut to 80 characters: q202_11 -> CFSVA 2012: In the first six months after delivery
+19:10:36 00_names WARNING label cut to 80 characters: q202_16 -> CFSVA 2012: Has the person been ill with a fever at any time, past 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: q202_17 -> CFSVA 2012: Has the person been ill with a cough at any time, past 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: q202_18 -> CFSVA 2012: Has the person been ill with diarrhea at any time, past 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: q202_19 -> CFSVA 2012: If the child was sick was the person seen at a health facility
+19:10:36 00_names WARNING label cut to 80 characters: q202_22 -> CFSVA 2012: Child measurement made lying or standing
+19:10:36 00_names WARNING label cut to 80 characters: q202_25 -> CFSVA 2012: Does the child have bilateral pitting oedema
+19:10:36 00_names WARNING label cut to 80 characters: q202_29h_1 -> CFSVA 2012: Any other liquids such as list other water-based liquids available
+19:10:36 00_names WARNING label cut to 80 characters: q202_30 -> CFSVA 2012: Yesterday, did the person eat anything during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: q202_30b -> CFSVA 2012: Pumpkin, carrots, squash, or sweet potatoes that are yellow or
+19:10:36 00_names WARNING label cut to 80 characters: q202_30c -> CFSVA 2012: White potatoes, white yams, manioc, cassava
+19:10:36 00_names WARNING label cut to 80 characters: q202_30d -> CFSVA 2012: Any dark green leafy vegetablesripe mangoes, ripe papayas, or
+19:10:36 00_names WARNING label cut to 80 characters: q202_30e -> CFSVA 2012: Any other fruits or vegetablesliver, kidney, heart
+19:10:36 00_names WARNING label cut to 80 characters: q202_30h -> CFSVA 2012: Fresh or dried fish, shellfish, or seafoodany foods made from beans
+19:10:36 00_names WARNING label cut to 80 characters: q202_30k -> CFSVA 2012: Any Sugary Foods Such As Chocolates, Sweets, Candies, Pastries
+19:10:36 00_names WARNING label cut to 80 characters: q202_30l -> CFSVA 2012: Condiments for flavor, such as chilies, spices, herbs
+19:10:36 00_names WARNING label cut to 80 characters: q202_30n -> CFSVA 2012: Foods made with red palm oil, red palm nut
+19:10:36 00_names WARNING label cut to 80 characters: q202_31 -> CFSVA 2012: Times did the person eat solid, semi-solid
+19:10:36 00_names WARNING label cut to 80 characters: q202_32 -> CFSVA 2012: Drink anything from a bottle with a nipple yesterday during the day
+19:10:36 00_names WARNING label cut to 80 characters: q209_1 -> CFSVA 2012: Current main source of drinking water for your household
+19:10:36 00_names WARNING label cut to 80 characters: q211 -> CFSVA 2012: Is there a time in the year when your household uses an alternate
+19:10:36 00_names WARNING label cut to 80 characters: q212_1 -> CFSVA 2012: Main alternative source of drinking water for your household
+19:10:36 00_names WARNING label cut to 80 characters: q214_1_1 -> CFSVA 2012: Main source:How do you or your household members go to your water
+19:10:36 00_names WARNING label cut to 80 characters: q214_1_2 -> CFSVA 2012: Specify other:How do you or your household members go to your water
+19:10:36 00_names WARNING label cut to 80 characters: q214_2_1 -> CFSVA 2012: Alternative source:How do you or your household members go to your
+19:10:36 00_names WARNING label cut to 80 characters: q214_2_2 -> CFSVA 2012: Specify other:How do you or your household members go to your water
+19:10:36 00_names WARNING label cut to 80 characters: q215_1 -> CFSVA 2012: Main source in minutes:How far is the source of water for your
+19:10:36 00_names WARNING label cut to 80 characters: q215_2 -> CFSVA 2012: Alternative source in minutes:How far is the source of water for
+19:10:36 00_names WARNING label cut to 80 characters: q2503_c_1 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q2503_c_2 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q2503_c_3 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q2503_c_4 -> CFSVA 2012: Second crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q2503_d -> CFSVA 2012: Second crop - What % of your total land do you generally use for
+19:10:36 00_names WARNING label cut to 80 characters: q2503_e -> CFSVA 2012: Second crop - What % of your production for this crop do you
+19:10:36 00_names WARNING label cut to 80 characters: q2503_f_2 -> CFSVA 2012: Second crop - What % of your production for this crop do you give a
+19:10:36 00_names WARNING label cut to 80 characters: q2503_g -> CFSVA 2012: Second crop - Of this major crop approximately what percentage is
+19:10:36 00_names WARNING label cut to 80 characters: q2503_h_1 -> CFSVA 2012: Second crop - How do you normally acquire major crop seeds/planting
+19:10:36 00_names WARNING label cut to 80 characters: q303_1 -> CFSVA 2012: Tell me what was your household's total cash income, last month
+19:10:36 00_names WARNING label cut to 80 characters: q3503_c_1 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q3503_c_2 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q3503_c_3 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q3503_c_4 -> CFSVA 2012: Third crop - How long did your household have food stocks from this
+19:10:36 00_names WARNING label cut to 80 characters: q3503_d -> CFSVA 2012: Third crop - What % of your total land do you generally use for
+19:10:36 00_names WARNING label cut to 80 characters: q3503_e -> CFSVA 2012: Third crop - What % of your production for this crop do you
+19:10:36 00_names WARNING label cut to 80 characters: q3503_f_2 -> CFSVA 2012: Third crop - What % of your production for this crop do you give a
+19:10:36 00_names WARNING label cut to 80 characters: q3503_g -> CFSVA 2012: Third crop - Of this major crop approximately what percentage is
+19:10:36 00_names WARNING label cut to 80 characters: q3503_h_1 -> CFSVA 2012: Third crop - How do you normally acquire major crop seeds/planting
+19:10:36 00_names WARNING label cut to 80 characters: q402_1 -> CFSVA 2012: Share Cropped:Out of the total land that your household farms
+19:10:36 00_names WARNING label cut to 80 characters: q402_2 -> CFSVA 2012: Owned:Out of the total land that your household farms, how much is
+19:10:36 00_names WARNING label cut to 80 characters: q402_3 -> CFSVA 2012: Rented / Leased:Out of the total land that your household farms
+19:10:36 00_names WARNING label cut to 80 characters: q402_4 -> CFSVA 2012: Free use / loaned or appropriated:Out of the total land that your
+19:10:36 00_names WARNING label cut to 80 characters: q402_5 -> CFSVA 2012: Other:Out of the total land that your household farms, how much is
+19:10:36 00_names WARNING label cut to 80 characters: q405 -> CFSVA 2012: Use fertilizer and/or insecticides, past 12 months
+19:10:36 00_names WARNING label cut to 80 characters: q406_1 -> CFSVA 2012: Bought:If yes where did you get it from
+19:10:36 00_names WARNING label cut to 80 characters: q406_2 -> CFSVA 2012: Bought with voucher:If yes where did you get it from
+19:10:36 00_names WARNING label cut to 80 characters: q406_3 -> CFSVA 2012: Received from NGO, Government Institutions:If yes where did you get
+19:10:36 00_names WARNING label cut to 80 characters: q406_4 -> CFSVA 2012: Free / Own production:If yes where did you get it from
+19:10:36 00_names WARNING label cut to 80 characters: q408_1 -> CFSVA 2012: Is any of the land that your household farms protected against soil
+19:10:36 00_names WARNING label cut to 80 characters: q408_2 -> CFSVA 2012: If yes, how much of the land you farm is protected against soil
+19:10:36 00_names WARNING label cut to 80 characters: q409_07 -> CFSVA 2012: Plough / Ox plough:Does your household own any of the following
+19:10:36 00_names WARNING label cut to 80 characters: q409_15 -> CFSVA 2012: Living room suite (chairs sofa:Does your household own any of the
+19:10:36 00_names WARNING label cut to 80 characters: q409_18 -> CFSVA 2012: Motorized vehicle of any kind:Does your household own any of the
+19:10:36 00_names WARNING label cut to 80 characters: q409_19 -> CFSVA 2012: Fishing boat / Canoe:Does your household own any of the following
+19:10:36 00_names WARNING label cut to 80 characters: q4503_c_1 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q4503_c_2 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q4503_c_3 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q4503_c_4 -> CFSVA 2012: Fourth crop - How long did your household have food stocks from
+19:10:36 00_names WARNING label cut to 80 characters: q4503_d -> CFSVA 2012: Fourth crop - What % of your total land do you generally use for
+19:10:36 00_names WARNING label cut to 80 characters: q4503_e -> CFSVA 2012: Fourth crop - What % of your production for this crop do you
+19:10:36 00_names WARNING label cut to 80 characters: q4503_f_2 -> CFSVA 2012: Fourth crop - What % of your production for this crop do you give a
+19:10:36 00_names WARNING label cut to 80 characters: q4503_g -> CFSVA 2012: Fourth crop - Of this major crop approximately what percentage is
+19:10:36 00_names WARNING label cut to 80 characters: q4503_h_1 -> CFSVA 2012: Fourth crop - How do you normally acquire major crop seeds/planting
+19:10:36 00_names WARNING label cut to 80 characters: q502 -> CFSVA 2012: Is any member of your household a member of a farmer
+19:10:36 00_names WARNING label cut to 80 characters: q602 -> CFSVA 2012: Household receive from remittances, last 12 months
+19:10:36 00_names WARNING label cut to 80 characters: q701 -> CFSVA 2012: Have you or any household member taken a loan in the, last 12 months
+19:10:36 00_names WARNING label cut to 80 characters: q702_1 -> CFSVA 2012: What was the main use of the largest loan taken, last 12 months
+19:10:36 00_names WARNING label cut to 80 characters: q905 -> CFSVA 2012: R household prefered staple food (other than beans, soup)
+19:10:36 00_names WARNING label cut to 80 characters: qa1106_3 -> CFSVA 2012: First shock - Did shock create a decrease or loss of income in cash
+19:10:36 00_names WARNING label cut to 80 characters: qa1106_4 -> CFSVA 2012: First shock - Did shock create a decrease or loss of assets or
+19:10:36 00_names WARNING label cut to 80 characters: qa1106_5 -> CFSVA 2012: First shock - Did shock create an unusual decrease in your
+19:10:36 00_names WARNING label cut to 80 characters: qa1106_6 -> CFSVA 2012: First shock - What did the household do to compensate for those
+19:10:36 00_names WARNING label cut to 80 characters: qa1203_1 -> CFSVA 2012: Food for school children - Was this aid provided
+19:10:36 00_names WARNING label cut to 80 characters: qa1203_2_1 -> CFSVA 2012: Food for school children - Who provided it
+19:10:36 00_names WARNING label cut to 80 characters: qa1206_1 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:36 00_names WARNING label cut to 80 characters: qa1206_2_1 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:36 00_names WARNING label cut to 80 characters: qa1206_2_2 -> CFSVA 2012: Access to credit/loans for agricultural/livestock related
+19:10:36 00_names WARNING label cut to 80 characters: qa302_2 -> CFSVA 2012: Main activity - Using proportional piling methods
+19:10:36 00_names WARNING label cut to 80 characters: qa302_4 -> CFSVA 2012: Main activity - Is this livelihood activity seasonal
+19:10:36 00_names WARNING label cut to 80 characters: qb1106_3 -> CFSVA 2012: Second shock - Did shock create a decrease or loss of income in
+19:10:36 00_names WARNING label cut to 80 characters: qb1106_4 -> CFSVA 2012: Second shock - Did shock create a decrease or loss of assets or
+19:10:36 00_names WARNING label cut to 80 characters: qb1106_5 -> CFSVA 2012: Second shock - Did shock create an unusual decrease in your
+19:10:36 00_names WARNING label cut to 80 characters: qb1106_6 -> CFSVA 2012: Second shock - What did the household do to compensate for those
+19:10:36 00_names WARNING label cut to 80 characters: qb1203_1 -> CFSVA 2012: Food for pregnant and breastfeeding women and small children - Was
+19:10:36 00_names WARNING label cut to 80 characters: qb1203_2_1 -> CFSVA 2012: Food for pregnant and breastfeeding women and small children - Who
+19:10:36 00_names WARNING label cut to 80 characters: qb1203_2_2 -> CFSVA 2012: Food for pregnant and breastfeeding women and small children
+19:10:36 00_names WARNING label cut to 80 characters: qb1206_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:36 00_names WARNING label cut to 80 characters: qb1206_2_1 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:36 00_names WARNING label cut to 80 characters: qb1206_2_2 -> CFSVA 2012: Access to credit/loans for Other NON agricultural/livestock related
+19:10:36 00_names WARNING label cut to 80 characters: qc1206_1 -> CFSVA 2012: Agricultural input assistance - Was this assistance provided
+19:10:36 00_names WARNING label cut to 80 characters: qc1206_2_1 -> CFSVA 2012: Agricultural input assistance - Who provided it
+19:10:36 00_names WARNING label cut to 80 characters: qc302_4 -> CFSVA 2012: Third activity - Is this livelihood activity seasonal
+19:10:36 00_names WARNING label cut to 80 characters: qd1206_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:36 00_names WARNING label cut to 80 characters: qd1206_2_1 -> CFSVA 2012: Training and technical assistance in improved
+19:10:36 00_names WARNING label cut to 80 characters: qd1206_2_2 -> CFSVA 2012: Training and technical assistance in improved
+19:10:36 00_names WARNING label cut to 80 characters: qd802_2 -> CFSVA 2012: Lighting and cooking energy materials (eg: Firewood/ - If yes
+19:10:36 00_names WARNING label cut to 80 characters: qf1206_1 -> CFSVA 2012: Small livestock - Was this assistance provided
+19:10:36 00_names WARNING label cut to 80 characters: qh904_2 -> CFSVA 2012: Carrot, orange sweet potato or other tubers that are orange inside
+19:10:36 00_names WARNING label cut to 80 characters: qi1206_1 -> CFSVA 2012: For education (e.g. school materials) - Was this assistance provided
+19:10:36 00_names WARNING label cut to 80 characters: qk1206_1 -> CFSVA 2012: Medical services - Was this assistance provided
+19:10:36 00_names WARNING label cut to 80 characters: qs13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: qs14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any Iron
+19:10:36 00_names WARNING label cut to 80 characters: rs13_16 -> CFSVA 2021-2024: Yesterday, during the day or night
+19:10:36 00_names WARNING label cut to 80 characters: rs14_16 -> CFSVA 2018: Yesterday, during the day or night, did child name eat any food to
+19:10:36 00_names WARNING label cut to 80 characters: s13_01_v2 -> CFSVA 2015: Women between 15 and 49 years old are present in this household
+19:10:36 00_names WARNING label cut to 80 characters: s13_05_v2 -> CFSVA 2021: Currently present for interview and anthropometric measurement
+19:10:36 00_names WARNING label cut to 80 characters: s13_05_2_v2 -> CFSVA 2015: Use to wash your hands after visiting toilet or at any other time
+19:10:36 00_names WARNING label cut to 80 characters: s13_06 -> CFSVA 2021-2024: Born, how big in Kg was the person
+19:10:36 00_names WARNING label cut to 80 characters: s13_06_v2 -> CFSVA 2018: During your last pregnancy, have you ever been visited by a
+19:10:36 00_names WARNING label cut to 80 characters: s13_06_v3 -> CFSVA 2015: Does the woman presen any disability the prevents her from being
+19:10:36 00_names WARNING label cut to 80 characters: s13_07_v2 -> CFSVA 2018: During the first 6 weeks that s/he was born (the child that you're
+19:10:36 00_names WARNING label cut to 80 characters: s13_08 -> CFSVA 2021-2024: Did the person receive deworming tablets, last six months
+19:10:36 00_names WARNING label cut to 80 characters: s13_08_3 -> CFSVA 2018: Months pregnant were you when you first received antenatal care for
+19:10:36 00_names WARNING label cut to 80 characters: s13_09_v2 -> CFSVA 2018: Antenatal care visits did you attend during your recent born
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2 -> CFSVA 2021-2024: When the person had diarrhea, how did you tre, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_1_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was gi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_2_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was gi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_3_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was fr, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_4_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was gi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_5_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was gi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_6_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was gi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_7 -> CFSVA 2024: Was zinc supplement given along with the home or packaged oral
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_7_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was zi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_8_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Was gi, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_11_2_smt_88_v2 -> CFSVA 2021: Had diarrhea, how did you treat it? - Nothin, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_12 -> CFSVA 2021-2024: Was sick, did s/he see any health, last two weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_13_2 -> CFSVA 2018: Were sick, did you consult any healthcare service, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s13_14_smt_2 -> CFSVA 2018: Tell me all the times you wash hands
+19:10:36 00_names WARNING label cut to 80 characters: s13_15 -> CFSVA 2018: Does the woman present any disability the prevents her from being
+19:10:36 00_names WARNING label cut to 80 characters: s13_17 -> CFSVA 2021-2024: Yesteday, during day or night how many times did child name
+19:10:36 00_names WARNING label cut to 80 characters: s13_20 -> CFSVA 2021-2024: Does child name present any disability preventing him or her
+19:10:36 00_names WARNING label cut to 80 characters: s13_20_smt_0_v2 -> CFSVA 2021: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s13_20_smt_1_v2 -> CFSVA 2021: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s13_20_smt_2_v2 -> CFSVA 2021: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s13_20_smt_3_v2 -> CFSVA 2021: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s13_20_smt_4_v2 -> CFSVA 2021: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_01_v2 -> CFSVA 2015: Children under 5 years old are present in this household
+19:10:36 00_names WARNING label cut to 80 characters: s14_02_5 -> CFSVA 2015: Does child name has birth card for proper DOB and other information
+19:10:36 00_names WARNING label cut to 80 characters: s14_03_3 -> CFSVA 2015: Days after the birth did you first put child name on breast
+19:10:36 00_names WARNING label cut to 80 characters: s14_03_4 -> CFSVA 2015: In the first six month child name was born
+19:10:36 00_names WARNING label cut to 80 characters: s14_05 -> CFSVA 2018: Is child name currently present for interview and anthropometric
+19:10:36 00_names WARNING label cut to 80 characters: s14_05_5 -> CFSVA 2015: Child name was sick, did s/he see any healthcare provider
+19:10:36 00_names WARNING label cut to 80 characters: s14_06 -> CFSVA 2018: Born, how big in Kg was child name , refer to the child growth card
+19:10:36 00_names WARNING label cut to 80 characters: s14_06_4 -> CFSVA 2015: If the child name does not feed him/herself do the person who feed
+19:10:36 00_names WARNING label cut to 80 characters: s14_07_v2 -> CFSVA 2015: Yesterday, during day or night was child name breastfeed
+19:10:36 00_names WARNING label cut to 80 characters: s14_08_2 -> CFSVA 2015: Please write down other foods or liquids in this box that
+19:10:36 00_names WARNING label cut to 80 characters: s14_09_v2 -> CFSVA 2015: Yesteday, during day or night how many times did child name eat
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2 -> CFSVA 2018: When child name had diarrhea, how did you treat it, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_1 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_2 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_3 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_4 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_5 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_6 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_7 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_8 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (W, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_11_2_smt_88 -> CFSVA 2018: When child name had diarrhea, how did you treat it? (N, last 2 weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_12 -> CFSVA 2018: Child name was sick, did s/he see any healthcare pr, last two weeks
+19:10:36 00_names WARNING label cut to 80 characters: s14_12_3 -> CFSVA 2015: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_17 -> CFSVA 2018: Yesteday, during day or night how many times did child name eat
+19:10:36 00_names WARNING label cut to 80 characters: s14_20 -> CFSVA 2018: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_20_smt_0 -> CFSVA 2018: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_20_smt_1 -> CFSVA 2018: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_20_smt_2 -> CFSVA 2018: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_20_smt_3 -> CFSVA 2018: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s14_20_smt_4 -> CFSVA 2018: Does child name present any disability preventing him or her from
+19:10:36 00_names WARNING label cut to 80 characters: s2_07 -> CFSVA 2015: Kind of toilet facility does your household use here in your
+19:10:36 00_names WARNING label cut to 80 characters: s2_07_2 -> CFSVA 2015: If your household does not have its own toilet facility
+19:10:36 00_names WARNING label cut to 80 characters: s2_13 -> CFSVA 2015: On average, how many liters of water does your household use per day
+19:10:36 00_names WARNING label cut to 80 characters: urban_nisr -> CFSVA 2012: Area of residence as shipped
+19:10:36 00_names WARNING label cut to 80 characters: v_name -> CFSVA 2012: Village name
+19:10:36 00_names WARNING label cut to 80 characters: v_s3_01 -> CFSVA 2015: Percentage of households in this village have access to electricity
+19:10:36 00_names WARNING label cut to 80 characters: v_s3_02_2 -> CFSVA 2015: If not, then how far away on average is the nearest functioning
+19:10:36 00_names WARNING label cut to 80 characters: v_s3_03_2 -> CFSVA 2015: If not, then how far away on average is the nearest functioning
+19:10:36 00_names WARNING label cut to 80 characters: v_s4_02_3 -> CFSVA 2015: If this is not the main market for the village or there is no
+19:10:36 00_names WARNING label cut to 80 characters: v_s4_02_4 -> CFSVA 2015: Is the road to the main market for your community accessible all
+19:10:37 00_names WARNING label cut to 80 characters: q301 -> CFSVA 2012: Percentage of households in this village have access to electricity
+19:10:37 00_names WARNING label cut to 80 characters: q302_2 -> CFSVA 2012: If not, then how far away on average is the nearest functioning
+19:10:37 00_names WARNING label cut to 80 characters: q303_2 -> CFSVA 2012: If not, then how far away on average is the nearest functioning
+19:10:37 00_names WARNING label cut to 80 characters: q401_1 -> CFSVA 2012: Is the main market your community mostly interacts with in your
+19:10:37 00_names WARNING label cut to 80 characters: q401_2 -> CFSVA 2012: If no, how far is the main market your community mostly interacts
+19:10:37 00_names WARNING label cut to 80 characters: q402 -> CFSVA 2012: Is the road to the main market for your community accessible all
+19:10:37 00_names WARNING label cut to 80 characters: q404_1 -> CFSVA 2012: Main challenge your community faces related to food markets
+19:10:37 00_names WARNING label cut to 80 characters: q601_1 -> CFSVA 2012: Main crop:What are the 3 main annual crops cultivated by the
+19:10:37 00_names WARNING label cut to 80 characters: q601_2 -> CFSVA 2012: Second crop:What are the 3 main annual crops cultivated by the
+19:10:37 00_names WARNING label cut to 80 characters: q601_3 -> CFSVA 2012: Third crop:What are the 3 main annual crops cultivated by the
+19:10:37 00_names WARNING label cut to 80 characters: q801_1 -> CFSVA 2012: First:What are the principal problems that the households in this
+19:10:37 00_names WARNING label cut to 80 characters: q801_2 -> CFSVA 2012: Second:What are the principal problems that the households in this
+19:10:37 00_names WARNING label cut to 80 characters: q801_3 -> CFSVA 2012: Third:What are the principal problems that the households in this
+19:10:37 00_names WARNING label cut to 80 characters: q801_4 -> CFSVA 2012: Fourth:What are the principal problems that the households in this
+19:10:37 00_names WARNING label cut to 80 characters: qa501_3 -> CFSVA 2012: Maize - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qa502_2 -> CFSVA 2012: Cow - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qa503 -> CFSVA 2012: Unskilled agricultural labour - Currently for the households in
+19:10:37 00_names WARNING label cut to 80 characters: qa503_2 -> CFSVA 2012: Unskilled agricultural labour - Compared to prices in the rest of
+19:10:37 00_names WARNING label cut to 80 characters: qa602_01 -> CFSVA 2012: Main crop - March 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_02 -> CFSVA 2012: Main crop - December 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_03 -> CFSVA 2012: Main crop - January 2012:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_04 -> CFSVA 2012: Main crop - February 2012:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_05 -> CFSVA 2012: Main crop - April 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_06 -> CFSVA 2012: Main crop - May 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_07 -> CFSVA 2012: Main crop - June 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_08 -> CFSVA 2012: Main crop - July 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_09 -> CFSVA 2012: Main crop - August 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_10 -> CFSVA 2012: Main crop - September 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_11 -> CFSVA 2012: Main crop - October 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa602_12 -> CFSVA 2012: Main crop - November 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qa702_4 -> CFSVA 2012: VUP public works - For each how does the community rate qualify the
+19:10:37 00_names WARNING label cut to 80 characters: qb501_3 -> CFSVA 2012: Rice - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qb502_2 -> CFSVA 2012: Goat - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qb503 -> CFSVA 2012: Unskilled non agricultural labour - Currently for the households in
+19:10:37 00_names WARNING label cut to 80 characters: qb503_2 -> CFSVA 2012: Unskilled non agricultural labour - Compared to prices in the rest
+19:10:37 00_names WARNING label cut to 80 characters: qb602_01 -> CFSVA 2012: Second crop - March 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_02 -> CFSVA 2012: Second crop - December 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_03 -> CFSVA 2012: Second crop - January 2012:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_04 -> CFSVA 2012: Second crop - February 2012:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_05 -> CFSVA 2012: Second crop - April 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_06 -> CFSVA 2012: Second crop - May 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_07 -> CFSVA 2012: Second crop - June 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_08 -> CFSVA 2012: Second crop - July 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_09 -> CFSVA 2012: Second crop - August 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_10 -> CFSVA 2012: Second crop - September 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_11 -> CFSVA 2012: Second crop - October 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb602_12 -> CFSVA 2012: Second crop - November 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qb702_1 -> CFSVA 2012: VUP direct support - Does any household in this village participate
+19:10:37 00_names WARNING label cut to 80 characters: qb702_4 -> CFSVA 2012: VUP direct support - For each how does the community rate qualify
+19:10:37 00_names WARNING label cut to 80 characters: qc501_3 -> CFSVA 2012: Sorghum - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qc502_2 -> CFSVA 2012: Sheep - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qc602_01 -> CFSVA 2012: Third crop - March 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_02 -> CFSVA 2012: Third crop - December 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_03 -> CFSVA 2012: Third crop - January 2012:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_04 -> CFSVA 2012: Third crop - February 2012:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_05 -> CFSVA 2012: Third crop - April 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_06 -> CFSVA 2012: Third crop - May 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_07 -> CFSVA 2012: Third crop - June 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_08 -> CFSVA 2012: Third crop - July 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_09 -> CFSVA 2012: Third crop - August 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_10 -> CFSVA 2012: Third crop - September 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_11 -> CFSVA 2012: Third crop - October 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc602_12 -> CFSVA 2012: Third crop - November 2011:In 2011-2012 when were the main crops
+19:10:37 00_names WARNING label cut to 80 characters: qc702_1 -> CFSVA 2012: Other Cash for work programmes - Does any household in this village
+19:10:37 00_names WARNING label cut to 80 characters: qc702_2 -> CFSVA 2012: Other Cash for work programmes - % households in the village
+19:10:37 00_names WARNING label cut to 80 characters: qc702_4 -> CFSVA 2012: Other Cash for work programmes - For each how does the community
+19:10:37 00_names WARNING label cut to 80 characters: qd501_3 -> CFSVA 2012: Cassava - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qd502_2 -> CFSVA 2012: Chicken - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qd702_1 -> CFSVA 2012: Food for work programmes - Does any household in this village
+19:10:37 00_names WARNING label cut to 80 characters: qd702_4 -> CFSVA 2012: Food for work programmes - For each how does the community rate
+19:10:37 00_names WARNING label cut to 80 characters: qe501_3 -> CFSVA 2012: Beans - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qe502_2 -> CFSVA 2012: Pig - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qe702_1 -> CFSVA 2012: Free food distribution - Does any household in this village
+19:10:37 00_names WARNING label cut to 80 characters: qe702_4 -> CFSVA 2012: Free food distribution - For each how does the community rate
+19:10:37 00_names WARNING label cut to 80 characters: qf501_3 -> CFSVA 2012: Sweet potatoes - Compared to prices in the rest of the year would
+19:10:37 00_names WARNING label cut to 80 characters: qf702_1 -> CFSVA 2012: Rural Support S Project - Does any household in this village
+19:10:37 00_names WARNING label cut to 80 characters: qf702_3_1 -> CFSVA 2012: Rural Support S Project - How are the households selected
+19:10:37 00_names WARNING label cut to 80 characters: qf702_4 -> CFSVA 2012: Rural Support S Project - For each how does the community rate
+19:10:37 00_names WARNING label cut to 80 characters: qg501_3 -> CFSVA 2012: Irish potatoes - Compared to prices in the rest of the year would
+19:10:37 00_names WARNING label cut to 80 characters: qg702_1 -> CFSVA 2012: Crop intensification Project - Does any household in this village
+19:10:37 00_names WARNING label cut to 80 characters: qg702_2 -> CFSVA 2012: Crop intensification Project - % households in the village
+19:10:37 00_names WARNING label cut to 80 characters: qg702_4 -> CFSVA 2012: Crop intensification Project - For each how does the community rate
+19:10:37 00_names WARNING label cut to 80 characters: qh501_3 -> CFSVA 2012: Cabbage - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qi501_3 -> CFSVA 2012: Banana fruit - Compared to prices in the rest of the year would you
+19:10:37 00_names WARNING label cut to 80 characters: qj501_3 -> CFSVA 2012: Cooking Banana - Compared to prices in the rest of the year would
+19:10:37 00_names WARNING label cut to 80 characters: qk501_3 -> CFSVA 2012: Meat - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: ql501_3 -> CFSVA 2012: Chicken - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qm501_3 -> CFSVA 2012: Small fish - Compared to prices in the rest of the year would you
+19:10:37 00_names WARNING label cut to 80 characters: qn501_3 -> CFSVA 2012: Fish - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: qo501_3 -> CFSVA 2012: Milk - Compared to prices in the rest of the year would you say
+19:10:37 00_names WARNING label cut to 80 characters: s2_03 -> CFSVA 2018-2021: Does any of the following safetynets schemes apply to this
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_1 -> CFSVA 2018-2021: Does any of the following safetynets schemes apply to this
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_2 -> CFSVA 2018-2021: Does any of the following safetynets schemes apply to this
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_3 -> CFSVA 2018-2021: Does any of the following safetynets schemes apply to this
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_4 -> CFSVA 2021: Does any of the following safetynets schemes apply to this village?
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_5 -> CFSVA 2018-2021: Does any of the following safetynets schemes apply to this
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_6 -> CFSVA 2018-2021: Does any of the following safetynets schemes apply to this
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_7 -> CFSVA 2021: Does any of the following safetynets schemes apply to this village?
+19:10:37 00_names WARNING label cut to 80 characters: s2_03_smt_88 -> CFSVA 2021: Does any of the following safetynets schemes apply to this village?
+19:10:37 00_names WARNING label cut to 80 characters: s3_02_2 -> CFSVA 2018-2021: If not, then how far away on average is the nearest
+19:10:37 00_names WARNING label cut to 80 characters: s3_03_2 -> CFSVA 2018-2021: If not, then how far away on average is the nearest
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_3 -> CFSVA 2018-2021: If this is not the main market for the village or there is no
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_4 -> CFSVA 2018-2021: Is the road to the main market for your community accessible
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_1_v2 -> CFSVA 2018: January
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_10_v2 -> CFSVA 2018: October
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_11_v2 -> CFSVA 2018: November
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_12_v2 -> CFSVA 2018: December
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_2_v2 -> CFSVA 2018: February
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_3_v2 -> CFSVA 2018: March
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_4_v2 -> CFSVA 2018: April
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_5_v2 -> CFSVA 2018: May
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_6_v2 -> CFSVA 2018: June
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_7_v2 -> CFSVA 2018: July
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_8_v2 -> CFSVA 2018: August
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_5_smt_9_v2 -> CFSVA 2018: September
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6 -> CFSVA 2018-2021: Main challenges your community faces related to food markets
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_10 -> CFSVA 2018-2021: Main challenges your community faces related to food markets?
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_2_v2 -> CFSVA 2018: Not enough supply (not enough food available on market (What are
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_4_v2 -> CFSVA 2018: Loss/reduction of employment of household (What are the main
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_5_v2 -> CFSVA 2018: Reduction of income of household members (What are the main
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_6_v2 -> CFSVA 2018: High market prices for non-food items (What are the main challenges
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_7_v2 -> CFSVA 2018: Unusually high food prices (What are the main challenges your
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_8_v2 -> CFSVA 2018: Insecurity/unrest/Violence (What are the main challenges your
+19:10:37 00_names WARNING label cut to 80 characters: s4_02_6_smt_9_v2 -> CFSVA 2018: Market too far (What are the main challenges your community faces
+19:10:37 00_names WARNING label cut to 80 characters: s5_01_2 -> CFSVA 2018-2021: How do you rate the current availability in the martets that
+19:10:37 00_names WARNING label cut to 80 characters: s5_01_3 -> CFSVA 2018-2021: How do you rate the current prices of these commodities
+19:10:37 00_names WARNING label cut to 80 characters: s5_02_2 -> CFSVA 2018-2021: How do you rate the current availability in the martets that
+19:10:37 00_names WARNING label cut to 80 characters: s5_02_3 -> CFSVA 2018-2021: How do you rate the current prices of these commodities
+19:10:37 00_names WARNING label cut to 80 characters: s5_02_smt_88 -> CFSVA 2018-2021: Three Most consumed tuber and roots - Other roots or other
+19:10:37 00_names WARNING label cut to 80 characters: s5_03_2 -> CFSVA 2018-2021: How do you rate the current availability in the martets that
+19:10:37 00_names WARNING label cut to 80 characters: s5_03_3 -> CFSVA 2018-2021: How do you rate the current prices of these commodities
+19:10:37 00_names WARNING label cut to 80 characters: s5_04_2 -> CFSVA 2018-2021: How do you rate the current availability in the martets that
+19:10:37 00_names WARNING label cut to 80 characters: s5_04_3 -> CFSVA 2018-2021: How do you rate the current prices of these commodities
+19:10:37 00_names WARNING label cut to 80 characters: s6_01 -> CFSVA 2018-2021: Currently, what is the daily wage for unskilled agricultural
+19:10:37 00_names WARNING label cut to 80 characters: s6_02 -> CFSVA 2018-2021: Currently, what is the daily wage for Unskilled non
+19:10:37 00_names WARNING label cut to 80 characters: s7_01 -> CFSVA 2018-2021: Do households in your village community practice any
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_15 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Other
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_21 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Sweet
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_22 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Irish
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_26 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Banana
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_27 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Other
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_33 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Other
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_41 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Banana
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_42 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Banana
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_43 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Passion
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_45 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Other
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_54 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Ground
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_55 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Other
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_64 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Sugar
+19:10:37 00_names WARNING label cut to 80 characters: s7_01_2_smt_65 -> CFSVA 2018-2021: Commodities do people usually grow in this village? - Other
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2 -> CFSVA 2018-2021: Based on severity, what are the main shocks/problems did
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_1 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_1_v2 -> CFSVA 2018: Drought/irregular rains, prolonged dry spell (what are the main
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_10 -> CFSVA 2018-2021: Based on severity, what are the main shocks/problems did
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_11 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_11_v2 -> CFSVA 2018: Serious illness or accident of household member (what are the main
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_12 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_12_v2 -> CFSVA 2018: Death of the Head of the household (what are the main
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_13 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_13_v2 -> CFSVA 2018: Death a working household member (what are the main shocks/problems
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_14 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_14_v2 -> CFSVA 2018: Death of other household member (what are the main shocks/problems
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_15 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_15_v2 -> CFSVA 2018: Theft of productive resources (what are the main shocks/problems
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_16 -> CFSVA 2018: Insecurity/violence (what are the main shocks/problems did
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_17 -> CFSVA 2018: Hailstones (what are the main shocks/problems did households in
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_18 -> CFSVA 2018: Earthquake (what are the main shocks/problems did households in
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_19 -> CFSVA 2018: Volcanic activity (what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_2 -> CFSVA 2018-2021: Based on severity, what are the main shocks/problems did
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_20 -> CFSVA 2018: Other, specify (what are the main shocks/problems did households in
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_3 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_3_v2 -> CFSVA 2018: Landslides and Mudslides (what are the main shocks/problems did
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_4 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_4_v2 -> CFSVA 2018: Unusually high level of crop pests & disease (what are the main
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_5 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_5_v2 -> CFSVA 2018: Unusually high level of livestock diseases (what are the main
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_6 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_6_v2 -> CFSVA 2018: Unusually high level of human disease/EPIDEMIC (what are the main
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_7 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_7_v2 -> CFSVA 2018: Unusually high prices for food (what are the main shocks/problems
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_8 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_9 -> CFSVA 2021: Based on severity, what are the main shocks/problems did households
+19:10:37 00_names WARNING label cut to 80 characters: s8_01_2_smt_9_v2 -> CFSVA 2018: Loss or reduced employment/Income for a household member (what are
+19:10:37 00_names WARNING label cut to 80 characters: s8_02 -> CFSVA 2018-2021: Major community development constraints facing this village
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_10 -> CFSVA 2018-2021: Major community development constraints facing this village?
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_2_v2 -> CFSVA 2018: Not enough supply (not enough food available on market (What are
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_4_v2 -> CFSVA 2018: Loss/reduction of employment of household (What are the major
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_5_v2 -> CFSVA 2018: Reduction of income of household members (What are the major
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_6_v2 -> CFSVA 2018: High market prices for non-food items (What are the major community
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_7_v2 -> CFSVA 2018: Unusually high food prices (What are the major community
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_8_v2 -> CFSVA 2018: Insecurity/unrest/Violence (What are the major community
+19:10:37 00_names WARNING label cut to 80 characters: s8_02_smt_9 -> CFSVA 2018-2021: Major community development constraints facing this village?
+19:10:37 00_names WARNING label cut to 80 characters: v_s3_01 -> CFSVA 2015: Percentage of households in this village have access to electricity
+19:10:37 00_names WARNING label cut to 80 characters: v_s3_02_2 -> CFSVA 2015: If not, then how far away on average is the nearest functioning
+19:10:37 00_names WARNING label cut to 80 characters: v_s3_03_2 -> CFSVA 2015: If not, then how far away on average is the nearest functioning
+19:10:37 00_names WARNING label cut to 80 characters: v_s4_02_3 -> CFSVA 2015: If this is not the main market for the village or there is no
+19:10:37 00_names WARNING label cut to 80 characters: v_s4_02_4 -> CFSVA 2015: Is the road to the main market for your community accessible all
+19:10:38 00_names INFO variable_names.csv written: 17044 names in 39 files (pooled + per-wave)
+19:10:38 00_names INFO pooled names that needed an abbreviation to fit 32 characters: 1248
+19:10:38 00_names INFO pooled names that carry the native code to stay unique: 1253 (e.g. ['cfsva_ps_livestocks_2012_act10', 'cfsva_household_as11055', 'cfsva_provided_access_as110734', 'cfsva_government_smt_as11073smt', 'cfsva_government_v2_as11073smt', 'cfsva_wfp_smt_2_2024_as11073smt', 'cfsva_wfp_v2_2021_as11073smt', 'cfsva_other_un_as11073smt'])

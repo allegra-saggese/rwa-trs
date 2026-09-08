@@ -12,8 +12,8 @@ import os, subprocess, sys, time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-STEPS = {"00": "00_benchmark_old.py", "01": "01_clean.py", "02": "02_merge.py", "03": "03_checks.py", "04": "04_codebook.py"}
-want = sys.argv[1:] or list(STEPS)
+STEPS = {"00": "00_benchmark_old.py", "01": "01_clean.py", "02": "02_merge.py", "03": "03_checks.py", "04": "04_codebook.py", "names": "00_names.py"}
+want = sys.argv[1:] or [s for s in STEPS if s != "names"]        # names: rebuild variable_names.csv from the last run's logs (review, commit, rerun)
 os.environ.setdefault("NISR_RUN_ID", time.strftime("%Y%m%d-%H%M%S"))
 t0 = time.time()
 for s in want:

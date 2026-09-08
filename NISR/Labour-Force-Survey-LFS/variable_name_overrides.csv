@@ -1,0 +1,455 @@
+native,clean_stem,clean_label
+a02,relation_to_head,Relationship to the household head
+a02_v2,relation_to_head,"Relationship to the household head, 14-code list"
+a03m,birth_month,Month of birth
+a03y,birth_year,Year of birth
+a05,present_marital_status,Present marital status as reported
+a06,difficulty_seeing,"Difficulty seeing, even with glasses (Washington Group)"
+a07,difficulty_hearing,"Difficulty hearing, even with a hearing aid (Washington Group)"
+a08,difficulty_walking,Difficulty walking or climbing steps (Washington Group)
+a09,difficulty_remembering,Difficulty remembering or concentrating (Washington Group)
+a0a,anyone_difficulty_seeing,Anyone in the household has difficulty seeing
+a0b,anyone_difficulty_hearing,Anyone in the household has difficulty hearing
+a0c,anyone_difficulty_walking,Anyone in the household has difficulty walking or climbing steps
+a0d,anyone_difficulty_remember,Anyone in the household has difficulty remembering
+a10,difficulty_self_care,Difficulty with self-care such as washing or dressing
+a11,difficulty_communicating,Difficulty communicating in the usual language
+a12,nationality,Nationality
+a12_v2,nationality,Nationality
+a13,residential_status,Residential status in Rwanda
+a14a,country_of_birth,Country or area of birth
+a14a_v2,country_of_birth,Country or area of birth
+a14b,district_of_birth,District of birth
+a14b_v2,district_of_birth_2024,District of birth; the 2024 file mixes district and sector codes
+a15,always_in_district,Usual residence always in this district
+a15_v2,lived_outside_6m,Lived outside this district for at least 6 months
+a16y,years_since_last_move,Years since the last move of usual residence
+a17a,previous_district,District or foreign country of previous residence
+a17a_v2,previous_country,Country of residence before arriving here
+a17b,previous_district_code,District code of the previous residence
+a18,previous_place_type,Kind of place of the previous residence
+a19,years_previous_location,Duration of stay in the previous location
+a1a,anyone_difficulty_self_care,Anyone in the household has difficulty with self-care
+a1b,anyone_difficulty_communic,Anyone in the household has difficulty communicating
+a20,reason_for_moving,Reason for moving to the current location
+a21,away_from_home_12m,Away from home in the last 12 months
+a22,months_away_12m,Months away from the household in the last 12 months
+a23,member_other_household,Member of another household while absent
+a24,household_member,Is a household member
+a25,child_studying_working,Child currently studying or working (ages 5-13)
+a26,child_type_of_work,Type of work the child does
+a27,child_days_per_week,Days per week the child worked in these activities
+a28,child_hours_per_day,Hours per day the child worked in these activities
+a29,child_hours_firewood,"Child hours collecting firewood, last 7 days"
+a30,child_hours_fetching_water,"Child hours fetching water, last 7 days"
+a31,child_hours_fodder,"Child hours searching fodder or grazing, last 7 days"
+a32,child_hours_construction,"Child hours constructing the dwelling, last 7 days"
+a33,child_hours_chores,"Child hours doing household chores, last 7 days"
+a34,child_hours_childcare,"Child hours looking after children, last 7 days"
+a35,child_hours_care_2017,"Child hours looking after children and the elderly, last 7 days"
+act_hrs,actual_hours_worked,"Actual hours worked in all jobs, NISR derived"
+acthrs,actual_hours_interval,"Actual hours worked, interval, NISR derived"
+agdis,age_group_5_15_16_plus,"Age group 5-15 or 16 and over, NISR derived"
+age10,age_group_broad,"Broad age group, NISR derived"
+age3,age_group_selected,"Selected age group, NISR derived"
+age3_16_30,youth_age_group,"Youth age group 16-30, NISR derived"
+age5,age_group_five_years,"Five-year age group, NISR derived"
+attained,education_completed,"Level of education completed, NISR derived"
+b01,student,Currently a student attending school
+b02a,education_level_highest,Highest educational level attended
+b02b,years_completed_in_level,Years completed in that level of education
+b03,highest_certificate,Highest certificate obtained
+b04,place_of_qualification,Place where the highest qualification was obtained
+b05a,specialisation_area,Area of specialisation
+b05b,esced_code,ESCED code of the specialisation
+b05c,esced_name,ESCED name of the specialisation
+b06,read_and_write,Ability to read and write
+b07,attending_tvet,Currently attending a trade or technical skills school
+b08,learned_tvet,Learned a trade or technical vocational course (TVET)
+b09,training_duration,Duration of the training
+b10,tvet_skills_type,Type of technical skills learned
+b10_v2,tvet_skills_type,Type of technical skills learned
+b11,skills_acquired_where,Where the skills were acquired
+b12,course_sponsor,Main sponsor of the course
+b13,course_completed,Completed the course
+b13_v2,course_completed,Completed the course
+b13a,course_completion_year,Year of completion of the course
+b13b,course_completion_year_2025,Year of completion of the course
+b14,after_course,What happened after completing the course
+b14_v2,after_course,What happened after completing the course
+b15,computer_level,Level of computer use
+b15_v2,job_after_course,Time to get a job or start a business after the course
+b16a,english_level,Level of spoken English
+b16a_v2,english_level,Level of spoken English
+b16a_v3,english_level,Level of spoken English
+b16b,french_level,Level of spoken French
+b16b_v2,french_level,Level of spoken French
+b16b_v3,french_level,Level of spoken French
+b16c,swahili_level,Level of spoken Swahili
+b16c_v2,swahili_level,Level of spoken Swahili
+b16c_v3,swahili_level,Level of spoken Swahili
+b17,ict_skills_any,"Able to apply ICT skills, any"
+b17_a,ict_copy_file,ICT skill: copying or moving a file or folder
+b17_b,ict_copy_paste,ICT skill: copy and paste
+b17_c,ict_email_attachment,ICT skill: sending email with attached files
+b17_d,ict_spreadsheet_formula,ICT skill: basic arithmetic formulae in a spreadsheet
+b17_e,ict_install_devices,ICT skill: connecting and installing new devices
+b17_f,ict_transfer_files,ICT skill: transferring files between a computer and devices
+b17_g,ict_skills_none,ICT skills: none
+b18,used_social_media_3m,Used social media in the last three months
+b19,used_internet_3m,Used the internet in the last three months
+c01,worked_for_pay_7d,"Worked for wage, salary, commission or tips, last 7 days"
+c02,ran_business_7d,"Ran a business activity, last 7 days"
+c02a,ran_farming_7d,"Ran a farming or rearing activity, last 7 days"
+c03,helped_unpaid_7d,"Helped unpaid in a household business, last 7 days"
+c04,work_in_agriculture,"Work in agriculture, farming or fishing"
+c05,products_for_sale,Products of the activity mainly for sale or for own use
+c06,job_absent_7d,"Had a paid job or business but was absent, last 7 days"
+c07,reason_absent,Main reason for absence from work
+c07_v2,reason_absent,Main reason for absence from work
+c08,expected_absence,Expected total absence from work
+c09,income_during_absence,Continues to receive income during the absence
+c09a,absence_category,Category of the situation of the absent person
+c10,other_paid_job,Had another paid job or business
+c10a,number_other_jobs,Number of jobs other than the main job
+c11a,usual_hours_main_job,"Usual hours per week, main job"
+c11b,usual_hours_second_job,"Usual hours per week, secondary job"
+c12a,days_worked_main_job,"Days worked in the main job, last 7 days"
+c12b,days_worked_second_job,"Days worked in the secondary job, last 7 days"
+c13a,hours_per_day_main_job,"Hours per day worked in the main job, last 7 days"
+c13b,hours_per_day_second_job,"Hours per day worked in the secondary job, last 7 days"
+c14,hours_all_jobs_7d,"Hours usually worked at all jobs, last 7 days"
+c15,reason_long_hours,Main reason for working long hours
+c16,looked_more_work_4w,"Looked for additional or other work, last 4 weeks"
+c17,wants_more_hours,Would want to work more hours per week
+c18,available_more_work,Available for additional work if an opportunity arose
+c19,looked_for_job_4w,"Looked for a paid job or tried to start a business, last 4 weeks"
+c19a,tried_start_business_4w,"Tried to start a business, last 4 weeks"
+c20,job_arranged,Already found a job or arranged to start a business
+c20a,start_new_job_when,How soon the person expects to start the new job
+c21,job_search_method,"Main method used to find a job, last 4 weeks"
+c21_a,search_financial,"Search method: arranging financial resources, permits or licences"
+c21_b,search_land_premises,"Search method: looking for land, premises or equipment"
+c21_c,search_friends,Search method: help of friends and relatives
+c21_d,search_employment_agency,Search method: registering with an employment agency
+c21_e,search_employers_direct,Search method: applying to employers directly
+c21_f,search_newspaper_ads,Search method: newspaper or internet advertisements
+c21_g,search_online_resume,Search method: placing or updating online resumes
+c21_h,search_no_method,Search method: none
+c21_l,search_other_text,"Search method: other, text"
+c21a,search_financial,"Search method: arranging financial resources, permits or licences"
+c21a_v2,search_action_1st,First job-search action mentioned
+c21a_v3,search_apply_employers_2024,Search method: applying to prospective employers
+c21b,search_land,"Search method: looking for land, premises or equipment"
+c21b_v2,search_action_2nd,Second job-search action mentioned
+c21b_v3,search_place_advert_2024,Search method: placing a job advertisement
+c21c,search_friends,Search method: help of friends and relatives
+c21c_v2,search_action_3rd,Third job-search action mentioned
+c21c_v3,search_post_resume_2024,Search method: posting or updating a resume
+c21d,search_agency,Search method: registering with an employment agency
+c21d_v2,search_action_4th,Fourth job-search action mentioned
+c21e,search_employers,Search method: applying to employers directly
+c21e_v2,search_test_interview_2024,Search method: taking a test or interview
+c21f,search_adverts,Search method: newspaper or internet advertisements
+c21f_v2,search_help_relatives_2024,Search method: help of relatives
+c21g,search_resume,Search method: placing or updating online resumes
+c21g_v2,search_check_worksites_2024,Search method: checking factories or worksites
+c21h,search_no_method,Search method: none
+c21h_v2,search_wait_street_2024,Search method: waiting on the street to be recruited
+c21i,search_financial_help_2024,Search method: seeking financial help to start a business
+c21j,search_land_equipment_2024,"Search method: looking for land, building or equipment"
+c21k,search_permit_licence_2024,Search method: applying for a permit or licence
+c21l,search_other,Search method: other
+c21l_v2,search_method_item_2024,Job-search method item as shipped in 2024
+c21m,search_other_text_2024,"Search method: other, text"
+c22,unemployment_spell,Duration without work and looking for a job
+c22_v2,unemployment_spell,Duration without work and looking for a job
+c23,wants_paid_job,Would want to work if a job or business were available
+c24,reason_not_search,Main reason for not trying to find a job or start a business
+c24_v2,reason_not_search,Main reason for not trying to find a job or start a business
+c25,available_to_start,Available to start if a job or business opportunity arose
+c26,reason_no_start,Main reason the person could not start working
+c26_v2,reason_no_start,Main reason the person could not start working
+cash,monthly_cash_income,"Monthly income in cash of employees, NISR derived"
+combhrs,combined_hours,Combined hours of own-use production and employment
+consent,consent_2021,Consent to the interview
+d01b2,main_job_tasks,Main tasks and duties in the main job
+d02,min_education_for_job,"Minimum education needed for the main job, opinion"
+d03a,workplace_name,Name of the workplace of the main job
+d03a1,workplace_name_text,"Name of the workplace of the main job, text"
+d03a_v2,workplace_name,Name of the workplace of the main job
+d03b,main_job_goods_services,Main goods or services produced at the workplace
+d03b1,isic_main_job,ISIC code of the main job
+d03b1_v2,isic_main_job,ISIC code of the main job; two-digit divisions in the 2020 file
+d04,inst_sector_main,Institutional sector of the main job
+d04_v2,inst_sector_main,Institutional sector of the main job
+d05,employment_status,Status in employment in the main job
+d05_v2,employment_status_2025,Status in employment in the main job (ICSE-18)
+d05a,workplace_size,"Persons at the workplace including the person, bracket"
+d05a1,workplace_size_number,"Persons at the workplace including the person, number"
+d06,contract_type,Written contract or oral agreement
+d07,contract_agreement,Type of contract or agreement
+d07_v2,contract_agreement,Type of contract or agreement
+d08,contract_duration,Duration of the contract
+d08_v2,contract_duration,Duration of the contract
+d08a,minimum_hours_agreed,Minimum hours or work agreed
+d09a,employer_social_security,Employer pays social security contributions
+d09b,employer_health_insurance,Employer pays health insurance contributions
+d10,activity_registered_rra,Economic activity registered with the Rwanda Revenue Authority
+d10_e,ejo_heza_contributions,Contributes to the Ejo Heza pension scheme
+d10a,paid_annual_leave,Entitled to paid annual leave
+d10b,paid_sick_leave,Entitled to paid sick leave
+d10c,maternity_paternity_leave,Entitled to paid maternity or paternity leave
+d10d,salary_tax_deducted,Salary subject to income tax deduction
+d11,trade_union_member,Belongs to a trade union or syndicate
+d12,earnings_cash_main_job,"Earnings in cash from the main job, last payment"
+d12_1,earnings_money_main_2025,"Money earned from the main job or business, last payment"
+d12_1a,earnings_amount_rwf_2025,"Earnings amount in Rwandan francs, main job"
+d12a,earnings_amount_rwf,"Earnings amount in Rwandan francs, main job"
+d13,earnings_period,Period covered by the earnings
+d13_1,earnings_period_2025,Period covered by the earnings
+d14,in_kind_payments,Receives in-kind payments in the main job
+d14_1,average_monthly_earn_2025,Average money earned per month from the main job
+d14_1a,average_monthly_rwf_2025,Average monthly earnings in Rwandan francs
+d15,in_kind_value,Value of the in-kind payments
+d15a,in_kind_amount_rwf,In-kind payments in Rwandan francs
+d16,in_kind_period,Period covered by the in-kind payments
+d17,monthly_earnings_bracket,"Monthly earnings, cash and in kind, bracket"
+d17_1,monthly_earnings_brk_2025,"Monthly earnings, cash and in kind, bracket"
+d18a,how_obtained_job,How the current employment was obtained
+d18a1,net_earnings_biz_rwf_2017,"Net monthly earnings from the business, Rwandan francs"
+d18a_other,how_obtained_job_other,"How the employment was obtained, other text"
+d18a_v2,net_earnings_biz_2017,Net monthly earnings from the business activity
+d18b,net_earnings_biz_brk_2017,"Net monthly earnings from the business, bracket"
+d19,earnings_vs_average_2017,"Earnings below, at or above the usual monthly average"
+d20,business_registered,Business or establishment registered
+d21,business_keeps_accounts,Business keeps accounts to report to an authority
+d21a,accounts_type,Kind of accounts or records kept
+d22a,employees_at_workplace,"Regular employees at the workplace, bracket"
+d22b,employees_at_workplace_num,"Regular employees at the workplace, number"
+d23,workplace_type,Type of place where the person usually works
+d23_v2,workplace_location_2025,Where the business or work is located
+d23a,commute_transport,Main means of transport to work
+d23a_v2,commute_transport,Main means of transport to work
+d23b,commute_time,Time to get to work
+d24,work_experience,Total work experience
+d24_v2,work_experience,Total work experience in years
+d24a,work_experience_years,Total work experience in years
+d24b,months_worked_per_year,Months worked in a year in the main job
+d25,computer_needed_at_work,Needs a computer in day-to-day work
+d25a,works_in_own_district,Works in the district of residence
+d25b,district_of_work,District where the main job is performed
+d26,uses_computer_at_work,Uses a computer in day-to-day work
+d27,has_secondary_job,Secondary paid job or business reported
+d28,injured_at_work_12m,"Hurt in an accident while working, last 12 months"
+d29,injury_absence,Injury caused absence or inability to work
+d30a,injury_absence_duration,Time away from work because of the injury
+d30b,injury_absence_unit,Unit of the time away from work because of the injury
+d31,injury_reported,Injury reported to management
+d32,injury_compensation,Received financial compensation for the injury
+decode,data_entry_code_2021,Data entry code
+dg01,own_use_firewood,"Own-use production: fetching firewood, NISR derived"
+dg02,own_use_water,"Own-use production: fetching water, NISR derived"
+dg03,own_use_fodder,"Own-use production: searching fodder or grazing, NISR derived"
+dg04,own_use_goods,"Own-use production: manufacturing household goods, NISR derived"
+dg05,own_use_repairs,"Own-use production: repairing the dwelling, NISR derived"
+dg06,own_use_cooking,"Own-use production: cooking and shopping, NISR derived"
+dg07,own_use_care,Own-use production: looking after children and elderly (NISR)
+disable,disability,"Person with disability, NISR derived"
+discourage,discouraged_jobseeker,"Discouraged jobseeker, NISR derived"
+ds07,works_as_2025,"Works as employee, in own business or helping"
+ds08,business_decisions_maker,Who makes the decisions about running the business
+ds09,business_hires_paid,Business hires paid employees regularly
+ds09_a,income_half_one_client,More than half of the income comes from one client
+ds09_b,customers_via_company,Gets customers through another company or platform
+ds09_c,business_activity_item,Business activity item as shipped
+ds09_d,client_sets_terms,Client company sets prices or working conditions
+ds09aa,business_registered_rdb,Business registered with the Rwanda Development Board
+ds09aaa,business_registered_other,Business registered with another institution
+ds10a,pay_types_received,Types of pay received for the work
+e01b1,second_job_tasks,Main tasks and duties in the secondary job
+e02,second_job_workplace,Name of the workplace of the secondary job
+e02b1,second_job_isic,ISIC code of the secondary job
+e03,second_job_activity,Activity of the secondary job
+e04,second_job_business,Business of the secondary job
+e05a,second_job_social_security,"Employer pays social security, secondary job"
+e05b,second_job_health_insurance,"Employer pays health insurance, secondary job"
+e06a,second_job_annual_leave,Paid annual leave in the secondary job
+e06b,second_job_sick_leave,Paid sick leave in the secondary job
+e06c,second_job_maternity_leave,Paid maternity or paternity leave in the secondary job
+e07,second_job_registered,Business of the secondary job registered
+e08,second_job_keeps_accounts,Employer of the secondary job keeps written accounts
+e09a,second_job_employees,"Employees at the secondary workplace, bracket"
+e09b,second_job_employees_num,"Employees at the secondary workplace, number"
+e10,second_job_workplace_type,Type of place of the secondary job
+e11,other_jobs_count,Number of jobs apart from the main job
+e12,earnings_other_jobs,"Earnings from other jobs, cash and in kind"
+e12b,earnings_other_jobs_rwf,Earnings from other jobs in Rwandan francs
+e13,earnings_other_jobs_period,Period covered by the earnings from other jobs
+employed16,employment_ratio_base,"Employment-to-population ratio base, NISR indicator"
+en01,lighting_energy_2024_2025,Main source of energy for lighting
+en01_others,lighting_energy_other_text,"Main source of energy for lighting, other text"
+f01,worked_previously,Ever worked for a wage or in a business
+f01a,ever_paid_job_2025,Ever had a paid job or another income activity
+f01b,time_since_last_job,Time since the person stopped working
+f02,reason_stopped,Main reason for stopping the last job
+f02_v2,reason_stopped,Main reason for stopping the last job
+f03b,last_job_tasks_text,"Main tasks and duties in the last job, text"
+f03b1,last_job_tasks,Main tasks and duties in the last job
+f04a,last_job_workplace,Name of the workplace of the last job
+f04b,last_job_goods_services,Main goods or services produced at the last workplace
+f04b1,last_job_isic,ISIC code of the last job
+f05,main_income_source,Main source of income at present
+f06,status_opinion,Self-described main status at present
+f06_v2,status_opinion,Self-described main status at present
+f07,competencies,Competencies needed to increase employability
+f07_v2,competencies,Competencies needed to increase employability
+g01,hours_firewood,"Hours collecting firewood, last 7 days"
+g01a,any_time_firewood,"Spent time collecting firewood, last 7 days"
+g02,hours_fetching_water,"Hours fetching water, last 7 days"
+g02a,any_time_fetching_water,"Spent time fetching water, last 7 days"
+g03,hours_fodder,"Hours searching fodder or grazing livestock, last 7 days"
+g03a,any_time_fodder,"Spent time grazing or feeding livestock, last 7 days"
+g04,hours_making_goods,"Hours manufacturing household goods, last 7 days"
+g04a,any_time_making_goods,"Spent time manufacturing household goods, last 7 days"
+g05,hours_construction,"Hours constructing or repairing the dwelling, last 7 days"
+g05a,any_time_construction,"Spent time on construction or building, last 7 days"
+g06,hours_household_chores,"Hours doing household chores, last 7 days"
+g06a,any_time_household_chores,"Spent time doing household chores, last 7 days"
+g07,hours_care,"Hours looking after children or adults, last 7 days"
+g07a,any_time_care,"Spent time looking after children or adults, last 7 days"
+gid,section_g_serial_2017,Serial number for section G as shipped
+h00,labour_situation,Description of the situation in the labour market
+h01,own_use_work_4w,Did work mainly for own use in the last four weeks
+h02,own_use_days_week,Days per week in own-use production
+h02_v2,own_use_hours_week_2021_2023,"Hours per week in own-use production, last 7 days"
+h03,own_use_hours_day,Hours per day in own-use production
+h03_v2,own_use_usual_2021_2023,Usual hours per week in own-use production
+h04,own_use_item_h04,"Own-use production item H04 as shipped, no label"
+h05,sells_farm_products,Household sells or barters part of its farm products
+h06,share_of_products_sold,Share of the farm products regularly sold
+h07,farm_net_value,"Net value of the agricultural activities, bracket"
+h08,season_vs_average,"Previous season below, at or above average"
+h09,farm_hires_paid_workers,Engages paid employees in the farming activity
+h10,farm_paid_workers_bracket,"Paid employees engaged in farming, bracket"
+h11a,land_leased,Access to land by leasing
+h11b,land_sharecropped,Access to land by renting against a share of the produce
+h11c,land_fixed_rent,Access to land by renting at a fixed rent
+h11d,land_free_of_charge,Access to land free of charge
+h11e,land_communal_rights,Access to land through communal rights
+head,household_head_flag,"Head of the household, NISR derived"
+hhgac,group_acceptance_count,Number of group acceptance as shipped
+hhgap,group_appearance_count,Number of group appearance as shipped
+hhrg,rotation_group,Rotation group of the household
+hr_cash,hourly_wage,"Hourly wage of employees, NISR derived"
+hr_cshmain,hourly_wage_main_job,"Hourly wage of employees in the main job, NISR derived"
+hr_own,own_use_hours_total,"Total hours in own-use production, NISR derived"
+i01_a,roof_material,Main material of the roof
+i01_a_v2,building_material_2019,Main material used in building the house
+i01_b,wall_material,Main material of the exterior walls
+i01_c,floor_material,Main material of the floor
+i02,rooms_for_sleeping,Rooms used for sleeping
+i03,toilet_type,Type of toilet
+i04,lighting_energy,Main source of energy for lighting
+i05,cooking_energy,Main source of energy for cooking
+i06a,drinking_water,Main source of drinking water
+i06a_v2,drinking_water,Main source of drinking water
+i06b,other_water_source,Main source of water for other uses
+i06b_v2,other_water_source,Main source of water for other uses
+i07a,owns_refrigerator,Household owns a refrigerator or freezer
+i07b,owns_radio,Household owns a radio
+i07c,owns_tv,Household owns a television set
+i07d,owns_satellite_dish,Household owns a parabolic antenna
+i07e,owns_dvd_player,Household owns a video or DVD player
+i07f,owns_computer,Household owns a computer
+i07g,owns_music_system,Household owns a music system
+i07h,owns_cooker,Household owns a cooker
+i07i,owns_sewing_machine,Household owns a sewing machine
+i07j,owns_washing_machine,Household owns a laundry machine
+i07k,owns_electric_fan,Household owns an electric fan
+i07l,owns_camera,Household owns a camera
+i07m,owns_mobile_phone,Household owns a mobile phone
+i07n,owns_car,Household owns a car
+i07o,owns_bicycle,Household owns a bicycle
+i07p,owns_motorcycle,Household owns a motorcycle
+i07q,has_internet_connection,Household has an internet connection
+i08,members_used_internet,Members who used the internet in the last 12 months
+i09,members_mobile_phone,Members having a mobile phone
+i10,members_computer,Members having a personal computer
+i11,members_social_media,Members using social media
+i12,members_used_computer,"Members aged 10 and over who used a computer, last 12 months"
+i13,members_ict_skilled,Members aged 10 and over who can use at least one ICT skill
+icse18a,employment_status_icse18,"Status in employment by type of authority, ICSE-18"
+ie,formal_employment_2017,"Formal or informal employment in the main job, NISR derived"
+iev2,formal_employment,"Formal or informal employment in the main job, NISR derived"
+indb05,education_field,"Field of education, NISR derived"
+indb1,years_of_schooling,"Years of schooling, NISR derived"
+indd01,isco_major_main_job,ISCO major group of the main job
+indd03,isic_section_main_job,ISIC section of the main job
+inde01,isco_major_second_job,ISCO major group of the secondary job
+inde02,isic_section_second_job,ISIC section of the secondary job
+indf03,isco_major_last_job,ISCO major group of the last job
+indf04,isic_section_last_job,ISIC section of the last job
+intcash,income_interval,"Income interval, NISR derived"
+intcash_v2,income_interval,"Income interval, NISR derived"
+is,formal_sector_2021,"Formal or informal sector of employment, NISR derived"
+isco2d,isco_2digit_main_2017_2018,ISCO two-digit group of the main job
+isco2digit,isco_two_digit_main_job,ISCO two-digit group of the main job
+isco2e,isco_two_digit_second_job,ISCO two-digit group of the secondary job
+isco2f,isco_two_digit_last_job,ISCO two-digit group of the last job
+isic2d,isic_2digit_main_2017_2018,ISIC two-digit division of the main job
+isic2digitdigit,isic_two_digit_main_job,ISIC two-digit division of the main job
+isic2e,isic_two_digit_second_job,ISIC two-digit division of the secondary job
+isic2f,isic_two_digit_last_job,ISIC two-digit division of the last job
+jobsearch,not_employed_searching,"Not employed and searching for a job, NISR derived"
+lfpr,participation_rate_base,"Labour force participation rate base, NISR indicator"
+lfs_round,round_code_shipped,Data collection round code as shipped by NISR
+lfs_round_v2,round_code_shipped_2020,Data collection round code as shipped by NISR
+lfs_strata,stratum_shipped,"Sampling stratum as shipped, district by area"
+lfs_workforce,agricultural_work_2019,"Works in agriculture or outside agriculture, NISR derived"
+lfs_year,data_collection_year,LFS data collection year as shipped
+lu2,underutilisation_lu2,LU2: unemployment and time-related underemployment rate
+lu3,underutilisation_lu3,LU3: unemployment and potential labour force rate
+lu4,underutilisation_lu4,LU4: composite measure of labour underutilisation
+luu,labour_underutilisation,"Labour underutilisation category, NISR derived"
+luur,underutilisation_rate,"Labour underutilisation rate, NISR derived"
+main_sect,economic_sector,"Economic sector: agriculture, industry, services"
+migrant,recent_migration,Recent migration: internal or international
+more_person,more_persons_flag_2021,More persons flag as shipped
+neetyoung,neet_16_30,"Not in employment, education or training, aged 16-30"
+neetyouth,neet_16_24,"Not in employment, education or training, aged 16-24"
+pkey,nisr_person_key_2019,NISR person key as shipped
+plf,potential_labour_force,"Potential labour force category, NISR derived"
+pop,population_count_2021,Total population indicator as shipped
+prod_sec,production_sector_2017_2018,"Production sector: informal, formal, household"
+prod_unit,production_sector,"Production sector unit: informal, formal, household"
+psu_id,psu_identifier_2021,Primary sampling unit identifier as shipped
+quintile,wealth_quintile_2021,Wealth quintile as shipped
+ryear,nisr_year_variable_2017,NISR variable named year as shipped
+samehh,same_household_visited,Same household as visited last time
+sihh,still_in_household_2021,Still in the household
+sm,search_methods_2021_2023,"Job-search methods, NISR summary"
+sub,subsistence_producer,"Subsistence foodstuff producer, NISR derived"
+subhrs,subsistence_hours,"Hours in subsistence activities, NISR derived"
+subhrs_v2,subsistence_hours_2022_2023,"NISR subsistence hours, product of two weekly measures"
+timegood,own_use_hours_goods,Time spent producing goods for own use
+timeservice,own_use_hours_services,Time spent producing services for own use
+tru,time_underemployed,"Time-related underemployment, NISR derived"
+trur,time_underemployment_rate,"Time-related underemployment rate, NISR derived"
+tvet3,tvet_completion_type,Formal or non-formal TVET completion
+tvt,attended_tvet,"Attended TVET or not, NISR derived"
+tvt2,general_or_tvet_attainment,"General or TVET attainment, NISR derived"
+ud,unemployment_duration,"Unemployment duration bracket, NISR derived"
+ur1,unemployment_rate_base,"Unemployment rate base, NISR indicator"
+usual_h,usual_hours_number,"Number of usual hours worked, NISR derived"
+usualhc,child_hours_worked_2020,"Hours worked by children, NISR derived"
+usualhrs,usual_hours_interval,"Usual hours worked, interval, NISR derived"
+usualhrsc,child_hours_interval_2020,"Hours worked by children, interval, NISR derived"
+wap16,working_age_16_plus,"Working-age population 16 and over, NISR indicator base"
+willing,willing_non_seeker,"Willing non-seeker not available, NISR derived"
+work_agr,agricultural_work_type,"Type of work in agriculture, NISR derived"
+ya,young_or_adult,Young 16-30 or adult 31 and over
+young,young_16_30,"Young aged 16 to 30, NISR derived"
+youngs,young_status,"Status of the young: education, employment, both or neither"
+youth,youth_16_24,"Youth aged 16 to 24, NISR derived"
+yur1,youth_unemployment_rate,"Youth unemployment rate base, NISR indicator"

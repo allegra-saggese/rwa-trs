@@ -1,0 +1,136 @@
+21:04:56 00_names INFO ==== 00_names | run 20260906-210456_00_names | python 3.13.5 | pandas 2.2.3 | pyreadstat 1.3.4
+21:04:56 00_names WARNING label cut to 80 characters: a10 -> WBES 2011: Establishment's Financial Statements Separate from Other
+21:04:56 00_names WARNING label cut to 80 characters: a11 -> WBES 2011-2023: If Hq, Financial Statements Independent of The Rest of
+21:04:56 00_names WARNING label cut to 80 characters: a19m -> WBES: If Option 2 or 3 In A.18, Estimate Duration of The Whole Interview
+21:04:56 00_names WARNING label cut to 80 characters: a7c -> WBES 2019-2023: Does This Headquarters Location Engage In Production or Sales
+21:04:56 00_names WARNING label cut to 80 characters: a9 -> WBES 2011-2023: Establishment'S Financial Statements Prepared Separately From
+21:04:56 00_names WARNING label cut to 80 characters: afb7a -> WBES 2006-2011: Highest level of education of the current top manager
+21:04:56 00_names WARNING label cut to 80 characters: afb8a -> WBES 2011: Is this establishment located in an export processing or other
+21:04:56 00_names WARNING label cut to 80 characters: afd11d -> WBES 2011: Did this establishment subcontract any part of its production to
+21:04:56 00_names WARNING label cut to 80 characters: afd5a -> WBES 2006-2011: Total clearing costs for an average consignment as a percentage
+21:04:56 00_names WARNING label cut to 80 characters: afd7a1 -> WBES 2006-2011: Benefit from Suspension or exemptions from duties on imported
+21:04:56 00_names WARNING label cut to 80 characters: afd7a4 -> WBES 2006-2011: Benefit from Export financing scheme
+21:04:56 00_names WARNING label cut to 80 characters: afd7b -> WBES 2006-2011: Main reason establishment did not take advantage of
+21:04:56 00_names WARNING label cut to 80 characters: afh2 -> WBES 2011: Agree or Disagree: I am confident that the legal system will uphold
+21:04:56 00_names WARNING label cut to 80 characters: afh3b -> WBES 2011: Agree or Disagree: Was the court system used to resolve this payment
+21:04:56 00_names WARNING label cut to 80 characters: afh3c -> WBES 2011: Agree or Disagree: Was a court judgment made for this payment dispute
+21:04:56 00_names WARNING label cut to 80 characters: afh3f -> WBES 2011: Agree or Disagree: How many weeks did it take to enforce this court
+21:04:56 00_names WARNING label cut to 80 characters: afk10a -> WBES 2006-2011: Rate of interest of this most recent line of credit or loan
+21:04:56 00_names WARNING label cut to 80 characters: afk7a -> WBES 2006-2011: For this establishments overdraft facility
+21:04:56 00_names WARNING label cut to 80 characters: afs1b -> WBES 2006-2011: High absenteeism as employees need to care of family members or
+21:04:56 00_names WARNING label cut to 80 characters: afs1y -> WBES 2011: Does this establishment currently have a pre-employment health check
+21:04:56 00_names WARNING label cut to 80 characters: afs2b -> WBES 2006-2011: High absenteeism as employees need to care of family members or
+21:04:56 00_names WARNING label cut to 80 characters: b6 -> WBES 2011-2023: Number of Full-Time Employees of The Establishment When It
+21:04:56 00_names WARNING label cut to 80 characters: b7 -> WBES 2011-2023: Years of Experience Working In This Sector Does The Top Manager
+21:04:56 00_names WARNING label cut to 80 characters: b8 -> WBES 2011-2023: Does Establishment Have An Internationally-Recognized Quality
+21:04:56 00_names WARNING label cut to 80 characters: c14 -> WBES: Applied For A Water Connection, Was An Informal Gift/Payment Requested
+21:04:56 00_names WARNING label cut to 80 characters: c15 -> WBES 2006-2019: Experience Insufficient Water Supply For Production In Last FY
+21:04:56 00_names WARNING label cut to 80 characters: c16 -> WBES 2006-2019: Frequency of Incidents of Water Shortages In A Typical Month In
+21:04:56 00_names WARNING label cut to 80 characters: c162 -> WBES 2023: Frequency of Incidents of Water Shortages In A Typical Month In Last
+21:04:56 00_names WARNING label cut to 80 characters: c19 -> WBES 2006-2011: Application To Obtain A Telephone Connection Submitted
+21:04:56 00_names WARNING label cut to 80 characters: c20 -> WBES 2006-2011: Days Did It Take For You To Receive A Telephone Connection
+21:04:56 00_names WARNING label cut to 80 characters: c21 -> WBES 2006-2011: Applied For A Tele. Connection Was An Informal/payment Gift
+21:04:56 00_names WARNING label cut to 80 characters: c22a -> WBES 2006-2011: Currently Communicate With Clients And Suppliers By E-Mail
+21:04:56 00_names WARNING label cut to 80 characters: c3 -> WBES: Application To Obtain An Electrical Connection Submitted, last 2 years
+21:04:56 00_names WARNING label cut to 80 characters: c30b -> WBES 2006-2011: Of An Obstacle: Telecommunications To Operations Of This
+21:04:56 00_names WARNING label cut to 80 characters: c36 -> WBES 2023: Application To Obtain Fixed Broadband Internet Connection
+21:04:56 00_names WARNING label cut to 80 characters: c4 -> WBES: Days Did It Take For You To Receive An Electrical Connection Service
+21:04:56 00_names WARNING label cut to 80 characters: d11 -> WBES 2019: In Last FY, % of Value of Products Lost In Transit Due To Breakage
+21:04:56 00_names WARNING label cut to 80 characters: d14 -> WBES 2006-2019: Avg. Num. of Days For Imported Goods To Clear Customs In Last
+21:04:56 00_names WARNING label cut to 80 characters: d14a -> WBES 2023: Avg. Num. of Days For Imported Goods To Clear Customs In Last Fiscal
+21:04:56 00_names WARNING label cut to 80 characters: d15a -> WBES 2019: In Clearing Imports Through Customs
+21:04:56 00_names WARNING label cut to 80 characters: d33a -> WBES 2023: In Last FY, Avg. Num. of Days For Exported Goods To Clear all border
+21:04:56 00_names WARNING label cut to 80 characters: d34 -> WBES 2023: FCA costs to comply with all export requirements
+21:04:56 00_names WARNING label cut to 80 characters: d4 -> WBES 2006-2019: In Last FY, Avg. Num. of Days For Exported Goods To Clear
+21:04:56 00_names WARNING label cut to 80 characters: d40a -> WBES 2023: In Last FY, Avg. Num. of Days For Imported Goods To Clear all border
+21:04:56 00_names WARNING label cut to 80 characters: d40b -> WBES 2023: If less than a day, total hours for imported goods to clear all
+21:04:56 00_names WARNING label cut to 80 characters: d41 -> WBES 2023: DAP costs to comply with all import requirements
+21:04:56 00_names WARNING label cut to 80 characters: d5a -> WBES 2019: In Clearing Exports Through Customs
+21:04:56 00_names WARNING label cut to 80 characters: d7 -> WBES 2006-2011: In last FY, Export Losses Due To Breakage Or Spoilage As % Of
+21:04:56 00_names WARNING label cut to 80 characters: d8 -> WBES 2019-2023: In What Year Did This Establishment First Export Directly or
+21:04:56 00_names WARNING label cut to 80 characters: e11 -> WBES 2011-2023: Does This Establishment Compete Against Unregistered or
+21:04:56 00_names WARNING label cut to 80 characters: e30 -> WBES 2011-2023: Of An Obstacle: Practices of Competitors In Informal Sector
+21:04:56 00_names WARNING label cut to 80 characters: e33 -> WBES 2023: Establishment can increase prices more than competitors without
+21:04:56 00_names WARNING label cut to 80 characters: f1 -> WBES 2006-2023: In Last FY, What Was The Capacity Utilization of This
+21:04:56 00_names WARNING label cut to 80 characters: f2 -> WBES 2006-2019: Number of Hours Per Week Operated By The Establishment In Last
+21:04:56 00_names WARNING label cut to 80 characters: g2 -> WBES: Applic. To Obtain A Construction-Related Permit Submitted, last 2 years
+21:04:56 00_names WARNING label cut to 80 characters: g4 -> WBES: Informal Gift/Payment Expected or Requested For A Construction-Related
+21:04:56 00_names WARNING label cut to 80 characters: h2 -> WBES 2011-2023: New Products/Services Also New For Thr Establishment'S Main
+21:04:56 00_names WARNING label cut to 80 characters: h3x -> WBES 2019-2023: Describe In Detail The Main New or Significantly Improved
+21:04:56 00_names WARNING label cut to 80 characters: h4 -> WBES 2011: Has this establishment introduced any new or signi, last three years
+21:04:56 00_names WARNING label cut to 80 characters: h4x -> WBES 2019-2023: Describe How The Main New/Significantly Improved Product or
+21:04:56 00_names WARNING label cut to 80 characters: h5 -> WBES 2011-2023: During Last 3 Yrs, Establishment Introduced New/Significantly
+21:04:56 00_names WARNING label cut to 80 characters: h6x -> WBES 2019-2023: Describe Main New/Significantly Improved Process This
+21:04:56 00_names WARNING label cut to 80 characters: h7 -> WBES 2011: Did this establishment spend on formal research an, last three years
+21:04:56 00_names WARNING label cut to 80 characters: h8 -> WBES 2011-2023: During Last Fiscal Year, Establishment Spent On R&D
+21:04:56 00_names WARNING label cut to 80 characters: i2a -> WBES 2006-2019: Percentage of Total Annual Sales Paid For Security In Last
+21:04:56 00_names WARNING label cut to 80 characters: i3 -> WBES 2006-2019: Losses Due To Theft, Robbery, Vandalism or Arson Experienced In
+21:04:56 00_names WARNING label cut to 80 characters: i4a -> WBES 2006-2019: Losses Due To Theft, Robbery, Vandalism or Arson In Last FY
+21:04:56 00_names WARNING label cut to 80 characters: i4b -> WBES 2006-2019: Value of Losses Due To Theft, Robbery
+21:04:56 00_names WARNING label cut to 80 characters: j12 -> WBES: Applied For An Import License, Was An Informal Gift/Payment Requested
+21:04:56 00_names WARNING label cut to 80 characters: j15 -> WBES: Applied For Operating License Was An Informal Gift/Payment Requested
+21:04:56 00_names WARNING label cut to 80 characters: j2 -> WBES 2011-2023: % of Senior Management Time Was Spent In Dealing With Govt
+21:04:56 00_names WARNING label cut to 80 characters: j3 -> WBES: Was This Establishment Inspected By Tax officials, last 12 months
+21:04:56 00_names WARNING label cut to 80 characters: j31 -> WBES 2023: In resolving commercial disputes, courts are independent and
+21:04:56 00_names WARNING label cut to 80 characters: j6 -> WBES 2006-2019: % of Value Avg. Establishment country In Informal Gifts To Govt
+21:04:56 00_names WARNING label cut to 80 characters: j6a -> WBES 2011-2023: Government Contract Secured (or Attempted), last 12 months
+21:04:56 00_names WARNING label cut to 80 characters: k15c -> WBES 2011-2023: Total Outstanding Balance of All Open Lines of Credit and Loans
+21:04:56 00_names WARNING label cut to 80 characters: k15d -> WBES 2011-2023: Outstanding Personal Loans Used To Finance Establishment'S
+21:04:56 00_names WARNING label cut to 80 characters: k16 -> WBES 2006-2019: In Last FY, Did Establishment Apply For New Loans/Lines of
+21:04:56 00_names WARNING label cut to 80 characters: k1c -> WBES 2006-2011: In last FY, % Of Material Inputs Or Services Paid For After
+21:04:56 00_names WARNING label cut to 80 characters: k20a -> WBES 2011: Referring only to this most recent application for a line of credit
+21:04:56 00_names WARNING label cut to 80 characters: k20a1 -> WBES 2019-2023: Outcome of That Most Recent Application For Loan/Line of Credit
+21:04:56 00_names WARNING label cut to 80 characters: k21 -> WBES 2011-2023: Financial Statements Checked & Certified By External Auditor In
+21:04:56 00_names WARNING label cut to 80 characters: k3f -> WBES: % of Working Capital Purchased On Credit/Advances From Suppliers
+21:04:56 00_names WARNING label cut to 80 characters: k3hd -> WBES: % of Working Capital Financed By Other
+21:04:56 00_names WARNING label cut to 80 characters: k5e1 -> WBES 2019-2023: Fixed Assets - Value Borrowed From Non-Bank Financial
+21:04:56 00_names WARNING label cut to 80 characters: k5f -> WBES: Last FY, % Fixed Assets Funded By: Credit From Suppliers/Advances From
+21:04:56 00_names WARNING label cut to 80 characters: k5f1 -> WBES 2019-2023: Fixed Assets - Value Purchases On Credit From Suppliers
+21:04:56 00_names WARNING label cut to 80 characters: k5hdj -> WBES: Last FY, % Fixed Assets Funded By: Other
+21:04:56 00_names WARNING label cut to 80 characters: k5i -> WBES: Last FY, % Fixed Assets Funded By: OwnersaTM Contributions or Issued New
+21:04:56 00_names WARNING label cut to 80 characters: k5i1 -> WBES 2019-2023: Fixed Assets - Value OwnersaTM Contribution or Issued New
+21:04:56 00_names WARNING label cut to 80 characters: k8 -> WBES 2006-2019: Establishment Has A Line of Credit or Loan From A Financial
+21:04:56 00_names WARNING label cut to 80 characters: k82 -> WBES 2023: Establishment Has A Line of Credit or Loan From A Financial
+21:04:56 00_names WARNING label cut to 80 characters: l11a -> WBES 2019-2023: % Permanent Full-Time Production Employees Received Formal
+21:04:56 00_names WARNING label cut to 80 characters: l11a1 -> WBES 2019-2023: Training Programs Amount: Production Full-Time Permanent
+21:04:56 00_names WARNING label cut to 80 characters: l11b -> WBES 2019-2023: % Permanent Fulltime Nonproduction Employees Received Formal
+21:04:56 00_names WARNING label cut to 80 characters: l11b1 -> WBES 2019-2023: Training Programs Amount:Non-Production Full-Time Permanent
+21:04:56 00_names WARNING label cut to 80 characters: l12a -> WBES 2023: % Permanent Full-Time Female Employees Received Formal Training In
+21:04:56 00_names WARNING label cut to 80 characters: l12a1 -> WBES 2023: Training Programs Amount: Full-Time Permanent Female Employees
+21:04:56 00_names WARNING label cut to 80 characters: l34 -> WBES 2023: In the last 3 yrs., establishment has dismissed any permanent
+21:04:56 00_names WARNING label cut to 80 characters: l37 -> WBES 2023: In the last 3 yrs., establishment has been involved in any labor
+21:04:56 00_names WARNING label cut to 80 characters: l4a2 -> WBES 2019-2023: Num. of Permanent, Full-Time Semi-skilled Production Workers
+21:04:56 00_names WARNING label cut to 80 characters: n2e -> WBES: Cost of Raw Materials And Intermediate Goods Used In Prod. In Last Fiscal
+21:04:56 00_names WARNING label cut to 80 characters: n2i -> WBES 2019-2023: Total Annual Cost of Finished Goods/Materials Bought To Resell
+21:04:56 00_names WARNING label cut to 80 characters: n5b -> WBES 2019-2023: Total Annual Expenditure For Purchases of Land And Buildings In
+21:04:56 00_names WARNING label cut to 80 characters: n5c -> WBES 2019-2023: Total Annual Expenditure For Purchases of Equipment In Year
+21:04:56 00_names WARNING label cut to 80 characters: n5d -> WBES 2019-2023: Total Annual Expenditure On Land And Buildings In Year Prior To
+21:04:56 00_names WARNING label cut to 80 characters: o2 -> WBES 2023: Use of courts, arbitration etc. to resolve commercial dispute
+21:04:56 00_names WARNING label cut to 80 characters: r1 -> WBES 2019-2023: Happened When Problem In The Production Process/Services
+21:04:56 00_names WARNING label cut to 80 characters: r11 -> WBES 2019-2023: An Under-Performing Non-Manager Reassigned or Dismissed
+21:04:56 00_names WARNING label cut to 80 characters: r2 -> WBES 2019-2023: Did This Establishment Monitor Any Production/Service
+21:04:56 00_names WARNING label cut to 80 characters: r3 -> WBES 2019-2023: Production/Service Provision Performance Indicators Were
+21:04:56 00_names WARNING label cut to 80 characters: r4 -> WBES 2019-2023: Did This Establishment Have Production/Service Provision Targets
+21:04:56 00_names WARNING label cut to 80 characters: r5 -> WBES 2019-2023: Best Describes The Time Frame of Production/Service Provision
+21:04:56 00_names WARNING label cut to 80 characters: r7 -> WBES 2019-2023: Aware of The Production/Service Provision Targets At This
+21:04:56 00_names WARNING label cut to 80 characters: r8 -> WBES 2019-2023: Was There Performance Bonuses Based On Production/Service
+21:04:56 00_names WARNING label cut to 80 characters: rwab1 -> WBES 2019: Is this establishment part or subsidiary of a foreign multinational
+21:04:56 00_names WARNING label cut to 80 characters: rwab3 -> WBES 2019: Has owner, CEO, top manager, or any of the board members of been
+21:04:56 00_names WARNING label cut to 80 characters: rwab5 -> WBES 2019: Is this establishment registered with Rwanda Social Security Board
+21:04:56 00_names WARNING label cut to 80 characters: rwad4 -> WBES 2019: Main Logistics-Related Obstacle Faced in its Direct Import and/or
+21:04:56 00_names WARNING label cut to 80 characters: rwae2 -> WBES 2019: Tax Breaks, Incentives via Reduced Social Security Contributions
+21:04:56 00_names WARNING label cut to 80 characters: rwal1 -> WBES 2019: Num. Permanent, Full-Time Employees Under 30 Years Old At End of
+21:04:56 00_names WARNING label cut to 80 characters: rwal2c -> WBES 2019: Num. of Permanent, Full-Time Technicians and Associate Professionals
+21:04:56 00_names WARNING label cut to 80 characters: rwal2f -> WBES 2019: Num. of Permanent, Full-Time Plant and machine operators and
+21:04:56 00_names WARNING label cut to 80 characters: rwal6 -> WBES 2019: Occupation Where Firm Faced Most Difficulties When Looking for
+21:04:56 00_names WARNING label cut to 80 characters: rwam1 -> WBES 2019: % or Number of its Workforce This Firm Reports for Purposes of
+21:04:56 00_names WARNING label cut to 80 characters: u1 -> WBES 2019: In Past 3 Yrs Rules or Regulations Enacted Without Prior Notice or
+21:04:56 00_names WARNING label cut to 80 characters: u10 -> WBES 2019: In Past 3 Yrs Faced Rules or Regulations Applied Differently Than
+21:04:56 00_names WARNING label cut to 80 characters: u11 -> WBES 2019: Primary Focus of Rule or Regulation Applied Differently Than
+21:04:56 00_names WARNING label cut to 80 characters: u12 -> WBES 2019: How Establishment Was Impacted By The Way Rule or Regulation Was
+21:04:56 00_names WARNING label cut to 80 characters: u13 -> WBES 2019: In Past 3 Yrs Dealt With Rules or Regulations That Cannot Be
+21:04:56 00_names WARNING label cut to 80 characters: u4 -> WBES 2019: In Past 3 Yrs Difficulty In Finding Info On Existing Rules or
+21:04:56 00_names WARNING label cut to 80 characters: u5 -> WBES 2019: Primary Focus of Rule or Regulation For Which It Was Difficult To
+21:04:56 00_names INFO variable_names.csv written: 2157 names in 5 files (pooled + per-wave)
+21:04:56 00_names INFO pooled names that needed an abbreviation to fit 32 characters: 172
+21:04:56 00_names INFO pooled names that carry the native code to stay unique: 0 (e.g. [])

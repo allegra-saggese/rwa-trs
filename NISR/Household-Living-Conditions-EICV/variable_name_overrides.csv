@@ -1,0 +1,89 @@
+native,clean_stem,clean_label
+active,economically_active,"Economically active, NISR derived"
+ae,adult_equiv_nisr,"Adult equivalents or household size in adult equivalents, NISR"
+age_5,age_five_year_bands,"Five-year age bands, NISR derived"
+agricwork,agricultural_worker,"Works in agriculture, NISR derived"
+childages,child_age_bands,"Child age bands, NISR derived"
+consumption,consumption_ae_jan2014,"Consumption per adult equivalent, January 2014 prices"
+curr_active,worked_ref_period,"Worked in the short reference period, NISR derived"
+current,main_job_last_week,"Main job in the last week, NISR derived"
+currentstatus,current_status,"Current economic status, NISR derived"
+cycle,interview_cycle,Data collection cycle in which the household was interviewed
+defl,price_deflator,"Spatial and temporal price deflator, NISR poverty file"
+depann,annual_expenditure,"Annual expenditure, NISR poverty file"
+deptot,total_expenditure,"Total expenditure, NISR poverty file"
+e2_prov,census_province,Province of the census frame
+econstatus,economic_status,"Economic activity status, NISR derived"
+ed_foodgov,school_feeding_gvt,"Government contribution to school feeding, NISR derived"
+eid,nisr_eid,"NISR poverty-file variable eid, no label shipped"
+empstatus,status_main_job,"Status in employment in the main job, NISR derived"
+epov,extreme_pov_base,Extreme poverty status as shipped in the base file
+epov_jan,extreme_poverty_status,"Extreme poverty status, NISR poverty file"
+epr,employment_ratio,"Employment-to-population ratio base, NISR derived"
+eqad,adult_equivalents,Adult equivalents in the household
+exp13p,nisr_exp13p,"NISR poverty-file variable exp13p, no label shipped"
+farmer,subsistence_farmer,"Subsistence farmer, NISR derived"
+farmer_type,crop_farmer_type,"Type of crop farmer, NISR derived"
+fddefl,food_price_deflator,"Food price deflator, NISR poverty file"
+filter__,nisr_filter,NISR filter variable as shipped
+grpages,working_age_bands,"Working-age bands, NISR derived"
+head_age,head_age,Age of the household head
+head_sex,head_sex,Sex of the household head
+hhid_old,household_id_old,Household identifier before anonymisation
+hhsize,household_size,Household size (persons in the roster)
+hhtype,household_sample_type,Household type according to the sample
+id1,stratum_shipped,Stratum as shipped
+id2,province_shipped,Province as shipped
+id3,district_shipped,District as shipped
+id4,sector_shipped,Sector as shipped
+id5,enumeration_area,Enumeration area as shipped
+id6,household_number,Household number within the enumeration area
+id_strate,stratum_census_eas,Stratum based on the census enumeration areas
+idmenag,household_key_shipped,Household key as shipped (idmenag)
+indfarmer,independent_farmer,"Independent farmer, NISR derived"
+indfarmer_nu,independent_farmers_hh,"Number of independent farmers in the household, NISR derived"
+isco,occupation_isco_shipped,"Occupation of the current main job, ISCO code as shipped"
+isic,industry_isic_shipped,"Industry of the current main job, ISIC code as shipped"
+isicgroup,industry_group,"Industry group of the main job, NISR derived"
+isicshort,industry_group_short,"Short industry group of the main job, NISR derived"
+lfs16,labour_force_status_16,"Labour force status, population aged 16 and over, NISR derived"
+lfs6,labour_force_status_6,"Labour force status, population aged 6 and over, NISR derived"
+mainisic,main_job_industry,"Industry of the main job, NISR derived"
+mainusual,main_job_last_year,"Main job over the last year, NISR derived"
+month,interview_month,Month of the interview
+multiplejobs,has_several_jobs,"Has more than one job, NISR derived"
+nfdefl,nonfood_price_deflator,"Non-food price deflator, NISR poverty file"
+nkey,household_key_2006,Key of the household identification variables
+nodays,days_per_week,"Days worked per week, NISR derived"
+nohours,hours_per_week,"Hours worked per week, NISR derived"
+nohours_sum,hours_all_jobs,"Total hours worked in all jobs, NISR derived"
+nojobs,number_of_jobs,"Number of jobs, NISR derived"
+nomonths,months_per_year,"Months worked per year, NISR derived"
+nweight,normalised_weight,"Normalised weight, NISR poverty file, no label shipped"
+occupation,occupation_grouped,"Occupation of the main job, NISR grouped"
+okey,old_key,Old household key as shipped
+ownfarmer,subsistence_farm_job,"Job in subsistence farming, NISR derived"
+payord,nisr_payord,"NISR poverty-file variable payord, no label shipped"
+pov,poverty_line,Poverty line or incidence as shipped by NISR
+pov_jan,poverty_status,"Poverty status, NISR poverty file (0 non-poor, 100 poor)"
+pov_v2,poverty_line,Poverty line or incidence as shipped by NISR
+poverty,poverty_base,Poverty status as shipped in the base file
+poverty_v2,poverty_base,Poverty status as shipped in the base file
+poverty_v3,poverty_base,Poverty status as shipped in the base file
+prefect,prefecture,Prefecture (pre-2006 province)
+primarylast,matching_case,"Indicator of a matching case, NISR derived"
+quint,expenditure_quintile,"Expenditure quintile, NISR"
+quintile,quintile,"Consumption quintile, NISR"
+quintile_v2,quintile,"Consumption quintile, NISR"
+ramord,nisr_ramord,"NISR poverty-file variable ramord, no label shipped"
+ramordj,nisr_ramordj,"NISR poverty-file variable ramordj, no label shipped"
+region,region,Region of residence as shipped by NISR
+revworkstats,work_status_revised,"Revised work status, NISR derived"
+rwanda,rwanda_flag,Rwanda indicator as shipped
+s0q18m,interview_month_2017,Month of the interview
+s0q18y,interview_year_2017,Year of the interview
+s0q19m,interview_month_2014,Month of the interview
+s0q19y,interview_year_2014,Year of the interview
+s6aq7,rooms_previous_dwelling,Rooms in the previous dwelling (NISR label reads 'how may')
+sol_jan,consumption_ae,"Consumption per adult equivalent, January prices of the round"
+sol_jan_v2,consumption_ae,"Consumption per adult equivalent, January prices of the round"

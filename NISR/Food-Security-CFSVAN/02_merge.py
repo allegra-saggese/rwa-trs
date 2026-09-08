@@ -19,9 +19,27 @@ import difflib, json, re
 from collections import Counter
 import numpy as np, pandas as pd
 from cfsva_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float,
-                          resolve_object_columns, label_similarity, save_json, LOGS)
+                          resolve_object_columns, label_similarity, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("02_merge"); P = paths(); ck = Checks(log)
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # per-wave files are read back under NISR's native names; pooled files written under the clean names
+_METAS = {f.stem[6:-5]: json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}
+_OUT2ENTRY = {e["out"]: (y, tag, e) for y, m in _METAS.items() for tag, e in m.get("files", {}).items() if e.get("out")}
+def _code(k):
+    """value-label code as saved in the meta file (json string) -> the number pyreadstat returns for a .dta"""
+    try: f = float(k)
+    except (TypeError, ValueError): return k
+    return int(f) if f.is_integer() else f
+def read_native(f):
+    """a per-wave cleaned file under native names, with the native labels and value labels saved by 01_clean in the meta file"""
+    df, vl, vv = read_dta(f); hit = _OUT2ENTRY.get(f.name)
+    if hit and hit[2].get("clean_names"):
+        y, tag, e = hit; df = df.rename(columns={c: n for n, c in e["clean_names"].items()})
+        vl = {c: e.get("var_labels", {}).get(c, "") for c in df.columns}
+        vv = {c: {_code(x): s for x, s in d.items()} for c, d in e.get("value_labels", {}).items() if c in df.columns}
+    elif hit: y, tag, e = hit; df, vl, vv = NAMES.invert(df, vl, vv, f"wave:{y}:{tag}")
+    else: log.warning("%s: no meta entry, labels taken from the file", f.name)
+    return df, vl, vv
 CS = ["2006", "2009", "2012", "2015", "2018", "2021", "2024"]
 VUP = []
 KEYS = ["survey", "year", "wave", "unit", "prov", "dist", "sector", "urban", "cluster", "hhid", "wt"]
@@ -112,7 +130,7 @@ def pool(files, out_name, label, unit):
     """files: {wave: path}. Returns (frame, decisions) and writes the pooled file."""
     data, labels, vlabs = {}, {}, {}
     for w, f in files.items():
-        df, vl, vv = read_dta(f); data[w], labels[w], vlabs[w] = df, vl, vv
+        df, vl, vv = read_native(f); data[w], labels[w], vlabs[w] = df, vl, vv
         log.info("  loaded %-10s %-55s %9s rows x %4d", w, f.name, f"{len(df):,}", df.shape[1])
     waves = list(files)
     allvars = sorted({c for df in data.values() for c in df.columns})
@@ -161,8 +179,9 @@ def pool(files, out_name, label, unit):
         for w in waves:
             if "wt" in data[w].columns: ck(abs(out.loc[out.wave == w, "wt"].sum() - data[w]["wt"].sum()) < 1e-6, f"{out_name}: {w} sum wt preserved")
     out, dup_rows, dup_wt = drop_exact_duplicates(out, out_name, log)
-    write_dta(out, P["final"] / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(out), "vars": list(out.columns), "unit": unit, "waves": waves, "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
+    out_c, vl_c, vv_c, clean_names = NAMES.apply(out, var_labels, value_labels, f"pooled:{out_name}", log)      # clean names, labels and value labels
+    write_dta(out_c, P["final"] / out_name, vl_c, vv_c, label, log)
+    return {"rows": len(out), "vars": list(out.columns), "clean_vars": list(out_c.columns), "clean_names": clean_names, "unit": unit, "waves": waves, "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in vl_conflicts.items()}, "stale_labels": stale_labels}
 
 summary = {"threshold": SIM_THRESHOLD, "vl_threshold": VL_THRESHOLD, "force_align": sorted(FORCE_ALIGN), "force_split": FORCE_SPLIT, "files": {}}

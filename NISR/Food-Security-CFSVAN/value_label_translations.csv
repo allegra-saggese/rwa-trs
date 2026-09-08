@@ -1,0 +1,292 @@
+source_text,english
+Numero y'urugo,Household number
+Numero d'Agent de saisie,Data entry clerk number
+10.0.Hari ingorane urugo rwanyu rwagize mu mwaka ushize muku,Did the household face any shock in the last year
+10.1.A.Amapfa/Imvura itagwira igihe,Shock: drought or rain not falling on time
+10.1.D.Indwara z'ibihingwa zidasanzwe,Shock: unusual crop diseases
+10.1.E.Indwara z'amatungo zidasanzwe,Shock: unusual livestock diseases
+10.1.F.Indwara zibyorezo zifata abantu,Shock: epidemic diseases affecting people
+10.1.J.Igabanuka ry'umutungo w'umwe mu bagize urugo,Shock: loss of assets of a household member
+10.1.K.Indwara ikomeye/impanuka by'umwe mu bagize urugo,Shock: serious illness or accident of a household member
+10.1.L.Urupfu rw'umutware w'urugo,Shock: death of the household head
+10.1.M.Urupfu rw'umwe mu bagize urugo wakoraga,Shock: death of a working household member
+10.1.N.Urupfu rw'umwe mu bagize urugo,Shock: death of a household member
+10.1.O.Kwibwa ibyazanira urugo amafaranga,Shock: theft of income-earning assets
+"11.0.Mu mezi 12 ashize, hari uwo muri uru rugo wabonye imfas",Anyone in the household received food assistance in the last 12 months
+11.2.1. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo by'ab,Food assistance received: food for children
+11.2.2. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo bigen,Food assistance received: targeted food rations
+11.2.3. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo bitan,Food assistance received: food distributed free
+11.2.4. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ibiryo bitan,"Food assistance received: food distributed free, second item"
+11.2.5. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Imfashanyo y,Food assistance received: other food aid
+11.2.6. NI IYIHE MFASHANYO Y'IBIRYO MWABONYE ?: Ubundi buryo,Food assistance received: other type
+"11.3.0.Mu mezi 12 ashize, hari uwo muri uru rugo waba warabo",Anyone in the household received non-food assistance in the last 12 months
+11.4.1.Ni ubuhe bwoko bw'imfashanyo zitari ibiribwa urugo rw,Type of non-food assistance the household received
+12.1.Hari ab'igitsina gore bafite imyaka kuva 15 kuveza kuri,Any women aged 15 to 49 in the household
+Hari abana bafite munsi y'amezi 59,Any children under 59 months in the household
+1.1. Ubu mubana n'abantu bangahe muri runo rugo ?,How many people live in this household
+1.10.ANi ayahe mashuri umugore wo muri uru rugo yarangije ?,Highest education completed by the woman of the household
+1.11.B - Kuva ku mezi 6 kugeza kumyaka 5 G,"Members aged 6 months to 5 years, male"
+1.11.C - Kuva ku myaka 6 kugeza kumyaka 14 G,"Members aged 6 to 14 years, male"
+1.11.D - Kuva ku myaka 15 kugez 59 G,"Members aged 15 to 59 years, male"
+1.11.E - Abafite imyaka 60 n'abayirengeje G,"Members aged 60 and over, male"
+1.11.B - Kuva ku mezi 6 kugeza kumyaka 5 F,"Members aged 6 months to 5 years, female"
+1.11.C - Kuva ku myaka 6 kugeza kumyaka 14 F,"Members aged 6 to 14 years, female"
+1.11.D - Kuva ku myaka 15 kugez 59 F,"Members aged 15 to 59 years, female"
+1.11.E - Abafite imyaka 60 n'abayirengeje F,"Members aged 60 and over, female"
+1.12.Hari uwo muri uru rugo witabye Imana mu mezi 6 ashize ?,Any household member died in the last 6 months
+1.14.Mu bantu bakuze bari hagati y'imyaka 15 na 59 baba muri,Adults aged 15 to 59 in the household who are chronically ill
+1.16.Ni abana bangahe bafite imyaka 7 kugeza kuri 14 biga am,Number of children aged 7 to 14 attending school
+1.17.Hari uwaba yarasibye ishuri icyumweru kimwe cyangwa kir,Any child missed school for a week or more
+1.19.Muri uru rugo haba harimo impfubyi zifite munis y'imyak,Any orphans under 18 in the household
+1.18.Gukorera amafaranga/Ibiryo,Reason for missing school: working for money or food
+1.18.Akazi ko mu rugo,Reason for missing school: household work
+1.2.Igitsina cy'umutware w'urugo,Sex of the household head
+1.20.Ni mfubyi zingahe zifite munsi y'imyaka 18 ziri muri ru,Number of orphans under 18 in the household
+1.22.Ni bangahe biga ubu,Number currently attending school
+1.23.Hari umuntu wo muri urugo waba yaragize aho ajya mu mez,Any household member migrated in the last months
+1.24.Ni iyi mpamvu yigenzi yamujyanye?,Main reason for the migration
+1.25.Yagiye hehe ?,Where the migrant went
+1.26.Hari abari baravuye mu rugo ariko bakagaruka nyuma yame,Any member who left the household and returned after months
+1.27.Hashize igihe kigani ki kuva bagaruka ?,Time since the member returned
+1.28.Hari umuntu urugo rwanyu rwacumbikiye mu gihe gito? (am,Any person hosted temporarily by the household
+1.3.Umutware w'urugo afite imyaka ingahe y'amavuko,Age of the household head in years
+1.4.Umutware w'urugo azi gusoma no kwandika inyandiko ngufi,Household head can read and write a short note
+1.5.Ni ayahe mashuri umutware w'urugo yarangije ?,Highest education completed by the household head
+1.5.B.Ikindi cy'iciro umutware w'urugo yarangije (Sobanura),"Other education level completed by the household head, specify"
+1.6.Imibereho bwite (irangamimerere) y'umutware w'urugo ni i,Marital status of the household head
+1.7.Afite abagore bangahe ?,Number of wives of the household head
+1.8.Umugore wo muri uri uru rugo afite imyaka ingahe ?,Age of the woman of the household in years
+1.9.Umugore wo muri uru rugo azi gusoma no kwandika inyandik,The woman of the household can read and write a short note
+2.10.Ubusanzwe amazi munywa muri uru rugo muyavoma hehe?,Usual source of drinking water of the household
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Muta,Months the water source was used: January
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Gash,Months the water source was used: February
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Weru,Months the water source was used: March
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Mata,Months the water source was used: April
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Gicu,Months the water source was used: May
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Kame,Months the water source was used: June
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Nyak,Months the water source was used: July
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Kana,Months the water source was used: August
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Nzel,Months the water source was used: September
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Ukwa,Months the water source was used: October
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Ugus,Months the water source was used: November
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Ukub,Months the water source was used: December
+2.11.Iryo vomo urugo rwanyu rwarikoresheje mu yahe mezi Yose,Months the water source was used: all year
+2.12.Hari amafaranga mwishyura amazi kuri iryo vomo,Household pays for water at this source
+2.13.Mwishyura amafaranga angahe buri kwezi mugura amazi?,Monthly amount paid for water
+2.14.Haba hari igihe muri uyu mwaka mwakoresheje amavomo ata,Household used other water sources this year
+2.15.Ni rihe riba rindi ry'ingezi mwagiye mwifashisha mu mez,Main alternative water source used
+2.16.Nimuyahe mezi urugo rwanyu rwagiye runyuranya ayo mavom,Months the alternative water source was used
+2.17.Urugo rwanyu rwigeze rwishyura amazi mu gihe kinyuranye,Household paid for water at the alternative source
+2.18.Uriha amafaranga angahe buri kwezi,Monthly amount paid at the alternative source
+2.19.a.Aho muvoma hari urugendo n'amaguru rungana iki kugend,"Walking time to the water source, one way"
+2.19.b.Aho muvoma hari urugendo n'amaguru rungana iki kugend,"Walking time to the alternative water source, one way"
+B.Gusasa hasi mu nzu,Floor material of the dwelling
+2.20.Ugereranije urugo rwanyu rukoresha amabindo y'amanzi an,Number of jerrycans of water the household uses per day
+2.21.Ubusanzwe urugo rwanyu rukoresha ubuhe buryo mugutungan,Usual method of treating drinking water
+"2.3.Ejo hashize, ni abantu bangahe baraye muri ibyo byumba?",Number of people who slept in the dwelling last night
+2.4.Umusarane mukoresha uba mu rugo ?,Toilet is inside the compound
+2.5.Uru rugo rukoresha umusarane umeze ute,Type of toilet the household uses
+2.7.Ni ibihe bikoresho by'isuku...Amazi ?,Hygiene materials used: water
+2.7.Ni ibihe bikoresho by'isuku...Ibibabi/Ibyatsi ?,Hygiene materials used: leaves or grass
+2.7.Ni ibihe bikoresho by'isuku...Urupapuro rw'isuku ?,Hygiene materials used: toilet paper
+2.7.Ni ibihe bikoresho by'isuku...Urupapuro zisanzwe ?,Hygiene materials used: ordinary paper
+2.7.Ni ibihe bikoresho by'isuku...Ntabyo ?,Hygiene materials used: none
+2.8.Iyo bwije mucana iki cy'igenzi mu nzu kugirango habone?,Main source of lighting at night
+2.9.Mukoresha iki kugirango mubone umuriro wo guteka ?,Main source of energy for cooking
+2.9.Mukoresha iki kugirango mubone umuriro wo guteka ? ibind,Other source of energy for cooking
+3.1.Urugo rwanyu rurahiga ?,Household practises farming
+3.10.Urugo rwanyu rufite ibiti bingahe byose hamwe ?,Total number of trees the household owns
+3.11.Urugo rwanyu rufite insina zinyamunyo,Household owns cooking banana plants
+3.12.Urugo rwanyu rufite insina z'inyamunyu zingahe sose ham,Number of cooking banana plants the household owns
+3.13.Urugo rwanyu rufite umurima ruhingamo insina z'ibitoki,Household has a field of beer banana plants
+3.14.Izo nsina z'ibitoki by'inzoga ni zingahe ?,Number of beer banana plants
+3.15.Urugo rwanyu rufite akarima k'igikoni ?,Household has a kitchen garden
+3.16.Urugo rwanyu rufite amatungo ?,Household owns livestock
+3.2.a.Uko amasambu angana igihembwe A 2009,"Land area cultivated, season A 2009"
+3.2.b.Uko amasambu angana igihembwe B 2008,"Land area cultivated, season B 2008"
+3.2.c.Uko amasambu angana igihembwe C 2008,"Land area cultivated, season C 2008"
+3.3.a.Ubutaka bwawe bwite buhingwa bungana iki ugeranije n'u,"Own land cultivated compared with the total, season A"
+3.3.b.Ubutaka bwawe bwite buhingwa bungana iki ugeranije n'u,"Own land cultivated compared with the total, season B"
+3.3.c.Ubutaka bwawe bwite buhingwa bungana iki ugeranije n'u,"Own land cultivated compared with the total, season C"
+3.4.a.Ni mukuhe kwezi wasaruyemo muri icyo gihe cy'ihinga ?,"Month of harvest, season A"
+3.4.b.Ni mukuhe kwezi wasaruyemo muri icyo gihe cy'ihinga ?,"Month of harvest, season B"
+3.4.c.Ni mukuhe kwezi wasaruyemo muri icyo gihe cy'ihinga ?,"Month of harvest, season C"
+3.5.a.Umusaruro w'igihe cy'ihinga wamaze igihe cyingana iki?,"How long the harvest lasted, season A"
+3.5.b.Umusaruro w'igihe cy'ihinga wamaze igihe cyingana iki?,"How long the harvest lasted, season B"
+3.5.c.Umusaruro w'igihe cy'ihinga wamaze igihe cyingana iki?,"How long the harvest lasted, season C"
+3.6.Muri icyo gihe cy'ihinga wakoesheje ifumbire mvaruganda,Used chemical fertiliser in that season
+3.7.Wakoresheje muri icyo gihe cy'ihinga ifumbire isanzwe (a,Used organic fertiliser in that season
+3.8.1.Urugo rwanyu rufite iki gikoresho ? ISUKA,Household owns a hoe
+3.8.2.Urugo rwanyu rufite iki gikoresho ? ISHOKA,Household owns an axe
+3.8.3.Urugo rwanyu rufite iki gikoresho ? UMUPANGA/AKAYUYA/N,"Household owns a machete, sickle or knife"
+3.8.4.Urugo rwanyu rufite iki gikoresho ? RATO,Household owns a rake
+3.8.5.Urugo rwanyu rufite iki gikoresho ? RADIO GUSA,Household owns a radio
+3.8.6.Urugo rwanyu rufite iki gikoresho ? AMAKASETI/AMASEDE,Household owns a cassette or CD player
+3.8.7.Urugo rwanyu rufite iki gikoresho ? IGARE,Household owns a bicycle
+3.8.8.Urugo rwanyu rufite iki gikoresho ? UBWATO,Household owns a boat
+3.8.9.Urugo rwanyu rufite iki gikoresho ? URUSHUNDURA/UMURAN,Household owns a fishing net or line
+3.8.10.Urugo rwanyu rufite iki gikoresho ? IPOMPO ITERA IMIT,Household owns a sprayer pump
+3.8.11.Urugo rwanyu rufite iki gikoresho ? INTEBE AMADIVA,Household owns chairs or sofas
+3.8.12.Urugo rwanyu rufite iki gikoresho ? IIGIKORESHO GIKUR,Household owns a grinding machine
+3.8.13.Urugo rwanyu rufite iki gikoresho ? TINGATINGA/IMASHI,Household owns a tractor or machine
+3.8.14.Urugo rwanyu rufite iki gikoresho ? URUSHYO RWA KIZUN,Household owns a modern plough
+3.8.15.Urugo rwanyu rufite iki gikoresho ? AKUMA GATUNGANYA,Household owns a processing device
+3.8.16.Urugo rwanyu rufite iki gikoresho ? TELEFONI ZIGENDAN,Household owns a mobile phone
+3.8.17.a.rugo rwanyu rufite iki gikoresho ? IBINDI BYUMA BIK,Household owns other equipment
+3.8.17.b.Urugo rwanyu rufite iki gikoresho ? KUBIVUGA,"Other equipment owned, specify"
+3.9.Urugo rwanyu rufite ibiti by'imbuto ziribwa ?,Household owns fruit trees
+5.4.a.Ni muyahe mezi uwo murimo ukorwamo ? J,Months the activity is carried out: January
+5.4.b.Ni muyahe mezi uwo murimo ukorwamo ? F,Months the activity is carried out: February
+5.4.c.Ni muyahe mezi uwo murimo ukorwamo ? M,Months the activity is carried out: March
+5.4.d.Ni muyahe mezi uwo murimo ukorwamo ? A,Months the activity is carried out: April
+5.4.e.Ni muyahe mezi uwo murimo ukorwamo ? M,Months the activity is carried out: May
+5.4.f.Ni muyahe mezi uwo murimo ukorwamo ? J,Months the activity is carried out: June
+5.4.g.Ni muyahe mezi uwo murimo ukorwamo ? J,Months the activity is carried out: July
+5.4.h.Ni muyahe mezi uwo murimo ukorwamo ? A,Months the activity is carried out: August
+5.4.i.Ni muyahe mezi uwo murimo ukorwamo ? S,Months the activity is carried out: September
+5.4.j.Ni muyahe mezi uwo murimo ukorwamo ? O,Months the activity is carried out: October
+5.4.k.Ni muyahe mezi uwo murimo ukorwamo ? N,Months the activity is carried out: November
+5.4.l.Ni muyahe mezi uwo murimo ukorwamo ? D,Months the activity is carried out: December
+5.1.Hari abo muri rungo rugo rwanyu bakorera ahandi kure ya,Any household members working away from home
+"5.2.Niba ari yego, ni hehe ?","If yes, where they work"
+5.3.A.Ni bangahe bagize urugo rwanyu bakorera ahandi badatah,"Number of members working away without returning, male"
+5.3.B.ni bangahe bagize urugo rwanyu bakorera ahandi badatah,"Number of members working away without returning, female"
+5.5.a.Hari amafaranga boherereza uru rugo ? ABAKORA AKAZI K',"Migrants send money to the household, male"
+5.5.b.Hari amafaranga boherereza uru rugo ? ABAKORA AKAZI K',"Migrants send money to the household, female"
+"5.6.a.Niba ari yego, bayohereza kangahe mu mezi 12 ashize ?","How often money was sent in the last 12 months, male"
+"5.6.b.Niba ari yego, bayohereza kangahe mu mezi 12 ashize ?","How often money was sent in the last 12 months, female"
+5.7.a.Ni amafaranga angahe urugo rwanyu rwohererejwe mu mwak,"Amount received in the last year, male migrants"
+5.7.b.Ni amafaranga angahe urugo rwanyu rwohererejwe mu mwak,"Amount received in the last year, female migrants"
+6.1.Urugo rwanyu rujyarubona inguzanyo/umwenda,Household has access to credit or loans
+"6.2.Bibaye ngombwa ko urugo rwanyu rusaba inguzanyo, ni hehe",Where the household would ask for a loan
+"6.2.a.Bibaye ngombwa ko urugo rwanyu rusaba inguzanyo, ni he","Where the household would ask for a loan, second source"
+6.3.Hari uwafashe inguzanyo muri uru rugo mu mezi 12 ashize,Anyone in the household took a loan in the last 12 months
+6.4.Ni iki mwakoresheje igice kinini k'iyo nguzanyo yafashwe,Main use of the loan
+6.6.Iyo nguzanyo ingana ite ? (amafaranga),"Amount of the loan, Rwandan francs"
+6.7.Iyo nguzanyo izishyurwa mu gihe kigana iki (mu mezi),"Repayment period of the loan, months"
+6.8.Ni ikihe gice cy'iyo nguzanyo wumva uzashobora kwishyura,Share of the loan the household expects to repay
+Ibirayi,Irish potatoes
+"S8_09_1 If yes, ni iminsi ingahe?","If yes, how many days"
+9.1.Ejo hashize abantu bakuru bariye inshuro zingahe muri ur,Number of meals eaten by adults yesterday
+9.2.Ejo hashize abana badakwije imaka 15 bariye inshuro zing,Number of meals eaten by children under 15 yesterday
+9.3.a.Ese izo nshuro nizo musanzwe mufataho ifunguro muri ik,Is this the usual number of meals in this period
+9.5.A.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara,Coping when food or money is short: strategy A
+9.5.B.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara,Coping when food or money is short: strategy B
+9.5.C.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara,Coping when food or money is short: strategy C
+9.5.D.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara,Coping when food or money is short: strategy D
+9.5.E.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara,Coping when food or money is short: strategy E
+9.5.F.Iyo urugo rwanyu ruzakubura ibiryo bihagije cg amafara,Coping when food or money is short: strategy F
+12.10.Mu byumweru 2 bishize hari ubwo wigeze urwara,Was ill in the last 2 weeks
+12.11.Mu ijoro ryakeye waba waraye mu nzitiraibu ?,Slept under a mosquito net last night
+12.12.a.Ukaraba intoki ryari ? Mbere yo gutegura ifunguro,Washes hands: before preparing food
+12.12.b.Ukaraba intoki ryari ? Mbere yo kurya,Washes hands: before eating
+12.12.c.Ukaraba intoki ryari ? Avuye kwituma,Washes hands: after using the toilet
+12.12.d.Ukaraba intoki ryari ? Nyuma yo gutuganya umwana uvu,Washes hands: after cleaning a child
+12.12.e.Ukaraba intoki ryari ? Igihe afite intoki zanduye,Washes hands: when the hands are dirty
+12.12.f.Ukaraba intoki ryari ? Nta na rimwe,Washes hands: never
+12.13.Iyo uvuye kwituma ukaraba iki ?,What is used to wash hands after the toilet
+12.14.Pima umusegururko w'ukuboko kw'ibumoso (MUAC) muri cm,"Mid-upper arm circumference of the woman, left arm, cm"
+12.15.Ese ubu uratwite,Currently pregnant
+12.16.Uburebure bw'uwo mubyeyi muri cm,"Height of the mother, cm"
+Izina ry'umugore ufite imyaka kuva 15 kugera 49,Name of the woman aged 15 to 49
+12.3. Imyaka afite,Age of the woman
+12.5.Ni ikihe cyiciro cy'amashuri wize,Education level of the woman
+12.6.Ese ubu uratwite/uronsa,Currently pregnant or breastfeeding
+12.7.Igihe wari utwite wigeze ujya kwisuzumisha kwa muganga,Attended antenatal care during pregnancy
+12.8.Igihe wari utwite wafashe ibinini bya feri,Took iron tablets during pregnancy
+12.9.Hari ubwo wigeze ufata ibinini bya vitamini A nyuma y'a,Took vitamin A after delivery
+13.10.Mu mezi 6 umaze kubyara waba hari icyo wamuhaye cyo ku,Gave the child anything to eat or drink in the first 6 months
+13.11.Uracyamwonsa,Still breastfeeding the child
+13.12.Ni kangahe waraye wonkeje kuva nimugoroba izuba rirenz,Number of times breastfed last night
+13.13.Ni inshuro nzigahe wonkeje ejo umunsi wose,Number of times breastfed yesterday during the day
+13.14.Ejo hashize cg mu ijoro ryakeye haba hari icyo yanywey,Child drank anything else yesterday or last night
+13.15.Igihe yavukaga ... yaganaga ate ?,Size of the child at birth
+13.17.Mu byumweru bibili bishize yigeze arwara,Child was ill in the last two weeks
+13.18.Mu byumweru bibili bishize yigeze agira umuriro,Child had fever in the last two weeks
+13.19.Mu byumweru bibiri bishize yigeze arwara inkorara,Child had a cough in the last two weeks
+13.1. Ese kuri ubu uracyonsa ?,Currently breastfeeding
+13.1b.N° za nyina w'umwana,Line number of the child's mother
+13.2.Itariki y'amavuko   Ukwezi,Date of birth of the child: month
+13.2.Itariki y'amavuko   Umwaka,Date of birth of the child: year
+13.20.Mu byumweru bibiri bishize yigeze arwara impiswi ?,Child had diarrhoea in the last two weeks
+"13.21.Niba mu byumweru bibiri bishize yararwaye, ese yagiye","If ill in the last two weeks, sought treatment"
+13.22.Niba afite amezi 9 cg hejuru ese yigeze abona urukingo,Child aged 9 months or more received the measles vaccine
+13.23.Ese yigeze afata ibinini by'inzoka mu mezi 6 ashize ?,Child took deworming tablets in the last 6 months
+13.24.Ibiro by'umwana,Weight of the child
+13.25.Ese ibipimo by'umwana byafashwe aryamye/ahagaze?,Child measured lying down or standing
+13.26.Uburebure bw'umwana,Height of the child
+13.28.umuzeguruko w'umutwe w''umwana,Head circumference of the child
+13.29.Ese umwana afite ububyimbe ku birenge byombi ? (oedema,"Child has swelling of both feet, oedema"
+13.3.Ukwezi yavutsemo,Month of birth of the child
+13.30.Yaba yarashyizwe muri gahunda mbonezamirire ?,Child enrolled in a nutrition programme
+"13.31.Niba ari yego, ni muhiye gahunda ?","If yes, which nutrition programme"
+13.4.Umwaka yavutseho,Year of birth of the child
+13.5.Imyaka y'umwana (mu mezi),Age of the child in months
+13.7.Ni wowe ubyara,Respondent is the child's mother
+13.8.Hari ubwo wigeze wonsa ?,Ever breastfed the child
+13.9.Wonkeje nyuma y'igihe kingana iki ukimara kubyara ?   A,"Time after birth when breastfeeding started, hours"
+13.9.Wonkeje nyuma y'igihe kingana iki ukimara kubyara ?   I,"Time after birth when breastfeeding started, days"
+1 - Kuva mu 2006 haba hari ubantu baje gutura aha cyangwa bi,People settled here or left since 2006
+Ni ubuhe buryo bw'imiturire buri muri aka kagari,Settlement pattern of this cell
+2.1 - Muri aka kagari hari ikigo cy'amashuri abanza gikora,Cell has a functioning primary school
+2.10 - Haba hari isoko ry'ibiribwa ritarema buri munsi muri,Cell has a food market not held daily
+2.11 - Ni igihe kingana iki mukoresha kugera ku isoko ribege,Time to reach the nearest market
+2.12 - Ni igihe kingana iki mukoresha kugera ku isoko ribege,"Time to reach the nearest market, second measure"
+"2.2 - Niba ntacyo,kugera ku mashuri abanza abegereye harimo","If none, time to reach the nearest primary school"
+2.3 - Muri aka kagari hari amashuri yisumbuye akora,Cell has a functioning secondary school
+2.4 - Niba ntayo kugera ku mashuri y'isumbuye abegereye  har,"If none, time to reach the nearest secondary school"
+2.5 - Muri aka kagari hari ivuriro ritoya rikora muri aka ka,Cell has a functioning health post
+2.6 - Hari urugendo rungana iki kugera iki kugera ku ivuriro,Time to reach the nearest health facility
+2.7 - Umuhanda muto ubegereye waba uri ku ntera ingana iki u,Distance to the nearest small road
+2.8 - Umuhanda munini ubegereye waba uri kuntera ingana iki,Distance to the nearest main road
+2.9 - Haba hari isoko ry'ibiribwa rirema buri munsi muri aka,Cell has a daily food market
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? ALL,Months the household faced the shock: all months
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? J,Months the household faced the shock: January
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? F,Months the household faced the shock: February
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? M,Months the household faced the shock: March
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? A,Months the household faced the shock: April
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? S,Months the household faced the shock: September
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? O,Months the household faced the shock: October
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? N,Months the household faced the shock: November
+NI MUYAHE MEZI URUGO RWANYU RWAHUYE N'IZO NGORANE ? D,Months the household faced the shock: December
+10.3. Iyo mpamvu yaba yaratumye urugo rubura cyangwa rutakaz,The shock reduced or removed the household's income
+10.4.Iyo mpamvu yaba yaratumye urugo rubura ibintu byo mu ru,The shock caused a loss of household assets
+10.5.Ese iyo ngorane yatumye urugo rutakaza ubushobozi bwo k,The shock reduced the household's ability to produce food
+10.6.1.Ni iki mwakoze kugirango mwikure muri izo ngorane ?,What the household did to recover from the shock
+10.7.Kuri ubu urugo rwanyu rwabashije kwihaza mu biribwa ?,Household is currently able to feed itself
+1.13.B.Imyaka,Age of the deceased member
+1.13.C.Bishwe ni iki,Cause of death of the member
+1.15.B.Imyaka,Age of the chronically ill member
+1.15.C.Uko ameze,Condition of the chronically ill member
+1.21.B.Mbwira imyaka yabo?,Ages of the orphans
+A.2.Niyihe mirimo y'ingenzi itunze urugo yakozwe mu mezi 12,Main livelihood activities of the household in the last 12 months
+Ni muyahe mezi uwo murimo ukorwamo ? All,Months the activity is carried out: all months
+B.Ni muyahe mezi uwo murimo ukorwamo ? J,Months the activity is carried out: January
+Ni muyahe mezi uwo murimo ukorwamo ? F,Months the activity is carried out: February
+Ni muyahe mezi uwo murimo ukorwamo ? M,Months the activity is carried out: March
+Ni muyahe mezi uwo murimo ukorwamo ? A,Months the activity is carried out: April
+Ni muyahe mezi uwo murimo ukorwamo ? J,Months the activity is carried out: June or July
+Ni muyahe mezi uwo murimo ukorwamo ? S,Months the activity is carried out: September
+Ni muyahe mezi uwo murimo ukorwamo ? O,Months the activity is carried out: October
+Ni muyahe mezi uwo murimo ukorwamo ? N,Months the activity is carried out: November
+Ni muyahe mezi uwo murimo ukorwamo ? D,Months the activity is carried out: December
+D.Ni uwuhe mugabane ukomoka kuri uwo murimo utunze urugo ?,Share of household income from this activity
+E.Ni ikihe kigereranyo cy'amafaranga yavuye muri uwo muimo m,Estimated income from this activity
+F.Ukoresheje ijanisha erekana uko uwo murimo ubunganira mugu,Percentage contribution of this activity to the household
+A.Ni ikihe gihingwa k'ingenzi cyahinzwe muri ubwo bwoko bw'b,Main crop grown on this type of land
+B.Ni uwuhe mugabane w'ubutaka ukoreshwa kuri iki gihingwa ? %,"Share of land used for this crop, percent"
+C.Wowe ubwawe ukoresha uwuhe mugabane w'umusaruro w'iki gihi,Share of the crop production consumed by the household
+D.Ni uwuhe mugabane w'umusaruro ugurisha uva muri iki gihing,Share of the crop production sold
+E.a.Iyo mushaka imbuto z'icyo gihingwa k'ingenzi muzibona mu,Main source of seeds for this crop
+E.b.Iyo mushaka imbuto z'icyo gihingwa k'ingenzi muzibona mu,Second source of seeds for this crop
+F.Ni uwuhe mugabane w'umusaruro w'icyo gihingwa k'ingenzi wo,Share of the crop production kept for other uses
+Mu minsi 30 ishize hari amafaranga yatanzwe ku... kugirango,Any expenditure on this item in the last 30 days
+A.Ugereranyije watanze amafaranga angahe ku.. mu minsi 30 is,Estimated cash spent on this item in the last 30 days
+B.Ugereranyije ibintu mwafashe ku ideni .... gifite agaciro,Estimated value of this item taken on credit
+A.Ugereranyije watanze amafaranga angahe?,Estimated cash spent
+B.Ugeraranyije mwafashe... ku ideni gifite agaciro k'amafara,Estimated value taken on credit
+IBIRIBWA,Food items
+"Ku biribwa byafshwe mu minsi 7 ishize, shyira akamenyetso mu",Food consumed in the last 7 days
+1.Umubare w'iminsi ikiribwa cyakoreshejwe igiteranyo cy'utuz,Number of days the food item was consumed
+2.1.Aho ibiribwa byakomotse   AH'INGENZI,Main source of the food item
+2.1.Aho ibiribwa byakomotse   AHANDI,Secondary source of the food item

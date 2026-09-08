@@ -1,0 +1,19 @@
+native,clean_stem,clean_label
+honey_produce,honey_produced,"Honey produced, no label shipped"
+total_egg,eggs_total,"Total eggs, no label shipped"
+agribus_n,agribusiness_activities_n,Number of agribusiness activities of the household
+agricactivities_n,agri_activities_n,Number of agricultural activities of the household
+cropping,household_cropping,Household engaged in cropping
+crops_grown,crops_grown_n,Number of crops grown by the household
+crops_improved,crops_improved_seeds_n,Number of crops grown with improved seeds
+crops_stored,crops_stored_n,Number of crops stored by the household
+dummy_cropping_b,cropping_season_b,Household engaged in cropping in season B
+hh_members,members_improved_seeds,Household members who used improved seeds
+hh_members2,members_inorganic_fert,Household members who used inorganic fertilisers
+measures_n,soil_measures_n,Number of soil protection measures used
+nmber_vegs,vegetables_grown_n,Number of vegetables grown by the household
+s0q3,stratum,Sampling stratum
+s0q4,segment,Segment
+s0q0,household_segment,Household segment identifier
+s1q7a,absent_12_months,Absent during the past 12 months
+total,total_unlabelled,"Total, no label shipped"

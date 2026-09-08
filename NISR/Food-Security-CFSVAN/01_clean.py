@@ -8,9 +8,10 @@ id where the file links to it. See NISR-Food-Security-CFSVAN.md (decisions log) 
 """
 import re, sys
 import numpy as np, pandas as pd
-from cfsva_helpers import (paths, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast, save_json, LOGS)
+from cfsva_helpers import (paths, get_logger, Checks, read_any, write_dta, lower_names, destring, downcast, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("01_clean"); P = paths()
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # clean names and labels per file (built by 00_names.py, committed); scopes wave:<year>:<tag>
 WANT = sys.argv[1:] or ["2006", "2009", "2012", "2015", "2018", "2021", "2024"]
 KEY_ORDER = ["survey", "year", "wave", "unit", "prov", "dist", "sector", "urban", "cluster", "hhid", "wt"]
 KEY_LABELS = {"survey": "Source survey", "year": "Survey year", "wave": "Wave (survey year)", "unit": "Unit of the file (household, woman, child, village)",
@@ -141,16 +142,20 @@ for y in WANT:
         if "dist" in df.columns: ck(set(pd.Series(df["dist"]).dropna().unique()) <= set(DIST_LABELS), f"{y} {unit}: district codes on the 11-57 scheme ({pd.Series(df['dist']).nunique()} districts)")
         tag = unit if unit not in ("other", "child_mother_household") else re.sub(rf"^cfsva_{y}_", "", f.stem.lower())
         out = f"CFSVA_{y}_{tag}_clean.dta"
-        write_dta(df, P["inter"] / out, vl, vv, f"CFSVA {y} {unit} file (cleaned)", log)
-        meta["files"][tag] = {"file": rel, "rows": len(df), "vars": list(df.columns), "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "source": srcmap, "out": out, "unit": unit,
+        out_df, vl_out, vv_out, clean_names = NAMES.apply(df, vl, vv, f"wave:{y}:{tag}", log)      # written under the clean names; native kept in the meta
+        write_dta(out_df, P["inter"] / out, vl_out, vv_out, f"CFSVA {y} {unit} file (cleaned)", log)
+        meta["files"][tag] = {"file": rel, "rows": len(df), "vars": list(df.columns), "var_labels": vl, "value_labels": {k: v for k, v in vv.items() if k in df.columns}, "source": srcmap, "out": out, "unit": unit, "clean_names": clean_names,
                               "hhid_nonmissing": int(df["hhid"].notna().sum()) if "hhid" in df.columns else 0, "cluster_nonmissing": int((df["cluster"] != "").sum()) if "cluster" in df.columns else 0}
         if y == "2015" and unit == "household":                                         # the reconstructed 2015 village file (one row per group of 10 households)
             vdf, vvl, vvv = village_meta; vdf["survey"] = "CFSVA"; vdf["year"] = np.int16(2015); vdf["wave"] = "2015"; vdf["unit"] = "village"
             vvl.update({c: t for c, t in KEY_LABELS.items() if c in vdf.columns and c != "cluster"}); vvv.update({"prov": PROV_LABELS, "dist": DIST_LABELS})
             vdf = vdf[[c for c in KEY_ORDER if c in vdf.columns] + [c for c in vdf.columns if c not in KEY_ORDER]]
-            write_dta(vdf, P["inter"] / "CFSVA_2015_village_clean.dta", vvl, vvv, "CFSVA 2015 village file (RECONSTRUCTED from the village answers embedded in the household file)", log)
+            v_out, vvl_out, vvv_out, v_clean = NAMES.apply(vdf, vvl, vvv, "wave:2015:village", log)
+            write_dta(v_out, P["inter"] / "CFSVA_2015_village_clean.dta", vvl_out, vvv_out, "CFSVA 2015 village file (RECONSTRUCTED from the village answers embedded in the household file)", log)
             meta["files"]["village"] = {"file": rel + " (embedded village fields, collapsed)", "rows": len(vdf), "vars": list(vdf.columns), "var_labels": vvl, "value_labels": {k: v for k, v in vvv.items() if k in vdf.columns},
                                         "source": {"cluster": srcmap["cluster"], **{c: f"{c} (first value within the group; constant by construction)" for c in vdf.columns if c.startswith("v_") or c == "road_distance"}}, "out": "CFSVA_2015_village_clean.dta", "unit": "village",
-                                        "hhid_nonmissing": 0, "cluster_nonmissing": len(vdf)}
+                                        "hhid_nonmissing": 0, "cluster_nonmissing": len(vdf), "clean_names": v_clean}
     ck.done(); save_json(meta, LOGS / f"clean_{y}_meta.json")
+    for f in sorted(P["inter"].glob(f"CFSVA_{y}_*_clean.dta")):        # a rerun leaves no output of an earlier file/tag layout behind
+        if f.name not in {e["out"] for e in meta["files"].values()}: f.unlink(); log.info("removed superseded %s", f.name)
 log.info("01_clean done for %s", WANT)

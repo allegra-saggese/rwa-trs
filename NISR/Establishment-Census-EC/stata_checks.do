@@ -1,7 +1,8 @@
 * stata_checks.do -- recompute EC check statistics in Stata (written by 03_checks.py)
 clear all
 set more off
-use year wt dist urban estid total_workers using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Establishment-Census-EC/3_Final/EC_pooled_establishment.dta", clear
+use ec_year ec_weight ec_district ec_urban ec_establishment_id ec_total_workers using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/Establishment-Census-EC/3_Final/EC_pooled_establishment.dta", clear
+rename (ec_year ec_weight ec_district ec_urban ec_establishment_id ec_total_workers) (year wt dist urban estid total_workers)
 gen long one = 1
 gen byte urb = urban == 1
 bysort year dist: gen byte first_dist = _n == 1

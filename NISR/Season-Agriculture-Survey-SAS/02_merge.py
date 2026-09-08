@@ -26,9 +26,27 @@ See NISR-Season-Agriculture-Survey-SAS.md (decisions log).
 import difflib, json, re
 import numpy as np, pandas as pd
 from sas_helpers import (paths, get_logger, Checks, read_dta, write_dta, downcast, to_plain_float, resolve_object_columns,
-                         label_similarity, save_json, LOGS)
+                         label_similarity, save_json, LOGS, HERE, NameTable, DATASET_TAG)
 
 log = get_logger("02_merge"); P = paths(); ck = Checks(log)
+NAMES = NameTable(HERE / "variable_names.csv", DATASET_TAG)      # per-wave files are read back under NISR's native names; pooled files written under the clean names
+_METAS = {f.stem[6:-5]: json.load(open(f)) for f in LOGS.glob("clean_*_meta.json")}
+_OUT2ENTRY = {e["out"]: (y, k, e) for y, m in _METAS.items() for k, e in m.items() if isinstance(e, dict) and e.get("out")}
+def _code(k):
+    """value-label code as saved in the meta file (json string) -> the number pyreadstat returns for a .dta"""
+    try: f = float(k)
+    except (TypeError, ValueError): return k
+    return int(f) if f.is_integer() else f
+def read_native(f):
+    """a per-wave cleaned file under native names, with the native labels and value labels saved by 01_clean in the meta file"""
+    df, vl, vv = read_dta(f); hit = _OUT2ENTRY.get(f.name)
+    if hit and hit[2].get("clean_names"):
+        y, k, e = hit; df = df.rename(columns={c: n for n, c in e["clean_names"].items()})
+        vl = {c: e.get("var_labels", {}).get(c, "") for c in df.columns}
+        vv = {c: {_code(x): t for x, t in d.items()} for c, d in e.get("value_labels", {}).items() if c in df.columns}
+    elif hit: y, k, e = hit; df, vl, vv = NAMES.invert(df, vl, vv, f"wave:{y}:{k}")
+    else: log.warning("%s: no meta entry, labels taken from the file", f.name)
+    return df, vl, vv
 KEYS = ["survey", "year", "season", "wave", "farm_type", "prov", "dist", "stratum", "segment", "holder", "plot", "crop", "wt"]
 CORE_KEYS = KEYS + ["plot_area_ha", "crop_area_ha", "harvested_area_ha", "production_kg", "yield_kg_ha", "wt_source"]
 STR_KEYS = ("survey", "season", "wave", "wt_source")
@@ -219,8 +237,9 @@ def version_pool(frames, labels, vlabs, out_name, label, unit, out_dir=None, sou
     pooled = downcast(pooled, keep_double=KEEP_DOUBLE)
     ck(len(pooled) == sum(len(d) for d in frames.values()), f"{out_name}: pooled rows == sum of wave rows")
     pooled, dup_rows, dup_wt = drop_exact_duplicates(pooled, out_name, log)
-    write_dta(pooled, out_dir / out_name, var_labels, value_labels, label, log)
-    return {"rows": len(pooled), "vars": list(pooled.columns), "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
+    out_c, vl_c, vv_c, clean_names = NAMES.apply(pooled, var_labels, value_labels, f"pooled:{out_name}", log)      # clean names, labels and value labels
+    write_dta(out_c, out_dir / out_name, vl_c, vv_c, label, log)
+    return {"rows": len(pooled), "vars": list(pooled.columns), "clean_vars": list(out_c.columns), "clean_names": clean_names, "unit": unit, "waves": waves, "dir": str(out_dir.relative_to(P["root"])), "decisions": decisions, "duplicates_dropped": dup_rows, "wt_dropped": dup_wt,
             "value_label_conflicts": {k: {c: sorted(s) for c, s in d.items()} for k, d in conflicts.items()}, "stale_labels": stale_labels,
             "wave_modules": {w: list(s) for w, s in (sources or {}).items()}}
 
@@ -234,7 +253,7 @@ KEYLAB = {"plot_area_ha": "Plot area (ha) -- CORE map, see codebook", "crop_area
 frames, labels, vlabs, sources = {}, {}, {}, {}
 for y, m0 in CORE.items():
     for f in files_for(y, m0["module"]):
-        df, vl, vv = read_dta(f); season = df["season"].iloc[0]; wave = f"{y}_{season}" + ("_lsf" if "lsf_" in f.name else ("_ssf" if "ssf_" in f.name else ""))
+        df, vl, vv = read_native(f); season = df["season"].iloc[0]; wave = f"{y}_{season}" + ("_lsf" if "lsf_" in f.name else ("_ssf" if "ssf_" in f.name else ""))
         m = dict(m0, **CORE_SEASON.get((y, season), {})); sources[wave] = modkey(f)
         for key, spec in (("plot_area_ha", m["plot_area"]), ("crop_area_ha", m["crop_area"]), ("harvested_area_ha", m["harvested"]), ("production_kg", m["production"]), ("yield_kg_ha", m["yield_"])):
             if spec and spec[0] in df.columns: df[key] = conv(df[spec[0]], spec[1]); vl[key] = KEYLAB[key] + f" [from {spec[0]}, {spec[1]}]"
@@ -249,7 +268,7 @@ for y, m0 in CORE.items():
                 scr = files_for(y, SCREENING_WT[y][0].replace("screening", r"ssf_screening|lsf_screening|screening"))
                 scr = [s for s in scr if s.name.split("_")[2] == season and (("lsf" in s.name) == ("lsf" in f.name))]
                 if scr:
-                    sd, svl, _ = read_dta(scr[0])
+                    sd, svl, _ = read_native(scr[0])
                     wcol = next((c for c in ("wt", "wh_plot") if c in sd.columns), None)
                     # the screening lists grid points AND plots: take the column whose label says "plot number"
                     pcol = next((c for c in sd.columns if re.search(r"plot[\s_]*(number|no\b)", str(svl.get(c, "")), re.I) and "grid" not in str(svl.get(c, "")).lower()), None)
@@ -280,7 +299,7 @@ for y in ("2013", "2014", "2015", "2016"):
     for f in sorted(inter.glob(f"SAS_{y}_*_clean.dta")):
         stem = re.sub(rf"^SAS_{y}_[ABC?]_(.*)_clean\.dta$", r"\1", f.name); rtype = early_type(stem)
         if rtype is None: continue
-        df, vl, vv = read_dta(f)
+        df, vl, vv = read_native(f)
         if "crop" not in df.columns or len(df) < 200: continue                 # tabulations / files without a crop record
         df["source_module"] = stem; vl["source_module"] = "Shipped file this row comes from (stem)"
         df["record_type"] = rtype; vl["record_type"] = "Record type of the shipped file: screening / crop area / sowing-production-harvest / plot roster (keys are unique only within a record type, if at all)"
@@ -305,7 +324,7 @@ for stem, fs in sorted(by_name.items()):
     if len({f.name.split("_")[1] for f in fs}) < 2: continue        # needs >= 2 years
     frames, labels, vlabs, sources = {}, {}, {}, {}
     for f in fs:
-        df, vl, vv = read_dta(f)
+        df, vl, vv = read_native(f)
         if len(df) < 200: continue
         w = f"{f.name.split('_')[1]}_{df['season'].iloc[0]}"; frames[w], labels[w], vlabs[w] = df, vl, vv; sources[w] = modkey(f)
     if len({w[:4] for w in frames}) >= 2:
@@ -316,7 +335,7 @@ for canon, (pat, years) in MODULES.items():
     frames, labels, vlabs, sources = {}, {}, {}, {}
     for y in years:
         for f in files_for(str(y), pat):
-            df, vl, vv = read_dta(f); wave = f"{y}_{df['season'].iloc[0]}" + ("_lsf" if "lsf_" in f.name else ("_ssf" if "ssf_" in f.name else ""))
+            df, vl, vv = read_native(f); wave = f"{y}_{df['season'].iloc[0]}" + ("_lsf" if "lsf_" in f.name else ("_ssf" if "ssf_" in f.name else ""))
             if "crop" in df.columns: df["crop_list"] = CROP_LIST(str(y)); vl["crop_list"] = "Crop code list generation of crop (codes comparable only within a list)"
             frames[wave], labels[wave], vlabs[wave] = df, vl, vv; sources[wave] = modkey(f)
     if len({w[:4] for w in frames}) >= 2:

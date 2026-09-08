@@ -5,10 +5,12 @@
 
 . set more off
 
-. use wave wt dist using "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing 
-> Projects/Rwanda - TRS/data/Publicly-Available-NISR/Food-Security-CFSVAN/3_Fin
-> al/CFSVA_pooled_household.dta", clear
+. use cfsva_wave cfsva_weight cfsva_district using "/Users/matteo/Library/Cloud
+> Storage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR/
+> Food-Security-CFSVAN/3_Final/CFSVA_pooled_household.dta", clear
 (CFSVA pooled household file (NISR/WFP, 2006-2024))
+
+. rename (cfsva_wave cfsva_weight cfsva_district) (wave wt dist)
 
 . gen long one = 1
 
