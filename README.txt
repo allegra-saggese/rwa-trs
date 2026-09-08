@@ -43,11 +43,19 @@ OpenStreetMap. Nothing uses restricted RDB programme data, and nothing here is a
 causal estimate — these are descriptives for memos and grant applications.
 
 ```bash
+python prelim_public_figures.py --check                  # verify the script itself
 python prelim_public_figures.py --all                    # rebuild all 32
 python prelim_public_figures.py --list                   # what exists, by group
 python prelim_public_figures.py --group forest labour
 python prelim_public_figures.py --only distance_decay
 ```
+
+Run `--check` before `--all`. It parses the file and fails on duplicate function
+definitions, registry keys pointing at functions that do not exist, figure
+functions nobody registered, and missing input folders. It exists because an
+edit once duplicated a block and left two definitions of the same function:
+Python keeps the last one, so the corrected version was shadowed by the stale
+one and the rebuilt figure came out identical to the old one, with no error.
 
 | Group | Outputs |
 |---|---|
