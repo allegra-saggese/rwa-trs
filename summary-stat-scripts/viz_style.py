@@ -8,8 +8,11 @@ from drifting into eight different colour schemes.
 
 from __future__ import annotations
 
-import os
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import geopandas as gpd
 import matplotlib as mpl
@@ -17,27 +20,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
-# Scripts live one level down (summary-stat-scripts/, geo-data-analysis/,
+# Scripts live one level down (summary-stat-scripts/, data-build-scripts/,
 # info-scripts/), so the repo root is the parent of this file's folder.
-REPO = Path(__file__).resolve().parents[1]
-ROOT = REPO   # back-compat: older code referred to the repo root as ROOT
-
-# One Dropbox constant, so a folder rename is a one-line fix rather than a
-# hunt through every script. Override with RWA_DROPBOX to run on another Mac.
-DROPBOX = Path(
-    os.environ.get(
-        "RWA_DROPBOX",
-        "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS",
-    )
-)
-GEO = DROPBOX / "data" / "geo-data"
-NISR = DROPBOX / "data" / "Publicly-Available-NISR"
-
-# Rendered output lives on Dropbox, not in the repo: the figures are shared
-# with a coauthor who does not run the code.
-OUT = DROPBOX / "output"
-FIGS = OUT / "figures"
-MAPS = OUT / "maps"
+REPO = P.REPO
+ROOT = P.REPO          # back-compat: older code called the repo root ROOT
+DROPBOX = P.DROPBOX
+GEO, NISR = P.GEO, P.NISR
+OUT, FIGS, MAPS = P.OUT, P.FIGS, P.MAPS
 
 # Treated / control, used for the same meaning in every figure.
 PARK, NONPARK = "#c1121f", "#1b4965"
@@ -151,7 +140,7 @@ def frame_map(ax, title: str, park_layer=None) -> None:
     ax.set_anchor("N")
 
 
-TABLES = OUT / "tables"
+TABLES = P.TABLES
 
 
 def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:

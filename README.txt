@@ -16,8 +16,10 @@ Folders are organised by **task**, not by pipeline stage.
 | Folder | Holds |
 |---|---|
 | `info-scripts/` | Anything that reads variable names, metadata or dataset structure |
-| `geo-data-analysis/` | Acquiring and assembling data — spatial layers, remote sensing, survey extracts |
-| `summary-stat-scripts/` | All preliminary descriptive analysis: figures, maps, tables |
+| `data-build-scripts/` | Acquiring and assembling data — spatial layers, remote sensing, survey extracts, and the two analysis panels |
+| `summary-stat-scripts/` | Preliminary descriptive analysis: figures, maps, tables |
+| `spatial-analysis-scripts/` | Spatial estimation on the sector and cell panels |
+| `district-level-analysis/` | District-year models, where the survey microdata lives |
 | `interim-processing/` | Everything this repo produces on the way to an analysis file |
 | `NISR/` | One cleaning pipeline per NISR survey (see below) |
 | `WB-Enterprise-Surveys/` | World Bank Enterprise Survey pipeline, same shape as the NISR ones |
@@ -26,12 +28,21 @@ Folders are organised by **task**, not by pipeline stage.
 
 ### Two rules that govern where data comes from and goes
 
-**1. Always read `4_Harmonized/`.** Every NISR survey folder on Dropbox ends in
-a harmonised file — `H_EC_establishment.dta`, `H_LFS_person.dta`, and so on.
-That is the dataset of record. It is the cleaned output the pipelines finish on,
-and it carries the cross-survey comparable variables (`lfs_industry_isic`,
-`lfs_employed`, `*_key`) that the earlier stages lack. Never read `1_Raw/`,
-`2_Intermediate/` or `3_Final/` for analysis.
+**1. Always read `4_Harmonized/`, and never write to it.** Every NISR survey
+folder on Dropbox ends in a harmonised file — `H_EC_establishment.dta`,
+`H_LFS_person.dta`, and so on. That is the dataset of record. It is the cleaned
+output the pipelines finish on, and it carries the cross-survey comparable
+variables (`lfs_industry_isic`, `lfs_employed`, `*_key`) that the earlier stages
+lack. Never read `1_Raw/`, `2_Intermediate/` or `3_Final/` for analysis.
+
+Those files belong to the `NISR/` pipelines. **Nothing outside `NISR/` may
+modify them, and nothing may write anywhere inside the NISR holdings** — a
+derived table sitting next to `H_LFS_person.dta` would be read as source data by
+the next person to look. Analysis reads harmonised data and writes derived
+tables to `geo-data/`. `extract_labour()` enforces this and raises rather than
+writing into the holdings.
+
+`5_Analysis/` stays empty for now.
 
 **2. Anything we generate on the way is interim.** Intermediate and processed
 files this repo builds go to `interim-processing/{raw,processed}/`, which is
@@ -44,22 +55,33 @@ the repo, so a coauthor who does not run the code still sees them:
 ~/Library/CloudStorage/Dropbox/Rwanda - TRS/output/{figures,maps,tables}
 ```
 
-Every script resolves that root from a single `DROPBOX` constant, overridable
-with the `RWA_DROPBOX` environment variable so the code runs on another Mac
-without edits.
+Every path comes from **`paths.py`** at the repo root — one module, imported by
+every script:
+
+```python
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P          # P.GEO, P.NISR, P.FIGS, P.PROC, P.POP_RASTER ...
+```
+
+It follows the convention the NISR pipelines already use: `RWA_ROOT` overrides
+everything, otherwise the login user picks a root from `ROOTS`. Add yourself
+there and the code runs unchanged on another Mac. `P.check_writable()` is the
+guard that refuses writes into the NISR holdings.
 
 ## Scripts
 
 | Script | Does | Writes to |
 |---|---|---|
-| `geo-data-analysis/extract.py` | Acquires, cleans and merges every source, including the labour extracts | `interim-processing/processed/`, `geo-data/labour/` |
-| `geo-data-analysis/gee_extract.py` | Earth Engine layers: TMF, Dynamic World, RADD | `geo-data/` |
-| `geo-data-analysis/fetch_geodata_rw.py` | Rwanda national geoportal layers (ArcGIS FeatureServers) | `geo-data/` |
+| `data-build-scripts/extract.py` | Acquires, cleans and merges every source, including the labour extracts | `interim-processing/processed/`, `geo-data/labour/` |
+| `data-build-scripts/gee_extract.py` | Earth Engine layers: TMF, Dynamic World, RADD | `geo-data/` |
+| `data-build-scripts/fetch_geodata_rw.py` | Rwanda national geoportal layers (ArcGIS FeatureServers) | `geo-data/` |
 | `info-scripts/inventory.py` | Indexes every file and variable across the holdings | `docs/` |
 | `info-scripts/variables.py` | EICV7 codebook by workstream, with a verifier | `docs/` |
 | **`summary-stat-scripts/prelim_public_figures.py`** | **Every preliminary descriptive figure and map** | Dropbox `output/` |
 | `summary-stat-scripts/summary.py` | Rainfall and WDI tables and figures | Dropbox `output/` |
 | `summary-stat-scripts/maps.py` | Rainfall and reference choropleths | Dropbox `output/maps/` |
+| `data-build-scripts/build_panels.py` | **The two analysis panels**, with the denominator rules applied | `geo-data/forest/` |
+| `district-level-analysis/district_models.py` | District-year models, cluster-robust + wild bootstrap | Dropbox `output/tables/` |
 | `summary-stat-scripts/viz_style.py` | Shared palette, paths and loaders for the figure scripts | — |
 
 Run everything from the repo venv so the spatial stack resolves:
@@ -69,7 +91,7 @@ python -m venv .venv && source .venv/bin/activate && pip install -r requirements
 ```
 
 ```bash
-python geo-data-analysis/extract.py --all
+python data-build-scripts/extract.py --all
 python summary-stat-scripts/prelim_public_figures.py --check
 python summary-stat-scripts/prelim_public_figures.py --all
 python summary-stat-scripts/summary.py --all
@@ -157,7 +179,7 @@ See `docs/cleaning_decisions.md` for which denominator to use when.
 straight from `4_Harmonized/`:
 
 ```bash
-python geo-data-analysis/extract.py --sources labour --no-merge
+python data-build-scripts/extract.py --sources labour --no-merge
 ```
 
 | File | Rows |
@@ -178,6 +200,69 @@ coarser than the sector-level treatment, but the microdata only reaches district
 
 `geo-data/labour/archive/` holds four superseded hand-cut files that no script
 reads. They are not regenerable; do not build on them.
+
+## The analysis panels
+
+`build_panels.py` builds the two files every figure and model runs on. Before
+this existed they were saved output with no generating code, so nobody could
+check how `hazard_pct` was constructed or rebuild them after a refresh.
+
+```bash
+python data-build-scripts/build_panels.py --all
+python data-build-scripts/build_panels.py --checks      # validate, build nothing
+python data-build-scripts/build_panels.py --only cell_master --fast
+```
+
+| Panel | Shape |
+|---|---|
+| `sector_year_panel.csv` | 416 sectors x 19 years (2006-2024) = 7,904 rows |
+| `cell_master.csv` | 2,148 cells, cross-section |
+
+`--all` runs a 14-point validation afterwards (sector and cell counts, no
+duplicate keys, guards consistent, rainfall coverage) in the same spirit as the
+`03_checks.py` step in each NISR pipeline. `cell_master` re-runs spatial joins
+against the 543 MB buildings parquet and the 284 MB SDPT layer, so it takes a
+few minutes; `--fast` reuses the previous infrastructure columns.
+
+**The denominator rules live here, not in the figures.** Each panel carries the
+measure and a usability flag together:
+
+| Column | Meaning |
+|---|---|
+| `hazard_pct` / `hazard_usable` | loss_t / forest standing at start of t; unusable under 10 ha |
+| `loss_rate` / `loss_rate_usable` | cumulative loss / cover in 2000; unusable under 10 ha |
+| `loss_per_km2` | loss / land area — no forest denominator, never degenerate |
+
+Do not re-derive these downstream. `docs/cleaning_decisions.md` explains which
+to use for what.
+
+## District-level models
+
+The labour panel is **30 districts x 9 years**. That is the ceiling: LFS, EICV
+and AHS are anonymised to district and only the Census reaches sector.
+
+```bash
+python district-level-analysis/district_models.py --all
+python district-level-analysis/district_models.py --list
+python district-level-analysis/district_models.py --only tourism_forest --no-bootstrap
+```
+
+Every model reports two p-values. **Quote `p_wild`.** With 30 clusters the CR1
+asymptotics do not hold — Cameron, Gelbach & Miller put the rule of thumb near
+50 — so `p_cluster` over-rejects. The gap is not hypothetical: in
+`tourism_park`, `log_pop` has p_cluster 0.024 and p_wild 0.095.
+
+The wild cluster bootstrap imposes the null, re-estimates without the tested
+column, and applies Rademacher weights one draw per district.
+
+`fit()` refuses to estimate a regressor with no variation left after the fixed
+effects, rather than reporting the t = 1e12 that follows. This matters here:
+the forest columns in `district_workers_forest_panel.csv` are cross-sectional
+totals repeated across years, so `load()` builds a year-varying district series
+by aggregating the sector-year panel instead.
+
+Nothing here is causal — 270 observations, no design. These are conditional
+correlations for memos and for deciding what is worth pursuing.
 
 ## NISR microdata pipelines (`NISR/`)
 
@@ -269,9 +354,7 @@ GRID3 settlements, gridfinder electricity, NISR administrative boundaries
 (province → village), geodata.rw protected areas, 1 km gridded population.
 
 Survey microdata is licensed to the researcher and lives outside this repo. The
-path is set once as `DROPBOX` in `geo-data-analysis/extract.py` and
-`summary-stat-scripts/viz_style.py`, and in `info-scripts/inventory.py`
-(`DEFAULT_ROOT`).
+roots are set once in `paths.py`.
 
 ## Documentation
 

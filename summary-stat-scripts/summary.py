@@ -17,28 +17,23 @@ from __future__ import annotations
 
 import argparse
 import sys
-import os
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-REPO = Path(__file__).resolve().parents[1]
-PROC = REPO / "interim-processing" / "processed"
-
-# One Dropbox constant; override with RWA_DROPBOX to run on another Mac.
-DROPBOX = Path(
-    os.environ.get(
-        "RWA_DROPBOX",
-        "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS",
-    )
-)
-
-OUT = DROPBOX / "output"
-FIGS = OUT / "figures"
-TABLES = OUT / "tables"
+REPO = P.REPO
+PROC = P.PROC
+DROPBOX = P.DROPBOX
+OUT = P.OUT
+FIGS = P.FIGS
+TABLES = P.TABLES
 
 # Publication defaults. Serif to sit comfortably in a LaTeX paper; restrained
 # grid; no chartjunk.

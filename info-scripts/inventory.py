@@ -30,21 +30,22 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import pandas as pd
 
-REPO = Path(__file__).resolve().parents[1]
-PROC = REPO / "interim-processing" / "processed"
+REPO = P.REPO
+PROC = P.PROC
 DOCS = REPO / "docs"
 
 # Default location of the NISR holdings. Data lives outside the repo on purpose:
 # NISR and DHS microdata are licensed to the individual researcher, and a git
 # repo is the wrong place for 5 GB of restricted files.
-DEFAULT_ROOT = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
-    "data/Publicly-Available-NISR"
-)
+DEFAULT_ROOT = (P.DATA / "Publicly-Available-NISR")
 
 READABLE = {".dta", ".sav", ".csv"}
 

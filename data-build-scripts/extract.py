@@ -29,7 +29,6 @@ from __future__ import annotations
 
 import argparse
 import gzip
-import os
 import io
 import re
 import shutil
@@ -37,7 +36,11 @@ import sys
 import unicodedata
 import warnings
 import zipfile
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import numpy as np
 import pandas as pd
@@ -47,22 +50,15 @@ import requests
 # Paths and constants
 # --------------------------------------------------------------------------
 
-REPO = Path(__file__).resolve().parents[1]
-ROOT = REPO   # back-compat for older references
+REPO = P.REPO
+ROOT = P.REPO          # back-compat for older references
 
 # Anything this script produces on the way to an analysis file is interim.
-RAW = REPO / "interim-processing" / "raw"
-PROC = REPO / "interim-processing" / "processed"
+RAW, PROC = P.RAW, P.PROC
+DROPBOX = P.DROPBOX
 
-# One Dropbox constant; override with RWA_DROPBOX to run on another Mac.
-DROPBOX = Path(
-    os.environ.get(
-        "RWA_DROPBOX",
-        "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS",
-    )
-)
-# Survey microdata is read from the Dropbox holdings, not the repo.
-NISR_ROOT = DROPBOX / "data" / "Publicly-Available-NISR"
+# Survey microdata is read from the Dropbox holdings, never written to.
+NISR_ROOT = P.NISR
 
 GADM_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_RWA_2.json.zip"
 
@@ -359,8 +355,7 @@ def extract_dhs() -> dict[str, pd.DataFrame]:
     """
     import pyreadstat
 
-    src = Path("/Users/allegrasaggese/Library/CloudStorage/Dropbox/"
-               "Rwanda - TRS/data/DHS")
+    src = (P.DROPBOX / "data/DHS")
     files = sorted([p for p in src.glob("**/*") if p.suffix.upper() in {".DTA", ".SAV"}]) if src.exists() else []
 
     if not files:
@@ -425,8 +420,7 @@ def extract_dhs_gps() -> "gpd.GeoDataFrame | None":  # noqa: F821
     """
     import geopandas as gpd
 
-    src = Path("/Users/allegrasaggese/Library/CloudStorage/Dropbox/"
-               "Rwanda - TRS/data/DHS")
+    src = (P.DROPBOX / "data/DHS")
     shp = sorted(src.glob("**/*.shp")) if src.exists() else []
     if not shp:
         _log("dhs gps: no shapefile in data/raw/dhs/ - skipping")
@@ -904,7 +898,7 @@ def merge_district_panel() -> pd.DataFrame:
 # step, written down.
 # --------------------------------------------------------------------------
 
-GEO = DROPBOX / "data" / "geo-data"
+GEO = P.GEO
 
 # 4_Harmonized/ is the dataset of record for every NISR survey: it is the
 # cleaned file the pipelines end on, and it adds the cross-survey comparable
@@ -982,6 +976,16 @@ def extract_labour() -> None:
 
     _log("labour: building from harmonized NISR microdata (4_Harmonized)")
     out = GEO / "labour"
+
+    # The harmonised files are the partner's output and are READ-ONLY here.
+    # Nothing this repo runs may write inside the NISR holdings: a derived
+    # table that lands next to H_LFS_person.dta would be picked up as source
+    # data by the next person to look. Enforced, not just documented.
+    if NISR_ROOT in out.parents or out == NISR_ROOT:
+        raise RuntimeError(
+            f"refusing to write inside the NISR holdings ({out}); "
+            "4_Harmonized is read-only and derived tables belong in geo-data/"
+        )
     out.mkdir(parents=True, exist_ok=True)
     park = _park_exposure()
 

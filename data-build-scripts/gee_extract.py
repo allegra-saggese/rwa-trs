@@ -33,17 +33,18 @@ from __future__ import annotations
 import argparse
 import sys
 import time
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import pandas as pd
 
-REPO = Path(__file__).resolve().parents[1]
-PROC = REPO / "interim-processing" / "processed"
+REPO = P.REPO
+PROC = P.PROC
 
-SECTORS_GPKG = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
-    "data/geo-data/protected-areas/sectors_park_exposure_wdpa.gpkg"
-)
+SECTORS_GPKG = (P.DATA / "geo-data/protected-areas/sectors_park_exposure_wdpa.gpkg")
 
 # JRC Tropical Moist Forest, annual change collection.
 TMF_ANNUAL = "projects/JRC/TMF/v1_2023/AnnualChanges"
