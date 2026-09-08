@@ -214,7 +214,80 @@ s6e/s6f→s6b/s6c), so these mappings must not be reused for earlier waves. See
 
 ---
 
+## 2026-09-07 — Hansen loss: which denominator
+
+**Decision.** Three denominators are carried, and which one is correct depends
+on the estimand. None is the default.
+
+| Measure | Definition | Where it lives |
+|---|---|---|
+| `loss_rate` | 100 x cumulative loss / tree cover in 2000 | `cell_master.csv`, `pop_vs_forest_by_sector.csv` |
+| `hazard_pct` | 100 x loss in year t / forest still standing at start of t | `sector_year_panel.csv` |
+| `loss_per_km2` | loss (ha) / land area (km2) of the unit | `cell_master.csv` |
+
+Verified against the data: `hazard_pct == 100 * loss_ha / forest_start_ha`, and
+`forest_start_ha` is a *depleting* stock — tree cover in 2000 less cumulative
+prior loss, floored at zero — not a fixed 2000 denominator.
+
+**Why it matters.** Rwanda plants and harvests timber. Hansen records the
+harvest of a post-2000 plantation as loss, but no product adds the planting back
+to the denominator. Every denominator breaks somewhere on that fact:
+
+- **Fixed 2000 (`loss_rate`).** Cumulative loss can exceed the year-2000 stock:
+  81 of 2,115 cells with tree cover exceed 100%. Those cells sit mostly far
+  from parks, so an unguarded mean *reverses the park gradient* — the 40+ km
+  band reads 77.9% against 17.1% at 0–2 km, while the medians are 15.8 and 11.7.
+- **Depleting stock (`hazard_pct`).** This is the discrete-time hazard a
+  duration model wants, but it divides by a quantity heading to zero. 162
+  sector-years hold under 1 ha; sector 1303 in 2014 holds 1.4e-16 ha —
+  floating-point residue of zero — returning a hazard of 1.9e17. Worse, it is
+  silently *lossy*: once the 2000 stock is exhausted the hazard is undefined and
+  the loss is dropped. 12 of 416 sectors exhaust, discarding 1,653 ha (1.8% of
+  the national 94,126 ha). Sector 1303 records 5.4 ha of loss after its 2.07 ha
+  stock is gone.
+- **Land area (`loss_per_km2`).** Cannot blow up and cannot drop loss, because
+  it has no forest denominator. It is an intensity, not a rate, so it does not
+  separate "a place with a lot of forest" from "a place losing forest fast".
+
+**Practical rule adopted.**
+
+1. `loss_per_km2` is the headline descriptive. It needs no guard, and it is the
+   only one of the three monotone in park distance (9.67 -> 6.20 -> 2.26 -> 2.57
+   ha/km2 across 0–2, 2–10, 10–40, 40+ km).
+2. `hazard_pct` is used only for the duration framing, restricted to
+   sector-years with >= 10 ha standing. That guard drops 1.9% of recorded loss,
+   which must be reported, not silently absorbed.
+3. `loss_rate` is not used for cross-sector comparison wherever plantations are
+   present. It is fine within the park interiors, where SDPT planted share is
+   near zero.
+
+**The confound underneath.** All of this is one fact seen three ways: Hansen and
+JRC TMF agree until about 2014 and then diverge sharply, with Hansen cumulating
+roughly 85,000 ha against TMF's 33,000 by 2023. TMF treats plantation cycling as
+land already deforested; Hansen counts each harvest. `sdpt_confound` and
+`hansen_tmf_divergence` in `prelim_public_figures.py` show this directly. Any
+result that rests on Hansen loss alone is measuring timber rotation as much as
+forest conversion.
+
 ## Open questions
+
+### The analysis panels have no builder script
+
+`sector_year_panel.csv` (7,904 rows) and `cell_master.csv` (2,148 rows) are the
+two files the descriptive work actually runs on, and **nothing in this repo
+builds them.** `grep -rl "sector_year_panel" --include="*.py"` returns only
+`prelim_public_figures.py`, which reads them. They were assembled in throwaway
+inline sessions, so the joins, the `forest_start_ha` recursion and the >= 2006
+clipping exist only as their output.
+
+Consequence: the figures are reproducible, the data they stand on is not. A
+reviewer cannot check how `hazard_pct` was constructed, and neither can we —
+the definitions in the entry above were recovered by testing identities against
+the saved columns, not by reading the code that produced them.
+
+**Not yet built.** This wants an `extract.py` target that goes from the Hansen /
+TMF / DW / RADD / SDPT sector tables to both panels, with the denominator rules
+above applied once, in one place, rather than re-guarded in every figure.
 
 ### The 2006 administrative reorganisation
 
