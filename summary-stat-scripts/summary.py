@@ -17,17 +17,23 @@ from __future__ import annotations
 
 import argparse
 import sys
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
-PROC = ROOT / "data" / "processed"
-FIGS = ROOT / "output" / "figures"
-TABLES = ROOT / "output" / "tables"
+REPO = P.REPO
+PROC = P.PROC
+DROPBOX = P.DROPBOX
+OUT = P.OUT
+FIGS = P.FIGS
+TABLES = P.TABLES
 
 # Publication defaults. Serif to sit comfortably in a LaTeX paper; restrained
 # grid; no chartjunk.

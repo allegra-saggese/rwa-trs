@@ -25,7 +25,11 @@ from __future__ import annotations
 import argparse
 import sys
 import textwrap
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import matplotlib as mpl
 import matplotlib.patheffects as pe
@@ -33,9 +37,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
-PROC = ROOT / "data" / "processed"
-MAPS = ROOT / "output" / "maps"
+REPO = P.REPO
+PROC = P.PROC
+DROPBOX = P.DROPBOX
+OUT = P.OUT
+MAPS = P.MAPS
 
 # Rwanda falls in UTM zone 35S. Metres, so scale bars and areas are honest.
 CRS_PROJ = 32735
@@ -76,7 +82,8 @@ def load_districts():
     fp = PROC / "districts.gpkg"
     if not fp.exists():
         raise FileNotFoundError(
-            "data/processed/districts.gpkg missing - run: python extract.py --sources boundaries")
+            "interim-processing/processed/districts.gpkg missing - run: "
+            "python data-build-scripts/extract.py --sources boundaries")
     return gpd.read_file(fp, layer="districts").to_crs(CRS_PROJ)
 
 
@@ -350,7 +357,8 @@ def map_dhs_clusters() -> None:
     fp = PROC / "dhs_clusters.gpkg"
     if not fp.exists():
         _log("  ! dhs_clusters.gpkg missing - place DHS GPS shapefile in "
-             "data/raw/dhs/ and run: python extract.py --sources dhs_gps; skipping")
+             "interim-processing/raw/dhs/ and run: "
+             "python data-build-scripts/extract.py --sources dhs_gps; skipping")
         return
 
     pts = gpd.read_file(fp, layer="clusters").to_crs(CRS_PROJ)

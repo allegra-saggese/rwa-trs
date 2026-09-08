@@ -8,7 +8,11 @@ from drifting into eight different colour schemes.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import geopandas as gpd
 import matplotlib as mpl
@@ -16,16 +20,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
-ROOT = Path(__file__).resolve().parent
-GEO = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/geo-data"
-)
-NISR = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
-    "data/Publicly-Available-NISR"
-)
-FIGS = ROOT / "output" / "figures"
-MAPS = ROOT / "output" / "maps"
+# Scripts live one level down (summary-stat-scripts/, data-build-scripts/,
+# info-scripts/), so the repo root is the parent of this file's folder.
+REPO = P.REPO
+ROOT = P.REPO          # back-compat: older code called the repo root ROOT
+DROPBOX = P.DROPBOX
+GEO, NISR = P.GEO, P.NISR
+OUT, FIGS, MAPS = P.OUT, P.FIGS, P.MAPS
 
 # Treated / control, used for the same meaning in every figure.
 PARK, NONPARK = "#c1121f", "#1b4965"
@@ -85,7 +86,7 @@ def save(fig, name: str, kind: str = "figure") -> Path:
     p = d / f"{name}.png"
     fig.savefig(p)
     plt.close(fig)
-    print(f"  -> {p.relative_to(ROOT)}", flush=True)
+    print(f"  -> {p.relative_to(OUT.parent)}", flush=True)
     return p
 
 
@@ -139,7 +140,7 @@ def frame_map(ax, title: str, park_layer=None) -> None:
     ax.set_anchor("N")
 
 
-TABLES = ROOT / "output" / "tables"
+TABLES = P.TABLES
 
 
 def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:
@@ -151,7 +152,7 @@ def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:
     TABLES.mkdir(parents=True, exist_ok=True)
     p = TABLES / f"{name}.csv"
     df.to_csv(p)
-    print(f"  -> {p.relative_to(ROOT)}", flush=True)
+    print(f"  -> {p.relative_to(OUT.parent)}", flush=True)
     try:
         (TABLES / f"{name}.tex").write_text(
             df.to_latex(float_format=lambda v: float_fmt % v, escape=True)

@@ -20,12 +20,14 @@ import json
 import subprocess
 import sys
 import time
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
+
 BASE = "https://geodata.rw/server/rest/services/basemap"
-DEFAULT_OUT = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/geo-data"
-)
+DEFAULT_OUT = P.GEO
 PAGE = 1000   # under the server's 2000 cap, and keeps each response small
 
 

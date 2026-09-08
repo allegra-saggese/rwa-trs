@@ -36,7 +36,11 @@ import sys
 import unicodedata
 import warnings
 import zipfile
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 import numpy as np
 import pandas as pd
@@ -46,15 +50,15 @@ import requests
 # Paths and constants
 # --------------------------------------------------------------------------
 
-ROOT = Path(__file__).resolve().parent
-RAW = ROOT / "data" / "raw"
-PROC = ROOT / "data" / "processed"
+REPO = P.REPO
+ROOT = P.REPO          # back-compat for older references
 
-# Survey microdata is read from the Dropbox holdings, not the repo.
-NISR_ROOT = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
-    "data/Publicly-Available-NISR"
-)
+# Anything this script produces on the way to an analysis file is interim.
+RAW, PROC = P.RAW, P.PROC
+DROPBOX = P.DROPBOX
+
+# Survey microdata is read from the Dropbox holdings, never written to.
+NISR_ROOT = P.NISR
 
 GADM_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_RWA_2.json.zip"
 
@@ -351,8 +355,7 @@ def extract_dhs() -> dict[str, pd.DataFrame]:
     """
     import pyreadstat
 
-    src = Path("/Users/allegrasaggese/Library/CloudStorage/Dropbox/"
-               "Rwanda - TRS/data/DHS")
+    src = (P.DROPBOX / "data/DHS")
     files = sorted([p for p in src.glob("**/*") if p.suffix.upper() in {".DTA", ".SAV"}]) if src.exists() else []
 
     if not files:
@@ -417,8 +420,7 @@ def extract_dhs_gps() -> "gpd.GeoDataFrame | None":  # noqa: F821
     """
     import geopandas as gpd
 
-    src = Path("/Users/allegrasaggese/Library/CloudStorage/Dropbox/"
-               "Rwanda - TRS/data/DHS")
+    src = (P.DROPBOX / "data/DHS")
     shp = sorted(src.glob("**/*.shp")) if src.exists() else []
     if not shp:
         _log("dhs gps: no shapefile in data/raw/dhs/ - skipping")
@@ -896,12 +898,14 @@ def merge_district_panel() -> pd.DataFrame:
 # step, written down.
 # --------------------------------------------------------------------------
 
-GEO = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/geo-data"
-)
+GEO = P.GEO
 
-EC_FINAL = NISR_ROOT / "Establishment-Census-EC/3_Final/EC_pooled_establishment.dta"
-LFS_FINAL = NISR_ROOT / "Labour-Force-Survey-LFS/3_Final/LFS_pooled_person.dta"
+# 4_Harmonized/ is the dataset of record for every NISR survey: it is the
+# cleaned file the pipelines end on, and it adds the cross-survey comparable
+# variables (lfs_industry_isic, lfs_employed, *_key) that 3_Final lacks.
+# Always read these, never 1_Raw / 2_Intermediate / 3_Final.
+EC_HARM = NISR_ROOT / "Establishment-Census-EC/4_Harmonized/H_EC_establishment.dta"
+LFS_HARM = NISR_ROOT / "Labour-Force-Survey-LFS/4_Harmonized/H_LFS_person.dta"
 
 # ISIC Rev.4 sections, 1-21. Both surveys code the section as an integer with
 # the same numbering in every wave, so no crosswalk is needed - only a coalesce
@@ -964,26 +968,36 @@ def _shares_wide(long: pd.DataFrame, value: str) -> pd.DataFrame:
 def extract_labour() -> None:
     """Build every labour table the figures read, from the pooled .dta files.
 
-    Reads the *cleaned* output of the NISR/ pipelines (3_Final), never the raw
+    Reads 4_Harmonized, the dataset of record, never the raw
     survey files, so the ISIC harmonisation and pooling decisions live in one
     place and are not re-implemented here.
     """
     import pyreadstat
 
-    _log("labour: building from pooled NISR microdata")
+    _log("labour: building from harmonized NISR microdata (4_Harmonized)")
     out = GEO / "labour"
+
+    # The harmonised files are the partner's output and are READ-ONLY here.
+    # Nothing this repo runs may write inside the NISR holdings: a derived
+    # table that lands next to H_LFS_person.dta would be picked up as source
+    # data by the next person to look. Enforced, not just documented.
+    if NISR_ROOT in out.parents or out == NISR_ROOT:
+        raise RuntimeError(
+            f"refusing to write inside the NISR holdings ({out}); "
+            "4_Harmonized is read-only and derived tables belong in geo-data/"
+        )
     out.mkdir(parents=True, exist_ok=True)
     park = _park_exposure()
 
     # ---- Establishment Census ------------------------------------------
-    if not EC_FINAL.exists():
-        _log(f"  ! {EC_FINAL.name} missing - run NISR/Establishment-Census-EC/master.py")
+    if not EC_HARM.exists():
+        _log(f"  ! {EC_HARM.name} missing - run NISR/Establishment-Census-EC/master.py then NISR/Harmonize/master.py")
     else:
         cols = ["ec_year", "ec_province", "ec_district", "ec_sector", "ec_weight",
                 "ec_main_activity_section", "ec_main_activity_section_2011",
                 "ec_main_activity_section_2014", "ec_total_workers",
                 "ec_total_workers_2011", "ec_total_workers_2014"]
-        raw, _m = pyreadstat.read_dta(str(EC_FINAL), usecols=cols,
+        raw, _m = pyreadstat.read_dta(str(EC_HARM), usecols=cols,
                                       apply_value_formats=False)
         ec = pd.DataFrame({
             "year": raw.ec_year.astype(int),
@@ -1015,16 +1029,16 @@ def extract_labour() -> None:
         _log("  -> ec_isic_shares_wide.csv")
 
     # ---- Labour Force Survey -------------------------------------------
-    if not LFS_FINAL.exists():
-        _log(f"  ! {LFS_FINAL.name} missing - run NISR/Labour-Force-Survey-LFS/master.py")
+    if not LFS_HARM.exists():
+        _log(f"  ! {LFS_HARM.name} missing - run NISR/Labour-Force-Survey-LFS/master.py then NISR/Harmonize/master.py")
         return
-    cols = ["lfs_year", "lfs_district", "lfs_weight", "lfs_isic_section_main_job"]
-    raw, _m = pyreadstat.read_dta(str(LFS_FINAL), usecols=cols,
+    cols = ["lfs_year", "lfs_district", "lfs_weight", "lfs_industry_isic"]
+    raw, _m = pyreadstat.read_dta(str(LFS_HARM), usecols=cols,
                                   apply_value_formats=False)
     lfs = pd.DataFrame({
         "year": raw.lfs_year.astype(int),
         "dist": pd.to_numeric(raw.lfs_district, errors="coerce"),
-        "isic": pd.to_numeric(raw.lfs_isic_section_main_job, errors="coerce"),
+        "isic": pd.to_numeric(raw.lfs_industry_isic, errors="coerce"),
         "wt": pd.to_numeric(raw.lfs_weight, errors="coerce").fillna(0.0),
     }).dropna(subset=["isic", "dist"])
     # Every LFS figure is weighted: the survey is a sample, unlike the census.
