@@ -34,8 +34,8 @@ from pathlib import Path
 
 import pandas as pd
 
-REPO = Path(__file__).resolve().parent
-PROC = REPO / "data" / "processed"
+REPO = Path(__file__).resolve().parents[1]
+PROC = REPO / "interim-processing" / "processed"
 DOCS = REPO / "docs"
 
 # Default location of the NISR holdings. Data lives outside the repo on purpose:

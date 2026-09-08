@@ -1,21 +1,17 @@
-# Raw data is never committed: EICV and DHS microdata are licensed to the
-# individual researcher and may not be redistributed. Open sources (CHIRPS,
-# GADM) are excluded too, since extract.py re-downloads them on demand.
-data/raw/*
-data/interim/*
-
-# Processed outputs are reproducible from extract.py. Commit selectively if a
-# specific file is small and needed for review.
-data/processed/*
-
-# Rendered output
-output/figures/*
-output/tables/*
-output/maps/*
+# Raw and interim data is never committed: EICV, LFS, Census and DHS microdata
+# are licensed to the individual researcher and may not be redistributed. Open
+# sources (CHIRPS, GADM) are excluded too, since extract.py re-downloads them.
+interim-processing/raw/*
+interim-processing/processed/*
 
 # Keep the directory skeleton so a fresh clone has somewhere to put data.
 !.gitkeep
 !**/.gitkeep
+
+# Rendered figures, maps and tables are written to the Dropbox output/ folder,
+# not the repo, so a coauthor who does not run the code still sees them. Nothing
+# to ignore here - but archive/ holds a 26 MB frozen copy of a previous run.
+archive/
 
 # Python
 __pycache__/

@@ -37,8 +37,8 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
-PROC = ROOT / "data" / "processed"
+REPO = Path(__file__).resolve().parents[1]
+PROC = REPO / "interim-processing" / "processed"
 
 SECTORS_GPKG = Path(
     "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"

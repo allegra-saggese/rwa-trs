@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import sys
 import textwrap
+import os
 from pathlib import Path
 
 import matplotlib as mpl
@@ -33,9 +34,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
-PROC = ROOT / "data" / "processed"
-MAPS = ROOT / "output" / "maps"
+REPO = Path(__file__).resolve().parents[1]
+PROC = REPO / "interim-processing" / "processed"
+
+# One Dropbox constant; override with RWA_DROPBOX to run on another Mac.
+DROPBOX = Path(
+    os.environ.get(
+        "RWA_DROPBOX",
+        "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS",
+    )
+)
+
+OUT = DROPBOX / "output"
+MAPS = OUT / "maps"
 
 # Rwanda falls in UTM zone 35S. Metres, so scale bars and areas are honest.
 CRS_PROJ = 32735
@@ -76,7 +87,8 @@ def load_districts():
     fp = PROC / "districts.gpkg"
     if not fp.exists():
         raise FileNotFoundError(
-            "data/processed/districts.gpkg missing - run: python extract.py --sources boundaries")
+            "interim-processing/processed/districts.gpkg missing - run: "
+            "python geo-data-analysis/extract.py --sources boundaries")
     return gpd.read_file(fp, layer="districts").to_crs(CRS_PROJ)
 
 
@@ -350,7 +362,8 @@ def map_dhs_clusters() -> None:
     fp = PROC / "dhs_clusters.gpkg"
     if not fp.exists():
         _log("  ! dhs_clusters.gpkg missing - place DHS GPS shapefile in "
-             "data/raw/dhs/ and run: python extract.py --sources dhs_gps; skipping")
+             "interim-processing/raw/dhs/ and run: "
+             "python geo-data-analysis/extract.py --sources dhs_gps; skipping")
         return
 
     pts = gpd.read_file(fp, layer="clusters").to_crs(CRS_PROJ)

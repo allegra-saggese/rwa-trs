@@ -33,7 +33,7 @@ import argparse
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 DICTIONARY = ROOT / "EICV7_2023-24_variable_dictionary.csv"
 
 
@@ -287,10 +287,13 @@ def check() -> int:
         print(f"! dictionary not found at {DICTIONARY}")
         return 1
 
+    # extract.py lives in geo-data-analysis/, a sibling folder, so it is not on
+    # sys.path when this script runs. Add it rather than duplicating the table.
     try:
+        sys.path.insert(0, str(ROOT / "geo-data-analysis"))
         from extract import EICV7_FILES
-    except ImportError:
-        print("! could not import EICV7_FILES from extract.py")
+    except ImportError as exc:
+        print(f"! could not import EICV7_FILES from geo-data-analysis/extract.py: {exc}")
         return 1
 
     d = pd.read_csv(DICTIONARY)

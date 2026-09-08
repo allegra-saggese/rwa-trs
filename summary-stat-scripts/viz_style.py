@@ -8,6 +8,7 @@ from drifting into eight different colour schemes.
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import geopandas as gpd
@@ -16,16 +17,27 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
-ROOT = Path(__file__).resolve().parent
-GEO = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/geo-data"
+# Scripts live one level down (summary-stat-scripts/, geo-data-analysis/,
+# info-scripts/), so the repo root is the parent of this file's folder.
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO   # back-compat: older code referred to the repo root as ROOT
+
+# One Dropbox constant, so a folder rename is a one-line fix rather than a
+# hunt through every script. Override with RWA_DROPBOX to run on another Mac.
+DROPBOX = Path(
+    os.environ.get(
+        "RWA_DROPBOX",
+        "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS",
+    )
 )
-NISR = Path(
-    "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/"
-    "data/Publicly-Available-NISR"
-)
-FIGS = ROOT / "output" / "figures"
-MAPS = ROOT / "output" / "maps"
+GEO = DROPBOX / "data" / "geo-data"
+NISR = DROPBOX / "data" / "Publicly-Available-NISR"
+
+# Rendered output lives on Dropbox, not in the repo: the figures are shared
+# with a coauthor who does not run the code.
+OUT = DROPBOX / "output"
+FIGS = OUT / "figures"
+MAPS = OUT / "maps"
 
 # Treated / control, used for the same meaning in every figure.
 PARK, NONPARK = "#c1121f", "#1b4965"
@@ -85,7 +97,7 @@ def save(fig, name: str, kind: str = "figure") -> Path:
     p = d / f"{name}.png"
     fig.savefig(p)
     plt.close(fig)
-    print(f"  -> {p.relative_to(ROOT)}", flush=True)
+    print(f"  -> {p.relative_to(OUT.parent)}", flush=True)
     return p
 
 
@@ -139,7 +151,7 @@ def frame_map(ax, title: str, park_layer=None) -> None:
     ax.set_anchor("N")
 
 
-TABLES = ROOT / "output" / "tables"
+TABLES = OUT / "tables"
 
 
 def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:
@@ -151,7 +163,7 @@ def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:
     TABLES.mkdir(parents=True, exist_ok=True)
     p = TABLES / f"{name}.csv"
     df.to_csv(p)
-    print(f"  -> {p.relative_to(ROOT)}", flush=True)
+    print(f"  -> {p.relative_to(OUT.parent)}", flush=True)
     try:
         (TABLES / f"{name}.tex").write_text(
             df.to_latex(float_format=lambda v: float_fmt % v, escape=True)
