@@ -155,7 +155,7 @@ household / woman files the common concepts as new variables sharing one stem ac
 <ds>_school_attendance, <ds>_labour_status with <ds>_labour_definition, <ds>_employed,
 <ds>_employment_status, <ds>_industry_isic, <ds>_occupation_isco, <ds>_head_sex, <ds>_head_age)
 with common codes. Sex is not repeated: <ds>_sex is already harmonised.
-Native variables are never changed, no row is lost. Publicly-Available-NISR/Harmonized/ holds only the
+Native variables are never changed, no row is lost. Publicly-Available-NISR/Harmonisation-docs/ holds only the
 three cross-dataset documents: README.txt, harmonization_map.csv (every mapping) and
 CODEBOOK_Harmonized.xlsx (code lists and counts). The July-2026
 three-file harmonisation stays in Archive/Harmonized/.

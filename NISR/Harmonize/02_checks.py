@@ -1,5 +1,5 @@
 """
-02_checks.py -- NISR/Harmonize: independent verification of Harmonized/ -> logs/checks_report.txt
+02_checks.py -- NISR/Harmonize: independent verification of the harmonised copies -> logs/checks_report.txt
 
   A. Completeness and no data loss: every expected copy exists (declared disk skips excepted and listed), no stray
      H_ file, every copy has exactly the rows and all the native columns of its CURRENT source.
@@ -37,7 +37,7 @@ declared = {f for f, i in summ["files"].items() if i.get("skipped") and "declare
 undeclared = {f for f, i in summ["files"].items() if i.get("skipped") and f not in declared}
 physical = {f.name for tag in DATASETS for f in h_dir(tag).glob("H_*.dta")}
 stray_top = sorted(f.name for f in P_OUT.glob("H_*.dta"))            # data files must not sit in the documents folder any more
-row("A", "H_ data files left in the documents folder Harmonized/ (must be 0)", len(stray_top), 0)
+row("A", "H_ data files left in the documents folder Harmonisation-docs/ (must be 0)", len(stray_top), 0)
 HP = lambda out: h_path(out, summ["files"].get(out))
 row("A", "manifest entries skipped without a declared reason (must be 0)", len(undeclared), 0)
 row("A", "declared skips (none: 4_Harmonized mirrors 3_Final; informational)", len(declared), 0)

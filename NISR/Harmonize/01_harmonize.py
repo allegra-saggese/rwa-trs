@@ -3,7 +3,7 @@
 
 4_Harmonized/ mirrors 3_Final/ exactly (Matteo, 2026-09-06): one copy per final file, nothing else.
 For EVERY file in <dataset>/3_Final/ -> <dataset>/4_Harmonized/H_<dataset>_<stem>.dta
-(the cross-dataset documents -- README, CODEBOOK_Harmonized.xlsx, harmonization_map.csv -- stay in Publicly-Available-NISR/Harmonized/):
+(the cross-dataset documents -- README, CODEBOOK_Harmonized.xlsx, harmonization_map.csv -- stay in Publicly-Available-NISR/Harmonisation-docs/):
   * identical key-block labels (survey year wave prov dist sector urban hhid pid sex age wt wt_hh) and
     identical province / district / sector / urban / sex value labels;
   * h_hhkey / h_pkey: string keys unique across datasets and waves (survey_wave[_interview]_hhid[_pid]);

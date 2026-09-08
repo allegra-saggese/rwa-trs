@@ -3,7 +3,7 @@ harmonize_helpers.py -- helpers for the cross-dataset harmonisation step (NISR/H
 
 Own copy of the path / logging / Stata I/O pattern used by every dataset folder (no imports across
 folders). This step READS the seven datasets' 3_Final/ and 2_Intermediate/appended/ files and their
-logs/merge_alignment.json, and WRITES Publicly-Available-NISR/Harmonized/.
+logs/merge_alignment.json, and WRITES Publicly-Available-NISR/Harmonisation-docs/.
 """
 from __future__ import annotations
 import getpass, json, logging, os, re, sys, time
@@ -34,9 +34,10 @@ def db_root() -> Path:
     return p
 
 def out_dir() -> Path:
-    """Publicly-Available-NISR/Harmonized/: the cross-dataset DOCUMENTS only (README.txt, CODEBOOK_Harmonized.xlsx,
-    harmonization_map.csv). The copies live in each dataset's 4_Harmonized/ (Matteo, 2026-09-05)."""
-    d = db_root() / "Harmonized"; d.mkdir(exist_ok=True); return d
+    """Publicly-Available-NISR/Harmonisation-docs/: the cross-dataset DOCUMENTS only (README.txt,
+    CODEBOOK_Harmonized.xlsx, harmonization_map.csv). The copies live in each dataset's 4_Harmonized/
+    (Matteo, 2026-09-05; folder renamed 2026-09-07 because it held no data and read as an eighth survey)."""
+    d = db_root() / "Harmonisation-docs"; d.mkdir(exist_ok=True); return d
 
 def h_dir(tag: str) -> Path:
     """<dataset>/4_Harmonized/: the harmonised copies of that dataset (created on first use)."""

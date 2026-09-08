@@ -116,7 +116,7 @@ on Dropbox; the repository holds code and run logs only, and the processing note
 NISR documentation says, every decision and why) are kept with the project memory outside
 git. An eighth folder, `NISR/Harmonize/`, writes harmonised copies of every final and
 appended file (common keys, labels and `h_*` concept variables) to
-`Publicly-Available-NISR/Harmonized/`. The `extract.py` survey loaders predate these pipelines.
+`Publicly-Available-NISR/Harmonisation-docs/`. The `extract.py` survey loaders predate these pipelines.
 
 ## The three measurement problems this project has to solve
 
