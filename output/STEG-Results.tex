@@ -1,0 +1,328 @@
+% STEG-Results.tex -- results for the Rwanda tourism revenue sharing project.
+% Figures are the note-free copies written by output/figures/make_tex_figures.py into
+% <Dropbox>/output/figures/tex/. Each figure carries its caption above and its note below, here in
+% the document rather than inside the image.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,amsmath,amssymb,booktabs,caption,float,microtype}
+\usepackage[hidelinks]{hyperref}
+\captionsetup[figure]{labelfont=bf,textfont=normalfont,justification=raggedright,singlelinecheck=false,skip=6pt}
+\graphicspath{{/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/output/figures/tex/}}
+\newcommand{\fignote}[1]{\vspace{4pt}\begin{minipage}{\linewidth}\footnotesize\setlength{\parskip}{0pt}\textit{Notes.} #1\end{minipage}}
+\setlength{\parskip}{5pt}
+\title{Tourism revenue sharing around Rwanda's national parks\\[2pt]\large Results}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{What the design is trying to separate}
+
+Rwanda's tourism revenue sharing scheme returns a share of national park receipts to the communities
+that border the parks. Every bordering sector receives the transfer. Only a few of them also sit at a
+park entrance, where tourists actually arrive, sleep and spend. That distinction is the whole
+identification strategy of this project: it lets the money be separated from the tourism.
+
+Three groups, defined at sector level because that is the level the transfer is allocated at:
+
+\begin{center}
+\begin{tabular}{llr l}
+\toprule
+& Definition & $n$ & Channel \\
+\midrule
+$G_1$ & Gates+: borders a park \emph{and} sits within 5\,km of an entrance & 12 & Transfer \emph{and} tourism \\
+$G_2$ & The other bordering sectors & 32 & Transfer only \\
+$G_0$ & Neither & 319 & Comparison group \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$G_1$ against $G_0$ measures the two channels together, $G_2$ against $G_0$ measures the transfer on
+its own, and $G_1-G_2$ is what tourism adds. The three groups plus the exclusions below account for
+all 416 sectors: $12+32+319+9+44=416$.
+
+\paragraph{Exclusions, and why.} The City of Kigali and the four largest towns of 2002 (44 sectors)
+are dropped: they are urban outliers on every outcome and none of them borders a park, so they add
+nothing to the comparison but a great deal of variance. The nine sectors bordering Gishwati-Mukura
+are also dropped. That park was gazetted only in 2015--16, so those sectors enter the revenue-sharing
+zone a decade after the others; leaving them among the controls would place nine treated units in the
+comparison group precisely in the years where the estimates move.
+
+\paragraph{A caution carried through the whole document.} $G_1$ contains twelve sectors and is
+identified off five districts. Standard errors clustered at sector assume many more independent
+groups than that, so the $p$-values attached to $G_1$ should be read as optimistic. A wild cluster
+bootstrap is the right fix and has not yet been run.
+
+\section{Housing quality}
+
+The housing outcomes use the census in an ANCOVA, conditioning on the 2002 level of the same outcome
+rather than differencing it:
+\begin{equation}
+Y_{s,t} \;=\; \alpha \;+\; \beta\,\text{Treated}_s \;+\; \gamma\,Y_{s,2002} \;+\; \phi_{p(s)} \;+\; \delta_{d(s)} \;+\; \varepsilon_{s,t},
+\qquad t \in \{2012,\,2022\}
+\end{equation}
+where $\phi_{p(s)}$ is a nearest-park fixed effect and $\delta_{d(s)}$ a district fixed effect; the
+pooled specification replaces the latter with district-by-wave effects. Errors are clustered at
+sector and reported alongside Conley spatial standard errors at 25 and 50\,km. Conditioning on the
+2002 level absorbs the pre-treatment differences that a bare cross-section would attribute to
+treatment, which matters here because park-adjacent sectors were poorer than average in 2002.
+
+\begin{figure}[H]
+\caption{Housing components and the housing index, by treatment definition}
+\includegraphics[width=\linewidth]{bar_chart_housing.pdf}
+\fignote{Bars are the change between census waves in the share of households with each housing
+attribute, for each treatment definition against the control sectors. The index is the unweighted
+mean of the five standardised components. Confidence intervals are from a sector-level bootstrap.
+The City of Kigali and the four largest towns of 2002 are excluded.}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Housing: ANCOVA estimates conditioning on the 2002 level}
+\includegraphics[width=\linewidth]{coefplot_housing.pdf}
+\fignote{Each point is $\beta$ from equation~(1), in units of the 2002 control standard deviation,
+with 95\% confidence intervals from sector-clustered standard errors. The specification includes the
+2002 level of the outcome, nearest-park fixed effects and district fixed effects; the pooled column
+uses district-by-wave fixed effects. Modern roofing is the outcome that moves: $+0.366$ standard
+deviations pooled for the 44 bordering sectors ($p<10^{-7}$), and the housing index rises $+0.277$
+($p=0.016$). Water and sanitation do not move.}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Housing: the same estimates with controls chosen by post-double-selection lasso}
+\includegraphics[width=\linewidth]{coefplot_housing_lasso.pdf}
+\fignote{As the previous figure, with the control set chosen by post-double-selection lasso with
+cluster-robust penalty loadings, drawn from the 2002 sector characteristics. The lasso is run
+separately for each outcome and wave; the number of selected controls is reported in the underlying
+table. The roofing result survives control selection, which is the point of running it.}
+\end{figure}
+
+\section{Employment}
+
+Employment uses the same ANCOVA, with the outcome the inverse hyperbolic sine of the count of workers
+aged 20--64 in each of the three Fisher--Clark sectors, so coefficients read as proportional changes.
+
+\paragraph{The classification problem, and what was done about it.} The three censuses do not use the
+same industry coding: 2002 is ISIC rev.\ 3 at the group level and 2012 and 2022 are ISIC rev.\ 4
+sections. The mapping was rebuilt so that the three sectors mean the same thing in all three waves,
+and verified to be exhaustive and non-overlapping in each. Mining is placed in the primary sector.
+
+\paragraph{The 2022 break, and the reconstruction.} The 19th ICLS revision, applied in 2022, counts
+agricultural self-employment only when production is \emph{mainly for market}. Subsistence farmers
+therefore leave the recorded workforce entirely in 2022, and recorded primary employment falls from
+71.6\% to 60.1\% to 27.3\% of adults across the three waves --- a break in measurement, not in
+behaviour. The 2022 primary count is reconstructed by adding back adults with no recorded industry
+who live in a crop-growing household, less the 14.1 percentage point false-positive rate that the
+same rule produces in 2012, where subsistence farmers \emph{are} recorded. The reconstruction gives a
+monotone 71.6 $\rightarrow$ 60.1 $\rightarrow$ 46.1\%, and is validated by the fact that the
+farm-household composition of unrecorded adults is 67.5\% in 2012 against 67.8\% in 2022.
+
+\begin{figure}[H]
+\caption{Employment by broad sector: ANCOVA estimates}
+\includegraphics[width=\linewidth]{coefplot_jobs.pdf}
+\fignote{Outcomes are $\operatorname{asinh}$ of the count of workers aged 20--64, so coefficients are
+approximately proportional changes, expressed in 2002 control standard deviations. Specification as
+in equation~(1). For the 44 bordering sectors the pooled estimates are $+0.576$ for primary
+($p=0.0001$), $+0.160$ for secondary ($p=0.016$) and $+0.177$ for tertiary ($p=0.042$): employment
+rises across the board, which is consistent with a labour market expanding rather than reallocating.
+The 2022 primary count is the reconstructed series described above.}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Employment by broad sector, controls chosen by post-double-selection lasso}
+\includegraphics[width=\linewidth]{coefplot_jobs_lasso.pdf}
+\fignote{As the previous figure with lasso-selected controls. The Gates+ pooled estimates change sign
+on primary employment once controls are selected: primary $-0.602$ ($p=0.018$), secondary $+0.184$
+($p=0.056$), tertiary $+0.265$ ($p=0.050$). Read together with the unselected estimates, the pattern
+at the gates is a shift out of agriculture and into services rather than a uniform expansion; the
+sign flip on primary is driven by control selection and should be reported as such rather than as a
+robust result.}
+\end{figure}
+
+\section{Education}
+
+Schooling is a stock fixed by the time a person finishes school, so a difference-in-differences on
+the adult stock would attribute to treatment things that happened decades earlier. The design instead
+follows the cohort-exposure logic of Duflo (2001): a person's exposure depends on how old they were
+when revenue sharing began. Children who had already left school by 2005 are unexposed; those who
+started primary school in 2005 or later are fully exposed.
+\begin{equation}
+Y_{i,c,s} \;=\; \alpha \;+\; \sum_{b}\beta_b\,\bigl[\text{Treated}_s \times \mathbf{1}(c \in b)\bigr]
+\;+\; \delta_c \;+\; \mu_s \;+\; X_{i}'\theta \;+\; \varepsilon_{i,c,s}
+\end{equation}
+with $c$ the birth cohort, $\delta_c$ cohort fixed effects, $\mu_s$ sector fixed effects, and $b$
+indexing three-year cohort bins. The reference cohort is 1999, the first to start primary school in
+2005. Cohorts before 1970 are dropped. Because several cohorts were of school age during the
+genocide, the specification is also run controlling for sector-level violence exposure --- double
+orphanhood, any orphanhood, war disability, widowhood, the sex ratio, child-headed households, prior
+residence abroad and foreign birth --- entered individually rather than as an index.
+
+\begin{figure}[H]
+\caption{Education by birth cohort: years of schooling, completed primary, and literacy}
+\includegraphics[width=\linewidth]{event_study_education_3yr.pdf}
+\fignote{Each point is the coefficient on treatment interacted with a three-year birth-cohort bin
+from equation~(2), relative to the 1999 cohort, with 95\% intervals from sector-clustered standard
+errors. Cohorts to the left of the reference were too old to be affected and act as placebos. At the
+gates the pooled cohort estimates are $+0.337$ years of schooling ($p=0.0014$) and $+2.4$ percentage
+points on completed primary ($p=0.023$); the 44-sector definition is null on all three outcomes. The
+violence controls reduce the point estimates modestly and do not overturn them.}
+\end{figure}
+
+\section{Age at marriage}
+
+Marriage uses the same cohort design, restricted to women aged 18 and over, with cohorts running to
+2004. The outcomes are an indicator for having married by 18 and age at first marriage.
+
+\begin{figure}[H]
+\caption{Marriage by birth cohort: married by 18 and age at first marriage}
+\includegraphics[width=\linewidth]{event_study_marriage_3yr.pdf}
+\fignote{Specification as in equation~(2), three-year cohort bins, reference cohort 1999, 95\%
+intervals from sector-clustered standard errors. At the gates, marriage by 18 falls $3.6$ percentage
+points ($p=0.0012$) and age at first marriage rises $0.42$ years ($p=0.004$); for the 44 bordering
+sectors the corresponding figures are $-2.6$ points ($p=0.0007$) and $+0.33$ years ($p=0.0003$).
+Controlling for genocide violence exposure leaves both intact ($-3.3$ points, $p=0.0010$; $+0.34$
+years, $p=0.008$). Pre-trends are flat. This is the best-identified result in the project.}
+\end{figure}
+
+\section{Forest loss}
+
+Forest uses a fixed 1\,km grid rather than administrative units, and a matched design rather than a
+bare difference-in-differences, because treated and control cells differ systematically in terrain,
+accessibility and baseline forest stock:
+\begin{equation}
+L_{i,t} \;=\; \alpha_i \;+\; \delta_{d(i),t} \;+\; \sum_{t}\beta_t\bigl[\text{Treated}_i \times \mathbf{1}(\text{year}=t)\bigr]
+\;+\; W_{i,t}'\gamma \;+\; \varepsilon_{i,t}
+\end{equation}
+estimated with overlap weights and weighted by them. $L_{i,t}$ is hectares of annual forest loss,
+$\alpha_i$ a cell fixed effect, $\delta_{d(i),t}$ district-by-year fixed effects, and $W_{i,t}$
+annual rainfall, temperature and PDSI. Overlap weights are estimated separately for each panel from
+2004 forest stock, elevation, slope, distance to trunk or primary roads, 2001 gridded population
+density, baseline precipitation, and the 2001--2004 level and trend of forest loss. Standard errors
+are clustered on 20-by-20\,km spatial blocks. Cells must hold at least 10 hectares of the relevant
+forest measure in 2004. The reference year is 2004 and the two products --- Hansen Global Forest
+Change and JRC Tropical Moist Forest --- are estimated separately, since they disagree about what
+counts as forest.
+
+\begin{figure}[H]
+\caption{Forest loss around the parks: annual event-study estimates, five comparisons}
+\includegraphics[width=\linewidth]{event_study_forest_5km.pdf}
+\fignote{Points are year-specific treated-control differences in annual forest loss relative to 2004,
+from equation~(3); bars are 90\% intervals from 20-by-20\,km spatial-block clustered standard errors.
+The first three panels are geographic; the last two are the sector split of Section~1 and compare
+each group against the same far cells, less the sectors bordering Gishwati-Mukura. Protection works
+inside the boundary --- pooled post-2005, Hansen gives $-0.365$ hectares per cell ($p<0.001$) and JRC
+$-0.275$ ($p=0.006$) for park against non-park --- but neither the transfer nor tourism shows outside
+it: Gates+ sectors give $+0.027$ ($p=0.50$, Hansen) and $-0.035$ ($p=0.90$, JRC), and
+revenue-sharing-only sectors $-0.030$ ($p=0.73$) and $+0.019$ ($p=0.94$). Pre-trend $p$-values
+jointly test the 2001--2003 coefficients.}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Forest loss: pooled post-2005 estimates from the matched-pair design}
+\includegraphics[width=\linewidth]{coefplot_forest_5km.pdf}
+\fignote{Pooled post-2005 coefficients from a matched-pair difference-in-differences in which each
+treated cell is matched with replacement to the closest eligible control cell in the same district on
+the covariates listed above, with pair fixed effects and baseline-covariate-specific linear trends.
+Bars are 90\% intervals with two-way clustering on treated and matched-control spatial blocks.
+Negative coefficients mean less forest loss in the first area. This figure covers the geographic
+comparisons only: its coefficients are stored constants from an estimator whose code is not in the
+repository, so it could not be regenerated for the sector split.}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Forest loss measured by JRC Tropical Moist Forest}
+\includegraphics[width=\linewidth]{coefplot_jrc_forest.pdf}
+\fignote{The JRC product measured on its own terms, as a check that the Hansen results are not an
+artefact of how Hansen defines tree cover. JRC counts moist forest and excludes plantation, which is
+why its levels differ from Hansen even where the two agree in sign.}
+\end{figure}
+
+\section{Nighttime lights}
+
+Lights are the one outcome available annually for the whole period, which makes them the natural
+place to look for a time path. Both groups enter one equation so that they share a comparison group:
+\begin{equation}
+Y_{u,t} \;=\; \alpha_u \;+\; \delta_{d(u),t}
+\;+\; \sum_{t}\beta^{1}_{t}\bigl[G_1(u)\times\mathbf{1}(\text{year}=t)\bigr]
+\;+\; \sum_{t}\beta^{2}_{t}\bigl[G_2(u)\times\mathbf{1}(\text{year}=t)\bigr] \;+\; \varepsilon_{u,t}
+\end{equation}
+$Y_{u,t}$ is $\operatorname{asinh}$ of the sector's total lights, scaled by the 2002 control standard
+deviation. $\alpha_u$ absorbs everything fixed about a place and $\delta_{d(u),t}$ every district-level
+shock, so the comparison is between sectors in the same district in the same year. The reference year
+is 2004 and errors are clustered at sector. The tourism increment $\beta^1-\beta^2$ is estimated
+directly, with its own standard error, by re-running the same equation on $[G_1 \text{ or } G_2]$ and
+$[G_1]$.
+
+\paragraph{Four restrictions, each settled by a test rather than assumed.}
+\begin{enumerate}\itemsep2pt
+\item \textbf{Park area is removed from every unit before the lights are counted.} Park land is dark
+by construction and it is not evenly spread: treated sectors lose 31.6\% of their area to park
+against 0.2\% for controls, so leaving it in attenuates the treated units specifically. Removing it
+also repaired the pre-trends --- three specifications that failed at $p\leq.005$ pass once the park is
+out.
+\item \textbf{Raw sensors only; no harmonised product.} DMSP-OLS ended in 2013 and VIIRS begins in
+2012, so the two are estimated separately and VIIRS is shifted by the DMSP coefficient at 2012, its
+intervals carrying that offset's variance. The splice is licensed by the 2012--13 overlap, where both
+sensors observe the same units and the treated-control gap between them is $-0.018$ ($p=0.89$). The
+Li and Chen harmonised products are \emph{not} used: each is half model output, and their large
+post-2013 effects live entirely in the modelled half.
+\item \textbf{Uncensored \texttt{avg\_vis} rather than \texttt{stable\_lights}}, which zeroes dim
+cells --- and the treated units are the dark ones.
+\item \textbf{Sector is the headline unit} because treatment is assigned at sector level; the cell
+panel is shown beside it to confirm the weighting does not drive the result, not as extra
+identification.
+\end{enumerate}
+
+\paragraph{A measurement limit that bounds what lights can show.} Across the twelve years when two
+DMSP satellites flew simultaneously, the same sectors are observed twice. The two readings disagree
+about the treated-control gap by \emph{more} than that gap varies across years: test-retest
+correlation is 0.45 at best and about 0.10 for the twelve gate sectors. The DMSP era therefore cannot
+support a small effect, and its flatness is weak evidence of a null rather than strong evidence of
+one.
+
+\begin{figure}[H]
+\caption{Nighttime lights: revenue sharing with tourism against revenue sharing alone}
+\includegraphics[width=\linewidth]{event_ntl_groups.pdf}
+\fignote{Year-specific coefficients from equation~(4), relative to 2004, in 2002 control standard
+deviations, with 95\% intervals from sector-clustered standard errors. Blue is DMSP-OLS 1992--2013
+and amber VIIRS 2012--2025, spliced at the dashed line. Post-2005 differences-in-differences,
+estimable on DMSP only because VIIRS begins seven years after treatment: $G_1$ $+0.012$ ($p=0.71$),
+$G_2$ $-0.014$ ($p=0.39$), and the tourism increment $G_1-G_2$ $+0.025$ ($p=0.44$). Nothing is
+distinguishable from zero on either channel. The visible movement is 2019 onward, fourteen years
+after revenue sharing began, and is common to both groups.}
+\end{figure}
+
+\section{What the results add up to}
+
+The transfer arm and the tourism arm behave differently, and not in the way the programme's own
+theory of change would predict.
+
+\begin{enumerate}\itemsep3pt
+\item \textbf{The best-identified results are demographic, not economic.} Marriage by 18 falls and
+age at first marriage rises at the gates, on flat pre-trends, robust to genocide-violence controls.
+Years of schooling rise at the gates and nowhere else. Both come from the cohort design, which has
+far more identifying variation than the three-wave census panels.
+\item \textbf{Housing improves, but narrowly.} Roofing moves and survives control selection; water and
+sanitation do not move at all. That is the signature of household-level investment rather than public
+infrastructure, which is what a cash transfer to communities would be expected to produce only if it
+were reaching households.
+\item \textbf{Employment expands rather than reallocating}, except at the gates, where the lasso
+estimates point to a shift out of agriculture into services. The sign flip on primary employment
+under control selection is not robust and should not be reported as a finding on its own.
+\item \textbf{Neither forest nor lights responds to either channel.} Protection works inside the park
+boundary on both products; outside it, neither the transfer nor tourism moves forest loss. Lights are
+flat on both arms, with the caveat above that the DMSP era cannot detect a small effect.
+\item \textbf{Tourism adds little that the transfer does not.} Where $G_1$ and $G_2$ can be compared
+directly --- lights and forest --- the increment is indistinguishable from zero. Where the gates do
+stand out --- schooling, marriage, the services shift --- the effect appears in outcomes that a
+transfer alone would not obviously move, which points at labour-market opportunity rather than money.
+\end{enumerate}
+
+\paragraph{What would change these conclusions.} A wild cluster bootstrap on every $G_1$ estimate,
+since twelve treated sectors in five districts cannot support cluster-robust inference as reported.
+An explanation for the 2019--2022 break in lights, which appears in every specification and every
+product and currently sits underneath the only positive lights result. And a measure of rural
+electrification by sector: nighttime lights in a poor rural country are substantially a measure of
+where the grid went, and without that control a lights result cannot be attributed to this programme.
+
+\end{document}
