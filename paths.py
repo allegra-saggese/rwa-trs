@@ -57,6 +57,11 @@ DATA = DROPBOX / "data"
 GEO = DATA / "geo-data"
 NISR = DATA / "Publicly-Available-NISR"
 
+# VIIRS annual nighttime-lights composites, cropped to Rwanda (+0.05 deg buffer).
+# Originals were global (~2GB/file/band); every *.tif.gz under here has been
+# replaced with a *.RWA.tif of the same name, so glob for *.RWA.tif, not *.tif.gz.
+NIGHTLIGHTS = DATA / "Nighttime-Lights"
+
 # The 1 km population raster ships inside the NISR geoportal download.
 POP_RASTER = NISR / "geodata-nisr" / "PopulationDensity01.tif"
 
