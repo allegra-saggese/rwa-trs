@@ -9,8 +9,13 @@ coefplot_housing.py -- the main regression behind the housing bar chart.
 Specification (Matteo, 2026-09-07). ANCOVA on the post waves, one regression per treatment, outcome
 and wave:
 
-    Y(s,t) = a + b treated(s) + c Y(s,2002) + district FE + e        t = 2012, or 2022
-    Y(s,t) = a + b treated(s) + c Y(s,2002) + district x wave FE + e t = 2012 and 2022 pooled
+    Y(s,t) = a + b treated(s) + c Y(s,2002) + park FE + district FE + e        t = 2012, or 2022
+    Y(s,t) = a + b treated(s) + c Y(s,2002) + park FE + district x wave FE + e t = pooled
+
+Park fixed effects are the sector's nearest park, four catchments (Matteo, 2026-09-08). They are not
+absorbed by the district effects -- 11 of 30 districts straddle two catchments -- but they change
+almost nothing, moving coefficients by at most 0.015 SD, because district x wave already carries the
+regional structure. They are kept so the question does not have to be asked.
 
 errors clustered at sector. The regressions are unweighted (Matteo, 2026-09-07): treatment is
 assigned at sector level, so every sector counts once, and the randomization inference resamples
@@ -61,7 +66,8 @@ def prepare():
     p = pd.read_csv(ANALYSIS / "census_sector_housing_panel.csv")
     p = p.drop(columns=[c for c in p.columns if c.startswith("district")], errors="ignore")
     ctrl = set(p.sid.unique()) - never - X["Kigali all + cities"]
-    p = p.merge(g[["sid", "district"]], on="sid", how="left")
+    g = g.assign(park=g.nearest_park.astype(str).str.split().str[0])
+    p = p.merge(g[["sid", "district", "park"]], on="sid", how="left")
     return g, T, ctrl, p
 
 
@@ -81,7 +87,7 @@ def fit(p, treated, ctrl, outcome):
     out = []
     for yr, waves, fe in WAVES:
         sub = d[d.wave.isin(waves)]
-        r = smf.ols(f"y ~ treat + base + C({fe})", data=sub).fit(
+        r = smf.ols(f"y ~ treat + base + C(park) + C({fe})", data=sub).fit(
             cov_type="cluster", cov_kwds={"groups": sub.sid})
         b, se = r.params["treat"], r.bse["treat"]
         out.append({"wave": yr, "b": b, "se": se, "p": r.pvalues["treat"],
@@ -102,6 +108,7 @@ def randomization_inference(p, treated, ctrl, outcome, reps=2000, seed=20260907)
     for yr, waves, fe in WAVES:
         sub = d[d.wave.isin(waves)].sort_values(["sid", "wave"]).reset_index(drop=True)
         X0 = np.column_stack([pd.get_dummies(sub[fe]).values.astype(float),
+                              pd.get_dummies(sub.park, drop_first=True).values.astype(float),
                               sub.base.values[:, None]])
         U, sv, _ = np.linalg.svd(X0, full_matrices=False)
         U = U[:, sv > sv.max() * 1e-10]                     # orthonormal basis, rank-safe
@@ -128,14 +135,12 @@ def main():
             for r in fits:
                 rows.append({"treatment": tn, "n_treated": len(tset), "outcome": o, **r})
     res = pd.DataFrame(rows)
-    res["p_ri"] = np.nan
-    for o in OUTCOMES:                                  # the four gate sectors: inference by permutation
-        for yr, (b, pv) in randomization_inference(p, T["Gates"], ctrl, o).items():
-            m = (res.treatment == "Gates") & (res.outcome == o) & (res.wave == yr)
-            res.loc[m, "p_ri"] = pv
-    res["p_used"] = np.where(res.treatment == "Gates", res.p_ri, res.p)
+    # Randomization inference lived here for the four-sector Gates panel. That panel is gone, and
+    # both remaining definitions have enough treated units for the clustered and spatial errors in
+    # housing_inference.py to carry the inference instead.
+    res["p_used"] = res.p
     res.to_csv(ANALYSIS / "reg_housing_main.csv", index=False)
-    print(res[["treatment", "outcome", "wave", "b", "se", "p", "p_ri"]].round(3).to_string(index=False))
+    print(res[["treatment", "outcome", "wave", "b", "se", "p"]].round(3).to_string(index=False))
 
     fig, axes = plt.subplots(1, 3, figsize=(15, max(6.0, 1.15 * len(OUTCOMES) + 1.4)),
                              sharex=True, sharey=True)

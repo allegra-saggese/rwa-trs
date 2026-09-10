@@ -23,6 +23,7 @@ Folders are organised by **task**, not by pipeline stage.
 | `interim-processing/` | Everything this repo produces on the way to an analysis file |
 | `NISR/` | One cleaning pipeline per NISR survey (see below) |
 | `WB-Enterprise-Surveys/` | World Bank Enterprise Survey pipeline, same shape as the NISR ones |
+| `Nighttime-Lights/` | Annual nighttime lights, 2000 onwards, same shape as the NISR ones |
 | `docs/` | Internal documentation — provenance, decisions, audits |
 | `archive/` | Frozen copies of previous runs. Gitignored, never read by any script |
 

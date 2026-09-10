@@ -65,7 +65,8 @@ def prepare():
     z = pd.read_csv(ANALYSIS / "census_sector_controls_2002.csv")
     for c in CTL.CONTROLS:                                   # z-scored: they are only ever controls
         z[c] = (z[c] - z[c].mean()) / z[c].std(ddof=1)
-    p = p.merge(g[["sid", "district"]], on="sid", how="left").merge(z, on="sid", how="left")
+    g = g.assign(park=g.nearest_park.astype(str).str.split().str[0])
+    p = p.merge(g[["sid", "district", "park"]], on="sid", how="left").merge(z, on="sid", how="left")
     return g, T, ctrl, p
 
 
@@ -97,22 +98,37 @@ def candidates(s):
     return (X - X.mean(axis=0)) / X.std(axis=0, ddof=1), names
 
 
-def rlasso(X, y, n_iter=15):
-    """rigorous lasso with the plug-in penalty; returns the indices it keeps"""
+def rlasso(X, y, clusters=None, n_iter=15):
+    """rigorous lasso with CLUSTER-ROBUST plug-in penalty loadings (Belloni, Chernozhukov, Hansen,
+    Kozbur 2016).
+
+    A single homoskedastic error scale is wrong here for two reasons. In the pooled regressions each
+    sector contributes two rows, so treating rows as independent doubles the apparent sample and
+    halves the effective penalty, which shows up directly as over-selection: the pooled specification
+    was picking two to five times as many terms as the single-wave ones. And the residuals are not
+    homoskedastic across sectors anyway. The loading for column j is therefore built from
+    cluster-summed scores, psi_j^2 = (1/n) sum_g ( sum_{i in g} x_ij e_i )^2, and the confidence
+    level uses the number of CLUSTERS rather than the number of rows."""
     n, p = X.shape
-    lam = 2 * 1.1 * np.sqrt(n) * norm.ppf(1 - (0.1 / np.log(max(n, 3))) / (2 * p))
-    sig, sel = y.std(ddof=1), np.array([], dtype=int)
+    gidx, uniq = (pd.factorize(clusters) if clusters is not None
+                  else (np.arange(n), np.arange(n)))
+    G = len(uniq)
+    lam = 2 * 1.1 * np.sqrt(n) * norm.ppf(1 - (0.1 / np.log(max(G, 3))) / (2 * p))
+    e = y - y.mean()
+    sel = np.array([], dtype=int)
     for _ in range(n_iter):
-        m = Lasso(alpha=lam * sig / (2 * n), fit_intercept=False, max_iter=20000, tol=1e-6).fit(X, y)
+        S = np.zeros((G, p))
+        np.add.at(S, gidx, X * e[:, None])                 # score summed within each cluster
+        psi = np.maximum(np.sqrt((S ** 2).sum(axis=0) / n), 1e-10)
+        m = Lasso(alpha=lam / (2 * n), fit_intercept=False, max_iter=20000,
+                  tol=1e-6).fit(X / psi, y)
         new = np.flatnonzero(np.abs(m.coef_) > 1e-10)
         if len(new) > n // 3:                              # runaway guard: keep the sparser set
             break
-        r = y - X @ m.coef_
-        sig_new = np.sqrt((r ** 2).sum() / max(n - len(new), 1))
-        if np.array_equal(new, sel) and abs(sig_new - sig) < 1e-8:
-            sel = new
+        e_new = y - (X / psi) @ m.coef_
+        if np.array_equal(new, sel):
             break
-        sel, sig = new, sig_new
+        sel, e = new, e_new
     return sel
 
 
@@ -124,18 +140,21 @@ def residualise(M, F):
 def select_and_fit(d, waves, fe):
     """post-double selection, then least squares with the union"""
     s = d[d.wave.isin(waves)].reset_index(drop=True)
-    F = np.column_stack([pd.get_dummies(s[fe]).values.astype(float), s.base.values])
+    F = np.column_stack([pd.get_dummies(s[fe]).values.astype(float),
+                         pd.get_dummies(s.park, drop_first=True).values.astype(float),
+                         s.base.values])
     X, names = candidates(s)
     Xr = residualise(X, F)
     Xr = Xr / np.maximum(Xr.std(axis=0, ddof=1), 1e-12)     # unit sd, so the penalty is on scale
     yr = residualise(s.y.values[:, None], F)[:, 0]
     dr = residualise(s.treat.values.astype(float)[:, None], F)[:, 0]
-    union = sorted(set(rlasso(Xr, yr)) | set(rlasso(Xr, dr)))
+    cl = s.sid.values
+    union = sorted(set(rlasso(Xr, yr, cl)) | set(rlasso(Xr, dr, cl)))
     picked = [names[i] for i in union]
     sub = s.copy()
     for k, i in enumerate(union):
         sub[f"z{k}"] = X[:, i]
-    f = f"y ~ treat + base + C({fe})" + "".join(f" + z{k}" for k in range(len(union)))
+    f = f"y ~ treat + base + C(park) + C({fe})" + "".join(f" + z{k}" for k in range(len(union)))
     r = smf.ols(f, data=sub).fit(cov_type="cluster", cov_kwds={"groups": sub.sid})
     b, se = r.params["treat"], r.bse["treat"]
     return ({"b": b, "se": se, "p": r.pvalues["treat"], "lo90": b - 1.645 * se, "hi90": b + 1.645 * se,
@@ -176,10 +195,10 @@ def main():
             d = frame(p, tset, ctrl, o)
             for yr, waves, fe in WAVES:
                 r, s, chosen = select_and_fit(d, waves, fe)
-                r["p_ri"] = randomization_p(s, tset, fe, chosen) if tn == "Gates" else np.nan
+                r["p_ri"] = np.nan
                 rows.append({"treatment": tn, "n_treated": len(tset), "outcome": o, "wave": yr, **r})
     res = pd.DataFrame(rows)
-    res["p_used"] = np.where(res.treatment == "Gates", res.p_ri, res.p)
+    res["p_used"] = res.p
     res.to_csv(ANALYSIS / "reg_housing_lasso.csv", index=False)
     print(res[["treatment", "outcome", "wave", "b", "se", "p", "p_ri", "k_selected"]]
           .round(3).to_string(index=False))

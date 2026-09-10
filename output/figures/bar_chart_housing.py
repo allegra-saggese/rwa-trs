@@ -36,6 +36,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import pyreadstat
+from shapely.geometry import Point
 
 DB = Path("/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS")
 NISR = DB / "data/Publicly-Available-NISR"
@@ -57,7 +58,10 @@ CROSSWALK = {
                      "na": {2002: [9], 2022: [9]}},
     "modern_roof": {"var": "roof_material", 2002: [1, 3, 4], 2012: [1, 3, 5], 2022: [1, 3, 5],
                     "na": {2002: [9], 2022: [9]}},
-    "wall_nonmud": {"var": "wall_material", 2002: [3, 4, 5, 6, 7], 2012: [3, 5, 6, 7, 8],
+    # Named for what it is. Sun-dried adobe IS mud, so the old name "non-mud wall" was wrong: the
+    # line this draws is between a wood frame packed with mud and a wall of formed brick, block or
+    # stone, adobe included.
+    "wall_brick": {"var": "wall_material", 2002: [3, 4, 5, 6, 7], 2012: [3, 5, 6, 7, 8],
                     2022: [3, 4, 6, 7, 8, 9, 10, 11, 12], "na": {2002: [99], 2012: [0], 2022: [99]}},
     "improved_floor": {"var": "floor_material", 2002: [2, 3, 4, 5], 2012: [2, 3, 4, 5], 2022: [3, 4, 5, 6, 7, 8],
                        "na": {2002: [9], 2022: [10]}},
@@ -65,7 +69,9 @@ CROSSWALK = {
                        "na": {2002: [99]}},
     "water_piped": {"var": "water_source", 2002: [1, 2, 3], 2012: [1, 2, 3], 2022: [1, 2, 3, 4],
                     "na": {2002: [99]}},
-    "improved_toilet": {"var": "toilet_facility", 2002: [1, 2], 2012: [1, 2], 2022: [1, 3, 5],
+    # "Private", not "improved": the 2022 codes kept include a pit latrine with no floor slab, which
+    # the JMP would not call improved. What the three waves can agree on is sole household use.
+    "private_toilet": {"var": "toilet_facility", 2002: [1, 2], 2012: [1, 2], 2022: [1, 3, 5],
                         "na": {2002: [9]}},
 }
 
@@ -89,13 +95,20 @@ INDICATORS = list(CROSSWALK) + ["any_durable"]
 #   piped water    out: null everywhere and it only diluted the index.
 #   any durable    out: radio and television ownership falls 65% to 43% between 2012 and 2022 as
 #                  phones displace radios, a measurement break correlated with electrification.
-COMPONENTS = ["modern_roof", "wall_nonmud", "improved_floor", "improved_water", "improved_toilet"]
-NICE = {"durable_roof": "Durable roof", "modern_roof": "Modern roof", "wall_nonmud": "Non-mud wall",
+COMPONENTS = ["modern_roof", "wall_brick", "improved_floor", "improved_water", "private_toilet"]
+NICE = {"durable_roof": "Durable roof", "modern_roof": "Modern roof", "wall_brick": "Brick, block or stone wall",
         "improved_floor": "Improved floor", "improved_water": "Improved water",
-        "water_piped": "Piped water", "improved_toilet": "Private toilet",
+        "water_piped": "Piped water", "private_toilet": "Private toilet",
         "any_durable": "Any durable good", "index": "Housing index"}
 
-GATES = [4307, 3701, 2509, 5407]
+GATES = [4307, 3701, 2509, 5407]   # Kinigi, Bushekeri, Kitabi, Mwiri
+GATE_KM = 5.0                      # how far settled land may sit from an entrance
+GATE_XY = {                        # the entrances themselves, from OpenStreetMap, lon/lat
+    4307: (29.59528, -1.43165),    # Volcanoes National Park Headquarters, Kinigi
+    3701: (29.09228, -2.44059),    # Gisakura Ranger Station, western Nyungwe
+    2509: (29.41697, -2.52640),    # Kitabi visitor centre, eastern Nyungwe
+    5407: (30.68178, -1.89912),    # Akagera South Gate
+}
 KIG_OUTER = ["Gikomero", "Rutunga", "Rusororo", "Masaka", "Mageregere", "Nduba", "Jali",
              "Kanyinya", "Bumbogo", "Ndera", "Jabana"]          # >= 10 km from the Convention Centre
 CITY9 = [2708, 2712, 2409, 2414, 4308, 4302, 3304, 3311, 3312]  # the four largest towns of 2002
@@ -111,13 +124,33 @@ def geography():
         return pk[pk.areaname.astype(str).str.contains(pat, case=False, na=False)].union_all()
     long_standing = block("Volcanoes").union(block("Nyungwe")).union(block("Akagera"))
     bordering = set(g.sid[g.geometry.distance(long_standing) == 0])
-    buf = g.geometry.buffer(10)
-    gates_plus = set()
+
+    # Gates+ (Matteo, 2026-09-08). Two conditions, both on SETTLED land rather than whole polygons.
+    #   contact   the sector's non-park area must touch the gate sector's non-park area. Nyungwe and
+    #             Akagera are large enough that two sectors can share a long boundary lying entirely
+    #             inside the park, with no road and nobody living on it. This drops Bweyeye (87%
+    #             park), Butare (73%), Karengera and Murundi.
+    #   distance  that settled land must also lie within 5 km of the entrance itself. Adjacency alone
+    #             means different things at different parks: Kayonza's sectors average 173 km2
+    #             against 56 to 81 elsewhere, so a neighbour of Mwiri could sit 13 km from the gate.
+    # The pair leaves 12 sectors, three at each of the four gates.
+    allpark = pk[pk.geometry.area > 1e5].union_all()
+    land = g.geometry.difference(allpark)
+    gate_pts = gpd.GeoSeries([Point(*GATE_XY[s]) for s in GATES], crs=4326).to_crs(32736).union_all()
+    contact = set()
     for sid in GATES:
-        gates_plus |= set(g.sid[buf.intersects(buf[g.sid == sid].iloc[0])])
+        contact |= set(g.sid[land.buffer(10).intersects(land[g.sid == sid].iloc[0].buffer(10))])
+    near = {int(r.sid) for r, l in zip(g.itertuples(), land)
+            if not l.is_empty and l.distance(gate_pts) <= GATE_KM * 1000}
+    gates_plus = contact & (near | set(GATES))
+
     kig = g[g.province.str.contains("Kigali", na=False)]
     kig_all, kig_inner = set(kig.sid), set(kig.sid[~kig.sector.isin(KIG_OUTER)])
-    T = {"Bordering": bordering, "Gates": set(GATES), "Gates+": gates_plus}
+    # The four gate sectors alone are not a specification (Matteo, 2026-09-08): four treated units
+    # cannot support inference, and they sit at four different parks, so they are not even one
+    # spatial cluster. They remain the anchor that DEFINES Gates+, but they are not estimated on
+    # their own.
+    T = {"Bordering or Gates+": bordering | gates_plus, "Gates+": gates_plus}
     X = {"Inner Kigali": kig_inner, "Kigali all": kig_all,
          "Inner Kigali + cities": kig_inner | set(CITY9), "Kigali all + cities": kig_all | set(CITY9)}
     never = bordering | gates_plus                    # never in the control pool, whatever the treatment

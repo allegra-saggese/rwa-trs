@@ -1,16 +1,20 @@
 """
-make_maps.py -- the two sector maps for the TRS analysis.
+maps-treat-sectors.py -- the sector maps for the TRS analysis.
 
-    python make_maps.py
+    python maps-treat-sectors.py
 
 Writes to the Dropbox output folder (not to the repository):
     Rwanda - TRS/output/maps/map1_treatment_definitions.pdf
     Rwanda - TRS/output/maps/map2_exclusion_definitions.pdf
+    Rwanda - TRS/output/maps/map3_estimation_samples.pdf
 
 Map 1: the sectors bordering the three long-established national parks, the four park entrances
 that already existed in 2005, and the sectors next to those entrances.
 Map 2: the places set aside from the comparison -- Kigali, the four largest towns of 2002, and
 the neighbours of Gishwati-Mukura, the park created in 2015.
+Map 3: the estimation sample itself, one panel per treatment definition. What the regression
+actually sees: which sectors are treated, which form the comparison group, and which are in
+neither. The control group is the same 322 sectors in all three panels, by design.
 
 Both maps are written for an audience that knows nothing about Rwanda: no internal list numbers,
 no references to project files. The definitions and their justification live in the memo
@@ -19,6 +23,7 @@ TRS-Border-Sectors.md; this script re-derives every set from the geometry so the
 Note on the park layer: it also contains a "Gishwati Forest Reserve" polygon of 223 km2, five times
 the size of the national park. Filtering on designate == National Park is what keeps it out.
 """
+import textwrap
 from pathlib import Path
 
 import geopandas as gpd
@@ -27,6 +32,7 @@ import matplotlib.pyplot as plt
 from adjustText import adjust_text
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
+from shapely.geometry import Point
 
 DB = Path("/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS")
 GEO = DB / "data/geo-data"
@@ -35,10 +41,24 @@ CRS = 32736                                    # UTM 36S, metres
 
 C = {"park": "#2E6B3E", "park_edge": "#1C4527", "border": "#E0A33E", "gate": "#C0392B",
      "gate_fill": "#E8701A", "kig_out": "#B8D4E8", "kig_in": "#2E75A8", "urban": "#8E6BAF",
-     "gish": "#B0672C", "sector_edge": "#C8C8C8", "district_edge": "#8C8C8C", "empty": "#FBFBFB"}
+     "gish": "#B0672C", "sector_edge": "#C8C8C8", "district_edge": "#8C8C8C", "empty": "#FBFBFB",
+     "treated": "#3C9A5F", "control": "#F0C74A", "dropped": "#BFBFBF"}
 
 CITY9 = [2708, 2712, 2409, 2414, 4308, 4302, 3304, 3311, 3312]     # the four largest towns of 2002
 GATES = {4307: "Kinigi", 3701: "Bushekeri", 2509: "Kitabi", 5407: "Mwiri"}
+
+# The entrances themselves, longitude and latitude, from OpenStreetMap. Marking a gate at the
+# sector's representative point put Mwiri 5 km inside Akagera and Kitabi 1.4 km inside Nyungwe,
+# because a representative point only promises to fall somewhere in the polygon and these sectors
+# are mostly park. These are the real features, and each one independently confirms the sector it
+# is supposed to be in.
+GATE_KM = 5.0                  # how far settled land may sit from an entrance, see classify()
+GATE_XY = {
+    4307: (29.59528, -1.43165),    # Volcanoes National Park Headquarters, Kinigi
+    3701: (29.09228, -2.44059),    # Gisakura Ranger Station, the western Nyungwe entrance
+    2509: (29.41697, -2.52640),    # Kitabi visitor centre, the eastern Nyungwe entrance
+    5407: (30.68178, -1.89912),    # Akagera South Gate
+}
 KIG_RURAL = ["Gikomero", "Rutunga", "Rusororo", "Masaka", "Mageregere", "Nduba", "Jali",
              "Kanyinya", "Bumbogo", "Ndera", "Jabana"]      # >= 10 km from the Convention Centre
 STARS_CITY = {"Kigali": 1109, "Gitarama": 2708, "Butare": 2409, "Ruhengeri": 4308, "Gisenyi": 3304}
@@ -58,7 +78,7 @@ def load():
     return sec, dist, pk, parks
 
 
-def classify(sec, parks):
+def classify(sec, parks, pk_all):
     long_standing = parks["Volcanoes"].union(parks["Nyungwe"]).union(parks["Akagera"])
     L = {}
     L["border"] = set(sec.sid[sec.geometry.distance(long_standing) == 0])
@@ -68,11 +88,38 @@ def classify(sec, parks):
     L["kig_core"] = set(kig.sid[~kig.sector.isin(KIG_RURAL)])
     L["towns"] = set(CITY9)
     L["gates"] = set(GATES)
-    buf = sec.geometry.buffer(10)
+    # Neighbours of a gate sector, but the adjacency is measured on SETTLED LAND, not on the whole
+    # polygon (Matteo, 2026-09-08). Nyungwe and Akagera are large enough that two sectors can share
+    # a long boundary lying entirely inside the park, with no road, no settlement and no way for
+    # traffic through the gate to reach either. Clipping each sector to its non-park part before
+    # testing adjacency removes exactly four: Bweyeye (87% park) and Butare (73%) in Rusizi and
+    # Karengera in Nyamasheke, all three meeting their gate inside Nyungwe, and Murundi in Kayonza,
+    # which meets Mwiri across 221 km2 of Akagera. It adds none, taking the set from 25 to 21.
+    # Note it is not a park-share threshold: Kivu stays at 58% park and Bushekeri at 55%, because
+    # their settled land genuinely touches.
+    allpark = pk_all.union_all()
+    land = sec.geometry.difference(allpark)
     nb = set()
     for sid in GATES:
-        nb |= set(sec.sid[buf.intersects(buf[sec.sid == sid].iloc[0])])
-    L["near_gates"] = nb
+        gate_land = land[sec.sid == sid].iloc[0].buffer(10)
+        nb |= set(sec.sid[land.buffer(10).intersects(gate_land)])
+
+    # Second condition: the settled land must also lie within GATE_KM of the entrance itself
+    # (Matteo, 2026-09-08). Adjacency alone means different things at different parks because
+    # sectors are not the same size: Kayonza's average 173 km2 against 56 to 81 at the other three
+    # gates, so a neighbour of Mwiri can sit 13 km from the gate while every neighbour of Kinigi is
+    # within 7. The cap binds only at Akagera, which is its purpose, and it is not knife-edge --
+    # anything from 9 to 11 km gives the same 19 sectors. It drops Mukarange (13.5 km) and
+    # Nyamirama (11.6 km).
+    #
+    # It is a cap ON TOP of adjacency, not a replacement for it. Distance alone would re-admit
+    # exactly what the other rules exclude: Muhoza, which is Musanze town and one of the four 2002
+    # towns held out as urban; Gataraga, a trailhead rather than an entrance; and Butare and
+    # Karengera, which reach their gate only through the park.
+    gate_pts = gpd.GeoSeries([Point(*GATE_XY[g]) for g in GATES], crs=4326).to_crs(CRS).union_all()
+    within = {int(r.sid) for r, l in zip(sec.itertuples(), land)
+              if not l.is_empty and l.distance(gate_pts) <= GATE_KM * 1000}
+    L["near_gates"] = nb & (within | set(GATES))
     return L
 
 
@@ -205,10 +252,82 @@ def map2(sec, dist, pk, parks, L):
     plt.close(fig)
 
 
+NOTE3 = (
+    "One panel per treatment definition, showing the sample each regression actually uses. Treated "
+    "sectors are those the definition selects: sectors sharing a boundary with Volcanoes, Nyungwe or "
+    "Akagera; the four sectors holding a park entrance that already existed in 2005; and the sectors "
+    "adjacent to those four. The comparison group is identical in all three panels by construction -- "
+    "the 322 sectors that neither border a park nor sit next to an entrance, less the City of Kigali "
+    "and the four largest towns of 2002 -- so the three estimates differ only in whom they treat, "
+    "never in whom they are compared against. Grey covers everything in neither group: Kigali and the "
+    "four towns, which are set aside as urban outliers, together with any park-adjacent sector that "
+    "belongs to one of the other two definitions and is therefore withheld from the comparison rather "
+    "than counted in it. That is why the grey ring around the parks is widest in the middle panel, "
+    "where only four sectors are treated but fifty are park-adjacent. Park outlines are drawn in dark "
+    "green, district boundaries in grey, and the four park entrances as red dots, shown in every "
+    "panel so their position can be compared against each definition. Rwanda is divided into 5 "
+    "provinces, 30 districts and 416 sectors."
+)
+
+
+def map3(sec, dist, pk, parks, L):
+    """the estimation sample, one panel per treatment definition"""
+    allpark3 = pk[pk.geometry.area > 1e5].union_all()
+    never = L["border"] | L["near_gates"]                  # never a control, whatever is treated
+    dropped_by_design = L["kig_all"] | L["towns"]
+    control = set(sec.sid) - never - dropped_by_design
+    # Ordered from the widest definition to the narrowest, left to right (Matteo, 2026-09-08).
+    panels = [("Bordering a park or near an entrance", L["border"] | L["near_gates"]),
+              ("Near a park entrance", L["near_gates"]),
+              ("Park entrance sectors", L["gates"])]
+
+    fig, axes = plt.subplots(1, 3, figsize=(19, 8.2))
+    for ax, (title, treated) in zip(axes, panels):
+        excluded = set(sec.sid) - treated - control
+        cls = sec.sid.map(lambda s: "treated" if s in treated
+                          else ("control" if s in control else "dropped"))
+        for key, z in (("dropped", 2), ("control", 3), ("treated", 4)):
+            part = sec[cls == key]
+            if len(part):
+                part.plot(ax=ax, facecolor=C[key], edgecolor=C["sector_edge"],
+                          linewidth=0.12, zorder=z)
+        dist.boundary.plot(ax=ax, color=C["district_edge"], linewidth=0.4, zorder=6)
+        # park outlines only: a filled park would hide the very sectors the panel is about
+        pk.boundary.plot(ax=ax, color=C["park_edge"], linewidth=1.0, zorder=7)
+        # the four park entrances, marked identically in every panel so the eye can compare them
+        gx = gpd.GeoSeries([Point(*GATE_XY[g]) for g in GATES], crs=4326).to_crs(CRS)
+        ax.scatter(gx.x, gx.y, s=46, color=C["gate"],
+                   edgecolor="white", linewidth=0.6, zorder=11)
+        ax.set_title(title, fontsize=11, pad=8)
+        ax.set_axis_off()
+        x0, y0, x1, y1 = sec.total_bounds
+        ax.set_xlim(x0 - 4000, x1 + 4000)
+        ax.set_ylim(y0 - 4000, y1 + 4000)
+        ax.legend(handles=[
+            Patch(facecolor=C["treated"], edgecolor="#2A6E43", label=f"Treated  ({len(treated)})"),
+            Patch(facecolor=C["control"], edgecolor="#C2A03A", label=f"Control  ({len(control)})"),
+            Patch(facecolor=C["dropped"], edgecolor="#9A9A9A", label=f"Excluded  ({len(excluded)})"),
+            Line2D([], [], marker="o", linestyle="none", markersize=7, color=C["gate"],
+                   markeredgecolor="white", label="Park entrance  (4)")],
+            loc="upper left", frameon=True, fontsize=8.5, framealpha=1.0, borderpad=0.7,
+            labelspacing=0.6)
+    fig.subplots_adjust(left=0.004, right=0.996, top=0.94, bottom=0.13, wspace=0.02)
+    fig.text(0.006, 0.012, "\n".join(textwrap.wrap(NOTE3, 200)), fontsize=6.6, va="bottom",
+             ha="left", color="#333333", linespacing=1.7)
+    fig.savefig(OUT / "map3_estimation_samples.pdf", bbox_inches="tight")
+    plt.close(fig)
+
+
+def gate_point(sec, park, sid):
+    """the entrance itself, from GATE_XY, reprojected to the map's CRS"""
+    return gpd.GeoSeries([Point(*GATE_XY[sid])], crs=4326).to_crs(CRS).iloc[0]
+
+
 if __name__ == "__main__":
     sec, dist, pk, parks = load()
-    L = classify(sec, parks)
+    L = classify(sec, parks, pk[pk.geometry.area > 1e5])
     print({k: len(v) for k, v in sorted(L.items())})
     map1(sec, dist, pk, parks, L)
     map2(sec, dist, pk, parks, L)
+    map3(sec, dist, pk, parks, L)
     print("written to", OUT)

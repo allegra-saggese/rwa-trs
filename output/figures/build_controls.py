@@ -23,7 +23,13 @@ which starts in 2005. Two blocks are deliberately absent:
                                  cover, forest loss years, settlement extents, tourism points of
                                  interest. All of them could be consequences of the treatment.
 
-Three coding traps in the 2002 census, all handled below:
+"Not stated" is a numeric code in every block of this file, and it is never the same number: 9, 99,
+999, 9999 depending on the item, and on parents_survival it is 9 with an unlabelled 5 beside it.
+Counted as a real answer it silently biases every share -- 9999 alone inflated the share born abroad
+by a tenth and the share previously resident abroad by a third. Every crosswalk below therefore names
+its own not-stated codes explicitly, and they become missing rather than a No.
+
+Three further traps in the 2002 census, all handled below:
   "Not stated" is a code, not a blank: 9 or 99 depending on the item, and counting it as a No would
   quietly bias every share. The births in the last twelve months use 9 for not stated where the real
   maximum is 3, which inflates fertility fivefold if it is missed.
@@ -44,6 +50,7 @@ import numpy as np
 import pandas as pd
 import pyreadstat
 import rasterio
+from affine import Affine
 from rasterio.features import rasterize
 from rasterio.transform import from_origin
 from shapely.geometry import LineString
@@ -203,6 +210,74 @@ def distances():
     return d
 
 
+# ------------------------------------------------------------------ shape, borders, towns
+CITY9 = [2708, 2712, 2409, 2414, 4308, 4302, 3304, 3311, 3312]   # the four largest towns of 2002
+
+
+def shape_and_access():
+    """size, compactness, and distance to the national border and to the 2002 towns"""
+    g = sectors().to_crs(32736)
+    cen = g.geometry.centroid
+    border = g.geometry.union_all().boundary
+    towns = g[g.sid.isin(CITY9)].geometry.union_all()
+    return pd.DataFrame({
+        "sid": g.sid.values,
+        "log_area": np.log(g.geometry.area.values / 1e6),
+        "compactness": 4 * np.pi * g.geometry.area.values / g.geometry.length.values ** 2,
+        "log_dist_border": np.log1p(cen.distance(border).values / 1000),
+        "log_dist_town": np.log1p(cen.distance(towns).values / 1000),
+    })
+
+
+# ------------------------------------------------------------------ climate
+def climate():
+    """rainfall climatology 1981-2002 from CHIRPS, per sector
+
+    CHIRPS is 0.05 degrees, about 30 km2, so a sector of 58 km2 covers only a couple of pixels and
+    the smallest cover less than one. The same sub-pixel assignment used for terrain therefore
+    applies here, and rainfall varies smoothly enough that this is not a strong assumption.
+
+    Four measures, all pre-treatment: the long-run level, how variable it is year to year, how much
+    of the year is dry, and how often a year fails outright."""
+    out = GEO / "raster/sector_rainfall.csv"
+    if out.exists():
+        return pd.read_csv(out)
+    stack_p = GEO / "raster/chirps_monthly_1981_2002_rwanda.tif"
+    bands = pd.read_csv(GEO / "raster/chirps_monthly_1981_2002_bands.csv")
+    g = sectors()
+    with rasterio.open(stack_p) as src:
+        a = src.read().astype("float64")                      # months x rows x cols
+        gm = g.to_crs(src.crs)
+        s = 8                                                 # coarse pixels: supersample harder
+        fine = src.transform * Affine.scale(1 / s, 1 / s)
+        lab = rasterize([(geom, i + 1) for i, geom in enumerate(gm.geometry)],
+                        out_shape=(src.height * s, src.width * s), transform=fine,
+                        fill=0, dtype="int32")
+    k = len(g)
+    flat = lab.ravel()
+    keep = flat > 0
+    idx = flat[keep]
+    n = np.bincount(idx, minlength=k + 1)[1:]
+    monthly = np.empty((a.shape[0], k))
+    for i in range(a.shape[0]):
+        v = np.repeat(np.repeat(a[i], s, axis=0), s, axis=1).ravel()[keep]
+        v = np.nan_to_num(v)
+        monthly[i] = np.bincount(idx, weights=v, minlength=k + 1)[1:] / np.maximum(n, 1)
+    yr = bands.year.values
+    annual = np.vstack([monthly[yr == y].sum(axis=0) for y in sorted(set(yr))])   # years x sectors
+    mean = annual.mean(axis=0)
+    r = pd.DataFrame({
+        "sid": g.sid.values,
+        "rain_mean": mean,
+        "rain_cv": annual.std(axis=0, ddof=1) / mean,
+        "dry_months": (monthly < 50).reshape(-1, 12, k).sum(axis=1).mean(axis=0),
+        "drought_freq": (annual < 0.8 * mean).mean(axis=0),
+    })
+    r.to_csv(out, index=False)
+    print("  rainfall ->", out.name)
+    return r
+
+
 # ------------------------------------------------------------------ census, household file
 def household_block():
     h, _ = pyreadstat.read_dta(CENSUS / "Census_pooled_household.dta", usecols=[
@@ -210,7 +285,9 @@ def household_block():
         "census_head_sex", "census_head_age", "census_urban", "census_lighting_source_2002",
         "census_cooking_energy_2002", "census_tenure_2002", "census_settlement_2002_2012",
         "census_dwelling_type_2002_2012", "census_living_rooms_2002", "census_radio_television_2002",
-        "census_telephone_2002", "census_bicycles_2002", "census_death_last_12m_2002"])
+        "census_telephone_2002", "census_bicycles_2002",
+        "census_recap_residents_total", "census_recap_residents_absent",
+        "census_recap_visitors_total", "census_recap_male_total", "census_recap_female_total"])
     h = h[h.census_wave.astype(str) == "2002"].rename(columns=lambda c: c.replace("census_", ""))
     h["w"] = h.household_weight.fillna(1.0)
     h["female_head"] = (h.head_sex == 2).astype(float)
@@ -224,13 +301,34 @@ def household_block():
     h["rooms02"] = lr.where(lr < 90)                          # 99 is not stated
     h["radiotv02"] = share(h.radio_television_2002, [1, 2, 3], [9])
     h["phone02"] = share(h.telephone_2002, [1, 2, 3], [9])
-    h["bicycle02"] = (pd.to_numeric(h.bicycles_2002, errors="coerce") > 0).astype(float)
-    h["death02"] = share(h.death_last_12m_2002, [1], [9])
+    bic = pd.to_numeric(h.bicycles_2002, errors="coerce")          # 99 is "Not stated", not 99 bikes
+    h["bicycle02"] = np.where(bic.isna() | bic.eq(99), np.nan, (bic > 0).astype(float))
     h["hh_size"] = h.household_size
     h["head_age"] = h.head_age
+    # The 2002 recap block counts residents present, residents absent and visitors separately. Absent
+    # members are the census's only direct sight of labour mobility, and visitors of who was passing
+    # through on census night; neither is recoverable from the person roster alone.
+    num = lambda c: pd.to_numeric(h[c], errors="coerce")
+    tot, absent = num("recap_residents_total"), num("recap_residents_absent")
+    vis = num("recap_visitors_total")
+    male, female = num("recap_male_total"), num("recap_female_total")
+    # These three are sector RATES, so they are ratios of weighted sums, not averages of household
+    # ratios: averaging a per-household ratio is a different quantity, and dropping the households
+    # with no women would push the sex ratio above one in a country that was female-skewed in 2002.
+    for c, v in (("_absent", absent), ("_residents", tot), ("_visitors", vis),
+                 ("_male", male), ("_female", female)):
+        h[c] = v
     cols = ["hh_size", "female_head", "head_age", "urban02", "electric02", "firewood02", "owner02",
-            "planned02", "onehh_house02", "rooms02", "radiotv02", "phone02", "bicycle02", "death02"]
-    return h.groupby("sector").apply(lambda g: pd.Series({c: wmean(g[c], g.w) for c in cols}))
+            "planned02", "onehh_house02", "rooms02", "radiotv02", "phone02", "bicycle02"]
+    def agg(g):
+        r = {c: wmean(g[c], g.w) for c in cols}
+        res, vis_, m, f = (wsum(g._residents, g.w), wsum(g._visitors, g.w),
+                           wsum(g._male, g.w), wsum(g._female, g.w))
+        r["absent_share"] = wsum(g._absent, g.w) / res if res > 0 else np.nan
+        r["visitor_share"] = vis_ / (res + vis_) if (res + vis_) > 0 else np.nan
+        r["sex_ratio"] = m / f if f > 0 else np.nan
+        return pd.Series(r)
+    return h.groupby("sector").apply(agg)
 
 
 # ------------------------------------------------------------------ census, person file
@@ -242,14 +340,11 @@ SWAHILI = [4, 5, 6, 7, 12, 13, 14, 15, 20, 21, 22, 23, 28, 29, 30, 31]
 def person_block():
     p, _ = pyreadstat.read_dta(CENSUS / "Census_pooled_person.dta", usecols=[
         "census_wave", "census_sector", "census_weight", "census_sex", "census_age",
-        "census_marital_grouped_2002", "census_handicap_type_2002", "census_handicap_cause_2002",
+        "census_marital_grouped_2002", "census_marital_status_2002", "census_handicap_type_2002", "census_handicap_cause_2002",
         "census_residence_duration_2002", "census_birth_place_2002", "census_previous_residence_2002",
         "census_parents_survival_2002", "census_languages_spoken_2002", "census_nationality_2002",
         "census_religion_2002", "census_relation_head_2002_2012",
-        "census_births_boys_2002", "census_births_girls_2002",
-        "census_children_alive_boys_2002", "census_children_alive_girls_2002",
-        "census_births_12m_boys_2002", "census_births_12m_girls_2002",
-        "census_surviving_12m_boys_2002", "census_surviving_12m_girls_2002"])
+        "census_sex", "census_age"])
     p = p[p.census_wave.astype(str) == "2002"].rename(
         columns=lambda c: c.replace("census_", "").replace("_2002_2012", "").replace("_2002", ""))
     p["w"] = p.weight.fillna(1.0)
@@ -261,52 +356,39 @@ def person_block():
     p["widowed"] = share(p.marital_grouped, [9], [99])
     p["never_married"] = share(p.marital_grouped, [1], [99])
     p["divorced"] = share(p.marital_grouped, [8], [99])
+    # The ungrouped item separates the union types the grouped one collapses. "Married" itself is
+    # near-collinear with never-married, divorced and widowed together, so only these two go in.
+    p["cohabiting"] = share(p.marital_status, [2], [99])
+    p["polygamous"] = share(p.marital_status, [4, 5, 6, 7], [99])
     p["handicap"] = share(p.handicap_type, [2, 3, 4, 5, 6, 7, 8], [9])       # 1 is no handicap
     p["war_disab"] = num("handicap_cause").isin([4, 5, 6]).astype(float)     # war, genocide, mines
     rd = num("residence_duration")
-    p["newcomer5"] = np.where(rd.isna(), np.nan, rd.between(0, 4).astype(float))  # 98, 99 long-term
-    p["foreign_born"] = share(p.birth_place, list(range(2000, 10000)))
-    p["prev_abroad"] = share(p.previous_residence, list(range(2000, 10000)))
-    p["orphan_double"] = share(p.parents_survival, [4])
-    p["orphan_any"] = share(p.parents_survival, [2, 3, 4])
-    p["english"] = share(p.languages_spoken, ENGLISH)
-    p["french"] = share(p.languages_spoken, FRENCH)
-    p["swahili"] = share(p.languages_spoken, SWAHILI)
-    p["nonrwandan"] = np.where(num("nationality").isna(), np.nan,
-                               num("nationality").ne(100).astype(float))
-    p["catholic"] = share(p.religion, [1])
-    p["protestant"] = share(p.religion, [2])
-    p["muslim"] = share(p.religion, [6])
-    p["extended"] = share(p.relation_head, [7, 8])                # grandchild, other relative
-    p["nonrelative"] = share(p.relation_head, [9])
+    # 98 is "Not stated" and 99 is "Toujours", always resident. Only the second is a long-term
+    # resident; treating both that way silently made 11,128 not-stated records into non-migrants.
+    p["newcomer5"] = np.where(rd.isna() | rd.eq(98), np.nan, rd.between(0, 4).astype(float))
+    p["foreign_born"] = share(p.birth_place, list(range(2000, 9999)), [9999])
+    p["prev_abroad"] = share(p.previous_residence, list(range(2000, 9999)), [9999])
+    p["orphan_double"] = share(p.parents_survival, [4], [5, 9])       # 5 and 9 carry no label
+    p["orphan_any"] = share(p.parents_survival, [2, 3, 4], [5, 9])
+    p["english"] = share(p.languages_spoken, ENGLISH, [99])
+    p["french"] = share(p.languages_spoken, FRENCH, [99])
+    p["swahili"] = share(p.languages_spoken, SWAHILI, [99])
+    nat = num("nationality")
+    p["nonrwandan"] = np.where(nat.isna() | nat.eq(999), np.nan, nat.ne(100).astype(float))
+    p["catholic"] = share(p.religion, [1], [99])
+    p["protestant"] = share(p.religion, [2], [99])
+    p["muslim"] = share(p.religion, [6], [99])
+    p["extended"] = share(p.relation_head, [7, 8], [99])          # grandchild, other relative
+    p["nonrelative"] = share(p.relation_head, [9], [99])
     p["child_head"] = np.where(num("relation_head").eq(1), (age < 18).astype(float), np.nan)
-
-    cap = lambda c: num(c).where(lambda x: x < 30)                # 99 is not stated
-    cap12 = lambda c: num(c).where(lambda x: x < 9)               # 9 is not stated, real maximum 3
-    births = cap("births_boys").fillna(0) + cap("births_girls").fillna(0)
-    alive = cap("children_alive_boys").fillna(0) + cap("children_alive_girls").fillna(0)
-    had = (cap("births_boys").notna() | cap("births_girls").notna()) & (births > 0)
-    p["_births"], p["_alive"] = births.where(had), alive.where(had)
-    w49 = (num("sex") == 2) & age.between(15, 49)
-    p["_b12"] = (cap12("births_12m_boys").fillna(0) + cap12("births_12m_girls").fillna(0)).where(w49)
-    p["_s12"] = (cap12("surviving_12m_boys").fillna(0) + cap12("surviving_12m_girls").fillna(0)).where(w49)
-    p["_w49"] = w49.astype(float)
-    asked = cap("births_boys").notna() | cap("births_girls").notna()
-    p["_ceb"] = births.where(w49 & asked)      # children ever born per woman 15-49, zero parity in
 
     simple = ["share_u15", "share_65p", "widowed", "never_married", "divorced", "handicap",
               "war_disab", "newcomer5", "foreign_born", "prev_abroad", "orphan_double", "orphan_any",
               "english", "french", "swahili", "nonrwandan", "catholic", "protestant", "muslim",
-              "extended", "nonrelative", "child_head"]
+              "extended", "nonrelative", "child_head", "cohabiting", "polygamous"]
 
     def agg(g):
         r = {c: wmean(g[c], g.w) for c in simple}
-        b, a = wsum(g._births, g.w), wsum(g._alive, g.w)
-        r["child_mort"] = (b - a) / b if b > 0 else np.nan
-        b12, s12, n49 = wsum(g._b12, g.w), wsum(g._s12, g.w), wsum(g._w49, g.w)
-        r["fert_12m"] = b12 / n49 if n49 > 0 else np.nan
-        r["infant_mort"] = (b12 - s12) / b12 if b12 > 0 else np.nan
-        r["fertility02"] = wmean(g._ceb, g.w)
         r["log_pop"] = np.log(g.w.sum())
         return pd.Series(r)
 
@@ -318,26 +400,35 @@ BLOCKS = {
     "household composition": ["hh_size", "female_head", "head_age", "share_u15", "share_65p",
                               "extended", "nonrelative", "child_head", "never_married", "divorced"],
     "war and genocide legacy": ["widowed", "handicap", "war_disab", "orphan_double", "orphan_any"],
-    "resettlement": ["newcomer5", "foreign_born", "prev_abroad", "nonrwandan",
-                     "english", "french", "swahili"],
-    "health and fertility": ["child_mort", "fert_12m", "infant_mort", "fertility02", "death02"],
+    "resettlement and origin": ["newcomer5", "foreign_born", "prev_abroad", "nonrwandan",
+                                "english", "french", "swahili"],
+    "mobility and residence": ["absent_share", "visitor_share", "sex_ratio"],
+    "marriage": ["cohabiting", "polygamous"],
     "religion": ["catholic", "protestant", "muslim"],
     "settlement and structure": ["urban02", "log_pop", "planned02", "onehh_house02", "owner02"],
     "baseline amenities and assets": ["electric02", "firewood02", "rooms02", "radiotv02", "phone02",
                                       "bicycle02"],
-    "terrain and access": ["elev_mean", "elev_sd", "slope_mean", "log_dist_road", "log_dist_kigali"],
+    # log_dist_road is deliberately absent. The only road layer available is present-day OSM, and its
+    # geometry cannot be shown to predate 2005 for either trunk or primary classes, so it fails the
+    # rule every other control here obeys. Distance to Kigali, to the 2002 towns and to the national
+    # border are all fixed geography and stay.
+    "terrain and access": ["elev_mean", "elev_sd", "slope_mean", "log_dist_kigali",
+                           "log_area", "compactness", "log_dist_border", "log_dist_town"],
+    "climate": ["rain_mean", "rain_cv", "dry_months", "drought_freq"],
 }
 CONTROLS = [c for cols in BLOCKS.values() for c in cols]
 
 
 def build():
-    print("terrain and distances")
+    print("terrain, distances, shape and climate")
     t, d = terrain(), distances()
+    sa, cl = shape_and_access(), climate()
     print("census 2002")
     X = household_block().join(person_block())
     X.index = X.index.astype(int)
     X.index.name = "sid"
-    X = X.reset_index().merge(t, on="sid", how="left").merge(d, on="sid", how="left")
+    X = (X.reset_index().merge(t, on="sid", how="left").merge(d, on="sid", how="left")
+           .merge(sa, on="sid", how="left").merge(cl, on="sid", how="left"))
     missing = [c for c in CONTROLS if c not in X.columns]
     if missing:
         raise RuntimeError(f"not built: {missing}")
