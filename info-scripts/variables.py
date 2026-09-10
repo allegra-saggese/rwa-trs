@@ -394,6 +394,199 @@ def export_markdown(dest: Path | None = None) -> Path:
     return dest
 
 
+# --------------------------------------------------------------------------
+# Definitions pulled from the .dta metadata
+#
+# The dictionary CSV gives a one-line label and nothing else. The .dta files
+# carry the response categories, which is what you actually need to write a
+# recode or read a coefficient. This resolves every code in WORKSTREAMS to its
+# harmonised column and reads both.
+# --------------------------------------------------------------------------
+
+# Raw EICV7 module files, used only for the variables the harmonised person and
+# household files do not carry (the VUP modules are separate units and are not
+# merged into either).
+RAW_MODULES = {
+    "poverty": "EICV7_CS_cs_eicv7_poverty_file.dta",
+    "person": "EICV7_CS_cs_s0_s1_s2_s3_s4_s6a_s6b_s6c_person.dta",
+    "household": "EICV7_CS_cs_s01_s5_s7_household.dta",
+    "services": "EICV7_CS_cs_s5f_access_to_services.dta",
+    "vup_direct_support": "EICV7_CS_cs_s9d1_direct_support.dta",
+    "vup_classic_public_work": "EICV7_CS_cs_s9d2_classic_public_work.dta",
+    "vup_expanded_public_work": "EICV7_CS_cs_s9d3_expanded_public_work.dta",
+    "vup_nsds": "EICV7_CS_cs_s9d4_nsds.dta",
+    "vup_financial_services": "EICV7_CS_cs_s9d5_financial_services.dta",
+}
+
+NAME_MAP = ("NISR/Household-Living-Conditions-EICV/variable_names.csv")
+
+
+def _paths():
+    sys.path.insert(0, str(ROOT))
+    import paths as P
+    return P
+
+
+# NISR .dta files mix encodings: EICV and Census carry latin-1 accented value
+# labels that fail a strict utf-8 read. Same fallback chain as inventory.py.
+ENCODINGS = (None, "latin1", "cp1252")
+
+
+def _read_meta(fp):
+    """Metadata for a .dta, trying each encoding. Returns None if all fail."""
+    import pyreadstat
+    for enc in ENCODINGS:
+        try:
+            kwargs = {"metadataonly": True}
+            if enc:
+                kwargs["encoding"] = enc
+            _d, m = pyreadstat.read_dta(str(fp), **kwargs)
+            return m
+        except Exception:  # noqa: BLE001 - trying the next encoding is the point
+            continue
+    print(f"! could not read {Path(fp).name} in any of {ENCODINGS}")
+    return None
+
+
+def _harmonised_meta(P):
+    """Variable and value labels from the harmonised EICV files.
+
+    4_Harmonized is the dataset of record, so it is read first and the raw
+    modules are only consulted for what it does not carry.
+    """
+    labels, values = {}, {}
+    for unit in ("person", "household"):
+        fp = P.NISR / f"Household-Living-Conditions-EICV/4_Harmonized/H_EICV_{unit}.dta"
+        if not fp.exists():
+            continue
+        m = _read_meta(fp)
+        if m is None:
+            continue
+        labels.update(dict(zip(m.column_names, m.column_labels)))
+        values.update(m.variable_value_labels)
+    return labels, values
+
+
+def _raw_meta(P, unit: str):
+    """Variable and value labels from one raw EICV7 module, keyed by native code."""
+    fname = RAW_MODULES.get(unit)
+    if not fname:
+        return {}, {}
+    hits = list((P.NISR / "Household-Living-Conditions-EICV/1_Raw").rglob(fname))
+    if not hits:
+        return {}, {}
+    m = _read_meta(hits[0])
+    if m is None:
+        return {}, {}
+    low = {c.lower(): c for c in m.column_names}
+    labels = {k: lab for k, lab in
+              zip([c.lower() for c in m.column_names], m.column_labels)}
+    values = {c.lower(): m.variable_value_labels[orig]
+              for c, orig in low.items() if orig in m.variable_value_labels}
+    return labels, values
+
+
+def definitions() -> "pd.DataFrame":  # noqa: F821
+    """One row per variable in WORKSTREAMS, with its label and response categories.
+
+    Resolution order for each EICV7 code:
+
+    1. the EICV pipeline's `variable_names.csv` maps the native code to the
+       clean name used in 4_Harmonized;
+    2. the harmonised .dta supplies the label and value labels;
+    3. anything the harmonised files do not carry (the VUP modules are separate
+       units) falls back to the raw EICV7 module, marked `source=raw`.
+    """
+    import pandas as pd
+    import pyreadstat  # noqa: F401  - fail early with a clear error if missing
+
+    P = _paths()
+    nm = pd.read_csv(ROOT / NAME_MAP)
+    e7 = nm[nm.wave.astype(str).str.contains("EICV7", na=False)].copy()
+    e7["nat"] = e7.native.astype(str).str.lower()
+    lut = e7.drop_duplicates("nat").set_index("nat")
+
+    h_lab, h_val = _harmonised_meta(P)
+    raw_cache: dict[str, tuple] = {}
+    dict_lab = {}
+    if DICTIONARY.exists():
+        d = pd.read_csv(DICTIONARY)
+        dict_lab = dict(zip(d.variable.astype(str).str.lower(), d.label))
+
+    rows = []
+    for ws, spec in WORKSTREAMS.items():
+        for name, (unit, code) in spec["variables"].items():
+            key = str(code).lower()
+            clean = lut.loc[key, "clean_name"] if key in lut.index else None
+            label = values = None
+            source = "unresolved"
+
+            if clean and clean in h_lab:
+                label, values, source = h_lab.get(clean), h_val.get(clean), "harmonised"
+            else:
+                if unit not in raw_cache:
+                    raw_cache[unit] = _raw_meta(P, unit)
+                r_lab, r_val = raw_cache[unit]
+                if key in r_lab:
+                    label, values, source = r_lab.get(key), r_val.get(key), "raw"
+
+            if not label:
+                label, source = dict_lab.get(key), (
+                    "dictionary" if dict_lab.get(key) else "unresolved")
+
+            rows.append(dict(
+                workstream=ws, name=name, unit=unit, eicv7_code=code,
+                harmonised_name=clean, label=label, source=source,
+                n_categories=len(values) if values else 0,
+                categories="; ".join(f"{k}={v}" for k, v in list(values.items())[:40])
+                if values else ""))
+    return pd.DataFrame(rows)
+
+
+def export_definitions(dest: Path | None = None) -> Path:
+    """Write docs/variable_definitions.md and the matching CSV."""
+    import pandas as pd  # noqa: F401
+    d = definitions()
+    dest = dest or (ROOT / "docs" / "variable_definitions.md")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    d.to_csv(dest.with_suffix(".csv"), index=False)
+
+    src = d.source.value_counts().to_dict()
+    out = [
+        "# EICV7 variable definitions",
+        "",
+        "Generated by `python info-scripts/variables.py --definitions`. "
+        "Do not hand-edit.",
+        "",
+        "Labels and response categories are read from the .dta metadata, not "
+        "from the dictionary CSV, which carries a label and nothing else. "
+        "`4_Harmonized` is read first; the VUP modules are separate units that "
+        "the harmonised person and household files do not carry, so those fall "
+        "back to the raw EICV7 module and are marked `raw`.",
+        "",
+        f"**{len(d)} variables** — "
+        + ", ".join(f"{k}: {v}" for k, v in sorted(src.items())),
+        "",
+    ]
+    for ws in d.workstream.unique():
+        sub = d[d.workstream == ws]
+        out += [f"## {ws} ({len(sub)})", ""]
+        for r in sub.itertuples():
+            out.append(f"### `{r.name}` — {r.eicv7_code}")
+            out.append("")
+            out.append(f"- **Label:** {r.label or '_not found_'}")
+            out.append(f"- **Unit:** {r.unit}   **Source:** {r.source}"
+                       + (f"   **Harmonised as:** `{r.harmonised_name}`"
+                          if r.harmonised_name else ""))
+            if r.categories:
+                out.append(f"- **Categories ({r.n_categories}):** {r.categories}")
+            out.append("")
+    dest.write_text("\n".join(out))
+    print(f"-> {dest}")
+    print(f"-> {dest.with_suffix('.csv')}")
+    return dest
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -401,9 +594,11 @@ def main(argv=None) -> int:
     p.add_argument("--list", dest="which", nargs="?", const="all",
                    choices=["all", *WORKSTREAMS], help="print a workstream")
     p.add_argument("--export", action="store_true", help="write docs/variable_lists.md")
+    p.add_argument("--definitions", action="store_true",
+                   help="write docs/variable_definitions.md from the .dta metadata")
     args = p.parse_args(argv)
 
-    if not (args.check or args.which or args.export):
+    if not (args.check or args.which or args.export or args.definitions):
         p.print_help()
         return 1
     if args.check:
@@ -412,6 +607,8 @@ def main(argv=None) -> int:
         show(args.which)
     if args.export:
         print(f"-> {export_markdown()}")
+    if args.definitions:
+        export_definitions()
     return 0
 
 
