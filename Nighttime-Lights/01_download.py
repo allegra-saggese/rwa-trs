@@ -116,8 +116,13 @@ if __name__ == "__main__":
     man = H.RAW / "source_manifest.csv"
     old = pd.read_csv(man) if man.exists() else pd.DataFrame()
     new = pd.concat([run(p, force) for p in products], ignore_index=True)
+    # A year skipped because its clip exists comes back with an empty checksum. It must not replace
+    # the row written when that year was actually downloaded, or every re-run erases the sha256 of
+    # every source it did not re-fetch. Only fresh downloads overwrite; a skip fills a gap only.
+    key = lambda df: df.set_index(["product", "year"]).index
+    fresh = new[new.note != "skipped, clip present"]
     if len(old):
-        old = old[~old.set_index(["product", "year"]).index.isin(
-            new.set_index(["product", "year"]).index)]
+        old = old[~key(old).isin(key(fresh))]
+        new = pd.concat([fresh, new[(new.note == "skipped, clip present") & ~key(new).isin(key(old))]])
     pd.concat([old, new], ignore_index=True).sort_values(["product", "year"]).to_csv(man, index=False)
     print("\nmanifest ->", man)

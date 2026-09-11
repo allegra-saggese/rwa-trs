@@ -100,7 +100,7 @@ PRODUCTS = {
         "short": "Li harmonised DN", "layers": {"main"},
         "citation": ("Li, X., Zhou, Y., Zhao, M. and Zhao, X. (2020). A harmonized global nighttime "
                      "light dataset 1992-2018. Scientific Data 7:168."),
-        "doi": "10.6084/m9.figshare.9828827",
+        "doi": "10.6084/m9.figshare.9828827", "figshare_article": 9828827,
     },
     "chen": {
         "kind": "bridge", "cadence": "annual", "unit": "nW/cm2/sr",
@@ -168,6 +168,11 @@ CLIP_PATTERNS = [
     (re.compile(r"^ntl_(viirs)_(\w+?)_(\d{4})_rwanda\.tif$"), ("product", "layer", "period")),
     (re.compile(r"^ntl_(li|chen)_(\d{4})_rwanda\.tif$"), ("product", "period")),
 ]
+
+
+def clip_path(product, year):
+    """where 01_download.py writes a bridge product's Rwanda cut-out; matches CLIP_PATTERNS above"""
+    return CLIPS / f"ntl_{product}_{year}_rwanda.tif"
 
 
 def clips():

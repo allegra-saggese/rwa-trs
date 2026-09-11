@@ -155,7 +155,11 @@ def run_plain(product, spec):
     process. NTL_SHARD=i/n takes every n-th file so several workers can run at once on disjoint
     sets; without it a single worker takes the lot. Workers never touch the same output.
     """
-    src_dir = H.RAW / spec["dir"]
+    # NTL_SRC overrides the source directory. A global that has just been downloaded is still on
+    # local disk; once it is filed into Dropbox, reading it back costs a file-provider
+    # materialisation, which measured about two orders of magnitude slower. Clipping straight from
+    # the download directory and filing afterwards avoids that round trip entirely.
+    src_dir = Path(os.environ["NTL_SRC"]) if os.environ.get("NTL_SRC") else H.RAW / spec["dir"]
     files = sorted(src_dir.rglob("*.tif"))
     # NTL_LAYER restricts the run to one layer. avg_vis is the outcome and cf_cvg is only a
     # quality control, so when the source files are slow to read the outcome is cut first and the
