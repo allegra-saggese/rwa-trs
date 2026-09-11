@@ -63,7 +63,7 @@ SUPERSAMPLE = 4                                   # sub-pixels per pixel side, f
 
 # What counts as lit. DMSP digital numbers are integers, so anything above zero is a detection.
 # VIIRS radiance has a noise floor: below it a dark rural scene is indistinguishable from background.
-FLOORS = {"dmsp": 0.0, "viirs": 0.5, "viirs_m": 0.5, "li": 0.0, "chen": 0.5}
+FLOORS = {"dmsp": 0.0, "dmsp_m": 0.0, "viirs": 0.5, "viirs_m": 0.5, "li": 0.0, "chen": 0.5}
 
 PRODUCTS = {
     "dmsp": {
@@ -79,6 +79,15 @@ PRODUCTS = {
         "citation": ("Elvidge, C., Zhizhin, M., Ghosh, T., Hsu, F.-C., Taneja, J. (2021). Annual "
                      "time series of global VIIRS nighttime lights. Remote Sensing 13(5):922."),
         "doi": "https://eogdata.mines.edu/products/vnl/",
+    },
+    # The satellite stays in the key: in an overlap month two satellites observe the same ground,
+    # and that comparison is exactly what the per-satellite intercalibration is fitted on.
+    "dmsp_m": {
+        "kind": "raw", "cadence": "monthly", "unit": "digital number, 0-63",
+        "short": "DMSP monthly DN", "layers": {"avgvis", "cfcvg"},
+        "citation": ("Elvidge, C. et al. DMSP-OLS monthly cloud-free composites. "
+                     "Earth Observation Group, Payne Institute, Colorado School of Mines."),
+        "doi": "https://eogdata.mines.edu/products/dmsp/",
     },
     "viirs_m": {
         "kind": "raw", "cadence": "monthly", "unit": "nW/cm2/sr",
@@ -152,6 +161,8 @@ DERIVED_LONG = {
 
 # Clip filenames. Bridge products carry only a year; raw DMSP also a satellite; monthly a year-month.
 CLIP_PATTERNS = [
+    # dmsp_m first: "dmsp" would otherwise have to be ruled out by the 4-digit period alone.
+    (re.compile(r"^ntl_(dmsp_m)_(\w+?)_(F\d{2})_(\d{6})_rwanda\.tif$"), ("product", "layer", "sat", "period")),
     (re.compile(r"^ntl_(dmsp)_(\w+?)_(F\d{2})_(\d{4})_rwanda\.tif$"), ("product", "layer", "sat", "period")),
     (re.compile(r"^ntl_(viirs_m)_(\w+?)_(\d{6})_rwanda\.tif$"), ("product", "layer", "period")),
     (re.compile(r"^ntl_(viirs)_(\w+?)_(\d{4})_rwanda\.tif$"), ("product", "layer", "period")),

@@ -55,7 +55,7 @@ KEYS = {
 SHORT_LAYER = {"stable": "stable lights", "intercal": "intercalibrated", "avgvis": "uncensored",
                "cfcvg": "cloud-free nights", "avg": "mean radiance", "med": "median radiance",
                "lit": "lit mask", "main": ""}
-SHORT_PROD = {"dmsp": "DMSP", "viirs": "VIIRS", "viirs_m": "VIIRS monthly",
+SHORT_PROD = {"dmsp": "DMSP", "dmsp_m": "DMSP monthly", "viirs": "VIIRS", "viirs_m": "VIIRS monthly",
               "li": "Li harmonised", "chen": "Chen VIIRS-like"}
 STAT_DESC = {"mean": "area-weighted mean", "sum": "area-weighted total",
              "max": "brightest pixel", "lit_share": "lit share of area",
@@ -96,7 +96,7 @@ def collapse(df, product):
     stats = list(H.STATS)
     g = df.groupby(["unit_id", "layer", "period"], as_index=False)
     out = g[stats].mean()
-    out["n_sat"] = g.size()["size"].values if product == "dmsp" else 1
+    out["n_sat"] = g.size()["size"].values if product in ("dmsp", "dmsp_m") else 1
     return out
 
 
@@ -109,9 +109,9 @@ def wide(df, product):
         r.columns = [f"{tag}_{s}" for s in r.columns]
         frames.append(r)
     w = pd.concat(frames, axis=1).reset_index()
-    if product == "dmsp":
+    if product in ("dmsp", "dmsp_m"):
         w = w.merge(df.groupby(["unit_id", "period"], as_index=False).n_sat.max()
-                    .rename(columns={"n_sat": "ntl_dmsp_n_sat"}), on=["unit_id", "period"])
+                    .rename(columns={"n_sat": f"ntl_{product}_n_sat"}), on=["unit_id", "period"])
     return w
 
 

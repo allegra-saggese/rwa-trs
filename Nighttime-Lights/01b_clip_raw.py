@@ -24,6 +24,7 @@ Why the raw layers are worth carrying, when two harmonised products already cove
 
 A year already cut is skipped, so the step is cheap to re-run.
 """
+import os
 import gzip
 import re
 import shutil
@@ -62,6 +63,16 @@ RAW_SETS = {
         "dir": "viirs_monthly", "archive": "tgz", "tile": "00N060W",
         "layers": {"avg_rade9h": "avg", "cf_cvg": "cfcvg"},
     },
+    # DMSP monthly composites arrive as PLAIN global .tif files, neither gzipped nor tarred, one
+    # per satellite-month-layer: F12_19970101_19970131.cloud2.light1.marginal0.glare2.
+    # line_screened.avg_vis.tif. The satellite is kept in the clipped filename because the
+    # intercalibration is fitted per satellite, and in an overlap month two satellites observe the
+    # same ground -- averaging them before calibration would destroy exactly the comparison the
+    # calibration is fitted on.
+    "dmsp_m": {
+        "dir": "dmsp_monthly", "archive": "plain",
+        "layers": {"avg_vis": "avgvis", "cf_cvg": "cfcvg"},
+    },
 }
 
 
@@ -78,6 +89,9 @@ def target(product, short, stem, path):
     if product == "viirs_m":
         ym = re.search(r"_(\d{6})\d{2}-", stem).group(1)  # SVDNB_npp_20140801-20140831_...
         return H.CLIPS / f"ntl_viirs_m_{short}_{ym}_rwanda.tif"
+    if product == "dmsp_m":
+        m = re.match(r"(F\d\d)_(\d{6})\d{2}_", stem)      # F12_19970101_19970131....
+        return H.CLIPS / f"ntl_dmsp_m_{short}_{m.group(1)}_{m.group(2)}_rwanda.tif"
     return H.CLIPS / f"ntl_viirs_{short}_{path.parent.name}_rwanda.tif"
 
 
@@ -134,10 +148,59 @@ def cut(src_path, dst):
     return a
 
 
+def run_plain(product, spec):
+    """already-uncompressed global rasters: window straight out of them, no unpacking step
+
+    Windowing a 43201x16801 global out of Dropbox is I/O bound, about 3 files a minute in one
+    process. NTL_SHARD=i/n takes every n-th file so several workers can run at once on disjoint
+    sets; without it a single worker takes the lot. Workers never touch the same output.
+    """
+    src_dir = H.RAW / spec["dir"]
+    files = sorted(src_dir.rglob("*.tif"))
+    # NTL_LAYER restricts the run to one layer. avg_vis is the outcome and cf_cvg is only a
+    # quality control, so when the source files are slow to read the outcome is cut first and the
+    # analysis can start while the rest follows.
+    only = os.environ.get("NTL_LAYER")
+    if only:
+        files = [f for f in files if f".{only}." in f.name]
+    shard = os.environ.get("NTL_SHARD")
+    tag = f" [{only}]" if only else ""
+    if shard:
+        i, n = (int(x) for x in shard.split("/"))
+        files = files[i::n]
+        tag = f" [shard {i+1}/{n}]"
+    print(f"  {product}: {len(files)} rasters in {src_dir.name}{tag}")
+    done = skipped = 0
+    failed = []
+    for f in files:
+        short = layer_of(f.name, spec["layers"])
+        if short is None:
+            continue
+        out = target(product, short, f.name, f)
+        if out.exists():
+            skipped += 1
+            continue
+        try:
+            a = cut(f, out)
+        except Exception as e:                             # a truncated download must not stop the run
+            print(f"    SKIPPED {f.name}: {e}")
+            out.unlink(missing_ok=True)
+            failed.append(f.name)
+            continue
+        done += 1
+        if done % 50 == 0:
+            print(f"    {done} cut, latest {out.name}  {a.shape[1]}x{a.shape[0]} px, max {float(a.max()):.4g}")
+    print(f"  {product}: {done} cut, {skipped} already present, {len(failed)} failed")
+    if failed:
+        print("    failed files: " + ", ".join(failed[:10]) + (" ..." if len(failed) > 10 else ""))
+
+
 def run(product):
     spec = RAW_SETS[product]
     if spec.get("archive") == "tgz":
         return run_tarballs(product, spec)
+    if spec.get("archive") == "plain":
+        return run_plain(product, spec)
     src_dir = H.RAW / spec["dir"]
     if not src_dir.exists():
         print(f"  {product}: nothing in {src_dir}")
