@@ -132,6 +132,8 @@ def derive(w, product, layer, pop, labels):
     for k, desc in DERIV_DESC.items():
         col = f"{tag}_{k}"
         if col in w.columns:
+            if k == "first" and H.PRODUCTS[product]["cadence"] == "monthly":
+                desc = "first month lit, YYYYMM"        # the period here is a year-month, not a year
             labels[col] = f"NIGHTLIGHTS: {SHORT_PROD[product]}"
             if SHORT_LAYER.get(layer):
                 labels[col] += f" {SHORT_LAYER[layer]}"

@@ -141,7 +141,8 @@ LAYER_DESC = {
 # The series the derived measures are built on. cf_cvg and the lit mask are excluded: the first is a
 # measurement-quality weight rather than a measure of light, and the second is already a lit share.
 HEADLINE = [("dmsp", "intercal"), ("dmsp", "stable"), ("dmsp", "avgvis"),
-            ("viirs", "avg"), ("viirs", "med"), ("li", "main"), ("chen", "main")]
+            ("viirs", "avg"), ("viirs", "med"), ("li", "main"), ("chen", "main"),
+            ("dmsp_m", "avgvis"), ("viirs_m", "avg")]
 
 # Measures derived in 03_merge.py from the four raw statistics, for each headline series.
 DERIVED = {
