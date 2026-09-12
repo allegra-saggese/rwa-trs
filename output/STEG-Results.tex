@@ -253,13 +253,17 @@ is 2004 and errors are clustered at sector. The tourism increment $\beta^1-\beta
 directly, with its own standard error, by re-running the same equation on $[G_1 \text{ or } G_2]$ and
 $[G_1]$.
 
-\paragraph{Four restrictions, each settled by a test rather than assumed.}
+\paragraph{Five restrictions, each settled by a test rather than assumed.}
 \begin{enumerate}\itemsep2pt
 \item \textbf{Park area is removed from every unit before the lights are counted.} Park land is dark
 by construction and it is not evenly spread: treated sectors lose 31.6\% of their area to park
-against 0.2\% for controls, so leaving it in attenuates the treated units specifically. Removing it
-also repaired the pre-trends --- three specifications that failed at $p\leq.005$ pass once the park is
-out.
+against 0.2\% for controls, so leaving it in attenuates the treated units specifically.
+\item \textbf{DMSP is put on one satellite's scale before the satellites are averaged.} Twelve years
+have two satellites flying, and averaging them raw treats two instruments with different gain as if
+they agreed. A monotone $DN\rightarrow DN$ map is fitted per satellite by quantile matching on
+Rwanda's own pixels in the months when both saw the same ground, and chained onto F15. F18
+(2010--2013) never overlaps another DMSP satellite, so it cannot be chained by measurement and stays
+raw; the seam at 2010 is left visible rather than papered over.
 \item \textbf{Raw sensors only; no harmonised product.} DMSP-OLS ended in 2013 and VIIRS begins in
 2012, so the two are estimated separately and VIIRS is shifted by the DMSP coefficient at 2012, its
 intervals carrying that offset's variance. The splice is licensed by the 2012--13 overlap, where both
@@ -273,23 +277,112 @@ panel is shown beside it to confirm the weighting does not drive the result, not
 identification.
 \end{enumerate}
 
+\paragraph{Why the $p$-values here come from randomisation.} $G_1$ is twelve sectors in five
+districts and the gate design below is thirty-three cells in five, all strung along park borders.
+Clustering at sector assumes those units are independent draws within a year; they are not, since a
+good year at one park border is a good year at all of them. The consequence is measurable rather than
+hypothetical: reassigning the group label at random among the controls and recomputing the joint
+pre-trend statistic, random twelve-sector groups produce a \emph{median} Wald of 35 to 80 against a
+$\chi^2$ reference with twelve degrees of freedom. Every headline coefficient and every pre-trend test
+below therefore carries a randomisation $p$-value, and that is the one to read. On this correction
+the pre-trends pass comfortably for $G_1$ ($p=0.87$ annual, $0.84$ monthly) and sit at the margin for
+$G_2$ ($p=0.06$), where the uncorrected test had reported $p=0.0006$.
+
 \paragraph{A measurement limit that bounds what lights can show.} Across the twelve years when two
 DMSP satellites flew simultaneously, the same sectors are observed twice. The two readings disagree
 about the treated-control gap by \emph{more} than that gap varies across years: test-retest
-correlation is 0.45 at best and about 0.10 for the twelve gate sectors. The DMSP era therefore cannot
-support a small effect, and its flatness is weak evidence of a null rather than strong evidence of
-one.
+correlation is 0.45 at best and about 0.10 for the twelve gate sectors. Intercalibration raises those
+to 0.33 and 0.23 without rescuing them. The DMSP era therefore cannot support a small effect, and its
+flatness is weak evidence of a null rather than strong evidence of one.
 
 \begin{figure}[H]
 \caption{Nighttime lights: revenue sharing with tourism against revenue sharing alone}
 \includegraphics[width=\linewidth]{event_ntl_groups.pdf}
 \fignote{Year-specific coefficients from equation~(4), relative to 2004, in 2002 control standard
-deviations, with 95\% intervals from sector-clustered standard errors. Blue is DMSP-OLS 1992--2013
-and amber VIIRS 2012--2025, spliced at the dashed line. Post-2005 differences-in-differences,
-estimable on DMSP only because VIIRS begins seven years after treatment: $G_1$ $+0.012$ ($p=0.71$),
-$G_2$ $-0.014$ ($p=0.39$), and the tourism increment $G_1-G_2$ $+0.025$ ($p=0.44$). Nothing is
-distinguishable from zero on either channel. The visible movement is 2019 onward, fourteen years
-after revenue sharing began, and is common to both groups.}
+deviations, with 95\% intervals from sector-clustered standard errors. Blue is DMSP-OLS 1992--2013 on
+the intercalibrated F15 scale and amber VIIRS 2012--2025, spliced at the dashed line. Post-2005
+differences-in-differences, estimable on DMSP only because VIIRS begins seven years after treatment:
+$G_1$ $+0.009$ ($p=0.78$), $G_2$ $-0.023$ ($p=0.14$), and the tourism increment $G_1-G_2$ $+0.032$
+($p=0.34$). Nothing is distinguishable from zero on either channel. The visible movement is 2019
+onward, fourteen years after revenue sharing began, and is common to both groups.}
+\end{figure}
+
+\subsection*{The gates, at 5 km}
+
+Sectors are the wrong unit for a tourism effect. They average 65 km$^2$ of settled land, and the
+lodges and service clusters a gate would generate occupy a small fraction of that, so a sector total
+dilutes whatever is there. The same design is therefore run on cells, comparing every cell within
+5 km of a park gate against every cell beyond it, and separately every cell within 5 km of the park
+itself:
+\begin{equation}
+Y_{c,t} \;=\; \alpha_c \;+\; \delta_{d(c),t}
+\;+\; \sum_{t}\beta_{t}\bigl[\text{within5}(c)\times\mathbf{1}(\text{year}=t)\bigr] \;+\; \varepsilon_{c,t}
+\end{equation}
+Cell fixed effects and district-by-year fixed effects. Sector-by-year effects are \emph{not} used:
+sectors are smaller than the scale this treatment varies over, so sector-by-time absorbs the
+treatment itself --- only 6 of 33 gate cells keep identifying variation under it, against 33 of 33
+under district-by-year.
+
+\begin{figure}[H]
+\caption{Nighttime lights within 5 km of a park gate, and within 5 km of the park}
+\includegraphics[width=\linewidth]{event_ntl_gates.pdf}
+\fignote{Year-specific coefficients from equation~(5), relative to 2004, in 2002 control standard
+deviations, with 95\% intervals. DMSP-OLS on the intercalibrated F15 scale to 2013, VIIRS thereafter,
+spliced at the dashed line. The post-2005 difference-in-differences is $+0.033$ at the gate, with a
+clustered $p$ of $0.089$ and a randomisation $p$ of $0.247$: \emph{not} a result. An earlier version
+of this design reported $p=0.0496$; that figure rested on raw satellite scales and on standard errors
+that assume thirty-three contiguous cells in five districts are independent. What does survive is
+growth in the VIIRS era: gate cells brighten $+0.147$ control SD per year faster than cells beyond
+5 km over 2012--2025 (randomisation $p=0.005$), and $+0.124$ over 2017--2025 ($p=0.005$), the window
+that excludes VIIRS's noisy early years. Proximity to the \emph{park} shows nothing on any of these
+($+0.011$, $p=0.58$; $+0.013$, $p=0.36$) despite resting on 227 treated cells rather than 33.}
+\end{figure}
+
+Two checks decide how much weight this carries. The growth specification sits entirely after
+treatment, so it cannot test parallel trends on its own; the monthly panel, which has about 150
+pre-2005 observations per cell, can. Gate cells show \textbf{no} differential pre-trend
+(randomisation $p=0.84$), so the post-2012 divergence is not the continuation of a path they were
+already on. Park-proximity cells \textbf{fail} the same test ($p=0.005$). The gate/park contrast
+should therefore be read as \emph{the gate design is identified and the park design is not}, rather
+than as a like-for-like discriminant between two valid comparisons.
+
+\subsection*{Monthly composites}
+
+The annual design rests on thirteen pre-treatment observations per unit. The monthly composites give
+about 150, which is what makes a pre-trend test informative rather than decorative. Nothing else
+changes: same groups, same settled land, same reference year, same clustering, with district-by-%
+\emph{month} fixed effects so that the seasonal cycle is absorbed --- Rwanda's cloud-free night count
+runs from 2.5 in April to 8.8 in July, and seasonality accounts for 40\% of residual variance in
+DMSP.
+
+\begin{figure}[H]
+\caption{Nighttime lights by month, 1992--2025: revenue sharing with tourism against revenue sharing alone}
+\includegraphics[width=\linewidth]{event_ntl_monthly_prepost.pdf}
+\fignote{Year-specific coefficients estimated on 416 sectors by 401 months of settled land, relative
+to 2004, in control standard deviations, with 95\% intervals. Totals are scaled to each sector's whole
+settled area: summing only observed pixels would measure coverage as much as light, and treated
+sectors are observed less (79\% of sector-months clear a 90\% threshold against 86\% for controls), a
+shortfall that halved between 1992--94 and 2005--09. Pre/post estimates on the calibrated F10--F16
+block, which contains the entire pre-period and never crosses the 2010 seam: $G_1$ $+0.030$
+($p=0.32$, randomisation $p=0.20$), $G_2$ $+0.007$ ($p=0.66$), increment $+0.024$ ($p=0.45$).
+Pre-trends by randomisation: $G_1$ $p=0.84$, $G_2$ $p=0.055$. Unlike the annual case, the monthly
+DMSP/VIIRS join is \emph{not} licensed by the overlap: across the twenty F18/VIIRS overlap months the
+two sensors disagree about the treated-control gap (correlation $-0.26$ and $-0.11$; mean difference
+$-0.44$ and $-0.37$ control SDs, $p=0.005$ and $0.013$). The join drawn here is a plotting convention
+and no coefficient crosses it.}
+\end{figure}
+
+\begin{figure}[H]
+\caption{The 5 km gate design on monthly composites}
+\includegraphics[width=\linewidth]{event_ntl_gates_monthly.pdf}
+\fignote{Equation~(5) on 1{,}939 cells by 401 months, cell and district-by-month fixed effects.
+Magnitudes are not comparable with the annual gate figure: each series is scaled by its own control
+standard deviation, and the monthly composites are far more dispersed than the cleaned annual
+product. Sign and significance are what transfer. Gate growth over 2017--2025 replicates
+(randomisation $p=0.010$ against $0.005$ annually) while park proximity stays null ($p=0.45$ against
+$0.36$). Over 2012--2025 the monthly panel instead shows a park effect the annual data does not,
+which is the window that includes VIIRS's noisy early years: residual dispersion falls fivefold at
+2017, from 0.96 in 2012--14 to 0.18 in 2017--18.}
 \end{figure}
 
 \section{What the results add up to}
@@ -309,13 +402,22 @@ were reaching households.
 \item \textbf{Employment expands rather than reallocating}, except at the gates, where the lasso
 estimates point to a shift out of agriculture into services. The sign flip on primary employment
 under control selection is not robust and should not be reported as a finding on its own.
-\item \textbf{Neither forest nor lights responds to either channel.} Protection works inside the park
-boundary on both products; outside it, neither the transfer nor tourism moves forest loss. Lights are
-flat on both arms, with the caveat above that the DMSP era cannot detect a small effect.
-\item \textbf{Tourism adds little that the transfer does not.} Where $G_1$ and $G_2$ can be compared
-directly --- lights and forest --- the increment is indistinguishable from zero. Where the gates do
-stand out --- schooling, marriage, the services shift --- the effect appears in outcomes that a
-transfer alone would not obviously move, which points at labour-market opportunity rather than money.
+\item \textbf{Forest responds to neither channel; lights respond only at the gates, and only
+recently.} Protection works inside the park boundary on both products; outside it, neither the
+transfer nor tourism moves forest loss. Lights are flat on both arms at sector level, in the annual
+and the monthly design alike, with the caveat above that the DMSP era cannot detect a small effect.
+The exception is spatial and late: cells within 5 km of a gate brighten $+0.147$ control SD per year
+faster than the rest of the country over 2012--2025 (randomisation $p=0.005$), on flat pre-trends,
+while proximity to the park does nothing. That the result appears only at cell level is what dilution
+predicts --- thirty-three cells inside sectors averaging 65 km$^2$ --- and it is the one lights result
+that survives correcting the inference.
+\item \textbf{Tourism adds little that the transfer does not, except at the gate itself.} Where
+$G_1$ and $G_2$ are compared directly at sector level --- lights and forest --- the increment is
+indistinguishable from zero. Where the gates stand out --- schooling, marriage, the services shift,
+and now lights within 5 km --- the effect appears in outcomes a transfer alone would not obviously
+move, and it is concentrated in the few kilometres where visitors actually arrive. That points at
+labour-market opportunity rather than money, and at a catchment far smaller than the sector the
+revenue-sharing formula pays.
 \end{enumerate}
 
 \paragraph{What would change these conclusions.} A wild cluster bootstrap on every $G_1$ estimate,

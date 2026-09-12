@@ -32,7 +32,8 @@ TEXFIG.mkdir(parents=True, exist_ok=True)
 MODULES = ["bar_chart_housing", "coefplot_housing", "coefplot_housing_lasso",
            "coefplot_jobs", "cohort_education", "cohort_marriage",
            "coefplot_forest_5km", "coefplot_jrc_forest",
-           "forest_event_study_5km", "event_ntl_groups"]
+           "forest_event_study_5km", "event_ntl_groups", "event_ntl_gates",
+           "event_ntl_gates_monthly", "event_ntl_monthly_prepost"]
 
 _text, _suptitle, _savefig = Figure.text, Figure.suptitle, Figure.savefig
 
