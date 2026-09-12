@@ -5,7 +5,7 @@ whether it worked.
     python ntl_intercal.py
     Analysis/ntl_intercal_lookup.csv     the fitted DN -> DN maps, one per satellite
     Analysis/ntl_intercal_validation.csv the before/after reliability test
-    output/figures/ntl_intercal.pdf/.png
+    output/figures/ntl_intercal.pdf
 
 WHY NOT LI OR CHEN. Both are global fits dominated by bright cities, then applied to Rwanda's dim
 range as an extrapolation. This fits on Rwanda's own pixels instead, which is interpolation inside
@@ -170,10 +170,10 @@ def main():
     a1.axhline(0, color="#333", lw=.8); a1.legend(fontsize=8)
     a1.grid(axis="y", lw=.3, color="#DDD"); a1.set_axisbelow(True)
     fig.tight_layout()
-    for ext in ("pdf", "png"):
+    for ext in ("pdf",):                       # PDF only: the PNG twin was pure duplication
         fig.savefig(f"{OUT}/ntl_intercal.{ext}", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"\nwritten {OUT}/ntl_intercal.pdf/.png")
+    print(f"\nwritten {OUT}/ntl_intercal.pdf")
 
 
 if __name__ == "__main__":

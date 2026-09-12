@@ -327,3 +327,131 @@ limited power in Rwanda. Options worth weighing before committing:
 
 This is a property of Rwanda's size and climate, not a defect in the pipeline —
 better to confront it now than after the outcome data arrive.
+
+## Nighttime lights (2026-09-11)
+
+### Clustered p-values over-reject badly with few treated units, and by how much
+
+The treated groups are small and spatially contiguous: Gates+ is 12 sectors in 5
+districts, and the 5 km gate design is 33–35 cells in 5 districts, strung along
+park borders. Clustering at sector assumes those units are independent draws
+within a year. They are not — a good year at one gate is a good year at all of
+them — so the variance is understated and joint tests reject far too often.
+
+This was measured, not assumed. Reassigning the group label at random among the
+controls and recomputing the same statistic:
+
+| Statistic | asymptotic p | randomisation p | median random draw |
+|---|---|---|---|
+| Pre-trend, Gates+ sector (annual) | 0.084 | **0.865** | 36.4 vs 12 df |
+| Pre-trend, Gates+ cell (annual) | 0.054 | **0.853** | 38.8 |
+| Pre-trend, Gates+ (monthly) | 0.028 | **0.836** | 34.9 |
+| Pre-trend, gate cells (monthly) | 0.0001 | **0.841** | 80.5 |
+| Gate DiD post-2005 (annual) | 0.089 | **0.247** | — |
+
+Random 12-sector groups routinely produce **larger** pre-trend statistics than
+the real treated group. A chi-square test on 12 degrees of freedom whose draws
+centre on 35–80 is not measuring what it claims to.
+
+**Decisions.** (1) Every headline coefficient and every pre-trend test carries a
+randomisation p-value, and that is the one to read; the asymptotic p is kept
+beside it. (2) Reassignment is by **sector in whole blocks** — a cell-wise
+shuffle scatters the placebo across the country and destroys the spatial
+clustering that makes the real assignment hard to distinguish from luck.
+(3) The previous pre-trend test summed z-squared, which additionally ignores the
+covariance between year coefficients that share a reference year; it is gone.
+
+**Consequence.** The one nominally significant nightlights result — the 5 km gate
+DiD at p=0.0496 — does not survive. Intercalibrating alone moves it to p=0.089,
+and randomisation to p=0.247. It must not be reported as significant.
+
+### An outcome must not measure how much of the unit was observed
+
+Summing light over observed pixels only conflates brightness with coverage: a
+sector seen at 85% carries a smaller total than the same sector seen in full.
+That is not neutral across groups. Treated sectors border parks, sit in cloudier
+terrain and are observed less — 0.79 of sector-months clear a 90% threshold
+against 0.86 for controls — and the shortfall **halved** between 1992–94 (10.1
+points) and 2005–09 (4.0), so treated totals drifted upward against controls for
+purely instrumental reasons.
+
+Totals are therefore scaled to the unit's whole settled area before averaging
+satellites, which assumes the unseen part of a unit resembles the seen part —
+far weaker than the implicit alternative, that unseen area is *dark*.
+
+Recorded honestly: this correction did **not** explain the pre-trend it was
+built to explain. Neither did relaxing the coverage threshold, nor sector-specific
+linear trends. The cause was the inference, above.
+
+### A composite with one value over all of Rwanda is not a measurement
+
+12 DMSP monthly composites are constant across the country while their own
+`cf_cvg` reports the ground was seen. They are dropped in every script by the
+same rule rather than case by case. Kept, F18 2012-12 would enter as a month in
+which every sector is exactly dark.
+
+### Sensors are never pooled in levels, and the monthly join is not licensed
+
+DMSP digital numbers (0–63, saturating) and VIIRS radiance are different physical
+quantities and the map between them is nonlinear. Each sensor is standardised on
+its own control group's SD and estimated separately.
+
+The annual DMSP/VIIRS overlap test passes (gap −0.018, p=0.89). **The monthly one
+fails**: over the 20 F18/VIIRS overlap months the sensors disagree about the
+treated–control gap, correlation −0.26 and −0.11, mean difference −0.44 and −0.37
+control SDs (p=0.005, 0.013). The join drawn in the monthly figures is a plotting
+convention; no coefficient crosses it.
+
+### VIIRS monthly is unusable before 2017
+
+Residual SD after unit and year effects, in the series' own control-SD units:
+
+| Era | Residual SD |
+|---|---|
+| 2012–2014 | 0.963 |
+| 2015–2016 | 0.927 |
+| 2017–2018 | 0.185 |
+| 2019–2021 | 0.168 |
+| 2022–2025 | 0.278 |
+
+A fivefold drop at 2017. Windows that include the early years misbehave: the
+gate/park discriminant replicates cleanly for 2017–2025 in both annual and
+monthly data, and fails for 2012–2025, where the monthly panel shows a park
+effect the annual data does not. The cause inside EOG's processing is not known
+and is not guessed at here.
+
+Structurally, VIIRS median lit share over Rwanda's settled land is **0.029** —
+a sector total is a small signal on top of 97% near-zero and sometimes negative
+pixels. DMSP has a floor at 0 and accumulates no negative background.
+
+### Aggregating months to years does not reproduce the annual composite
+
+Levels correlate 0.952, but the within sector-and-year variation the DiD actually
+uses correlates only **0.730**, and the DMSP DiD moves from +0.0115 to +0.0248 as
+a result. EOG's annual composite is not the mean of its monthlies — it applies
+its own cloud screening and outlier rejection and weights by cloud-free
+observations. Neither is wrong; they are different measurements and should not be
+quoted interchangeably.
+
+### Seasonality is a DMSP problem more than a VIIRS one
+
+Share of residual variance explained by month-of-year: **DMSP 0.40, VIIRS 0.11**,
+both peaking in April and bottoming in January, tracking Rwanda's cloud-free
+night count (2.5 nights in April against 8.8 in July). District-by-**month**
+fixed effects absorb it in every monthly specification.
+
+### What the nightlights evidence now supports
+
+- **Gate cells brighten faster in the recent era.** Within 5 km of a gate, growth
+  is +0.147 control SD per year over 2012–2025 (randomisation p=0.005) and +0.124
+  for 2017–2025 (p=0.005), against all cells beyond 5 km. The monthly panel
+  agrees in sign and significance for 2017–2025 (p=0.010); magnitudes are not
+  comparable across the two because each is in its own control-SD units.
+- **Gate cells show no differential pre-trend** (randomisation p=0.841), so this
+  is not a continuation of a pre-existing path.
+- **Park-proximity cells are not a clean comparison**: their pre-trend fails
+  (randomisation p=0.005). The gate/park contrast should be read as "the gate
+  design is identified and the park design is not", not as a like-for-like test.
+- **Everything at sector level remains null**, on both channels and in both the
+  annual and monthly designs. The gate result appears only at cell level, which
+  is what dilution predicts: 33 cells inside sectors averaging 65 km².

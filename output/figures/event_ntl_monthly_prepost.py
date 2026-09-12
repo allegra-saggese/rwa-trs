@@ -2,7 +2,7 @@
 event_ntl_monthly_prepost.py -- the three-group design on MONTHLY lights, 1992-2025.
 
     python event_ntl_monthly_prepost.py [--perm N]
-    output/figures/event_ntl_monthly_prepost.pdf / .png
+    output/figures/event_ntl_monthly_prepost.pdf
     Analysis/nightlights_monthly_settled_sector.csv    sector-month panel, settled land, every series
     Analysis/reg_nightlights_monthly_prepost.csv       event-study, pre/post and randomisation results
 
@@ -119,7 +119,7 @@ def read(p):
         return np.where(a == r.nodata, 0.0, a) if r.nodata is not None else a
 
 
-def sector_sums(L, kind, lut):
+def sector_sums(L, kind, lut, idcol="uid"):
     """per satellite-month: sum of lights on settled land (observed pixels only) and share observed"""
     inv = inventory(kind)
     if not inv:
@@ -147,7 +147,7 @@ def sector_sums(L, kind, lut):
             a = np.interp(a, grid, lut[sat])
         ok = up(read(v["cf"]) >= MIN_CF) if use_cf else np.ones(keep.sum(), bool)
         x = up(a)
-        rows.append(pd.DataFrame({"uid": L.uid.to_numpy(), "sat": sat, "ym": int(ym),
+        rows.append(pd.DataFrame({idcol: L[idcol].to_numpy(), "sat": sat, "ym": int(ym),
                                   "sum": np.bincount(fk, weights=np.where(ok, x, 0.0), minlength=k + 1)[1:] / SS**2,
                                   "obs": np.bincount(fk, weights=ok.astype(float), minlength=k + 1)[1:] / np.maximum(allp, 1)}))
     if blank:
@@ -155,7 +155,7 @@ def sector_sums(L, kind, lut):
     return pd.concat(rows, ignore_index=True), use_cf
 
 
-def build_series(raw, name):
+def build_series(raw, name, idcol="uid"):
     """average the satellites flying in each month, then asinh; drop barely-observed sector-months
 
     The total is scaled to the sector's WHOLE settled area before averaging. Summing only the
@@ -173,7 +173,7 @@ def build_series(raw, name):
         r = r[r.sat.isin(s["sats"])]
     r = r[(r.ym // 100).between(*s["span"])]
     r["scaled"] = np.where(r.obs > 0, r["sum"] / r.obs, np.nan)
-    g = r.groupby(["uid", "ym"], as_index=False).agg(total=("scaled", "mean"), raw_total=("sum", "mean"),
+    g = r.groupby([idcol, "ym"], as_index=False).agg(total=("scaled", "mean"), raw_total=("sum", "mean"),
                                                      obs=("obs", "min"), n_sat=("sat", "nunique"))
     g["asinh_sum"] = np.where(g.obs >= MIN_OBS, np.arcsinh(g.total), np.nan)
     g["asinh_unscaled"] = np.where(g.obs >= MIN_OBS, np.arcsinh(g.raw_total), np.nan)
@@ -449,10 +449,10 @@ def draw(R):
     ax.set_ylabel("asinh(sum of lights), SD units, relative to 2004", fontsize=9.5)
     ax.legend(fontsize=9.0, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(.5, 1.10))
     fig.tight_layout()
-    for ext in ("pdf", "png"):
+    for ext in ("pdf",):                       # PDF only: the PNG twin was pure duplication
         fig.savefig(f"{OUT}/event_ntl_monthly_prepost.{ext}", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"written {OUT}/event_ntl_monthly_prepost.pdf/.png")
+    print(f"written {OUT}/event_ntl_monthly_prepost.pdf")
 
 
 if __name__ == "__main__":

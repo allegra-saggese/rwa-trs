@@ -4,7 +4,7 @@ ntl_monthly_groups.py -- the three-group design on MONTHLY VIIRS, 2012-04 to 202
     python ntl_monthly_groups.py
     Analysis/nightlights_monthly_settled_sector.csv   settled-land monthly panel
     Analysis/reg_nightlights_monthly.csv              event-study and seasonal coefficients
-    output/figures/event_ntl_monthly.pdf / .png
+    output/figures/event_ntl_monthly.pdf
 
 WHAT THIS CAN AND CANNOT DO. VIIRS monthly begins in April 2012, seven years after revenue sharing
 started, so there is no pre-treatment period and a post-2005 difference-in-differences is NOT
@@ -175,10 +175,10 @@ def main():
     b_.set_title("Within-year cycle, against December", fontsize=11, pad=8)
     b_.grid(axis="y", lw=.3, color="#DDD"); b_.set_axisbelow(True)
     fig.tight_layout()
-    for ext in ("pdf", "png"):
+    for ext in ("pdf",):                       # PDF only: the PNG twin was pure duplication
         fig.savefig(f"{OUT}/event_ntl_monthly.{ext}", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"written {OUT}/event_ntl_monthly.pdf/.png")
+    print(f"written {OUT}/event_ntl_monthly.pdf")
     for spec in ("seasonal", "seasonal_cf3"):
         q = R[R.spec == spec]
         for t in ("G1", "G2"):

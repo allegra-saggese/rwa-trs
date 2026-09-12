@@ -139,3 +139,45 @@ recollection.
 "Census" is used interchangeably with "survey" in this project's description.
 The data in scope is EICV7 — the household survey above. RPHC (the actual
 Population and Housing Census) is **not** part of this project.
+
+## Nighttime lights (added 2026-09-11)
+
+All raster sources are verified against their upstream index, not against a
+remembered total. Counts below were checked file by file on 2026-09-11.
+
+| Product | Coverage | Files | Source |
+|---|---|---|---|
+| DMSP-OLS monthly composites | 1992-04 – 2014-02 | 785 | `eogdata.mines.edu/wwwdata/dmsp/monthly_composites/by_satellite/<SAT>/` |
+| DMSP-OLS v4 annual | 34 satellite-years | 136 | `eogdata.mines.edu/wwwdata/dmsp/v4composites_rearrange/` |
+| VIIRS VNL monthly v1 (`vcmcfg`) | 2012-04 – 2025-12 | 163 months | `eogdata.mines.edu/nighttime_light/monthly/v10/<YYYY>/<YYYYMM>/vcmcfg/` |
+| VIIRS VNL annual v2.1 | 2012–2025 | 56 | `eogdata.mines.edu/products/vnl/` |
+| Li harmonised DN | 1992–2024 | 33 | figshare 9828827 |
+| Chen VIIRS-like | 2000–2025 | 26 | Harvard Dataverse, Version 2 |
+
+EOG downloads sit behind Keycloak OAuth. There is no programmatic route: a token
+request itself needs username and password, tokens last five minutes, and
+programmatic access became a paid subscription on 1 June 2026. The files were
+fetched through an authenticated browser session, which expires roughly hourly.
+
+### Gaps that are upstream, not ours
+
+- **VIIRS 2022-08 and 2025-11** have no Suomi-NPP composite. 2022-08 publishes
+  only a `NOAA-20/` folder and 2025-11 only `SVDNB_j02_*` (NOAA-21); the NPP
+  composite for 2022-07 stops on the 26th. The series is NPP throughout, so
+  these are left as genuine gaps rather than spliced from another satellite.
+- **F16 2009-01 `avg_vis`** and **F18 2014-01/02 `avg_vis`** are not published.
+- **F10 1992-07 and 1992-08** do not exist in the monthly archive.
+- **23 of 785 DMSP monthly clips are blank or unobserved.** Each was checked by
+  reading the raw global at a location lit in every DMSP month: 12 are blank
+  products with intact downloads, 11 are months with no cloud-free night over
+  Rwanda. **None was a failed download.** F18 2012-12 is the clearest case —
+  zero over all of Rwanda while its own `cf_cvg` reports 99.9% of pixels seen.
+
+### Storage hazard worth recording
+
+Both `~/Desktop` (iCloud Desktop & Documents) and Dropbox are macOS file
+providers and evict files. An evicted file keeps its name and size and reads as
+`SF_DATALESS`; `mv` on it times out and `brctl download` can return success
+while leaving it empty, at which point the bytes are gone. One file was lost
+this way and re-downloaded. Downloads are therefore moved off the Desktop into
+plain local storage and clipped there before being filed into Dropbox.

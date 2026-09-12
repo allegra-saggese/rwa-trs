@@ -2,7 +2,7 @@
 event_ntl_groups.py -- nighttime lights, separating the tourism channel from revenue sharing alone.
 
     python event_ntl_groups.py
-    output/figures/event_ntl_groups.pdf / .png       the figure
+    output/figures/event_ntl_groups.pdf       the figure
     Analysis/nightlights_settled_panel_sector.csv    sector panel, settled land
     Analysis/nightlights_settled_panel_cell.csv      cell panel, settled land
     Analysis/reg_nightlights_groups.csv              event-study and DiD coefficients
@@ -64,6 +64,7 @@ onward, fourteen years after revenue sharing began.
 import sys, re, collections, textwrap
 from pathlib import Path
 import numpy as np, pandas as pd, geopandas as gpd, rasterio, matplotlib
+import scipy.sparse as sp
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from rasterio.features import rasterize
 from scipy import stats
@@ -89,8 +90,24 @@ def settled(gdf, parks):
     return g.set_geometry("land")
 
 
-def zonal(gdf, idcol):
-    """asinh(sum of lights) per unit per year, satellites averaged, on settled land"""
+def intercal_lut():
+    """per-satellite DN -> F15-scale maps fitted by ntl_intercal.py, empty if it has not been run"""
+    f = ANALYSIS / "ntl_intercal_lookup.csv"
+    if not f.exists():
+        return {}
+    d = pd.read_csv(f)
+    return {c: d[c].to_numpy(float) for c in d.columns if c != "dn"}
+
+
+def zonal(gdf, idcol, lut=None):
+    """asinh(sum of lights) per unit per year, satellites averaged, on settled land
+
+    DMSP digital numbers are put on the F15 scale first where a map exists. Twelve years have two
+    satellites flying, and averaging them raw treats two instruments with different gain as if they
+    agreed; the calibration is fitted precisely on the months when both saw the same ground. F18
+    (2010-2013) has no overlap partner and stays raw, which is why the seam at 2010 is left visible.
+    """
+    lut = {} if lut is None else lut
     files = collections.defaultdict(lambda: collections.defaultdict(list))
     for p in sorted(H.CLIPS.glob("ntl_dmsp_avgvis_F*_*.tif")):
         m = re.match(r"ntl_dmsp_avgvis_(F\d\d)_(\d{4})_rwanda\.tif$", p.name)
@@ -112,11 +129,95 @@ def zonal(gdf, idcol):
                 with rasterio.open(p) as r:
                     a = r.read(1).astype(float)
                     if r.nodata is not None: a = np.where(a == r.nodata, 0.0, a)
+                sm = re.match(r"ntl_dmsp_avgvis_(F\d\d)_", p.name)
+                if sm and sm.group(1) in lut:
+                    a = np.interp(a, np.arange(len(lut[sm.group(1)]), dtype=float), lut[sm.group(1)])
                 v = np.repeat(np.repeat(a, SS, axis=0), SS, axis=1).ravel()[keep]
                 tot.append(np.bincount(fk, weights=v, minlength=k + 1)[1:] / (SS * SS))
             rows.append(pd.DataFrame({idcol: gdf[idcol].to_numpy(), "year": y, "sensor": sensor,
                                       "asinh_sum": np.arcsinh(np.mean(tot, axis=0))}))
     return pd.concat(rows, ignore_index=True)
+
+
+def ols_v(yv, Xm, sid):
+    """OLS with the full cluster-robust covariance, which a joint pre-trend test needs"""
+    XtX = Xm.T @ Xm
+    if np.linalg.matrix_rank(XtX) < XtX.shape[0]:
+        return None
+    inv = np.linalg.inv(XtX); b = inv @ (Xm.T @ yv); e = yv - Xm @ b
+    G = pd.factorize(pd.Series(sid))[0]; ng = G.max() + 1
+    S = np.zeros((ng, Xm.shape[1])); np.add.at(S, G, Xm * e[:, None])
+    return b, inv @ (S.T @ S) @ inv * (ng / max(ng - 1.0, 1)), ng
+
+
+def pretrend(panel, unitcol, term, sensor, ref, n_perm=400, seed=20260912):
+    """joint pre-trend test, as chi-square and by randomisation
+
+    The chi-square version over-rejects here, and the sum of z-squared this script used before
+    over-rejects for a second reason: it ignores the covariance between the year coefficients, which
+    share a reference year and are therefore correlated. Underneath both is the same problem -- the
+    year coefficients are group-by-year common shocks, and the treated sectors are adjacent, strung
+    along park borders in a handful of districts, so clustering at sector assumes an independence
+    that spatial correlation denies. Measured on the monthly panel, random 12-sector groups produced
+    a MEDIAN pre-trend Wald of 34.9 against Gates+'s own 20.6.
+
+    So the group label is reassigned at random among that group and the controls, holding the other
+    group fixed, and the same statistic recomputed. p_ri is the share of reassignments reaching the
+    observed value; it assumes nothing about the error structure. Treatment is assigned at SECTOR
+    level, so the reassignment is by sector even when the unit of observation is the cell.
+    """
+    s = panel[(panel.sensor == sensor) & panel.year.between(*SPAN[sensor]) & panel.asinh_sum.notna()].copy()
+    ctrl = (s.G1 == 0) & (s.G2 == 0)
+    sd = s[(s.year == BASE[sensor]) & ctrl].asinh_sum.std(ddof=1)
+    s["yv"] = s.asinh_sum / sd if np.isfinite(sd) and sd > 0 else s.asinh_sum
+    tk = (s.district.astype(str) + "_" + s.year.astype(str)).to_numpy()
+    per = sorted(s.year.unique()); use = [q for q in per if q != ref]
+    pre = [i for i, q in enumerate(use) if q < 2005]
+    if len(pre) < 2:
+        return None
+    uid, ucol, yr = s.uid.to_numpy(), s[unitcol].to_numpy(), s.year.to_numpy()
+    # sparse projections: hundreds of draws on the cell panel are not affordable with np.add.at
+    proj = []
+    for k in (ucol, tk):
+        c, u = pd.factorize(pd.Series(k)); n = len(c)
+        S = sp.csr_matrix((np.ones(n), (np.arange(n), c)), shape=(n, len(u)))
+        proj.append((S, np.asarray(S.sum(0)).ravel()))
+
+    def absorb(M, maxit=2000, tol=1e-10):
+        M = np.array(M, float)
+        for _ in range(maxit):
+            chg = 0.0
+            for S, cnt in proj:
+                d = S @ ((S.T @ M) / cnt[:, None]); chg = max(chg, float(np.abs(d).max())); M -= d
+            if chg < tol:
+                break
+        return M
+
+    ytil = absorb(s.yv.to_numpy(float).reshape(-1, 1))[:, 0]
+
+    def wald(units):
+        ind = np.isin(uid, list(units)).astype(float)
+        X = absorb(np.column_stack([ind * (yr == q) for q in use]))
+        r = ols_v(ytil, X, uid)
+        if r is None:
+            return None
+        b, V, _ = r
+        bb, VV = b[pre], V[np.ix_(pre, pre)]
+        try:
+            return float(bb @ np.linalg.solve(VV, bb))
+        except np.linalg.LinAlgError:
+            return None
+
+    tu = set(s.loc[s[term] == 1, "uid"])
+    obs = wald(tu)
+    if obs is None:
+        return None
+    pool = np.array(sorted(tu | set(s.loc[ctrl, "uid"])))
+    rng = np.random.default_rng(seed)
+    d = np.asarray([w for w in (wald(set(rng.choice(pool, size=len(tu), replace=False)))
+                                for _ in range(n_perm)) if w is not None])
+    return dict(term=term, wald=obs, df=len(pre), p_chi2=1 - stats.chi2.cdf(obs, len(pre)),
+                p_ri=(1 + (d >= obs).sum()) / (1 + len(d)), n_perm=len(d), median_draw=float(np.median(d)))
 
 
 def fit(panel, unitcol, terms, sensor, ref):
@@ -168,6 +269,8 @@ def main():
     print(f"G1 {len(G1)}  G2 {len(G2)}  G0 {len(G0)}  Gishwati dropped {len(GISH)}  "
           f"Kigali+towns {len(X['Kigali all + cities'])}  total {len(G1)+len(G2)+len(G0)+len(DROP)}")
 
+    LUT = intercal_lut()
+    print(f"  intercalibration onto F15: {sorted(LUT) if LUT else 'NONE (raw DN)'}")
     sec = gpd.read_file(H.SECTORS); sec["uid"] = sec.sector_id.astype(int); sec["idc"] = sec.uid
     cel = gpd.read_file(H.CELLS); cel["cid"] = cel.cell_id.astype(int)
     cel["uid"] = cel.sector_id.astype(int); cel["idc"] = cel.cid
@@ -175,7 +278,7 @@ def main():
     for name, gdf, idcol in (("sector", sec, "uid"), ("cell", cel, "cid")):
         L = settled(gdf, allpark)
         keep = list(dict.fromkeys([idcol, "uid", "district", "land_km2"]))   # idcol IS uid for sectors
-        p = zonal(L, idcol).merge(L[keep].drop_duplicates(idcol), on=idcol, how="left")
+        p = zonal(L, idcol, LUT).merge(L[keep].drop_duplicates(idcol), on=idcol, how="left")
         p = p[p.uid.isin(G1 | G2 | G0)].copy()
         p["G1"] = p.uid.isin(G1).astype(float); p["G2"] = p.uid.isin(G2).astype(float)
         p["ANY"] = ((p.G1 + p.G2) > 0).astype(float)
@@ -195,6 +298,16 @@ def main():
             if did is not None:
                 rows += [dict(unit=name, sensor=sensor, kind="did", term=r.term, year=np.nan,
                               b=r.b, se=r.se, p=r.p, n=r.n, clusters=r.clusters) for r in did.itertuples()]
+            if sensor == "dmsp":                 # the pre-period lives entirely in the DMSP era
+                for term in ("G1", "G2"):
+                    pt = pretrend(p, idcol, term, sensor, ref)
+                    if pt is not None:
+                        rows.append(dict(unit=name, sensor=sensor, kind="pretrend", term=term,
+                                         year=np.nan, b=pt["wald"], n=pt["df"], p=pt["p_chi2"],
+                                         p_ri=pt["p_ri"], n_perm=pt["n_perm"], se=pt["median_draw"]))
+                        print(f"  pre-trend {name:6s} {term}: Wald {pt['wald']:6.2f} on {pt['df']} df, "
+                              f"chi2 p={pt['p_chi2']:.4f}, randomisation p={pt['p_ri']:.3f} "
+                              f"({pt['n_perm']} draws, median draw {pt['median_draw']:.1f})")
             # reparametrised: coefficient on G1 is now b1 - b2, the tourism increment
             _, dinc = fit(p, idcol, ["ANY", "G1"], sensor, ref)
             if dinc is not None:
@@ -220,11 +333,13 @@ def main():
             ax.errorbar(both.period, both.b, yerr=1.96 * both.se, fmt=mk, ms=4.0, color=col,
                         ecolor=col, elinewidth=1.05, capsize=1.9, zorder=3, label=lab)
             ax.plot(both.period, both.b, color=col, lw=1.05, alpha=.45, zorder=2)
-            pre = D[(D.period < 2005) & (D.period != REF)]
-            z = (pre.b / pre.se.replace(0, np.nan)).dropna()
-            pj = 1 - stats.chi2.cdf(float((z ** 2).sum()), len(z))
+            # the randomisation p, not the sum of z-squared this used to report: that version
+            # ignores the covariance between year coefficients AND assumes independence across the
+            # treated sectors, which are adjacent and in a handful of districts
+            pt = res[(res.unit == name) & (res.kind == "pretrend") & (res.term == term)]
+            pj = float(pt.p_ri.iloc[0]) if len(pt) else float("nan")
             d = res[(res.unit == name) & (res.kind == "did") & (res.term == term) & (res.sensor == "dmsp")]
-            notes.append(f"{term}  placebo p={pj:.2f}" +
+            notes.append(f"{term}  pre-trend randomisation p={pj:.2f}" +
                          (f"   DiD {d.iloc[0].b:+.3f} (p={d.iloc[0].p:.2f})" if len(d) else ""))
         di = res[(res.unit == name) & (res.kind == "did_increment") & (res.sensor == "dmsp")]
         if len(di):
@@ -242,10 +357,10 @@ def main():
     h, l = axes[0].get_legend_handles_labels()
     fig.legend(h, l, fontsize=9.0, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(.5, 1.045))
     fig.tight_layout()
-    for ext in ("pdf", "png"):
+    for ext in ("pdf",):                       # PDF only: the PNG twin was pure duplication
         fig.savefig(f"{OUT}/event_ntl_groups.{ext}", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"written {OUT}/event_ntl_groups.pdf/.png")
+    print(f"written {OUT}/event_ntl_groups.pdf")
     show = res[res.kind.isin(["did", "did_increment"]) & (res.sensor == "dmsp")]
     for r in show.itertuples():
         print(f"  {r.unit:6s} {r.term:12s} b={r.b:+.4f} se={r.se:.4f} p={r.p:.4f} clusters={int(r.clusters)}")

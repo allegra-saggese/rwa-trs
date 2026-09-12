@@ -6,7 +6,7 @@ test that says whether it worked, and the check that licenses joining F18 to VII
     Analysis/ntl_intercal_monthly_lookup.csv      DN -> F15-scale DN, one column per satellite
     Analysis/ntl_intercal_monthly_validation.csv  test-retest of the treated-control gap, raw vs calibrated
     Analysis/ntl_f18_viirs_overlap.csv            the F18 / VIIRS gap, month by month, 2012-04 to 2014-02
-    output/figures/ntl_intercal_monthly.pdf/.png
+    output/figures/ntl_intercal_monthly.pdf
 
 SAME METHOD AS THE ANNUAL FIT (ntl_intercal.py), MORE DATA. Where two satellites flew in the same
 month the ground is identical, so any difference is instrument. A monotone DN -> DN map is fitted by
@@ -247,10 +247,10 @@ def main():
         a2.legend(fontsize=8)
     a2.grid(lw=.3, color="#DDD"); a2.set_axisbelow(True)
     fig.tight_layout()
-    for ext in ("pdf", "png"):
+    for ext in ("pdf",):                       # PDF only: the PNG twin was pure duplication
         fig.savefig(f"{OUT}/ntl_intercal_monthly.{ext}", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"\nwritten {OUT}/ntl_intercal_monthly.pdf/.png")
+    print(f"\nwritten {OUT}/ntl_intercal_monthly.pdf")
 
 
 if __name__ == "__main__":
