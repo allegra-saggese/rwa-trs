@@ -81,7 +81,7 @@ def main():
     ta = pd.concat([nisr, rdb[rdb.index > nisr.index.max()]]).sort_index()
     preal = to_real(pr)
     treal = to_real(tr)
-    draw(pv / 1e6, "National park visits, million (left)", lambda v, _: f"{v:.2f}", preal,
+    draw(pv / 1e3, "National park visits, thousands (left)", lambda v, _: f"{v:,.0f}", preal,
          "National park direct revenue collection", "steg_tourism_parks.pdf")
     draw(ta / 1e6, "International arrivals, million (left)", lambda v, _: f"{v:.2f}", treal,
          "Spending by international visitors", "steg_tourism_national.pdf")
