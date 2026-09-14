@@ -7,7 +7,9 @@
 \usepackage{graphicx,amsmath,amssymb,booktabs,caption,float,microtype}
 \usepackage[hidelinks]{hyperref}
 \captionsetup[figure]{labelfont=bf,textfont=normalfont,justification=raggedright,singlelinecheck=false,skip=6pt}
-\graphicspath{{/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/output/figures/tex/}}
+% Searched in order: ../figures/ is the Overleaf project's own folder (Overleaf cannot reach Dropbox);
+% the absolute path is the local build. One file compiles in both places.
+\graphicspath{{../figures/}{/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/output/figures/tex/}}
 \newcommand{\fignote}[1]{\vspace{4pt}\begin{minipage}{\linewidth}\footnotesize\setlength{\parskip}{0pt}\textit{Notes.} #1\end{minipage}}
 \setlength{\parskip}{5pt}
 \title{Tourism revenue sharing around Rwanda's national parks\\[2pt]\large Results}
