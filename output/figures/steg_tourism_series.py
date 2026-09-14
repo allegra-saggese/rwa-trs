@@ -13,8 +13,8 @@ for 2019, 2020 and 2023-2025. World Bank tourism series are not used.
 Both revenue series are put in constant 2024 US dollars with the US GDP deflator, since RDB quotes them
 in current dollars. Both are shown in levels, with visits and arrivals as levels on the left axis.
 
-No arrivals total is published for 2018, 2021 or 2022, so the arrivals line is broken there rather than
-drawn through the missing years. Immigration's broader "visitor arrivals" (2.6 million in 2018-2019) are
+No arrivals total is published for 2018, 2021 or 2022; a dashed segment joins the published years on
+either side, so the missing years are visibly not data. Immigration's broader "visitor arrivals" (2.6 million in 2018-2019) are
 not used: they add cross-border transit, mostly from the DRC, and would put a false jump into the line.
 """
 import sys
@@ -26,36 +26,39 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import paths as P
 
 SRC = P.DATA / "Tourism Data"
-BASE_PRICE, BASE_YEAR = 2024, 2008
+BASE_PRICE = 2024
 C_LEFT, C_RIGHT = "#2a9d8f", "#1b4965"
 
 
-def cumulative_real(nominal):
+def to_real(nominal):
+    """current US$ million -> constant BASE_PRICE US$ million, with the US GDP deflator"""
     w = pd.read_csv(SRC / "world_bank_wdi.csv")
     defl = w[(w.country == "USA") & (w.indicator_code == "NY.GDP.DEFL.ZS")].set_index("year").value
-    real = nominal * defl[BASE_PRICE] / defl.reindex(nominal.index)
-    return (real / real[BASE_YEAR] - 1) * 100, real
+    return nominal * defl[BASE_PRICE] / defl.reindex(nominal.index)
 
 
-def draw(left, left_label, left_fmt, right, fname, points_only, right_mode="change"):
+def line(ax, s, color, marker, label):
+    """solid through consecutive years; a dashed segment bridges any year with no published figure"""
+    s = s.dropna().sort_index()
+    full = s.reindex(range(int(s.index.min()), int(s.index.max()) + 1))
+    ax.plot(full.index, full.values, "-" + marker, color=color, lw=2, ms=4, label=label)
+    yrs = list(s.index)
+    for a, b in zip(yrs, yrs[1:]):
+        if b - a > 1:
+            ax.plot([a, b], [s[a], s[b]], "--", color=color, lw=1.4)
+
+
+def draw(left, left_label, left_fmt, right, right_label, fname):
     fig, ax = plt.subplots(figsize=(9.5, 4.8))
     ax2 = ax.twinx()
-    left = left.reindex(range(int(left.index.min()), int(left.index.max()) + 1))   # gaps stay gaps
-    ax.plot(left.index, left.values, "-o", color=C_LEFT, lw=2, ms=4, label=left_label)
-    right_legend = (f"Revenue, US$ million, constant {BASE_PRICE} prices (right)" if right_mode == "level"
-                    else f"Revenue, cumulative change since {BASE_YEAR} (right)")
-    ax2.plot(right.index, right.values, "-s", color=C_RIGHT, lw=2, ms=4, label=right_legend)
+    line(ax, left, C_LEFT, "o", left_label)
+    line(ax2, right, C_RIGHT, "s", f"{right_label}, US$ million, constant {BASE_PRICE} prices (right)")
     ax.set_ylabel(left_label.replace(" (left)", ""))
     ax.yaxis.set_major_formatter(FuncFormatter(left_fmt))
     ax.set_ylim(0, left.max() * 1.15)
-    if right_mode == "level":
-        ax2.set_ylabel(f"US$ million, constant {BASE_PRICE} prices")
-        ax2.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
-        ax2.set_ylim(0, right.max() * 1.15)
-    else:
-        ax2.set_ylabel(f"% change since {BASE_YEAR}, constant {BASE_PRICE} US$")
-        ax2.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:+,.0f}%"))
-        lo = min(right.min(), 0); ax2.set_ylim(lo - 20, right.max() * 1.15)
+    ax2.set_ylabel(f"{right_label}, US$ million, constant {BASE_PRICE} prices")
+    ax2.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
+    ax2.set_ylim(0, right.max() * 1.15)
     first = int(min(left.index.min(), right.index.min()))
     ax.set_xticks(range(first, 2026, 2 if 2025 - first > 12 else 1))
     ax.set_xlim(first - 0.6, 2025.6)
@@ -76,12 +79,12 @@ def main():
     nisr = nisr[nisr.series == "tourist arrivals"].set_index("year").total
     rdb = pd.read_csv(SRC / "rdb_visitor_arrivals.csv").set_index("year").arrivals
     ta = pd.concat([nisr, rdb[rdb.index > nisr.index.max()]]).sort_index()
-    pchg, preal = cumulative_real(pr)
-    tchg, treal = cumulative_real(tr)
-    draw(pv / 1e6, "National park visits, million (left)", lambda v, _: f"{v:.2f}", preal / 1e0,
-         "steg_tourism_parks.pdf", points_only=False, right_mode="level")
+    preal = to_real(pr)
+    treal = to_real(tr)
+    draw(pv / 1e6, "National park visits, million (left)", lambda v, _: f"{v:.2f}", preal,
+         "National park revenue", "steg_tourism_parks.pdf")
     draw(ta / 1e6, "International arrivals, million (left)", lambda v, _: f"{v:.2f}", treal,
-         "steg_tourism_national.pdf", points_only=False, right_mode="level")
+         "Tourism revenue", "steg_tourism_national.pdf")
     f = lambda s, y: float(s.get(y, float("nan")))
     print(f"parks: visits 2005 {f(pv,2005):,.0f} 2019 {f(pv,2019):,.0f} 2020 {f(pv,2020):,.0f} 2025 {f(pv,2025):,.0f} | "
           f"real revenue US$M: 2008 {f(preal,2008):.1f} 2019 {f(preal,2019):.1f} 2020 {f(preal,2020):.1f} 2025 {f(preal,2025):.1f}")
