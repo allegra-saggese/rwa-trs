@@ -2,7 +2,7 @@
 steg_tourism_series.py -- Rwanda's tourism boom from Rwanda Development Board figures, for the STEG appendix.
 
     python steg_tourism_series.py
-    output/figures/steg_tourism_parks.pdf       national parks: visits (left), revenue in constant 2024 US$ (right)
+    output/figures/steg_tourism_parks.pdf       national parks: visits (left), direct revenue collection (entry tickets) in constant 2024 US$ (right)
     output/figures/steg_tourism_national.pdf    all tourism: international arrivals (left), revenue in constant 2024 US$ (right)
 
 Revenue and park figures are Rwanda Development Board data, from its annual reports and, for park visits
@@ -56,7 +56,7 @@ def draw(left, left_label, left_fmt, right, right_label, fname):
     ax.set_ylabel(left_label.replace(" (left)", ""))
     ax.yaxis.set_major_formatter(FuncFormatter(left_fmt))
     ax.set_ylim(0, left.max() * 1.15)
-    ax2.set_ylabel(f"{right_label}, million constant {BASE_PRICE} US$")
+    ax2.set_ylabel(f"{right_label},\nmillion constant {BASE_PRICE} US$")
     ax2.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
     ax2.set_ylim(0, right.max() * 1.15)
     first = int(min(left.index.min(), right.index.min()))
@@ -82,7 +82,7 @@ def main():
     preal = to_real(pr)
     treal = to_real(tr)
     draw(pv / 1e6, "National park visits, million (left)", lambda v, _: f"{v:.2f}", preal,
-         "National park revenue", "steg_tourism_parks.pdf")
+         "National park direct revenue collection", "steg_tourism_parks.pdf")
     draw(ta / 1e6, "International arrivals, million (left)", lambda v, _: f"{v:.2f}", treal,
          "Spending by international visitors", "steg_tourism_national.pdf")
     f = lambda s, y: float(s.get(y, float("nan")))

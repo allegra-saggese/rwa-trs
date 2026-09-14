@@ -2,11 +2,13 @@
 steg_employment_series.py -- structural transformation and tourism jobs, 2001-2025, for the STEG appendix.
 
     python steg_employment_series.py
-    output/figures/steg_employment_series.pdf
+    output/figures/steg_employment_sectors.pdf    share of workers in agriculture (subsistence included) and in services
+    output/figures/steg_employment_tourism.pdf    people employed in tourism-related services: accommodation & food,
+                                                  arts & recreation, and travel agencies and tour operators where
+                                                  the data separate them
 
-    (a) share of the workforce in agriculture (subsistence included) and in services
-    (b) people employed in tourism: accommodation & food, arts & recreation, and travel agencies and tour
-        operators where the data separate them
+Each person is counted once, by main job, so agriculture + services + industry = 100%; industry is the
+remainder (2% in 2001, 12% in 2025). The x axis is broken (//) between survey years that are not consecutive.
 
 Two surveys, never spliced in levels.
     EICV   2001, 2006, 2011, 2014 -- NISR household living conditions survey, main job of everyone who
@@ -18,11 +20,13 @@ Two surveys, never spliced in levels.
            in-or-out-of-agriculture variable instead, which gives 61.1% against the 61.2% in the 2019
            LFS report.
 
-Panel (a) is in shares because the two surveys count different people: EICV takes ages 6+ over twelve
-months, LFS ages 16+ (14+ from 2020) over seven days, so headcounts jump at the join for reasons that
-have nothing to do with the economy. The overlap years show the size of that difference (EICV 2017 and
-2024 are printed for comparison, not plotted). Panel (b) is in people: tourism counts line up across the
-two surveys (EICV 2024 159k, LFS 2024 163k), so the level is informative.
+The sectors figure is in shares because the two surveys count different people: EICV takes ages 6+ over
+twelve months, LFS ages 16+ (14+ from 2020) over seven days, so headcounts jump at the join for reasons
+that have nothing to do with the economy. The overlap years show the size of that difference (EICV 2017
+and 2024 are printed for comparison, not plotted). The tourism figure is in people: tourism counts line up
+across the two surveys (EICV 2024 159k, LFS 2024 163k), so the level is informative. It counts direct
+main jobs only, so it sits well below WTTC's "jobs supported by travel & tourism" (386k in 2024), which
+adds transport, retail and indirect and induced jobs.
 
 EICV 2011 and 2017 are rebuilt from the raw job files because the harmonised EICV file carries no
 industry code for either round. 2011: main job = the job with the most annual hours; industry from the
@@ -114,6 +118,31 @@ def lfs():
     return out
 
 
+def broken_axis(ax, years):
+    """evenly spaced survey years; where two years are not consecutive, a short gap and a // on the axis"""
+    x = [0.0]
+    for a, b in zip(years, years[1:]):
+        x.append(x[-1] + (1 if b - a == 1 else 1.6))
+    xt = ax.get_xaxis_transform()
+    for k in range(1, len(years)):
+        if years[k] - years[k - 1] > 1:
+            m = (x[k] + x[k - 1]) / 2
+            ax.plot([m - .13, m + .13], [0, 0], color="white", lw=4, transform=xt, clip_on=False, zorder=5)
+            for dx in (-.06, .06):
+                ax.plot([m + dx - .05, m + dx + .05], [-.03, .03], color="black", lw=.9, transform=xt,
+                        clip_on=False, zorder=6)
+    ax.set_xticks(x); ax.set_xticklabels(years, fontsize=9)
+    ax.set_xlim(x[0] - .7, x[-1] + .7)
+    return np.array(x)
+
+
+def save(fig, ax, fname):
+    ax.grid(axis="y", lw=.35, color="#DDD"); ax.set_axisbelow(True)
+    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+    fig.savefig(P.FIGS / fname, bbox_inches="tight"); plt.close(fig)
+    print(f"written {P.FIGS / fname}")
+
+
 def main():
     eh = eicv_harmonised()
     e11, e17 = eicv_2011(), eicv_2017()
@@ -124,36 +153,26 @@ def main():
                                                  2024: {k: round(v, 2) for k, v in eh.get(2024, {}).items()}})
     print("LFS (plotted):"); print(pd.DataFrame(lf).T.round(2).to_string())
 
-    yE, yL = sorted(eicv), sorted(lf)
-    C_AG, C_SV = "#e9c46a", "#1b4965"
-    fig, (a1, a2) = plt.subplots(2, 1, figsize=(10, 7.6), sharex=True, gridspec_kw=dict(hspace=.12))
-    w = 0.38
-    for years, src, alpha, hatch in ((yE, eicv, .55, "//"), (yL, lf, 1.0, None)):
-        x = np.array(years, float)
-        a1.bar(x - w / 2, [src[y]["agri_pct"] for y in years], w, color=C_AG, alpha=alpha, hatch=hatch,
-               edgecolor="white", lw=.4)
-        a1.bar(x + w / 2, [src[y]["serv_pct"] for y in years], w, color=C_SV, alpha=alpha, hatch=hatch,
-               edgecolor="white", lw=.4)
-        a2.bar(x, [src[y]["tourism_k"] for y in years], .7, color="#2a9d8f", alpha=alpha, hatch=hatch,
-               edgecolor="white", lw=.4)
-    from matplotlib.patches import Patch
-    a1.legend(handles=[Patch(color=C_AG, label="Agriculture, subsistence included"),
-                       Patch(color=C_SV, label="Services"),
-                       Patch(facecolor="0.75", hatch="//", edgecolor="white", label="EICV (2001-2014)"),
-                       Patch(color="0.35", label="LFS (2017-2025)")],
-              loc="upper right", frameon=False, fontsize=8.5, ncol=2)
-    a1.set_ylabel("% of the workforce"); a1.set_ylim(0, 100)
-    a2.set_ylabel("People employed in tourism, thousands")
-    a2.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
-    a2.set_xticks(yE + yL); a2.set_xticklabels(yE + yL, rotation=45, ha="right", fontsize=8.5)
-    for a in (a1, a2):
-        a.grid(axis="y", lw=.35, color="#DDD"); a.set_axisbelow(True)
-        a.spines["top"].set_visible(False); a.spines["right"].set_visible(False)
-    a1.text(.005, .97, "(a)", transform=a1.transAxes, fontsize=10, va="top", fontweight="bold")
-    a2.text(.005, .97, "(b)", transform=a2.transAxes, fontsize=10, va="top", fontweight="bold")
-    fig.savefig(P.FIGS / "steg_employment_series.pdf", bbox_inches="tight")
-    plt.close(fig)
-    print(f"written {P.FIGS / 'steg_employment_series.pdf'}")
+    years = sorted(eicv) + sorted(lf)
+    rows = {**eicv, **lf}
+    for y in years:
+        assert rows[y]["agri_pct"] + rows[y]["serv_pct"] < 100, y
+
+    fig, ax = plt.subplots(figsize=(9.5, 4.2))
+    x = broken_axis(ax, years)
+    w = .38
+    ax.bar(x - w / 2, [rows[y]["agri_pct"] for y in years], w, color="#e9c46a", label="Agriculture, subsistence included")
+    ax.bar(x + w / 2, [rows[y]["serv_pct"] for y in years], w, color="#1b4965", label="Services")
+    ax.set_ylabel("% of workers"); ax.set_ylim(0, 100)
+    ax.legend(loc="upper right", frameon=False, fontsize=9)
+    save(fig, ax, "steg_employment_sectors.pdf")
+
+    fig, ax = plt.subplots(figsize=(9.5, 4.2))
+    x = broken_axis(ax, years)
+    ax.bar(x, [rows[y]["tourism_k"] for y in years], .7, color="#2a9d8f")
+    ax.set_ylabel("People employed, thousands")
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
+    save(fig, ax, "steg_employment_tourism.pdf")
 
 
 if __name__ == "__main__":
