@@ -52,11 +52,11 @@ def draw(left, left_label, left_fmt, right, right_label, fname):
     fig, ax = plt.subplots(figsize=(9.5, 4.8))
     ax2 = ax.twinx()
     line(ax, left, C_LEFT, "o", left_label)
-    line(ax2, right, C_RIGHT, "s", f"{right_label}, US$ million, constant {BASE_PRICE} prices (right)")
+    line(ax2, right, C_RIGHT, "s", f"{right_label}, million constant {BASE_PRICE} US$ (right)")
     ax.set_ylabel(left_label.replace(" (left)", ""))
     ax.yaxis.set_major_formatter(FuncFormatter(left_fmt))
     ax.set_ylim(0, left.max() * 1.15)
-    ax2.set_ylabel(f"{right_label}, US$ million, constant {BASE_PRICE} prices")
+    ax2.set_ylabel(f"{right_label}, million constant {BASE_PRICE} US$")
     ax2.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
     ax2.set_ylim(0, right.max() * 1.15)
     first = int(min(left.index.min(), right.index.min()))
@@ -84,7 +84,7 @@ def main():
     draw(pv / 1e6, "National park visits, million (left)", lambda v, _: f"{v:.2f}", preal,
          "National park revenue", "steg_tourism_parks.pdf")
     draw(ta / 1e6, "International arrivals, million (left)", lambda v, _: f"{v:.2f}", treal,
-         "Tourism revenue", "steg_tourism_national.pdf")
+         "Spending by international visitors", "steg_tourism_national.pdf")
     f = lambda s, y: float(s.get(y, float("nan")))
     print(f"parks: visits 2005 {f(pv,2005):,.0f} 2019 {f(pv,2019):,.0f} 2020 {f(pv,2020):,.0f} 2025 {f(pv,2025):,.0f} | "
           f"real revenue US$M: 2008 {f(preal,2008):.1f} 2019 {f(preal,2019):.1f} 2020 {f(preal,2020):.1f} 2025 {f(preal,2025):.1f}")
