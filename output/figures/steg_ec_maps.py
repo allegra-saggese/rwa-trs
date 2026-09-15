@@ -5,7 +5,8 @@ steg_ec_maps.py -- services establishments with paid staff per 1,000 residents b
     output/figures/steg_ec2014_services_map.pdf
 
 One map (Matteo, 2026-09-15): establishments whose main activity is in services, ISIC sections G-S, with at
-least one paid employee, per 1,000 residents, in quartiles of the 416 sectors, shades of red.
+least one paid employee, per 1,000 residents, in quartiles of the 416 sectors, shades of blue (red until
+2026-09-15). Lakes are drawn paler than the lightest blue class so they cannot be read as a sector.
 
 Establishments: NISR Establishment Census 2014, main activity section, weighted with the file's sampling
 weight (the public file keeps about one establishment in two, weight 2). 2014 is the last round with sector
@@ -91,17 +92,18 @@ def main():
     assert (v > 0).all()
     edges = np.quantile(v, [0, .25, .5, .75, 1])
     k = np.clip(np.searchsorted(edges, v, side="right") - 1, 0, 3)
-    colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap("Reds")(np.linspace(.2, .9, 4))]
+    colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap("Blues")(np.linspace(.45, 1.0, 4))]
+    water = "#dcecf7"                  # paler than the lightest class, so a lake never reads as a sector
     fmt = lambda x: f"{x:.2f}" if x < 1 else (f"{x:.1f}" if x < 10 else f"{x:.0f}")
     names = ["Bottom 25%", "25–50%", "50–75%", "Top 25%"]
 
     fig, ax = plt.subplots(figsize=(7.5, 7))
     s.plot(ax=ax, color=[colours[i] for i in k], edgecolor=EDGE, linewidth=.25, zorder=1)
     pk.plot(ax=ax, facecolor=PARK, edgecolor=PARK_EDGE, linewidth=.5, zorder=2)
-    lk.plot(ax=ax, facecolor=WATER, edgecolor=WATER_EDGE, linewidth=.3, zorder=3)
+    lk.plot(ax=ax, facecolor=water, edgecolor=WATER_EDGE, linewidth=.3, zorder=3)
     handles = [Patch(facecolor=colours[i], edgecolor=EDGE, label=f"{names[i]}:  {fmt(edges[i])} – {fmt(edges[i + 1])}")
                for i in range(4)] + [Patch(facecolor=PARK, edgecolor=PARK_EDGE, label="National park"),
-                                     Patch(facecolor=WATER, edgecolor=WATER_EDGE, label="Lake")]
+                                     Patch(facecolor=water, edgecolor=WATER_EDGE, label="Lake")]
     ax.legend(handles=handles, title="Establishments per\n1,000 residents", loc="center left", bbox_to_anchor=(1.0, .3),
               frameon=False, fontsize=8.5, title_fontsize=9, alignment="left")
     ax.set_axis_off()
