@@ -1,10 +1,10 @@
 """
-steg_sas_productivity_map.py -- crop output per hectare by district, 2023, for the STEG appendix.
+steg_sas_productivity_map.py -- crop output per hectare by district, 2025, for the STEG appendix.
 
     python steg_sas_productivity_map.py
-    output/figures/steg_sas_productivity_map_2023.pdf
+    output/figures/steg_sas_productivity_map_2025.pdf
 
-MEASURE. NISR Seasonal Agricultural Survey 2023, seasons A and B, small-scale farms, ten staples (maize, bush
+MEASURE. NISR Seasonal Agricultural Survey 2025 (the latest wave; 2023 until 2026-09-15), seasons A and B, small-scale farms, ten staples (maize, bush
 and climbing bean, cassava, the three bananas, sweet and Irish potato, sorghum). Output is valued at fixed
 prices, each crop's national median selling price over 2018-2025, and divided by harvested area; each district
 value is the weighted sum of output value over the weighted sum of area. Plot-crop records above their crop's
@@ -13,12 +13,13 @@ value is the weighted sum of output value over the weighted sum of area. Plot-cr
 DATA NOTES, each found in the data rather than assumed.
     999 and 9999 are don't-know codes in the selling price, 30-40% of recorded prices; they are excluded, or
         maize, beans and sweet potato would be priced at 999 RWF/kg.
-    2023 records harvested area, not crop area; 2021 crop area is about three times the 2020 distribution and
-        2024 has no area at all, which is why this is a single-year map.
+    Area is harvested area, recorded in 2018-2019, 2022-2023 and 2025 (2025 also records crop area, of which
+        harvested area is 79%); 2021 crop area is about three times the 2020 distribution and 2024 has no area
+        at all, which is why this is a single-year map.
 
 SEASONS. Seasons A and B are the two main rain-fed seasons. Season C is the small mid-year dry-season crop,
-mostly in marshlands and valley bottoms, with 4.5% of the 2023 plot-crop records (3,566 of 79,150), so it is
-left out. A and B are not averaged: output value is summed over both seasons and
+mostly in marshlands and valley bottoms, with 2.7% of the 2025 plot-crop records (1,884 of 69,173; 4.5% in
+2023), so it is left out. A and B are not averaged: output value is summed over both seasons and
 divided by harvested area summed over both, so a hectare cropped in both seasons counts twice.
 
 Colours split the 30 districts into three groups of ten, in shades of yellow (Matteo, 2026-09-15; quartiles
@@ -37,7 +38,7 @@ import paths as P
 import steg_ec_maps as M
 
 SAS = P.NISR / "Season-Agriculture-Survey-SAS" / "4_Harmonized" / "H_SAS_plotcrop.dta"
-YEAR = 2023
+YEAR = 2025                            # latest wave; 2023 until 2026-09-15
 BASKET = ["Maize", "Bush bean", "Climbing bean", "Cassava", "Banana for beer", "Cooking banana", "Dessert banana",
           "Sweet potato", "Irish potato", "Sorghum"]
 PRICES = ["sas_selling_price_2018_2022", "sas_selling_price_2023_2025"]
