@@ -91,7 +91,7 @@ def main():
                    for i, (name, c) in list(enumerate(CLASSES))[::-1]]
         handles += [Patch(facecolor=M.PARK, edgecolor="white", hatch="////", label="National park"),
                     Patch(facecolor=M.WATER, edgecolor=M.WATER_EDGE, label="Lake")]
-        ax.legend(handles=handles, title=f"{label}: change in share of\nworkers, points per decade",
+        ax.legend(handles=handles, title=f"{label}: average change per decade in\nthe share of workers, percentage points",
                   loc="center left", bbox_to_anchor=(1.0, .3), frameon=False, fontsize=8.5, title_fontsize=9,
                   alignment="left")
         ax.set_axis_off()
