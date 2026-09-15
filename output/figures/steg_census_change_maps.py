@@ -10,9 +10,11 @@ and 2022 Population and Housing Censuses, and the average of the two decade chan
 ((2012 - 2002) + (2022 - 2012)) / 2, in percentage points per decade. The shares come from three mutually
 exclusive groups that add to 100% of workers with a recorded industry; only two are mapped:
 
-    agriculture     agriculture, forestry and fishing, plus mining (ISIC A-B)          mapped
-    manufacturing   manufacturing, utilities and construction (C-F)                    in the denominator only
+    agriculture     agriculture, forestry and fishing (ISIC A)                         mapped
+    industry        mining, manufacturing, utilities and construction (B-F)            in the denominator only
     services        all services (G-U)                                                 mapped
+
+Mining sits in industry, not agriculture (Matteo, 2026-09-15); it is 0.2-1.4% of workers.
 
 Counts come from Analysis/census_sector_jobs_panel.csv (build_jobs_panel.py), where 2002 sits on the
 2022 sector boundaries. The 2022 census counts farming as work only if it is mainly for market, so
@@ -40,8 +42,8 @@ import paths as P
 import steg_ec_maps as M
 
 PANEL = P.NISR / "Analysis" / "census_sector_jobs_panel.csv"
-GROUPS = {"agriculture": (["n_AG_pt", "n_MIN"], "Agriculture"),
-          "manufacturing": (["n_MAN"], "Manufacturing, utilities & construction"),
+GROUPS = {"agriculture": (["n_AG_pt"], "Agriculture"),
+          "industry": (["n_MIN", "n_MAN"], "Mining, manufacturing, utilities & construction"),
           "services": (["n_TER"], "Services")}
 MAPPED = ("agriculture", "services")
 CUTS = [-10, -5, 0, 5, 10]
