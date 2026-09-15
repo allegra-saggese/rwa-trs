@@ -5,6 +5,9 @@ steg_ec_maps.py -- services and tourism establishments per 1,000 residents by se
     output/figures/steg_ec2014_services_map.pdf    ISIC sections G-S
     output/figures/steg_ec2014_tourism_map.pdf     ISIC sections I (accommodation & food) and R (arts,
                                                    entertainment & recreation)
+    output/figures/steg_ec2014_{services,tourism}_map_paid{1,4}.pdf
+                                                   the same two 2014 maps, counting only establishments with at
+                                                   least 1 / at least 4 paid employees
     output/figures/steg_ec2011_tourism_map.pdf     2011, number of tourist establishments: hotels and lodges
                                                    (ISIC 55), travel agencies and tour operators (79), arts,
                                                    museums, parks and recreation (90, 91, 93)
@@ -19,6 +22,12 @@ weight (the public file keeps about one establishment in two, weight 2). 2014 re
 ISIC section, so travel agencies and tour operators (inside N) cannot be separated, and I is mostly
 restaurants and bars. It is the last round with sector codes; 2017-2023 carry the district only.
 
+Employees outside the family (Matteo, 2026-09-15): EC 2014 splits an establishment's workers into working
+owners, unpaid workers, apprentices and paid workers by contract length (under 1 month, 1-6 months, over
+6 months, open-ended), and these add up to total workers in 99.9% of records. It has no family variable,
+so paid workers on any contract stand in for employees outside the family; owners, unpaid helpers and
+apprentices are left out. 23% of establishments have at least one, 8% at least four.
+
 Residents: 2012 Population and Housing Census, persons summed with the census weight by sector.
 
 Boundaries: NISR 2022 sector boundaries, all 416 sectors, six invalid rings repaired with make_valid;
@@ -27,7 +36,8 @@ Rwanda protected-areas layer, drawn in green over the sectors, with the sector e
 so no sector disappears under a park. Lakes in blue from OpenStreetMap (geo-data/water, see its README),
 cut to the frame of the sectors.
 
-Colours are quintiles of the 416 sectors, so each class holds about 83 sectors.
+Colours are quintiles of the 416 sectors, so each class holds about 83 sectors; where some sectors have
+none, they get their own grey class and the quintiles are taken over the rest.
 """
 import sys
 from pathlib import Path
@@ -48,6 +58,9 @@ CRS = 32736
 SERVICES = list(range(7, 20))          # G-S
 TOURISM = [9, 18]                      # I, R
 TOURISM_2011 = [55, 79, 90, 91, 93]    # ISIC divisions
+PAID = ["ec_contract_under_1m_total_2014", "ec_contract_1_6m_total_2014", "ec_contract_over_6m_total_2014",
+        "ec_open_contract_total_2014"]
+MIN_PAID = (1, 4)
 COUNT_BINS = [0, 1, 2, 5, 10, 20]      # 0 | 1 | 2-4 | 5-9 | 10-19 | 20+
 NONE = "#f2f2f2"
 PARK, PARK_EDGE, EDGE = "#2E6B3E", "#1C4527", "#9a9a9a"
@@ -63,10 +76,11 @@ def data():
     assert len(s) == 416 and s.sid.nunique() == 416 and s.is_valid.all()
 
     e, _ = pyreadstat.read_dta(str(EC), usecols=["ec_year", "ec_sector", "ec_weight", "ec_main_activity_section_2014",
-                                                 "ec_main_activity_isic_2011"])
+                                                 "ec_main_activity_isic_2011"] + PAID)
     o = e[e.ec_year == 2011].copy()
     e = e[e.ec_year == 2014].copy()
     e["sid"], e["sec"], e["w"] = num(e.ec_sector).astype(int), num(e.ec_main_activity_section_2014), num(e.ec_weight)
+    e["paid"] = e[PAID].apply(num).fillna(0).sum(axis=1)
     code = num(o.ec_main_activity_isic_2011)
     code = code.where(code >= 1000, code * 10)
     o["sid"], o["div"] = num(o.ec_sector).astype(int), code // 100
@@ -74,15 +88,19 @@ def data():
     counts = pd.DataFrame({"services": e[e.sec.isin(SERVICES)].groupby("sid").w.sum(),
                            "tourism": e[e.sec.isin(TOURISM)].groupby("sid").w.sum(),
                            "tourism2011": o[o["div"].isin(TOURISM_2011)].groupby("sid").size()})
+    for k in MIN_PAID:
+        p = e[e.paid >= k]
+        counts[f"services_paid{k}"] = p[p.sec.isin(SERVICES)].groupby("sid").w.sum()
+        counts[f"tourism_paid{k}"] = p[p.sec.isin(TOURISM)].groupby("sid").w.sum()
 
     c, _ = pyreadstat.read_dta(str(CENSUS), usecols=["census_year", "census_sector", "census_weight"])
     c = c[c.census_year == 2012]
     pop = c.groupby(num(c.census_sector).astype(int)).census_weight.sum().rename("pop2012")
 
     s = s.merge(counts, left_on="sid", right_index=True, how="left").merge(pop, left_on="sid", right_index=True, how="left")
-    s[["services", "tourism", "tourism2011"]] = s[["services", "tourism", "tourism2011"]].fillna(0)
+    s[list(counts.columns)] = s[list(counts.columns)].fillna(0)
     assert s.pop2012.notna().all() and len(s) == 416
-    for k in ("services", "tourism"):
+    for k in ["services", "tourism"] + [f"{m}_paid{n}" for m in ("services", "tourism") for n in MIN_PAID]:
         s[f"{k}_per_1000"] = s[k] / s.pop2012 * 1000
     return s
 
@@ -116,14 +134,18 @@ def render(s, pk, lk, fill, classes, title, fname):
 
 
 def draw(s, pk, lk, col, fname, cmap):
-    """quintiles of the 416 sectors"""
-    v = s[col]
-    edges = np.unique(np.quantile(v, np.linspace(0, 1, 6)))
+    """quintiles of the 416 sectors; sectors with none get their own grey class and the quintiles cover the rest"""
+    v = s[col].to_numpy()
+    pos = v > 0
+    edges = np.unique(np.quantile(v[pos], np.linspace(0, 1, 6)))
     k = np.clip(np.searchsorted(edges, v, side="right") - 1, 0, len(edges) - 2)
     colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap(cmap)(np.linspace(.15, .9, len(edges) - 1))]
-    fmt = lambda x: f"{x:.1f}" if x < 10 else f"{x:.0f}"
+    fmt = lambda x: f"{x:.2f}" if x < 1 else (f"{x:.1f}" if x < 10 else f"{x:.0f}")
     classes = [(colours[i], f"{fmt(edges[i])} – {fmt(edges[i + 1])}") for i in range(len(edges) - 1)]
-    render(s, pk, lk, [colours[i] for i in k], classes, "Establishments per\n1,000 residents", fname)
+    fill =[colours[i] if p else NONE for i, p in zip(k, pos)]
+    if (~pos).any():
+        classes = [(NONE, f"0  ({int((~pos).sum())} sectors)")] + classes
+    render(s, pk, lk, fill, classes, "Establishments per\n1,000 residents", fname)
 
 
 def draw_counts(s, pk, lk, col, fname, cmap, title):
@@ -150,6 +172,12 @@ def main():
               ", ".join(f"{r.sector} ({r.district}) {r[c]:.0f}" for _, r in s.nlargest(5, c).iterrows()))
     draw(s, pk, lk, "services_per_1000", "steg_ec2014_services_map.pdf", "Blues")
     draw(s, pk, lk, "tourism_per_1000", "steg_ec2014_tourism_map.pdf", "Oranges")
+    for n in MIN_PAID:
+        for k, cmap in (("services", "Blues"), ("tourism", "Oranges")):
+            c = f"{k}_paid{n}_per_1000"
+            print(f"{k}, >= {n} paid: {s[f'{k}_paid{n}'].sum():,.0f} establishments, {(s[c] == 0).sum()} sectors with none | top 5: " +
+                  ", ".join(f"{r.sector} ({r.district}) {r[c]:.1f}" for _, r in s.nlargest(5, c).iterrows()))
+            draw(s, pk, lk, c, f"steg_ec2014_{k}_map_paid{n}.pdf", cmap)
     t = s.tourism2011
     print(f"tourism 2011: {t.sum():,.0f} establishments, {(t > 0).sum()} sectors with any | top 8: " +
           ", ".join(f"{r.sector} ({r.district}) {r.tourism2011:.0f}" for _, r in s.nlargest(8, "tourism2011").iterrows()))
