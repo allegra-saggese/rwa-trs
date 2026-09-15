@@ -36,8 +36,9 @@ Rwanda protected-areas layer, drawn in green over the sectors, with the sector e
 so no sector disappears under a park. Lakes in blue from OpenStreetMap (geo-data/water, see its README),
 cut to the frame of the sectors.
 
-Colours are quintiles of the 416 sectors, so each class holds about 83 sectors; where some sectors have
-none, they get their own grey class and the quintiles are taken over the rest.
+Colours are quantile classes of the 416 sectors: quartiles for services (Matteo, 2026-09-15; bottom 25% of
+sectors, 25-50%, 50-75%, top 25%, about 104 sectors each), quintiles for tourism; where some sectors have
+none, they get their own grey class and the quantiles are taken over the rest.
 """
 import sys
 from pathlib import Path
@@ -133,15 +134,21 @@ def render(s, pk, lk, fill, classes, title, fname):
     print(f"written {P.FIGS / fname}")
 
 
-def draw(s, pk, lk, col, fname, cmap):
-    """quintiles of the 416 sectors; sectors with none get their own grey class and the quintiles cover the rest"""
+def draw(s, pk, lk, col, fname, cmap, q=5):
+    """q quantile classes of the 416 sectors (quintiles by default, quartiles for services); sectors with none
+    get their own grey class and the quantiles cover the rest"""
     v = s[col].to_numpy()
     pos = v > 0
-    edges = np.unique(np.quantile(v[pos], np.linspace(0, 1, 6)))
+    edges = np.unique(np.quantile(v[pos], np.linspace(0, 1, q + 1)))
     k = np.clip(np.searchsorted(edges, v, side="right") - 1, 0, len(edges) - 2)
     colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap(cmap)(np.linspace(.15, .9, len(edges) - 1))]
     fmt = lambda x: f"{x:.2f}" if x < 1 else (f"{x:.1f}" if x < 10 else f"{x:.0f}")
-    classes = [(colours[i], f"{fmt(edges[i])} – {fmt(edges[i + 1])}") for i in range(len(edges) - 1)]
+    rng = lambda i: f"{fmt(edges[i])} – {fmt(edges[i + 1])}"
+    if q == 4 and len(edges) == 5:
+        names = ["Bottom 25%", "25–50%", "50–75%", "Top 25%"]
+        classes = [(colours[i], f"{names[i]}:  {rng(i)}") for i in range(4)]
+    else:
+        classes = [(colours[i], rng(i)) for i in range(len(edges) - 1)]
     fill =[colours[i] if p else NONE for i, p in zip(k, pos)]
     if (~pos).any():
         classes = [(NONE, f"0  ({int((~pos).sum())} sectors)")] + classes
@@ -170,14 +177,14 @@ def main():
         print(f"{k}: per 1,000 median {s[c].median():.1f}, national {s[k].sum() / s.pop2012.sum() * 1000:.1f}, "
               f"zero sectors {(s[k] == 0).sum()} | top 5: " +
               ", ".join(f"{r.sector} ({r.district}) {r[c]:.0f}" for _, r in s.nlargest(5, c).iterrows()))
-    draw(s, pk, lk, "services_per_1000", "steg_ec2014_services_map.pdf", "Blues")
+    draw(s, pk, lk, "services_per_1000", "steg_ec2014_services_map.pdf", "Blues", q=4)
     draw(s, pk, lk, "tourism_per_1000", "steg_ec2014_tourism_map.pdf", "Oranges")
     for n in MIN_PAID:
         for k, cmap in (("services", "Blues"), ("tourism", "Oranges")):
             c = f"{k}_paid{n}_per_1000"
             print(f"{k}, >= {n} paid: {s[f'{k}_paid{n}'].sum():,.0f} establishments, {(s[c] == 0).sum()} sectors with none | top 5: " +
                   ", ".join(f"{r.sector} ({r.district}) {r[c]:.1f}" for _, r in s.nlargest(5, c).iterrows()))
-            draw(s, pk, lk, c, f"steg_ec2014_{k}_map_paid{n}.pdf", cmap)
+            draw(s, pk, lk, c, f"steg_ec2014_{k}_map_paid{n}.pdf", cmap, q=4 if k == "services" else 5)
     t = s.tourism2011
     print(f"tourism 2011: {t.sum():,.0f} establishments, {(t > 0).sum()} sectors with any | top 8: " +
           ", ".join(f"{r.sector} ({r.district}) {r.tourism2011:.0f}" for _, r in s.nlargest(8, "tourism2011").iterrows()))
