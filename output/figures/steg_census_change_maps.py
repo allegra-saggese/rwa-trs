@@ -25,7 +25,8 @@ partly because farmers disappear from the count; with it the path is 9.5, 16.8, 
 COLOURS (Matteo, 2026-09-15). Quartiles of the 416 sectors' change, in shades of dark blue, darker for a
 larger change (for agriculture, where almost every sector falls, the darkest class is the smallest fall).
 A red-green split at zero with strong and weak halves on each side was tried first and dropped. Sector
-boundaries, parks and lakes are drawn as in steg_ec_maps.py.
+boundaries and parks are drawn as in steg_ec_maps.py; lakes are paler than there, because its lake blue is
+the colour of the lightest class here.
 """
 import sys
 from pathlib import Path
@@ -69,7 +70,8 @@ def main():
     pk = gpd.read_file(M.PARKS)
     pk = pk[pk.designate.astype(str).str.contains("National Park", case=False, na=False)].to_crs(M.CRS)
     lk = gpd.clip(gpd.read_file(M.LAKES).to_crs(M.CRS), box(*s.total_bounds))
-    colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap("Blues")(np.linspace(.35, 1.0, 4))]
+    colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap("Blues")(np.linspace(.45, 1.0, 4))]
+    water = "#dcecf7"                  # paler than the lightest class, so a lake never reads as a sector
     pp = lambda x: f"{x:+.2f}" if abs(x) < .05 else f"{x:+.1f}"
 
     for g, (_, label) in GROUPS.items():
@@ -81,11 +83,11 @@ def main():
         fig, ax = plt.subplots(figsize=(7.5, 7))
         s.plot(ax=ax, color=[colours[i] for i in k], edgecolor=M.EDGE, linewidth=.25, zorder=1)
         pk.plot(ax=ax, facecolor=M.PARK, edgecolor=M.PARK_EDGE, linewidth=.5, zorder=2)
-        lk.plot(ax=ax, facecolor=M.WATER, edgecolor=M.WATER_EDGE, linewidth=.3, zorder=3)
+        lk.plot(ax=ax, facecolor=water, edgecolor=M.WATER_EDGE, linewidth=.3, zorder=3)
         handles = [Patch(facecolor=colours[i], edgecolor=M.EDGE, label=f"{QUARTILE[i]}:  {pp(edges[i])} to {pp(edges[i + 1])}")
                    for i in range(4)]
         handles += [Patch(facecolor=M.PARK, edgecolor=M.PARK_EDGE, label="National park"),
-                    Patch(facecolor=M.WATER, edgecolor=M.WATER_EDGE, label="Lake")]
+                    Patch(facecolor=water, edgecolor=M.WATER_EDGE, label="Lake")]
         ax.legend(handles=handles, title=f"{label}: change in share of\nworkers, points per decade",
                   loc="center left", bbox_to_anchor=(1.0, .3), frameon=False, fontsize=8.5, title_fontsize=9,
                   alignment="left")
