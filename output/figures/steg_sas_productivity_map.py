@@ -16,8 +16,14 @@ DATA NOTES, each found in the data rather than assumed.
     2023 records harvested area, not crop area; 2021 crop area is about three times the 2020 distribution and
         2024 has no area at all, which is why this is a single-year map.
 
-Colours are quartiles of the 30 districts in shades of yellow (Matteo, 2026-09-15). District boundaries are the
-NISR 2022 sectors dissolved by district; parks and lakes as in steg_ec_maps.py.
+SEASONS. Seasons A and B are the two main rain-fed seasons. Season C is the small mid-year dry-season crop,
+mostly in marshlands and valley bottoms, with 4.5% of the 2023 plot-crop records (3,566 of 79,150), so it is
+left out. A and B are not averaged: output value is summed over both seasons and
+divided by harvested area summed over both, so a hectare cropped in both seasons counts twice.
+
+Colours split the 30 districts into three groups of ten, in shades of yellow (Matteo, 2026-09-15; quartiles
+before). District boundaries are the NISR 2022 sectors dissolved by district; parks and lakes as in
+steg_ec_maps.py.
 """
 import sys
 from pathlib import Path
@@ -36,8 +42,8 @@ BASKET = ["Maize", "Bush bean", "Climbing bean", "Cassava", "Banana for beer", "
           "Sweet potato", "Irish potato", "Sorghum"]
 PRICES = ["sas_selling_price_2018_2022", "sas_selling_price_2023_2025"]
 DONT_KNOW = [999, 9999, 99999]
-COLOURS = ["#fff3b0", "#ffd95a", "#f2b600", "#b98500"]          # light to dark yellow
-NAMES = ["Bottom 25%", "25–50%", "50–75%", "Top 25%"]
+COLOURS = ["#fff0a0", "#f7c52b", "#b98500"]                      # light to dark yellow
+NAMES = ["Bottom 10 districts", "Middle 10", "Top 10"]
 
 
 def district_values():
@@ -72,15 +78,16 @@ def main():
     pk = pk[pk.designate.astype(str).str.contains("National Park", case=False, na=False)].to_crs(M.CRS)
     lk = gpd.clip(gpd.read_file(M.LAKES).to_crs(M.CRS), box(*dm.total_bounds))
 
-    v = dm.value_ha.to_numpy()
-    edges = np.quantile(v, [0, .25, .5, .75, 1])
-    k = np.clip(np.searchsorted(edges, v, side="right") - 1, 0, 3)
+    rank = dm.value_ha.rank(method="first").astype(int) - 1          # 0..29, ties broken by order
+    k = (rank // 10).to_numpy()
+    edges = [dm.value_ha[k == i].min() for i in range(3)] + [dm.value_ha.max()]
+    bounds = [(dm.value_ha[k == i].min(), dm.value_ha[k == i].max()) for i in range(3)]
     fig, ax = plt.subplots(figsize=(7.5, 7))
     dm.plot(ax=ax, color=[COLOURS[i] for i in k], edgecolor="#9a9a9a", linewidth=.6, zorder=1)
     pk.plot(ax=ax, facecolor=M.PARK, edgecolor=M.PARK_EDGE, linewidth=.5, zorder=2)
     lk.plot(ax=ax, facecolor=M.WATER, edgecolor=M.WATER_EDGE, linewidth=.3, zorder=3)
-    handles = [Patch(facecolor=COLOURS[i], edgecolor="#9a9a9a", label=f"{NAMES[i]}:  {edges[i]:,.0f} – {edges[i + 1]:,.0f}")
-               for i in range(4)]
+    handles = [Patch(facecolor=COLOURS[i], edgecolor="#9a9a9a", label=f"{NAMES[i]}:  {bounds[i][0]:,.0f} – {bounds[i][1]:,.0f}")
+               for i in range(3)]
     handles += [Patch(facecolor=M.PARK, edgecolor=M.PARK_EDGE, label="National park"),
                 Patch(facecolor=M.WATER, edgecolor=M.WATER_EDGE, label="Lake")]
     ax.legend(handles=handles, title=f"Crop output per hectare, {YEAR},\nthousand RWF at fixed prices",
