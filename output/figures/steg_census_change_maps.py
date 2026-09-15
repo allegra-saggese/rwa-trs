@@ -21,10 +21,11 @@ estimate (adults with no recorded industry in crop-growing households, less the 
 rate of the same rule in 2012). Without it services' national share would jump from 17% to 33% in 2012-2022
 partly because farmers disappear from the count; with it the path is 9.5, 16.8, 23.6%.
 
-COLOURS (Matteo, 2026-09-15). Fixed classes in points per decade: below -10 dark red, -10 to 0 light red,
-0 to +10 light green, above +10 dark green. Parks are dark green with white hatching so they cannot be read
-as a gain above +10. Sector boundaries and lakes are drawn as in steg_ec_maps.py. Tried and dropped: a
-red-green split at the median on each side of zero, and quartiles in blue (with a manufacturing map).
+COLOURS (Matteo, 2026-09-15). Six fixed classes in points per decade, reds for falls and greens for gains,
+darker further from zero: below -10, -10 to -5, -5 to 0, 0 to +5, +5 to +10, above +10. Parks are dark
+green with white hatching so they cannot be read as a gain above +10. Sector boundaries and lakes are
+drawn as in steg_ec_maps.py. Tried and dropped: four classes cut at -10, 0 and +10, a red-green split at the
+median on each side of zero, and quartiles in blue (with a manufacturing map).
 """
 import sys
 from pathlib import Path
@@ -42,7 +43,9 @@ GROUPS = {"agriculture": (["n_AG_pt", "n_MIN"], "Agriculture"),
           "manufacturing": (["n_MAN"], "Manufacturing, utilities & construction"),
           "services": (["n_TER"], "Services")}
 MAPPED = ("agriculture", "services")
-CLASSES = [("Below −10", "#b2182b"), ("−10 to 0", "#f4a582"), ("0 to +10", "#a6dba0"), ("Above +10", "#1b7837")]
+CUTS = [-10, -5, 0, 5, 10]
+CLASSES = [("Below −10", "#b2182b"), ("−10 to −5", "#ef8a62"), ("−5 to 0", "#fcd0bd"),
+           ("0 to +5", "#d9f0d3"), ("+5 to +10", "#7fbf7b"), ("Above +10", "#1b7837")]
 
 
 def changes():
@@ -74,9 +77,9 @@ def main():
     for g in MAPPED:
         label = GROUPS[g][1]
         v = s[g].to_numpy()
-        k = np.select([v < -10, v < 0, v <= 10], [0, 1, 2], default=3)
-        n = [int((k == i).sum()) for i in range(4)]
-        print(f"{g}: range {v.min():+.1f} to {v.max():+.1f} pp/decade | sectors per class (<-10, -10-0, 0-10, >10): {n}")
+        k = np.searchsorted(CUTS, v, side="left")          # a value on a cut goes to the class below it
+        n = [int((k == i).sum()) for i in range(len(CLASSES))]
+        print(f"{g}: range {v.min():+.1f} to {v.max():+.1f} pp/decade | sectors per class {dict(zip([c[0] for c in CLASSES], n))}")
         fig, ax = plt.subplots(figsize=(7.5, 7))
         s.plot(ax=ax, color=[CLASSES[i][1] for i in k], edgecolor=M.EDGE, linewidth=.25, zorder=1)
         pk.plot(ax=ax, facecolor=M.PARK, edgecolor="white", hatch="////", linewidth=0, zorder=2)
