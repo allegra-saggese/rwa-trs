@@ -22,9 +22,10 @@ estimate (adults with no recorded industry in crop-growing households, less the 
 rate of the same rule in 2012). Without it services' national share would jump from 17% to 33% in 2012-2022
 partly because farmers disappear from the count; with it the path is 9.5, 16.8, 23.6%.
 
-COLOURS. Decreases red, increases green; on each side the split between strong and weak is the median
-change of the sectors on that side. Parks are dark green with white hatching so they cannot be read as a
-strong increase. Sector boundaries, parks and lakes are drawn as in steg_ec_maps.py.
+COLOURS (Matteo, 2026-09-15). Quartiles of the 416 sectors' change, in shades of dark blue, darker for a
+larger change (for agriculture, where almost every sector falls, the darkest class is the smallest fall).
+A red-green split at zero with strong and weak halves on each side was tried first and dropped. Sector
+boundaries, parks and lakes are drawn as in steg_ec_maps.py.
 """
 import sys
 from pathlib import Path
@@ -41,8 +42,7 @@ PANEL = P.NISR / "Analysis" / "census_sector_jobs_panel.csv"
 GROUPS = {"agriculture": (["n_AG_pt", "n_MIN"], "Agriculture"),
           "manufacturing": (["n_MAN"], "Manufacturing, utilities\n& construction"),
           "services": (["n_TER"], "Services")}
-CLASS_COL = ["#b2182b", "#f4a582", "#a6dba0", "#1b7837"]     # strong decrease, weak decrease, weak increase, strong increase
-CLASS_NAME = ["Strong decrease", "Weak decrease", "Weak increase", "Strong increase"]
+QUARTILE = ["Bottom 25%", "25–50%", "50–75%", "Top 25%"]
 
 
 def changes():
@@ -58,15 +58,6 @@ def changes():
     return ch, nat
 
 
-def classify(v):
-    neg, pos = v[v < 0], v[v >= 0]
-    mn = np.median(neg) if len(neg) else -np.inf
-    mp = np.median(pos) if len(pos) else np.inf
-    k = np.select([(v < 0) & (v <= mn), v < 0, v <= mp], [0, 1, 2], default=3)
-    bounds = [(v[k == i].min(), v[k == i].max()) if (k == i).any() else None for i in range(4)]
-    return k, bounds
-
-
 def main():
     ch, nat = changes()
     print("national share of workers, %:"); print(nat.round(1).to_string())
@@ -78,24 +69,24 @@ def main():
     pk = gpd.read_file(M.PARKS)
     pk = pk[pk.designate.astype(str).str.contains("National Park", case=False, na=False)].to_crs(M.CRS)
     lk = gpd.clip(gpd.read_file(M.LAKES).to_crs(M.CRS), box(*s.total_bounds))
-    matplotlib.rcParams["hatch.linewidth"] = .6
+    colours = [matplotlib.colors.to_hex(c) for c in plt.get_cmap("Blues")(np.linspace(.35, 1.0, 4))]
+    pp = lambda x: f"{x:+.2f}" if abs(x) < .05 else f"{x:+.1f}"
 
     for g, (_, label) in GROUPS.items():
         v = s[g].to_numpy()
-        k, bounds = classify(v)
-        print(f"{g}: {int((v < 0).sum())} sectors down, {int((v >= 0).sum())} up | median {np.median(v):+.1f} pp/decade | "
-              f"range {v.min():+.1f} to {v.max():+.1f} | class sizes {[int((k == i).sum()) for i in range(4)]}")
+        edges = np.quantile(v, [0, .25, .5, .75, 1])
+        k = np.clip(np.searchsorted(edges, v, side="right") - 1, 0, 3)
+        print(f"{g}: {int((v < 0).sum())} sectors down, {int((v >= 0).sum())} up | quartile edges "
+              f"{[round(float(x), 1) for x in edges]} pp/decade | class sizes {[int((k == i).sum()) for i in range(4)]}")
         fig, ax = plt.subplots(figsize=(7.5, 7))
-        s.plot(ax=ax, color=[CLASS_COL[i] for i in k], edgecolor=M.EDGE, linewidth=.25, zorder=1)
-        pk.plot(ax=ax, facecolor=M.PARK, edgecolor="white", hatch="////", linewidth=0, zorder=2)
+        s.plot(ax=ax, color=[colours[i] for i in k], edgecolor=M.EDGE, linewidth=.25, zorder=1)
+        pk.plot(ax=ax, facecolor=M.PARK, edgecolor=M.PARK_EDGE, linewidth=.5, zorder=2)
         lk.plot(ax=ax, facecolor=M.WATER, edgecolor=M.WATER_EDGE, linewidth=.3, zorder=3)
-        pp = lambda x: f"{x:+.2f}" if abs(x) < .05 else f"{x:+.1f}"
-        handles = [Patch(facecolor=CLASS_COL[i], edgecolor=M.EDGE,
-                         label=f"{CLASS_NAME[i]}:  {pp(bounds[i][0])} to {pp(bounds[i][1])}  ({int((k == i).sum())})")
-                   for i in range(3, -1, -1) if bounds[i] is not None]
-        handles += [Patch(facecolor=M.PARK, edgecolor="white", hatch="////", label="National park"),
+        handles = [Patch(facecolor=colours[i], edgecolor=M.EDGE, label=f"{QUARTILE[i]}:  {pp(edges[i])} to {pp(edges[i + 1])}")
+                   for i in range(4)]
+        handles += [Patch(facecolor=M.PARK, edgecolor=M.PARK_EDGE, label="National park"),
                     Patch(facecolor=M.WATER, edgecolor=M.WATER_EDGE, label="Lake")]
-        ax.legend(handles=handles, title=f"{label}: change in share of\nworkers, points per decade (sectors)",
+        ax.legend(handles=handles, title=f"{label}: change in share of\nworkers, points per decade",
                   loc="center left", bbox_to_anchor=(1.0, .3), frameon=False, fontsize=8.5, title_fontsize=9,
                   alignment="left")
         ax.set_axis_off()
