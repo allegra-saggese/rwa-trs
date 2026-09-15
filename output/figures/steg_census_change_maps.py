@@ -21,11 +21,11 @@ estimate (adults with no recorded industry in crop-growing households, less the 
 rate of the same rule in 2012). Without it services' national share would jump from 17% to 33% in 2012-2022
 partly because farmers disappear from the count; with it the path is 9.5, 16.8, 23.6%.
 
-COLOURS (Matteo, 2026-09-15). Six fixed classes in points per decade, reds for falls and greens for gains,
-darker further from zero: below -10, -10 to -5, -5 to 0, 0 to +5, +5 to +10, above +10. Parks are dark
-green with white hatching so they cannot be read as a gain above +10. Sector boundaries and lakes are
-drawn as in steg_ec_maps.py. Tried and dropped: four classes cut at -10, 0 and +10, a red-green split at the
-median on each side of zero, and quartiles in blue (with a manufacturing map).
+COLOURS (Matteo, 2026-09-15). Five fixed classes in points per decade: below -10 dark red, -10 to -5 light
+red, -5 to +5 light grey, +5 to +10 light green, above +10 dark green. Parks are dark green with white
+hatching so they cannot be read as a gain above +10. Sector boundaries and lakes are drawn as in
+steg_ec_maps.py. Tried and dropped: six classes with 0 as a cut, four classes cut at -10, 0 and +10, a
+red-green split at the median on each side of zero, and quartiles in blue (with a manufacturing map).
 """
 import sys
 from pathlib import Path
@@ -43,9 +43,9 @@ GROUPS = {"agriculture": (["n_AG_pt", "n_MIN"], "Agriculture"),
           "manufacturing": (["n_MAN"], "Manufacturing, utilities & construction"),
           "services": (["n_TER"], "Services")}
 MAPPED = ("agriculture", "services")
-CUTS = [-10, -5, 0, 5, 10]
-CLASSES = [("Below −10", "#b2182b"), ("−10 to −5", "#ef8a62"), ("−5 to 0", "#fcd0bd"),
-           ("0 to +5", "#d9f0d3"), ("+5 to +10", "#7fbf7b"), ("Above +10", "#1b7837")]
+CUTS = [-10, -5, 5, 10]
+CLASSES = [("Below −10", "#b2182b"), ("−10 to −5", "#ef8a62"), ("−5 to +5", "#ebebeb"),
+           ("+5 to +10", "#7fbf7b"), ("Above +10", "#1b7837")]
 
 
 def changes():
