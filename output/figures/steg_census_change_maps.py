@@ -84,7 +84,7 @@ def main():
         s.plot(ax=ax, color=[CLASSES[i][1] for i in k], edgecolor=M.EDGE, linewidth=.25, zorder=1)
         pk.plot(ax=ax, facecolor=M.PARK, edgecolor="white", hatch="////", linewidth=0, zorder=2)
         lk.plot(ax=ax, facecolor=M.WATER, edgecolor=M.WATER_EDGE, linewidth=.3, zorder=3)
-        handles = [Patch(facecolor=c, edgecolor=M.EDGE, label=f"{name}  ({n[i]} sectors)")
+        handles = [Patch(facecolor=c, edgecolor=M.EDGE, label=f"{name}  ({n[i]} sector{'' if n[i] == 1 else 's'})")
                    for i, (name, c) in list(enumerate(CLASSES))[::-1]]
         handles += [Patch(facecolor=M.PARK, edgecolor="white", hatch="////", label="National park"),
                     Patch(facecolor=M.WATER, edgecolor=M.WATER_EDGE, label="Lake")]
