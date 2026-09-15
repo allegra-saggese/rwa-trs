@@ -3,10 +3,8 @@ steg_employment_series.py -- structural transformation and tourism jobs, 2001-20
 
     python steg_employment_series.py
     output/figures/steg_employment_sectors.pdf    share of workers in agriculture (subsistence included) and in services
-    output/figures/steg_employment_tourism.pdf    people employed in tourism-related services. Green, every year:
-                                                  accommodation & food and arts & recreation (ISIC sections I, R).
-                                                  Yellow on top, LFS only: travel agencies & tour operators (79),
-                                                  air (51) and water (50) transport, rental & leasing (77)
+    output/figures/steg_employment_tourism.pdf    people employed in tourism-related services: accommodation & food
+                                                  and arts & recreation (ISIC sections I, R), every year
 
 Each person is counted once, by main job, so agriculture + services + industry = 100%; industry is the
 remainder (2% in 2001, 12% in 2025). The x axis is broken (//) between survey years that are not consecutive.
@@ -34,8 +32,9 @@ industry code for either round. 2011: main job = the job with the most annual ho
 job module, or for independent non-farmers from the enterprise module; NISR's own industry groups mapped
 to agriculture (11-14), services (61-93), tourism (64 hotels & restaurants, 92 recreation & tourism).
 EICV 2011 has only NISR's industry groups and EICV 2014 and 2017 only ISIC sections, so the green bars
-are sections I and R (NISR groups 64 and 92 in 2011) in every year, gambling (92) included. The LFS has
-two-digit ISIC in every year (four-digit in 2019 and 2021), which is what the yellow bars need.
+are sections I and R (NISR groups 64 and 92 in 2011) in every year, gambling (92) included. Travel
+agencies (79), air (51) and water (50) transport and rental (77) are separable only in the LFS and add
+4-10k a year, so they are left out.
 """
 import sys
 from pathlib import Path
@@ -48,7 +47,6 @@ import paths as P
 EICV = P.NISR / "Household-Living-Conditions-EICV"
 LFS = P.NISR / "Labour-Force-Survey-LFS" / "4_Harmonized" / "H_LFS_person.dta"
 TOUR = [9, 18]                          # ISIC sections I and R
-BROAD = [79, 51, 50, 77]                # two-digit ISIC added on top in LFS years
 num = lambda s: pd.to_numeric(s, errors="coerce")
 
 
@@ -102,12 +100,9 @@ def eicv_2017():
 
 def lfs():
     cols = ["lfs_year", "lfs_weight", "lfs_labour_force_status", "lfs_subsistence_producer", "lfs_industry_isic",
-            "lfs_agricultural_work_2019", "lfs_isic_2digit_main_2017_2018", "lfs_isic_main_job_2019_2021",
-            "lfs_isic_main_job_2020", "lfs_isic_two_digit_main_job"]
+            "lfs_agricultural_work_2019"]
     d, _ = pyreadstat.read_dta(str(LFS), usecols=cols)
     d["wt"] = num(d.lfs_weight).fillna(0)
-    d["isic2"] = (num(d.lfs_isic_two_digit_main_job).fillna(num(d.lfs_isic_2digit_main_2017_2018))
-                  .fillna(num(d.lfs_isic_main_job_2020)).fillna(np.floor(num(d.lfs_isic_main_job_2019_2021) / 100)))
     out = {}
     for y, g in d.groupby("lfs_year"):
         emp = g.lfs_labour_force_status == 1
@@ -120,7 +115,6 @@ def lfs():
             sub = g.lfs_subsistence_producer == 1
             total = g.wt[emp | sub].sum(); agri = (emp & (i == 1)) | (sub & ~emp)
         out[int(y)] = summarise(g.wt, agri, emp & (i >= 7), tour, total=total)
-        out[int(y)]["broad_k"] = g.wt[emp & g.isic2.isin(BROAD)].sum() / 1e3
     return out
 
 
@@ -175,11 +169,7 @@ def main():
 
     fig, ax = plt.subplots(figsize=(9.5, 4.2))
     x = broken_axis(ax, years)
-    base = [rows[y]["tourism_k"] for y in years]
-    ax.bar(x, base, .7, color="#2a9d8f", label="Accommodation & food; arts, entertainment & recreation")
-    ax.bar(x, [rows[y].get("broad_k", 0) for y in years], .7, bottom=base, color="#e9c46a",
-           label="Travel agencies & tour operators; air & water transport; rental & leasing")
-    ax.legend(loc="upper left", frameon=False, fontsize=9)
+    ax.bar(x, [rows[y]["tourism_k"] for y in years], .7, color="#2a9d8f")
     ax.set_ylabel("People employed, thousands")
     ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
     save(fig, ax, "steg_employment_tourism.pdf")
