@@ -12,7 +12,8 @@ Folders are organised by **task**, not by pipeline stage.
 | `info-scripts/` | Anything that reads variable names, metadata or dataset structure |
 | `data-build-scripts/` | Acquiring and assembling data — spatial layers, remote sensing, survey extracts, and the two analysis panels |
 | `summary-stat-scripts/` | Preliminary descriptive analysis: figures, maps, tables |
-| `spatial-analysis-scripts/` | Spatial estimation on the sector and cell panels |
+| `spatial-analysis-scripts/` | Spatial estimation on the sector and cell panels — **currently empty**, reserved |
+| `output/` | The STEG results scripts and `STEG-Results.tex` (see "STEG results scripts" below). Not the same as the Dropbox `output/` folder, which holds rendered files |
 | `district-level-analysis/` | District-year models, where the survey microdata lives |
 | `interim-processing/` | Everything this repo produces on the way to an analysis file |
 | `NISR/` | One cleaning pipeline per NISR survey (see below) |
@@ -225,19 +226,39 @@ asymptotics do not hold — Cameron, Gelbach & Miller put the rule of thumb near
 ## NISR microdata pipelines (`NISR/`)
 
 The survey microdata (LFS, Census, EICV, Establishment Census, AHS, SAS, CFSVA) are
-cleaned and pooled by independent Python pipelines in `NISR/` (read `NISR/README.txt`
-first for survey data): 
-- one folder per survey, `python master.py` runs it top to bottom,
-- outputs go to Dropbox data folder (`2_Intermediate/`, `3_Final/`). 
-- codebook: Each dataset's codebook is the Excel workbook `CODEBOOK_<survey>.xlsx`
-- repo: holds code and run logs only, and the processing notes (what the
-NISR documentation says, every decision and why) are kept with the project memory outside
-git. 
-- `NISR/Harmonize/`, writes harmonised copies of every final and appended file (common keys, labels and `h_*` concept variables) to
-`Publicly-Available-NISR/Harmonisation-docs/`. 
+cleaned by independent Python pipelines in `NISR/` (read `NISR/README.txt` first for
+survey data):
+- one folder per survey; `python master.py` runs it top to bottom, and `NISR/master.py`
+  runs all seven surveys and then the harmonisation step.
+- outputs go to the Dropbox data folder (`2_Intermediate/`, `3_Final/`, then `4_Harmonized/`).
+- codebook: each dataset's codebook is the Excel workbook `CODEBOOK_<survey>.xlsx` next to
+  that folder's `README.txt` on Dropbox.
+- repo: holds code and run logs only; the processing notes (what the NISR documentation
+  says, every decision and why) are kept outside the repository.
+- `NISR/Harmonize/` writes the harmonised copy of every final file (common keys, labels and
+  `h_*` concept variables) into that dataset's own `4_Harmonized/`. **Those are the files
+  analysis reads.** The `extract.py` survey loaders for EICV predate these pipelines and
+  still read `1_Raw`; the labour extracts do not.
 
-=======
+## STEG results scripts (`output/`)
 
+`output/figures/` holds the scripts behind the STEG results document
+(`output/STEG-Results.tex`) and its appendix; `output/maps/maps-treat-sectors.py` draws
+the treated-sector maps. They write rendered figures to the Dropbox `output/figures/`
+folder. `make_tex_figures.py` regenerates every figure without its embedded caption so
+the note sits in the LaTeX instead of the image. Each script's docstring states its
+inputs and outputs; the groups are:
+
+| Group | Scripts |
+|---|---|
+| Census DiD (2002/2012/2022) | `bar_chart_{education,housing}.py`, `coefplot_{education,housing}.py` and `_lasso` variants (PDS-lasso control choice), `housing_inference.py`, `cohort_{education,marriage}.py`, `build_controls.py` (2002 control block), `build_jobs_panel.py`, `coefplot_jobs.py` |
+| Forest | `forest_event_study_5km.py`, `coefplot_forest_5km.py`, `coefplot_jrc_forest.py` |
+| Nighttime lights | `did_nightlights.py`, `event_ntl_{gates,gates_monthly,groups,monthly_prepost}.py`, `ntl_monthly_groups.py`, `ntl_engine_gates.py` (estimation engine), `ntl_intercal{,_monthly}.py` (DMSP intercalibration) |
+| STEG appendix descriptives | `steg_{census_change_maps,ec_maps,employment_series,forest_jrc,ntl_gates,sas_productivity_map,tourism_series}.py` |
+
+These scripts read analysis files (e.g. `Analysis/census_sector_education_panel.csv`)
+that live outside the repo, and `STEG-Results.tex` has a hardcoded local graphics path,
+so check both before running on another machine.
 
 ## Measurement review of data
 
@@ -324,4 +345,4 @@ python info-scripts/inventory.py            # docs/data_inventory.md
 python info-scripts/variables.py --export   # docs/variable_lists.md
 ```
 
-`data_inventory.md`    # stale - to delete 
+`data_inventory.md` predates the current layout and should be regenerated or deleted.
