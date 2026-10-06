@@ -1,11 +1,5 @@
-# rwa-trs
-
-Tourism, jobs and conservation in the communities bordering Rwanda's national
-parks. Estimates the effect of park-based tourism and of the Tourism Revenue
-Sharing (TRS) programme on local economies, and asks whether tourism-led
-development raises or relieves pressure on the forest.
-
-The unit of analysis is the **sector** (416) and, where the outcome supports it,
+# Purpose: Service sector, labor market and conservation
+## The unit of analysis is the **sector** (416) and, where the outcome supports it,
 the **cell** (2,148). Both are joined to Census microdata through the national
 administrative code scheme.
 
@@ -49,9 +43,7 @@ writing into the holdings.
 files this repo builds go to `interim-processing/{raw,processed}/`, which is
 gitignored. Nothing intermediate is written next to the scripts.
 
-Rendered figures, maps and tables go to the **Dropbox `output/` folder**, not
-the repo, so a coauthor who does not run the code still sees them:
-
+**Dropbox `output/` folder**: Rendered figures, maps and tables
 ```
 ~/Library/CloudStorage/Dropbox/Rwanda - TRS/output/{figures,maps,tables}
 ```
@@ -152,29 +144,8 @@ python maps.py --all       # districts_reference, rainfall_mean, rainfall_variab
 `maps.py --all` also builds `dhs_clusters`, which skips with a message until the
 DHS GPS shapefile is in `interim-processing/raw/dhs/`.
 
-Tables are written by the same scripts to Dropbox `output/tables/` as CSV and,
-where jinja2 is installed, LaTeX: isic_composition_full, ec_isic_shares_wide,
-lfs_isic_shares_wide, landcover_change_district, sector_panel_summary,
-district_summary, balance_by_province, wdi_trends.
 
-`viz_style.py` fixes the shared conventions — park-bordering red `#c1121f`,
-other navy `#1b4965`, one colour per land-cover class, integer year axes, and
-colourbars placed outside the map frame — so the whole set reads as one system.
-
-Two denominator guards are applied in the figures and must be carried into any
-model built on the same columns:
-
-- `hazard_pct` in `sector_year_panel.csv` divides by forest still standing. 162
-  sector-years hold under 1 ha, and sector 1303 in 2014 holds 1.4e-16 ha —
-  floating-point residue of zero — returning a hazard of 1.9e17 that swamps any
-  mean over the raw column. Figures restrict to >= 10 ha standing.
-- Cell `loss_rate` divides by year-2000 tree cover. 81 cells exceed 100%,
-  because Hansen records loss on plantations established after 2000. These sit
-  mostly far from parks, so an unguarded mean reverses the distance gradient.
-
-See `docs/cleaning_decisions.md` for which denominator to use when.
-
-## Labour extracts
+## Labor extracts
 
 `extract.py --sources labour` builds every labour table the figures read,
 straight from `4_Harmonized/`:
@@ -198,9 +169,6 @@ no crosswalk is needed. LFS is weighted throughout because it is a sample; the
 Establishment Census is a census and is not. `border_dist` marks a district
 containing at least one sector that touches or lies within 1 km of a park —
 coarser than the sector-level treatment, but the microdata only reaches district.
-
-`geo-data/labour/archive/` holds four superseded hand-cut files that no script
-reads. They are not regenerable; do not build on them.
 
 ## The analysis panels
 
@@ -253,51 +221,27 @@ asymptotics do not hold — Cameron, Gelbach & Miller put the rule of thumb near
 50 — so `p_cluster` over-rejects. The gap is not hypothetical: in
 `tourism_park`, `log_pop` has p_cluster 0.024 and p_wild 0.095.
 
-The wild cluster bootstrap imposes the null, re-estimates without the tested
-column, and applies Rademacher weights one draw per district.
-
-`fit()` refuses to estimate a regressor with no variation left after the fixed
-effects, rather than reporting the t = 1e12 that follows. This matters here:
-the forest columns in `district_workers_forest_panel.csv` are cross-sectional
-totals repeated across years, so `load()` builds a year-varying district series
-by aggregating the sector-year panel instead.
-
-Nothing here is causal — 270 observations, no design. These are conditional
-correlations for memos and for deciding what is worth pursuing.
 
 ## NISR microdata pipelines (`NISR/`)
 
 The survey microdata (LFS, Census, EICV, Establishment Census, AHS, SAS, CFSVA) are
-<<<<<<< HEAD
 cleaned and pooled by independent Python pipelines in `NISR/` (read `NISR/README.txt`
-first for survey data): one folder per survey, `python master.py` runs it top to bottom,
-outputs go to the Dropbox data folder (`2_Intermediate/`, `3_Final/`). Each dataset's
-codebook is the Excel workbook `CODEBOOK_<survey>.xlsx` next to that folder's `README.txt`
-on Dropbox; the repository holds code and run logs only, and the processing notes (what the
+first for survey data): 
+- one folder per survey, `python master.py` runs it top to bottom,
+- outputs go to Dropbox data folder (`2_Intermediate/`, `3_Final/`). 
+- codebook: Each dataset's codebook is the Excel workbook `CODEBOOK_<survey>.xlsx`
+- repo: holds code and run logs only, and the processing notes (what the
 NISR documentation says, every decision and why) are kept with the project memory outside
-git. An eighth folder, `NISR/Harmonize/`, writes harmonised copies of every final and
-appended file (common keys, labels and `h_*` concept variables) to
-`Publicly-Available-NISR/Harmonisation-docs/`. The `extract.py` survey loaders predate these pipelines.
+git. 
+- `NISR/Harmonize/`, writes harmonised copies of every final and appended file (common keys, labels and `h_*` concept variables) to
+`Publicly-Available-NISR/Harmonisation-docs/`. 
+
 =======
-cleaned by independent Python pipelines in `NISR/` (read `NISR/README.txt` first for
-survey data): one folder per survey, `python master.py` runs it top to bottom, outputs
-go to the Dropbox data folder (`2_Intermediate/`, `3_Final/`, then `4_Harmonized/`).
-Each dataset's codebook is the Excel workbook `CODEBOOK_<survey>.xlsx` next to that
-folder's `README.txt` on Dropbox; the repository holds code and run logs only, and the
-processing notes (what the NISR documentation says, every decision and why) are kept
-with the project memory outside git. An eighth folder, `NISR/Harmonize/`, writes the
-harmonised copy of every final file — common keys, labels and `h_*` concept variables —
-into that dataset's own `4_Harmonized/`. **Those are the files analysis reads.** The
-`extract.py` survey loaders for EICV predate these pipelines and still read `1_Raw`;
-the labour extracts do not.
->>>>>>> 14a37cfa34c5b2a13864c54c82cc2550c4579467
 
-## The three measurement problems this project has to solve
 
-Everything in the data build exists to address one of these. They are not
-side-quests; each one determines whether a headline result survives.
+## Measurement review of data
 
-### 1. Where are the households?
+### Household-level data
 
 Public microdata is anonymised to coarse geography, and it differs by source:
 
@@ -317,10 +261,7 @@ they support clustered standard errors and nothing spatial.
 non-spatial; the spatial work runs on the Census and on the environmental
 layers.
 
-### 2. What counts as treated?
-
-`Border_s` — a sector touching or within 1 km of a national park — is
-load-bearing, and the count moves with the boundary source:
+### Treatment definitions
 
 | Boundary source | Border sectors | Population |
 |---|---|---|
@@ -328,7 +269,10 @@ load-bearing, and the count moves with the boundary source:
 | geodata.rw (authoritative, in use) | 62 | 1,925,052 |
 | Population within 2 km (1 km grid) | — | **490,308** |
 
-The third row is the point. Sectors average 64 km², so most people in a
+`Border_s` — a sector touching or within 1 km of a national park — is
+load-bearing, and the count moves with the boundary source:
+
+Population-points Sectors average 64 km², so most people in a
 "treated" sector live far from the boundary. The gridded population raster gives
 a continuous exposure measure that does not inherit sector shape.
 
@@ -336,18 +280,8 @@ Boundaries are stable from the **2006 administrative reform** onward. All time
 series are therefore clipped to 2006+; full-length versions are kept as
 `*_full.csv`.
 
-### 3. Is forest loss deforestation, or is it harvest?
 
-Rwandan forest loss runs 1,200–2,100 ha/yr through 2012 and 5,500–9,100 ha/yr
-from 2013. That step change is not obviously a change in deforestation
-pressure — planted area correlates 0.154 with 2006–2012 loss but **0.565** with
-2013–2024 loss. Rwanda planted heavily in the 1980s–90s and those stands came
-due.
-
-Separating the two requires the planted-tree layer alongside the loss layer.
-Without it, a forest result is partly an estimate of eucalyptus rotation.
-
-## Data
+## Data sources (review)
 
 Full detail in [`docs/data_catalogue.md`](docs/data_catalogue.md); the paper
 table is `output/tables/data_table.tex` on Dropbox.
@@ -359,15 +293,12 @@ itself, and DHS GPS.
 
 **Conservation** — Hansen forest loss (sector and cell), JRC TMF (forest
 quality: undisturbed / degraded / regrowth), Dynamic World (9 land-cover
-classes), RADD alerts, WRI SDPT planted trees, CHIRPS rainfall. Missing: RCMRD
-land cover (portal down), animal censuses.
+classes), RADD alerts, WRI SDPT planted trees, CHIRPS rainfall. 
+Missing: RCMRD land cover (portal down at extraction time), animal censuses (disaggregated)
 
 **Infrastructure and geography** — Google Open Buildings (5.8M footprints),
 GRID3 settlements, gridfinder electricity, NISR administrative boundaries
-(province → village), geodata.rw protected areas, 1 km gridded population.
-
-Survey microdata is licensed to the researcher and lives outside this repo. The
-roots are set once in `paths.py`.
+(province to village), geodata.rw protected areas, 1 km gridded population.
 
 ## Documentation
 
@@ -382,9 +313,9 @@ roots are set once in `paths.py`.
 | [`docs/variable_lists.md`](docs/variable_lists.md) | EICV7 variables by workstream (generated) |
 | [`docs/data_inventory.md`](docs/data_inventory.md) | File-level index (generated) |
 
-**Read `cleaning_decisions.md` before specifying anything.** It records the
-constraints that shape what can be identified — including that rainfall shocks
-are ~79% absorbed by year fixed effects.
+**Read `cleaning_decisions.md` before specifying anything.** 
+
+
 
 Two docs are machine-generated and must not be hand-edited:
 
@@ -393,5 +324,4 @@ python info-scripts/inventory.py            # docs/data_inventory.md
 python info-scripts/variables.py --export   # docs/variable_lists.md
 ```
 
-`data_inventory.md` is currently stale — it was generated on a coauthor's
-machine and its header points at their Dropbox root. Regenerate it.
+`data_inventory.md`    # stale - to delete 
