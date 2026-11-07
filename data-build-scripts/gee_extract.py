@@ -24,6 +24,12 @@ Outputs (data/processed/)
     dw_by_sector.csv    sector x year, mean fraction of each Dynamic World class
     radd_by_sector.csv  sector x year, hectares of confirmed RADD alerts
 
+    worldcover_by_<unit>.csv   (written to geo-data/land-cover/)
+        unit x year (2020, 2021) x ESA WorldCover class, area in ha, for
+        --units sector (416) and/or cell (2,148 NISR administrative cells)
+
+    python gee_extract.py --project YOUR_GEE_PROJECT --datasets worldcover --units sector cell
+
 Both key on `sector_id`, so they join to the Census microdata and to the
 existing park-exposure and Hansen tables.
 """
@@ -68,6 +74,16 @@ RADD = "projects/radar-wur/raddalert/v1"
 DW = "GOOGLE/DYNAMICWORLD/V1"
 DW_BANDS = ["water", "trees", "grass", "flooded_vegetation", "crops",
             "shrub_and_scrub", "built", "bare", "snow_and_ice"]
+
+# ESA WorldCover, 10 m, hard classification (one class per pixel). Two vintages
+# only: v100 = 2020, v200 = 2021. The versions use different algorithms, so ESA
+# cautions against reading 2020 -> 2021 differences as land change.
+WORLDCOVER = {2020: "ESA/WorldCover/v100", 2021: "ESA/WorldCover/v200"}
+WC_CLASSES = {10: "tree", 20: "shrub", 30: "grass", 40: "cropland", 50: "built",
+              60: "bare", 70: "snow", 80: "water", 90: "wetland", 95: "mangrove",
+              100: "moss"}
+WC_SCALE_M = 10
+CELLS_GPKG = (P.DATA / "geo-data/protected-areas/cells_park_exposure_geodatarw.gpkg")
 
 # Native resolutions. TMF is 30 m; Dynamic World is 10 m but is reduced at 30 m
 # here so the two share a grid and the export stays within EE's limits.
@@ -114,6 +130,65 @@ def sectors_to_ee(ee):
         ))
     _log(f"{len(feats)} sector polygons prepared")
     return ee.FeatureCollection(feats)
+
+
+def units_to_ee(ee, unit: str):
+    """Sector or cell polygons as a list of ee.Feature (not one collection).
+
+    Kept as a list so the WorldCover reduction can send them in chunks: 2,148
+    cells at 10 m exceed Earth Engine's per-request memory in one call.
+    """
+    import geopandas as gpd
+
+    path, key = {"sector": (SECTORS_GPKG, "sector_id"),
+                 "cell": (CELLS_GPKG, "cell_id")}[unit]
+    if not path.exists():
+        raise FileNotFoundError(f"{unit} file not found: {path}")
+    g = gpd.read_file(path).to_crs(4326)
+    g["geometry"] = g.geometry.simplify(0.0002 if unit == "cell" else 0.0005)
+    feats = [ee.Feature(ee.Geometry(r.geometry.__geo_interface__),
+                        {"unit_id": int(getattr(r, key))}) for r in g.itertuples()]
+    _log(f"{len(feats)} {unit} polygons prepared")
+    return feats
+
+
+def fetch_worldcover(ee, feats, unit: str, chunk: int = 100) -> pd.DataFrame:
+    """Area (ha) of each ESA WorldCover class, per unit, for 2020 and 2021.
+
+    Pixel area is summed by class at the native 10 m, so the result is land area,
+    not a probability. Units are reduced in chunks, retried with a larger
+    tileScale on memory errors.
+    """
+    rows = []
+    for yr, asset in WORLDCOVER.items():
+        img = ee.ImageCollection(asset).first().select("Map")
+        area = ee.Image.pixelArea().divide(1e4).addBands(img)
+        reducer = ee.Reducer.sum().group(groupField=1, groupName="class")
+        for i in range(0, len(feats), chunk):
+            fc = ee.FeatureCollection(feats[i:i + chunk])
+            got = None
+            for tile_scale in (4, 16):
+                try:
+                    got = area.reduceRegions(collection=fc, reducer=reducer,
+                                             scale=WC_SCALE_M,
+                                             tileScale=tile_scale).getInfo()["features"]
+                    break
+                except Exception as exc:  # noqa: BLE001
+                    if "memory" not in str(exc).lower() and "timed out" not in str(exc).lower():
+                        _log(f"  ! {yr} chunk {i}: {str(exc)[:90]}")
+                        break
+            if got is None:
+                _log(f"  ! {yr} chunk {i}: skipped"); continue
+            for f in got:
+                pr = f["properties"]
+                rec = {f"{unit}_id": pr["unit_id"], "year": yr}
+                for grp in pr.get("groups", []):
+                    name = WC_CLASSES.get(int(grp["class"]), f"class_{grp['class']}")
+                    rec[f"wc_{name}_ha"] = grp["sum"]
+                rows.append(rec)
+            time.sleep(0.3)
+        _log(f"  WorldCover {yr} done ({unit})")
+    return pd.DataFrame(rows).fillna(0)
 
 
 def fetch_tmf(ee, sectors, years: range) -> pd.DataFrame:
@@ -284,7 +359,9 @@ def main(argv=None) -> int:
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--project", required=True, help="your GEE Cloud project id")
     p.add_argument("--datasets", nargs="+", default=["tmf", "dw", "radd"],
-                   choices=["tmf", "dw", "radd"])
+                   choices=["tmf", "dw", "radd", "worldcover"])
+    p.add_argument("--units", nargs="+", default=["sector"], choices=["sector", "cell"],
+                   help="spatial units for --datasets worldcover")
     p.add_argument("--years", nargs=2, type=int, default=[1990, 2024],
                    metavar=("START", "END"))
     args = p.parse_args(argv)
@@ -311,6 +388,15 @@ def main(argv=None) -> int:
         if not d.empty:
             d.to_csv(PROC / "radd_by_sector.csv", index=False)
             _log(f"-> radd_by_sector.csv ({len(d):,} sector-years)")
+
+    if "worldcover" in args.datasets:
+        out = P.GEO / "land-cover"
+        out.mkdir(parents=True, exist_ok=True)
+        for unit in args.units:
+            d = fetch_worldcover(ee, units_to_ee(ee, unit), unit)
+            if not d.empty:
+                d.to_csv(out / f"worldcover_by_{unit}.csv", index=False)
+                _log(f"-> geo-data/land-cover/worldcover_by_{unit}.csv ({len(d):,} {unit}-years)")
 
     _log("done")
     return 0
