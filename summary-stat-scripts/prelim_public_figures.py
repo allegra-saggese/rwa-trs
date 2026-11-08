@@ -360,22 +360,21 @@ def fig_economy_composition():
     lf = pd.read_csv(V.GEO / "labour/lfs_isic_shares_wide.csv", index_col=0)
     ec.index = [int(str(i).split()[0]) for i in ec.index]
     lf.index = [int(str(i).split()[0]) for i in lf.index]
-    fig, ax = plt.subplots(1, 2, figsize=(15, 6.2))
-    for a, (df, title, yr) in zip(ax, [(ec, "Establishment Census — share of establishments",
-                                        str(max(int(c) for c in ec.columns))),
-                                       (lf, "Labour Force Survey — share of workers",
-                                        str(max(int(c) for c in lf.columns)))]):
+    for df, title, name in [(ec, "Establishment Census: share of establishments", "economy_composition_establishments"),
+                            (lf, "Labour Force Survey: share of workers", "economy_composition_workers")]:
+        yr = str(max(int(c) for c in df.columns))
         s = df[yr].sort_values(ascending=True)
         s = s[s > .05]
+        fig, a = plt.subplots(figsize=(8, 6.2))
         cols = [V.PARK if i == 9 else ("#8b5fbf" if i == 18 else V.NONPARK) for i in s.index]
         a.barh([V.ISIC.get(i, "?")[:34] for i in s.index], s.values, color=cols)
         for y, (i, v) in enumerate(s.items()):
             a.text(v + max(s) * .012, y, f"{v:.1f}", va="center", fontsize=7.5,
                    color=V.PARK if i == 9 else "0.3")
-        a.set_title(f"{title}, {yr}"); a.set_xlabel("%"); a.grid(axis="y", visible=False)
-    fig.suptitle("Rwanda's economy by ISIC section — accommodation & food in red",
-                 fontsize=11.5, y=1.01)
-    V.save(fig, "economy_composition")
+        a.set_xlim(0, max(s) * 1.12)
+        a.set_title(f"{title}, {yr}\naccommodation & food in red")
+        a.set_xlabel("%"); a.grid(axis="y", visible=False)
+        V.save(fig, name)
 
 
 def fig_district_trajectories():
