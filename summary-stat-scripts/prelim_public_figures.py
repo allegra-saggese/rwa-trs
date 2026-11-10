@@ -639,6 +639,50 @@ def map_lisa_clusters():
     V.save(fig, "lisa_clusters", "map")
 
 
+def _lisa_single(s, col, title, name):
+    """One-variable LISA cluster map (same method and colours as map_lisa_clusters), saved as PNG and PDF."""
+    from esda.moran import Moran, Moran_Local
+    from libpysal.weights import Queen
+    pk = V.parks()
+    w = Queen.from_dataframe(s, use_index=False); w.transform = "r"
+    CAT = {1: ("High–High", V.PARK), 2: ("Low–High", "#a8c6e8"),
+           3: ("Low–Low", V.NONPARK), 4: ("High–Low", "#f4a261")}
+    x = s[col].fillna(s[col].median()).values
+    li = Moran_Local(x, w, permutations=999, seed=0); mi = Moran(x, w, permutations=999)  # seed: same clusters every run
+    s = s.assign(q=np.where(li.p_sim <= 0.05, li.q, 0))
+    fig, a = plt.subplots(figsize=(7, 7.2))
+    fig.subplots_adjust(left=.02, right=.98, top=.86, bottom=.12)
+    s[s.q == 0].plot(ax=a, color="0.92", edgecolor="white", linewidth=.2)
+    for k, (_nm, c) in CAT.items():
+        sub = s[s.q == k]
+        if len(sub):
+            sub.plot(ax=a, color=c, edgecolor="white", linewidth=.2)
+    V.frame_map(a, f"{title}\nMoran's I = {mi.I:.3f}  (p = {mi.p_sim:.3f})", pk)
+    handles = [mpl.patches.Patch(color=c, label=n) for n, c in CAT.values()] + \
+              [mpl.patches.Patch(color="0.92", label="not significant")]
+    fig.legend(handles=handles, loc="lower center", ncol=3, fontsize=9, frameon=False, bbox_to_anchor=(.5, .02))
+    fig.suptitle("Local spatial clustering (LISA, queen contiguity, p ≤ 0.05)", fontsize=12, y=.97)
+    fig.savefig(V.MAPS / f"{name}.pdf", bbox_inches="tight")
+    V.save(fig, name, "map")
+
+
+def map_lisa_hansen_loss():
+    """LISA map of Hansen forest loss, ha per km² of sector area, 2001-2024."""
+    d = V.csv("forest/pop_vs_forest_by_sector.csv", "sector_id")
+    s = V.sectors()[["sector_id", "geometry"]].merge(d, on="sector_id", how="left")
+    _lisa_single(s, "loss_per_km2", "Hansen forest loss, ha per km² (2001–2024)", "lisa_hansen_loss")
+
+
+def map_lisa_crop_share():
+    """LISA map of cropland share: WorldCover 2021 cropland outside parks over land outside parks
+    (all classes except water and no-data), in percent. Built by prelim-analysis/03b_landcover_sectors.py."""
+    wc = pd.read_csv(V.P.NISR / "Analysis/prelim/sector_landcover_worldcover2021.csv")
+    cls = ["crop", "built", "tree", "other", "shrub_grass", "wetland"]
+    wc["crop_share"] = 100 * wc.crop_out_ha / wc[[f"{c}_out_ha" for c in cls]].sum(axis=1)
+    s = V.sectors()[["sector_id", "geometry"]].merge(wc[["sector_id", "crop_share"]], on="sector_id", how="left")
+    _lisa_single(s, "crop_share", "Cropland, % of land area (ESA WorldCover 2021)", "lisa_crop_share")
+
+
 # ==========================================================================
 # LABOUR — district maps and the full ISIC breakdown
 # ==========================================================================
@@ -1317,6 +1361,8 @@ OUTPUTS = {
     # spatial
     "correlation_heatmap": (fig_correlation_heatmap, "spatial"),
     "lisa_clusters": (map_lisa_clusters, "spatial"),
+    "lisa_hansen_loss": (map_lisa_hansen_loss, "spatial"),
+    "lisa_crop_share": (map_lisa_crop_share, "spatial"),
     # cell level
     "cell_quadrants": (map_cell_quadrants, "cell"),
     "cell_deforestation_park": (map_cell_deforestation_park, "cell"),

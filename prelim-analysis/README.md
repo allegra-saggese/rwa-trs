@@ -35,5 +35,7 @@ Figures: 01 jobs maps (levels + change), 02 land maps 2000-2020, 03 stacked jobs
 10/11 district facets (EICV + LFS), 12 violins.
 Tables: T1 national employment; T2 model objects by group x wave (mean/sd/p50; p10/p90 in T2_model_objects_full.csv); T3 treated vs control
 
+| `20_map_admin_levels.py` | `maps/admin_levels`: districts, sectors, cells, parks and lakes, with a sector-name zoom on Volcanoes NP |
+
 ## Write-up
 `writeup/template.tex` holds the text, with `%%TABLE:name%%` markers. `12_writeup.py` fills the markers and writes `output/writeup/prelim_results_writeup.tex`; compile with pdflatex twice.

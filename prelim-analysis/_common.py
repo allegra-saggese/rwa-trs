@@ -26,6 +26,7 @@ OUT_D.mkdir(parents=True, exist_ok=True)
 
 # figure id -> (folder under output/, descriptive name)
 FIGURE_NAMES = {
+    'admin_levels_map': ('maps', 'admin_levels'),
     'fig01_map_jobs_levels': ('maps', 'census_jobs_levels_and_change'),
     'fig02_map_land_glclu': ('maps', 'glclu_land_use_2000_2020'),
     'fig03_stacked_jobs_groups': ('figures', 'census_jobs_by_treatment_group'),
