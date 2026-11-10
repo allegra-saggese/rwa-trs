@@ -12,6 +12,7 @@ Folders are organised by **task**, not by pipeline stage.
 | `info-scripts/` | Anything that reads variable names, metadata or dataset structure |
 | `data-build-scripts/` | Acquiring and assembling data — spatial layers, remote sensing, survey extracts, and the two analysis panels |
 | `summary-stat-scripts/` | Preliminary descriptive analysis: figures, maps, tables |
+| `prelim-analysis/` | 2x2-model preliminary descriptives and regressions (Nov 2026), run in order 00-19; see its README |
 | `spatial-analysis-scripts/` | Spatial estimation on the sector and cell panels — **currently empty**, reserved |
 | `output/` | The STEG results scripts and `STEG-Results.tex` (see "STEG results scripts" below). Not the same as the Dropbox `output/` folder, which holds rendered files |
 | `district-level-analysis/` | District-year models, where the survey microdata lives |
@@ -46,7 +47,7 @@ gitignored. Nothing intermediate is written next to the scripts.
 
 **Dropbox `output/` folder**: Rendered figures, maps and tables
 ```
-~/Library/CloudStorage/Dropbox/Rwanda - TRS/output/{figures,maps,tables}
+~/Library/CloudStorage/Dropbox/Rwanda - TRS/output/{figures,maps,tables/summary_statistics,tables/regressions,writeup}
 ```
 
 Every path comes from **`paths.py`** at the repo root — one module, imported by

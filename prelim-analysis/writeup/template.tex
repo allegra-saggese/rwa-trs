@@ -1,0 +1,188 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in,top=0.85in,bottom=0.85in]{geometry}
+\usepackage{amsmath,booktabs,threeparttable,float,lmodern,enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\setlist{itemsep=2pt,topsep=4pt}
+\renewcommand{\arraystretch}{1.05}
+\title{Tourism, Land and Structural Change in Rwanda:\\ Preliminary Evidence}
+\author{Allegra Saggese and Matteo Fossi}
+\date{Working notes, November 2026}
+\begin{document}
+\maketitle
+
+\noindent These notes set out the data, the empirical design and the first-stage results for the $2\times2$ model of tourism, land and structural change. The results are descriptive and reduced form. None of them is yet a causal estimate of tourism or of Tourism Revenue Sharing (TRS). Each table is followed by a reading of its main coefficients in plain units.
+
+\section{Motivating facts}
+
+\begin{itemize}
+\item \textbf{Tourism is a large export, not a large employer.} Tourism exports reached US\$458 million in 2019 (4.4\% of GDP) and more than 20\% of export earnings from goods and services, growing 11\% a year over 2009--2019 (World Bank 2023). WDI puts tourism receipts at 26--32\% of total exports over 2010--2019. Hotels and restaurants account for only 1--2\% of GDP in NISR value added, because most visitor spending is recorded in transport, trade and other services.
+\item \textbf{Services' share of output has been flat; its share of employment has not.} Services value added rose from about 44\% of GDP in 2002 to about 50\% by 2008 and has stayed there (WDI). The services share of employment kept rising, from 18\% (2002) to 30\% (2012) in the ILO modelled series. Agriculture produced about 22\% of value added in 2022 but employed 66\% of Census workers aged 20--64.
+\item \textbf{The output-per-worker gap is large.} Combining 2022 value-added and employment shares, output per worker in services is 3.6 (LFS employment) to 6.5 (Census employment) times that in agriculture. In the model this ratio identifies $\beta_a/\beta_s$ (eq.\ 12), which would place Rwanda in the case $\beta_s<\beta_a$. Gaps of this kind roughly halve once hours and human capital are accounted for (Gollin, Lagakos and Waugh 2014), so this is an upper bound.
+\end{itemize}
+
+\section{Data}
+
+\subsection{Unit of analysis}
+The unit is the administrative \emph{sector} (416 sectors, mean area about 60 km$^2$), the finest level at which the Census can be matched to geography. Census microdata and the 2014 Establishment Census carry the national sector code; sector polygons are dissolved from NISR's 2022 village boundaries. Surveys that are representative only at district level (30 districts) enter at that level.
+
+\subsection{Sources}
+\begin{table}[H]\centering\footnotesize
+\begin{tabular}{p{3.5cm}p{2.4cm}p{1.6cm}p{6.4cm}}
+\toprule
+Source & Years & Level & Used for \\
+\midrule
+Population and Housing Census (10\% public-use samples) & 2002, 2012, 2022 & Sector & Workers by industry (ISIC section), total population, in-migration; $\lambda$, services and tourism shares \\
+Labour Force Survey & 2017--2025 & District & Annual employment by 2-digit industry; earnings of employees \\
+EICV household survey & 2001--2017 & District & Employment shares (2001, 2006, 2014); land parcels and rent \\
+Agricultural Household Survey & 2024 & District & Land rent (check only) \\
+Seasonal Agricultural Survey & 2019--2025 & District & Crop output at fixed prices \\
+Establishment Census & 2011--2023 & Sector/\allowbreak district & Establishments, workers and turnover brackets by industry \\
+GLAD GLCLU v2, 30 m (Potapov et al.\ 2022) & 2000--2020, every 5 years & Sector & Cropland, built-up, tree cover, short vegetation \\
+ESA WorldCover, 10 m & 2021 & Sector & Cross-sectional check on land shares \\
+GHSL built-up surface R2023A, $\sim$90 m & 2000--2020, every 5 years & Sector & Built-up surface (roofs and pavement) \\
+Hansen Global Forest Change & 2001--2024 & Sector & Annual tree-cover loss \\
+Chen et al.\ harmonized night lights & 2000--2025 & Sector & Local activity \\
+RDB annual reports & 2005--2025 & Park & Park visitors and revenue \\
+Protected areas (geodata.rw) & -- & Polygon & Park boundaries; treatment definitions \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Key variables and measurement choices}
+\begin{itemize}
+\item \textbf{Employment.} Census workers aged 20--64. The 2022 Census follows the 19th ICLS definition and records most own-use farmers as not employed (1.69 million recorded agricultural workers against 2.80 million in 2012); we use a reconstructed own-use-inclusive count (2.94 million).
+\item \textbf{$\lambda$}, agriculture's share of agricultural plus services workers. Services exclude trade (ISIC G) and public administration (O), which serve local demand and government rather than the export sector in the model.
+\item \textbf{Tourism share}, workers in ISIC sections I (accommodation and food), H (transport) and R (recreation) over all workers. The narrow I+R definition captures only about 35\% of employment in tourism-characteristic industries in the 2012 Census (4-digit codes), with transport most of the remainder; section N is excluded because tour operators are under 3\% of its workers.
+\item \textbf{Land shares}, the share of usable land outside national parks (cropland + built-up + tree cover + short vegetation, water excluded) in each use. $\ell$ = cropland / (cropland + built-up), the model's two-use land share. GLCLU's built-up class flags any 30 m pixel with a man-made surface, so it includes rural homesteads; GHSL measures built surface directly.
+\item \textbf{Population}, total residents from the Census (all ages), because residential land demand comes from everyone, not only workers.
+\end{itemize}
+
+\section{Empirical design}
+
+The first stage has two blocks. Block A describes how land use moves with the composition of employment, the relationship the model's contract curve disciplines. Block B compares sectors near parks with comparable sectors elsewhere, the reduced-form counterpart of the model's tourism shock. The choices below were made one at a time against the model and the data; each is stated with its reason.
+
+\subsection{Block A: land and the composition of employment}
+\begin{equation*}
+y_{k,nt}=\alpha_n+\delta_{d(n)t}+\textstyle\sum_p\gamma_{pt}\,\text{Border}_{pn}+\beta_1 s_{nt}+\beta_2\ln \text{Pop}_{nt}+\varepsilon_{nt},
+\end{equation*}
+one regression for each land use $k$ (cropland, built-up, tree cover, short vegetation), where $s_{nt}$ is the services share of workers.
+\begin{itemize}
+\item \textbf{Land is measured after employment.} The 2002 and 2012 Censuses are paired with GLCLU 2005 and 2015. Land responds to who works where, not the reverse, so land measured before the Census would test the wrong direction. The 2022 Census is dropped from this block because no GLCLU year follows it.
+\item \textbf{Shares and population enter separately.} $s_{nt}$ captures composition and $\ln\text{Pop}_{nt}$ scale. The model's contract curve $\ell(\lambda)=c\lambda/(1-\lambda+c\lambda)$ (eq.\ 7) depends on composition only, so $\beta_2=0$ is a direct test of the model's fixed land endowment.
+\item \textbf{Sector fixed effects} absorb fixed geography (slope, soils, park share). \textbf{District-by-wave fixed effects} absorb district-wide shocks, notably the Crop Intensification Program and land-use consolidation, which are implemented by district and move cropland and farm labour together. \textbf{Park-border-by-wave terms} give sectors bordering each park (Volcanoes, Nyungwe, Akagera, Gishwati-Mukura) their own time path, absorbing, for example, resettlement after Akagera's 1997 boundary change.
+\item \textbf{Sample}: all sectors outside the City of Kigali and the four largest towns of 2002.
+\end{itemize}
+
+\subsection{Block B: park proximity}
+\begin{equation*}
+y_{nt}=\alpha_n+\delta_{r(n)t}+\textstyle\sum_{s\in\{2012,2022\}}\left(\theta^{G}_s\,\text{NearGate}_n+\theta^{B}_s\,\text{BorderOnly}_n\right)\mathbf{1}\{t=s\}+\gamma\ln\text{Pop}_{nt}+\varepsilon_{nt},
+\end{equation*}
+\begin{itemize}
+\item \textbf{Population control.} $\gamma\ln\text{Pop}_{nt}$ enters Table~\ref{tab:Bjobs} only, so that its indicator coefficients compare composition at equal population; the robustness, park and land tables omit it.
+\item \textbf{Treatment definitions} come from the project's mapping code so that they match the treatment maps exactly. \emph{Near gate} (12 sectors) contains one of the four park entrances that existed before 2005 (Kinigi, Kitabi, Bushekeri, Mwiri) or is adjacent to one on settled land within 5 km of it. \emph{Bordering only} (32 sectors) borders Volcanoes, Nyungwe or Akagera without being near a gate.
+\item \textbf{The two tiers separate channels.} TRS money and conservation restrictions reach every bordering sector, while tourist spending concentrates at the gates. Near-gate sectors receive both; bordering-only sectors mainly the transfer and the restrictions. Comparing the two is our first handle on the mechanical link between tourism and TRS, which is funded from tourism revenue.
+\item \textbf{A clean comparison group} (257 sectors): neither treated nor urban, and excluding (i) the 62 sectors that touch a treated sector, because the model predicts that migration toward the gates depletes neighbouring sectors, which would bias the comparison, and (ii) the nine neighbours of Gishwati-Mukura, a park only since 2015.
+\item \textbf{Province-by-wave fixed effects.} Within-district comparisons are too thin once the spillover ring is removed: Kayonza and Nyamasheke keep one clean control each. District-by-wave fixed effects are reported as a robustness check.
+\item \textbf{Timing.} Census outcomes use 2002 as the base wave (TRS began in 2005). Land outcomes are event studies in the land product's own years with 2000 as base, so land is never measured before the period it describes.
+\item \textbf{Park-specific effects, not park-by-wave controls.} Park-border-by-wave terms would mark exactly the treated sectors, so park differences enter as park-specific treatment effects.
+\item \textbf{Excluded variation.} The 2017 doubling of the gorilla permit price is not used: permits are capped, so the price change does not shift tourist numbers. The variation therefore identifies revenue productivity $p_sA_s$, not $p_s$ and $A_s$ separately.
+\end{itemize}
+
+\subsection{Inference}
+Standard errors are clustered by district (27 outside Kigali). $p$-values come from the wild cluster restricted bootstrap with Webb weights (9,999 replications). In a simulation on our own Block A design with no true effect, the bootstrap rejects at the 5\% level in 4.7\% of draws, while conventional clustered $t$-tests reject in only 0.7\%; bootstrap $p$-values are therefore the ones to read, and they are often smaller than the clustered standard errors suggest. Near-gate sectors lie in five districts, and with so few treated clusters bootstrap inference is itself unreliable (MacKinnon and Webb 2017).
+
+\section{Results}
+
+\subsection{Land and the composition of employment}
+
+%%TABLE:tab1_land_services%%
+
+\noindent\textbf{Reading Table~\ref{tab:land}.} Outcomes and the services share are fractions, so a coefficient is the change in a land share for a one-unit change in the services share. In Panel A, column (1), $-0.251$ means that a sector whose services share is 10 percentage points higher has 2.5 pp less of its usable land in crops ($p=0.018$), about 7\% of the mean of 35\%. Column (2): 1.6 pp more built-up land ($p=0.016$), about 12\% of the mean of 13\%. Population enters in logs: a 10\% larger population ($\Delta\ln\text{Pop}=0.095$) goes with 0.41 pp more cropland ($0.043\times0.095$, $p=0.004$), 0.15 pp less tree cover ($p=0.013$) and 0.35 pp less short vegetation ($p=0.002$). Panel B shows that tourism industries drive the composition effect: per 10 pp of tourism-industry share, cropland is 4.2 pp lower and built-up land 5.6 pp higher (both $p=0.001$); other services have small, imprecise coefficients.
+
+\medskip\noindent\textbf{What it means.} Two facts follow. First, where more people work in services, and especially in tourism industries, land moves from crops to buildings, as the model's land market predicts. Second, population growth adds cropland at the expense of grass and forest even holding composition fixed. The model rules this out: with land split between two uses only, $\ell$ depends on $\lambda$ alone. The fixed land endowment $\bar L$ is rejected.
+
+%%TABLE:tab1b_land_fe%%
+
+\noindent\textbf{Reading Table~\ref{tab:landfe}.} The signs are the same under all three sets of time effects. The cropland coefficient is about $-0.31$ with wave or province-by-wave effects and $-0.25$ with district-by-wave effects. The difference is variation common to all sectors of a district, which district-implemented agricultural programmes would also generate; the district-by-wave estimate is the conservative one.
+
+%%TABLE:tab2_contract_curve%%
+
+\noindent\textbf{Reading Table~\ref{tab:cc}.} The slope of $\ell$ on $\lambda$ is 0.17 ($p=0.12$), against about 2.9 implied by the model at sample means ($\lambda\approx0.92$, $\ell\approx0.70$). Population enters with a positive coefficient ($p=0.068$) where the model predicts zero. Two measurement problems pull the slope down: the 10\% Census sample adds noise to $\lambda$, and built-up land includes farm households' housing, so it is not the model's services land.
+
+%%TABLE:tab8_land_other_outcomes%%
+
+\noindent\textbf{Reading Table~\ref{tab:landother}.} Column (2) is in percent of usable land: $2.77$ means a 10 pp higher services share goes with 0.28 pp more built surface ($p<0.001$), about 17\% of the mean of 1.65\%. GHSL measures roofs and pavement directly, so this confirms the built-up result without the homestead problem of GLCLU. Column (1) shows no relationship between employment composition and subsequent tree-cover loss; tree-cover loss is the only land outcome measured after all three Censuses, including 2022.
+
+\subsection{Park proximity}
+
+%%TABLE:tab3_B_jobs%%
+
+\noindent\textbf{Reading Table~\ref{tab:Bjobs}.} Each indicator coefficient is the change since 2002 in treated sectors minus the change in clean controls, at the same log population. Near-gate sectors (rows 1--2) show no differential change in any outcome: by 2022 they have 0.204 log points ($\approx$23\%) more services workers, but $p=0.21$. Bordering-only sectors became more agricultural than controls with the same population: $\lambda$ is 2.5 pp higher in 2012 ($p=0.017$) and 3.3 pp higher in 2022 ($p=0.046$), the services share 1.6 pp lower in 2012 ($p=0.021$), and they have 0.179 log points ($\approx$20\%) more farm workers by 2022 ($p=0.007$). The population row is the within-sector association across waves: a 10\% larger population ($\Delta\ln=0.095$) goes with 1.3 pp lower $\lambda$, 0.8 pp higher services share, 4\% more farm workers and 12\% more services workers (all $p\le0.001$).
+
+\medskip\noindent\textbf{What it means.} Population growth, not park proximity, is what moves composition: where population grows, services workers grow three times as fast as farm workers. Holding population fixed, sectors near a gate look like controls, and sectors along the park border shifted toward agriculture. Without the population control, treated sectors had 14--25\% more farm workers and 35--37\% more services workers than controls by 2022; with it, most of that growth is absorbed by population. Population is itself an outcome of park proximity, so this table separates composition from scale rather than identifying a causal effect at fixed population.
+
+%%TABLE:tab5_B_robustness%%
+
+\noindent\textbf{Reading Table~\ref{tab:Brob}.} With district-by-wave effects (Panel A), the near-gate night-lights difference in 2022 is 2.1 units ($p=0.023$) and the tourism share rises 1.6 pp ($p=0.090$). Controlling for 2000 land shares (Panel B), population growth in treated sectors becomes precise: 0.13--0.17 log points ($\approx$13--18\%, $p\le0.05$). The continuous exposure measure (Panel C) gives the same signs with less precision.
+
+%%TABLE:tab6_B_parks%%
+
+\noindent\textbf{Reading Table~\ref{tab:Bpark}.} Around Volcanoes the tourism share rose 1.1 pp by 2012 ($p=0.053$), roughly three times the 2002 control mean of 0.4\%. Around Akagera, $\lambda$ rose and population grew 0.36--0.43 log points ($\approx$44--53\%, $p\approx0.11$), consistent with resettlement after the 1997 boundary change rather than with tourism.
+
+%%TABLE:tab4_B_land%%
+
+\noindent\textbf{Reading Table~\ref{tab:Bland}.} Coefficients are changes in land shares since 2000 relative to controls. Near-gate sectors moved 1.5--2.2 pp of usable land out of crops and into short vegetation over 2005--2015 ($p=0.04$--$0.06$), against a cropland mean of 37\%. Bordering-only sectors show no change.
+
+\noindent\textbf{Reading Table~\ref{tab:Blandrob}.} The near-gate cropland decline does not survive district-by-year fixed effects (Panel A) or controls for 2000 land shares (Panel B). Land use near the gates barely moved.
+
+%%TABLE:tab4b_B_land_robustness%%
+
+
+%%TABLE:tab4c_B_land_parks%%
+
+\noindent\textbf{Reading Table~\ref{tab:Blandpark}.} The parks differ. Around Volcanoes, built-up land grew steadily, by 3.9 pp of usable land by 2020 ($p=0.022$), against a mean of 13\%. Around Nyungwe, cropland fell 2.4--3.5 pp and short vegetation rose ($p=0.02$--$0.08$). Around Akagera, cropland rose 7.1 pp by 2020 ($p=0.051$) while built-up land fell. The pooled estimates average over these opposite patterns.
+
+%%TABLE:tab9_B_other_land%%
+
+\noindent\textbf{Reading Table~\ref{tab:Bother}.} Column (1) is in percent of 2000 tree cover per year. Bordering-only sectors lost 0.29 pp less tree cover per year in 2005--09 ($p=0.023$), about two-thirds of the base-period control mean of 0.43\% a year. That is the first period of TRS; the gap closes afterwards. Because loss outside parks largely reflects plantation harvest, this is suggestive only. Built-up surface (column 2) shows nothing.
+
+%%TABLE:tab10_land_rent%%
+
+\noindent\textbf{Reading Table~\ref{tab:rent}.} Coefficients are log changes in rent per hectare in park districts relative to other districts since 2001. All are small and imprecise (standard errors about 0.4 log points); the 2001 base rests on about 60 rented parcels per district. There is no detectable rent response.
+
+\subsection{Wages}
+
+%%TABLE:tab7_B_wages%%
+
+\noindent\textbf{Reading Table~\ref{tab:wages}.} Coefficients are log earnings gaps relative to agricultural employees in the same district and year, holding age, sex and education fixed. In column (1), $0.485$ means tourism-industry employees earn $e^{0.485}-1\approx62\%$ more; outside Kigali 44\%, and in park districts 38\%. Local-services employees earn 18--19\% more (all $p<0.01$). The model assumes one wage per location. These gaps reflect either a wedge between sectors or sorting of more productive workers into services; the sample covers employees only, since own-account farmers report no wage.
+
+\section{Implications for the model}
+\begin{enumerate}
+\item \textbf{Add a land margin.} Population growth expands cropland into grassland and forest holding composition fixed (Table~\ref{tab:land}). The fixed $\bar L$ split between two uses should give way to an endogenous land frontier or a third use with a conversion cost (open issue 4), with the population elasticity of cropland as a target moment.
+\item \textbf{Add a within-location wage wedge or worker heterogeneity} (Table~\ref{tab:wages}; open issue 1).
+\item \textbf{Emphasise the spatial channel.} Near parks, population grew (Table~\ref{tab:Brob}), and at a given population there is no shift out of agriculture (Table~\ref{tab:Bjobs}). Stage 2, migration toward the gate cell, is the margin to estimate.
+\item \textbf{Identification is of revenue productivity only} ($p_sA_s$), since the permit price change is excluded.
+\item \textbf{Measure tourism broadly.} I+R misses about two-thirds of tourism employment; the tourism share should use I+H+R at section level and the tourism-industry definition where 2-digit codes exist.
+\end{enumerate}
+
+\section{Caveats}
+\begin{itemize}
+\item \textbf{Nothing here is causal.} Parks and gates were not placed at random, treated sectors started with about 10 pp more tree cover, and employment outcomes have a single pre-period (2002).
+\item \textbf{Inference near the gates is fragile} (five treated districts).
+\item \textbf{No measure of services land.} Built-up land includes housing; GHSL's non-residential layer classifies under 1\% of Kigali's built surface as non-residential and cannot be used.
+\item \textbf{Block A uses two Census waves} because no land product postdates 2022 at the needed resolution, except tree-cover loss.
+\item \textbf{2022 agriculture is reconstructed}, and EICV and LFS employment definitions differ, so survey levels are not compared across sources.
+\end{itemize}
+
+\section*{References}
+\small
+\begin{itemize}[leftmargin=*,label={}]
+\item Gollin, D., Lagakos, D., and Waugh, M. E. (2014). The agricultural productivity gap. \textit{Quarterly Journal of Economics} 129(2): 939--993.
+\item Hansen, M. C., et al. (2013). High-resolution global maps of 21st-century forest cover change. \textit{Science} 342: 850--853.
+\item MacKinnon, J. G., and Webb, M. D. (2017). Wild bootstrap inference for wildly different cluster sizes. \textit{Journal of Applied Econometrics} 32(2): 233--254.
+\item Potapov, P., et al. (2022). The global 2000--2020 land cover and land use change dataset derived from the Landsat archive. \textit{Frontiers in Remote Sensing} 3: 856903.
+\item World Bank (2023). \textit{Rwanda Economic Update, Edition 20: Making the Most of Nature-Based Tourism in Rwanda}. Washington, DC.
+\item World Bank. World Development Indicators: NV.SRV.TOTL.ZS, ST.INT.RCPT.XP.ZS, SL.SRV.EMPL.ZS, NV.AGR.TOTL.ZS.
+\end{itemize}
+\end{document}
