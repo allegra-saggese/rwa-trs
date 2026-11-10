@@ -2,7 +2,7 @@
 steg_sas_productivity_map.py -- crop output per hectare by district, 2025, for the STEG appendix.
 
     python steg_sas_productivity_map.py
-    output/figures/steg_sas_productivity_map_2025.pdf
+    output/maps/sas_productivity_2025.pdf
 
 MEASURE. NISR Seasonal Agricultural Survey 2025 (the latest wave; 2023 until 2026-09-15), seasons A and B, small-scale farms, ten staples (maize, bush
 and climbing bean, cassava, the three bananas, sweet and Irish potato, sorghum). Output is valued at fixed
@@ -94,7 +94,7 @@ def main():
     ax.legend(handles=handles, title=f"Crop output per hectare, {YEAR},\nthousand RWF at fixed prices",
               loc="center left", bbox_to_anchor=(1.0, .3), frameon=False, fontsize=8.5, title_fontsize=9, alignment="left")
     ax.set_axis_off()
-    out = P.FIGS / f"steg_sas_productivity_map_{YEAR}.pdf"
+    out = P.MAPS / f"sas_productivity_{YEAR}.pdf"
     fig.savefig(out, bbox_inches="tight"); plt.close(fig)
     print(f"written {out}")
 

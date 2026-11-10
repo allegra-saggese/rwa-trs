@@ -2,7 +2,7 @@
 steg_ntl_gates.py -- share of land lit within 5 km of the park gates, for the STEG appendix.
 
     python steg_ntl_gates.py
-    output/figures/steg_ntl_gates.pdf
+    output/figures/nightlights_near_gates_series.pdf
 
 The land within 5 km of the park gates, with the parks themselves taken out (park land is dark by
 construction) and anything outside Rwanda taken out, so the area is a circle conditional on not being
@@ -101,8 +101,8 @@ def main():
     ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
     ax.legend(loc="upper left", frameon=False, fontsize=9)
     fig.tight_layout()
-    fig.savefig(B.FIG / "steg_ntl_gates.pdf", bbox_inches="tight"); plt.close(fig)
-    print(f"written {B.FIG / 'steg_ntl_gates.pdf'}")
+    fig.savefig(B.FIG / "nightlights_near_gates_series.pdf", bbox_inches="tight"); plt.close(fig)
+    print(f"written {B.FIG / 'nightlights_near_gates_series.pdf'}")
     print("share of land lit, %:"); print(w.round(1).to_string())
 
 

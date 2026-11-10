@@ -1,6 +1,6 @@
 % STEG-Results.tex -- results for the Rwanda tourism revenue sharing project.
 % Figures are the note-free copies written by output/figures/make_tex_figures.py into
-% <Dropbox>/output/figures/tex/. Each figure carries its caption above and its note below, here in
+% <Dropbox>/output/figures/ (the *_latex.pdf versions). Each figure carries its caption above and its note below, here in
 % the document rather than inside the image.
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
@@ -9,7 +9,7 @@
 \captionsetup[figure]{labelfont=bf,textfont=normalfont,justification=raggedright,singlelinecheck=false,skip=6pt}
 % Searched in order: ../figures/ is the Overleaf project's own folder (Overleaf cannot reach Dropbox);
 % the absolute path is the local build. One file compiles in both places.
-\graphicspath{{../figures/}{/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/output/figures/tex/}}
+\graphicspath{{../figures/}{/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/output/figures/}}
 \newcommand{\fignote}[1]{\vspace{4pt}\begin{minipage}{\linewidth}\footnotesize\setlength{\parskip}{0pt}\textit{Notes.} #1\end{minipage}}
 \setlength{\parskip}{5pt}
 \title{Tourism revenue sharing around Rwanda's national parks\\[2pt]\large Results}
@@ -72,7 +72,7 @@ treatment, which matters here because park-adjacent sectors were poorer than ave
 
 \begin{figure}[H]
 \caption{Housing components and the housing index, by treatment definition}
-\includegraphics[width=\linewidth]{bar_chart_housing.pdf}
+\includegraphics[width=\linewidth]{bar_chart_housing_latex.pdf}
 \fignote{Bars are the change between census waves in the share of households with each housing
 attribute, for each treatment definition against the control sectors. The index is the unweighted
 mean of the five standardised components. Confidence intervals are from a sector-level bootstrap.
@@ -81,7 +81,7 @@ The City of Kigali and the four largest towns of 2002 are excluded.}
 
 \begin{figure}[H]
 \caption{Housing: ANCOVA estimates conditioning on the 2002 level}
-\includegraphics[width=\linewidth]{coefplot_housing.pdf}
+\includegraphics[width=\linewidth]{coefplot_housing_latex.pdf}
 \fignote{Each point is $\beta$ from equation~(1), in units of the 2002 control standard deviation,
 with 95\% confidence intervals from sector-clustered standard errors. The specification includes the
 2002 level of the outcome, nearest-park fixed effects and district fixed effects; the pooled column
@@ -92,7 +92,7 @@ deviations pooled for the 44 bordering sectors ($p<10^{-7}$), and the housing in
 
 \begin{figure}[H]
 \caption{Housing: the same estimates with controls chosen by post-double-selection lasso}
-\includegraphics[width=\linewidth]{coefplot_housing_lasso.pdf}
+\includegraphics[width=\linewidth]{coefplot_housing_lasso_latex.pdf}
 \fignote{As the previous figure, with the control set chosen by post-double-selection lasso with
 cluster-robust penalty loadings, drawn from the 2002 sector characteristics. The lasso is run
 separately for each outcome and wave; the number of selected controls is reported in the underlying
@@ -121,7 +121,7 @@ farm-household composition of unrecorded adults is 67.5\% in 2012 against 67.8\%
 
 \begin{figure}[H]
 \caption{Employment by broad sector: ANCOVA estimates}
-\includegraphics[width=\linewidth]{coefplot_jobs.pdf}
+\includegraphics[width=\linewidth]{coefplot_jobs_latex.pdf}
 \fignote{Outcomes are $\operatorname{asinh}$ of the count of workers aged 20--64, so coefficients are
 approximately proportional changes, expressed in 2002 control standard deviations. Specification as
 in equation~(1). For the 44 bordering sectors the pooled estimates are $+0.576$ for primary
@@ -132,7 +132,7 @@ The 2022 primary count is the reconstructed series described above.}
 
 \begin{figure}[H]
 \caption{Employment by broad sector, controls chosen by post-double-selection lasso}
-\includegraphics[width=\linewidth]{coefplot_jobs_lasso.pdf}
+\includegraphics[width=\linewidth]{coefplot_jobs_lasso_latex.pdf}
 \fignote{As the previous figure with lasso-selected controls. The Gates+ pooled estimates change sign
 on primary employment once controls are selected: primary $-0.602$ ($p=0.018$), secondary $+0.184$
 ($p=0.056$), tertiary $+0.265$ ($p=0.050$). Read together with the unselected estimates, the pattern
@@ -161,7 +161,7 @@ residence abroad and foreign birth --- entered individually rather than as an in
 
 \begin{figure}[H]
 \caption{Education by birth cohort: years of schooling, completed primary, and literacy}
-\includegraphics[width=\linewidth]{event_study_education_3yr.pdf}
+\includegraphics[width=\linewidth]{event_study_education_3yr_latex.pdf}
 \fignote{Each point is the coefficient on treatment interacted with a three-year birth-cohort bin
 from equation~(2), relative to the 1999 cohort, with 95\% intervals from sector-clustered standard
 errors. Cohorts to the left of the reference were too old to be affected and act as placebos. At the
@@ -177,7 +177,7 @@ Marriage uses the same cohort design, restricted to women aged 18 and over, with
 
 \begin{figure}[H]
 \caption{Marriage by birth cohort: married by 18 and age at first marriage}
-\includegraphics[width=\linewidth]{event_study_marriage_3yr.pdf}
+\includegraphics[width=\linewidth]{event_study_marriage_3yr_latex.pdf}
 \fignote{Specification as in equation~(2), three-year cohort bins, reference cohort 1999, 95\%
 intervals from sector-clustered standard errors. At the gates, marriage by 18 falls $3.6$ percentage
 points ($p=0.0012$) and age at first marriage rises $0.42$ years ($p=0.004$); for the 44 bordering
@@ -207,7 +207,7 @@ counts as forest.
 
 \begin{figure}[H]
 \caption{Forest loss around the parks: annual event-study estimates, five comparisons}
-\includegraphics[width=\linewidth]{event_study_forest_5km.pdf}
+\includegraphics[width=\linewidth]{event_study_forest_5km_latex.pdf}
 \fignote{Points are year-specific treated-control differences in annual forest loss relative to 2004,
 from equation~(3); bars are 90\% intervals from 20-by-20\,km spatial-block clustered standard errors.
 The first three panels are geographic; the last two are the sector split of Section~1 and compare
@@ -221,7 +221,7 @@ jointly test the 2001--2003 coefficients.}
 
 \begin{figure}[H]
 \caption{Forest loss: pooled post-2005 estimates from the matched-pair design}
-\includegraphics[width=\linewidth]{coefplot_forest_5km.pdf}
+\includegraphics[width=\linewidth]{coefplot_forest_5km_latex.pdf}
 \fignote{Pooled post-2005 coefficients from a matched-pair difference-in-differences in which each
 treated cell is matched with replacement to the closest eligible control cell in the same district on
 the covariates listed above, with pair fixed effects and baseline-covariate-specific linear trends.
@@ -233,7 +233,7 @@ repository, so it could not be regenerated for the sector split.}
 
 \begin{figure}[H]
 \caption{Forest loss measured by JRC Tropical Moist Forest}
-\includegraphics[width=\linewidth]{coefplot_jrc_forest.pdf}
+\includegraphics[width=\linewidth]{coefplot_jrc_forest_latex.pdf}
 \fignote{The JRC product measured on its own terms, as a check that the Hansen results are not an
 artefact of how Hansen defines tree cover. JRC counts moist forest and excludes plantation, which is
 why its levels differ from Hansen even where the two agree in sign.}
@@ -299,7 +299,7 @@ flatness is weak evidence of a null rather than strong evidence of one.
 
 \begin{figure}[H]
 \caption{Nighttime lights: revenue sharing with tourism against revenue sharing alone}
-\includegraphics[width=\linewidth]{event_ntl_groups.pdf}
+\includegraphics[width=\linewidth]{event_ntl_groups_latex.pdf}
 \fignote{Year-specific coefficients from equation~(4), relative to 2004, in 2002 control standard
 deviations, with 95\% intervals from sector-clustered standard errors. Blue is DMSP-OLS 1992--2013 on
 the intercalibrated F15 scale and amber VIIRS 2012--2025, spliced at the dashed line. Post-2005
@@ -327,7 +327,7 @@ under district-by-year.
 
 \begin{figure}[H]
 \caption{Nighttime lights within 5 km of a park gate, and within 5 km of the park}
-\includegraphics[width=\linewidth]{event_ntl_gates.pdf}
+\includegraphics[width=\linewidth]{event_ntl_gates_latex.pdf}
 \fignote{Year-specific coefficients from equation~(5), relative to 2004, in 2002 control standard
 deviations, with 95\% intervals. DMSP-OLS on the intercalibrated F15 scale to 2013, VIIRS thereafter,
 spliced at the dashed line. The post-2005 difference-in-differences is $+0.033$ at the gate, with a
@@ -359,7 +359,7 @@ DMSP.
 
 \begin{figure}[H]
 \caption{Nighttime lights by month, 1992--2025: revenue sharing with tourism against revenue sharing alone}
-\includegraphics[width=\linewidth]{event_ntl_monthly_prepost.pdf}
+\includegraphics[width=\linewidth]{event_ntl_monthly_prepost_latex.pdf}
 \fignote{Year-specific coefficients estimated on 416 sectors by 401 months of settled land, relative
 to 2004, in control standard deviations, with 95\% intervals. Totals are scaled to each sector's whole
 settled area: summing only observed pixels would measure coverage as much as light, and treated
@@ -376,7 +376,7 @@ and no coefficient crosses it.}
 
 \begin{figure}[H]
 \caption{The 5 km gate design on monthly composites}
-\includegraphics[width=\linewidth]{event_ntl_gates_monthly.pdf}
+\includegraphics[width=\linewidth]{event_ntl_gates_monthly_latex.pdf}
 \fignote{Equation~(5) on 1{,}939 cells by 401 months, cell and district-by-month fixed effects.
 Magnitudes are not comparable with the annual gate figure: each series is scaled by its own control
 standard deviation, and the monthly composites are far more dispersed than the cleaned annual

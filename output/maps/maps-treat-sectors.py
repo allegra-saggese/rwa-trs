@@ -4,9 +4,9 @@ maps-treat-sectors.py -- the sector maps for the TRS analysis.
     python maps-treat-sectors.py
 
 Writes to the Dropbox output folder (not to the repository):
-    Rwanda - TRS/output/maps/map1_treatment_definitions.pdf
-    Rwanda - TRS/output/maps/map2_exclusion_definitions.pdf
-    Rwanda - TRS/output/maps/map3_estimation_samples.pdf
+    Rwanda - TRS/output/maps/treatment_definitions.pdf
+    Rwanda - TRS/output/maps/exclusion_definitions.pdf
+    Rwanda - TRS/output/maps/estimation_samples.pdf
 
 Map 1: the sectors bordering the three long-established national parks, the four park entrances
 that already existed in 2005, and the sectors next to those entrances.
@@ -222,7 +222,7 @@ def map1(sec, dist, pk, parks, L):
               Patch(facecolor="white", edgecolor="#4D4D4D", hatch="////", label="Gates+  (25)"),
               Patch(facecolor=C["park"], edgecolor=C["park_edge"], alpha=0.85, label="National park")]
     finish(ax, sec, legend, NOTE1)
-    fig.savefig(OUT / "map1_treatment_definitions.pdf", bbox_inches="tight")
+    fig.savefig(OUT / "treatment_definitions.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -248,7 +248,7 @@ def map2(sec, dist, pk, parks, L):
               Patch(facecolor=C["gish"], edgecolor="#7D4A1F", alpha=0.85, label="Gishwati Mukura  (9)"),
               Patch(facecolor=C["park"], edgecolor=C["park_edge"], alpha=0.85, label="National Parks")]
     finish(ax, sec, legend, NOTE2)
-    fig.savefig(OUT / "map2_exclusion_definitions.pdf", bbox_inches="tight")
+    fig.savefig(OUT / "exclusion_definitions.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -314,7 +314,7 @@ def map3(sec, dist, pk, parks, L):
     fig.subplots_adjust(left=0.004, right=0.996, top=0.94, bottom=0.13, wspace=0.02)
     fig.text(0.006, 0.012, "\n".join(textwrap.wrap(NOTE3, 200)), fontsize=6.6, va="bottom",
              ha="left", color="#333333", linespacing=1.7)
-    fig.savefig(OUT / "map3_estimation_samples.pdf", bbox_inches="tight")
+    fig.savefig(OUT / "estimation_samples.pdf", bbox_inches="tight")
     plt.close(fig)
 
 

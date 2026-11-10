@@ -37,8 +37,8 @@ REPO = Path("/Users/matteo/Documents/GitHub/rwa-trs")
 DB = Path("/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS")
 GEO = DB / "data/geo-data"
 FIGURE = DB / "output/figures/event_study_forest_5km.pdf"
-RESULTS = DB / "output/tables/event_study_forest_5km.csv"
-DIAGNOSTICS = DB / "output/tables/event_study_forest_5km_diagnostics.csv"
+RESULTS = DB / "output/tables/regressions/forest_event_study_5km.csv"
+DIAGNOSTICS = DB / "output/tables/regressions/forest_event_study_5km_diagnostics.csv"
 
 SECTORS = GEO / "protected-areas/sectors_park_exposure_wdpa.gpkg"
 PARKS = GEO / "protected-areas/rwanda_protected_areas_geodata_rw.gpkg"

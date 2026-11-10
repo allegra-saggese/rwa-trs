@@ -2,7 +2,7 @@
 steg_ec_maps.py -- services establishments with paid staff per 1,000 residents by sector, 2014, for the STEG appendix.
 
     python steg_ec_maps.py
-    output/figures/steg_ec2014_services_map.pdf
+    output/maps/ec2014_services_establishments.pdf
 
 One map (Matteo, 2026-09-15): establishments whose main activity is in services, ISIC sections G-S, with at
 least one paid employee, per 1,000 residents, in quartiles of the 416 sectors, shades of blue (red until
@@ -107,7 +107,7 @@ def main():
     ax.legend(handles=handles, title="Establishments per\n1,000 residents", loc="center left", bbox_to_anchor=(1.0, .3),
               frameon=False, fontsize=8.5, title_fontsize=9, alignment="left")
     ax.set_axis_off()
-    out = P.FIGS / "steg_ec2014_services_map.pdf"
+    out = P.MAPS / "ec2014_services_establishments.pdf"
     fig.savefig(out, bbox_inches="tight"); plt.close(fig)
     print(f"written {out}")
 

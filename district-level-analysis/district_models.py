@@ -283,6 +283,11 @@ MODELS = {
 }
 
 
+# output file names (output/tables/regressions/) for each model key
+OUT_NAMES = {"agriculture_park": "agriculture_on_park_proximity", "tourism_park": "tourism_on_park_proximity",
+             "tourism_forest": "forest_on_tourism_share", "within_district": "within_district_tourism_model"}
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -305,13 +310,14 @@ def main(argv=None) -> int:
         p.print_help()
         return 1
 
-    P.TABLES.mkdir(parents=True, exist_ok=True)
+    P.TABLES_REG.mkdir(parents=True, exist_ok=True)
     for k in todo:
         _log(k)
         res, title = MODELS[k]()
         report(res, title)
-        res.to_csv(P.TABLES / f"model_{k}.csv", index=False)
-        print(f"    -> output/tables/model_{k}.csv")
+        out = P.TABLES_REG / f"{OUT_NAMES.get(k, 'model_' + k)}.csv"
+        res.to_csv(out, index=False)
+        print(f"    -> output/tables/regressions/{out.name}")
     return 0
 
 

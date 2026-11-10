@@ -360,8 +360,8 @@ def fig_economy_composition():
     lf = pd.read_csv(V.GEO / "labour/lfs_isic_shares_wide.csv", index_col=0)
     ec.index = [int(str(i).split()[0]) for i in ec.index]
     lf.index = [int(str(i).split()[0]) for i in lf.index]
-    for df, title, name in [(ec, "Establishment Census: share of establishments", "economy_composition_establishments"),
-                            (lf, "Labour Force Survey: share of workers", "economy_composition_workers")]:
+    for df, title, name in [(ec, "Establishment Census: share of establishments", "economy_composition_ec_establishments"),
+                            (lf, "Labour Force Survey: share of workers", "economy_composition_lfs_workers")]:
         yr = str(max(int(c) for c in df.columns))
         s = df[yr].sort_values(ascending=True)
         s = s[s > .05]
@@ -636,7 +636,7 @@ def map_lisa_clusters():
               [mpl.patches.Patch(color="0.92", label="not significant")]
     fig.legend(handles=handles, loc="lower center", ncol=5, fontsize=9, bbox_to_anchor=(.5, -.02))
     fig.suptitle("Local spatial clustering (LISA, queen contiguity, p ≤ 0.05)", fontsize=12, y=1.02)
-    V.save(fig, "lisa_clusters", "map")
+    V.save(fig, "lisa_clusters_forest_and_population", "map")
 
 
 def _lisa_single(s, col, title, name):
@@ -824,8 +824,8 @@ def fig_isic_composition_full():
     ax.set_title("Economic composition by ISIC section, both sources")
     ax.legend(loc="lower right")
     ax.grid(axis="y", alpha=0)
-    V.save(fig, "isic_composition_full")
-    V.save_table(t, "isic_composition_full")
+    V.save(fig, "census_isic_composition")
+    V.save_table(t, "census_isic_composition")
 
 
 def fig_isic_trends_full():
@@ -860,11 +860,11 @@ def fig_isic_trends_full():
     fig.suptitle("ISIC section shares over time (%), Establishment Census vs LFS",
                  y=0.995)
     fig.tight_layout()
-    V.save(fig, "isic_trends_full")
+    V.save(fig, "census_isic_trends")
     for src in ("ec", "lfs"):
         w = nat[src].pivot(index="isic", columns="year", values="pct")
         w.index = [f"{i}. {V.ISIC[i]}" for i in w.index]
-        V.save_table(w, f"{src}_isic_shares_wide")
+        V.save_table(w, f"{src}_isic_shares_by_year")
 
 
 # ==========================================================================

@@ -140,7 +140,7 @@ def frame_map(ax, title: str, park_layer=None) -> None:
     ax.set_anchor("N")
 
 
-TABLES = P.TABLES
+TABLES = P.TABLES_SUM
 
 
 def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> Path:

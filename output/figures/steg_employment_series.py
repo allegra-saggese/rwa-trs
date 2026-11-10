@@ -2,8 +2,8 @@
 steg_employment_series.py -- structural transformation and tourism jobs, 2001-2025, for the STEG appendix.
 
     python steg_employment_series.py
-    output/figures/steg_employment_sectors.pdf    share of workers in agriculture (subsistence included) and in services
-    output/figures/steg_employment_tourism.pdf    people employed in tourism-related services: accommodation & food
+    output/figures/employment_by_sector_series.pdf    share of workers in agriculture (subsistence included) and in services
+    output/figures/employment_tourism_series.pdf    people employed in tourism-related services: accommodation & food
                                                   and arts & recreation (ISIC sections I, R), every year
 
 Each person is counted once, by main job, so agriculture + services + industry = 100%; industry is the
@@ -165,14 +165,14 @@ def main():
     ax.bar(x + w / 2, [rows[y]["serv_pct"] for y in years], w, color="#1b4965", label="Services")
     ax.set_ylabel("% of workers"); ax.set_ylim(0, 100)
     ax.legend(loc="upper right", frameon=False, fontsize=9)
-    save(fig, ax, "steg_employment_sectors.pdf")
+    save(fig, ax, "employment_by_sector_series.pdf")
 
     fig, ax = plt.subplots(figsize=(9.5, 4.2))
     x = broken_axis(ax, years)
     ax.bar(x, [rows[y]["tourism_k"] for y in years], .7, color="#2a9d8f")
     ax.set_ylabel("People employed, thousands")
     ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
-    save(fig, ax, "steg_employment_tourism.pdf")
+    save(fig, ax, "employment_tourism_series.pdf")
 
 
 if __name__ == "__main__":

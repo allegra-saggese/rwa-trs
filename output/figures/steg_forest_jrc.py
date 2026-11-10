@@ -2,7 +2,7 @@
 steg_forest_jrc.py -- tropical moist forest remaining in and outside national parks, 1995-2024, for the STEG appendix.
 
     python steg_forest_jrc.py
-    output/figures/steg_forest_jrc.pdf
+    output/figures/forest_cover_jrc_series.pdf
 
 MEASURE (Matteo, 2026-09-15). JRC Tropical Moist Forest, version 2025, read as cloud-optimised GeoTIFFs from
 the Source Cooperative mirror (the same source as coefplot_jrc_forest.py and forest_event_study_5km.py; only
@@ -86,8 +86,8 @@ def main():
     ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
     ax.legend(loc="lower left", frameon=False, fontsize=9)
     fig.tight_layout()
-    fig.savefig(P.FIGS / "steg_forest_jrc.pdf", bbox_inches="tight"); plt.close(fig)
-    print(f"written {P.FIGS / 'steg_forest_jrc.pdf'}")
+    fig.savefig(P.FIGS / "forest_cover_jrc_series.pdf", bbox_inches="tight"); plt.close(fig)
+    print(f"written {P.FIGS / 'forest_cover_jrc_series.pdf'}")
 
 
 if __name__ == "__main__":

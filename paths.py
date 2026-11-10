@@ -72,6 +72,8 @@ OUT = DROPBOX / "output"
 FIGS = OUT / "figures"
 MAPS = OUT / "maps"
 TABLES = OUT / "tables"
+TABLES_SUM = TABLES / "summary_statistics"   # descriptive tables
+TABLES_REG = TABLES / "regressions"          # regression output
 
 INTERIM = REPO / "interim-processing"
 RAW = INTERIM / "raw"

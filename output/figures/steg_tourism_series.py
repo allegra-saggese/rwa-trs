@@ -2,8 +2,8 @@
 steg_tourism_series.py -- Rwanda's tourism boom from Rwanda Development Board figures, for the STEG appendix.
 
     python steg_tourism_series.py
-    output/figures/steg_tourism_parks.pdf       national parks: visits (left), direct revenue collection (entry tickets) in constant 2024 US$ (right)
-    output/figures/steg_tourism_national.pdf    all tourism: international arrivals (left), revenue in constant 2024 US$ (right)
+    output/figures/tourism_visitors_by_park_series.pdf       national parks: visits (left), direct revenue collection (entry tickets) in constant 2024 US$ (right)
+    output/figures/tourism_visitors_national_series.pdf    all tourism: international arrivals (left), revenue in constant 2024 US$ (right)
 
 Revenue and park figures are Rwanda Development Board data, from its annual reports and, for park visits
 to 2023, NISR's Statistical Yearbook 2024 (source: RDB). International arrivals are NISR's "tourist
@@ -82,9 +82,9 @@ def main():
     preal = to_real(pr)
     treal = to_real(tr)
     draw(pv / 1e3, "National park visits, thousands (left)", lambda v, _: f"{v:,.0f}", preal,
-         "National park direct revenue collection", "steg_tourism_parks.pdf")
+         "National park direct revenue collection", "tourism_visitors_by_park_series.pdf")
     draw(ta / 1e6, "International arrivals, million (left)", lambda v, _: f"{v:.2f}", treal,
-         "Spending by international visitors", "steg_tourism_national.pdf")
+         "Spending by international visitors", "tourism_visitors_national_series.pdf")
     f = lambda s, y: float(s.get(y, float("nan")))
     print(f"parks: visits 2005 {f(pv,2005):,.0f} 2019 {f(pv,2019):,.0f} 2020 {f(pv,2020):,.0f} 2025 {f(pv,2025):,.0f} | "
           f"real revenue US$M: 2008 {f(preal,2008):.1f} 2019 {f(preal,2019):.1f} 2020 {f(preal,2020):.1f} 2025 {f(preal,2025):.1f}")

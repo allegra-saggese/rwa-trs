@@ -2,8 +2,8 @@
 steg_census_change_maps.py -- labour reallocation by sector, 2002-2022, for the STEG appendix.
 
     python steg_census_change_maps.py
-    output/figures/steg_census_change_agriculture.pdf
-    output/figures/steg_census_change_services.pdf
+    output/maps/census_change_agriculture_share.pdf
+    output/maps/census_change_services_share.pdf
 
 MEASURE (Matteo, 2026-09-15). Each sector's share of workers aged 20-64 in each group, from the 2002, 2012
 and 2022 Population and Housing Censuses, and the average of the two decade changes,
@@ -95,7 +95,7 @@ def main():
                   loc="center left", bbox_to_anchor=(1.0, .3), frameon=False, fontsize=8.5, title_fontsize=9,
                   alignment="left")
         ax.set_axis_off()
-        out = P.FIGS / f"steg_census_change_{g}.pdf"
+        out = P.MAPS / f"census_change_{g}_share.pdf"
         fig.savefig(out, bbox_inches="tight"); plt.close(fig)
         print(f"written {out}")
 

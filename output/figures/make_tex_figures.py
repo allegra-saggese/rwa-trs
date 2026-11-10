@@ -2,7 +2,7 @@
 make_tex_figures.py -- regenerate every figure without its embedded caption or note, for STEG-Results.
 
     python make_tex_figures.py [module ...]
-    output/figures/tex/*.pdf
+    output/figures/*_latex.pdf
 
 The LaTeX document carries the caption above each figure and the note below it, so the image itself
 must contain neither. Rather than edit ten figure scripts, this driver imports each one and runs it
@@ -12,7 +12,7 @@ with three methods temporarily replaced:
     Figure.suptitle  -> no-op   removes the overall title, which becomes the LaTeX caption
     Axes.set_title   -> cleared at save time, but only on single-panel figures, where the axes
                        title is acting as the caption; column headers on multi-panel figures stay
-    Figure.savefig   -> writes into output/figures/tex/ instead of output/figures/
+    Figure.savefig   -> writes <name>_latex.pdf next to the original in output/figures/
 
 Axis titles, axis labels, legends and in-panel statistics boxes are left alone: those are part of the
 figure, not a caption. Nothing in the original scripts is modified and the originals they normally
@@ -26,8 +26,7 @@ from matplotlib.figure import Figure
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import bar_chart_housing as B          # never alias to C: shadows patsy C()
 
-TEXFIG = Path(str(B.FIG)) / "tex"
-TEXFIG.mkdir(parents=True, exist_ok=True)
+TEXFIG = Path(str(B.FIG))          # LaTeX-styled copies sit next to the originals as <name>_latex.pdf
 
 MODULES = ["bar_chart_housing", "coefplot_housing", "coefplot_housing_lasso",
            "coefplot_jobs", "cohort_education", "cohort_marriage",
@@ -54,7 +53,8 @@ def _redirect(self, fname, *a, **k):
     if not name.lower().endswith((".pdf", ".png")):
         return _savefig(self, fname, *a, **k)
     k.pop("bbox_inches", None)
-    return _savefig(self, TEXFIG / name, *a, bbox_inches="tight", **k)
+    p = Path(name)
+    return _savefig(self, TEXFIG / f"{p.stem}_latex{p.suffix}", *a, bbox_inches="tight", **k)
 
 
 def run(name):
@@ -91,7 +91,7 @@ def main(names):
                 # that are already there, and a set difference would call that "wrote nothing"
                 started = time.time()
                 how = run(name)
-                made = sorted(f.name for f in TEXFIG.glob("*.pdf") if f.stat().st_mtime >= started - 1)
+                made = sorted(f.name for f in TEXFIG.glob("*_latex.pdf") if f.stat().st_mtime >= started - 1)
                 if not made:
                     bad.append((name, "produced no figure"))
                     print(f"  EMPTY {name}: ran via {how} but wrote nothing")
@@ -105,7 +105,7 @@ def main(names):
     finally:
         Figure.text, Figure.suptitle, Figure.savefig = _text, _suptitle, _savefig
     print(f"\n{len(ok)} ok, {len(bad)} failed -> {TEXFIG}")
-    for f in sorted(TEXFIG.glob("*.pdf")):
+    for f in sorted(TEXFIG.glob("*_latex.pdf")):
         print("   ", f.name)
 
 

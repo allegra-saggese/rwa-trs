@@ -2,7 +2,7 @@
 summary.py — descriptive tables, figures, and graphs.
 
 Reads only from data/processed/ (built by extract.py) and writes to
-output/tables/ and output/figures/. Computes no new analysis variables: if a
+output/tables/summary_statistics/ and output/figures/. Computes no new analysis variables: if a
 figure needs a variable that does not exist, add it in extract.py so every
 output uses the same definition.
 
@@ -33,7 +33,7 @@ PROC = P.PROC
 DROPBOX = P.DROPBOX
 OUT = P.OUT
 FIGS = P.FIGS
-TABLES = P.TABLES
+TABLES = P.TABLES_SUM
 
 # Publication defaults. Serif to sit comfortably in a LaTeX paper; restrained
 # grid; no chartjunk.
