@@ -3,7 +3,7 @@
 
     python 02_zonal.py [dmsp|viirs|viirs_m|li|chen]
 
-    2_Intermediate/ntl_<product>_<unit>_long.csv
+    harmonized/nightlights/sector-cell-long/ntl_<product>_<unit>_long.csv
 
 The step is driven by what is on disk: H.clips() lists every Rwanda cut-out with its product, layer,
 satellite and period, and each one gets the same four statistics. Nothing here knows the product

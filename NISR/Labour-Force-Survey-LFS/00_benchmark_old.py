@@ -11,11 +11,9 @@ import pandas as pd, pyreadstat
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "logs" / "benchmark_old_stata.json"
-ROOTS = {
-    "matteo": "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR",
-    "allegrasaggese": "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/Publicly-Available-NISR",
-}
-DB = Path(os.environ.get("NISR_DB_ROOT") or ROOTS[getpass.getuser()]) / "Labour-Force-Survey-LFS"
+sys.path.insert(0, str(HERE.parents[1]))
+import paths as P   # the Dropbox location is defined once, in the repo-root paths.py
+DB = P.NISR / "Labour-Force-Survey-LFS"
 
 def read_dta_any(path, **kw):
     """pyreadstat with a latin1 fallback: several NISR files carry non-UTF-8 labels."""

@@ -3,11 +3,11 @@
 
     python 01_download.py [li|chen] [--force]
 
-    geo-data/nightlights/ntl_<product>_<year>_rwanda.tif   the cut-outs, kept
-    1_Raw/source_manifest.csv                              url, size and sha256 of every source file
+    Nighttime-Lights/clipped-rwanda/ntl_<product>_<year>_rwanda.tif   the cut-outs, kept
+    Nighttime-Lights/source/source_manifest.csv                              url, size and sha256 of every source file
 
 The global rasters are 33 MB (Li) to 10 GB uncompressed (Chen) per year and nothing downstream needs
-anything outside Rwanda, so they are deleted as soon as the window is written. 1_Raw therefore holds
+anything outside Rwanda, so they are deleted as soon as the window is written. Nighttime-Lights/source therefore holds
 the manifest rather than the files: every source is reproducible from the url and checksum in it.
 
 A year already cut is skipped, so an interrupted run resumes where it stopped.

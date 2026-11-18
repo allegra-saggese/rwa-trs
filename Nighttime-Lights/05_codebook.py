@@ -3,8 +3,8 @@
 
     python 05_codebook.py
 
-    CODEBOOK_Nightlights.xlsx   one sheet per final file, plus Sources and Coverage
-    README.txt                  written next to it, describing the folder for someone who
+    CODEBOOK_Nightlights.xlsx   data/harmonized/nightlights/: one sheet per final file, plus Sources and Coverage
+    README.txt                  data/Nighttime-Lights/: describes the folder for someone who
                                 opens it without this repository in front of them
 """
 import numpy as np
@@ -12,42 +12,61 @@ import pandas as pd
 
 import ntl_helpers as H
 
-README = """NIGHTTIME LIGHTS -- Rwanda, 2000 onwards
-{rule}
+README = """NIGHTTIME LIGHTS -- Rwanda, 1992-2025
+========================================================================
 
-WHAT THIS IS
-Annual nighttime light brightness for every Rwandan sector (416) and cell (2,148), from two
-independent global products, both harmonised across the 2012 change of satellite sensor.
+This folder holds the satellite images: the files as downloaded (source/) and the same images
+clipped to Rwanda (clipped-rwanda/). Everything averaged to sectors or cells is in
+data/harmonized/nightlights/.
 
-  li     Li, Zhou, Zhao and Zhao (2020), extended to 2024. Digital numbers on the DMSP scale,
-         0 to 63, originally 30 arc-second (about 0.9 km over Rwanda). Calibrated DMSP through
-         2013, VIIRS converted to DMSP-like numbers from 2014.
-  chen   Chen, Yu, Yang and others (2021), version 2, 1992 to 2025. Radiance in nW/cm2/sr,
-         originally 15 arc-second (about 0.5 km). VIIRS-like throughout, extended backwards.
+THE SIX PRODUCTS
+  product        what it is                                         years      units
+  dmsp           NOAA/EOG DMSP-OLS annual composites, version 4,     1992-2013  digital number 0-63
+                 one per satellite (F10, F12, F14, F15, F16, F18)
+  dmsp_m         DMSP-OLS monthly composites                         1992-2014  digital number 0-63
+  viirs          EOG VIIRS annual composites, VNL version 2.1        2012-2025  radiance nW/cm2/sr
+  viirs_m        EOG VIIRS monthly cloud-free composites, version 1  2012-2025  radiance nW/cm2/sr
+  li             Li, Zhou, Zhao and Zhao (2020), DMSP and VIIRS       1992-2024  digital number 0-63
+                 spliced into one DMSP-scale series
+  chen           Chen, Yu, Yang and others (2021), version 2,        2000-2025  radiance nW/cm2/sr
+                 a VIIRS-scale series extended back in time
 
-Both are carried and neither is preferred. They are built by different methods on different
-scales, so where they disagree that disagreement is information, not error. Never average them.
+  Layers within a product:
+    avgvis / avg   average brightness over cloud-free nights
+    cfcvg          number of cloud-free nights observed (quality weight, not brightness)
+    stable         DMSP stable lights: fires and other ephemeral lights removed
+    intercal       DMSP stable lights intercalibrated across satellites
+    med            VIIRS median brightness
+    lit            VIIRS lit mask (1 = pixel lit)
 
-FILES
-  3_Final/Nightlights_pooled_sector.dta   {sector_rows} rows, one per sector-year
-  3_Final/Nightlights_pooled_cell.dta     {cell_rows} rows, one per cell-year
-  (.csv copies sit beside both)
-  2_Intermediate/                         one long file per product and unit, before merging
-  1_Raw/source_manifest.csv               url, byte size and sha256 of every source file
-  CODEBOOK_Nightlights.xlsx               every variable, its label and its range
-  z_Documentation/                        the two source papers' citations and licences
+  li and chen are built by different methods on different scales; where they disagree that is
+  information, not error. Never average them.
 
-The Rwanda cut-outs of the rasters live in geo-data/nightlights/, one GeoTIFF per product-year,
-alongside the other gridded layers. The global originals run from 33 MB to 10 GB per year and
-are not kept: they are reproducible from the manifest, and nothing here needs a pixel outside
-the country.
+FOLDERS
+  source/                       files as downloaded
+    dmsp_v4/                    DMSP annual, global .tif.gz, one folder per satellite-year
+    dmsp_monthly/               DMSP monthly, one folder per satellite (1.4 GB)
+    viirs_annual/               VIIRS annual, already clipped to Rwanda by EOG (.RWA.tif)
+    viirs_monthly/              VIIRS monthly, original world tiles (.tgz), one folder per year (1.1 GB)
+    source_manifest.csv         li and chen: product, year, file name, URL, size, sha256
+    source_manifest_dmsp.csv    DMSP annual: the same fields
+  clipped-rwanda/               every product clipped to Rwanda, one GeoTIFF per product, layer and
+                                period: ntl_<product>_<layer>_<year or yyyymm>_rwanda.tif (1,362 files)
+  z_Documentation/sources.txt   citation, DOI and licence of each product (all CC BY 4.0)
 
-WHAT IS NOT HERE
-The raw composites these products are built from, DMSP-OLS v4 and VIIRS VNL v2 from NOAA/EOG,
-now sit behind an account login at eogdata.mines.edu. They can be added to 1_Raw by anyone with
-an account; the pipeline does not fetch them.
+  li and chen are kept only as Rwanda clips: their global files are 33 MB to 10 GB per year. The
+  manifest is the download log that lets them be fetched again and checked byte for byte (sha256).
+  DMSP monthly, VIIRS annual and VIIRS monthly have no manifest.
 
-Monthly VIIRS is not here either. Only annual composites were built.
+  dmsp_v4/ and viirs_annual/ are online-only in Dropbox: they show 0 bytes until opened.
+
+WHAT IS BUILT FROM THESE (in data/harmonized/nightlights/)
+  Nightlights_pooled_sector / _cell     annual, one row per sector-year (416 x 34) or cell-year,
+                                        all annual products side by side, .dta and .csv
+  Nightlights_monthly_sector / _cell    monthly DMSP and VIIRS
+  sector-cell-long/                     one long file per product and unit, before merging
+  CODEBOOK_Nightlights.xlsx             every variable, its label and its range
+  Built by rwa-trs/Nighttime-Lights.
 
 HOW THE NUMBERS ARE MADE
 Each raster pixel is split into 4 x 4 sub-pixels that inherit its value; each sub-pixel is
@@ -59,7 +78,7 @@ shortens with latitude.
   mean        area-weighted average brightness
   sum         area-weighted total, in whole-pixel equivalents, the usual "sum of lights"
   max         the brightest single pixel
-  lit_share   share of the unit's area above the noise floor (0 for Li, 0.5 nW for Chen)
+  lit_share   share of the unit's area above the noise floor (0 for the 0-63 products, 0.5 nW for radiance)
 
 MERGING
 Merge on the codes. ntl_sector_id is the NISR sector code, the same one the census and the
@@ -76,7 +95,7 @@ Names are unique once the district is added. If you must join on text, the keys 
   sector level   district + sector
   cell level     district + sector + cell
 
-Both are checked in logs/checks_report.txt, section B.
+Both are checked in the pipeline's logs/checks_report.txt, section B.
 
 {stamp}
 """
@@ -101,7 +120,7 @@ def sheet(df, labels=None):
 
 
 def main():
-    out = H.NTL / "CODEBOOK_Nightlights.xlsx"
+    out = H.FINAL / "CODEBOOK_Nightlights.xlsx"   # data/harmonized/nightlights/
     counts = {}
     with pd.ExcelWriter(out, engine="openpyxl") as xl:
         for cadence, stem in (("annual", "pooled"), ("monthly", "monthly")):

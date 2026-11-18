@@ -44,13 +44,18 @@ import re
 import urllib.request
 from pathlib import Path
 
-DB = Path("/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS")
-DATA = DB / "data"
-NTL = DATA / "Nighttime-Lights"
-RAW, INTERMEDIATE, FINAL = NTL / "1_Raw", NTL / "2_Intermediate", NTL / "3_Final"
-DOCS = NTL / "z_Documentation"
-GEO = DATA / "geo-data"
-CLIPS = GEO / "nightlights"
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P   # the Dropbox location is defined once, in the repo-root paths.py
+
+DATA = P.DATA
+NTL = P.NIGHTLIGHTS                      # data/Nighttime-Lights/: the images
+RAW = P.NTL_SOURCE                       # as downloaded, plus source_manifest*.csv
+CLIPS = P.NTL_CLIPS                      # clipped to Rwanda, one GeoTIFF per product-layer-period
+DOCS = P.NTL_DOCS
+INTERMEDIATE = P.HARM_NTL_LONG           # data/harmonized/nightlights/sector-cell-long/
+FINAL = P.HARM_NTL                       # data/harmonized/nightlights/: panels and codebook
+GEO = P.GEO
 LOGS = Path(__file__).resolve().parent / "logs"
 
 SECTORS = GEO / "protected-areas/sectors_park_exposure_wdpa.gpkg"

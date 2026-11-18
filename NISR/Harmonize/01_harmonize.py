@@ -19,7 +19,7 @@ CFSVA, whose household file carries the head's characteristics directly) on hous
 <ds>_literacy on the CFSVA woman file; <ds>_household_key / <ds>_person_key everywhere. Sex is not repeated as a
 harmonised variable: <ds>_sex is already 1 male / 2 female in every dataset.
 Every code mapping is written to harmonization_map.csv (dataset, waves, file, h_variable, source, rule,
-level, quality, note). Scope and code lists: the project notes NISR-Harmonize.md (Green Jobs - TRS folder).
+level, quality, note).
 """
 import csv, os, re, shutil, sys, time
 import numpy as np, pandas as pd

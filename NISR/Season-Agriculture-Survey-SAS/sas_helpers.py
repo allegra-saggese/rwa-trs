@@ -19,25 +19,13 @@ HERE = Path(__file__).resolve().parent
 LOGS = HERE / "logs"
 
 # --------------------------------------------------------------------------- paths
-# The Dropbox project folder sits at a different path on each collaborator's Mac.
-# NISR_DB_ROOT (environment) overrides everything; otherwise the login user decides.
-ROOTS = {
-    "matteo": "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR",
-    "allegrasaggese": "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/Publicly-Available-NISR",
-}
+# The Dropbox location is defined once, in the repo-root paths.py (RWA_ROOT, or the login user).
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths as P
 
 def db_root() -> Path:
-    r = os.environ.get("NISR_DB_ROOT")
-    if not r:
-        u = getpass.getuser()
-        if u not in ROOTS:
-            sys.exit(f"Unknown user {u!r}: set NISR_DB_ROOT to the Publicly-Available-NISR folder, "
-                     f"or add yourself to ROOTS in {Path(__file__).name}")
-        r = ROOTS[u]
-    p = Path(r)
-    if not p.is_dir():
-        sys.exit(f"Data root not found: {p}")
-    return p
+    """The Publicly-Available-NISR folder in Dropbox."""
+    return P.NISR
 
 def paths() -> dict[str, Path]:
     d = db_root() / DATASET

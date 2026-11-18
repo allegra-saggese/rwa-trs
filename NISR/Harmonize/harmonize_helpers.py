@@ -13,25 +13,19 @@ import numpy as np, pandas as pd, pyreadstat
 HERE = Path(__file__).resolve().parent
 LOGS = HERE / "logs"
 REPO_NISR = HERE.parent                      # rwa-trs/NISR/<dataset>/ folders (for merge_alignment.json)
-ROOTS = {
-    "matteo": "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data/Publicly-Available-NISR",
-    "allegrasaggese": "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data/Publicly-Available-NISR",
-}
 DATASETS = {   # short tag -> Dropbox / repo folder name
     "LFS": "Labour-Force-Survey-LFS", "Census": "Census-PHC", "EICV": "Household-Living-Conditions-EICV",
     "EC": "Establishment-Census-EC", "AHS": "Agriculture-Survey-AHS", "SAS": "Season-Agriculture-Survey-SAS",
     "CFSVA": "Food-Security-CFSVAN",
 }
 
+# The Dropbox location is defined once, in the repo-root paths.py (RWA_ROOT, or the login user).
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths as P
+
 def db_root() -> Path:
-    r = os.environ.get("NISR_DB_ROOT")
-    if not r:
-        u = getpass.getuser()
-        if u not in ROOTS: sys.exit(f"Unknown user {u!r}: set NISR_DB_ROOT or add yourself to ROOTS in {Path(__file__).name}")
-        r = ROOTS[u]
-    p = Path(r)
-    if not p.is_dir(): sys.exit(f"Data root not found: {p}")
-    return p
+    """The Publicly-Available-NISR folder in Dropbox."""
+    return P.NISR
 
 def out_dir() -> Path:
     """Publicly-Available-NISR/Harmonisation-docs/: the cross-dataset DOCUMENTS only (README.txt,

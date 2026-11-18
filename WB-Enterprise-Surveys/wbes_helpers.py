@@ -20,26 +20,13 @@ HERE = Path(__file__).resolve().parent
 LOGS = HERE / "logs"
 
 # --------------------------------------------------------------------------- paths
-# The Dropbox project folder sits at a different path on each collaborator's Mac.
-# WBES_DB_ROOT (environment) overrides everything; otherwise the login user decides.
-# The root is the project's data/ folder; the survey lives in data/WB-Enterprise-Surveys/.
-ROOTS = {
-    "matteo": "/Users/matteo/Library/CloudStorage/Dropbox/1-Ongoing Projects/Rwanda - TRS/data",
-    "allegrasaggese": "/Users/allegrasaggese/Library/CloudStorage/Dropbox/Rwanda - TRS/data",
-}
+# The Dropbox location is defined once, in the repo-root paths.py (RWA_ROOT, or the login user).
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths as P
 
 def db_root() -> Path:
-    r = os.environ.get("WBES_DB_ROOT")
-    if not r:
-        u = getpass.getuser()
-        if u not in ROOTS:
-            sys.exit(f"Unknown user {u!r}: set WBES_DB_ROOT to the Rwanda - TRS/data folder, "
-                     f"or add yourself to ROOTS in {Path(__file__).name}")
-        r = ROOTS[u]
-    p = Path(r)
-    if not p.is_dir():
-        sys.exit(f"Data root not found: {p}")
-    return p
+    """The data/ folder in Dropbox; the survey lives in data/WB-Enterprise-Surveys/."""
+    return P.DATA
 
 def paths() -> dict[str, Path]:
     d = db_root() / DATASET

@@ -1,14 +1,14 @@
 """
-01b_clip_raw.py -- cut Rwanda out of the raw sensor composites sitting in 1_Raw.
+01b_clip_raw.py -- cut Rwanda out of the raw sensor composites sitting in Nighttime-Lights/source.
 
     python 01b_clip_raw.py [dmsp|viirs]
 
-    geo-data/nightlights/ntl_dmsp_<layer>_<sat>_<year>_rwanda.tif
-    geo-data/nightlights/ntl_viirs_<layer>_<year>_rwanda.tif
+    Nighttime-Lights/clipped-rwanda/ntl_dmsp_<layer>_<sat>_<year>_rwanda.tif
+    Nighttime-Lights/clipped-rwanda/ntl_viirs_<layer>_<year>_rwanda.tif
 
 Unlike 01_download.py, which fetches the published harmonised products, this step works on files
 already on disk: the DMSP-OLS v4 and VIIRS VNL v2 composites downloaded by hand from EOG, whose
-programmatic route is now behind a paid subscription. The global originals stay in 1_Raw; only the
+programmatic route is now behind a paid subscription. The global originals stay in Nighttime-Lights/source; only the
 Rwanda windows are written, because a global DMSP cf_cvg year is 300 MB and the window is 60 KB.
 
 Why the raw layers are worth carrying, when two harmonised products already cover the same years:

@@ -7,7 +7,7 @@ master.py -- EC: run the whole pipeline top to bottom.
 Steps: 00 benchmark of old outputs (idempotent) -> 01 clean -> 02 merge -> 03 checks -> 04 codebook.
     python master.py names      # rebuild variable_names.csv from the last run's logs (00_names.py); review, commit, rerun
 All steps of one run log to the same logs/run_<timestamp>.log. Stops at the first failure.
-Set NISR_DB_ROOT to override the Dropbox root (otherwise resolved from the login user).
+Set RWA_ROOT to the 'Rwanda - TRS' Dropbox folder to override the login-user default in paths.py.
 """
 import os, subprocess, sys, time
 from pathlib import Path
