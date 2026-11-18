@@ -5,7 +5,7 @@ Reads metadata only (no data rows), so a full scan of several GB takes seconds
 rather than minutes. Produces two outputs:
 
     docs/data_inventory.md          one row per file: rows, vars, encoding
-    data/processed/variable_index.csv   one row per VARIABLE across every file
+    output/variable-lists/variable_index.csv   one row per VARIABLE across every file
 
 The variable index is the thing to grep. It answers "which files have an ISCO
 variable", "what is s6bq3 called in EICV5", "does the census carry literacy"
@@ -40,7 +40,7 @@ import pandas as pd
 
 REPO = P.REPO
 PROC = P.PROC
-DOCS = REPO / "docs"
+DOCS = P.VARLISTS   # Dropbox output/variable-lists/
 
 # Default location of the NISR holdings. Data lives outside the repo on purpose:
 # NISR and DHS microdata are licensed to the individual researcher, and a git
@@ -54,7 +54,7 @@ READABLE = {".dta", ".sav", ".csv"}
 # Order matters - utf-8 first so correctly-encoded files are not mangled.
 ENCODINGS = (None, "latin1", "cp1252")
 
-INDEX_PATH = PROC / "variable_index.csv"
+INDEX_PATH = P.VARLISTS / "variable_index.csv"
 
 
 def _log(msg: str) -> None:

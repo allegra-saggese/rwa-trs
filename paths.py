@@ -72,6 +72,8 @@ OUT = DROPBOX / "output"
 FIGS = OUT / "figures"
 MAPS = OUT / "maps"
 TABLES = OUT / "tables"
+TABLES_SUM = TABLES / "summary_statistics"       # descriptive tables
+TABLES_REG = TABLES / "regressions"              # regression tables
 LATEX = OUT / "latex"                              # write-ups: .tex sources and compiled .pdf
 VARLISTS = OUT / "variable-lists"                  # generated variable inventories
 

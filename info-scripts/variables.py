@@ -367,7 +367,7 @@ def show(which: str = "all") -> None:
 def export_markdown(dest: Path | None = None) -> Path:
     """Write the codebook to docs/variable_lists.md."""
     labels = _labels()
-    dest = dest or (ROOT / "docs" / "variable_lists.md")
+    dest = dest or (_paths().VARLISTS / "variable_lists.md")
     dest.parent.mkdir(parents=True, exist_ok=True)
 
     out = ["# EICV7 variable lists by workstream", "",
@@ -547,7 +547,7 @@ def export_definitions(dest: Path | None = None) -> Path:
     """Write docs/variable_definitions.md and the matching CSV."""
     import pandas as pd  # noqa: F401
     d = definitions()
-    dest = dest or (ROOT / "docs" / "variable_definitions.md")
+    dest = dest or (_paths().VARLISTS / "variable_definitions.md")
     dest.parent.mkdir(parents=True, exist_ok=True)
     d.to_csv(dest.with_suffix(".csv"), index=False)
 

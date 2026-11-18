@@ -201,7 +201,7 @@ def load() -> pd.DataFrame:
     the outcome and returns degenerate standard errors. The year-varying series
     is built here by aggregating the sector-year panel up to district-year.
     """
-    d = pd.read_csv(P.GEO / "labour/district_workers_forest_panel.csv")
+    d = pd.read_csv(P.HARM_LABOUR / "district_workers_forest_panel.csv")
 
     s = pd.read_csv(P.GEO / "forest/sector_year_panel.csv")
     fy = (s.groupby(["district_id", "year"])

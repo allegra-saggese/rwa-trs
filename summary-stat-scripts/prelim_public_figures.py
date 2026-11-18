@@ -320,8 +320,8 @@ def fig_tourism_employment():
     workers (including subsistence agriculture). The two disagree in sign, and
     the reason is the denominator, not a data error.
     """
-    ec = V.csv("labour/ec_establishments_long.csv")
-    lfs = V.csv("labour/lfs_tourism_share.csv")
+    ec = pd.read_csv(V.P.HARM_LABOUR / "ec_establishments_long.csv")
+    lfs = pd.read_csv(V.P.HARM_LABOUR / "lfs_tourism_share.csv")
     rec = []
     for (y, b), x in ec.dropna(subset=["border_dist", "isic"]).groupby(["year", "border_dist"]):
         lo, hi = _boot(x.tourism.values * 100)
@@ -356,8 +356,8 @@ def fig_tourism_employment():
 
 def fig_economy_composition():
     """Rwanda's economy by ISIC section, both sources."""
-    ec = pd.read_csv(V.GEO / "labour/ec_isic_shares_wide.csv", index_col=0)
-    lf = pd.read_csv(V.GEO / "labour/lfs_isic_shares_wide.csv", index_col=0)
+    ec = pd.read_csv(V.P.HARM_LABOUR / "ec_isic_shares_wide.csv", index_col=0)
+    lf = pd.read_csv(V.P.HARM_LABOUR / "lfs_isic_shares_wide.csv", index_col=0)
     ec.index = [int(str(i).split()[0]) for i in ec.index]
     lf.index = [int(str(i).split()[0]) for i in lf.index]
     for df, title, name in [(ec, "Establishment Census: share of establishments", "economy_composition_ec_establishments"),
@@ -379,8 +379,8 @@ def fig_economy_composition():
 
 def fig_district_trajectories():
     """Every district as a thin line, group means thick."""
-    dw = V.csv("labour/district_workers_forest_panel.csv")
-    ec = V.csv("labour/ec_district_isic.csv")
+    dw = pd.read_csv(V.P.HARM_LABOUR / "district_workers_forest_panel.csv")
+    ec = pd.read_csv(V.P.HARM_LABOUR / "ec_district_isic.csv")
     pk = _parkiness()
     dw = dw.merge(pk, on="dist", how="left"); ec = ec.merge(pk, on="dist", how="left")
     dw["grp"] = np.where(dw.parkiness > 0, "park-bordering", "other")
@@ -413,7 +413,7 @@ def fig_agriculture_workers_forest():
     Agricultural districts sit near parks; tourism-worker districts sit far
     from them. Both correlations are spatial sorting, not effects.
     """
-    dw = V.csv("labour/district_workers_forest_panel.csv")
+    dw = pd.read_csv(V.P.HARM_LABOUR / "district_workers_forest_panel.csv")
     avg = dw.groupby("dist").mean(numeric_only=True).reset_index()
     avg["parkiness"] = avg.border_sectors / avg.n_sectors
     fig, ax = plt.subplots(2, 3, figsize=(16, 9))
@@ -675,8 +675,8 @@ def map_lisa_hansen_loss():
 
 def map_lisa_crop_share():
     """LISA map of cropland share: WorldCover 2021 cropland outside parks over land outside parks
-    (all classes except water and no-data), in percent. Built by prelim-analysis/03b_landcover_sectors.py."""
-    wc = pd.read_csv(V.P.NISR / "Analysis/prelim/sector_landcover_worldcover2021.csv")
+    (all classes except water and no-data), in percent. Built by micro-analysis/03b_landcover_sectors.py."""
+    wc = pd.read_csv(V.P.HARM_PRELIM / "sector_landcover_worldcover2021.csv")
     cls = ["crop", "built", "tree", "other", "shrub_grass", "wetland"]
     wc["crop_share"] = 100 * wc.crop_out_ha / wc[[f"{c}_out_ha" for c in cls]].sum(axis=1)
     s = V.sectors()[["sector_id", "geometry"]].merge(wc[["sector_id", "crop_share"]], on="sector_id", how="left")
@@ -709,9 +709,9 @@ def _isic_shares(source: str) -> pd.DataFrame:
     Sections 1-21 only; 99 "not stated" is dropped before shares are taken.
     """
     if source == "ec":
-        d = V.csv("labour/ec_district_isic.csv").rename(columns={"n": "v"})
+        d = pd.read_csv(V.P.HARM_LABOUR / "ec_district_isic.csv").rename(columns={"n": "v"})
     else:
-        d = V.csv("labour/lfs_district_isic.csv").rename(columns={"workers": "v"})
+        d = pd.read_csv(V.P.HARM_LABOUR / "lfs_district_isic.csv").rename(columns={"workers": "v"})
     d = d[d.isic.between(1, 21)].copy()
     d["dist"] = d.dist.astype("int64")
     d["isic"] = d.isic.astype(int)

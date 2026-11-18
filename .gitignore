@@ -23,3 +23,10 @@ venv/
 
 # Credentials - never commit
 .gfw_api_key
+
+# Run logs and the metadata the pipelines write between steps (logs/*.json, checks
+# reports): regenerated on every run, kept on disk, never committed.
+**/logs/
+
+# Generated variable lists live in Dropbox output/variable-lists/ (info-scripts/).
+data/processed/
