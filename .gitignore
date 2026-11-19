@@ -30,3 +30,6 @@ venv/
 
 # Generated variable lists live in Dropbox output/variable-lists/ (info-scripts/).
 data/processed/
+
+# Written by each pipeline's 03_checks.py on every run, with that machine's paths.
+**/stata_checks.do
