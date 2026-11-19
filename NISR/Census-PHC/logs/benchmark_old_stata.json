@@ -1,0 +1,90 @@
+{
+ "source": "old Stata outputs built 3 Jul 2026 (clean.do/merge.do, archived in _archive/code-NISR-stata-2026-09-04)",
+ "files": [
+  {
+   "file": "Census_2012_clean.dta",
+   "n_rows": 1038369,
+   "n_vars": 118,
+   "by_year": {
+    "2012": {
+     "n": 1038369,
+     "sum_wt": 10383685.717377208,
+     "miss_wt": 0,
+     "sum_wt_hh": 0.0,
+     "n_prov": 5,
+     "n_dist": 30,
+     "n_sector": 416,
+     "sex_counts": {
+      "2": 540067,
+      "1": 498302
+     },
+     "age_min": 0.0,
+     "age_max": 125.0,
+     "n_hh": 242461
+    }
+   }
+  },
+  {
+   "file": "Census_2022_clean.dta",
+   "n_rows": 1313015,
+   "n_vars": 252,
+   "by_year": {
+    "2022": {
+     "n": 1313015,
+     "sum_wt": 13245753.00388956,
+     "miss_wt": 0,
+     "sum_wt_hh": 13104505.160895348,
+     "n_prov": 5,
+     "n_dist": 30,
+     "n_sector": 416,
+     "sex_counts": {
+      "2": 681472,
+      "1": 631543
+     },
+     "age_min": 0.0,
+     "age_max": 122.0,
+     "n_hh": 331917
+    }
+   }
+  },
+  {
+   "file": "Census_panel_2012_2022.dta",
+   "n_rows": 2351384,
+   "n_vars": 350,
+   "by_year": {
+    "2012": {
+     "n": 1038369,
+     "sum_wt": 10383685.717377208,
+     "miss_wt": 0,
+     "sum_wt_hh": 0.0,
+     "n_prov": 5,
+     "n_dist": 30,
+     "n_sector": 416,
+     "sex_counts": {
+      "2": 540067,
+      "1": 498302
+     },
+     "age_min": 0.0,
+     "age_max": 125.0,
+     "n_hh": 242461
+    },
+    "2022": {
+     "n": 1313015,
+     "sum_wt": 13245753.00388956,
+     "miss_wt": 0,
+     "sum_wt_hh": 13104505.160895348,
+     "n_prov": 5,
+     "n_dist": 30,
+     "n_sector": 416,
+     "sex_counts": {
+      "2": 681472,
+      "1": 631543
+     },
+     "age_min": 0.0,
+     "age_max": 122.0,
+     "n_hh": 331917
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,2115 @@
+{
+ "source": "no prior outputs; raw NISR files as shipped",
+ "files": [
+  {
+   "file": "2013/season_A/SAS_2013_a_large_scale_inorganicfertilizer_types.dta",
+   "n_rows": 364,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_a_small_scale_inorganicfertilizer_types.dta",
+   "n_rows": 1923,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_A/SAS_2013_area_a.dta",
+   "n_rows": 64365,
+   "n_vars": 10
+  },
+  {
+   "file": "2013/season_A/SAS_2013_area_a_province.dta",
+   "n_rows": 159,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_A/SAS_2013_area_a_province_phys.dta",
+   "n_rows": 158,
+   "n_vars": 5
+  },
+  {
+   "file": "2013/season_A/SAS_2013_big_farmer_a.dta",
+   "n_rows": 2226,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_A/SAS_2013_date_sowing_production_harvest.dta",
+   "n_rows": 49434,
+   "n_vars": 12
+  },
+  {
+   "file": "2013/season_A/SAS_2013_identifiant_a_lsf.dta",
+   "n_rows": 562,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_identifiant_a_small_scale_farmer.dta",
+   "n_rows": 15441,
+   "n_vars": 15
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_antierrosion.dta",
+   "n_rows": 562,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_antierrosion_by_type.dta",
+   "n_rows": 271,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_area_a_province.dta",
+   "n_rows": 124,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_date_sowing_production_harvest.dta",
+   "n_rows": 1512,
+   "n_vars": 8
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_improved_by_crop.dta",
+   "n_rows": 349,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_inorganic_a.dta",
+   "n_rows": 409,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_irrigation.dta",
+   "n_rows": 562,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_irrigation_by_type.dta",
+   "n_rows": 28,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_organic_a.dta",
+   "n_rows": 562,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_pesticide.dta",
+   "n_rows": 562,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_pesticide_by_type.dta",
+   "n_rows": 180,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_seeds.dta",
+   "n_rows": 595,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_small_equipment_exp.dta",
+   "n_rows": 2903,
+   "n_vars": 5
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_small_equipment_received.dta",
+   "n_rows": 62,
+   "n_vars": 5
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_traditional_by_crop.dta",
+   "n_rows": 825,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_lsf_use_of_production.dta",
+   "n_rows": 3413,
+   "n_vars": 15
+  },
+  {
+   "file": "2013/season_A/SAS_2013_production_yield_a.dta",
+   "n_rows": 105,
+   "n_vars": 9
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_antierrosion_a.dta",
+   "n_rows": 15441,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_antierrosion_by_type.dta",
+   "n_rows": 5788,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_area_a_province.dta",
+   "n_rows": 158,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_improved_by_crop.dta",
+   "n_rows": 2188,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_inorganic_a.dta",
+   "n_rows": 15292,
+   "n_vars": 6
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_irrigation.dta",
+   "n_rows": 15279,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_irrigation_by_type.dta",
+   "n_rows": 338,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_organic_a.dta",
+   "n_rows": 15331,
+   "n_vars": 5
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_pesticide.dta",
+   "n_rows": 15292,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_pesticide_by_type.dta",
+   "n_rows": 1597,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_seeds.dta",
+   "n_rows": 12230,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_small_equipment_exp.dta",
+   "n_rows": 36080,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_small_equipment_received.dta",
+   "n_rows": 431,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_traditional_by_crop.dta",
+   "n_rows": 18058,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_A/SAS_2013_ssf_use_of_production.dta",
+   "n_rows": 6425,
+   "n_vars": 15
+  },
+  {
+   "file": "2013/season_B/SAS_2013_area.dta",
+   "n_rows": 160,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_B/SAS_2013_area_phy.dta",
+   "n_rows": 157,
+   "n_vars": 5
+  },
+  {
+   "file": "2013/season_B/SAS_2013_inorganic_type.dta",
+   "n_rows": 4028,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_antierosion_b.dta",
+   "n_rows": 503,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_antierosion_b_by_type.dta",
+   "n_rows": 91,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_area.dta",
+   "n_rows": 2991,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_ident.dta",
+   "n_rows": 503,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_improved_by_crop_b.dta",
+   "n_rows": 221,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_inorganic_b.dta",
+   "n_rows": 503,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_inorganic_type.dta",
+   "n_rows": 244,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_irrigation_b.dta",
+   "n_rows": 503,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_irrigation_b_by_type.dta",
+   "n_rows": 26,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_organic_b.dta",
+   "n_rows": 503,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_pesticideb.dta",
+   "n_rows": 503,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_pesticideb_by_type.dta",
+   "n_rows": 144,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_seeds_b.dta",
+   "n_rows": 427,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_small_equipment_b_exp.dta",
+   "n_rows": 2874,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_small_equipment_b_reic.dta",
+   "n_rows": 64,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_sowing_production_harvest.dta",
+   "n_rows": 1513,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_traditional_by_crop_b.dta",
+   "n_rows": 744,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_lsf_use_of_production.dta",
+   "n_rows": 194,
+   "n_vars": 13
+  },
+  {
+   "file": "2013/season_B/SAS_2013_phys_area_b.dta",
+   "n_rows": 166,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_prod_area_yield.dta",
+   "n_rows": 95,
+   "n_vars": 9
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_antierosion_b.dta",
+   "n_rows": 15730,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_antierosion_b_by_type.dta",
+   "n_rows": 1479,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_identification_b.dta",
+   "n_rows": 15735,
+   "n_vars": 15
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_improved_by_crop_b.dta",
+   "n_rows": 1144,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_inorganic_b.dta",
+   "n_rows": 15730,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_irrigation_b.dta",
+   "n_rows": 15730,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_irrigation_b_by_type.dta",
+   "n_rows": 424,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_organic_b.dta",
+   "n_rows": 15730,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_pesticideb.dta",
+   "n_rows": 15730,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_pesticideb_by_type.dta",
+   "n_rows": 2032,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_pure_mixed_crop_land.dta",
+   "n_rows": 76153,
+   "n_vars": 9
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_seeds_b.dta",
+   "n_rows": 15047,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_small_equipment_b_exp.dta",
+   "n_rows": 37045,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_small_equipment_b_reic.dta",
+   "n_rows": 215,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_sowing_production_harvest.dta",
+   "n_rows": 59642,
+   "n_vars": 9
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_traditional_by_crop_b.dta",
+   "n_rows": 38385,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_B/SAS_2013_ssf_use_of_production.dta",
+   "n_rows": 7660,
+   "n_vars": 15
+  },
+  {
+   "file": "2013/season_C/SAS_2013_area_province_crop_c.dta",
+   "n_rows": 5510,
+   "n_vars": 6
+  },
+  {
+   "file": "2013/season_C/SAS_2013_area_province_crop_c_total2.dta",
+   "n_rows": 29,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_antierosion_c.dta",
+   "n_rows": 1412,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_antierosion_c_by_type.dta",
+   "n_rows": 172,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_identification_c.dta",
+   "n_rows": 1412,
+   "n_vars": 8
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_improved_by_crop_c.dta",
+   "n_rows": 139,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_inorganic_c.dta",
+   "n_rows": 1412,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_inorganic_c_type.dta",
+   "n_rows": 1183,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_irrigation_c.dta",
+   "n_rows": 1412,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_irrigation_c_by_type.dta",
+   "n_rows": 198,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_organic_c.dta",
+   "n_rows": 1412,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_pesticidec.dta",
+   "n_rows": 1412,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_pesticidec_by_type.dta",
+   "n_rows": 1639,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_pure_and_mixed_c.dta",
+   "n_rows": 6068,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_seeds_c.dta",
+   "n_rows": 1412,
+   "n_vars": 3
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_small_equipment_c.dta",
+   "n_rows": 112,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_small_equipment_c_exp.dta",
+   "n_rows": 3155,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_sowing_production_harvest_c.dta",
+   "n_rows": 1893,
+   "n_vars": 7
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_traditional_by_crop_c.dta",
+   "n_rows": 1398,
+   "n_vars": 4
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_use_of_productionc.dta",
+   "n_rows": 1536,
+   "n_vars": 15
+  },
+  {
+   "file": "2013/season_C/SAS_2013_ssf_yield_production_area_c_crop.dta",
+   "n_rows": 18,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part0.dta",
+   "n_rows": 5216,
+   "n_vars": 11
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part1.dta",
+   "n_rows": 24039,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part1b.dta",
+   "n_rows": 14569,
+   "n_vars": 26
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part2a.dta",
+   "n_rows": 15555,
+   "n_vars": 12
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part2b.dta",
+   "n_rows": 13079,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part2c.dta",
+   "n_rows": 184274,
+   "n_vars": 7
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_part4.dta",
+   "n_rows": 12609,
+   "n_vars": 14
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_screening.dta",
+   "n_rows": 100661,
+   "n_vars": 12
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_farmq_weight.dta",
+   "n_rows": 5,
+   "n_vars": 2
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part0.dta",
+   "n_rows": 177,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part1.dta",
+   "n_rows": 1169,
+   "n_vars": 7
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part2_antierosion.dta",
+   "n_rows": 1062,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part2_inorganic.dta",
+   "n_rows": 1044,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part2_irrigation.dta",
+   "n_rows": 653,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part2_organic.dta",
+   "n_rows": 882,
+   "n_vars": 4
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part2_pesticide.dta",
+   "n_rows": 946,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part2_smalltools.dta",
+   "n_rows": 6249,
+   "n_vars": 7
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_farmq_part3_useofproduction.dta",
+   "n_rows": 585,
+   "n_vars": 14
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_lsf_screening.dta",
+   "n_rows": 3375,
+   "n_vars": 9
+  },
+  {
+   "file": "2014/season_A/SAS_2014_A_yield.dta",
+   "n_rows": 20,
+   "n_vars": 4
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part0.dta",
+   "n_rows": 4856,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part1.dta",
+   "n_rows": 23562,
+   "n_vars": 6
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part2_fertilizer.dta",
+   "n_rows": 11939,
+   "n_vars": 6
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part2_pesticide.dta",
+   "n_rows": 11938,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part2a.dta",
+   "n_rows": 10902,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part2c.dta",
+   "n_rows": 150205,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part3.dta",
+   "n_rows": 14289,
+   "n_vars": 26
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_part5.dta",
+   "n_rows": 12462,
+   "n_vars": 15
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_farmq_weight.dta",
+   "n_rows": 5,
+   "n_vars": 2
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part0.dta",
+   "n_rows": 174,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part1.dta",
+   "n_rows": 1754,
+   "n_vars": 6
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part2a.dta",
+   "n_rows": 854,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part2b.dta",
+   "n_rows": 1024,
+   "n_vars": 7
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part2c.dta",
+   "n_rows": 5398,
+   "n_vars": 7
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part3.dta",
+   "n_rows": 606,
+   "n_vars": 25
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_farmq_part5.dta",
+   "n_rows": 621,
+   "n_vars": 13
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_lsf_screening.dta",
+   "n_rows": 3430,
+   "n_vars": 10
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_ssf_screening.dta",
+   "n_rows": 104572,
+   "n_vars": 16
+  },
+  {
+   "file": "2014/season_B/SAS_2014_B_yield.dta",
+   "n_rows": 20,
+   "n_vars": 4
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part0.dta",
+   "n_rows": 609,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part1.dta",
+   "n_rows": 1283,
+   "n_vars": 6
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part2.dta",
+   "n_rows": 1077,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part2b_fertilizer.dta",
+   "n_rows": 1379,
+   "n_vars": 9
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part2b_pesticide.dta",
+   "n_rows": 1379,
+   "n_vars": 5
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part5a.dta",
+   "n_rows": 18827,
+   "n_vars": 8
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_part7.dta",
+   "n_rows": 657,
+   "n_vars": 26
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_use_of_production.dta",
+   "n_rows": 677,
+   "n_vars": 14
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_farmq_weight.dta",
+   "n_rows": 5,
+   "n_vars": 2
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_ssf_screening.dta",
+   "n_rows": 9316,
+   "n_vars": 16
+  },
+  {
+   "file": "2014/season_C/SAS_2014_C_yield.dta",
+   "n_rows": 6,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_antierosion_lsf.dta",
+   "n_rows": 199,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_antierosion_type_lsf.dta",
+   "n_rows": 219,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part0.dta",
+   "n_rows": 5502,
+   "n_vars": 8
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part1.dta",
+   "n_rows": 27490,
+   "n_vars": 6
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part2a.dta",
+   "n_rows": 12711,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part2b_fertilizer.dta",
+   "n_rows": 14043,
+   "n_vars": 6
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part2b_pesticide.dta",
+   "n_rows": 14048,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part4.dta",
+   "n_rows": 14366,
+   "n_vars": 14
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part6a.dta",
+   "n_rows": 170087,
+   "n_vars": 8
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_farmq_part7.dta",
+   "n_rows": 16435,
+   "n_vars": 26
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_general_info_lsf.dta",
+   "n_rows": 199,
+   "n_vars": 9
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_ic_expense_small_tools_eq_lsf.dta",
+   "n_rows": 6100,
+   "n_vars": 7
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_inorganic_fertilizer_lsf.dta",
+   "n_rows": 1308,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_inorganic_fertilizer_oper_lsf.dta",
+   "n_rows": 199,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_irrigation_lsf.dta",
+   "n_rows": 199,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_irrigation_type_lsf.dta",
+   "n_rows": 200,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_lsf_screening.dta",
+   "n_rows": 4067,
+   "n_vars": 9
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_organic_fert_lsf.dta",
+   "n_rows": 196,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_pesticides_oper_lsf.dta",
+   "n_rows": 199,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_pesticides_types_lsf.dta",
+   "n_rows": 287,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_plot_ident_lsf.dta",
+   "n_rows": 1080,
+   "n_vars": 6
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_ssf_screening.dta",
+   "n_rows": 105474,
+   "n_vars": 16
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_use_of_production_lsf.dta",
+   "n_rows": 638,
+   "n_vars": 13
+  },
+  {
+   "file": "2015/season_A/SAS_2015_A_yield.dta",
+   "n_rows": 20,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part0.dta",
+   "n_rows": 5337,
+   "n_vars": 8
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part1.dta",
+   "n_rows": 25648,
+   "n_vars": 6
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part2a.dta",
+   "n_rows": 12412,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part2b_fertilizer.dta",
+   "n_rows": 13456,
+   "n_vars": 6
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part2b_pesticide.dta",
+   "n_rows": 13456,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part4.dta",
+   "n_rows": 14371,
+   "n_vars": 14
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_farmq_part6a.dta",
+   "n_rows": 165135,
+   "n_vars": 8
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_antierosion_op.dta",
+   "n_rows": 488,
+   "n_vars": 2
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_antierosion_type.dta",
+   "n_rows": 503,
+   "n_vars": 2
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_impr_seeds.dta",
+   "n_rows": 107,
+   "n_vars": 2
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_impr_seeds_op.dta",
+   "n_rows": 194,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_screening_season_b.dta",
+   "n_rows": 4395,
+   "n_vars": 15
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_seeds_op.dta",
+   "n_rows": 194,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_summary.dta",
+   "n_rows": 587,
+   "n_vars": 25
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_trad_seeds.dta",
+   "n_rows": 130,
+   "n_vars": 2
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_lsf_trad_seeds_op.dta",
+   "n_rows": 194,
+   "n_vars": 3
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_ssf_screening_segment.dta",
+   "n_rows": 94858,
+   "n_vars": 16
+  },
+  {
+   "file": "2015/season_B/SAS_2015_B_yield.dta",
+   "n_rows": 20,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_0.dta",
+   "n_rows": 644,
+   "n_vars": 8
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_1.dta",
+   "n_rows": 1554,
+   "n_vars": 6
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_2_a.dta",
+   "n_rows": 1284,
+   "n_vars": 10
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_2_b0.dta",
+   "n_rows": 1227,
+   "n_vars": 4
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_2_b1.dta",
+   "n_rows": 1306,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_2_b2.dta",
+   "n_rows": 1499,
+   "n_vars": 5
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_4.dta",
+   "n_rows": 796,
+   "n_vars": 14
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_6_a.dta",
+   "n_rows": 19934,
+   "n_vars": 8
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_phase_2_part_7.dta",
+   "n_rows": 760,
+   "n_vars": 26
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_screening_c.dta",
+   "n_rows": 13269,
+   "n_vars": 9
+  },
+  {
+   "file": "2015/season_C/SAS_2015_C_yield.dta",
+   "n_rows": 7,
+   "n_vars": 4
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_i_farm.dta",
+   "n_rows": 25183,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_i_farm_big.dta",
+   "n_rows": 2167,
+   "n_vars": 13
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_ii_a.dta",
+   "n_rows": 12503,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_ii_a_big.dta",
+   "n_rows": 1286,
+   "n_vars": 7
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_ii_b.dta",
+   "n_rows": 12189,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_ii_b_big.dta",
+   "n_rows": 1361,
+   "n_vars": 8
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_iv.dta",
+   "n_rows": 13012,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_iv_big.dta",
+   "n_rows": 632,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_vi_a.dta",
+   "n_rows": 162896,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_vi_a_big.dta",
+   "n_rows": 6245,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_vi_b.dta",
+   "n_rows": 71246,
+   "n_vars": 12
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_vi_b_big.dta",
+   "n_rows": 2769,
+   "n_vars": 12
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_vii.dta",
+   "n_rows": 14694,
+   "n_vars": 26
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_part_vii_big.dta",
+   "n_rows": 570,
+   "n_vars": 26
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_screening_a_final.dta",
+   "n_rows": 105526,
+   "n_vars": 16
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_screening_a_final_big.dta",
+   "n_rows": 5224,
+   "n_vars": 15
+  },
+  {
+   "file": "2016/season_A/SAS_2016_A_yield.dta",
+   "n_rows": 20,
+   "n_vars": 4
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part0.dta",
+   "n_rows": 5568,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part1.dta",
+   "n_rows": 29652,
+   "n_vars": 6
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part2a.dta",
+   "n_rows": 15341,
+   "n_vars": 7
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part2b.dta",
+   "n_rows": 16029,
+   "n_vars": 8
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part4.dta",
+   "n_rows": 14908,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part6a.dta",
+   "n_rows": 178274,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part6b.dta",
+   "n_rows": 77930,
+   "n_vars": 12
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_part7.dta",
+   "n_rows": 16350,
+   "n_vars": 26
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_farmq_screening.dta",
+   "n_rows": 102381,
+   "n_vars": 17
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part0.dta",
+   "n_rows": 186,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part1.dta",
+   "n_rows": 1914,
+   "n_vars": 6
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part2a.dta",
+   "n_rows": 1182,
+   "n_vars": 7
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part2b.dta",
+   "n_rows": 1057,
+   "n_vars": 8
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part4.dta",
+   "n_rows": 566,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part6a.dta",
+   "n_rows": 5947,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part6b.dta",
+   "n_rows": 2667,
+   "n_vars": 12
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_farmq_part7.dta",
+   "n_rows": 502,
+   "n_vars": 26
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_lsf_screening.dta",
+   "n_rows": 4838,
+   "n_vars": 13
+  },
+  {
+   "file": "2016/season_B/SAS_2016_B_yield.dta",
+   "n_rows": 20,
+   "n_vars": 4
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part0.dta",
+   "n_rows": 963,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part1.dta",
+   "n_rows": 2361,
+   "n_vars": 6
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part2a.dta",
+   "n_rows": 2075,
+   "n_vars": 7
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part2b.dta",
+   "n_rows": 1887,
+   "n_vars": 8
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part4.dta",
+   "n_rows": 1257,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part6a.dta",
+   "n_rows": 30817,
+   "n_vars": 9
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part6b.dta",
+   "n_rows": 13478,
+   "n_vars": 12
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_farmq_part7.dta",
+   "n_rows": 1184,
+   "n_vars": 26
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_screening2016c.dta",
+   "n_rows": 20774,
+   "n_vars": 14
+  },
+  {
+   "file": "2016/season_C/SAS_2016_C_yield.dta",
+   "n_rows": 7,
+   "n_vars": 4
+  },
+  {
+   "file": "2017/SAS_2017_seasona_lsf_antierosion.dta",
+   "n_rows": 889,
+   "n_vars": 10
+  },
+  {
+   "file": "2017/SAS_2017_seasona_lsf_crop_production.dta",
+   "n_rows": 744,
+   "n_vars": 30
+  },
+  {
+   "file": "2017/SAS_2017_seasona_lsf_fertilizers.dta",
+   "n_rows": 1423,
+   "n_vars": 17
+  },
+  {
+   "file": "2017/SAS_2017_seasona_lsf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 806,
+   "n_vars": 36
+  },
+  {
+   "file": "2017/SAS_2017_seasona_lsf_pesticides.dta",
+   "n_rows": 1282,
+   "n_vars": 11
+  },
+  {
+   "file": "2017/SAS_2017_seasona_lsf_screening.dta",
+   "n_rows": 3253,
+   "n_vars": 18
+  },
+  {
+   "file": "2017/SAS_2017_seasona_ssf_antierosion.dta",
+   "n_rows": 15191,
+   "n_vars": 12
+  },
+  {
+   "file": "2017/SAS_2017_seasona_ssf_crop_production.dta",
+   "n_rows": 27740,
+   "n_vars": 32
+  },
+  {
+   "file": "2017/SAS_2017_seasona_ssf_fertilizers.dta",
+   "n_rows": 14855,
+   "n_vars": 19
+  },
+  {
+   "file": "2017/SAS_2017_seasona_ssf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 13325,
+   "n_vars": 38
+  },
+  {
+   "file": "2017/SAS_2017_seasona_ssf_pesticides.dta",
+   "n_rows": 13828,
+   "n_vars": 12
+  },
+  {
+   "file": "2017/SAS_2017_seasona_ssf_screening.dta",
+   "n_rows": 68212,
+   "n_vars": 27
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_lsf_antierosion.dta",
+   "n_rows": 1204,
+   "n_vars": 10
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_lsf_crop_production.dta",
+   "n_rows": 1591,
+   "n_vars": 30
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_lsf_fertilizers.dta",
+   "n_rows": 1248,
+   "n_vars": 17
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_lsf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 1019,
+   "n_vars": 36
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_lsf_pesticides.dta",
+   "n_rows": 1173,
+   "n_vars": 11
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_lsf_screening.dta",
+   "n_rows": 2807,
+   "n_vars": 18
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_ssf_antierosion.dta",
+   "n_rows": 13827,
+   "n_vars": 12
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_ssf_crop_production.dta",
+   "n_rows": 25529,
+   "n_vars": 32
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_ssf_fertilizers.dta",
+   "n_rows": 12938,
+   "n_vars": 19
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_ssf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 12156,
+   "n_vars": 38
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_ssf_pesticides.dta",
+   "n_rows": 12980,
+   "n_vars": 12
+  },
+  {
+   "file": "2017/SAS_2017_seasonb_ssf_screening.dta",
+   "n_rows": 59985,
+   "n_vars": 27
+  },
+  {
+   "file": "2017/SAS_2017_seasonc_ssf_antierosion.dta",
+   "n_rows": 5094,
+   "n_vars": 12
+  },
+  {
+   "file": "2017/SAS_2017_seasonc_ssf_crop_production.dta",
+   "n_rows": 1907,
+   "n_vars": 32
+  },
+  {
+   "file": "2017/SAS_2017_seasonc_ssf_fertilizers.dta",
+   "n_rows": 6792,
+   "n_vars": 19
+  },
+  {
+   "file": "2017/SAS_2017_seasonc_ssf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 1698,
+   "n_vars": 38
+  },
+  {
+   "file": "2017/SAS_2017_seasonc_ssf_pesticides.dta",
+   "n_rows": 6792,
+   "n_vars": 12
+  },
+  {
+   "file": "2017/SAS_2017_seasonc_ssf_screening.dta",
+   "n_rows": 7853,
+   "n_vars": 27
+  },
+  {
+   "file": "2018/SAS_2018_seasona_lsf_antierosion.dta",
+   "n_rows": 1361,
+   "n_vars": 9
+  },
+  {
+   "file": "2018/SAS_2018_seasona_lsf_crop_production.dta",
+   "n_rows": 1346,
+   "n_vars": 46
+  },
+  {
+   "file": "2018/SAS_2018_seasona_lsf_fertilizers.dta",
+   "n_rows": 3417,
+   "n_vars": 17
+  },
+  {
+   "file": "2018/SAS_2018_seasona_lsf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 1139,
+   "n_vars": 38
+  },
+  {
+   "file": "2018/SAS_2018_seasona_lsf_pesticides.dta",
+   "n_rows": 4556,
+   "n_vars": 12
+  },
+  {
+   "file": "2018/SAS_2018_seasona_lsf_screening.dta",
+   "n_rows": 2803,
+   "n_vars": 19
+  },
+  {
+   "file": "2018/SAS_2018_seasona_ssf_antierosion.dta",
+   "n_rows": 12464,
+   "n_vars": 9
+  },
+  {
+   "file": "2018/SAS_2018_seasona_ssf_crop_production.dta",
+   "n_rows": 16909,
+   "n_vars": 50
+  },
+  {
+   "file": "2018/SAS_2018_seasona_ssf_fertilizers.dta",
+   "n_rows": 31065,
+   "n_vars": 16
+  },
+  {
+   "file": "2018/SAS_2018_seasona_ssf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 10355,
+   "n_vars": 39
+  },
+  {
+   "file": "2018/SAS_2018_seasona_ssf_pesticides.dta",
+   "n_rows": 41420,
+   "n_vars": 11
+  },
+  {
+   "file": "2018/SAS_2018_seasona_ssf_screening.dta",
+   "n_rows": 45009,
+   "n_vars": 27
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_lsf_antierosion.dta",
+   "n_rows": 1356,
+   "n_vars": 10
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_lsf_crop_production.dta",
+   "n_rows": 1443,
+   "n_vars": 46
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_lsf_fertilizers.dta",
+   "n_rows": 1434,
+   "n_vars": 17
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_lsf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 1137,
+   "n_vars": 40
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_lsf_pesticides.dta",
+   "n_rows": 1321,
+   "n_vars": 12
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_lsf_screening.dta",
+   "n_rows": 2972,
+   "n_vars": 18
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_ssf_antierosion.dta",
+   "n_rows": 11724,
+   "n_vars": 9
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_ssf_crop_production.dta",
+   "n_rows": 18133,
+   "n_vars": 48
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_ssf_fertilizers.dta",
+   "n_rows": 10521,
+   "n_vars": 17
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_ssf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 9731,
+   "n_vars": 38
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_ssf_pesticides.dta",
+   "n_rows": 10507,
+   "n_vars": 11
+  },
+  {
+   "file": "2018/SAS_2018_seasonb_ssf_screening.dta",
+   "n_rows": 44381,
+   "n_vars": 27
+  },
+  {
+   "file": "2018/SAS_2018_seasonc_ssf_antierosion.dta",
+   "n_rows": 1295,
+   "n_vars": 9
+  },
+  {
+   "file": "2018/SAS_2018_seasonc_ssf_crop_production.dta",
+   "n_rows": 1462,
+   "n_vars": 48
+  },
+  {
+   "file": "2018/SAS_2018_seasonc_ssf_fertilizers.dta",
+   "n_rows": 1293,
+   "n_vars": 17
+  },
+  {
+   "file": "2018/SAS_2018_seasonc_ssf_irrigation_soil_preparation_and_land_tenure.dta",
+   "n_rows": 1255,
+   "n_vars": 38
+  },
+  {
+   "file": "2018/SAS_2018_seasonc_ssf_pesticides.dta",
+   "n_rows": 1287,
+   "n_vars": 11
+  },
+  {
+   "file": "2018/SAS_2018_seasonc_ssf_screening.dta",
+   "n_rows": 6560,
+   "n_vars": 27
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasona_crop_production.dta",
+   "n_rows": 32906,
+   "n_vars": 49
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasona_partiii_fertilizers_pesticides.dta",
+   "n_rows": 18786,
+   "n_vars": 28
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasona_partiv_agricultural_practice.dta",
+   "n_rows": 19805,
+   "n_vars": 34
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasona_partv_land_tenure.dta",
+   "n_rows": 63292,
+   "n_vars": 17
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasona_screening.dta",
+   "n_rows": 46854,
+   "n_vars": 24
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonb_crop_production.dta",
+   "n_rows": 30493,
+   "n_vars": 49
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonb_partiii_fertilizers_pesticides.dta",
+   "n_rows": 17637,
+   "n_vars": 28
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonb_partiv_agricultural_practice.dta",
+   "n_rows": 19222,
+   "n_vars": 34
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonb_partv_land_tenure.dta",
+   "n_rows": 61548,
+   "n_vars": 17
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonb_screening.dta",
+   "n_rows": 43411,
+   "n_vars": 24
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonc_crop_production.dta",
+   "n_rows": 1667,
+   "n_vars": 49
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonc_partiii_fertilizers_pesticides.dta",
+   "n_rows": 1832,
+   "n_vars": 27
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonc_partiv_agricultural_practice.dta",
+   "n_rows": 1731,
+   "n_vars": 33
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonc_partv_land_tenure.dta",
+   "n_rows": 5400,
+   "n_vars": 16
+  },
+  {
+   "file": "2019/STATA/SAS_2019_seasonc_screening.dta",
+   "n_rows": 8311,
+   "n_vars": 24
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasona_crop_production.dta",
+   "n_rows": 41313,
+   "n_vars": 66
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasona_partiii_fertilizers_pesticides.dta",
+   "n_rows": 21023,
+   "n_vars": 42
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasona_partiv_agricultural_practice.dta",
+   "n_rows": 16830,
+   "n_vars": 47
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasona_screening_agroforestry.dta",
+   "n_rows": 27564,
+   "n_vars": 11
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasona_screening_antierosion_land_consolidation.dta",
+   "n_rows": 30078,
+   "n_vars": 13
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasona_screening_crops.dta",
+   "n_rows": 53419,
+   "n_vars": 20
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonb_crop_production.dta",
+   "n_rows": 35773,
+   "n_vars": 66
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonb_partiii_fertilizers_pesticides.dta",
+   "n_rows": 18936,
+   "n_vars": 42
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonb_partiv_agricultural_practice.dta",
+   "n_rows": 16398,
+   "n_vars": 48
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonb_screening_agroforestry.dta",
+   "n_rows": 29526,
+   "n_vars": 11
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonb_screening_antierosion_land_consolidation.dta",
+   "n_rows": 29822,
+   "n_vars": 13
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonb_screening_crops.dta",
+   "n_rows": 48696,
+   "n_vars": 20
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonc_crop_production.dta",
+   "n_rows": 4283,
+   "n_vars": 67
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonc_partiii_fertilizers_pesticides.dta",
+   "n_rows": 5618,
+   "n_vars": 42
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonc_partiv_agricultural_practice.dta",
+   "n_rows": 3251,
+   "n_vars": 48
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonc_screening_agroforestry.dta",
+   "n_rows": 5057,
+   "n_vars": 11
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonc_screening_antierosion_land_consolidation.dta",
+   "n_rows": 7945,
+   "n_vars": 14
+  },
+  {
+   "file": "2020/Datasets/STATA/SAS_2020_seasonc_screening_crops.dta",
+   "n_rows": 10897,
+   "n_vars": 20
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasona_crop_production.dta",
+   "n_rows": 41634,
+   "n_vars": 70
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasona_partiii_fertilizers_pesticides.dta",
+   "n_rows": 22314,
+   "n_vars": 43
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasona_partiv_agricultural_practice.dta",
+   "n_rows": 17342,
+   "n_vars": 56
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasona_screening_agroforestry.dta",
+   "n_rows": 30596,
+   "n_vars": 12
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasona_screening_antierosion_land_consolidation.dta",
+   "n_rows": 33890,
+   "n_vars": 13
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasona_screening_crops.dta",
+   "n_rows": 52873,
+   "n_vars": 21
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonb_crop_production.dta",
+   "n_rows": 35869,
+   "n_vars": 69
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonb_partiii_fertilizers_pesticides.dta",
+   "n_rows": 20431,
+   "n_vars": 43
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonb_partiv_agricultural_practice.dta",
+   "n_rows": 19333,
+   "n_vars": 55
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonb_screening_agroforestry.dta",
+   "n_rows": 30122,
+   "n_vars": 12
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonb_screening_antierosion_land_consolidation.dta",
+   "n_rows": 36257,
+   "n_vars": 13
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonb_screening_crops.dta",
+   "n_rows": 49348,
+   "n_vars": 21
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonc_crop_production.dta",
+   "n_rows": 3416,
+   "n_vars": 67
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonc_partiii_fertilizers_pesticides.dta",
+   "n_rows": 4838,
+   "n_vars": 39
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonc_partiv_agricultural_practice.dta",
+   "n_rows": 2779,
+   "n_vars": 49
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonc_screening_agroforestry.dta",
+   "n_rows": 5063,
+   "n_vars": 12
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonc_screening_antierosion_land_consolidation.dta",
+   "n_rows": 5668,
+   "n_vars": 13
+  },
+  {
+   "file": "2021/Microdata_SAS2021/STATA/SAS_2021_seasonc_screening_crops.dta",
+   "n_rows": 10495,
+   "n_vars": 19
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasona_crop_production.dta",
+   "n_rows": 41589,
+   "n_vars": 101
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasona_partiii_fertilizers_pesticides.dta",
+   "n_rows": 24279,
+   "n_vars": 45
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasona_partiv_agricultural_practice.dta",
+   "n_rows": 17376,
+   "n_vars": 60
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasona_screening_agroforestry.dta",
+   "n_rows": 34477,
+   "n_vars": 15
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasona_screening_antierosion_land_consolidation.dta",
+   "n_rows": 35362,
+   "n_vars": 16
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasona_screening_crops.dta",
+   "n_rows": 52487,
+   "n_vars": 30
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonb_crop_production.dta",
+   "n_rows": 36005,
+   "n_vars": 101
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonb_partiii_fertilizers_pesticides.dta",
+   "n_rows": 21432,
+   "n_vars": 45
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonb_partiv_agricultural_practice.dta",
+   "n_rows": 16883,
+   "n_vars": 59
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonb_screening_agroforestry.dta",
+   "n_rows": 33192,
+   "n_vars": 15
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonb_screening_antierosion_land_consolidation.dta",
+   "n_rows": 34483,
+   "n_vars": 16
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonb_screening_crops.dta",
+   "n_rows": 47308,
+   "n_vars": 30
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonc_crop_production.dta",
+   "n_rows": 5818,
+   "n_vars": 101
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonc_partiii_fertilizers_pesticides.dta",
+   "n_rows": 11242,
+   "n_vars": 41
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonc_partiv_agricultural_practice.dta",
+   "n_rows": 4926,
+   "n_vars": 53
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonc_screening_agroforestry.dta",
+   "n_rows": 4937,
+   "n_vars": 20
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonc_screening_antierosion_land_consolidation.dta",
+   "n_rows": 4937,
+   "n_vars": 18
+  },
+  {
+   "file": "2022/Microdata_SAS_2022/STATA/SAS_2022_seasonc_screening_crops.dta",
+   "n_rows": 12067,
+   "n_vars": 28
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasona_crop_production.dta",
+   "n_rows": 39038,
+   "n_vars": 103
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasona_partiii_fertilizers_pesticides.dta",
+   "n_rows": 16895,
+   "n_vars": 87
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasona_partiv_agricultural_practice.dta",
+   "n_rows": 16830,
+   "n_vars": 56
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasona_screening_agroforestry.dta",
+   "n_rows": 31778,
+   "n_vars": 15
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasona_screening_antierosion_land_consolidation.dta",
+   "n_rows": 34765,
+   "n_vars": 16
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasona_screening_crops.dta",
+   "n_rows": 53691,
+   "n_vars": 30
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonb_crop_production.dta",
+   "n_rows": 36546,
+   "n_vars": 103
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonb_partiii_fertilizers_pesticides.dta",
+   "n_rows": 16864,
+   "n_vars": 84
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonb_partiv_agricultural_practice.dta",
+   "n_rows": 16864,
+   "n_vars": 54
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonb_screening_agroforestry.dta",
+   "n_rows": 26391,
+   "n_vars": 15
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonb_screening_antierosion_land_consolidation.dta",
+   "n_rows": 29371,
+   "n_vars": 16
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonb_screening_crops.dta",
+   "n_rows": 49337,
+   "n_vars": 30
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonc_crop_production.dta",
+   "n_rows": 3566,
+   "n_vars": 88
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonc_partiii_fertilizers_pesticides.dta",
+   "n_rows": 2983,
+   "n_vars": 84
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonc_partiv_agricultural_practice.dta",
+   "n_rows": 2983,
+   "n_vars": 53
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonc_screening_agroforestry.dta",
+   "n_rows": 4930,
+   "n_vars": 18
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonc_screening_antierosion_land_consolidation.dta",
+   "n_rows": 4930,
+   "n_vars": 17
+  },
+  {
+   "file": "2023/Microdata_SAS2023/Stata/SAS_2023_seasonc_screening_crops.dta",
+   "n_rows": 10305,
+   "n_vars": 28
+  },
+  {
+   "file": "2024/Dataset/Season A/SAS_2024_raw_fertilizer_pesticidea2024.dta",
+   "n_rows": 22105,
+   "n_vars": 63
+  },
+  {
+   "file": "2024/Dataset/Season A/SAS_2024_raw_seasona2024_agricultural_practice.dta",
+   "n_rows": 17506,
+   "n_vars": 58
+  },
+  {
+   "file": "2024/Dataset/Season A/SAS_2024_raw_seasona2024_production.dta",
+   "n_rows": 39330,
+   "n_vars": 95
+  },
+  {
+   "file": "2024/Dataset/Season A/SAS_2024_raw_seasona2024_screening.dta",
+   "n_rows": 54382,
+   "n_vars": 45
+  },
+  {
+   "file": "2024/Dataset/Season B/SAS_2024_raw_fertilizer_pesticideb2024.dta",
+   "n_rows": 19965,
+   "n_vars": 63
+  },
+  {
+   "file": "2024/Dataset/Season B/SAS_2024_raw_seasonb2024_agricultural_practice.dta",
+   "n_rows": 17261,
+   "n_vars": 52
+  },
+  {
+   "file": "2024/Dataset/Season B/SAS_2024_raw_seasonb2024_production.dta",
+   "n_rows": 35584,
+   "n_vars": 97
+  },
+  {
+   "file": "2024/Dataset/Season B/SAS_2024_raw_seasonb2024_screening.dta",
+   "n_rows": 28562,
+   "n_vars": 45
+  },
+  {
+   "file": "2024/Dataset/Season C/SAS_2024_raw_fertilizer_pesticidec2024.dta",
+   "n_rows": 2307,
+   "n_vars": 60
+  },
+  {
+   "file": "2024/Dataset/Season C/SAS_2024_raw_seasonc2024_agricultural_practice.dta",
+   "n_rows": 1632,
+   "n_vars": 47
+  },
+  {
+   "file": "2024/Dataset/Season C/SAS_2024_raw_seasonc2024_production.dta",
+   "n_rows": 1949,
+   "n_vars": 96
+  },
+  {
+   "file": "2024/Dataset/Season C/SAS_2024_raw_seasonc2024_screening.dta",
+   "n_rows": 8195,
+   "n_vars": 41
+  },
+  {
+   "file": "2025/Microdata/Season A/SAS_2025_raw_fertilizer_pesticidea2025.dta",
+   "n_rows": 17062,
+   "n_vars": 80
+  },
+  {
+   "file": "2025/Microdata/Season A/SAS_2025_raw_seasona2025_agricultural_practice.dta",
+   "n_rows": 17062,
+   "n_vars": 59
+  },
+  {
+   "file": "2025/Microdata/Season A/SAS_2025_raw_seasona2025_production.dta",
+   "n_rows": 34369,
+   "n_vars": 101
+  },
+  {
+   "file": "2025/Microdata/Season A/SAS_2025_raw_seasona2025_screening.dta",
+   "n_rows": 52569,
+   "n_vars": 51
+  },
+  {
+   "file": "2025/Microdata/Season B/SAS_2025_raw_fertilizer_pesticideb2025.dta",
+   "n_rows": 17100,
+   "n_vars": 93
+  },
+  {
+   "file": "2025/Microdata/Season B/SAS_2025_raw_seasonb2025_agricultural_practice.dta",
+   "n_rows": 17100,
+   "n_vars": 55
+  },
+  {
+   "file": "2025/Microdata/Season B/SAS_2025_raw_seasonb2025_production.dta",
+   "n_rows": 32920,
+   "n_vars": 101
+  },
+  {
+   "file": "2025/Microdata/Season B/SAS_2025_raw_seasonb2025_screening.dta",
+   "n_rows": 50537,
+   "n_vars": 54
+  },
+  {
+   "file": "2025/Microdata/Season C/SAS_2025_raw_fertilizer_pesticidec2025.dta",
+   "n_rows": 1667,
+   "n_vars": 85
+  },
+  {
+   "file": "2025/Microdata/Season C/SAS_2025_raw_seasonc2025_agricultural_practice.dta",
+   "n_rows": 1667,
+   "n_vars": 47
+  },
+  {
+   "file": "2025/Microdata/Season C/SAS_2025_raw_seasonc2025_production.dta",
+   "n_rows": 1884,
+   "n_vars": 98
+  },
+  {
+   "file": "2025/Microdata/Season C/SAS_2025_raw_seasonc2025_screening.dta",
+   "n_rows": 8412,
+   "n_vars": 40
+  }
+ ]
+}
