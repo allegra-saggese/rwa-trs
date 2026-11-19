@@ -30,7 +30,7 @@ for p, xy in GATES.items():
     d[f"km_{p}"] = np.min([hav(d.lon, d.lat, *g) for g in xy], axis=0)
     d[f"s_{p}"] = np.exp(-d[f"km_{p}"] / 10)
 
-vis = pd.read_csv(DATA / "Tourism Data" / "park_visitors_by_park.csv").set_index("year")
+vis = pd.read_csv(P.tourism("park_visitors_by_park.csv")).set_index("year")
 G = {1: {p: np.log(vis.loc[2012, p] / vis.loc[2005, p]) for p in GATES},
      2: {p: np.log(vis.loc[2019, p] / vis.loc[2012, p]) for p in GATES}}
 print("shocks (dln visitors):", {t: {p: round(v, 3) for p, v in g.items()} for t, g in G.items()})

@@ -218,7 +218,7 @@ fig.tight_layout(); fig.savefig(OUT_F / "fig08_land_transitions.png", bbox_inche
 
 # ---- F9 nightlights by park x group, with visitors ----
 nl = pd.read_csv(OUT_D / "sector_ntl.csv").merge(tg[["sid", "group", "park"]], on="sid")
-vis = pd.read_csv(DATA / "Tourism Data" / "park_visitors_by_park.csv").set_index("year")
+vis = pd.read_csv(P.tourism("park_visitors_by_park.csv")).set_index("year")
 fig, axes = plt.subplots(2, 3, figsize=(11, 5.2), sharex=True, gridspec_kw=dict(height_ratios=[2.2, 1]))
 for k, p in enumerate(["Volcanoes", "Nyungwe", "Akagera"]):
     ax = axes[0, k]

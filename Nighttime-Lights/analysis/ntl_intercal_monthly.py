@@ -43,6 +43,7 @@ from rasterio.features import rasterize
 from scipy import stats
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "Nighttime-Lights"))
 import ntl_helpers as H
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "results-scripts" / "figures"))  # shared geography (bar_chart_housing)
 import bar_chart_housing as B
 from event_ntl_monthly_prepost import setup
 

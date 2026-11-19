@@ -58,6 +58,22 @@ NTL_SOURCE = NIGHTLIGHTS / "source"                # as downloaded, plus the two
 NTL_CLIPS = NIGHTLIGHTS / "clipped-rwanda"         # one GeoTIFF per product, layer and period
 NTL_DOCS = NIGHTLIGHTS / "z_Documentation"
 
+# National tourism series (assembled 2026-09-14), each kept with its source. Look up by file name.
+_TOURISM_DIRS = {
+    "world_bank_wdi.csv": DATA / "WB-Tourism-data",
+    "rdb_tourism_revenue_usd_million.csv": DATA / "RDB",
+    "rdb_visitor_arrivals.csv": DATA / "RDB",
+    "park_revenue_usd_million.csv": NISR / "Travel-Expenditure-Survey-TES",
+    "park_visitors_by_park.csv": NISR / "Travel-Expenditure-Survey-TES",
+    "park_visitors_by_nationality.csv": NISR / "Travel-Expenditure-Survey-TES",
+    "arrivals_by_purpose_nisr.csv": NISR / "Travel-Expenditure-Survey-TES",
+}
+
+
+def tourism(name: str) -> Path:
+    """Path of one of the national tourism series (see _TOURISM_DIRS)."""
+    return _TOURISM_DIRS[name] / name
+
 # ---- manipulated data (written) ---------------------------------------------
 # Anything collapsed to sectors / cells / districts, merged across sources, or built for an analysis.
 HARMONIZED = DATA / "harmonized"

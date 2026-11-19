@@ -6,7 +6,7 @@
  Output: harmonized/prelim/district_land_rent.csv (district x year weighted median, N parcels)."""
 import os, numpy as np, pandas as pd
 from _common import *
-cpi = pd.read_csv(DATA / "Tourism Data" / "world_bank_wdi.csv").query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
+cpi = pd.read_csv(P.tourism("world_bank_wdi.csv")).query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
 defl = lambda y: cpi.get(min(y, cpi.dropna().index.max())) / cpi[2014]
 e = pd.read_parquet(os.path.expanduser("~/eicv_parcels.parquet"))
 num = lambda c: pd.to_numeric(e[c], errors="coerce")

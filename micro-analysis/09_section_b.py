@@ -41,7 +41,7 @@ def hav(lon1, lat1, lon2, lat2):
     return 6371 * 2 * np.arcsin(np.sqrt(a))
 D = pd.DataFrame({g: hav(d.lon, d.lat, *xy) for g, xy in GATE_XY.items()})
 d["gate"] = D.idxmin(axis=1).values; d["km_gate"] = D.min(axis=1).values
-vis = pd.read_csv(DATA / "Tourism Data" / "park_visitors_by_park.csv").set_index("year")
+vis = pd.read_csv(P.tourism("park_visitors_by_park.csv")).set_index("year")
 vy = {2002: 2005, 2012: 2012, 2022: 2019}
 d["visitors"] = [vis.loc[vy[w], GPARK[g]] / 1e3 for w, g in zip(d.wave, d.gate)]
 d["exposure"] = np.log1p(d.visitors) * np.exp(-d.km_gate / 10)
@@ -125,7 +125,7 @@ l = pd.read_parquet(os.path.expanduser("~/lfs_sub.parquet")).join(pd.read_parque
 l = l[(l.lfs_employment_status == 1) & l.lfs_monthly_cash_income.gt(0) & l.lfs_age.between(16, 64) & l.lfs_industry_isic.notna()].copy()
 l["sec"] = l.lfs_industry_isic.astype(int).map(SEC)
 l["g"] = np.select([l.sec == "A", l.sec.isin(list("IHR")), l.sec.isin(list("JKM")), l.sec.isin(list("BCDEF"))], ["AG", "TOUR", "BUS", "IND"], "LOC")
-cpi = pd.read_csv(DATA / "Tourism Data" / "world_bank_wdi.csv").query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
+cpi = pd.read_csv(P.tourism("world_bank_wdi.csv")).query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
 l["lnw"] = np.log(l.lfs_monthly_cash_income / l.lfs_year.map(lambda y: cpi.get(min(y, cpi.dropna().index.max())) / cpi[2014]))
 for g in ["TOUR", "LOC", "BUS", "IND"]: l[g] = (l.g == g).astype(float)
 l["age2"] = l.lfs_age ** 2 / 100; l["female"] = (l.lfs_sex == 2).astype(float)

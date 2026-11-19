@@ -87,7 +87,7 @@ for p in ["Volcanoes", "Nyungwe", "Akagera"]:
 t4 = pd.DataFrame(pk_rows).set_index(["Park", "Group"])
 tex(t4[[c for c in t4.columns if c.startswith(("Sectors", "Workers", "lambda", "Tourism"))]], "T4a_parks_jobs", "Jobs by park side and group, aggregated within group (Census).")
 tex(t4[[c for c in t4.columns if c.startswith(("Crop", "Built", "Tree"))]], "T4b_parks_land", "Land use by park side and group, share of usable land outside parks, aggregated within group (GLCLU).")
-vis = pd.read_csv(DATA / "Tourism Data" / "park_visitors_by_park.csv").set_index("year")
+vis = pd.read_csv(P.tourism("park_visitors_by_park.csv")).set_index("year")
 t4c = pd.DataFrame({p.capitalize(): [vis.loc[2005, p], vis.loc[2012, p], vis.loc[2019, p], vis.loc[2020, p], vis.loc[2023, p]] for p in ["volcanoes", "nyungwe", "akagera"]},
                    index=["2005", "2012", "2019", "2020", "2023"]).T
 t4c["growth 2005-19 p.a."] = (t4c["2019"] / t4c["2005"]) ** (1 / 14) - 1
@@ -127,7 +127,7 @@ l = pd.read_parquet(os.path.expanduser("~/lfs_sub.parquet"))
 l = l[(l.lfs_employment_status == 1) & l.lfs_monthly_cash_income.gt(0) & l.lfs_age.between(16, 64)]
 l["sec"] = l.lfs_industry_isic.map(lambda x: SEC.get(int(x)) if pd.notna(x) and int(x) in SEC else None)
 l["grp"] = l.sec.map(GROUP); l = l.dropna(subset=["grp"])
-cpi = pd.read_csv(DATA / "Tourism Data" / "world_bank_wdi.csv").query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
+cpi = pd.read_csv(P.tourism("world_bank_wdi.csv")).query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
 l["real"] = l.lfs_monthly_cash_income / l.lfs_year.map(lambda y: cpi.get(min(y, cpi.dropna().index.max())) / cpi[2014])
 l["dg"] = l.lfs_district.map(dg)
 l["period"] = pd.cut(l.lfs_year, [2016, 2019, 2021, 2025], labels=["2017-19", "2020-21", "2022-25"])

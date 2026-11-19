@@ -65,7 +65,7 @@ ec["bracket"] = br
 ec["turn"] = br.map(MID)
 print("bracket distribution:"); print(ec.groupby("ec_year").bracket.value_counts(normalize=True).unstack().round(3))
 ec["emp"] = ec.ec_total_workers.fillna(ec.ec_total_workers_2014).fillna(ec.ec_total_workers_2011)
-cpi = pd.read_csv(DATA / "Tourism Data" / "world_bank_wdi.csv").query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
+cpi = pd.read_csv(P.tourism("world_bank_wdi.csv")).query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
 last = cpi.dropna().index.max()
 print("CPI last year", last)
 ec["defl"] = ec.ec_year.map(lambda y: cpi.get(min(y, last)) / cpi[2014])
@@ -97,10 +97,9 @@ nlb = nl.groupby(["year", "band"], observed=True).asinh_sum.mean().unstack()
 nlb.to_csv(OUT_T / "output_nightlights_by_band.csv")
 
 # ---------------- (d) tourism ----------------
-TD = DATA / "Tourism Data"
-vis = pd.read_csv(TD / "park_visitors_by_park.csv").set_index("year")
-prev = pd.read_csv(TD / "park_revenue_usd_million.csv").set_index("year").park_revenue_usd_million_nominal
-trev = pd.read_csv(TD / "rdb_tourism_revenue_usd_million.csv"); trev = trev.set_index(trev.columns[0]).iloc[:, 0]
+vis = pd.read_csv(P.tourism("park_visitors_by_park.csv")).set_index("year")
+prev = pd.read_csv(P.tourism("park_revenue_usd_million.csv")).set_index("year").park_revenue_usd_million_nominal
+trev = pd.read_csv(P.tourism("rdb_tourism_revenue_usd_million.csv")); trev = trev.set_index(trev.columns[0]).iloc[:, 0]
 tt = pd.DataFrame({"Park visitors (000s)": vis.total / 1e3, "Volcanoes": vis.volcanoes / 1e3, "Akagera": vis.akagera / 1e3,
                    "Nyungwe": vis.nyungwe / 1e3, "Park revenue (US$ m)": prev, "Tourism revenue (US$ m)": trev})
 tt["Park revenue per visitor (US$)"] = tt["Park revenue (US$ m)"] * 1e3 / tt["Park visitors (000s)"]

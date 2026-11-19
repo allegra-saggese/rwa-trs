@@ -63,6 +63,7 @@ import pandas as pd
 from scipy import stats
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "Nighttime-Lights"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "results-scripts" / "figures"))  # shared geography (bar_chart_housing)
 import bar_chart_housing as B          # noqa: E402
 import ntl_helpers as H                # noqa: E402
 

@@ -33,6 +33,7 @@ from rasterio.features import rasterize
 from shapely.geometry import Point
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "Nighttime-Lights"))
 import ntl_helpers as H
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "results-scripts" / "figures"))  # shared geography (bar_chart_housing)
 import bar_chart_housing as B
 
 KM, MIN_OBS = 5.0, 0.90

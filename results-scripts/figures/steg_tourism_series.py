@@ -25,14 +25,13 @@ from matplotlib.ticker import FuncFormatter
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import paths as P
 
-SRC = P.DATA / "Tourism Data"
 BASE_PRICE = 2024
 C_LEFT, C_RIGHT = "#2a9d8f", "#1b4965"
 
 
 def to_real(nominal):
     """current US$ million -> constant BASE_PRICE US$ million, with the US GDP deflator"""
-    w = pd.read_csv(SRC / "world_bank_wdi.csv")
+    w = pd.read_csv(P.tourism("world_bank_wdi.csv"))
     defl = w[(w.country == "USA") & (w.indicator_code == "NY.GDP.DEFL.ZS")].set_index("year").value
     return nominal * defl[BASE_PRICE] / defl.reindex(nominal.index)
 
@@ -72,12 +71,12 @@ def draw(left, left_label, left_fmt, right, right_label, fname):
 
 
 def main():
-    pr = pd.read_csv(SRC / "park_revenue_usd_million.csv").set_index("year").park_revenue_usd_million_nominal
-    pv = pd.read_csv(SRC / "park_visitors_by_park.csv").set_index("year").total
-    tr = pd.read_csv(SRC / "rdb_tourism_revenue_usd_million.csv").set_index("year").tourism_revenue_usd_million_nominal
-    nisr = pd.read_csv(SRC / "arrivals_by_purpose_nisr.csv")
+    pr = pd.read_csv(P.tourism("park_revenue_usd_million.csv")).set_index("year").park_revenue_usd_million_nominal
+    pv = pd.read_csv(P.tourism("park_visitors_by_park.csv")).set_index("year").total
+    tr = pd.read_csv(P.tourism("rdb_tourism_revenue_usd_million.csv")).set_index("year").tourism_revenue_usd_million_nominal
+    nisr = pd.read_csv(P.tourism("arrivals_by_purpose_nisr.csv"))
     nisr = nisr[nisr.series == "tourist arrivals"].set_index("year").total
-    rdb = pd.read_csv(SRC / "rdb_visitor_arrivals.csv").set_index("year").arrivals
+    rdb = pd.read_csv(P.tourism("rdb_visitor_arrivals.csv")).set_index("year").arrivals
     ta = pd.concat([nisr, rdb[rdb.index > nisr.index.max()]]).sort_index()
     preal = to_real(pr)
     treal = to_real(tr)
