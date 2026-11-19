@@ -121,7 +121,7 @@ PX = [f"T_{p}_{w}" for p in ["volcanoes", "nyungwe", "akagera"] for w in (2012, 
 T13 = fmt(table(HEAD, ["sid", "pw"], xs=PX), "T13_B_by_park", "Treated (near gate or bordering) by park vs clean control." + note)
 
 # ---- wages ----
-l = pd.read_parquet(os.path.expanduser("~/lfs_sub.parquet")).join(pd.read_parquet(os.path.expanduser("~/lfs_demo.parquet"))[["lfs_sex", "lfs_education_level_highest"]])
+l = pd.read_parquet(P.HARM_EXTRACTS / "lfs_sub.parquet").join(pd.read_parquet(P.HARM_EXTRACTS / "lfs_demo.parquet")[["lfs_sex", "lfs_education_level_highest"]])
 l = l[(l.lfs_employment_status == 1) & l.lfs_monthly_cash_income.gt(0) & l.lfs_age.between(16, 64) & l.lfs_industry_isic.notna()].copy()
 l["sec"] = l.lfs_industry_isic.astype(int).map(SEC)
 l["g"] = np.select([l.sec == "A", l.sec.isin(list("IHR")), l.sec.isin(list("JKM")), l.sec.isin(list("BCDEF"))], ["AG", "TOUR", "BUS", "IND"], "LOC")

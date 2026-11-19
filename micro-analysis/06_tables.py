@@ -123,7 +123,7 @@ tex(e6, "T6b_output_services", "Establishment Census by district group and ISIC 
 tex(n6, "T6c_output_nightlights", "Mean night lights per sector, asinh(sum), Chen (VIIRS-like) and Li (DMSP-like) harmonised products.", "{:,.2f}")
 
 # ---------- T7 earnings ----------
-l = pd.read_parquet(os.path.expanduser("~/lfs_sub.parquet"))
+l = pd.read_parquet(P.HARM_EXTRACTS / "lfs_sub.parquet")
 l = l[(l.lfs_employment_status == 1) & l.lfs_monthly_cash_income.gt(0) & l.lfs_age.between(16, 64)]
 l["sec"] = l.lfs_industry_isic.map(lambda x: SEC.get(int(x)) if pd.notna(x) and int(x) in SEC else None)
 l["grp"] = l.sec.map(GROUP); l = l.dropna(subset=["grp"])

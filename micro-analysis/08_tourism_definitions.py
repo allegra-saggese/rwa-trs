@@ -14,7 +14,7 @@ grp = tg.set_index("sid").group.map(lambda g: "Treated: near gate" if g in ("Gat
 cc = tg.set_index("sid").control_clean
 
 # ---- A) Census 2012 4-digit ----
-c = pd.read_parquet(os.path.expanduser("~/census_sub.parquet"), columns=["census_year", "census_sector", "census_age", "census_weight", "census_industry_isic4_2012"])
+c = pd.read_parquet(P.HARM_EXTRACTS / "census_sub.parquet", columns=["census_year", "census_sector", "census_age", "census_weight", "census_industry_isic4_2012"])
 c = c[(c.census_year == 2012) & c.census_age.between(20, 64) & c.census_industry_isic4_2012.between(100, 9900)].copy()
 c["div"] = (c.census_industry_isic4_2012 // 100).astype(int)
 c["grp"] = c.census_sector.map(grp)
@@ -32,7 +32,7 @@ A.to_csv(OUT_T / "T9a_tourism_definitions_census2012.csv")
 (OUT_T / "T9a_tourism_definitions_census2012.tex").write_text(A.T.to_latex(float_format=lambda v: f"{v:,.3f}", caption="Tourism employment under three definitions, Census 2012 (4-digit ISIC Rev.4), workers 20--64. TSA-broad = divisions 49--51, 55, 56, 79, 90--93.", label="tab:T9a", position="htbp"))
 
 # ---- B) LFS 2-digit district panel ----
-l = pd.read_parquet(os.path.expanduser("~/lfs_isic.parquet"))
+l = pd.read_parquet(P.HARM_EXTRACTS / "lfs_isic.parquet")
 l = l[l.lfs_isic_section_main_job.notna() & (l.lfs_age >= 16)].copy()
 l["div"] = l.lfs_isic_2digit_main_2017_2018.fillna(l.lfs_isic_main_job_2020).fillna(l.lfs_isic_two_digit_main_job)
 l["div"] = l["div"].fillna(l.lfs_isic_main_job_2019_2021 // 100)

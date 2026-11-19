@@ -6,7 +6,7 @@ own-use farmers as not employed (recorded ISIC A falls 2.80M -> 1.69M)."""
 import os, numpy as np, pandas as pd, matplotlib.pyplot as plt
 from _common import *
 
-cs = pd.read_parquet(os.path.expanduser("~/census_sub.parquet"),
+cs = pd.read_parquet(P.HARM_EXTRACTS / "census_sub.parquet",
                      columns=["census_year", "census_sector", "census_age", "census_weight", "census_industry_isic"])
 cs = cs[cs.census_industry_isic.notna() & cs.census_age.between(20, 64)]
 cs["sec"] = cs.census_industry_isic.astype(int).map(SEC)

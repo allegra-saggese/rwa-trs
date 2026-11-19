@@ -25,7 +25,7 @@ dgrp[cross.groupby("district_id").province_id.first() == 1] = "Kigali"
 dgrp = dgrp.rename("park_group")
 
 # ---------------- (a) agriculture ----------------
-sas = pd.read_parquet(os.path.expanduser("~/sas_sub.parquet"))
+sas = pd.read_parquet(P.HARM_EXTRACTS / "sas_sub.parquet")
 sas = sas[sas.sas_year >= 2019]
 sas["price"] = sas.sas_selling_price_2018_2022.fillna(sas.sas_selling_price_2023_2025)
 pr = sas[(sas.price > 0) & sas.sas_year.between(2018, 2024)].groupby("sas_crop_name").price.median().rename("p_fix")
@@ -53,7 +53,7 @@ crop.columns = crop.columns.astype(str)
 crop.to_csv(OUT_T / "output_ag_top_crops_kt.csv")
 
 # ---------------- (b) services turnover ----------------
-ec = pd.read_parquet(os.path.expanduser("~/ec_sub.parquet"))
+ec = pd.read_parquet(P.HARM_EXTRACTS / "ec_sub.parquet")
 ec["sec_n"] = ec.ec_main_activity_section.fillna(ec.ec_isic_section_comparable_2011)
 lw = pd.read_csv(P.HARM_LABOUR / "ec_establishments_long.csv", usecols=["year", "isic"])  # 2014 section
 ec.loc[ec.ec_year == 2014, "sec_n"] = lw.loc[lw.year == 2014, "isic"].values

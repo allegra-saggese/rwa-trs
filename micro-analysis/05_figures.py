@@ -242,7 +242,7 @@ lfs = pd.read_csv(P.HARM_LABOUR / "lfs_district_isic.csv"); lfs["sec"] = lfs.isi
 lfs["w_ag"] = lfs.workers * (lfs.sec == "A"); lfs["w_tour"] = lfs.workers * lfs.sec.isin(["I", "R"])
 lfs_sh = lfs.groupby(["dist", "year"])[["workers", "w_ag", "w_tour"]].sum()
 lfs_sh = pd.DataFrame({"ag": lfs_sh.w_ag / lfs_sh.workers, "tour": lfs_sh.w_tour / lfs_sh.workers}).reset_index()
-e = pd.read_parquet(os.path.expanduser("~/eicv_sub.parquet"))
+e = pd.read_parquet(P.HARM_EXTRACTS / "eicv_sub.parquet")
 e = e[(e.eicv_employed == 1) & (e.eicv_age_years >= 16) & e.eicv_year.isin([2001, 2006, 2014])]
 e["isic"] = e.eicv_industry_isic.fillna(e.eicv_industry_isic_approx)
 e["w_ag"] = e.eicv_weight * (e.isic == 1); e["w_tour"] = e.eicv_weight * e.isic.isin([9, 18])

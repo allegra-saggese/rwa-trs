@@ -32,7 +32,7 @@ st = {}
 for s in (GATE, INT):
     st[s] = dict(name=p.sector[s], crop=100 * cb.crop_sh[s], crop_total=100 * cb.crop[s] / area_ha[s], ag=100 * p.sh_ag[s],
                  svc=100 * p.sh_S_broad[s], workers=p.workers[s], area=cb.usable[s] / 100)
-l = pd.read_parquet(os.path.expanduser("~/lfs_sub.parquet"))
+l = pd.read_parquet(P.HARM_EXTRACTS / "lfs_sub.parquet")
 l = l[(l.lfs_employment_status == 1) & l.lfs_monthly_cash_income.gt(0) & l.lfs_age.between(16, 64)
       & l.lfs_industry_isic.notna() & (l.lfs_year == 2022)].copy()
 l["sec"] = l.lfs_industry_isic.astype(int).map(SEC)

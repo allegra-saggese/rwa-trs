@@ -8,13 +8,13 @@ import os, numpy as np, pandas as pd
 from _common import *
 cpi = pd.read_csv(P.tourism("world_bank_wdi.csv")).query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
 defl = lambda y: cpi.get(min(y, cpi.dropna().index.max())) / cpi[2014]
-e = pd.read_parquet(os.path.expanduser("~/eicv_parcels.parquet"))
+e = pd.read_parquet(P.HARM_EXTRACTS / "eicv_parcels.parquet")
 num = lambda c: pd.to_numeric(e[c], errors="coerce")
 e["area_ha"] = np.where(e.eicv_year == 2001, num("eicv_area_hectares_2001"), num("eicv_surface_area_2006_2011").fillna(num("eicv_surface_area")) / 100)
 e["rent"] = num("eicv_cost_include_renting_2001").fillna(num("eicv_cost_rental_2006")).fillna(num("eicv_cost_renting_2011")).fillna(num("eicv_cost_renting_months_2014")).fillna(num("eicv_cost_renting_2017"))
 e = e[(e.rent > 0) & (e.rent < 999999) & (e.area_ha > 0)].copy()
 E = pd.DataFrame({"year": e.eicv_year, "district_id": e.eicv_district, "w": e.eicv_household_weight.fillna(e.eicv_weight), "rent": e.rent, "area_ha": e.area_ha, "src": "EICV"})
-a = pd.read_parquet(os.path.expanduser("~/ahs_land.parquet"))
+a = pd.read_parquet(P.HARM_EXTRACTS / "ahs_land.parquet")
 a = a[a.ahs_year == 2024].copy(); a["rent"] = pd.to_numeric(a.ahs_pay_cash_renting_plot_2024, errors="coerce"); a["area_ha"] = pd.to_numeric(a.ahs_area_sqm_2024, errors="coerce") / 1e4
 a = a[(a.rent > 0) & (a.area_ha > 0)]
 A = pd.DataFrame({"year": 2024, "district_id": a.ahs_district, "w": a.ahs_household_weight.fillna(a.ahs_weight), "rent": a.rent, "area_ha": a.area_ha, "src": "AHS"})
