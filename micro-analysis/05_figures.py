@@ -238,7 +238,7 @@ cross = pd.read_csv(ANA / "model_sector_cross.csv")[["sid", "district_id", "dist
 tgx = tg.merge(cross[["sid", "district_id"]], on="sid")
 park_d = set(tgx[tgx.treated_any == 1].district_id)
 dname = cross.groupby("district_id").district.first()
-lfs = pd.read_csv(DATA / "geo-data" / "labour" / "lfs_district_isic.csv"); lfs["sec"] = lfs.isic.astype(int).map(SEC)
+lfs = pd.read_csv(P.HARM_LABOUR / "lfs_district_isic.csv"); lfs["sec"] = lfs.isic.astype(int).map(SEC)
 lfs["w_ag"] = lfs.workers * (lfs.sec == "A"); lfs["w_tour"] = lfs.workers * lfs.sec.isin(["I", "R"])
 lfs_sh = lfs.groupby(["dist", "year"])[["workers", "w_ag", "w_tour"]].sum()
 lfs_sh = pd.DataFrame({"ag": lfs_sh.w_ag / lfs_sh.workers, "tour": lfs_sh.w_tour / lfs_sh.workers}).reset_index()

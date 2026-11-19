@@ -30,7 +30,7 @@ cb = tg[["sid", "sector", "district", "group", "park", "treated_any", "control",
 cb.to_csv(OUT_D / "sector_cropland_builtup_glclu.csv", index=False)
 
 # ---------- nightlights ----------
-nl = pd.read_csv(DATA / "Nighttime-Lights" / "3_Final" / "Nightlights_pooled_sector.csv",
+nl = pd.read_csv(P.HARM_NTL / "Nightlights_pooled_sector.csv",
                  usecols=["ntl_sector_id", "ntl_year", "ntl_chen_sum", "ntl_chen_asinh", "ntl_li_sum", "ntl_li_asinh"]).rename(columns={"ntl_sector_id": "sid", "ntl_year": "year"})
 nl.to_csv(OUT_D / "sector_ntl.csv", index=False)
 

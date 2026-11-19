@@ -3,6 +3,7 @@ tables in output/tables/regressions/journal_format/ (run 10_paper_tables.py firs
 import re
 from pathlib import Path
 from _common import OUT, OUT_T
+import paths as P   # on sys.path once _common is imported
 T = OUT_T / "paper"; W = P.LATEX; W.mkdir(parents=True, exist_ok=True)
 s = (P.LATEX / "template.tex").read_text()
 def put(m):

@@ -6,7 +6,7 @@ from _reg import fe_ols
 d = pd.read_csv(OUT_D / "sector_panel_desc.csv"); tg = pd.read_csv(OUT_D / "treatment_groups.csv"); pop = pd.read_csv(OUT_D / "sector_pop_total.csv")
 cb = pd.read_csv(OUT_D / "sector_cropland_builtup_glclu.csv")
 d = d[[c for c in d.columns if not c.endswith("_sh") and c not in ("crop", "built", "tree", "other", "usable", "ell")]]
-d = d.merge(tg[["sid"] + [c for c in tg.columns if c.startswith("border_")]], on="sid").merge(pop, on=["sid", "wave"])
+d = d.merge(tg[["sid"] + [c for c in tg.columns if c.startswith("border_") and c not in d.columns]], on="sid").merge(pop, on=["sid", "wave"])
 d = d[d.urban == 0].copy(); d["ln_pop"] = np.log(d.pop_total)
 d["dw"] = d.district_id.astype(str) + "_" + d.wave.astype(str); d["pw"] = d.province_id.astype(str) + "_" + d.wave.astype(str)
 pk = []

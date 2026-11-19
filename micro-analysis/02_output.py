@@ -55,7 +55,7 @@ crop.to_csv(OUT_T / "output_ag_top_crops_kt.csv")
 # ---------------- (b) services turnover ----------------
 ec = pd.read_parquet(os.path.expanduser("~/ec_sub.parquet"))
 ec["sec_n"] = ec.ec_main_activity_section.fillna(ec.ec_isic_section_comparable_2011)
-lw = pd.read_csv(DATA / "geo-data" / "labour" / "ec_establishments_long.csv", usecols=["year", "isic"])  # 2014 section
+lw = pd.read_csv(P.HARM_LABOUR / "ec_establishments_long.csv", usecols=["year", "isic"])  # 2014 section
 ec.loc[ec.ec_year == 2014, "sec_n"] = lw.loc[lw.year == 2014, "isic"].values
 ec["grp"] = ec.sec_n.where(ec.sec_n.between(1, 21)).map(SEC).map(GROUP)
 br = ec.ec_annual_turnover_2014.fillna(ec.ec_annual_turnover_2017_2020).fillna(ec.ec_annual_total_turnover_2023)

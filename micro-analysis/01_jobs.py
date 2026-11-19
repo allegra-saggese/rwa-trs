@@ -77,7 +77,7 @@ t3.columns = [f"{a} {b}" for a, b in t3.columns]
 to_tex(t3, OUT_T / "jobs_changes_by_band", "Sector-level changes in employment shares and log workers, by park-distance band (unweighted across sectors).", "tab:jobs_chg")
 
 # ---------- LFS annual ----------
-lfs = pd.read_csv(DATA / "geo-data" / "labour" / "lfs_district_isic.csv")
+lfs = pd.read_csv(P.HARM_LABOUR / "lfs_district_isic.csv")
 lfs["grp"] = lfs.isic.astype(int).map(SEC).map(GROUP)
 ly = lfs.pivot_table(index="year", columns="grp", values="workers", aggfunc="sum")
 ly_sh = ly.div(ly.sum(1), axis=0)
