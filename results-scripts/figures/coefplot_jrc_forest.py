@@ -30,7 +30,7 @@ from scipy import stats
 
 
 REPO = Path(__file__).resolve().parents[2]
-FIGURE_CODE = REPO / "results-scripts/figures"
+FIGURE_CODE = REPO / "micro-analysis/census"   # bar_chart_housing (census geography)
 if str(FIGURE_CODE) not in sys.path:
     sys.path.insert(0, str(FIGURE_CODE))
 

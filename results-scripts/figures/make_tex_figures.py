@@ -24,6 +24,9 @@ import matplotlib
 matplotlib.use("Agg")
 from matplotlib.figure import Figure
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+_REPO = Path(__file__).resolve().parents[2]
+for _d in ("micro-analysis/census", "Nighttime-Lights/analysis", "Nighttime-Lights"):  # the modules it re-runs
+    sys.path.insert(0, str(_REPO / _d))
 import bar_chart_housing as B          # never alias to C: shadows patsy C()
 
 TEXFIG = Path(str(B.FIG))          # LaTeX-styled copies sit next to the originals as <name>_latex.pdf

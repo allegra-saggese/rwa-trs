@@ -204,7 +204,7 @@ def main():
     d = df.dropna(subset=["ntl_dmsp_stable_mean", "ntl_dmsp_avgvis_mean"])
     try:
         import sys
-        sys.path.insert(0, str(H.LOGS.parent.parent / "output/figures"))
+        sys.path.insert(0, str(H.LOGS.parent.parent / "micro-analysis/census"))
         import bar_chart_housing as BCH
         _, T_, X_, never_ = BCH.geography()
         treated = T_["Bordering or Gates+"]

@@ -39,7 +39,7 @@ matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from rasterio.features import rasterize
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "Nighttime-Lights"))
 import ntl_helpers as H
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "results-scripts" / "figures"))  # shared geography (bar_chart_housing)
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "micro-analysis" / "census"))  # shared census geography (bar_chart_housing)
 import bar_chart_housing as B          # never alias to C: shadows patsy C()
 
 OUT, ANALYSIS = str(B.FIG), B.ANALYSIS
