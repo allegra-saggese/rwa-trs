@@ -10,8 +10,8 @@ and c a lower bound on the model object."""
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "micro-analysis"))
-from _common import *   # shared paths and table helpers
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "helpers"))
+from common import *   # shared paths and table helpers (helpers/common.py)
 
 gl = pd.read_csv(OUT_D / "sector_landcover_glclu.csv")
 wc = pd.read_csv(OUT_D / "sector_landcover_worldcover2021.csv")

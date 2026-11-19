@@ -1,7 +1,10 @@
 """
-maps-treat-sectors.py -- the sector maps for the TRS analysis.
+treatment_groups.py -- the treatment geography of the TRS analysis: which sectors border a park, sit near
+a park entrance, or are urban (classify()), and the map helpers that draw them.
 
-    python maps-treat-sectors.py
+The maps themselves are drawn by results-scripts/treatment_maps.py. Formerly maps-treat-sectors.py.
+
+    python results-scripts/treatment_maps.py
 
 Writes to the Dropbox output folder (not to the repository):
     Rwanda - TRS/output/maps/treatment_definitions.pdf
@@ -35,7 +38,7 @@ from matplotlib.patches import Patch, Rectangle
 from shapely.geometry import Point
 
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import paths as P   # every Dropbox path is defined in the repo-root paths.py
 DB = P.DROPBOX
 GEO = DB / "data/geo-data"
@@ -326,11 +329,3 @@ def gate_point(sec, park, sid):
     return gpd.GeoSeries([Point(*GATE_XY[sid])], crs=4326).to_crs(CRS).iloc[0]
 
 
-if __name__ == "__main__":
-    sec, dist, pk, parks = load()
-    L = classify(sec, parks, pk[pk.geometry.area > 1e5])
-    print({k: len(v) for k, v in sorted(L.items())})
-    map1(sec, dist, pk, parks, L)
-    map2(sec, dist, pk, parks, L)
-    map3(sec, dist, pk, parks, L)
-    print("written to", OUT)

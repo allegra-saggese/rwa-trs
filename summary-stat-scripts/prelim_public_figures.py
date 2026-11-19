@@ -675,7 +675,7 @@ def map_lisa_hansen_loss():
 
 def map_lisa_crop_share():
     """LISA map of cropland share: WorldCover 2021 cropland outside parks over land outside parks
-    (all classes except water and no-data), in percent. Built by micro-analysis/03b_landcover_sectors.py."""
+    (all classes except water and no-data), in percent. Built by micro-analysis/sector_panel.py (section landcover_sectors)."""
     wc = pd.read_csv(V.P.HARM_PRELIM / "sector_landcover_worldcover2021.csv")
     cls = ["crop", "built", "tree", "other", "shrub_grass", "wetland"]
     wc["crop_share"] = 100 * wc.crop_out_ha / wc[[f"{c}_out_ha" for c in cls]].sum(axis=1)
