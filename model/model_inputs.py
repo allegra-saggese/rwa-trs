@@ -21,7 +21,7 @@ from common import *  # noqa: F401,F403  paths, ISIC groups, figure/table names,
 def section_model_panel():
     """build_model_sector.py -- sector-level inputs for the 2x2 tourism / land model.
 
-    RWA_ROOT=<Rwanda - TRS folder> python model/build_model_sector.py
+    RWA_ROOT=<Rwanda - TRS folder> python model/model_inputs.py --only model_panel
 
 The geographic unit is the NISR administrative SECTOR (416), the finest unit at which
 public labour data exist (Census 2002/2012/2022). Writes to data/harmonized/:

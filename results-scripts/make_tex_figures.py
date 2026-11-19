@@ -24,8 +24,8 @@ import matplotlib
 matplotlib.use("Agg")
 from matplotlib.figure import Figure
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-_REPO = Path(__file__).resolve().parents[2]
-for _d in ("micro-analysis/census", "Nighttime-Lights/analysis", "Nighttime-Lights"):  # the modules it re-runs
+_REPO = Path(__file__).resolve().parents[1]
+for _d in ("micro-analysis/census", "micro-analysis/forest", "Nighttime-Lights/analysis", "Nighttime-Lights"):  # the modules it re-runs
     sys.path.insert(0, str(_REPO / _d))
 import bar_chart_housing as B          # never alias to C: shadows patsy C()
 
