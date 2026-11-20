@@ -1,5 +1,5 @@
 """
-prelim_public_figures.py — every preliminary descriptive figure and map.
+public_data_figures.py — every preliminary descriptive figure and map.
 
 ALL outputs here are built from PUBLIC data only: NISR public-use microdata,
 Dynamic World, Hansen GFC, JRC TMF, RADD, WRI SDPT, CHIRPS, WDPA/geodata.rw,
@@ -9,16 +9,16 @@ are descriptives for memos and grant applications.
 
 Usage
 -----
-    python prelim_public_figures.py --all
-    python prelim_public_figures.py --list
-    python prelim_public_figures.py --only tourism_employment distance_decay
-    python prelim_public_figures.py --group forest
+    python results-scripts/public_data_figures.py --all
+    python results-scripts/public_data_figures.py --list
+    python results-scripts/public_data_figures.py --only tourism_employment distance_decay
+    python results-scripts/public_data_figures.py --group forest
 
 Groups: forest, landcover, labour, infrastructure, spatial, cell
 
 Outputs land in output/figures/ and output/maps/ (both gitignored — they are
 reproducible from this script). Inputs are read from the Dropbox geo-data and
-NISR folders; see viz_style.py for those paths.
+NISR folders; see helpers/viz_style.py for those paths.
 """
 
 from __future__ import annotations
@@ -35,7 +35,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import viz_style as V
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "helpers"))
+import viz_style as V  # noqa: E402
 
 warnings.filterwarnings("ignore")
 V.apply_style()
@@ -186,7 +187,7 @@ def fig_transition_matrices_yoy():
     """Year-on-year land-cover transition matrices, national.
 
     Built from Dynamic World's discrete `label` band in Earth Engine (see
-    gee_extract.py): sector-level class fractions give composition, not flows.
+    data-build/earth_engine_forest_landcover.py): sector-level class fractions give composition, not flows.
     The diagonal (no change) dominates and is hidden so the flows are visible.
     """
     nat = V.csv("land-cover/dw_transitions_national.csv")

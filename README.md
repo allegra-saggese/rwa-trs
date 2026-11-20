@@ -28,7 +28,7 @@ Run from the repository root. Each step only needs re-running when its inputs ch
 | Step | Command | Builds |
 |---|---|---|
 | 1. Clean the surveys | `python NISR/master.py` and `python WB-Enterprise-Surveys/master.py` | cleaned survey files in each survey folder: `2_Intermediate/`, `3_Final/`, `4_Harmonized/` (about 1.5 hours) |
-| 2. Build spatial and labour data | `python data-build-scripts/extract.py --all`, then `python data-build-scripts/build_panels.py --all` | `data/geo-data/`, `data/harmonized/labour/` |
+| 2. Build spatial, district and labour data | `python data-build-scripts/survey_extracts.py --all`, then `python data-build/district_sources.py --all`, then `python data-build-scripts/build_panels.py --all` | `data/harmonized/labour/`, `data/harmonized/district/`, `data/geo-data/` |
 | 3. Model panel | `python model/model_inputs.py --only model_panel` | `data/harmonized/model_*.csv` |
 | 4. Sector panel | `python micro-analysis/sector_panel.py` | `data/harmonized/extracts/`, `data/harmonized/prelim/` |
 | 5. Land moments | `python model/model_inputs.py --only land_moments` | land-moment panels and tables |
@@ -44,13 +44,12 @@ runs one of them.
 
 Other scripts, run as needed:
 
-- `summary-stat-scripts/prelim_public_figures.py --all`
-- `summary-stat-scripts/summary.py --all`
-- `summary-stat-scripts/maps.py --all`
+- `results-scripts/public_data_figures.py --all` (public-data descriptive figures and maps)
+- `results-scripts/district_summary.py --all` and `results-scripts/district_maps.py --all` (district-level descriptives)
 - `district-level-analysis/district_models.py --all`
-- `info-scripts/inventory.py` and `info-scripts/variables.py` (variable lists)
-- `data-build-scripts/gee_extract.py` (needs an Earth Engine account)
-- `data-build-scripts/fetch_geodata_rw.py` (downloads from the national geoportal)
+- `helpers/data_inventory.py` and `helpers/eicv7_variables.py` (variable lists)
+- `data-build/earth_engine_forest_landcover.py` (needs an Earth Engine account)
+- `data-build/geoportal_download.py` (downloads from the national geoportal)
 - `results-scripts/make_tex_figures.py` (figures without captions for `STEG-Results.tex`)
 
 The nightlights pipeline and its analysis (`Nighttime-Lights/`) are kept but not part of the main run.
@@ -60,7 +59,7 @@ The nightlights pipeline and its analysis (`Nighttime-Lights/`) are kept but not
 | Folder | Holds |
 |---|---|
 | `data/<source>/` | source data, one folder per source; nothing in the analysis writes here |
-| `data/harmonized/` | everything built from the sources: panels, survey subsets, labour tables |
+| `data/harmonized/` | everything built from the sources: panels, survey subsets, labour tables, the district panel (`district/`) |
 | `analysis/nisr-public-data-analysis/` | regression results (`reg_*.csv`) |
 | `output/figures/`, `output/maps/`, `output/tables/` | figures, maps, summary and regression tables |
 | `output/latex/` | write-ups (`.tex` and compiled `.pdf`) |
@@ -73,13 +72,14 @@ Each data folder has its own `README.txt`.
 | Folder | Holds |
 |---|---|
 | `paths.py` | every Dropbox path |
-| `helpers/` | shared code: paths and table helpers, regressions, treatment groups |
+| `helpers/` | shared code: table helpers, regressions, treatment groups, survey cleaning, plot style, variable inventories |
 | `NISR/`, `WB-Enterprise-Surveys/` | survey cleaning pipelines, one folder per survey |
-| `data-build-scripts/` | spatial layers, labour tables, analysis panels |
+| `data-build/` | non-survey sources: boundaries, rainfall, World Bank indicators, DHS, Earth Engine, geoportal; the district panel |
+| `data-build-scripts/` | survey extracts and labour tables (`survey_extracts.py`), sector and cell panels (`build_panels.py`) |
 | `micro-analysis/` | reduced-form analysis: `sector_panel`, `sector_regressions`, `paper_tables`, `census` (with `census/`), `forest` (with `forest/`) |
 | `model/` | inputs of the 2x2 model |
-| `results-scripts/` | figures and maps only (`STEG/` holds the grant-appendix modules) |
-| `summary-stat-scripts/`, `district-level-analysis/`, `info-scripts/` | public-data figures, district models, variable lists |
+| `results-scripts/` | figures, maps and descriptive tables (`STEG/` holds the grant-appendix modules) |
+| `district-level-analysis/` | district-year regressions |
 | `Nighttime-Lights/` | nightlights pipeline and analysis (not part of the main run) |
 | `docs/` | cleaning decisions, data provenance, earlier READMEs |
 

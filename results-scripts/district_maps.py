@@ -1,16 +1,16 @@
 """
-maps.py — spatial visualisation for the Rwanda project.
+district_maps.py — district-level maps for the Rwanda project.
 
-Reads from data/processed/ and writes to output/maps/. Built around one
+Reads from data/harmonized/district/ and writes to output/maps/. Built around one
 reusable `choropleth()` so every map in the paper shares projection,
 classification, and legend conventions.
 
 Usage
 -----
-    python maps.py --all
-    python maps.py --only rainfall_mean drought_rate
-    python maps.py --only rainfall_facets --format pdf
-    python maps.py --list-vars                 # what can be mapped
+    python results-scripts/district_maps.py --all
+    python results-scripts/district_maps.py --only rainfall_mean drought_rate
+    python results-scripts/district_maps.py --only rainfall_facets --format pdf
+    python results-scripts/district_maps.py --list-vars                 # what can be mapped
 
 Projection
 ----------
@@ -38,7 +38,7 @@ import numpy as np
 import pandas as pd
 
 REPO = P.REPO
-PROC = P.PROC
+PROC = P.HARM_DISTRICT
 DROPBOX = P.DROPBOX
 OUT = P.OUT
 MAPS = P.MAPS
@@ -82,15 +82,15 @@ def load_districts():
     fp = PROC / "districts.gpkg"
     if not fp.exists():
         raise FileNotFoundError(
-            "interim-processing/processed/districts.gpkg missing - run: "
-            "python data-build-scripts/extract.py --sources boundaries")
+            "data/harmonized/district/districts.gpkg missing - run: "
+            "python data-build/district_sources.py --sources boundaries")
     return gpd.read_file(fp, layer="districts").to_crs(CRS_PROJ)
 
 
 def load_panel() -> pd.DataFrame | None:
     fp = PROC / "district_panel.csv"
     if not fp.exists():
-        _log("  ! district_panel.csv missing - run extract.py first")
+        _log("  ! district_panel.csv missing - run data-build/district_sources.py first")
         return None
     return pd.read_csv(fp)
 
@@ -357,8 +357,8 @@ def map_dhs_clusters() -> None:
     fp = PROC / "dhs_clusters.gpkg"
     if not fp.exists():
         _log("  ! dhs_clusters.gpkg missing - place DHS GPS shapefile in "
-             "interim-processing/raw/dhs/ and run: "
-             "python data-build-scripts/extract.py --sources dhs_gps; skipping")
+             "data/DHS/ and run: "
+             "python data-build/district_sources.py --sources dhs_gps; skipping")
         return
 
     pts = gpd.read_file(fp, layer="clusters").to_crs(CRS_PROJ)

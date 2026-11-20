@@ -116,7 +116,7 @@ Model objects (see theory/TRS-2x2-model-derivation.pdf):
         X = X.merge(wc, on="sid", how="left")
         print("WorldCover 2021 merged")
     else:
-        print("WorldCover not yet extracted: run data-build-scripts/gee_extract.py --datasets worldcover")
+        print("WorldCover not yet extracted: run data-build/earth_engine_forest_landcover.py --datasets worldcover")
 
     # ---- labour from the census jobs panel ---------------------------------------
     j = pd.read_csv(AN / "census_sector_jobs_panel.csv")[

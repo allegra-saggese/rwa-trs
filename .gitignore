@@ -1,8 +1,6 @@
-# Raw and interim data is never committed: EICV, LFS, Census and DHS microdata
-# are licensed to the individual researcher and may not be redistributed. Open
-# sources (CHIRPS, GADM) are excluded too, since extract.py re-downloads them.
-interim-processing/raw/*
-interim-processing/processed/*
+# Data is never committed: EICV, LFS, Census and DHS microdata are licensed to the individual
+# researcher and may not be redistributed. All data lives in the Dropbox folder (paths.py).
+interim-processing/
 
 # Keep the directory skeleton so a fresh clone has somewhere to put data.
 !.gitkeep

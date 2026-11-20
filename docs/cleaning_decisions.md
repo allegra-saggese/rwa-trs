@@ -85,7 +85,7 @@ alternative cutoffs need no re-extraction.
 **Why.** DHS stores weights as integers scaled by one million. Using them
 unscaled leaves every weighted statistic off by that factor. Different recode
 files use different weight variables, so the mapping is explicit in
-`extract.py:DHS_WEIGHT_COLS`.
+`data-build/district_sources.py:DHS_WEIGHT_COLS`.
 
 ## 2026-09-03 — DHS clusters at (0, 0) dropped
 
@@ -265,7 +265,7 @@ to the denominator. Every denominator breaks somewhere on that fact:
 JRC TMF agree until about 2014 and then diverge sharply, with Hansen cumulating
 roughly 85,000 ha against TMF's 33,000 by 2023. TMF treats plantation cycling as
 land already deforested; Hansen counts each harvest. `sdpt_confound` and
-`hansen_tmf_divergence` in `prelim_public_figures.py` show this directly. Any
+`hansen_tmf_divergence` in `results-scripts/public_data_figures.py` show this directly. Any
 result that rests on Hansen loss alone is measuring timber rotation as much as
 forest conversion.
 
@@ -276,7 +276,7 @@ forest conversion.
 `sector_year_panel.csv` (7,904 rows) and `cell_master.csv` (2,148 rows) are the
 two files the descriptive work actually runs on, and **nothing in this repo
 builds them.** `grep -rl "sector_year_panel" --include="*.py"` returns only
-`prelim_public_figures.py`, which reads them. They were assembled in throwaway
+`results-scripts/public_data_figures.py`, which reads them. They were assembled in throwaway
 inline sessions, so the joins, the `forest_start_ha` recursion and the >= 2006
 clipping exist only as their output.
 
@@ -285,7 +285,7 @@ reviewer cannot check how `hazard_pct` was constructed, and neither can we —
 the definitions in the entry above were recovered by testing identities against
 the saved columns, not by reading the code that produced them.
 
-**Not yet built.** This wants an `extract.py` target that goes from the Hansen /
+**Not yet built.** This wants a `data-build/` target that goes from the Hansen /
 TMF / DW / RADD / SDPT sector tables to both panels, with the denominator rules
 above applied once, in one place, rather than re-guarded in every figure.
 

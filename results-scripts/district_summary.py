@@ -1,16 +1,16 @@
 """
-summary.py — descriptive tables, figures, and graphs.
+district_summary.py — district-level descriptive tables, figures, and graphs.
 
-Reads only from data/processed/ (built by extract.py) and writes to
+Reads only from data/harmonized/district/ (built by data-build/district_sources.py) and writes to
 output/tables/summary_statistics/ and output/figures/. Computes no new analysis variables: if a
-figure needs a variable that does not exist, add it in extract.py so every
+figure needs a variable that does not exist, add it in data-build/district_sources.py so every
 output uses the same definition.
 
 Usage
 -----
-    python summary.py --all
-    python summary.py --only rainfall_climatology drought_frequency
-    python summary.py --all --format pdf
+    python results-scripts/district_summary.py --all
+    python results-scripts/district_summary.py --only rainfall_climatology drought_frequency
+    python results-scripts/district_summary.py --all --format pdf
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ import numpy as np
 import pandas as pd
 
 REPO = P.REPO
-PROC = P.PROC
+PROC = P.HARM_DISTRICT
 DROPBOX = P.DROPBOX
 OUT = P.OUT
 FIGS = P.FIGS
@@ -91,7 +91,7 @@ def save_table(df: pd.DataFrame, name: str, float_fmt: str = "%.2f") -> None:
 def _require(fname: str) -> pd.DataFrame | None:
     fp = PROC / fname
     if not fp.exists():
-        _log(f"  ! {fname} not found - run extract.py first; skipping")
+        _log(f"  ! {fname} not found - run data-build/district_sources.py first; skipping")
         return None
     return pd.read_csv(fp)
 

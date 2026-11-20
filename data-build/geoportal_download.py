@@ -1,13 +1,13 @@
 """
-fetch_geodata_rw.py — pull layers from Rwanda's national geodata portal.
+geoportal_download.py — pull layers from Rwanda's national geodata portal.
 
 geodata.rw runs ArcGIS FeatureServers. They cap each response at 2,000 records,
 so anything larger has to be paged with resultOffset. This handles that and
 writes GeoJSON + GeoPackage in EPSG:4326.
 
-    python fetch_geodata_rw.py --list
-    python fetch_geodata_rw.py District_boundary
-    python fetch_geodata_rw.py Road_network Land_Cover --out ../path/to/geo-data
+    python data-build/geoportal_download.py --list
+    python data-build/geoportal_download.py District_boundary
+    python data-build/geoportal_download.py Road_network Land_Cover --out ../path/to/geo-data
 
 The portal's native CRS is ITRF_2005 / Rwanda TM; outSR=4326 is requested so
 everything lands in the same frame as the rest of the project.

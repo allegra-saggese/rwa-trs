@@ -109,7 +109,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 ## Panel B — Conservation and environmental measures
 
 ### JRC Tropical Moist Forest (TMF) ✅
-- **Location** `$DB/geo-data/forest/tmf_by_sector.csv` (1.8 MB) · also `$R/data/processed/`
+- **Location** `$DB/geo-data/forest/tmf_by_sector.csv` (1.8 MB) · also `$DB/data/harmonized/district/`
 - **Coverage** **34 years, 1990–2023**, all 416 sectors — 14,144 sector-years, complete
 - **Source** Earth Engine `projects/JRC/TMF/v1_2023/AnnualChanges`, 30 m
 - **Contents** Area in hectares per sector-year of: undisturbed forest, degraded forest, deforested, regrowth, water, other land cover
@@ -158,7 +158,7 @@ Legend: ✅ held · ⏳ requested/in progress · ❌ not obtainable yet
 - **Version trap** GFW's highest-numbered version, v20239998, contains **only Uruguay**. Use v20231128.
 
 ### CHIRPS precipitation ✅
-- **Location** `$R/data/processed/rainfall_monthly.csv`, `rainfall_annual.csv`, `district_panel.csv`
+- **Location** `$DB/data/harmonized/district/rainfall_monthly.csv`, `rainfall_annual.csv`, `district_panel.csv`
 - **Coverage** monthly 2000–2024 built (record starts 1981), 30 districts — 9,000 district-months, 750 district-years
 - **Source** Climate Hazards Center UCSB, CHIRPS v2.0 Africa monthly, 0.05°
 - **Contents** District rainfall totals, within-district z-scores and percentiles, drought indicator

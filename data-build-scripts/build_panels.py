@@ -139,12 +139,12 @@ def build_sector_year() -> pd.DataFrame:
     # Rainfall is district-level (CHIRPS zonal means), so it repeats across the
     # sectors of a district. Flagged here so nobody reads it as sector variation.
     #
-    # JOIN ON NAME, NOT ID. rainfall_annual.csv carries extract.py's own
+    # JOIN ON NAME, NOT ID. rainfall_annual.csv carries data-build/district_sources.py's own
     # district_id (1-30, assigned after sorting GADM by province then district);
     # the exposure tables carry NISR codes (11-57). The two ranges OVERLAP at
     # 11, 12, 13, 21..., so joining on district_id does not fail - it silently
     # matches the wrong districts for a third of the panel.
-    rain = pd.read_csv(P.PROC / "rainfall_annual.csv")[
+    rain = pd.read_csv(P.HARM_DISTRICT / "rainfall_annual.csv")[
         ["district", "year", "rain_mm", "rain_z"]]
     rain["dkey"] = rain.district.map(_dkey)
     rain = rain.drop(columns="district")

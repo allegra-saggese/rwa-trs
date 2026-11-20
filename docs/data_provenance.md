@@ -14,12 +14,12 @@ Last updated: 2026-09-03
 - **Level**: admin-2 (district). 30 districts nested in 5 provinces.
 - **CRS as delivered**: EPSG:4326
 - **Licence**: free for academic use; redistribution restricted. Not committed to
-  the repo — `extract.py` re-downloads.
+  the repo — `data-build/district_sources.py` re-downloads.
 - **Vintage**: reflects the post-2006 administrative structure. See
   `cleaning_decisions.md` on the 2006 reorganisation.
 
 Province names ship in Kinyarwanda and without spaces (`UmujyiwaKigali`). Mapped
-to English NISR conventions in `extract.py:PROVINCE_LABELS`.
+to English NISR conventions in `data-build/district_sources.py:PROVINCE_LABELS`.
 
 ## CHIRPS v2.0 — precipitation
 
@@ -39,7 +39,7 @@ size (~4 MB vs ~"whole planet" per month). Identical values over Rwanda.
 
 - **URL**: `https://api.worldbank.org/v2/country/RWA/indicator/{code}`
 - **Retrieved**: 2026-09-03
-- **Indicators**: see `extract.py:WDI_INDICATORS`
+- **Indicators**: see `data-build/district_sources.py:WDI_INDICATORS`
 - **Licence**: CC BY 4.0
 - **Note**: national aggregates only. Constant within a year by construction, so
   usable as controls but never as identifying variation in a district panel.
@@ -70,7 +70,7 @@ size (~4 MB vs ~"whole planet" per month). Identical values over Rwanda.
 21 files, all sharing an identical identifier block: `hhid`, `clust`,
 `province`, `district`, `strata_id`, `weight`. Because the block is identical,
 files are identified by their `F`-number prefix rather than by column sniffing;
-the mapping is `extract.py:EICV7_FILES`.
+the mapping is `data-build-scripts/survey_extracts.py:EICV7_FILES`.
 
 Core files:
 
@@ -101,7 +101,7 @@ files are in hand rather than guessed at. The current loader targets EICV7 only.
 - **Licence**: NISR terms; redistribution prohibited.
 - **Expected locations**: `data/raw/rec/`, `data/raw/est/`, `data/raw/ahs/`,
   `data/raw/lfs/`
-- **Loader**: `extract.py:extract_survey()`, registry in `extract.py:SURVEYS`
+- **Loader**: `data-build-scripts/survey_extracts.py:extract_survey()`, registry in `survey_extracts.py:SURVEYS`
 
 | Key | Survey | Unit | Why it is in scope |
 |---|---|---|---|
