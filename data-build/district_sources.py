@@ -7,14 +7,10 @@ Downloads (cached) and cleans:
     wdi          World Bank national indicators           -> wdi.csv
     dhs          DHS recode files (data/DHS/)             -> dhs_*.csv
     dhs_gps      DHS cluster locations                    -> dhs_clusters.gpkg
-then merges rainfall, WDI and the EICV 7 district welfare table into district_panel.csv
+then merges rainfall and WDI into district_panel.csv
 (district x year). All outputs go to data/harmonized/district/ (paths.HARM_DISTRICT).
 Downloads are cached with their source: GADM in data/geo-data/admin-boundaries/, CHIRPS in
 data/geo-data/climate/chirps/. Delete a cached file to force a refresh.
-
-The merge also picks up eicv7_district_welfare.csv if it exists. Nothing builds that file at present
-(see build_eicv7_district_welfare in micro-analysis/district_survey_tables.py), so the panel has no
-EICV columns.
 
 Usage
 -----
@@ -480,15 +476,6 @@ def merge_district_panel() -> pd.DataFrame:
     wdi_fp = PROC / "wdi.csv"
     if wdi_fp.exists():
         panel = panel.merge(pd.read_csv(wdi_fp), on="year", how="left")
-
-    # EICV welfare is a single cross-section, so it is merged on district only
-    # and repeats down the years. Columns are suffixed with the survey to keep
-    # that obvious: eicv7_poverty_rate is a 2023-24 value on every row.
-    wel_fp = PROC / "eicv7_district_welfare.csv"
-    if wel_fp.exists():
-        wel = pd.read_csv(wel_fp).drop(columns=["survey", "survey_year"], errors="ignore")
-        wel = wel.rename(columns={c: f"eicv7_{c}" for c in wel.columns if c != "district_id"})
-        panel = panel.merge(wel, on="district_id", how="left")
 
     panel = panel.sort_values(["district_id", "year"]).reset_index(drop=True)
     panel.to_csv(PROC / "district_panel.csv", index=False)

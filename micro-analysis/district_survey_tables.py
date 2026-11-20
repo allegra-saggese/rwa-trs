@@ -7,11 +7,8 @@ Sections (python micro-analysis/district_survey_tables.py --list):
                     (lfs_district_isic, lfs_isic_shares_wide, lfs_tourism_share, ec_district_isic,
                     ec_isic_shares_wide, ec_establishments_long, district_workers_forest_panel)
 
-Also here, NOT run by any section: build_eicv7_district_welfare(), which collapses the EICV 7
-poverty file to district welfare indicators. Nothing has called it since commit 461c14f, so the
-district panel (data-build/district_sources.py) has never carried these columns.
-
-Formerly the labour and EICV 7 parts of data-build-scripts/extract.py. Its other survey extracts
+Formerly the labour part of data-build-scripts/extract.py. Its EICV 7 district welfare function
+(never run) is archived in Dropbox _archive/code-eicv7-district-welfare-2026-11-19/. Its other survey extracts
 (EICV, Establishment Census and other per-year CSVs) were read by no script and were dropped on
 2026-11-19; their last outputs are in Dropbox _archive/district-survey-extracts-2026-11-19/.
 
@@ -42,65 +39,6 @@ def _log(msg: str) -> None:
     print(f"[extract] {msg}", flush=True)
 
 
-
-# Two weights, and they are not interchangeable.
-#   weight  - household weight. Use for household-level statistics
-#             (share of households in poverty, mean household size).
-#   pop_wt  - population weight. Use for person-level statistics
-#             (poverty headcount among individuals, employment rates).
-# Only F1 and F3 carry pop_wt; person-level work on F2 must bring it across
-# from F1 on hhid.
-EICV7_HH_WEIGHT = "weight"
-EICV7_POP_WEIGHT = "pop_wt"
-
-
-def build_eicv7_district_welfare(poverty: pd.DataFrame) -> pd.DataFrame:
-    """Collapse the EICV7 poverty file to district-level welfare indicators.
-
-    Weighting follows the distinction above: poverty rates are population-
-    weighted (a headcount is a statement about people), while mean household
-    consumption is household-weighted. Getting this backwards shifts poverty
-    rates by several points, since poor households are larger.
-    """
-    if "district_id" not in poverty.columns:
-        _log("  ! poverty file has no district_id; skipping district welfare")
-        return pd.DataFrame()
-
-    df = poverty.copy()
-    hw = df[EICV7_HH_WEIGHT] if EICV7_HH_WEIGHT in df else pd.Series(1.0, index=df.index)
-    pw = df[EICV7_POP_WEIGHT] if EICV7_POP_WEIGHT in df else hw
-
-    def wmean(values: pd.Series, weights: pd.Series) -> float:
-        m = values.notna() & weights.notna()
-        return np.average(values[m], weights=weights[m]) if m.any() else np.nan
-
-    rows = []
-    for did, g in df.groupby("district_id"):
-        gw, gp = hw.loc[g.index], pw.loc[g.index]
-        rec = {"district_id": int(did), "n_households": len(g)}
-        # Poverty status is coded as a label; treat the poor category as 1.
-        for src_col, name in [("pov_jan", "poverty_rate"), ("epov_jan", "extreme_poverty_rate")]:
-            if src_col in g:
-                v = g[src_col]
-                ind = (v.astype(str).str.strip().str.lower().str.startswith("poor").astype(float)
-                       if v.dtype == object else v.astype(float))
-                rec[name] = wmean(ind, gp)
-        if "cons1ae" in g:
-            rec["cons_pae_mean"] = wmean(g["cons1ae"], gw)
-        if "sol_jan" in g:
-            rec["cons_pae_jan2024"] = wmean(g["sol_jan"], gw)
-        if "ae" in g:
-            rec["hh_size_ae_mean"] = wmean(g["ae"], gw)
-        if "member" in g:
-            rec["hh_size_mean"] = wmean(g["member"], gw)
-        rows.append(rec)
-
-    out = pd.DataFrame(rows).sort_values("district_id").reset_index(drop=True)
-    out["survey"] = "EICV7"
-    out["survey_year"] = 2024  # EICV7 covers 2023-24; January 2024 price base
-    out.to_csv(PROC / "eicv7_district_welfare.csv", index=False)
-    _log(f"  -> eicv7_district_welfare.csv ({len(out)} districts)")
-    return out
 
 # --------------------------------------------------------------------------
 # Labour extracts: pooled NISR microdata -> the tables the figures read

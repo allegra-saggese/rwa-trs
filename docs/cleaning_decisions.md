@@ -135,6 +135,17 @@ understates poverty — typically by several percentage points. Only F1 and F3
 carry `pop_wt`; person-level work on F2 has to bring it across from F1 on
 `hhid`.
 
+## 2026-11-19 — EICV7 district welfare removed
+
+**Decision.** `build_eicv7_district_welfare()` and the step in the district panel merge that read
+`eicv7_district_welfare.csv` are removed; the function is archived in Dropbox
+`_archive/code-eicv7-district-welfare-2026-11-19/`. The two 2026-09-03 entries below describe it
+and no longer apply.
+
+**Why.** Nothing had called the function since commit 461c14f, so the panel never carried these
+columns. A 2023-24 cross-section is post-treatment for the 2005 programme, so it is no use as a
+control, and it has no pre-period, so it is no use as an outcome.
+
 ## 2026-09-03 — EICV7 poverty status read as a label
 
 **Decision.** `pov_jan` / `epov_jan` are read with value labels applied, and the
