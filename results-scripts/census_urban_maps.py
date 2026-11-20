@@ -7,6 +7,7 @@ urban areas, from the Population and Housing Census.
 Writes, to Dropbox output/maps/ (one figure per file, vector PDF, no title inside the figure):
     census_urban_share_2012.pdf          share of residents in urban areas, 2012 (NISR's two-way urban flag)
     census_urban_share_2022.pdf          the same, 2022
+    census_rural_share_2022.pdf          share in rural areas, 2022 (100 minus the urban share)
     census_area_urban_share_2012.pdf     2012, four area types, one map each: urban,
     census_area_semi_urban_share_2012.pdf    semi-urban,
     census_area_peri_urban_share_2012.pdf    peri-urban,
@@ -19,7 +20,7 @@ market, banks or other financial institutions) -- 2012 Census atlas. Every house
 type. Villages are not released, so the maps show, for each of the 416 sectors, the weighted share of
 residents living in each type of area. The two-way flag (census_urban) counts urban + semi-urban as urban
 and peri-urban + rural as rural; it reproduces NISR's published urban shares (16.5% in 2012). Only 2012
-ships the four types (census_area_residence_2012). 2002 is left out: its urban areas were 15 delineated
+ships the four types (census_area_residence_2012); NISR's raw 2022 file has urban and rural only (ml07). 2002 is left out: its urban areas were 15 delineated
 towns that took in a large amount of rural land, so its flag is not comparable.
 
 Same classes on every map, so the maps can be compared: 0, 0-10, 10-25, 25-50, 50-75, 75-100 percent.
@@ -142,6 +143,12 @@ def main():
         kind = "urban" + (" (NISR's urban and semi-urban areas)" if y == 2012 else "")
         tex.append(caption(f"urban_share_{y}", f"Share of Residents Living in Urban Areas, by Sector, {y}",
                            common.format(kind=kind), f))
+    m = s.merge(sh[sh.year == 2022], on="sid", how="left")
+    m["rural"] = 100 - m.urban
+    draw(m, pk, lk, "rural", "Share of residents in rural areas, 2022", P.MAPS / "census_rural_share_2022.pdf")
+    tex.append(caption("rural_share_2022", "Share of Residents Living in Rural Areas, by Sector, 2022",
+                       common.format(kind="rural") + " The 2022 Census distinguishes urban and rural only; this "
+                       "map is 100 percent minus the urban share.", "census_rural_share_2022.pdf"))
     m = s.merge(sh[sh.year == 2012], on="sid", how="left")
     for code, (key, name) in AREA_TYPES.items():
         f = f"census_area_{key}_share_2012.pdf"
