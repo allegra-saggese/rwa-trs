@@ -321,8 +321,14 @@ def _standardise(Z: np.ndarray, wt: np.ndarray):
     return (Z - mu) / np.where(sd > 0, sd, 1), mu, sd
 
 
+import sklearn  # noqa: E402
+# scikit-learn 1.8 replaced penalty="l1" with l1_ratio=1 (and warns, or fits a ridge, if they disagree)
+_SK18 = tuple(int(x) for x in sklearn.__version__.split(".")[:2]) >= (1, 8)
+_L1 = {"l1_ratio": 1.0} if _SK18 else {"penalty": "l1"}
+
+
 def _fit(Z, y, wt, C):
-    m = LogisticRegression(penalty="l1", solver="liblinear", C=C, intercept_scaling=100, max_iter=500)
+    m = LogisticRegression(solver="liblinear", C=C, intercept_scaling=100, max_iter=500, **_L1)
     return m.fit(Z, y, sample_weight=wt)
 
 
