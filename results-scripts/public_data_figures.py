@@ -1,5 +1,5 @@
 """
-prelim_public_figures.py — every preliminary descriptive figure and map.
+public_data_figures.py — every preliminary descriptive figure and map.
 
 ALL outputs here are built from PUBLIC data only: NISR public-use microdata,
 Dynamic World, Hansen GFC, JRC TMF, RADD, WRI SDPT, CHIRPS, WDPA/geodata.rw,
@@ -9,16 +9,16 @@ are descriptives for memos and grant applications.
 
 Usage
 -----
-    python prelim_public_figures.py --all
-    python prelim_public_figures.py --list
-    python prelim_public_figures.py --only tourism_employment distance_decay
-    python prelim_public_figures.py --group forest
+    python results-scripts/public_data_figures.py --all
+    python results-scripts/public_data_figures.py --list
+    python results-scripts/public_data_figures.py --only tourism_employment distance_decay
+    python results-scripts/public_data_figures.py --group forest
 
 Groups: forest, landcover, labour, infrastructure, spatial, cell
 
 Outputs land in output/figures/ and output/maps/ (both gitignored — they are
 reproducible from this script). Inputs are read from the Dropbox geo-data and
-NISR folders; see viz_style.py for those paths.
+NISR folders; see helpers/viz_style.py for those paths.
 """
 
 from __future__ import annotations
@@ -35,7 +35,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import viz_style as V
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "helpers"))
+import viz_style as V  # noqa: E402
 
 warnings.filterwarnings("ignore")
 V.apply_style()
@@ -53,7 +54,8 @@ def _boot(x, n=800):
     x = np.asarray(x, float)
     if len(x) < 3:
         return np.nan, np.nan
-    d = [np.mean(x[np.random.randint(0, len(x), len(x))]) for _ in range(n)]
+    rng = np.random.default_rng(0)  # fixed seed: the same interval on every run
+    d = [np.mean(x[rng.integers(0, len(x), len(x))]) for _ in range(n)]
     return np.percentile(d, 2.5), np.percentile(d, 97.5)
 
 
@@ -186,7 +188,7 @@ def fig_transition_matrices_yoy():
     """Year-on-year land-cover transition matrices, national.
 
     Built from Dynamic World's discrete `label` band in Earth Engine (see
-    gee_extract.py): sector-level class fractions give composition, not flows.
+    data-build/earth_engine_forest_landcover.py): sector-level class fractions give composition, not flows.
     The diagonal (no change) dominates and is hidden so the flows are visible.
     """
     nat = V.csv("land-cover/dw_transitions_national.csv")
@@ -624,7 +626,7 @@ def map_lisa_clusters():
     fig, axes = plt.subplots(1, 4, figsize=(18, 5.6))
     for a, (c, lab) in zip(axes, VARS):
         x = s[c].fillna(s[c].median()).values
-        li = Moran_Local(x, w, permutations=999); mi = Moran(x, w, permutations=999)
+        li = Moran_Local(x, w, permutations=999, seed=0); np.random.seed(0); mi = Moran(x, w, permutations=999)  # seeds: same clusters and p-values every run
         s["q"] = np.where(li.p_sim <= 0.05, li.q, 0)
         s[s.q == 0].plot(ax=a, color="0.92", edgecolor="white", linewidth=.2)
         for k, (_nm, col) in CAT.items():
@@ -648,7 +650,7 @@ def _lisa_single(s, col, title, name):
     CAT = {1: ("High–High", V.PARK), 2: ("Low–High", "#a8c6e8"),
            3: ("Low–Low", V.NONPARK), 4: ("High–Low", "#f4a261")}
     x = s[col].fillna(s[col].median()).values
-    li = Moran_Local(x, w, permutations=999, seed=0); mi = Moran(x, w, permutations=999)  # seed: same clusters every run
+    li = Moran_Local(x, w, permutations=999, seed=0); np.random.seed(0); mi = Moran(x, w, permutations=999)  # seeds: same clusters and p-values every run
     s = s.assign(q=np.where(li.p_sim <= 0.05, li.q, 0))
     fig, a = plt.subplots(figsize=(7, 7.2))
     fig.subplots_adjust(left=.02, right=.98, top=.86, bottom=.12)

@@ -22,7 +22,7 @@ jinja2>=3.0               # DataFrame.to_latex
 scipy>=1.10
 statsmodels>=0.14
 
-# Earth Engine — TMF, Dynamic World, RADD (see gee_extract.py)
+# Earth Engine — TMF, Dynamic World, RADD (see data-build/earth_engine_forest_landcover.py)
 earthengine-api>=1.0
 openpyxl>=3.1            # IBES published tables (.xlsx)
 xlrd>=2.0              # NISR/Census-PHC: the 2012 ISCO coding list is a legacy .xls (pandas.read_excel needs xlrd)

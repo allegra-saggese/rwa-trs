@@ -82,6 +82,7 @@ HARM_EXTRACTS = HARMONIZED / "extracts"            # column subsets of the clean
 HARM_LABOUR = HARMONIZED / "labour"                # LFS and Establishment Census industry tables
 HARM_NTL = HARMONIZED / "nightlights"              # nightlight sector and cell panels + codebook
 HARM_NTL_LONG = HARM_NTL / "sector-cell-long"      # one long file per product and unit
+HARM_DISTRICT = HARMONIZED / "district"            # district panel, rainfall, WDI, DHS extracts (data-build/)
 
 # ---- results (written) ------------------------------------------------------
 ANALYSIS = DROPBOX / "analysis" / "nisr-public-data-analysis"   # regression results (reg_*.csv)
@@ -94,10 +95,9 @@ TABLES_REG = TABLES / "regressions"              # regression tables
 LATEX = OUT / "latex"                              # write-ups: .tex sources and compiled .pdf
 VARLISTS = OUT / "variable-lists"                  # generated variable inventories
 
-# ---- scratch inside the repo (gitignored) -----------------------------------
-INTERIM = REPO / "interim-processing"
-RAW = INTERIM / "raw"
-PROC = INTERIM / "processed"
+# Download caches of data-build/district_sources.py (source data, so kept with their source).
+GADM_CACHE = GEO / "admin-boundaries"              # gadm41_RWA_2.json.zip
+CHIRPS_CACHE = GEO / "climate" / "chirps"          # monthly CHIRPS rasters, downloaded on first run
 
 
 def check_writable(target: Path) -> None:

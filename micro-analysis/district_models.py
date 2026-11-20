@@ -6,9 +6,9 @@ EICV and AHS are anonymised to district, and only the Census reaches sector. So
 the labour panel is 30 districts x 9 years = 270 observations, and everything
 here is built around that being a SMALL panel.
 
-    python district-level-analysis/district_models.py --all
-    python district-level-analysis/district_models.py --only tourism_forest
-    python district-level-analysis/district_models.py --list
+    python micro-analysis/district_models.py --all
+    python micro-analysis/district_models.py --only tourism_forest
+    python micro-analysis/district_models.py --list
 
 Inference
 ---------

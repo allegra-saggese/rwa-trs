@@ -168,7 +168,7 @@ Two dependencies to keep in view:
 
 **DHS Rwanda** (recodes + GPS shapefile) has been requested from dhsprogram.com.
 It does not appear in the proposal's data table. Loaders are written
-(`extract.py --sources dhs dhs_gps`) and it will land in `data/DHS/`.
+(`data-build/district_sources.py --sources dhs dhs_gps`) and it will land in `data/DHS/`.
 
 Worth deciding what role it plays: DHS carries health and asset outcomes the
 other sources do not, and its **geocoded clusters are the only household-level

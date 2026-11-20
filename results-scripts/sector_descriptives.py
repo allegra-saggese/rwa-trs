@@ -23,7 +23,7 @@ from common import *  # noqa: F401,F403  paths, ISIC groups, figure/table names,
 def section_figures():
     """Descriptive figures on the repo treatment groups. Writes to output/figures and output/maps (names in helpers/common.py FIGURE_NAMES).
 Group colours: treated tiers in reds (repo PARK #c1121f), control navy (repo NONPARK #1b4965), urban greys.
-Land colours from rwa-trs/summary-stat-scripts/viz_style.py LANDCOVER."""
+Land colours from rwa-trs/helpers/viz_style.py LANDCOVER."""
     import numpy as np, pandas as pd, geopandas as gpd, matplotlib.pyplot as plt
     from matplotlib.colors import TwoSlopeNorm
     from matplotlib.patches import Patch

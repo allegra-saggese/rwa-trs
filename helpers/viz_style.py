@@ -1,7 +1,7 @@
 """
 viz_style.py — shared plotting conventions for the project.
 
-Imported by summary.py and maps.py so every figure uses the same palette,
+Imported by results-scripts/public_data_figures.py so every figure uses the same palette,
 fonts and axis rules. Keeping this in one place is what stops the figure set
 from drifting into eight different colour schemes.
 """
@@ -20,8 +20,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
-# Scripts live one level down (summary-stat-scripts/, data-build-scripts/,
-# info-scripts/), so the repo root is the parent of this file's folder.
+# This file lives in helpers/, one level down, so the repo root is the parent of its folder.
 REPO = P.REPO
 ROOT = P.REPO          # back-compat: older code called the repo root ROOT
 DROPBOX = P.DROPBOX

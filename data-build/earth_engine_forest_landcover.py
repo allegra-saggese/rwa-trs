@@ -1,5 +1,5 @@
 """
-gee_extract.py — pull TMF and Dynamic World to sector level via Google Earth Engine.
+earth_engine_forest_landcover.py — pull TMF and Dynamic World to sector level via Google Earth Engine.
 
 Neither layer has a working bulk download: the JRC TMF tile endpoint returns HTTP
 500, and Dynamic World is a near-real-time global collection with no download at
@@ -15,10 +15,10 @@ Setup (once)
 
 Usage
 -----
-    python gee_extract.py --project YOUR_GEE_PROJECT --datasets tmf dw
-    python gee_extract.py --project YOUR_GEE_PROJECT --datasets tmf --years 1990 2024
+    python data-build/earth_engine_forest_landcover.py --project YOUR_GEE_PROJECT --datasets tmf dw
+    python data-build/earth_engine_forest_landcover.py --project YOUR_GEE_PROJECT --datasets tmf --years 1990 2024
 
-Outputs (data/processed/)
+Outputs (data/harmonized/district/)
 -------------------------
     tmf_by_sector.csv   sector x year x TMF annual-change class, area in ha
     dw_by_sector.csv    sector x year, mean fraction of each Dynamic World class
@@ -28,7 +28,7 @@ Outputs (data/processed/)
         unit x year (2020, 2021) x ESA WorldCover class, area in ha, for
         --units sector (416) and/or cell (2,148 NISR administrative cells)
 
-    python gee_extract.py --project YOUR_GEE_PROJECT --datasets worldcover --units sector cell
+    python data-build/earth_engine_forest_landcover.py --project YOUR_GEE_PROJECT --datasets worldcover --units sector cell
 
 Both key on `sector_id`, so they join to the Census microdata and to the
 existing park-exposure and Hansen tables.
@@ -48,7 +48,7 @@ import paths as P
 import pandas as pd
 
 REPO = P.REPO
-PROC = P.PROC
+PROC = P.HARM_DISTRICT
 
 SECTORS_GPKG = (P.DATA / "geo-data/protected-areas/sectors_park_exposure_wdpa.gpkg")
 
