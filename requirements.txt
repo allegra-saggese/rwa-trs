@@ -26,3 +26,7 @@ statsmodels>=0.14
 earthengine-api>=1.0
 openpyxl>=3.1            # IBES published tables (.xlsx)
 xlrd>=2.0              # NISR/Census-PHC: the 2012 ISCO coding list is a legacy .xls (pandas.read_excel needs xlrd)
+
+# Used by the analysis but missing above
+scikit-learn>=1.3        # PDS lasso (micro-analysis/census)
+adjustText>=1.0          # map labels (helpers/treatment_groups.py)

@@ -3,8 +3,8 @@
 
     python 03_merge.py
 
-    3_Final/Nightlights_pooled_sector.dta   416 sectors x year
-    3_Final/Nightlights_pooled_cell.dta     2,148 cells x year
+    harmonized/nightlights/Nightlights_pooled_sector.dta   416 sectors x year
+    harmonized/nightlights/Nightlights_pooled_cell.dta     2,148 cells x year
 
 The panel is built on the RAW sensor backbone (Matteo, 2026-09-08). DMSP-OLS v4 and VIIRS VNL v2 are
 the measurements; Li and Chen ride alongside as a bridge across the 2012 sensor break. Products are
@@ -169,7 +169,7 @@ def build(unit, cadence="annual"):
         frames[product] = w
 
     if not frames:
-        raise SystemExit("nothing in 2_Intermediate; run 02_zonal.py first")
+        raise SystemExit("nothing in harmonized/nightlights/sector-cell-long; run 02_zonal.py first")
     geo_src = pd.read_csv(H.INTERMEDIATE / f"ntl_{list(frames)[-1]}_{unit}_long.csv")
     geo_cols = [c for c, _, _ in KEYS[unit] if c != "unit_id"]
     geo = (geo_src.sort_values("period").groupby("unit_id", as_index=False).first()

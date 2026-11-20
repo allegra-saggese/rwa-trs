@@ -23,3 +23,18 @@ venv/
 
 # Credentials - never commit
 .gfw_api_key
+
+# Run logs and the metadata the pipelines write between steps (logs/*.json, checks
+# reports): regenerated on every run, kept on disk, never committed. The one exception is
+# benchmark_old_stata.json: the old Stata outputs, recorded once, which 03_checks compares against.
+**/logs/*
+!**/logs/benchmark_old_stata.json
+
+# Generated variable lists live in Dropbox output/variable-lists/ (info-scripts/).
+data/processed/
+
+# Written by each pipeline's 03_checks.py on every run, with that machine's paths.
+**/stata_checks.do
+
+# Rendered outputs belong in Dropbox (Rwanda - TRS/_archive/ or output/), not the repo.
+_archive/

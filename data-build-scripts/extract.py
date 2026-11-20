@@ -975,7 +975,7 @@ def extract_labour() -> None:
     import pyreadstat
 
     _log("labour: building from harmonized NISR microdata (4_Harmonized)")
-    out = GEO / "labour"
+    out = P.HARM_LABOUR
 
     # The harmonised files are the partner's output and are READ-ONLY here.
     # Nothing this repo runs may write inside the NISR holdings: a derived

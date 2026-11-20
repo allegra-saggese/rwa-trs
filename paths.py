@@ -1,21 +1,16 @@
 """
-paths.py — every filesystem root the analysis scripts use, resolved once.
+paths.py -- every folder the code reads or writes, defined once.
 
-Follows the convention already established in the NISR pipelines
-(`NISR/*/[a-z]*_helpers.py`): the Dropbox project folder sits at a different
-path on each collaborator's Mac, so an environment variable overrides
-everything and otherwise the login user decides. Same idea here, one level up:
-these roots cover the whole project, not one survey.
+Every script in this repo imports this module. No other file names a Dropbox path.
 
-This module lives at the repo root so every task folder can import it. Scripts
-in subfolders reach it with:
+How the Dropbox project folder ("Rwanda - TRS") is found, in order:
+  1. the RWA_ROOT environment variable, if set (use this on any new machine);
+  2. otherwise the login user's entry in ROOTS below.
 
-    import sys
-    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+Scripts in a subfolder reach this module with:
+    import sys; from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # [2] from NISR/<survey>/
     import paths as P
-
-Set RWA_ROOT to point at the "Rwanda - TRS" Dropbox folder on a machine that is
-not listed below, or add yourself to ROOTS.
 """
 
 from __future__ import annotations
@@ -39,10 +34,8 @@ def db_root() -> Path:
     if not r:
         u = getpass.getuser()
         if u not in ROOTS:
-            sys.exit(
-                f"Unknown user {u!r}: set RWA_ROOT to the 'Rwanda - TRS' Dropbox "
-                f"folder, or add yourself to ROOTS in {Path(__file__).name}"
-            )
+            sys.exit(f"Unknown user {u!r}: set RWA_ROOT to the 'Rwanda - TRS' Dropbox folder, "
+                     f"or add yourself to ROOTS in {Path(__file__).name}")
         r = ROOTS[u]
     p = Path(r)
     if not p.is_dir():
@@ -52,29 +45,56 @@ def db_root() -> Path:
 
 DROPBOX = db_root()
 
-# ---- data the project reads -------------------------------------------------
+# ---- source data (read) -----------------------------------------------------
 DATA = DROPBOX / "data"
-GEO = DATA / "geo-data"
-NISR = DATA / "Publicly-Available-NISR"
-
-# VIIRS annual nighttime-lights composites, cropped to Rwanda (+0.05 deg buffer).
-# Originals were global (~2GB/file/band); every *.tif.gz under here has been
-# replaced with a *.RWA.tif of the same name, so glob for *.RWA.tif, not *.tif.gz.
-NIGHTLIGHTS = DATA / "Nighttime-Lights"
-
-# The 1 km population raster ships inside the NISR geoportal download.
+NISR = DATA / "Publicly-Available-NISR"            # one folder per survey
+WBES = DATA / "WB-Enterprise-Surveys"
+GEO = DATA / "geo-data"                            # parks, roads, land cover, forest, climate ...
 POP_RASTER = NISR / "geodata-nisr" / "PopulationDensity01.tif"
 
-# ---- what the project writes ------------------------------------------------
-# Rendered output goes to Dropbox so a coauthor who does not run the code
-# still sees it. Interim files stay in the repo, gitignored.
+# Nighttime lights: the images, as downloaded and clipped to Rwanda.
+NIGHTLIGHTS = DATA / "Nighttime-Lights"
+NTL_SOURCE = NIGHTLIGHTS / "source"                # as downloaded, plus the two download manifests
+NTL_CLIPS = NIGHTLIGHTS / "clipped-rwanda"         # one GeoTIFF per product, layer and period
+NTL_DOCS = NIGHTLIGHTS / "z_Documentation"
+
+# National tourism series (assembled 2026-09-14), each kept with its source. Look up by file name.
+_TOURISM_DIRS = {
+    "world_bank_wdi.csv": DATA / "WB-Tourism-data",
+    "rdb_tourism_revenue_usd_million.csv": DATA / "RDB",
+    "rdb_visitor_arrivals.csv": DATA / "RDB",
+    "park_revenue_usd_million.csv": NISR / "Travel-Expenditure-Survey-TES",
+    "park_visitors_by_park.csv": NISR / "Travel-Expenditure-Survey-TES",
+    "park_visitors_by_nationality.csv": NISR / "Travel-Expenditure-Survey-TES",
+    "arrivals_by_purpose_nisr.csv": NISR / "Travel-Expenditure-Survey-TES",
+}
+
+
+def tourism(name: str) -> Path:
+    """Path of one of the national tourism series (see _TOURISM_DIRS)."""
+    return _TOURISM_DIRS[name] / name
+
+# ---- manipulated data (written) ---------------------------------------------
+# Anything collapsed to sectors / cells / districts, merged across sources, or built for an analysis.
+HARMONIZED = DATA / "harmonized"
+HARM_PRELIM = HARMONIZED / "prelim"                # micro-analysis descriptive panels
+HARM_EXTRACTS = HARMONIZED / "extracts"            # column subsets of the cleaned survey files (micro-analysis)
+HARM_LABOUR = HARMONIZED / "labour"                # LFS and Establishment Census industry tables
+HARM_NTL = HARMONIZED / "nightlights"              # nightlight sector and cell panels + codebook
+HARM_NTL_LONG = HARM_NTL / "sector-cell-long"      # one long file per product and unit
+
+# ---- results (written) ------------------------------------------------------
+ANALYSIS = DROPBOX / "analysis" / "nisr-public-data-analysis"   # regression results (reg_*.csv)
 OUT = DROPBOX / "output"
 FIGS = OUT / "figures"
 MAPS = OUT / "maps"
 TABLES = OUT / "tables"
-TABLES_SUM = TABLES / "summary_statistics"   # descriptive tables
-TABLES_REG = TABLES / "regressions"          # regression output
+TABLES_SUM = TABLES / "summary_statistics"       # descriptive tables
+TABLES_REG = TABLES / "regressions"              # regression tables
+LATEX = OUT / "latex"                              # write-ups: .tex sources and compiled .pdf
+VARLISTS = OUT / "variable-lists"                  # generated variable inventories
 
+# ---- scratch inside the repo (gitignored) -----------------------------------
 INTERIM = REPO / "interim-processing"
 RAW = INTERIM / "raw"
 PROC = INTERIM / "processed"
@@ -83,12 +103,9 @@ PROC = INTERIM / "processed"
 def check_writable(target: Path) -> None:
     """Refuse to write inside the NISR holdings.
 
-    4_Harmonized and everything around it belongs to the NISR/ pipelines. A
-    derived table landing next to H_LFS_person.dta would be read as source data
-    by the next person to look, so this is enforced rather than documented.
+    Only the NISR/ pipelines write there. A derived table written next to a survey file would be
+    read as source data by the next person, so derived tables go to HARMONIZED instead.
     """
     if target == NISR or NISR in target.parents:
-        raise RuntimeError(
-            f"refusing to write inside the NISR holdings ({target}); "
-            "those files are read-only, derived tables belong in geo-data/"
-        )
+        raise RuntimeError(f"refusing to write inside the NISR holdings ({target}); "
+                           "derived tables belong in data/harmonized/")
