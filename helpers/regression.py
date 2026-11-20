@@ -22,7 +22,8 @@ def cluster_se(X, u, g, k_extra):
     kk = k + k_extra; adj = len(G) / (len(G) - 1) * (n - 1) / (n - kk)
     return np.sqrt(np.diag(adj * XtXi @ meat @ XtXi))
 
-def fe_ols(df, y, xs, fes, cluster, B=9999, seed=1, weights="webb"):
+def fe_ols(df, y, xs, fes, cluster, B=9999, seed=1, weights="webb", test=None):
+    """test: the regressors to get wild-bootstrap p-values for (default: all of them; the rest get NaN)."""
     d = df.dropna(subset=[y] + xs).reset_index(drop=True)
     D = fe_matrix(d, fes); kD = 0 if D is None else np.linalg.matrix_rank(D)
     Y = _resid(d[[y]].values.astype(float), D)[:, 0]; X = _resid(d[xs].values.astype(float), D)
@@ -36,6 +37,8 @@ def fe_ols(df, y, xs, fes, cluster, B=9999, seed=1, weights="webb"):
     agg = lambda v: np.bincount(gi, weights=v, minlength=len(G))
     p_wcb = []
     for j in range(len(xs)):
+        if test is not None and xs[j] not in test:
+            p_wcb.append(np.nan); continue
         Xr = np.delete(X, j, axis=1)
         br = np.linalg.lstsq(Xr, Y, rcond=None)[0] if Xr.shape[1] else np.zeros(0)
         fit_r = Xr @ br if Xr.shape[1] else np.zeros_like(Y); ur = Y - fit_r
