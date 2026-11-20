@@ -54,7 +54,8 @@ def _boot(x, n=800):
     x = np.asarray(x, float)
     if len(x) < 3:
         return np.nan, np.nan
-    d = [np.mean(x[np.random.randint(0, len(x), len(x))]) for _ in range(n)]
+    rng = np.random.default_rng(0)  # fixed seed: the same interval on every run
+    d = [np.mean(x[rng.integers(0, len(x), len(x))]) for _ in range(n)]
     return np.percentile(d, 2.5), np.percentile(d, 97.5)
 
 
@@ -625,7 +626,7 @@ def map_lisa_clusters():
     fig, axes = plt.subplots(1, 4, figsize=(18, 5.6))
     for a, (c, lab) in zip(axes, VARS):
         x = s[c].fillna(s[c].median()).values
-        li = Moran_Local(x, w, permutations=999); mi = Moran(x, w, permutations=999)
+        li = Moran_Local(x, w, permutations=999, seed=0); np.random.seed(0); mi = Moran(x, w, permutations=999)  # seeds: same clusters and p-values every run
         s["q"] = np.where(li.p_sim <= 0.05, li.q, 0)
         s[s.q == 0].plot(ax=a, color="0.92", edgecolor="white", linewidth=.2)
         for k, (_nm, col) in CAT.items():
@@ -649,7 +650,7 @@ def _lisa_single(s, col, title, name):
     CAT = {1: ("High–High", V.PARK), 2: ("Low–High", "#a8c6e8"),
            3: ("Low–Low", V.NONPARK), 4: ("High–Low", "#f4a261")}
     x = s[col].fillna(s[col].median()).values
-    li = Moran_Local(x, w, permutations=999, seed=0); mi = Moran(x, w, permutations=999)  # seed: same clusters every run
+    li = Moran_Local(x, w, permutations=999, seed=0); np.random.seed(0); mi = Moran(x, w, permutations=999)  # seeds: same clusters and p-values every run
     s = s.assign(q=np.where(li.p_sim <= 0.05, li.q, 0))
     fig, a = plt.subplots(figsize=(7, 7.2))
     fig.subplots_adjust(left=.02, right=.98, top=.86, bottom=.12)

@@ -12,8 +12,9 @@ then merges rainfall, WDI and the EICV 7 district welfare table into district_pa
 Downloads are cached with their source: GADM in data/geo-data/admin-boundaries/, CHIRPS in
 data/geo-data/climate/chirps/. Delete a cached file to force a refresh.
 
-The EICV 7 district welfare table is built by data-build-scripts/survey_extracts.py (--sources eicv);
-run that first if the panel should carry it.
+The merge also picks up eicv7_district_welfare.csv if it exists. Nothing builds that file at present
+(see build_eicv7_district_welfare in micro-analysis/district_survey_tables.py), so the panel has no
+EICV columns.
 
 Usage
 -----

@@ -70,7 +70,7 @@ size (~4 MB vs ~"whole planet" per month). Identical values over Rwanda.
 21 files, all sharing an identical identifier block: `hhid`, `clust`,
 `province`, `district`, `strata_id`, `weight`. Because the block is identical,
 files are identified by their `F`-number prefix rather than by column sniffing;
-the mapping is `data-build-scripts/survey_extracts.py:EICV7_FILES`.
+the mapping is `helpers/eicv7_variables.py:EICV7_FILES`.
 
 Core files:
 
@@ -101,7 +101,7 @@ files are in hand rather than guessed at. The current loader targets EICV7 only.
 - **Licence**: NISR terms; redistribution prohibited.
 - **Expected locations**: `data/raw/rec/`, `data/raw/est/`, `data/raw/ahs/`,
   `data/raw/lfs/`
-- **Loader**: `data-build-scripts/survey_extracts.py:extract_survey()`, registry in `survey_extracts.py:SURVEYS`
+- **Loader**: none at present. The per-survey CSV loaders of the old `extract.py` were dropped on 2026-11-19 (their outputs were read by no script); the cleaned files come from the `NISR/` pipelines.
 
 | Key | Survey | Unit | Why it is in scope |
 |---|---|---|---|

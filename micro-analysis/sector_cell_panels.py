@@ -1,5 +1,5 @@
 """
-build_panels.py — the two analysis panels, from source layers.
+sector_cell_panels.py — the two analysis panels, from source layers.
 
     sector_year_panel.csv    416 sectors x 19 years (2006-2024)
     cell_master.csv          2,148 cells, cross-section
@@ -11,9 +11,9 @@ step, written down.
 
 Usage
 -----
-    python data-build-scripts/build_panels.py --all
-    python data-build-scripts/build_panels.py --only sector_year
-    python data-build-scripts/build_panels.py --checks       # validate, build nothing
+    python micro-analysis/sector_cell_panels.py --all
+    python micro-analysis/sector_cell_panels.py --only sector_year
+    python micro-analysis/sector_cell_panels.py --checks       # validate, build nothing
 
 Denominator rules are applied HERE, once, and travel with the data as columns.
 Do not re-derive them downstream:
