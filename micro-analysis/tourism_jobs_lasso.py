@@ -113,28 +113,31 @@ def load(year: int) -> tuple[pd.DataFrame, dict]:
     """One row per resident of that wave, with household counts and the head's characteristics attached."""
     meta = pyreadstat.read_dta(str(CENSUS), metadataonly=True)[1]
     crops = [c for c in meta.column_names if c.endswith("_grown")] if year == 2022 else []
-    d, meta = pyreadstat.read_dta(str(CENSUS), usecols=BASE + COLS[year] + crops)
-    d = d[d.census_year == year].copy()
+    parts = []                                   # read in chunks and keep only this wave: the pooled file is large
+    for chunk, meta in pyreadstat.read_file_in_chunks(pyreadstat.read_dta, str(CENSUS), chunksize=400_000,
+                                                      usecols=BASE + COLS[year] + crops):
+        chunk = chunk[chunk.census_year == year]
+        num = chunk.select_dtypes("float64").columns.difference(["census_household_id", "census_weight"])
+        parts.append(chunk.astype({c: "float32" for c in num}))
+    d = pd.concat(parts, ignore_index=True)
+    del parts
     d.attrs["crops"] = crops
-    hh = d.groupby("census_household_id")
     a = d.census_age
-    d["hh_size"] = hh.census_age.transform("size")
-    d["hh_children_u15"] = hh.census_age.transform(lambda x: (x < 15).sum())
-    d["hh_elderly_65p"] = hh.census_age.transform(lambda x: (x >= 65).sum())
-    d["_adult"] = (a >= 16).astype(int)
-    d["_adult_woman"] = ((a >= 16) & (d.census_sex == 2)).astype(int)
-    d["_working_age"] = ((a >= 15) & (a <= 64)).astype(int)
-    d["hh_adults"] = hh._adult.transform("sum")
-    d["hh_adult_women"] = hh._adult_woman.transform("sum")
-    d["hh_dependency_ratio"] = (d.hh_children_u15 + d.hh_elderly_65p) / hh._working_age.transform("sum").clip(lower=1)
+    hh = d.census_household_id
+    count = lambda flag: flag.astype("int32").groupby(hh).transform("sum")
+    d["hh_size"] = hh.map(hh.value_counts())
+    d["hh_children_u15"] = count(a < 15)
+    d["hh_elderly_65p"] = count(a >= 65)
+    d["hh_adults"] = count(a >= 16)
+    d["hh_adult_women"] = count((a >= 16) & (d.census_sex == 2))
+    d["hh_dependency_ratio"] = (d.hh_children_u15 + d.hh_elderly_65p) / count((a >= 15) & (a <= 64)).clip(lower=1)
     rel = "census_relation_head_2002_2012" if year == 2012 else "census_relation_head_2022"
     edu = f"census_education_level_{year}"
     head = d[d[rel] == 1].drop_duplicates("census_household_id").set_index("census_household_id")
     for c, name in [("census_sex", "head_sex"), ("census_age", "head_age"), (edu, "head_education")]:
         d[name] = d.census_household_id.map(head[c])
     if year == 2022:                                   # phones are asked per person in 2022
-        d["_phone"] = d.census_mobile_phone_type_2022.isin([1, 2, 3]).astype(int)
-        d["hh_any_phone"] = hh._phone.transform("max")
+        d["hh_any_phone"] = d.census_mobile_phone_type_2022.isin([1, 2, 3]).astype("int8").groupby(hh).transform("max")
     return d, meta.variable_value_labels
 
 
