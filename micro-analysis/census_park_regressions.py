@@ -26,6 +26,9 @@ industry or industry not stated count in the denominator only.
 Sections (python micro-analysis/census_park_regressions.py --list):
   outcomes   sector x wave counts and rates -> data/harmonized/census_sector_work_per_adult.csv
   gap        the regression above -> output/tables/regressions/census_park_gap.csv and .tex
+  eicv_check validation of the Census measure against EICV, by district (Kigali excluded): non-farm workers
+             per 100 adults in Census 2002 / 2012 / 2022 against EICV 2005/06 / 2013/14 / 2023/24 (the rounds
+             whose pooled person file carries the industry of the main job) -> census_eicv_nonfarm_check.csv
 
 Usage
     python micro-analysis/census_park_regressions.py
@@ -172,7 +175,54 @@ def tex(res: pd.DataFrame):
     (P.TABLES_REG / "census_park_gap.tex").write_text("\n".join(L))
 
 
-SECTIONS = {"outcomes": section_outcomes, "gap": section_gap}
+EICV = P.NISR / "Household-Living-Conditions-EICV/3_Final/EICV_pooled_person.dta"
+EICV_PAIRS = {2002: ("EICV2", "eicv_industry_group"), 2012: ("EICV4_CS", "eicv_industry_isic_shipped"),
+              2022: ("EICV7_CS", "eicv_isic_level1_2024")}
+
+
+def eicv_nonfarm(d: pd.DataFrame, col: str) -> pd.Series:
+    """1 if the main job is outside agriculture, forestry and fishing. EICV2 uses NISR's two-digit industry
+    groups (11-14 farm, 0 inadequately described); EICV4 and EICV7 use ISIC Rev. 4 sections (1 = A)."""
+    v = d[col]
+    if col == "eicv_industry_group":
+        return (v >= 21).astype(int)
+    return v.between(2, 21).astype(int)
+
+
+def section_eicv_check():
+    cols = ["eicv_wave", "eicv_district", "eicv_age", "eicv_weight"] + [c for _, c in EICV_PAIRS.values()]
+    e, _ = pyreadstat.read_dta(str(EICV), usecols=cols)
+    e = e[e.eicv_age >= 16]
+    rows = []
+    for year, (wave, col) in EICV_PAIRS.items():
+        g = e[e.eicv_wave == wave].copy()
+        g["nf"] = eicv_nonfarm(g, col) * g.eicv_weight
+        r = g.groupby("eicv_district").agg(nf=("nf", "sum"), adults=("eicv_weight", "sum"), n=("eicv_age", "size"))
+        r["eicv_nonfarm_per100"] = 100 * r.nf / r.adults
+        r["census_year"], r["eicv_round"], r["eicv_respondents"] = year, wave, r.n
+        rows.append(r.reset_index().rename(columns={"eicv_district": "district_id"}))
+    ev = pd.concat(rows)[["district_id", "census_year", "eicv_round", "eicv_respondents", "eicv_nonfarm_per100"]]
+    p = pd.read_csv(PANEL).merge(pd.read_csv(SECTORS)[["sid", "district_id"]], on="sid")
+    c = p.groupby(["district_id", "wave"])[["nonfarm", "adults"]].sum().reset_index()
+    c["census_nonfarm_per100"] = 100 * c.nonfarm / c.adults
+    m = c.rename(columns={"wave": "census_year"})[["district_id", "census_year", "census_nonfarm_per100"]].merge(
+        ev, on=["district_id", "census_year"])
+    m = m[~m.district_id.isin(KIGALI)]
+    m.to_csv(P.TABLES_REG / "census_eicv_nonfarm_check.csv", index=False)
+    for y, g in m.groupby("census_year"):
+        _log(f"Census {y} vs {g.eicv_round.iloc[0]}: {len(g)} districts; correlation "
+             f"{g.census_nonfarm_per100.corr(g.eicv_nonfarm_per100):.2f}; mean per 100 adults, Census "
+             f"{g.census_nonfarm_per100.mean():.1f} vs EICV {g.eicv_nonfarm_per100.mean():.1f}")
+    w = m.pivot(index="district_id", columns="census_year", values=["census_nonfarm_per100", "eicv_nonfarm_per100"])
+    for a, b in ((2002, 2012), (2012, 2022)):
+        dc = w["census_nonfarm_per100"][b] - w["census_nonfarm_per100"][a]
+        de = w["eicv_nonfarm_per100"][b] - w["eicv_nonfarm_per100"][a]
+        _log(f"change {a}-{b}: correlation of district changes, Census vs EICV {dc.corr(de):.2f}; "
+             f"mean change Census {dc.mean():+.1f}, EICV {de.mean():+.1f}")
+    _log(f"-> {P.TABLES_REG / 'census_eicv_nonfarm_check.csv'}")
+
+
+SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "eicv_check": section_eicv_check}
 
 
 def main(argv=None) -> int:
