@@ -26,6 +26,8 @@ industry or industry not stated count in the denominator only.
 Sections (python micro-analysis/census_park_regressions.py --list):
   outcomes   sector x wave counts and rates -> data/harmonized/census_sector_work_per_adult.csv
   gap        the regression above -> output/tables/regressions/census_park_gap.csv and .tex
+  person     the same comparison at the person level, without and with person and household controls
+             -> census_park_gap_person.csv and .tex (see section_person)
   eicv_check validation of the Census measure against EICV, by district (Kigali excluded): non-farm workers
              per 100 adults in Census 2002 / 2012 / 2022 against EICV 2005/06 / 2013/14 / 2023/24 (the rounds
              whose pooled person file carries the industry of the main job) -> census_eicv_nonfarm_check.csv
@@ -35,6 +37,7 @@ Usage
     python micro-analysis/census_park_regressions.py --only gap
 """
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -175,6 +178,158 @@ def tex(res: pd.DataFrame):
     (P.TABLES_REG / "census_park_gap.tex").write_text("\n".join(L))
 
 
+# ---------------------------------------------------------------------------- person level, with controls
+PERSON_COLS = ["census_year", "census_sector", "census_district", "census_household_id", "census_age", "census_sex",
+               "census_urban", "census_weight", "census_industry_isic3_2002", "census_isic_section_2012",
+               "census_isic_section_2022", "census_ever_attended_school_2002", "census_education_grouped_2002",
+               "census_school_attendance_2012", "census_education_level_2012", "census_school_attendance_2022",
+               "census_education_level_2022", "census_marital_status_2002", "census_marital_status_2012",
+               "census_marital_status_2022"]
+
+
+def education_group(d: pd.DataFrame) -> pd.Series:
+    """none / primary / secondary / tertiary / not stated, on the same footing in all three waves.
+    2002: first digit of the grouped code is the level (1 primary, 2 post-primary, 3 secondary, 4+ university).
+    Post-primary and 2022 vocational (INGOBOKA) count as primary; 2012 preschool and 2022 ECD / nursery as none."""
+    g = pd.Series("not stated", index=d.index)
+    y = d.census_year
+    lv = d.census_education_grouped_2002 // 10
+    g[(y == 2002) & lv.isin([1, 2])] = "primary"
+    g[(y == 2002) & (lv == 3)] = "secondary"
+    g[(y == 2002) & lv.between(4, 8)] = "tertiary"
+    g[(y == 2002) & (d.census_ever_attended_school_2002 == 2)] = "none"
+    e = d.census_education_level_2012
+    g[(y == 2012) & e.isin([1, 2])] = "primary"
+    g[(y == 2012) & (e == 3)] = "secondary"
+    g[(y == 2012) & (e == 4)] = "tertiary"
+    g[(y == 2012) & ((d.census_school_attendance_2012 == 1) | (e == 0))] = "none"
+    e = d.census_education_level_2022
+    g[(y == 2022) & e.isin([3, 4])] = "primary"
+    g[(y == 2022) & e.isin([5, 6])] = "secondary"
+    g[(y == 2022) & (e == 7)] = "tertiary"
+    g[(y == 2022) & ((d.census_school_attendance_2022 == 3) | e.isin([1, 2]))] = "none"
+    return g
+
+
+def marital_group(d: pd.DataFrame) -> pd.Series:
+    """never married / married or cohabiting / divorced or separated / widowed / not stated."""
+    g = pd.Series("not stated", index=d.index)
+    codes = {2002: {"never": [1], "married": [2, 3, 4, 5, 6, 7], "divorced": [8], "widowed": [9]},
+             2012: {"never": [1], "married": [2], "divorced": [3, 5], "widowed": [4]},
+             2022: {"never": [6], "married": [1, 2, 3], "divorced": [4, 5], "widowed": [7]}}
+    for y, cmap in codes.items():
+        v = d[f"census_marital_status_{y}"]
+        for k, c in cmap.items():
+            g[(d.census_year == y) & v.isin(c)] = k
+    return g
+
+
+def _demean(A: np.ndarray, groups: list[np.ndarray], w: np.ndarray, tol=1e-10, it=200) -> np.ndarray:
+    """Weighted within transformation for several sets of fixed effects (alternating projections)."""
+    A = np.array(A, dtype=float)                   # one working copy; convergence tracked without a second copy
+    sws = [np.bincount(g, weights=w) for g in groups]
+    for _ in range(it):
+        step = 0.0
+        for g, sw in zip(groups, sws):
+            for j in range(A.shape[1]):
+                m = np.bincount(g, weights=w * A[:, j]) / sw
+                step = max(step, np.abs(m).max())
+                A[:, j] -= m[g]
+        if step < tol:
+            break
+    return A
+
+
+def section_person():
+    """Person-level version of the gap regression, without and with controls.
+    Every resident aged 16+ outside Kigali, three waves pooled. Outcome: 1 if the person's main work is in the
+    group (non-farm, services, tourism), else 0 (people who do not work included), times 100.
+    Weights: Census person weight divided by the sector-wave total, so every sector-wave counts equally and the
+    no-controls column reproduces the sector regression (section gap) exactly.
+    Controls (each interacted with wave): age band, female, education group, marital group, urban, household size.
+    Birthplace is left out: 2002 records it in the pre-2006 districts, which do not map onto today's."""
+    parts = []
+    for chunk, _ in pyreadstat.read_file_in_chunks(pyreadstat.read_dta, str(CENSUS), chunksize=500_000, usecols=PERSON_COLS):
+        chunk = chunk[chunk.census_year.isin(WAVES)]
+        chunk["hh_key"] = chunk.census_year.astype(int).astype(str) + "_" + chunk.census_household_id.astype(str)
+        parts.append(chunk)
+    d = pd.concat(parts, ignore_index=True)
+    d["hh_size"] = d.hh_key.map(d.hh_key.value_counts()).astype(float)
+    d = d[(d.census_age >= 16) & ~d.census_district.isin(KIGALI)].reset_index(drop=True)
+    frac = float(os.environ.get("CENSUS_PARK_SAMPLE", 0) or 0)   # test switch: keep this share of sectors
+    if frac:
+        keep = np.random.default_rng(0).choice(d.census_sector.unique(), int(d.census_sector.nunique() * frac), replace=False)
+        d = d[d.census_sector.isin(keep)].reset_index(drop=True)
+    d = d.join(classify(d))
+    d["sid"], d["wave"] = d.census_sector.astype(int), d.census_year.astype(int)
+    park = pd.read_csv(SECTORS).set_index("sid").border
+    d["park"] = d.sid.map(park)
+    d["w"] = d.census_weight / d.groupby(["sid", "wave"]).census_weight.transform("sum")
+    edu, mar = education_group(d), marital_group(d)
+    bands = pd.cut(d.census_age, [15, 19, 24, 29, 34, 39, 44, 49, 54, 59, 64, 200], labels=False)
+    base = {"female": (d.census_sex == 2), "urban": (d.census_urban == 1), "household size": d.hh_size}
+    for b in range(11):
+        if b != 3:                                  # 30-34 omitted
+            base[f"age band {b}"] = bands == b
+    for k in ("none", "secondary", "tertiary", "not stated"):
+        base[f"education {k}"] = edu == k        # primary omitted
+    for k in ("never", "divorced", "widowed", "not stated"):
+        base[f"marital {k}"] = mar == k          # married omitted
+    X = {f"{k} x {t}": np.asarray(v, float) * (d.wave == t).to_numpy() for k, v in base.items() for t in WAVES}
+    X = pd.DataFrame(X).loc[:, lambda x: x.std() > 0]
+    T = pd.DataFrame({f"park_x_{t}": (d.park * (d.wave == t)).to_numpy(float) for t in (2012, 2022)})
+    _log(f"{len(d):,} residents aged 16+ in {d.sid.nunique()} sectors; {X.shape[1]} control terms")
+    gi = [pd.factorize(d.sid)[0], pd.factorize(d.wave)[0]]
+    w = d.w.to_numpy()
+    r = np.sqrt(w / w.mean())
+    rows = []
+    for y, label in OUTCOMES:
+        yv = 100 * d[y.replace("_per100", "")].to_numpy(float)
+        for spec, Z in (("no controls", T), ("controls", pd.concat([T, X], axis=1))):
+            A = _demean(np.column_stack([yv, Z.to_numpy(float)]), gi, w) * r[:, None]
+            df = pd.DataFrame(A[:, 1:], columns=Z.columns)
+            df["y"], df["district"] = A[:, 0], d.census_district.to_numpy()
+            est, n, G = fe_ols(df, "y", list(Z.columns), [], "district", test=["park_x_2012", "park_x_2022"])
+            for t in (2012, 2022):
+                e = est.loc[f"park_x_{t}"]
+                rows.append({"outcome": y, "label": label, "spec": spec, "wave": t, "coef": e.coef, "se": e.se,
+                             "p_wcb": e.p_wcb, "obs": n, "clusters": G})
+            _log(f"  {label}, {spec}: 2012 {est.loc['park_x_2012', 'coef']:+.2f} [{est.loc['park_x_2012', 'p_wcb']:.3f}], "
+                 f"2022 {est.loc['park_x_2022', 'coef']:+.2f} [{est.loc['park_x_2022', 'p_wcb']:.3f}]")
+    res = pd.DataFrame(rows)
+    res.to_csv(P.TABLES_REG / "census_park_gap_person.csv", index=False)
+    tex_person(res, len(d), d.sid.nunique(), int(d.drop_duplicates("sid").park.sum()))
+    _log(f"-> {P.TABLES_REG / 'census_park_gap_person.csv'} and .tex")
+
+
+def tex_person(res: pd.DataFrame, n: int, n_sec: int, n_park: int):
+    cols = [(l, sp) for _, l in OUTCOMES for sp in ("no controls", "controls")]
+    get = lambda l, sp, t, k: res[(res.label == l) & (res.spec == sp) & (res.wave == t)].iloc[0][k]
+    L = [r"\begin{table}[htbp]", r"\centering", r"\caption{Park-Adjacent and Interior Sectors: Person-Level Estimates}",
+         r"\label{tab:census_park_gap_person}", r"\begin{tabular}{l" + "c" * len(cols) + "}", r"\toprule",
+         " & " + " & ".join(f"\\multicolumn{{2}}{{c}}{{{l}}}" for _, l in OUTCOMES) + r" \\",
+         " & " + " & ".join(f"({i + 1})" for i in range(len(cols))) + r" \\", r"\midrule"]
+    for t in (2012, 2022):
+        L.append(f"Park-adjacent $\\times$ {t} & " + " & ".join(f"${get(l, sp, t, 'coef'):.2f}{_stars(get(l, sp, t, 'p_wcb'))}$" for l, sp in cols) + r" \\")
+        L.append(" & " + " & ".join(f"$({get(l, sp, t, 'se'):.2f})$" for l, sp in cols) + r" \\")
+        L.append(" & " + " & ".join(f"$[{get(l, sp, t, 'p_wcb'):.3f}]$" for l, sp in cols) + r" \\")
+    L += [r"\midrule", "Person and household controls $\\times$ wave & " + " & ".join("No" if sp == "no controls" else "Yes" for _, sp in cols) + r" \\",
+          f"Residents aged 16+ & \\multicolumn{{{len(cols)}}}{{c}}{{{n:,}}} \\\\",
+          f"Sectors (park-adjacent) & \\multicolumn{{{len(cols)}}}{{c}}{{{n_sec} ({n_park})}} \\\\",
+          f"Districts (clusters) & \\multicolumn{{{len(cols)}}}{{c}}{{{int(res.clusters.iloc[0])}}} \\\\",
+          r"\bottomrule", r"\end{tabular}", r"\begin{minipage}{0.95\textwidth}\footnotesize",
+          r"\textit{Notes:} Residents aged 16 and over in the 2002, 2012 and 2022 Census public-use samples, outside Kigali "
+          r"City. Outcome: 100 if the person's main work is in the group (non-farm, services, tourism; definitions as in "
+          r"Table~\ref{tab:census_park_gap}), 0 otherwise, including people who do not work. All columns include sector and "
+          r"wave fixed effects; observations are weighted so that every sector-wave carries equal weight, so the odd "
+          r"columns reproduce Table~\ref{tab:census_park_gap}. Even columns add, each interacted with wave: age band, sex, "
+          r"education (none, primary, secondary, tertiary), marital status, urban residence and household size. Standard "
+          r"errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 "
+          r"draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.",
+          r"\end{minipage}", r"\end{table}", ""]
+    (P.TABLES_REG / "census_park_gap_person.tex").write_text("\n".join(L))
+
+
 EICV = P.NISR / "Household-Living-Conditions-EICV/3_Final/EICV_pooled_person.dta"
 EICV_PAIRS = {2002: ("EICV2", "eicv_industry_group"), 2012: ("EICV4_CS", "eicv_industry_isic_shipped"),
               2022: ("EICV7_CS", "eicv_isic_level1_2024")}
@@ -222,7 +377,7 @@ def section_eicv_check():
     _log(f"-> {P.TABLES_REG / 'census_eicv_nonfarm_check.csv'}")
 
 
-SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "eicv_check": section_eicv_check}
+SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "person": section_person, "eicv_check": section_eicv_check}
 
 
 def main(argv=None) -> int:
