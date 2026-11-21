@@ -1,9 +1,14 @@
 """
 tourism_jobs_lasso.py -- who holds tourism jobs? A lasso on the Census, 2012 and 2022.
 
-Outcome   1 if a worker's industry is ISIC section I (accommodation and food) or R (arts,
-          entertainment and recreation), 0 for any other stated industry. Sample: residents aged
-          16+ with a stated industry, each Census wave on its own.
+Outcomes  1 if a worker's industry is in the group, 0 for any other stated industry:
+            tourism              ISIC sections I (accommodation and food) and R (arts, entertainment, recreation)
+            accommodation        ISIC 55 (2012 only: the four-digit class is released for 2012, not 2022)
+            food_beverage        ISIC 56: restaurants, catering, bars (2012 only)
+            accommodation_food   ISIC section I (2022 only)
+            arts_recreation      ISIC section R
+          Sample: residents aged 16+ with a stated industry, each Census wave on its own, outside Kigali City
+          (everyone living in Nyarugenge, Gasabo or Kicukiro is dropped; --with-kigali keeps them).
 
 Candidates: person characteristics (age, sex, schooling, literacy, marital status, relationship
 to the head, migration, nationality, religion, parents alive, registration, fertility, disability),
@@ -31,16 +36,25 @@ Method
      (helpers/regression.py) for the three sector variables of the exposure model. The intervals ignore the selection step: these coefficients describe who
      holds tourism jobs, they are not causal effects.
 
-Writes (Dropbox output/tables/regressions/):
-  census_tourism_jobs_lasso_<year>_<model>.csv   every candidate: lasso coefficient (standardised,
-                                                 logit scale), selected or not, post-lasso LPM
-                                                 coefficient, SE, wild-bootstrap p
-  census_tourism_jobs_lasso_fit.csv              one row per year x model: sample, base rate, penalty,
-                                                 variables selected, out-of-fold AUC and PR-AUC
+Average effects. With interactions, a variable's coefficient is not its effect. For each variable that
+is not itself an interaction, the average effect is its coefficient plus, for every selected interaction
+with another variable Z, that interaction's coefficient times the weighted mean of Z; the standard error
+comes from the full sector-clustered covariance matrix of the post-lasso regression.
+
+Writes (Dropbox output/tables/regressions/); <tag> = <outcome>_<year>_<model>, plus _with_kigali if kept:
+  census_tourism_jobs_lasso_<tag>.csv       every candidate: lasso coefficient (standardised, logit scale),
+                                            selected or not, post-lasso LPM coefficient, SE, wild-bootstrap p
+  census_tourism_jobs_lasso_ame_<tag>.csv   average effect and SE of every non-interaction variable
+  census_tourism_jobs_lasso_fit.csv         one row per outcome x year x model x sample: sample, base rate,
+                                            penalty, variables selected, out-of-fold AUC and PR-AUC
+  census_tourism_jobs_lasso_summary.tex     summary table: average effects for the tourism outcome, 2012 and
+                                            2022 (individual model), and the sector variables (exposure model)
 
 Usage
-    python micro-analysis/tourism_jobs_lasso.py                       # both waves, both models
+    python micro-analysis/tourism_jobs_lasso.py                       # every outcome, both waves, both models
+    python micro-analysis/tourism_jobs_lasso.py --outcomes tourism    # the combined outcome only
     python micro-analysis/tourism_jobs_lasso.py --years 2012 --models individual
+    python micro-analysis/tourism_jobs_lasso.py --summary-only        # rebuild the LaTeX table from the CSVs
     python micro-analysis/tourism_jobs_lasso.py --sample 0.2          # 20% of sectors, for a quick test
 """
 from __future__ import annotations
@@ -68,6 +82,9 @@ CENSUS = P.NISR / "Census-PHC/3_Final/Census_pooled_person.dta"
 SECTORS = P.HARMONIZED / "model_sector_cross.csv"
 OUT = P.TABLES_REG
 TOURISM = {9, 18}                       # ISIC sections I and R (same as the labour tables)
+KIGALI = {11, 12, 13}                   # Nyarugenge, Gasabo, Kicukiro
+OUTCOMES = {2012: ["tourism", "accommodation", "food_beverage", "arts_recreation"],
+            2022: ["tourism", "accommodation_food", "arts_recreation"]}
 NOT_STATED = {2012: {22, 23}, 2022: {22}}   # "industry not stated", "not applicable"
 FORCED = ["border", "park_share", "log_pop_density"]
 C_GRID = np.logspace(-4, 0, 13)         # inverse penalty strength for the L1 logit
@@ -82,7 +99,7 @@ def _log(msg):
 COLS = {
     2012: ["census_education_level_2012", "census_school_attendance_2012", "census_marital_status_2012",
            "census_relation_head_2002_2012", "census_birth_place_2012", "census_disability_any_2012",
-           "census_isic_section_2012", "census_years_completed_2012", "census_highest_certificate_2012",
+           "census_isic_section_2012", "census_industry_isic4_2012", "census_years_completed_2012", "census_highest_certificate_2012",
            "census_languages_literate_2012", "census_religion_2012", "census_nationality_group_2012",
            "census_mother_alive_2012", "census_father_alive_2012", "census_mother_in_household_2012",
            "census_father_in_household_2012", "census_residence_duration_2012",
@@ -300,17 +317,36 @@ def sector_features(d: pd.DataFrame) -> pd.DataFrame:
     return m[FORCED].astype(float)
 
 
-def sample(year: int, frac: float | None) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, np.ndarray, np.ndarray]:
-    d, vl = load(year)
-    S = sector_features(d)
+def outcome(d: pd.DataFrame, year: int, name: str) -> pd.Series:
+    sec = d[f"census_isic_section_{year}"]
+    if name == "tourism":
+        return sec.isin(TOURISM)
+    if name in ("accommodation_food",):
+        return sec == 9
+    if name == "arts_recreation":
+        return sec == 18
+    cls = d.census_industry_isic4_2012 // 100          # ISIC Rev. 4 division from the four-digit class
+    return cls == {"accommodation": 55, "food_beverage": 56}[name]
+
+
+_CACHE: dict = {}
+
+
+def sample(year: int, frac: float | None, name: str = "tourism", kigali: bool = False):
+    if year not in _CACHE:                             # one Census read per wave, whatever the outcomes
+        d, vl = load(year)
+        _CACHE[year] = (d, vl, sector_features(d))
+    d, vl, S = _CACHE[year]
     isic = d[f"census_isic_section_{year}"]
     w = (d.census_age >= 16) & isic.notna() & ~isic.isin(NOT_STATED[year])
+    if not kigali:
+        w &= ~d.census_district.isin(KIGALI)
     if frac:
         rng = np.random.default_rng(0)
         secs = d.census_sector.unique()
         w &= d.census_sector.isin(rng.choice(secs, int(len(secs) * frac), replace=False))
     X = features(d[w], vl, year)
-    y = isic[w].isin(TOURISM).astype(int)
+    y = outcome(d[w], year, name).astype(int)
     return X, S[w], y, d.census_weight[w].to_numpy(float), d.census_sector[w].to_numpy(int)
 
 
@@ -362,33 +398,75 @@ def lasso(X: pd.DataFrame, forced: pd.DataFrame | None, y, wt, groups):
 
 
 # ---------------------------------------------------------------------------- post-lasso LPM
-def post_lasso(X: pd.DataFrame, y, wt, groups, keep: list[str]) -> pd.DataFrame:
-    """Weighted LPM of y on the kept variables: WLS by scaling every column (and the constant) by sqrt(w)."""
+def _cluster_vcov(X: np.ndarray, u: np.ndarray, g: np.ndarray) -> np.ndarray:
+    """CR1 covariance matrix, clustered by g (same small-sample factor as helpers/regression.py)."""
+    n, k = X.shape
+    XtXi = np.linalg.pinv(X.T @ X)
+    G, gi = np.unique(g, return_inverse=True)
+    S = np.zeros((len(G), k))
+    np.add.at(S, gi, X * u[:, None])
+    adj = len(G) / (len(G) - 1) * (n - 1) / (n - k)
+    return adj * XtXi @ (S.T @ S) @ XtXi
+
+
+def post_lasso(X: pd.DataFrame, y, wt, groups, keep: list[str]):
+    """Weighted LPM of y on the kept variables: WLS by scaling every column (and the constant) by sqrt(w).
+    Returns the coefficient table and the full covariance matrix (CR1, by sector)."""
     r = np.sqrt(wt / wt.mean())
-    df = pd.DataFrame({c: X[c].to_numpy(float) * r for c in keep})
-    df["constant"] = r
-    df["y"] = y * r
-    df["sector"] = groups
     xs = keep + ["constant"]
+    Xw = np.column_stack([X[c].to_numpy(float) * r for c in keep] + [r])
+    yw = y * r
+    b = np.linalg.lstsq(Xw, yw, rcond=None)[0]
+    V = _cluster_vcov(Xw, yw - Xw @ b, groups)
+    est = pd.DataFrame({"coef": b, "se": np.sqrt(np.diag(V)), "p_wcb": np.nan}, index=xs)
     test = [c for c in FORCED if c in keep]
-    est, n, G = fe_ols(df, "y", xs, [], "sector", B=B, test=test)
-    return est
+    if test:                                           # wild cluster bootstrap for the sector variables only
+        df = pd.DataFrame(Xw, columns=xs)
+        df["y"] = yw
+        df["sector"] = groups
+        wcb, _, _ = fe_ols(df, "y", xs, [], "sector", B=B, test=test)
+        est.loc[test, "p_wcb"] = wcb.loc[test, "p_wcb"]
+    return est, pd.DataFrame(V, index=xs, columns=xs)
 
 
-def run(year: int, model: str, frac: float | None) -> dict:
+def average_effects(X: pd.DataFrame, wt, est: pd.DataFrame, V: pd.DataFrame) -> pd.DataFrame:
+    """Average effect of every non-interaction variable: own coefficient + sum over its selected
+    interactions of (interaction coefficient x weighted mean of the other variable)."""
+    names = [c for c in X.columns if " x " not in c]
+    inter = [c for c in est.index if " x " in c]
+    rows = []
+    for v in names:
+        a = pd.Series(0.0, index=est.index)
+        if v in est.index:
+            a[v] = 1.0
+        for c in inter:
+            left, right = c.split(" x ", 1)
+            if v in (left, right):
+                other = right if v == left else left
+                a[c] = np.average(X[other].to_numpy(float), weights=wt)
+        if not a.any():
+            continue                                   # neither the variable nor any of its interactions selected
+        rows.append({"variable": v, "average_effect": float(a @ est.coef),
+                     "se": float(np.sqrt(a.to_numpy() @ V.to_numpy() @ a.to_numpy())),
+                     "terms": int((a != 0).sum()), "mean": float(np.average(X[v].to_numpy(float), weights=wt))})
+    return pd.DataFrame(rows)
+
+
+def run(year: int, model: str, frac: float | None, name: str = "tourism", kigali: bool = False) -> dict:
     t0 = time.time()
-    _log(f"{year} / {model}: building the sample")
-    X, S, y, wt, groups = sample(year, frac)
+    _log(f"{name} / {year} / {model}{' / with Kigali' if kigali else ''}: building the sample")
+    X, S, y, wt, groups = sample(year, frac, name, kigali)
     forced = S if model == "exposure" else None
-    _log(f"  {len(y):,} workers in {len(np.unique(groups))} sectors; tourism share "
-         f"{np.average(y, weights=wt):.2%} weighted, {y.sum():,} tourism workers")
+    _log(f"  {len(y):,} workers in {len(np.unique(groups))} sectors; outcome share "
+         f"{np.average(y, weights=wt):.2%} weighted, {y.sum():,} workers in the outcome")
     coef, C, oof = lasso(X, forced, y.to_numpy(), wt, groups)
     sel = [c for c in X.columns if coef[c] != 0]
     keep = sel + (FORCED if forced is not None else [])
     Xall = X if forced is None else pd.concat([X, forced], axis=1)
     _log(f"  penalty C={C:.2e}: {len(sel)} of {X.shape[1]} person / household variables selected; "
          f"post-lasso LPM" + (f" with {B} bootstrap draws for the sector variables" if forced is not None else ""))
-    est = post_lasso(Xall, y.to_numpy(), wt, groups, keep)
+    est, V = post_lasso(Xall, y.to_numpy(), wt, groups, keep)
+    ame = average_effects(Xall, wt, est, V)
     tab = pd.DataFrame({"variable": Xall.columns, "lasso_coef_std_logit": coef.reindex(Xall.columns).values})
     tab["selected"] = tab.lasso_coef_std_logit.ne(0) | tab.variable.isin(FORCED if forced is not None else [])
     tab["kept_unpenalised"] = tab.variable.isin(FORCED) if forced is not None else False
@@ -397,35 +475,145 @@ def run(year: int, model: str, frac: float | None) -> dict:
                     on="variable", how="outer")
     tab = tab.sort_values(["selected", "lasso_coef_std_logit"], key=lambda s: s.abs() if s.name != "selected" else s,
                           ascending=[False, False])
-    tag = f"{year}_{model}" + ("_sample" if frac else "")
+    tag = f"{name}_{year}_{model}" + ("_with_kigali" if kigali else "") + ("_sample" if frac else "")
     OUT.mkdir(parents=True, exist_ok=True)
     tab.to_csv(OUT / f"census_tourism_jobs_lasso_{tag}.csv", index=False)
+    ame.to_csv(OUT / f"census_tourism_jobs_lasso_ame_{tag}.csv", index=False)
     yv = y.to_numpy()
-    fit = {"year": year, "model": model, "sample_share_of_sectors": frac or 1.0, "workers": len(yv),
-           "sectors": len(np.unique(groups)), "tourism_workers": int(yv.sum()),
-           "tourism_share_weighted": np.average(yv, weights=wt), "penalty_C": C,
+    fit = {"outcome": name, "year": year, "model": model, "kigali": "included" if kigali else "excluded",
+           "sample_share_of_sectors": frac or 1.0, "workers": len(yv),
+           "sectors": len(np.unique(groups)), "outcome_workers": int(yv.sum()),
+           "outcome_share_weighted": np.average(yv, weights=wt), "penalty_C": C,
            "candidates": X.shape[1], "selected": len(sel),
            "oof_auc": roc_auc_score(yv, oof, sample_weight=wt),
            "oof_pr_auc": average_precision_score(yv, oof, sample_weight=wt)}
     _log(f"  out-of-fold AUC {fit['oof_auc']:.3f}, PR-AUC {fit['oof_pr_auc']:.3f} "
-         f"(base rate {fit['tourism_share_weighted']:.3f}); {time.time() - t0:.0f}s")
+         f"(base rate {fit['outcome_share_weighted']:.3f}); {time.time() - t0:.0f}s")
     return fit
+
+
+SUMMARY_ROWS = [  # (label, 2012 variable, 2022 variable)
+    ("Female", "female", "female"),
+    ("Urban", "urban", "urban"),
+    ("Age 16--19", "age 16-19", "age 16-19"),
+    ("Age 20--24", "age 20-24", "age 20-24"),
+    ("Age 50--54", "age 50-54", "age 50-54"),
+    ("Never married", "marital: Never Married", "marital: Never married"),
+    ("Secondary schooling", "education: Secondary", "education: Upper secondary"),
+    ("University", "education: University", "education: Tertiary"),
+    ("Never attended school", "never attended school", "never attended school"),
+    ("Reads and writes English", "reads and writes English", "reads and writes English"),
+    ("Born in another district", "born in another district", "born in another district"),
+    ("Grid electricity", "grid electricity", "grid electricity"),
+    ("Household has a phone", "household has a phone", "household has a phone"),
+    ("Owns a smartphone", None, "owns a smartphone"),
+    ("Household has a vehicle", "household has a vehicle", "household has a vehicle"),
+    ("Farms own land", "farms own land", "farms own land"),
+    ("Household grew crops", None, "household grew crops"),
+]
+SECTOR_ROWS = [("Sector borders a park", "border"), ("Park share of sector area", "park_share"),
+               ("Log population density", "log_pop_density")]
+
+
+def _cell(r) -> tuple[str, str]:
+    if r is None:
+        return "", ""
+    z = abs(r["average_effect"] / r["se"]) if r["se"] > 0 else 0
+    star = "^{***}" if z > 2.576 else "^{**}" if z > 1.96 else "^{*}" if z > 1.645 else ""
+    return f"${100 * r['average_effect']:.2f}{star}$", f"$({100 * r['se']:.2f})$"
+
+
+def summary_tex() -> None:
+    """LaTeX table: average effects (percentage points) on the tourism outcome, Kigali excluded."""
+    fit = pd.read_csv(OUT / "census_tourism_jobs_lasso_fit.csv")
+    fit = fit[(fit.outcome == "tourism") & (fit.kigali == "excluded") & (fit.sample_share_of_sectors == 1.0)]
+    ame = {}; sect = {}
+    for y in (2012, 2022):
+        f = OUT / f"census_tourism_jobs_lasso_ame_tourism_{y}_individual.csv"
+        ame[y] = pd.read_csv(f).set_index("variable") if f.exists() else pd.DataFrame()
+        f = OUT / f"census_tourism_jobs_lasso_tourism_{y}_exposure.csv"
+        sect[y] = pd.read_csv(f).set_index("variable") if f.exists() else pd.DataFrame()
+    L = [r"\begin{table}[htbp]", r"\centering", r"\caption{Who Holds Tourism Jobs Outside Kigali}",
+         r"\label{tab:tourism_jobs_lasso}", r"\begin{tabular}{lcc}", r"\toprule", r" & 2012 & 2022 \\", r"\midrule",
+         r"\multicolumn{3}{l}{\textit{Panel A. Person and household characteristics: average effects}} \\"]
+    for label, v12, v22 in SUMMARY_ROWS:
+        cells = [_cell(ame[y].loc[v].to_dict() if (v and v in ame[y].index) else None) for y, v in ((2012, v12), (2022, v22))]
+        if not any(c[0] for c in cells):
+            continue
+        L += [f"{label} & {cells[0][0]} & {cells[1][0]} \\\\", f" & {cells[0][1]} & {cells[1][1]} \\\\"]
+    L += [r"\addlinespace", r"\multicolumn{3}{l}{\textit{Panel B. Sector variables (exposure model)}} \\"]
+    for label, v in SECTOR_ROWS:
+        cells = []
+        for y in (2012, 2022):
+            t = sect[y]
+            if v in t.index:
+                b, se, p = t.loc[v, "lpm_coef"], t.loc[v, "lpm_se"], t.loc[v, "lpm_p_wild_bootstrap"]
+                star = "^{***}" if p < .01 else "^{**}" if p < .05 else "^{*}" if p < .1 else ""
+                cells.append((f"${100 * b:.2f}{star}$", f"$[{p:.3f}]$"))
+            else:
+                cells.append(("", ""))
+        L += [f"{label} & {cells[0][0]} & {cells[1][0]} \\\\", f" & {cells[0][1]} & {cells[1][1]} \\\\"]
+    L += [r"\midrule"]
+    for key, lab, fmt in [("workers", "Workers", "{:,.0f}"), ("outcome_share_weighted", "Share in tourism jobs (\\%)", "{:.2f}"),
+                          ("selected", "Variables selected (of candidates)", None), ("oof_auc", "Out-of-sample AUC", "{:.3f}")]:
+        vals = []
+        for y in (2012, 2022):
+            r = fit[(fit.year == y) & (fit.model == "individual")]
+            if r.empty:
+                vals.append(""); continue
+            r = r.iloc[0]
+            vals.append(f"{int(r.selected)} ({int(r.candidates)})" if fmt is None
+                        else fmt.format(100 * r[key] if key == "outcome_share_weighted" else r[key]))
+        L.append(f"{lab} & {vals[0]} & {vals[1]} \\\\")
+    L += [r"\bottomrule", r"\end{tabular}",
+          r"\begin{minipage}{0.95\textwidth}\footnotesize",
+          r"\textit{Notes:} Census public-use samples; residents aged 16 and over with a stated industry, outside Kigali "
+          r"City. Outcome: works in accommodation and food (ISIC I) or arts, entertainment and recreation (ISIC R). "
+          r"Variables are selected by an L1-penalised logit (penalty by five-fold cross-validation, folds grouped by "
+          r"sector); the coefficients come from a weighted linear probability model on the selected variables, in "
+          r"percentage points. Panel A reports average effects: a variable's coefficient plus its selected interactions "
+          r"(age, sex, schooling, marital status, urban) evaluated at the sample means, with standard errors clustered "
+          r"by sector in parentheses. Omitted categories: age 30--34, primary schooling, married. Panel B adds the "
+          r"sector's park exposure and population density to the same candidates, kept unpenalised; wild cluster "
+          r"bootstrap p-values by sector in brackets. Stars: *** 1\%, ** 5\%, * 10\%. Intervals do not account for the "
+          r"selection step; household wealth may partly be a result of holding the job.",
+          r"\end{minipage}", r"\end{table}", ""]
+    (OUT / "census_tourism_jobs_lasso_summary.tex").write_text("\n".join(L))
+    _log(f"-> {OUT / 'census_tourism_jobs_lasso_summary.tex'}")
 
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--years", nargs="+", type=int, default=[2012, 2022], choices=[2012, 2022])
     p.add_argument("--models", nargs="+", default=["individual", "exposure"], choices=["individual", "exposure"])
+    p.add_argument("--outcomes", nargs="+", default=None,
+                   help="tourism, accommodation, food_beverage, accommodation_food, arts_recreation (default: all for the year)")
+    p.add_argument("--with-kigali", action="store_true", help="keep residents of Kigali City")
     p.add_argument("--sample", type=float, default=None, help="share of sectors to keep, for a quick test")
+    p.add_argument("--summary-only", action="store_true", help="only rebuild the LaTeX summary table")
     a = p.parse_args(argv)
-    fits = [run(y, m, a.sample) for y in a.years for m in a.models]
+    if a.summary_only:
+        summary_tex(); return 0
+    fits = []
+    for y in a.years:
+        for name in [o for o in (a.outcomes or OUTCOMES[y]) if o in OUTCOMES[y]]:
+            for m in a.models:
+                fits.append(run(y, m, a.sample, name, a.with_kigali))
+        _CACHE.pop(y, None)
     f = OUT / ("census_tourism_jobs_lasso_fit" + ("_sample" if a.sample else "") + ".csv")
     new = pd.DataFrame(fits)
+    key = ["outcome", "year", "model", "kigali"]
     if f.exists():
         old = pd.read_csv(f)
-        new = pd.concat([old[~old.set_index(["year", "model"]).index.isin(new.set_index(["year", "model"]).index)], new])
-    new.sort_values(["year", "model"]).to_csv(f, index=False)
+        for c, v in (("outcome", "tourism"), ("kigali", "included")):   # rows written before these columns existed
+            if c not in old:
+                old[c] = v
+        old = old.rename(columns={"tourism_workers": "outcome_workers", "tourism_share_weighted": "outcome_share_weighted"})
+        new = pd.concat([old[~old.set_index(key).index.isin(new.set_index(key).index)], new])
+    new.sort_values(key).to_csv(f, index=False)
     _log(f"-> {f}")
+    if not a.sample:
+        summary_tex()
     return 0
 
 
