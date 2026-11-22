@@ -252,17 +252,15 @@ def section_person():
     parts = []
     for chunk, _ in pyreadstat.read_file_in_chunks(pyreadstat.read_dta, str(CENSUS), chunksize=500_000, usecols=PERSON_COLS):
         chunk = chunk[chunk.census_year.isin(WAVES)]
-        hid = chunk.census_household_id
-        has = hid.notna() & (hid.astype(object).astype(str).str.strip() != "")
-        chunk["hh_key"] = np.where(has, chunk.census_year.astype(int).astype(str).to_numpy(object) + "_"
-                                   + hid.astype(object).astype(str).to_numpy(object), None)
         parts.append(chunk)
     d = pd.concat(parts, ignore_index=True)
-    # Residents with no household identifier live in collective quarters (boarding schools, barracks, prisons;
-    # mostly 2002): household size 0 and their own indicator, so they stay in the sample.
-    d["collective"] = d.hh_key.isna()
-    size = d.hh_key.dropna().value_counts()
-    d["hh_size"] = d.hh_key.map(size).astype(float).fillna(0.0)
+    # Household size = residents sharing wave and household identifier (all ages). Residents with no household
+    # identifier live in collective quarters (boarding schools, barracks, prisons; 2002 only): household size 0
+    # and their own indicator, so they stay in the sample. Grouping drops missing identifiers the same way in
+    # pandas 2 and 3.
+    size = d.groupby(["census_year", "census_household_id"], dropna=True).census_age.transform("size")
+    d["collective"] = size.isna()
+    d["hh_size"] = size.astype(float).fillna(0.0)
     d = d[(d.census_age >= 16) & ~d.census_district.isin(KIGALI)].reset_index(drop=True)
     frac = float(os.environ.get("CENSUS_PARK_SAMPLE", 0) or 0)   # test switch: keep this share of sectors
     if frac:
