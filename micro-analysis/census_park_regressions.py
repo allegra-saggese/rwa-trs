@@ -32,9 +32,13 @@ Sections (python micro-analysis/census_park_regressions.py --list):
              per 100 adults in Census 2002 / 2012 / 2022 against EICV 2005/06 / 2013/14 / 2023/24 (the rounds
              whose pooled person file carries the industry of the main job) -> census_eicv_nonfarm_check.csv
 
+Ring option (--drop-ring): drop from the comparison group the sectors that touch a park-adjacent sector without
+bordering a park themselves (82 sectors outside Kigali), leaving 237 interior sectors. Outputs then carry _no_ring.
+
 Usage
     python micro-analysis/census_park_regressions.py
     python micro-analysis/census_park_regressions.py --only gap
+    python micro-analysis/census_park_regressions.py --only gap person --drop-ring
 """
 import argparse
 import os
@@ -58,6 +62,28 @@ KIGALI = {11, 12, 13}
 WAVES = (2002, 2012, 2022)
 OUTCOMES = [("nonfarm_per100", "Non-farm workers"), ("services_per100", "Services workers"),
             ("tourism_per100", "Tourism workers")]
+
+
+DROP_RING = False                       # set by --drop-ring
+SECTOR_BOUNDARIES = P.NISR / "geodata-nisr" / "Sector_Boundary_2022_956146177651063157.geojson"
+
+
+def _suffix() -> str:
+    return "_no_ring" if DROP_RING else ""
+
+
+def ring_sectors() -> set:
+    """Sectors that touch a park-adjacent sector but do not border a park themselves (shared boundary or corner;
+    1 m tolerance for slivers between the NISR polygons)."""
+    import geopandas as gpd
+    from shapely.validation import make_valid
+    g = gpd.read_file(SECTOR_BOUNDARIES)
+    g["sid"] = g.sector_id.astype(int)
+    g["geometry"] = g.geometry.apply(make_valid)
+    g = g[["sid", "geometry"]].dissolve("sid").reset_index().to_crs(32736)
+    g = g.merge(pd.read_csv(SECTORS)[["sid", "border"]], on="sid")
+    adj = g[g.border == 1].geometry.buffer(1).union_all()
+    return set(g.sid[(g.border == 0) & g.geometry.intersects(adj)])
 
 
 def _log(msg):
@@ -118,6 +144,8 @@ def section_gap():
     d = p.merge(s, on="sid", how="left")
     assert d.border.notna().all()
     d = d[~d.district_id.isin(KIGALI)].copy()
+    if DROP_RING:
+        d = d[~d.sid.isin(ring_sectors())].copy()
     for t in (2012, 2022):
         d[f"park_x_{t}"] = d.border * (d.wave == t)
     n_sec, n_park, n_dist = d.sid.nunique(), int(d.drop_duplicates("sid").border.sum()), d.district_id.nunique()
@@ -136,9 +164,9 @@ def section_gap():
              f"2022 {est.loc['park_x_2022', 'coef']:+.2f} (p {est.loc['park_x_2022', 'p_wcb']:.3f})")
     res = pd.DataFrame(rows)
     P.TABLES_REG.mkdir(parents=True, exist_ok=True)
-    res.to_csv(P.TABLES_REG / "census_park_gap.csv", index=False)
+    res.to_csv(P.TABLES_REG / f"census_park_gap{_suffix()}.csv", index=False)
     tex(res)
-    _log(f"-> {P.TABLES_REG / 'census_park_gap.csv'} and .tex")
+    _log(f"-> {P.TABLES_REG / f'census_park_gap{_suffix()}.csv'} and .tex")
 
 
 def _stars(p):
@@ -149,7 +177,8 @@ def tex(res: pd.DataFrame):
     labels = [l for _, l in OUTCOMES]
     cell = lambda l, t, k: res[(res.label == l) & (res.wave == t)].iloc[0][k]
     L = [r"\begin{table}[htbp]", r"\centering",
-         r"\caption{Park-Adjacent and Interior Sectors across Census Waves}", r"\label{tab:census_park_gap}",
+         r"\caption{Park-Adjacent and Interior Sectors across Census Waves" + (", Excluding the Ring of Neighbouring Sectors}" if DROP_RING else "}"),
+         r"\label{tab:census_park_gap" + _suffix().replace("_", "-") + "}",
          r"\begin{tabular}{l" + "c" * len(labels) + "}", r"\toprule",
          " & " + " & ".join(labels) + r" \\", " & " + " & ".join(f"({i + 1})" for i in range(len(labels))) + r" \\",
          r"\midrule"]
@@ -167,7 +196,8 @@ def tex(res: pd.DataFrame):
     L.append("Districts (clusters) & " + " & ".join(f"{int(r0.clusters)}" for _ in labels) + r" \\")
     L += [r"\bottomrule", r"\end{tabular}", r"\begin{minipage}{0.95\textwidth}\footnotesize",
           r"\textit{Notes:} Sector-by-wave panel from the 2002, 2012 and 2022 Population and Housing Census public-use "
-          r"samples, on 2022 sector boundaries, excluding Kigali City. Outcomes are workers per 100 residents aged 16 and "
+          r"samples, on 2022 sector boundaries, excluding Kigali City" + (" and the sectors that touch a park-adjacent sector "
+          r"without bordering a park" if DROP_RING else "") + r". Outcomes are workers per 100 residents aged 16 and "
           r"over, by industry of main work: non-farm (all industries except agriculture, forestry and fishing), services "
           r"(ISIC Rev.~4 sections G--U; Rev.~3 divisions 50--99 in 2002) and tourism (accommodation and food, and arts, "
           r"entertainment and recreation; Rev.~3 divisions 55 and 92 in 2002). Park-adjacent sectors border a national "
@@ -175,7 +205,7 @@ def tex(res: pd.DataFrame):
           r"the park-adjacent minus interior gap relative to 2002. Standard errors clustered by district in parentheses; "
           r"wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap "
           r"p-values: *** 1\%, ** 5\%, * 10\%.", r"\end{minipage}", r"\end{table}", ""]
-    (P.TABLES_REG / "census_park_gap.tex").write_text("\n".join(L))
+    (P.TABLES_REG / f"census_park_gap{_suffix()}.tex").write_text("\n".join(L))
 
 
 # ---------------------------------------------------------------------------- person level, with controls
@@ -262,6 +292,8 @@ def section_person():
     d["collective"] = size.isna()
     d["hh_size"] = size.astype(float).fillna(0.0)
     d = d[(d.census_age >= 16) & ~d.census_district.isin(KIGALI)].reset_index(drop=True)
+    if DROP_RING:
+        d = d[~d.census_sector.astype(int).isin(ring_sectors())].reset_index(drop=True)
     frac = float(os.environ.get("CENSUS_PARK_SAMPLE", 0) or 0)   # test switch: keep this share of sectors
     if frac:
         keep = np.random.default_rng(0).choice(d.census_sector.unique(), int(d.census_sector.nunique() * frac), replace=False)
@@ -315,16 +347,17 @@ def section_person():
             _log(f"  {label}, {spec}: 2012 {est.loc['park_x_2012', 'coef']:+.2f} [{est.loc['park_x_2012', 'p_wcb']:.3f}], "
                  f"2022 {est.loc['park_x_2022', 'coef']:+.2f} [{est.loc['park_x_2022', 'p_wcb']:.3f}]")
     res = pd.DataFrame(rows)
-    res.to_csv(P.TABLES_REG / "census_park_gap_person.csv", index=False)
+    res.to_csv(P.TABLES_REG / f"census_park_gap_person{_suffix()}.csv", index=False)
     tex_person(res, len(d), d.sid.nunique(), int(d.drop_duplicates("sid").park.sum()))
-    _log(f"-> {P.TABLES_REG / 'census_park_gap_person.csv'} and .tex")
+    _log(f"-> {P.TABLES_REG / f'census_park_gap_person{_suffix()}.csv'} and .tex")
 
 
 def tex_person(res: pd.DataFrame, n: int, n_sec: int, n_park: int):
     cols = [(l, sp) for _, l in OUTCOMES for sp in ("no controls", "controls")]
     get = lambda l, sp, t, k: res[(res.label == l) & (res.spec == sp) & (res.wave == t)].iloc[0][k]
-    L = [r"\begin{table}[htbp]", r"\centering", r"\caption{Park-Adjacent and Interior Sectors: Person-Level Estimates}",
-         r"\label{tab:census_park_gap_person}", r"\begin{tabular}{l" + "c" * len(cols) + "}", r"\toprule",
+    L = [r"\begin{table}[htbp]", r"\centering",
+         r"\caption{Park-Adjacent and Interior Sectors: Person-Level Estimates" + (", Excluding the Ring of Neighbouring Sectors}" if DROP_RING else "}"),
+         r"\label{tab:census_park_gap_person" + _suffix().replace("_", "-") + "}", r"\begin{tabular}{l" + "c" * len(cols) + "}", r"\toprule",
          " & " + " & ".join(f"\\multicolumn{{2}}{{c}}{{{l}}}" for _, l in OUTCOMES) + r" \\",
          " & " + " & ".join(f"({i + 1})" for i in range(len(cols))) + r" \\", r"\midrule"]
     for t in (2012, 2022):
@@ -337,16 +370,16 @@ def tex_person(res: pd.DataFrame, n: int, n_sec: int, n_park: int):
           f"Districts (clusters) & \\multicolumn{{{len(cols)}}}{{c}}{{{int(res.clusters.iloc[0])}}} \\\\",
           r"\bottomrule", r"\end{tabular}", r"\begin{minipage}{0.95\textwidth}\footnotesize",
           r"\textit{Notes:} Residents aged 16 and over in the 2002, 2012 and 2022 Census public-use samples, outside Kigali "
-          r"City. Outcome: 100 if the person's main work is in the group (non-farm, services, tourism; definitions as in "
-          r"Table~\ref{tab:census_park_gap}), 0 otherwise, including people who do not work. All columns include sector and "
+          r"City" + (" and the sectors that touch a park-adjacent sector without bordering a park" if DROP_RING else "") + r". Outcome: 100 if the person's main work is in the group (non-farm, services, tourism; definitions as in "
+          r"Table~\ref{tab:census_park_gap" + _suffix().replace("_", "-") + r"}), 0 otherwise, including people who do not work. All columns include sector and "
           r"wave fixed effects; observations are weighted so that every sector-wave carries equal weight, so the odd "
-          r"columns reproduce Table~\ref{tab:census_park_gap}. Even columns add, each interacted with wave: age band, sex, "
+          r"columns reproduce Table~\ref{tab:census_park_gap" + _suffix().replace("_", "-") + r"}. Even columns add, each interacted with wave: age band, sex, "
           r"education (none, primary, secondary, tertiary), marital status, urban residence, household size and residence "
           r"in collective quarters. Standard "
           r"errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 "
           r"draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.",
           r"\end{minipage}", r"\end{table}", ""]
-    (P.TABLES_REG / "census_park_gap_person.tex").write_text("\n".join(L))
+    (P.TABLES_REG / f"census_park_gap_person{_suffix()}.tex").write_text("\n".join(L))
 
 
 EICV = P.NISR / "Household-Living-Conditions-EICV/3_Final/EICV_pooled_person.dta"
@@ -403,7 +436,10 @@ def main(argv=None) -> int:
     a = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     a.add_argument("--only", nargs="+", choices=list(SECTIONS))
     a.add_argument("--list", action="store_true")
+    a.add_argument("--drop-ring", action="store_true", help="drop the ring of sectors touching park-adjacent ones")
     args = a.parse_args(argv)
+    global DROP_RING
+    DROP_RING = args.drop_ring
     if args.list:
         print("\n".join(SECTIONS)); return 0
     for k in args.only or SECTIONS:
