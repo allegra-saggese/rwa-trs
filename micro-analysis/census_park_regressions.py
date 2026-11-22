@@ -28,6 +28,11 @@ Sections (python micro-analysis/census_park_regressions.py --list):
   gap        the regression above -> output/tables/regressions/census_park_gap.csv and .tex
   person     the same comparison at the person level, without and with person and household controls
              -> census_park_gap_person.csv and .tex (see section_person)
+  migration  2012 and 2022 only (2002 records previous residence in the pre-2006 districts): the gap with a control
+             for having moved in from another district or from abroad (a lower bound: moves within a district are
+             missed). Person level: no controls / person and household controls / plus mover x wave. Sector level:
+             plus the sector's in-mover share x wave. The park coefficient is the change in the gap from 2012 to 2022.
+             -> census_park_gap_migration.csv and .tex
   eicv_check validation of the Census measure against EICV, by district (Kigali excluded): non-farm workers
              per 100 adults in Census 2002 / 2012 / 2022 against EICV 2005/06 / 2013/14 / 2023/24 (the rounds
              whose pooled person file carries the industry of the main job) -> census_eicv_nonfarm_check.csv
@@ -220,7 +225,8 @@ PERSON_COLS = ["census_year", "census_sector", "census_district", "census_househ
                "census_isic_section_2022", "census_ever_attended_school_2002", "census_education_grouped_2002",
                "census_school_attendance_2012", "census_education_level_2012", "census_school_attendance_2022",
                "census_education_level_2022", "census_marital_status_2002", "census_marital_status_2012",
-               "census_marital_status_2022"]
+               "census_marital_status_2022", "census_previous_residence_2012", "census_previous_in_rwanda_2022",
+               "census_previous_district_2022"]
 
 
 def education_group(d: pd.DataFrame) -> pd.Series:
@@ -388,6 +394,156 @@ def tex_person(res: pd.DataFrame, n: int, n_sec: int, n_park: int):
     (P.TABLES_REG / f"census_park_gap_person{_suffix()}.tex").write_text("\n".join(L))
 
 
+def mover(d: pd.DataFrame) -> pd.Series:
+    """1 if previous residence was another district or abroad (2012, 2022). NaN in 2002, where previous residence
+    is recorded in the pre-2006 districts. A lower bound on in-migration: moves within a district are missed."""
+    out = pd.Series(np.nan, index=d.index)
+    m = d.census_year == 2012
+    pr = d.loc[m, "census_previous_residence_2012"]
+    out[m] = (pr.notna() & (pr != d.loc[m, "census_district"]) & (pr != 0)).astype(float)
+    m = d.census_year == 2022
+    ab = d.loc[m, "census_previous_in_rwanda_2022"] == 2
+    pdist = d.loc[m, "census_previous_district_2022"]
+    out[m] = (ab | (pdist.notna() & (pdist != d.loc[m, "census_district"]))).astype(float)
+    return out
+
+
+def _person_data():
+    """Residents aged 16+ outside Kigali (and outside the ring with --drop-ring), with outcomes, household size,
+    the collective-quarters flag, the mover flag and the equal-sector-wave weights."""
+    parts = []
+    for chunk, _ in pyreadstat.read_file_in_chunks(pyreadstat.read_dta, str(CENSUS), chunksize=500_000, usecols=PERSON_COLS):
+        parts.append(chunk[chunk.census_year.isin(WAVES)])
+    d = pd.concat(parts, ignore_index=True)
+    size = d.groupby(["census_year", "census_household_id"], dropna=True).census_age.transform("size")
+    d["collective"] = size.isna()
+    d["hh_size"] = size.astype(float).fillna(0.0)
+    d = d[(d.census_age >= 16) & ~d.census_district.isin(KIGALI)].reset_index(drop=True)
+    if DROP_RING:
+        d = d[~d.census_sector.astype(int).isin(ring_sectors())].reset_index(drop=True)
+    d = d.join(classify(d))
+    d["sid"], d["wave"] = d.census_sector.astype(int), d.census_year.astype(int)
+    d["park"] = d.sid.map(pd.read_csv(SECTORS).set_index("sid").border)
+    d["mover"] = mover(d)
+    return d
+
+
+def _person_controls(d: pd.DataFrame, waves) -> pd.DataFrame:
+    edu, mar = education_group(d).astype(object), marital_group(d).astype(object)
+    bands = pd.cut(d.census_age, [15, 19, 24, 29, 34, 39, 44, 49, 54, 59, 64, 200], labels=False)
+    base = {"female": (d.census_sex == 2), "urban": (d.census_urban == 1), "household size": d.hh_size,
+            "collective quarters": d.collective}
+    for b in range(11):
+        if b != 3:
+            base[f"age band {b}"] = bands == b
+    for k in ("none", "secondary", "tertiary", "not stated"):
+        base[f"education {k}"] = edu == k
+    for k in ("never", "divorced", "widowed", "not stated"):
+        base[f"marital {k}"] = mar == k
+    X = {f"{k} x {t}": np.asarray(pd.Series(v).to_numpy(dtype=float, na_value=np.nan)) * (d.wave == t).to_numpy(dtype=float)
+         for k, v in base.items() for t in waves}
+    return pd.DataFrame(X).loc[:, lambda x: x.std() > 0]
+
+
+def _run_person(d, specs: dict, test: list) -> pd.DataFrame:
+    """Weighted within regression (sector and wave fixed effects) of each outcome on each spec's columns."""
+    w = (d.census_weight / d.groupby(["sid", "wave"]).census_weight.transform("sum")).to_numpy()
+    r = np.sqrt(w / w.mean())
+    gi = [pd.factorize(d.sid)[0], pd.factorize(d.wave)[0]]
+    rows = []
+    for y, label in OUTCOMES:
+        yv = 100 * d[y.replace("_per100", "")].to_numpy(float)
+        for spec, Z in specs.items():
+            Zn = Z.to_numpy(dtype=float, na_value=np.nan)
+            bad = [c for c, ok in zip(Z.columns, np.isfinite(Zn).all(axis=0)) if not ok]
+            if bad:
+                raise ValueError(f"{label}, {spec}: missing values in {bad}")
+            A = _demean(np.column_stack([yv, Zn]), gi, w) * r[:, None]
+            df = pd.DataFrame(A[:, 1:], columns=Z.columns)
+            df["y"], df["district"] = A[:, 0], d.census_district.to_numpy()
+            est, n, G = fe_ols(df, "y", list(Z.columns), [], "district", test=test)
+            if n != len(d):
+                raise ValueError(f"{label}, {spec}: regression used {n:,} of {len(d):,} observations")
+            for v in test:
+                e = est.loc[v]
+                rows.append({"outcome": y, "label": label, "spec": spec, "term": v, "coef": e.coef, "se": e.se,
+                             "p_wcb": e.p_wcb, "obs": n, "clusters": G})
+            _log(f"  {label}, {spec}: " + ", ".join(f"{v} {est.loc[v, 'coef']:+.2f} [{est.loc[v, 'p_wcb']:.3f}]" for v in test))
+    return pd.DataFrame(rows)
+
+
+def section_migration():
+    """2012 and 2022 only. Park coefficient = change in the park-adjacent minus interior gap from 2012 to 2022."""
+    d = _person_data()
+    d = d[d.wave.isin([2012, 2022])].reset_index(drop=True)
+    _log(f"{len(d):,} residents aged 16+ in {d.sid.nunique()} sectors, 2012 and 2022; "
+         f"moved in from another district or abroad: {np.average(d.mover, weights=d.census_weight):.1%}")
+    T = pd.DataFrame({"park_x_2022": (d.park * (d.wave == 2022)).to_numpy(float)})
+    X = _person_controls(d, (2012, 2022))
+    M = pd.DataFrame({f"mover x {t}": (d.mover * (d.wave == t)).to_numpy(float) for t in (2012, 2022)})
+    res = _run_person(d, {"no controls": T, "controls": pd.concat([T, X], axis=1),
+                          "controls and mover": pd.concat([T, X, M], axis=1)}, ["park_x_2022"])
+    res["level"] = "person"
+    # sector level: in-mover share x wave
+    sec = d.assign(wm=d.mover * d.census_weight).groupby(["sid", "wave"]).agg(
+        movers=("wm", "sum"), adults=("census_weight", "sum")).reset_index()
+    sec["mover_share"] = 100 * sec.movers / sec.adults
+    p = pd.read_csv(PANEL).merge(sec[["sid", "wave", "mover_share"]], on=["sid", "wave"])
+    p = p.merge(pd.read_csv(SECTORS)[["sid", "district_id", "border"]], on="sid")
+    p["park_x_2022"] = p.border * (p.wave == 2022)
+    p["mover_share_x_2022"] = p.mover_share * (p.wave == 2022)
+    srows = []
+    for y, label in OUTCOMES:
+        for spec, xs in (("no controls", ["park_x_2022"]), ("mover share", ["park_x_2022", "mover_share", "mover_share_x_2022"])):
+            est, n, G = fe_ols(p, y, xs, ["sid", "wave"], "district_id", test=["park_x_2022"])
+            e = est.loc["park_x_2022"]
+            srows.append({"outcome": y, "label": label, "spec": spec, "term": "park_x_2022", "coef": e.coef, "se": e.se,
+                          "p_wcb": e.p_wcb, "obs": n, "clusters": G, "level": "sector"})
+            _log(f"  sector, {label}, {spec}: park_x_2022 {e.coef:+.2f} [{e.p_wcb:.3f}]")
+    res = pd.concat([res, pd.DataFrame(srows)], ignore_index=True)
+    res.to_csv(P.TABLES_REG / f"census_park_gap_migration{_suffix()}.csv", index=False)
+    tex_migration(res, p.sid.nunique(), int(p.drop_duplicates("sid").border.sum()))
+    _log(f"-> {P.TABLES_REG / f'census_park_gap_migration{_suffix()}.csv'} and .tex")
+
+
+def tex_migration(res: pd.DataFrame, n_sec: int, n_park: int):
+    labels = [l for _, l in OUTCOMES]
+    cols = [("person", "no controls"), ("person", "controls"), ("person", "controls and mover"),
+            ("sector", "no controls"), ("sector", "mover share")]
+    get = lambda l, lev, sp, k: res[(res.label == l) & (res.level == lev) & (res.spec == sp)].iloc[0][k]
+    L = [r"\begin{table}[htbp]", r"\centering",
+         r"\caption{Change in the Park-Adjacent Gap, 2012--2022, Controlling for In-Migration" + (", Excluding the Ring}" if DROP_RING else "}"),
+         r"\label{tab:census_park_gap_migration" + _suffix().replace("_", "-") + "}",
+         r"\begin{tabular}{l" + "c" * len(cols) + "}", r"\toprule",
+         r" & \multicolumn{3}{c}{Person level} & \multicolumn{2}{c}{Sector level} \\",
+         r"\cmidrule(lr){2-4} \cmidrule(lr){5-6}",
+         " & " + " & ".join(f"({i + 1})" for i in range(len(cols))) + r" \\", r"\midrule"]
+    for l in labels:
+        L.append(f"\\textit{{{l}}} & & & & & \\\\")
+        L.append("Park-adjacent $\\times$ 2022 & " + " & ".join(f"${get(l, lev, sp, 'coef'):.2f}{_stars(get(l, lev, sp, 'p_wcb'))}$" for lev, sp in cols) + r" \\")
+        L.append(" & " + " & ".join(f"$({get(l, lev, sp, 'se'):.2f})$" for lev, sp in cols) + r" \\")
+        L.append(" & " + " & ".join(f"$[{get(l, lev, sp, 'p_wcb'):.3f}]$" for lev, sp in cols) + r" \\")
+    L += [r"\midrule",
+          r"Person and household controls $\times$ wave & No & Yes & Yes & -- & -- \\",
+          r"Moved in from another district or abroad $\times$ wave & No & No & Yes & -- & -- \\",
+          r"Sector share of in-movers $\times$ wave & -- & -- & -- & No & Yes \\",
+          f"Sectors (park-adjacent) & \\multicolumn{{5}}{{c}}{{{n_sec} ({n_park})}} \\\\",
+          r"\bottomrule", r"\end{tabular}", r"\begin{minipage}{0.95\textwidth}\footnotesize",
+          r"\textit{Notes:} 2012 and 2022 Census public-use samples, residents aged 16 and over outside Kigali City"
+          + (" and the ring of sectors touching a park-adjacent sector" if DROP_RING else "") + r". 2002 is left out because "
+          r"it records previous residence in the pre-2006 districts. Outcomes as in Table~\ref{tab:census_park_gap}; "
+          r"the coefficient is the change in the park-adjacent minus interior gap from 2012 to 2022. A mover is a resident "
+          r"whose previous residence was another district or abroad; moves within a district are not recorded, so this is a "
+          r"lower bound on in-migration. All columns include sector and wave fixed effects. Columns (1)--(3): person level, "
+          r"each sector-wave weighted equally; column (2) adds age band, sex, education, marital status, urban residence, "
+          r"household size and collective quarters, each by wave. Columns (4)--(5): sector level, workers per 100 adults; "
+          r"column (5) adds the sector's share of adults who moved in, by wave. Migration may itself respond to jobs, so "
+          r"columns (3) and (5) show the gap net of who moved in. Standard errors clustered by district in parentheses; wild "
+          r"cluster restricted bootstrap p-values in brackets; *** 1\%, ** 5\%, * 10\%.",
+          r"\end{minipage}", r"\end{table}", ""]
+    (P.TABLES_REG / f"census_park_gap_migration{_suffix()}.tex").write_text("\n".join(L))
+
+
 EICV = P.NISR / "Household-Living-Conditions-EICV/3_Final/EICV_pooled_person.dta"
 EICV_PAIRS = {2002: ("EICV2", "eicv_industry_group"), 2012: ("EICV4_CS", "eicv_industry_isic_shipped"),
               2022: ("EICV7_CS", "eicv_isic_level1_2024")}
@@ -435,7 +591,8 @@ def section_eicv_check():
     _log(f"-> {P.TABLES_REG / 'census_eicv_nonfarm_check.csv'}")
 
 
-SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "person": section_person, "eicv_check": section_eicv_check}
+SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "person": section_person, "migration": section_migration,
+            "eicv_check": section_eicv_check}
 
 
 def main(argv=None) -> int:
