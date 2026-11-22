@@ -62,6 +62,7 @@ KIGALI = {11, 12, 13}
 WAVES = (2002, 2012, 2022)
 OUTCOMES = [("nonfarm_per100", "Non-farm workers"), ("services_per100", "Services workers"),
             ("tourism_per100", "Tourism workers")]
+SECTOR_ONLY = [("log_adults", "Log adults")]   # sector regression only: population growth, not composition
 
 
 DROP_RING = False                       # set by --drop-ring
@@ -128,6 +129,7 @@ def section_outcomes():
     p = pd.concat(parts).groupby(["sid", "wave"], as_index=False).sum()
     for k in ("nonfarm", "services", "tourism"):
         p[f"{k}_per100"] = 100 * p[k] / p.adults
+    p["log_adults"] = np.log(p.adults)
     assert len(p) == 3 * 416, f"expected 416 sectors x 3 waves, got {len(p)}"
     P.HARMONIZED.mkdir(parents=True, exist_ok=True)
     p.to_csv(PANEL, index=False)
@@ -142,6 +144,8 @@ def section_gap():
     p = pd.read_csv(PANEL)
     s = pd.read_csv(SECTORS)[["sid", "district_id", "border"]]
     d = p.merge(s, on="sid", how="left")
+    if "log_adults" not in d:
+        d["log_adults"] = np.log(d.adults)
     assert d.border.notna().all()
     d = d[~d.district_id.isin(KIGALI)].copy()
     if DROP_RING:
@@ -151,7 +155,7 @@ def section_gap():
     n_sec, n_park, n_dist = d.sid.nunique(), int(d.drop_duplicates("sid").border.sum()), d.district_id.nunique()
     _log(f"{n_sec} sectors ({n_park} park-adjacent), {n_dist} districts")
     rows = []
-    for y, label in OUTCOMES:
+    for y, label in OUTCOMES + SECTOR_ONLY:
         est, n, G = fe_ols(d, y, ["park_x_2012", "park_x_2022"], ["sid", "wave"], "district_id")
         means = d.groupby(["wave", "border"])[y].mean().unstack()
         for t in (2012, 2022):
@@ -174,7 +178,7 @@ def _stars(p):
 
 
 def tex(res: pd.DataFrame):
-    labels = [l for _, l in OUTCOMES]
+    labels = [l for _, l in OUTCOMES + SECTOR_ONLY]
     cell = lambda l, t, k: res[(res.label == l) & (res.wave == t)].iloc[0][k]
     L = [r"\begin{table}[htbp]", r"\centering",
          r"\caption{Park-Adjacent and Interior Sectors across Census Waves" + (", Excluding the Ring of Neighbouring Sectors}" if DROP_RING else "}"),
@@ -200,7 +204,9 @@ def tex(res: pd.DataFrame):
           r"without bordering a park" if DROP_RING else "") + r". Outcomes are workers per 100 residents aged 16 and "
           r"over, by industry of main work: non-farm (all industries except agriculture, forestry and fishing), services "
           r"(ISIC Rev.~4 sections G--U; Rev.~3 divisions 50--99 in 2002) and tourism (accommodation and food, and arts, "
-          r"entertainment and recreation; Rev.~3 divisions 55 and 92 in 2002). Park-adjacent sectors border a national "
+          r"entertainment and recreation; Rev.~3 divisions 55 and 92 in 2002). Column (4) is the log of the number of "
+          r"residents aged 16 and over (Census-weighted), so its coefficients give the difference in adult population "
+          r"growth since 2002, in log points. Park-adjacent sectors border a national "
           r"park. Each column is one regression with sector and wave fixed effects; the coefficients give the change in "
           r"the park-adjacent minus interior gap relative to 2002. Standard errors clustered by district in parentheses; "
           r"wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap "
