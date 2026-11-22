@@ -265,7 +265,7 @@ def section_person():
     park = pd.read_csv(SECTORS).set_index("sid").border
     d["park"] = d.sid.map(park)
     d["w"] = d.census_weight / d.groupby(["sid", "wave"]).census_weight.transform("sum")
-    edu, mar = education_group(d), marital_group(d)
+    edu, mar = education_group(d).astype(object), marital_group(d).astype(object)
     bands = pd.cut(d.census_age, [15, 19, 24, 29, 34, 39, 44, 49, 54, 59, 64, 200], labels=False)
     base = {"female": (d.census_sex == 2), "urban": (d.census_urban == 1), "household size": d.hh_size}
     for b in range(11):
@@ -275,7 +275,8 @@ def section_person():
         base[f"education {k}"] = edu == k        # primary omitted
     for k in ("never", "divorced", "widowed", "not stated"):
         base[f"marital {k}"] = mar == k          # married omitted
-    X = {f"{k} x {t}": np.asarray(v, float) * (d.wave == t).to_numpy() for k, v in base.items() for t in WAVES}
+    X = {f"{k} x {t}": np.asarray(pd.Series(v).to_numpy(dtype=float, na_value=np.nan)) * (d.wave == t).to_numpy(dtype=float)
+         for k, v in base.items() for t in WAVES}
     X = pd.DataFrame(X).loc[:, lambda x: x.std() > 0]
     T = pd.DataFrame({f"park_x_{t}": (d.park * (d.wave == t)).to_numpy(float) for t in (2012, 2022)})
     _log(f"{len(d):,} residents aged 16+ in {d.sid.nunique()} sectors; {X.shape[1]} control terms")
@@ -286,10 +287,20 @@ def section_person():
     for y, label in OUTCOMES:
         yv = 100 * d[y.replace("_per100", "")].to_numpy(float)
         for spec, Z in (("no controls", T), ("controls", pd.concat([T, X], axis=1))):
-            A = _demean(np.column_stack([yv, Z.to_numpy(float)]), gi, w) * r[:, None]
+            Zn = Z.to_numpy(dtype=float, na_value=np.nan)
+            bad = [c for c, ok in zip(Z.columns, np.isfinite(Zn).all(axis=0)) if not ok]
+            if bad or not np.isfinite(yv).all():
+                raise ValueError(f"{label}, {spec}: missing or infinite values before demeaning in {bad or ['outcome']}")
+            A = _demean(np.column_stack([yv, Zn]), gi, w) * r[:, None]
+            if not np.isfinite(A).all():
+                cols = ["outcome"] + list(Z.columns)
+                raise ValueError(f"{label}, {spec}: demeaning produced missing values in "
+                                 f"{[c for c, ok in zip(cols, np.isfinite(A).all(axis=0)) if not ok][:10]}")
             df = pd.DataFrame(A[:, 1:], columns=Z.columns)
             df["y"], df["district"] = A[:, 0], d.census_district.to_numpy()
             est, n, G = fe_ols(df, "y", list(Z.columns), [], "district", test=["park_x_2012", "park_x_2022"])
+            if n != len(d):
+                raise ValueError(f"{label}, {spec}: regression used {n:,} of {len(d):,} observations")
             for t in (2012, 2022):
                 e = est.loc[f"park_x_{t}"]
                 rows.append({"outcome": y, "label": label, "spec": spec, "wave": t, "coef": e.coef, "se": e.se,
