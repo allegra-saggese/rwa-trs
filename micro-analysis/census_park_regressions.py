@@ -246,15 +246,23 @@ def section_person():
     group (non-farm, services, tourism), else 0 (people who do not work included), times 100.
     Weights: Census person weight divided by the sector-wave total, so every sector-wave counts equally and the
     no-controls column reproduces the sector regression (section gap) exactly.
-    Controls (each interacted with wave): age band, female, education group, marital group, urban, household size.
+    Controls (each interacted with wave): age band, female, education group, marital group, urban, household size,
+    lives in collective quarters (no household identifier; household size set to 0).
     Birthplace is left out: 2002 records it in the pre-2006 districts, which do not map onto today's."""
     parts = []
     for chunk, _ in pyreadstat.read_file_in_chunks(pyreadstat.read_dta, str(CENSUS), chunksize=500_000, usecols=PERSON_COLS):
         chunk = chunk[chunk.census_year.isin(WAVES)]
-        chunk["hh_key"] = chunk.census_year.astype(int).astype(str) + "_" + chunk.census_household_id.astype(str)
+        hid = chunk.census_household_id
+        has = hid.notna() & (hid.astype(object).astype(str).str.strip() != "")
+        chunk["hh_key"] = np.where(has, chunk.census_year.astype(int).astype(str).to_numpy(object) + "_"
+                                   + hid.astype(object).astype(str).to_numpy(object), None)
         parts.append(chunk)
     d = pd.concat(parts, ignore_index=True)
-    d["hh_size"] = d.hh_key.map(d.hh_key.value_counts()).astype(float)
+    # Residents with no household identifier live in collective quarters (boarding schools, barracks, prisons;
+    # mostly 2002): household size 0 and their own indicator, so they stay in the sample.
+    d["collective"] = d.hh_key.isna()
+    size = d.hh_key.dropna().value_counts()
+    d["hh_size"] = d.hh_key.map(size).astype(float).fillna(0.0)
     d = d[(d.census_age >= 16) & ~d.census_district.isin(KIGALI)].reset_index(drop=True)
     frac = float(os.environ.get("CENSUS_PARK_SAMPLE", 0) or 0)   # test switch: keep this share of sectors
     if frac:
@@ -267,7 +275,8 @@ def section_person():
     d["w"] = d.census_weight / d.groupby(["sid", "wave"]).census_weight.transform("sum")
     edu, mar = education_group(d).astype(object), marital_group(d).astype(object)
     bands = pd.cut(d.census_age, [15, 19, 24, 29, 34, 39, 44, 49, 54, 59, 64, 200], labels=False)
-    base = {"female": (d.census_sex == 2), "urban": (d.census_urban == 1), "household size": d.hh_size}
+    base = {"female": (d.census_sex == 2), "urban": (d.census_urban == 1), "household size": d.hh_size,
+            "collective quarters": d.collective}
     for b in range(11):
         if b != 3:                                  # 30-34 omitted
             base[f"age band {b}"] = bands == b
@@ -334,7 +343,8 @@ def tex_person(res: pd.DataFrame, n: int, n_sec: int, n_park: int):
           r"Table~\ref{tab:census_park_gap}), 0 otherwise, including people who do not work. All columns include sector and "
           r"wave fixed effects; observations are weighted so that every sector-wave carries equal weight, so the odd "
           r"columns reproduce Table~\ref{tab:census_park_gap}. Even columns add, each interacted with wave: age band, sex, "
-          r"education (none, primary, secondary, tertiary), marital status, urban residence and household size. Standard "
+          r"education (none, primary, secondary, tertiary), marital status, urban residence, household size and residence "
+          r"in collective quarters. Standard "
           r"errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 "
           r"draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.",
           r"\end{minipage}", r"\end{table}", ""]
