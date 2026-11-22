@@ -21,7 +21,7 @@ ROOT = P.DROPBOX
 DATA = ROOT / "data"
 ANA = P.HARMONIZED          # shared sector panels (model_*, nightlights_*)
 OUT = P.OUT
-OUT_D = P.HARM_PRELIM  # derived sector-level panels
+OUT_D = P.HARM_PANELS  # sector and district panels built for the analysis
 OUT_D.mkdir(parents=True, exist_ok=True)
 
 # figure id -> (folder under output/, descriptive name)

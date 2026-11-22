@@ -77,7 +77,7 @@ def tourism(name: str) -> Path:
 # ---- manipulated data (written) ---------------------------------------------
 # Anything collapsed to sectors / cells / districts, merged across sources, or built for an analysis.
 HARMONIZED = DATA / "harmonized"
-HARM_PRELIM = HARMONIZED / "prelim"                # micro-analysis descriptive panels
+HARM_PANELS = HARMONIZED / "analysis-panels"      # sector and district panels built for the analysis (sector_panel.py)
 HARM_EXTRACTS = HARMONIZED / "extracts"            # column subsets of the cleaned survey files (micro-analysis)
 HARM_LABOUR = HARMONIZED / "labour"                # LFS and Establishment Census industry tables
 HARM_NTL = HARMONIZED / "nightlights"              # nightlight sector and cell panels + codebook

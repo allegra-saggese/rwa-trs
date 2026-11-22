@@ -30,7 +30,7 @@ Run from the repository root. Each step only needs re-running when its inputs ch
 | 1. Clean the surveys | `python NISR/master.py` and `python WB-Enterprise-Surveys/master.py` | cleaned survey files in each survey folder: `2_Intermediate/`, `3_Final/`, `4_Harmonized/` (about 1.5 hours) |
 | 2. Build spatial, district and labour data | `python data-build/district_sources.py --all`, `python micro-analysis/district_survey_tables.py`, then `python micro-analysis/sector_cell_panels.py --all` | `data/harmonized/district/`, `data/harmonized/labour/`, the sector and cell panels in `data/geo-data/` |
 | 3. Model panel | `python model/model_inputs.py --only model_panel` | `data/harmonized/model_*.csv` |
-| 4. Sector panel | `python micro-analysis/sector_panel.py` | `data/harmonized/extracts/`, `data/harmonized/prelim/` |
+| 4. Sector panel | `python micro-analysis/sector_panel.py` | `data/harmonized/extracts/`, `data/harmonized/analysis-panels/` |
 | 5. Land moments | `python model/model_inputs.py --only land_moments` | land-moment panels and tables |
 | 6. Descriptives | `python results-scripts/sector_descriptives.py` | figures, maps, summary tables |
 | 7. Sector regressions | `python micro-analysis/sector_regressions.py` | regression tables |

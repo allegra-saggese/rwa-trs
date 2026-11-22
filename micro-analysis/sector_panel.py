@@ -1,5 +1,5 @@
 """Sector panel for the 2x2 model: survey subsets, treatment groups and every sector-level panel the
-analysis reads. Writes data/harmonized/extracts/ and data/harmonized/prelim/.
+analysis reads. Writes data/harmonized/extracts/ and data/harmonized/analysis-panels/.
 
 Run every section in order:   python micro-analysis/sector_panel.py
 Run some sections:            python micro-analysis/sector_panel.py --only <name> [<name> ...]
@@ -98,15 +98,15 @@ their own age, year and industry filters.
 
         # Census population and urban share by sector and wave (all ages, Census weights; census_urban 1 = urban).
         import pandas as pd
-        P.HARM_PRELIM.mkdir(parents=True, exist_ok=True)
+        P.HARM_PANELS.mkdir(parents=True, exist_ok=True)
         c = pd.read_parquet(P.HARM_EXTRACTS / "census_sub.parquet",
                             columns=["census_year", "census_sector", "census_weight", "census_urban"])
         c["w_urban"] = c.census_weight * (c.census_urban == 1)
         g = c.groupby(["census_sector", "census_year"])[["census_weight", "w_urban"]].sum()
         g.index.names = ["sid", "wave"]
-        g.census_weight.rename("pop_total").reset_index().to_csv(P.HARM_PRELIM / "sector_pop_total.csv", index=False)
-        (g.w_urban / g.census_weight).rename("urban_sh").reset_index().to_csv(P.HARM_PRELIM / "sector_urban_share.csv", index=False)
-        print("sector_pop_total.csv, sector_urban_share.csv ->", P.HARM_PRELIM)
+        g.census_weight.rename("pop_total").reset_index().to_csv(P.HARM_PANELS / "sector_pop_total.csv", index=False)
+        (g.w_urban / g.census_weight).rename("urban_sh").reset_index().to_csv(P.HARM_PANELS / "sector_urban_share.csv", index=False)
+        print("sector_pop_total.csv, sector_urban_share.csv ->", P.HARM_PANELS)
 
 
     main()
@@ -116,7 +116,7 @@ def section_treatment_groups():
     """Treatment groups, taken from helpers/treatment_groups.py::classify() so they match
 map1-map3 exactly (Bordering 42, Gates 4, Gates+ 21 after the settled-land rule, control 322,
 Kigali 35 + four 2002 towns (9 sectors) excluded, Gishwati-Mukura neighbours flagged).
-Writes data/harmonized/prelim/treatment_groups.csv with one row per sector:
+Writes data/harmonized/analysis-panels/treatment_groups.csv with one row per sector:
   group: Gates | Gates+ (near_gates not gates) | Bordering (border only) | Kigali | Towns | Control
 Precedence for the single label: Kigali > Towns > Gates > Gates+ > Bordering > Control.
 Gishwati-Mukura neighbours stay in Control, as in map3 (flag `gish`).
@@ -564,7 +564,7 @@ def section_panel():
  ntl   : Chen et al. VIIRS-like sum (calibrated across sensors), asinh, Census waves matched to 2002/2012/2022
 Shares of land use 'usable' land outside parks = crop + built + tree + other (water excluded).
 ell = crop / (crop + built), the model's two-use land share.
-Writes harmonized/prelim/sector_panel_desc.csv (sector x wave) and sector_cropland_builtup_glclu.csv (sector x year)."""
+Writes harmonized/analysis-panels/sector_panel_desc.csv (sector x wave) and sector_cropland_builtup_glclu.csv (sector x year)."""
     import numpy as np, pandas as pd
 
     tg = pd.read_csv(OUT_D / "treatment_groups.csv")
@@ -616,7 +616,7 @@ Writes harmonized/prelim/sector_panel_desc.csv (sector x wave) and sector_cropla
 def section_forest_outcomes():
     """Hansen GFC tree-cover loss by sector and year, outside parks, from the Rwanda crops in geo-data/forest.
 Tree cover = canopy >= 30% in 2000 (Hansen convention). Loss year 1-24 = 2001-2024. Pixel area by latitude.
-Writes harmonized/prelim/sector_hansen_annual.csv (sector x year: loss_ha, treecover2000_ha) and
+Writes harmonized/analysis-panels/sector_hansen_annual.csv (sector x year: loss_ha, treecover2000_ha) and
 sector_forest_census.csv: for each Census wave, mean annual loss over the years AFTER it, as % of 2000 tree cover:
   2002 -> 2003-2005, 2012 -> 2013-2015, 2022 -> 2023-2024 (only two years exist after 2022)."""
     import numpy as np, pandas as pd, geopandas as gpd, rasterio
@@ -657,7 +657,7 @@ Uses the Rwanda crops in data/geo-data/land-cover/rasters/ (ghsl_built_{tot,nres
 (REDO=1 rebuilds them); otherwise builds them from the zipped tiles in data/geo-data/land-cover/raw-tiles/, named
 ghsl_built_{tot,nres}_{year}_tile_R10_{C21,C22}.zip. A missing tile stops the script with the file to fetch from
 https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/ (original name in the message).
-Writes harmonized/prelim/sector_ghsl_built.csv: sector x year, built_total_ha, built_nres_ha, built_res_ha, outside parks."""
+Writes harmonized/analysis-panels/sector_ghsl_built.csv: sector x year, built_total_ha, built_nres_ha, built_res_ha, outside parks."""
     import os, zipfile, tempfile, numpy as np, pandas as pd, geopandas as gpd, rasterio
     from rasterio.merge import merge
     from rasterio.features import rasterize
@@ -712,7 +712,7 @@ def section_land_rent():
    (2014 is labelled 12 months; other waves are taken as annual -- an assumption). Rented = rent > 0.
  AHS 2024 plots: cash rent for the plot, area in m2 (different instrument; reported separately).
  Codes >= 999,999 dropped; rent per ha winsorized at 1/99% within year; CPI-deflated to 2014 RWF (WDI).
- Output: harmonized/prelim/district_land_rent.csv (district x year weighted median, N parcels)."""
+ Output: harmonized/analysis-panels/district_land_rent.csv (district x year weighted median, N parcels)."""
     import os, numpy as np, pandas as pd
     cpi = pd.read_csv(P.tourism("world_bank_wdi.csv")).query("country=='RWA' and indicator_code=='FP.CPI.TOTL'").set_index("year").value
     defl = lambda y: cpi.get(min(y, cpi.dropna().index.max())) / cpi[2014]
