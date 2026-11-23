@@ -33,6 +33,9 @@ Sections (python micro-analysis/census_park_regressions.py --list):
              missed). Person level: no controls / person and household controls / plus mover x wave. Sector level:
              plus the sector's in-mover share x wave. The park coefficient is the change in the gap from 2012 to 2022.
              -> census_park_gap_migration.csv and .tex
+  levels     worker counts (non-farm, services, tourism, farm) instead of rates, controlling for log adults, with and
+             without the park-share interaction; farm workers on 2002-2012 (2022 changes what counts as farm work)
+             and on all three waves -> census_park_levels.csv
   eicv_check validation of the Census measure against EICV, by district (Kigali excluded): non-farm workers
              per 100 adults in Census 2002 / 2012 / 2022 against EICV 2005/06 / 2013/14 / 2023/24 (the rounds
              whose pooled person file carries the industry of the main job) -> census_eicv_nonfarm_check.csv
@@ -98,8 +101,9 @@ def _log(msg):
 
 # ---------------------------------------------------------------------------- outcomes
 def classify(d: pd.DataFrame) -> pd.DataFrame:
-    """0/1 columns nonfarm, services, tourism for each person, by wave-specific industry coding."""
-    out = pd.DataFrame(0, index=d.index, columns=["nonfarm", "services", "tourism"], dtype="int8")
+    """0/1 columns nonfarm, services, tourism, farm for each person, by wave-specific industry coding.
+    farm = stated industry in agriculture, forestry and fishing (the complement of nonfarm among stated industries)."""
+    out = pd.DataFrame(0, index=d.index, columns=["nonfarm", "services", "tourism", "farm"], dtype="int8")
     # 2002: ISIC Rev. 3 three-digit groups (11-50 agriculture and fishing, 101+ everything else, 999 not stated)
     m = d.census_year == 2002
     g = d.loc[m, "census_industry_isic3_2002"]
@@ -108,6 +112,7 @@ def classify(d: pd.DataFrame) -> pd.DataFrame:
     out.loc[m, "nonfarm"] = (stated & (g >= 101)).astype("int8")
     out.loc[m, "services"] = (stated & (div >= 50)).astype("int8")
     out.loc[m, "tourism"] = (div.isin([55, 92])).astype("int8")
+    out.loc[m, "farm"] = (stated & (g < 101)).astype("int8")
     # 2012 and 2022: ISIC Rev. 4 sections 1 = A ... 21 = U (22 not stated, 23 not applicable)
     for y in (2012, 2022):
         m = d.census_year == y
@@ -116,6 +121,7 @@ def classify(d: pd.DataFrame) -> pd.DataFrame:
         out.loc[m, "nonfarm"] = (ok & (s >= 2)).astype("int8")
         out.loc[m, "services"] = (ok & (s >= 7)).astype("int8")
         out.loc[m, "tourism"] = s.isin([9, 18]).astype("int8")
+        out.loc[m, "farm"] = (s == 1).astype("int8")
     return out
 
 
@@ -130,16 +136,16 @@ def section_outcomes():
         w = chunk.census_weight.to_numpy()
         parts.append(pd.DataFrame({"sid": chunk.census_sector.astype(int).to_numpy(), "wave": chunk.census_year.astype(int).to_numpy(),
                                    "adults": w, "nonfarm": w * c.nonfarm, "services": w * c.services,
-                                   "tourism": w * c.tourism}))
+                                   "tourism": w * c.tourism, "farm": w * c.farm}))
     p = pd.concat(parts).groupby(["sid", "wave"], as_index=False).sum()
-    for k in ("nonfarm", "services", "tourism"):
+    for k in ("nonfarm", "services", "tourism", "farm"):
         p[f"{k}_per100"] = 100 * p[k] / p.adults
     p["log_adults"] = np.log(p.adults)
     assert len(p) == 3 * 416, f"expected 416 sectors x 3 waves, got {len(p)}"
     P.HARMONIZED.mkdir(parents=True, exist_ok=True)
     p.to_csv(PANEL, index=False)
-    nat = p.groupby("wave")[["adults", "nonfarm", "services", "tourism"]].sum()
-    for k in ("nonfarm", "services", "tourism"):
+    nat = p.groupby("wave")[["adults", "nonfarm", "services", "tourism", "farm"]].sum()
+    for k in ("nonfarm", "services", "tourism", "farm"):
         nat[k] = (100 * nat[k] / nat.adults).round(2)
     _log(f"-> {PANEL}\nnational, per 100 adults:\n{nat.drop(columns='adults').to_string()}")
 
@@ -590,9 +596,64 @@ def section_eicv_check():
              f"mean change Census {dc.mean():+.1f}, EICV {de.mean():+.1f}")
     _log(f"-> {P.TABLES_REG / 'census_eicv_nonfarm_check.csv'}")
 
+# ---------------------------------------------------------------------------- levels, controlling for population
+def section_levels():
+    """Worker counts (not rates) by sector and wave, controlling for log adults.
+        y_st = a_s + g_t + sum_t b_t Park_s 1[t] (+ sum_t d_t Park_s (Share_s - mean) 1[t]) + lam log(adults_st) + e_st
+    y = number of non-farm, services, tourism and farm workers (Census-weighted). Share = park_overlap / sector area
+    (model_sector_cross.csv, park_share), centred at its mean among the park-adjacent sectors in the sample.
+    Farm workers: in 2022 farming counts as work only if mainly for the market, so farm counts fall in every sector.
+    Wave fixed effects absorb a common fall but not one that differs by sector, so farm is run on 2002 and 2012 only
+    (main) and on all three waves (flagged). Log adults is itself an outcome of the programme (see section gap), so
+    b_t is the gap in workers at a given population, net of the population channel."""
+    p = pd.read_csv(PANEL)
+    if "farm" not in p:
+        raise SystemExit("panel has no farm column: run --only outcomes first")
+    s = pd.read_csv(SECTORS)[["sid", "district_id", "border", "park_share"]]
+    d = p.merge(s, on="sid", how="left")
+    d["log_adults"] = np.log(d.adults)
+    d = d[~d.district_id.isin(KIGALI)].copy()
+    if DROP_RING:
+        d = d[~d.sid.isin(ring_sectors())].copy()
+    centre = d.loc[d.border == 1, "park_share"].mean()
+    d["share_c"] = d.border * (d.park_share - centre)
+    for t in (2012, 2022):
+        d[f"park_x_{t}"] = d.border * (d.wave == t)
+        d[f"share_x_{t}"] = d.share_c * (d.wave == t)
+    _log(f"{d.sid.nunique()} sectors ({int(d.drop_duplicates('sid').border.sum())} park-adjacent); park share centred at {centre:.3f}")
+    runs = [("nonfarm", "Non-farm workers", (2002, 2012, 2022)), ("services", "Services workers", (2002, 2012, 2022)),
+            ("tourism", "Tourism workers", (2002, 2012, 2022)), ("farm", "Farm workers", (2002, 2012)),
+            ("farm", "Farm workers", (2002, 2012, 2022))]
+    rows = []
+    for y, label, waves in runs:
+        g = d[d.wave.isin(waves)]
+        ts = [t for t in (2012, 2022) if t in waves]
+        sample = "-".join(str(w) for w in (waves[0], waves[-1])) if len(waves) == 2 else "all three waves"
+        for spec, terms in (("border", [f"park_x_{t}" for t in ts]),
+                            ("border and share", [f"{k}_x_{t}" for t in ts for k in ("park", "share")])):
+            xs = terms + ["log_adults"]
+            est, n, G = fe_ols(g, y, xs, ["sid", "wave"], "district_id", test=terms)
+            means = g.groupby(["wave", "border"])[y].mean().unstack()
+            for term in terms:
+                e = est.loc[term]
+                t = int(term[-4:])
+                rows.append({"outcome": y, "label": label, "sample": sample, "spec": spec, "term": term, "coef": e.coef,
+                             "se": e.se, "p_wcb": e.p_wcb,
+                             "mean_park_2002": means.loc[2002, 1], "mean_interior_2002": means.loc[2002, 0],
+                             "mean_park_wave": means.loc[t, 1], "mean_interior_wave": means.loc[t, 0],
+                             "log_adults_coef": est.loc["log_adults", "coef"],
+                             "log_adults_se": est.loc["log_adults", "se"], "obs": n, "clusters": G})
+            _log("  " + f"{label}, {sample}, {spec}: " + ", ".join(
+                f"{t} {est.loc[t, 'coef']:+.1f} [{est.loc[t, 'p_wcb']:.3f}]" for t in terms)
+                 + f"; log adults {est.loc['log_adults', 'coef']:.0f}")
+    res = pd.DataFrame(rows)
+    P.TABLES_REG.mkdir(parents=True, exist_ok=True)
+    res.to_csv(P.TABLES_REG / f"census_park_levels{_suffix()}.csv", index=False)
+    _log(f"-> {P.TABLES_REG / f'census_park_levels{_suffix()}.csv'}")
+
 
 SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "person": section_person, "migration": section_migration,
-            "eicv_check": section_eicv_check}
+            "levels": section_levels, "eicv_check": section_eicv_check}
 
 
 def main(argv=None) -> int:
