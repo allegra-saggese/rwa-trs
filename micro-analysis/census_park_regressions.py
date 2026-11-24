@@ -651,6 +651,28 @@ def section_levels():
     res.to_csv(P.TABLES_REG / f"census_park_levels{_suffix()}.csv", index=False)
     _log(f"-> {P.TABLES_REG / f'census_park_levels{_suffix()}.csv'}")
 
+    # Level gap within each wave: no sector fixed effects, so the coefficient compares park-adjacent with interior
+    # sectors in the same wave at the same population (not a change since 2002). Wave fixed effects absorb anything
+    # common to a wave, including the 2022 change in what counts as farm work; district fixed effects in the second
+    # specification compare sectors within the same district.
+    for t in WAVES:
+        d[f"parkw_{t}"] = d.border * (d.wave == t)
+    terms = [f"parkw_{t}" for t in WAVES]
+    gap_rows = []
+    for y, label in [(r[0], r[1]) for r in runs[:4]]:
+        for spec, fes in (("wave FE", ["wave"]), ("wave and district FE", ["wave", "district_id"])):
+            est, n, G = fe_ols(d, y, terms + ["log_adults"], fes, "district_id", test=terms)
+            for t, term in zip(WAVES, terms):
+                m = d[d.wave == t].groupby("border")[y].mean()
+                e = est.loc[term]
+                gap_rows.append({"outcome": y, "label": label, "spec": spec, "wave": t, "coef": e.coef, "se": e.se,
+                                 "p_wcb": e.p_wcb, "mean_park": m[1], "mean_interior": m[0],
+                                 "log_adults_coef": est.loc["log_adults", "coef"], "obs": n, "clusters": G})
+            _log("  level gap " + f"{label}, {spec}: " + ", ".join(
+                f"{t} {est.loc[f'parkw_{t}', 'coef']:+.0f} [{est.loc[f'parkw_{t}', 'p_wcb']:.3f}]" for t in WAVES))
+    pd.DataFrame(gap_rows).to_csv(P.TABLES_REG / f"census_park_levels_gap{_suffix()}.csv", index=False)
+    _log(f"-> {P.TABLES_REG / f'census_park_levels_gap{_suffix()}.csv'}")
+
 
 SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "person": section_person, "migration": section_migration,
             "levels": section_levels, "eicv_check": section_eicv_check}

@@ -1,0 +1,622 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,amsmath,array,float}
+\usepackage[T1]{fontenc}
+\pagestyle{plain}\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\begin{document}
+\begin{table}[H]
+\centering
+\caption{Park-Adjacent and Interior Sectors across Census Waves}
+\label{tab:census_park_gap}
+\begin{tabular}{lcccc}
+\toprule
+ & Non-farm workers & Services workers & Tourism workers & Log adults \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+Park-adjacent $\times$ 2012 & $-0.39$ & $-0.39$ & $-0.05$ & $0.06$ \\
+ & $(0.81)$ & $(0.70)$ & $(0.07)$ & $(0.05)$ \\
+ & $[0.574]$ & $[0.543]$ & $[0.392]$ & $[0.115]$ \\
+Park-adjacent $\times$ 2022 & $-1.32^{*}$ & $-0.72$ & $-0.09^{**}$ & $0.04$ \\
+ & $(0.85)$ & $(0.63)$ & $(0.05)$ & $(0.07)$ \\
+ & $[0.058]$ & $[0.167]$ & $[0.023]$ & $[0.510]$ \\
+\midrule
+2002 mean, park-adjacent & 4.16 & 2.61 & 0.04 & 9.18 \\
+2002 mean, interior & 5.17 & 3.80 & 0.06 & 9.19 \\
+Sectors (park-adjacent) & 381 (62) & 381 (62) & 381 (62) & 381 (62) \\
+Observations & 1,143 & 1,143 & 1,143 & 1,143 \\
+Districts (clusters) & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel from the 2002, 2012 and 2022 Population and Housing Census public-use samples, on 2022 sector boundaries, excluding Kigali City. Outcomes are workers per 100 residents aged 16 and over, by industry of main work: non-farm (all industries except agriculture, forestry and fishing), services (ISIC Rev.~4 sections G--U; Rev.~3 divisions 50--99 in 2002) and tourism (accommodation and food, and arts, entertainment and recreation; Rev.~3 divisions 55 and 92 in 2002). Column (4) is the log of the number of residents aged 16 and over (Census-weighted), so its coefficients give the difference in adult population growth since 2002, in log points. Park-adjacent sectors border a national park. Each column is one regression with sector and wave fixed effects; the coefficients give the change in the park-adjacent minus interior gap relative to 2002. Standard errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+
+\textbf{What it does.} Unit of observation: sector $\times$ Census wave (2002, 2012, 2022), the 381 sectors outside Kigali City. Outcomes are workers per 100 residents aged 16 and over, by industry of main work (non-farm, services, tourism), plus the log of adults. The model is $y_{st} = \alpha_s + \gamma_t + \beta_{2012}\,\mathrm{Park}_s 1[t{=}2012] + \beta_{2022}\,\mathrm{Park}_s 1[t{=}2022] + \varepsilon_{st}$ with sector and wave fixed effects and no controls, so each $\beta_t$ is the change since 2002 in the park-adjacent minus interior gap. Data: Census public-use samples and the sector--park border indicator. This is a descriptive comparison across waves, not a design built on a shock.
+
+\textbf{Result.} Park-adjacent sectors fall behind on non-farm work ($-$1.32 per 100 adults by 2022, $p=0.058$) and tourism work ($-$0.09, $p=0.023$), with no clear differential population growth.
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Park-Adjacent and Interior Sectors across Census Waves, Excluding the Ring of Neighbouring Sectors}
+\label{tab:census_park_gap-no-ring}
+\begin{tabular}{lcccc}
+\toprule
+ & Non-farm workers & Services workers & Tourism workers & Log adults \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+Park-adjacent $\times$ 2012 & $-0.42$ & $-0.36$ & $-0.04$ & $0.07$ \\
+ & $(0.85)$ & $(0.68)$ & $(0.07)$ & $(0.05)$ \\
+ & $[0.554]$ & $[0.539]$ & $[0.461]$ & $[0.101]$ \\
+Park-adjacent $\times$ 2022 & $-1.39$ & $-0.67$ & $-0.10^{**}$ & $0.06$ \\
+ & $(1.06)$ & $(0.75)$ & $(0.06)$ & $(0.08)$ \\
+ & $[0.110]$ & $[0.273]$ & $[0.032]$ & $[0.433]$ \\
+\midrule
+2002 mean, park-adjacent & 4.16 & 2.61 & 0.04 & 9.18 \\
+2002 mean, interior & 4.92 & 3.63 & 0.06 & 9.18 \\
+Sectors (park-adjacent) & 299 (62) & 299 (62) & 299 (62) & 299 (62) \\
+Observations & 897 & 897 & 897 & 897 \\
+Districts (clusters) & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel from the 2002, 2012 and 2022 Population and Housing Census public-use samples, on 2022 sector boundaries, excluding Kigali City and the sectors that touch a park-adjacent sector without bordering a park. Outcomes are workers per 100 residents aged 16 and over, by industry of main work: non-farm (all industries except agriculture, forestry and fishing), services (ISIC Rev.~4 sections G--U; Rev.~3 divisions 50--99 in 2002) and tourism (accommodation and food, and arts, entertainment and recreation; Rev.~3 divisions 55 and 92 in 2002). Column (4) is the log of the number of residents aged 16 and over (Census-weighted), so its coefficients give the difference in adult population growth since 2002, in log points. Park-adjacent sectors border a national park. Each column is one regression with sector and wave fixed effects; the coefficients give the change in the park-adjacent minus interior gap relative to 2002. Standard errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+
+\textbf{What it does.} Unit of observation: sector $\times$ Census wave (2002, 2012, 2022), the 381 sectors outside Kigali City minus the 82 sectors that touch a park-adjacent sector without bordering a park (299 sectors). Outcomes are workers per 100 residents aged 16 and over, by industry of main work (non-farm, services, tourism), plus the log of adults. The model is $y_{st} = \alpha_s + \gamma_t + \beta_{2012}\,\mathrm{Park}_s 1[t{=}2012] + \beta_{2022}\,\mathrm{Park}_s 1[t{=}2022] + \varepsilon_{st}$ with sector and wave fixed effects and no controls, so each $\beta_t$ is the change since 2002 in the park-adjacent minus interior gap. Data: Census public-use samples and the sector--park border indicator. This is a descriptive comparison across waves, not a design built on a shock.
+
+\textbf{Result.} Park-adjacent sectors fall behind on non-farm work ($-$1.39 per 100 adults by 2022, $p=0.110$) and tourism work ($-$0.10, $p=0.032$), with no clear differential population growth even without the ring.
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Park-Adjacent and Interior Sectors: Person-Level Estimates}
+\label{tab:census_park_gap_person}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm workers} & \multicolumn{2}{c}{Services workers} & \multicolumn{2}{c}{Tourism workers} \\
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Park-adjacent $\times$ 2012 & $-0.39$ & $0.16$ & $-0.39$ & $0.02$ & $-0.05$ & $-0.00$ \\
+ & $(0.66)$ & $(0.50)$ & $(0.57)$ & $(0.42)$ & $(0.05)$ & $(0.05)$ \\
+ & $[0.574]$ & $[0.781]$ & $[0.543]$ & $[0.983]$ & $[0.392]$ & $[0.960]$ \\
+Park-adjacent $\times$ 2022 & $-1.32^{*}$ & $-0.65$ & $-0.72$ & $-0.16$ & $-0.09^{**}$ & $-0.04$ \\
+ & $(0.69)$ & $(0.48)$ & $(0.51)$ & $(0.28)$ & $(0.04)$ & $(0.03)$ \\
+ & $[0.058]$ & $[0.193]$ & $[0.167]$ & $[0.566]$ & $[0.023]$ & $[0.234]$ \\
+\midrule
+Person and household controls $\times$ wave & No & Yes & No & Yes & No & Yes \\
+Residents aged 16+ & \multicolumn{6}{c}{1,574,787} \\
+Sectors (park-adjacent) & \multicolumn{6}{c}{381 (62)} \\
+Districts (clusters) & \multicolumn{6}{c}{27} \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Residents aged 16 and over in the 2002, 2012 and 2022 Census public-use samples, outside Kigali City. Outcome: 100 if the person's main work is in the group (non-farm, services, tourism; definitions as in Table~\ref{tab:census_park_gap}), 0 otherwise, including people who do not work. All columns include sector and wave fixed effects; observations are weighted so that every sector-wave carries equal weight, so the odd columns reproduce Table~\ref{tab:census_park_gap}. Even columns add, each interacted with wave: age band, sex, education (none, primary, secondary, tertiary), marital status, urban residence, household size and residence in collective quarters. Standard errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+
+\textbf{What it does.} Unit: adults aged 16 and over in the same sectors. The outcome is 100 if the person's main work is in the group and 0 otherwise. Same sector and wave fixed effects and Park $\times$ wave terms as the sector regression; each sector-wave is weighted equally, so odd columns reproduce it exactly. Even columns add age band, sex, urban residence, household size, education and marital status, each interacted with wave, so the coefficient compares adults with the same observable traits.
+
+\textbf{Result.} Adding person and household controls roughly halves the 2022 gaps (non-farm $-$1.32 to $-$0.65, $p=0.193$; tourism $-$0.09 to $-$0.04, $p=0.234$), so much of the lag reflects who lives in park-adjacent sectors.
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Park-Adjacent and Interior Sectors: Person-Level Estimates, Excluding the Ring of Neighbouring Sectors}
+\label{tab:census_park_gap_person-no-ring}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm workers} & \multicolumn{2}{c}{Services workers} & \multicolumn{2}{c}{Tourism workers} \\
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Park-adjacent $\times$ 2012 & $-0.42$ & $0.20$ & $-0.36$ & $0.07$ & $-0.04$ & $0.00$ \\
+ & $(0.69)$ & $(0.52)$ & $(0.55)$ & $(0.43)$ & $(0.06)$ & $(0.05)$ \\
+ & $[0.554]$ & $[0.725]$ & $[0.539]$ & $[0.920]$ & $[0.461]$ & $[0.935]$ \\
+Park-adjacent $\times$ 2022 & $-1.39$ & $-0.76$ & $-0.67$ & $-0.15$ & $-0.10^{**}$ & $-0.05$ \\
+ & $(0.86)$ & $(0.56)$ & $(0.61)$ & $(0.32)$ & $(0.05)$ & $(0.03)$ \\
+ & $[0.110]$ & $[0.190]$ & $[0.273]$ & $[0.658]$ & $[0.032]$ & $[0.134]$ \\
+\midrule
+Person and household controls $\times$ wave & No & Yes & No & Yes & No & Yes \\
+Residents aged 16+ & \multicolumn{6}{c}{1,219,404} \\
+Sectors (park-adjacent) & \multicolumn{6}{c}{299 (62)} \\
+Districts (clusters) & \multicolumn{6}{c}{27} \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Residents aged 16 and over in the 2002, 2012 and 2022 Census public-use samples, outside Kigali City and the sectors that touch a park-adjacent sector without bordering a park. Outcome: 100 if the person's main work is in the group (non-farm, services, tourism; definitions as in Table~\ref{tab:census_park_gap-no-ring}), 0 otherwise, including people who do not work. All columns include sector and wave fixed effects; observations are weighted so that every sector-wave carries equal weight, so the odd columns reproduce Table~\ref{tab:census_park_gap-no-ring}. Even columns add, each interacted with wave: age band, sex, education (none, primary, secondary, tertiary), marital status, urban residence, household size and residence in collective quarters. Standard errors clustered by district in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+
+\textbf{What it does.} Unit: adults aged 16 and over in the same sectors (ring sectors dropped). The outcome is 100 if the person's main work is in the group and 0 otherwise. Same sector and wave fixed effects and Park $\times$ wave terms as the sector regression; each sector-wave is weighted equally, so odd columns reproduce it exactly. Even columns add age band, sex, urban residence, household size, education and marital status, each interacted with wave, so the coefficient compares adults with the same observable traits.
+
+\textbf{Result.} Adding person and household controls roughly halves the 2022 gaps (non-farm $-$1.39 to $-$0.76, $p=0.190$; tourism $-$0.10 to $-$0.05, $p=0.134$), so much of the lag reflects who lives in park-adjacent sectors.
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Change in the Park-Adjacent Gap, 2012--2022, Controlling for In-Migration}
+\label{tab:census_park_gap_migration}
+\begin{tabular}{lccccc}
+\toprule
+ & \multicolumn{3}{c}{Person level} & \multicolumn{2}{c}{Sector level} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-6}
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+\textit{Non-farm workers} & & & & & \\
+Park-adjacent $\times$ 2022 & $-0.93^{*}$ & $-0.82^{*}$ & $-0.67$ & $-0.93^{*}$ & $-0.34$ \\
+ & $(0.45)$ & $(0.46)$ & $(0.45)$ & $(0.64)$ & $(0.60)$ \\
+ & $[0.059]$ & $[0.096]$ & $[0.156]$ & $[0.059]$ & $[0.424]$ \\
+\textit{Services workers} & & & & & \\
+Park-adjacent $\times$ 2022 & $-0.33$ & $-0.19$ & $-0.06$ & $-0.33$ & $0.16$ \\
+ & $(0.34)$ & $(0.38)$ & $(0.38)$ & $(0.48)$ & $(0.50)$ \\
+ & $[0.335]$ & $[0.666]$ & $[0.886]$ & $[0.335]$ & $[0.659]$ \\
+\textit{Tourism workers} & & & & & \\
+Park-adjacent $\times$ 2022 & $-0.05$ & $-0.04$ & $-0.03$ & $-0.05$ & $-0.02$ \\
+ & $(0.05)$ & $(0.05)$ & $(0.05)$ & $(0.06)$ & $(0.07)$ \\
+ & $[0.327]$ & $[0.438]$ & $[0.524]$ & $[0.327]$ & $[0.727]$ \\
+\midrule
+Person and household controls $\times$ wave & No & Yes & Yes & -- & -- \\
+Moved in from another district or abroad $\times$ wave & No & No & Yes & -- & -- \\
+Sector share of in-movers $\times$ wave & -- & -- & -- & No & Yes \\
+Sectors (park-adjacent) & \multicolumn{5}{c}{381 (62)} \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} 2012 and 2022 Census public-use samples, residents aged 16 and over outside Kigali City. 2002 is left out because it records previous residence in the pre-2006 districts. Outcomes as in Table~\ref{tab:census_park_gap}; the coefficient is the change in the park-adjacent minus interior gap from 2012 to 2022. A mover is a resident whose previous residence was another district or abroad; moves within a district are not recorded, so this is a lower bound on in-migration. All columns include sector and wave fixed effects. Columns (1)--(3): person level, each sector-wave weighted equally; column (2) adds age band, sex, education, marital status, urban residence, household size and collective quarters, each by wave. Columns (4)--(5): sector level, workers per 100 adults; column (5) adds the sector's share of adults who moved in, by wave. Migration may itself respond to jobs, so columns (3) and (5) show the gap net of who moved in. Standard errors clustered by district in parentheses; wild cluster restricted bootstrap p-values in brackets; *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+
+\textbf{What it does.} Unit: adults aged 16 and over (columns 1--3) and sector $\times$ wave (columns 4--5), 2012 and 2022 only because the 2002 previous-residence variable uses the pre-2006 districts. The coefficient is Park $\times$ 2022, the change in the park-adjacent minus interior gap from 2012 to 2022, with sector and wave fixed effects. Column 2 adds the person controls of the previous page; column 3 adds a mover indicator (previous residence in another district or abroad) $\times$ wave; column 5 adds the sector's share of adults who moved in $\times$ wave. Moves within a district are not recorded, so movers are a lower bound. Migration can respond to jobs, so columns 3 and 5 are the gap net of who moved in, not a causal decomposition.
+
+\textbf{Result.} The 2012--22 widening of the non-farm gap ($-$0.93, $p=0.059$) shrinks to $-$0.67 ($p=0.156$) with a person-level mover control and to $-$0.34 ($p=0.424$) with the sector in-mover share, which is plausibly an outcome of the same process rather than a clean control.
+\clearpage
+\begin{table}[H]
+\centering
+\caption{Change in the Park-Adjacent Gap, 2012--2022, Controlling for In-Migration, Excluding the Ring}
+\label{tab:census_park_gap_migration-no-ring}
+\begin{tabular}{lccccc}
+\toprule
+ & \multicolumn{3}{c}{Person level} & \multicolumn{2}{c}{Sector level} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-6}
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+\textit{Non-farm workers} & & & & & \\
+Park-adjacent $\times$ 2022 & $-0.97$ & $-0.96^{*}$ & $-0.79$ & $-0.97$ & $-0.34$ \\
+ & $(0.57)$ & $(0.49)$ & $(0.48)$ & $(0.80)$ & $(0.71)$ \\
+ & $[0.103]$ & $[0.066]$ & $[0.112]$ & $[0.103]$ & $[0.510]$ \\
+\textit{Services workers} & & & & & \\
+Park-adjacent $\times$ 2022 & $-0.30$ & $-0.22$ & $-0.09$ & $-0.30$ & $0.22$ \\
+ & $(0.39)$ & $(0.36)$ & $(0.36)$ & $(0.55)$ & $(0.52)$ \\
+ & $[0.434]$ & $[0.554]$ & $[0.816]$ & $[0.434]$ & $[0.570]$ \\
+\textit{Tourism workers} & & & & & \\
+Park-adjacent $\times$ 2022 & $-0.06$ & $-0.06$ & $-0.05$ & $-0.06$ & $-0.03$ \\
+ & $(0.04)$ & $(0.05)$ & $(0.05)$ & $(0.06)$ & $(0.06)$ \\
+ & $[0.171]$ & $[0.250]$ & $[0.318]$ & $[0.171]$ & $[0.518]$ \\
+\midrule
+Person and household controls $\times$ wave & No & Yes & Yes & -- & -- \\
+Moved in from another district or abroad $\times$ wave & No & No & Yes & -- & -- \\
+Sector share of in-movers $\times$ wave & -- & -- & -- & No & Yes \\
+Sectors (park-adjacent) & \multicolumn{5}{c}{299 (62)} \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} 2012 and 2022 Census public-use samples, residents aged 16 and over outside Kigali City and the ring of sectors touching a park-adjacent sector. 2002 is left out because it records previous residence in the pre-2006 districts. Outcomes as in Table~\ref{tab:census_park_gap}; the coefficient is the change in the park-adjacent minus interior gap from 2012 to 2022. A mover is a resident whose previous residence was another district or abroad; moves within a district are not recorded, so this is a lower bound on in-migration. All columns include sector and wave fixed effects. Columns (1)--(3): person level, each sector-wave weighted equally; column (2) adds age band, sex, education, marital status, urban residence, household size and collective quarters, each by wave. Columns (4)--(5): sector level, workers per 100 adults; column (5) adds the sector's share of adults who moved in, by wave. Migration may itself respond to jobs, so columns (3) and (5) show the gap net of who moved in. Standard errors clustered by district in parentheses; wild cluster restricted bootstrap p-values in brackets; *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+
+\textbf{What it does.} Unit: adults aged 16 and over (columns 1--3) and sector $\times$ wave (columns 4--5), 2012 and 2022 only because the 2002 previous-residence variable uses the pre-2006 districts. The coefficient is Park $\times$ 2022, the change in the park-adjacent minus interior gap from 2012 to 2022, with sector and wave fixed effects. Column 2 adds the person controls of the previous page; column 3 adds a mover indicator (previous residence in another district or abroad) $\times$ wave; column 5 adds the sector's share of adults who moved in $\times$ wave. Moves within a district are not recorded, so movers are a lower bound. Migration can respond to jobs, so columns 3 and 5 are the gap net of who moved in, not a causal decomposition.
+
+\textbf{Result.} The 2012--22 widening of the non-farm gap ($-$0.97, $p=0.103$) shrinks to $-$0.79 ($p=0.112$) with a person-level mover control and to $-$0.34 ($p=0.510$) with the sector in-mover share, which is plausibly an outcome of the same process rather than a clean control.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park-Adjacent and Interior Sectors: Worker Counts, Controlling for Population}
+\label{tab:levels}
+\begin{tabular}{lccccc}
+\toprule
+ & Non-farm & Services & Tourism & Farm, 2002--2012 & Farm, all waves \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A. Park-adjacent only}} \\
+Park-adjacent $\times$ 2012 & $-369^{**}$ & $-297^{**}$ & $-17.3^{*}$ & $133$ & $117$ \\
+ & $(214)$ & $(150)$ & $(11.1)$ & $(571)$ & $(483)$ \\
+ & $[0.036]$ & $[0.022]$ & $[0.083]$ & $[0.760]$ & $[0.783]$ \\
+Park-adjacent $\times$ 2022 & $-674^{***}$ & $-475^{***}$ & $-35.2^{***}$ &  & $816^{***}$ \\
+ & $(301)$ & $(209)$ & $(14.6)$ &  & $(361)$ \\
+ & $[0.003]$ & $[0.005]$ & $[0.002]$ &  & $[0.005]$ \\
+\multicolumn{6}{l}{\textit{Panel B. With park share}} \\
+Park-adjacent $\times$ 2012 & $-369^{**}$ & $-297^{**}$ & $-17.4^{*}$ & $133$ & $118$ \\
+ & $(214)$ & $(149)$ & $(11.1)$ & $(562)$ & $(477)$ \\
+ & $[0.037]$ & $[0.020]$ & $[0.082]$ & $[0.757]$ & $[0.781]$ \\
+Park-adjacent $\times$ 2022 & $-674^{***}$ & $-475^{***}$ & $-35.2^{***}$ &  & $817^{***}$ \\
+ & $(300)$ & $(210)$ & $(14.6)$ &  & $(353)$ \\
+ & $[0.002]$ & $[0.005]$ & $[0.002]$ &  & $[0.004]$ \\
+Park share $\times$ 2012 & $-376$ & $-311$ & $-16.7$ & $-1,535$ & $-1,538^{*}$ \\
+ & $(562)$ & $(435)$ & $(36.4)$ & $(1,334)$ & $(1,132)$ \\
+ & $[0.412]$ & $[0.383]$ & $[0.589]$ & $[0.101]$ & $[0.090]$ \\
+Park share $\times$ 2022 & $-1,061^{**}$ & $-854^{**}$ & $-32.7$ &  & $1,413$ \\
+ & $(587)$ & $(435)$ & $(26.6)$ &  & $(1,293)$ \\
+ & $[0.050]$ & $[0.027]$ & $[0.135]$ &  & $[0.224]$ \\
+\midrule
+Log adults (Panel A coefficient) & $4,328$ & $3,230$ & $171$ & $5,124$ & $5,393$ \\
+ & $(969)$ & $(719)$ & $(41)$ & $(1,880)$ & $(1,392)$ \\
+Observations & 1,143 & 1,143 & 1,143 & 762 & 1,143 \\
+Districts (clusters) & 27 & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel, Census 2002, 2012 and 2022, excluding Kigali City. Outcomes are the number of workers (Census-weighted) by industry of main work; farm is agriculture, forestry and fishing. All columns include sector and wave fixed effects and log adults. Park share is park area over sector area, centred at its mean among park-adjacent sectors (0.29); coefficients on the share terms are per unit of share, so divide by ten for ten percentage points. Column (4) uses 2002 and 2012 only: in 2022 farming counts as work only if mainly for the market, so farm counts fall mechanically in 2022. Log adults is itself an outcome of the programme, so the Park-adjacent terms are net of the population channel. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ Census wave. The outcome is the number of non-farm, services, tourism or farm workers rather than a rate. The model is $y_{st} = \alpha_s + \gamma_t + \sum_t \beta_t\,\mathrm{Park}_s 1[t] + \lambda \log(\mathrm{adults}_{st}) + \varepsilon_{st}$; Panel B adds $\sum_t \delta_t\,\mathrm{Park}_s(\mathrm{Share}_s - \overline{\mathrm{Share}})1[t]$, so the gap can vary with the share of the sector that is park. Controlling for log adults with a free coefficient asks how many workers a park-adjacent sector has at a given population.
+
+\textbf{Result.} At a given population, park-adjacent sectors have 369 fewer non-farm workers than interior sectors by 2012 and 674 fewer by 2022 ($p=0.003$), and the 2022 gap grows with park share ($-$1,061 per unit of share, $p=0.050$).
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park-Adjacent and Interior Sectors: Worker Counts, Controlling for Population (No Ring)}
+\label{tab:levels_nr}
+\begin{tabular}{lccccc}
+\toprule
+ & Non-farm & Services & Tourism & Farm, 2002--2012 & Farm, all waves \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A. Park-adjacent only}} \\
+Park-adjacent $\times$ 2012 & $-398^{**}$ & $-316^{**}$ & $-18.0^{*}$ & $173$ & $188$ \\
+ & $(229)$ & $(154)$ & $(11.6)$ & $(596)$ & $(512)$ \\
+ & $[0.034]$ & $[0.014]$ & $[0.080]$ & $[0.698]$ & $[0.674]$ \\
+Park-adjacent $\times$ 2022 & $-673^{**}$ & $-462^{**}$ & $-37.8^{***}$ &  & $958^{***}$ \\
+ & $(345)$ & $(234)$ & $(16.0)$ &  & $(407)$ \\
+ & $[0.012]$ & $[0.015]$ & $[0.004]$ &  & $[0.005]$ \\
+\multicolumn{6}{l}{\textit{Panel B. With park share}} \\
+Park-adjacent $\times$ 2012 & $-399^{**}$ & $-317^{**}$ & $-18.0^{*}$ & $173$ & $189$ \\
+ & $(230)$ & $(154)$ & $(11.6)$ & $(586)$ & $(505)$ \\
+ & $[0.033]$ & $[0.015]$ & $[0.079]$ & $[0.697]$ & $[0.670]$ \\
+Park-adjacent $\times$ 2022 & $-674^{**}$ & $-462^{**}$ & $-37.9^{***}$ &  & $959^{***}$ \\
+ & $(345)$ & $(236)$ & $(16.0)$ &  & $(397)$ \\
+ & $[0.011]$ & $[0.016]$ & $[0.004]$ &  & $[0.003]$ \\
+Park share $\times$ 2012 & $-376$ & $-311$ & $-16.7$ & $-1,537^{*}$ & $-1,535$ \\
+ & $(558)$ & $(431)$ & $(36.4)$ & $(1,314)$ & $(1,155)$ \\
+ & $[0.405]$ & $[0.374]$ & $[0.586]$ & $[0.092]$ & $[0.100]$ \\
+Park share $\times$ 2022 & $-1,058^{**}$ & $-851^{**}$ & $-32.6$ &  & $1,431$ \\
+ & $(583)$ & $(432)$ & $(26.8)$ &  & $(1,324)$ \\
+ & $[0.047]$ & $[0.025]$ & $[0.135]$ &  & $[0.227]$ \\
+\midrule
+Log adults (Panel A coefficient) & $4,286$ & $3,187$ & $170$ & $5,342$ & $5,143$ \\
+ & $(1,103)$ & $(803)$ & $(48)$ & $(1,879)$ & $(1,307)$ \\
+Observations & 897 & 897 & 897 & 598 & 897 \\
+Districts (clusters) & 27 & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel, Census 2002, 2012 and 2022, excluding Kigali City and the 82 ring sectors. Outcomes are the number of workers (Census-weighted) by industry of main work; farm is agriculture, forestry and fishing. All columns include sector and wave fixed effects and log adults. Park share is park area over sector area, centred at its mean among park-adjacent sectors (0.29); coefficients on the share terms are per unit of share, so divide by ten for ten percentage points. Column (4) uses 2002 and 2012 only: in 2022 farming counts as work only if mainly for the market, so farm counts fall mechanically in 2022. Log adults is itself an outcome of the programme, so the Park-adjacent terms are net of the population channel. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ Census wave, ring sectors dropped. The outcome is the number of non-farm, services, tourism or farm workers rather than a rate. The model is $y_{st} = \alpha_s + \gamma_t + \sum_t \beta_t\,\mathrm{Park}_s 1[t] + \lambda \log(\mathrm{adults}_{st}) + \varepsilon_{st}$; Panel B adds $\sum_t \delta_t\,\mathrm{Park}_s(\mathrm{Share}_s - \overline{\mathrm{Share}})1[t]$, so the gap can vary with the share of the sector that is park. Controlling for log adults with a free coefficient asks how many workers a park-adjacent sector has at a given population.
+
+\textbf{Result.} At a given population, park-adjacent sectors have 398 fewer non-farm workers than interior sectors by 2012 and 673 fewer by 2022 ($p=0.012$), and the 2022 gap grows with park share ($-$1,058 per unit of share, $p=0.047$).
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park-Adjacent Minus Interior Gap in Worker Counts, Within Each Wave}
+\label{tab:levelsgap}
+\begin{tabular}{lcccc}
+\toprule
+ & Non-farm & Services & Tourism & Farm \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A. Wave fixed effects}} \\
+Park-adjacent, 2002 & $-137$ & $-155$ & $-3.1$ & $82$ \\
+ & $(134)$ & $(98)$ & $(5.6)$ & $(170)$ \\
+ & $[0.315]$ & $[0.119]$ & $[0.591]$ & $[0.639]$ \\
+Park-adjacent, 2012 & $-470^{***}$ & $-429^{***}$ & $-18.5^{**}$ & $230$ \\
+ & $(154)$ & $(102)$ & $(6.9)$ & $(410)$ \\
+ & $[0.003]$ & $[0.001]$ & $[0.016]$ & $[0.595]$ \\
+Park-adjacent, 2022 & $-788^{***}$ & $-615^{***}$ & $-37.0^{***}$ & $919^{***}$ \\
+ & $(203)$ & $(142)$ & $(9.0)$ & $(259)$ \\
+ & $[0.001]$ & $[0.001]$ & $[0.000]$ & $[0.000]$ \\
+Mean, park-adjacent, 2022 & 2,306 & 1,524 & 56 & 5,806 \\
+Mean, interior, 2022 & 2,983 & 2,054 & 89 & 4,742 \\
+Log adults coefficient & 3,738 & 2,855 & 139 & 4,881 \\
+\multicolumn{5}{l}{\textit{Panel B. Wave and district fixed effects}} \\
+Park-adjacent, 2002 & $-190$ & $-210$ & $-7.5$ & $449^{**}$ \\
+ & $(201)$ & $(148)$ & $(8.5)$ & $(203)$ \\
+ & $[0.366]$ & $[0.182]$ & $[0.395]$ & $[0.028]$ \\
+Park-adjacent, 2012 & $-548^{**}$ & $-503^{***}$ & $-23.9^{**}$ & $626$ \\
+ & $(217)$ & $(143)$ & $(8.1)$ & $(384)$ \\
+ & $[0.028]$ & $[0.003]$ & $[0.011]$ & $[0.135]$ \\
+Park-adjacent, 2022 & $-857^{***}$ & $-683^{***}$ & $-42.1^{***}$ & $1,305^{***}$ \\
+ & $(246)$ & $(177)$ & $(13.0)$ & $(327)$ \\
+ & $[0.001]$ & $[0.001]$ & $[0.003]$ & $[0.000]$ \\
+Mean, park-adjacent, 2022 & 2,306 & 1,524 & 56 & 5,806 \\
+Mean, interior, 2022 & 2,983 & 2,054 & 89 & 4,742 \\
+Log adults coefficient & 4,153 & 3,171 & 155 & 4,384 \\
+\midrule
+Observations & 1,143 & 1,143 & 1,143 & 1,143 \\
+Districts (clusters) & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel, Census 2002, 2012 and 2022, excluding Kigali City. Outcomes are numbers of workers. There are no sector fixed effects: each Park-adjacent coefficient compares park-adjacent with interior sectors within the same wave at the same population (log adults), not a change since 2002. Panel B adds district fixed effects, comparing sectors within the same district. Wave fixed effects absorb the common 2022 change in what counts as farm work. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ Census wave. This is the cross-sectional counterpart of the previous regression: $y_{st} = \gamma_t + \sum_t \beta_t\,\mathrm{Park}_s 1[t] + \lambda \log(\mathrm{adults}_{st}) + \varepsilon_{st}$ with wave fixed effects only (Panel A), then with district fixed effects (Panel B). Each $\beta_t$ is the level difference in worker counts between park-adjacent and interior sectors in that wave, holding population fixed, so it shows whether the gap already existed in 2002.
+
+\textbf{Result.} The non-farm gap is small and insignificant in 2002 ($-$137, $p=0.315$) and widens to $-$470 in 2012 and $-$788 in 2022 ($p=0.001$), so the later gaps were not already there.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park-Adjacent Minus Interior Gap in Worker Counts, Within Each Wave (No Ring)}
+\label{tab:levelsgap_nr}
+\begin{tabular}{lcccc}
+\toprule
+ & Non-farm & Services & Tourism & Farm \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A. Wave fixed effects}} \\
+Park-adjacent, 2002 & $-136$ & $-155$ & $-4.1$ & $-41$ \\
+ & $(149)$ & $(110)$ & $(6.6)$ & $(183)$ \\
+ & $[0.366]$ & $[0.157]$ & $[0.534]$ & $[0.821]$ \\
+Park-adjacent, 2012 & $-483^{***}$ & $-439^{***}$ & $-19.8^{**}$ & $162$ \\
+ & $(169)$ & $(119)$ & $(8.3)$ & $(437)$ \\
+ & $[0.005]$ & $[0.001]$ & $[0.025]$ & $[0.726]$ \\
+Park-adjacent, 2022 & $-770^{***}$ & $-592^{***}$ & $-40.2^{***}$ & $928^{***}$ \\
+ & $(240)$ & $(171)$ & $(10.4)$ & $(292)$ \\
+ & $[0.002]$ & $[0.003]$ & $[0.001]$ & $[0.002]$ \\
+Mean, park-adjacent, 2022 & 2,306 & 1,524 & 56 & 5,806 \\
+Mean, interior, 2022 & 2,886 & 1,971 & 89 & 4,615 \\
+Log adults coefficient & 3,593 & 2,743 & 139 & 4,938 \\
+\multicolumn{5}{l}{\textit{Panel B. Wave and district fixed effects}} \\
+Park-adjacent, 2002 & $-393$ & $-433$ & $-33.7$ & $794^{***}$ \\
+ & $(319)$ & $(275)$ & $(21.5)$ & $(335)$ \\
+ & $[0.247]$ & $[0.128]$ & $[0.117]$ & $[0.009]$ \\
+Park-adjacent, 2012 & $-779^{**}$ & $-746^{***}$ & $-51.0^{**}$ & $1,039^{**}$ \\
+ & $(323)$ & $(262)$ & $(22.3)$ & $(446)$ \\
+ & $[0.025]$ & $[0.009]$ & $[0.013]$ & $[0.039]$ \\
+Park-adjacent, 2022 & $-1,057^{***}$ & $-892^{***}$ & $-71.0^{***}$ & $1,795^{***}$ \\
+ & $(333)$ & $(281)$ & $(25.0)$ & $(411)$ \\
+ & $[0.006]$ & $[0.006]$ & $[0.003]$ & $[0.000]$ \\
+Mean, park-adjacent, 2022 & 2,306 & 1,524 & 56 & 5,806 \\
+Mean, interior, 2022 & 2,886 & 1,971 & 89 & 4,615 \\
+Log adults coefficient & 4,120 & 3,152 & 161 & 4,364 \\
+\midrule
+Observations & 897 & 897 & 897 & 897 \\
+Districts (clusters) & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel, Census 2002, 2012 and 2022, excluding Kigali City and the 82 ring sectors. Outcomes are numbers of workers. There are no sector fixed effects: each Park-adjacent coefficient compares park-adjacent with interior sectors within the same wave at the same population (log adults), not a change since 2002. Panel B adds district fixed effects, comparing sectors within the same district. Wave fixed effects absorb the common 2022 change in what counts as farm work. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ Census wave, ring sectors dropped. This is the cross-sectional counterpart of the previous regression: $y_{st} = \gamma_t + \sum_t \beta_t\,\mathrm{Park}_s 1[t] + \lambda \log(\mathrm{adults}_{st}) + \varepsilon_{st}$ with wave fixed effects only (Panel A), then with district fixed effects (Panel B). Each $\beta_t$ is the level difference in worker counts between park-adjacent and interior sectors in that wave, holding population fixed, so it shows whether the gap already existed in 2002.
+
+\textbf{Result.} The non-farm gap is small and insignificant in 2002 ($-$136, $p=0.366$) and widens to $-$483 in 2012 and $-$770 in 2022 ($p=0.002$), so the later gaps were not already there.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park-Adjacent and Interior Sectors: Land Use, 2000--2020}
+\label{tab:land}
+\begin{tabular}{lccc}
+\toprule
+ & Cropland share (pp) & Built-up share (pp) & Log built-up area \\
+ & (1) & (2) & (3) \\
+\midrule
+Park-adjacent $\times$ 2010 & $-0.10$ & $-0.50^{**}$ & $0.06$ \\
+ & $(0.85)$ & $(0.24)$ & $(0.07)$ \\
+ & $[0.889]$ & $[0.016]$ & $[0.340]$ \\
+Park-adjacent $\times$ 2020 & $-1.75$ & $-0.71$ & $0.13$ \\
+ & $(1.92)$ & $(0.81)$ & $(0.14)$ \\
+ & $[0.290]$ & $[0.276]$ & $[0.324]$ \\
+\midrule
+Sectors & 381 & 381 & 381 \\
+Observations & 1,143 & 1,143 & 1,143 \\
+Districts (clusters) & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-year panel, 2000, 2010 and 2020, 381 sectors outside Kigali City. Cropland and built-up share are percentage points of the sector's usable (non-park) land, from GLAD land cover; log built-up area is $\log(1+\text{hectares})$ from the Global Human Settlement Layer. Sector and year fixed effects; 2000 is the base year. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ year, 2000, 2010 and 2020 (the five-year panel is the robustness check). The model is $y_{st} = \alpha_s + \gamma_t + \sum_{t>2000}\beta_t\,\mathrm{Park}_s 1[t] + \varepsilon_{st}$, the same design as the Census gap regression with land-use years in place of Census waves. $\beta_t$ is the change since 2000 in the park-adjacent minus interior gap in cropland share, built-up share and log built-up area.
+
+\textbf{Result.} There is no clear land-use gap: built-up share is 0.50 pp lower in 2010 ($p=0.016$) but the 2020 difference ($-$0.71, $p=0.276$) and the cropland and log built-up area results are insignificant.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Tourism Exposure and Land Use}
+\label{tab:shift_land}
+\begin{tabular}{lccc}
+\toprule
+ & Cropland share (pp) & Built-up share (pp) & Log built-up area \\
+ & (1) & (2) & (3) \\
+\midrule
+\multicolumn{4}{l}{\textit{Panel A. Exposure $\times$ national visits}} \\
+Exposure $\times$ national visits (100,000s) & $4.82$ & $-3.62^{**}$ & $-0.00$ \\
+ & $(5.53)$ & $(1.91)$ & $(0.25)$ \\
+ & $[0.408]$ & $[0.011]$ & $[0.985]$ \\
+\multicolumn{4}{l}{\textit{Panel B. Exposure by year (2005 base)}} \\
+Exposure $\times$ 2010 & $1.83$ & $-0.72^{**}$ & $-0.00$ \\
+ & $(2.12)$ & $(0.43)$ & $(0.11)$ \\
+ & $[0.424]$ & $[0.034]$ & $[0.982]$ \\
+Exposure $\times$ 2015 & $4.64$ & $-2.11^{**}$ & $0.02$ \\
+ & $(4.15)$ & $(1.17)$ & $(0.22)$ \\
+ & $[0.378]$ & $[0.037]$ & $[0.933]$ \\
+Exposure $\times$ 2020 & $8.22$ & $-1.58$ & $0.07$ \\
+ & $(7.08)$ & $(2.03)$ & $(0.34)$ \\
+ & $[0.367]$ & $[0.403]$ & $[0.842]$ \\
+\midrule
+Sectors & 361 & 361 & 361 \\
+Observations & 1,444 & 1,444 & 1,444 \\
+Districts (clusters) & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-year panel, 2005, 2010, 2015 and 2020, the 361 sectors outside Kigali City that do not border Gishwati or Mukura. Exposure is the share of three-park visits (2005--2019: Volcanoes 0.40, Akagera 0.46, Nyungwe 0.14) for a sector whose nearest park is that park, and zero for interior sectors; national visits are all-park visits in 100,000s (0.24, 0.45, 0.73, 0.36 in the four years). Outcomes as in the land-use table. Sector and year fixed effects. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ year, 2005, 2010, 2015, 2020 (the years with a land observation and a visit count). Exposure $E_s$ is the park's share of visits at fixed 2005--2019 weights, so the shock is one national series of park visits allocated to sectors by the park they border. Panel A: $y_{st} = \alpha_s + \gamma_t + \beta E_s T_t + \varepsilon_{st}$, with $T_t$ national visits. Panel B: $y_{st} = \alpha_s + \gamma_t + \sum_{t>2005}\beta_t E_s 1[t] + \varepsilon_{st}$. With four years of one series, $\beta$ cannot separate tourism from anything else that moves with $E_s$.
+
+\textbf{Result.} Built-up share falls with exposure to national park visits ($-$3.62, $p=0.011$), but the by-year estimates are not significant in 2020 and cropland and log built-up area show nothing.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Tourism Exposure and Work Outcomes across Census Waves}
+\label{tab:shift_census}
+\begin{tabular}{lccc}
+\toprule
+ & Non-farm & Services & Tourism \\
+ & (1) & (2) & (3) \\
+\midrule
+Exposure $\times$ 2012 & $-2.89^{*}$ & $-1.71$ & $-0.04$ \\
+ & $(1.78)$ & $(1.32)$ & $(0.28)$ \\
+ & $[0.086]$ & $[0.146]$ & $[0.862]$ \\
+Exposure $\times$ 2022 & $-3.88$ & $-1.24$ & $-0.27$ \\
+ & $(3.28)$ & $(2.31)$ & $(0.22)$ \\
+ & $[0.233]$ & $[0.541]$ & $[0.258]$ \\
+\midrule
+Sectors & 361 & 361 & 361 \\
+Observations & 1,083 & 1,083 & 1,083 \\
+Districts (clusters) & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel, Census 2002, 2012 and 2022, the 361 sectors outside Kigali City that do not border Gishwati or Mukura. Outcomes are workers per 100 residents aged 16 and over. Exposure as in the previous table. Sector and wave fixed effects; 2002 is the base wave. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ Census wave. Same exposure measure as the land-use version, entered as $y_{st} = \alpha_s + \gamma_t + \sum_{t\in\{2012,2022\}}\beta_t E_s 1[t] + \varepsilon_{st}$ for the three work outcomes. Exposure takes one value per park (about three distinct non-zero values), so the contrast is essentially between parks and interior sectors.
+
+\textbf{Result.} More exposed sectors lose ground on non-farm work ($-$2.89 in 2012, $p=0.086$; $-$3.88 in 2022, $p=0.233$), but the 2022 estimate is imprecise and services and tourism are insignificant.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Gishwati--Mukura Opening and Land Use}
+\label{tab:open_land}
+\begin{tabular}{lccc}
+\toprule
+ & Cropland share (pp) & Built-up share (pp) & Log built-up area \\
+ & (1) & (2) & (3) \\
+\midrule
+\multicolumn{4}{l}{\textit{Panel A. After the opening}} \\
+Gishwati--Mukura $\times$ post-2015 & $-5.22^{**}$ & $0.11$ & $0.04$ \\
+ & $(1.15)$ & $(1.02)$ & $(0.15)$ \\
+ & $[0.023]$ & $[0.911]$ & $[0.790]$ \\
+\multicolumn{4}{l}{\textit{Panel B. By year (2010 base)}} \\
+Gishwati--Mukura $\times$ 2000 & $0.57$ & $0.37$ & $-0.04$ \\
+ & $(0.75)$ & $(0.33)$ & $(0.11)$ \\
+ & $[0.515]$ & $[0.293]$ & $[0.697]$ \\
+Gishwati--Mukura $\times$ 2005 & $0.80^{*}$ & $0.43$ & $-0.02$ \\
+ & $(0.39)$ & $(0.21)$ & $(0.06)$ \\
+ & $[0.083]$ & $[0.136]$ & $[0.734]$ \\
+Gishwati--Mukura $\times$ 2015 & $-2.53^{**}$ & $-0.52$ & $0.01$ \\
+ & $(0.86)$ & $(0.53)$ & $(0.06)$ \\
+ & $[0.032]$ & $[0.335]$ & $[0.824]$ \\
+Gishwati--Mukura $\times$ 2020 & $-5.51^{**}$ & $0.18$ & $0.03$ \\
+ & $(1.26)$ & $(1.04)$ & $(0.12)$ \\
+ & $[0.026]$ & $[0.859]$ & $[0.819]$ \\
+\midrule
+Sectors & 339 & 339 & 339 \\
+Observations & 1,695 & 1,695 & 1,695 \\
+Districts (clusters) & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-year panel, 2000--2020 in five-year steps: the 319 interior sectors and the 20 sectors bordering Gishwati or Mukura, outside Kigali City. Outcomes as in the land-use table. Sector and year fixed effects. Panel A: post = 2020 (the park was created in 2015). Panel B: 2010, the last year before the opening, is the base. The 20 treated sectors lie in four districts (Rutsiro, Nyabihu, Rubavu, Ngororero), so the wild-bootstrap p-values rest on very few treated clusters. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ year. Gishwati-Mukura National Park was created in 2015, so sectors bordering it are treated at a known date, unlike the older parks. Control group: interior sectors. Panel A: $y_{st} = \alpha_s + \gamma_t + \beta\,\mathrm{GM}_s 1[t>2015] + \varepsilon_{st}$; Panel B: $\mathrm{GM}_s \times$ year dummies with 2010 omitted, which shows pre-trends. On the five-year grid 2020 is the only clean post year and 2015 is the opening year.
+
+\textbf{Result.} Cropland share falls 5.22 pp after the opening ($p=0.023$), but it was already rising before (0.80 in 2005, $p=0.083$) and the 2015 observation already shows a drop, so the timing is not clean.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Gishwati--Mukura Opening and Work Outcomes}
+\label{tab:open_census}
+\begin{tabular}{lccc}
+\toprule
+ & Non-farm & Services & Tourism \\
+ & (1) & (2) & (3) \\
+\midrule
+Gishwati--Mukura $\times$ 2022 & $-0.85$ & $-0.90$ & $-0.07$ \\
+ & $(1.23)$ & $(0.75)$ & $(0.05)$ \\
+ & $[0.506]$ & $[0.275]$ & $[0.161]$ \\
+\midrule
+Sectors & 339 & 339 & 339 \\
+Observations & 1,017 & 1,017 & 1,017 \\
+Districts (clusters) & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Sector-by-wave panel, Census 2002, 2012 and 2022: interior sectors and the 20 sectors bordering Gishwati or Mukura, outside Kigali City. Outcomes are workers per 100 residents aged 16 and over. Sector and wave fixed effects; 2002 and 2012 are before the 2015 opening. Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: sector $\times$ Census wave. The Census counterpart of the opening regression: $y_{st} = \alpha_s + \gamma_t + \beta\,\mathrm{GM}_s 1[t{=}2022] + \varepsilon_{st}$, with 2002 and 2012 as pre-opening waves and interior sectors as the control group. Because the park opened in 2015, 2022 is the first Census after it.
+
+\textbf{Result.} Work outcomes show no significant change in Gishwati--Mukura sectors after the opening (non-farm $-$0.85, $p=0.506$), with only 20 treated sectors.
+\clearpage
+\begin{table}[H]
+\centering\scriptsize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{0.75}
+\caption{Who Holds Tourism Jobs Outside Kigali}
+\label{tab:tourism_jobs_lasso}
+\begin{tabular}{lcc}
+\toprule
+ & 2012 & 2022 \\
+\midrule
+\multicolumn{3}{l}{\textit{Panel A. Person and household characteristics: average effects}} \\
+Female & $-0.19^{***}$ & $-0.21^{**}$ \\
+ & $(0.05)$ & $(0.09)$ \\
+Urban & $0.35^{*}$ & $0.48^{***}$ \\
+ & $(0.21)$ & $(0.09)$ \\
+Age 16--19 & $-0.29^{***}$ & $0.43$ \\
+ & $(0.08)$ & $(0.83)$ \\
+Age 20--24 & $0.12$ & $-0.08$ \\
+ & $(0.11)$ & $(0.10)$ \\
+Age 50--54 & $-0.26^{***}$ & $-0.34^{***}$ \\
+ & $(0.06)$ & $(0.09)$ \\
+Never married & $0.16^{***}$ & $0.70^{***}$ \\
+ & $(0.04)$ & $(0.17)$ \\
+Secondary schooling & $0.57^{***}$ & $1.12^{***}$ \\
+ & $(0.10)$ & $(0.25)$ \\
+University & $1.03^{***}$ & $0.85^{**}$ \\
+ & $(0.31)$ & $(0.35)$ \\
+Never attended school & $0.00$ & $0.03$ \\
+ & $(0.02)$ & $(0.02)$ \\
+Reads and writes English & $0.20$ & $-0.08$ \\
+ & $(0.16)$ & $(0.16)$ \\
+Born in another district & $-0.05$ &  \\
+ & $(0.04)$ &  \\
+Grid electricity & $1.13^{***}$ & $0.45^{***}$ \\
+ & $(0.12)$ & $(0.04)$ \\
+Household has a phone & $0.31^{***}$ & $0.34^{***}$ \\
+ & $(0.03)$ & $(0.05)$ \\
+Owns a smartphone &  & $1.35^{***}$ \\
+ &  & $(0.14)$ \\
+Household has a vehicle & $0.12$ & $-1.09^{*}$ \\
+ & $(0.24)$ & $(0.57)$ \\
+Farms own land & $-0.37^{***}$ &  \\
+ & $(0.05)$ &  \\
+Household grew crops &  & $-0.53^{***}$ \\
+ &  & $(0.08)$ \\
+\addlinespace
+\multicolumn{3}{l}{\textit{Panel B. Sector variables (exposure model)}} \\
+Sector borders a park & $-0.02$ & $-0.19^{*}$ \\
+ & $[0.781]$ & $[0.060]$ \\
+Park share of sector area & $0.29$ & $0.32$ \\
+ & $[0.129]$ & $[0.126]$ \\
+Log population density & $0.19^{**}$ & $0.30^{***}$ \\
+ & $[0.022]$ & $[0.000]$ \\
+\midrule
+Workers & 369,167 & 292,576 \\
+Share in tourism jobs (\%) & 0.67 & 1.07 \\
+Variables selected (of candidates) & 113 (273) & 162 (378) \\
+Out-of-sample AUC & 0.767 & 0.762 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Census public-use samples; residents aged 16 and over with a stated industry, outside Kigali City. Outcome: works in accommodation and food (ISIC I) or arts, entertainment and recreation (ISIC R). Variables are selected by an L1-penalised logit (penalty by five-fold cross-validation, folds grouped by sector); the coefficients come from a weighted linear probability model on the selected variables, in percentage points. Panel A reports average effects: a variable's coefficient plus its selected interactions (age, sex, schooling, marital status, urban) evaluated at the sample means, with standard errors clustered by sector in parentheses. Omitted categories: age 30--34, primary schooling, married. Panel B adds the sector's park exposure and population density to the same candidates, kept unpenalised; wild cluster bootstrap p-values by sector in brackets. Stars: *** 1\%, ** 5\%, * 10\%. Intervals do not account for the selection step; household wealth may partly be a result of holding the job.
+\end{minipage}
+\end{table}
+
+{\footnotesize
+\textbf{What it does.} Unit: Census workers aged 16 and over with a stated industry, outside Kigali City, 2012 and 2022. The outcome is working in accommodation and food or in arts, entertainment and recreation. An L1-penalised logit (folds grouped by sector) selects among demographic, schooling, household asset, crop and land candidates; a weighted linear probability model on the selected variables gives the coefficients in percentage points. Panel B adds the park border dummy, park share and log density, unpenalised. This is prediction, not an identified effect.
+
+\textbf{Result.} Education, grid electricity, smartphone ownership and urban residence predict tourism work and being female or in a crop-growing household predicts less, while park exposure adds little beyond population density (border $-0.19$, $p=0.060$, and density $+0.30$, $p<0.001$, in 2022).
+}
+\end{document}

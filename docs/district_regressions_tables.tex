@@ -1,0 +1,250 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,amsmath,array,float}
+\usepackage[T1]{fontenc}
+\pagestyle{plain}\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\begin{document}
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park Exposure and Land Rents, EICV 2001--2017}
+\label{tab:land_rounds}
+\begin{tabular}{lc}
+\toprule
+ & Log rent per ha \\
+ & (1) \\
+\midrule
+Exposure $\times$ 2006 & $0.01$ \\
+ & $(0.68)$ \\
+ & $[0.985]$ \\
+Exposure $\times$ 2011 & $0.10$ \\
+ & $(0.70)$ \\
+ & $[0.866]$ \\
+Exposure $\times$ 2014 & $0.23$ \\
+ & $(0.74)$ \\
+ & $[0.724]$ \\
+Exposure $\times$ 2017 & $0.32$ \\
+ & $(0.82)$ \\
+ & $[0.658]$ \\
+\midrule
+Districts & 27 \\
+District-rounds & 135 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} District-by-round panel, EICV 2001, 2006, 2011, 2014 and 2017, 27 districts outside Kigali City. The outcome is the mean of log rent per hectare (2014 RWF) over the district's rental parcels, at least 19 parcels per district-round. Exposure fixed at its 2002 value; 2001 is the base round. District and round fixed effects. Exposure is the share of the district's population living in park-adjacent sectors (62 sectors border a park), so it runs from 0 to 1 and a coefficient is the difference for a district with all of its population in park-adjacent sectors; a district with a quarter of its population in them has a quarter of the coefficient. Per-park terms use the share in sectors whose nearest park is that park (Volcanoes, Akagera, Nyungwe, Gishwati--Mukura); only 14 districts are exposed (Nyungwe 5, Volcanoes 4, Akagera 3, Gishwati--Mukura 4; Rubavu and Nyabihu border two parks). Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: district $\times$ EICV round. The model is $y_{dt} = \alpha_d + \gamma_t + \sum_{t>2001}\beta_t E_d 1[t] + \varepsilon_{dt}$, with $E_d$ the 2002 population share in park-adjacent sectors. $\beta_t$ is the change since 2001 in log rent per hectare in a fully exposed district relative to an unexposed one. Data: parcel-level rent reports from the EICV, aggregated to the district.
+
+\textbf{Result.} There is no detectable rent difference at any date: the estimate drifts from 0.01 in 2006 to 0.32 in 2017, but standard errors are 0.7--0.8 and no p-value is below 0.65.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park Exposure and Land Rents and Values, 2001 versus 2017}
+\label{tab:land_firstlast}
+\begin{tabular}{lcc}
+\toprule
+ & Log rent per ha & Log value per ha \\
+ & (1) & (2) \\
+\midrule
+\multicolumn{3}{l}{\textit{Panel A. Combined exposure}} \\
+Exposure $\times$ 2017 & $0.32$ & $-0.05$ \\
+ & $(1.03)$ & $(1.05)$ \\
+ & $[0.658]$ & $[0.946]$ \\
+\multicolumn{3}{l}{\textit{Panel B. One term per park}} \\
+Volcanoes $\times$ 2017 & $2.77^{*}$ & $1.28$ \\
+ & $(1.73)$ & $(1.51)$ \\
+ & $[0.078]$ & $[0.189]$ \\
+Akagera $\times$ 2017 & $2.78$ & $3.00$ \\
+ & $(0.99)$ & $(1.09)$ \\
+ & $[0.127]$ & $[0.138]$ \\
+Nyungwe $\times$ 2017 & $-2.35^{**}$ & $-2.64^{**}$ \\
+ & $(1.63)$ & $(1.71)$ \\
+ & $[0.025]$ & $[0.036]$ \\
+Gishwati--Mukura $\times$ 2017 & $0.68$ & $0.43$ \\
+ & $(1.19)$ & $(0.81)$ \\
+ & $[0.431]$ & $[0.396]$ \\
+\midrule
+District-rounds & 54 & 54 \\
+Districts & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} District-by-round panel, EICV 2001 and 2017, the two rounds that report land value (rent is also reported in 2006, 2011 and 2014). Outcomes are the district mean of log rent or log value per hectare (2014 RWF). Exposure fixed at its 2002 value. District and round fixed effects. Exposure is the share of the district's population living in park-adjacent sectors (62 sectors border a park), so it runs from 0 to 1 and a coefficient is the difference for a district with all of its population in park-adjacent sectors; a district with a quarter of its population in them has a quarter of the coefficient. Per-park terms use the share in sectors whose nearest park is that park (Volcanoes, Akagera, Nyungwe, Gishwati--Mukura); only 14 districts are exposed (Nyungwe 5, Volcanoes 4, Akagera 3, Gishwati--Mukura 4; Rubavu and Nyabihu border two parks). Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: district $\times$ round, 2001 and 2017. Panel A: $y_{dt} = \alpha_d + \gamma_t + \beta E_d 1[t{=}2017] + \varepsilon_{dt}$. Panel B replaces $E_d$ with one exposure term per park, $\sum_p \beta_p E_{pd}1[t{=}2017]$, so each park has its own coefficient. 2017 is two years after Gishwati-Mukura was created.
+
+\textbf{Result.} Combined exposure shows no land-value difference, but the parks pull in opposite directions: Volcanoes and Akagera are positive while Nyungwe is negative for both rent ($-$2.35, $p=0.025$) and value ($-$2.64, $p=0.036$), on 3--5 treated districts each and with the Nyungwe baseline not yet checked.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park Exposure and Farm Productivity, 2019--2025}
+\label{tab:ag_prod}
+\begin{tabular}{lcc}
+\toprule
+ & Log crop value per ha & Log output per worker \\
+ & (1) & (2) \\
+\midrule
+\multicolumn{3}{l}{\textit{Panel A. Level difference (year and province fixed effects)}} \\
+Exposure & $0.58$ & $0.11$ \\
+ & $(0.34)$ & $(0.28)$ \\
+ & $[0.105]$ & $[0.722]$ \\
+\multicolumn{3}{l}{\textit{Panel B. One term per park (year and province fixed effects)}} \\
+Volcanoes & $2.87^{***}$ & $1.93^{***}$ \\
+ & $(0.59)$ & $(0.42)$ \\
+ & $[0.003]$ & $[0.005]$ \\
+Akagera & $-0.06$ & $0.01$ \\
+ & $(0.21)$ & $(0.16)$ \\
+ & $[0.876]$ & $[0.966]$ \\
+Nyungwe & $-0.22$ & $-0.73^{**}$ \\
+ & $(0.39)$ & $(0.22)$ \\
+ & $[0.679]$ & $[0.037]$ \\
+Gishwati--Mukura & $0.32$ & $-0.38$ \\
+ & $(0.36)$ & $(0.36)$ \\
+ & $[0.394]$ & $[0.483]$ \\
+\multicolumn{3}{l}{\textit{Panel C. Differential trend (district and year fixed effects)}} \\
+Exposure $\times$ (year $-$ 2019) & $-0.01$ & $-0.03$ \\
+ & $(0.02)$ & $(0.04)$ \\
+ & $[0.821]$ & $[0.394]$ \\
+\midrule
+Observations & 189 & 162 \\
+Districts & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} District-by-year panel, 2019--2025 agricultural survey output, 27 districts outside Kigali City (output per worker needs the number of agricultural workers, which is missing in 2019). Exposure is measured in 2022. Panels A and B compare districts within the same year and province; there is no pre-period, so these are level differences, not changes. Panel C compares trends within districts (2020 is the COVID year). Exposure is the share of the district's population living in park-adjacent sectors (62 sectors border a park), so it runs from 0 to 1 and a coefficient is the difference for a district with all of its population in park-adjacent sectors; a district with a quarter of its population in them has a quarter of the coefficient. Per-park terms use the share in sectors whose nearest park is that park (Volcanoes, Akagera, Nyungwe, Gishwati--Mukura); only 14 districts are exposed (Nyungwe 5, Volcanoes 4, Akagera 3, Gishwati--Mukura 4; Rubavu and Nyabihu border two parks). Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: district $\times$ year, 2019--2025. Outcomes are the log of crop value per hectare and of output per agricultural worker (values deflated to a common year). Panel A: $y_{dt} = \gamma_t + \eta_{p(d)} + \beta E_d + \varepsilon_{dt}$ with year and province fixed effects; Panel B uses one exposure term per park; Panel C: $y_{dt} = \alpha_d + \gamma_t + \beta E_d (t-2019) + \varepsilon_{dt}$ with district fixed effects, which asks whether exposed districts' productivity trends differently.
+
+\textbf{Result.} Exposed districts have somewhat higher crop value per hectare (0.58, $p=0.105$), driven by Volcanoes (2.87, $p=0.003$), but there is no differential trend over 2019--2025 ($-$0.01, $p=0.821$).
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park Exposure and Crop Mix, 2019--2025 (Area Shares, Percentage Points)}
+\label{tab:ag_mix}
+\begin{tabular}{lcccc}
+\toprule
+ & Bananas & Export crops & Horticulture & Staples \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A. Level difference (year and province fixed effects)}} \\
+Exposure & $-22.3^{***}$ & $4.3$ & $-0.5$ & $17.3^{**}$ \\
+ & $(6.1)$ & $(4.3)$ & $(1.8)$ & $(7.0)$ \\
+ & $[0.004]$ & $[0.342]$ & $[0.803]$ & $[0.029]$ \\
+\multicolumn{5}{l}{\textit{Panel B. One term per park (year and province fixed effects)}} \\
+Volcanoes & $-65.2^{**}$ & $-15.8^{*}$ & $8.2$ & $59.0^{**}$ \\
+ & $(14.2)$ & $(5.8)$ & $(4.9)$ & $(16.5)$ \\
+ & $[0.014]$ & $[0.084]$ & $[0.168]$ & $[0.031]$ \\
+Akagera & $-19.6^{*}$ & $-2.0$ & $-0.7$ & $25.2^{*}$ \\
+ & $(5.9)$ & $(1.3)$ & $(1.6)$ & $(9.2)$ \\
+ & $[0.065]$ & $[0.230]$ & $[0.681]$ & $[0.070]$ \\
+Nyungwe & $-17.5^{*}$ & $23.1^{***}$ & $-5.0$ & $1.0$ \\
+ & $(8.6)$ & $(4.0)$ & $(3.5)$ & $(7.7)$ \\
+ & $[0.080]$ & $[0.006]$ & $[0.173]$ & $[0.904]$ \\
+Gishwati--Mukura & $-2.1$ & $8.0$ & $-2.9$ & $-6.7$ \\
+ & $(9.9)$ & $(4.8)$ & $(3.3)$ & $(10.2)$ \\
+ & $[0.845]$ & $[0.298]$ & $[0.445]$ & $[0.544]$ \\
+\multicolumn{5}{l}{\textit{Panel C. Differential trend (district and year fixed effects)}} \\
+Exposure $\times$ (year $-$ 2019) & $0.9$ & $0.2$ & $-0.0$ & $-0.7$ \\
+ & $(0.6)$ & $(0.4)$ & $(0.3)$ & $(0.7)$ \\
+ & $[0.124]$ & $[0.672]$ & $[0.964]$ & $[0.269]$ \\
+\midrule
+Observations & 189 & 179 & 189 & 189 \\
+Districts & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} District-by-year panel, 2019--2025 agricultural survey output, 27 districts outside Kigali City (output per worker needs the number of agricultural workers, which is missing in 2019). Exposure is measured in 2022. Panels A and B compare districts within the same year and province; there is no pre-period, so these are level differences, not changes. Panel C compares trends within districts (2020 is the COVID year). Exposure is the share of the district's population living in park-adjacent sectors (62 sectors border a park), so it runs from 0 to 1 and a coefficient is the difference for a district with all of its population in park-adjacent sectors; a district with a quarter of its population in them has a quarter of the coefficient. Per-park terms use the share in sectors whose nearest park is that park (Volcanoes, Akagera, Nyungwe, Gishwati--Mukura); only 14 districts are exposed (Nyungwe 5, Volcanoes 4, Akagera 3, Gishwati--Mukura 4; Rubavu and Nyabihu border two parks). Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Same panels and specifications as the previous page, with the share of cropped area in each crop group as the outcome, in percentage points: bananas, export crops, horticulture and staples. This asks whether land in exposed districts moves toward cash crops.
+
+\textbf{Result.} Exposed districts devote less area to bananas ($-$22.3 pp, $p=0.004$) and more to staples (17.3 pp, $p=0.029$), largely a Volcanoes pattern, with no differential trend over the period.
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park Exposure and Household Crop Value, 2011--2017}
+\label{tab:crop_value}
+\begin{tabular}{lccccc}
+\toprule
+ & Log value per ha & Bananas & Export & Horticulture & Staples \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A. Exposure by round (2011 base)}} \\
+Exposure $\times$ 2014 & $-0.34^{*}$ & $-2.2$ & $-0.9$ & $-3.0$ & $6.2$ \\
+ & $(0.20)$ & $(3.6)$ & $(1.3)$ & $(4.2)$ & $(5.5)$ \\
+ & $[0.063]$ & $[0.561]$ & $[0.520]$ & $[0.425]$ & $[0.220]$ \\
+Exposure $\times$ 2017 & $-0.26$ & $2.1$ & $-0.5$ & $-1.1$ & $-0.4$ \\
+ & $(0.34)$ & $(3.9)$ & $(1.2)$ & $(4.5)$ & $(7.2)$ \\
+ & $[0.392]$ & $[0.491]$ & $[0.599]$ & $[0.768]$ & $[0.948]$ \\
+\multicolumn{6}{l}{\textit{Panel B. One term per park, 2011 versus 2017}} \\
+Volcanoes $\times$ 2017 & $-0.99$ & $6.8$ & $1.7^{*}$ & $-4.7$ & $-9.2$ \\
+ & $(1.94)$ & $(10.4)$ & $(1.7)$ & $(29.8)$ & $(37.2)$ \\
+ & $[0.619]$ & $[0.310]$ & $[0.093]$ & $[0.884]$ & $[0.705]$ \\
+Akagera $\times$ 2017 & $-0.95$ & $-10.1$ & $0.9$ & $7.0$ & $-1.2$ \\
+ & $(0.35)$ & $(7.5)$ & $(1.0)$ & $(3.3)$ & $(7.3)$ \\
+ & $[0.214]$ & $[0.152]$ & $[0.209]$ & $[0.136]$ & $[0.842]$ \\
+Nyungwe $\times$ 2017 & $-0.01$ & $-2.1$ & $-2.8$ & $0.5$ & $5.5$ \\
+ & $(0.53)$ & $(6.2)$ & $(2.0)$ & $(6.9)$ & $(10.1)$ \\
+ & $[0.984]$ & $[0.658]$ & $[0.259]$ & $[0.934]$ & $[0.671]$ \\
+Gishwati--Mukura $\times$ 2017 & $-0.12$ & $5.1^{**}$ & $-0.2$ & $-2.3$ & $-1.3$ \\
+ & $(0.43)$ & $(4.5)$ & $(1.0)$ & $(8.9)$ & $(11.6)$ \\
+ & $[0.758]$ & $[0.037]$ & $[0.784]$ & $[0.731]$ & $[0.889]$ \\
+\midrule
+District-rounds, Panel A & 81 & 81 & 81 & 81 & 81 \\
+District-rounds, Panel B & 54 & 54 & 54 & 54 & 54 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} District-by-round panel, EICV 2011, 2014 and 2017 (households' reported crop value per hectare, 2014 RWF; about 470 households per district-round), 27 districts outside Kigali City. Column (1) is the district mean of log value per hectare; columns (2)--(5) are the percentage-point shares of crop value in each crop group. Exposure fixed at its 2002 value. District and round fixed effects. Exposure is the share of the district's population living in park-adjacent sectors (62 sectors border a park), so it runs from 0 to 1 and a coefficient is the difference for a district with all of its population in park-adjacent sectors; a district with a quarter of its population in them has a quarter of the coefficient. Per-park terms use the share in sectors whose nearest park is that park (Volcanoes, Akagera, Nyungwe, Gishwati--Mukura); only 14 districts are exposed (Nyungwe 5, Volcanoes 4, Akagera 3, Gishwati--Mukura 4; Rubavu and Nyabihu border two parks). Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: district $\times$ EICV round. The only farm outcome with a period before 2019. Panel A: $y_{dt} = \alpha_d + \gamma_t + \sum_{t>2011}\beta_t E_d 1[t] + \varepsilon_{dt}$. Panel B: 2011 and 2017 only, with one exposure term per park, $\sum_p \beta_p E_{pd}1[t{=}2017]$.
+
+\textbf{Result.} There is no clear change in crop value or crop mix in exposed districts (log value per hectare $-$0.34 in 2014, $p=0.063$); the only single-park result below 5\% is Gishwati--Mukura's banana share (5.1 pp, $p=0.037$).
+\clearpage
+\begin{table}[H]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Park Exposure and Employment Status, Labour Force Survey 2017--2025}
+\label{tab:lfs}
+\begin{tabular}{lcccc}
+\toprule
+ & Wage employees & Self-employed & Family workers & Subsistence workers \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A. Level difference (year and province fixed effects)}} \\
+Exposure & $9.22^{***}$ & $-3.99$ & $1.08^{**}$ & $-7.50$ \\
+ & $(3.15)$ & $(2.74)$ & $(0.45)$ & $(6.95)$ \\
+ & $[0.009]$ & $[0.140]$ & $[0.043]$ & $[0.290]$ \\
+\multicolumn{5}{l}{\textit{Panel B. One term per park (year and province fixed effects)}} \\
+Volcanoes & $9.12^{**}$ & $7.71$ & $3.03^{**}$ & $-51.62^{***}$ \\
+ & $(2.88)$ & $(7.95)$ & $(1.03)$ & $(16.59)$ \\
+ & $[0.025]$ & $[0.448]$ & $[0.036]$ & $[0.001]$ \\
+Akagera & $7.30^{**}$ & $-2.57$ & $1.86^{*}$ & $-9.23$ \\
+ & $(2.67)$ & $(2.46)$ & $(0.69)$ & $(6.95)$ \\
+ & $[0.048]$ & $[0.244]$ & $[0.054]$ & $[0.187]$ \\
+Nyungwe & $3.51$ & $-11.20^{*}$ & $0.12$ & $14.01$ \\
+ & $(5.66)$ & $(4.86)$ & $(0.66)$ & $(12.30)$ \\
+ & $[0.639]$ & $[0.061]$ & $[0.865]$ & $[0.310]$ \\
+Gishwati--Mukura & $14.69^{**}$ & $-8.27$ & $-0.35$ & $8.24$ \\
+ & $(5.12)$ & $(4.77)$ & $(0.56)$ & $(10.85)$ \\
+ & $[0.035]$ & $[0.135]$ & $[0.585]$ & $[0.489]$ \\
+\multicolumn{5}{l}{\textit{Panel C. Differential trend (district and year fixed effects)}} \\
+Exposure $\times$ (year $-$ 2017) & $0.43$ & $0.48$ & $-0.08$ & $0.32$ \\
+ & $(0.59)$ & $(0.45)$ & $(0.16)$ & $(0.60)$ \\
+ & $[0.458]$ & $[0.296]$ & $[0.581]$ & $[0.565]$ \\
+\midrule
+Observations & 243 & 243 & 243 & 216 \\
+Districts & 27 & 27 & 27 & 27 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} District-by-year panel, labour force survey 2017--2025, 27 districts outside Kigali City; outcomes are workers per 100 adults by status of main work. Subsistence work is missing for 27 district-years. Exposure is measured in 2022. Panels A and B are level differences within year and province (no pre-period); Panel C compares trends within districts (2020 is the COVID year). Exposure is the share of the district's population living in park-adjacent sectors (62 sectors border a park), so it runs from 0 to 1 and a coefficient is the difference for a district with all of its population in park-adjacent sectors; a district with a quarter of its population in them has a quarter of the coefficient. Per-park terms use the share in sectors whose nearest park is that park (Volcanoes, Akagera, Nyungwe, Gishwati--Mukura); only 14 districts are exposed (Nyungwe 5, Volcanoes 4, Akagera 3, Gishwati--Mukura 4; Rubavu and Nyabihu border two parks). Standard errors clustered by district (27 clusters) in parentheses; wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws) in brackets; stars from the bootstrap p-values: *** 1\%, ** 5\%, * 10\%.
+\end{minipage}
+\end{table}
+\textbf{What it does.} Unit: district $\times$ year, 2017--2025, from the labour force survey. The same three specifications as the farm panels: a level difference with year and province fixed effects, one exposure term per park, and a differential trend with district fixed effects. This is the annual counterpart of the Census employment-status regression.
+
+\textbf{Result.} Exposed districts have more wage employment (9.2 per 100 adults, $p=0.009$) and fewer subsistence workers in Volcanoes districts ($-$51.6, $p=0.001$), but wage employment does not trend differently over 2017--2025 (0.43, $p=0.458$).
+\end{document}
