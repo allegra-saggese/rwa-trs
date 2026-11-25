@@ -1,6 +1,28 @@
 """
-census_park_regressions.py -- park-adjacent vs interior sectors across the 2002, 2012 and 2022 Censuses.
+census_park_regressions.py -- park-adjacent vs interior sectors across the 2002, 2012 and 2022 Censuses. All sector-level
+regressions live here (one file; the former census_park_questions, census_park_status, census_park_logs and
+park_land_regressions scripts are sections below).
 
+DEFAULT SECTIONS (python micro-analysis/census_park_regressions.py [--drop-ring])
+  outcomes   sector x wave counts and rates from the Census microdata -> data/harmonized/census_sector_work_per_adult.csv
+  questions  Q1-Q4, one OLS per Census wave (land: per land-cover year), no sector fixed effects and no base year:
+               ln(workers_s) = a_district + b Park_s + lam ln(adults_s) [+ geography controls] + e_s
+             Q1 park-adjacent vs interior; Q2 distance to the nearest park gate (bins, nearest-park FE); Q3 visit-share
+             exposure E_s; Q4 land use (cropland, built-up). Every regression has a column without and a column with the
+             geography controls (log area, log distance to road and to Kigali, elevation, slope, rainfall; z-scored).
+             -> census_park_questions[_no_ring].csv and docs/sector_question_tables.tex (AER tables). Specification, controls
+             and fixed effects of every row are columns of the CSV; docs/sector_level_regressions.md lists them.
+RETIRED SECTIONS (change-from-baseline designs with sector fixed effects; --legacy or --only <name>)
+  gap person migration levels eicv_check status logs land shift opening -- described below and in each section's comments.
+
+Usage
+    python micro-analysis/census_park_regressions.py                 # outcomes + questions
+    python micro-analysis/census_park_regressions.py --only questions --drop-ring
+    python micro-analysis/census_park_regressions.py --legacy        # also the retired sections
+    python micro-analysis/census_park_regressions.py --list
+
+----------------------------------------------------------------------------------------------------------------
+Retired design (sections gap, person, migration, levels, eicv_check; status, logs, land, shift, opening follow the same logic).
 Question: do park-adjacent and interior sectors follow parallel paths in non-farm work, services work and
 tourism work, or does the gap between them change from wave to wave? This is a descriptive comparison
 across waves, not a design built on a shock.
@@ -53,15 +75,21 @@ import os
 import sys
 from pathlib import Path
 
+import types
+
 import numpy as np
 import pandas as pd
 import pyreadstat
+import statsmodels.api as sm
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "helpers"))
 import paths as P  # noqa: E402
 from regression import fe_ols  # noqa: E402
+
+sys.modules.setdefault("adjustText", types.SimpleNamespace(adjust_text=lambda *a, **k: None))  # label placement only; not used here
+import treatment_groups as TG  # noqa: E402  (GATE_XY: the four park gates)
 
 CENSUS = P.NISR / "Census-PHC/3_Final/Census_pooled_person.dta"
 SECTORS = P.HARMONIZED / "model_sector_cross.csv"
@@ -674,22 +702,566 @@ def section_levels():
     _log(f"-> {P.TABLES_REG / f'census_park_levels_gap{_suffix()}.csv'}")
 
 
-SECTIONS = {"outcomes": section_outcomes, "gap": section_gap, "person": section_person, "migration": section_migration,
-            "levels": section_levels, "eicv_check": section_eicv_check}
+
+# ============================================================================ geography, per-wave questions (default), tables, legacy designs
+# Everything below was split over census_park_questions.py, census_park_status.py, census_park_logs.py, park_land_regressions.py
+# and sector_question_tables.py; one file now. Default sections: outcomes, questions. Retired change-from-baseline designs
+# (sector fixed effects, 2002 / 2000 base): gap, person, migration, levels, eicv_check, status, logs, land, shift, opening --
+# run with --legacy or --only <name>.
+
+LAND_PATH = P.HARM_PANELS / "sector_cropland_builtup_glclu.csv"
+GHSL_PATH = P.HARM_PANELS / "sector_ghsl_built.csv"
+RDB = P.HARMONIZED / "rwanda-parks-tourism-rdb.xlsx"
+ALL_YEARS = False                       # set by --all-years (section land)
+
+STATUS = P.HARMONIZED / "district" / "sector-labour-status.csv"
+STATUS_OUTCOMES = [("wage100", "Wage employees"), ("self100", "Self-employed"), ("family100", "Family workers"),
+                   ("other100", "Other status"), ("workers100", "All workers")]
+
+LOG_TERMS = ["park_x_2012", "park_x_2022"]
+STAT = [("wage", "Wage employees"), ("self", "Self-employed"), ("family", "Family workers"), ("other", "Other status")]
+LOG_ROWS = []
+
+XVARS = ["log_area", "log_dist_road", "log_dist_kigali", "elev_mean", "slope_mean", "rain_mean"]
+X_LABEL = "log area, log distance to road, log distance to Kigali, elevation, slope, rainfall (z-scored)"
+INDUSTRY = [("nonfarm", "Non-farm workers"), ("services", "Services workers"), ("tourism", "Tourism workers"), ("farm", "Farm workers")]
+LAND_Y = [("crop_pp", "Cropland share (pp)"), ("built_pp", "Built-up share (pp)"), ("log_built", "ln(1 + built-up ha)")]
+BINS = [("gate_lt10", 0, 10), ("gate_10_20", 10, 20), ("gate_20_40", 20, 40)]
+
+Q_ROWS = []
+
+
+
+def hav(lon1, lat1, lon2, lat2):
+    r = np.radians
+    a = np.sin(r(lat2 - lat1) / 2) ** 2 + np.cos(r(lat1)) * np.cos(r(lat2)) * np.sin(r(lon2 - lon1) / 2) ** 2
+    return 6371 * 2 * np.arcsin(np.sqrt(a))
+
+
+
+def controls() -> pd.DataFrame:
+    """Sector attributes and z-scored controls for the 381 sectors outside Kigali, plus distance to the nearest gate."""
+    c = pd.read_csv(SECTORS)[["sid", "district_id", "border", "nearest_park", "unit_km2", "lon", "lat"]]
+    c = c[~c.district_id.isin(KIGALI)].copy()
+    c["log_area"] = np.log(c.unit_km2)
+    for f, cols in [("roads/sector_distances.csv", ["log_dist_road", "log_dist_kigali"]),
+                    ("raster/sector_terrain.csv", ["elev_mean", "slope_mean"]), ("raster/sector_rainfall.csv", ["rain_mean"])]:
+        c = c.merge(pd.read_csv(P.GEO / f)[["sid"] + cols], on="sid", how="left", validate="1:1")
+    assert c[XVARS].notna().all().all() and len(c) == 381
+    c[XVARS] = (c[XVARS] - c[XVARS].mean()) / c[XVARS].std()
+    km = np.column_stack([hav(c.lon, c.lat, *xy) for xy in TG.GATE_XY.values()]).min(axis=1)
+    for name, lo, hi in BINS:
+        c[name] = ((km > lo) & (km <= hi)).astype(int) if lo else (km <= hi).astype(int)
+    c["km_gate"] = km
+    return c.drop(columns=["lon", "lat", "unit_km2"])
+
+
+def question_panel(x) -> pd.DataFrame:
+    d = pd.read_csv(PANEL)[["sid", "wave", "adults", "nonfarm", "services", "tourism", "farm"]]
+    d = d.merge(x, on="sid", validate="m:1")
+    d["log_adults"] = np.log(d.adults)
+    return d[~d.sid.isin(_ring())].copy() if DROP_RING else d
+
+
+# ---------------------------------------------------------------------------- estimators
+def ols(d, y, xs, fes, test):
+    est, n, g = fe_ols(d, y, xs, fes, "district_id", test=test)
+    return est.rename(columns={"p_wcb": "p"}), n, g
+
+
+def poisson(d, y, xs, fes):
+    """Poisson, log link; FE as dummies; groups with no positive outcome dropped; cluster-robust (district) normal p."""
+    d = d.copy()
+    while True:
+        keep = np.ones(len(d), bool)
+        for f in fes:
+            keep &= (d.groupby(f)[y].transform("sum") > 0).values
+        if keep.all():
+            break
+        d = d[keep]
+    X = pd.concat([d[xs]] + [pd.get_dummies(d[f], prefix=f, drop_first=True, dtype=float) for f in fes], axis=1)
+    m = sm.GLM(d[y], sm.add_constant(X), family=sm.families.Poisson()).fit(
+        cov_type="cluster", cov_kwds={"groups": pd.factorize(d.district_id)[0]}, maxiter=200)
+    r = pd.DataFrame({"coef": m.params, "se": m.bse, "p": m.pvalues}).loc[xs]
+    return r, int(len(d)), d.district_id.nunique()
+
+
+def record(q, spec, y, label, est, n, g, focal, kind, ptype, controls_, fe, wave):
+    for t in focal:
+        e = est.loc[t]
+        Q_ROWS.append({"question": q, "spec": spec, "outcome": y, "label": label, "estimator": kind, "p_type": ptype, "term": t,
+                     "wave": wave, "coef": e.coef, "se": e.se, "p": e.p, "log_adults_coef": est.loc["log_adults", "coef"] if "log_adults" in est.index else np.nan,
+                     "obs": n, "clusters": g, "controls": controls_, "fixed_effects": fe})
+    _log(f"[questions]   {wave} | {spec} | {label} ({kind}): " + ", ".join(f"{t} {est.loc[t,'coef']:+.3f} [{est.loc[t,'p']:.3f}]" for t in focal))
+
+
+def run_count(d, y, label, q, spec, terms, ctrl, fes, controls_, wave):
+    """Count outcome, per wave: OLS on ln(y) (bootstrap p) if y > 0 everywhere, otherwise Poisson."""
+    xs = terms + ["log_adults"] + ctrl
+    if (d[y] > 0).all():
+        est, n, g = ols(d.assign(ln_y=np.log(d[y])), "ln_y", xs, fes, terms)
+        record(q, spec, y, label, est, n, g, terms, "OLS on ln(workers)", "wild cluster bootstrap", controls_, "+".join(fes), wave)
+    else:
+        est, n, g = poisson(d, y, xs, fes)
+        record(q, spec, y, label, est, n, g, terms, "Poisson", "cluster-robust normal", controls_, "+".join(fes), wave)
+
+
+# ---------------------------------------------------------------------------- questions
+def q1(x):
+    _log("[questions] Q1 per wave: ln workers on Park, ln adults, district FE [+ X]")
+    d = question_panel(x)
+    for t in WAVES:
+        w = d[d.wave == t]
+        _log(f"[questions]  Q1 {t}: {len(w)} sectors ({int(w.border.sum())} park-adjacent)")
+        for spec, ctrl in [("(1) ln adults", []), ("(2) ln adults + X", XVARS)]:
+            for y, lab in INDUSTRY:
+                run_count(w, y, lab, "Q1", spec, ["border"], ctrl, ["district_id"], "ln(adults)" + (f"; {X_LABEL}" if ctrl else ""), t)
+
+
+def q2(x):
+    _log("[questions] Q2 per wave: gate-distance bins, nearest-park FE")
+    d = question_panel(x)
+    terms = [b[0] for b in BINS]
+    for t in WAVES:
+        w = d[d.wave == t]
+        _log(f"[questions]  Q2 {t}: {len(w)} sectors; " + ", ".join(f"{b[0]} {int(w[b[0]].sum())}" for b in BINS))
+        for spec, tm in [("(1) bins", terms), ("(2) bins + Park", terms + ["border"])]:
+            for y, lab in INDUSTRY:
+                run_count(w, y, lab, "Q2", spec, tm, XVARS, ["nearest_park"], f"ln(adults); {X_LABEL}", t)
+
+
+def q3(x):
+    _log("[questions] Q3 per wave: visit-share exposure E_s, district FE [+ X]")
+    s = exposure_sectors()[["sid", "exposure", "gm"]]
+    d = question_panel(x).merge(s, on="sid", validate="m:1")
+    d = d[d.gm == 0]
+    for t in WAVES:
+        w = d[d.wave == t]
+        _log(f"[questions]  Q3 {t}: {len(w)} sectors (Gishwati-Mukura dropped)")
+        for spec, ctrl in [("(1) ln adults", []), ("(2) ln adults + X", XVARS)]:
+            for y, lab in INDUSTRY:
+                run_count(w, y, lab, "Q3", spec, ["exposure"], ctrl, ["district_id"], "ln(adults)" + (f"; {X_LABEL}" if ctrl else ""), t)
+
+
+def q4(x):
+    _log("[questions] Q4 per land-cover year: land outcomes on Park, district FE [+ X]")
+    d = land_panel()
+    d = d[d.year.isin((2000, 2010, 2020))].drop(columns=["border", "district_id", "nearest_park"]).merge(
+        x[["sid", "district_id", "border", "nearest_park"] + XVARS], on="sid", validate="m:1")
+    d = d[~d.sid.isin(_ring())] if DROP_RING else d
+    for t in (2000, 2010, 2020):
+        w = d[d.year == t]
+        _log(f"[questions]  Q4 {t}: {len(w)} sectors ({int(w.border.sum())} park-adjacent)")
+        for spec, ctrl in [("(1) none", []), ("(2) X", XVARS)]:
+            for y, lab in LAND_Y:
+                est, n, g = ols(w, y, ["border"] + ctrl, ["district_id"], ["border"])
+                record("Q4", spec, y, lab, est, n, g, ["border"], "OLS, level", "wild cluster bootstrap",
+                       "none" + "" if not ctrl else X_LABEL, "district_id", t)
+
+
+
+_RING = None
+
+
+def _ring() -> set:
+    global _RING
+    if _RING is None:
+        _RING = ring_sectors()
+    return _RING
+
+
+QUESTIONS = {"Q1": q1, "Q2": q2, "Q3": q3, "Q4": q4}
+
+
+def section_questions():
+    x = controls()                                   # z-scored over all 381 sectors, also with --drop-ring
+    _log(f"[questions] {len(x[~x.sid.isin(_ring())]) if DROP_RING else len(x)} sectors{' (ring dropped)' if DROP_RING else ''}")
+    for k in QUESTIONS:
+        QUESTIONS[k](x)
+    P.TABLES_REG.mkdir(parents=True, exist_ok=True)
+    out = P.TABLES_REG / f"census_park_questions{_suffix()}.csv"
+    pd.DataFrame(Q_ROWS).to_csv(out, index=False)
+    _log(f"-> {out}")
+    tex_questions()
+
+
+
+# ---- tables for the questions
+
+GEO = "log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised)"
+OUTS = [("nonfarm", "Non-farm"), ("services", "Services"), ("tourism", "Tourism"), ("farm", "Farm")]
+LAND_TAB = [("built_pp", "Built-up share"), ("crop_pp", "Cropland share"), ("log_built", "ln(1 + built-up ha)")]
+
+
+def tex_star(p):
+    return "***" if p < .01 else "**" if p < .05 else "*" if p < .1 else ""
+
+
+def tex_fmt(v, d=3):
+    return ("$-$" if v < 0 and round(abs(v), d) != 0 else "") + f"{abs(v):,.{d}f}"
+
+
+def tex_cells(row):
+    if row is None:
+        return "", "", ""
+    return f"{tex_fmt(row.coef)}$^{{{tex_star(row.p)}}}$" if tex_star(row.p) else tex_fmt(row.coef), f"({tex_fmt(row.se)})", f"[{row.p:.3f}]"
+
+
+def tex_pick(df, **kw):
+    for k, v in kw.items():
+        df = df[df[k] == v]
+    return df.iloc[0] if len(df) else None
+
+
+def tex_block(label, rows):
+    c = [tex_cells(r) for r in rows]
+    return [f"{label} & " + " & ".join(x[0] for x in c) + r" \\", " & " + " & ".join(x[1] for x in c) + r" \\",
+            " & " + " & ".join(x[2] for x in c) + r" \\"]
+
+
+def tex_table(caption, label, groups, panels, footer, notes, ncols):
+    head1 = " & " + " & ".join(rf"\multicolumn{{2}}{{c}}{{{g}}}" for g in groups) + r" \\"
+    cm = " ".join(rf"\cmidrule(lr){{{2 * i + 2}-{2 * i + 3}}}" for i in range(len(groups)))
+    head2 = " & " + " & ".join(f"({i + 1})" for i in range(ncols)) + r" \\"
+    return "\n".join([r"\begin{table}[H]", r"\centering\footnotesize\setlength{\tabcolsep}{3pt}", rf"\caption{{{caption}}}", rf"\label{{{label}}}",
+                      r"\resizebox{\textwidth}{!}{%", rf"\begin{{tabular}}{{l{'c' * ncols}}}", r"\toprule", head1, cm, head2, r"\midrule", *panels, r"\midrule", *footer, r"\bottomrule",
+                      r"\end{tabular}}", r"\begin{minipage}{0.97\textwidth}\scriptsize", rf"\textit{{Notes:}} {notes}", r"\end{minipage}", r"\end{table}"])
+
+
+SE_NOTE = (r"Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values "
+           r"(Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.")
+
+
+def tex_count_table(df, q, terms, caption, label, fe, extra_note, sample_note):
+    """Count outcomes, one panel per wave. terms: [(term, row label)]."""
+    panels = []
+    for t in WAVES:
+        panels.append(rf"\multicolumn{{9}}{{l}}{{\textit{{Panel {'ABC'[WAVES.index(t)]}. Census {t}}}}} \\")
+        for term, lab in terms:
+            panels += tex_block(lab, [tex_pick(df, question=q, wave=t, term=term, outcome=o, spec=s)
+                                  for o, _ in OUTS for s in (df[df.question == q].spec.unique()[:2])])
+        la = [tex_pick(df, question=q, wave=t, outcome=o, spec=s, term=terms[0][0]) for o, _ in OUTS for s in df[df.question == q].spec.unique()[:2]]
+        panels += [r"ln(adults) & " + " & ".join(tex_fmt(r.log_adults_coef, 2) for r in la) + r" \\",
+                   "Observations & " + " & ".join(f"{int(r.obs):,}" for r in la) + r" \\"]
+        if t != WAVES[-1]:
+            panels.append(r"\addlinespace")
+    footer = ["Geography controls & " + " & ".join(["No", "Yes"] * 4) + r" \\", f"Fixed effects & " + " & ".join([fe] * 8) + r" \\",
+              "Estimator & " + " & ".join(["OLS", "OLS", "OLS", "OLS", "Poisson", "Poisson", "OLS", "OLS"]) + r" \\"]
+    notes = (sample_note + r" Dependent variable: ln(number of workers) by industry of main work (non-farm, services, farm; Census-weighted); "
+             r"for tourism, the number of workers (Poisson, log link, so coefficients are also proportional differences). One OLS regression per wave and column, "
+             rf"on sectors outside Kigali City. ln(adults) is the log of residents aged 16 and over; its coefficient is an elasticity. Geography controls: {GEO}. " + extra_note + " " + SE_NOTE)
+    return tex_table(caption, label, [n for _, n in OUTS], panels, footer, notes, 8)
+
+
+def tex_land_table(df, caption, label, sample_note):
+    panels = []
+    for t in (2000, 2010, 2020):
+        panels.append(rf"\multicolumn{{7}}{{l}}{{\textit{{Panel {'ABC'[(2000, 2010, 2020).index(t)]}. {t}}}}} \\")
+        panels += tex_block("Park-adjacent", [tex_pick(df, question="Q4", wave=t, term="border", outcome=o, spec=s) for o, _ in LAND_TAB for s in ("(1) none", "(2) X")])
+        panels.append("Observations & " + " & ".join(f"{int(tex_pick(df, question='Q4', wave=t, term='border', outcome=o, spec=s).obs):,}" for o, _ in LAND_TAB for s in ("(1) none", "(2) X")) + r" \\")
+        if t != 2020:
+            panels.append(r"\addlinespace")
+    footer = ["Geography controls & " + " & ".join(["No", "Yes"] * 3) + r" \\", "Fixed effects & " + " & ".join(["District"] * 6) + r" \\"]
+    notes = (sample_note + r" Dependent variables: built-up share and cropland share of the sector's usable (non-park) land, in percentage points (GLAD land cover), and ln(1 + built-up hectares) (GHSL). "
+             rf"One OLS regression per year and column. Geography controls: {GEO}. " + SE_NOTE.replace("; in the tourism columns (Poisson), cluster-robust normal p-values", ""))
+    return tex_table(caption, label, [n for _, n in LAND_TAB], panels, footer, notes, 6)
+
+
+def tex_build(suffix, ring):
+    df = pd.read_csv(P.TABLES_REG / f"census_park_questions{suffix}.csv")
+    samp = (r"Sample: 299 sectors outside Kigali City, dropping the 82 that touch a park-adjacent sector without bordering a park." if ring
+            else r"Sample: 381 sectors outside Kigali City, of which 62 border a national park.")
+    tag = " (Ring Dropped)" if ring else ""
+    out = []
+    out.append(tex_count_table(df, "Q1", [("border", "Park-adjacent")], "Workers in Park-Adjacent vs Interior Sectors, by Census Wave" + tag, "tab:q1" + suffix, "District",
+                           r"Park-adjacent = the sector borders a national park; the coefficient is the proportional difference in workers relative to interior sectors of the same district, at the same number of adults.", samp))
+    out.append(tex_count_table(df, "Q3", [("exposure", "Visit-share exposure")], "Exposure to Park Tourism and Workers, by Census Wave" + tag, "tab:q3" + suffix, "District",
+                           r"Exposure = the nearest park's share of three-park visits 2005--2019 (Volcanoes 0.40, Akagera 0.46, Nyungwe 0.14) for park-adjacent sectors, 0 for others; Gishwati--Mukura sectors dropped (no visit data).",
+                           (r"Sample: 279 sectors outside Kigali City, excluding the ring and the Gishwati--Mukura sectors." if ring else r"Sample: 361 sectors outside Kigali City, excluding the Gishwati--Mukura sectors.")))
+    # gate bins: three panels, rows are bins (+ Park in even columns)
+    g = df[df.question == "Q2"]
+    for t in WAVES:
+        panels = [rf"\multicolumn{{9}}{{l}}{{\textit{{Census {t}}}}} \\"]
+        for term, lab in (("gate_lt10", r"Within 10 km of a gate"), ("gate_10_20", "10--20 km"), ("gate_20_40", "20--40 km"), ("border", "Park-adjacent")):
+            panels += tex_block(lab, [tex_pick(g, wave=t, term=term, outcome=o, spec=s) for o, _ in OUTS for s in ("(1) bins", "(2) bins + Park")])
+        la = [tex_pick(g, wave=t, term="gate_lt10", outcome=o, spec=s) for o, _ in OUTS for s in ("(1) bins", "(2) bins + Park")]
+        panels += [r"ln(adults) & " + " & ".join(tex_fmt(r.log_adults_coef, 2) for r in la) + r" \\", "Observations & " + " & ".join(f"{int(r.obs):,}" for r in la) + r" \\"]
+        footer = [r"Park-adjacent indicator & " + " & ".join(["No", "Yes"] * 4) + r" \\", "Geography controls & " + " & ".join(["Yes"] * 8) + r" \\",
+                  "Fixed effects & " + " & ".join(["Nearest park"] * 8) + r" \\", "Estimator & " + " & ".join(["OLS", "OLS", "OLS", "OLS", "Poisson", "Poisson", "OLS", "OLS"]) + r" \\"]
+        notes = (samp + r" Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). "
+                 r"Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). "
+                 rf"Geography controls: {GEO}. " + SE_NOTE)
+        out.append(tex_table(f"Distance to a Park Gate and Workers, Census {t}" + tag, f"tab:q2_{t}" + suffix, [n for _, n in OUTS], panels, footer, notes, 8))
+    out.append(tex_land_table(df, "Land Use in Park-Adjacent vs Interior Sectors, by Year" + tag, "tab:q4" + suffix, samp))
+    return out
+
+
+
+def tex_questions():
+    """docs/sector_question_tables.tex: one table per question, a panel per wave, full sample then no ring (from the CSVs that exist)."""
+    body = []
+    for suffix, ring in (("", False), ("_no_ring", True)):
+        if (P.TABLES_REG / f"census_park_questions{suffix}.csv").exists():
+            body += tex_build(suffix, ring) + [r"\clearpage"]
+    tex = "\n".join([r"\documentclass[11pt]{article}", r"\usepackage[margin=0.8in]{geometry}", r"\usepackage{booktabs,float,amsmath,graphicx}",
+                     r"\usepackage[font=small,labelfont=bf]{caption}", r"\captionsetup[table]{position=top}", r"\begin{document}", *body, r"\end{document}"])
+    p = ROOT / "docs" / "sector_question_tables.tex"
+    p.write_text(tex)
+    _log(f"-> {p}")
+
+
+
+# ---- legacy: land use, tourism exposure and the Gishwati-Mukura opening (sector and year FE, 2000 / 2005 base)
+
+SHARE_YEARS = (2005, 2019)                  # years of visits that set omega_p (before the 2020-21 collapse)
+TOURIST_PARKS = {"Volcanoes National Park": "Volcanoes", "Akagera National Park": "Akagera",
+                 "Nyungwe National Park": "Nyungwe"}
+GM_PARKS = ("Gishwati", "Mukura")
+OPENING_YEAR = 2015                         # Gishwati-Mukura National Park created
+LAND_OUTCOMES = [("crop_pp", "Cropland share (pp)"), ("built_pp", "Built-up share (pp)"),
+                 ("log_built", "Log built-up area (ha)")]
+OUTCOMES = [("nonfarm_per100", "Non-farm workers"), ("services_per100", "Services workers"),
+                   ("tourism_per100", "Tourism workers")]
+
+
+def exposure_sectors() -> pd.DataFrame:
+    """Sector attributes for the 381 sectors outside Kigali, with the exposure E_s and the Gishwati-Mukura flag."""
+    s = pd.read_csv(SECTORS)[["sid", "district_id", "border", "nearest_park"]]
+    s = s[~s.district_id.isin(KIGALI)].copy()
+    v = pd.read_excel(RDB, sheet_name="visits_by_park")
+    v = v[pd.to_numeric(v["year"], errors="coerce").between(*SHARE_YEARS)]
+    tot = v[["Volcanoes", "Akagera", "Nyungwe"]].sum()
+    omega = (tot / tot.sum()).to_dict()
+    _log("omega_p (share of three-park visits, %d-%d): " % SHARE_YEARS + ", ".join(f"{k} {w:.3f}" for k, w in omega.items()))
+    s["exposure"] = s.nearest_park.map(TOURIST_PARKS).map(omega).where(s.border == 1, 0.0)
+    s["gm"] = ((s.border == 1) & s.nearest_park.isin(GM_PARKS)).astype(int)
+    return s
+
+
+def national_visits() -> pd.Series:
+    """T_t: national park visits in 100,000s, 2005-2023, indexed by year."""
+    v = pd.read_excel(RDB, sheet_name="visits_by_park")
+    v = v[pd.to_numeric(v["year"], errors="coerce").notna()].copy()
+    v["year"] = v["year"].astype(int)
+    return (v.set_index("year")["All parks (published)"] / 1e5).dropna()
+
+
+def land_panel() -> pd.DataFrame:
+    """Sector x year (2000, 2005, ..., 2020): cropland and built-up shares in percentage points, log(1 + GHSL built ha)."""
+    a = pd.read_csv(LAND_PATH, usecols=["sid", "year", "crop_sh", "built_sh"])
+    g = pd.read_csv(GHSL_PATH, usecols=["sid", "year", "built_total_ha"])
+    d = a.merge(g, on=["sid", "year"], how="inner", validate="1:1")
+    d["crop_pp"], d["built_pp"] = 100 * d.crop_sh, 100 * d.built_sh
+    d["log_built"] = np.log1p(d.built_total_ha)
+    return d.merge(exposure_sectors(), on="sid", how="inner")
+
+
+def exposure_census_panel() -> pd.DataFrame:
+    d = pd.read_csv(PANEL).rename(columns={"wave": "year"})
+    return d.merge(exposure_sectors(), on="sid", how="inner")
+
+
+def land_run(d, outcomes, terms, section, spec, rows):
+    """One regression per outcome; every term gets a wild-bootstrap p-value."""
+    for y, label in outcomes:
+        est, n, G = fe_ols(d, y, terms, ["sid", "year"], "district_id", test=terms)
+        for t in terms:
+            e = est.loc[t]
+            rows.append({"section": section, "spec": spec, "outcome": y, "label": label, "term": t, "coef": e.coef,
+                         "se": e.se, "p_wcb": e.p_wcb, "obs": n, "sectors": d.sid.nunique(), "clusters": G})
+        _log(f"  {spec}, {label}: " + ", ".join(f"{t} {est.loc[t, 'coef']:+.3f} [{est.loc[t, 'p_wcb']:.3f}]" for t in terms))
+
+
+def land_save(rows, name):
+    P.TABLES_REG.mkdir(parents=True, exist_ok=True)
+    path = P.TABLES_REG / f"park_land_{name}.csv"
+    pd.DataFrame(rows).to_csv(path, index=False)
+    _log(f"-> {path}")
+
+
+def section_land():
+    all_years = ALL_YEARS
+    d = land_panel()
+    years = (2000, 2005, 2010, 2015, 2020) if all_years else (2000, 2010, 2020)
+    d = d[d.year.isin(years)].copy()
+    terms = []
+    for t in years[1:]:
+        d[f"park_x_{t}"] = d.border * (d.year == t)
+        terms.append(f"park_x_{t}")
+    _log(f"land: {d.sid.nunique()} sectors, {int(d.drop_duplicates('sid').border.sum())} park-adjacent, years {years}")
+    rows = []
+    land_run(d, LAND_OUTCOMES, terms, "land", "five-year panel" if all_years else "2000-2010-2020", rows)
+    land_save(rows, "land_all_years" if all_years else "land")
+
+
+def section_shift():
+    T = national_visits()
+    rows = []
+    # annual: land panel, years with a visit count
+    d = land_panel()
+    d = d[(d.year >= 2005) & (d.gm == 0)].copy()
+    d["T"] = d.year.map(T)
+    d["E_x_T"] = d.exposure * d["T"]
+    _log(f"shift: {d.sid.nunique()} sectors (Gishwati-Mukura dropped); exposed sectors {int((d.drop_duplicates('sid').exposure > 0).sum())}; "
+         f"T (100,000 visits) = " + ", ".join(f"{y}: {T[y]:.2f}" for y in sorted(d.year.unique())))
+    land_run(d, LAND_OUTCOMES, ["E_x_T"], "shift", "annual, E x national visits", rows)
+    ts = [t for t in sorted(d.year.unique()) if t > 2005]
+    for t in ts:
+        d[f"E_x_{t}"] = d.exposure * (d.year == t)
+    land_run(d, LAND_OUTCOMES, [f"E_x_{t}" for t in ts], "shift", "by year, 2005 base", rows)
+    # census waves
+    c = exposure_census_panel()
+    c = c[c.gm == 0].copy()
+    for t in (2012, 2022):
+        c[f"E_x_{t}"] = c.exposure * (c.year == t)
+    land_run(c, OUTCOMES, ["E_x_2012", "E_x_2022"], "shift", "census waves, 2002 base", rows)
+    land_save(rows, "shift")
+
+
+def section_opening():
+    rows = []
+    d = land_panel()
+    d = d[(d.border == 0) | (d.gm == 1)].copy()            # interior sectors and the Gishwati-Mukura sectors
+    _log(f"opening: {d.sid.nunique()} sectors, {int(d.drop_duplicates('sid').gm.sum())} bordering Gishwati or Mukura")
+    d["gm_post"] = d.gm * (d.year > OPENING_YEAR)
+    land_run(d, LAND_OUTCOMES, ["gm_post"], "opening", f"land, post = year > {OPENING_YEAR}", rows)
+    ts = [t for t in sorted(d.year.unique()) if t != 2010]
+    for t in ts:
+        d[f"gm_x_{t}"] = d.gm * (d.year == t)
+    land_run(d, LAND_OUTCOMES, [f"gm_x_{t}" for t in ts], "opening", "land, by year, 2010 base", rows)
+    c = exposure_census_panel()
+    c = c[(c.border == 0) | (c.gm == 1)].copy()
+    c["gm_post"] = c.gm * (c.year == 2022)
+    land_run(c, OUTCOMES, ["gm_post"], "opening", "census waves, post = 2022", rows)
+    land_save(rows, "opening")
+
+
+
+
+
+# ---- legacy: employment status of main work (sector and wave FE, 2002 base)
+
+def section_status():
+    suffix = _suffix()
+    s = pd.read_csv(STATUS).rename(columns={"sector_id": "sid", "year": "wave"})
+    s["wage100"], s["self100"] = 100 * s.per_adult_wage, 100 * s.per_adult_self
+    s["family100"], s["other100"] = 100 * s.per_adult_family, 100 * s.per_adult_other
+    s["workers100"] = 100 * s.workers / s.adults
+    x = pd.read_csv(SECTORS)[["sid", "district_id", "border"]]
+    d = s.drop(columns=["district_id"]).merge(x, on="sid", how="inner", validate="m:1")
+    d = d[~d.district_id.isin(KIGALI)].copy()
+    if DROP_RING:
+        d = d[~d.sid.isin(ring_sectors())].copy()
+    for t in (2012, 2022):
+        d[f"park_x_{t}"] = d.border * (d.wave == t)
+    terms = ["park_x_2012", "park_x_2022"]
+    _log(f"[status] {d.sid.nunique()} sectors, {int(d.drop_duplicates('sid').border.sum())} park-adjacent", )
+
+    rows = []
+    for y, label in STATUS_OUTCOMES:
+        est, n, G = fe_ols(d, y, terms, ["sid", "wave"], "district_id", test=terms)
+        m = {t: d[(d.wave == t)].groupby("border")[y].mean() for t in (2002, 2012, 2022)}
+        for t in (2012, 2022):
+            e = est.loc[f"park_x_{t}"]
+            rows.append({"outcome": y, "label": label, "wave": t, "coef": e.coef, "se": e.se, "p_wcb": e.p_wcb,
+                         "mean_park_2002": m[2002][1], "mean_interior_2002": m[2002][0],
+                         "mean_park_wave": m[t][1], "mean_interior_wave": m[t][0], "obs": n, "clusters": G})
+        _log(f"[status]   {label}: 2012 {est.loc['park_x_2012','coef']:+.2f} [{est.loc['park_x_2012','p_wcb']:.3f}], "
+              f"2022 {est.loc['park_x_2022','coef']:+.2f} [{est.loc['park_x_2022','p_wcb']:.3f}]", )
+    P.TABLES_REG.mkdir(parents=True, exist_ok=True)
+    out = P.TABLES_REG / f"census_park_status{suffix}.csv"
+    pd.DataFrame(rows).to_csv(out, index=False)
+    _log(f"-> {out}")
+
+
+
+
+
+# ---- legacy: log outcomes with sector and wave FE (2002 base)
+
+def logs_prepare(drop_ring: bool):
+    x = pd.read_csv(SECTORS)[["sid", "district_id", "border"]]
+    ind = pd.read_csv(PANEL)[["sid", "wave", "adults", "nonfarm", "services", "tourism", "farm"]]
+    st = pd.read_csv(STATUS).rename(columns={"sector_id": "sid", "year": "wave"})
+    for k, _ in STAT:
+        st[k] = st[f"per_adult_{k}"] * st.adults
+    st = st[["sid", "wave", "adults", "wage", "self", "family", "other"]]
+    out = []
+    for d in (ind, st):
+        d = d.merge(x, on="sid", validate="m:1")
+        d = d[~d.district_id.isin(KIGALI)].copy()
+        if drop_ring:
+            d = d[~d.sid.isin(ring_sectors())].copy()
+        d["log_adults"] = np.log(d.adults)
+        for t in (2012, 2022):
+            d[f"park_x_{t}"] = d.border * (d.wave == t)
+        out.append(d)
+    return out
+
+
+def logs_ppml(d, y):
+    g = d.groupby("sid")[y].transform("sum") > 0                     # drop sectors with no workers in any wave
+    d = d[g].copy()
+    X = pd.concat([d[LOG_TERMS + ["log_adults"]], pd.get_dummies(d.sid, prefix="s", drop_first=True, dtype=float),
+                   pd.get_dummies(d.wave, prefix="w", drop_first=True, dtype=float)], axis=1)
+    m = sm.GLM(d[y], sm.add_constant(X), family=sm.families.Poisson()).fit(
+        cov_type="cluster", cov_kwds={"groups": pd.factorize(d.district_id)[0]}, maxiter=200)
+    r = pd.DataFrame({"coef": m.params, "se": m.bse, "p": m.pvalues}).loc[LOG_TERMS + ["log_adults"]]
+    return r, int(len(d)), d.sid.nunique(), d.district_id.nunique()
+
+
+def logs_run(d, y, label, spec):
+    if (d[y] > 0).all():
+        d = d.assign(ln_y=np.log(d[y]))
+        est, n, G = fe_ols(d, "ln_y", LOG_TERMS + ["log_adults"], ["sid", "wave"], "district_id", test=LOG_TERMS)
+        est = est.rename(columns={"p_wcb": "p"})
+        kind, ns = "OLS, log workers", d.sid.nunique()
+    else:
+        est, n, ns, G = logs_ppml(d, y)
+        kind = "Poisson, workers"
+    for t in (2012, 2022):
+        e = est.loc[f"park_x_{t}"]
+        LOG_ROWS.append({"spec": spec, "outcome": y, "label": label, "estimator": kind, "wave": t, "coef": e.coef, "se": e.se,
+                     "p": e.p, "log_adults_coef": est.loc["log_adults", "coef"], "obs": n, "sectors": ns, "clusters": G})
+    _log(f"[logs]   {spec}, {label} ({kind}): 2012 {est.loc['park_x_2012','coef']:+.3f} [{est.loc['park_x_2012','p']:.3f}], "
+          f"2022 {est.loc['park_x_2022','coef']:+.3f} [{est.loc['park_x_2022','p']:.3f}]; ln adults {est.loc['log_adults','coef']:.2f}")
+
+
+
+def section_logs():
+    ind, st = logs_prepare(DROP_RING)
+    _log(f"[logs] {ind.sid.nunique()} sectors ({int(ind.drop_duplicates('sid').border.sum())} park-adjacent)")
+    for y, lab in INDUSTRY:
+        logs_run(ind, y, lab, "industry")
+    for y, lab in STAT:
+        logs_run(st, y, lab, "status")
+    P.TABLES_REG.mkdir(parents=True, exist_ok=True)
+    out = P.TABLES_REG / f"census_park_logs{'_no_ring' if DROP_RING else ''}.csv"
+    pd.DataFrame(LOG_ROWS).to_csv(out, index=False)
+    _log(f"-> {out}")
+
+
+SECTIONS = {"outcomes": section_outcomes, "questions": section_questions}
+LEGACY = {"gap": section_gap, "person": section_person, "migration": section_migration, "levels": section_levels,
+          "eicv_check": section_eicv_check, "status": section_status, "logs": section_logs, "land": section_land,
+          "shift": section_shift, "opening": section_opening}
 
 
 def main(argv=None) -> int:
     a = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    a.add_argument("--only", nargs="+", choices=list(SECTIONS))
+    a.add_argument("--only", nargs="+", choices=list(SECTIONS) + list(LEGACY))
+    a.add_argument("--legacy", action="store_true", help="also run the retired change-from-baseline sections")
     a.add_argument("--list", action="store_true")
     a.add_argument("--drop-ring", action="store_true", help="drop the ring of sectors touching park-adjacent ones")
+    a.add_argument("--all-years", action="store_true", help="land: use 2000, 2005, ..., 2020 instead of 2000, 2010, 2020")
     args = a.parse_args(argv)
-    global DROP_RING
-    DROP_RING = args.drop_ring
+    global DROP_RING, ALL_YEARS
+    DROP_RING, ALL_YEARS = args.drop_ring, args.all_years
+    allsec = {**SECTIONS, **LEGACY}
     if args.list:
-        print("\n".join(SECTIONS)); return 0
-    for k in args.only or SECTIONS:
-        SECTIONS[k]()
+        print("default: " + " ".join(SECTIONS) + "\nlegacy:  " + " ".join(LEGACY)); return 0
+    for k in args.only or (list(SECTIONS) + (list(LEGACY) if args.legacy else [])):
+        allsec[k]()
     return 0
 
 

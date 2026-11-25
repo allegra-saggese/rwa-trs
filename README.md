@@ -38,6 +38,8 @@ Run from the repository root. Each step only needs re-running when its inputs ch
 | 9. Census analysis | `python micro-analysis/census.py` | census panels, housing / education / jobs / cohort results |
 | 10. Forest analysis | `python micro-analysis/forest.py` | forest-loss event study and DiD (reads JRC rasters online) |
 | 11. Figures | `python results-scripts/treatment_maps.py`, `python results-scripts/STEG_figures_script.py` | treatment maps, grant-appendix figures |
+| 12. Park-adjacent sector regressions | `python micro-analysis/census_park_regressions.py [--drop-ring]` (retired designs: `--legacy`) | `output/tables/regressions/census_park_*.csv`; AER tables in `docs/sector_question_tables.pdf` |
+| 13. Sector figures | `python data-build/sector_work_type.py`, then `python results-scripts/sector_figures.py --tex` | 101 figures in `output/figures/sector/`; all of them with captions in `docs/sector_figures.pdf` |
 
 Each multi-part script runs all its sections in order. `--list` shows the sections, and `--only <name>`
 runs one of them.
@@ -61,7 +63,7 @@ The nightlights pipeline and its analysis (`Nighttime-Lights/`) are kept but not
 | `data/<source>/` | source data, one folder per source; nothing in the analysis writes here |
 | `data/harmonized/` | everything built from the sources: panels, survey subsets, labour tables, the district panel (`district/`) |
 | `analysis/nisr-public-data-analysis/` | regression results (`reg_*.csv`) |
-| `output/figures/`, `output/maps/`, `output/tables/` | figures, maps, summary and regression tables |
+| `output/figures/`, `output/maps/`, `output/tables/` | figures, maps, summary and regression tables. Sector figures: `output/figures/sector/` (one PDF per figure, named by type: `ranked_*`, `hist_*`, `scatter_*`, `trend_*`, `map_*`, ...). Regression results: `output/tables/regressions/` |
 | `output/latex/` | write-ups (`.tex` and compiled `.pdf`) |
 | `output/variable-lists/` | generated variable inventories |
 
@@ -75,9 +77,9 @@ Each data folder has its own `README.txt`.
 | `helpers/` | shared code: table helpers, regressions, treatment groups, survey cleaning, plot style, variable inventories |
 | `NISR/`, `WB-Enterprise-Surveys/` | survey cleaning pipelines, one folder per survey |
 | `data-build/` | non-survey sources: boundaries, rainfall, World Bank indicators, DHS, Earth Engine, geoportal; the district panel |
-| `micro-analysis/` | reduced-form analysis: `sector_panel`, `sector_regressions`, `paper_tables`, `census` (with `census/`), `forest` (with `forest/`), `district_models`; and the panels they use: `sector_cell_panels`, `district_survey_tables` |
+| `micro-analysis/` | reduced-form analysis: `sector_panel`, `sector_regressions`, `paper_tables`, `census` (with `census/`), `forest` (with `forest/`), `census_park_regressions` (all park-adjacent sector regressions and their tables), `district_models`; and the panels they use: `sector_cell_panels`, `district_survey_tables` |
 | `model/` | inputs of the 2x2 model |
-| `results-scripts/` | figures, maps and descriptive tables (`STEG/` holds the grant-appendix modules) |
+| `results-scripts/` | figures, maps and descriptive tables: `sector_figures.py` (all park-adjacent sector figures), `sector_descriptives.py`, `public_data_figures.py`, ... (`STEG/` holds the grant-appendix modules) |
 | `Nighttime-Lights/` | nightlights pipeline and analysis (not part of the main run) |
 | `docs/` | cleaning decisions, data provenance, earlier READMEs |
 
