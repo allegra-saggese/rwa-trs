@@ -13,7 +13,7 @@ Sample: the 381 sectors outside Kigali City (all of them; no distance cut-off), 
 
 Figures (python results-scripts/sector_gate_plots.py; files in output/figures/sector-gate/)
   ranked_{farm,services}_{dot,bar}_{2002,2012,2022}.pdf   sectors ordered along the x-axis by distance to the nearest gate,
-                     share of workers on the y-axis; gate-touching sectors are dark diamonds / dark bars.
+                     share of workers on the y-axis; gate-touching sectors are black diamonds / bars; other park-adjacent sectors dark triangles / bars; ring sectors grey squares / bars; interior sectors open circles / light bars.
   scatter_land_density_{2002,2012,2022}.pdf   land area (km2) against population density (residents per km2), log scales,
                      one point per sector; gate-touching sectors are filled diamonds, other park-adjacent sectors open triangles.
 """
@@ -23,6 +23,7 @@ from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
+import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -30,6 +31,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "helpers"))
+sys.path.insert(0, str(ROOT / "micro-analysis"))
 import paths as P  # noqa: E402
 
 sys.modules.setdefault("adjustText", types.SimpleNamespace(adjust_text=lambda *a, **k: None))  # label placement only
@@ -58,6 +60,9 @@ def load() -> pd.DataFrame:
     g = pd.read_csv(P.HARM_PANELS / "treatment_groups.csv")[["sid", "group"]]
     c = c.merge(g, on="sid", how="left")
     c["gate"] = c.group.isin(["Gates", "Gates+"]).astype(int)
+    import census_park_regressions as CPR                      # ring_sectors(): touch a park-adjacent sector, do not border a park
+    ring = CPR.ring_sectors()
+    c["zone"] = np.where(c.border == 1, "park", np.where(c.sid.isin(ring), "ring", "interior"))
     w = pd.read_csv(P.HARMONIZED / "census_sector_work_per_adult.csv")[["sid", "wave", "nonfarm", "services", "farm"]]
     pop = pd.read_csv(P.HARM_PANELS / "sector_pop_total.csv")
     d = c.merge(w, on="sid").merge(pop, on=["sid", "wave"])
@@ -75,16 +80,43 @@ def save(fig, name):
 
 
 def ranked(d, wave, col, ylabel, kind):
+    """Sectors ordered by distance to the nearest gate. Four classes: sectors touching a gate (black), other park-adjacent
+    sectors, ring sectors (touch a park-adjacent sector, do not border a park), and the remaining interior sectors."""
     x = d[d.wave == wave].sort_values("km_gate").reset_index(drop=True)
     n, pos = len(x), np.arange(len(x))
-    fig, ax = plt.subplots(figsize=(6.5, 3.4))
-    touch = x.gate.values == 1
+    fig, ax = plt.subplots(figsize=(6.5, 3.6))
+    gate = x.gate.values == 1
+    cls = [("interior", ~gate & (x.zone.values == "interior"), "Interior sectors"),
+           ("ring", ~gate & (x.zone.values == "ring"), "Ring sectors"),
+           ("park", ~gate & (x.zone.values == "park"), "Other park-adjacent sectors")]
+    sty = {"interior": dict(bar="#D9D9D9", marker="o", s=9, fc="none", ec=MID, mk=None),
+           "ring": dict(bar="#8F8F8F", marker="s", s=14, fc="#8F8F8F", ec="#8F8F8F", mk=None),
+           "park": dict(bar="#4A4A4A", marker="^", s=24, fc="none", ec=DARK, mk=None)}
+    ls = {"interior": ":", "ring": "-.", "park": "--", "gate": "-"}
+    lc = {"interior": MID, "ring": "#4F4F4F", "park": DARK, "gate": DARK}
+
+    def mean_line(key, m):
+        mu = x[col][m].mean()
+        ax.axhline(mu, color=lc[key], linestyle=ls[key], linewidth=1.1, zorder=4,
+                   path_effects=[pe.Stroke(linewidth=1.9, foreground="white", alpha=0.7), pe.Normal()])
+        return mu
+
+    for key, m, name in cls:
+        st = sty[key]
+        mu = x[col][m].mean()
+        lab = f"{name} ({int(m.sum())}), mean {mu:.0f}%"
+        if kind == "bar":
+            ax.bar(pos[m], x[col][m], width=1.0, color=st["bar"], linewidth=0, label=lab)
+        else:
+            ax.scatter(pos[m], x[col][m], s=st["s"], marker=st["marker"], facecolor=st["fc"], edgecolor=st["ec"], linewidth=0.7, label=lab)
+        mean_line(key, m)
+    mu = x[col][gate].mean()
+    lab = f"Sectors touching a park gate ({int(gate.sum())}), mean {mu:.0f}%"
     if kind == "bar":
-        ax.bar(pos[~touch], x[col][~touch], width=1.0, color=LIGHT, linewidth=0, label="Other sectors")
-        ax.bar(pos[touch], x[col][touch], width=1.0, color=DARK, linewidth=0, label="Sectors touching a park gate")
+        ax.bar(pos[gate], x[col][gate], width=1.0, color=DARK, linewidth=0, label=lab)
     else:
-        ax.scatter(pos[~touch], x[col][~touch], s=9, facecolor="none", edgecolor=MID, linewidth=0.6, label="Other sectors")
-        ax.scatter(pos[touch], x[col][touch], s=34, marker="D", color=DARK, linewidth=0, label="Sectors touching a park gate", zorder=3)
+        ax.scatter(pos[gate], x[col][gate], s=34, marker="D", color=DARK, linewidth=0, label=lab, zorder=3)
+    mean_line("gate", gate)
     ticks = [0, n // 5, 2 * n // 5, 3 * n // 5, 4 * n // 5, n - 1]
     ax.set_xticks(ticks)
     ax.set_xticklabels([f"{x.km_gate[i]:.0f}" for i in ticks])
@@ -92,7 +124,7 @@ def ranked(d, wave, col, ylabel, kind):
     ax.set_xlabel(f"Distance to nearest park gate, km (sectors ranked from nearest to farthest, n = {n})")
     ax.set_ylabel(ylabel)
     ax.set_ylim(0, 100 if kind == "bar" or col == "farm_sh" else None)
-    ax.legend(frameon=False, loc="best")
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=2, fontsize=8)
     return fig
 
 

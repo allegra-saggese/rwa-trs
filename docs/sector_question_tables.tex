@@ -1,0 +1,468 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{booktabs,float,amsmath,graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\captionsetup[table]{position=top}
+\begin{document}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Workers in Park-Adjacent vs Interior Sectors, by Census Wave}
+\label{tab:q1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A. Census 2002}} \\
+Park-adjacent & $-$0.198$^{*}$ & 0.013 & $-$0.299$^{**}$ & $-$0.024 & $-$0.516 & $-$0.461 & 0.060 & $-$0.021 \\
+ & (0.091) & (0.152) & (0.097) & (0.149) & (0.359) & (0.575) & (0.036) & (0.062) \\
+ & [0.050] & [0.926] & [0.012] & [0.867] & [0.151] & [0.422] & [0.107] & [0.772] \\
+ln(adults) & 1.81 & 1.75 & 1.91 & 1.82 & 3.47 & 3.16 & 0.47 & 0.47 \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel B. Census 2012}} \\
+Park-adjacent & $-$0.149$^{*}$ & 0.078 & $-$0.270$^{**}$ & $-$0.012 & $-$0.327$^{**}$ & 0.028 & 0.088 & $-$0.106 \\
+ & (0.071) & (0.117) & (0.095) & (0.146) & (0.132) & (0.171) & (0.050) & (0.100) \\
+ & [0.061] & [0.539] & [0.015] & [0.944] & [0.013] & [0.871] & [0.103] & [0.399] \\
+ln(adults) & 1.70 & 1.75 & 1.79 & 1.83 & 2.03 & 2.04 & 0.58 & 0.53 \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel C. Census 2022}} \\
+Park-adjacent & $-$0.138$^{**}$ & 0.042 & $-$0.190$^{***}$ & 0.028 & $-$0.387$^{**}$ & 0.095 & 0.254$^{***}$ & $-$0.080 \\
+ & (0.057) & (0.085) & (0.060) & (0.092) & (0.167) & (0.166) & (0.076) & (0.141) \\
+ & [0.027] & [0.623] & [0.003] & [0.774] & [0.021] & [0.569] & [0.003] & [0.610] \\
+ln(adults) & 1.64 & 1.69 & 1.76 & 1.79 & 2.19 & 2.23 & 0.73 & 0.59 \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+\midrule
+Geography controls & No & Yes & No & Yes & No & Yes & No & Yes \\
+Fixed effects & District & District & District & District & District & District & District & District \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 381 sectors outside Kigali City, of which 62 border a national park. Dependent variable: ln(number of workers) by industry of main work (non-farm, services, farm; Census-weighted); for tourism, the number of workers (Poisson, log link, so coefficients are also proportional differences). One OLS regression per wave and column, on sectors outside Kigali City. ln(adults) is the log of residents aged 16 and over; its coefficient is an elasticity. Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Park-adjacent = the sector borders a national park; the coefficient is the proportional difference in workers relative to interior sectors of the same district, at the same number of adults. Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Exposure to Park Tourism and Workers, by Census Wave}
+\label{tab:q3}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A. Census 2002}} \\
+Visit-share exposure & $-$0.545 & $-$0.114 & $-$0.548 & 0.331 & $-$0.661 & 0.018 & 0.062 & $-$0.259 \\
+ & (0.341) & (0.523) & (0.375) & (0.578) & (0.824) & (1.476) & (0.133) & (0.222) \\
+ & [0.224] & [0.829] & [0.229] & [0.574] & [0.422] & [0.990] & [0.640] & [0.235] \\
+ln(adults) & 1.82 & 1.75 & 1.91 & 1.84 & 3.53 & 3.19 & 0.46 & 0.46 \\
+Observations & 361 & 361 & 361 & 361 & 361 & 361 & 361 & 361 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel B. Census 2012}} \\
+Visit-share exposure & $-$0.783$^{**}$ & $-$0.120 & $-$0.856$^{**}$ & 0.151 & $-$0.902$^{*}$ & 0.660 & 0.478$^{**}$ & $-$0.084 \\
+ & (0.179) & (0.296) & (0.242) & (0.341) & (0.488) & (0.509) & (0.152) & (0.261) \\
+ & [0.012] & [0.702] & [0.014] & [0.675] & [0.065] & [0.194] & [0.031] & [0.755] \\
+ln(adults) & 1.76 & 1.77 & 1.84 & 1.85 & 2.07 & 2.04 & 0.55 & 0.52 \\
+Observations & 361 & 361 & 361 & 361 & 361 & 361 & 361 & 361 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel C. Census 2022}} \\
+Visit-share exposure & $-$0.583$^{*}$ & 0.086 & $-$0.604$^{*}$ & 0.217 & $-$1.312$^{**}$ & 0.677 & 0.892$^{***}$ & $-$0.094 \\
+ & (0.230) & (0.241) & (0.263) & (0.263) & (0.548) & (0.443) & (0.306) & (0.372) \\
+ & [0.052] & [0.713] & [0.067] & [0.418] & [0.017] & [0.127] & [0.004] & [0.816] \\
+ln(adults) & 1.67 & 1.69 & 1.79 & 1.80 & 2.24 & 2.24 & 0.71 & 0.57 \\
+Observations & 361 & 361 & 361 & 361 & 361 & 361 & 361 & 361 \\
+\midrule
+Geography controls & No & Yes & No & Yes & No & Yes & No & Yes \\
+Fixed effects & District & District & District & District & District & District & District & District \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 361 sectors outside Kigali City, excluding the Gishwati--Mukura sectors. Dependent variable: ln(number of workers) by industry of main work (non-farm, services, farm; Census-weighted); for tourism, the number of workers (Poisson, log link, so coefficients are also proportional differences). One OLS regression per wave and column, on sectors outside Kigali City. ln(adults) is the log of residents aged 16 and over; its coefficient is an elasticity. Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Exposure = the nearest park's share of three-park visits 2005--2019 (Volcanoes 0.40, Akagera 0.46, Nyungwe 0.14) for park-adjacent sectors, 0 for others; Gishwati--Mukura sectors dropped (no visit data). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Distance to a Park Gate and Workers, Census 2002}
+\label{tab:q2_2002}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Census 2002}} \\
+Within 10 km of a gate & 0.270 & 0.268 & 0.234 & 0.233 & $-$0.197 & $-$0.213 & $-$0.009 & $-$0.007 \\
+ & (0.151) & (0.152) & (0.171) & (0.171) & (0.562) & (0.580) & (0.073) & (0.070) \\
+ & [0.102] & [0.100] & [0.212] & [0.210] & [0.726] & [0.714] & [0.911] & [0.934] \\
+10--20 km & 0.087 & 0.086 & 0.135 & 0.135 & $-$0.542 & $-$0.534 & $-$0.035 & $-$0.035 \\
+ & (0.139) & (0.140) & (0.134) & (0.134) & (0.346) & (0.357) & (0.045) & (0.045) \\
+ & [0.563] & [0.572] & [0.351] & [0.352] & [0.117] & [0.135] & [0.446] & [0.459] \\
+20--40 km & $-$0.104 & $-$0.104 & $-$0.036 & $-$0.036 & $-$0.226 & $-$0.216 & 0.000 & 0.000 \\
+ & (0.101) & (0.101) & (0.109) & (0.109) & (0.212) & (0.202) & (0.045) & (0.044) \\
+ & [0.367] & [0.366] & [0.771] & [0.771] & [0.287] & [0.285] & [0.995] & [0.992] \\
+Park-adjacent &  & 0.027 &  & 0.011 &  & $-$0.245 &  & $-$0.038 \\
+ &  & (0.141) &  & (0.140) &  & (0.628) &  & (0.052) \\
+ &  & [0.846] &  & [0.935] &  & [0.696] &  & [0.481] \\
+ln(adults) & 1.68 & 1.69 & 1.77 & 1.77 & 3.02 & 2.99 & 0.53 & 0.53 \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+\midrule
+Park-adjacent indicator & No & Yes & No & Yes & No & Yes & No & Yes \\
+Geography controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Fixed effects & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 381 sectors outside Kigali City, of which 62 border a national park. Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Distance to a Park Gate and Workers, Census 2012}
+\label{tab:q2_2012}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Census 2012}} \\
+Within 10 km of a gate & 0.181 & 0.175 & 0.155 & 0.155 & $-$0.011 & $-$0.010 & $-$0.122 & $-$0.119 \\
+ & (0.106) & (0.100) & (0.103) & (0.100) & (0.122) & (0.124) & (0.103) & (0.102) \\
+ & [0.175] & [0.160] & [0.218] & [0.207] & [0.927] & [0.936] & [0.299] & [0.311] \\
+10--20 km & 0.168$^{**}$ & 0.167$^{**}$ & 0.180$^{**}$ & 0.180$^{**}$ & $-$0.015 & $-$0.016 & $-$0.118$^{*}$ & $-$0.117$^{*}$ \\
+ & (0.057) & (0.058) & (0.064) & (0.064) & (0.115) & (0.116) & (0.056) & (0.058) \\
+ & [0.018] & [0.013] & [0.026] & [0.025] & [0.894] & [0.892] & [0.065] & [0.066] \\
+20--40 km & $-$0.039 & $-$0.039 & 0.013 & 0.013 & $-$0.133 & $-$0.133 & $-$0.016 & $-$0.016 \\
+ & (0.053) & (0.053) & (0.053) & (0.053) & (0.082) & (0.083) & (0.050) & (0.050) \\
+ & [0.496] & [0.490] & [0.816] & [0.817] & [0.107] & [0.107] & [0.767] & [0.772] \\
+Park-adjacent &  & 0.094 &  & 0.005 &  & 0.020 &  & $-$0.052 \\
+ &  & (0.104) &  & (0.125) &  & (0.168) &  & (0.081) \\
+ &  & [0.405] &  & [0.973] &  & [0.904] &  & [0.593] \\
+ln(adults) & 1.66 & 1.66 & 1.76 & 1.76 & 1.85 & 1.85 & 0.62 & 0.62 \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+\midrule
+Park-adjacent indicator & No & Yes & No & Yes & No & Yes & No & Yes \\
+Geography controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Fixed effects & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 381 sectors outside Kigali City, of which 62 border a national park. Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Distance to a Park Gate and Workers, Census 2022}
+\label{tab:q2_2022}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Census 2022}} \\
+Within 10 km of a gate & 0.147$^{*}$ & 0.145$^{*}$ & 0.152 & 0.152$^{*}$ & $-$0.017 & $-$0.013 & $-$0.127 & $-$0.126 \\
+ & (0.078) & (0.076) & (0.080) & (0.077) & (0.271) & (0.274) & (0.132) & (0.130) \\
+ & [0.092] & [0.089] & [0.103] & [0.099] & [0.951] & [0.961] & [0.373] & [0.371] \\
+10--20 km & 0.078 & 0.078 & 0.080 & 0.080 & $-$0.377 & $-$0.379 & $-$0.142 & $-$0.142 \\
+ & (0.062) & (0.061) & (0.059) & (0.059) & (0.245) & (0.242) & (0.080) & (0.079) \\
+ & [0.257] & [0.257] & [0.232] & [0.233] & [0.124] & [0.118] & [0.147] & [0.143] \\
+20--40 km & $-$0.045 & $-$0.045 & 0.015 & 0.015 & $-$0.042 & $-$0.044 & $-$0.015 & $-$0.014 \\
+ & (0.060) & (0.060) & (0.058) & (0.058) & (0.100) & (0.098) & (0.087) & (0.087) \\
+ & [0.503] & [0.501] & [0.838] & [0.840] & [0.675] & [0.652] & [0.877] & [0.878] \\
+Park-adjacent &  & 0.031 &  & 0.010 &  & 0.039 &  & $-$0.019 \\
+ &  & (0.070) &  & (0.070) &  & (0.162) &  & (0.107) \\
+ &  & [0.674] &  & [0.894] &  & [0.809] &  & [0.866] \\
+ln(adults) & 1.64 & 1.64 & 1.76 & 1.76 & 2.27 & 2.27 & 0.64 & 0.64 \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+\midrule
+Park-adjacent indicator & No & Yes & No & Yes & No & Yes & No & Yes \\
+Geography controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Fixed effects & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 381 sectors outside Kigali City, of which 62 border a national park. Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Land Use in Park-Adjacent vs Interior Sectors, by Year}
+\label{tab:q4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Built-up share} & \multicolumn{2}{c}{Cropland share} & \multicolumn{2}{c}{ln(1 + built-up ha)} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel A. 2000}} \\
+Park-adjacent & $-$1.871 & 1.959 & 3.210 & $-$6.349$^{*}$ & $-$0.070 & $-$0.088 \\
+ & (1.641) & (1.351) & (2.039) & (3.289) & (0.152) & (0.125) \\
+ & [0.271] & [0.150] & [0.129] & [0.075] & [0.659] & [0.538] \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Panel B. 2010}} \\
+Park-adjacent & $-$2.428 & 2.115 & 2.854 & $-$4.963 & 0.009 & $-$0.042 \\
+ & (1.854) & (1.514) & (2.328) & (3.858) & (0.108) & (0.097) \\
+ & [0.214] & [0.180] & [0.229] & [0.237] & [0.935] & [0.678] \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Panel C. 2020}} \\
+Park-adjacent & $-$3.087 & 2.280 & 2.331 & $-$4.603 & 0.091 & $-$0.030 \\
+ & (2.350) & (1.677) & (2.345) & (4.258) & (0.073) & (0.073) \\
+ & [0.214] & [0.184] & [0.321] & [0.321] & [0.220] & [0.690] \\
+Observations & 381 & 381 & 381 & 381 & 381 & 381 \\
+\midrule
+Geography controls & No & Yes & No & Yes & No & Yes \\
+Fixed effects & District & District & District & District & District & District \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 381 sectors outside Kigali City, of which 62 border a national park. Dependent variables: built-up share and cropland share of the sector's usable (non-park) land, in percentage points (GLAD land cover), and ln(1 + built-up hectares) (GHSL). One OLS regression per year and column. Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws). Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Workers in Park-Adjacent vs Interior Sectors, by Census Wave (Ring Dropped)}
+\label{tab:q1_no_ring}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A. Census 2002}} \\
+Park-adjacent & $-$0.026 & 0.263 & $-$0.134 & 0.280 & $-$0.459 & $-$0.425 & 0.050 & $-$0.039 \\
+ & (0.108) & (0.280) & (0.141) & (0.316) & (0.375) & (0.860) & (0.057) & (0.151) \\
+ & [0.807] & [0.370] & [0.362] & [0.395] & [0.221] & [0.621] & [0.398] & [0.810] \\
+ln(adults) & 1.86 & 1.84 & 1.94 & 1.90 & 3.91 & 3.41 & 0.55 & 0.54 \\
+Observations & 299 & 299 & 299 & 299 & 281 & 281 & 299 & 299 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel B. Census 2012}} \\
+Park-adjacent & $-$0.189$^{**}$ & 0.048 & $-$0.331$^{***}$ & $-$0.072 & $-$0.463$^{***}$ & $-$0.360 & 0.212$^{*}$ & 0.017 \\
+ & (0.072) & (0.168) & (0.080) & (0.190) & (0.147) & (0.263) & (0.126) & (0.155) \\
+ & [0.023] & [0.786] & [0.004] & [0.721] & [0.002] & [0.171] & [0.089] & [0.950] \\
+ln(adults) & 1.66 & 1.75 & 1.76 & 1.85 & 1.95 & 1.96 & 0.54 & 0.48 \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 & 299 & 299 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel C. Census 2022}} \\
+Park-adjacent & $-$0.132$^{*}$ & 0.097 & $-$0.182$^{*}$ & 0.091 & $-$0.668$^{***}$ & $-$0.214 & 0.438$^{***}$ & 0.052 \\
+ & (0.072) & (0.113) & (0.084) & (0.137) & (0.228) & (0.450) & (0.132) & (0.129) \\
+ & [0.082] & [0.405] & [0.058] & [0.522] & [0.003] & [0.634] & [0.000] & [0.796] \\
+ln(adults) & 1.64 & 1.72 & 1.77 & 1.83 & 2.23 & 2.24 & 0.67 & 0.51 \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 & 299 & 299 \\
+\midrule
+Geography controls & No & Yes & No & Yes & No & Yes & No & Yes \\
+Fixed effects & District & District & District & District & District & District & District & District \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 299 sectors outside Kigali City, dropping the 82 that touch a park-adjacent sector without bordering a park. Dependent variable: ln(number of workers) by industry of main work (non-farm, services, farm; Census-weighted); for tourism, the number of workers (Poisson, log link, so coefficients are also proportional differences). One OLS regression per wave and column, on sectors outside Kigali City. ln(adults) is the log of residents aged 16 and over; its coefficient is an elasticity. Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Park-adjacent = the sector borders a national park; the coefficient is the proportional difference in workers relative to interior sectors of the same district, at the same number of adults. Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Exposure to Park Tourism and Workers, by Census Wave (Ring Dropped)}
+\label{tab:q3_no_ring}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A. Census 2002}} \\
+Visit-share exposure & $-$0.111 & 0.281 & $-$0.163 & 0.900 & $-$1.125 & $-$1.242 & 0.009 & $-$0.383 \\
+ & (0.418) & (0.981) & (0.471) & (1.068) & (0.912) & (1.699) & (0.198) & (0.443) \\
+ & [0.796] & [0.789] & [0.723] & [0.497] & [0.217] & [0.465] & [0.966] & [0.481] \\
+ln(adults) & 1.88 & 1.84 & 1.96 & 1.92 & 3.96 & 3.42 & 0.53 & 0.52 \\
+Observations & 279 & 279 & 279 & 279 & 264 & 264 & 279 & 279 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel B. Census 2012}} \\
+Visit-share exposure & $-$0.758$^{**}$ & $-$0.136 & $-$0.863$^{**}$ & 0.188 & $-$0.845$^{**}$ & 0.652 & 0.727$^{**}$ & 0.268 \\
+ & (0.232) & (0.498) & (0.291) & (0.546) & (0.418) & (0.825) & (0.386) & (0.420) \\
+ & [0.016] & [0.806] & [0.014] & [0.761] & [0.043] & [0.429] & [0.041] & [0.551] \\
+ln(adults) & 1.73 & 1.79 & 1.81 & 1.88 & 1.97 & 1.99 & 0.54 & 0.50 \\
+Observations & 279 & 279 & 279 & 279 & 279 & 279 & 279 & 279 \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Panel C. Census 2022}} \\
+Visit-share exposure & $-$0.489$^{*}$ & 0.283 & $-$0.536 & 0.414 & $-$1.572$^{**}$ & 0.800 & 1.244$^{***}$ & 0.102 \\
+ & (0.276) & (0.363) & (0.323) & (0.425) & (0.720) & (1.236) & (0.475) & (0.442) \\
+ & [0.094] & [0.468] & [0.115] & [0.386] & [0.029] & [0.518] & [0.004] & [0.827] \\
+ln(adults) & 1.67 & 1.72 & 1.79 & 1.84 & 2.28 & 2.26 & 0.65 & 0.49 \\
+Observations & 279 & 279 & 279 & 279 & 279 & 279 & 279 & 279 \\
+\midrule
+Geography controls & No & Yes & No & Yes & No & Yes & No & Yes \\
+Fixed effects & District & District & District & District & District & District & District & District \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 279 sectors outside Kigali City, excluding the ring and the Gishwati--Mukura sectors. Dependent variable: ln(number of workers) by industry of main work (non-farm, services, farm; Census-weighted); for tourism, the number of workers (Poisson, log link, so coefficients are also proportional differences). One OLS regression per wave and column, on sectors outside Kigali City. ln(adults) is the log of residents aged 16 and over; its coefficient is an elasticity. Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Exposure = the nearest park's share of three-park visits 2005--2019 (Volcanoes 0.40, Akagera 0.46, Nyungwe 0.14) for park-adjacent sectors, 0 for others; Gishwati--Mukura sectors dropped (no visit data). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Distance to a Park Gate and Workers, Census 2002 (Ring Dropped)}
+\label{tab:q2_2002_no_ring}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Census 2002}} \\
+Within 10 km of a gate & 0.554$^{**}$ & 0.531$^{**}$ & 0.495 & 0.470$^{*}$ & 1.433$^{**}$ & 1.384$^{**}$ & $-$0.014 & $-$0.005 \\
+ & (0.211) & (0.210) & (0.249) & (0.244) & (0.610) & (0.563) & (0.103) & (0.094) \\
+ & [0.044] & [0.045] & [0.102] & [0.099] & [0.019] & [0.014] & [0.894] & [0.953] \\
+10--20 km & 0.122 & 0.106 & 0.173 & 0.156 & $-$0.463 & $-$0.484 & $-$0.044 & $-$0.038 \\
+ & (0.175) & (0.186) & (0.175) & (0.186) & (0.381) & (0.365) & (0.064) & (0.062) \\
+ & [0.513] & [0.594] & [0.359] & [0.434] & [0.224] & [0.185] & [0.530] & [0.561] \\
+20--40 km & 0.003 & 0.003 & 0.087 & 0.087 & 0.251 & 0.243 & $-$0.030 & $-$0.030 \\
+ & (0.100) & (0.099) & (0.102) & (0.100) & (0.296) & (0.290) & (0.036) & (0.035) \\
+ & [0.982] & [0.980] & [0.459] & [0.448] & [0.396] & [0.402] & [0.474] & [0.461] \\
+Park-adjacent &  & 0.137 &  & 0.146 &  & 0.147 &  & $-$0.051 \\
+ &  & (0.193) &  & (0.211) &  & (0.533) &  & (0.088) \\
+ &  & [0.521] &  & [0.523] &  & [0.783] &  & [0.588] \\
+ln(adults) & 1.80 & 1.81 & 1.87 & 1.89 & 3.34 & 3.36 & 0.59 & 0.58 \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 & 299 & 299 \\
+\midrule
+Park-adjacent indicator & No & Yes & No & Yes & No & Yes & No & Yes \\
+Geography controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Fixed effects & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 299 sectors outside Kigali City, dropping the 82 that touch a park-adjacent sector without bordering a park. Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Distance to a Park Gate and Workers, Census 2012 (Ring Dropped)}
+\label{tab:q2_2012_no_ring}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Census 2012}} \\
+Within 10 km of a gate & 0.176 & 0.154 & 0.215 & 0.216 & 0.176 & 0.201 & $-$0.183 & $-$0.187 \\
+ & (0.173) & (0.161) & (0.188) & (0.183) & (0.304) & (0.311) & (0.164) & (0.162) \\
+ & [0.394] & [0.404] & [0.342] & [0.320] & [0.562] & [0.519] & [0.326] & [0.320] \\
+10--20 km & 0.111 & 0.096 & 0.197 & 0.197 & $-$0.147 & $-$0.130 & $-$0.125 & $-$0.127 \\
+ & (0.103) & (0.105) & (0.110) & (0.112) & (0.148) & (0.141) & (0.087) & (0.086) \\
+ & [0.354] & [0.415] & [0.143] & [0.144] & [0.321] & [0.358] & [0.222] & [0.208] \\
+20--40 km & $-$0.022 & $-$0.023 & 0.024 & 0.024 & $-$0.110 & $-$0.106 & $-$0.027 & $-$0.027 \\
+ & (0.062) & (0.061) & (0.066) & (0.066) & (0.104) & (0.103) & (0.054) & (0.054) \\
+ & [0.734] & [0.723] & [0.727] & [0.728] & [0.292] & [0.304] & [0.643] & [0.643] \\
+Park-adjacent &  & 0.120 &  & $-$0.005 &  & $-$0.152 &  & 0.018 \\
+ &  & (0.123) &  & (0.154) &  & (0.216) &  & (0.095) \\
+ &  & [0.367] &  & [0.979] &  & [0.482] &  & [0.859] \\
+ln(adults) & 1.66 & 1.65 & 1.76 & 1.76 & 1.81 & 1.80 & 0.57 & 0.57 \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 & 299 & 299 \\
+\midrule
+Park-adjacent indicator & No & Yes & No & Yes & No & Yes & No & Yes \\
+Geography controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Fixed effects & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 299 sectors outside Kigali City, dropping the 82 that touch a park-adjacent sector without bordering a park. Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Distance to a Park Gate and Workers, Census 2022 (Ring Dropped)}
+\label{tab:q2_2022_no_ring}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{Non-farm} & \multicolumn{2}{c}{Services} & \multicolumn{2}{c}{Tourism} & \multicolumn{2}{c}{Farm} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Census 2022}} \\
+Within 10 km of a gate & 0.245 & 0.231 & 0.263 & 0.253 & $-$0.020 & 0.007 & $-$0.104 & $-$0.109 \\
+ & (0.126) & (0.120) & (0.153) & (0.145) & (0.335) & (0.320) & (0.166) & (0.161) \\
+ & [0.123] & [0.115] & [0.195] & [0.175] & [0.952] & [0.983] & [0.575] & [0.543] \\
+10--20 km & 0.043 & 0.034 & 0.066 & 0.059 & $-$0.520$^{**}$ & $-$0.507$^{**}$ & $-$0.208$^{*}$ & $-$0.211$^{*}$ \\
+ & (0.088) & (0.087) & (0.088) & (0.086) & (0.240) & (0.226) & (0.089) & (0.088) \\
+ & [0.652] & [0.720] & [0.515] & [0.538] & [0.031] & [0.025] & [0.064] & [0.055] \\
+20--40 km & $-$0.016 & $-$0.017 & 0.046 & 0.046 & $-$0.039 & $-$0.030 & $-$0.016 & $-$0.017 \\
+ & (0.067) & (0.065) & (0.066) & (0.065) & (0.127) & (0.119) & (0.095) & (0.095) \\
+ & [0.835] & [0.828] & [0.565] & [0.569] & [0.757] & [0.799] & [0.871] & [0.872] \\
+Park-adjacent &  & 0.077 &  & 0.057 &  & $-$0.120 &  & 0.025 \\
+ &  & (0.069) &  & (0.080) &  & (0.324) &  & (0.111) \\
+ &  & [0.275] &  & [0.505] &  & [0.710] &  & [0.834] \\
+ln(adults) & 1.66 & 1.65 & 1.78 & 1.77 & 2.33 & 2.33 & 0.57 & 0.57 \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 & 299 & 299 \\
+\midrule
+Park-adjacent indicator & No & Yes & No & Yes & No & Yes & No & Yes \\
+Geography controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Fixed effects & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park & Nearest park \\
+Estimator & OLS & OLS & OLS & OLS & Poisson & Poisson & OLS & OLS \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 299 sectors outside Kigali City, dropping the 82 that touch a park-adjacent sector without bordering a park. Distance bins are from the sector centroid to the nearest of four park gates (Kinigi, Gisakura, Kitabi, Akagera South Gate); the omitted bin is 40 km or more (196 sectors; bin sizes 17, 43 and 125 sectors). Dependent variable: ln(number of workers) by industry of main work (tourism: number of workers, Poisson). One regression per wave and column; the fixed effect is the nearest park (five groups). Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws); in the tourism columns (Poisson), cluster-robust normal p-values. Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Land Use in Park-Adjacent vs Interior Sectors, by Year (Ring Dropped)}
+\label{tab:q4_no_ring}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Built-up share} & \multicolumn{2}{c}{Cropland share} & \multicolumn{2}{c}{ln(1 + built-up ha)} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel A. 2000}} \\
+Park-adjacent & $-$4.414 & $-$1.319 & 3.052 & $-$7.223 & $-$0.072 & $-$0.334 \\
+ & (2.930) & (2.561) & (3.631) & (6.209) & (0.190) & (0.205) \\
+ & [0.134] & [0.624] & [0.404] & [0.270] & [0.706] & [0.121] \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Panel B. 2010}} \\
+Park-adjacent & $-$5.330$^{*}$ & $-$2.061 & 3.488 & $-$5.040 & 0.069 & $-$0.143 \\
+ & (3.205) & (2.615) & (4.431) & (7.395) & (0.131) & (0.169) \\
+ & [0.100] & [0.450] & [0.431] & [0.533] & [0.591] & [0.423] \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 \\
+\addlinespace
+\multicolumn{7}{l}{\textit{Panel C. 2020}} \\
+Park-adjacent & $-$5.685 & $-$1.993 & 3.220 & $-$4.654 & 0.214$^{**}$ & 0.013 \\
+ & (3.473) & (2.355) & (4.331) & (7.517) & (0.088) & (0.139) \\
+ & [0.117] & [0.410] & [0.457] & [0.564] & [0.025] & [0.934] \\
+Observations & 299 & 299 & 299 & 299 & 299 & 299 \\
+\midrule
+Geography controls & No & Yes & No & Yes & No & Yes \\
+Fixed effects & District & District & District & District & District & District \\
+\bottomrule
+\end{tabular}}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Sample: 299 sectors outside Kigali City, dropping the 82 that touch a park-adjacent sector without bordering a park. Dependent variables: built-up share and cropland share of the sector's usable (non-park) land, in percentage points (GLAD land cover), and ln(1 + built-up hectares) (GHSL). One OLS regression per year and column. Geography controls: log area, log distance to the nearest trunk or primary road, log distance to Kigali, mean elevation, mean slope and mean rainfall (each standardised). Standard errors clustered by district (27 clusters) in parentheses. In OLS columns, brackets give wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws). Stars follow the bracketed p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\end{document}
