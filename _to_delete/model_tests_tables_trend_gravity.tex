@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{booktabs,float,amsmath,graphicx,adjustbox}
+\usepackage[font=small,labelfont=bf]{caption}
+\begin{document}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Trends in the Sector of Work, 2017--2025}
+\label{tab:mt_trend}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{All districts} & \multicolumn{3}{c}{Outside Kigali City} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & Services & Tourism & Agriculture & Services & Tourism & Agriculture \\
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+Year (trend) & 0.253 & 0.198$^{***}$ & 0.109 & 0.304 & 0.191$^{***}$ & 0.157 \\
+ & (0.185) & (0.021) & (0.158) & (0.202) & (0.022) & (0.173) \\
+\midrule
+Mean in 2017 & 37.1 & 1.5 & 46.1 & 33.1 & 1.2 & 50.2 \\
+District FE & Yes & Yes & Yes & Yes & Yes & Yes \\
+Districts & 30 & 30 & 30 & 27 & 27 & 27 \\
+Observations & 270 & 270 & 270 & 243 & 243 & 243 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS on district-by-year shares from the Labour Force Survey, 2017--2025. Outcome: the share of workers with a stated industry whose main job is in services (ISIC sections G--U), in tourism industries (accommodation and food; arts and recreation) or in agriculture, in percentage points. The coefficient is the change per year. 2020 and 2021 are the COVID-19 years. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Migration Between Districts and Distance}
+\label{tab:mt_gravity}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Census 2012} & \multicolumn{2}{c}{Census 2022} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & (1) & (2) & (3) & (4) \\
+\midrule
+Distance (10 km) & $-$0.310$^{***}$ &  & $-$0.275$^{***}$ &  \\
+ & (0.025) &  & (0.019) &  \\
+Log distance &  & $-$1.720$^{***}$ &  & $-$1.551$^{***}$ \\
+ &  & (0.130) &  & (0.094) \\
+\midrule
+Origin and destination FE & Yes & Yes & Yes & Yes \\
+District pairs & 870 & 870 & 870 & 870 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} Poisson pseudo-maximum likelihood on flows between districts from the Census question on previous residence; pairs with no movers are kept as zeros. Distance is between district centroids (area-weighted sector centroids), a straight line. Standard errors clustered by origin district in parentheses; stars follow cluster-robust p-values: *** $p<0.01$, ** $p<0.05$, * $p<0.1$. In the model the coefficient on distance is minus the product of the location elasticity and the distance cost.
+\end{minipage}
+\end{table}
+\clearpage
+\end{document}

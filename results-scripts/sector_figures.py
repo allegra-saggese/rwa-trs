@@ -86,7 +86,8 @@ def _log(msg):
 
 def save(fig, name, caption):
     OUT.mkdir(parents=True, exist_ok=True)
-    fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight")
+    fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight")                        # vector master (AER production)
+    fig.savefig(OUT / f"{name}.jpg", bbox_inches="tight", dpi=300, pil_kwargs={"quality": 95})  # raster copy for LaTeX/slides
     plt.close(fig)
     CAP[name] = caption
 

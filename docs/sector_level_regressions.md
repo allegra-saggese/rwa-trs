@@ -47,6 +47,19 @@ Controls X (z-scored over the 381 sectors): log area; log distance to trunk/prim
 | Q3 | Exposure to park tourism. ln(workers_s) = a_district + b E_s + lam ln(adults) [+ X g] | 361 sectors (279 no ring), Gishwati-Mukura dropped, per wave | as Q1 | E_s = nearest park's share of three-park visits 2005-2019 (Volcanoes .40, Akagera .46, Nyungwe .14), 0 for other sectors | (1) ln(adults); (2) ln(adults), X. District FE |
 | Q4 | Land use. y_s = a_district + b Park [+ X g] | 381 sectors (299 no ring), per land-cover year 2000, 2010, 2020 | Cropland share and built-up share of usable land (pp, GLAD); ln(1 + built-up ha) (GHSL) | Park | (1) none; (2) X. District FE |
 
+## Distance to the park within its catchment (section `distance` of `census_park_regressions.py`)
+
+**Catchments** (section `catchments` -> `analysis-panels/sector_park_catchment.csv`): every sector is assigned to the national park nearest its centroid; distance = centroid to that park's boundary (km). Parks are the national-park polygons of geodata.rw (Gishwati and Mukura merged into one park). Before 2015 Gishwati-Mukura was not a park, so for 2002 and 2012 its 95 sectors take the nearest of the other three parks (Nyungwe 46, Volcanoes 46, Akagera 3). 51 sectors touch a park; the older `border` flag (62) also counted 8 sectors touching only the former Gishwati Forest Reserve and 3 sectors 0.5-0.9 km from a park.
+
+| # | Regression | Sample | Outcomes | Terms | Controls and fixed effects |
+|---|---|---|---|---|---|
+| Q5 | Per wave: ln Y_s = sum_p a_p C_ps + sum_p f_p(km_s) + b1 ln area_s + b2 ln adults_s + e_s. Pooled: adds wave FE, sector-waves stacked | 381 sectors per wave 2002, 2012, 2022; pooled 1,143 | ln services workers; ln farm workers; ln farm workers incl. estimated 2022 subsistence farmers (2022 and pooled) | Linear: C_p x km. Bands: C_p x 1[km in 0-5, 5-10, ..., 25-30]; 30 km+ omitted | ln adults 16+; ln total area (main, cols 1-4) or ln usable area = total minus park land (robustness, cols 5-8; total area includes park land, which inflates sectors touching a park). Catchment FE (+ wave FE pooled) |
+
+| Q5 main | As Q5, total area, Gishwati-Mukura catchment dropped (active conflict; park only from 2015) | 286 sectors per wave; pooled 858 | Q5 outcomes plus gap = 100 x (farm - services) / workers with a stated industry (pp) | as Q5 | ln total area, ln adults 16+. Catchment FE (+ wave FE pooled) |
+| Q6 | Gishwati-Mukura opening event study: Y_st = a_s + g_t + sum_b [d_b,2002 B_b 1[2002] + d_b,2022 B_b 1[2022]] + lam ln adults_st + e | 95 sectors of the Gishwati-Mukura catchment x 2002, 2012, 2022 (285); 12 district clusters | Q5 main outcomes | 5 km bands to the 2015 park x wave (30 km+ and 2012 omitted); linear km x wave | ln adults 16+. Sector FE, wave FE |
+
+Tables: main results and event study `docs/sector_distance_main.pdf`; robustness (all 381 sectors, total vs usable area) `docs/sector_distance_tables.pdf`; results `census_park_distance.csv` (column `set`: no_gm = main, all = robustness), `census_park_gishwati_event.csv`.
+
 **Retired:** the sector-FE change-from-baseline designs (R1-R7, R10, R12 above, and an earlier version of Q2/Q4 with Park x wave and a 2002/2000 base) are no longer used. R8, R9 and R11 (land panels) are likewise superseded by Q4 for descriptive purposes. The balancing-weights version was dropped with them.
 
 **Main results (full sample, 2022, % difference in workers, park-adjacent vs interior, same district):** without geography, services -17%, non-farm -13%, tourism -32%, farm +29% (bootstrap p 0.003-0.027); with geography, all within +-10% and p > 0.5. Q2 shows no gradient in gate distance. Q3 exposure shows the same pattern as Q1. Q4: the built-up gap is negative without X and positive with X, but p > 0.15 in every year, and it is already present in 2000, so it is not a gain.

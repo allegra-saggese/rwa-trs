@@ -5,6 +5,11 @@ park_land_regressions scripts are sections below).
 
 DEFAULT SECTIONS (python micro-analysis/census_park_regressions.py [--drop-ring])
   outcomes   sector x wave counts and rates from the Census microdata -> data/harmonized/census_sector_work_per_adult.csv
+  catchments every sector assigned to its nearest national park (4 parks), with touch-the-park dummies and distance to
+             the park, per park -> data/harmonized/analysis-panels/sector_park_catchment.csv (see park_catchments)
+  distance   within-catchment distance to the park (linear and 5 km bands), per wave and pooled; main results without the
+             Gishwati-Mukura catchment -> census_park_distance.csv, docs/sector_distance_main.tex, docs/sector_distance_tables.tex
+  gishwati   event study of the 2015 Gishwati-Mukura opening, its catchment only, 2012 base -> census_park_gishwati_event.csv
   questions  Q1-Q4, one OLS per Census wave (land: per land-cover year), no sector fixed effects and no base year:
                ln(workers_s) = a_district + b Park_s + lam ln(adults_s) [+ geography controls] + e_s
              Q1 park-adjacent vs interior; Q2 distance to the nearest park gate (bins, nearest-park FE); Q3 visit-share
@@ -121,6 +126,78 @@ def ring_sectors() -> set:
     g = g.merge(pd.read_csv(SECTORS)[["sid", "border"]], on="sid")
     adj = g[g.border == 1].geometry.buffer(1).union_all()
     return set(g.sid[(g.border == 0) & g.geometry.intersects(adj)])
+
+
+# ---------------------------------------------------------------------------- park catchments
+PARK_POLYGONS = P.GEO / "protected-areas" / "rwanda_protected_areas_geodata_rw.gpkg"
+PARK_NAMES = {"Akagera National Park": "akagera", "Nyungwe National Park": "nyungwe",
+              "Volcanoes National Park": "volcanoes", "Gishwati": "gishwati_mukura", "Mukura": "gishwati_mukura"}
+CATCHMENT = P.HARM_PANELS / "sector_park_catchment.csv"
+
+
+def park_catchments() -> pd.DataFrame:
+    """Assign every sector outside Kigali to its nearest national park and flag the sectors that touch it.
+
+    Parks: the national-park polygons of geodata.rw (type 'National Park' or 'Volcanoes National Park': core, buffer and
+    extension zones). Gishwati and Mukura are separate blocks of one park (Gishwati-Mukura National Park, 2015) and are
+    merged. The Gishwati and Mukura Forest Reserve polygons (223 and 9 km2, the pre-2015 reserve, mostly converted to
+    farm and pasture) are not park and are left out; the older `border` flag counted them (see touch vs border below).
+
+      park       nearest park to the sector centroid (catchment)
+      km_park    distance from the sector centroid to that park's boundary, km (0 if the centroid lies inside the park)
+      km_edge    distance from the sector's own boundary to that park, km (0 for touching sectors)
+      touch      1 if the sector polygon touches or overlaps its park (1 m tolerance for slivers between polygons)
+      C_<p>      1 if the sector's nearest park is p (catchment dummy)
+      T_<p>      touch x C_<p>: the sector touches park p
+      D_<p>      km_park x C_<p>: distance to park p inside p's catchment, 0 elsewhere
+      *_pre      the same, before Gishwati-Mukura National Park existed (2015): nearest of Akagera, Nyungwe, Volcanoes
+    """
+    import geopandas as gpd
+    from shapely.validation import make_valid
+    g = gpd.read_file(SECTOR_BOUNDARIES)
+    g["sid"] = g.sector_id.astype(int)
+    g["geometry"] = g.geometry.apply(make_valid)
+    g = g[["sid", "geometry"]].dissolve("sid").reset_index().to_crs(32736)
+    g = g.merge(pd.read_csv(SECTORS)[["sid", "district_id", "border"]], on="sid", validate="1:1")
+    g = g[~g.district_id.isin(KIGALI)].reset_index(drop=True)
+
+    pk = gpd.read_file(PARK_POLYGONS)
+    pk = pk[pk["type"].isin(["National Park", "Volcanoes National Park"])].to_crs(32736)
+    pk["park"] = pk.areaname.map(PARK_NAMES)
+    assert pk.park.notna().all(), "unmapped park polygon"
+    pk["geometry"] = pk.geometry.apply(make_valid)
+    parks = pk.dissolve("park").geometry
+
+    cen = g.geometry.centroid
+    km = pd.DataFrame({p: cen.distance(geom) / 1e3 for p, geom in parks.items()})
+    # Two assignments: post-2015 (all four parks; used for 2022) and pre-2015 (Gishwati-Mukura not yet a park, so its
+    # sectors go to the nearest of the other three; used for 2002 and 2012). Columns of the pre-2015 version end in _pre.
+    for suffix, cols in (("", list(parks.index)), ("_pre", [p for p in parks.index if p != "gishwati_mukura"])):
+        g["park" + suffix] = km[cols].idxmin(axis=1)
+        g["km_park" + suffix] = km[cols].min(axis=1)
+        g["km_edge" + suffix] = [geom.distance(parks[p]) / 1e3 for geom, p in zip(g.geometry, g["park" + suffix])]
+        g["touch" + suffix] = [int(geom.buffer(1).intersects(parks[p])) for geom, p in zip(g.geometry, g["park" + suffix])]
+        for p in cols:
+            c = (g["park" + suffix] == p).astype(int)
+            g[f"C_{p}{suffix}"], g[f"T_{p}{suffix}"], g[f"D_{p}{suffix}"] = c, c * g["touch" + suffix], c * g["km_park" + suffix]
+    out = pd.DataFrame(g.drop(columns="geometry"))
+    assert len(out) == 381
+    return out
+
+
+def section_catchments():
+    c = park_catchments()
+    c.to_csv(CATCHMENT, index=False)
+    _log("park catchments (nearest park to the sector centroid), sectors outside Kigali:")
+    t = c.groupby("park").agg(sectors=("sid", "size"), touch=("touch", "sum"),
+                              km_touch=("km_park", lambda v: v[c.loc[v.index, "touch"] == 1].median()),
+                              km_other=("km_park", lambda v: v[c.loc[v.index, "touch"] == 0].median()),
+                              km_max=("km_park", "max"))
+    print(t.round(1).to_string())
+    print(pd.crosstab(c.touch, c.border, rownames=["touch"], colnames=["old border flag"]).to_string())
+    print("pre-2015 (three parks):\n" + c.groupby("park_pre").agg(sectors=("sid", "size"), touch=("touch_pre", "sum")).to_string())
+    print("post-2015 catchment of the sectors reassigned before 2015:\n" + pd.crosstab(c.park, c.park_pre).to_string())
+    _log(f"-> {CATCHMENT}")
 
 
 def _log(msg):
@@ -1011,6 +1088,334 @@ def tex_questions():
 
 
 
+# ---------------------------------------------------------------------------- distance to the park, within catchment
+DIST_BANDS = [(0, 5), (5, 10), (10, 15), (15, 20), (20, 25), (25, 30)]     # km; 30 km and over is the omitted band
+DIST_ROWS = []
+ES_ROWS = []
+GM = "gishwati_mukura"
+
+
+def distance_panel() -> pd.DataFrame:
+    """Sector x wave, with the catchment of the wave: 2002 and 2012 use the pre-2015 assignment (three parks), 2022 the
+    four-park one.
+      farm_sub  farm workers plus the estimated subsistence farmers of 2022 (n_AG_pt - n_AG, adults 20-64;
+                census_sector_jobs_panel.csv); equal to farm in 2002 and 2012
+      gap       100 x (farm - services) / workers, workers = everyone with a stated industry (farm + non-farm); the farm
+                share minus the services share of workers, in percentage points"""
+    c = pd.read_csv(CATCHMENT)
+    d = pd.read_csv(PANEL)[["sid", "wave", "adults", "nonfarm", "services", "farm"]]
+    j = pd.read_csv(P.HARMONIZED / "census_sector_jobs_panel.csv", usecols=["sid", "wave", "n_AG", "n_AG_pt"])
+    d = d.merge(j, on=["sid", "wave"], how="left", validate="1:1")
+    d["farm_sub"] = d.farm + np.where(d.wave == 2022, d.n_AG_pt - d.n_AG, 0.0)
+    d["workers"] = d.farm + d.nonfarm
+    d["gap"] = 100 * (d.farm - d.services) / d.workers
+    d = d.merge(c[["sid", "district_id", "park", "km_park", "park_pre", "km_park_pre"]], on="sid", validate="m:1")
+    pre = d.wave < 2015
+    d["cat"] = np.where(pre, d.park_pre, d.park)
+    d["km"] = np.where(pre, d.km_park_pre, d.km_park)
+    area = pd.read_csv(SECTORS)[["sid", "unit_km2", "Lbar_km2"]]
+    d = d.merge(area, on="sid", validate="m:1")
+    # total area includes park land (most sectors touching a park contain some); usable area = total minus park, floored
+    # at 0.5 km2 (one sector lies almost entirely inside Nyungwe)
+    d["log_area"], d["log_usable"], d["log_adults"] = np.log(d.unit_km2), np.log(d.Lbar_km2.clip(lower=0.5)), np.log(d.adults)
+    for y in ("services", "farm", "farm_sub"):
+        d[f"ln_{y}"] = np.log(d[y])
+    for p in sorted(d.cat.unique()):
+        cp = (d.cat == p).astype(int)
+        d[f"C_{p}"] = cp
+        d[f"km_{p}"] = cp * d.km
+        for lo, hi in DIST_BANDS:
+            d[f"b{lo}_{hi}_{p}"] = cp * ((d.km >= lo) & (d.km < hi)).astype(int)
+    return d
+
+
+def distance_run(d, y, label, design, sample, fes, area="log_area", sset="all"):
+    parks = sorted(d.cat.unique())
+    if design == "linear":
+        terms = [f"km_{p}" for p in parks]
+    else:
+        terms = [f"b{lo}_{hi}_{p}" for p in parks for lo, hi in DIST_BANDS]
+    terms = [t for t in terms if d[t].abs().sum() > 0]
+    est, n, g = fe_ols(d, y, terms + [area, "log_adults"], fes, "district_id", test=terms)
+    for t in terms + [area, "log_adults"]:
+        e = est.loc[t]
+        park = next((p for p in parks if t.endswith(p)), "")
+        band = t[1:].rsplit("_" + park, 1)[0].replace("_", "-") if t.startswith("b") else ("per km" if t.startswith("km_") else t)
+        n_cell = int(d[t].gt(0).sum()) if t.startswith(("b", "km_")) else np.nan
+        DIST_ROWS.append({"set": sset, "design": design, "sample": sample, "outcome": y, "label": label, "park": park, "term": band,
+                          "coef": e.coef, "se": e.se, "p_wcb": e.p_wcb,
+                          "pct": 100 * (np.exp(e.coef) - 1) if y.startswith("ln_") else np.nan, "n_sectors_cell": n_cell,
+                          "obs": n, "sectors": d.sid.nunique(), "clusters": g, "fixed_effects": "+".join(fes), "area": area,
+                          "controls": f"{'log total area' if area == 'log_area' else 'log usable (non-park) area'}, log adults 16+"})
+    focal = ", ".join(f"{t} {est.loc[t, 'coef']:+.3f} [{est.loc[t, 'p_wcb']:.3f}]" for t in terms if t.startswith("km_") or t.startswith("b0_"))
+    _log(f"[distance] {sset} | {sample} | {design} | {area} | {label}: {focal}")
+
+
+DIST_OUTCOMES = [("ln_services", "Services workers"), ("ln_farm", "Farm workers"),
+                 ("ln_farm_sub", "Farm workers incl. subsistence (2022)"), ("gap", "Farm minus services share of workers (pp)")]
+
+
+def section_distance():
+    """Within-catchment distance to the park. One regression per Census wave (repeated cross-section) and one pooled over
+    the three waves:
+        per wave  Y_s  = sum_p a_p C_ps + sum_p f(km_s) x C_ps + b1 ln area_s + b2 ln adults_s + e_s
+        pooled    Y_st = g_t + sum_p a_p C_pst + sum_p f(km_st) x C_pst + b1 ln area_s + b2 ln adults_st + e_st
+    Y = ln services workers, ln farm workers, ln farm workers incl. 2022 subsistence, or the farm-minus-services gap (pp).
+    f(km) = d_p km (linear) or sum_b d_pb 1[km in band b] (5 km bands to 30 km; 30 km and over omitted).
+    C_p = catchment dummies (nearest park to the sector centroid). Standard errors clustered by district, wild cluster
+    restricted bootstrap p-values.
+      main (set no_gm)  total area; the 95 sectors of the Gishwati-Mukura catchment dropped in every wave (park created 2015,
+                        active conflict in the area), leaving 286 sectors in the Akagera, Nyungwe and Volcanoes catchments
+                        -> docs/sector_distance_main.tex (with the Gishwati-Mukura event study)
+      all sectors (set all)  381 sectors; before 2015 the Gishwati-Mukura sectors take the nearest other park; total and
+                        usable area -> docs/sector_distance_tables.tex (robustness)
+    -> census_park_distance.csv"""
+    d = distance_panel()
+    m = d[d.park != GM]
+    for design in ("linear", "bands"):
+        for y, label in DIST_OUTCOMES:
+            for w in WAVES:
+                if y == "ln_farm_sub" and w != 2022:
+                    continue                                  # identical to ln_farm before 2022
+                distance_run(m[m.wave == w], y, label, design, str(w), ["cat"], "log_area", "no_gm")
+            distance_run(m, y, label, design, "pooled", ["cat", "wave"], "log_area", "no_gm")
+    for area in ("log_area", "log_usable"):
+        for design in ("linear", "bands"):
+            for y, label in DIST_OUTCOMES[:3]:
+                for w in WAVES:
+                    if y == "ln_farm_sub" and w != 2022:
+                        continue
+                    distance_run(d[d.wave == w], y, label, design, str(w), ["cat"], area, "all")
+                distance_run(d, y, label, design, "pooled", ["cat", "wave"], area, "all")
+    out = P.TABLES_REG / "census_park_distance.csv"
+    pd.DataFrame(DIST_ROWS).to_csv(out, index=False)
+    _log(f"-> {out}")
+    tex_distance()
+
+
+def section_gishwati():
+    """Event study of the Gishwati-Mukura opening (2015), its catchment only (95 sectors whose nearest park is
+    Gishwati-Mukura; 12 districts). Distance is to the boundary of the park as created in 2015, the same in every wave.
+        Y_st = a_s + g_t + sum_b [ d_b,2002 B_bs 1[t = 2002] + d_b,2022 B_bs 1[t = 2022] ] + lam ln adults_st + e_st
+    B_b = 5 km distance bands to 30 km (30 km and over omitted); 2012, the last Census before the opening, is the base wave.
+    d_b,2022 = change from 2012 to 2022 in band b relative to the 30 km+ sectors (after the opening); d_b,2002 = the same
+    change from 2012 back to 2002 (before the opening; should be zero if near and far sectors moved in parallel).
+    Also run with 2002 as the base wave (terms for 2012 and 2022): the 2002-2022 change, the full twenty years.
+    Linear version: km x 1[2002], km x 1[2022]. Sector and wave FE; area is absorbed by the sector FE. Standard errors
+    clustered by district (12 clusters), wild cluster restricted bootstrap p-values. -> census_park_gishwati_event.csv"""
+    d = distance_panel()
+    d = d[d.park == GM].copy()
+    d["kmg"] = d.km_park                                      # distance to the 2015 park in every wave
+    for base in (2012, 2002):                                 # 2012: last Census before the opening; 2002: first Census
+        waves = [w for w in WAVES if w != base]
+        terms_b, terms_l = [], []
+        for w in waves:
+            d[f"km_x{w}"] = d.kmg * (d.wave == w)
+            terms_l.append(f"km_x{w}")
+            for lo, hi in DIST_BANDS:
+                d[f"b{lo}_{hi}_x{w}"] = ((d.kmg >= lo) & (d.kmg < hi) & (d.wave == w)).astype(int)
+                terms_b.append(f"b{lo}_{hi}_x{w}")
+        for design, terms in (("bands", terms_b), ("linear", terms_l)):
+            for y, label in DIST_OUTCOMES:
+                est, n, g = fe_ols(d, y, terms + ["log_adults"], ["sid", "wave"], "district_id", test=terms)
+                for t in terms + ["log_adults"]:
+                    e = est.loc[t]
+                    wave = t[-4:] if "_x" in t else ""
+                    band = t[1:].split("_x")[0].replace("_", "-") if t.startswith("b") else ("per km" if t.startswith("km_") else t)
+                    ES_ROWS.append({"base_wave": base, "design": design, "outcome": y, "label": label, "term": band, "wave": wave,
+                                    "coef": e.coef, "se": e.se, "p_wcb": e.p_wcb,
+                                    "pct": 100 * (np.exp(e.coef) - 1) if y.startswith("ln_") else np.nan,
+                                    "obs": n, "sectors": d.sid.nunique(), "clusters": g, "fixed_effects": "sector+wave",
+                                    "controls": "log adults 16+", "base": f"{base}; 30 km+"})
+                _log(f"[gishwati] base {base} | {design} | {label}: " + ", ".join(
+                    f"{t} {est.loc[t, 'coef']:+.3f} [{est.loc[t, 'p_wcb']:.3f}]" for t in terms if t.startswith(("b0_", "km_"))))
+    counts = d[d.wave == 2012].assign(band=pd.cut(d.kmg, [0, 5, 10, 15, 20, 25, 30, 999], right=False)).band.value_counts().sort_index()
+    _log("[gishwati] sectors per band: " + ", ".join(f"{k}: {v}" for k, v in counts.items()))
+    out = P.TABLES_REG / "census_park_gishwati_event.csv"
+    pd.DataFrame(ES_ROWS).to_csv(out, index=False)
+    _log(f"-> {out}")
+    tex_distance_main()
+
+
+PARK_LABEL = {"akagera": "Akagera", "gishwati_mukura": "Gishwati--Mukura", "nyungwe": "Nyungwe", "volcanoes": "Volcanoes"}
+OUT_TEX = {"ln_services": "ln(services workers)", "ln_farm": "ln(farm workers)",
+           "ln_farm_sub": "ln(farm workers incl. estimated subsistence farmers in 2022)",
+           "gap": r"farm share minus services share of workers, percentage points; workers = everyone with a stated industry"}
+# robustness document: total area, columns 1-4; usable (non-park) area, columns 5-8
+DIST_COLS = [("2002", "log_area"), ("2012", "log_area"), ("2022", "log_area"), ("pooled", "log_area"),
+             ("2002", "log_usable"), ("2012", "log_usable"), ("2022", "log_usable"), ("pooled", "log_usable")]
+STAR_NOTE = r"*** $p<0.01$, ** $p<0.05$, * $p<0.1$"
+
+
+def _dist_cell(r, d=3):
+    if r is None:
+        return "", ""
+    st = tex_star(r.p_wcb)
+    return (f"{tex_fmt(r.coef, d)}$^{{{st}}}$" if st else tex_fmt(r.coef, d)), f"({tex_fmt(r.se, d)})"
+
+
+def _tex_wrap(caption, label, ncols, header, lines, foot, notes):
+    return "\n".join([r"\begin{table}[H]", r"\centering\footnotesize\setlength{\tabcolsep}{4pt}", rf"\caption{{{caption}}}",
+                      rf"\label{{{label}}}", r"\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}",
+                      rf"\begin{{tabular}}{{l{'c' * ncols}}}", r"\toprule", *header, r"\midrule", *lines, r"\midrule", *foot,
+                      r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}",
+                      r"\begin{minipage}{0.97\textwidth}\scriptsize", rf"\textit{{Notes:}} {notes}", r"\end{minipage}", r"\end{table}"])
+
+
+def _dist_table(r, y, design, caption, label, cols, robust=True):
+    """robust=True: the 8-column robustness layout (total vs usable area). robust=False: the main layout (no area header,
+    controls with standard errors and fixed-effect rows)."""
+    r = r[(r.outcome == y) & (r.design == design)]
+    pick = lambda **kw: tex_pick(r, **kw)
+    dp = 2 if y == "gap" else (4 if design == "linear" else 3)
+    lines = []
+    for p in PARK_LABEL:
+        if not (r.park == p).any():
+            continue
+        lines.append(rf"\multicolumn{{{len(cols) + 1}}}{{l}}{{\textit{{Catchment: {PARK_LABEL[p]}}}}} \\")
+        terms = ["per km"] if design == "linear" else [f"{lo}-{hi}" for lo, hi in DIST_BANDS]
+        for t in terms:
+            c = [_dist_cell(pick(park=p, term=t, sample=s, area=a), dp) for s, a in cols]
+            name = "Distance to park (km)" if t == "per km" else f"{t.replace('-', '--')} km"
+            lines += [f"\\quad {name} & " + " & ".join(x[0] for x in c) + r" \\", " & " + " & ".join(x[1] for x in c) + r" \\"]
+        lines.append(r"\addlinespace")
+    ctrl = [_dist_cell(pick(term=a, sample=s, area=a, park=""), dp) for s, a in cols]
+    adl = [_dist_cell(pick(term="log_adults", sample=s, area=a, park=""), dp) for s, a in cols]
+    any_ = [pick(sample=s, area=a) for s, a in cols]
+    yes = lambda f: " & ".join(f(s, a) if x is not None else "" for x, (s, a) in zip(any_, cols))
+    if robust:
+        foot = ["Log area & " + " & ".join(x[0] for x in ctrl) + r" \\", "Log adults 16+ & " + " & ".join(x[0] for x in adl) + r" \\",
+                "Area measure & " + yes(lambda s, a: "Total" if a == "log_area" else "Usable") + r" \\"]
+    else:
+        lines += [r"\multicolumn{" + str(len(cols) + 1) + r"}{l}{\textit{Controls}} \\",
+                  r"\quad Log area (km$^2$) & " + " & ".join(x[0] for x in ctrl) + r" \\", " & " + " & ".join(x[1] for x in ctrl) + r" \\",
+                  r"\quad Log adults 16+ & " + " & ".join(x[0] for x in adl) + r" \\", " & " + " & ".join(x[1] for x in adl) + r" \\"]
+        foot = []
+    foot += ["Catchment FE & " + yes(lambda s, a: "Yes") + r" \\",
+             "Wave FE & " + yes(lambda s, a: "Yes" if s == "pooled" else "--") + r" \\",
+             "Sectors & " + " & ".join(f"{int(x.sectors):,}" if x is not None and "sectors" in x and pd.notna(x.sectors) else "" for x in any_) + r" \\",
+             "Observations & " + " & ".join(f"{int(x.obs):,}" if x is not None else "" for x in any_) + r" \\"]
+    head2 = " & " + " & ".join("Pooled" if s == "pooled" else s for s, a in cols) + r" \\"
+    head3 = " & " + " & ".join(f"({i + 1})" for i in range(len(cols))) + r" \\"
+    header = [head2, head3]
+    if robust:
+        groups = [("Total area", [c for c in cols if c[1] == "log_area"]), ("Usable (non-park) area", [c for c in cols if c[1] == "log_usable"])]
+        cm, k = [], 2
+        for n, g in groups:
+            if g:
+                cm.append(rf"\cmidrule(lr){{{k}-{k + len(g) - 1}}}"); k += len(g)
+        header = [" & " + " & ".join(rf"\multicolumn{{{len(g)}}}{{c}}{{{n}}}" for n, g in groups if g) + r" \\", " ".join(cm)] + header
+    unit = "percentage-point" if y == "gap" else "log-point"
+    band_note = (f"Each coefficient is the {unit} difference between sectors in that distance band and sectors 30 km or more "
+                 "from the same park (the omitted band), holding area and adults fixed"
+                 + ("; $100(e^{b}-1)$ is the percent difference. " if y != "gap" else ". ")
+                 if design == "bands" else f"Each coefficient is the {unit} change in the outcome per extra km from the park, within the park's catchment. ")
+    sample = (r"Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes (the 95 sectors "
+              r"nearest Gishwati--Mukura are dropped). " if not robust else
+              r"Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors "
+              r"are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). ")
+    notes = (rf"OLS. Outcome: {OUT_TEX[y]}. " + sample +
+             r"Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. "
+             + band_note + r"Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. "
+             r"Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values "
+             r"(Webb weights, 9,999 draws): " + STAR_NOTE + ".")
+    return _tex_wrap(caption, label, len(cols), header, lines, foot, notes)
+
+
+def _es_table(r, design, caption, label, base=2012):
+    """Gishwati-Mukura event study: rows band x wave, columns the four outcomes. base 2012: 2002 (lead) and 2022 (post) rows;
+    base 2002: 2012 (both before the opening) and 2022 (post) rows."""
+    r = r[(r.design == design) & (r.base_wave == base)]
+    outs = [o for o, _ in DIST_OUTCOMES]
+    terms = ["per km"] if design == "linear" else [f"{lo}-{hi}" for lo, hi in DIST_BANDS]
+    lines = []
+    rows = ((("2002", "Before the opening: 2002 relative to 2012"), ("2022", "After the opening: 2022 relative to 2012")) if base == 2012 else
+            (("2012", "Before the opening: 2012 relative to 2002"), ("2022", "After the opening: 2022 relative to 2002")))
+    for w, what in rows:
+        lines.append(rf"\multicolumn{{5}}{{l}}{{\textit{{{what}}}}} \\")
+        for t in terms:
+            c = [_dist_cell(tex_pick(r, outcome=o, term=t, wave=int(w)), 2 if o == "gap" else (4 if design == "linear" else 3)) for o in outs]
+            name = "Distance to park (km)" if t == "per km" else f"{t.replace('-', '--')} km"
+            lines += [f"\\quad {name} & " + " & ".join(x[0] for x in c) + r" \\", " & " + " & ".join(x[1] for x in c) + r" \\"]
+        lines.append(r"\addlinespace")
+    adl = [_dist_cell(tex_pick(r, outcome=o, term="log_adults"), 3) for o in outs]
+    lines += [r"\multicolumn{5}{l}{\textit{Controls}} \\", r"\quad Log adults 16+ & " + " & ".join(x[0] for x in adl) + r" \\",
+              " & " + " & ".join(x[1] for x in adl) + r" \\"]
+    any_ = [tex_pick(r, outcome=o) for o in outs]
+    foot = ["Sector FE & Yes & Yes & Yes & Yes \\\\", "Wave FE & Yes & Yes & Yes & Yes \\\\",
+            "Sectors & " + " & ".join(f"{int(x.sectors)}" for x in any_) + r" \\",
+            "Observations & " + " & ".join(f"{int(x.obs)}" for x in any_) + r" \\",
+            "District clusters & " + " & ".join(f"{int(x.clusters)}" for x in any_) + r" \\"]
+    header = [r" & ln(services) & ln(farm) & ln(farm incl. & Farm $-$ services \\",
+              r" & workers & workers & subsistence) & share (pp) \\", r" & (1) & (2) & (3) & (4) \\"]
+    what = ("Each coefficient is the change in the outcome for sectors in that distance band, relative to sectors 30 km or more "
+            f"from the park, between {base} and the wave shown"
+            if design == "bands" else f"Each coefficient is the change per km of distance from the park between {base} and the wave shown")
+    notes = (r"OLS with sector and wave fixed effects on the 95 sectors whose nearest park is Gishwati--Mukura (created 2015), "
+             rf"Censuses 2002, 2012, 2022; {base} is the base wave. Distance is from the sector centroid to the boundary of the park as "
+             r"created in 2015, the same in every wave. " + what + r" (log points in columns 1--3, percentage points in column 4). "
+             + (r"The 2002 rows test whether near and far sectors moved in parallel before the park existed. " if base == 2012 else
+                r"The 2012 rows compare two Censuses that both precede the park; the 2022 rows give the change over the full twenty years. ")
+             + r"In 2022 farming counts as "
+             r"work only if mainly for the market; column 3 adds back estimated subsistence farmers. Sector fixed effects absorb area. "
+             r"Standard errors clustered by district (12 clusters) in parentheses; stars follow wild cluster restricted bootstrap "
+             r"p-values (Webb weights, 9,999 draws): " + STAR_NOTE + ".")
+    return _tex_wrap(caption, label, 4, header, lines, foot, notes)
+
+
+def _tex_doc(body, name):
+    tex = "\n".join([r"\documentclass[11pt]{article}", r"\usepackage[margin=0.6in]{geometry}", r"\usepackage{booktabs,float,amsmath,graphicx,adjustbox}",
+                     r"\usepackage[font=small,labelfont=bf]{caption}", r"\begin{document}", *body, r"\end{document}"])
+    p = ROOT / "docs" / name
+    p.write_text(tex)
+    _log(f"-> {p}")
+
+
+def tex_distance():
+    """docs/sector_distance_tables.tex (robustness: all 381 sectors, total and usable area) from census_park_distance.csv."""
+    r = pd.read_csv(P.TABLES_REG / "census_park_distance.csv", keep_default_na=False, na_values=[""])
+    r["park"] = r.park.fillna("")
+    r = r[r["set"] == "all"]
+    sub = [("2022", "log_area"), ("pooled", "log_area"), ("2022", "log_usable"), ("pooled", "log_usable")]
+    body = []
+    for design, what in (("bands", "Distance Bands"), ("linear", "Linear Distance")):
+        body += [_dist_table(r, "ln_services", design, f"Services Workers and Distance to the Park: {what}", f"tab:dist_{design}_services", DIST_COLS),
+                 r"\clearpage",
+                 _dist_table(r, "ln_farm", design, f"Farm Workers and Distance to the Park: {what}", f"tab:dist_{design}_farm", DIST_COLS),
+                 r"\clearpage",
+                 _dist_table(r, "ln_farm_sub", design, f"Farm Workers Including Subsistence (2022) and Distance to the Park: {what}",
+                             f"tab:dist_{design}_farmsub", sub), r"\clearpage"]
+    _tex_doc(body, "sector_distance_tables.tex")
+
+
+def tex_distance_main():
+    """docs/sector_distance_main.tex: main distance results (286 sectors, total area) and the Gishwati-Mukura event study."""
+    r = pd.read_csv(P.TABLES_REG / "census_park_distance.csv", keep_default_na=False, na_values=[""])
+    r["park"] = r.park.fillna("")
+    r = r[r["set"] == "no_gm"]
+    cols = [("2002", "log_area"), ("2012", "log_area"), ("2022", "log_area"), ("pooled", "log_area")]
+    sub = [("2022", "log_area"), ("pooled", "log_area")]
+    titles = {"ln_services": "Services Workers", "ln_farm": "Farm Workers", "ln_farm_sub": "Farm Workers Including Subsistence (2022)",
+              "gap": "Farm Minus Services Share of Workers"}
+    body = []
+    for design, what in (("bands", "Distance Bands"), ("linear", "Linear Distance")):
+        for y, _ in DIST_OUTCOMES:
+            body += [_dist_table(r, y, design, f"{titles[y]} and Distance to the Park: {what}", f"tab:main_{design}_{y}",
+                                 sub if y == "ln_farm_sub" else cols, robust=False), r"\clearpage" if design == "bands" else ""]
+        if design == "linear":
+            body.append(r"\clearpage")
+    es = P.TABLES_REG / "census_park_gishwati_event.csv"
+    if es.exists():
+        e = pd.read_csv(es, keep_default_na=False, na_values=[""])
+        e["wave"] = pd.to_numeric(e.wave, errors="coerce")
+        for base in (2012, 2002):
+            body += [_es_table(e, "bands", f"Opening of Gishwati--Mukura National Park (2015): Event Study by Distance Band, Base {base}",
+                               f"tab:gm_bands_{base}", base), r"\clearpage",
+                     _es_table(e, "linear", f"Opening of Gishwati--Mukura National Park (2015): Event Study, Linear Distance, Base {base}",
+                               f"tab:gm_linear_{base}", base), r"\clearpage"]
+    _tex_doc(body, "sector_distance_main.tex")
+
+
 # ---- legacy: land use, tourism exposure and the Gishwati-Mukura opening (sector and year FE, 2000 / 2005 base)
 
 SHARE_YEARS = (2005, 2019)                  # years of visits that set omega_p (before the 2020-21 collapse)
@@ -1241,7 +1646,8 @@ def section_logs():
     _log(f"-> {out}")
 
 
-SECTIONS = {"outcomes": section_outcomes, "questions": section_questions}
+SECTIONS = {"outcomes": section_outcomes, "catchments": section_catchments, "distance": section_distance,
+            "gishwati": section_gishwati, "questions": section_questions}
 LEGACY = {"gap": section_gap, "person": section_person, "migration": section_migration, "levels": section_levels,
           "eicv_check": section_eicv_check, "status": section_status, "logs": section_logs, "land": section_land,
           "shift": section_shift, "opening": section_opening}

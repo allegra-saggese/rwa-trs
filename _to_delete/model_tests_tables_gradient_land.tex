@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{booktabs,float,amsmath,graphicx,adjustbox}
+\usepackage[font=small,labelfont=bf]{caption}
+\begin{document}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Change in the Distance Gradient of Work: Linear Distance}
+\label{tab:mt_gradient_linear}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Services workers} & \multicolumn{2}{c}{Farm workers incl. subsistence} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & 2002 & Change to 2022 & 2002 & Change to 2022 \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+Distance to Akagera (km) & $-$0.0143$^{**}$ & 0.0148$^{***}$ & 0.0055$^{*}$ & $-$0.0067$^{*}$ \\
+ & (0.0064) & (0.0044) & (0.0032) & (0.0028) \\
+Distance to Nyungwe (km) & $-$0.0052 & 0.0000 & 0.0036$^{*}$ & 0.0012 \\
+ & (0.0057) & (0.0019) & (0.0014) & (0.0014) \\
+Distance to Volcanoes (km) & 0.0027 & $-$0.0011 & $-$0.0007 & 0.0003 \\
+ & (0.0044) & (0.0029) & (0.0015) & (0.0012) \\
+\midrule
+Catchment $\times$ period FE & Yes & Yes & Yes & Yes \\
+Sectors & 286 & 286 & 286 & 286 \\
+Observations & 858 & 858 & 858 & 858 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS, the 3 periods stacked (2002, 2012, 2022). For each outcome one regression gives both columns: the slope in 2002 and the change in the slope from 2002 to 2022 (the interaction of distance with the 2022 dummy). Outcomes are in logs, so a coefficient is a log-point difference; controls are log area and log adults aged 16 and over. Farm workers include the estimated subsistence farmers of 2022, when the Census counts farming as work only if it is mainly for the market. Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes. Each sector is assigned to the park nearest its centroid; distance is from the centroid to that park's boundary. Controls and catchment effects are interacted with period. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Change in the Distance Gradient of Work: Services workers, Distance Bands}
+\label{tab:mt_gradient_bands_ln_services}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lccc}
+\toprule
+ & 2002 & Change to 2012 & Change to 2022 \\
+ & (1) & (2) & (3) \\
+\midrule
+\multicolumn{4}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & 1.198$^{***}$ & $-$0.386 & $-$0.867$^{***}$ \\
+ & (0.350) & (0.296) & (0.293) \\
+\quad 5--10 km & 0.573 & $-$0.100 & $-$0.396 \\
+ & (0.153) & (0.132) & (0.156) \\
+\quad 10--15 km & 0.028 & 0.019 & $-$0.058 \\
+ & (0.578) & (0.388) & (0.468) \\
+\quad 15--20 km & 0.756 & $-$0.324 & $-$0.449 \\
+ & (0.139) & (0.115) & (0.174) \\
+\quad 20--25 km & 0.390 & 0.057 & $-$0.168 \\
+ & (0.420) & (0.323) & (0.330) \\
+\quad 25--30 km & 0.370$^{*}$ & $-$0.262 & $-$0.329 \\
+ & (0.134) & (0.194) & (0.193) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & 0.191 & $-$0.038 & $-$0.012 \\
+ & (0.271) & (0.162) & (0.137) \\
+\quad 5--10 km & 0.067 & 0.040 & 0.041 \\
+ & (0.280) & (0.136) & (0.107) \\
+\quad 10--15 km & 0.080 & $-$0.130 & $-$0.141 \\
+ & (0.287) & (0.175) & (0.151) \\
+\quad 15--20 km & 0.187 & 0.025 & $-$0.121 \\
+ & (0.328) & (0.184) & (0.167) \\
+\quad 20--25 km & 0.037 & $-$0.012 & 0.064 \\
+ & (0.294) & (0.241) & (0.116) \\
+\quad 25--30 km & $-$0.146 & $-$0.008 & 0.236 \\
+ & (0.252) & (0.199) & (0.107) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & 0.001 & $-$0.032 & 0.041 \\
+ & (0.136) & (0.100) & (0.135) \\
+\quad 5--10 km & 0.119 & $-$0.097 & $-$0.124 \\
+ & (0.178) & (0.156) & (0.128) \\
+\quad 10--15 km & $-$0.446$^{**}$ & 0.370$^{*}$ & 0.262 \\
+ & (0.137) & (0.164) & (0.163) \\
+\quad 15--20 km & $-$0.325$^{**}$ & 0.121 & 0.031 \\
+ & (0.134) & (0.124) & (0.127) \\
+\quad 20--25 km & $-$0.536$^{*}$ & 0.008 & 0.205$^{**}$ \\
+ & (0.148) & (0.104) & (0.131) \\
+\quad 25--30 km & $-$0.136 & $-$0.065 & $-$0.041 \\
+ & (0.135) & (0.089) & (0.183) \\
+\addlinespace
+\midrule
+Catchment $\times$ period FE & Yes & Yes & Yes \\
+Sectors & 286 & 286 & 286 \\
+Observations & 858 & 858 & 858 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS, one regression. Column (1) is the gap in 2002 between sectors in that band and sectors 30 km or more from the same park (the omitted band); the other columns are the change in that gap since 2002. Outcomes are in logs, so a coefficient is a log-point difference; controls are log area and log adults aged 16 and over. Farm workers include the estimated subsistence farmers of 2022, when the Census counts farming as work only if it is mainly for the market. Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes. Controls and catchment effects are interacted with period. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Change in the Distance Gradient of Work: Farm workers incl. subsistence, Distance Bands}
+\label{tab:mt_gradient_bands_ln_farm_sub}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lccc}
+\toprule
+ & 2002 & Change to 2012 & Change to 2022 \\
+ & (1) & (2) & (3) \\
+\midrule
+\multicolumn{4}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & $-$0.641$^{**}$ & 0.461$^{**}$ & 0.267$^{*}$ \\
+ & (0.157) & (0.114) & (0.172) \\
+\quad 5--10 km & $-$0.155 & 0.024 & 0.044 \\
+ & (0.059) & (0.045) & (0.064) \\
+\quad 10--15 km & $-$0.114 & 0.097 & 0.158$^{*}$ \\
+ & (0.130) & (0.106) & (0.094) \\
+\quad 15--20 km & $-$0.076 & $-$0.144 & $-$0.022 \\
+ & (0.038) & (0.039) & (0.055) \\
+\quad 20--25 km & $-$0.298$^{*}$ & 0.167$^{**}$ & 0.290$^{***}$ \\
+ & (0.115) & (0.063) & (0.090) \\
+\quad 25--30 km & $-$0.183$^{*}$ & 0.089 & 0.201$^{**}$ \\
+ & (0.067) & (0.061) & (0.051) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & $-$0.128 & 0.081 & $-$0.079 \\
+ & (0.076) & (0.146) & (0.053) \\
+\quad 5--10 km & $-$0.130 & 0.167$^{*}$ & 0.094 \\
+ & (0.099) & (0.063) & (0.056) \\
+\quad 10--15 km & $-$0.049 & 0.073 & $-$0.028 \\
+ & (0.102) & (0.102) & (0.049) \\
+\quad 15--20 km & $-$0.085 & $-$0.008 & $-$0.044 \\
+ & (0.123) & (0.086) & (0.054) \\
+\quad 20--25 km & $-$0.048 & $-$0.008 & $-$0.006 \\
+ & (0.083) & (0.191) & (0.052) \\
+\quad 25--30 km & 0.039 & $-$0.047 & $-$0.076 \\
+ & (0.076) & (0.033) & (0.034) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & $-$0.003 & 0.019 & 0.054 \\
+ & (0.077) & (0.058) & (0.044) \\
+\quad 5--10 km & $-$0.013 & $-$0.164$^{**}$ & $-$0.110 \\
+ & (0.052) & (0.086) & (0.060) \\
+\quad 10--15 km & 0.096 & $-$0.222$^{*}$ & $-$0.104 \\
+ & (0.057) & (0.099) & (0.063) \\
+\quad 15--20 km & 0.096 & $-$0.157$^{***}$ & 0.016 \\
+ & (0.069) & (0.082) & (0.042) \\
+\quad 20--25 km & 0.063 & 0.020 & 0.078 \\
+ & (0.044) & (0.038) & (0.028) \\
+\quad 25--30 km & 0.047 & 0.041 & 0.041 \\
+ & (0.032) & (0.025) & (0.023) \\
+\addlinespace
+\midrule
+Catchment $\times$ period FE & Yes & Yes & Yes \\
+Sectors & 286 & 286 & 286 \\
+Observations & 858 & 858 & 858 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS, one regression. Column (1) is the gap in 2002 between sectors in that band and sectors 30 km or more from the same park (the omitted band); the other columns are the change in that gap since 2002. Outcomes are in logs, so a coefficient is a log-point difference; controls are log area and log adults aged 16 and over. Farm workers include the estimated subsistence farmers of 2022, when the Census counts farming as work only if it is mainly for the market. Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes. Controls and catchment effects are interacted with period. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Change in the Distance Gradient of Land Use: Linear Distance}
+\label{tab:mt_land_linear}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Cropland share} & \multicolumn{2}{c}{Built-up share} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & 2000 & Change to 2020 & 2000 & Change to 2020 \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+Distance to Akagera (km) & 0.537$^{**}$ & $-$0.253$^{**}$ & $-$0.029 & $-$0.020 \\
+ & (0.179) & (0.087) & (0.056) & (0.047) \\
+Distance to Nyungwe (km) & 0.048 & 0.194$^{**}$ & $-$0.036 & $-$0.044 \\
+ & (0.235) & (0.037) & (0.100) & (0.027) \\
+Distance to Volcanoes (km) & 0.138 & $-$0.057 & 0.026 & $-$0.134$^{**}$ \\
+ & (0.072) & (0.046) & (0.046) & (0.050) \\
+\midrule
+Catchment $\times$ period FE & Yes & Yes & Yes & Yes \\
+Sectors & 286 & 286 & 286 & 286 \\
+Observations & 858 & 858 & 858 & 858 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS, the 3 periods stacked (2000, 2010, 2020). For each outcome one regression gives both columns: the slope in 2000 and the change in the slope from 2000 to 2020 (the interaction of distance with the 2020 dummy). Outcomes are the cropland and built-up shares of the sector's usable (non-park) land, in percentage points (GLAD land cover); the control is log area. Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes. Each sector is assigned to the park nearest its centroid; distance is from the centroid to that park's boundary. Controls and catchment effects are interacted with period. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Change in the Distance Gradient of Land Use: Cropland share, Distance Bands}
+\label{tab:mt_land_bands_crop_pp}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lccc}
+\toprule
+ & 2000 & Change to 2010 & Change to 2020 \\
+ & (1) & (2) & (3) \\
+\midrule
+\multicolumn{4}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & $-$24.03$^{**}$ & 3.10 & 10.46 \\
+ & (8.04) & (2.59) & (6.20) \\
+\quad 5--10 km & $-$9.60 & $-$2.47 & 2.75 \\
+ & (5.62) & (1.81) & (3.44) \\
+\quad 10--15 km & $-$7.45 & 0.79 & 1.87 \\
+ & (10.43) & (1.48) & (3.17) \\
+\quad 15--20 km & $-$11.48 & $-$0.45 & $-$1.18 \\
+ & (5.76) & (1.64) & (2.83) \\
+\quad 20--25 km & $-$14.09$^{*}$ & 0.76 & 2.74 \\
+ & (7.47) & (1.94) & (2.77) \\
+\quad 25--30 km & $-$14.74 & 1.34 & 5.04$^{*}$ \\
+ & (6.49) & (1.14) & (2.38) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & $-$1.03 & $-$2.25$^{*}$ & $-$7.84$^{***}$ \\
+ & (8.43) & (1.06) & (2.05) \\
+\quad 5--10 km & $-$4.17 & $-$0.85 & $-$3.83 \\
+ & (7.66) & (0.94) & (2.00) \\
+\quad 10--15 km & 2.23 & $-$2.19$^{**}$ & $-$6.35$^{**}$ \\
+ & (6.93) & (0.85) & (1.81) \\
+\quad 15--20 km & 3.82 & $-$1.45 & $-$3.95 \\
+ & (9.60) & (0.85) & (2.00) \\
+\quad 20--25 km & 14.20 & $-$1.01 & $-$3.13$^{*}$ \\
+ & (7.14) & (0.79) & (1.47) \\
+\quad 25--30 km & 12.11 & $-$1.45$^{*}$ & $-$3.25 \\
+ & (5.11) & (0.45) & (1.50) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & $-$5.90 & 4.91$^{*}$ & 6.28$^{**}$ \\
+ & (4.88) & (2.47) & (2.07) \\
+\quad 5--10 km & $-$9.63$^{**}$ & 2.13 & 0.32 \\
+ & (2.65) & (2.08) & (3.10) \\
+\quad 10--15 km & $-$10.20$^{*}$ & 0.22 & 0.34 \\
+ & (3.89) & (0.71) & (1.81) \\
+\quad 15--20 km & $-$5.03 & $-$0.47 & $-$0.10 \\
+ & (3.87) & (0.67) & (2.08) \\
+\quad 20--25 km & $-$5.32$^{*}$ & $-$0.71 & $-$0.10 \\
+ & (1.75) & (0.61) & (1.61) \\
+\quad 25--30 km & $-$5.55$^{*}$ & $-$0.45 & 0.77 \\
+ & (1.76) & (0.59) & (1.35) \\
+\addlinespace
+\midrule
+Catchment $\times$ period FE & Yes & Yes & Yes \\
+Sectors & 286 & 286 & 286 \\
+Observations & 858 & 858 & 858 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS, one regression. Column (1) is the gap in 2000 between sectors in that band and sectors 30 km or more from the same park (the omitted band); the other columns are the change in that gap since 2000. Outcomes are the cropland and built-up shares of the sector's usable (non-park) land, in percentage points (GLAD land cover); the control is log area. Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes. Controls and catchment effects are interacted with period. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Change in the Distance Gradient of Land Use: Built-up share, Distance Bands}
+\label{tab:mt_land_bands_built_pp}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lccc}
+\toprule
+ & 2000 & Change to 2010 & Change to 2020 \\
+ & (1) & (2) & (3) \\
+\midrule
+\multicolumn{4}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & 3.80 & 1.16$^{*}$ & 1.40 \\
+ & (4.19) & (0.58) & (1.60) \\
+\quad 5--10 km & $-$1.60 & 0.07 & $-$1.91 \\
+ & (2.23) & (0.29) & (0.88) \\
+\quad 10--15 km & $-$2.18 & 0.40 & $-$0.12 \\
+ & (2.52) & (0.42) & (0.92) \\
+\quad 15--20 km & 2.80 & 1.24$^{*}$ & 1.72 \\
+ & (2.13) & (0.40) & (1.37) \\
+\quad 20--25 km & 1.39 & 0.68 & 1.32 \\
+ & (1.93) & (0.44) & (1.25) \\
+\quad 25--30 km & $-$1.15 & 1.10 & 1.67 \\
+ & (1.22) & (0.66) & (1.54) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & 2.10 & 0.39 & 1.91$^{*}$ \\
+ & (5.21) & (0.36) & (0.81) \\
+\quad 5--10 km & $-$3.16 & 0.11 & 0.70 \\
+ & (5.78) & (0.57) & (1.18) \\
+\quad 10--15 km & $-$4.43 & 0.24 & 1.45 \\
+ & (5.43) & (0.50) & (1.53) \\
+\quad 15--20 km & $-$6.76 & $-$0.14 & $-$0.13 \\
+ & (5.91) & (0.48) & (1.79) \\
+\quad 20--25 km & $-$5.63 & $-$0.79 & $-$2.69$^{**}$ \\
+ & (5.27) & (0.31) & (0.63) \\
+\quad 25--30 km & $-$2.36 & $-$0.71 & $-$2.37 \\
+ & (4.21) & (0.37) & (0.52) \\
+\addlinespace
+\multicolumn{4}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & 0.59 & 1.31$^{***}$ & 4.90$^{***}$ \\
+ & (2.03) & (0.38) & (0.77) \\
+\quad 5--10 km & 0.83 & 1.51$^{**}$ & 8.10$^{**}$ \\
+ & (0.90) & (0.70) & (2.52) \\
+\quad 10--15 km & $-$0.81 & 0.62$^{**}$ & 4.25$^{***}$ \\
+ & (1.65) & (0.28) & (1.28) \\
+\quad 15--20 km & $-$1.40 & $-$0.09 & 1.00$^{**}$ \\
+ & (1.61) & (0.18) & (0.28) \\
+\quad 20--25 km & $-$4.11 & $-$0.08 & 0.11 \\
+ & (1.64) & (0.09) & (0.33) \\
+\quad 25--30 km & $-$2.59 & $-$0.36 & $-$0.57 \\
+ & (2.25) & (0.13) & (0.70) \\
+\addlinespace
+\midrule
+Catchment $\times$ period FE & Yes & Yes & Yes \\
+Sectors & 286 & 286 & 286 \\
+Observations & 858 & 858 & 858 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS, one regression. Column (1) is the gap in 2000 between sectors in that band and sectors 30 km or more from the same park (the omitted band); the other columns are the change in that gap since 2000. Outcomes are the cropland and built-up shares of the sector's usable (non-park) land, in percentage points (GLAD land cover); the control is log area. Sample: the 286 sectors outside Kigali City whose nearest park is Akagera, Nyungwe or Volcanoes. Controls and catchment effects are interacted with period. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\end{document}

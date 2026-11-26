@@ -1,0 +1,390 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{booktabs,float,amsmath,graphicx,adjustbox}
+\usepackage[font=small,labelfont=bf]{caption}
+\begin{document}
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Services Workers and Distance to the Park: Distance Bands}
+\label{tab:dist_bands_services}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{4}{c}{Total area} & \multicolumn{4}{c}{Usable (non-park) area} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+ & 2002 & 2012 & 2022 & Pooled & 2002 & 2012 & 2022 & Pooled \\
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & 1.339$^{***}$ & 0.930$^{*}$ & 0.419 & 0.882$^{**}$ & 1.040$^{**}$ & 0.719$^{*}$ & 0.220 & 0.642$^{*}$ \\
+ & (0.317) & (0.229) & (0.216) & (0.219) & (0.271) & (0.189) & (0.182) & (0.184) \\
+\quad 5--10 km & 0.571 & 0.487 & 0.204 & 0.423 & 0.589 & 0.564 & 0.249 & 0.468 \\
+ & (0.146) & (0.131) & (0.130) & (0.119) & (0.157) & (0.144) & (0.134) & (0.125) \\
+\quad 10--15 km & 0.037 & 0.051 & $-$0.006 & 0.028 & 0.062 & 0.123 & 0.038 & 0.074 \\
+ & (0.595) & (0.231) & (0.167) & (0.312) & (0.589) & (0.255) & (0.177) & (0.322) \\
+\quad 15--20 km & 0.707 & 0.391 & 0.299 & 0.473 & 0.713 & 0.399 & 0.309 & 0.484 \\
+ & (0.127) & (0.107) & (0.122) & (0.095) & (0.122) & (0.131) & (0.141) & (0.100) \\
+\quad 20--25 km & 0.346 & 0.416 & 0.216 & 0.330 & 0.350 & 0.424 & 0.224 & 0.339 \\
+ & (0.433) & (0.223) & (0.155) & (0.243) & (0.434) & (0.235) & (0.161) & (0.248) \\
+\quad 25--30 km & 0.355 & 0.081 & 0.038 & 0.156 & 0.362 & 0.088 & 0.043 & 0.164 \\
+ & (0.145) & (0.130) & (0.105) & (0.087) & (0.146) & (0.144) & (0.117) & (0.096) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Gishwati--Mukura}} \\
+\quad 0--5 km &  &  & $-$0.334$^{*}$ & $-$0.328$^{*}$ &  &  & $-$0.467$^{**}$ & $-$0.481$^{**}$ \\
+ &  &  & (0.075) & (0.073) &  &  & (0.062) & (0.061) \\
+\quad 5--10 km &  &  & $-$0.155 & $-$0.172$^{*}$ &  &  & $-$0.244$^{**}$ & $-$0.272$^{**}$ \\
+ &  &  & (0.091) & (0.086) &  &  & (0.074) & (0.072) \\
+\quad 10--15 km &  &  & $-$0.167$^{*}$ & $-$0.181$^{*}$ &  &  & $-$0.202$^{**}$ & $-$0.220$^{**}$ \\
+ &  &  & (0.080) & (0.079) &  &  & (0.081) & (0.083) \\
+\quad 15--20 km &  &  & $-$0.223$^{*}$ & $-$0.261$^{**}$ &  &  & $-$0.258$^{**}$ & $-$0.296$^{**}$ \\
+ &  &  & (0.091) & (0.084) &  &  & (0.080) & (0.083) \\
+\quad 20--25 km &  &  & $-$0.135 & $-$0.139 &  &  & $-$0.137 & $-$0.141 \\
+ &  &  & (0.153) & (0.148) &  &  & (0.150) & (0.145) \\
+\quad 25--30 km &  &  & $-$0.124 & $-$0.130 &  &  & $-$0.128 & $-$0.134 \\
+ &  &  & (0.102) & (0.098) &  &  & (0.100) & (0.096) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & 0.319$^{**}$ & 0.241 & 0.235 & 0.262$^{*}$ & $-$0.051 & $-$0.152 & $-$0.065 & $-$0.093 \\
+ & (0.145) & (0.124) & (0.200) & (0.122) & (0.138) & (0.127) & (0.193) & (0.126) \\
+\quad 5--10 km & 0.114 & 0.118 & 0.110 & 0.119 & 0.112 & 0.097 & 0.102 & 0.107 \\
+ & (0.153) & (0.113) & (0.194) & (0.128) & (0.150) & (0.113) & (0.186) & (0.124) \\
+\quad 10--15 km & 0.150 & $-$0.013 & $-$0.046 & 0.031 & 0.156 & $-$0.003 & $-$0.040 & 0.035 \\
+ & (0.169) & (0.151) & (0.210) & (0.145) & (0.170) & (0.162) & (0.207) & (0.146) \\
+\quad 15--20 km & 0.192 & 0.141 & 0.073 & 0.131 & 0.197 & 0.139 & 0.067 & 0.127 \\
+ & (0.250) & (0.183) & (0.232) & (0.190) & (0.254) & (0.200) & (0.242) & (0.202) \\
+\quad 20--25 km & 0.151 & 0.114 & 0.131 & 0.128 & 0.162 & 0.135 & 0.148 & 0.140 \\
+ & (0.144) & (0.157) & (0.204) & (0.128) & (0.143) & (0.147) & (0.199) & (0.123) \\
+\quad 25--30 km & 0.179 & 0.025 & 0.108 & 0.102 & 0.186 & 0.032 & 0.117 & 0.108 \\
+ & (0.258) & (0.179) & (0.170) & (0.175) & (0.258) & (0.175) & (0.165) & (0.173) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & 0.068 & 0.058 & 0.024 & 0.068 & $-$0.148$^{*}$ & $-$0.214 & $-$0.173 & $-$0.154 \\
+ & (0.143) & (0.184) & (0.158) & (0.153) & (0.094) & (0.137) & (0.121) & (0.108) \\
+\quad 5--10 km & 0.158 & 0.081 & $-$0.047 & 0.083 & 0.127 & 0.001 & $-$0.098 & 0.034 \\
+ & (0.158) & (0.098) & (0.109) & (0.108) & (0.172) & (0.096) & (0.111) & (0.114) \\
+\quad 10--15 km & $-$0.388$^{**}$ & 0.023 & $-$0.192$^{*}$ & $-$0.170$^{*}$ & $-$0.430$^{**}$ & $-$0.038 & $-$0.234$^{*}$ & $-$0.217$^{*}$ \\
+ & (0.116) & (0.122) & (0.079) & (0.080) & (0.136) & (0.132) & (0.087) & (0.095) \\
+\quad 15--20 km & $-$0.276$^{***}$ & 0.040 & $-$0.302$^{**}$ & $-$0.149 & $-$0.341$^{***}$ & $-$0.057 & $-$0.310$^{**}$ & $-$0.205$^{**}$ \\
+ & (0.101) & (0.154) & (0.066) & (0.088) & (0.134) & (0.124) & (0.071) & (0.086) \\
+\quad 20--25 km & $-$0.341 & $-$0.246 & $-$0.330 & $-$0.286 & $-$0.388 & $-$0.333$^{*}$ & $-$0.328 & $-$0.331 \\
+ & (0.182) & (0.145) & (0.207) & (0.142) & (0.207) & (0.123) & (0.215) & (0.144) \\
+\quad 25--30 km & $-$0.192 & $-$0.205$^{*}$ & $-$0.175 & $-$0.184 & $-$0.233 & $-$0.273$^{**}$ & $-$0.180 & $-$0.224$^{*}$ \\
+ & (0.190) & (0.103) & (0.061) & (0.082) & (0.224) & (0.097) & (0.058) & (0.103) \\
+\addlinespace
+\midrule
+Log area & $-$0.623 & $-$0.664 & $-$0.509 & $-$0.595 & $-$0.661 & $-$0.804 & $-$0.588 & $-$0.674 \\
+Log adults 16+ & 1.986 & 1.937 & 1.840 & 1.877 & 2.020 & 2.026 & 1.882 & 1.920 \\
+Area measure & Total & Total & Total & Total & Usable & Usable & Usable & Usable \\
+Catchment FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Wave FE & -- & -- & -- & Yes & -- & -- & -- & Yes \\
+Sectors & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+Observations & 381 & 381 & 381 & 1,143 & 381 & 381 & 381 & 1,143 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS. Outcome: ln(services workers). Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. Each coefficient is the log-point difference between sectors in that distance band and sectors 30 km or more from the same park (the omitted band), holding area and adults fixed; $100(e^{b}-1)$ is the percent difference. Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Farm Workers and Distance to the Park: Distance Bands}
+\label{tab:dist_bands_farm}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{4}{c}{Total area} & \multicolumn{4}{c}{Usable (non-park) area} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+ & 2002 & 2012 & 2022 & Pooled & 2002 & 2012 & 2022 & Pooled \\
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & $-$0.737$^{**}$ & $-$0.393 & $-$0.534 & $-$0.531$^{*}$ & $-$0.651$^{**}$ & $-$0.314 & $-$0.334 & $-$0.409$^{*}$ \\
+ & (0.155) & (0.219) & (0.218) & (0.169) & (0.145) & (0.178) & (0.187) & (0.142) \\
+\quad 5--10 km & $-$0.185 & $-$0.180 & $-$0.227 & $-$0.199 & $-$0.211 & $-$0.218 & $-$0.234 & $-$0.222 \\
+ & (0.060) & (0.106) & (0.135) & (0.093) & (0.067) & (0.117) & (0.139) & (0.099) \\
+\quad 10--15 km & $-$0.142 & $-$0.050 & 0.032 & $-$0.052 & $-$0.169 & $-$0.085 & 0.022 & $-$0.076 \\
+ & (0.147) & (0.116) & (0.158) & (0.123) & (0.156) & (0.129) & (0.162) & (0.132) \\
+\quad 15--20 km & $-$0.079 & $-$0.183 & $-$0.193 & $-$0.161 & $-$0.087 & $-$0.187 & $-$0.194 & $-$0.166 \\
+ & (0.050) & (0.100) & (0.113) & (0.081) & (0.062) & (0.122) & (0.117) & (0.092) \\
+\quad 20--25 km & $-$0.298$^{*}$ & $-$0.105 & 0.068 & $-$0.116 & $-$0.304$^{*}$ & $-$0.110 & 0.068 & $-$0.120 \\
+ & (0.123) & (0.100) & (0.135) & (0.110) & (0.128) & (0.108) & (0.137) & (0.114) \\
+\quad 25--30 km & $-$0.185$^{*}$ & $-$0.074 & 0.081 & $-$0.054 & $-$0.191$^{*}$ & $-$0.078 & 0.081 & $-$0.058 \\
+ & (0.079) & (0.086) & (0.095) & (0.069) & (0.087) & (0.096) & (0.097) & (0.075) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Gishwati--Mukura}} \\
+\quad 0--5 km &  &  & 0.172 & 0.160 &  &  & 0.266 & 0.238 \\
+ &  &  & (0.091) & (0.095) &  &  & (0.090) & (0.092) \\
+\quad 5--10 km &  &  & 0.139 & 0.111 &  &  & 0.194 & 0.162 \\
+ &  &  & (0.204) & (0.198) &  &  & (0.199) & (0.195) \\
+\quad 10--15 km &  &  & $-$0.066 & $-$0.093 &  &  & $-$0.048 & $-$0.073 \\
+ &  &  & (0.153) & (0.155) &  &  & (0.156) & (0.157) \\
+\quad 15--20 km &  &  & $-$0.467$^{**}$ & $-$0.508$^{**}$ &  &  & $-$0.458$^{**}$ & $-$0.490$^{**}$ \\
+ &  &  & (0.214) & (0.211) &  &  & (0.205) & (0.200) \\
+\quad 20--25 km &  &  & $-$0.282 & $-$0.297 &  &  & $-$0.282 & $-$0.296 \\
+ &  &  & (0.173) & (0.168) &  &  & (0.171) & (0.166) \\
+\quad 25--30 km &  &  & $-$0.352 & $-$0.369 &  &  & $-$0.351 & $-$0.366 \\
+ &  &  & (0.175) & (0.182) &  &  & (0.176) & (0.182) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & $-$0.212$^{***}$ & $-$0.256 & $-$0.193 & $-$0.200$^{***}$ & $-$0.061 & $-$0.087 & 0.037 & $-$0.020 \\
+ & (0.047) & (0.157) & (0.119) & (0.071) & (0.038) & (0.127) & (0.122) & (0.054) \\
+\quad 5--10 km & $-$0.170$^{**}$ & $-$0.049 & $-$0.061 & $-$0.085 & $-$0.163$^{**}$ & $-$0.038 & $-$0.060 & $-$0.079 \\
+ & (0.056) & (0.079) & (0.105) & (0.065) & (0.051) & (0.080) & (0.103) & (0.063) \\
+\quad 10--15 km & $-$0.099 & $-$0.103 & $-$0.275 & $-$0.144 & $-$0.100 & $-$0.107 & $-$0.278 & $-$0.146 \\
+ & (0.075) & (0.110) & (0.140) & (0.076) & (0.080) & (0.116) & (0.139) & (0.079) \\
+\quad 15--20 km & $-$0.118 & $-$0.176 & $-$0.219 & $-$0.148 & $-$0.117 & $-$0.174 & $-$0.219 & $-$0.146 \\
+ & (0.104) & (0.173) & (0.204) & (0.139) & (0.112) & (0.182) & (0.210) & (0.147) \\
+\quad 20--25 km & $-$0.096$^{**}$ & $-$0.136 & $-$0.230 & $-$0.131 & $-$0.101$^{**}$ & $-$0.146 & $-$0.237 & $-$0.137 \\
+ & (0.041) & (0.128) & (0.121) & (0.075) & (0.041) & (0.125) & (0.118) & (0.073) \\
+\quad 25--30 km & $-$0.030 & $-$0.081$^{**}$ & $-$0.278 & $-$0.100 & $-$0.032 & $-$0.084$^{**}$ & $-$0.282 & $-$0.103$^{*}$ \\
+ & (0.041) & (0.033) & (0.207) & (0.063) & (0.041) & (0.033) & (0.208) & (0.064) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & $-$0.027 & 0.038 & 0.375$^{**}$ & 0.105 & 0.067 & 0.157 & 0.517$^{**}$ & 0.218$^{**}$ \\
+ & (0.077) & (0.088) & (0.105) & (0.064) & (0.062) & (0.096) & (0.104) & (0.060) \\
+\quad 5--10 km & $-$0.018 & $-$0.106 & 0.053 & $-$0.048 & 0.003 & $-$0.068 & 0.080 & $-$0.023 \\
+ & (0.043) & (0.120) & (0.188) & (0.089) & (0.045) & (0.117) & (0.193) & (0.090) \\
+\quad 10--15 km & 0.086 & $-$0.115 & $-$0.094 & $-$0.062 & 0.108 & $-$0.087 & $-$0.066 & $-$0.038 \\
+ & (0.055) & (0.074) & (0.210) & (0.082) & (0.063) & (0.076) & (0.224) & (0.093) \\
+\quad 15--20 km & $-$0.075 & $-$0.145$^{*}$ & 0.143 & $-$0.064 & $-$0.042 & $-$0.101$^{*}$ & 0.146 & $-$0.035 \\
+ & (0.121) & (0.073) & (0.101) & (0.077) & (0.108) & (0.059) & (0.101) & (0.062) \\
+\quad 20--25 km & 0.045 & $-$0.207 & 0.270$^{*}$ & $-$0.021 & 0.069 & $-$0.167 & 0.270$^{*}$ & 0.002 \\
+ & (0.030) & (0.228) & (0.122) & (0.107) & (0.037) & (0.209) & (0.120) & (0.100) \\
+\quad 25--30 km & 0.106$^{**}$ & 0.117$^{**}$ & 0.290 & 0.138$^{**}$ & 0.127$^{**}$ & 0.148$^{**}$ & 0.291 & 0.158$^{**}$ \\
+ & (0.048) & (0.052) & (0.089) & (0.040) & (0.055) & (0.055) & (0.088) & (0.041) \\
+\addlinespace
+\midrule
+Log area & 0.253 & 0.284 & 0.386 & 0.303 & 0.292 & 0.352 & 0.407 & 0.343 \\
+Log adults 16+ & 0.454 & 0.532 & 0.695 & 0.625 & 0.433 & 0.490 & 0.677 & 0.603 \\
+Area measure & Total & Total & Total & Total & Usable & Usable & Usable & Usable \\
+Catchment FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Wave FE & -- & -- & -- & Yes & -- & -- & -- & Yes \\
+Sectors & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+Observations & 381 & 381 & 381 & 1,143 & 381 & 381 & 381 & 1,143 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS. Outcome: ln(farm workers). Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. Each coefficient is the log-point difference between sectors in that distance band and sectors 30 km or more from the same park (the omitted band), holding area and adults fixed; $100(e^{b}-1)$ is the percent difference. Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Farm Workers Including Subsistence (2022) and Distance to the Park: Distance Bands}
+\label{tab:dist_bands_farmsub}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Total area} & \multicolumn{2}{c}{Usable (non-park) area} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & 2022 & Pooled & 2022 & Pooled \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\multicolumn{5}{l}{\textit{Catchment: Akagera}} \\
+\quad 0--5 km & $-$0.560 & $-$0.578$^{*}$ & $-$0.386 & $-$0.469$^{*}$ \\
+ & (0.227) & (0.182) & (0.181) & (0.149) \\
+\quad 5--10 km & $-$0.173 & $-$0.184 & $-$0.222 & $-$0.224 \\
+ & (0.112) & (0.089) & (0.121) & (0.098) \\
+\quad 10--15 km & $-$0.009 & $-$0.071 & $-$0.058 & $-$0.110 \\
+ & (0.117) & (0.118) & (0.132) & (0.132) \\
+\quad 15--20 km & $-$0.093 & $-$0.123 & $-$0.104 & $-$0.133 \\
+ & (0.126) & (0.088) & (0.157) & (0.109) \\
+\quad 20--25 km & $-$0.004 & $-$0.141 & $-$0.013 & $-$0.148 \\
+ & (0.105) & (0.103) & (0.115) & (0.112) \\
+\quad 25--30 km & 0.019 & $-$0.084 & 0.013 & $-$0.090 \\
+ & (0.085) & (0.079) & (0.098) & (0.090) \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Catchment: Gishwati--Mukura}} \\
+\quad 0--5 km & 0.057 & 0.089 & 0.184 & 0.179$^{*}$ \\
+ & (0.070) & (0.063) & (0.057) & (0.047) \\
+\quad 5--10 km & 0.080 & 0.063 & 0.167$^{*}$ & 0.126$^{*}$ \\
+ & (0.084) & (0.078) & (0.077) & (0.061) \\
+\quad 10--15 km & 0.026 & 0.018 & 0.061 & 0.044 \\
+ & (0.094) & (0.110) & (0.081) & (0.097) \\
+\quad 15--20 km & $-$0.271 & $-$0.330 & $-$0.233 & $-$0.301 \\
+ & (0.293) & (0.356) & (0.265) & (0.334) \\
+\quad 20--25 km & $-$0.037 & $-$0.028 & $-$0.034 & $-$0.026 \\
+ & (0.092) & (0.099) & (0.089) & (0.096) \\
+\quad 25--30 km & 0.040 & 0.043 & 0.045 & 0.047 \\
+ & (0.067) & (0.054) & (0.067) & (0.053) \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Catchment: Nyungwe}} \\
+\quad 0--5 km & $-$0.311$^{**}$ & $-$0.260$^{***}$ & $-$0.030 & $-$0.059 \\
+ & (0.128) & (0.088) & (0.110) & (0.064) \\
+\quad 5--10 km & $-$0.034 & $-$0.087 & $-$0.025 & $-$0.076 \\
+ & (0.130) & (0.073) & (0.121) & (0.069) \\
+\quad 10--15 km & $-$0.101 & $-$0.105 & $-$0.107 & $-$0.106 \\
+ & (0.138) & (0.088) & (0.140) & (0.095) \\
+\quad 15--20 km & $-$0.137 & $-$0.150 & $-$0.129 & $-$0.145 \\
+ & (0.151) & (0.128) & (0.165) & (0.140) \\
+\quad 20--25 km & $-$0.104 & $-$0.110 & $-$0.121 & $-$0.119 \\
+ & (0.112) & (0.068) & (0.104) & (0.064) \\
+\quad 25--30 km & $-$0.066 & $-$0.056 & $-$0.075 & $-$0.059 \\
+ & (0.101) & (0.037) & (0.098) & (0.038) \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Catchment: Volcanoes}} \\
+\quad 0--5 km & 0.073 & 0.012 & 0.261$^{**}$ & 0.143 \\
+ & (0.074) & (0.074) & (0.056) & (0.069) \\
+\quad 5--10 km & $-$0.052 & $-$0.077 & 0.000 & $-$0.042 \\
+ & (0.098) & (0.073) & (0.094) & (0.071) \\
+\quad 10--15 km & 0.004 & $-$0.014 & 0.045 & 0.017 \\
+ & (0.061) & (0.047) & (0.078) & (0.058) \\
+\quad 15--20 km & 0.128$^{**}$ & $-$0.045 & 0.136$^{**}$ & $-$0.008 \\
+ & (0.042) & (0.067) & (0.048) & (0.051) \\
+\quad 20--25 km & 0.139 & $-$0.017 & 0.136 & 0.012 \\
+ & (0.061) & (0.096) & (0.070) & (0.087) \\
+\quad 25--30 km & 0.088$^{**}$ & 0.121$^{**}$ & 0.094$^{**}$ & 0.146$^{**}$ \\
+ & (0.015) & (0.046) & (0.018) & (0.053) \\
+\addlinespace
+\midrule
+Log area & 0.478 & 0.336 & 0.563 & 0.400 \\
+Log adults 16+ & 0.241 & 0.426 & 0.198 & 0.395 \\
+Area measure & Total & Total & Usable & Usable \\
+Catchment FE & Yes & Yes & Yes & Yes \\
+Wave FE & -- & Yes & -- & Yes \\
+Sectors & 381 & 381 & 381 & 381 \\
+Observations & 381 & 1,143 & 381 & 1,143 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS. Outcome: ln(farm workers incl. estimated subsistence farmers in 2022). Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. Each coefficient is the log-point difference between sectors in that distance band and sectors 30 km or more from the same park (the omitted band), holding area and adults fixed; $100(e^{b}-1)$ is the percent difference. Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Services Workers and Distance to the Park: Linear Distance}
+\label{tab:dist_linear_services}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{4}{c}{Total area} & \multicolumn{4}{c}{Usable (non-park) area} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+ & 2002 & 2012 & 2022 & Pooled & 2002 & 2012 & 2022 & Pooled \\
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Catchment: Akagera}} \\
+\quad Distance to park (km) & $-$0.0101 & $-$0.0046 & $-$0.0001 & $-$0.0052 & $-$0.0093 & $-$0.0040 & 0.0006 & $-$0.0045 \\
+ & (0.0072) & (0.0057) & (0.0050) & (0.0057) & (0.0074) & (0.0064) & (0.0053) & (0.0061) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Gishwati--Mukura}} \\
+\quad Distance to park (km) &  &  & 0.0056$^{**}$ & 0.0058$^{**}$ &  &  & 0.0075$^{**}$ & 0.0078$^{***}$ \\
+ &  &  & (0.0016) & (0.0015) &  &  & (0.0016) & (0.0016) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Nyungwe}} \\
+\quad Distance to park (km) & $-$0.0051$^{*}$ & $-$0.0042$^{**}$ & $-$0.0058 & $-$0.0048$^{**}$ & $-$0.0020 & $-$0.0005 & $-$0.0011 & $-$0.0012 \\
+ & (0.0026) & (0.0022) & (0.0043) & (0.0022) & (0.0028) & (0.0021) & (0.0048) & (0.0024) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Volcanoes}} \\
+\quad Distance to park (km) & 0.0017 & $-$0.0001 & 0.0020 & 0.0008 & 0.0042 & 0.0035 & 0.0048 & 0.0036 \\
+ & (0.0033) & (0.0028) & (0.0029) & (0.0029) & (0.0030) & (0.0024) & (0.0024) & (0.0025) \\
+\addlinespace
+\midrule
+Log area & $-$0.4899 & $-$0.5593 & $-$0.4526 & $-$0.4989 & $-$0.5754 & $-$0.7359 & $-$0.5719 & $-$0.6218 \\
+Log adults 16+ & 1.9292 & 1.9308 & 1.8769 & 1.8816 & 1.9766 & 2.0168 & 1.9185 & 1.9304 \\
+Area measure & Total & Total & Total & Total & Usable & Usable & Usable & Usable \\
+Catchment FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Wave FE & -- & -- & -- & Yes & -- & -- & -- & Yes \\
+Sectors & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+Observations & 381 & 381 & 381 & 1,143 & 381 & 381 & 381 & 1,143 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS. Outcome: ln(services workers). Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. Each coefficient is the log-point change in the outcome per extra km from the park, within the park's catchment. Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Farm Workers and Distance to the Park: Linear Distance}
+\label{tab:dist_linear_farm}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{4}{c}{Total area} & \multicolumn{4}{c}{Usable (non-park) area} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+ & 2002 & 2012 & 2022 & Pooled & 2002 & 2012 & 2022 & Pooled \\
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+\midrule
+\multicolumn{9}{l}{\textit{Catchment: Akagera}} \\
+\quad Distance to park (km) & 0.0050 & $-$0.0003 & $-$0.0008 & 0.0013 & 0.0050 & $-$0.0004 & $-$0.0019 & 0.0008 \\
+ & (0.0034) & (0.0041) & (0.0064) & (0.0043) & (0.0036) & (0.0045) & (0.0062) & (0.0044) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Gishwati--Mukura}} \\
+\quad Distance to park (km) &  &  & 0.0000 & 0.0006 &  &  & $-$0.0011 & $-$0.0004 \\
+ &  &  & (0.0039) & (0.0040) &  &  & (0.0042) & (0.0041) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Nyungwe}} \\
+\quad Distance to park (km) & 0.0041$^{***}$ & 0.0041$^{*}$ & 0.0044 & 0.0039$^{***}$ & 0.0028$^{***}$ & 0.0026 & 0.0010 & 0.0021 \\
+ & (0.0009) & (0.0022) & (0.0033) & (0.0012) & (0.0007) & (0.0021) & (0.0039) & (0.0012) \\
+\addlinespace
+\multicolumn{9}{l}{\textit{Catchment: Volcanoes}} \\
+\quad Distance to park (km) & 0.0003 & 0.0009 & $-$0.0065 & $-$0.0008 & $-$0.0008 & $-$0.0007 & $-$0.0083 & $-$0.0021 \\
+ & (0.0009) & (0.0016) & (0.0032) & (0.0013) & (0.0010) & (0.0017) & (0.0031) & (0.0013) \\
+\addlinespace
+\midrule
+Log area & 0.1836 & 0.2264 & 0.3465 & 0.2496 & 0.2360 & 0.3133 & 0.3786 & 0.3033 \\
+Log adults 16+ & 0.4766 & 0.5234 & 0.6828 & 0.6295 & 0.4539 & 0.4817 & 0.6710 & 0.6077 \\
+Area measure & Total & Total & Total & Total & Usable & Usable & Usable & Usable \\
+Catchment FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Wave FE & -- & -- & -- & Yes & -- & -- & -- & Yes \\
+Sectors & 381 & 381 & 381 & 381 & 381 & 381 & 381 & 381 \\
+Observations & 381 & 381 & 381 & 1,143 & 381 & 381 & 381 & 1,143 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS. Outcome: ln(farm workers). Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. Each coefficient is the log-point change in the outcome per extra km from the park, within the park's catchment. Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Farm Workers Including Subsistence (2022) and Distance to the Park: Linear Distance}
+\label{tab:dist_linear_farmsub}
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.8\textheight}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Total area} & \multicolumn{2}{c}{Usable (non-park) area} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & 2022 & Pooled & 2022 & Pooled \\
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\multicolumn{5}{l}{\textit{Catchment: Akagera}} \\
+\quad Distance to park (km) & 0.0000 & 0.0018 & $-$0.0004 & 0.0017 \\
+ & (0.0049) & (0.0040) & (0.0053) & (0.0043) \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Catchment: Gishwati--Mukura}} \\
+\quad Distance to park (km) & $-$0.0010 & $-$0.0009 & $-$0.0028 & $-$0.0022 \\
+ & (0.0020) & (0.0025) & (0.0015) & (0.0021) \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Catchment: Nyungwe}} \\
+\quad Distance to park (km) & 0.0061$^{*}$ & 0.0045$^{***}$ & 0.0019 & 0.0024 \\
+ & (0.0025) & (0.0014) & (0.0028) & (0.0013) \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Catchment: Volcanoes}} \\
+\quad Distance to park (km) & $-$0.0012 & 0.0004 & $-$0.0038$^{**}$ & $-$0.0013 \\
+ & (0.0015) & (0.0011) & (0.0015) & (0.0012) \\
+\addlinespace
+\midrule
+Log area & 0.4071 & 0.2682 & 0.5315 & 0.3560 \\
+Log adults 16+ & 0.2279 & 0.4306 & 0.1848 & 0.3972 \\
+Area measure & Total & Total & Usable & Usable \\
+Catchment FE & Yes & Yes & Yes & Yes \\
+Wave FE & -- & Yes & -- & Yes \\
+Sectors & 381 & 381 & 381 & 381 \\
+Observations & 381 & 1,143 & 381 & 1,143 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\begin{minipage}{0.97\textwidth}\scriptsize
+\textit{Notes:} OLS. Outcome: ln(farm workers incl. estimated subsistence farmers in 2022). Sample: the 381 sectors outside Kigali City; Gishwati--Mukura became a park in 2015, so in 2002 and 2012 its sectors are assigned to the nearest of the other three parks. Usable area = total area minus park land (floored at 0.5 km$^2$). Each sector is assigned to the park nearest its centroid (catchment); distance is from the centroid to that park's boundary. Each coefficient is the log-point change in the outcome per extra km from the park, within the park's catchment. Per-wave columns are separate cross-sections; the pooled column stacks the three waves with wave fixed effects. Standard errors clustered by district in parentheses; stars follow wild cluster restricted bootstrap p-values (Webb weights, 9,999 draws): *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+\end{minipage}
+\end{table}
+\clearpage
+\end{document}
